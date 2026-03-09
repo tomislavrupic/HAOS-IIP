@@ -114,6 +114,7 @@ python3 numerics/simulations/laplacian_modes.py
 python3 numerics/simulations/gauge_modes.py
 python3 numerics/simulations/hodge_modes.py
 python3 numerics/simulations/parameter_sweep.py
+python3 numerics/simulations/periodic_twisted_l1.py
 ```
 
 ## Next explicit target

@@ -97,3 +97,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260309_224536_parameter_sweep_parameter_sweep_laplacian_gap.png`, `plots/20260309_224536_parameter_sweep_parameter_sweep_laplacian_ipr.png`, `plots/20260309_224536_parameter_sweep_parameter_sweep_hodge_coexact.png`
 - Observation: cubic substrates stay smoother than random graphs across the sweep
 - Conclusion: substrate regularity matters strongly for clean low-mode geometry, while the vector branch remains only partially separated
+
+## Periodic / twisted L1 experiment
+- Date: 2026-03-09T23:02:39
+- Config: epsilon=0.2, sizes=[4, 5], flux_quanta=[0, 1], open_compare_side=5
+- Results: `data/20260309_230015_periodic_twisted_l1.json`
+- Plots: `plots/20260309_230015_periodic_twisted_l1_periodic_twisted_l1_spectral_flow.png`, `plots/20260309_230015_periodic_twisted_l1_periodic_twisted_l1_open_vs_periodic.png`, `plots/20260309_230015_periodic_twisted_l1_periodic_twisted_l1_fractions.png`, `plots/20260309_230015_periodic_twisted_l1_periodic_twisted_l1_divergence.png`, `plots/20260309_230015_periodic_twisted_l1_periodic_twisted_l1_curl.png`, `plots/20260309_230015_periodic_twisted_l1_periodic_twisted_l1_modes.png`
+- Observation: periodic topology produces a low divergence-free family absent in the open box, and nontrivial flux shifts it cleanly
+- Conclusion: the periodic/twisted L1 branch shows a robust non-scalar flux-sensitive edge sector, but it is not yet a Maxwell-like propagating family

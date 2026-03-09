@@ -15,3 +15,5 @@ Build the weighted edge/Hodge branch from the current 3D substrate:
 7. compare pure-gauge and nontrivial-flux backgrounds
 
 This is now an active numerical branch in the repository. The next hard question is whether any transverse-like `L1` family survives beyond one clean cubic-lattice setup.
+
+The current branch has now advanced to a periodic/twisted `L1` experiment with coexact projection. The immediate follow-up is to test whether the low divergence-free family survives broader flux sweeps and defect backgrounds.
