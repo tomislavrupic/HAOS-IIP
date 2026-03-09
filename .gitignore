@@ -2,3 +2,5 @@
 __pycache__/
 .ipynb_checkpoints/
 .mplconfig/
+docs/media/videos/*.mp4
+docs/media/videos/*.mov
