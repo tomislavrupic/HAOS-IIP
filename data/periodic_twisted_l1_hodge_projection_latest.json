@@ -1,0 +1,2788 @@
+{
+  "experiment": "periodic_twisted_l1_hodge_projection",
+  "config": {
+    "epsilon": 0.2,
+    "sizes": [
+      4,
+      5
+    ],
+    "flux_quanta": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "low_modes": 6,
+    "representative_fluxes": [
+      0,
+      1,
+      4
+    ]
+  },
+  "cases": {
+    "periodic_n4_flux0": {
+      "label": "periodic_n4_flux0",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 0,
+        "plaquette_angle": 0.0
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 192,
+          "exact": 63,
+          "harmonic": 3,
+          "coexact": 126
+        },
+        "chain_error": 1.201889082438531e-17,
+        "orthogonality_errors": {
+          "exact_harmonic": 2.176814764723126e-15,
+          "exact_coexact": 1.8355333955522715e-15,
+          "harmonic_coexact": 1.1324838575220338e-15
+        },
+        "idempotence_errors": {
+          "exact": 3.2371166600583113e-15,
+          "harmonic": 2.7932874135004225e-15,
+          "coexact": 3.3031299646962693e-15
+        },
+        "reconstruction_error": 3.517635925152963e-15,
+        "sample_reconstruction_error": 1.3977181855479019e-15
+      },
+      "full_spectrum": [
+        -4.500600535813283e-15,
+        -7.82215305163094e-16,
+        1.933729903452976e-15,
+        1.7106906546148404,
+        1.7106906546148428,
+        1.710690654614843,
+        1.7106906546148433,
+        1.7106906546148442,
+        1.7106906546148444,
+        1.7106906546148446,
+        1.7106906546148455,
+        1.7106906546148455
+      ],
+      "harmonic_spectrum": [
+        -4.996774811137285e-16,
+        -4.28222343311051e-16,
+        -3.906625193798138e-16
+      ],
+      "coexact_spectrum": [
+        1.7106906546148382,
+        1.7106906546148384,
+        1.71069065461484,
+        1.7106906546148415,
+        1.7106906546148415,
+        1.7106906546148428,
+        1.7106906546148433,
+        1.7106906546148433,
+        1.710690654614845,
+        1.7106906546148466,
+        1.7106906546148468,
+        1.710690654614847
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": -4.500600535813283e-15,
+          "exact_fraction": -1.280552567746828e-17,
+          "harmonic_fraction": 1.0000000000000007,
+          "coexact_fraction": 1.729808691657402e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.0311351551482268e-15,
+          "curl_norm": 2.178849390134624e-15,
+          "ipr": 0.012428970244478017,
+          "support_pattern": "harmonic y-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": -7.82215305163094e-16,
+          "exact_fraction": 2.965242256450024e-17,
+          "harmonic_fraction": 1.0000000000000004,
+          "coexact_fraction": -1.755556340227894e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.2735976957428779e-15,
+          "curl_norm": 1.7393230124847985e-15,
+          "ipr": 0.012484539238516588,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.933729903452976e-15,
+          "exact_fraction": -2.2410545017965152e-17,
+          "harmonic_fraction": 1.0000000000000018,
+          "coexact_fraction": -1.5301664531806218e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 9.534179875832974e-16,
+          "curl_norm": 1.4885883760414967e-15,
+          "ipr": 0.015555010325932709,
+          "support_pattern": "harmonic x-cycle"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.7106906546148404,
+          "exact_fraction": 0.31186137917323203,
+          "harmonic_fraction": -7.644118395511538e-19,
+          "coexact_fraction": 0.6881386208267679,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.7304097116597952,
+          "curl_norm": 1.0849849343322244,
+          "ipr": 0.01567173926583646,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.7106906546148428,
+          "exact_fraction": 0.2501526363332054,
+          "harmonic_fraction": -3.4271508285211627e-19,
+          "coexact_fraction": 0.7498473636667947,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.6541664751441181,
+          "curl_norm": 1.1325885737602879,
+          "ipr": 0.011782010207763177,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.710690654614843,
+          "exact_fraction": 0.26062715593985053,
+          "harmonic_fraction": -1.4744845920742781e-18,
+          "coexact_fraction": 0.7393728440601498,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.6677218283126197,
+          "curl_norm": 1.1246502632417315,
+          "ipr": 0.013372146184523537,
+          "support_pattern": "mixed z-biased support"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": -4.996774811137285e-16,
+          "exact_fraction": -1.3992597437089046e-17,
+          "harmonic_fraction": 1.000000000000001,
+          "coexact_fraction": 4.194841241653917e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.4275353723349045e-15,
+          "curl_norm": 2.316731290641315e-15,
+          "ipr": 0.0067592176850089,
+          "support_pattern": "harmonic x-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": -4.28222343311051e-16,
+          "exact_fraction": -7.019697297745959e-18,
+          "harmonic_fraction": 1.0000000000000002,
+          "coexact_fraction": 2.2618080581951708e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 4.6197055399845915e-15,
+          "curl_norm": 4.088445097872899e-15,
+          "ipr": 0.007635185437591285,
+          "support_pattern": "harmonic y-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": -3.906625193798138e-16,
+          "exact_fraction": 3.146711456453416e-17,
+          "harmonic_fraction": 1.0000000000000018,
+          "coexact_fraction": -2.7659737525336874e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.6438582210837363e-15,
+          "curl_norm": 1.6941402193452751e-15,
+          "ipr": 0.008151215615395285,
+          "support_pattern": "harmonic z-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 1.7106906546148382,
+          "exact_fraction": -1.1109459677446652e-17,
+          "harmonic_fraction": -3.3918594522188137e-19,
+          "coexact_fraction": 1.0000000000000004,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.5725190756889766e-15,
+          "curl_norm": 1.3079337347950195,
+          "ipr": 0.013144395138673092,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 1.7106906546148384,
+          "exact_fraction": 3.6532662841805117e-17,
+          "harmonic_fraction": -1.3031890973849272e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.6010302442847119e-15,
+          "curl_norm": 1.3079337347950186,
+          "ipr": 0.014998076856940643,
+          "support_pattern": "coexact y-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.71069065461484,
+          "exact_fraction": 3.516857190439307e-18,
+          "harmonic_fraction": -3.2466454527377715e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.582178036533495e-15,
+          "curl_norm": 1.3079337347950182,
+          "ipr": 0.01234184518613626,
+          "support_pattern": "coexact y-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.7106906546148415,
+          "exact_fraction": 1.30083695948738e-17,
+          "harmonic_fraction": 2.3899754543052556e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4366434119248452e-15,
+          "curl_norm": 1.3079337347950186,
+          "ipr": 0.010899167215127833,
+          "support_pattern": "coexact y-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.7106906546148415,
+          "exact_fraction": -1.1823826225888946e-17,
+          "harmonic_fraction": -1.9071522100872208e-18,
+          "coexact_fraction": 0.9999999999999997,
+          "residual_fraction": 3.3306690738754696e-16,
+          "divergence_norm": 1.819619279574123e-15,
+          "curl_norm": 1.307933734795018,
+          "ipr": 0.013971920414846161,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.7106906546148428,
+          "exact_fraction": 1.2878979365173965e-17,
+          "harmonic_fraction": -2.445371335346958e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4045204101938013e-15,
+          "curl_norm": 1.3079337347950186,
+          "ipr": 0.01602731811467111,
+          "support_pattern": "coexact y-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 1.7106906546148382,
+        "exact_fraction": -1.1109459677446652e-17,
+        "harmonic_fraction": -3.3918594522188137e-19,
+        "coexact_fraction": 1.0000000000000004,
+        "residual_fraction": 0.0,
+        "divergence_norm": 1.5725190756889766e-15,
+        "curl_norm": 1.3079337347950195,
+        "ipr": 0.013144395138673092,
+        "support_pattern": "coexact x-biased circulation"
+      }
+    },
+    "periodic_n4_flux1": {
+      "label": "periodic_n4_flux1",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 1,
+        "plaquette_angle": 0.39269908169872414
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 192,
+          "exact": 63,
+          "harmonic": 3,
+          "coexact": 126
+        },
+        "chain_error": 1.201889082438531e-17,
+        "orthogonality_errors": {
+          "exact_harmonic": 2.176814764723126e-15,
+          "exact_coexact": 1.8355333955522715e-15,
+          "harmonic_coexact": 1.1324838575220338e-15
+        },
+        "idempotence_errors": {
+          "exact": 3.2371166600583113e-15,
+          "harmonic": 2.7932874135004225e-15,
+          "coexact": 3.3031299646962693e-15
+        },
+        "reconstruction_error": 3.517635925152963e-15,
+        "sample_reconstruction_error": 1.3977181855479019e-15
+      },
+      "full_spectrum": [
+        0.01411017397974383,
+        0.17463921286671508,
+        0.2802830574076359,
+        0.3196458479591329,
+        0.47971102705198676,
+        0.6656436275120879,
+        0.7548952071473903,
+        0.7548952071473943,
+        0.8896595919736658,
+        0.8896595919736721,
+        0.9204769710029387,
+        0.9274239898503649
+      ],
+      "harmonic_spectrum": [
+        0.6118969491950159,
+        0.8494991505972219,
+        1.0871013519994293
+      ],
+      "coexact_spectrum": [
+        0.6795815674441942,
+        1.0256203710829588,
+        1.3738044701361476,
+        1.4482516305073547,
+        1.9159581294153394,
+        1.9159581294153438,
+        1.9582300772794625,
+        2.1405805428239275,
+        2.2855413723528546,
+        2.285541372352857,
+        2.371230557804662,
+        2.4804791858648336
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.01411017397974383,
+          "exact_fraction": 0.2060473185753585,
+          "harmonic_fraction": 0.32509026945445213,
+          "coexact_fraction": 0.4688624119701896,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.8358292537234145,
+          "curl_norm": 1.1278321137057579,
+          "ipr": 0.01703552753469676,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.17463921286671508,
+          "exact_fraction": 0.5879438040282929,
+          "harmonic_fraction": 0.1711250105872686,
+          "coexact_fraction": 0.2409311853844389,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.2133483156988274,
+          "curl_norm": 0.8211583818459899,
+          "ipr": 0.01947884399840388,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.2802830574076359,
+          "exact_fraction": 0.2711092178291081,
+          "harmonic_fraction": 0.5050649868972791,
+          "coexact_fraction": 0.22382579527361368,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.8275999604175274,
+          "curl_norm": 0.7629679120811512,
+          "ipr": 0.015376344418438607,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.3196458479591329,
+          "exact_fraction": 9.453916611103226e-18,
+          "harmonic_fraction": 0.5311665726866616,
+          "coexact_fraction": 0.4688334273133388,
+          "residual_fraction": 0.0,
+          "divergence_norm": 5.703381223871695e-15,
+          "curl_norm": 1.0405163115589229,
+          "ipr": 0.018670796276223724,
+          "support_pattern": "mixed z-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.47971102705198676,
+          "exact_fraction": 0.6757799569030317,
+          "harmonic_fraction": 0.05763864606034008,
+          "coexact_fraction": 0.26658139703662864,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.3388815461485744,
+          "curl_norm": 0.8437282161877041,
+          "ipr": 0.019249942352818256,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.6656436275120879,
+          "exact_fraction": 0.3984581381655222,
+          "harmonic_fraction": 0.3647945483657256,
+          "coexact_fraction": 0.23674731346875233,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.9412376241713758,
+          "curl_norm": 0.7609337769683299,
+          "ipr": 0.013498861184555034,
+          "support_pattern": "mixed y-biased support"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.6118969491950159,
+          "exact_fraction": -8.928697059722124e-18,
+          "harmonic_fraction": 1.0000000000000016,
+          "coexact_fraction": 2.6852909347439136e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.3514336150075933e-15,
+          "curl_norm": 2.235443170405396e-15,
+          "ipr": 0.007812499999999998,
+          "support_pattern": "harmonic y-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.8494991505972219,
+          "exact_fraction": 1.6046192152787752e-17,
+          "harmonic_fraction": 1.0000000000000004,
+          "coexact_fraction": 4.0088375327651416e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 3.455625733849013e-15,
+          "curl_norm": 3.0186974132439936e-15,
+          "ipr": 0.015624999999999993,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.0871013519994293,
+          "exact_fraction": -9.135587664612975e-18,
+          "harmonic_fraction": 1.0000000000000007,
+          "coexact_fraction": 1.2732084442210128e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 3.544595448942618e-15,
+          "curl_norm": 3.2853539856735792e-15,
+          "ipr": 0.0078124999999999965,
+          "support_pattern": "harmonic x-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.6795815674441942,
+          "exact_fraction": 2.7192499881940575e-17,
+          "harmonic_fraction": -1.0592140145874759e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.5934323329964435e-15,
+          "curl_norm": 1.4730984915328311,
+          "ipr": 0.024535096123832003,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 1.0256203710829588,
+          "exact_fraction": -4.273491650519374e-18,
+          "harmonic_fraction": -3.726513930772364e-19,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.6032330002969364e-15,
+          "curl_norm": 1.39552097639688,
+          "ipr": 0.01434950093221888,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.3738044701361476,
+          "exact_fraction": -1.0977147987730806e-18,
+          "harmonic_fraction": 1.4999794954988243e-19,
+          "coexact_fraction": 1.0000000000000004,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.3836531113780023e-15,
+          "curl_norm": 1.476813295522416,
+          "ipr": 0.017550302826170865,
+          "support_pattern": "coexact y-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.4482516305073547,
+          "exact_fraction": 2.2447551811367734e-17,
+          "harmonic_fraction": -3.689792845849691e-18,
+          "coexact_fraction": 0.9999999999999998,
+          "residual_fraction": 2.220446049250313e-16,
+          "divergence_norm": 1.789127624722906e-15,
+          "curl_norm": 1.462611621976639,
+          "ipr": 0.026676195443628953,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.9159581294153394,
+          "exact_fraction": -7.932993681631859e-18,
+          "harmonic_fraction": 3.582566560762446e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.9116556839965902e-15,
+          "curl_norm": 1.5461751443801752,
+          "ipr": 0.016469058636423242,
+          "support_pattern": "coexact y-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.9159581294153438,
+          "exact_fraction": -2.140694859504103e-18,
+          "harmonic_fraction": -2.463947553855538e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.617692191886444e-15,
+          "curl_norm": 1.546175144380179,
+          "ipr": 0.016469058636423232,
+          "support_pattern": "coexact y-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.6795815674441942,
+        "exact_fraction": 2.7192499881940575e-17,
+        "harmonic_fraction": -1.0592140145874759e-18,
+        "coexact_fraction": 1.0,
+        "residual_fraction": 0.0,
+        "divergence_norm": 1.5934323329964435e-15,
+        "curl_norm": 1.4730984915328311,
+        "ipr": 0.024535096123832003,
+        "support_pattern": "coexact z-biased circulation"
+      }
+    },
+    "periodic_n4_flux2": {
+      "label": "periodic_n4_flux2",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 2,
+        "plaquette_angle": 0.7853981633974483
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 192,
+          "exact": 63,
+          "harmonic": 3,
+          "coexact": 126
+        },
+        "chain_error": 1.201889082438531e-17,
+        "orthogonality_errors": {
+          "exact_harmonic": 2.176814764723126e-15,
+          "exact_coexact": 1.8355333955522715e-15,
+          "harmonic_coexact": 1.1324838575220338e-15
+        },
+        "idempotence_errors": {
+          "exact": 3.2371166600583113e-15,
+          "harmonic": 2.7932874135004225e-15,
+          "coexact": 3.3031299646962693e-15
+        },
+        "reconstruction_error": 3.517635925152963e-15,
+        "sample_reconstruction_error": 1.3977181855479019e-15
+      },
+      "full_spectrum": [
+        0.1718047422179909,
+        0.1718047422179925,
+        0.17785300415197763,
+        0.1778530041519803,
+        0.60673274833011,
+        0.6067327483301124,
+        0.9460605448859967,
+        0.9460605448860032,
+        0.9921911196160903,
+        0.9921911196160939,
+        1.0204640093450734,
+        1.0204640093450763
+      ],
+      "harmonic_spectrum": [
+        1.3155726340505987,
+        1.7106906546148462,
+        2.1058086751790936
+      ],
+      "coexact_spectrum": [
+        0.6067327483301135,
+        0.6919488233770495,
+        1.2525778772088707,
+        1.4678523880489192,
+        1.7106906546148468,
+        2.039329086446272,
+        2.0393290864462768,
+        2.067637328688167,
+        2.0676373286881673,
+        2.1097294686094212,
+        2.4054392277685808,
+        2.4091942478282236
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.1718047422179909,
+          "exact_fraction": 0.3439324376547321,
+          "harmonic_fraction": 5.142728644844053e-19,
+          "coexact_fraction": 0.6560675623452683,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.984142629371265,
+          "curl_norm": 1.2492362691176448,
+          "ipr": 0.01793607621161884,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.1718047422179925,
+          "exact_fraction": 0.7142607727322293,
+          "harmonic_fraction": -4.1442615877058766e-19,
+          "coexact_fraction": 0.2857392272677709,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.2930338092702323,
+          "curl_norm": 0.8453385587814517,
+          "ipr": 0.017936076211618864,
+          "support_pattern": "exact y-biased gradient"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.17785300415197763,
+          "exact_fraction": 0.4142962236801762,
+          "harmonic_fraction": 0.32766835003222905,
+          "coexact_fraction": 0.2580354262875955,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.0804313796310012,
+          "curl_norm": 1.0021171999711687,
+          "ipr": 0.012836161211015112,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.1778530041519803,
+          "exact_fraction": 0.2796727813322119,
+          "harmonic_fraction": 0.29450389998192866,
+          "coexact_fraction": 0.4258233186858597,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.0565097847565554,
+          "curl_norm": 1.1663960328035115,
+          "ipr": 0.012836161211015096,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.60673274833011,
+          "exact_fraction": 1.307074185257569e-17,
+          "harmonic_fraction": 0.4016318667716681,
+          "coexact_fraction": 0.5983681332283323,
+          "residual_fraction": 0.0,
+          "divergence_norm": 7.800885060118738e-15,
+          "curl_norm": 1.3040238749258801,
+          "ipr": 0.023150968906455033,
+          "support_pattern": "flux-lifted harmonic/z-circulation mix"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.6067327483301124,
+          "exact_fraction": 4.473065371809695e-17,
+          "harmonic_fraction": 0.06918858321669218,
+          "coexact_fraction": 0.9308114167833078,
+          "residual_fraction": 0.0,
+          "divergence_norm": 5.144189589111287e-15,
+          "curl_norm": 1.4000132984364981,
+          "ipr": 0.02315096890645502,
+          "support_pattern": "coexact z-biased circulation"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 1.3155726340505987,
+          "exact_fraction": 1.2661144687365372e-17,
+          "harmonic_fraction": 1.0000000000000016,
+          "coexact_fraction": 1.309914450499227e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.8003972017634705e-15,
+          "curl_norm": 1.7528051908354862e-15,
+          "ipr": 0.0078125,
+          "support_pattern": "harmonic y-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 1.7106906546148462,
+          "exact_fraction": 1.7780915628764525e-17,
+          "harmonic_fraction": 1.0000000000000004,
+          "coexact_fraction": 7.017498561412413e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 3.4458047780220165e-15,
+          "curl_norm": 3.006149541977625e-15,
+          "ipr": 0.015625000000000007,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 2.1058086751790936,
+          "exact_fraction": -7.934401778135521e-18,
+          "harmonic_fraction": 1.0000000000000004,
+          "coexact_fraction": -2.5477143413672453e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 3.84482275830505e-15,
+          "curl_norm": 3.567171199370806e-15,
+          "ipr": 0.0078125,
+          "support_pattern": "harmonic x-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.6067327483301135,
+          "exact_fraction": 4.50658841893411e-17,
+          "harmonic_fraction": -3.97500436594536e-19,
+          "coexact_fraction": 0.9999999999999999,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 1.5507081767436262e-15,
+          "curl_norm": 1.4191747703436322,
+          "ipr": 0.02317098646759348,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.6919488233770495,
+          "exact_fraction": -2.4113785109331057e-17,
+          "harmonic_fraction": 5.0594991986626894e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.5433949325893203e-15,
+          "curl_norm": 1.3957199506861997,
+          "ipr": 0.017221201024215104,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.2525778772088707,
+          "exact_fraction": -2.9053323284551116e-18,
+          "harmonic_fraction": -2.6537344030787882e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.7195868275000213e-15,
+          "curl_norm": 1.9046200026543516,
+          "ipr": 0.030856442741733235,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.4678523880489192,
+          "exact_fraction": -1.909174471291162e-17,
+          "harmonic_fraction": -1.0473342545925321e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4204213981565932e-15,
+          "curl_norm": 1.8202492044200402,
+          "ipr": 0.01994557460346445,
+          "support_pattern": "coexact y-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.7106906546148468,
+          "exact_fraction": 1.5790884729997867e-17,
+          "harmonic_fraction": -3.1583324607716727e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.7201918186335889e-15,
+          "curl_norm": 1.849697626432409,
+          "ipr": 0.027343749999999993,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 2.039329086446272,
+          "exact_fraction": 8.706914350313485e-18,
+          "harmonic_fraction": 6.580026685163477e-19,
+          "coexact_fraction": 0.9999999999999999,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 1.6104498889355146e-15,
+          "curl_norm": 1.92727498512376,
+          "ipr": 0.011553495862305377,
+          "support_pattern": "coexact x-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.6067327483301135,
+        "exact_fraction": 4.50658841893411e-17,
+        "harmonic_fraction": -3.97500436594536e-19,
+        "coexact_fraction": 0.9999999999999999,
+        "residual_fraction": 1.1102230246251565e-16,
+        "divergence_norm": 1.5507081767436262e-15,
+        "curl_norm": 1.4191747703436322,
+        "ipr": 0.02317098646759348,
+        "support_pattern": "coexact z-biased circulation"
+      }
+    },
+    "periodic_n4_flux3": {
+      "label": "periodic_n4_flux3",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 3,
+        "plaquette_angle": 1.1780972450961724
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 192,
+          "exact": 63,
+          "harmonic": 3,
+          "coexact": 126
+        },
+        "chain_error": 1.201889082438531e-17,
+        "orthogonality_errors": {
+          "exact_harmonic": 2.176814764723126e-15,
+          "exact_coexact": 1.8355333955522715e-15,
+          "harmonic_coexact": 1.1324838575220338e-15
+        },
+        "idempotence_errors": {
+          "exact": 3.2371166600583113e-15,
+          "harmonic": 2.7932874135004225e-15,
+          "coexact": 3.3031299646962693e-15
+        },
+        "reconstruction_error": 3.517635925152963e-15,
+        "sample_reconstruction_error": 1.3977181855479019e-15
+      },
+      "full_spectrum": [
+        0.04919249521442061,
+        0.08268742357160568,
+        0.28203979372594423,
+        0.3387432179035738,
+        0.4709633837881531,
+        0.7090740681375777,
+        0.8509619353954203,
+        0.8667414493730385,
+        0.8725272719306084,
+        1.011276592613612,
+        1.0112765926136165,
+        1.0358093761340066
+      ],
+      "harmonic_spectrum": [
+        1.8251006195786212,
+        2.2445556729210234,
+        2.6640107262634247
+      ],
+      "coexact_spectrum": [
+        0.7710507654399744,
+        0.8638272900807493,
+        0.8725002306488809,
+        1.0929345759397469,
+        1.6982623555802199,
+        1.750437391286891,
+        2.1338931263399266,
+        2.133893126339927,
+        2.1900472734113214,
+        2.1900472734113223,
+        2.2478906912202,
+        2.335271854284596
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.04919249521442061,
+          "exact_fraction": 0.36966078265906044,
+          "harmonic_fraction": 0.008837068658253842,
+          "coexact_fraction": 0.6215021486826859,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.1958388124269514,
+          "curl_norm": 1.584553993492761,
+          "ipr": 0.01428001344582234,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.08268742357160568,
+          "exact_fraction": 0.25472973209585026,
+          "harmonic_fraction": 0.353454205698042,
+          "coexact_fraction": 0.3918160622061086,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.8515584050348862,
+          "curl_norm": 0.927596312466768,
+          "ipr": 0.014891333125073895,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.28203979372594423,
+          "exact_fraction": 0.23342633284156752,
+          "harmonic_fraction": 0.013926430643592648,
+          "coexact_fraction": 0.7526472365148397,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 0.8653963306388737,
+          "curl_norm": 1.3558226275168421,
+          "ipr": 0.02413271513259786,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.3387432179035738,
+          "exact_fraction": 0.8126311002327146,
+          "harmonic_fraction": 0.005667265137711865,
+          "coexact_fraction": 0.18170163462957392,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4955711612077356,
+          "curl_norm": 0.7778002530365502,
+          "ipr": 0.01571056632066436,
+          "support_pattern": "exact y-biased gradient"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.4709633837881531,
+          "exact_fraction": 0.8526569826744395,
+          "harmonic_fraction": 0.004065861786599614,
+          "coexact_fraction": 0.14327715553896128,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.8233424064533796,
+          "curl_norm": 0.848383014378858,
+          "ipr": 0.020150982873128914,
+          "support_pattern": "exact y-biased gradient"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.7090740681375777,
+          "exact_fraction": 0.33434343718678855,
+          "harmonic_fraction": 0.31200712769170597,
+          "coexact_fraction": 0.3536494351215059,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.8954865807310824,
+          "curl_norm": 0.9503063812760784,
+          "ipr": 0.013918909077458859,
+          "support_pattern": "mixed x-biased support"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 1.8251006195786212,
+          "exact_fraction": -6.292623672202956e-18,
+          "harmonic_fraction": 1.000000000000002,
+          "coexact_fraction": 3.499984459434196e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.7034974369740594e-15,
+          "curl_norm": 1.6643273713962673e-15,
+          "ipr": 0.0078125,
+          "support_pattern": "harmonic y-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 2.2445556729210234,
+          "exact_fraction": 1.8648277366753034e-17,
+          "harmonic_fraction": 1.0000000000000004,
+          "coexact_fraction": 7.529784087911809e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 3.437065447128138e-15,
+          "curl_norm": 3.0014969623484327e-15,
+          "ipr": 0.015625,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 2.6640107262634247,
+          "exact_fraction": -1.822281716748545e-18,
+          "harmonic_fraction": 1.0000000000000002,
+          "coexact_fraction": -9.680545090561267e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 3.880220515017201e-15,
+          "curl_norm": 3.584260708078979e-15,
+          "ipr": 0.0078125,
+          "support_pattern": "harmonic x-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.7710507654399744,
+          "exact_fraction": -8.048833773973803e-18,
+          "harmonic_fraction": 3.4241618183648316e-18,
+          "coexact_fraction": 0.9999999999999998,
+          "residual_fraction": 2.220446049250313e-16,
+          "divergence_norm": 1.4558176610280058e-15,
+          "curl_norm": 1.5542694107158257,
+          "ipr": 0.01924737269855959,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.8638272900807493,
+          "exact_fraction": 3.714858896570943e-17,
+          "harmonic_fraction": -1.0117924531739438e-19,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.8201661235662702e-15,
+          "curl_norm": 1.75540479970853,
+          "ipr": 0.023563728354744424,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.8725002306488809,
+          "exact_fraction": 3.0008833689492754e-17,
+          "harmonic_fraction": 7.708434503723425e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.5584951862301685e-15,
+          "curl_norm": 1.738227101371971,
+          "ipr": 0.02267628076847196,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.0929345759397469,
+          "exact_fraction": -3.1180725087041953e-18,
+          "harmonic_fraction": 1.7945388963983436e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.5534227433094303e-15,
+          "curl_norm": 1.8531744147811096,
+          "ipr": 0.018188785955458704,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.6982623555802199,
+          "exact_fraction": 3.140931689685564e-17,
+          "harmonic_fraction": -1.4192018306231172e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.835497910857473e-15,
+          "curl_norm": 1.5792629009998091,
+          "ipr": 0.029305864294356214,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.750437391286891,
+          "exact_fraction": -2.442398419322169e-17,
+          "harmonic_fraction": -1.5632089686223512e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4500077521791883e-15,
+          "curl_norm": 1.6083239554442041,
+          "ipr": 0.016464216315499776,
+          "support_pattern": "coexact y-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.7710507654399744,
+        "exact_fraction": -8.048833773973803e-18,
+        "harmonic_fraction": 3.4241618183648316e-18,
+        "coexact_fraction": 0.9999999999999998,
+        "residual_fraction": 2.220446049250313e-16,
+        "divergence_norm": 1.4558176610280058e-15,
+        "curl_norm": 1.5542694107158257,
+        "ipr": 0.01924737269855959,
+        "support_pattern": "coexact x-biased circulation"
+      }
+    },
+    "periodic_n4_flux4": {
+      "label": "periodic_n4_flux4",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 4,
+        "plaquette_angle": 1.5707963267948966
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 192,
+          "exact": 63,
+          "harmonic": 3,
+          "coexact": 126
+        },
+        "chain_error": 1.201889082438531e-17,
+        "orthogonality_errors": {
+          "exact_harmonic": 2.176814764723126e-15,
+          "exact_coexact": 1.8355333955522715e-15,
+          "harmonic_coexact": 1.1324838575220338e-15
+        },
+        "idempotence_errors": {
+          "exact": 3.2371166600583113e-15,
+          "harmonic": 2.7932874135004225e-15,
+          "coexact": 3.3031299646962693e-15
+        },
+        "reconstruction_error": 3.517635925152963e-15,
+        "sample_reconstruction_error": 1.3977181855479019e-15
+      },
+      "full_spectrum": [
+        0.27522291718919006,
+        0.2752229171891914,
+        0.2752229171891946,
+        0.27522291718919495,
+        0.4545206095827924,
+        0.45452060958279356,
+        0.4545206095827944,
+        0.4545206095827954,
+        1.0020993844484674,
+        1.0020993844484678,
+        1.0020993844484685,
+        1.0020993844484687
+      ],
+      "harmonic_spectrum": [
+        1.710690654614844,
+        1.7106906546148448,
+        1.7106906546148486
+      ],
+      "coexact_spectrum": [
+        0.6515641113214382,
+        0.6705421538216155,
+        0.8161106731027987,
+        1.0020993844484667,
+        1.002099384448468,
+        1.0020993844484687,
+        2.1897796664388194,
+        2.1897796664388225,
+        2.2177742570222905,
+        2.2177742570222927,
+        2.2424832625009006,
+        2.242483262500904
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.27522291718919006,
+          "exact_fraction": 0.4147544738768492,
+          "harmonic_fraction": -9.051097618056376e-19,
+          "coexact_fraction": 0.5852455261231511,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.0737874681191566,
+          "curl_norm": 1.230427676886336,
+          "ipr": 0.019447540690404372,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.2752229171891914,
+          "exact_fraction": 0.5034258444745862,
+          "harmonic_fraction": -1.1436578767437359e-18,
+          "coexact_fraction": 0.49657415552541395,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.1023785458685726,
+          "curl_norm": 1.20487897165912,
+          "ipr": 0.015265819344596216,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.2752229171891946,
+          "exact_fraction": 0.5642406092634759,
+          "harmonic_fraction": -1.0265599300088074e-18,
+          "coexact_fraction": 0.43575939073652453,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.215584685607864,
+          "curl_norm": 1.090562087573778,
+          "ipr": 0.018130970203159052,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.27522291718919495,
+          "exact_fraction": 0.5175790723850894,
+          "harmonic_fraction": -1.1832297326844544e-19,
+          "coexact_fraction": 0.48242092761491057,
+          "residual_fraction": 5.551115123125783e-17,
+          "divergence_norm": 1.2198522355227581,
+          "curl_norm": 1.0857864975342884,
+          "ipr": 0.014977826330721079,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.4545206095827924,
+          "exact_fraction": 0.14361965466086618,
+          "harmonic_fraction": 0.5637902871063845,
+          "coexact_fraction": 0.29259005823274975,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.612466600916417,
+          "curl_norm": 0.7740011744730179,
+          "ipr": 0.019786110797565558,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.45452060958279356,
+          "exact_fraction": 0.6219538460767187,
+          "harmonic_fraction": 0.01613223460942181,
+          "coexact_fraction": 0.36191391931385963,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.610548762124358,
+          "curl_norm": 1.2365163509231871,
+          "ipr": 0.01419616347092845,
+          "support_pattern": "mixed y-biased support"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 1.710690654614844,
+          "exact_fraction": -1.3854872697977545e-17,
+          "harmonic_fraction": 1.0,
+          "coexact_fraction": 2.732479835885443e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 4.1591556105300155e-15,
+          "curl_norm": 3.6766002696206626e-15,
+          "ipr": 0.009530491732690258,
+          "support_pattern": "harmonic y-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 1.7106906546148448,
+          "exact_fraction": 8.964005283842572e-19,
+          "harmonic_fraction": 0.9999999999999998,
+          "coexact_fraction": 2.3319252929323285e-17,
+          "residual_fraction": 1.9872535199570802e-16,
+          "divergence_norm": 3.0995953683244375e-15,
+          "curl_norm": 2.7932729844696705e-15,
+          "ipr": 0.007971705339526599,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.7106906546148486,
+          "exact_fraction": -5.764938090199328e-19,
+          "harmonic_fraction": 1.0000000000000027,
+          "coexact_fraction": 1.0625306864456264e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.845572757694695e-15,
+          "curl_norm": 1.847916927445921e-15,
+          "ipr": 0.007245343731630514,
+          "support_pattern": "harmonic x-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.6515641113214382,
+          "exact_fraction": 3.5822750476208154e-18,
+          "harmonic_fraction": 1.5006060701030046e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.5363083910896465e-15,
+          "curl_norm": 2.0133222835172697,
+          "ipr": 0.024795698935599728,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.6705421538216155,
+          "exact_fraction": -2.682861100897794e-17,
+          "harmonic_fraction": -1.2273751113538493e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.6225453945308464e-15,
+          "curl_norm": 1.552930615084794,
+          "ipr": 0.019385814686242103,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.8161106731027987,
+          "exact_fraction": -1.3723338017743301e-17,
+          "harmonic_fraction": 4.760154770714671e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.435472133871701e-15,
+          "curl_norm": 1.481791021200123,
+          "ipr": 0.017864732444881248,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.0020993844484667,
+          "exact_fraction": 4.495167208954879e-17,
+          "harmonic_fraction": -3.8107543068405577e-19,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.794251850215725e-15,
+          "curl_norm": 1.5075042279213544,
+          "ipr": 0.028436549242996066,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.002099384448468,
+          "exact_fraction": 4.36567096020526e-17,
+          "harmonic_fraction": 6.031231859169163e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4021686474405671e-15,
+          "curl_norm": 1.6846495991122763,
+          "ipr": 0.026591719193047297,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.0020993844484687,
+          "exact_fraction": 3.167586726393135e-17,
+          "harmonic_fraction": -2.324409686249871e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4841513365646305e-15,
+          "curl_norm": 1.7986935331351401,
+          "ipr": 0.025554892403099255,
+          "support_pattern": "coexact z-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.6515641113214382,
+        "exact_fraction": 3.5822750476208154e-18,
+        "harmonic_fraction": 1.5006060701030046e-18,
+        "coexact_fraction": 1.0,
+        "residual_fraction": 0.0,
+        "divergence_norm": 1.5363083910896465e-15,
+        "curl_norm": 2.0133222835172697,
+        "ipr": 0.024795698935599728,
+        "support_pattern": "coexact x-biased circulation"
+      }
+    },
+    "periodic_n5_flux0": {
+      "label": "periodic_n5_flux0",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 0,
+        "plaquette_angle": 0.0
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 375,
+          "exact": 124,
+          "harmonic": 3,
+          "coexact": 248
+        },
+        "chain_error": 2.1746917908399438e-16,
+        "orthogonality_errors": {
+          "exact_harmonic": 8.534798757485996e-16,
+          "exact_coexact": 2.73346742231323e-15,
+          "harmonic_coexact": 1.4962005693120291e-15
+        },
+        "idempotence_errors": {
+          "exact": 4.155824952020128e-15,
+          "harmonic": 5.75827786263364e-15,
+          "coexact": 3.3851956277748678e-15
+        },
+        "reconstruction_error": 5.319008623918133e-15,
+        "sample_reconstruction_error": 1.888342545419931e-15
+      },
+      "full_spectrum": [
+        -7.503595687200843e-15,
+        -1.3326677738662105e-16,
+        4.855562303194632e-16,
+        1.2504545574329922,
+        1.2504545574329937,
+        1.2504545574329973,
+        1.2504545574329975,
+        1.250454557432998,
+        1.2504545574329982,
+        1.2504545574329982,
+        1.2504545574329984,
+        1.2504545574329986
+      ],
+      "harmonic_spectrum": [
+        -2.423449418899291e-16,
+        -2.269598807905738e-16,
+        -2.0486503661660303e-16
+      ],
+      "coexact_spectrum": [
+        1.2504545574329955,
+        1.2504545574329955,
+        1.250454557432996,
+        1.2504545574329973,
+        1.2504545574329977,
+        1.2504545574329982,
+        1.2504545574329984,
+        1.250454557432999,
+        1.250454557432999,
+        1.2504545574329993,
+        1.2504545574330013,
+        1.2504545574330057
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": -7.503595687200843e-15,
+          "exact_fraction": 1.9497863152814043e-19,
+          "harmonic_fraction": 1.0000000000000036,
+          "coexact_fraction": -6.17082444075197e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.2473839509729714e-15,
+          "curl_norm": 1.8919685662140574e-15,
+          "ipr": 0.007904240129758829,
+          "support_pattern": "harmonic y-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": -1.3326677738662105e-16,
+          "exact_fraction": 8.616127098613826e-18,
+          "harmonic_fraction": 0.9999999999999993,
+          "coexact_fraction": -9.797546139087349e-18,
+          "residual_fraction": 6.759313609141813e-16,
+          "divergence_norm": 1.3425336933036048e-15,
+          "curl_norm": 1.7770146626398792e-15,
+          "ipr": 0.007984192182116802,
+          "support_pattern": "harmonic x-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 4.855562303194632e-16,
+          "exact_fraction": 4.0929985568607535e-17,
+          "harmonic_fraction": 1.0000000000000007,
+          "coexact_fraction": -2.5711665259350175e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4227621466825085e-15,
+          "curl_norm": 1.950734987643435e-15,
+          "ipr": 0.00791988949518939,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.2504545574329922,
+          "exact_fraction": 0.47421877122713035,
+          "harmonic_fraction": -2.452640267342938e-19,
+          "coexact_fraction": 0.5257812287728699,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.7700578054284242,
+          "curl_norm": 0.810842483921357,
+          "ipr": 0.006796710494526259,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.2504545574329937,
+          "exact_fraction": 0.41174161261155956,
+          "harmonic_fraction": -2.927874253493472e-19,
+          "coexact_fraction": 0.5882583873884403,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 0.717540365397611,
+          "curl_norm": 0.8576656583180076,
+          "ipr": 0.009317386668120037,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.2504545574329973,
+          "exact_fraction": 0.3411480526899888,
+          "harmonic_fraction": 3.2008546065338956e-20,
+          "coexact_fraction": 0.6588519473100113,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.6531386814801192,
+          "curl_norm": 0.9076697748561467,
+          "ipr": 0.01231038744495053,
+          "support_pattern": "mixed z-biased support"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": -2.423449418899291e-16,
+          "exact_fraction": 1.953247454977874e-17,
+          "harmonic_fraction": 0.9999999999999993,
+          "coexact_fraction": 9.884393369603035e-18,
+          "residual_fraction": 6.562494214054909e-16,
+          "divergence_norm": 1.7209905850867876e-15,
+          "curl_norm": 1.8001281595671436e-15,
+          "ipr": 0.0035032428425609747,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": -2.269598807905738e-16,
+          "exact_fraction": 2.3393684202594882e-17,
+          "harmonic_fraction": 1.0,
+          "coexact_fraction": 2.8705108437429066e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.6267149913691612e-15,
+          "curl_norm": 1.4032358230680651e-15,
+          "ipr": 0.00300963413659154,
+          "support_pattern": "harmonic x-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": -2.0486503661660303e-16,
+          "exact_fraction": 1.3201482690585123e-19,
+          "harmonic_fraction": 1.000000000000003,
+          "coexact_fraction": -3.626484479480562e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.3406823330500746e-15,
+          "curl_norm": 1.4024678752171926e-15,
+          "ipr": 0.004287963151177793,
+          "support_pattern": "harmonic y-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 1.2504545574329955,
+          "exact_fraction": 1.754212773602819e-17,
+          "harmonic_fraction": 1.1287993687132143e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.071555644195358e-15,
+          "curl_norm": 1.1182372545363517,
+          "ipr": 0.009135253937436926,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 1.2504545574329955,
+          "exact_fraction": 4.2656884100716403e-17,
+          "harmonic_fraction": 2.497432389921915e-19,
+          "coexact_fraction": 0.9999999999999998,
+          "residual_fraction": 2.220446049250313e-16,
+          "divergence_norm": 2.1935138361933577e-15,
+          "curl_norm": 1.1182372545363524,
+          "ipr": 0.0062701312670629325,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.250454557432996,
+          "exact_fraction": 9.166123372721053e-18,
+          "harmonic_fraction": 9.00920654010066e-19,
+          "coexact_fraction": 1.0000000000000004,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.277228348394672e-15,
+          "curl_norm": 1.1182372545363521,
+          "ipr": 0.008167510753556078,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.2504545574329973,
+          "exact_fraction": 3.0376399005259816e-17,
+          "harmonic_fraction": -1.6878091531608561e-18,
+          "coexact_fraction": 0.9999999999999999,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 2.1578496802934292e-15,
+          "curl_norm": 1.118237254536352,
+          "ipr": 0.005523144488765837,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.2504545574329977,
+          "exact_fraction": 4.311922067862805e-17,
+          "harmonic_fraction": 1.919832277429721e-19,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.18392156216698e-15,
+          "curl_norm": 1.1182372545363517,
+          "ipr": 0.0063491424048352915,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.2504545574329982,
+          "exact_fraction": -5.9872378193846096e-18,
+          "harmonic_fraction": -7.126222355415275e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.178965904762594e-15,
+          "curl_norm": 1.118237254536353,
+          "ipr": 0.006462986567073903,
+          "support_pattern": "coexact x-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 1.2504545574329955,
+        "exact_fraction": 1.754212773602819e-17,
+        "harmonic_fraction": 1.1287993687132143e-18,
+        "coexact_fraction": 1.0,
+        "residual_fraction": 0.0,
+        "divergence_norm": 2.071555644195358e-15,
+        "curl_norm": 1.1182372545363517,
+        "ipr": 0.009135253937436926,
+        "support_pattern": "coexact z-biased circulation"
+      }
+    },
+    "periodic_n5_flux1": {
+      "label": "periodic_n5_flux1",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 1,
+        "plaquette_angle": 0.25132741228718347
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 375,
+          "exact": 124,
+          "harmonic": 3,
+          "coexact": 248
+        },
+        "chain_error": 2.1746917908399438e-16,
+        "orthogonality_errors": {
+          "exact_harmonic": 8.534798757485996e-16,
+          "exact_coexact": 2.73346742231323e-15,
+          "harmonic_coexact": 1.4962005693120291e-15
+        },
+        "idempotence_errors": {
+          "exact": 4.155824952020128e-15,
+          "harmonic": 5.75827786263364e-15,
+          "coexact": 3.3851956277748678e-15
+        },
+        "reconstruction_error": 5.319008623918133e-15,
+        "sample_reconstruction_error": 1.888342545419931e-15
+      },
+      "full_spectrum": [
+        0.013057252371157072,
+        0.11128701055949305,
+        0.22033597533111984,
+        0.22152763015529256,
+        0.3569927803377899,
+        0.4306518167875035,
+        0.484964057378137,
+        0.48496405737813786,
+        0.6294212857410246,
+        0.6471421462062253,
+        0.6505986484716418,
+        0.6505986484716448
+      ],
+      "harmonic_spectrum": [
+        0.5098075019121955,
+        0.6841710021536079,
+        0.8585345023950225
+      ],
+      "coexact_spectrum": [
+        0.4584573287499251,
+        0.769832764625027,
+        1.013921793655575,
+        1.0191629543900342,
+        1.4168861606581127,
+        1.4277613659261483,
+        1.427761365926151,
+        1.605165996539175,
+        1.669051609323054,
+        1.6690516093230574,
+        1.7563733076123988,
+        1.8581702565584017
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.013057252371157072,
+          "exact_fraction": 0.2180311873203478,
+          "harmonic_fraction": 0.2510970869756857,
+          "coexact_fraction": 0.5308717257039673,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.8537883718800748,
+          "curl_norm": 1.0892751972296075,
+          "ipr": 0.012287178398675424,
+          "support_pattern": "flux-lifted harmonic/x-circulation mix"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.11128701055949305,
+          "exact_fraction": 0.5094428917366816,
+          "harmonic_fraction": 0.25262455427859076,
+          "coexact_fraction": 0.2379325539847283,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.0236543573156833,
+          "curl_norm": 0.6892150012578161,
+          "ipr": 0.008117437815419702,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.22033597533111984,
+          "exact_fraction": 5.3415419051365166e-17,
+          "harmonic_fraction": 0.4908773657025711,
+          "coexact_fraction": 0.5091226342974289,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.5033787232901775e-13,
+          "curl_norm": 0.9605581075918969,
+          "ipr": 0.009510902173700068,
+          "support_pattern": "flux-lifted harmonic/z-circulation mix"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.22152763015529256,
+          "exact_fraction": 0.3283635349322314,
+          "harmonic_fraction": 0.458468313696424,
+          "coexact_fraction": 0.2131681513713444,
+          "residual_fraction": 2.498001805406602e-16,
+          "divergence_norm": 0.8272708238894043,
+          "curl_norm": 0.6930882448651663,
+          "ipr": 0.008442005279158317,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.3569927803377899,
+          "exact_fraction": 0.7465587194557042,
+          "harmonic_fraction": 0.03591921965596618,
+          "coexact_fraction": 0.2175220608883296,
+          "residual_fraction": 5.551115123125783e-17,
+          "divergence_norm": 1.1821673181208172,
+          "curl_norm": 0.6672909167885036,
+          "ipr": 0.010377039145183677,
+          "support_pattern": "exact y-biased gradient"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.4306518167875035,
+          "exact_fraction": 0.3234940833380001,
+          "harmonic_fraction": 0.3990983272153151,
+          "coexact_fraction": 0.2774075894466853,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.7994452608260022,
+          "curl_norm": 0.791200818199389,
+          "ipr": 0.006292586086024362,
+          "support_pattern": "mixed y-biased support"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.5098075019121955,
+          "exact_fraction": 1.8592324050704503e-17,
+          "harmonic_fraction": 1.000000000000002,
+          "coexact_fraction": 2.1644808011871196e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.407705082140996e-15,
+          "curl_norm": 1.4518067665160972e-15,
+          "ipr": 0.004000000000000001,
+          "support_pattern": "harmonic x-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.6841710021536079,
+          "exact_fraction": 3.472638594835393e-17,
+          "harmonic_fraction": 1.0000000000000002,
+          "coexact_fraction": 2.2497965763803363e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.8718953657639254e-15,
+          "curl_norm": 1.6807429549683714e-15,
+          "ipr": 0.008000000000000004,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.8585345023950225,
+          "exact_fraction": -1.9941746887156277e-19,
+          "harmonic_fraction": 1.0000000000000009,
+          "coexact_fraction": -7.77688792800483e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.375048989011694e-15,
+          "curl_norm": 1.558318221898624e-15,
+          "ipr": 0.004,
+          "support_pattern": "harmonic y-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.4584573287499251,
+          "exact_fraction": 4.320520924981521e-17,
+          "harmonic_fraction": -1.1839922477037256e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.966019623687056e-15,
+          "curl_norm": 1.288169554832354,
+          "ipr": 0.012317789263443624,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.769832764625027,
+          "exact_fraction": 2.3749441423045705e-17,
+          "harmonic_fraction": -7.595125332274637e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.212067134628406e-15,
+          "curl_norm": 1.175755109288663,
+          "ipr": 0.008109231601172995,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.013921793655575,
+          "exact_fraction": -1.8979918217823326e-17,
+          "harmonic_fraction": -1.9085226814347554e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.5009432366621968e-15,
+          "curl_norm": 1.3151588830958125,
+          "ipr": 0.011153049388999229,
+          "support_pattern": "coexact y-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.0191629543900342,
+          "exact_fraction": 3.358589648329094e-17,
+          "harmonic_fraction": 1.1981193426518113e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.124270543244253e-15,
+          "curl_norm": 1.3168234085366026,
+          "ipr": 0.013010227263701601,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.4168861606581127,
+          "exact_fraction": 5.848498631247796e-17,
+          "harmonic_fraction": -2.903670957366424e-19,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.197239994046481e-15,
+          "curl_norm": 1.437795668275659,
+          "ipr": 0.012862733868216849,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.4277613659261483,
+          "exact_fraction": -1.3012643296845552e-17,
+          "harmonic_fraction": -1.0892906160978948e-18,
+          "coexact_fraction": 0.9999999999999999,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 2.3902507396207015e-15,
+          "curl_norm": 1.3224295936968864,
+          "ipr": 0.007153325773945558,
+          "support_pattern": "coexact y-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.4584573287499251,
+        "exact_fraction": 4.320520924981521e-17,
+        "harmonic_fraction": -1.1839922477037256e-18,
+        "coexact_fraction": 1.0,
+        "residual_fraction": 0.0,
+        "divergence_norm": 1.966019623687056e-15,
+        "curl_norm": 1.288169554832354,
+        "ipr": 0.012317789263443624,
+        "support_pattern": "coexact z-biased circulation"
+      }
+    },
+    "periodic_n5_flux2": {
+      "label": "periodic_n5_flux2",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 2,
+        "plaquette_angle": 0.5026548245743669
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 375,
+          "exact": 124,
+          "harmonic": 3,
+          "coexact": 248
+        },
+        "chain_error": 2.1746917908399438e-16,
+        "orthogonality_errors": {
+          "exact_harmonic": 8.534798757485996e-16,
+          "exact_coexact": 2.73346742231323e-15,
+          "harmonic_coexact": 1.4962005693120291e-15
+        },
+        "idempotence_errors": {
+          "exact": 4.155824952020128e-15,
+          "harmonic": 5.75827786263364e-15,
+          "coexact": 3.3851956277748678e-15
+        },
+        "reconstruction_error": 5.319008623918133e-15,
+        "sample_reconstruction_error": 1.888342545419931e-15
+      },
+      "full_spectrum": [
+        0.018836665070685626,
+        0.10079804190284308,
+        0.1131994168717705,
+        0.18089243561926185,
+        0.3675999254911308,
+        0.42675449165591006,
+        0.4267593736626871,
+        0.46675160442548874,
+        0.49438511138146896,
+        0.49438511138147323,
+        0.581703604533962,
+        0.581703604533965
+      ],
+      "harmonic_spectrum": [
+        1.1243608823583815,
+        1.4299526823931379,
+        1.7355444824279003
+      ],
+      "coexact_spectrum": [
+        0.4267586587461407,
+        0.5338422603558379,
+        0.8595151816085169,
+        1.2261827444717002,
+        1.2872338092549145,
+        1.479725399730022,
+        1.4797253997300233,
+        1.587629765538981,
+        1.5876297655389837,
+        1.6107832419388086,
+        1.7199582115581242,
+        1.822490572553816
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.018836665070685626,
+          "exact_fraction": 0.3188295509840866,
+          "harmonic_fraction": 0.1035539525349768,
+          "coexact_fraction": 0.5776164964809369,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.9407513146126629,
+          "curl_norm": 1.33592918560348,
+          "ipr": 0.0143358363997991,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.10079804190284308,
+          "exact_fraction": 0.29871401071432163,
+          "harmonic_fraction": 0.10253713446296435,
+          "coexact_fraction": 0.5987488548227142,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.8331447972192126,
+          "curl_norm": 1.0627936055436962,
+          "ipr": 0.0071753463366217,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.1131994168717705,
+          "exact_fraction": 0.7677102363337905,
+          "harmonic_fraction": 0.01399804461408624,
+          "coexact_fraction": 0.21829171905212288,
+          "residual_fraction": 3.3306690738754696e-16,
+          "divergence_norm": 1.1845566669250642,
+          "curl_norm": 0.6808411275181662,
+          "ipr": 0.009380817615630156,
+          "support_pattern": "exact y-biased gradient"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.18089243561926185,
+          "exact_fraction": 0.433009591285681,
+          "harmonic_fraction": 0.20530178310041575,
+          "coexact_fraction": 0.3616886256139035,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.058427039353691,
+          "curl_norm": 1.0377725725152571,
+          "ipr": 0.005812268652557253,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.3675999254911308,
+          "exact_fraction": 0.5541387893489781,
+          "harmonic_fraction": 0.09313370438977377,
+          "coexact_fraction": 0.3527275062612483,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.441833196364255,
+          "curl_norm": 1.0711167739877494,
+          "ipr": 0.00862908663897275,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.42675449165591006,
+          "exact_fraction": 6.889903441563513e-17,
+          "harmonic_fraction": 0.35624095607608336,
+          "coexact_fraction": 0.6437590439239167,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.9693928767099556e-14,
+          "curl_norm": 1.2989148265480106,
+          "ipr": 0.01154422317670099,
+          "support_pattern": "flux-lifted harmonic/z-circulation mix"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 1.1243608823583815,
+          "exact_fraction": 2.5724679751245755e-17,
+          "harmonic_fraction": 1.0000000000000024,
+          "coexact_fraction": 9.58169926420649e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.437459559984004e-15,
+          "curl_norm": 1.4220031072091216e-15,
+          "ipr": 0.004,
+          "support_pattern": "harmonic x-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 1.4299526823931379,
+          "exact_fraction": 4.0535127970991127e-17,
+          "harmonic_fraction": 1.0000000000000004,
+          "coexact_fraction": 2.5601133455360565e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.872232504524469e-15,
+          "curl_norm": 1.6608534848382347e-15,
+          "ipr": 0.008,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.7355444824279003,
+          "exact_fraction": -5.455564710848401e-18,
+          "harmonic_fraction": 1.0000000000000004,
+          "coexact_fraction": 2.190637618506731e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.3623529487454132e-15,
+          "curl_norm": 1.6097992646872882e-15,
+          "ipr": 0.004,
+          "support_pattern": "harmonic y-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.4267586587461407,
+          "exact_fraction": 4.836770067377122e-17,
+          "harmonic_fraction": 8.866434610420425e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.100791364616066e-15,
+          "curl_norm": 1.2146269731324735,
+          "ipr": 0.011530859011783846,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.5338422603558379,
+          "exact_fraction": 4.4512413881171686e-18,
+          "harmonic_fraction": -3.801595868193876e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.2242071985844708e-15,
+          "curl_norm": 1.2015264392285208,
+          "ipr": 0.008643011375086973,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.8595151816085169,
+          "exact_fraction": 6.7542714076709e-17,
+          "harmonic_fraction": -5.825681830904992e-19,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.2066333228737133e-15,
+          "curl_norm": 1.835707344593334,
+          "ipr": 0.014810797300255519,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.2261827444717002,
+          "exact_fraction": 6.492636575802316e-17,
+          "harmonic_fraction": -1.1466173139996414e-18,
+          "coexact_fraction": 0.9999999999999998,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 2.2692892848662825e-15,
+          "curl_norm": 1.6062221136161323,
+          "ipr": 0.011051888804030501,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.2872338092549145,
+          "exact_fraction": 1.2978912525594042e-17,
+          "harmonic_fraction": 1.2522581350009472e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.1910216753604494e-15,
+          "curl_norm": 1.7540207119491016,
+          "ipr": 0.009912188283223464,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.479725399730022,
+          "exact_fraction": 2.6086396156663085e-17,
+          "harmonic_fraction": -3.4002561535673644e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.189094833082177e-15,
+          "curl_norm": 1.6479629797659738,
+          "ipr": 0.0057196876996456845,
+          "support_pattern": "coexact x-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.4267586587461407,
+        "exact_fraction": 4.836770067377122e-17,
+        "harmonic_fraction": 8.866434610420425e-19,
+        "coexact_fraction": 1.0,
+        "residual_fraction": 0.0,
+        "divergence_norm": 2.100791364616066e-15,
+        "curl_norm": 1.2146269731324735,
+        "ipr": 0.011530859011783846,
+        "support_pattern": "coexact z-biased circulation"
+      }
+    },
+    "periodic_n5_flux3": {
+      "label": "periodic_n5_flux3",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 3,
+        "plaquette_angle": 0.7539822368615503
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 375,
+          "exact": 124,
+          "harmonic": 3,
+          "coexact": 248
+        },
+        "chain_error": 2.1746917908399438e-16,
+        "orthogonality_errors": {
+          "exact_harmonic": 8.534798757485996e-16,
+          "exact_coexact": 2.73346742231323e-15,
+          "harmonic_coexact": 1.4962005693120291e-15
+        },
+        "idempotence_errors": {
+          "exact": 4.155824952020128e-15,
+          "harmonic": 5.75827786263364e-15,
+          "coexact": 3.3851956277748678e-15
+        },
+        "reconstruction_error": 5.319008623918133e-15,
+        "sample_reconstruction_error": 1.888342545419931e-15
+      },
+      "full_spectrum": [
+        0.02417882294376397,
+        0.13541692132015143,
+        0.1730103011317035,
+        0.18432966580019283,
+        0.22590746530599062,
+        0.4280451117384845,
+        0.5794771913571937,
+        0.579477191357198,
+        0.6191293666963931,
+        0.6195770302620169,
+        0.6197409472632679,
+        0.7006584141534767
+      ],
+      "harmonic_spectrum": [
+        1.7516757766703788,
+        2.112896547903137,
+        2.4741173191359036
+      ],
+      "coexact_spectrum": [
+        0.619483354321555,
+        0.6197409439252863,
+        0.6429765863456454,
+        0.8352095779117678,
+        1.2242150079274998,
+        1.5298597457878693,
+        1.5496424356103593,
+        1.5496424356103606,
+        1.6967061749374877,
+        1.6967061749374879,
+        1.7349913401782848,
+        1.7390510185047097
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.02417882294376397,
+          "exact_fraction": 0.3242021873166537,
+          "harmonic_fraction": 0.24394412819419065,
+          "coexact_fraction": 0.4318536844891566,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.9285514374195553,
+          "curl_norm": 1.141010568144207,
+          "ipr": 0.005644654204985091,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.13541692132015143,
+          "exact_fraction": 0.54664081478517,
+          "harmonic_fraction": 0.04493614931197999,
+          "coexact_fraction": 0.4084230359028501,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.3223883236108271,
+          "curl_norm": 1.2212210758165918,
+          "ipr": 0.006344624773759134,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.1730103011317035,
+          "exact_fraction": 0.6762919659707342,
+          "harmonic_fraction": 0.014213185742687434,
+          "coexact_fraction": 0.3094948482865781,
+          "residual_fraction": 3.3306690738754696e-16,
+          "divergence_norm": 1.2459411030246386,
+          "curl_norm": 0.8944564181677586,
+          "ipr": 0.0094741308196177,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.18432966580019283,
+          "exact_fraction": 0.2861788010023884,
+          "harmonic_fraction": 0.004234943317445444,
+          "coexact_fraction": 0.709586255680166,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 0.8343718193574127,
+          "curl_norm": 1.1604731961243524,
+          "ipr": 0.01089996565278555,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.22590746530599062,
+          "exact_fraction": 0.5147169104152625,
+          "harmonic_fraction": 0.06493217505656104,
+          "coexact_fraction": 0.42035091452817647,
+          "residual_fraction": 5.551115123125783e-17,
+          "divergence_norm": 1.3862327119652975,
+          "curl_norm": 1.1861174888801869,
+          "ipr": 0.009894215587562103,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.4280451117384845,
+          "exact_fraction": 0.4870501698448488,
+          "harmonic_fraction": 0.14655681322525782,
+          "coexact_fraction": 0.36639301692989334,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.2209080627452686,
+          "curl_norm": 1.1404733395244357,
+          "ipr": 0.007791809308294483,
+          "support_pattern": "mixed x-biased support"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 1.7516757766703788,
+          "exact_fraction": 1.7810238153891134e-17,
+          "harmonic_fraction": 1.000000000000002,
+          "coexact_fraction": -1.4362288071893845e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4135827501759188e-15,
+          "curl_norm": 1.368898574899758e-15,
+          "ipr": 0.003999999999999999,
+          "support_pattern": "harmonic x-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 2.112896547903137,
+          "exact_fraction": 5.430543460228439e-17,
+          "harmonic_fraction": 1.0000000000000004,
+          "coexact_fraction": 1.578736563080682e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.858437849039246e-15,
+          "curl_norm": 1.643068531463088e-15,
+          "ipr": 0.008000000000000002,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 2.4741173191359036,
+          "exact_fraction": 1.6108620124165973e-17,
+          "harmonic_fraction": 1.0000000000000009,
+          "coexact_fraction": -2.7293552377204556e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.3598458486922524e-15,
+          "curl_norm": 1.582916141918612e-15,
+          "ipr": 0.004000000000000002,
+          "support_pattern": "harmonic y-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.619483354321555,
+          "exact_fraction": 3.755538347354235e-17,
+          "harmonic_fraction": 1.308411809431417e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.1814700973675573e-15,
+          "curl_norm": 1.612879630178477,
+          "ipr": 0.012030507003614835,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.6197409439252863,
+          "exact_fraction": 6.867993308875118e-17,
+          "harmonic_fraction": 5.413150938067158e-19,
+          "coexact_fraction": 0.9999999999999998,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 2.1975837507789317e-15,
+          "curl_norm": 1.6241253758597152,
+          "ipr": 0.011949713144837849,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.6429765863456454,
+          "exact_fraction": 1.240546935225943e-17,
+          "harmonic_fraction": -7.172706904348048e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.281751013257231e-15,
+          "curl_norm": 1.2756301923666662,
+          "ipr": 0.008895947304619005,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.8352095779117678,
+          "exact_fraction": 5.1161201134890386e-17,
+          "harmonic_fraction": -4.2840953558875345e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.385817204214583e-15,
+          "curl_norm": 1.9013146554819071,
+          "ipr": 0.011987861080148163,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.2242150079274998,
+          "exact_fraction": 6.837731628293551e-17,
+          "harmonic_fraction": -1.536698905883785e-19,
+          "coexact_fraction": 1.0000000000000002,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.203069331150146e-15,
+          "curl_norm": 1.844496360830758,
+          "ipr": 0.016065023587727878,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.5298597457878693,
+          "exact_fraction": 2.1543834735093773e-17,
+          "harmonic_fraction": 1.4006628609808977e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.7107325900722578e-15,
+          "curl_norm": 1.7500574878835018,
+          "ipr": 0.011842763386084738,
+          "support_pattern": "coexact y-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.619483354321555,
+        "exact_fraction": 3.755538347354235e-17,
+        "harmonic_fraction": 1.308411809431417e-18,
+        "coexact_fraction": 1.0,
+        "residual_fraction": 0.0,
+        "divergence_norm": 2.1814700973675573e-15,
+        "curl_norm": 1.612879630178477,
+        "ipr": 0.012030507003614835,
+        "support_pattern": "coexact z-biased circulation"
+      }
+    },
+    "periodic_n5_flux4": {
+      "label": "periodic_n5_flux4",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 4,
+        "plaquette_angle": 1.0053096491487339
+      },
+      "decomposition": {
+        "dimensions": {
+          "edge_space": 375,
+          "exact": 124,
+          "harmonic": 3,
+          "coexact": 248
+        },
+        "chain_error": 2.1746917908399438e-16,
+        "orthogonality_errors": {
+          "exact_harmonic": 8.534798757485996e-16,
+          "exact_coexact": 2.73346742231323e-15,
+          "harmonic_coexact": 1.4962005693120291e-15
+        },
+        "idempotence_errors": {
+          "exact": 4.155824952020128e-15,
+          "harmonic": 5.75827786263364e-15,
+          "coexact": 3.3851956277748678e-15
+        },
+        "reconstruction_error": 5.319008623918133e-15,
+        "sample_reconstruction_error": 1.888342545419931e-15
+      },
+      "full_spectrum": [
+        0.03235118346883288,
+        0.09000389779596785,
+        0.185357436046882,
+        0.24886351340160226,
+        0.2681874679543864,
+        0.3179667793266876,
+        0.40197259017635456,
+        0.5540491403351574,
+        0.7262434876645785,
+        0.7262434876645804,
+        0.7842343312485047,
+        0.7842343312485066
+      ],
+      "harmonic_spectrum": [
+        2.032143279687324,
+        2.359631829256294,
+        2.6871203788252727
+      ],
+      "coexact_spectrum": [
+        0.6576670305037622,
+        0.7974495801201128,
+        0.7984464545350626,
+        0.802908921587943,
+        0.8249507242213208,
+        1.0628420852808256,
+        1.5034928648485215,
+        1.6632528929408474,
+        1.6750010877621513,
+        1.6750010877621517,
+        1.7049625426412587,
+        1.7049625426412613
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.03235118346883288,
+          "exact_fraction": 0.3663046780828753,
+          "harmonic_fraction": 0.03964787785396108,
+          "coexact_fraction": 0.5940474440631637,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.215358791279304,
+          "curl_norm": 1.5610694286527518,
+          "ipr": 0.014456728177532885,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.09000389779596785,
+          "exact_fraction": 0.30590190855376126,
+          "harmonic_fraction": 0.1983224793628506,
+          "coexact_fraction": 0.4957756120833884,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.024251097541653,
+          "curl_norm": 1.0840413628094776,
+          "ipr": 0.008901977146890745,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.185357436046882,
+          "exact_fraction": 0.4552619561891986,
+          "harmonic_fraction": 0.02881825244505942,
+          "coexact_fraction": 0.5159197913657416,
+          "residual_fraction": 3.3306690738754696e-16,
+          "divergence_norm": 1.3704421569526501,
+          "curl_norm": 1.3516078668298994,
+          "ipr": 0.007161497631737351,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.24886351340160226,
+          "exact_fraction": 0.798327057089451,
+          "harmonic_fraction": 0.0022622106182326974,
+          "coexact_fraction": 0.19941073229231587,
+          "residual_fraction": 4.718447854656915e-16,
+          "divergence_norm": 1.7339926278193554,
+          "curl_norm": 0.9174443497554501,
+          "ipr": 0.012153085613256842,
+          "support_pattern": "exact y-biased gradient"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.2681874679543864,
+          "exact_fraction": 0.1865688593592868,
+          "harmonic_fraction": 0.0033395544579277042,
+          "coexact_fraction": 0.810091586182786,
+          "residual_fraction": 0.0,
+          "divergence_norm": 0.7319584325863022,
+          "curl_norm": 1.2935886271890185,
+          "ipr": 0.015173601581790186,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.3179667793266876,
+          "exact_fraction": 0.8691161780470068,
+          "harmonic_fraction": 0.00152075195326977,
+          "coexact_fraction": 0.12936306999972336,
+          "residual_fraction": 5.551115123125783e-17,
+          "divergence_norm": 1.40977182497264,
+          "curl_norm": 0.5969317419048177,
+          "ipr": 0.013620521666498086,
+          "support_pattern": "exact y-biased gradient"
+        }
+      ],
+      "harmonic_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 2.032143279687324,
+          "exact_fraction": 3.015072633521614e-17,
+          "harmonic_fraction": 1.000000000000002,
+          "coexact_fraction": -1.8071283166451516e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.4288048390182375e-15,
+          "curl_norm": 1.409026822390458e-15,
+          "ipr": 0.003999999999999998,
+          "support_pattern": "harmonic x-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 2.359631829256294,
+          "exact_fraction": 5.641946759215923e-17,
+          "harmonic_fraction": 1.0000000000000004,
+          "coexact_fraction": -1.9705114841400253e-17,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.862599925993695e-15,
+          "curl_norm": 1.6647575546090505e-15,
+          "ipr": 0.008,
+          "support_pattern": "harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 2.6871203788252727,
+          "exact_fraction": 9.15800009660808e-18,
+          "harmonic_fraction": 1.0000000000000009,
+          "coexact_fraction": -9.978545272862133e-18,
+          "residual_fraction": 0.0,
+          "divergence_norm": 1.369676273561183e-15,
+          "curl_norm": 1.615026594337937e-15,
+          "ipr": 0.004000000000000002,
+          "support_pattern": "harmonic y-cycle"
+        }
+      ],
+      "coexact_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.6576670305037622,
+          "exact_fraction": 2.5060786889472958e-17,
+          "harmonic_fraction": 2.8290223966137614e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.2932721586351912e-15,
+          "curl_norm": 1.9198888268008214,
+          "ipr": 0.013357189670984627,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.7974495801201128,
+          "exact_fraction": 4.6818273790019165e-17,
+          "harmonic_fraction": 1.6781231126800916e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.1785459431574972e-15,
+          "curl_norm": 1.7723515734863762,
+          "ipr": 0.013061517475367077,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.7984464545350626,
+          "exact_fraction": 7.15396407386305e-17,
+          "harmonic_fraction": -1.11138979097037e-18,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.309289727313892e-15,
+          "curl_norm": 1.6082935895724921,
+          "ipr": 0.010080658842756152,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.802908921587943,
+          "exact_fraction": 6.743422326354723e-17,
+          "harmonic_fraction": -1.4503331729872253e-20,
+          "coexact_fraction": 0.9999999999999998,
+          "residual_fraction": 1.1102230246251565e-16,
+          "divergence_norm": 2.1161974315364747e-15,
+          "curl_norm": 1.8665661425594213,
+          "ipr": 0.015965282635095817,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.8249507242213208,
+          "exact_fraction": -1.141806358945531e-17,
+          "harmonic_fraction": -2.646465670513983e-19,
+          "coexact_fraction": 1.0,
+          "residual_fraction": 0.0,
+          "divergence_norm": 2.35166188761336e-15,
+          "curl_norm": 1.3245923277432288,
+          "ipr": 0.009410557612399922,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.0628420852808256,
+          "exact_fraction": 3.145577835034114e-17,
+          "harmonic_fraction": 5.909928263672642e-19,
+          "coexact_fraction": 0.9999999999999998,
+          "residual_fraction": 2.220446049250313e-16,
+          "divergence_norm": 2.433815388573596e-15,
+          "curl_norm": 1.8724560289324377,
+          "ipr": 0.011687462097396375,
+          "support_pattern": "coexact x-biased circulation"
+        }
+      ],
+      "selected_coexact_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.6576670305037622,
+        "exact_fraction": 2.5060786889472958e-17,
+        "harmonic_fraction": 2.8290223966137614e-19,
+        "coexact_fraction": 1.0,
+        "residual_fraction": 0.0,
+        "divergence_norm": 2.2932721586351912e-15,
+        "curl_norm": 1.9198888268008214,
+        "ipr": 0.013357189670984627,
+        "support_pattern": "coexact x-biased circulation"
+      }
+    }
+  },
+  "verdict": {
+    "projected_coexact_sector_exists": true,
+    "clear_low_coexact_band": false,
+    "responds_smoothly_to_flux": false,
+    "scales_consistently_with_size": true,
+    "still_dominated_by_topological_remnants": true,
+    "band_records": {
+      "4": [
+        {
+          "flux_quanta": 0,
+          "plaquette_angle": 0.0,
+          "full_low_eigenvalue": -4.500600535813283e-15,
+          "harmonic_low_eigenvalue": -4.996774811137285e-16,
+          "eigenvalue": 1.7106906546148382,
+          "coexact_to_full_ratio": null,
+          "harmonic_dim": 3,
+          "coexact_fraction": 1.0000000000000004,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "flux_quanta": 1,
+          "plaquette_angle": 0.39269908169872414,
+          "full_low_eigenvalue": 0.01411017397974383,
+          "harmonic_low_eigenvalue": 0.6118969491950159,
+          "eigenvalue": 0.6795815674441942,
+          "coexact_to_full_ratio": 48.16252219283635,
+          "harmonic_dim": 3,
+          "coexact_fraction": 1.0,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "flux_quanta": 2,
+          "plaquette_angle": 0.7853981633974483,
+          "full_low_eigenvalue": 0.1718047422179909,
+          "harmonic_low_eigenvalue": 1.3155726340505987,
+          "eigenvalue": 0.6067327483301135,
+          "coexact_to_full_ratio": 3.531525035323374,
+          "harmonic_dim": 3,
+          "coexact_fraction": 0.9999999999999999,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "flux_quanta": 3,
+          "plaquette_angle": 1.1780972450961724,
+          "full_low_eigenvalue": 0.04919249521442061,
+          "harmonic_low_eigenvalue": 1.8251006195786212,
+          "eigenvalue": 0.7710507654399744,
+          "coexact_to_full_ratio": 15.67415440259968,
+          "harmonic_dim": 3,
+          "coexact_fraction": 0.9999999999999998,
+          "support_pattern": "coexact x-biased circulation"
+        },
+        {
+          "flux_quanta": 4,
+          "plaquette_angle": 1.5707963267948966,
+          "full_low_eigenvalue": 0.27522291718919006,
+          "harmonic_low_eigenvalue": 1.710690654614844,
+          "eigenvalue": 0.6515641113214382,
+          "coexact_to_full_ratio": 2.367405003826584,
+          "harmonic_dim": 3,
+          "coexact_fraction": 1.0,
+          "support_pattern": "coexact x-biased circulation"
+        }
+      ],
+      "5": [
+        {
+          "flux_quanta": 0,
+          "plaquette_angle": 0.0,
+          "full_low_eigenvalue": -7.503595687200843e-15,
+          "harmonic_low_eigenvalue": -2.423449418899291e-16,
+          "eigenvalue": 1.2504545574329955,
+          "coexact_to_full_ratio": null,
+          "harmonic_dim": 3,
+          "coexact_fraction": 1.0,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "flux_quanta": 1,
+          "plaquette_angle": 0.25132741228718347,
+          "full_low_eigenvalue": 0.013057252371157072,
+          "harmonic_low_eigenvalue": 0.5098075019121955,
+          "eigenvalue": 0.4584573287499251,
+          "coexact_to_full_ratio": 35.111317122324934,
+          "harmonic_dim": 3,
+          "coexact_fraction": 1.0,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "flux_quanta": 2,
+          "plaquette_angle": 0.5026548245743669,
+          "full_low_eigenvalue": 0.018836665070685626,
+          "harmonic_low_eigenvalue": 1.1243608823583815,
+          "eigenvalue": 0.4267586587461407,
+          "coexact_to_full_ratio": 22.65574384556424,
+          "harmonic_dim": 3,
+          "coexact_fraction": 1.0,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "flux_quanta": 3,
+          "plaquette_angle": 0.7539822368615503,
+          "full_low_eigenvalue": 0.02417882294376397,
+          "harmonic_low_eigenvalue": 1.7516757766703788,
+          "eigenvalue": 0.619483354321555,
+          "coexact_to_full_ratio": 25.620906185647378,
+          "harmonic_dim": 3,
+          "coexact_fraction": 1.0,
+          "support_pattern": "coexact z-biased circulation"
+        },
+        {
+          "flux_quanta": 4,
+          "plaquette_angle": 1.0053096491487339,
+          "full_low_eigenvalue": 0.03235118346883288,
+          "harmonic_low_eigenvalue": 2.032143279687324,
+          "eigenvalue": 0.6576670305037622,
+          "coexact_to_full_ratio": 20.3289944906454,
+          "harmonic_dim": 3,
+          "coexact_fraction": 1.0,
+          "support_pattern": "coexact x-biased circulation"
+        }
+      ]
+    }
+  },
+  "observation": "after harmonic removal, the coexact floor stays well above the mixed full low branch across the flux scan",
+  "conclusion": "no clear coexact low band yet; the very low modes remain dominated by harmonic or mixed topological remnants",
+  "plots": [
+    "plots/periodic_twisted_l1_hodge_projection_full_vs_coexact.png",
+    "plots/periodic_twisted_l1_hodge_projection_harmonic_fraction.png",
+    "plots/periodic_twisted_l1_hodge_projection_coexact_fraction.png",
+    "plots/periodic_twisted_l1_hodge_projection_coexact_flow.png",
+    "plots/periodic_twisted_l1_hodge_projection_persistence.png",
+    "plots/periodic_twisted_l1_hodge_projection_modes.png"
+  ]
+}

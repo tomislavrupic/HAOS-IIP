@@ -21,6 +21,12 @@
     "open_compare_sizes": [4, 5],
     "low_modes": 4
   },
+  "periodic_twisted_l1_hodge_projection": {
+    "sizes": [4, 5],
+    "flux_quanta": [0, 1, 2, 3, 4],
+    "low_modes": 6,
+    "representative_fluxes": [0, 1, 4]
+  },
   "sweep": {
     "epsilon_values": [0.12, 0.2, 0.28],
     "node_values": [216, 343],
