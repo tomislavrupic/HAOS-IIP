@@ -1,0 +1,362 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{HAOS-IIP Operator Architecture and Low-Spectrum Results}
+\author{HAOS-IIP Research Stack}
+\date{March 9, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note summarizes the current HAOS-IIP operator program at the level that is now supported by explicit numerics. A single interaction kernel defines a weighted discrete substrate, but different operator lifts act on different field types. The node Laplacian $L_0$ produces the scalar or geometry branch. The edge or Hodge operator $L_1$ produces the first non-scalar branch. The key numerical result is that the low periodic $L_1$ spectrum is not reducible to scalar-gradient leakage: on a cubic $3$-torus with background plaquette holonomy, a low mostly divergence-free branch persists across the tested lattice sizes and responds to flux. The same branch is still best interpreted as flux-deformed harmonic or topological edge structure rather than a clean propagating Maxwell-like band. No claim of emergent photons, full gauge theory, or particle matching is made here.
+\end{abstract}
+
+\section{Introduction}
+The current HAOS-IIP architecture is most cleanly stated as
+\begin{equation}
+\text{same substrate} \quad + \quad \text{same kernel} \quad + \quad \text{different operator lifts}.
+\end{equation}
+The project no longer treats a single node Laplacian as the entire physical content. Instead, the present operator stack has three distinct levels:
+\begin{align}
+L_0 &: \text{node operator for scalar and geometry-like structure}, \\
+L_1 &: \text{edge operator for vector-sector tests}, \\
+D_H &: \text{Dirac-type lift for later fermion-sector work}.
+\end{align}
+Only the first two levels are numerically active in the present repository. The node sector is already supported by explicit low-mode studies on concrete $3$D substrates. The edge sector now has a working periodic and twisted implementation together with a wider flux scan. The main question addressed in this paper is therefore narrow: does the current edge operator contain a genuine low non-scalar branch, or is the apparent vector content still inherited from scalar gradients?
+
+\section{Interaction Kernel}
+The common starting point is a weighted interaction kernel on embedded nodes $x_i \in \mathbb{R}^3$,
+\begin{equation}
+A_{ij} = \exp\!\left(-\frac{|x_i-x_j|^2}{2\varepsilon_k}\right),
+\qquad
+A_{ii}=0.
+\end{equation}
+Here $\varepsilon_k$ is the kernel width. For numerics, the graph may be truncated at a finite interaction radius
+\begin{equation}
+r_c = \alpha \sqrt{\varepsilon_k},
+\end{equation}
+with the truncation factor $\alpha$ reported explicitly.
+
+The weighted graph data are
+\begin{equation}
+D_{ii} = \sum_j A_{ij},
+\qquad
+L_0 = D - A.
+\end{equation}
+For the edge complex, the same kernel determines edge weights. On a nearest-neighbor cubic complex with edge length $h$,
+\begin{equation}
+w_e = \exp\!\left(-\frac{h^2}{2\varepsilon_k}\right).
+\end{equation}
+The key point is that the scalar and edge sectors are not built from unrelated models. They are different lifts of the same weighted interaction fabric.
+
+\section{Graph Substrate}
+Two substrate classes are currently used.
+
+First, for the scalar study, nodes are embedded either as a perturbed cubic lattice or as a random geometric point cloud in $[0,1]^3$. Edges are included when $|x_i-x_j| \le r_c$, with weight $A_{ij}$.
+
+Second, for the edge study, the substrate is a weighted cubic cell complex. Let $V$, $E$, and $F$ denote nodes, oriented edges, and oriented faces. The node-edge incidence matrix $B_0$ is defined by
+\begin{equation}
+(B_0)_{e,i} =
+\begin{cases}
+-1, & i = \mathrm{tail}(e), \\
++1, & i = \mathrm{head}(e), \\
+0, & \text{otherwise},
+\end{cases}
+\end{equation}
+and the face-edge incidence matrix $C$ records oriented face boundaries.
+
+For the open cubic complex used in the first $L_1$ tests, the weighted differentials are
+\begin{equation}
+d_0 = W_1^{1/2} B_0,
+\qquad
+d_1 = W_2^{1/2} C,
+\end{equation}
+with diagonal edge and face weight matrices $W_1$ and $W_2$.
+
+For the periodic gauge-sector study, opposite faces of the cubic box are identified to form a discrete $3$-torus $\mathbb{T}^3_n$. This periodic identification is not cosmetic. It introduces a nontrivial low harmonic sector on edge space that is absent on the open box.
+
+\section{Node Operator $L_0$}
+The scalar operator acts on node $0$-forms,
+\begin{equation}
+(L_0 \psi)_i = \sum_j A_{ij}(\psi_i-\psi_j).
+\end{equation}
+When a graph incidence representation is available, one may also write
+\begin{equation}
+L_0 = B_0^\top W_1 B_0.
+\end{equation}
+This is the branch that currently carries the geometry evidence.
+
+The strongest scalar benchmark in the repository is the open perturbed cubic study on a $6 \times 6 \times 6$ substrate with $N=216$ nodes and reference kernel width $\varepsilon_k = 0.056997$. The first nontrivial eigenvalues are
+\begin{equation}
+\lambda_1 = 2.410405,
+\qquad
+\lambda_2 = 2.415782,
+\qquad
+\lambda_3 = 2.422536.
+\end{equation}
+These three modes form a near-degenerate smooth family aligned with the coordinate directions of the box. Their inverse participation ratios remain low, and the visual mode shapes match the first scalar box modes. This is the current evidence that the node branch reproduces geometry-like long-wavelength behavior.
+
+The same low-spectrum study also tested an open random geometric graph. There the lowest modes were more strongly mixed with localization and boundary artifacts. That comparison is important because it sets the present diagnostic choice: regular or weakly perturbed cubic substrates are the cleanest setting for operator separation, whereas random graphs mix sectors too early.
+
+A phase-dressed scalar extension has also been implemented,
+\begin{equation}
+(L_\theta \psi)_i = \sum_j A_{ij}(\psi_i - U_{ij}\psi_j),
+\qquad
+U_{ij} = e^{i\theta_{ij}}.
+\end{equation}
+This branch is connection sensitive and supports organized edge currents, but it still acts on node scalars. It is therefore a bridge toward gauge structure, not the gauge sector itself.
+
+\section{Edge Operator $L_1$}
+The vector-sector candidate acts on oriented edge fields. On the weighted cubic complex, the implemented edge operator is the discrete Hodge Laplacian
+\begin{equation}
+L_1 = d_0 d_0^* + d_1^* d_1.
+\end{equation}
+In the open real-valued implementation,
+\begin{equation}
+d_0 = W_1^{1/2} B_0,
+\qquad
+d_1 = W_2^{1/2} C,
+\qquad
+L_1 = d_0 d_0^\top + d_1^\top d_1.
+\end{equation}
+The edge space decomposes as
+\begin{equation}
+C^1 = \operatorname{im} d_0 \oplus \mathcal{H}^1 \oplus \operatorname{im} d_1^*,
+\end{equation}
+where exact components lie in $\operatorname{im} d_0$, coexact components lie in $\operatorname{im} d_1^*$, and harmonic modes lie in
+\begin{equation}
+\mathcal{H}^1 = \ker d_0^* \cap \ker d_1.
+\end{equation}
+On a contractible open box, the low harmonic sector is trivial. On a $3$-torus, it is not.
+
+The first open-box $L_1$ study showed that the bottom of the edge spectrum is exact dominated. For the open $n=5$ cubic box, the first three eigenvalues are all
+\begin{equation}
+0.326713,
+\end{equation}
+and each corresponding mode has exact fraction $1.000$ and coexact fraction $0.000$. In other words, the unrestricted low edge spectrum of the open box is still scalar leakage.
+
+This is the baseline that the periodic and twisted experiment had to beat.
+
+\section{Periodic Twisted Experiment}
+The next step replaces the open box by a periodic cubic lattice of side length $n$ with nearest-neighbor oriented edges in the $x$, $y$, and $z$ directions. The edge weight remains kernel derived,
+\begin{equation}
+w_e = \exp\!\left(-\frac{h^2}{2\varepsilon_k}\right),
+\qquad
+h = \frac{1}{n},
+\qquad
+\varepsilon_k = 0.2.
+\end{equation}
+A background $U(1)$ connection is added in a discrete Landau gauge with flux quantum $m$ through each $xy$ plaquette,
+\begin{equation}
+\phi = \frac{2\pi m}{n^2}.
+\end{equation}
+The implemented link phases are
+\begin{align}
+U_x(i,j,k) &=
+\begin{cases}
+1, & i < n-1, \\
+\exp(-i\phi n j), & i = n-1,
+\end{cases} \\
+U_y(i,j,k) &= \exp(i\phi i), \\
+U_z(i,j,k) &= 1.
+\end{align}
+The covariant node-edge differential is
+\begin{equation}
+(d_{0,A}\psi)_e = \sqrt{w_e}\bigl(U_e\psi_{\mathrm{head}(e)} - \psi_{\mathrm{tail}(e)}\bigr).
+\end{equation}
+A compatible covariant face operator $d_{1,A}$ is built by transporting boundary edge values back to a chosen face basepoint before summing the oriented boundary. The twisted edge operator is then
+\begin{equation}
+L_{1,A} = d_{0,A} d_{0,A}^* + d_{1,A}^* d_{1,A}.
+\end{equation}
+
+For the periodic analysis, exact and divergence-free content are measured using orthogonal projectors
+\begin{equation}
+P_{\mathrm{ex}} : C^1 \to \operatorname{im} d_{0,A},
+\qquad
+P_{\mathrm{div}} : C^1 \to \ker d_{0,A}^*.
+\end{equation}
+For a mode $a$, the reported fractions are
+\begin{equation}
+f_{\mathrm{ex}}(a) = \frac{\|P_{\mathrm{ex}} a\|^2}{\|a\|^2},
+\qquad
+f_{\mathrm{div}}(a) = \frac{\|P_{\mathrm{div}} a\|^2}{\|a\|^2}.
+\end{equation}
+Because $\ker d_{0,A}^*$ contains both coexact and harmonic pieces, the reported ``coexact fraction'' in the experiment should be read operationally as a divergence-free fraction.
+
+The open and periodic branches then separate sharply.
+
+For the open $n=5$ box, the first three $L_1$ modes remain exact gradients:
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+mode & $\lambda$ & exact & divergence-free & pattern \\
+\midrule
+0 & 0.326713 & 1.000 & 0.000 & exact $x$-gradient \\
+1 & 0.326713 & 1.000 & 0.000 & exact $y$-gradient \\
+2 & 0.326713 & 1.000 & 0.000 & exact $z$-gradient \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For the periodic $n=5$ torus at trivial flux $m=0$, the lowest three modes are instead harmonic cycles:
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+mode & $\lambda$ & exact & divergence-free & pattern \\
+\midrule
+0 & 0.000000 & 0.000 & 1.000 & harmonic $y$-cycle \\
+1 & 0.000000 & 0.000 & 1.000 & harmonic $x$-cycle \\
+2 & 0.000000 & 0.000 & 1.000 & harmonic $z$-cycle \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+At nontrivial flux $m=1$, those zero modes lift while staying mostly divergence free:
+\begin{center}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+mode & $\lambda$ & exact & divergence-free & $\|d_{0,A}^* a\|$ & $\|d_{1,A} a\|$ \\
+\midrule
+0 & 0.013057 & 0.025 & 0.975 & 0.0850 & 0.0764 \\
+1 & 0.111287 & 0.194 & 0.806 & 0.2344 & 0.2373 \\
+2 & 0.220336 & 0.000 & 1.000 & 0.0000 & 0.4694 \\
+3 & 0.221528 & 0.097 & 0.903 & 0.3099 & 0.3542 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The divergence-free projected spectrum for the same case begins at
+\begin{equation}
+0.027359,\ 0.220336,\ 0.243475,\ 0.440293, \dots
+\end{equation}
+This matters because the low branch survives projection onto $\ker d_{0,A}^*$ and therefore cannot be reduced to exact scalar gradients, even though this projector does not by itself separate harmonic and coexact content.
+
+The same qualitative behavior persists for $n=4$. For $m=1$, the first mode has
+\begin{equation}
+\lambda = 0.014110,
+\qquad
+f_{\mathrm{ex}} = 0.020,
+\qquad
+f_{\mathrm{div}} = 0.980.
+\end{equation}
+The low periodic branch is therefore not a single-size artifact.
+
+\section{Flux Scan Results}
+The wider flux scan extends the periodic and twisted experiment to
+\begin{equation}
+m = 0,1,2,3,4
+\end{equation}
+for lattice sizes $n=4$ and $n=5$. For each case, the code records low eigenvalues, exact fraction, divergence-free fraction, divergence norm, curl norm, inverse participation ratio, and qualitative support pattern.
+
+To follow one representative low branch, the scan selects the lowest mode among the first four full-spectrum modes whose divergence-free fraction is at least $0.8$. This is an operational diagnostic, not a proof of a continuum band.
+
+For $n=5$, the selected low branch is
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$m$ & $\phi$ & $\lambda$ & divergence-free fraction \\
+\midrule
+0 & 0.000000 & 0.000000 & 1.0000 \\
+1 & 0.251327 & 0.013057 & 0.9755 \\
+2 & 0.502655 & 0.018837 & 0.9837 \\
+3 & 0.753982 & 0.024179 & 0.9876 \\
+4 & 1.005310 & 0.032351 & 0.9870 \\
+\bottomrule
+\end{tabular}
+\end{center}
+This branch is nearly smooth from $m=1$ onward.
+
+For $n=4$, the selected low branch is
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$m$ & $\phi$ & $\lambda$ & divergence-free fraction \\
+\midrule
+0 & 0.000000 & 0.000000 & 1.0000 \\
+1 & 0.392699 & 0.014110 & 0.9798 \\
+2 & 0.785398 & 0.171805 & 0.9228 \\
+3 & 1.178097 & 0.049192 & 0.9821 \\
+4 & 1.570796 & 0.275223 & 0.9077 \\
+\bottomrule
+\end{tabular}
+\end{center}
+The divergence-free content remains high, but the spectral ordering is less smooth.
+
+The projected spectrum confirms the same pattern. The first nonzero projected eigenvalue evolves as
+\begin{align}
+&n=5: && 0.000000 \to 0.027359 \to 0.035496 \to 0.041094 \to 0.058335, \\
+&n=4: && 0.000000 \to 0.032130 \to 0.197545 \to 0.083671 \to 0.327827.
+\end{align}
+The $n=5$ branch is cleaner; the $n=4$ branch still shows strong reordering. The broad conclusions of the scan are therefore:
+\begin{enumerate}
+\item the low periodic branch stays mostly divergence free across the scanned flux values,
+\item the branch is flux responsive rather than collapsing back into the exact sector,
+\item the behavior persists across the tested lattice sizes,
+\item the low branch does not yet organize into one clean smooth transverse band across the full scan.
+\end{enumerate}
+
+\section{Interpretation}
+The current numerical evidence supports the kinematics of an operator-level vector sector, but not a full gauge theory.
+
+The decisive point is the contrast between open and periodic behavior. On the open box, the bottom of $L_1$ is exact dominated and therefore reducible to scalar leakage. On the periodic torus, a low non-exact and divergence-free branch appears and responds to nontrivial holonomy. This is explicit non-scalar structure in the edge operator.
+
+The present implementation also has an important limitation. The reported low-sector fraction is computed using projection onto $\ker d_{0,A}^*$, that is, the divergence-free subspace. On a torus this subspace contains both harmonic and coexact components. Accordingly, the current numerics do not yet isolate a purely coexact propagating band.
+
+At the same time, the present branch is not yet a clean Maxwell-like propagating band. In the trivial-flux case, the lowest modes are harmonic torus cycles. Under flux, those zero modes lift into small positive eigenvalues and develop circulation structure, but the low branch is still best described as flux-deformed harmonic or topological edge structure rather than a separated transverse continuum family.
+
+This places the current HAOS-IIP stack close to the kinematic side of lattice gauge theory. The repository already contains
+\begin{enumerate}
+\item $L_0 = d_0^* d_0$,
+\item $L_1 = d_0 d_0^* + d_1^* d_1$,
+\item link phases $U_{ij}$,
+\item plaquette holonomy and flux response,
+\item explicit low non-scalar edge modes.
+\end{enumerate}
+What it does not yet contain is the dynamical part of a gauge theory:
+\begin{enumerate}
+\item a dynamical action for the link variables $U$,
+\item a plaquette energy term playing the role of $F^2$,
+\item a clean propagating transverse band beyond harmonic torus cycles.
+\end{enumerate}
+
+The correct reading is therefore limited but meaningful:
+\begin{quote}
+The repository now contains operator-level evidence for a low vector-like branch in $L_1$. That branch is mostly divergence free and flux responsive on topologically nontrivial substrates, but it is not yet a clean emergent photon sector or a dynamical gauge field.
+\end{quote}
+This distinction matters. The numerics now justify talking about a non-scalar edge sector. They do not justify talking about emergent photons, a derived Maxwell action, or physical couplings.
+
+\section{Open Problems}
+The present operator architecture is incomplete in several concrete ways.
+
+First, the periodic low branch must be separated more cleanly into harmonic, coexact, and eventually propagating components. The current diagnostics establish non-scalar structure, but they do not yet isolate a smooth transverse band.
+
+Second, the next technical step is to refine the Hodge-sector decomposition by separating harmonic and coexact subspaces explicitly rather than using only the divergence-free projector onto $\ker d_{0,A}^*$. Only after this separation is numerically stable should the program broaden toward defect-localized circulation modes or a dynamical plaquette action for the link variables.
+
+Third, the periodic torus is not sufficient by itself. Larger lattice sizes, punctures, and defect backgrounds are needed to test whether the low divergence-free family remains delocalized, becomes localized around topological structure, or reorganizes into a more continuum-like circulation sector.
+
+Fourth, the relation between the phase-dressed scalar bridge $L_\theta$ and the edge branch $L_{1,A}$ still needs continuum control. At present, the code demonstrates connection sensitivity and flux response, but not a derivation of a dynamical gauge field from the kernel alone.
+
+Fifth, the fermion branch remains postponed. A Dirac-type operator $D_H$ is part of the planned architecture, but it should only be interpreted after the gauge branch is cleaner. Otherwise any spinorial numerics will be hard to distinguish from artifacts of an incompletely resolved connection sector.
+
+The immediate numerical targets are therefore:
+\begin{enumerate}
+\item more explicit harmonic versus coexact separation,
+\item larger periodic flux scans,
+\item puncture and defect backgrounds,
+\item continuum scaling tests for the low edge branch,
+\item only then a Dirac-type lift on the same weighted substrate or a dynamical plaquette-action branch.
+\end{enumerate}
+
+\section{Conclusion}
+The present HAOS-IIP results support a clean operator architecture built from one weighted interaction substrate and multiple operator lifts. The node operator $L_0$ already reproduces a scalar or geometry-like low spectrum on regular $3$D substrates. The edge operator $L_1$ now passes the main falsification test that had remained open: on a periodic and twisted cubic substrate, the low branch is not reducible to exact scalar gradients. It remains mostly divergence free, responds to flux, and persists across the tested sizes.
+
+That is the current positive result. The current limitation is equally clear: the same low branch is still best interpreted as flux-lifted harmonic or topological edge structure rather than a clean propagating Maxwell-like band. The project therefore has explicit operator-level evidence for a vector sector, but not yet a full emergent gauge theory.
+
+\end{document}
