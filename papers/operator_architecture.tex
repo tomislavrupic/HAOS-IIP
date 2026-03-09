@@ -28,7 +28,7 @@ L_0 &: \text{node operator for scalar and geometry-like structure}, \\
 L_1 &: \text{edge operator for vector-sector tests}, \\
 D_H &: \text{Dirac-type lift for later fermion-sector work}.
 \end{align}
-Only the first two levels are numerically active in the present repository. The node sector is already supported by explicit low-mode studies on concrete $3$D substrates. The edge sector now has a working periodic and twisted implementation together with a wider flux scan. The main question addressed in this paper is therefore narrow: does the current edge operator contain a genuine low non-scalar branch, or is the apparent vector content still inherited from scalar gradients?
+Only the first two levels are numerically active in the present repository. Operationally, interaction-invariant physics means that these different operator lifts are built on the same kernel-defined weighted substrate rather than on unrelated microscopic models. The node sector is already supported by explicit low-mode studies on concrete $3$D substrates. The edge sector now has a working periodic and twisted implementation together with a wider flux scan. The main question addressed in this paper is therefore narrow: does the current edge operator contain a genuine low non-scalar branch, or is the apparent vector content still inherited from scalar gradients?
 
 \begin{figure}[t]
 \centering
@@ -120,7 +120,7 @@ The strongest scalar benchmark in the repository is the open perturbed cubic stu
 \qquad
 \lambda_3 = 2.422536.
 \end{equation}
-These three modes form a near-degenerate smooth family aligned with the coordinate directions of the box. Their inverse participation ratios remain low, and the visual mode shapes match the first scalar box modes. This is the current evidence that the node branch reproduces geometry-like long-wavelength behavior.
+These three modes form a near-degenerate smooth family aligned with the coordinate directions of the box. On a nearly cubic domain, the first nontrivial scalar Laplacian modes are expected to vary primarily along the three coordinate axes, so this near-triple degeneracy is the discrete analogue of the first box-mode family. Their inverse participation ratios remain low, and the visual mode shapes match the first scalar box modes. This is the current evidence that the node branch reproduces geometry-like long-wavelength behavior.
 
 The same low-spectrum study also tested an open random geometric graph. There the lowest modes were more strongly mixed with localization and boundary artifacts. That comparison is important because it sets the present diagnostic choice: regular or weakly perturbed cubic substrates are the cleanest setting for operator separation, whereas random graphs mix sectors too early.
 
@@ -155,6 +155,21 @@ where exact components lie in $\operatorname{im} d_0$, coexact components lie in
 \end{equation}
 On a contractible open box, the low harmonic sector is trivial. On a $3$-torus, it is not.
 
+\begin{figure}[t]
+\centering
+\small
+\setlength{\fboxsep}{6pt}
+\begin{tabular}{c c c c c}
+\fbox{\parbox{0.18\linewidth}{\centering exact\\$\operatorname{im} d_0$}} &
+$\oplus$ &
+\fbox{\parbox{0.18\linewidth}{\centering harmonic\\$\mathcal{H}^1$}} &
+$\oplus$ &
+\fbox{\parbox{0.18\linewidth}{\centering coexact\\$\operatorname{im} d_1^*$}}
+\end{tabular}
+\caption{Edge-space decomposition used to interpret the low $L_1$ spectrum. On the periodic branch, the divergence-free subspace contains both harmonic and coexact components.}
+\label{fig:hodge-decomposition}
+\end{figure}
+
 The first open-box $L_1$ study showed that the bottom of the edge spectrum is exact dominated. For the open $n=5$ cubic box, the first three eigenvalues are all
 \begin{equation}
 0.326713,
@@ -176,6 +191,7 @@ A background $U(1)$ connection is added in a discrete Landau gauge with flux qua
 \begin{equation}
 \phi = \frac{2\pi m}{n^2}.
 \end{equation}
+Here $m$ counts the inserted plaquette-flux quanta through the periodic $xy$ cycles, so increasing $m$ twists the background connection and lifts the torus-cycle zero modes.
 The implemented link phases are
 \begin{align}
 U_x(i,j,k) &=
