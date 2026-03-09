@@ -1,0 +1,2657 @@
+{
+  "experiment": "periodic_twisted_l1_flux_scan",
+  "config": {
+    "epsilon": 0.2,
+    "sizes": [
+      4,
+      5
+    ],
+    "flux_quanta": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "open_compare_sizes": [
+      4,
+      5
+    ],
+    "low_modes": 4
+  },
+  "open_cases": {
+    "open_n4": {
+      "label": "open_n4",
+      "config": {
+        "nodes": 64,
+        "edges": 144,
+        "faces": 108,
+        "n_side": 4,
+        "flux_quanta": 0,
+        "plaquette_angle": 0.0
+      },
+      "face_holonomy_phase": 0.0,
+      "full_spectrum": [
+        0.4437127991902654,
+        0.4437127991902674,
+        0.4437127991902677,
+        0.8874255983805263,
+        0.887425598380527,
+        0.8874255983805284,
+        0.8874255983805286,
+        0.8874255983805296,
+        0.8874255983805315,
+        1.3311383975707949,
+        1.331138397570795,
+        1.3311383975707967
+      ],
+      "projected_spectrum": [
+        0.8874255983805306,
+        0.8874255983805306,
+        0.8874255983805334,
+        1.331138397570794,
+        1.3311383975707978,
+        1.9586430559841945,
+        1.9586430559841963,
+        1.9586430559841967,
+        1.9586430559841983,
+        1.9586430559841987,
+        1.9586430559842014,
+        2.4023558551744593
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.4437127991902654,
+          "exact_fraction": 1.0000000000000002,
+          "coexact_fraction": 7.917867452354296e-18,
+          "divergence_norm": 0.6661177067082548,
+          "curl_norm": 2.199180592026318e-15,
+          "ipr": 0.023437500000000003,
+          "support_pattern": "delocalized exact z-biased gradient"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.4437127991902674,
+          "exact_fraction": 1.0,
+          "coexact_fraction": -1.4029247557467947e-17,
+          "divergence_norm": 0.6661177067082551,
+          "curl_norm": 1.2582952782557625e-15,
+          "ipr": 0.023437500000000007,
+          "support_pattern": "delocalized exact x-biased gradient"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.4437127991902677,
+          "exact_fraction": 1.0000000000000002,
+          "coexact_fraction": -4.522344937464322e-17,
+          "divergence_norm": 0.6661177067082552,
+          "curl_norm": 1.3127536380592129e-15,
+          "ipr": 0.023437500000000007,
+          "support_pattern": "delocalized exact y-biased gradient"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.8874255983805263,
+          "exact_fraction": 0.5,
+          "coexact_fraction": 0.5,
+          "divergence_norm": 0.6661177067082554,
+          "curl_norm": 0.6661177067082554,
+          "ipr": 0.05273437500000002,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.887425598380527,
+          "exact_fraction": 0.49999999999999895,
+          "coexact_fraction": 0.5000000000000001,
+          "divergence_norm": 0.6661177067082552,
+          "curl_norm": 0.6661177067082552,
+          "ipr": 0.05273437500000001,
+          "support_pattern": "mixed z-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.8874255983805284,
+          "exact_fraction": 0.49999999999999967,
+          "coexact_fraction": 0.5,
+          "divergence_norm": 0.666117706708256,
+          "curl_norm": 0.666117706708256,
+          "ipr": 0.05273437499999997,
+          "support_pattern": "mixed z-biased support"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.8874255983805286,
+          "exact_fraction": 0.49999999999999944,
+          "coexact_fraction": 0.4999999999999999,
+          "divergence_norm": 0.6661177067082558,
+          "curl_norm": 0.6661177067082558,
+          "ipr": 0.05273437500000004,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.8874255983805296,
+          "exact_fraction": 0.4999999999999997,
+          "coexact_fraction": 0.49999999999999994,
+          "divergence_norm": 0.6661177067082551,
+          "curl_norm": 0.6661177067082551,
+          "ipr": 0.05273437500000003,
+          "support_pattern": "mixed y-biased support"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.8874255983805306,
+          "exact_fraction": 2.1940493364886507e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 4.978828990797893e-16,
+          "curl_norm": 0.9420326949636777,
+          "ipr": 0.017578125000000003,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.8874255983805306,
+          "exact_fraction": 5.015254692727602e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 4.145878766229992e-16,
+          "curl_norm": 0.9420326949636781,
+          "ipr": 0.017578125,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.8874255983805334,
+          "exact_fraction": 1.2471932366957022e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 7.476789391815161e-16,
+          "curl_norm": 0.9420326949636778,
+          "ipr": 0.017578125,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.331138397570794,
+          "exact_fraction": 9.32277504441334e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 4.072080023634969e-16,
+          "curl_norm": 1.153749711839962,
+          "ipr": 0.02636718749999999,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.3311383975707978,
+          "exact_fraction": -1.1524089281731986e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 8.480619999047941e-16,
+          "curl_norm": 1.1537497118399622,
+          "ipr": 0.026367187500000003,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.9586430559841945,
+          "exact_fraction": 3.164751933842696e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 4.823297778551832e-16,
+          "curl_norm": 1.3995152932298371,
+          "ipr": 0.013874878808813598,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.9586430559841963,
+          "exact_fraction": -7.634102593255837e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 6.026098917315462e-16,
+          "curl_norm": 1.3995152932298365,
+          "ipr": 0.015837456413760012,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.9586430559841967,
+          "exact_fraction": 9.130278502947223e-18,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 6.667720687183992e-16,
+          "curl_norm": 1.3995152932298376,
+          "ipr": 0.019497386014194307,
+          "support_pattern": "divergence-free y-biased circulation"
+        }
+      ]
+    },
+    "open_n5": {
+      "label": "open_n5",
+      "config": {
+        "nodes": 125,
+        "edges": 300,
+        "faces": 240,
+        "n_side": 5,
+        "flux_quanta": 0,
+        "plaquette_angle": 0.0
+      },
+      "face_holonomy_phase": 0.0,
+      "full_spectrum": [
+        0.3267128429130312,
+        0.3267128429130313,
+        0.3267128429130322,
+        0.6534256858260616,
+        0.6534256858260621,
+        0.6534256858260625,
+        0.6534256858260638,
+        0.6534256858260646,
+        0.6534256858260648,
+        0.9801385287390947,
+        0.9801385287390967,
+        0.9801385287390971
+      ],
+      "projected_spectrum": [
+        0.6534256858260649,
+        0.6534256858260654,
+        0.6534256858260666,
+        0.9801385287390997,
+        0.9801385287390997,
+        1.5087710131334826,
+        1.5087710131334842,
+        1.5087710131334848,
+        1.508771013133485,
+        1.5087710131334866,
+        1.50877101313349,
+        1.8354838560465123
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.3267128429130312,
+          "exact_fraction": 0.9999999999999996,
+          "coexact_fraction": -4.817124017790007e-17,
+          "divergence_norm": 0.5715880010226172,
+          "curl_norm": 3.600610701067623e-15,
+          "ipr": 0.011999999999999993,
+          "support_pattern": "delocalized exact x-biased gradient"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.3267128429130313,
+          "exact_fraction": 0.9999999999999994,
+          "coexact_fraction": 1.6589612802084735e-17,
+          "divergence_norm": 0.5715880010226173,
+          "curl_norm": 1.5449287945012552e-15,
+          "ipr": 0.011999999999999999,
+          "support_pattern": "delocalized exact y-biased gradient"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.3267128429130322,
+          "exact_fraction": 0.9999999999999999,
+          "coexact_fraction": -3.4585104901166473e-19,
+          "divergence_norm": 0.5715880010226174,
+          "curl_norm": 1.967124409960599e-15,
+          "ipr": 0.011999999999999999,
+          "support_pattern": "delocalized exact z-biased gradient"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.6534256858260616,
+          "exact_fraction": 0.4999999999999998,
+          "coexact_fraction": 0.49999999999999994,
+          "divergence_norm": 0.5715880010226172,
+          "curl_norm": 0.5715880010226171,
+          "ipr": 0.026999999999998768,
+          "support_pattern": "mixed z-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.6534256858260621,
+          "exact_fraction": 0.5000000000000003,
+          "coexact_fraction": 0.49999999999999994,
+          "divergence_norm": 0.5715880010226172,
+          "curl_norm": 0.5715880010226173,
+          "ipr": 0.02699999999999711,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.6534256858260625,
+          "exact_fraction": 0.4999999999999994,
+          "coexact_fraction": 0.49999999999999994,
+          "divergence_norm": 0.5715880010226175,
+          "curl_norm": 0.5715880010226175,
+          "ipr": 0.026999999999993057,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.6534256858260638,
+          "exact_fraction": 0.5000000000000006,
+          "coexact_fraction": 0.5000000000000002,
+          "divergence_norm": 0.5715880010226178,
+          "curl_norm": 0.5715880010226178,
+          "ipr": 0.026999999999993068,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.6534256858260646,
+          "exact_fraction": 0.5000000000000003,
+          "coexact_fraction": 0.5,
+          "divergence_norm": 0.5715880010226176,
+          "curl_norm": 0.5715880010226178,
+          "ipr": 0.02699999999999875,
+          "support_pattern": "mixed z-biased support"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.6534256858260649,
+          "exact_fraction": 4.419462524833817e-18,
+          "coexact_fraction": 0.9999999999999996,
+          "divergence_norm": 7.15753194662279e-16,
+          "curl_norm": 0.8083475031359127,
+          "ipr": 0.008999999999999998,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.6534256858260654,
+          "exact_fraction": 3.456920278559687e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.230139297521983e-16,
+          "curl_norm": 0.8083475031359119,
+          "ipr": 0.008999999999999994,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.6534256858260666,
+          "exact_fraction": 2.132033855185338e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 7.194389709427133e-16,
+          "curl_norm": 0.8083475031359114,
+          "ipr": 0.009000000000000001,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.9801385287390997,
+          "exact_fraction": 1.2900518601061532e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 6.371546547425869e-16,
+          "curl_norm": 0.9900194587679049,
+          "ipr": 0.013500000000000007,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.9801385287390997,
+          "exact_fraction": 3.755020932963813e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 8.320044164725684e-16,
+          "curl_norm": 0.9900194587679036,
+          "ipr": 0.013500000000000002,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.5087710131334826,
+          "exact_fraction": 5.899525497148702e-19,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 7.281365023479324e-16,
+          "curl_norm": 1.2283204032879564,
+          "ipr": 0.009209323198871251,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.5087710131334842,
+          "exact_fraction": 2.5755420150892448e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 6.217954721769989e-16,
+          "curl_norm": 1.2283204032879558,
+          "ipr": 0.0140523106400412,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.5087710131334848,
+          "exact_fraction": -3.91097197180523e-18,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 6.589142483561395e-16,
+          "curl_norm": 1.2283204032879556,
+          "ipr": 0.011196865964833613,
+          "support_pattern": "divergence-free y-biased circulation"
+        }
+      ]
+    }
+  },
+  "periodic_cases": {
+    "periodic_n4_flux0": {
+      "label": "periodic_n4_flux0",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 0,
+        "plaquette_angle": 0.0
+      },
+      "face_holonomy_phase": 0.0,
+      "full_spectrum": [
+        -4.500600535813283e-15,
+        -7.82215305163094e-16,
+        1.933729903452976e-15,
+        1.7106906546148404,
+        1.7106906546148428,
+        1.710690654614843,
+        1.7106906546148433,
+        1.7106906546148442,
+        1.7106906546148444,
+        1.7106906546148446,
+        1.7106906546148455,
+        1.7106906546148455
+      ],
+      "projected_spectrum": [
+        1.3392941475550479e-16,
+        1.7062796763519108e-16,
+        1.9655364478861938e-15,
+        1.7106906546148415,
+        1.7106906546148422,
+        1.7106906546148428,
+        1.7106906546148428,
+        1.710690654614843,
+        1.7106906546148435,
+        1.7106906546148435,
+        1.710690654614844,
+        1.7106906546148444
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": -4.500600535813283e-15,
+          "exact_fraction": -1.280552567746828e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 2.0311351551482268e-15,
+          "curl_norm": 2.178849390134624e-15,
+          "ipr": 0.012428970244478017,
+          "support_pattern": "delocalized harmonic y-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": -7.82215305163094e-16,
+          "exact_fraction": 2.965242256450024e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 1.2735976957428779e-15,
+          "curl_norm": 1.7393230124847985e-15,
+          "ipr": 0.012484539238516588,
+          "support_pattern": "delocalized harmonic z-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.933729903452976e-15,
+          "exact_fraction": -2.2410545017965152e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.534179875832974e-16,
+          "curl_norm": 1.4885883760414967e-15,
+          "ipr": 0.015555010325932709,
+          "support_pattern": "delocalized harmonic x-cycle"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.7106906546148404,
+          "exact_fraction": 0.31186137917323203,
+          "coexact_fraction": 0.6881386208267678,
+          "divergence_norm": 0.7304097116597952,
+          "curl_norm": 1.0849849343322244,
+          "ipr": 0.01567173926583646,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.7106906546148428,
+          "exact_fraction": 0.2501526363332054,
+          "coexact_fraction": 0.7498473636667946,
+          "divergence_norm": 0.6541664751441181,
+          "curl_norm": 1.1325885737602879,
+          "ipr": 0.011782010207763177,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.710690654614843,
+          "exact_fraction": 0.26062715593985053,
+          "coexact_fraction": 0.7393728440601496,
+          "divergence_norm": 0.6677218283126197,
+          "curl_norm": 1.1246502632417315,
+          "ipr": 0.013372146184523537,
+          "support_pattern": "mixed z-biased support"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.7106906546148433,
+          "exact_fraction": 0.27450195597490784,
+          "coexact_fraction": 0.7254980440250924,
+          "divergence_norm": 0.685264861757678,
+          "curl_norm": 1.1140479001618706,
+          "ipr": 0.018363266497908107,
+          "support_pattern": "mixed z-biased support"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.7106906546148442,
+          "exact_fraction": 0.5197130902096407,
+          "coexact_fraction": 0.48028690979035976,
+          "divergence_norm": 0.9429041979451744,
+          "curl_norm": 0.9064338520334567,
+          "ipr": 0.017992294562536842,
+          "support_pattern": "mixed y-biased support"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 1.3392941475550479e-16,
+          "exact_fraction": 5.66065103994463e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 7.600251406772988e-16,
+          "curl_norm": 2.9282094056052764e-15,
+          "ipr": 0.01212868983939477,
+          "support_pattern": "delocalized harmonic z-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 1.7062796763519108e-16,
+          "exact_fraction": -9.258145501082934e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 5.897034290883276e-16,
+          "curl_norm": 2.3438915838972387e-15,
+          "ipr": 0.012138852312003588,
+          "support_pattern": "delocalized harmonic x-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 1.9655364478861938e-15,
+          "exact_fraction": 1.7760020754585996e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 9.268145221580899e-16,
+          "curl_norm": 3.00821556556789e-15,
+          "ipr": 0.0156125400852952,
+          "support_pattern": "delocalized harmonic y-cycle"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.7106906546148415,
+          "exact_fraction": 1.2492707406808367e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 8.083827132410578e-16,
+          "curl_norm": 1.307933734795017,
+          "ipr": 0.016470277547307545,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.7106906546148422,
+          "exact_fraction": 3.1318211477948906e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 7.555136091035894e-16,
+          "curl_norm": 1.3079337347950186,
+          "ipr": 0.013990822590907406,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.7106906546148428,
+          "exact_fraction": 1.3060307737419981e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 8.51322780102924e-16,
+          "curl_norm": 1.3079337347950186,
+          "ipr": 0.01062135175389422,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.7106906546148428,
+          "exact_fraction": -1.4452667716739284e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 9.130153603029554e-16,
+          "curl_norm": 1.3079337347950184,
+          "ipr": 0.01977626027478238,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.710690654614843,
+          "exact_fraction": -1.4748174562327334e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 7.862018320511076e-16,
+          "curl_norm": 1.307933734795018,
+          "ipr": 0.013328156722152365,
+          "support_pattern": "divergence-free x-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": -4.500600535813283e-15,
+        "exact_fraction": -1.280552567746828e-17,
+        "coexact_fraction": 1.0,
+        "divergence_norm": 2.0311351551482268e-15,
+        "curl_norm": 2.178849390134624e-15,
+        "ipr": 0.012428970244478017,
+        "support_pattern": "delocalized harmonic y-cycle"
+      }
+    },
+    "periodic_n4_flux1": {
+      "label": "periodic_n4_flux1",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 1,
+        "plaquette_angle": 0.39269908169872414
+      },
+      "face_holonomy_phase": 0.3926990816987242,
+      "full_spectrum": [
+        0.01411017397974383,
+        0.17463921286671508,
+        0.2802830574076359,
+        0.3196458479591329,
+        0.47971102705198676,
+        0.6656436275120879,
+        0.7548952071473903,
+        0.7548952071473943,
+        0.8896595919736658,
+        0.8896595919736721,
+        0.9204769710029387,
+        0.9274239898503649
+      ],
+      "projected_spectrum": [
+        0.032129698048758,
+        0.2912782589830852,
+        0.31964584795913376,
+        0.6399639500226951,
+        0.9274239898503669,
+        1.1086664979583658,
+        1.2020113328261361,
+        1.202011332826141,
+        1.312463600000948,
+        1.3124636000009504,
+        1.369175480172221,
+        1.4734396718343317
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.01411017397974383,
+          "exact_fraction": 0.020171915817346918,
+          "coexact_fraction": 0.9798280841826531,
+          "divergence_norm": 0.09056351571972525,
+          "curl_norm": 0.07686627088799072,
+          "ipr": 0.01703552753469676,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.17463921286671508,
+          "exact_fraction": 0.13118252160175908,
+          "coexact_fraction": 0.8688174783982413,
+          "divergence_norm": 0.2541386614579204,
+          "curl_norm": 0.33174199857583603,
+          "ipr": 0.01947884399840388,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.2802830574076359,
+          "exact_fraction": 0.17301866198316984,
+          "coexact_fraction": 0.8269813380168306,
+          "divergence_norm": 0.380920754599075,
+          "curl_norm": 0.36767164171758754,
+          "ipr": 0.015376344418438607,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.3196458479591329,
+          "exact_fraction": 8.142487506895105e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 3.2053951595891408e-15,
+          "curl_norm": 0.5653723091548911,
+          "ipr": 0.018670796276223724,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.47971102705198676,
+          "exact_fraction": 0.37059811470919185,
+          "coexact_fraction": 0.6294018852908086,
+          "divergence_norm": 0.5585660279296135,
+          "curl_norm": 0.4095302424668063,
+          "ipr": 0.019249942352818256,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.6656436275120879,
+          "exact_fraction": 0.36877938971522445,
+          "coexact_fraction": 0.6312206102847763,
+          "divergence_norm": 0.602485469633776,
+          "curl_norm": 0.5501407877918656,
+          "ipr": 0.013498861184555034,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.7548952071473903,
+          "exact_fraction": 0.15154789999651697,
+          "coexact_fraction": 0.8484521000034829,
+          "divergence_norm": 0.6163542094964061,
+          "curl_norm": 0.6123746366265145,
+          "ipr": 0.01653316969620989,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.7548952071473943,
+          "exact_fraction": 0.15154789999651713,
+          "coexact_fraction": 0.8484521000034831,
+          "divergence_norm": 0.6163542094964063,
+          "curl_norm": 0.6123746366265143,
+          "ipr": 0.01653316969620986,
+          "support_pattern": "mixed y-biased support"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.032129698048758,
+          "exact_fraction": -1.134326099326397e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 8.604969607926845e-16,
+          "curl_norm": 0.17924758868324636,
+          "ipr": 0.020982142502107375,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.2912782589830852,
+          "exact_fraction": 6.605384969802093e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 6.846838596087697e-16,
+          "curl_norm": 0.5397020094302837,
+          "ipr": 0.022951276683688553,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.31964584795913376,
+          "exact_fraction": 9.839177648140307e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 8.636530634744867e-16,
+          "curl_norm": 0.5653723091548916,
+          "ipr": 0.018670796276223717,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.6399639500226951,
+          "exact_fraction": 5.518223516322811e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 8.38019837467865e-16,
+          "curl_norm": 0.7999774684468905,
+          "ipr": 0.01329249214189498,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.9274239898503669,
+          "exact_fraction": 2.2567021088656275e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 7.908552734190002e-16,
+          "curl_norm": 0.9630285509009405,
+          "ipr": 0.02995176614990204,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.1086664979583658,
+          "exact_fraction": -1.01606933301025e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 7.806534297717687e-16,
+          "curl_norm": 1.052932333038722,
+          "ipr": 0.01730166049272508,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.2020113328261361,
+          "exact_fraction": -3.5645660294297573e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 6.235389717028649e-16,
+          "curl_norm": 1.096362774279635,
+          "ipr": 0.022582370887261102,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.202011332826141,
+          "exact_fraction": 1.602127566999783e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 6.374352649116564e-16,
+          "curl_norm": 1.0963627742796354,
+          "ipr": 0.02258237088726117,
+          "support_pattern": "divergence-free y-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.01411017397974383,
+        "exact_fraction": 0.020171915817346918,
+        "coexact_fraction": 0.9798280841826531,
+        "divergence_norm": 0.09056351571972525,
+        "curl_norm": 0.07686627088799072,
+        "ipr": 0.01703552753469676,
+        "support_pattern": "mixed x-biased support"
+      }
+    },
+    "periodic_n4_flux2": {
+      "label": "periodic_n4_flux2",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 2,
+        "plaquette_angle": 0.7853981633974483
+      },
+      "face_holonomy_phase": 0.7853981633974482,
+      "full_spectrum": [
+        0.1718047422179909,
+        0.1718047422179925,
+        0.17785300415197763,
+        0.1778530041519803,
+        0.60673274833011,
+        0.6067327483301124,
+        0.9460605448859967,
+        0.9460605448860032,
+        0.9921911196160903,
+        0.9921911196160939,
+        1.0204640093450734,
+        1.0204640093450763
+      ],
+      "projected_spectrum": [
+        0.1975448450376997,
+        0.22602771184118534,
+        0.5890160874960828,
+        0.6067327483301103,
+        0.6067327483301118,
+        0.9104707497875936,
+        1.1919700315148054,
+        1.1919700315148059,
+        1.3480125909205598,
+        1.348012590920563,
+        1.3960986603205194,
+        1.5651282495904453
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.1718047422179909,
+          "exact_fraction": 0.07715735671043292,
+          "coexact_fraction": 0.9228426432895674,
+          "divergence_norm": 0.2531889019847166,
+          "curl_norm": 0.32817696770152055,
+          "ipr": 0.01793607621161884,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.1718047422179925,
+          "exact_fraction": 0.15600127320310234,
+          "coexact_fraction": 0.8439987267968979,
+          "divergence_norm": 0.32817696770152044,
+          "curl_norm": 0.2531889019847168,
+          "ipr": 0.017936076211618864,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.17785300415197763,
+          "exact_fraction": 0.04673888522701485,
+          "coexact_fraction": 0.9532611147729855,
+          "divergence_norm": 0.23781155878773283,
+          "curl_norm": 0.34827958116853214,
+          "ipr": 0.012836161211015112,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.1778530041519803,
+          "exact_fraction": 0.17913817210437094,
+          "coexact_fraction": 0.8208618278956292,
+          "divergence_norm": 0.3482795811685324,
+          "curl_norm": 0.23781155878773239,
+          "ipr": 0.012836161211015096,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.60673274833011,
+          "exact_fraction": -9.401637465720247e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 3.949125908223296e-15,
+          "curl_norm": 0.7789305157266033,
+          "ipr": 0.023150968906455033,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.6067327483301124,
+          "exact_fraction": 3.769088680830812e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 3.0475189401297432e-15,
+          "curl_norm": 0.7789305157266037,
+          "ipr": 0.02315096890645502,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.9460605448859967,
+          "exact_fraction": 0.2826863619275997,
+          "coexact_fraction": 0.7173136380724002,
+          "divergence_norm": 0.8258867673076637,
+          "curl_norm": 0.5137816583648114,
+          "ipr": 0.04337612665502849,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.9460605448860032,
+          "exact_fraction": 0.2826863619275996,
+          "coexact_fraction": 0.7173136380724005,
+          "divergence_norm": 0.8258867673076634,
+          "curl_norm": 0.513781658364811,
+          "ipr": 0.04337612665502853,
+          "support_pattern": "mixed y-biased support"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.1975448450376997,
+          "exact_fraction": 1.5418625173757634e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 8.559566590602238e-16,
+          "curl_norm": 0.4444601726113348,
+          "ipr": 0.02150382842752404,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.22602771184118534,
+          "exact_fraction": 1.0651349102225924e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 8.258021883034351e-16,
+          "curl_norm": 0.47542371821480256,
+          "ipr": 0.010191728041643946,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.5890160874960828,
+          "exact_fraction": 1.148165742743589e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.1447266162423098e-15,
+          "curl_norm": 0.7674738350563377,
+          "ipr": 0.01493596683853528,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.6067327483301103,
+          "exact_fraction": -1.3852599487233356e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 7.772453331766133e-16,
+          "curl_norm": 0.7789305157266045,
+          "ipr": 0.02283074458225423,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.6067327483301118,
+          "exact_fraction": 1.5791764999520314e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.1159550222105452e-15,
+          "curl_norm": 0.7789305157266043,
+          "ipr": 0.02283074458225423,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.9104707497875936,
+          "exact_fraction": 3.5504166859299596e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 7.651715104234543e-16,
+          "curl_norm": 0.9541859094472088,
+          "ipr": 0.026345199366631603,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.1919700315148054,
+          "exact_fraction": -4.200133695401966e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 8.624495078603336e-16,
+          "curl_norm": 1.0917738005259179,
+          "ipr": 0.017656389639551993,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.1919700315148059,
+          "exact_fraction": 1.1978055981008766e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 7.056607933159093e-16,
+          "curl_norm": 1.091773800525918,
+          "ipr": 0.01765638963955201,
+          "support_pattern": "divergence-free z-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.1718047422179909,
+        "exact_fraction": 0.07715735671043292,
+        "coexact_fraction": 0.9228426432895674,
+        "divergence_norm": 0.2531889019847166,
+        "curl_norm": 0.32817696770152055,
+        "ipr": 0.01793607621161884,
+        "support_pattern": "divergence-free x-biased circulation"
+      }
+    },
+    "periodic_n4_flux3": {
+      "label": "periodic_n4_flux3",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 3,
+        "plaquette_angle": 1.1780972450961724
+      },
+      "face_holonomy_phase": 1.1780972450961724,
+      "full_spectrum": [
+        0.04919249521442061,
+        0.08268742357160568,
+        0.28203979372594423,
+        0.3387432179035738,
+        0.4709633837881531,
+        0.7090740681375777,
+        0.8509619353954203,
+        0.8667414493730385,
+        0.8725272719306084,
+        1.011276592613612,
+        1.0112765926136165,
+        1.0358093761340066
+      ],
+      "projected_spectrum": [
+        0.08367108679320694,
+        0.1764857870460071,
+        0.36106158063522886,
+        0.8509619353954205,
+        0.8667414493730407,
+        0.8725272719306089,
+        1.0890546545241053,
+        1.2678262734681938,
+        1.4079053381753648,
+        1.40790533817537,
+        1.4355446058874017,
+        1.483610290643483
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.04919249521442061,
+          "exact_fraction": 0.017858831762365114,
+          "coexact_fraction": 0.9821411682376351,
+          "divergence_norm": 0.1458301991971693,
+          "curl_norm": 0.1671108859905215,
+          "ipr": 0.01428001344582234,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.08268742357160568,
+          "exact_fraction": 0.048205358717804625,
+          "coexact_fraction": 0.9517946412821959,
+          "divergence_norm": 0.21796865248055733,
+          "curl_norm": 0.18755556538641727,
+          "ipr": 0.014891333125073895,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.28203979372594423,
+          "exact_fraction": 0.044090962444973104,
+          "coexact_fraction": 0.9559090375550269,
+          "divergence_norm": 0.263173548950616,
+          "curl_norm": 0.46128025847491677,
+          "ipr": 0.02413271513259786,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.3387432179035738,
+          "exact_fraction": 0.27787212313945636,
+          "coexact_fraction": 0.7221278768605437,
+          "divergence_norm": 0.5112465531589574,
+          "curl_norm": 0.278154956430158,
+          "ipr": 0.01571056632066436,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.4709633837881531,
+          "exact_fraction": 0.29131851890400706,
+          "coexact_fraction": 0.7086814810959929,
+          "divergence_norm": 0.5463641897165026,
+          "curl_norm": 0.4152704612461451,
+          "ipr": 0.020150982873128914,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.7090740681375777,
+          "exact_fraction": 0.18917480328849304,
+          "coexact_fraction": 0.810825196711507,
+          "divergence_norm": 0.4657097316568918,
+          "curl_norm": 0.701561482678209,
+          "ipr": 0.013918909077458859,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.8509619353954203,
+          "exact_fraction": 2.330285307028907e-17,
+          "coexact_fraction": 0.9999999999999996,
+          "divergence_norm": 6.861544584848771e-15,
+          "curl_norm": 0.9224759809314393,
+          "ipr": 0.029910901109441532,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.8667414493730385,
+          "exact_fraction": 1.2199988613265424e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.0917742605514401e-14,
+          "curl_norm": 0.9309895001411349,
+          "ipr": 0.01944020468964046,
+          "support_pattern": "divergence-free z-biased circulation"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.08367108679320694,
+          "exact_fraction": 1.2864782525338577e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 6.76580553334441e-16,
+          "curl_norm": 0.2892595491824051,
+          "ipr": 0.013160069381795455,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.1764857870460071,
+          "exact_fraction": 1.809134211495262e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 9.841603123784779e-16,
+          "curl_norm": 0.4201021150220586,
+          "ipr": 0.016886648658921824,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.36106158063522886,
+          "exact_fraction": -2.04019759646566e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.604061134411429e-16,
+          "curl_norm": 0.6008839993170308,
+          "ipr": 0.01884226329470568,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.8509619353954205,
+          "exact_fraction": 2.093863429756775e-17,
+          "coexact_fraction": 0.9999999999999997,
+          "divergence_norm": 9.245296223942405e-16,
+          "curl_norm": 0.9224759809314395,
+          "ipr": 0.029910901109441525,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.8667414493730407,
+          "exact_fraction": 7.452246969726097e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 7.106245062393412e-16,
+          "curl_norm": 0.9309895001411354,
+          "ipr": 0.019440204689640476,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.8725272719306089,
+          "exact_fraction": 2.69354349488427e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 8.763650138427095e-16,
+          "curl_norm": 0.9340916828291579,
+          "ipr": 0.022687295704379645,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.0890546545241053,
+          "exact_fraction": -5.082455713854882e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.330202814611596e-16,
+          "curl_norm": 1.0435778143119496,
+          "ipr": 0.014886809345059643,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.2678262734681938,
+          "exact_fraction": -1.0030582855645098e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 8.631751030529013e-16,
+          "curl_norm": 1.1259779187302883,
+          "ipr": 0.016711561427658148,
+          "support_pattern": "divergence-free y-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.04919249521442061,
+        "exact_fraction": 0.017858831762365114,
+        "coexact_fraction": 0.9821411682376351,
+        "divergence_norm": 0.1458301991971693,
+        "curl_norm": 0.1671108859905215,
+        "ipr": 0.01428001344582234,
+        "support_pattern": "divergence-free x-biased circulation"
+      }
+    },
+    "periodic_n4_flux4": {
+      "label": "periodic_n4_flux4",
+      "config": {
+        "nodes": 64,
+        "edges": 192,
+        "faces": 192,
+        "n_side": 4,
+        "flux_quanta": 4,
+        "plaquette_angle": 1.5707963267948966
+      },
+      "face_holonomy_phase": 1.5707963267948966,
+      "full_spectrum": [
+        0.27522291718919006,
+        0.2752229171891914,
+        0.2752229171891946,
+        0.27522291718919495,
+        0.4545206095827924,
+        0.45452060958279356,
+        0.4545206095827944,
+        0.4545206095827954,
+        1.0020993844484674,
+        1.0020993844484678,
+        1.0020993844484685,
+        1.0020993844484687
+      ],
+      "projected_spectrum": [
+        0.3278268629316866,
+        0.3278268629316868,
+        0.5485095002724234,
+        0.5485095002724235,
+        1.0020993844484647,
+        1.002099384448468,
+        1.002099384448468,
+        1.002099384448473,
+        1.2266748693889846,
+        1.2266748693889884,
+        1.4530410946932637,
+        1.453041094693265
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.27522291718919006,
+          "exact_fraction": 0.09226925426381964,
+          "coexact_fraction": 0.9077307457361806,
+          "divergence_norm": 0.3416986920026646,
+          "curl_norm": 0.39807652665393733,
+          "ipr": 0.019447540690404372,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.2752229171891914,
+          "exact_fraction": 0.13736684742971805,
+          "coexact_fraction": 0.8626331525702821,
+          "divergence_norm": 0.3925226453574485,
+          "curl_norm": 0.34806449125238936,
+          "ipr": 0.015265819344596216,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.2752229171891946,
+          "exact_fraction": 0.1159707132386264,
+          "coexact_fraction": 0.8840292867613733,
+          "divergence_norm": 0.36826064930282004,
+          "curl_norm": 0.37364021647068346,
+          "ipr": 0.018130970203159052,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.27522291718919495,
+          "exact_fraction": 0.12313499082564151,
+          "coexact_fraction": 0.8768650091743582,
+          "divergence_norm": 0.37947055922523465,
+          "curl_norm": 0.36224993011798023,
+          "ipr": 0.014977826330721079,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.4545206095827924,
+          "exact_fraction": 0.2563228737799766,
+          "coexact_fraction": 0.7436771262200237,
+          "divergence_norm": 0.5355434906489998,
+          "curl_norm": 0.409528728181894,
+          "ipr": 0.019786110797565558,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.45452060958279356,
+          "exact_fraction": 0.2807241893173236,
+          "coexact_fraction": 0.7192758106826765,
+          "divergence_norm": 0.556190354019735,
+          "curl_norm": 0.3810156160555581,
+          "ipr": 0.01419616347092845,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.4545206095827944,
+          "exact_fraction": 0.08725304783206177,
+          "coexact_fraction": 0.9127469521679384,
+          "divergence_norm": 0.3763244007893928,
+          "curl_norm": 0.5593751468856109,
+          "ipr": 0.012880768776467252,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.4545206095827954,
+          "exact_fraction": 0.11996074485111863,
+          "coexact_fraction": 0.8800392551488815,
+          "divergence_norm": 0.4138437196031625,
+          "curl_norm": 0.5322161077305108,
+          "ipr": 0.0203438968863828,
+          "support_pattern": "divergence-free x-biased circulation"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.3278268629316866,
+          "exact_fraction": -4.43272195346779e-18,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 7.722320685112717e-16,
+          "curl_norm": 0.5725616673614153,
+          "ipr": 0.016607628810760895,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.3278268629316868,
+          "exact_fraction": 1.8499614370143283e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 8.99959133159517e-16,
+          "curl_norm": 0.5725616673614154,
+          "ipr": 0.016607628810760906,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.5485095002724234,
+          "exact_fraction": 2.1418047644958488e-18,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 7.852589408165008e-16,
+          "curl_norm": 0.7406142722581193,
+          "ipr": 0.012126326146702877,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.5485095002724235,
+          "exact_fraction": 7.912424521562539e-19,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 1.0529667260916964e-15,
+          "curl_norm": 0.7406142722581194,
+          "ipr": 0.012126326146702882,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.0020993844484647,
+          "exact_fraction": 2.464956296525313e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 7.545069068296421e-16,
+          "curl_norm": 1.0010491418748975,
+          "ipr": 0.028437626891791083,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.002099384448468,
+          "exact_fraction": -4.101049495703656e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 8.889972671423357e-16,
+          "curl_norm": 1.0010491418748981,
+          "ipr": 0.031687352383774334,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.002099384448468,
+          "exact_fraction": -2.5997832898038437e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.2724257433478265e-15,
+          "curl_norm": 1.0010491418748975,
+          "ipr": 0.03405366475995394,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.002099384448473,
+          "exact_fraction": -1.2338036627403675e-18,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 7.319412872472043e-16,
+          "curl_norm": 1.0010491418748981,
+          "ipr": 0.025732779141314034,
+          "support_pattern": "divergence-free z-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.27522291718919006,
+        "exact_fraction": 0.09226925426381964,
+        "coexact_fraction": 0.9077307457361806,
+        "divergence_norm": 0.3416986920026646,
+        "curl_norm": 0.39807652665393733,
+        "ipr": 0.019447540690404372,
+        "support_pattern": "divergence-free x-biased circulation"
+      }
+    },
+    "periodic_n5_flux0": {
+      "label": "periodic_n5_flux0",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 0,
+        "plaquette_angle": 0.0
+      },
+      "face_holonomy_phase": 0.0,
+      "full_spectrum": [
+        -7.503595687200843e-15,
+        -1.3326677738662105e-16,
+        4.855562303194632e-16,
+        1.2504545574329922,
+        1.2504545574329937,
+        1.2504545574329973,
+        1.2504545574329975,
+        1.250454557432998,
+        1.2504545574329982,
+        1.2504545574329982,
+        1.2504545574329984,
+        1.2504545574329986
+      ],
+      "projected_spectrum": [
+        -3.5437088344586505e-15,
+        1.854607675090144e-15,
+        4.1913833833046465e-15,
+        1.2504545574329926,
+        1.2504545574329953,
+        1.2504545574329955,
+        1.2504545574329966,
+        1.250454557432998,
+        1.2504545574329988,
+        1.250454557432999,
+        1.250454557432999,
+        1.2504545574329997
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": -7.503595687200843e-15,
+          "exact_fraction": 1.9497863152814043e-19,
+          "coexact_fraction": 0.9999999999999997,
+          "divergence_norm": 1.2473839509729714e-15,
+          "curl_norm": 1.8919685662140574e-15,
+          "ipr": 0.007904240129758829,
+          "support_pattern": "delocalized harmonic y-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": -1.3326677738662105e-16,
+          "exact_fraction": 8.616127098613826e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.3425336933036048e-15,
+          "curl_norm": 1.7770146626398792e-15,
+          "ipr": 0.007984192182116802,
+          "support_pattern": "delocalized harmonic x-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 4.855562303194632e-16,
+          "exact_fraction": 4.0929985568607535e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 1.4227621466825085e-15,
+          "curl_norm": 1.950734987643435e-15,
+          "ipr": 0.00791988949518939,
+          "support_pattern": "delocalized harmonic z-cycle"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.2504545574329922,
+          "exact_fraction": 0.47421877122713035,
+          "coexact_fraction": 0.5257812287728698,
+          "divergence_norm": 0.7700578054284242,
+          "curl_norm": 0.810842483921357,
+          "ipr": 0.006796710494526259,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.2504545574329937,
+          "exact_fraction": 0.41174161261155956,
+          "coexact_fraction": 0.5882583873884404,
+          "divergence_norm": 0.717540365397611,
+          "curl_norm": 0.8576656583180076,
+          "ipr": 0.009317386668120037,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.2504545574329973,
+          "exact_fraction": 0.3411480526899888,
+          "coexact_fraction": 0.6588519473100113,
+          "divergence_norm": 0.6531386814801192,
+          "curl_norm": 0.9076697748561467,
+          "ipr": 0.01231038744495053,
+          "support_pattern": "mixed z-biased support"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.2504545574329975,
+          "exact_fraction": 0.2825837063319439,
+          "coexact_fraction": 0.7174162936680564,
+          "divergence_norm": 0.5944393017281807,
+          "curl_norm": 0.9471517692502666,
+          "ipr": 0.009113929909275599,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.250454557432998,
+          "exact_fraction": 0.3487552114946434,
+          "coexact_fraction": 0.6512447885053566,
+          "divergence_norm": 0.6603806051376628,
+          "curl_norm": 0.9024145465311448,
+          "ipr": 0.008736793811414787,
+          "support_pattern": "mixed z-biased support"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": -3.5437088344586505e-15,
+          "exact_fraction": 2.5947106241176216e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.0753352135396251e-15,
+          "curl_norm": 3.3556819359092113e-15,
+          "ipr": 0.004095408064640412,
+          "support_pattern": "delocalized harmonic z-cycle"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 1.854607675090144e-15,
+          "exact_fraction": 4.2772213754542734e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 1.0575641865643118e-15,
+          "curl_norm": 3.4579161655506867e-15,
+          "ipr": 0.003282009364051178,
+          "support_pattern": "delocalized harmonic x-cycle"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 4.1913833833046465e-15,
+          "exact_fraction": -2.643505097136508e-18,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 9.75554632780944e-16,
+          "curl_norm": 2.799267539383235e-15,
+          "ipr": 0.006209728663273403,
+          "support_pattern": "delocalized harmonic y-cycle"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 1.2504545574329926,
+          "exact_fraction": 4.5597897079905104e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 1.0555250812237076e-15,
+          "curl_norm": 1.1182372545363524,
+          "ipr": 0.005784911137843575,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 1.2504545574329953,
+          "exact_fraction": 1.0716261350406202e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 1.1103125178353957e-15,
+          "curl_norm": 1.1182372545363528,
+          "ipr": 0.005757802314040052,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 1.2504545574329955,
+          "exact_fraction": 2.3412465111041556e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 9.451303677650158e-16,
+          "curl_norm": 1.118237254536352,
+          "ipr": 0.00737180421403323,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 1.2504545574329966,
+          "exact_fraction": 3.2997191067781914e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 1.0479179070318243e-15,
+          "curl_norm": 1.1182372545363526,
+          "ipr": 0.008247602666875515,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 1.250454557432998,
+          "exact_fraction": -1.4545847903082398e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 1.0442719970213213e-15,
+          "curl_norm": 1.1182372545363515,
+          "ipr": 0.00665799561030294,
+          "support_pattern": "divergence-free y-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": -7.503595687200843e-15,
+        "exact_fraction": 1.9497863152814043e-19,
+        "coexact_fraction": 0.9999999999999997,
+        "divergence_norm": 1.2473839509729714e-15,
+        "curl_norm": 1.8919685662140574e-15,
+        "ipr": 0.007904240129758829,
+        "support_pattern": "delocalized harmonic y-cycle"
+      }
+    },
+    "periodic_n5_flux1": {
+      "label": "periodic_n5_flux1",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 1,
+        "plaquette_angle": 0.25132741228718347
+      },
+      "face_holonomy_phase": 0.25132741228718347,
+      "full_spectrum": [
+        0.013057252371157072,
+        0.11128701055949305,
+        0.22033597533111984,
+        0.22152763015529256,
+        0.3569927803377899,
+        0.4306518167875035,
+        0.484964057378137,
+        0.48496405737813786,
+        0.6294212857410246,
+        0.6471421462062253,
+        0.6505986484716418,
+        0.6505986484716448
+      ],
+      "projected_spectrum": [
+        0.02735930358029002,
+        0.22033597533111798,
+        0.24347515776609732,
+        0.4402928471975217,
+        0.6471421462062268,
+        0.7288927554447612,
+        0.8169118707579401,
+        0.8169118707579426,
+        0.9127550878268013,
+        0.9127550878268041,
+        1.0004742788978132,
+        1.046616148055062
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.013057252371157072,
+          "exact_fraction": 0.024525128800695004,
+          "coexact_fraction": 0.9754748711993051,
+          "divergence_norm": 0.0849896559388266,
+          "curl_norm": 0.07638069621676485,
+          "ipr": 0.012287178398675424,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.11128701055949305,
+          "exact_fraction": 0.19437090215231692,
+          "coexact_fraction": 0.8056290978476833,
+          "divergence_norm": 0.23444782080516333,
+          "curl_norm": 0.23732094277413548,
+          "ipr": 0.008117437815419702,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.22033597533111984,
+          "exact_fraction": -1.6225421414132944e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 5.676162299631958e-14,
+          "curl_norm": 0.4693995902545278,
+          "ipr": 0.009510902173700068,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.22152763015529256,
+          "exact_fraction": 0.09657918110909856,
+          "coexact_fraction": 0.9034208188909015,
+          "divergence_norm": 0.3099479668290651,
+          "curl_norm": 0.3542031733536865,
+          "ipr": 0.008442005279158317,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.3569927803377899,
+          "exact_fraction": 0.4660214115916105,
+          "coexact_fraction": 0.5339785884083904,
+          "divergence_norm": 0.5087844939751444,
+          "curl_norm": 0.31325886903365746,
+          "ipr": 0.010377039145183677,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.4306518167875035,
+          "exact_fraction": 0.25792640592421395,
+          "coexact_fraction": 0.7420735940757861,
+          "divergence_norm": 0.4435917667973104,
+          "curl_norm": 0.4836095131582358,
+          "ipr": 0.006292586086024362,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.484964057378137,
+          "exact_fraction": 0.12256987207035222,
+          "coexact_fraction": 0.8774301279296475,
+          "divergence_norm": 0.4873452996590417,
+          "curl_norm": 0.49745212460937066,
+          "ipr": 0.007610038006611309,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.48496405737813786,
+          "exact_fraction": 0.12256987207035265,
+          "coexact_fraction": 0.8774301279296475,
+          "divergence_norm": 0.4873452996590421,
+          "curl_norm": 0.49745212460937005,
+          "ipr": 0.007610038006611305,
+          "support_pattern": "divergence-free y-biased circulation"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.02735930358029002,
+          "exact_fraction": -1.6005578202607472e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 1.1043230609282136e-15,
+          "curl_norm": 0.1654064798618534,
+          "ipr": 0.014742477784892759,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.22033597533111798,
+          "exact_fraction": 1.7437756446986076e-19,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 1.2120309859179964e-15,
+          "curl_norm": 0.4693995902545279,
+          "ipr": 0.009510902173700077,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.24347515776609732,
+          "exact_fraction": -9.809151317247483e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.517922184171177e-16,
+          "curl_norm": 0.4934320193968915,
+          "ipr": 0.010194845168088303,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.4402928471975217,
+          "exact_fraction": 9.317684615689403e-19,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.0260475668360444e-15,
+          "curl_norm": 0.663545663234654,
+          "ipr": 0.007930154099295806,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.6471421462062268,
+          "exact_fraction": 2.6241555692305224e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.1107450468779215e-15,
+          "curl_norm": 0.8044514567121047,
+          "ipr": 0.015601911584630758,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.7288927554447612,
+          "exact_fraction": 1.4968018988487437e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.0635429828659989e-15,
+          "curl_norm": 0.8537521627760382,
+          "ipr": 0.008751134958054118,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.8169118707579401,
+          "exact_fraction": 3.3900589891335413e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.193536932754672e-16,
+          "curl_norm": 0.9038317712704849,
+          "ipr": 0.00991930927819152,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.8169118707579426,
+          "exact_fraction": -3.2257045288303215e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.680895522904085e-16,
+          "curl_norm": 0.9038317712704849,
+          "ipr": 0.009919309278191549,
+          "support_pattern": "divergence-free y-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.013057252371157072,
+        "exact_fraction": 0.024525128800695004,
+        "coexact_fraction": 0.9754748711993051,
+        "divergence_norm": 0.0849896559388266,
+        "curl_norm": 0.07638069621676485,
+        "ipr": 0.012287178398675424,
+        "support_pattern": "mixed x-biased support"
+      }
+    },
+    "periodic_n5_flux2": {
+      "label": "periodic_n5_flux2",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 2,
+        "plaquette_angle": 0.5026548245743669
+      },
+      "face_holonomy_phase": 0.5026548245743669,
+      "full_spectrum": [
+        0.018836665070685626,
+        0.10079804190284308,
+        0.1131994168717705,
+        0.18089243561926185,
+        0.3675999254911308,
+        0.42675449165591006,
+        0.4267593736626871,
+        0.46675160442548874,
+        0.49438511138146896,
+        0.49438511138147323,
+        0.581703604533962,
+        0.581703604533965
+      ],
+      "projected_spectrum": [
+        0.035496351862464505,
+        0.1320039266717437,
+        0.3798646953751744,
+        0.4267544916559103,
+        0.42675937366268873,
+        0.6091577151450152,
+        0.6990154439653604,
+        0.7033861690386348,
+        0.7033861690386363,
+        0.7685206966110499,
+        0.7685206966110507,
+        0.8661021952778971
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.018836665070685626,
+          "exact_fraction": 0.016299437017919003,
+          "coexact_fraction": 0.983700562982081,
+          "divergence_norm": 0.09676601175509547,
+          "curl_norm": 0.09732935857026252,
+          "ipr": 0.0143358363997991,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.10079804190284308,
+          "exact_fraction": 0.06102371308384967,
+          "coexact_fraction": 0.9389762869161501,
+          "divergence_norm": 0.19233397000410532,
+          "curl_norm": 0.2525978738732844,
+          "ipr": 0.0071753463366217,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.1131994168717705,
+          "exact_fraction": 0.1709235822118133,
+          "coexact_fraction": 0.8290764177881863,
+          "divergence_norm": 0.2902857825736753,
+          "curl_norm": 0.1700987398758638,
+          "ipr": 0.009380817615630156,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.18089243561926185,
+          "exact_fraction": 0.09503112075542666,
+          "coexact_fraction": 0.9049688792445734,
+          "divergence_norm": 0.2629258999901437,
+          "curl_norm": 0.33430884931995736,
+          "ipr": 0.005812268652557253,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.3675999254911308,
+          "exact_fraction": 0.210440404860968,
+          "coexact_fraction": 0.7895595951390321,
+          "divergence_norm": 0.4644224194810999,
+          "curl_norm": 0.3897585685709212,
+          "ipr": 0.00862908663897275,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.42675449165591006,
+          "exact_fraction": -1.0292236866645838e-18,
+          "coexact_fraction": 0.9999999999999996,
+          "divergence_norm": 1.0298928180481183e-14,
+          "curl_norm": 0.6532644882862594,
+          "ipr": 0.01154422317670099,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.4267593736626871,
+          "exact_fraction": 5.731371609986608e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 6.050191200831334e-15,
+          "curl_norm": 0.6532682248989967,
+          "ipr": 0.011528566219075352,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.46675160442548874,
+          "exact_fraction": 0.1855814845795057,
+          "coexact_fraction": 0.8144185154204939,
+          "divergence_norm": 0.43051739359624436,
+          "curl_norm": 0.5304775002171022,
+          "ipr": 0.007895828494466729,
+          "support_pattern": "divergence-free x-biased circulation"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.035496351862464505,
+          "exact_fraction": -1.2988538333778991e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.462747214269488e-16,
+          "curl_norm": 0.18840475541361007,
+          "ipr": 0.016747121227094174,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.1320039266717437,
+          "exact_fraction": 4.407099899939583e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.0333206727802638e-15,
+          "curl_norm": 0.36332344635564917,
+          "ipr": 0.009343823450239321,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.3798646953751744,
+          "exact_fraction": -2.484477124147119e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 1.1519911675779568e-15,
+          "curl_norm": 0.616331643983314,
+          "ipr": 0.006509424534695269,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.4267544916559103,
+          "exact_fraction": -1.3171385595119601e-19,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.5183679037094376e-15,
+          "curl_norm": 0.6532644882862594,
+          "ipr": 0.011544223176700986,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.42675937366268873,
+          "exact_fraction": -5.932254593284819e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.0237146192609205e-15,
+          "curl_norm": 0.6532682248989968,
+          "ipr": 0.011528566219075357,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.6091577151450152,
+          "exact_fraction": -1.3278646039680124e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 1.076991942174424e-15,
+          "curl_norm": 0.7804855637005818,
+          "ipr": 0.007375428563851436,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.6990154439653604,
+          "exact_fraction": -5.841222933176099e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.667520626097933e-16,
+          "curl_norm": 0.8360714347263389,
+          "ipr": 0.008506236310423422,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.7033861690386348,
+          "exact_fraction": 2.3807393500574332e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 8.520363091466864e-16,
+          "curl_norm": 0.8386812082302991,
+          "ipr": 0.00900798734714899,
+          "support_pattern": "divergence-free z-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.018836665070685626,
+        "exact_fraction": 0.016299437017919003,
+        "coexact_fraction": 0.983700562982081,
+        "divergence_norm": 0.09676601175509547,
+        "curl_norm": 0.09732935857026252,
+        "ipr": 0.0143358363997991,
+        "support_pattern": "divergence-free x-biased circulation"
+      }
+    },
+    "periodic_n5_flux3": {
+      "label": "periodic_n5_flux3",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 3,
+        "plaquette_angle": 0.7539822368615503
+      },
+      "face_holonomy_phase": 0.7539822368615503,
+      "full_spectrum": [
+        0.02417882294376397,
+        0.13541692132015143,
+        0.1730103011317035,
+        0.18432966580019283,
+        0.22590746530599062,
+        0.4280451117384845,
+        0.5794771913571937,
+        0.579477191357198,
+        0.6191293666963931,
+        0.6195770302620169,
+        0.6197409472632679,
+        0.7006584141534767
+      ],
+      "projected_spectrum": [
+        0.04109398760604993,
+        0.2102318267598223,
+        0.2300831623081967,
+        0.6191293666963935,
+        0.6195770302620158,
+        0.6197409472632678,
+        0.697296640942304,
+        0.8287758492249336,
+        0.8599951760528481,
+        0.8599951760528495,
+        0.8896689292950395,
+        0.8896689292950403
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.02417882294376397,
+          "exact_fraction": 0.012383801214425158,
+          "coexact_fraction": 0.9876161987855752,
+          "divergence_norm": 0.10181811260172537,
+          "curl_norm": 0.11752401835363398,
+          "ipr": 0.005644654204985091,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.13541692132015143,
+          "exact_fraction": 0.10293150947772427,
+          "coexact_fraction": 0.8970684905222761,
+          "divergence_norm": 0.2770735569718343,
+          "curl_norm": 0.24217176827022122,
+          "ipr": 0.006344624773759134,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.1730103011317035,
+          "exact_fraction": 0.14291057899197065,
+          "coexact_fraction": 0.857089421008029,
+          "divergence_norm": 0.3242953430561441,
+          "curl_norm": 0.26046656523208467,
+          "ipr": 0.0094741308196177,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.18432966580019283,
+          "exact_fraction": 0.054043584452880246,
+          "coexact_fraction": 0.9459564155471198,
+          "divergence_norm": 0.22719288032089668,
+          "curl_norm": 0.3642980386053244,
+          "ipr": 0.01089996565278555,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.22590746530599062,
+          "exact_fraction": 0.20570096445838068,
+          "coexact_fraction": 0.7942990355416194,
+          "divergence_norm": 0.3866277881666469,
+          "curl_norm": 0.2764532848843651,
+          "ipr": 0.009894215587562103,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.4280451117384845,
+          "exact_fraction": 0.22589056291942522,
+          "coexact_fraction": 0.7741094370805748,
+          "divergence_norm": 0.4392998685045672,
+          "curl_norm": 0.48483062740543975,
+          "ipr": 0.007791809308294483,
+          "support_pattern": "mixed x-biased support"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.5794771913571937,
+          "exact_fraction": 0.12225770848507837,
+          "coexact_fraction": 0.8777422915149219,
+          "divergence_norm": 0.5051634295464298,
+          "curl_norm": 0.5694621153387488,
+          "ipr": 0.015025507605897995,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.579477191357198,
+          "exact_fraction": 0.12225770848507861,
+          "coexact_fraction": 0.8777422915149209,
+          "divergence_norm": 0.5051634295464305,
+          "curl_norm": 0.5694621153387487,
+          "ipr": 0.015025507605898046,
+          "support_pattern": "divergence-free x-biased circulation"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.04109398760604993,
+          "exact_fraction": -1.754018755781808e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 1.2264745892354882e-15,
+          "curl_norm": 0.20271652030866086,
+          "ipr": 0.0055826878153008045,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.2102318267598223,
+          "exact_fraction": -2.353142623019805e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 1.061351556348914e-15,
+          "curl_norm": 0.45851044345774866,
+          "ipr": 0.011955684333056375,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.2300831623081967,
+          "exact_fraction": -3.510541972445674e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.1136144627024686e-15,
+          "curl_norm": 0.4796698471951265,
+          "ipr": 0.006065471010233405,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.6191293666963935,
+          "exact_fraction": -2.0066671077058862e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.3408107791742183e-15,
+          "curl_norm": 0.7868477404786738,
+          "ipr": 0.013994640120311586,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.6195770302620158,
+          "exact_fraction": -2.8516912853116686e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.0326934586269205e-15,
+          "curl_norm": 0.7871321555253717,
+          "ipr": 0.010193389866196622,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.6197409472632678,
+          "exact_fraction": -2.3022217438495902e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 9.835251465875186e-16,
+          "curl_norm": 0.7872362715622733,
+          "ipr": 0.011949704555451215,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.697296640942304,
+          "exact_fraction": -1.798116969431572e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 1.1393259409678823e-15,
+          "curl_norm": 0.8350428976659239,
+          "ipr": 0.0065242623330607355,
+          "support_pattern": "divergence-free y-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.8287758492249336,
+          "exact_fraction": 1.432446426479167e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.1630923007169701e-15,
+          "curl_norm": 0.9103712699909492,
+          "ipr": 0.010633789538320318,
+          "support_pattern": "divergence-free y-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.02417882294376397,
+        "exact_fraction": 0.012383801214425158,
+        "coexact_fraction": 0.9876161987855752,
+        "divergence_norm": 0.10181811260172537,
+        "curl_norm": 0.11752401835363398,
+        "ipr": 0.005644654204985091,
+        "support_pattern": "divergence-free x-biased circulation"
+      }
+    },
+    "periodic_n5_flux4": {
+      "label": "periodic_n5_flux4",
+      "config": {
+        "nodes": 125,
+        "edges": 375,
+        "faces": 375,
+        "n_side": 5,
+        "flux_quanta": 4,
+        "plaquette_angle": 1.0053096491487339
+      },
+      "face_holonomy_phase": 1.0053096491487339,
+      "full_spectrum": [
+        0.03235118346883288,
+        0.09000389779596785,
+        0.185357436046882,
+        0.24886351340160226,
+        0.2681874679543864,
+        0.3179667793266876,
+        0.40197259017635456,
+        0.5540491403351574,
+        0.7262434876645785,
+        0.7262434876645804,
+        0.7842343312485047,
+        0.7842343312485066
+      ],
+      "projected_spectrum": [
+        0.05833501662862218,
+        0.18779010487353687,
+        0.2891789803255933,
+        0.319895978380305,
+        0.7939443639259643,
+        0.7984463214802073,
+        0.7984564228454604,
+        0.8030185289578252,
+        0.8806843706333727,
+        0.9509548885374072,
+        0.95498319766695,
+        0.9549831976669508
+      ],
+      "full_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.03235118346883288,
+          "exact_fraction": 0.013028076223148298,
+          "coexact_fraction": 0.9869719237768515,
+          "divergence_norm": 0.12257600879989884,
+          "curl_norm": 0.13162942503681035,
+          "ipr": 0.014456728177532885,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.09000389779596785,
+          "exact_fraction": 0.055869507110893675,
+          "coexact_fraction": 0.9441304928891062,
+          "divergence_norm": 0.22882528122816256,
+          "curl_norm": 0.19401775296817442,
+          "ipr": 0.008901977146890745,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.185357436046882,
+          "exact_fraction": 0.07583075205616671,
+          "coexact_fraction": 0.9241692479438333,
+          "divergence_norm": 0.2834203474643449,
+          "curl_norm": 0.324083851325658,
+          "ipr": 0.007161497631737351,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.24886351340160226,
+          "exact_fraction": 0.22535223995939918,
+          "coexact_fraction": 0.7746477600406007,
+          "divergence_norm": 0.4439527921004544,
+          "curl_norm": 0.22752896911780504,
+          "ipr": 0.012153085613256842,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.2681874679543864,
+          "exact_fraction": 0.02669167776281116,
+          "coexact_fraction": 0.9733083222371891,
+          "divergence_norm": 0.227936494446163,
+          "curl_norm": 0.46500798106481805,
+          "ipr": 0.015173601581790186,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.3179667793266876,
+          "exact_fraction": 0.22938423312985767,
+          "coexact_fraction": 0.7706157668701424,
+          "divergence_norm": 0.45704927153481845,
+          "curl_norm": 0.3302616276774798,
+          "ipr": 0.013620521666498086,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.40197259017635456,
+          "exact_fraction": 0.2171446937087327,
+          "coexact_fraction": 0.7828553062912675,
+          "divergence_norm": 0.4599256167136156,
+          "curl_norm": 0.4363954826381167,
+          "ipr": 0.007006491739454365,
+          "support_pattern": "mixed y-biased support"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.5540491403351574,
+          "exact_fraction": 0.1956507611878631,
+          "coexact_fraction": 0.8043492388121372,
+          "divergence_norm": 0.4491968781955012,
+          "curl_norm": 0.5935244771317987,
+          "ipr": 0.007910354172914198,
+          "support_pattern": "divergence-free x-biased circulation"
+        }
+      ],
+      "projected_modes": [
+        {
+          "mode_index": 0,
+          "eigenvalue": 0.05833501662862218,
+          "exact_fraction": 1.3884132882246738e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 9.149839309967546e-16,
+          "curl_norm": 0.24152643049700295,
+          "ipr": 0.013774025689836706,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 1,
+          "eigenvalue": 0.18779010487353687,
+          "exact_fraction": 2.2186889153638545e-17,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 1.2203468056127451e-15,
+          "curl_norm": 0.43334755667193864,
+          "ipr": 0.010256049140567563,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.2891789803255933,
+          "exact_fraction": 2.6204493942813534e-17,
+          "coexact_fraction": 1.0000000000000002,
+          "divergence_norm": 1.1331625186203675e-15,
+          "curl_norm": 0.5377536427822646,
+          "ipr": 0.007346622954656381,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.319895978380305,
+          "exact_fraction": 3.9203505715277166e-17,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 1.3024479844758335e-15,
+          "curl_norm": 0.5655934744852587,
+          "ipr": 0.010992351099469593,
+          "support_pattern": "divergence-free x-biased circulation"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.7939443639259643,
+          "exact_fraction": -9.691233534612363e-18,
+          "coexact_fraction": 0.9999999999999998,
+          "divergence_norm": 1.3265759522228813e-15,
+          "curl_norm": 0.8910355570491924,
+          "ipr": 0.017371446038282327,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.7984463214802073,
+          "exact_fraction": -1.0653004666006404e-17,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 9.410594383911307e-16,
+          "curl_norm": 0.8935582361996386,
+          "ipr": 0.009920391679891002,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 6,
+          "eigenvalue": 0.7984564228454604,
+          "exact_fraction": -5.156816353901868e-18,
+          "coexact_fraction": 0.9999999999999999,
+          "divergence_norm": 1.0458685863530051e-15,
+          "curl_norm": 0.8935638885079576,
+          "ipr": 0.011077236243193792,
+          "support_pattern": "divergence-free z-biased circulation"
+        },
+        {
+          "mode_index": 7,
+          "eigenvalue": 0.8030185289578252,
+          "exact_fraction": 1.3094852676347886e-18,
+          "coexact_fraction": 1.0,
+          "divergence_norm": 9.120460292763647e-16,
+          "curl_norm": 0.8961130112646647,
+          "ipr": 0.016026190658069064,
+          "support_pattern": "divergence-free z-biased circulation"
+        }
+      ],
+      "selected_branch": {
+        "mode_index": 0,
+        "eigenvalue": 0.03235118346883288,
+        "exact_fraction": 0.013028076223148298,
+        "coexact_fraction": 0.9869719237768515,
+        "divergence_norm": 0.12257600879989884,
+        "curl_norm": 0.13162942503681035,
+        "ipr": 0.014456728177532885,
+        "support_pattern": "divergence-free x-biased circulation"
+      }
+    }
+  },
+  "verdict": {
+    "moves_continuously_under_flux": false,
+    "stays_mostly_coexact": true,
+    "robust_across_sizes": true,
+    "still_harmonic_or_topological": false,
+    "low_branch_records": {
+      "4": [
+        {
+          "flux_quanta": 0,
+          "plaquette_angle": 0.0,
+          "eigenvalue": -4.500600535813283e-15,
+          "coexact_fraction": 1.0
+        },
+        {
+          "flux_quanta": 1,
+          "plaquette_angle": 0.39269908169872414,
+          "eigenvalue": 0.01411017397974383,
+          "coexact_fraction": 0.9798280841826531
+        },
+        {
+          "flux_quanta": 2,
+          "plaquette_angle": 0.7853981633974483,
+          "eigenvalue": 0.1718047422179909,
+          "coexact_fraction": 0.9228426432895674
+        },
+        {
+          "flux_quanta": 3,
+          "plaquette_angle": 1.1780972450961724,
+          "eigenvalue": 0.04919249521442061,
+          "coexact_fraction": 0.9821411682376351
+        },
+        {
+          "flux_quanta": 4,
+          "plaquette_angle": 1.5707963267948966,
+          "eigenvalue": 0.27522291718919006,
+          "coexact_fraction": 0.9077307457361806
+        }
+      ],
+      "5": [
+        {
+          "flux_quanta": 0,
+          "plaquette_angle": 0.0,
+          "eigenvalue": -7.503595687200843e-15,
+          "coexact_fraction": 0.9999999999999997
+        },
+        {
+          "flux_quanta": 1,
+          "plaquette_angle": 0.25132741228718347,
+          "eigenvalue": 0.013057252371157072,
+          "coexact_fraction": 0.9754748711993051
+        },
+        {
+          "flux_quanta": 2,
+          "plaquette_angle": 0.5026548245743669,
+          "eigenvalue": 0.018836665070685626,
+          "coexact_fraction": 0.983700562982081
+        },
+        {
+          "flux_quanta": 3,
+          "plaquette_angle": 0.7539822368615503,
+          "eigenvalue": 0.02417882294376397,
+          "coexact_fraction": 0.9876161987855752
+        },
+        {
+          "flux_quanta": 4,
+          "plaquette_angle": 1.0053096491487339,
+          "eigenvalue": 0.03235118346883288,
+          "coexact_fraction": 0.9869719237768515
+        }
+      ]
+    }
+  },
+  "observation": "the low L1 branch stays mostly coexact across the scan, but its ordering under flux is not yet a single clean smooth band",
+  "conclusion": "the scan shows some departure from pure torus-cycle behavior, but no isolated propagating Maxwell-like band is established yet",
+  "plots": [
+    "plots/periodic_twisted_l1_flux_scan_spectral_flow.png",
+    "plots/periodic_twisted_l1_flux_scan_fractions.png",
+    "plots/periodic_twisted_l1_flux_scan_divergence.png",
+    "plots/periodic_twisted_l1_flux_scan_curl.png",
+    "plots/periodic_twisted_l1_flux_scan_persistence.png",
+    "plots/periodic_twisted_l1_flux_scan_open_vs_periodic.png",
+    "plots/periodic_twisted_l1_flux_scan_modes.png"
+  ]
+}

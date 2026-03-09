@@ -15,6 +15,12 @@
     "flux_quanta": [0, 1],
     "open_compare_side": 5
   },
+  "periodic_twisted_l1_flux_scan": {
+    "sizes": [4, 5],
+    "flux_quanta": [0, 1, 2, 3, 4],
+    "open_compare_sizes": [4, 5],
+    "low_modes": 4
+  },
   "sweep": {
     "epsilon_values": [0.12, 0.2, 0.28],
     "node_values": [216, 343],

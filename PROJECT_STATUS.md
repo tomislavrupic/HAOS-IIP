@@ -37,6 +37,12 @@ The current caution remains:
 - the observed family is still best interpreted as harmonic or topological edge structure plus flux-lifted circulation modes
 - no clean Maxwell-like propagating transverse band has been isolated yet
 
+The wider periodic flux scan sharpens this further:
+
+- across `m = 0, 1, 2, 3, 4`, the low periodic branch stays mostly coexact for `n = 4, 5`
+- the branch remains flux-responsive and robust across those tested sizes
+- but the branch ordering is not yet one clean smooth band, especially on the smaller lattice
+
 ## FILES_MOVED
 
 ### Foundations -> `docs/notes/foundations/`
@@ -175,6 +181,6 @@ This loads shared parameters, runs the starter simulations, stores structured JS
 
 The next technical target should be:
 
-1. widen the periodic `L1` flux scan beyond the first nontrivial holonomy sector
-2. introduce punctures or controlled defects to separate torus-cycle modes from local transverse circulation
+1. introduce punctures or controlled defects to separate torus-cycle modes from local transverse circulation
+2. extend the periodic scan to larger lattices and check whether the low coexact branch smooths into a cleaner band
 3. only after that, build the minimal Dirac-type branch `D_H`

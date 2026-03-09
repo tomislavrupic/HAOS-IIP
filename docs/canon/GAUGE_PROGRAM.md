@@ -85,6 +85,13 @@ $$
 
 `[E]` This clears the main falsification test for the current edge operator: the low periodic branch is not reducible to scalar-gradient leakage.
 
+`[E]` The wider periodic flux scan now shows:
+
+- across `m = 0, 1, 2, 3, 4`, the low periodic branch stays mostly coexact for the tested sizes `n = 4, 5`
+- the branch remains clearly flux-responsive
+- the `n = 5` flow is smoother than the `n = 4` flow
+- the branch still does not organize into one clean smooth transverse band across the full scan
+
 ## What is still missing
 
 `[O]` The current repository does not yet derive:
@@ -100,6 +107,6 @@ $$
 
 1. widen the flux scan on the periodic/twisted `L1` branch
 2. compare harmonic-cycle modes to puncture or defect-supported circulation modes
-3. continuum-limit checks for `L_theta` and `L1`
-4. compare coexact-projected low modes across larger lattice sizes
+3. compare coexact-projected low modes across larger lattice sizes
+4. continuum-limit checks for `L_theta` and `L1`
 5. test whether any low family remains robustly transverse-like away from the torus-cycle sector

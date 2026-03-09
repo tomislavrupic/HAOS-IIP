@@ -6,3 +6,6 @@ sweep:
 
 periodic_twisted_l1:
 	python3 numerics/simulations/periodic_twisted_l1.py
+
+periodic_twisted_l1_flux_scan:
+	python3 numerics/simulations/periodic_twisted_l1_flux_scan.py
