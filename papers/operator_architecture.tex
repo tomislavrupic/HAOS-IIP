@@ -337,12 +337,7 @@ The $n=5$ branch is cleaner; the $n=4$ branch still shows strong reordering. The
 \item the low branch does not yet organize into one clean smooth transverse band across the full scan.
 \end{enumerate}
 
-A stricter follow-up test now separates the untwisted periodic edge space into exact, harmonic, and coexact sectors and then restricts the twisted operator to the coexact subspace. Current gauge-sector verdict: The present HAOS/IIP edge operator supports a genuine non-scalar flux-responsive branch, but explicit harmonic-vs-coexact separation shows that the lowest modes remain harmonic or mixed topological structure rather than a low coexact vector band. In the current periodic/twisted range, this is a negative Maxwell test. Quantitatively,
-\begin{itemize}
-\item $n=5$, $m=1$: full lowest $0.013057$, harmonic-projected $0.509808$, coexact-projected $0.458457$
-\item $n=4$, $m=1$: full lowest $0.014110$, harmonic-projected $0.611897$, coexact-projected $0.679582$
-\end{itemize}
-So the projected coexact sector exists and is numerically stable, but it does not form the actual low band once harmonic torus cycles are removed.
+Gauge-sector diagnostic result. The periodic/twisted $L_1$ operator produces a genuine non-scalar flux-responsive branch. However, explicit harmonic--coexact separation shows that the lowest modes remain dominated by harmonic or mixed topological structure rather than a low coexact vector band. In the present periodic/twisted range this therefore constitutes a negative Maxwell test. Quantitatively: $n=5$, $m=1$, full lowest $=0.013057$, harmonic-projected $=0.509808$, coexact-projected $=0.458457$; $n=4$, $m=1$, full lowest $=0.014110$, harmonic-projected $=0.611897$, coexact-projected $=0.679582$.
 
 \section{Interpretation}
 The current numerical evidence supports the kinematics of an operator-level vector sector, but not a full gauge theory.
@@ -350,6 +345,8 @@ The current numerical evidence supports the kinematics of an operator-level vect
 The decisive point is the contrast between open and periodic behavior. On the open box, the bottom of $L_1$ is exact dominated and therefore reducible to scalar leakage. On the periodic torus, a low non-exact and divergence-free branch appears and responds to nontrivial holonomy. This is explicit non-scalar structure in the edge operator.
 
 The present implementation also has an important limitation. The earlier divergence-free projector onto $\ker d_{0,A}^*$ mixes harmonic and coexact content on the torus. The explicit Hodge-separation follow-up resolves that ambiguity. After projecting out both the exact sector and the harmonic torus cycles, the coexact sector remains real and numerically stable, but it does not become the actual low band. In the tested cases the coexact floor stays much higher than the mixed full low branch.
+
+The current HAOS/IIP operator stack therefore supports vector-sector kinematics but does not yet produce a propagating Maxwell-like band. The lowest flux-sensitive modes remain tied to harmonic torus structure. Identifying conditions under which the coexact sector becomes the actual low band remains an open problem.
 
 This places the current HAOS-IIP stack close to the kinematic side of lattice gauge theory. The repository already contains
 \begin{enumerate}
@@ -387,10 +384,9 @@ Fifth, the fermion branch remains postponed. A Dirac-type operator $D_H$ is part
 
 The immediate numerical targets are therefore:
 \begin{enumerate}
-\item puncture and defect backgrounds,
-\item larger periodic sizes,
-\item continuum scaling tests for the coexact floor,
-\item only then a Dirac-type lift on the same weighted substrate or a dynamical plaquette-action branch.
+\item periodic lattices with punctures or defects,
+\item larger lattice sizes $n$,
+\item only after this, extension toward Dirac-type operators.
 \end{enumerate}
 
 \section{Conclusion}
