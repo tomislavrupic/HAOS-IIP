@@ -14,8 +14,8 @@
 
 `[O]`
 
-- build weighted edge/Hodge operator `L1`
-- determine whether its low spectrum contains gradient-like and transverse-like families
+- determine whether the low periodic `L1` family can be separated into harmonic/topological and genuinely propagating transverse pieces
+- widen flux scans and defect backgrounds on the current `L1` branch
 - prove or falsify convergence of `L_theta` or `L1` to a covariant continuum operator
 - determine whether any autonomous vector sector exists
 - check whether heat-kernel coefficients contain a usable `F^2` term
@@ -39,7 +39,7 @@
 The strongest current next target is:
 
 ```text
-same kernel -> build L1 on the current weighted substrate -> test for true low vector modes
+same kernel -> widen periodic L1 flux scans and defects -> test whether the low coexact family becomes a true transverse band
 ```
 
-This is the cleanest way to determine whether the current gauge program is only scalar matter in a background connection, or the start of a genuine gauge sector.
+This is the cleanest way to determine whether the current gauge program is only harmonic or topological edge structure, or the start of a genuine propagating gauge sector.

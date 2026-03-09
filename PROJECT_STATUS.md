@@ -12,6 +12,7 @@ The repository has been restructured into a research layout with:
 - reusable starter numerics
 - reproducible orchestration layer
 - one explicit 3D eigenmode experiment preserved under `experiments/`
+- a periodic/twisted `L1` gauge-sector experiment with coexact projection
 
 The theory architecture has now been tightened further:
 
@@ -20,6 +21,21 @@ The theory architecture has now been tightened further:
 - three operator sectors
 
 This replaces the earlier compressed reading that one node Laplacian might explain all sectors directly.
+
+## Current gauge-sector verdict
+
+The periodic/twisted `L1` experiment reveals a low flux-responsive family that remains mostly coexact or divergence-free across the tested lattice sizes.
+
+This clears the main falsification test for the present edge operator:
+
+- the low periodic `L1` branch is not reducible to scalar-gradient leakage
+- the open-box low `L1` branch remains exact-gradient dominated
+- nontrivial plaquette holonomy lifts the periodic zero modes while preserving their mostly coexact character
+
+The current caution remains:
+
+- the observed family is still best interpreted as harmonic or topological edge structure plus flux-lifted circulation modes
+- no clean Maxwell-like propagating transverse band has been isolated yet
 
 ## FILES_MOVED
 
@@ -128,6 +144,7 @@ Created under `numerics/simulations/`:
 - `gauge_modes.py`
 - `hodge_modes.py`
 - `parameter_sweep.py`
+- `periodic_twisted_l1.py`
 
 These are small reusable scripts, separate from experiment-specific code.
 
@@ -158,6 +175,6 @@ This loads shared parameters, runs the starter simulations, stores structured JS
 
 The next technical target should be:
 
-1. compare `L1` modes under flux backgrounds and controlled defects
-2. check whether any low `L1` family remains robustly transverse-like across the sweep
+1. widen the periodic `L1` flux scan beyond the first nontrivial holonomy sector
+2. introduce punctures or controlled defects to separate torus-cycle modes from local transverse circulation
 3. only after that, build the minimal Dirac-type branch `D_H`

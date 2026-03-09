@@ -76,21 +76,30 @@ $$
 
 `[E]` This is explicit connection sensitivity.
 
+`[E]` The periodic/twisted `L1` experiment now shows:
+
+- open-box low `L1` modes collapse into exact gradients
+- periodic low `L1` modes include a mostly coexact or divergence-free family
+- trivial-flux torus cycles lift under nontrivial plaquette holonomy while remaining mostly coexact
+- the same qualitative behavior appears for the tested sizes `n = 4, 5`
+
+`[E]` This clears the main falsification test for the current edge operator: the low periodic branch is not reducible to scalar-gradient leakage.
+
 ## What is still missing
 
 `[O]` The current repository does not yet derive:
 
-- a built weighted `L1` branch
 - a dynamical gauge field from the kernel alone
 - an autonomous massless vector sector
 - a Maxwell-like action term from the same numerics
+- a clean propagating transverse band distinct from harmonic or topological edge modes
 
 ## Immediate next tests
 
 `[O]`
 
-1. build weighted edge/Hodge operator `L1`
-2. continuum-limit checks for `L_theta`
-3. holonomy and flux experiments on irregular 3D graphs
-4. compare gradient-like and transverse-like `L1` low modes
-5. compare pure-gauge and nontrivial-flux backgrounds
+1. widen the flux scan on the periodic/twisted `L1` branch
+2. compare harmonic-cycle modes to puncture or defect-supported circulation modes
+3. continuum-limit checks for `L_theta` and `L1`
+4. compare coexact-projected low modes across larger lattice sizes
+5. test whether any low family remains robustly transverse-like away from the torus-cycle sector
