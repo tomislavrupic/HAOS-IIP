@@ -8,13 +8,13 @@
 
 \title{HAOS-IIP Operator Architecture and Low-Spectrum Results}
 \author{HAOS-IIP Research Stack}
-\date{March 9, 2026}
+\date{March 10, 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This note summarizes the current HAOS-IIP operator program at the level that is now supported by explicit numerics. A single interaction kernel defines a weighted discrete substrate, but different operator lifts act on different field types. The node Laplacian $L_0$ produces the scalar or geometry branch. The edge or Hodge operator $L_1$ produces the first non-scalar branch. The key numerical result is that the low periodic $L_1$ spectrum is not reducible to scalar-gradient leakage: on a cubic $3$-torus with background plaquette holonomy, a low mostly divergence-free branch persists across the tested lattice sizes and responds to flux. The same branch is still best interpreted as flux-deformed harmonic or topological edge structure rather than a clean propagating Maxwell-like band. No claim of emergent photons, full gauge theory, or particle matching is made here.
+This note summarizes the current HAOS-IIP operator program at the level that is now supported by explicit numerics. A single interaction kernel defines a weighted discrete substrate, but different operator lifts act on different field types. The node Laplacian $L_0$ produces the scalar or geometry branch. The edge or Hodge operator $L_1$ produces the first non-scalar branch. The present HAOS/IIP edge operator supports a genuine non-scalar flux-responsive branch, but explicit harmonic-vs-coexact separation shows that the lowest modes remain harmonic or mixed topological structure rather than a low coexact vector band. In the current periodic/twisted range, this is a negative Maxwell test. No claim of emergent photons, full gauge theory, or particle matching is made here.
 \end{abstract}
 
 \section{Introduction}
@@ -337,14 +337,19 @@ The $n=5$ branch is cleaner; the $n=4$ branch still shows strong reordering. The
 \item the low branch does not yet organize into one clean smooth transverse band across the full scan.
 \end{enumerate}
 
+A stricter follow-up test now separates the untwisted periodic edge space into exact, harmonic, and coexact sectors and then restricts the twisted operator to the coexact subspace. Current gauge-sector verdict: The present HAOS/IIP edge operator supports a genuine non-scalar flux-responsive branch, but explicit harmonic-vs-coexact separation shows that the lowest modes remain harmonic or mixed topological structure rather than a low coexact vector band. In the current periodic/twisted range, this is a negative Maxwell test. Quantitatively,
+\begin{itemize}
+\item $n=5$, $m=1$: full lowest $0.013057$, harmonic-projected $0.509808$, coexact-projected $0.458457$
+\item $n=4$, $m=1$: full lowest $0.014110$, harmonic-projected $0.611897$, coexact-projected $0.679582$
+\end{itemize}
+So the projected coexact sector exists and is numerically stable, but it does not form the actual low band once harmonic torus cycles are removed.
+
 \section{Interpretation}
 The current numerical evidence supports the kinematics of an operator-level vector sector, but not a full gauge theory.
 
 The decisive point is the contrast between open and periodic behavior. On the open box, the bottom of $L_1$ is exact dominated and therefore reducible to scalar leakage. On the periodic torus, a low non-exact and divergence-free branch appears and responds to nontrivial holonomy. This is explicit non-scalar structure in the edge operator.
 
-The present implementation also has an important limitation. The reported low-sector fraction is computed using projection onto $\ker d_{0,A}^*$, that is, the divergence-free subspace. On a torus this subspace contains both harmonic and coexact components. Accordingly, the current numerics do not yet isolate a purely coexact propagating band.
-
-At the same time, the present branch is not yet a clean Maxwell-like propagating band. In the trivial-flux case, the lowest modes are harmonic torus cycles. Under flux, those zero modes lift into small positive eigenvalues and develop circulation structure, but the low branch is still best described as flux-deformed harmonic or topological edge structure rather than a separated transverse continuum family.
+The present implementation also has an important limitation. The earlier divergence-free projector onto $\ker d_{0,A}^*$ mixes harmonic and coexact content on the torus. The explicit Hodge-separation follow-up resolves that ambiguity. After projecting out both the exact sector and the harmonic torus cycles, the coexact sector remains real and numerically stable, but it does not become the actual low band. In the tested cases the coexact floor stays much higher than the mixed full low branch.
 
 This places the current HAOS-IIP stack close to the kinematic side of lattice gauge theory. The repository already contains
 \begin{enumerate}
@@ -363,18 +368,18 @@ What it does not yet contain is the dynamical part of a gauge theory:
 
 The correct reading is therefore limited but meaningful:
 \begin{quote}
-The repository now contains operator-level evidence for a low vector-like branch in $L_1$. That branch is mostly divergence free and flux responsive on topologically nontrivial substrates, but it is not yet a clean emergent photon sector or a dynamical gauge field.
+The repository now contains operator-level evidence for a non-scalar vector-like branch in $L_1$. That branch is flux responsive on topologically nontrivial substrates, but explicit Hodge separation shows that the lowest modes remain harmonic or mixed topological structure rather than a low coexact vector band.
 \end{quote}
 This distinction matters. The numerics now justify talking about a non-scalar edge sector. They do not justify talking about emergent photons, a derived Maxwell action, or physical couplings.
 
 \section{Open Problems}
 The present operator architecture is incomplete in several concrete ways.
 
-First, the periodic low branch must be separated more cleanly into harmonic, coexact, and eventually propagating components. The current diagnostics establish non-scalar structure, but they do not yet isolate a smooth transverse band.
+First, the explicit Hodge split has now been implemented, and the result is a negative Maxwell test in the current range: the coexact floor does not descend into the actual low band. The next problem is therefore not to redefine the decomposition, but to find out whether the spectrum can be reorganized so that local circulation modes descend below the harmonic or mixed topological floor.
 
-Second, the next technical step is to refine the Hodge-sector decomposition by separating harmonic and coexact subspaces explicitly rather than using only the divergence-free projector onto $\ker d_{0,A}^*$. Only after this separation is numerically stable should the program broaden toward defect-localized circulation modes or a dynamical plaquette action for the link variables.
+Second, the periodic torus is not sufficient by itself. Punctures and controlled defect backgrounds are needed to break the dominance of global torus cycles and test whether more local vector excitations appear lower in the spectrum.
 
-Third, the periodic torus is not sufficient by itself. Larger lattice sizes, punctures, and defect backgrounds are needed to test whether the low divergence-free family remains delocalized, becomes localized around topological structure, or reorganizes into a more continuum-like circulation sector.
+Third, larger lattice sizes are required to determine whether the coexact floor moves down toward a cleaner band or simply stabilizes as a higher sector.
 
 Fourth, the relation between the phase-dressed scalar bridge $L_\theta$ and the edge branch $L_{1,A}$ still needs continuum control. At present, the code demonstrates connection sensitivity and flux response, but not a derivation of a dynamical gauge field from the kernel alone.
 
@@ -382,10 +387,9 @@ Fifth, the fermion branch remains postponed. A Dirac-type operator $D_H$ is part
 
 The immediate numerical targets are therefore:
 \begin{enumerate}
-\item more explicit harmonic versus coexact separation,
-\item larger periodic flux scans,
 \item puncture and defect backgrounds,
-\item continuum scaling tests for the low edge branch,
+\item larger periodic sizes,
+\item continuum scaling tests for the coexact floor,
 \item only then a Dirac-type lift on the same weighted substrate or a dynamical plaquette-action branch.
 \end{enumerate}
 

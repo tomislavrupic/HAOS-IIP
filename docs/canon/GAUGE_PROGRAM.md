@@ -92,6 +92,13 @@ $$
 - the `n = 5` flow is smoother than the `n = 4` flow
 - the branch still does not organize into one clean smooth transverse band across the full scan
 
+`[E]` Current gauge-sector verdict:
+
+The present HAOS/IIP edge operator supports a genuine non-scalar flux-responsive branch, but explicit harmonic-vs-coexact separation shows that the lowest modes remain harmonic or mixed topological structure rather than a low coexact vector band. In the current periodic/twisted range, this is a negative Maxwell test.
+
+- `n = 5`, `m = 1`: full lowest `0.013057`, harmonic-projected `0.509808`, coexact-projected `0.458457`
+- `n = 4`, `m = 1`: full lowest `0.014110`, harmonic-projected `0.611897`, coexact-projected `0.679582`
+
 ## What is still missing
 
 `[O]` The current repository does not yet derive:
@@ -99,14 +106,15 @@ $$
 - a dynamical gauge field from the kernel alone
 - an autonomous massless vector sector
 - a Maxwell-like action term from the same numerics
+- a low coexact vector band distinct from harmonic or topological edge modes
 - a clean propagating transverse band distinct from harmonic or topological edge modes
 
 ## Immediate next tests
 
 `[O]`
 
-1. widen the flux scan on the periodic/twisted `L1` branch
-2. compare harmonic-cycle modes to puncture or defect-supported circulation modes
-3. compare coexact-projected low modes across larger lattice sizes
-4. continuum-limit checks for `L_theta` and `L1`
-5. test whether any low family remains robustly transverse-like away from the torus-cycle sector
+1. introduce punctures or defects to test whether local circulation modes descend below the harmonic or mixed topological floor
+2. compare coexact-projected low modes across larger lattice sizes
+3. continuum-limit checks for `L_theta` and `L1`
+4. test whether any low family remains robustly transverse-like away from the torus-cycle sector
+5. only after that, revisit any Dirac-type lift

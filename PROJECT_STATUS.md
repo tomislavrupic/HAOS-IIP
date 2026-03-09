@@ -1,6 +1,6 @@
 # PROJECT_STATUS
 
-Date: March 9, 2026
+Date: March 10, 2026
 
 ## Status summary
 
@@ -24,24 +24,10 @@ This replaces the earlier compressed reading that one node Laplacian might expla
 
 ## Current gauge-sector verdict
 
-The periodic/twisted `L1` experiment reveals a low flux-responsive family that remains mostly coexact or divergence-free across the tested lattice sizes.
+The present HAOS/IIP edge operator supports a genuine non-scalar flux-responsive branch, but explicit harmonic-vs-coexact separation shows that the lowest modes remain harmonic or mixed topological structure rather than a low coexact vector band. In the current periodic/twisted range, this is a negative Maxwell test.
 
-This clears the main falsification test for the present edge operator:
-
-- the low periodic `L1` branch is not reducible to scalar-gradient leakage
-- the open-box low `L1` branch remains exact-gradient dominated
-- nontrivial plaquette holonomy lifts the periodic zero modes while preserving their mostly coexact character
-
-The current caution remains:
-
-- the observed family is still best interpreted as harmonic or topological edge structure plus flux-lifted circulation modes
-- no clean Maxwell-like propagating transverse band has been isolated yet
-
-The wider periodic flux scan sharpens this further:
-
-- across `m = 0, 1, 2, 3, 4`, the low periodic branch stays mostly coexact for `n = 4, 5`
-- the branch remains flux-responsive and robust across those tested sizes
-- but the branch ordering is not yet one clean smooth band, especially on the smaller lattice
+- `n = 5`, `m = 1`: full lowest `0.013057`, harmonic-projected `0.509808`, coexact-projected `0.458457`
+- `n = 4`, `m = 1`: full lowest `0.014110`, harmonic-projected `0.611897`, coexact-projected `0.679582`
 
 ## FILES_MOVED
 
@@ -182,5 +168,5 @@ This loads shared parameters, runs the starter simulations, stores structured JS
 The next technical target should be:
 
 1. introduce punctures or controlled defects to separate torus-cycle modes from local transverse circulation
-2. extend the periodic scan to larger lattices and check whether the low coexact branch smooths into a cleaner band
+2. extend the periodic scan to larger lattices and check whether the coexact floor moves down toward a cleaner low band
 3. only after that, build the minimal Dirac-type branch `D_H`
