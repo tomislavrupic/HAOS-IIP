@@ -1,0 +1,35 @@
+{
+  "experiment": "laplacian_geometry_test",
+  "config": {
+    "nodes": 500,
+    "epsilon": 0.2,
+    "random_seed": 42,
+    "substrate": "random_geometric",
+    "cutoff_factor": 2.5
+  },
+  "spectrum": {
+    "first_eigenvalues": [
+      9.445917261898927e-14,
+      78.19858983792268,
+      86.4586737564696,
+      92.66408510121636,
+      95.76158189567072,
+      96.8703579239686,
+      98.30051349709616,
+      103.15019285786195,
+      105.84578751184178,
+      108.62380764891596,
+      111.02876400861466,
+      114.61373377693877
+    ],
+    "spectral_gap": 78.19858983792268,
+    "mean_ipr_first3": 0.7063834029866835,
+    "degree_mean": 481.676
+  },
+  "plots": [
+    "plots/laplacian_modes_spectrum.png",
+    "plots/laplacian_modes_mode1.png"
+  ],
+  "observation": "low spectrum contains localized modes",
+  "conclusion": "geometry sector mixed with substrate or boundary artifacts"
+}

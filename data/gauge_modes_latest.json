@@ -1,0 +1,33 @@
+{
+  "experiment": "gauge_sector_test",
+  "config": {
+    "nodes": 216,
+    "epsilon": 0.2,
+    "random_seed": 42,
+    "substrate": "cubic_lattice",
+    "flux_per_plaquette": 0.2
+  },
+  "spectrum": {
+    "first_eigenvalues": [
+      0.4159890077273005,
+      0.43427976393217244,
+      0.484060087847618,
+      0.5398678496805098,
+      0.6584394631714975,
+      0.6767302193763693,
+      0.7122102020830817,
+      0.7265105432918136,
+      0.7823183051247071,
+      0.820589541665515,
+      0.8848685379196947,
+      0.924736425452788
+    ],
+    "lowest_mode_current_ratio": 0.5516496421416907
+  },
+  "plots": [
+    "plots/gauge_modes_spectrum.png",
+    "plots/gauge_modes_phase_mode.png"
+  ],
+  "observation": "phase dressing produces circulating low modes",
+  "conclusion": "connection-sensitive gauge branch present, but still scalar in background transport"
+}

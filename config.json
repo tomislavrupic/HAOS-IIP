@@ -1,0 +1,11 @@
+{
+  "nodes": 500,
+  "epsilon": 0.2,
+  "random_seed": 42,
+  "substrate": "random_geometric",
+  "cutoff_factor": 2.5,
+  "gauge_substrate": "cubic_lattice",
+  "gauge_lattice_side": 6,
+  "flux_per_plaquette": 0.2,
+  "nearest_neighbor_factor": 1.05
+}

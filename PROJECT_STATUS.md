@@ -10,6 +10,7 @@ The repository has been restructured into a research layout with:
 - classified legacy source documents
 - initialized Git repository
 - reusable starter numerics
+- reproducible orchestration layer
 - one explicit 3D eigenmode experiment preserved under `experiments/`
 
 The theory architecture has now been tightened further:
@@ -127,6 +128,27 @@ Created under `numerics/simulations/`:
 - `gauge_modes.py`
 
 These are small reusable scripts, separate from experiment-specific code.
+
+Added orchestration layer:
+
+- `scripts/run_experiments.py`
+- `config.json`
+- `experiments/EXPERIMENT_LOG.md`
+- `Makefile`
+
+The repository now supports a single command workflow:
+
+```bash
+python3 scripts/run_experiments.py
+```
+
+or
+
+```bash
+make run
+```
+
+This loads shared parameters, runs the starter simulations, stores structured JSON results in `data/`, writes plots into `plots/`, and appends a dated run record to `experiments/EXPERIMENT_LOG.md`.
 
 ## NEXT_RESEARCH_TARGET
 

@@ -33,6 +33,9 @@ Those three sectors are:
 - `theory/`: topic-grouped source material
 - `numerics/`: reusable simulation starters and future notebooks
 - `experiments/`: experiment-specific code, plots, and result notes
+- `data/`: structured JSON results from orchestrated runs
+- `plots/`: current and timestamped plot outputs
+- `scripts/`: thin orchestration layer for reproducible runs
 - `papers/`: future paper drafts and figures
 - `ai/`: Codex prompts and agent definitions
 
@@ -67,6 +70,32 @@ different operator lifts
 - Put experiment-specific outputs under `experiments/`, not into theory folders.
 
 ## Quick start
+
+Run the repo as a small experiment lab:
+
+```bash
+cd /Volumes/Samsung\ T5/2026/HAOS/HAOS\ DOCS/HAOS-IIP
+python3 scripts/run_experiments.py
+```
+
+Or use:
+
+```bash
+cd /Volumes/Samsung\ T5/2026/HAOS/HAOS\ DOCS/HAOS-IIP
+make run
+```
+
+This does the following:
+
+- loads shared parameters from `config.json`
+- runs the reusable scalar and gauge starter experiments
+- writes JSON outputs into `data/`
+- writes plots into `plots/`
+- appends a record to `experiments/EXPERIMENT_LOG.md`
+
+Adjust experiment parameters in `config.json` rather than hard-coding them in the simulation modules.
+
+## Direct module runs
 
 Run the current 3D low-mode experiment:
 
