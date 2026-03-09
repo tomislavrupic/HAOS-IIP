@@ -30,6 +30,26 @@ D_H &: \text{Dirac-type lift for later fermion-sector work}.
 \end{align}
 Only the first two levels are numerically active in the present repository. The node sector is already supported by explicit low-mode studies on concrete $3$D substrates. The edge sector now has a working periodic and twisted implementation together with a wider flux scan. The main question addressed in this paper is therefore narrow: does the current edge operator contain a genuine low non-scalar branch, or is the apparent vector content still inherited from scalar gradients?
 
+\begin{figure}[t]
+\centering
+\small
+\setlength{\fboxsep}{6pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{c c c c c c c c c}
+\fbox{\parbox{0.105\linewidth}{\centering interaction\\kernel}} &
+$\to$ &
+\fbox{\parbox{0.105\linewidth}{\centering weighted\\graph}} &
+$\to$ &
+\fbox{\parbox{0.105\linewidth}{\centering $L_0$\\node sector}} &
+$\to$ &
+\fbox{\parbox{0.105\linewidth}{\centering $L_1$\\edge sector}} &
+$\to$ &
+\fbox{\parbox{0.105\linewidth}{\centering $D_H$\\Dirac lift}}
+\end{tabular}
+\caption{Current HAOS-IIP operator hierarchy. One interaction kernel defines the weighted substrate, while different operator lifts target scalar, vector, and later spinorial sectors. Only $L_0$ and $L_1$ are numerically active in the present repository.}
+\label{fig:operator-hierarchy}
+\end{figure}
+
 \section{Interaction Kernel}
 The common starting point is a weighted interaction kernel on embedded nodes $x_i \in \mathbb{R}^3$,
 \begin{equation}
