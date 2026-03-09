@@ -130,7 +130,11 @@ def make_plots(points: np.ndarray, evals: np.ndarray, evecs: np.ndarray, name: s
     return plot_paths
 
 
-def run_laplacian_test(config: dict[str, Any] | None = None) -> dict[str, Any]:
+def run_laplacian_test(
+    config: dict[str, Any] | None = None,
+    with_plots: bool = True,
+    plot_name: str = "laplacian_modes",
+) -> dict[str, Any]:
     cfg = load_config(config)
     epsilon = float(cfg["epsilon"])
     cutoff_factor = float(cfg.get("cutoff_factor", 2.5))
@@ -141,7 +145,7 @@ def run_laplacian_test(config: dict[str, Any] | None = None) -> dict[str, Any]:
     evals = np.asarray(evals[order], dtype=float)
     evecs = np.asarray(evecs[:, order])
     observation, conclusion, mean_ipr = summarize_observation(evals, evecs)
-    plot_paths = make_plots(points, evals, evecs, name="laplacian_modes")
+    plot_paths = make_plots(points, evals, evecs, name=plot_name) if with_plots else []
 
     return {
         "experiment": "laplacian_geometry_test",

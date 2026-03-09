@@ -89,6 +89,8 @@ This does the following:
 
 - loads shared parameters from `config.json`
 - runs the reusable scalar and gauge starter experiments
+- runs the weighted edge/Hodge `L1` experiment
+- runs a parameter sweep over `epsilon`, `N`, and substrate choice
 - writes JSON outputs into `data/`
 - writes plots into `plots/`
 - appends a record to `experiments/EXPERIMENT_LOG.md`
@@ -110,8 +112,10 @@ Run the reusable starter simulations:
 cd /Volumes/Samsung\ T5/2026/HAOS/HAOS\ DOCS/HAOS-IIP
 python3 numerics/simulations/laplacian_modes.py
 python3 numerics/simulations/gauge_modes.py
+python3 numerics/simulations/hodge_modes.py
+python3 numerics/simulations/parameter_sweep.py
 ```
 
 ## Next explicit target
 
-Build the weighted edge/Hodge branch `L1` on the current 3D substrate and test whether its low modes are gradient-like or transverse-like.
+Build the minimal Dirac-type branch `D_H` after the `L1` edge/Hodge branch has been mapped more cleanly across flux backgrounds and defect perturbations.

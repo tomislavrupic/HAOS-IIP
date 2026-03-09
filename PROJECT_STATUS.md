@@ -126,6 +126,8 @@ Created under `numerics/simulations/`:
 
 - `laplacian_modes.py`
 - `gauge_modes.py`
+- `hodge_modes.py`
+- `parameter_sweep.py`
 
 These are small reusable scripts, separate from experiment-specific code.
 
@@ -135,6 +137,8 @@ Added orchestration layer:
 - `config.json`
 - `experiments/EXPERIMENT_LOG.md`
 - `Makefile`
+- `numerics/simulations/hodge_modes.py`
+- `numerics/simulations/parameter_sweep.py`
 
 The repository now supports a single command workflow:
 
@@ -154,7 +158,6 @@ This loads shared parameters, runs the starter simulations, stores structured JS
 
 The next technical target should be:
 
-1. construct the weighted edge/Hodge operator `L1`
-2. compute its low spectrum on the current 3D substrate
-3. distinguish gradient-like from transverse-like low modes
-4. only after that, build the minimal Dirac-type branch `D_H`
+1. compare `L1` modes under flux backgrounds and controlled defects
+2. check whether any low `L1` family remains robustly transverse-like across the sweep
+3. only after that, build the minimal Dirac-type branch `D_H`

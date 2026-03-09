@@ -15,6 +15,8 @@ if str(ROOT) not in sys.path:
 
 from numerics.simulations.laplacian_modes import load_config, run_laplacian_test
 from numerics.simulations.gauge_modes import run_gauge_test
+from numerics.simulations.hodge_modes import run_hodge_test
+from numerics.simulations.parameter_sweep import run_parameter_sweep
 
 RESULTS = ROOT / "data"
 PLOTS = ROOT / "plots"
@@ -44,6 +46,23 @@ def copy_plots(name: str, result: dict[str, Any], timestamp: str) -> list[str]:
     return saved
 
 
+def format_config(cfg: dict[str, Any]) -> str:
+    if {"substrate", "nodes", "epsilon"}.issubset(cfg) and cfg.get("substrate") is not None:
+        return (
+            f"substrate={cfg.get('substrate')}, "
+            f"nodes={cfg.get('nodes')}, "
+            f"epsilon={cfg.get('epsilon')}, "
+            f"seed={cfg.get('random_seed')}"
+        )
+    if {"substrates", "node_values", "epsilon_values"}.issubset(cfg):
+        return (
+            f"substrates={cfg.get('substrates')}, "
+            f"nodes={cfg.get('node_values')}, "
+            f"epsilons={cfg.get('epsilon_values')}"
+        )
+    return json.dumps(cfg, sort_keys=True)
+
+
 def log_experiment(name: str, result_path: Path, result: dict[str, Any], saved_plots: list[str]) -> None:
     if not LOG.exists():
         LOG.write_text("# EXPERIMENT_LOG\n", encoding="utf-8")
@@ -51,7 +70,7 @@ def log_experiment(name: str, result_path: Path, result: dict[str, Any], saved_p
     with LOG.open("a", encoding="utf-8") as handle:
         handle.write(f"\n## {name}\n")
         handle.write(f"- Date: {datetime.now().isoformat(timespec='seconds')}\n")
-        handle.write(f"- Config: substrate={cfg.get('substrate')}, nodes={cfg.get('nodes')}, epsilon={cfg.get('epsilon')}, seed={cfg.get('random_seed')}\n")
+        handle.write(f"- Config: {format_config(cfg)}\n")
         handle.write(f"- Results: `{result_path.relative_to(ROOT)}`\n")
         if saved_plots:
             handle.write(f"- Plots: {', '.join(f'`{p}`' for p in saved_plots)}\n")
@@ -77,9 +96,21 @@ def main() -> None:
     plots2 = copy_plots("gauge_modes", gauge, timestamp)
     log_experiment("Gauge sector test", p2, gauge, plots2)
 
+    hodge = run_hodge_test(config)
+    p3 = save_results("hodge_modes", hodge, timestamp)
+    plots3 = copy_plots("hodge_modes", hodge, timestamp)
+    log_experiment("Hodge L1 test", p3, hodge, plots3)
+
+    sweep = run_parameter_sweep(config)
+    p4 = save_results("parameter_sweep", sweep, timestamp)
+    plots4 = copy_plots("parameter_sweep", sweep, timestamp)
+    log_experiment("Parameter sweep", p4, sweep, plots4)
+
     print(f"Config: {CONFIG}")
     print(f"Saved: {p1.relative_to(ROOT)}")
     print(f"Saved: {p2.relative_to(ROOT)}")
+    print(f"Saved: {p3.relative_to(ROOT)}")
+    print(f"Saved: {p4.relative_to(ROOT)}")
     print(f"Log: {LOG.relative_to(ROOT)}")
 
 

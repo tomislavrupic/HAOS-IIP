@@ -1,0 +1,91 @@
+{
+  "experiment": "hodge_l1_test",
+  "config": {
+    "nodes": 216,
+    "edges": 540,
+    "faces": 450,
+    "epsilon": 0.2,
+    "random_seed": 42,
+    "substrate": "cubic_lattice",
+    "hodge_lattice_side": 6
+  },
+  "spectrum": {
+    "first_eigenvalues": [
+      0.24245045544419766,
+      0.24245045544419777,
+      0.24245045544419852,
+      0.4849009108883918,
+      0.48490091088839454,
+      0.4849009108883948,
+      0.48490091088839565,
+      0.48490091088839665,
+      0.4849009108883999,
+      0.7273513663325936,
+      0.7273513663325937,
+      0.7273513663325938
+    ],
+    "mode_records": [
+      {
+        "mode_index": 1,
+        "eigenvalue": 0.24245045544419777,
+        "label": "gradient-like",
+        "exact_fraction": 0.9999999999999989,
+        "coexact_fraction": -2.580283333469246e-16,
+        "divergence_norm": 0.49239258264539026,
+        "curl_norm": 3.169335517888825e-15
+      },
+      {
+        "mode_index": 2,
+        "eigenvalue": 0.24245045544419852,
+        "label": "gradient-like",
+        "exact_fraction": 0.9999999999999956,
+        "coexact_fraction": -2.7470400430583043e-16,
+        "divergence_norm": 0.4923925826453902,
+        "curl_norm": 2.277913212661251e-15
+      },
+      {
+        "mode_index": 3,
+        "eigenvalue": 0.4849009108883918,
+        "label": "mixed",
+        "exact_fraction": 0.5000000000000026,
+        "coexact_fraction": 0.5000000000000024,
+        "divergence_norm": 0.49239258264538993,
+        "curl_norm": 0.49239258264538993
+      },
+      {
+        "mode_index": 4,
+        "eigenvalue": 0.48490091088839454,
+        "label": "mixed",
+        "exact_fraction": 0.4999999999999992,
+        "coexact_fraction": 0.49999999999999917,
+        "divergence_norm": 0.4923925826453897,
+        "curl_norm": 0.49239258264538965
+      },
+      {
+        "mode_index": 5,
+        "eigenvalue": 0.4849009108883948,
+        "label": "mixed",
+        "exact_fraction": 0.5000000000000007,
+        "coexact_fraction": 0.5000000000000006,
+        "divergence_norm": 0.4923925826453905,
+        "curl_norm": 0.4923925826453905
+      },
+      {
+        "mode_index": 6,
+        "eigenvalue": 0.48490091088839565,
+        "label": "mixed",
+        "exact_fraction": 0.4999999999999994,
+        "coexact_fraction": 0.49999999999999933,
+        "divergence_norm": 0.4923925826453903,
+        "curl_norm": 0.4923925826453903
+      }
+    ]
+  },
+  "plots": [
+    "plots/hodge_modes_spectrum.png",
+    "plots/hodge_modes_sector_split.png",
+    "plots/hodge_modes_mode.png"
+  ],
+  "observation": "low edge spectrum is dominated by exact gradient-like modes",
+  "conclusion": "edge branch is present but not yet separated into a clear vector sector"
+}

@@ -1,0 +1,198 @@
+{
+  "experiment": "parameter_sweep",
+  "config": {
+    "epsilon_values": [
+      0.12,
+      0.2,
+      0.28
+    ],
+    "node_values": [
+      216,
+      343
+    ],
+    "substrates": [
+      "random_geometric",
+      "cubic_lattice"
+    ]
+  },
+  "laplacian_records": [
+    {
+      "substrate": "random_geometric",
+      "nodes_requested": 216,
+      "nodes_effective": 216,
+      "epsilon": 0.12,
+      "spectral_gap": 18.582220704942245,
+      "mean_ipr_first3": 0.034934429095614804,
+      "conclusion": "scalar geometry branch present but not especially symmetric"
+    },
+    {
+      "substrate": "random_geometric",
+      "nodes_requested": 216,
+      "nodes_effective": 216,
+      "epsilon": 0.2,
+      "spectral_gap": 41.50261425309461,
+      "mean_ipr_first3": 0.07679334312221207,
+      "conclusion": "scalar geometry branch present but not especially symmetric"
+    },
+    {
+      "substrate": "random_geometric",
+      "nodes_requested": 216,
+      "nodes_effective": 216,
+      "epsilon": 0.28,
+      "spectral_gap": 61.988739923928264,
+      "mean_ipr_first3": 0.10074945486852153,
+      "conclusion": "geometry sector mixed with substrate or boundary artifacts"
+    },
+    {
+      "substrate": "random_geometric",
+      "nodes_requested": 343,
+      "nodes_effective": 343,
+      "epsilon": 0.12,
+      "spectral_gap": 25.821617273945325,
+      "mean_ipr_first3": 0.31223868840319297,
+      "conclusion": "geometry sector mixed with substrate or boundary artifacts"
+    },
+    {
+      "substrate": "random_geometric",
+      "nodes_requested": 343,
+      "nodes_effective": 343,
+      "epsilon": 0.2,
+      "spectral_gap": 55.90203780026351,
+      "mean_ipr_first3": 0.5017123480466739,
+      "conclusion": "geometry sector mixed with substrate or boundary artifacts"
+    },
+    {
+      "substrate": "random_geometric",
+      "nodes_requested": 343,
+      "nodes_effective": 343,
+      "epsilon": 0.28,
+      "spectral_gap": 85.40942762549021,
+      "mean_ipr_first3": 0.5642417567877508,
+      "conclusion": "geometry sector mixed with substrate or boundary artifacts"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 216,
+      "nodes_effective": 216,
+      "epsilon": 0.12,
+      "spectral_gap": 11.373183372540236,
+      "mean_ipr_first3": 0.022457866188931978,
+      "conclusion": "geometry sector consistent"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 216,
+      "nodes_effective": 216,
+      "epsilon": 0.2,
+      "spectral_gap": 27.268731679004542,
+      "mean_ipr_first3": 0.04780206275221679,
+      "conclusion": "geometry sector consistent"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 216,
+      "nodes_effective": 216,
+      "epsilon": 0.28,
+      "spectral_gap": 44.061327538556085,
+      "mean_ipr_first3": 0.07382719535573891,
+      "conclusion": "scalar geometry branch present but not especially symmetric"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 343,
+      "nodes_effective": 343,
+      "epsilon": 0.12,
+      "spectral_gap": 19.763487950902544,
+      "mean_ipr_first3": 0.01820679227937091,
+      "conclusion": "geometry sector consistent"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 343,
+      "nodes_effective": 343,
+      "epsilon": 0.2,
+      "spectral_gap": 46.44238936108866,
+      "mean_ipr_first3": 0.0512046847624373,
+      "conclusion": "scalar geometry branch present but not especially symmetric"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 343,
+      "nodes_effective": 343,
+      "epsilon": 0.28,
+      "spectral_gap": 73.34982918223086,
+      "mean_ipr_first3": 0.08575827191335685,
+      "conclusion": "geometry sector mixed with substrate or boundary artifacts"
+    }
+  ],
+  "hodge_records": [
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 216,
+      "nodes_effective": 216,
+      "epsilon": 0.12,
+      "lowest_mode_label": "gradient-like",
+      "lowest_mode_exact_fraction": 1.000000000000006,
+      "lowest_mode_coexact_fraction": -1.2914138746875395e-16,
+      "conclusion": "edge branch is present but not yet separated into a clear vector sector"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 216,
+      "nodes_effective": 216,
+      "epsilon": 0.2,
+      "lowest_mode_label": "gradient-like",
+      "lowest_mode_exact_fraction": 0.9999999999999989,
+      "lowest_mode_coexact_fraction": -2.580283333469246e-16,
+      "conclusion": "edge branch is present but not yet separated into a clear vector sector"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 216,
+      "nodes_effective": 216,
+      "epsilon": 0.28,
+      "lowest_mode_label": "gradient-like",
+      "lowest_mode_exact_fraction": 1.0000000000000004,
+      "lowest_mode_coexact_fraction": -1.0685250848570368e-15,
+      "conclusion": "weighted L1 branch is active, but mode-family separation remains partial"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 343,
+      "nodes_effective": 343,
+      "epsilon": 0.12,
+      "lowest_mode_label": "gradient-like",
+      "lowest_mode_exact_fraction": 1.0000000000000042,
+      "lowest_mode_coexact_fraction": -2.8174725700576646e-16,
+      "conclusion": "edge branch is present but not yet separated into a clear vector sector"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 343,
+      "nodes_effective": 343,
+      "epsilon": 0.2,
+      "lowest_mode_label": "gradient-like",
+      "lowest_mode_exact_fraction": 1.000000000000004,
+      "lowest_mode_coexact_fraction": -1.8861074664024977e-16,
+      "conclusion": "weighted L1 branch is active, but mode-family separation remains partial"
+    },
+    {
+      "substrate": "cubic_lattice",
+      "nodes_requested": 343,
+      "nodes_effective": 343,
+      "epsilon": 0.28,
+      "lowest_mode_label": "gradient-like",
+      "lowest_mode_exact_fraction": 0.9999999999999986,
+      "lowest_mode_coexact_fraction": -9.921842088497329e-17,
+      "conclusion": "weighted L1 branch is active, but mode-family separation remains partial"
+    }
+  ],
+  "skipped": [],
+  "plots": [
+    "plots/parameter_sweep_laplacian_gap.png",
+    "plots/parameter_sweep_laplacian_ipr.png",
+    "plots/parameter_sweep_hodge_coexact.png"
+  ],
+  "observation": "cubic substrates stay smoother than random graphs across the sweep",
+  "conclusion": "substrate regularity matters strongly for clean low-mode geometry, while the vector branch remains only partially separated"
+}

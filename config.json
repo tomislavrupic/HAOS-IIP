@@ -7,5 +7,12 @@
   "gauge_substrate": "cubic_lattice",
   "gauge_lattice_side": 6,
   "flux_per_plaquette": 0.2,
-  "nearest_neighbor_factor": 1.05
+  "nearest_neighbor_factor": 1.05,
+  "hodge_substrate": "cubic_lattice",
+  "hodge_lattice_side": 6,
+  "sweep": {
+    "epsilon_values": [0.12, 0.2, 0.28],
+    "node_values": [216, 343],
+    "substrates": ["random_geometric", "cubic_lattice"]
+  }
 }

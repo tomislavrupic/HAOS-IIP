@@ -150,7 +150,11 @@ def make_plots(points: np.ndarray, evals: np.ndarray, evecs: np.ndarray, name: s
     return plot_paths
 
 
-def run_gauge_test(config: dict[str, Any] | None = None) -> dict[str, Any]:
+def run_gauge_test(
+    config: dict[str, Any] | None = None,
+    with_plots: bool = True,
+    plot_name: str = "gauge_modes",
+) -> dict[str, Any]:
     cfg = load_config(config)
     points, substrate, h = build_points(cfg)
     epsilon = float(cfg["epsilon"])
@@ -160,7 +164,7 @@ def run_gauge_test(config: dict[str, Any] | None = None) -> dict[str, Any]:
     evals = np.asarray(evals[order])
     evecs = np.asarray(evecs[:, order])
     observation, conclusion, max_current_ratio = summarize_gauge(evals, evecs, A, U)
-    plot_paths = make_plots(points, evals, evecs, name="gauge_modes")
+    plot_paths = make_plots(points, evals, evecs, name=plot_name) if with_plots else []
 
     return {
         "experiment": "gauge_sector_test",
