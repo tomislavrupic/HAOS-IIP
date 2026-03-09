@@ -1,0 +1,138 @@
+# PROJECT_STATUS
+
+Date: March 9, 2026
+
+## Status summary
+
+The repository has been restructured into a research layout with:
+
+- canonical theory files
+- classified legacy source documents
+- initialized Git repository
+- reusable starter numerics
+- one explicit 3D eigenmode experiment preserved under `experiments/`
+
+The theory architecture has now been tightened further:
+
+- same substrate
+- same kernel
+- three operator sectors
+
+This replaces the earlier compressed reading that one node Laplacian might explain all sectors directly.
+
+## FILES_MOVED
+
+### Foundations -> `docs/notes/foundations/`
+
+- `HAOS_Frozen_Specification_v1.docx`
+- `HAOS_IIP_Minimal_Theory_Statement_v2.docx`
+- `Interaction_Invariant_Physics_Full_v1.docx`
+
+### Kernel -> `theory/kernel/`
+
+- `HAOS_IIP_Kernel_v1.docx`
+- `HAOS_Spectral_Recoverability_Principle_v1.docx`
+- `Discrete_Scale_Invariance_and_Coherence_Stability_v1.docx`
+
+### Geometry -> `theory/geometry/`
+
+- `Interaction_Kernels_to_Emergent_Geometry_v1.docx`
+- `HAOS_IIP_Spectral_Geometry_Note_v1.docx`
+- `HAOS_IIP_Spectral_Gravity_Note_v1.docx`
+- `HAOS_IIP_Singularities_v1.docx`
+
+### Gauge -> `theory/gauge/`
+
+- `HAOS_IIP_Emergent_Gauge_Sector_Note_v1.md`
+
+### Particles -> `theory/particles/`
+
+- `Rebuilding_Dudas_Picture_in_HAOS_IIP_v1.docx`
+
+### Applications -> `docs/notes/applications/`
+
+- `HAOS_IIP_Microtubules_v1.docx`
+- `HAOS_IIP_Fluid_Derivation_v1.docx`
+- `The_Meissner_Effect_v1.docx`
+
+### Archive -> `docs/archive/`
+
+- `Interaction_Invariant_Foundations_of_Consciousness_v1.docx`
+- `Mathematical_Foundations_of_QATC_v1.docx`
+- `QATC_2026_Creative_Dynamics_v1.docx`
+- `The_Physics_of_Imagination_v1.docx`
+- `ALi_22_v1.docx`
+- `HAOPS_v1.docx`
+- `STATEFLOW_v1.docx`
+- `The_Hierarchical_Autonomy_of_Reality_v1.docx`
+
+### Experiments -> `experiments/eigenmodes/haos_iip_3d_low_mode_study/`
+
+- `HAOS_IIP_3D_Low_Mode_Study_v1.md`
+- `haos_iip_3d_low_modes_v1.py`
+- `haos_iip_results_v1.json`
+- `haos_iip_mode_plots/`
+
+## FILES_VERSIONED
+
+- existing active notes were given `_v1` or `_v2` suffixes
+- the minimal theory statement retained `_v2` because the source title already marked it as a later-stage document
+- canonical files were created separately under `docs/canon/` rather than renaming source drafts into canon
+
+## TERMINOLOGY_CONFLICTS
+
+Primary conflicts found in legacy material:
+
+1. `epsilon`
+
+- used as kernel width in geometry/kernel notes
+- also used as coherence threshold in recoverability inequalities
+- canonical standard:
+  - `epsilon_k`: kernel width
+  - `epsilon_c`: coherence threshold
+
+2. `L`
+
+- used as graph Laplacian
+- also loosely used in some drafts for Lagrangian-like objects
+- canonical standard:
+  - `L0`: node Laplacian
+  - `L1`: edge/Hodge Laplacian
+  - `L`: generic Laplacian only when sector is obvious
+  - `mathcal{L}`: continuum operator
+
+3. charge language
+
+- some drafts treat charge as winding, some as coupling asymmetry, some as placeholder gauge quantity
+- canonical status:
+  - winding/defect charge is `[P]`
+  - no physical charge derivation is `[E]`
+
+## CANON_CREATED
+
+Created under `docs/canon/`:
+
+- `HAOS_IIP_CORE_THEORY.md`
+- `KERNEL_DEFINITION.md`
+- `OPERATOR_STRUCTURE.md`
+- `EMERGENT_GEOMETRY.md`
+- `GAUGE_PROGRAM.md`
+- `OPEN_PROBLEMS.md`
+
+## NUMERICS_INITIALIZED
+
+Created under `numerics/simulations/`:
+
+- `laplacian_modes.py`
+- `gauge_modes.py`
+
+These are small reusable scripts, separate from experiment-specific code.
+
+## NEXT_RESEARCH_TARGET
+
+The next technical target should be:
+
+1. construct the weighted edge/Hodge operator `L1`
+2. compute its low spectrum on the current 3D substrate
+3. distinguish gradient-like from transverse-like low modes
+4. only after that, build the minimal Dirac-type branch `D_H`
