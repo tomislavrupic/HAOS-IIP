@@ -185,3 +185,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_111522_operator_error_vs_h.png`, `plots/20260310_111522_operator_profiles.png`
 - Observation: the kernel-induced operator reproduces the quadratic test exactly and converges toward the continuum Laplacian for smooth test functions
 - Conclusion: after discrete second-moment normalization, the graph operator shows clear Laplacian convergence on the cubic scan; broader kernels remain less accurate at finite resolution
+
+## L1 defect transverse test
+- Date: 2026-03-10T13:03:26
+- Config: epsilon=0.2, sizes=[6, 8, 10], variants=['baseline', 'puncture', 'line_defect'], phase_modes=48, restricted_modes=12
+- Results: `data/20260310_130326_L1_defect_scan.json`
+- Plots: `plots/20260310_130326_divergence_curl_phase.png`, `plots/20260310_130326_restricted_transverse_spectrum.png`, `plots/20260310_130326_restricted_eigenvalue_vs_n.png`
+- Observation: the lowest restricted transverse eigenvalue decreases with lattice size in all three substrate branches, and both defect branches lie below the baseline torus at every tested n
+- Conclusion: the restricted transverse sector develops a descending low band under the tested puncture and line-defect substrate modifications
