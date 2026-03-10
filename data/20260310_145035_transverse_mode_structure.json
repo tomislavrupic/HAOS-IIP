@@ -1,0 +1,392 @@
+{
+  "config": {
+    "epsilon": 0.2,
+    "n_side": 16,
+    "variant": "baseline",
+    "phase_modes": 20,
+    "restricted_modes": 10,
+    "harmonic_tol": 1e-08,
+    "eig_tol": 1e-08,
+    "penalty": 10.0
+  },
+  "case": {
+    "config": {
+      "variant": "baseline",
+      "variant_label": "baseline periodic torus",
+      "n_side": 16,
+      "nodes": 4096,
+      "edges": 12288,
+      "faces": 12288,
+      "removed_nodes": 0,
+      "removed_requested_edges": 0,
+      "epsilon": 0.2
+    },
+    "dimensions": {
+      "harmonic": 3
+    },
+    "phase_modes": [
+      {
+        "mode_index": 0,
+        "eigenvalue": -1.3238975888186072e-14,
+        "divergence_norm": 7.121316910408466e-15,
+        "curl_norm": 1.0484064066866938e-14,
+        "coexact_fraction": 2.8765878568037806e-13
+      },
+      {
+        "mode_index": 1,
+        "eigenvalue": 4.030511147657769e-16,
+        "divergence_norm": 2.6961085350080024e-15,
+        "curl_norm": 3.799837986600865e-15,
+        "coexact_fraction": 0.0
+      },
+      {
+        "mode_index": 2,
+        "eigenvalue": 1.502111975876769e-15,
+        "divergence_norm": 3.0902998828128845e-15,
+        "curl_norm": 4.799494738125139e-15,
+        "coexact_fraction": 0.0
+      },
+      {
+        "mode_index": 3,
+        "eigenvalue": 0.1507614429369402,
+        "divergence_norm": 0.20019188496795282,
+        "curl_norm": 0.33269302987877875,
+        "coexact_fraction": 0.7341708196320178
+      },
+      {
+        "mode_index": 4,
+        "eigenvalue": 0.15076144293694052,
+        "divergence_norm": 0.24046699899731822,
+        "curl_norm": 0.3048558107206877,
+        "coexact_fraction": 0.6164511530248353
+      },
+      {
+        "mode_index": 5,
+        "eigenvalue": 0.1507614429369406,
+        "divergence_norm": 0.24556621794025105,
+        "curl_norm": 0.30076348771662126,
+        "coexact_fraction": 0.6000120042715407
+      },
+      {
+        "mode_index": 6,
+        "eigenvalue": 0.150761442936943,
+        "divergence_norm": 0.18400812999170563,
+        "curl_norm": 0.3419100042904556,
+        "coexact_fraction": 0.7754134529131158
+      },
+      {
+        "mode_index": 7,
+        "eigenvalue": 0.15076144293694446,
+        "divergence_norm": 0.20450661724545768,
+        "curl_norm": 0.33005830763633937,
+        "coexact_fraction": 0.7225885101492924
+      },
+      {
+        "mode_index": 8,
+        "eigenvalue": 0.15076144293694904,
+        "divergence_norm": 0.11506665414380395,
+        "curl_norm": 0.37083838533934804,
+        "coexact_fraction": 0.9121769158087221
+      },
+      {
+        "mode_index": 9,
+        "eigenvalue": 0.15076144293694962,
+        "divergence_norm": 0.22098242307375707,
+        "curl_norm": 0.31926197961767205,
+        "coexact_fraction": 0.6760893876030778
+      },
+      {
+        "mode_index": 10,
+        "eigenvalue": 0.30152288587387943,
+        "divergence_norm": 0.33814937939472306,
+        "curl_norm": 0.43264059343622824,
+        "coexact_fraction": 0.6207750451391555
+      },
+      {
+        "mode_index": 11,
+        "eigenvalue": 0.3015228858738829,
+        "divergence_norm": 0.27730493616432084,
+        "curl_norm": 0.4739460499390094,
+        "coexact_fraction": 0.7449678574207439
+      },
+      {
+        "mode_index": 12,
+        "eigenvalue": 0.30152288587388787,
+        "divergence_norm": 0.26938856916513676,
+        "curl_norm": 0.4784900047828052,
+        "coexact_fraction": 0.7593210844128356
+      },
+      {
+        "mode_index": 13,
+        "eigenvalue": 0.30152288587388953,
+        "divergence_norm": 0.32524854435461575,
+        "curl_norm": 0.44242091979142445,
+        "coexact_fraction": 0.6491589177444979
+      },
+      {
+        "mode_index": 14,
+        "eigenvalue": 0.3015228858738903,
+        "divergence_norm": 0.3430400035492816,
+        "curl_norm": 0.4287731822756612,
+        "coexact_fraction": 0.6097263274260735
+      },
+      {
+        "mode_index": 15,
+        "eigenvalue": 0.3015228858738904,
+        "divergence_norm": 0.30660005732519274,
+        "curl_norm": 0.45554285278344514,
+        "coexact_fraction": 0.6882372796367848
+      },
+      {
+        "mode_index": 16,
+        "eigenvalue": 0.45228432881082514,
+        "divergence_norm": 0.30800311583653706,
+        "curl_norm": 0.5978448038126757,
+        "coexact_fraction": 0.7902515888303239
+      },
+      {
+        "mode_index": 17,
+        "eigenvalue": 0.452284328810828,
+        "divergence_norm": 0.40772548289455585,
+        "curl_norm": 0.5348310568854749,
+        "coexact_fraction": 0.6324434458326575
+      },
+      {
+        "mode_index": 18,
+        "eigenvalue": 0.45228432881083247,
+        "divergence_norm": 0.41082512952767425,
+        "curl_norm": 0.5324537930744786,
+        "coexact_fraction": 0.6268336612608518
+      },
+      {
+        "mode_index": 19,
+        "eigenvalue": 0.45228432881083525,
+        "divergence_norm": 0.4565636217275003,
+        "curl_norm": 0.4937954922089721,
+        "coexact_fraction": 0.5391165967810561
+      }
+    ],
+    "restricted_transverse_spectrum": [
+      0.1507614429369441,
+      0.1507614429369441,
+      0.15076144293694413,
+      0.15076144293694407,
+      0.15076144293694413,
+      0.30152288587388826,
+      0.30152288587388826,
+      0.3015228858738883,
+      0.3015228858738882,
+      0.45228432881083225
+    ],
+    "restricted_transverse_modes": [
+      {
+        "mode_index": 0,
+        "eigenvalue": 0.1507614429369441,
+        "divergence_norm": 1.3821458400325795e-16,
+        "curl_norm": 0.38828010886078634,
+        "coexact_fraction": 1.0,
+        "ipr": 0.0001807589465577837,
+        "near_defect_fraction": 0.005304927936773467,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      },
+      {
+        "mode_index": 1,
+        "eigenvalue": 0.1507614429369441,
+        "divergence_norm": 1.1665095145962838e-16,
+        "curl_norm": 0.38828010886078634,
+        "coexact_fraction": 1.0,
+        "ipr": 0.00022748885426371367,
+        "near_defect_fraction": 0.005154119825828412,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      },
+      {
+        "mode_index": 2,
+        "eigenvalue": 0.15076144293694413,
+        "divergence_norm": 1.813362912047552e-16,
+        "curl_norm": 0.3882801088607864,
+        "coexact_fraction": 1.0,
+        "ipr": 0.00019469810803488986,
+        "near_defect_fraction": 0.004054857114606294,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      },
+      {
+        "mode_index": 3,
+        "eigenvalue": 0.15076144293694407,
+        "divergence_norm": 1.4288013691337314e-16,
+        "curl_norm": 0.38828010886078634,
+        "coexact_fraction": 1.0,
+        "ipr": 0.0002349990636214763,
+        "near_defect_fraction": 0.004101058461260296,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      },
+      {
+        "mode_index": 4,
+        "eigenvalue": 0.15076144293694413,
+        "divergence_norm": 1.244790286957174e-16,
+        "curl_norm": 0.3882801088607864,
+        "coexact_fraction": 1.0,
+        "ipr": 0.00018232009523097114,
+        "near_defect_fraction": 0.01146487385900565,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      },
+      {
+        "mode_index": 5,
+        "eigenvalue": 0.30152288587388826,
+        "divergence_norm": 1.664405747171828e-16,
+        "curl_norm": 0.549110995950626,
+        "coexact_fraction": 1.0,
+        "ipr": 0.00020554716003597234,
+        "near_defect_fraction": 0.006653893137090537,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      },
+      {
+        "mode_index": 6,
+        "eigenvalue": 0.30152288587388826,
+        "divergence_norm": 2.4351635142067013e-16,
+        "curl_norm": 0.5491109959506258,
+        "coexact_fraction": 1.0,
+        "ipr": 0.0001972637099780545,
+        "near_defect_fraction": 0.012894903137252415,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      },
+      {
+        "mode_index": 7,
+        "eigenvalue": 0.3015228858738883,
+        "divergence_norm": 1.438764607013688e-16,
+        "curl_norm": 0.549110995950626,
+        "coexact_fraction": 1.0,
+        "ipr": 0.00023787634861049083,
+        "near_defect_fraction": 0.004347989499727521,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      },
+      {
+        "mode_index": 8,
+        "eigenvalue": 0.3015228858738882,
+        "divergence_norm": 1.557276154207509e-16,
+        "curl_norm": 0.5491109959506258,
+        "coexact_fraction": 1.0,
+        "ipr": 0.00022263888474697825,
+        "near_defect_fraction": 0.006166476496339505,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      },
+      {
+        "mode_index": 9,
+        "eigenvalue": 0.45228432881083225,
+        "divergence_norm": 1.6215402530874702e-16,
+        "curl_norm": 0.6725208761152566,
+        "coexact_fraction": 1.0,
+        "ipr": 0.00019507715733008916,
+        "near_defect_fraction": 0.005335143705718381,
+        "radial_profile": {
+          "radius": [],
+          "density": []
+        }
+      }
+    ]
+  },
+  "mode_metrics": [
+    {
+      "mode_index": 0,
+      "eigenvalue": 0.1507614429369441,
+      "divergence_norm": 1.3821458400325795e-16,
+      "curl_norm": 0.38828010886078634,
+      "ipr": 0.0001807589465577837
+    },
+    {
+      "mode_index": 1,
+      "eigenvalue": 0.1507614429369441,
+      "divergence_norm": 1.1665095145962838e-16,
+      "curl_norm": 0.38828010886078634,
+      "ipr": 0.00022748885426371367
+    },
+    {
+      "mode_index": 2,
+      "eigenvalue": 0.15076144293694413,
+      "divergence_norm": 1.813362912047552e-16,
+      "curl_norm": 0.3882801088607864,
+      "ipr": 0.00019469810803488986
+    },
+    {
+      "mode_index": 3,
+      "eigenvalue": 0.15076144293694407,
+      "divergence_norm": 1.4288013691337314e-16,
+      "curl_norm": 0.38828010886078634,
+      "ipr": 0.0002349990636214763
+    },
+    {
+      "mode_index": 4,
+      "eigenvalue": 0.15076144293694413,
+      "divergence_norm": 1.244790286957174e-16,
+      "curl_norm": 0.3882801088607864,
+      "ipr": 0.00018232009523097114
+    },
+    {
+      "mode_index": 5,
+      "eigenvalue": 0.30152288587388826,
+      "divergence_norm": 1.664405747171828e-16,
+      "curl_norm": 0.549110995950626,
+      "ipr": 0.00020554716003597234
+    },
+    {
+      "mode_index": 6,
+      "eigenvalue": 0.30152288587388826,
+      "divergence_norm": 2.4351635142067013e-16,
+      "curl_norm": 0.5491109959506258,
+      "ipr": 0.0001972637099780545
+    },
+    {
+      "mode_index": 7,
+      "eigenvalue": 0.3015228858738883,
+      "divergence_norm": 1.438764607013688e-16,
+      "curl_norm": 0.549110995950626,
+      "ipr": 0.00023787634861049083
+    },
+    {
+      "mode_index": 8,
+      "eigenvalue": 0.3015228858738882,
+      "divergence_norm": 1.557276154207509e-16,
+      "curl_norm": 0.5491109959506258,
+      "ipr": 0.00022263888474697825
+    },
+    {
+      "mode_index": 9,
+      "eigenvalue": 0.45228432881083225,
+      "divergence_norm": 1.6215402530874702e-16,
+      "curl_norm": 0.6725208761152566,
+      "ipr": 0.00019507715733008916
+    }
+  ],
+  "observation": "the lowest restricted transverse modes remain numerically divergence-free while their spatial support extends over the periodic lattice rather than concentrating at a single location",
+  "conclusion": "the inspected low restricted modes behave like extended circulation fields in the tested baseline branch",
+  "plots": [
+    "plots/transverse_vector_field_profiles.png",
+    "plots/divergence_curl_phase_mode_structure.png"
+  ]
+}
