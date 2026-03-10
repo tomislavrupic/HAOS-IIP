@@ -477,3 +477,19 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_192921_gauss_residual_map.png`, `plots/20260310_192921_gauss_correlation.png`, `plots/20260310_192921_gauss_integrated_flux.png`
 - Observation: the induced edge field satisfies a local divergence constraint that matches the inserted scalar source to numerical precision on the tested periodic complexes
 - Conclusion: the Gauss-law diagnostic is consistent with a discrete divergence constraint of the form d0* A = c rho with c near unity and small integrated flux mismatch
+
+## Stage 8B Refinement Dispersion
+- Date: 2026-03-10T19:45:40
+- Config: sizes=[16, 20, 24], epsilon=0.2, restricted_modes=24
+- Results: `data/20260310_194540_stage8_dispersion_refinement.json`
+- Plots: `plots/20260310_194540_dispersion_refinement_curve.png`, `plots/20260310_194540_dispersion_refinement_n2lambda.png`, `plots/20260310_194540_dispersion_refinement_residuals.png`
+- Observation: extending the lattice-size scan preserves the n^2 lambda_1 plateau of the low restricted transverse band while leaving the direct momentum-fit quality moderate
+- Conclusion: the larger-n refinement strengthens the continuum scaling evidence for the lowest transverse modes, although the coarse momentum assignment still limits the direct dispersion fit
+
+## Stage 8D Refinement Loop Response
+- Date: 2026-03-10T19:45:48
+- Config: n=16, epsilon=0.2, mode_index=0, max_loop_side=8
+- Results: `data/20260310_194548_stage8_loop_response_extended.json`
+- Plots: `plots/20260310_194548_loop_response_extended_perimeter.png`, `plots/20260310_194548_loop_response_extended_area.png`
+- Observation: extending the loop-size range preserves a smooth nonlocal loop response and sharpens the fitted scaling exponents relative to the original 1-4 scan
+- Conclusion: the extended loop scan strengthens the nonlocal diagnostic, but perimeter-versus-area interpretation still depends on the chosen square-loop family
