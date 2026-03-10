@@ -462,3 +462,11 @@ This file records orchestrated experiment runs.
 - Observation: adding pure exact edge components leaves the restricted transverse observables unchanged to numerical precision in the tested amplitudes
 - Conclusion: the longitudinal-decoupling diagnostic is consistent with redundancy of exact perturbations at the restricted transverse level
 
+## Stage 8D Wilson Loop Analogue
+- Date: 2026-03-10T19:21:21
+- Config: n=16, epsilon=0.2, mode_index=0, max_loop_side=4
+- Results: `data/20260310_192121_stage8_wilson_loop_test.json`
+- Plots: `plots/20260310_192121_loop_perimeter_scaling.png`, `plots/20260310_192121_loop_area_scaling.png`
+- Observation: closed-loop response of the lowest restricted transverse mode scales smoothly with loop size on the periodic architecture
+- Conclusion: the Wilson-loop analogue yields a stable nonlocal loop diagnostic with measurable perimeter and area scaling on the tested architecture
+

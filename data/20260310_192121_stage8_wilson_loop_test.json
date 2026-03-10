@@ -1,0 +1,50 @@
+{
+  "experiment": "stage8_wilson_loop_test",
+  "config": {
+    "n_side": 16,
+    "epsilon": 0.2,
+    "restricted_mode_index": 0,
+    "max_loop_side": 4
+  },
+  "selected_mode_eigenvalue": 0.15076144293694416,
+  "loop_sides": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "perimeter": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "area": [
+    0.00390625,
+    0.015625,
+    0.03515625,
+    0.0625
+  ],
+  "mean_abs_loop_response": [
+    0.0028744091558666053,
+    0.011263447636116752,
+    0.024556874190609073,
+    0.041624274946083624
+  ],
+  "perimeter_fit": {
+    "prefactor": 0.042334688179775655,
+    "power": 1.9328698865521567,
+    "r2": 0.9998101835587937
+  },
+  "area_fit": {
+    "prefactor": 0.61716315768,
+    "power": 0.9664349432760789,
+    "r2": 0.9998101835587937
+  },
+  "observation": "closed-loop response of the lowest restricted transverse mode scales smoothly with loop size on the periodic architecture",
+  "conclusion": "the Wilson-loop analogue yields a stable nonlocal loop diagnostic with measurable perimeter and area scaling on the tested architecture",
+  "plots": [
+    "plots/loop_perimeter_scaling.png",
+    "plots/loop_area_scaling.png"
+  ]
+}
