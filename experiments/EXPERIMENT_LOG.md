@@ -406,3 +406,35 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_175553_DK_flux_spectral_flow.png`, `plots/20260310_175553_DK_flux_square_residual.png`
 - Observation: the low Dirac-Kaehler branch shifts smoothly under flat torus-cycle holonomy while the graded square residual remains at numerical precision
 - Conclusion: the Stage 6 2D Dirac-Kaehler lift preserves its square identity under mild background cycle holonomy and shows stable spectral flow
+
+## DK 3D Cochain Infrastructure
+- Date: 2026-03-10T18:04:12
+- Config: epsilon=0.2, cochain_sizes=[4, 6, 8], cycle_phase_x=0.0, cycle_phase_y=0.0, cycle_phase_z=0.0
+- Results: `data/20260310_180412_DK_3D_cochain_infrastructure.json`
+- Plots: 
+- Observation: the weighted periodic 3D cochain complex satisfies the nilpotency and adjoint-nilpotency identities to numerical precision across the tested lattice sizes
+- Conclusion: the Stage 7 3D cochain infrastructure is internally consistent and admissible for the graded square test
+
+## DK 3D Square Test
+- Date: 2026-03-10T18:04:19
+- Config: epsilon=0.2, cochain_sizes=[4, 6, 8], square_modes=40
+- Results: `data/20260310_180419_DK_3D_square_test.json`
+- Plots: `plots/20260310_180419_DK_3D_square_vs_Hodge.png`
+- Observation: the graded 3D Dirac-Kaehler square matches the graded Hodge Laplacian to numerical precision across the tested lattice sizes and on every form degree
+- Conclusion: the Stage 7 3D Dirac-Kaehler lift satisfies the grade-by-grade square identity on the validated 3D cochain architecture
+
+## DK 3D Spectrum Structure
+- Date: 2026-03-10T18:04:33
+- Config: epsilon=0.2, n_side=6, modes=60
+- Results: `data/20260310_180433_DK_3D_spectrum_structure.json`
+- Plots: `plots/20260310_180433_DK_3D_spectrum.png`, `plots/20260310_180433_DK_3D_mode_grading.png`, `plots/20260310_180433_DK_3D_ipr_vs_mode.png`
+- Observation: the low graded 3D Dirac-Kaehler spectrum shows clean sign symmetry, near-zero modes, and stable weight distribution across 0-, 1-, 2-, and 3-form sectors
+- Conclusion: the Stage 7 3D prototype exhibits a stable graded spectral structure consistent with the validated Dirac-Kaehler lift
+
+## DK 3D Flux Response Test
+- Date: 2026-03-10T18:04:36
+- Config: epsilon=0.2, n_side=4, cycle_phases=[0.0, 0.2617993877991494, 0.5235987755982988, 0.7853981633974483], spectral_flow_modes=12
+- Results: `data/20260310_180436_DK_3D_flux_response_test.json`
+- Plots: `plots/20260310_180436_DK_3D_flux_spectral_flow.png`, `plots/20260310_180436_DK_3D_flux_square_residual.png`
+- Observation: the low 3D Dirac-Kaehler branch shifts smoothly under flat x-cycle holonomy while the graded square residual remains at numerical precision
+- Conclusion: the Stage 7 3D Dirac-Kaehler lift preserves its square identity under mild torus-cycle holonomy and shows stable low spectral flow

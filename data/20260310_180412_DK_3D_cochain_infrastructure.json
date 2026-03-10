@@ -1,0 +1,59 @@
+{
+  "experiment": "DK_3D_cochain_infrastructure",
+  "timestamp": "20260310_180412",
+  "config": {
+    "epsilon": 0.2,
+    "cochain_sizes": [
+      4,
+      6,
+      8
+    ],
+    "cycle_phase_x": 0.0,
+    "cycle_phase_y": 0.0,
+    "cycle_phase_z": 0.0
+  },
+  "systems": [
+    {
+      "n_side": 4,
+      "n_nodes": 64,
+      "n_edges": 192,
+      "n_faces": 192,
+      "n_volumes": 64,
+      "d1_d0_error": 0.0,
+      "d2_d1_error": 0.0,
+      "delta1_delta2_error": 0.0,
+      "delta2_delta3_error": 0.0,
+      "square_residual": 1.7404671430534633e-14,
+      "square_relative_residual": 1.3876013576651828e-16
+    },
+    {
+      "n_side": 6,
+      "n_nodes": 216,
+      "n_edges": 648,
+      "n_faces": 648,
+      "n_volumes": 216,
+      "d1_d0_error": 0.0,
+      "d2_d1_error": 0.0,
+      "delta1_delta2_error": 0.0,
+      "delta2_delta3_error": 0.0,
+      "square_residual": 0.0,
+      "square_relative_residual": 0.0
+    },
+    {
+      "n_side": 8,
+      "n_nodes": 512,
+      "n_edges": 1536,
+      "n_faces": 1536,
+      "n_volumes": 512,
+      "d1_d0_error": 0.0,
+      "d2_d1_error": 0.0,
+      "delta1_delta2_error": 0.0,
+      "delta2_delta3_error": 0.0,
+      "square_residual": 0.0,
+      "square_relative_residual": 0.0
+    }
+  ],
+  "observation": "the weighted periodic 3D cochain complex satisfies the nilpotency and adjoint-nilpotency identities to numerical precision across the tested lattice sizes",
+  "conclusion": "the Stage 7 3D cochain infrastructure is internally consistent and admissible for the graded square test",
+  "result_path": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/data/20260310_180412_DK_3D_cochain_infrastructure.json"
+}

@@ -1,0 +1,116 @@
+{
+  "experiment": "DK_3D_flux_response_test",
+  "timestamp": "20260310_180436",
+  "config": {
+    "epsilon": 0.2,
+    "n_side": 4,
+    "cycle_phases": [
+      0.0,
+      0.2617993877991494,
+      0.5235987755982988,
+      0.7853981633974483
+    ],
+    "spectral_flow_modes": 12
+  },
+  "flux_cases": [
+    {
+      "cycle_phase_x": 0.0,
+      "cycle_phase_y": 0.0,
+      "cycle_phase_z": 0.0,
+      "square_relative_residual": 1.3876013576651828e-16,
+      "first_positive_mode": 1.3079337347950162,
+      "last_tracked_mode": 1.3079337347950182,
+      "omega1_fraction_mean": 0.3863349206058824,
+      "positive_branch": [
+        1.3079337347950162,
+        1.3079337347950162,
+        1.3079337347950164,
+        1.3079337347950166,
+        1.307933734795017,
+        1.3079337347950173,
+        1.3079337347950175,
+        1.3079337347950177,
+        1.3079337347950177,
+        1.307933734795018,
+        1.307933734795018,
+        1.3079337347950182
+      ]
+    },
+    {
+      "cycle_phase_x": 0.2617993877991494,
+      "cycle_phase_y": 0.0,
+      "cycle_phase_z": 0.0,
+      "square_relative_residual": 1.3876013576651828e-16,
+      "first_positive_mode": 0.06052040983448293,
+      "last_tracked_mode": 1.3093331793784866,
+      "omega1_fraction_mean": 0.38603588102052816,
+      "positive_branch": [
+        0.06052040983448293,
+        0.0605204098344837,
+        0.060520409834484146,
+        0.06052040983448476,
+        1.2644390584991712,
+        1.264439058499172,
+        1.2644390584991725,
+        1.264439058499175,
+        1.3093331793784853,
+        1.3093331793784861,
+        1.3093331793784864,
+        1.3093331793784866
+      ]
+    },
+    {
+      "cycle_phase_x": 0.5235987755982988,
+      "cycle_phase_y": 0.0,
+      "cycle_phase_z": 0.0,
+      "square_relative_residual": 1.3876013576651828e-16,
+      "first_positive_mode": 0.12097601289824728,
+      "last_tracked_mode": 1.3135165968923275,
+      "omega1_fraction_mean": 0.3740598594615719,
+      "positive_branch": [
+        0.12097601289824728,
+        0.12097601289824786,
+        0.120976012898248,
+        0.1209760128982484,
+        1.219590389188738,
+        1.2195903891887407,
+        1.2195903891887407,
+        1.219590389188741,
+        1.3135165968923261,
+        1.3135165968923264,
+        1.3135165968923275,
+        1.3135165968923275
+      ]
+    },
+    {
+      "cycle_phase_x": 0.7853981633974483,
+      "cycle_phase_y": 0.0,
+      "cycle_phase_z": 0.0,
+      "square_relative_residual": 1.3876013576651828e-16,
+      "first_positive_mode": 0.1813020718172788,
+      "last_tracked_mode": 1.3204397357926183,
+      "omega1_fraction_mean": 0.36657031601832196,
+      "positive_branch": [
+        0.1813020718172788,
+        0.18130207181727898,
+        0.18130207181727942,
+        0.18130207181728092,
+        1.173435751942156,
+        1.1734357519421563,
+        1.1734357519421563,
+        1.1734357519421565,
+        1.3204397357926179,
+        1.320439735792618,
+        1.320439735792618,
+        1.3204397357926183
+      ]
+    }
+  ],
+  "observation": "the low 3D Dirac-Kaehler branch shifts smoothly under flat x-cycle holonomy while the graded square residual remains at numerical precision",
+  "conclusion": "the Stage 7 3D Dirac-Kaehler lift preserves its square identity under mild torus-cycle holonomy and shows stable low spectral flow",
+  "plots": [
+    "plots/20260310_180436_DK_3D_flux_spectral_flow.png",
+    "plots/20260310_180436_DK_3D_flux_square_residual.png"
+  ],
+  "result_path": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/data/20260310_180436_DK_3D_flux_response_test.json"
+}
