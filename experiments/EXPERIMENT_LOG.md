@@ -438,3 +438,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_180436_DK_3D_flux_spectral_flow.png`, `plots/20260310_180436_DK_3D_flux_square_residual.png`
 - Observation: the low 3D Dirac-Kaehler branch shifts smoothly under flat x-cycle holonomy while the graded square residual remains at numerical precision
 - Conclusion: the Stage 7 3D Dirac-Kaehler lift preserves its square identity under mild torus-cycle holonomy and shows stable low spectral flow
+## Stage 8A Charge Insertion
+- Date: 2026-03-10T19:19:33
+- Config: n=16, epsilon=0.2, source_strength=1.0
+- Results: `data/20260310_191933_stage8_charge_insertion.json`
+- Plots: `plots/20260310_191933_charge_radial_decay.png`, `plots/20260310_191933_charge_flux_balance.png`, `plots/20260310_191933_charge_divergence_map.png`
+- Observation: the scalar source produces a smooth induced edge field with a stable flux-balance profile on the periodic cochain architecture
+- Conclusion: the charge-insertion diagnostic shows structured scalar-to-edge response and exact discrete divergence accounting on the tested architecture
+
