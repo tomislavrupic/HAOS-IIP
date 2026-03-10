@@ -1,0 +1,77 @@
+{
+  "config": {
+    "epsilon": 0.2,
+    "sizes": [
+      12,
+      16,
+      20,
+      24
+    ],
+    "restricted_modes": 24,
+    "fit_modes": 2,
+    "harmonic_tol": 1e-08,
+    "eig_tol": 1e-08,
+    "penalty": 10.0,
+    "source_json": "data/20260310_145017_L1_large_n_scaling_test.json"
+  },
+  "q2_int": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0
+  ],
+  "fits": {
+    "12": {
+      "c_eff": 37.920592093313836,
+      "m_eff": -8.275113844157575e-17,
+      "r2": 1.0,
+      "families_used": 2
+    },
+    "16": {
+      "c_eff": 38.59492939185771,
+      "m_eff": -2.482534153247273e-16,
+      "r2": 1.0,
+      "families_used": 2
+    },
+    "20": {
+      "c_eff": 38.91083269655972,
+      "m_eff": -2.0687784610393942e-17,
+      "r2": 1.0,
+      "families_used": 2
+    },
+    "24": {
+      "c_eff": 39.0834464405579,
+      "m_eff": 0.0,
+      "r2": 1.0,
+      "families_used": 2
+    }
+  },
+  "observation": "the low restricted spectrum on the clean periodic branch is well fit by a linear function of effective momentum squared across the tested lattice sizes",
+  "conclusion": "the fitted gap stays small, from -8.275e-17 at n=12 to 0.000e+00 at n=24, while the effective stiffness varies only mildly across the tested sizes, consistent with a nearly gapless continuum transverse branch in the tested range",
+  "plots": [
+    "plots/effective_operator_fit.png",
+    "plots/effective_gap_vs_n.png",
+    "plots/effective_stiffness_vs_n.png",
+    "plots/divergence_curl_phase_effective_fit.png"
+  ]
+}
