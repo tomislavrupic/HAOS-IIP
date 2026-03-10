@@ -317,3 +317,44 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_164600_transverse_gap_vs_deformation.png`, `plots/20260310_164600_transverse_stiffness_vs_deformation.png`
 - Observation: small scalar/background deformations shift the effective transverse fit mainly through smooth stiffness renormalization, with no large unstable gap opening in the tested range
 - Conclusion: for the anisotropic family at n=12 and eta=0.10, the fitted stiffness is 23.654496 and the fitted gap is 9.884579e-02, consistent with a structured operator-level response rather than chaotic spectral rearrangement
+
+## transverse gap response
+- Date: 2026-03-10T16:57:17
+- Config: epsilon=0.2, sizes=[12, 16], variant=baseline, families=['radial', 'anisotropic', 'bump'], etas=[0.0, 0.02, 0.05, 0.1]
+- Results: `data/20260310_165717_transverse_gap_response.json`
+- Plots: `plots/20260310_165717_transverse_gap_vs_deformation.png`, `plots/20260310_165717_transverse_stiffness_vs_deformation.png`
+- Observation: small scalar/background deformations shift the effective transverse fit mainly through smooth stiffness renormalization, with no large unstable gap opening in the tested range
+- Conclusion: for the anisotropic family at n=16 and eta=0.10, the fitted stiffness is 38.561330 and the fitted gap is 5.394913e-05, consistent with a structured operator-level response rather than chaotic spectral rearrangement
+
+
+## DH Hermiticity Test
+- Date: 2026-03-10T17:32:41
+- Config: epsilon=0.2, two_d_n=6, three_d_n=8, prototype=full chiral 4-spinor lift
+- Results: `data/20260310_172558_DH_hermiticity_test.json`
+- Plots: 
+- Observation: the chiral Dirac-type lift is Hermitian to numerical precision on both the 2D and 3D prototype grids
+- Conclusion: the Stage 5 prototype passes the Hermiticity gate and is admissible for the square-root and spectral tests
+
+## DH Square-Root Test
+- Date: 2026-03-10T17:32:41
+- Config: epsilon=0.2, two_d_n=6, three_d_n=8, modes=48, prototype=full chiral 4-spinor lift
+- Results: `data/20260310_172136_DH_square_root_test.json`
+- Plots: `plots/20260310_172136_DH2_vs_L0_spectrum.png`
+- Observation: the chiral Dirac prototype tracks the low scalar spectrum only qualitatively: eigenvalue correlations remain high, but the relative spectral and operator errors stay large on both prototype grids
+- Conclusion: the current Stage 5 prototype does not satisfy the square-root criterion tightly enough; under the prompt rule, this lift is rejected in its present form
+
+## DH Flux Response Test
+- Date: 2026-03-10T17:32:41
+- Config: epsilon=0.2, two_d_n=6, flux_quanta=[0, 1, 2, 3], spectral_flow_modes=12, prototype=full chiral 4-spinor lift
+- Results: `data/20260310_172754_DH_flux_response_test.json`
+- Plots: `plots/20260310_172754_DH_flux_spectral_flow.png`
+- Observation: the low positive DH branch shifts smoothly as torus flux is increased in the 2D prototype
+- Conclusion: the prototype has smooth 2D background-flux spectral flow, but it remains rejected overall because the square-root criterion against the scalar operator failed
+
+## DH Spectrum Structure
+- Date: 2026-03-10T17:32:41
+- Config: epsilon=0.2, two_d_n=6, three_d_n=8, modes=50, prototype=full chiral 4-spinor lift
+- Results: `data/20260310_173100_DH_spectrum_structure.json`
+- Plots: `plots/20260310_173100_DH_spectrum.png`, `plots/20260310_173100_DH_ipr_vs_mode.png`
+- Observation: the low DH spectrum is sign-symmetric and extended in the 2D prototype, while the 3D prototype remains extended but shows only partial near-zero pairing
+- Conclusion: the prototype shows qualitative Dirac-like spectral structure, but this does not overcome the failed square-root test against the scalar operator
