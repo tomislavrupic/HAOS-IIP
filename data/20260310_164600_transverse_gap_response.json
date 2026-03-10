@@ -1,0 +1,131 @@
+{
+  "config": {
+    "epsilon": 0.2,
+    "sizes": [
+      12
+    ],
+    "variant": "baseline",
+    "families": [
+      "radial",
+      "anisotropic",
+      "bump"
+    ],
+    "etas": [
+      0.0,
+      0.02,
+      0.05,
+      0.1
+    ],
+    "restricted_modes": 24,
+    "fit_families": 2,
+    "harmonic_tol": 1e-08,
+    "eig_tol": 1e-08,
+    "penalty": 10.0,
+    "source_json": "data/20260310_164041_scalar_transverse_coupling_test.json",
+    "used_source": true
+  },
+  "fits": {
+    "radial|n12|0.00": {
+      "c_eff": 37.92059209331385,
+      "m_eff": -8.275113844157575e-17,
+      "family_values": [
+        0.2633374450924571,
+        0.5266748901849143
+      ]
+    },
+    "radial|n12|0.02": {
+      "c_eff": 23.683268906497357,
+      "m_eff": 0.0988224353314506,
+      "family_values": [
+        0.2632895805154601,
+        0.42775672569946943
+      ]
+    },
+    "radial|n12|0.05": {
+      "c_eff": 23.657247069971916,
+      "m_eff": 0.09886680383546041,
+      "family_values": [
+        0.26315324182137645,
+        0.42743967980729247
+      ]
+    },
+    "radial|n12|0.10": {
+      "c_eff": 23.612826627380212,
+      "m_eff": 0.09877854939861669,
+      "family_values": [
+        0.2627565120887571,
+        0.42673447477889737
+      ]
+    },
+    "anisotropic|n12|0.00": {
+      "c_eff": 37.92059209331385,
+      "m_eff": -8.275113844157575e-17,
+      "family_values": [
+        0.2633374450924571,
+        0.5266748901849143
+      ]
+    },
+    "anisotropic|n12|0.02": {
+      "c_eff": 33.17339302646977,
+      "m_eff": 0.03295071385015793,
+      "family_values": [
+        0.263321498756198,
+        0.49369228366223794
+      ]
+    },
+    "anisotropic|n12|0.05": {
+      "c_eff": 23.682160856947004,
+      "m_eff": 0.09879743967918075,
+      "family_values": [
+        0.2632568900746461,
+        0.4277163404701113
+      ]
+    },
+    "anisotropic|n12|0.10": {
+      "c_eff": 23.654495804384776,
+      "m_eff": 0.09884579459264344,
+      "family_values": [
+        0.2631131265675377,
+        0.42738045854243195
+      ]
+    },
+    "bump|n12|0.00": {
+      "c_eff": 37.92059209331385,
+      "m_eff": -8.275113844157575e-17,
+      "family_values": [
+        0.2633374450924571,
+        0.5266748901849143
+      ]
+    },
+    "bump|n12|0.02": {
+      "c_eff": 23.699526898691285,
+      "m_eff": 0.09875444830338871,
+      "family_values": [
+        0.26333449621096705,
+        0.4279145441185454
+      ]
+    },
+    "bump|n12|0.05": {
+      "c_eff": 23.698219349438414,
+      "m_eff": 0.09875879206775443,
+      "family_values": [
+        0.2633297597721878,
+        0.42790072747662117
+      ]
+    },
+    "bump|n12|0.10": {
+      "c_eff": 23.695925780425952,
+      "m_eff": 0.09876598985582857,
+      "family_values": [
+        0.2633210299976756,
+        0.42787607013952234
+      ]
+    }
+  },
+  "observation": "small scalar/background deformations shift the effective transverse fit mainly through smooth stiffness renormalization, with no large unstable gap opening in the tested range",
+  "conclusion": "for the anisotropic family at n=12 and eta=0.10, the fitted stiffness is 23.654496 and the fitted gap is 9.884579e-02, consistent with a structured operator-level response rather than chaotic spectral rearrangement",
+  "plots": [
+    "plots/transverse_gap_vs_deformation.png",
+    "plots/transverse_stiffness_vs_deformation.png"
+  ]
+}

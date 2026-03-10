@@ -222,10 +222,98 @@ This file records orchestrated experiment runs.
   - operator-level evidence for a low transverse spectral band consistent with continuum scaling in the tested range
   - no claim of gauge dynamics or emergent photons
 
-## L1 transverse band test
-- Date: 2026-03-10T13:39:40
-- Config: epsilon=0.2, sizes=[10, 12, 14, 16], variants=['baseline', 'puncture', 'line_defect', 'flux_tube'], restricted_modes=20, flux_tube_phase=1.5707963267948966
-- Results: `data/20260310_133940_L1_transverse_band_scan.json`
-- Plots: `plots/20260310_133940_transverse_band_collapse.png`, `plots/20260310_133940_transverse_floor_vs_n.png`, `plots/20260310_133940_transverse_ipr_vs_n.png`, `plots/20260310_133940_divergence_curl_phase_band.png`, `plots/20260310_133940_transverse_mode_profiles.png`
-- Observation: the first twenty restricted transverse eigenvalues show a partial n^2 spectral collapse while the lowest-mode IPR and defect concentration both fall with lattice size
-- Conclusion: the restricted transverse sector is organizing as a stable low spectral band consistent with continuum scaling in the tested range
+## kernel width sensitivity test
+- Date: 2026-03-10T14:45:13
+- Config: n=16, c_epsilon_values=[0.25, 0.5, 1.0, 1.5], phase_modes=20, restricted_modes=20
+- Results: `data/20260310_144513_kernel_width_sensitivity_test.json`
+- Plots: `plots/20260310_144513_transverse_band_vs_kernel_width.png`, `plots/20260310_144513_divergence_curl_phase_kernel_width.png`
+- Observation: the restricted transverse spectrum remains present across the tested kernel-width range, while the lowest eigenvalue, first-band spread, and lowest-mode IPR shift smoothly with c_epsilon
+- Conclusion: within the tested local-kernel range, the restricted transverse band is robust to moderate kernel-width changes
+
+## L1 geometric disorder test
+- Date: 2026-03-10T14:46:21
+- Config: epsilon=0.2, sizes=[12, 16, 20], sigma_factor=0.05, phase_modes=20, restricted_modes=20
+- Results: `data/20260310_144621_L1_geometric_disorder_test.json`
+- Plots: `plots/20260310_144621_transverse_band_disorder.png`, `plots/20260310_144621_divergence_curl_phase_disorder.png`
+- Observation: the restricted transverse spectrum persists under weak geometric disorder, with the ordered and disordered scaled bands remaining close and the lowest restricted mode staying divergence-free
+- Conclusion: in the tested weak-disorder regime, loss of exact lattice symmetry does not destroy the low restricted transverse band
+
+## L1 large-n scaling test
+- Date: 2026-03-10T14:50:17
+- Config: epsilon=0.2, sizes=[12, 16, 20, 24, 28, 32], phase_modes=30, restricted_modes=30, variant=baseline
+- Results: `data/20260310_145017_L1_large_n_scaling_test.json`
+- Plots: `plots/20260310_145017_transverse_floor_vs_n_large.png`, `plots/20260310_145017_transverse_band_collapse_large.png`, `plots/20260310_145017_transverse_ipr_vs_n_large.png`, `plots/20260310_145017_divergence_curl_phase_large.png`
+- Observation: the lowest restricted transverse eigenvalue keeps decreasing on the baseline torus, the lowest-mode IPR continues to fall, and the first thirty scaled eigenvalues show partial n^2 collapse
+- Conclusion: the large-n baseline scan remains consistent with a continuum Laplacian-type transverse band in the tested range
+
+## transverse mode structure
+- Date: 2026-03-10T14:50:35
+- Config: epsilon=0.2, n=16, variant=baseline, phase_modes=20, restricted_modes=10
+- Results: `data/20260310_145035_transverse_mode_structure.json`
+- Plots: `plots/20260310_145035_transverse_vector_field_profiles.png`, `plots/20260310_145035_divergence_curl_phase_mode_structure.png`
+- Observation: the lowest restricted transverse modes remain numerically divergence-free while their spatial support extends over the periodic lattice rather than concentrating at a single location
+- Conclusion: the inspected low restricted modes behave like extended circulation fields in the tested baseline branch
+
+## transverse continuum comparison
+- Date: 2026-03-10T15:00:06
+- Config: epsilon=0.2, sizes=[12, 16, 20], variants=['baseline', 'puncture', 'line_defect', 'flux_tube'], restricted_modes=20
+- Results: `data/20260310_150006_transverse_continuum_comparison.json`
+- Plots: `plots/20260310_150006_transverse_continuum_comparison.png`, `plots/20260310_150006_transverse_mode_spacing.png`, `plots/20260310_150006_divergence_curl_phase_continuum.png`
+- Observation: after n^2 rescaling, the low restricted transverse spectrum aligns with the continuum transverse mode ordering and the mode-spacing pattern remains stable across the tested branches
+- Conclusion: for the largest baseline case, the first-ten relative spectrum error is 0.219 and the first-ten spacing error is 0.000, consistent with a low continuum transverse operator in the tested range
+
+## transverse PDE reconstruction
+- Date: 2026-03-10T15:48:31
+- Config: epsilon=0.2, sizes=[12, 16], restricted_modes=3
+- Results: `data/20260310_154831_transverse_pde_reconstruction.json`
+- Plots: `plots/20260310_154831_pde_reconstruction_residuals.png`, `plots/20260310_154831_transverse_field_residual_maps.png`, `plots/20260310_154831_divergence_curl_phase_pde_reconstruction.png`
+- Observation: after coarse-graining to a periodic vector field, the lowest restricted modes remain nearly divergence-free and the curl-curl residual decreases with lattice size
+- Conclusion: for the lowest mode, the relative curl-curl residual decreases from 0.051 at n=12 to 0.029 at n=16, consistent with an emergent local coarse-grained PDE in the tested range
+
+## transverse real-space correlations
+- Date: 2026-03-10T15:51:53
+- Config: epsilon=0.2, sizes=[12, 16], pair_samples=8000, bins=24, restricted_modes=6
+- Results: `data/20260310_155153_transverse_realspace_correlations.json`
+- Plots: `plots/20260310_155153_transverse_correlation_decay.png`, `plots/20260310_155153_transverse_anisotropy.png`, `plots/20260310_155153_divergence_curl_phase_correlations.png`
+- Observation: the lowest restricted transverse mode shows extended two-point correlations while directional anisotropy remains modest across the tested sizes
+- Conclusion: the correlation length remains of the same order, from 0.094 at n=12 to 0.088 at n=16, while the anisotropy ratio stays moderate at 1.197 for the largest size, consistent with an extended continuum-like branch in the tested range
+
+## transverse effective operator fit
+- Date: 2026-03-10T15:57:13
+- Config: epsilon=0.2, sizes=[12, 16, 20, 24], restricted_modes=24, fit_modes=2
+- Results: `data/20260310_155713_transverse_effective_operator_fit.json`
+- Plots: `plots/20260310_155713_effective_operator_fit.png`, `plots/20260310_155713_effective_gap_vs_n.png`, `plots/20260310_155713_effective_stiffness_vs_n.png`, `plots/20260310_155713_divergence_curl_phase_effective_fit.png`
+- Observation: the low restricted spectrum on the clean periodic branch is well fit by a linear function of effective momentum squared across the tested lattice sizes
+- Conclusion: the fitted gap stays small, from -8.275e-17 at n=12 to 0.000e+00 at n=24, while the effective stiffness varies only mildly across the tested sizes, consistent with a nearly gapless continuum transverse branch in the tested range
+
+## scalar-transverse coupling test
+- Date: 2026-03-10T16:40:41
+- Config: epsilon=0.2, sizes=[12], variants=['baseline', 'puncture', 'line_defect'], families=['radial', 'anisotropic', 'bump'], etas=[0.02, 0.05, 0.1], restricted_modes=20
+- Results: `data/20260310_164041_scalar_transverse_coupling_test.json`
+- Plots: `plots/20260310_164041_scalar_transverse_eigenvalue_shifts.png`, `plots/20260310_164041_scalar_transverse_mode_overlap.png`, `plots/20260310_164041_scalar_transverse_deformation_response.png`, `plots/20260310_164041_divergence_curl_phase_scalar_transverse.png`
+- Observation: small scalar/background deformations shift the restricted transverse spectrum smoothly, while the matched low-mode overlaps remain moderate to high depending on branch and deformation family
+- Conclusion: for the baseline anisotropic branch at eta=0.10, the lowest restricted eigenvalue shifts by -0.000479 with mean matched overlap 0.4121, indicating a measurable but bounded operator-level spectral response
+
+## scalar-transverse coupling matrix
+- Date: 2026-03-10T16:42:16
+- Config: epsilon=0.2, n_side=12, variant=baseline, family=anisotropic, etas=[0.02, 0.05, 0.1], matrix_modes=10
+- Results: `data/20260310_164216_scalar_transverse_coupling_matrix.json`
+- Plots: `plots/20260310_164216_transverse_coupling_matrix_heatmap.png`, `plots/20260310_164216_transverse_mode_mixing_vs_eta.png`
+- Observation: the deformation-induced coupling matrix remains structured, but its weight is broadly distributed across the low-mode block rather than sharply diagonal-dominant
+- Conclusion: at eta=0.10, the diagonal fraction is 0.3365 and the off-diagonal fraction is 0.6635, indicating structured but non-diagonal mode mixing in the low transverse sector
+
+## transverse backreaction maps
+- Date: 2026-03-10T16:44:15
+- Config: epsilon=0.2, n_side=12, variants=['baseline', 'puncture'], family=bump, etas=[0.05, 0.1]
+- Results: `data/20260310_164414_transverse_backreaction_maps.json`
+- Plots: `plots/20260310_164414_transverse_backreaction_maps.png`, `plots/20260310_164414_transverse_sensitivity_vs_scalar_profile.png`
+- Observation: localized scalar/background bumps produce nonuniform changes in the lowest restricted transverse mode rather than a flat redistribution across the lattice
+- Conclusion: for the baseline branch at eta=0.10, the mean sensitivity is 0.008907 with profile correlation -0.0934, so the response is spatially structured but not simply proportional to the scalar bump profile
+
+## transverse gap response
+- Date: 2026-03-10T16:46:00
+- Config: epsilon=0.2, sizes=[12], variant=baseline, families=['radial', 'anisotropic', 'bump'], etas=[0.0, 0.02, 0.05, 0.1]
+- Results: `data/20260310_164600_transverse_gap_response.json`
+- Plots: `plots/20260310_164600_transverse_gap_vs_deformation.png`, `plots/20260310_164600_transverse_stiffness_vs_deformation.png`
+- Observation: small scalar/background deformations shift the effective transverse fit mainly through smooth stiffness renormalization, with no large unstable gap opening in the tested range
+- Conclusion: for the anisotropic family at n=12 and eta=0.10, the fitted stiffness is 23.654496 and the fitted gap is 9.884579e-02, consistent with a structured operator-level response rather than chaotic spectral rearrangement
