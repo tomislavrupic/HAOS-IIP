@@ -75,6 +75,47 @@ w_e = \exp\!\left(-\frac{h^2}{2\varepsilon_k}\right).
 \end{equation}
 The key point is that the scalar and edge sectors are not built from unrelated models. They are different lifts of the same weighted interaction fabric.
 
+\subsection{Kernel-Induced Laplacian Limit}
+The repository now contains a direct operator-convergence test showing how the Laplacian arises from the same kernel substrate rather than being inserted as an independent continuum assumption. On cubic grids with spacing $h$, the kernel width is scaled as
+\begin{equation}
+\varepsilon_k = c_\varepsilon h^2,
+\qquad
+c_\varepsilon > 0.
+\end{equation}
+In this regime the Gaussian weights define a local averaging operator that is the discrete analogue of heat-kernel smoothing. The centered graph difference operator
+\begin{equation}
+L = D - W
+\end{equation}
+is therefore not yet the Laplacian itself, but rather the kernel-induced difference between a field and its local Gaussian average.
+
+For the actual cutoff stencil used on the graph, the correct continuum normalization is set by the discrete second moment
+\begin{equation}
+\mu_2 = \frac{1}{3}\sum_{\delta} w_\delta |\delta|^2,
+\end{equation}
+where $\delta$ runs over the offset stencil and $w_\delta$ are the corresponding kernel weights. The induced operator tested numerically is
+\begin{equation}
+\widehat{L}_h = -\frac{2}{\mu_2 h^2} L.
+\end{equation}
+The numerical experiments in the accompanying repository show that this is the object converging to $\Delta$ on interior nodes.
+
+The evidence is strongest in the local-kernel regime $c_\varepsilon \le 1$. Three analytic test functions were used:
+\begin{align}
+f_1(x,y,z) &= x^2 + y^2 + z^2, \\
+f_2(x,y,z) &= \sin(\pi x)\sin(\pi y)\sin(\pi z), \\
+f_3(x,y,z) &= \exp(-(x^2+y^2+z^2)).
+\end{align}
+For $f_1$, the interior error is at machine precision across the cubic scan, showing that the normalized operator reproduces the constant Laplacian of a quadratic polynomial essentially exactly. For $f_2$, the measured convergence orders are approximately $1.98$ for $c_\varepsilon=0.5$ and $1.86$ for $c_\varepsilon=1.0$. For $f_3$, the corresponding orders are approximately $1.80$ and $1.25$. When $c_\varepsilon=2.0$, convergence is visibly weaker at finite resolution, which is consistent with the kernel becoming too broad relative to the grid spacing and therefore less local as a differential operator.
+
+This is the current operator-level chain supported by the numerics:
+\begin{equation}
+\text{local Gaussian kernel}
+\;\to\;
+\text{heat-kernel-type smoothing}
+\;\to\;
+\widehat{L}_h \to \Delta.
+\end{equation}
+Once that induced Laplacian limit is in place, the later Green-response and bound-spectrum steps used elsewhere in the repository follow from the same operator substrate rather than from a separate continuum postulate.
+
 \section{Graph Substrate}
 Two substrate classes are currently used.
 

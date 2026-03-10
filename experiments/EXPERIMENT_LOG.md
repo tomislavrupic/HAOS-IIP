@@ -177,3 +177,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_110539_kernel_graph_green_profiles.png`, `plots/20260310_110539_kernel_graph_green_exponents.png`, `plots/20260310_110539_kernel_graph_green_fit_quality.png`
 - Observation: kernel-graph Green response approaches A + B/r on the cubic substrate scan
 - Conclusion: the weighted interaction kernel induces a graph Laplacian whose far field is consistent with inverse-distance geometry; direct shell-derivative force estimates remain noisier than the field fit
+
+## Kernel Laplacian convergence
+- Date: 2026-03-10T11:15:23
+- Config: n_sides=[9, 11, 13, 17, 21], epsilon_coeffs=[0.5, 1.0, 2.0], cutoff_factor=2.5
+- Results: `data/20260310_111522_kernel_operator_convergence.json`
+- Plots: `plots/20260310_111522_operator_error_vs_h.png`, `plots/20260310_111522_operator_profiles.png`
+- Observation: the kernel-induced operator reproduces the quadratic test exactly and converges toward the continuum Laplacian for smooth test functions
+- Conclusion: after discrete second-moment normalization, the graph operator shows clear Laplacian convergence on the cubic scan; broader kernels remain less accurate at finite resolution
