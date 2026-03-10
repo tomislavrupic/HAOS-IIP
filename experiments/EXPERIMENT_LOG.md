@@ -209,3 +209,23 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_133322_transverse_band_collapse.png`, `plots/20260310_133322_transverse_floor_vs_n.png`, `plots/20260310_133322_transverse_ipr_vs_n.png`, `plots/20260310_133322_divergence_curl_phase_band.png`, `plots/20260310_133322_transverse_mode_profiles.png`
 - Observation: the first twenty restricted transverse eigenvalues show a partial n^2 spectral collapse while the lowest-mode IPR and defect concentration both fall with lattice size
 - Conclusion: the restricted transverse sector is organizing as a stable low spectral band consistent with continuum scaling in the tested range
+
+## Milestone: transverse-band formation test (2026-03-10)
+- Kernel-induced substrate now supports:
+  - Laplacian scalar sector
+  - restricted transverse edge sector
+- Numerical evidence:
+  - descending restricted floor with lattice size
+  - decreasing IPR and defect concentration
+  - partial n^2 spectral collapse of first modes
+- Interpretation boundary:
+  - operator-level evidence for a low transverse spectral band consistent with continuum scaling in the tested range
+  - no claim of gauge dynamics or emergent photons
+
+## L1 transverse band test
+- Date: 2026-03-10T13:39:40
+- Config: epsilon=0.2, sizes=[10, 12, 14, 16], variants=['baseline', 'puncture', 'line_defect', 'flux_tube'], restricted_modes=20, flux_tube_phase=1.5707963267948966
+- Results: `data/20260310_133940_L1_transverse_band_scan.json`
+- Plots: `plots/20260310_133940_transverse_band_collapse.png`, `plots/20260310_133940_transverse_floor_vs_n.png`, `plots/20260310_133940_transverse_ipr_vs_n.png`, `plots/20260310_133940_divergence_curl_phase_band.png`, `plots/20260310_133940_transverse_mode_profiles.png`
+- Observation: the first twenty restricted transverse eigenvalues show a partial n^2 spectral collapse while the lowest-mode IPR and defect concentration both fall with lattice size
+- Conclusion: the restricted transverse sector is organizing as a stable low spectral band consistent with continuum scaling in the tested range
