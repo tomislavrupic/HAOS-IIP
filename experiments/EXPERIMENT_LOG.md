@@ -201,3 +201,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_132323_transverse_floor_scaling_loglog.png`, `plots/20260310_132323_transverse_floor_ipr_vs_n.png`, `plots/20260310_132323_transverse_mode_profiles.png`, `plots/20260310_132323_divergence_curl_phase_scaling.png`
 - Observation: the restricted floor keeps descending while the lowest-mode IPR drops with lattice size in every branch, and the defect branches do not retain a growing fraction of norm near the defect
 - Conclusion: the descending restricted floor is behaving more like a continuum transverse-band candidate than a defect-pinned low mode in the tested range
+
+## L1 transverse band test
+- Date: 2026-03-10T13:33:22
+- Config: epsilon=0.2, sizes=[6, 8, 10, 12, 14, 16], variants=['baseline', 'puncture', 'line_defect', 'flux_tube'], restricted_modes=20, flux_tube_phase=1.5707963267948966
+- Results: `data/20260310_133322_L1_transverse_band_scan.json`
+- Plots: `plots/20260310_133322_transverse_band_collapse.png`, `plots/20260310_133322_transverse_floor_vs_n.png`, `plots/20260310_133322_transverse_ipr_vs_n.png`, `plots/20260310_133322_divergence_curl_phase_band.png`, `plots/20260310_133322_transverse_mode_profiles.png`
+- Observation: the first twenty restricted transverse eigenvalues show a partial n^2 spectral collapse while the lowest-mode IPR and defect concentration both fall with lattice size
+- Conclusion: the restricted transverse sector is organizing as a stable low spectral band consistent with continuum scaling in the tested range
