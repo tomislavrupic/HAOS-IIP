@@ -4,3 +4,8 @@ __pycache__/
 .mplconfig/
 docs/media/videos/*.mp4
 docs/media/videos/*.mov
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
