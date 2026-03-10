@@ -358,3 +358,51 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_173100_DH_spectrum.png`, `plots/20260310_173100_DH_ipr_vs_mode.png`
 - Observation: the low DH spectrum is sign-symmetric and extended in the 2D prototype, while the 3D prototype remains extended but shows only partial near-zero pairing
 - Conclusion: the prototype shows qualitative Dirac-like spectral structure, but this does not overcome the failed square-root test against the scalar operator
+
+## DK 2D Cochain Infrastructure
+- Date: 2026-03-10T17:49:55
+- Config: epsilon=0.2, cochain_sizes=[8, 12, 16], cycle_phase_x=0.0, cycle_phase_y=0.0
+- Results: `data/20260310_174955_DK_2D_cochain_infrastructure.json`
+- Plots: 
+- Observation: the weighted periodic 2D cochain complex satisfies the coboundary and adjoint-coboundary identities to numerical precision across the tested lattice sizes
+- Conclusion: the Stage 6 2D cochain infrastructure is internally consistent and admissible for the Dirac-Kaehler square test
+
+## DK Square Test
+- Date: 2026-03-10T17:50:01
+- Config: epsilon=0.2, cochain_sizes=[8, 12, 16], square_modes=40
+- Results: `data/20260310_175001_DK_square_test.json`
+- Plots: `plots/20260310_175001_DK_square_vs_Hodge.png`
+- Observation: the graded Dirac-Kaehler square matches the graded Hodge Laplacian to numerical precision across the tested 2D lattice sizes
+- Conclusion: the Stage 6 Dirac-Kaehler lift satisfies the defining square identity on the validated 2D cochain architecture
+
+## DK Spectrum Structure
+- Date: 2026-03-10T17:51:59
+- Config: epsilon=0.2, n_side=12, modes=60
+- Results: `data/20260310_175158_DK_spectrum_structure.json`
+- Plots: `plots/20260310_175158_DK_spectrum.png`, `plots/20260310_175158_DK_mode_grading.png`, `plots/20260310_175158_DK_ipr_vs_mode.png`
+- Observation: the low graded Dirac-Kaehler spectrum shows clean sign symmetry, low near-zero modes, and stable weight distribution across 0-, 1-, and 2-form sectors
+- Conclusion: the Stage 6 2D prototype exhibits a stable graded spectral structure consistent with a Dirac-Kaehler lift on the validated cochain complex
+
+## DK Flux Response Test
+- Date: 2026-03-10T17:53:52
+- Config: epsilon=0.2, n_side=12, cycle_phases=[0.0, 0.2617993877991494, 0.5235987755982988, 0.7853981633974483], spectral_flow_modes=12
+- Results: `data/20260310_175351_DK_flux_response_test.json`
+- Plots: `plots/20260310_175351_DK_flux_spectral_flow.png`, `plots/20260310_175351_DK_flux_square_residual.png`
+- Observation: the low Dirac-Kaehler branch shifts smoothly under flat torus-cycle holonomy while the graded square residual remains at numerical precision
+- Conclusion: the Stage 6 2D Dirac-Kaehler lift preserves its square identity under mild background cycle holonomy and shows stable spectral flow
+
+## DK Flux Response Test
+- Date: 2026-03-10T17:55:52
+- Config: epsilon=0.2, n_side=12, cycle_phases=[0.0, 0.2617993877991494, 0.5235987755982988, 0.7853981633974483], spectral_flow_modes=12
+- Results: `data/20260310_175551_DK_flux_response_test.json`
+- Plots: `plots/20260310_175551_DK_flux_spectral_flow.png`, `plots/20260310_175551_DK_flux_square_residual.png`
+- Observation: the low Dirac-Kaehler branch shifts smoothly under flat torus-cycle holonomy while the graded square residual remains at numerical precision
+- Conclusion: the Stage 6 2D Dirac-Kaehler lift preserves its square identity under mild background cycle holonomy and shows stable spectral flow
+
+## DK Flux Response Test
+- Date: 2026-03-10T17:55:53
+- Config: epsilon=0.2, n_side=12, cycle_phases=[0.0, 0.2617993877991494, 0.5235987755982988, 0.7853981633974483], spectral_flow_modes=12
+- Results: `data/20260310_175553_DK_flux_response_test.json`
+- Plots: `plots/20260310_175553_DK_flux_spectral_flow.png`, `plots/20260310_175553_DK_flux_square_residual.png`
+- Observation: the low Dirac-Kaehler branch shifts smoothly under flat torus-cycle holonomy while the graded square residual remains at numerical precision
+- Conclusion: the Stage 6 2D Dirac-Kaehler lift preserves its square identity under mild background cycle holonomy and shows stable spectral flow

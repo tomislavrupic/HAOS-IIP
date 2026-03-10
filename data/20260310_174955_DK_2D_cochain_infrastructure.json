@@ -1,0 +1,49 @@
+{
+  "experiment": "DK_2D_cochain_infrastructure",
+  "timestamp": "20260310_174955",
+  "config": {
+    "epsilon": 0.2,
+    "cochain_sizes": [
+      8,
+      12,
+      16
+    ],
+    "cycle_phase_x": 0.0,
+    "cycle_phase_y": 0.0
+  },
+  "systems": [
+    {
+      "n_side": 8,
+      "n_nodes": 64,
+      "n_edges": 128,
+      "n_faces": 64,
+      "d1_d0_error": 0.0,
+      "delta1_delta2_error": 0.0,
+      "square_residual": 0.0,
+      "square_relative_residual": 0.0
+    },
+    {
+      "n_side": 12,
+      "n_nodes": 144,
+      "n_edges": 288,
+      "n_faces": 144,
+      "d1_d0_error": 0.0,
+      "delta1_delta2_error": 0.0,
+      "square_residual": 0.0,
+      "square_relative_residual": 0.0
+    },
+    {
+      "n_side": 16,
+      "n_nodes": 256,
+      "n_edges": 512,
+      "n_faces": 256,
+      "d1_d0_error": 0.0,
+      "delta1_delta2_error": 0.0,
+      "square_residual": 0.0,
+      "square_relative_residual": 0.0
+    }
+  ],
+  "observation": "the weighted periodic 2D cochain complex satisfies the coboundary and adjoint-coboundary identities to numerical precision across the tested lattice sizes",
+  "conclusion": "the Stage 6 2D cochain infrastructure is internally consistent and admissible for the Dirac-Kaehler square test",
+  "result_path": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/data/20260310_174955_DK_2D_cochain_infrastructure.json"
+}
