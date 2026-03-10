@@ -454,3 +454,11 @@ This file records orchestrated experiment runs.
 - Observation: the low restricted transverse spectrum follows a stable quadratic dispersion trend across the tested lattice sizes
 - Conclusion: the dispersion diagnostic is consistent with continuum-like propagation of the restricted transverse band on the frozen architecture
 
+## Stage 8C Longitudinal Decoupling
+- Date: 2026-03-10T19:21:13
+- Config: n=16, epsilon=0.2, restricted_modes=20
+- Results: `data/20260310_192113_stage8_longitudinal_decoupling.json`
+- Plots: `plots/20260310_192113_decoupling_residuals.png`
+- Observation: adding pure exact edge components leaves the restricted transverse observables unchanged to numerical precision in the tested amplitudes
+- Conclusion: the longitudinal-decoupling diagnostic is consistent with redundancy of exact perturbations at the restricted transverse level
+

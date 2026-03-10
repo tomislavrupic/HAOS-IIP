@@ -1,0 +1,51 @@
+{
+  "experiment": "stage8_longitudinal_decoupling",
+  "config": {
+    "n_side": 16,
+    "epsilon": 0.2,
+    "restricted_modes": 20,
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ]
+  },
+  "residuals": {
+    "projection": [
+      0.0,
+      3.2970658604103103e-15,
+      6.5463388169562536e-15,
+      1.3195585273589366e-14,
+      2.6296684580968708e-14
+    ],
+    "coexact_energy": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "spectral_weights": [
+      0.0,
+      8.881784197001248e-16,
+      8.881784197001248e-16,
+      5.045199191674907e-32,
+      6.661338147750936e-16
+    ],
+    "divfree_projection": [
+      0.0,
+      3.2938322207562262e-15,
+      6.5422063049779365e-15,
+      1.3190947632879801e-14,
+      2.6295333288813454e-14
+    ],
+    "max_residual": 2.6296684580968708e-14
+  },
+  "observation": "adding pure exact edge components leaves the restricted transverse observables unchanged to numerical precision in the tested amplitudes",
+  "conclusion": "the longitudinal-decoupling diagnostic is consistent with redundancy of exact perturbations at the restricted transverse level",
+  "plots": [
+    "plots/decoupling_residuals.png"
+  ]
+}
