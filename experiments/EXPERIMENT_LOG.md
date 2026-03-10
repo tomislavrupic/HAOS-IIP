@@ -145,3 +145,19 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_000308_periodic_twisted_l1_hodge_projection_periodic_twisted_l1_hodge_projection_full_vs_coexact.png`, `plots/20260310_000308_periodic_twisted_l1_hodge_projection_periodic_twisted_l1_hodge_projection_harmonic_fraction.png`, `plots/20260310_000308_periodic_twisted_l1_hodge_projection_periodic_twisted_l1_hodge_projection_coexact_fraction.png`, `plots/20260310_000308_periodic_twisted_l1_hodge_projection_periodic_twisted_l1_hodge_projection_coexact_flow.png`, `plots/20260310_000308_periodic_twisted_l1_hodge_projection_periodic_twisted_l1_hodge_projection_persistence.png`, `plots/20260310_000308_periodic_twisted_l1_hodge_projection_periodic_twisted_l1_hodge_projection_modes.png`
 - Observation: after harmonic removal, the coexact floor stays well above the mixed full low branch across the flux scan
 - Conclusion: no clear coexact low band yet; the very low modes remain dominated by harmonic or mixed topological remnants
+
+## Recoverable hydrogenic spectrum
+- Date: 2026-03-10T10:46:08
+- Config: D=1.0, alpha=1.0, r_min=0.001, r_max=80.0, n_grid=1400, l_values=[0, 1, 2], states_per_l=4
+- Results: `data/20260310_104607_recoverable_hydrogenic_spectrum.json`
+- Plots: `plots/20260310_104607_recoverable_hydrogenic_energy_scaling.png`, `plots/20260310_104607_recoverable_hydrogenic_n2_energy.png`, `plots/20260310_104607_recoverable_hydrogenic_modes.png`
+- Observation: bound radial modes form a discrete ladder with near-constant n^2 |E_n|
+- Conclusion: discreteness emerges from quadratic dispersion, inverse-distance geometry, and normalizability without a separate quantization postulate
+
+## Interaction attractor spectrum
+- Date: 2026-03-10T10:50:45
+- Config: D=1.0, alpha=1.0, r_min=0.001, r_max=80.0, n_grid=1200, states=4, modal_basis_size=12, dt=6.0, max_steps=400, tol=1e-10, recovery_noise=0.12, seed=42
+- Results: `data/20260310_105044_interaction_attractor_spectrum.json`
+- Plots: `plots/20260310_105044_interaction_attractor_energy_descent.png`, `plots/20260310_105044_interaction_attractor_scaling.png`, `plots/20260310_105044_interaction_attractor_recovery.png`, `plots/20260310_105044_interaction_attractor_modes.png`
+- Observation: normalized interaction flow converges to a discrete ladder of recoverable bound attractors
+- Conclusion: discrete states arise from the inverse-distance interaction geometry and boundary-constrained radial operator; the attractor flow stabilizes and recovers these modes, but unconstrained flow selects only the lowest sector
