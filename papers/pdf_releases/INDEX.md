@@ -1,0 +1,18 @@
+# PDF Releases
+
+Naming convention:
+- `PP.V Title.pdf`
+- `PP` = paper number in the research sequence
+- `V` = release version for that paper
+
+Current releases:
+- `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
+- `01.1` Kernel-Induced Operator Architecture and the Emergence of a Transverse Spectral Band on Discrete Substrates
+- `02.1` Continuum Reconstruction and Scalar-Transverse Coupling in Kernel-Induced Operator Systems
+- `03.1` Dirac-Kaehler Factorization on a Validated Cochain Operator Architecture
+- `04.1` Gauge-Like Diagnostics on a Kernel-Induced Cochain Operator Architecture
+
+Rule for future papers:
+- add the compiled PDF here when a paper snapshot is frozen
+- keep the source PDF in `papers/` untouched
+- increment only the version suffix when a frozen paper is revised
