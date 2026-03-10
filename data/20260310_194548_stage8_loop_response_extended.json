@@ -1,0 +1,66 @@
+{
+  "experiment": "stage8_loop_response_extended",
+  "config": {
+    "n_side": 16,
+    "epsilon": 0.2,
+    "restricted_mode_index": 0,
+    "max_loop_side": 8
+  },
+  "selected_mode_eigenvalue": 0.15076144293694416,
+  "loop_sides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "perimeter": [
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0
+  ],
+  "area": [
+    0.00390625,
+    0.015625,
+    0.03515625,
+    0.0625,
+    0.09765625,
+    0.140625,
+    0.19140625,
+    0.25
+  ],
+  "mean_abs_loop_response": [
+    0.0028744091558666053,
+    0.011263447636116752,
+    0.024556874190609073,
+    0.041624274946083624,
+    0.06125326571119499,
+    0.0815771041265768,
+    0.10115441466071455,
+    0.11773122830539635
+  ],
+  "perimeter_fit": {
+    "prefactor": 0.0384023118821509,
+    "power": 1.8038788627816953,
+    "r2": 0.9961265518566943
+  },
+  "area_fit": {
+    "prefactor": 0.4681668543019107,
+    "power": 0.9019394313908471,
+    "r2": 0.9961265518566943
+  },
+  "observation": "extending the loop-size range preserves a smooth nonlocal loop response and sharpens the fitted scaling exponents relative to the original 1-4 scan",
+  "conclusion": "the extended loop scan strengthens the nonlocal diagnostic, but perimeter-versus-area interpretation still depends on the chosen square-loop family",
+  "plots": [
+    "plots/loop_response_extended_perimeter.png",
+    "plots/loop_response_extended_area.png"
+  ]
+}
