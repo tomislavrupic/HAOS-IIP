@@ -470,3 +470,10 @@ This file records orchestrated experiment runs.
 - Observation: closed-loop response of the lowest restricted transverse mode scales smoothly with loop size on the periodic architecture
 - Conclusion: the Wilson-loop analogue yields a stable nonlocal loop diagnostic with measurable perimeter and area scaling on the tested architecture
 
+## Stage 8.5A Gauss-Law Diagnostic
+- Date: 2026-03-10T19:29:21
+- Config: sizes=[12, 16, 20], epsilon=0.2, source_strength=1.0
+- Results: `data/20260310_192921_stage8_gauss_law_test.json`
+- Plots: `plots/20260310_192921_gauss_residual_map.png`, `plots/20260310_192921_gauss_correlation.png`, `plots/20260310_192921_gauss_integrated_flux.png`
+- Observation: the induced edge field satisfies a local divergence constraint that matches the inserted scalar source to numerical precision on the tested periodic complexes
+- Conclusion: the Gauss-law diagnostic is consistent with a discrete divergence constraint of the form d0* A = c rho with c near unity and small integrated flux mismatch
