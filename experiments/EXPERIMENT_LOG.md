@@ -446,3 +446,11 @@ This file records orchestrated experiment runs.
 - Observation: the scalar source produces a smooth induced edge field with a stable flux-balance profile on the periodic cochain architecture
 - Conclusion: the charge-insertion diagnostic shows structured scalar-to-edge response and exact discrete divergence accounting on the tested architecture
 
+## Stage 8B Dispersion Measurement
+- Date: 2026-03-10T19:21:04
+- Config: sizes=[12, 16, 20], epsilon=0.2, restricted_modes=30
+- Results: `data/20260310_192104_stage8_dispersion_measurement.json`
+- Plots: `plots/20260310_192104_dispersion_curve.png`, `plots/20260310_192104_dispersion_residuals.png`
+- Observation: the low restricted transverse spectrum follows a stable quadratic dispersion trend across the tested lattice sizes
+- Conclusion: the dispersion diagnostic is consistent with continuum-like propagation of the restricted transverse band on the frozen architecture
+
