@@ -193,3 +193,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_130326_divergence_curl_phase.png`, `plots/20260310_130326_restricted_transverse_spectrum.png`, `plots/20260310_130326_restricted_eigenvalue_vs_n.png`
 - Observation: the lowest restricted transverse eigenvalue decreases with lattice size in all three substrate branches, and both defect branches lie below the baseline torus at every tested n
 - Conclusion: the restricted transverse sector develops a descending low band under the tested puncture and line-defect substrate modifications
+
+## L1 transverse scaling test
+- Date: 2026-03-10T13:23:23
+- Config: epsilon=0.2, sizes=[6, 8, 10, 12, 14, 16], variants=['baseline', 'puncture', 'line_defect'], phase_modes=18, restricted_modes=6
+- Results: `data/20260310_132323_L1_transverse_scaling.json`
+- Plots: `plots/20260310_132323_transverse_floor_scaling_loglog.png`, `plots/20260310_132323_transverse_floor_ipr_vs_n.png`, `plots/20260310_132323_transverse_mode_profiles.png`, `plots/20260310_132323_divergence_curl_phase_scaling.png`
+- Observation: the restricted floor keeps descending while the lowest-mode IPR drops with lattice size in every branch, and the defect branches do not retain a growing fraction of norm near the defect
+- Conclusion: the descending restricted floor is behaving more like a continuum transverse-band candidate than a defect-pinned low mode in the tested range
