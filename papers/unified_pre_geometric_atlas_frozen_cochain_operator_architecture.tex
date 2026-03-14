@@ -1,0 +1,442 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{cite}
+
+\geometry{margin=1in}
+
+\title{A Pre-Geometric Atlas of Morphology, Resilience, and Transition Structure on a Frozen Kernel-Induced Cochain Operator Architecture}
+\author{Tomislav Rupi\'c\\Independent Researcher\\\v{S}ibenik, Croatia}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper unifies the first three atlas layers of the HAOS/IIP numerical program on a frozen kernel-induced cochain operator architecture. Earlier stages established the scalar branch, the projected transverse sector, the associated constraint structure, and finite-window packet propagation on the same frozen substrate. Stage 10 then introduced a pre-geometric atlas whose purpose is classification before interpretation. Atlas-0 defined a common run grammar, a common observable set, and a rule-based regime taxonomy, and executed a deterministic 72-run baseline morphology sweep over scalar and projected transverse sectors. Atlas-1 used a 40-run pilot derived from ten committed Atlas-0 seeds to test one-axis perturbation resilience under edge-weight noise, sparse graph defects, anisotropic bias, and kernel-width jitter. Atlas-2 used a 20-run pilot on the same seed set to test paired-stress transition structure under two fixed perturbation pairs. Across these three layers, the atlas records five active morphology classes: ballistic coherent, ballistic dispersive, diffusive, chaotic or irregular, and fragmenting. The baseline sweep separates these classes by sector and boundary type; the Atlas-1 pilot shows an official persistence of $38/40 = 0.95$ under mild one-axis stress once transverse labels are evaluated with the same frozen divergence condition that defines the frozen projector; and the Atlas-2 pilot shows $18/20 = 0.9$ stability under paired stress, with only two diffusive seeds shifting to ballistic-dispersive behavior. The resulting atlas is strictly morphological. It provides a reproducible instrument for mapping states, local resilience, and first transition structure on the frozen architecture without making geometric, particle, gauge, or continuum claims.
+\end{abstract}
+
+\section{Introduction}
+The HAOS/IIP numerical sequence has so far advanced by freezing each architectural layer before asking what that layer does. Earlier stages established a kernel-induced scalar branch, a projected transverse edge sector, constraint diagnostics on the same cochain complex, a Dirac--K"ahler factorization, and finite-window packet propagation on the frozen architecture. Those papers answered construction and stability questions: which operators exist, which identities hold, and whether localized disturbances evolve without immediate collapse.
+
+Stage 10 changed the question. Once coherent packet propagation had been documented on the frozen architecture, the next task was not interpretation but mapping. Different sectors, boundaries, bandwidths, and carrier choices can produce different packet morphologies even when the operators remain fixed. Before any geometric or physical reading is attempted, that behavioral landscape must be organized as an explicit instrument.
+
+This paper unifies the first three layers of that instrument:
+\begin{itemize}
+\item Atlas-0: baseline morphology on the untouched architecture,
+\item Atlas-1: one-axis perturbation resilience,
+\item Atlas-2: paired-stress transition structure.
+\end{itemize}
+The resulting sequence is cumulative. Atlas-0 asks what morphology classes exist. Atlas-1 asks which of those classes survive mild one-axis stress. Atlas-2 asks how those same classes deform when two mild stress channels are combined.
+
+The guiding principle remains the same throughout:
+\begin{quote}
+\emph{Classification precedes interpretation.}
+\end{quote}
+
+The purpose of the present synthesis is therefore narrow. It does not expand the interpretation boundary of the atlas. It collects the common measurement contract, records the frozen baseline survey, summarizes the one-axis resilience pilot, summarizes the paired-stress transition pilot, and states what can be said about the resulting atlas as a morphology instrument.
+
+\section{Frozen Context and Common Instrument}
+\subsection{Frozen operator context}
+All three atlas layers assume the same frozen kernel-induced cochain operator architecture. The underlying domain is a Gaussian-kernel graph/cochain complex fixed from the earlier stages. No operator definitions are changed in Atlas-0, Atlas-1, or Atlas-2.
+
+The scalar sector is governed by the frozen node operator $L_0$. The edge sector is governed by the frozen Hodge operator
+\begin{equation}
+L_1 = d_0 d_0^{*} + d_1^{*} d_1.
+\end{equation}
+Only two dynamical sectors are active in the present atlas:
+\begin{itemize}
+\item the scalar sector on node data,
+\item the projected transverse sector on edge data.
+\end{itemize}
+Projected transverse runs are evolved in the same restricted subspace used in the earlier diagnostics,
+\begin{equation}
+\ker(d_0^{*}) \cap (\mathcal{H}^1)^\perp,
+\end{equation}
+with the same frozen projector throughout the atlas sequence.
+
+The dynamical generator is also unchanged. In both sectors the packet evolution is second-order,
+\begin{equation}
+\partial_t^2 q = -L q,
+\end{equation}
+with $L=L_0$ in the scalar case and $L=L_1$ in the projected transverse case.
+
+\subsection{Common observable contract}
+The atlas is defined by a common observable contract applied to every run across all three layers. Let $q(t)$ denote the packet state and let
+\begin{equation}
+w_i(t) = |q_i(t)|^2
+\end{equation}
+be the induced site or edge weights. The common observables are:
+\begin{itemize}
+\item packet center trajectory,
+\item packet width evolution,
+\item spectral centroid and spectral spread,
+\item sector leakage norm,
+\item norm or energy drift,
+\item constraint norm,
+\item anisotropy score,
+\item coherence score,
+\item primary regime label,
+\item secondary sector label.
+\end{itemize}
+
+Using the weighted center $x_c(t)$, the packet width is
+\begin{equation}
+W(t) = \left( \frac{\sum_i w_i(t)\,\|x_i - x_c(t)\|^2}{\sum_i w_i(t)} \right)^{1/2},
+\end{equation}
+with periodic wrapping when appropriate. The spectral centroid and spectral spread are computed with respect to the frozen operator $L$:
+\begin{equation}
+\mu_L(t) = \frac{\langle q(t),Lq(t)\rangle}{\langle q(t),q(t)\rangle},
+\qquad
+\sigma_L(t) = \left(
+\frac{\langle Lq(t),Lq(t)\rangle}{\langle q(t),q(t)\rangle}
+- \mu_L(t)^2
+\right)^{1/2}.
+\end{equation}
+The quadratic second-order energy is
+\begin{equation}
+E(q,v) = \frac{1}{2}\bigl(\langle v,v\rangle + \langle q,Lq\rangle\bigr).
+\end{equation}
+
+For projected transverse runs, the official constraint norm is measured using the same frozen divergence operator that defines the frozen projector. The leakage norm is
+\begin{equation}
+\ell_{\mathrm{sec}}(t) = \frac{\|P_{\perp}q(t)-q(t)\|}{\|q(t)\|}.
+\end{equation}
+In the scalar sector both quantities are recorded as zero by construction.
+
+Coherence is computed from the normalized weight distribution
+\begin{equation}
+p_i(t) = \frac{w_i(t)}{\sum_j w_j(t)}
+\end{equation}
+through the inverse-participation-style quantity
+\begin{equation}
+Q(t) = \sum_i p_i(t)^2,
+\qquad
+S_{\mathrm{coh}} = \frac{Q(t_{\mathrm{final}})}{Q(0)}.
+\end{equation}
+Operationally, $S_{\mathrm{coh}}$ is a normalized concentration measure for the packet envelope over the sampled window.
+
+\subsection{Common taxonomy}
+All three atlas layers reuse the same rule-based regime classifier. The active primary labels in the present atlas stack are:
+\begin{itemize}
+\item Ballistic coherent,
+\item Ballistic dispersive,
+\item Diffusive,
+\item Chaotic or irregular,
+\item Fragmenting.
+\end{itemize}
+The secondary labels are:
+\begin{itemize}
+\item Scalar-dominant,
+\item Transverse-dominant.
+\end{itemize}
+The classifier depends on multiple observables rather than a single score. In particular it uses center displacement, width growth, coherence ratio, energy drift, leakage, and constraint behavior. The labels are therefore operational morphology classes, not physical categories.
+
+Table~\ref{tab:atlas-overview} summarizes the three atlas layers unified in the present paper.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lccc}
+\hline
+Layer & Main question & Runs & Status \\
+\hline
+Atlas-0 & What morphology classes exist? & 72 & Full baseline sweep \\
+Atlas-1 & Which classes survive one-axis stress? & 40 & Pilot resilience layer \\
+Atlas-2 & How do classes deform under paired stress? & 20 & Pilot transition layer \\
+\hline
+\end{tabular}
+\caption{Unified atlas overview. Atlas-0 is the baseline survey layer, while Atlas-1 and Atlas-2 are intentionally narrower pilot layers built on committed baseline seeds.}
+\label{tab:atlas-overview}
+\end{table}
+
+\section{Atlas-0: Baseline Morphology}
+Atlas-0 is the baseline morphology layer of the instrument. It keeps the graph regular, keeps the kernel unchanged, uses only single-packet seeds, and surveys scalar and projected transverse sectors under periodic and open boundaries. The deterministic run sheet spans
+\begin{equation}
+3 \times 3 \times 2 \times 2 \times 2 = 72
+\end{equation}
+runs:
+\begin{itemize}
+\item three packet widths,
+\item three carrier frequencies,
+\item two amplitudes,
+\item two boundary types,
+\item two operator sectors.
+\end{itemize}
+This yields a balanced split of 36 scalar and 36 projected-transverse runs.
+
+The baseline regime counts are shown in Table~\ref{tab:atlas0-counts}. Ballistic coherent and ballistic dispersive together account for 56 of the 72 runs. Diffusive, chaotic, and fragmenting behavior are minority outcomes, but they are present and reproducible.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lc}
+\hline
+Primary regime label & Count \\
+\hline
+Ballistic dispersive & 30 \\
+Ballistic coherent & 26 \\
+Diffusive & 8 \\
+Chaotic or irregular & 6 \\
+Fragmenting & 2 \\
+\hline
+\end{tabular}
+\caption{Atlas-0 primary regime counts from the deterministic 72-run baseline sweep.}
+\label{tab:atlas0-counts}
+\end{table}
+
+The cleanest structural separation appears when the baseline map is partitioned by sector and boundary type, as shown in Table~\ref{tab:atlas0-sector-boundary}. Periodic transverse runs occupy only the two cleanest active classes in this baseline pass. By contrast, the scalar/open block contains all fragmenting runs and half of the diffusive runs.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lccccc}
+\hline
+Subset & BC & BD & Diff & Chaos & Frag \\
+\hline
+Scalar / periodic & 4 & 8 & 2 & 4 & 0 \\
+Scalar / open & 4 & 6 & 4 & 2 & 2 \\
+Transverse / periodic & 10 & 8 & 0 & 0 & 0 \\
+Transverse / open & 8 & 8 & 2 & 0 & 0 \\
+\hline
+\end{tabular}
+\caption{Atlas-0 regime counts split by sector and boundary type. Abbreviations: BC = ballistic coherent, BD = ballistic dispersive, Diff = diffusive, Chaos = chaotic or irregular, Frag = fragmenting.}
+\label{tab:atlas0-sector-boundary}
+\end{table}
+
+Three baseline observations matter for the later atlas layers.
+First, periodic transverse packets show the strongest coherence retention in the baseline table.
+Second, open high-frequency scalar runs are the main source of diffusive, chaotic, and fragmenting outcomes.
+Third, amplitude variation produces almost no regime change in the tested linear window: all 36 matched amplitude pairs retain the same primary regime label when the amplitude is changed from $0.5$ to $1.0$.
+
+Atlas-0 therefore establishes that the frozen architecture does not occupy a single undifferentiated transport regime. It supports a structured baseline morphology map under a fixed run grammar.
+
+\section{Atlas-1: One-Axis Perturbation Resilience}
+Atlas-1 tests whether the committed Atlas-0 labels describe local morphology basins or merely fragile combinatorial patterns. The pilot uses ten committed baseline seeds:
+\begin{itemize}
+\item 3 ballistic-coherent seeds,
+\item 3 ballistic-dispersive seeds,
+\item 2 diffusive seeds,
+\item 1 chaotic-or-irregular seed,
+\item 1 fragmenting seed.
+\end{itemize}
+Each seed is perturbed by four mild channels, one at a time:
+\begin{enumerate}
+\item edge-weight noise with strength $0.03$,
+\item sparse graph defects with density $0.03$,
+\item anisotropic bias with factor $1.05$,
+\item kernel-width jitter with strength $0.05$.
+\end{enumerate}
+This produces a 40-run resilience table.
+
+The main methodological result of Atlas-1 is a constraint-consistency correction. Projected transverse trajectories are evolved with the frozen transverse projector, so the official morphology label must be evaluated with the same frozen divergence read. If instead the classifier uses a perturbed divergence operator, false transitions appear in otherwise constraint-clean transverse runs.
+
+Atlas-1 is therefore frozen with a dual record:
+\begin{itemize}
+\item official frozen-constraint diagnostic,
+\item auxiliary perturbed-constraint sensitivity diagnostic.
+\end{itemize}
+Under the inconsistent mixed read, overall persistence would have appeared as
+\begin{equation}
+25/40 = 0.625.
+\end{equation}
+Under the consistent frozen-constraint read, the official persistence is
+\begin{equation}
+38/40 = 0.95.
+\end{equation}
+Across the transverse pilot subset, the maximal frozen constraint residual remains at roundoff,
+\begin{equation}
+\max C^{\max}_{\mathrm{frozen}} = 1.38 \times 10^{-16},
+\end{equation}
+while the auxiliary perturbed read can become substantially larger,
+\begin{equation}
+\max C^{\max}_{\mathrm{pert}} = 1.09 \times 10^{-1}.
+\end{equation}
+This separation is part of the atlas instrument definition, not a cosmetic correction.
+
+The official Atlas-1 results are summarized in Table~\ref{tab:atlas1-persistence}. Ballistic coherent, ballistic dispersive, chaotic, and fragmenting baseline classes are fully persistent in the pilot. Diffusive is the only class with reduced persistence.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lc|lc}
+\hline
+Baseline regime & Persistence & Perturbation axis & Persistence \\
+\hline
+Ballistic coherent & 1.00 & Edge-weight noise & 1.00 \\
+Ballistic dispersive & 1.00 & Sparse graph defects & 0.90 \\
+Diffusive & 0.75 & Anisotropic bias & 0.90 \\
+Chaotic or irregular & 1.00 & Kernel-width jitter & 1.00 \\
+Fragmenting & 1.00 & & \\
+\hline
+\end{tabular}
+\caption{Atlas-1 pilot persistence by baseline regime and by perturbation axis.}
+\label{tab:atlas1-persistence}
+\end{table}
+
+Only two pilot runs change class, and both move from Diffusive to Ballistic dispersive. Scalar and transverse persistence remain close:
+\begin{equation}
+\text{scalar persistence} = \frac{23}{24} \approx 0.958,
+\qquad
+\text{transverse persistence} = \frac{15}{16} = 0.9375.
+\end{equation}
+
+Atlas-1 therefore adds a local stability layer to the atlas. The baseline labels survive mild one-axis stress substantially better than the initial inconsistent read suggested.
+
+\section{Atlas-2: Paired-Stress Transition Structure}
+Atlas-2 asks how committed morphology classes deform when two mild perturbation channels are applied together. It reuses the same ten baseline seeds already frozen in Atlas-1 and introduces only two paired-stress channels:
+\begin{enumerate}
+\item edge-weight noise $0.03$ plus anisotropic bias $1.05$,
+\item sparse graph defects $0.03$ plus kernel-width jitter $0.05$.
+\end{enumerate}
+This gives a 20-run pilot.
+
+The official constraint protocol is inherited directly from Atlas-1. For projected transverse runs, official labels are evaluated using the same frozen divergence condition that defines the frozen projector, while the paired perturbed divergence is retained only as an auxiliary sensitivity diagnostic. Across the transverse pilot subset,
+\begin{equation}
+\max C^{\max}_{\mathrm{frozen}} = 1.22 \times 10^{-16},
+\qquad
+\max C^{\max}_{\mathrm{pair}} = 1.09 \times 10^{-1},
+\end{equation}
+and the mean sector leakage remains at roundoff,
+\begin{equation}
+\langle \ell_{\mathrm{sec}} \rangle = 1.60 \times 10^{-16}.
+\end{equation}
+
+Atlas-2 adds one new field, the transition-type label, with the active values
+\begin{itemize}
+\item stable,
+\item regime shift,
+\item regime softening,
+\item fragmentation induced,
+\item chaos induced.
+\end{itemize}
+Only the first three appear in the pilot.
+
+The Atlas-2 transition counts are shown in Table~\ref{tab:atlas2-transitions}. As in Atlas-1, the dominant feature is stability.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lc}
+\hline
+Transition & Count \\
+\hline
+Ballistic coherent $\rightarrow$ Ballistic coherent & 6 \\
+Ballistic dispersive $\rightarrow$ Ballistic dispersive & 6 \\
+Diffusive $\rightarrow$ Diffusive & 2 \\
+Diffusive $\rightarrow$ Ballistic dispersive & 2 \\
+Chaotic or irregular $\rightarrow$ Chaotic or irregular & 2 \\
+Fragmenting $\rightarrow$ Fragmenting & 2 \\
+\hline
+\end{tabular}
+\caption{Atlas-2 pilot transition counts under paired stress.}
+\label{tab:atlas2-transitions}
+\end{table}
+
+The transition-type summary is even more compact:
+\begin{equation}
+18 \text{ stable},\quad 1 \text{ regime shift},\quad 1 \text{ regime softening}.
+\end{equation}
+Both perturbation pairs show the same persistence,
+\begin{equation}
+P_{\mathrm{pair}} = 0.9.
+\end{equation}
+Only two runs change class, and both are diffusive seeds shifting to ballistic-dispersive behavior.
+
+Atlas-2 therefore does not yet reveal a wide transition web. What it does reveal is a first readable transition topology: coherent, chaotic, and fragmenting classes remain stable in the pilot, while the soft edge of the atlas again lies in the diffusive subset.
+
+\section{Unified Atlas Read}
+Taken together, Atlas-0, Atlas-1, and Atlas-2 form a cumulative morphology instrument rather than three disconnected experiments.
+
+Atlas-0 establishes the state space of the current atlas. On the frozen architecture, packet behavior separates into a small number of reproducible morphology classes under a fixed run grammar.
+
+Atlas-1 establishes that these classes are not merely fragile labels. Under mild one-axis stress, the official persistence rate is 0.95 in the pilot, with coherent, chaotic, and fragmenting classes all fully persistent and only the diffusive subset showing reduced persistence.
+
+Atlas-2 establishes that mild paired stress still produces a readable transition map rather than an unstructured relabeling cloud. The paired-stress stability is 0.9 in the pilot, and again the only nontrivial transitions occur inside the diffusive subset.
+
+This gives the current atlas a simple internal structure.
+\begin{itemize}
+\item The coherent classes are stable under both one-axis and paired stress in the present pilot windows.
+\item The chaotic and fragmenting classes are also stable, but in a different sense: they remain where they are rather than collapsing into cleaner transport classes.
+\item The soft boundary of the atlas lies in the diffusive regime, which can shift toward ballistic-dispersive behavior under both one-axis and paired perturbations.
+\end{itemize}
+
+This is enough to say that the atlas now contains three kinds of information on the same frozen architecture:
+\begin{enumerate}
+\item baseline morphology classes,
+\item local resilience under mild one-axis stress,
+\item first transition structure under mild paired stress.
+\end{enumerate}
+What it does not yet contain is a large-scale phase diagram, a resolution study, or any justification for continuum or geometric claims. The present synthesis should therefore be read as the completion of an instrument layer, not as the completion of an interpretation layer.
+
+\section{Interpretation Boundary and Limits}
+The unified atlas remains strictly operator-level and morphology-level. It establishes:
+\begin{itemize}
+\item a reproducible run grammar,
+\item a shared observable contract,
+\item a rule-based regime taxonomy,
+\item baseline morphology separation,
+\item one-axis resilience information,
+\item a first paired-stress transition map.
+\end{itemize}
+
+It does not establish:
+\begin{itemize}
+\item geometric reconstruction,
+\item continuum limits,
+\item particle interpretation,
+\item gauge structure,
+\item relativistic structure,
+\item emergent spacetime.
+\end{itemize}
+
+The current atlas also has clear technical limits. Atlas-0 is a full baseline layer, but Atlas-1 and Atlas-2 are still pilot layers. Their seed sets are curated and deliberately small. The classifier has been stress-tested enough to become useful, but not enough to be treated as universal. The present paper therefore supports a calm conclusion: the atlas is now a usable instrument for the frozen architecture, but its later scaling and refinement questions remain open.
+
+\section{Conclusion}
+This paper unifies Atlas-0, Atlas-1, and Atlas-2 into a single pre-geometric atlas on a frozen kernel-induced cochain operator architecture. Atlas-0 provides the baseline morphology map; Atlas-1 adds one-axis resilience; Atlas-2 adds a first paired-stress transition layer. Together they turn the Stage 10 program from a collection of isolated packet runs into a reproducible morphology instrument.
+
+The resulting atlas is already informative. It identifies a structured baseline regime map, shows that most committed classes are stable under mild one-axis stress, and shows that paired stress still produces a readable transition topology whose soft edge lies in the diffusive subset. That is a meaningful endpoint for the current instrument phase.
+
+The appropriate next use of this atlas is not immediate interpretation. It is careful decision-making about whether later scaling, resolution, or expanded transition studies are justified by the stability already observed here.
+
+\appendix
+
+\section{Atlas Layer Summary}
+\begin{table}[h]
+\centering
+\begin{tabular}{p{0.12\textwidth}p{0.22\textwidth}p{0.34\textwidth}p{0.18\textwidth}}
+\hline
+Layer & Main output & Key numerical result & Role \\
+\hline
+Atlas-0 & 72-run baseline map & 30 BD, 26 BC, 8 Diff, 6 Chaos, 2 Frag & State map \\
+Atlas-1 & 40-run one-axis pilot & $38/40 = 0.95$ persistence & Local resilience \\
+Atlas-2 & 20-run paired-stress pilot & $18/20 = 0.9$ stability & Transition structure \\
+\hline
+\end{tabular}
+\caption{Compact summary of the unified atlas layers.}
+\end{table}
+
+\section{Active Taxonomy}
+The active primary morphology labels in the unified atlas are:
+\begin{itemize}
+\item Ballistic coherent,
+\item Ballistic dispersive,
+\item Diffusive,
+\item Chaotic or irregular,
+\item Fragmenting.
+\end{itemize}
+The active secondary sector labels are:
+\begin{itemize}
+\item Scalar-dominant,
+\item Transverse-dominant.
+\end{itemize}
+Atlas-2 additionally uses the transition-type labels:
+\begin{itemize}
+\item stable,
+\item regime shift,
+\item regime softening,
+\item fragmentation induced,
+\item chaos induced.
+\end{itemize}
+
+\end{document}
