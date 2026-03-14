@@ -510,3 +510,10 @@ This file records orchestrated experiment runs.
 - Observation: the restricted transverse packet propagates with controlled spreading while the divergence constraint remains near numerical precision throughout the evolution
 - Conclusion: the transverse edge sector supports coherent projected packet propagation on the frozen architecture
 
+## Stage 9C Constraint Stability During Evolution
+- Date: 2026-03-10T20:26:47
+- Config: sizes=[16, 20, 24], epsilon=0.2, sigma=0.08, t_final=0.45
+- Results: `data/20260310_202647_stage9_constraint_stability.json`
+- Plots: `plots/20260310_202647_constraint_residuals.png`
+- Observation: projected dynamics preserves the divergence constraint and removes exact contamination so that longitudinally shifted initial data evolve with the same restricted observables
+- Conclusion: constraint preservation and longitudinal redundancy remain stable during Stage 9 evolution on the frozen architecture

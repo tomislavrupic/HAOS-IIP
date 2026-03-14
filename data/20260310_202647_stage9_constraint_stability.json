@@ -1,0 +1,146 @@
+{
+  "experiment": "stage9_constraint_stability",
+  "config": {
+    "sizes": [
+      16,
+      20,
+      24
+    ],
+    "epsilon": 0.2,
+    "sigma": 0.08,
+    "t_final": 0.45
+  },
+  "cases": [
+    {
+      "n_side": 16,
+      "dt": 0.2630042281105532,
+      "steps": 2,
+      "times": [
+        0.0,
+        0.2630042281105532,
+        0.5260084562211064
+      ],
+      "baseline_divergence_norms": [
+        1.2660411959225042e-16,
+        1.5752421192057264e-16,
+        1.612066289156179e-16
+      ],
+      "baseline_projection_residuals": [
+        1.476619277957608e-16,
+        7.336223635181914e-17,
+        5.808050602039053e-17
+      ],
+      "center_differences": [
+        4.440892098500626e-16,
+        0.0,
+        0.0
+      ],
+      "width_differences": [
+        1.1102230246251565e-16,
+        0.0,
+        2.7755575615628914e-17
+      ],
+      "energy_differences": [
+        2.220446049250313e-16,
+        2.220446049250313e-16,
+        4.440892098500626e-16
+      ],
+      "summary": {
+        "max_divergence_norm": 1.612066289156179e-16,
+        "max_projection_residual": 1.476619277957608e-16,
+        "max_center_difference": 4.440892098500626e-16,
+        "max_width_difference": 1.1102230246251565e-16,
+        "max_energy_difference": 4.440892098500626e-16
+      }
+    },
+    {
+      "n_side": 20,
+      "dt": 0.2631788127549193,
+      "steps": 2,
+      "times": [
+        0.0,
+        0.2631788127549193,
+        0.5263576255098386
+      ],
+      "baseline_divergence_norms": [
+        1.2671527590423076e-16,
+        1.744080498078715e-16,
+        1.3268724136771656e-16
+      ],
+      "baseline_projection_residuals": [
+        5.222902073129449e-16,
+        9.863400553243764e-17,
+        6.442275025713342e-17
+      ],
+      "center_differences": [
+        2.220446049250313e-16,
+        0.0,
+        0.0
+      ],
+      "width_differences": [
+        2.7755575615628914e-17,
+        0.0,
+        2.7755575615628914e-17
+      ],
+      "energy_differences": [
+        1.1102230246251565e-16,
+        0.0,
+        2.220446049250313e-16
+      ],
+      "summary": {
+        "max_divergence_norm": 1.744080498078715e-16,
+        "max_projection_residual": 5.222902073129449e-16,
+        "max_center_difference": 2.220446049250313e-16,
+        "max_width_difference": 2.7755575615628914e-17,
+        "max_energy_difference": 2.220446049250313e-16
+      }
+    },
+    {
+      "n_side": 24,
+      "dt": 0.26297784107147465,
+      "steps": 2,
+      "times": [
+        0.0,
+        0.26297784107147465,
+        0.5259556821429493
+      ],
+      "baseline_divergence_norms": [
+        1.4039103476600907e-16,
+        1.3116713855039617e-16,
+        1.4414115330130598e-16
+      ],
+      "baseline_projection_residuals": [
+        6.960333455178949e-16,
+        1.121409942377294e-16,
+        9.360595007695028e-17
+      ],
+      "center_differences": [
+        4.440892098500626e-16,
+        0.0,
+        0.0
+      ],
+      "width_differences": [
+        1.1102230246251565e-16,
+        2.7755575615628914e-17,
+        0.0
+      ],
+      "energy_differences": [
+        4.440892098500626e-16,
+        6.661338147750939e-16,
+        6.661338147750939e-16
+      ],
+      "summary": {
+        "max_divergence_norm": 1.4414115330130598e-16,
+        "max_projection_residual": 6.960333455178949e-16,
+        "max_center_difference": 4.440892098500626e-16,
+        "max_width_difference": 1.1102230246251565e-16,
+        "max_energy_difference": 6.661338147750939e-16
+      }
+    }
+  ],
+  "observation": "projected dynamics preserves the divergence constraint and removes exact contamination so that longitudinally shifted initial data evolve with the same restricted observables",
+  "conclusion": "constraint preservation and longitudinal redundancy remain stable during Stage 9 evolution on the frozen architecture",
+  "plots": [
+    "plots/constraint_residuals.png"
+  ]
+}
