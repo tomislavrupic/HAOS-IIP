@@ -534,3 +534,10 @@ This file records orchestrated experiment runs.
 - Observation: the validated 3D Dirac-Kaehler operator supports coherent graded packet propagation with stable norm, mild anisotropy, and controlled grade redistribution
 - Conclusion: the 3D DK sector behaves as a coherent first-order propagator on the frozen cochain architecture
 
+## Stage 9B DK First-vs-Second-Order Consistency
+- Date: 2026-03-14T13:53:26
+- Config: n=16, epsilon=0.2, sigma=0.08, t_final=0.6
+- Results: `data/20260314_135326_DK_first_vs_second_order.json`
+- Plots: `plots/20260314_135326_DK_first_vs_second_order_comparison.png`
+- Observation: first-order DK propagation and the induced second-order Hodge evolution remain closely matched at the packet level over the tested time window, while each evolution preserves its own conserved quantity with small drift
+- Conclusion: the first-order DK dynamics is consistent with its validated squared Hodge dynamics in the tested 2D packet regime
