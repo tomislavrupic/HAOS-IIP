@@ -1,0 +1,390 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{cite}
+
+\geometry{margin=1in}
+
+\title{Pre-Geometric Morphology Survey on a Frozen Kernel-Induced Cochain Operator Architecture}
+\author{Tomislav Rupi\'c\\Independent Researcher\\\v{S}ibenik, Croatia}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We introduce Stage 10 of the HAOS/IIP numerical program as a classification atlas on a frozen kernel-induced cochain operator architecture. Earlier stages validated the scalar branch, the projected transverse sector, the associated constraint structure, and short-window packet propagation on the same interaction substrate. Atlas-0, the baseline pass of Stage 10, does not modify that architecture. Instead it defines a fixed observable grammar, a rule-based regime taxonomy, and a reproducible run sheet for surveying packet morphology before interpretation. The baseline survey uses a regular graph, the default Gaussian kernel, single-packet seeds, scalar and projected transverse sectors, and periodic and open boundaries. A deterministic 72-run sweep over three packet widths, three carrier frequencies, two amplitudes, two boundaries, and two sectors separates five morphology classes: ballistic coherent, ballistic dispersive, diffusive, chaotic or irregular, and fragmenting. The resulting counts are 30 ballistic-dispersive, 26 ballistic-coherent, 8 diffusive, 6 chaotic or irregular, and 2 fragmenting runs, with a balanced 36/36 scalar/transverse split. Periodic transverse runs provide the strongest coherence retention, while open high-frequency scalar runs generate most irregular outcomes. Projected transverse runs preserve leakage and constraint residuals at numerical precision throughout the sweep. No geometric reconstruction, continuum claim, or physical interpretation is made. The present paper defines the atlas instrument and records Atlas-0 as a frozen baseline morphology survey.
+\end{abstract}
+
+\section{Introduction}
+The HAOS/IIP program has so far proceeded by freezing each operator layer before asking what it does. Earlier stages established a kernel-induced scalar branch, a projected transverse edge sector, local and nonlocal constraint diagnostics, a Dirac--Kaehler factorization on the same cochain complex, and short-window packet propagation on the frozen architecture. Those results answered construction and stability questions: which operators exist on the substrate, which identities hold, and whether localized disturbances can evolve without immediate breakdown.
+
+Stage 10 changes the question. Once coherent transport has been demonstrated on a frozen architecture, the next task is not interpretation but mapping. Different sectors, boundaries, bandwidths, and carrier choices may produce different morphology classes even when the core operators are held fixed. Before any broader interpretive step, that behavioral landscape has to be organized in a reproducible way.
+
+This paper introduces that organizational layer. Stage 10 defines a pre-geometric atlas whose purpose is to classify packet morphology on the untouched architecture. The guiding principle is simple:
+\begin{quote}
+\emph{Classification precedes interpretation.}
+\end{quote}
+
+Atlas-0 is the baseline pass of this atlas. It keeps the graph regular, keeps the kernel unchanged, uses only single-packet seeds, and surveys scalar and projected transverse sectors under periodic and open boundaries. The goal is not to reconstruct spacetime, infer particle content, or identify continuum field theories. The goal is narrower and more useful at this stage: define an observable grammar, define an operational taxonomy, and record the morphology classes naturally admitted by the frozen system.
+
+The resulting document is therefore an instrument paper. It specifies how Stage 10 measures packet behavior, how it labels that behavior, and what the first baseline sweep returns. The claims remain strictly morphological and operator-level.
+
+\section{Frozen Operator Context}
+Atlas-0 assumes the operator architecture validated in the earlier stages and does not modify it. The underlying domain is a kernel-induced graph/cochain complex generated from the frozen Gaussian interaction substrate. On that substrate, the scalar sector is governed by the previously validated node operator $L_0$, while the edge sector is governed by the previously validated Hodge operator
+\begin{equation}
+L_1 = d_0 d_0^{*} + d_1^{*} d_1.
+\end{equation}
+
+Only two sectors are used in Atlas-0:
+\begin{itemize}
+\item the scalar sector on node data,
+\item the projected transverse sector on edge data.
+\end{itemize}
+The transverse sector uses the same projection mechanism already validated in the Stage 8 and Stage 9 diagnostics, namely restriction to the divergence-free, non-harmonic subspace
+\begin{equation}
+\ker(d_0^{*}) \cap (\mathcal{H}^1)^\perp.
+\end{equation}
+This ensures that Atlas-0 surveys morphology on the frozen constrained sector rather than reintroducing longitudinal contamination.
+
+The baseline survey also inherits the Stage 9 dynamical setting: packets are propagated by second-order evolution generated by the frozen operators,
+\begin{equation}
+\partial_t^2 q = -L q,
+\end{equation}
+with $L=L_0$ in the scalar case and $L=L_1$ in the projected transverse case. The present paper does not revisit the derivation or validation of those operators. It treats them as fixed numerical infrastructure and asks how packet morphology varies when seed parameters and boundaries are changed within that infrastructure.
+
+\section{Atlas Methodology}
+\subsection{Experimental grammar}
+Each Atlas-0 run is defined by a small set of explicit choices:
+\begin{itemize}
+\item operator sector,
+\item boundary condition,
+\item packet bandwidth,
+\item central carrier frequency,
+\item amplitude,
+\item phase pattern,
+\item fixed seed.
+\end{itemize}
+
+Atlas-0 deliberately restricts this grammar to the untouched baseline architecture:
+\begin{itemize}
+\item regular graph,
+\item default Gaussian kernel with $\epsilon = 0.2$,
+\item single-packet seeds,
+\item scalar and projected transverse sectors only,
+\item periodic and open boundaries only,
+\item fixed packet center $(0.25,0.5,0.5)$,
+\item fixed kick axis along $x$,
+\item fixed random seed $10$.
+\end{itemize}
+
+The packet family is Gaussian in envelope, with widths
+\begin{equation}
+\sigma \in \{0.06,\,0.08,\,0.10\},
+\end{equation}
+carrier frequencies
+\begin{equation}
+k \in \{0,\,1,\,2\},
+\end{equation}
+and amplitudes
+\begin{equation}
+a \in \{0.5,\,1.0\}.
+\end{equation}
+The $k=0$ seeds use a flat phase pattern, while the nonzero carrier cases use a cosine carrier. All runs are propagated on an $n=16$ baseline lattice to final time
+\begin{equation}
+t_{\mathrm{final}} = 0.9,
+\end{equation}
+with a step size chosen from the same spectral-radius heuristic used in the Stage 9 transport diagnostics.
+
+\subsection{Minimal observable set}
+Every Atlas-0 run returns the same minimal observable vector. Let $q(t)$ denote the packet state and let
+\begin{equation}
+w_i(t) = |q_i(t)|^2
+\end{equation}
+be the corresponding site or edge weights. The atlas records:
+\begin{itemize}
+\item packet center trajectory,
+\item packet width evolution,
+\item spectral centroid,
+\item spectral spread,
+\item sector leakage norm,
+\item norm or energy behavior,
+\item constraint norm,
+\item anisotropy score,
+\item coherence score.
+\end{itemize}
+
+Using the weighted center $x_c(t)$, the packet width is
+\begin{equation}
+W(t) = \left( \frac{\sum_i w_i(t)\,\|x_i - x_c(t)\|^2}{\sum_i w_i(t)} \right)^{1/2},
+\end{equation}
+with periodic wrapping applied when appropriate. The spectral centroid and spectral spread are computed directly from the frozen operator $L$:
+\begin{equation}
+\mu_L(t) = \frac{\langle q(t),Lq(t)\rangle}{\langle q(t),q(t)\rangle},
+\qquad
+\sigma_L(t) = \left(
+\frac{\langle Lq(t),Lq(t)\rangle}{\langle q(t),q(t)\rangle}
+- \mu_L(t)^2
+\right)^{1/2}.
+\end{equation}
+
+The energy functional is the same quadratic second-order energy used in Stage 9,
+\begin{equation}
+E(q,v) = \frac{1}{2}\bigl(\langle v,v\rangle + \langle q,Lq\rangle\bigr),
+\end{equation}
+and the atlas stores its relative drift over the run window. For projected transverse runs, the constraint norm is $\|d_0^{*}q(t)\|$ and the leakage norm is the relative distance to the projected subspace,
+\begin{equation}
+\ell_{\mathrm{sec}}(t) = \frac{\|P_{\perp}q(t)-q(t)\|}{\|q(t)\|}.
+\end{equation}
+In the scalar sector both quantities are recorded as zero by construction.
+
+Anisotropy is measured from the weighted covariance of the packet profile through the ratio of its largest and smallest eigenvalues. Coherence is computed from the normalized weight distribution
+\begin{equation}
+p_i(t) = \frac{w_i(t)}{\sum_j w_j(t)}
+\end{equation}
+using the inverse-participation-style quantity
+\begin{equation}
+Q(t) = \sum_i p_i(t)^2.
+\end{equation}
+The atlas coherence score is the finite-window ratio
+\begin{equation}
+S_{\mathrm{coh}} = \frac{Q(t_{\mathrm{final}})}{Q(0)}.
+\end{equation}
+Operationally, this is a normalized concentration measure for the packet envelope on its initial support: values near unity indicate that the packet remains comparably concentrated over the sampled window, while smaller values indicate broader redistribution.
+
+The key methodological constraint is that all runs return this same observable contract. Stage 10 is therefore not a loose collection of plots. It is a fixed measurement grammar applied uniformly across the sweep.
+
+\section{Regime Taxonomy}
+Each Atlas-0 run receives two labels: one primary morphology label and one secondary sector label.
+
+The primary labels active in the baseline sweep are:
+\begin{itemize}
+\item Ballistic coherent,
+\item Ballistic dispersive,
+\item Diffusive,
+\item Chaotic or irregular,
+\item Fragmenting.
+\end{itemize}
+The code path also contains dormant labels for localized or oscillatory-trapped behavior, but these were not activated in the present 72-run baseline pass.
+
+The secondary labels used in Atlas-0 are:
+\begin{itemize}
+\item Scalar-dominant,
+\item Transverse-dominant.
+\end{itemize}
+
+Assignment is rule-based and depends on multiple observables rather than a single score. The classifier uses center displacement, path efficiency, width ratio, coherence ratio, relative energy drift, and the maximal leakage and constraint residuals over the run window. The regime labels are therefore operational morphology classes, not universal categories and not physical interpretations. Their role is to stabilize comparison across runs, not to explain the underlying dynamics.
+
+\section{Atlas-0 Survey Design}
+The deterministic Atlas-0 run sheet spans
+\begin{equation}
+3 \times 3 \times 2 \times 2 \times 2 = 72
+\end{equation}
+runs:
+\begin{itemize}
+\item three packet widths,
+\item three central frequencies,
+\item two amplitudes,
+\item two boundary types,
+\item two operator sectors.
+\end{itemize}
+
+This gives a balanced split:
+\begin{equation}
+36 \text{ scalar runs}, \qquad 36 \text{ transverse runs}.
+\end{equation}
+No multi-packet interaction, graph disorder, kernel perturbation, or Dirac--Kaehler evolution is included. Atlas-0 is intentionally narrow so that later atlas phases can be compared against a clean baseline rather than against a moving target.
+
+Reproducibility is built into the survey design:
+\begin{itemize}
+\item fixed seed and deterministic configurations,
+\item stamped JSON and CSV outputs,
+\item stamped per-run plots,
+\item a fixed observable vector for every run,
+\item a fixed rule-based classifier.
+\end{itemize}
+
+The implementation also records a compact $0$--$5$ internal summary score, stored in the run table as a proto-spacetime score. In Atlas-0 this score is only a heuristic roll-up of stable propagation, low leakage, bounded constraint growth, and bounded directional distortion. The refinement-reproducibility component is currently inactive, so the score is not used for label assignment and should be read only as an auxiliary summary statistic.
+
+In this sense, Atlas-0 is as much an instrument-definition stage as it is a survey stage.
+
+\section{Results --- Baseline Morphology}
+The full Atlas-0 sweep produces the regime counts listed in Table~\ref{tab:regime-counts}. The dominant baseline classes are ballistic dispersive and ballistic coherent, which together account for $56$ of the $72$ runs. Diffusive, chaotic, and fragmenting behavior are present but clearly minority outcomes.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lc}
+\hline
+Primary regime label & Count \\
+\hline
+Ballistic dispersive & 30 \\
+Ballistic coherent & 26 \\
+Diffusive & 8 \\
+Chaotic or irregular & 6 \\
+Fragmenting & 2 \\
+\hline
+\end{tabular}
+\caption{Atlas-0 primary regime counts from the deterministic 72-run baseline sweep.}
+\label{tab:regime-counts}
+\end{table}
+
+The sector split remains exactly balanced:
+\begin{equation}
+36 \text{ scalar-dominant}, \qquad 36 \text{ transverse-dominant}.
+\end{equation}
+This matters because it means the baseline map is not an artifact of an uneven run grammar.
+
+The clearest structural separation appears when the sweep is partitioned by sector and boundary type. Table~\ref{tab:sector-boundary-counts} shows that periodic transverse runs occupy only the two cleanest active classes in this baseline pass: 10 ballistic-coherent and 8 ballistic-dispersive runs, with no diffusive, chaotic, or fragmenting outcomes. By contrast, the scalar/open block contains all fragmenting runs and half of the total diffusive runs.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lccccc}
+\hline
+Subset & BC & BD & Diff & Chaos & Frag \\
+\hline
+Scalar / periodic & 4 & 8 & 2 & 4 & 0 \\
+Scalar / open & 4 & 6 & 4 & 2 & 2 \\
+Transverse / periodic & 10 & 8 & 0 & 0 & 0 \\
+Transverse / open & 8 & 8 & 2 & 0 & 0 \\
+\hline
+\end{tabular}
+\caption{Atlas-0 regime counts split by sector and boundary type. Abbreviations: BC = ballistic coherent, BD = ballistic dispersive, Diff = diffusive, Chaos = chaotic or irregular, Frag = fragmenting.}
+\label{tab:sector-boundary-counts}
+\end{table}
+
+Several numerical trends are already clear at the baseline level:
+\begin{itemize}
+\item periodic transverse packets retain the strongest coherence overall,
+\item open high-frequency scalar packets generate most irregular outcomes,
+\item projected transverse runs maintain the frozen constraint structure to numerical precision.
+\end{itemize}
+
+The last point can be stated quantitatively. Across all 36 transverse runs, the maximal divergence residual never exceeds
+\begin{equation}
+2.40\times 10^{-16},
+\end{equation}
+and the maximal sector-leakage residual never exceeds
+\begin{equation}
+2.34\times 10^{-16}.
+\end{equation}
+This shows that the Atlas-0 sweep is not merely labeling visual packet shape. It is surveying morphology while preserving the already validated transverse constraint structure.
+
+\section{Morphology Diagnostics}
+The atlas is useful because it records not just labels, but the diagnostic quantities behind them. Table~\ref{tab:aggregate-diagnostics} summarizes mean coherence, width ratio, center shift, and anisotropy by sector and by boundary. The transverse sector shows a higher mean coherence score than the scalar sector,
+\begin{equation}
+0.7439 \quad \text{vs.} \quad 0.6622,
+\end{equation}
+and a smaller mean width ratio,
+\begin{equation}
+1.0832 \quad \text{vs.} \quad 1.2619.
+\end{equation}
+Likewise, periodic runs outperform open runs in mean coherence,
+\begin{equation}
+0.7464 \quad \text{vs.} \quad 0.6597.
+\end{equation}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lcccc}
+\hline
+Subset & $S_{\mathrm{coh}}$ & $\rho_W$ & $\Delta x_c$ & $A_{\mathrm{aniso}}$ \\
+\hline
+Scalar sector & 0.6622 & 1.2619 & 0.0629 & 1.9685 \\
+Transverse sector & 0.7439 & 1.0832 & 0.0609 & 1.8118 \\
+Periodic boundaries & 0.7464 & 1.1592 & 0.0628 & 1.8409 \\
+Open boundaries & 0.6597 & 1.1858 & 0.0609 & 1.9394 \\
+\hline
+\end{tabular}
+\caption{Aggregate morphology diagnostics from the Atlas-0 sweep. Here $S_{\mathrm{coh}}$ is the final-to-initial coherence ratio, $\rho_W$ the final-to-initial packet width, $\Delta x_c$ the net center displacement, and $A_{\mathrm{aniso}}$ the maximal weighted covariance aspect ratio.}
+\label{tab:aggregate-diagnostics}
+\end{table}
+
+These trends support a descriptive reading.
+
+First, transport character depends on carrier choice and boundary type even before any perturbation is introduced. The scalar/open/high-frequency corner is the main source of less organized morphology; in fact, the scalar/open/$k=2$ block contributes all fragmenting runs and four of the eight diffusive runs.
+
+Second, amplitude variation produces almost no regime change in the present linear setting. All 36 matched amplitude pairs retain the same primary regime label when the amplitude is changed from $0.5$ to $1.0$. Within the tested linear regime, amplitude variation does not significantly alter morphology classification. This is useful because it confirms that the atlas is not simply recording amplitude-driven instabilities in a regime that remains essentially linear.
+
+Third, anisotropy is best read here as a morphology diagnostic rather than a convergence statement. Anisotropy is monitored here purely as a morphology diagnostic; no refinement or continuum-limit interpretation is attempted. The atlas does not claim continuum isotropy. It records directional distortion as one component of the observable contract so that later perturbation stages can be compared against the baseline map.
+
+Fourth, the coherence score provides a compact summary of structure retention over the run window. It is not a physics observable in its own right. It is a numerical shorthand for how sharply the packet profile remains organized relative to its initial state.
+
+Taken together, these diagnostics show why Atlas-0 is better understood as an instrument than as a theory claim. It supplies a reproducible vocabulary for saying how the frozen architecture behaves across a controlled family of runs.
+
+\section{Discussion}
+Atlas-0 establishes the first baseline behavioral map on the frozen kernel-induced cochain architecture. Its main result is methodological: a common run grammar, a common observable set, and a common regime taxonomy have now been fixed and executed successfully across a balanced baseline survey.
+
+The resulting regime separation appears without any geometric assumption. Periodic transverse packets preferentially occupy the most coherent baseline windows, while open high-frequency scalar packets generate most of the least organized outcomes. Constraint closure remains exact for the projected transverse sector throughout the sweep. These are already useful landscape facts, even though they do not yet explain why the architecture prefers one morphology class over another.
+
+The limits of the present paper are equally important. Atlas-0 does not reconstruct a continuum theory. It does not establish particle interpretation. It does not prove gauge dynamics. It does not infer geometry from transport. Its role is narrower and more stable: provide a reference morphology map against which later perturbation, robustness, and collective-dynamics studies can be measured.
+
+This is why the current stage should be read as instrument science. The baseline atlas defines what later stages are allowed to compare against. Without such a frozen reference, perturbation studies would be difficult to interpret because the unperturbed landscape itself would remain underspecified.
+
+\section{Conclusion}
+Stage 10 introduces a reproducible classification framework for packet morphology on a frozen kernel-induced cochain operator architecture. Atlas-0, the first pass of this framework, executes a deterministic 72-run baseline sweep over packet width, carrier frequency, amplitude, sector choice, and boundary type while keeping the underlying operators unchanged.
+
+The baseline results are already structured. Five morphology classes appear, with ballistic-dispersive and ballistic-coherent behavior dominating the survey, diffusive and irregular regimes concentrated in specific scalar/open/high-frequency blocks, and projected transverse runs preserving their defining constraint structure to numerical precision. These observations remain descriptive. They are not continuum claims and not geometric interpretations.
+
+The correct role of Atlas-0 is therefore baseline definition. It fixes a morphology reference for the frozen architecture and prepares the ground for later atlas phases involving perturbation, disorder, and collective packet dynamics.
+
+\appendix
+\section{Observable Definitions}
+The Atlas-0 implementation records the following summary quantities for each run:
+\begin{align}
+\Delta x_c &= \|x_c(t_{\mathrm{final}})-x_c(0)\|, \\
+\rho_W &= \frac{W(t_{\mathrm{final}})}{W(0)}, \\
+\mu_L(t) &= \frac{\langle q(t),Lq(t)\rangle}{\langle q(t),q(t)\rangle}, \\
+\sigma_L(t) &= \left(
+\frac{\langle Lq(t),Lq(t)\rangle}{\langle q(t),q(t)\rangle}
+- \mu_L(t)^2
+\right)^{1/2}, \\
+S_{\mathrm{coh}} &= \frac{Q(t_{\mathrm{final}})}{Q(0)}, \qquad
+Q(t)=\sum_i p_i(t)^2, \qquad
+p_i(t)=\frac{|q_i(t)|^2}{\sum_j |q_j(t)|^2}, \\
+A_{\mathrm{aniso}} &= \frac{\lambda_{\max}(\Sigma_w)}{\lambda_{\min}(\Sigma_w)}, \\
+\ell_{\mathrm{sec}}^{\max} &= \max_t \frac{\|P_{\perp}q(t)-q(t)\|}{\|q(t)\|}, \\
+C_{\max} &= \max_t \|d_0^{*}q(t)\|, \\
+\delta_E &= \frac{E(t_{\mathrm{final}})-E(0)}{|E(0)|}.
+\end{align}
+For scalar runs, $\ell_{\mathrm{sec}}^{\max}$ and $C_{\max}$ are recorded as zero by construction. For projected transverse runs, both are active diagnostics.
+
+\section{Rule Table for Atlas-0 Labels}
+Table~\ref{tab:thresholds} records the rule set used by the committed classifier. Only the first five labels were activated in the present baseline sweep, but the full threshold logic is included here because it defines the instrument used by later atlas passes.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lp{0.68\textwidth}}
+\hline
+Label & Rule condition \\
+\hline
+Chaotic or irregular & $C_{\max}>10^{-4}$ or $\ell_{\mathrm{sec}}^{\max}>10^{-4}$ \\
+Fragmenting & $S_{\mathrm{coh}}<0.45$ and $\rho_W>1.35$ \\
+Localized & $\Delta x_c<0.01$ and $\rho_W<1.06$ \\
+Oscillatory trapped & $\Delta x_c<0.02$ and $\rho_W\geq 1.06$ \\
+Diffusive & $\Delta x_c<0.05$ and $\rho_W>1.18$ \\
+Ballistic coherent & path efficiency $\geq 0.9$, $\rho_W \leq 1.12$, $S_{\mathrm{coh}}\geq 0.65$, and $|\delta_E|<0.02$ \\
+Ballistic dispersive & $\Delta x_c\geq 0.02$, path efficiency $\geq 0.75$, and $\rho_W \leq 1.35$ \\
+Metastable structured & $S_{\mathrm{coh}}\geq 0.65$ and $|\delta_E|<0.03$ \\
+\hline
+\end{tabular}
+\caption{Rule-based threshold logic used by the Atlas-0 classifier. The baseline sweep activated only the Ballistic coherent, Ballistic dispersive, Diffusive, Chaotic or irregular, and Fragmenting branches.}
+\label{tab:thresholds}
+\end{table}
+
+\section{Deterministic Run Sheet}
+The committed Atlas-0 run sheet spans the Cartesian product of:
+\begin{itemize}
+\item bandwidths $\{0.06,\,0.08,\,0.10\}$,
+\item central frequencies $\{0,\,1,\,2\}$,
+\item amplitudes $\{0.5,\,1.0\}$,
+\item boundaries $\{\text{periodic},\,\text{open}\}$,
+\item sectors $\{\text{scalar},\,\text{transverse}\}$.
+\end{itemize}
+All runs use packet count $1$, seed $10$, and stamped JSON/CSV/plot outputs. This deterministic sheet is the baseline contract for subsequent atlas phases.
+
+\end{document}

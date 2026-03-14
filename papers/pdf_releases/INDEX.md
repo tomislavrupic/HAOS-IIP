@@ -12,6 +12,7 @@ Current releases:
 - `03.1` Dirac-Kaehler Factorization on a Validated Cochain Operator Architecture
 - `04.1` Gauge-Like Diagnostics on a Kernel-Induced Cochain Operator Architecture
 - `05.1` Wave-Packet Propagation and Constraint Stability on a Frozen Cochain Operator Architecture
+- `06.1` Pre-Geometric Morphology Survey on a Frozen Kernel-Induced Cochain Operator Architecture
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
