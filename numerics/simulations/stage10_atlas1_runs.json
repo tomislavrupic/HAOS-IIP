@@ -1,0 +1,464 @@
+{
+  "description": "Atlas-1 pilot run sheet derived from committed Atlas-0 baseline seeds.",
+  "baseline_artifact": "data/20260314_143113_stage10_atlas0_baseline_morphology.csv",
+  "baseline_seed_selection": [
+    {
+      "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "selection_note": "strongest periodic transverse coherent seed"
+    },
+    {
+      "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "selection_note": "open transverse coherent seed"
+    },
+    {
+      "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "selection_note": "scalar coherent seed"
+    },
+    {
+      "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "selection_note": "periodic scalar dispersive seed"
+    },
+    {
+      "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "selection_note": "open scalar dispersive seed"
+    },
+    {
+      "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "selection_note": "transverse dispersive seed"
+    },
+    {
+      "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "selection_note": "periodic scalar diffusive seed"
+    },
+    {
+      "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "selection_note": "transverse diffusive seed"
+    },
+    {
+      "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+      "baseline_regime": "Chaotic or irregular",
+      "selection_note": "periodic chaotic seed"
+    },
+    {
+      "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+      "baseline_regime": "Fragmenting",
+      "selection_note": "fragmenting boundary seed"
+    }
+  ],
+  "pilot_strengths": {
+    "edge_weight_noise": 0.03,
+    "sparse_graph_defects": 0.03,
+    "anisotropic_bias": 1.05,
+    "kernel_width_jitter": 0.05
+  },
+  "runs": [
+    {
+      "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via kernel_width_jitter"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_wide_lowk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_wide_lowk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_wide_lowk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_wide_lowk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via kernel_width_jitter"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via kernel_width_jitter"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via kernel_width_jitter"
+    },
+    {
+      "run_id": "A1_A0_scalar_open_medium_midk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_scalar_open_medium_midk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_scalar_open_medium_midk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_scalar_open_medium_midk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via kernel_width_jitter"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_wide_highk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_wide_highk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_wide_highk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_wide_highk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via kernel_width_jitter"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via kernel_width_jitter"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_narrow_highk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_narrow_highk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_narrow_highk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_transverse_open_narrow_highk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via kernel_width_jitter"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+      "baseline_regime": "Chaotic or irregular",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+      "baseline_regime": "Chaotic or irregular",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+      "baseline_regime": "Chaotic or irregular",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+      "baseline_regime": "Chaotic or irregular",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via kernel_width_jitter"
+    },
+    {
+      "run_id": "A1_A0_scalar_open_narrow_highk_amp05_edge_weight_noise",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+      "baseline_regime": "Fragmenting",
+      "perturbation_axis": "edge_weight_noise",
+      "perturbation_strength": 0.03,
+      "random_seed": 101,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via edge_weight_noise"
+    },
+    {
+      "run_id": "A1_A0_scalar_open_narrow_highk_amp05_sparse_graph_defects",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+      "baseline_regime": "Fragmenting",
+      "perturbation_axis": "sparse_graph_defects",
+      "perturbation_strength": 0.03,
+      "random_seed": 202,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via sparse_graph_defects"
+    },
+    {
+      "run_id": "A1_A0_scalar_open_narrow_highk_amp05_anisotropic_bias",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+      "baseline_regime": "Fragmenting",
+      "perturbation_axis": "anisotropic_bias",
+      "perturbation_strength": 1.05,
+      "random_seed": 303,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via anisotropic_bias"
+    },
+    {
+      "run_id": "A1_A0_scalar_open_narrow_highk_amp05_kernel_width_jitter",
+      "atlas_phase": "Atlas-1",
+      "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+      "baseline_regime": "Fragmenting",
+      "perturbation_axis": "kernel_width_jitter",
+      "perturbation_strength": 0.05,
+      "random_seed": 404,
+      "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via kernel_width_jitter"
+    }
+  ]
+}
