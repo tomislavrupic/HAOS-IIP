@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atlas Explorer MVP</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css?v=20260314-three1">
+    <script defer src="app.js?v=20260314-three1"></script>
+    <script type="module" src="three-grid.js?v=20260314-three1"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Atlas Explorer MVP</p>
+          <h1>Regime morphology inspection</h1>
+          <p class="subtitle">
+            Static instrument panel for Atlas-0 baselines and Atlas-1 transitions.
+          </p>
+        </div>
+        <div class="status-strip" aria-label="Data load status">
+          <div class="status-pill">
+            <span class="status-label">Atlas-0</span>
+            <span id="atlas0-status" class="status-value">Loading</span>
+          </div>
+          <div class="status-pill">
+            <span class="status-label">Atlas-1</span>
+            <span id="atlas1-status" class="status-value">Optional</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="meta-grid" aria-label="Dataset context">
+        <article class="panel compact-panel">
+          <div class="panel-header compact-header">
+            <div>
+              <h2>Data Sources</h2>
+              <p>Static inputs only. Paths live in <code>app.js</code>.</p>
+            </div>
+          </div>
+          <dl id="data-source-list" class="source-list"></dl>
+        </article>
+
+        <article class="panel compact-panel">
+          <div class="panel-header compact-header">
+            <div>
+              <h2>Morphology Snapshot</h2>
+              <p>Fast counts and stability signals.</p>
+            </div>
+          </div>
+          <div id="summary-chips" class="summary-chips"></div>
+        </article>
+
+        <article class="panel compact-panel">
+          <div class="panel-header compact-header">
+            <div>
+              <h2>Selection</h2>
+              <p>Current run context.</p>
+            </div>
+          </div>
+          <div id="selection-brief" class="selection-brief">No run selected.</div>
+        </article>
+      </section>
+
+      <main class="dashboard-grid">
+        <section class="panel panel-table">
+          <div class="panel-header">
+            <div>
+              <h2>Run Table View</h2>
+              <p>Baseline Atlas-0 runs. Click a row to inspect details.</p>
+            </div>
+            <button id="clear-filters" class="ghost-button" type="button">Reset filters</button>
+          </div>
+
+          <div class="filter-row" aria-label="Run filters">
+            <label class="control">
+              <span>run_id</span>
+              <input id="search-input" type="search" placeholder="Search by run_id">
+            </label>
+            <label class="control">
+              <span>regime</span>
+              <select id="regime-filter"></select>
+            </label>
+            <label class="control">
+              <span>sector</span>
+              <select id="sector-filter"></select>
+            </label>
+            <label class="control">
+              <span>boundary</span>
+              <select id="boundary-filter"></select>
+            </label>
+          </div>
+
+          <div class="table-meta">
+            <span id="result-count">Loading rows</span>
+            <span id="sort-indicator">Sorted by coherence_score descending</span>
+          </div>
+
+          <div class="table-scroller">
+            <table class="run-table">
+              <thead>
+                <tr>
+                  <th><button class="sort-button" type="button" data-sort-key="run_id">run_id</button></th>
+                  <th><button class="sort-button" type="button" data-sort-key="atlas_phase">atlas_phase</button></th>
+                  <th><button class="sort-button" type="button" data-sort-key="regime_label">regime_label</button></th>
+                  <th><button class="sort-button" type="button" data-sort-key="sector_label">sector_label</button></th>
+                  <th><button class="sort-button" type="button" data-sort-key="proto_spacetime_score">proto_spacetime_score</button></th>
+                  <th><button class="sort-button" type="button" data-sort-key="coherence_score">coherence_score</button></th>
+                  <th><button class="sort-button" type="button" data-sort-key="anisotropy_score">anisotropy_score</button></th>
+                  <th><button class="sort-button" type="button" data-sort-key="boundary_type">boundary_type</button></th>
+                  <th><button class="sort-button" type="button" data-sort-key="operator_sector">operator_sector</button></th>
+                </tr>
+              </thead>
+              <tbody id="run-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel panel-map">
+          <div class="panel-header">
+            <div>
+              <h2>Map + 3D Space</h2>
+              <p>2D clustering plus interactive 3D parameter projection from recorded runs.</p>
+            </div>
+          </div>
+          <div class="map-grid">
+            <article class="viz-card">
+              <h3>2D morphology view</h3>
+              <div class="viz-frame">
+                <svg id="regime-map" class="viz-svg" viewBox="0 0 640 420" role="img" aria-label="Regime map plot"></svg>
+              </div>
+              <div id="map-legend" class="legend-block"></div>
+            </article>
+
+            <article class="viz-card">
+              <div class="viz-header-row">
+                <div>
+                  <h3>3D parameter space</h3>
+                  <p>Axes: central_k, bandwidth, amplitude. Drag to rotate, click a point to inspect.</p>
+                </div>
+                <div class="viz-actions">
+                  <label class="control compact-control">
+                    <span>color</span>
+                    <select id="parameter-color-mode">
+                      <option value="regime">regime</option>
+                      <option value="wave-particle">wave / particle proxy</option>
+                    </select>
+                  </label>
+                  <button id="reset-3d-view" class="ghost-button" type="button">Reset view</button>
+                </div>
+              </div>
+              <canvas
+                id="parameter-space-canvas"
+                class="viz-canvas"
+                width="640"
+                height="420"
+                aria-label="3D parameter space"
+              ></canvas>
+              <div id="parameter-space-info" class="canvas-info">
+                Waiting for Atlas-0 parameter data.
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel panel-detail">
+          <div class="panel-header">
+            <div>
+              <h2>Run Detail View</h2>
+              <p>Metrics, transition outcomes, and plot artifacts for the selected baseline run.</p>
+            </div>
+          </div>
+
+          <div id="detail-empty" class="empty-state">Select a run from the table or regime map.</div>
+
+          <div id="detail-content" class="detail-content hidden">
+            <div id="detail-metrics" class="metric-grid"></div>
+
+            <div class="detail-split">
+              <article class="detail-card">
+                <h3>Run Metadata</h3>
+                <dl id="detail-metadata" class="detail-list"></dl>
+              </article>
+
+              <article class="detail-card">
+                <h3>Atlas-1 Perturbation Outcomes</h3>
+                <div id="detail-transitions"></div>
+              </article>
+            </div>
+
+            <article class="detail-card trajectory-card">
+              <div class="viz-header-row">
+                <div>
+                  <h3>Grid Flow Replay</h3>
+                  <p>Three.js lattice reconstruction with node intensity, edge-flow proxy, and recorded center trail.</p>
+                </div>
+                <button id="reset-trajectory-view" class="ghost-button" type="button">Reset view</button>
+              </div>
+              <canvas
+                id="trajectory-canvas"
+                class="viz-canvas trajectory-canvas"
+                width="760"
+                height="360"
+                aria-label="Grid flow replay"
+              ></canvas>
+              <div class="trajectory-controls">
+                <button id="trajectory-play-toggle" class="ghost-button" type="button">Play</button>
+                <label class="control scrub-control">
+                  <span>time index</span>
+                  <input id="trajectory-scrub" type="range" min="0" max="0" value="0">
+                </label>
+                <div id="trajectory-frame-info" class="canvas-info compact-info">
+                  Select a run to inspect its lattice replay.
+                </div>
+              </div>
+            </article>
+
+            <div id="detail-images" class="image-grid"></div>
+          </div>
+        </section>
+
+        <section class="panel panel-transition">
+          <div class="panel-header">
+            <div>
+              <h2>Transition View</h2>
+              <p>Atlas-1 baseline to perturbed regime counts and persistence.</p>
+            </div>
+          </div>
+
+          <div id="transition-empty" class="empty-state">Atlas-1 transition data not loaded.</div>
+
+          <div id="transition-content" class="transition-content hidden">
+            <div class="transition-grid">
+              <article class="viz-card">
+                <h3>Baseline to perturbed matrix</h3>
+                <svg id="transition-matrix" class="viz-svg" viewBox="0 0 680 420" role="img" aria-label="Transition matrix"></svg>
+              </article>
+
+              <article class="viz-card">
+                <h3>Mean persistence by baseline regime</h3>
+                <svg id="persistence-bar" class="viz-svg" viewBox="0 0 560 420" role="img" aria-label="Persistence bar chart"></svg>
+              </article>
+            </div>
+            <div id="transition-summary" class="summary-chips summary-chips-wide"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
