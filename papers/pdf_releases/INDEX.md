@@ -11,6 +11,7 @@ Current releases:
 - `02.1` Continuum Reconstruction and Scalar-Transverse Coupling in Kernel-Induced Operator Systems
 - `03.1` Dirac-Kaehler Factorization on a Validated Cochain Operator Architecture
 - `04.1` Gauge-Like Diagnostics on a Kernel-Induced Cochain Operator Architecture
+- `05.1` Wave-Packet Propagation and Constraint Stability on a Frozen Cochain Operator Architecture
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
