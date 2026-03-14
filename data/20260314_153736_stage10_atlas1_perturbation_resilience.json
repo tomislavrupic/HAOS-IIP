@@ -1,0 +1,3574 @@
+{
+  "experiment": "stage10_atlas1_perturbation_resilience",
+  "baseline_artifact": "data/20260314_143113_stage10_atlas0_baseline_morphology.csv",
+  "config": {
+    "n_side": 16,
+    "epsilon": 0.2,
+    "t_final": 0.9,
+    "dt_safety": 0.28,
+    "selected_run_ids": [
+      "A1_A0_transverse_periodic_wide_midk_amp05_edge_weight_noise",
+      "A1_A0_transverse_periodic_wide_midk_amp05_sparse_graph_defects",
+      "A1_A0_transverse_periodic_wide_midk_amp05_anisotropic_bias",
+      "A1_A0_transverse_periodic_wide_midk_amp05_kernel_width_jitter",
+      "A1_A0_transverse_open_wide_lowk_amp05_edge_weight_noise",
+      "A1_A0_transverse_open_wide_lowk_amp05_sparse_graph_defects",
+      "A1_A0_transverse_open_wide_lowk_amp05_anisotropic_bias",
+      "A1_A0_transverse_open_wide_lowk_amp05_kernel_width_jitter",
+      "A1_A0_scalar_periodic_wide_lowk_amp05_edge_weight_noise",
+      "A1_A0_scalar_periodic_wide_lowk_amp05_sparse_graph_defects",
+      "A1_A0_scalar_periodic_wide_lowk_amp05_anisotropic_bias",
+      "A1_A0_scalar_periodic_wide_lowk_amp05_kernel_width_jitter",
+      "A1_A0_scalar_periodic_medium_lowk_amp05_edge_weight_noise",
+      "A1_A0_scalar_periodic_medium_lowk_amp05_sparse_graph_defects",
+      "A1_A0_scalar_periodic_medium_lowk_amp05_anisotropic_bias",
+      "A1_A0_scalar_periodic_medium_lowk_amp05_kernel_width_jitter",
+      "A1_A0_scalar_open_medium_midk_amp05_edge_weight_noise",
+      "A1_A0_scalar_open_medium_midk_amp05_sparse_graph_defects",
+      "A1_A0_scalar_open_medium_midk_amp05_anisotropic_bias",
+      "A1_A0_scalar_open_medium_midk_amp05_kernel_width_jitter",
+      "A1_A0_transverse_open_wide_highk_amp05_edge_weight_noise",
+      "A1_A0_transverse_open_wide_highk_amp05_sparse_graph_defects",
+      "A1_A0_transverse_open_wide_highk_amp05_anisotropic_bias",
+      "A1_A0_transverse_open_wide_highk_amp05_kernel_width_jitter",
+      "A1_A0_scalar_periodic_medium_highk_amp05_edge_weight_noise",
+      "A1_A0_scalar_periodic_medium_highk_amp05_sparse_graph_defects",
+      "A1_A0_scalar_periodic_medium_highk_amp05_anisotropic_bias",
+      "A1_A0_scalar_periodic_medium_highk_amp05_kernel_width_jitter",
+      "A1_A0_transverse_open_narrow_highk_amp05_edge_weight_noise",
+      "A1_A0_transverse_open_narrow_highk_amp05_sparse_graph_defects",
+      "A1_A0_transverse_open_narrow_highk_amp05_anisotropic_bias",
+      "A1_A0_transverse_open_narrow_highk_amp05_kernel_width_jitter",
+      "A1_A0_scalar_periodic_wide_highk_amp05_edge_weight_noise",
+      "A1_A0_scalar_periodic_wide_highk_amp05_sparse_graph_defects",
+      "A1_A0_scalar_periodic_wide_highk_amp05_anisotropic_bias",
+      "A1_A0_scalar_periodic_wide_highk_amp05_kernel_width_jitter",
+      "A1_A0_scalar_open_narrow_highk_amp05_edge_weight_noise",
+      "A1_A0_scalar_open_narrow_highk_amp05_sparse_graph_defects",
+      "A1_A0_scalar_open_narrow_highk_amp05_anisotropic_bias",
+      "A1_A0_scalar_open_narrow_highk_amp05_kernel_width_jitter"
+    ]
+  },
+  "executed_runs": [
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "coherence_score": 0.969380853838808
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "random_seed": 101,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 1.3802610641743021e-16,
+        "constraint_max_perturbed": 0.00615408150858806,
+        "baseline_constraint_max": 8.036762689291721e-17,
+        "sector_leakage": 1.305450899813724e-16,
+        "baseline_sector_leakage": 9.205078871863103e-17,
+        "norm_drift": 0.09656606980683044,
+        "anisotropy_score": 1.6914358125875202,
+        "coherence_score": 0.9702564337687253,
+        "baseline_coherence_score": 0.969380853838808,
+        "coherence_delta": 0.0008755799299172695,
+        "center_shift": 0.0676299193884397,
+        "width_ratio": 0.983596108811751,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000221497441082,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9863162006427602,
+        "face_scale_max": 1.0137375348796314
+      },
+      "integration": {
+        "dt": 0.1636096588883238,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "coherence_score": 0.969380853838808
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "random_seed": 202,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 8.036762689291721e-17,
+        "constraint_max_perturbed": 0.05609723320479089,
+        "baseline_constraint_max": 8.036762689291721e-17,
+        "sector_leakage": 1.4411942130731762e-16,
+        "baseline_sector_leakage": 9.205078871863103e-17,
+        "norm_drift": 0.106569869839894,
+        "anisotropy_score": 1.6972661248072536,
+        "coherence_score": 0.9721116241998313,
+        "baseline_coherence_score": 0.969380853838808,
+        "coherence_delta": 0.002730770361023316,
+        "center_shift": 0.06703899954966532,
+        "width_ratio": 0.9759015440131124,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 369,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.4871708245126285,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.1650797460431632,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "coherence_score": 0.969380853838808
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "random_seed": 303,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 1.0378408409616965e-16,
+        "constraint_max_perturbed": 0.0028013192997309922,
+        "baseline_constraint_max": 8.036762689291721e-17,
+        "sector_leakage": 7.172629312982e-17,
+        "baseline_sector_leakage": 9.205078871863103e-17,
+        "norm_drift": 0.09102952033850141,
+        "anisotropy_score": 1.6928146098439951,
+        "coherence_score": 0.9742489380492485,
+        "baseline_coherence_score": 0.969380853838808,
+        "coherence_delta": 0.004868084210440493,
+        "center_shift": 0.06762189222883097,
+        "width_ratio": 0.9841847781235877,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16110922258433716,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "coherence_score": 0.969380853838808
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_periodic_wide_midk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "random_seed": 404,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 8.115341726832108e-17,
+        "constraint_max_perturbed": 0.00011059667947916495,
+        "baseline_constraint_max": 8.036762689291721e-17,
+        "sector_leakage": 8.398337078351804e-17,
+        "baseline_sector_leakage": 9.205078871863103e-17,
+        "norm_drift": 0.09676063848275726,
+        "anisotropy_score": 1.6916123656940338,
+        "coherence_score": 0.9693723980696641,
+        "baseline_coherence_score": 0.969380853838808,
+        "coherence_delta": -8.455769143878022e-06,
+        "center_shift": 0.06760804881753299,
+        "width_ratio": 0.9835910303018426,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_periodic_wide_midk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997430486234051,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.9997721851312348,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16364745726943974,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_wide_lowk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.9125263439158239
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_wide_lowk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 101,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 1.2505937596903508e-16,
+        "constraint_max_perturbed": 0.006425460916794259,
+        "baseline_constraint_max": 9.461137674160213e-17,
+        "sector_leakage": 1.550173430970102e-16,
+        "baseline_sector_leakage": 2.1672933891806193e-16,
+        "norm_drift": 0.1272003629845779,
+        "anisotropy_score": 1.4375196916559312,
+        "coherence_score": 0.9123580839756943,
+        "baseline_coherence_score": 0.9125263439158239,
+        "coherence_delta": -0.00016825994012958922,
+        "center_shift": 0.06739494533422087,
+        "width_ratio": 0.9800053173401311,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000378139353094,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9855920999376862,
+        "face_scale_max": 1.0140384656774226
+      },
+      "integration": {
+        "dt": 0.1644596741319887,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_wide_lowk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.9125263439158239
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_wide_lowk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 202,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 8.226139739348295e-17,
+        "constraint_max_perturbed": 0.10862031640777929,
+        "baseline_constraint_max": 9.461137674160213e-17,
+        "sector_leakage": 1.7156989131365766e-16,
+        "baseline_sector_leakage": 2.1672933891806193e-16,
+        "norm_drift": 0.1339563688036973,
+        "anisotropy_score": 1.4332107536532426,
+        "coherence_score": 0.9046511743232475,
+        "baseline_coherence_score": 0.9125263439158239,
+        "coherence_delta": -0.007875169592576392,
+        "center_shift": 0.06584306186506073,
+        "width_ratio": 0.9719520797013155,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 346,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.658113883008419,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.16606042680365057,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_wide_lowk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.9125263439158239
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_wide_lowk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 303,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 8.804611064676182e-17,
+        "constraint_max_perturbed": 0.0027702018031629905,
+        "baseline_constraint_max": 9.461137674160213e-17,
+        "sector_leakage": 1.7554260925876614e-16,
+        "baseline_sector_leakage": 2.1672933891806193e-16,
+        "norm_drift": 0.1210747230364981,
+        "anisotropy_score": 1.4395733642981055,
+        "coherence_score": 0.9182506069901408,
+        "baseline_coherence_score": 0.9125263439158239,
+        "coherence_delta": 0.005724263074316949,
+        "center_shift": 0.06764398067776783,
+        "width_ratio": 0.9802283015846422,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16198255044372944,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_wide_lowk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.9125263439158239
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_wide_lowk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 404,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 8.566777373456543e-17,
+        "constraint_max_perturbed": 0.00011204649913145712,
+        "baseline_constraint_max": 9.461137674160213e-17,
+        "sector_leakage": 1.6871131531536474e-16,
+        "baseline_sector_leakage": 2.1672933891806193e-16,
+        "norm_drift": 0.1269751024754606,
+        "anisotropy_score": 1.4377151457612345,
+        "coherence_score": 0.9125271474352489,
+        "baseline_coherence_score": 0.9125263439158239,
+        "coherence_delta": 8.035194249966793e-07,
+        "center_shift": 0.06745785682418334,
+        "width_ratio": 0.9801547457704474,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_lowk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997076516091015,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.9997375765827073,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.16448038572942716,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.879721809467974
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 101,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Ballistic coherent",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.15170817890043867,
+        "anisotropy_score": 1.4345300175858968,
+        "coherence_score": 0.8807627389099879,
+        "baseline_coherence_score": 0.879721809467974,
+        "coherence_delta": 0.0010409294420139492,
+        "center_shift": 0.08589141218945621,
+        "width_ratio": 1.1028212299670377,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000221497441082,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9863162006427602,
+        "face_scale_max": 1.0137375348796314
+      },
+      "integration": {
+        "dt": 0.16377530998649303,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.879721809467974
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 202,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Ballistic coherent",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.16263783789078137,
+        "anisotropy_score": 1.4360972025194425,
+        "coherence_score": 0.879614570222188,
+        "baseline_coherence_score": 0.879721809467974,
+        "coherence_delta": -0.00010723924578592836,
+        "center_shift": 0.08513240977758227,
+        "width_ratio": 1.102132796683395,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 369,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.4871708245126285,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.16522915136517138,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.879721809467974
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 303,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Ballistic coherent",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.14534879924725266,
+        "anisotropy_score": 1.4331178572181542,
+        "coherence_score": 0.8826784344018773,
+        "baseline_coherence_score": 0.879721809467974,
+        "coherence_delta": 0.0029566249339033623,
+        "center_shift": 0.08632622438723603,
+        "width_ratio": 1.0999245128370885,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16240659014004896,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.879721809467974
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_wide_lowk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 404,
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "perturbed_regime_perturbed_constraint": "Ballistic coherent",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.15165651319041465,
+        "anisotropy_score": 1.4342279402125315,
+        "coherence_score": 0.8796848597740557,
+        "baseline_coherence_score": 0.879721809467974,
+        "coherence_delta": -3.6949693918209014e-05,
+        "center_shift": 0.08589384154755753,
+        "width_ratio": 1.1029572727768244,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_lowk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997430486234051,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.9997721851312348,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16376098600189848,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7518985870001085
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 101,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.04852899979323343,
+        "anisotropy_score": 1.5016243132746212,
+        "coherence_score": 0.7526819299283269,
+        "baseline_coherence_score": 0.7518985870001085,
+        "coherence_delta": 0.0007833429282184667,
+        "center_shift": 0.07330093536595411,
+        "width_ratio": 1.1644684998578168,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000221497441082,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9863162006427602,
+        "face_scale_max": 1.0137375348796314
+      },
+      "integration": {
+        "dt": 0.16377530998649303,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7518985870001085
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 202,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.06404091562657287,
+        "anisotropy_score": 1.4998107854840594,
+        "coherence_score": 0.7456521722772997,
+        "baseline_coherence_score": 0.7518985870001085,
+        "coherence_delta": -0.006246414722808735,
+        "center_shift": 0.07186842186745727,
+        "width_ratio": 1.162308921319206,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 369,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.4871708245126285,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.16522915136517138,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7518985870001085
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 303,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.04185168792372695,
+        "anisotropy_score": 1.498959672718196,
+        "coherence_score": 0.755712064016835,
+        "baseline_coherence_score": 0.7518985870001085,
+        "coherence_delta": 0.0038134770167265186,
+        "center_shift": 0.07392198146058404,
+        "width_ratio": 1.1606679838561293,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16240659014004896,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7518985870001085
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_medium_lowk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 404,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.048361888107077075,
+        "anisotropy_score": 1.5018103177681041,
+        "coherence_score": 0.7518508717821641,
+        "baseline_coherence_score": 0.7518985870001085,
+        "coherence_delta": -4.771521794433298e-05,
+        "center_shift": 0.07328282837298343,
+        "width_ratio": 1.1646733122575492,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_lowk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997430486234051,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.9997721851312348,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16376098600189848,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_open_medium_midk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_medium_midk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.70026294603859
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_open_medium_midk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "random_seed": 101,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.018817283674825606,
+        "anisotropy_score": 2.0017691487413316,
+        "coherence_score": 0.7015607623001078,
+        "baseline_coherence_score": 0.70026294603859,
+        "coherence_delta": 0.0012978162615178146,
+        "center_shift": 0.06847292068766604,
+        "width_ratio": 1.1928340575872785,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000378139353094,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9855920999376862,
+        "face_scale_max": 1.0140384656774226
+      },
+      "integration": {
+        "dt": 0.16400548464995737,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_open_medium_midk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_medium_midk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.70026294603859
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_open_medium_midk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "random_seed": 202,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.025144605766125875,
+        "anisotropy_score": 2.0377581193162033,
+        "coherence_score": 0.7061514000041729,
+        "baseline_coherence_score": 0.70026294603859,
+        "coherence_delta": 0.005888453965582907,
+        "center_shift": 0.06427276342772538,
+        "width_ratio": 1.179930667677055,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 346,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.658113883008419,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.16564779214585204,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_open_medium_midk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_medium_midk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.70026294603859
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_open_medium_midk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "random_seed": 303,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.027251906484698222,
+        "anisotropy_score": 1.9924878297559512,
+        "coherence_score": 0.7051888008058734,
+        "baseline_coherence_score": 0.70026294603859,
+        "coherence_delta": 0.004925854767283466,
+        "center_shift": 0.06954959137643851,
+        "width_ratio": 1.1897327723658484,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16267407322149469,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_open_medium_midk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_medium_midk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.70026294603859
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_open_medium_midk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "random_seed": 404,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.02005132121760556,
+        "anisotropy_score": 2.000191826073087,
+        "coherence_score": 0.700233584489658,
+        "baseline_coherence_score": 0.70026294603859,
+        "coherence_delta": -2.9361548931960968e-05,
+        "center_shift": 0.06868573803631171,
+        "width_ratio": 1.1937086627080533,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_medium_midk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997076516091015,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.9997375765827073,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.1640212276131738,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_wide_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_highk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.5926741982872317
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_wide_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 101,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 8.800384432321616e-17,
+        "constraint_max_perturbed": 0.005590208011565474,
+        "baseline_constraint_max": 1.1224456549061128e-16,
+        "sector_leakage": 1.2538899391667192e-16,
+        "baseline_sector_leakage": 1.7058133323461127e-16,
+        "norm_drift": -0.11944181799382914,
+        "anisotropy_score": 2.0954397446882758,
+        "coherence_score": 0.5944416633156085,
+        "baseline_coherence_score": 0.5926741982872317,
+        "coherence_delta": 0.00176746502837688,
+        "center_shift": 0.06363298587286223,
+        "width_ratio": 1.1504927174830781,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 2,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000378139353094,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9855920999376862,
+        "face_scale_max": 1.0140384656774226
+      },
+      "integration": {
+        "dt": 0.1644596741319887,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_wide_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_highk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.5926741982872317
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_wide_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 202,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 6.47081134520888e-17,
+        "constraint_max_perturbed": 0.09529818632698513,
+        "baseline_constraint_max": 1.1224456549061128e-16,
+        "sector_leakage": 1.385307498901801e-16,
+        "baseline_sector_leakage": 1.7058133323461127e-16,
+        "norm_drift": -0.09032485220695674,
+        "anisotropy_score": 2.101075930422831,
+        "coherence_score": 0.6070991056013534,
+        "baseline_coherence_score": 0.5926741982872317,
+        "coherence_delta": 0.014424907314121715,
+        "center_shift": 0.05919419863103793,
+        "width_ratio": 1.123583709440849,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 2,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 346,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.658113883008419,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.16606042680365057,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_wide_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_highk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.5926741982872317
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_wide_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 303,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 7.64216486553373e-17,
+        "constraint_max_perturbed": 0.0032215213903987873,
+        "baseline_constraint_max": 1.1224456549061128e-16,
+        "sector_leakage": 1.8829516251096766e-16,
+        "baseline_sector_leakage": 1.7058133323461127e-16,
+        "norm_drift": -0.12390421146723563,
+        "anisotropy_score": 2.098897812289903,
+        "coherence_score": 0.5984382934623893,
+        "baseline_coherence_score": 0.5926741982872317,
+        "coherence_delta": 0.005764095175157635,
+        "center_shift": 0.06382329165689582,
+        "width_ratio": 1.1499138715925221,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 2,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16198255044372944,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_wide_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_highk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.5926741982872317
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_wide_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 404,
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 8.246486427449306e-17,
+        "constraint_max_perturbed": 9.929566092333516e-05,
+        "baseline_constraint_max": 1.1224456549061128e-16,
+        "sector_leakage": 1.7773766765213048e-16,
+        "baseline_sector_leakage": 1.7058133323461127e-16,
+        "norm_drift": -0.12013939443461807,
+        "anisotropy_score": 2.0956801861260033,
+        "coherence_score": 0.5926630210228935,
+        "baseline_coherence_score": 0.5926741982872317,
+        "coherence_delta": -1.1177264338191328e-05,
+        "center_shift": 0.06368220363186883,
+        "width_ratio": 1.1514190516473528,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_wide_highk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 2,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997076516091015,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.9997375765827073,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.16448038572942716,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7547960878771556
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 101,
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Diffusive",
+        "perturbed_regime_perturbed_constraint": "Diffusive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.12319197477791322,
+        "anisotropy_score": 2.317815552171001,
+        "coherence_score": 0.7526932186144376,
+        "baseline_coherence_score": 0.7547960878771556,
+        "coherence_delta": -0.0021028692627179657,
+        "center_shift": 0.04969557384368817,
+        "width_ratio": 1.280526608830032,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000221497441082,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9863162006427602,
+        "face_scale_max": 1.0137375348796314
+      },
+      "integration": {
+        "dt": 0.16377530998649303,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7547960878771556
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 202,
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Diffusive",
+        "perturbed_regime_perturbed_constraint": "Diffusive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.09870883631330696,
+        "anisotropy_score": 2.3280730021475162,
+        "coherence_score": 0.7304017238811983,
+        "baseline_coherence_score": 0.7547960878771556,
+        "coherence_delta": -0.02439436399595729,
+        "center_shift": 0.04783602471907974,
+        "width_ratio": 1.2728697416815995,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 369,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.4871708245126285,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.16522915136517138,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7547960878771556
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 303,
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Ballistic dispersive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 0,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.13228694257514284,
+        "anisotropy_score": 2.3109039294734153,
+        "coherence_score": 0.7571100835009469,
+        "baseline_coherence_score": 0.7547960878771556,
+        "coherence_delta": 0.0023139956237913095,
+        "center_shift": 0.050140947671027725,
+        "width_ratio": 1.2794442163178623,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16240659014004896,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7547960878771556
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_medium_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 404,
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Diffusive",
+        "perturbed_regime_perturbed_constraint": "Diffusive",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.12284874140319291,
+        "anisotropy_score": 2.3172269238674668,
+        "coherence_score": 0.7547440013608332,
+        "baseline_coherence_score": 0.7547960878771556,
+        "coherence_delta": -5.208651632238048e-05,
+        "center_shift": 0.04966197746104387,
+        "width_ratio": 1.280152827432952,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_medium_highk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997430486234051,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.9997721851312348,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16376098600189848,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_narrow_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_narrow_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.4703163028355739
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_narrow_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 101,
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Diffusive",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 8.427874118603003e-17,
+        "constraint_max_perturbed": 0.004852747707477102,
+        "baseline_constraint_max": 8.427874118603003e-17,
+        "sector_leakage": 1.8026840879665943e-16,
+        "baseline_sector_leakage": 1.8026840879665943e-16,
+        "norm_drift": -0.25730990499445733,
+        "anisotropy_score": 2.217882402673077,
+        "coherence_score": 0.47072536033111934,
+        "baseline_coherence_score": 0.4703163028355739,
+        "coherence_delta": 0.0004090574955454285,
+        "center_shift": 0.046555399006904,
+        "width_ratio": 1.2152505427474452,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 2,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000378139353094,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9855920999376862,
+        "face_scale_max": 1.0140384656774226
+      },
+      "integration": {
+        "dt": 0.1644596741319887,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_narrow_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_narrow_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.4703163028355739
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_narrow_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 202,
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Ballistic dispersive",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 0,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 8.690650573244934e-17,
+        "constraint_max_perturbed": 0.09046010428411685,
+        "baseline_constraint_max": 8.427874118603003e-17,
+        "sector_leakage": 2.2522654486849723e-16,
+        "baseline_sector_leakage": 1.8026840879665943e-16,
+        "norm_drift": -0.19096660624034828,
+        "anisotropy_score": 2.2499693559727905,
+        "coherence_score": 0.4428401517469802,
+        "baseline_coherence_score": 0.4703163028355739,
+        "coherence_delta": -0.027476151088593692,
+        "center_shift": 0.0367606394191514,
+        "width_ratio": 1.1505240507936574,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 2,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 346,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.658113883008419,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.16606042680365057,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_narrow_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_narrow_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.4703163028355739
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_narrow_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 303,
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Diffusive",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 0,
+        "constraint_max": 8.427874118603003e-17,
+        "constraint_max_perturbed": 0.0040196992641452906,
+        "baseline_constraint_max": 8.427874118603003e-17,
+        "sector_leakage": 1.8026840879665943e-16,
+        "baseline_sector_leakage": 1.8026840879665943e-16,
+        "norm_drift": -0.26201956859197445,
+        "anisotropy_score": 2.2163738914913345,
+        "coherence_score": 0.4730285669964895,
+        "baseline_coherence_score": 0.4703163028355739,
+        "coherence_delta": 0.0027122641609155784,
+        "center_shift": 0.04699766099841407,
+        "width_ratio": 1.2175522171812951,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 2,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16198255044372944,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_transverse_open_narrow_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_narrow_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.4703163028355739
+      },
+      "summary": {
+        "run_id": "A1_A0_transverse_open_narrow_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "random_seed": 404,
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Diffusive",
+        "perturbed_regime_perturbed_constraint": "Diffusive",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "sector_label_perturbed_constraint": "Constraint-failing",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 8.528168871417898e-17,
+        "constraint_max_perturbed": 9.00717259572018e-05,
+        "baseline_constraint_max": 8.427874118603003e-17,
+        "sector_leakage": 1.8026840879665943e-16,
+        "baseline_sector_leakage": 1.8026840879665943e-16,
+        "norm_drift": -0.2592725329820707,
+        "anisotropy_score": 2.2182673428164064,
+        "coherence_score": 0.4703080089237094,
+        "baseline_coherence_score": 0.4703163028355739,
+        "coherence_delta": -8.293911864520886e-06,
+        "center_shift": 0.0467291538314207,
+        "width_ratio": 1.217248401888843,
+        "notes": "Atlas-1 pilot resilience test from A0_transverse_open_narrow_highk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Diffusive",
+        "sector_label": "Constraint-failing",
+        "proto_spacetime_score": 2,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 0,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997076516091015,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.9997375765827073,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.16448038572942716,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "baseline_regime": "Chaotic or irregular",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.6308160840820418
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 101,
+        "baseline_regime": "Chaotic or irregular",
+        "perturbed_regime": "Chaotic or irregular",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.056174054174836105,
+        "anisotropy_score": 2.173065688185156,
+        "coherence_score": 0.6293637036822849,
+        "baseline_coherence_score": 0.6308160840820418,
+        "coherence_delta": -0.0014523803997569251,
+        "center_shift": 0.05090207077662935,
+        "width_ratio": 1.3922649396387816,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000221497441082,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9863162006427602,
+        "face_scale_max": 1.0137375348796314
+      },
+      "integration": {
+        "dt": 0.16377530998649303,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "baseline_regime": "Chaotic or irregular",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.6308160840820418
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 202,
+        "baseline_regime": "Chaotic or irregular",
+        "perturbed_regime": "Chaotic or irregular",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.03497480940300556,
+        "anisotropy_score": 2.173065688185156,
+        "coherence_score": 0.6263100252416425,
+        "baseline_coherence_score": 0.6308160840820418,
+        "coherence_delta": -0.004506058840399341,
+        "center_shift": 0.05004667126164835,
+        "width_ratio": 1.3847564640966874,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 369,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.4871708245126285,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.16522915136517138,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "baseline_regime": "Chaotic or irregular",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.6308160840820418
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 303,
+        "baseline_regime": "Chaotic or irregular",
+        "perturbed_regime": "Chaotic or irregular",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.06658935274681531,
+        "anisotropy_score": 2.173065688185156,
+        "coherence_score": 0.6303283518813642,
+        "baseline_coherence_score": 0.6308160840820418,
+        "coherence_delta": -0.00048773220067765966,
+        "center_shift": 0.050765061316250026,
+        "width_ratio": 1.3927150485584006,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16240659014004896,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "baseline_regime": "Chaotic or irregular",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.6308160840820418
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_periodic_wide_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "random_seed": 404,
+        "baseline_regime": "Chaotic or irregular",
+        "perturbed_regime": "Chaotic or irregular",
+        "perturbed_regime_perturbed_constraint": "Chaotic or irregular",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.056010200488604486,
+        "anisotropy_score": 2.173065688185156,
+        "coherence_score": 0.6307927228412914,
+        "baseline_coherence_score": 0.6308160840820418,
+        "coherence_delta": -2.336124075041912e-05,
+        "center_shift": 0.05085432362225096,
+        "width_ratio": 1.3918757191991744,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_periodic_wide_highk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997430486234051,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.9997721851312348,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16376098600189848,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_open_narrow_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "baseline_regime": "Fragmenting",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "random_seed": 101,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via edge_weight_noise"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_narrow_highk_amp05",
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.4218853401641373
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_open_narrow_highk_amp05_edge_weight_noise",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "perturbation_axis": "edge_weight_noise",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "random_seed": 101,
+        "baseline_regime": "Fragmenting",
+        "perturbed_regime": "Fragmenting",
+        "perturbed_regime_perturbed_constraint": "Fragmenting",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.2464795389447704,
+        "anisotropy_score": 2.836464788867138,
+        "coherence_score": 0.420532163729283,
+        "baseline_coherence_score": 0.4218853401641373,
+        "coherence_delta": -0.0013531764348543307,
+        "center_shift": 0.0464652371723479,
+        "width_ratio": 1.4391146093049951,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via edge_weight_noise"
+      },
+      "labels": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "distribution": "uniform",
+        "weight_factor_mean": 1.0000378139353094,
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.014884322819558,
+        "face_scale_min": 0.9855920999376862,
+        "face_scale_max": 1.0140384656774226
+      },
+      "integration": {
+        "dt": 0.16400548464995737,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_open_narrow_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "baseline_regime": "Fragmenting",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "random_seed": 202,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via sparse_graph_defects"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_narrow_highk_amp05",
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.4218853401641373
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_open_narrow_highk_amp05_sparse_graph_defects",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "perturbation_axis": "sparse_graph_defects",
+        "perturbation_strength": 0.03,
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "random_seed": 202,
+        "baseline_regime": "Fragmenting",
+        "perturbed_regime": "Fragmenting",
+        "perturbed_regime_perturbed_constraint": "Fragmenting",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.14728510026954159,
+        "anisotropy_score": 3.021228775080758,
+        "coherence_score": 0.40988140386324634,
+        "baseline_coherence_score": 0.4218853401641373,
+        "coherence_delta": -0.012003936300890972,
+        "center_shift": 0.03588899724909774,
+        "width_ratio": 1.4092954246406948,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via sparse_graph_defects"
+      },
+      "labels": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "defect_count": 346,
+        "defect_density": 0.03,
+        "weakened_weight_factor": 0.1,
+        "edge_scale_min": 0.31622776601683794,
+        "edge_scale_max": 1.0,
+        "face_scale_min": 0.658113883008419,
+        "face_scale_max": 1.0
+      },
+      "integration": {
+        "dt": 0.16564779214585204,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_open_narrow_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "baseline_regime": "Fragmenting",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "random_seed": 303,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_narrow_highk_amp05",
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.4218853401641373
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_open_narrow_highk_amp05_anisotropic_bias",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "perturbation_axis": "anisotropic_bias",
+        "perturbation_strength": 1.05,
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "random_seed": 303,
+        "baseline_regime": "Fragmenting",
+        "perturbed_regime": "Fragmenting",
+        "perturbed_regime_perturbed_constraint": "Fragmenting",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.25756357462810336,
+        "anisotropy_score": 2.7756749624774675,
+        "coherence_score": 0.43385926917689205,
+        "baseline_coherence_score": 0.4218853401641373,
+        "coherence_delta": 0.011973929012754736,
+        "center_shift": 0.04811992169404827,
+        "width_ratio": 1.4381846652550012,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "preferred_axis": "x",
+        "bias_factor": 1.05,
+        "edge_scale_min": 1.0,
+        "edge_scale_max": 1.02469507659596,
+        "face_scale_min": 1.0,
+        "face_scale_max": 1.01234753829798
+      },
+      "integration": {
+        "dt": 0.16267407322149469,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A1_A0_scalar_open_narrow_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "baseline_regime": "Fragmenting",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "random_seed": 404,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via kernel_width_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_narrow_highk_amp05",
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.4218853401641373
+      },
+      "summary": {
+        "run_id": "A1_A0_scalar_open_narrow_highk_amp05_kernel_width_jitter",
+        "atlas_phase": "Atlas-1",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "perturbation_axis": "kernel_width_jitter",
+        "perturbation_strength": 0.05,
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "random_seed": 404,
+        "baseline_regime": "Fragmenting",
+        "perturbed_regime": "Fragmenting",
+        "perturbed_regime_perturbed_constraint": "Fragmenting",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "sector_label_perturbed_constraint": "Scalar-dominant",
+        "persistence_score": 1,
+        "persistence_score_perturbed_constraint": 1,
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.24989102658142784,
+        "anisotropy_score": 2.8264163938147204,
+        "coherence_score": 0.42185214230861884,
+        "baseline_coherence_score": 0.4218853401641373,
+        "coherence_delta": -3.3197855518474206e-05,
+        "center_shift": 0.0468634261313032,
+        "width_ratio": 1.441592986098674,
+        "notes": "Atlas-1 pilot resilience test from A0_scalar_open_narrow_highk_amp05 via kernel_width_jitter"
+      },
+      "labels": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "labels_perturbed_constraint": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "perturbation_metadata": {
+        "epsilon": 0.2,
+        "jitter_strength": 0.05,
+        "edge_scale_min": 0.9997076516091015,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.9997375765827073,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.1640212276131738,
+        "steps": 6
+      }
+    }
+  ],
+  "regime_counts": {
+    "Ballistic coherent": 12,
+    "Ballistic dispersive": 14,
+    "Diffusive": 6,
+    "Chaotic or irregular": 4,
+    "Fragmenting": 4
+  },
+  "transition_counts": {
+    "Ballistic coherent -> Ballistic coherent": 12,
+    "Ballistic dispersive -> Ballistic dispersive": 12,
+    "Diffusive -> Diffusive": 6,
+    "Diffusive -> Ballistic dispersive": 2,
+    "Chaotic or irregular -> Chaotic or irregular": 4,
+    "Fragmenting -> Fragmenting": 4
+  },
+  "persistence_by_regime": {
+    "Ballistic coherent": 1.0,
+    "Ballistic dispersive": 1.0,
+    "Chaotic or irregular": 1.0,
+    "Diffusive": 0.75,
+    "Fragmenting": 1.0
+  },
+  "persistence_by_axis": {
+    "anisotropic_bias": 0.9,
+    "edge_weight_noise": 1.0,
+    "kernel_width_jitter": 1.0,
+    "sparse_graph_defects": 0.9
+  },
+  "observation": "Atlas-1 pilot executes cleanly on frozen Atlas-0 seeds and returns baseline-to-perturbed regime transitions under one-axis perturbations.",
+  "conclusion": "The Atlas-1 pilot is operational and can now compare regime persistence across mild perturbation channels before any threshold retuning."
+}
