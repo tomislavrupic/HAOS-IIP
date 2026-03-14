@@ -526,3 +526,11 @@ This file records orchestrated experiment runs.
 - Observation: the validated 2D Dirac-Kaehler operator supports coherent packet propagation with stable norm and structured grade evolution across single-grade and mixed initial data
 - Conclusion: the 2D DK sector behaves as a coherent first-order dynamical generator on the frozen cochain architecture
 
+## Stage 9B DK 3D Packet Propagation
+- Date: 2026-03-14T13:52:25
+- Config: n=6, epsilon=0.2, sigma=0.12, t_final=0.35
+- Results: `data/20260314_135225_DK_3D_packet_dynamics.json`
+- Plots: `plots/20260314_135225_DK_3D_packet_position.png`, `plots/20260314_135225_DK_3D_packet_width.png`, `plots/20260314_135225_DK_3D_packet_norm.png`, `plots/20260314_135225_DK_3D_packet_grade_weights.png`, `plots/20260314_135225_DK_3D_packet_anisotropy.png`
+- Observation: the validated 3D Dirac-Kaehler operator supports coherent graded packet propagation with stable norm, mild anisotropy, and controlled grade redistribution
+- Conclusion: the 3D DK sector behaves as a coherent first-order propagator on the frozen cochain architecture
+
