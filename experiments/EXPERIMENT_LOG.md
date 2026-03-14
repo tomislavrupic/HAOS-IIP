@@ -517,3 +517,12 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_202647_constraint_residuals.png`
 - Observation: projected dynamics preserves the divergence constraint and removes exact contamination so that longitudinally shifted initial data evolve with the same restricted observables
 - Conclusion: constraint preservation and longitudinal redundancy remain stable during Stage 9 evolution on the frozen architecture
+
+## Stage 9B DK 2D Packet Propagation
+- Date: 2026-03-14T13:52:22
+- Config: n=16, epsilon=0.2, sigma=0.08, t_final=0.6
+- Results: `data/20260314_135222_DK_2D_packet_dynamics.json`
+- Plots: `plots/20260314_135222_DK_2D_packet_position.png`, `plots/20260314_135222_DK_2D_packet_width.png`, `plots/20260314_135222_DK_2D_packet_norm.png`, `plots/20260314_135222_DK_2D_packet_grade_weights.png`
+- Observation: the validated 2D Dirac-Kaehler operator supports coherent packet propagation with stable norm and structured grade evolution across single-grade and mixed initial data
+- Conclusion: the 2D DK sector behaves as a coherent first-order dynamical generator on the frozen cochain architecture
+
