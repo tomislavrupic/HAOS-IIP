@@ -1,0 +1,102 @@
+{
+  "description": "Stage R1 resolution-probing pilot derived from committed Atlas-0 and Atlas-2 cases.",
+  "baseline_artifact": "data/20260314_143113_stage10_atlas0_baseline_morphology.csv",
+  "resolutions": [16, 24],
+  "cases": [
+    {
+      "case_id": "S11_B0_A0_transverse_periodic_wide_midk_amp05",
+      "source_layer": "Atlas-0",
+      "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_mode": "none",
+      "selection_note": "baseline periodic transverse coherent representative"
+    },
+    {
+      "case_id": "S11_B0_A0_scalar_periodic_wide_lowk_amp05",
+      "source_layer": "Atlas-0",
+      "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_mode": "none",
+      "selection_note": "baseline scalar coherent representative"
+    },
+    {
+      "case_id": "S11_B0_A0_scalar_periodic_medium_lowk_amp05",
+      "source_layer": "Atlas-0",
+      "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_mode": "none",
+      "selection_note": "baseline scalar dispersive representative"
+    },
+    {
+      "case_id": "S11_B0_A0_transverse_open_wide_highk_amp05",
+      "source_layer": "Atlas-0",
+      "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+      "baseline_regime": "Ballistic dispersive",
+      "perturbation_mode": "none",
+      "selection_note": "baseline transverse dispersive representative"
+    },
+    {
+      "case_id": "S11_B0_A0_scalar_periodic_medium_highk_amp05",
+      "source_layer": "Atlas-0",
+      "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_mode": "none",
+      "selection_note": "baseline scalar diffusive soft-edge representative"
+    },
+    {
+      "case_id": "S11_B0_A0_scalar_periodic_wide_highk_amp05",
+      "source_layer": "Atlas-0",
+      "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+      "baseline_regime": "Chaotic or irregular",
+      "perturbation_mode": "none",
+      "selection_note": "baseline chaotic representative"
+    },
+    {
+      "case_id": "S11_B0_A0_scalar_open_narrow_highk_amp05",
+      "source_layer": "Atlas-0",
+      "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+      "baseline_regime": "Fragmenting",
+      "perturbation_mode": "none",
+      "selection_note": "baseline fragmenting representative"
+    },
+    {
+      "case_id": "S11_P2_A0_transverse_periodic_wide_midk_amp05_edge_noise_plus_anisotropic_bias",
+      "source_layer": "Atlas-2",
+      "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+      "baseline_regime": "Ballistic coherent",
+      "perturbation_mode": "pair",
+      "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+      "component_perturbations": [
+        {"axis": "edge_weight_noise", "strength": 0.03, "seed": 101},
+        {"axis": "anisotropic_bias", "strength": 1.05, "seed": 303}
+      ],
+      "selection_note": "paired-stress coherent representative from Atlas-2 stable class"
+    },
+    {
+      "case_id": "S11_P2_A0_scalar_periodic_medium_highk_amp05_edge_noise_plus_anisotropic_bias",
+      "source_layer": "Atlas-2",
+      "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_mode": "pair",
+      "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+      "component_perturbations": [
+        {"axis": "edge_weight_noise", "strength": 0.03, "seed": 101},
+        {"axis": "anisotropic_bias", "strength": 1.05, "seed": 303}
+      ],
+      "selection_note": "paired-stress scalar soft-edge case that shifted in Atlas-2"
+    },
+    {
+      "case_id": "S11_P2_A0_transverse_open_narrow_highk_amp05_defects_plus_kernel_jitter",
+      "source_layer": "Atlas-2",
+      "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+      "baseline_regime": "Diffusive",
+      "perturbation_mode": "pair",
+      "perturbation_pair": "defects_plus_kernel_jitter",
+      "component_perturbations": [
+        {"axis": "sparse_graph_defects", "strength": 0.03, "seed": 202},
+        {"axis": "kernel_width_jitter", "strength": 0.05, "seed": 404}
+      ],
+      "selection_note": "paired-stress transverse soft-edge case that softened in Atlas-2"
+    }
+  ]
+}

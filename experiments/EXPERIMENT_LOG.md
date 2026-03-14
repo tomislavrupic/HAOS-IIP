@@ -579,3 +579,27 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260314_161318_stage10_atlas2_transition_matrix.png`, `plots/20260314_161318_stage10_atlas2_regime_transition_map.png`
 - Observation: Paired perturbations reveal how baseline regime labels deform under controlled stress interactions while preserving the Atlas-0/1 measurement grammar.
 - Conclusion: Atlas-2 is operational as a pilot transition-topology instrument on the frozen architecture.
+
+## Stage R1 Resolution Probe (20260314_212240_stageR1_resolution_probe)
+- Date: 2026-03-14T21:22:40
+- Config: cases=10, resolutions=[16, 24], csv=data/20260314_212240_stageR1_resolution_probe.csv
+- Results: `data/20260314_212240_stageR1_resolution_probe.json`
+- Plots: `plots/20260314_212240_stageR1_resolution_transition_heatmap.png`, `plots/20260314_212240_stageR1_resolution_persistence_by_regime.png`, `plots/20260314_212240_stageR1_resolution_metric_deltas.png`, `plots/20260314_212240_stageR1_resolution_constraint_scaling.png`
+- Observation: transition_counts={'Ballistic coherent -> Ballistic coherent': 3, 'Ballistic dispersive -> Ballistic coherent': 3, 'Diffusive -> Ballistic dispersive': 1, 'Chaotic or irregular -> Ballistic dispersive': 1, 'Fragmenting -> Ballistic dispersive': 1, 'Ballistic dispersive -> Ballistic dispersive': 1}; overall_persistence=0.400
+- Conclusion: the first Stage R1 pilot measures whether committed atlas labels survive n=16 -> n=24 refinement without changing the classifier
+
+## Stage 11 Collective Wave Interaction (20260314_213446_stage11_collective_wave_interaction)
+- Date: 2026-03-14T21:34:46
+- Config: runs=5, sector=transverse, boundary=periodic, bandwidth=0.1, k=1.0
+- Results: `data/20260314_213446_stage11_collective_wave_interaction.json`
+- Plots: `plots/20260314_213446_stage11_S11_collective_symmetric_in_phase_pair_field_snapshot.png`, `plots/20260314_213446_stage11_S11_collective_symmetric_in_phase_pair_centroid_traces.png`, `plots/20260314_213446_stage11_S11_collective_symmetric_in_phase_pair_pair_distance.png`, `plots/20260314_213446_stage11_S11_collective_symmetric_in_phase_pair_overlap_phase.png`, `plots/20260314_213446_stage11_S11_collective_symmetric_out_of_phase_pair_field_snapshot.png`, `plots/20260314_213446_stage11_S11_collective_symmetric_out_of_phase_pair_centroid_traces.png`, `plots/20260314_213446_stage11_S11_collective_symmetric_out_of_phase_pair_pair_distance.png`, `plots/20260314_213446_stage11_S11_collective_symmetric_out_of_phase_pair_overlap_phase.png`, `plots/20260314_213446_stage11_S11_collective_asymmetric_amplitude_pair_field_snapshot.png`, `plots/20260314_213446_stage11_S11_collective_asymmetric_amplitude_pair_centroid_traces.png`, `plots/20260314_213446_stage11_S11_collective_asymmetric_amplitude_pair_pair_distance.png`, `plots/20260314_213446_stage11_S11_collective_asymmetric_amplitude_pair_overlap_phase.png`, `plots/20260314_213446_stage11_S11_collective_near_overlap_clustered_pair_field_snapshot.png`, `plots/20260314_213446_stage11_S11_collective_near_overlap_clustered_pair_centroid_traces.png`, `plots/20260314_213446_stage11_S11_collective_near_overlap_clustered_pair_pair_distance.png`, `plots/20260314_213446_stage11_S11_collective_near_overlap_clustered_pair_overlap_phase.png`, `plots/20260314_213446_stage11_S11_collective_three_packet_chain_field_snapshot.png`, `plots/20260314_213446_stage11_S11_collective_three_packet_chain_centroid_traces.png`, `plots/20260314_213446_stage11_S11_collective_three_packet_chain_pair_distance.png`, `plots/20260314_213446_stage11_S11_collective_three_packet_chain_overlap_phase.png`, `plots/20260314_213446_stage11_collective_morphology_map.png`
+- Observation: regime_counts={'transient binding regime': 4, 'metastable composite regime': 1}
+- Conclusion: the Stage 11 pilot adds a first interaction-morphology layer on the frozen projected transverse architecture without extending the interpretation boundary
+
+## Stage 11 Collective Wave Interaction (20260314_213741_stage11_collective_sharp)
+- Date: 2026-03-14T21:37:41
+- Config: runs=2, sector=transverse, boundary=periodic, bandwidth=0.1, k=1.0
+- Results: `data/20260314_213741_stage11_collective_sharp.json`
+- Plots: `plots/20260314_213741_stage11_S11B_collective_counter_propagating_pair_field_snapshot.png`, `plots/20260314_213741_stage11_S11B_collective_counter_propagating_pair_centroid_traces.png`, `plots/20260314_213741_stage11_S11B_collective_counter_propagating_pair_pair_distance.png`, `plots/20260314_213741_stage11_S11B_collective_counter_propagating_pair_overlap_phase.png`, `plots/20260314_213741_stage11_S11B_collective_tight_phase_sensitive_pair_field_snapshot.png`, `plots/20260314_213741_stage11_S11B_collective_tight_phase_sensitive_pair_centroid_traces.png`, `plots/20260314_213741_stage11_S11B_collective_tight_phase_sensitive_pair_pair_distance.png`, `plots/20260314_213741_stage11_S11B_collective_tight_phase_sensitive_pair_overlap_phase.png`, `plots/20260314_213741_stage11_collective_sharp_morphology_map.png`
+- Observation: regime_counts={'transient binding regime': 1, 'metastable composite regime': 1}
+- Conclusion: the Stage 11 pilot adds a first interaction-morphology layer on the frozen projected transverse architecture without extending the interpretation boundary
