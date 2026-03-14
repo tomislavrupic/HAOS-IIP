@@ -1,0 +1,353 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{cite}
+
+\geometry{margin=1in}
+
+\title{Perturbation Resilience of Pre-Geometric Morphology Classes on a Frozen Kernel-Induced Cochain Operator Architecture}
+\author{Tomislav Rupi\'c\\Independent Researcher\\\v{S}ibenik, Croatia}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Stage 10B extends the pre-geometric atlas of the HAOS/IIP program from baseline morphology to morphology under controlled stress. Earlier work fixed the frozen kernel-induced cochain operator architecture, documented coherent packet propagation on that architecture, and recorded a deterministic Atlas-0 baseline sweep over scalar and projected transverse sectors. Atlas-1 asks a narrower question: which baseline morphology classes persist under mild one-axis perturbations? The present paper documents a 40-run pilot derived from ten committed Atlas-0 seeds spanning ballistic coherent, ballistic dispersive, diffusive, chaotic, and fragmenting regimes. Four perturbation channels are introduced one at a time: edge-weight noise, sparse graph defects, weak anisotropic bias, and kernel-width jitter. All runs reuse the Atlas-0 observable grammar and rule-based classifier. A methodological issue in the initial pilot is resolved by aligning the official constraint diagnostic with the same frozen transverse projector used in the dynamics. With that correction, the pilot shows an overall persistence of $38/40 = 0.95$, with unit persistence for ballistic coherent, ballistic dispersive, chaotic, and fragmenting baseline classes, and $0.75$ persistence for the two diffusive seeds. Kernel-width jitter and edge-weight noise preserve all labels in the pilot, while anisotropic bias and sparse graph defects each induce one diffusive-to-ballistic-dispersive transition. These results remain strictly morphological. They document resilience of the atlas taxonomy under mild disorder and establish Atlas-1 as a local stability instrument on the frozen architecture.
+\end{abstract}
+
+\section{Introduction}
+The Stage 9 transport diagnostics established that the frozen HAOS/IIP architecture supports coherent packet propagation in scalar and projected transverse sectors over a short finite window. Stage 10A then converted that transport result into an instrument: Atlas-0 introduced a fixed run grammar, a fixed observable contract, and a rule-based morphology taxonomy, and executed a deterministic 72-run baseline sweep on the untouched architecture. That baseline survey established that the frozen system does not occupy a single undifferentiated transport regime. Instead it separates into a small set of reproducible morphology classes whose distribution depends on sector, boundary type, bandwidth, and carrier choice.
+
+Atlas-1 asks the next natural question. Once the baseline map exists, one can ask whether its labels describe robust local basins or merely fragile combinatorial patterns. The purpose of Stage 10B is therefore not to expand the physical interpretation of the atlas. It is to test whether the committed Atlas-0 labels persist under mild, controlled, one-axis perturbations. The correct frame is local stability analysis of the morphology taxonomy.
+
+This distinction matters. The baseline atlas recorded what the untouched frozen architecture does. Atlas-1 records how much of that behavior survives small stress without changing the core operators or retuning the classifier. In that sense Atlas-1 is not a new theory stage. It is a robustness stage for the instrument itself.
+
+The guiding rule remains unchanged:
+\begin{quote}
+\emph{Classification precedes interpretation.}
+\end{quote}
+
+The present paper therefore stays at the morphology level. It documents the perturbation grammar, the corrected constraint protocol used for the official labels, and the 40-run pilot derived from ten committed Atlas-0 seeds. It does not claim continuum reconstruction, particle content, gauge structure, or geometry. Its narrow claim is that the Atlas-0 morphology classes can now be stress-tested reproducibly on the same frozen architecture.
+
+\section{Frozen Context and Pilot Scope}
+Atlas-1 inherits the frozen operator architecture from the earlier stages. The underlying domain is the same Gaussian kernel-induced cochain complex used in the Stage 9 transport paper and the Atlas-0 baseline paper. No operator definitions are changed in the present study.
+
+The scalar branch is still governed by the frozen node operator $L_0$. The edge sector is still governed by the frozen Hodge operator
+\begin{equation}
+L_1 = d_0 d_0^{*} + d_1^{*} d_1,
+\end{equation}
+and projected transverse runs are still evolved in the restricted subspace
+\begin{equation}
+\ker(d_0^{*}) \cap (\mathcal{H}^1)^\perp
+\end{equation}
+defined and validated in the earlier diagnostics. The same second-order packet evolution is used throughout:
+\begin{equation}
+\partial_t^2 q = -L q,
+\end{equation}
+with the same projection logic as in Stage 9 for transverse runs.
+
+Atlas-1 also inherits the Atlas-0 measurement contract. Each run returns the same common observables:
+\begin{itemize}
+\item packet center shift,
+\item width ratio,
+\item spectral centroid and spread,
+\item sector leakage,
+\item norm drift,
+\item constraint norm,
+\item anisotropy score,
+\item coherence score,
+\item primary regime label,
+\item secondary sector label.
+\end{itemize}
+The Atlas-1 additions are the baseline label, the perturbed label, and a persistence score
+\begin{equation}
+P =
+\begin{cases}
+1, & R_1 = R_0, \\
+0, & R_1 \neq R_0,
+\end{cases}
+\end{equation}
+where $R_0$ is the committed Atlas-0 label and $R_1$ is the label after one perturbation.
+
+The present paper documents only the Atlas-1 pilot, not a full resilience sweep. The pilot uses a curated ten-seed subset of committed Atlas-0 runs:
+\begin{itemize}
+\item 3 ballistic-coherent seeds,
+\item 3 ballistic-dispersive seeds,
+\item 2 diffusive seeds,
+\item 1 chaotic-or-irregular seed,
+\item 1 fragmenting seed.
+\end{itemize}
+Each baseline seed is perturbed by exactly four mild channels, one at a time, producing a 40-run resilience table.
+
+\section{Atlas-1 Perturbation Methodology}
+\subsection{One-axis perturbation grammar}
+Atlas-1 preserves the Atlas-0 baseline grammar and varies only one perturbation axis per run. The pilot uses four static perturbation channels:
+\begin{enumerate}
+\item edge-weight noise with multiplicative strength $0.03$,
+\item sparse graph defects with density $0.03$,
+\item anisotropic bias with factor $1.05$ along one principal axis,
+\item kernel-width jitter with strength $0.05$.
+\end{enumerate}
+
+No run combines perturbation channels. No taxonomy thresholds are retuned. No architectural components are redefined. All pilot runs use the same baseline spatial resolution,
+\begin{equation}
+n = 16,
+\end{equation}
+the same frozen kernel width $\epsilon = 0.2$, and the same final time
+\begin{equation}
+t_{\mathrm{final}} = 0.9
+\end{equation}
+as Atlas-0. The time step is again chosen from the spectral-radius heuristic already used in Atlas-0.
+
+\subsection{Baseline seed selection}
+The pilot seed set is drawn directly from the committed Atlas-0 run table. Table~\ref{tab:pilot-seeds} records the baseline seed composition.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lllc}
+\hline
+Baseline seed class & Count & Sector mix & Boundary mix \\
+\hline
+Ballistic coherent & 3 & 2 transverse, 1 scalar & 2 periodic, 1 open \\
+Ballistic dispersive & 3 & 1 transverse, 2 scalar & 1 periodic, 2 open \\
+Diffusive & 2 & 1 transverse, 1 scalar & 1 periodic, 1 open \\
+Chaotic or irregular & 1 & 1 scalar & 1 periodic \\
+Fragmenting & 1 & 1 scalar & 1 open \\
+\hline
+\end{tabular}
+\caption{Committed Atlas-0 seed selection used in the 40-run Atlas-1 pilot.}
+\label{tab:pilot-seeds}
+\end{table}
+
+This choice is deliberately modest. The pilot is intended to expose gross regime transitions without hiding them inside a very large perturbation grid. It also ensures that both stable-looking and unstable-looking baseline classes are represented.
+
+\section{Constraint-Consistency Protocol}
+The main methodological result of Atlas-1 appears before the numerical counts are interpreted. During the initial pilot pass, projected transverse trajectories were still being evolved with the frozen transverse projector, but the constraint classifier was evaluating those same trajectories with the perturbed divergence operator. This mixed two different structures:
+\begin{itemize}
+\item the frozen projector that defines the transverse dynamics,
+\item the perturbed divergence operator that was being used as a label threshold.
+\end{itemize}
+
+That mismatch created false transitions in the transverse coherent seeds. In particular, runs that remained divergence-free to roundoff under the frozen $d_0^{*}$ used by the projector were being relabeled as chaotic or irregular because the corresponding perturbed $d_0^{*}$ produced a larger auxiliary residual.
+
+Atlas-1 is therefore frozen with a dual-constraint record:
+\begin{itemize}
+\item the official constraint diagnostic
+\begin{equation}
+C_{\mathrm{frozen}}^{\max} = \max_t \|d_{0,\mathrm{frozen}}^{*} q(t)\|,
+\end{equation}
+used for the official morphology label;
+\item the auxiliary perturbed diagnostic
+\begin{equation}
+C_{\mathrm{pert}}^{\max} = \max_t \|d_{0,\mathrm{pert}}^{*} q(t)\|,
+\end{equation}
+retained as a sensitivity measure only.
+\end{itemize}
+
+This is the correct alignment for the present stage because the transverse projector itself remains frozen from Atlas-0. Official label assignment must therefore be evaluated against the same frozen transverse condition that defines the dynamics. The perturbed divergence is still valuable, but it belongs to a different question: how sensitive the divergence read is under structural perturbation, not whether the pilot trajectory has left the official projected sector.
+
+The effect of this correction is numerically decisive. Across the 16 transverse pilot runs,
+\begin{equation}
+\max C_{\mathrm{frozen}}^{\max} = 1.38 \times 10^{-16},
+\end{equation}
+while
+\begin{equation}
+\max C_{\mathrm{pert}}^{\max} = 1.09 \times 10^{-1}.
+\end{equation}
+Under the inconsistent mixed read, the overall pilot persistence would have appeared as
+\begin{equation}
+25/40 = 0.625.
+\end{equation}
+Under the consistent frozen-constraint read, the official persistence is
+\begin{equation}
+38/40 = 0.95.
+\end{equation}
+
+This is not a cosmetic change. It is the difference between a robustness pilot and a mislabeled classifier artifact. The official Atlas-1 results reported below are therefore all based on the frozen-constraint labeling rule.
+
+\section{Atlas-1 Pilot Results}
+\subsection{Transition counts}
+The corrected Atlas-1 pilot produces the transition counts shown in Table~\ref{tab:transition-counts}. The dominant feature of the table is stability. All three ballistic-coherent seeds retain their class across all four perturbation channels. The same is true for all three ballistic-dispersive seeds, the chaotic seed, and the fragmenting seed. Only the two diffusive seeds show regime changes, and in both cases the transition is upward into the neighboring ballistic-dispersive class rather than into a more irregular class.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lc}
+\hline
+Transition & Count \\
+\hline
+Ballistic coherent $\rightarrow$ Ballistic coherent & 12 \\
+Ballistic dispersive $\rightarrow$ Ballistic dispersive & 12 \\
+Diffusive $\rightarrow$ Diffusive & 6 \\
+Diffusive $\rightarrow$ Ballistic dispersive & 2 \\
+Chaotic or irregular $\rightarrow$ Chaotic or irregular & 4 \\
+Fragmenting $\rightarrow$ Fragmenting & 4 \\
+\hline
+\end{tabular}
+\caption{Official Atlas-1 pilot transition counts using the frozen-constraint label definition.}
+\label{tab:transition-counts}
+\end{table}
+
+The two non-persistent cases are:
+\begin{itemize}
+\item a periodic scalar diffusive seed under anisotropic bias,
+\item an open transverse diffusive seed under sparse graph defects.
+\end{itemize}
+Both transition to ballistic dispersive, not to chaotic or fragmenting behavior. In that limited sense the diffusive class is the softest class in the pilot.
+
+\subsection{Persistence by regime and by axis}
+Table~\ref{tab:persistence-summary} summarizes the persistence rates by baseline regime and by perturbation axis.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lc|lc}
+\hline
+Baseline regime & Persistence & Perturbation axis & Persistence \\
+\hline
+Ballistic coherent & 1.00 & Edge-weight noise & 1.00 \\
+Ballistic dispersive & 1.00 & Sparse graph defects & 0.90 \\
+Diffusive & 0.75 & Anisotropic bias & 0.90 \\
+Chaotic or irregular & 1.00 & Kernel-width jitter & 1.00 \\
+Fragmenting & 1.00 & & \\
+\hline
+\end{tabular}
+\caption{Atlas-1 pilot persistence by baseline regime and by perturbation axis.}
+\label{tab:persistence-summary}
+\end{table}
+
+The regime-side summary is simple:
+\begin{itemize}
+\item ballistic coherent remains fully persistent in the pilot,
+\item ballistic dispersive remains fully persistent,
+\item chaotic and fragmenting runs remain fully persistent,
+\item diffusive is the only class with reduced persistence.
+\end{itemize}
+
+The axis-side summary is equally simple:
+\begin{itemize}
+\item edge-weight noise preserves all pilot labels,
+\item kernel-width jitter preserves all pilot labels,
+\item anisotropic bias and sparse graph defects each induce one transition.
+\end{itemize}
+
+This result is narrower than a global robustness claim, but it is still informative. Within the chosen pilot window, the baseline atlas classes are substantially more stable than the initial inconsistent classifier read suggested.
+
+\subsection{Sector-level read}
+The persistence split by sector is also balanced:
+\begin{equation}
+\text{scalar persistence} = \frac{23}{24} \approx 0.958,
+\qquad
+\text{transverse persistence} = \frac{15}{16} = 0.9375.
+\end{equation}
+This means the corrected pilot does not support a strong claim that one sector is dramatically more fragile than the other under mild perturbation. The two sectors behave comparably in the present small sample, with one regime transition each.
+
+The transverse story is nevertheless special for methodological reasons. Sector leakage remains at roundoff in the corrected pilot, while the auxiliary perturbed divergence can become substantial. This means the projected transverse sector remains well-defined as an official morphology carrier even when the perturbed divergence operator is sensitive to structural disorder. Atlas-1 therefore separates two different questions:
+\begin{enumerate}
+\item whether the frozen projected morphology persists;
+\item whether a perturbed divergence read is itself sensitive to disorder.
+\end{enumerate}
+Only the first question defines the official labels in this paper.
+
+\section{Morphology Diagnostics Under Stress}
+Atlas-1 is useful not only because it counts transitions, but because it exposes which observables move most under stress.
+
+First, coherence shifts remain small for three of the four perturbation channels. The mean coherence change is approximately
+\begin{equation}
+1.10\times 10^{-4}
+\end{equation}
+for edge-weight noise and effectively zero for kernel-width jitter. Sparse graph defects produce the strongest average coherence loss,
+\begin{equation}
+\langle \Delta S_{\mathrm{coh}} \rangle \approx -5.96\times 10^{-3},
+\end{equation}
+while anisotropic bias tends to increase the coherence score slightly on average,
+\begin{equation}
+\langle \Delta S_{\mathrm{coh}} \rangle \approx 4.46\times 10^{-3}.
+\end{equation}
+These are still small morphology shifts rather than catastrophic changes.
+
+Second, anisotropy remains a descriptive stress metric rather than a convergence claim. The maximal anisotropy in the pilot reaches
+\begin{equation}
+3.02
+\end{equation}
+for scalar runs and
+\begin{equation}
+2.25
+\end{equation}
+for transverse runs. As in Atlas-0, anisotropy is monitored here purely as a morphology diagnostic; no refinement or continuum-limit interpretation is attempted.
+
+Third, the pilot preserves the linear character already suggested by Atlas-0. Since all ten seeds are inherited directly from the fixed Atlas-0 amplitude slice, the observed transitions arise from the perturbation channels themselves rather than from any new amplitude ladder. Atlas-1 is therefore resolving structural sensitivity of the baseline morphology classes, not amplitude-driven instability.
+
+\section{Discussion}
+The corrected Atlas-1 pilot supports three restrained conclusions.
+
+First, the Atlas-0 taxonomy appears to identify genuine local morphology basins rather than purely fragile label assignments. A 95\% persistence rate under mild one-axis perturbations is not proof of universality, but it is enough to say that the baseline labels survive modest stress surprisingly well in the pilot sample.
+
+Second, the most important instability in the initial Atlas-1 attempt was methodological, not dynamical. Once the official label is evaluated with the same frozen divergence condition used by the frozen projector, the apparent collapse of the transverse coherent class disappears. This is exactly the kind of issue a resilience stage should expose. Atlas-1 is therefore already doing instrument work as well as morphology work.
+
+Third, the classes that soften first in this pilot are diffusive classes, and even there the observed transitions are modest:
+\begin{equation}
+\text{Diffusive} \rightarrow \text{Ballistic dispersive}.
+\end{equation}
+The pilot does not show coherent classes collapsing directly into chaotic or fragmenting behavior under the selected mild perturbations.
+
+The limits are equally important. The pilot uses only ten baseline seeds and one perturbation strength per axis. It is therefore not a full disorder phase diagram. It does not measure recoverability across resolution. It does not retune or validate the dormant classifier branches. It does not assign any geometric meaning to resilient regimes. The current stage remains a local resilience survey on a frozen architecture.
+
+\section{Interpretation Boundary}
+Atlas-1 remains a morphology-resilience study only. It does not establish spacetime emergence, continuum reconstruction, gauge structure, particle content, or any physical disorder analogy. The official results show only that baseline morphology classes on the frozen kernel-induced cochain architecture can be stress-tested reproducibly under mild one-axis perturbations, and that most of the selected pilot classes remain label-stable under those perturbations.
+
+The constraint correction discussed in this paper should also be interpreted narrowly. It does not claim that perturbed divergence is unimportant. It only establishes that official Atlas-1 labels must be evaluated with the same frozen divergence condition that defines the frozen projected dynamics. The perturbed divergence remains an auxiliary sensitivity channel for later work.
+
+\section{Conclusion}
+Stage 10B extends the pre-geometric atlas from baseline morphology to morphology under mild controlled disorder. On a 40-run pilot derived from ten committed Atlas-0 seeds, the corrected Atlas-1 protocol shows strong regime persistence:
+\begin{equation}
+38/40 = 0.95.
+\end{equation}
+Ballistic coherent, ballistic dispersive, chaotic, and fragmenting seeds remain fully persistent in the pilot, while the only observed class changes are two diffusive-to-ballistic-dispersive transitions under anisotropic bias and sparse graph defects.
+
+The paper's main contribution is therefore twofold. Numerically, it documents the first local resilience map for the atlas taxonomy. Methodologically, it fixes the official Atlas-1 constraint protocol by aligning the classifier with the same frozen divergence condition used by the frozen transverse projector. In that corrected form, Atlas-1 becomes a stable local-stress instrument for the pre-geometric program.
+
+The natural next step is not interpretation but expansion of the resilience map: either a larger perturbation ladder on the same seed family or a carefully designed Atlas-2 stage built on the now-frozen Atlas-0 and Atlas-1 instruments.
+
+\appendix
+\section{Pilot Baseline Seeds}
+The ten committed Atlas-0 pilot seeds are:
+\begin{itemize}
+\item \texttt{A0\_transverse\_periodic\_wide\_midk\_amp05},
+\item \texttt{A0\_transverse\_open\_wide\_lowk\_amp05},
+\item \texttt{A0\_scalar\_periodic\_wide\_lowk\_amp05},
+\item \texttt{A0\_scalar\_periodic\_medium\_lowk\_amp05},
+\item \texttt{A0\_scalar\_open\_medium\_midk\_amp05},
+\item \texttt{A0\_transverse\_open\_wide\_highk\_amp05},
+\item \texttt{A0\_scalar\_periodic\_medium\_highk\_amp05},
+\item \texttt{A0\_transverse\_open\_narrow\_highk\_amp05},
+\item \texttt{A0\_scalar\_periodic\_wide\_highk\_amp05},
+\item \texttt{A0\_scalar\_open\_narrow\_highk\_amp05}.
+\end{itemize}
+
+\section{Pilot Perturbation Strengths}
+The Atlas-1 pilot uses the following single-strength perturbation ladder:
+\begin{align}
+\text{edge-weight noise} &: 0.03, \\
+\text{sparse graph defects} &: 0.03, \\
+\text{anisotropic bias} &: 1.05, \\
+\text{kernel-width jitter} &: 0.05.
+\end{align}
+Each baseline seed is perturbed by all four channels, one at a time.
+
+\section{Official and Auxiliary Constraint Records}
+For transverse pilot runs the committed CSV and JSON outputs store both
+\begin{equation}
+C_{\mathrm{frozen}}^{\max}
+\end{equation}
+and
+\begin{equation}
+C_{\mathrm{pert}}^{\max}.
+\end{equation}
+The official regime label uses $C_{\mathrm{frozen}}^{\max}$, while $C_{\mathrm{pert}}^{\max}$ is retained for auxiliary sensitivity analysis. This dual record is part of the committed Atlas-1 instrument definition.
+
+\end{document}

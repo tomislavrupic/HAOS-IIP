@@ -1,0 +1,306 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{cite}
+
+\geometry{margin=1in}
+
+\title{Transition Structure of Pre-Geometric Morphology Classes on a Frozen Kernel-Induced Cochain Operator Architecture}
+\author{Tomislav Rupi\'c\\Independent Researcher\\\v{S}ibenik, Croatia}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Stage 10C extends the HAOS/IIP pre-geometric atlas from baseline morphology and single-axis resilience to paired-stress transition structure. Earlier work fixed the kernel-induced cochain operator architecture, documented coherent packet propagation on that frozen substrate, introduced Atlas-0 as a baseline morphology survey, and introduced Atlas-1 as a one-axis resilience instrument. Atlas-2 asks a different question: how do committed morphology classes deform when two mild perturbation channels are applied together? The present paper documents a 20-run pilot built from the same ten committed Atlas-1 baseline seeds. Two paired perturbation channels are used: edge-weight noise with anisotropic bias, and sparse graph defects with kernel-width jitter. All runs reuse the Atlas-0 observable grammar and the same rule-based classifier. As in Atlas-1, official transverse labels are evaluated with the frozen divergence constraint associated with the frozen projector, while the paired perturbed divergence is retained only as an auxiliary sensitivity diagnostic. Under that protocol the pilot shows $18/20=0.9$ stability, with six ballistic-coherent, six ballistic-dispersive, two chaotic, and two fragmenting runs remaining unchanged, and only two diffusive seeds shifting to ballistic-dispersive behavior. The transition-type summary contains 18 stable cases, one regime shift, and one regime softening. These results remain strictly morphological. They document a small but readable transition topology on the frozen architecture and provide a basis for deciding whether later resolution studies are justified.
+\end{abstract}
+
+\section{Introduction}
+The Stage 10 atlas has developed in layers. Atlas-0 established a fixed measurement instrument on the frozen kernel-induced cochain architecture: a common run grammar, a common observable contract, and a rule-based regime taxonomy. Atlas-1 then asked whether those baseline morphology labels survived mild one-axis perturbations. The result was a local resilience map on the same frozen architecture, together with a corrected constraint protocol for projected transverse runs.
+
+Atlas-2 asks a different class of question. Once baseline classes exist and their one-axis resilience has been tested, one can ask whether regime changes under combined stress remain readable. In other words, Atlas-2 is not about discovering new states. It is about measuring the transition structure between already committed states.
+
+This is the first stage in the atlas where the object of study is the deformation of the regime map itself. The correct frame is therefore still methodological and morphological. Atlas-2 does not test continuum limits, geometry, particles, or gauge structure. It tests whether paired perturbations reveal a coherent transition topology or whether the morphology atlas breaks into noisy, unstructured relabeling.
+
+The guiding principle remains unchanged:
+\begin{quote}
+\emph{Classification precedes interpretation.}
+\end{quote}
+
+The present paper documents the first Atlas-2 pilot only. It uses the same ten baseline seeds already frozen in Atlas-1, reuses the same classifier, and introduces only two paired-stress channels. Its purpose is narrow: determine whether the resulting transitions are stable enough and structured enough to justify later scaling work.
+
+\section{Frozen Context and Atlas-2 Scope}
+No operator definitions are changed in Atlas-2. The underlying domain is the same Gaussian kernel-induced cochain complex used in the Stage 9 transport paper, the Atlas-0 baseline paper, and the Atlas-1 resilience paper. The scalar sector is governed by the frozen node operator $L_0$, while the edge sector is governed by the frozen Hodge operator
+\begin{equation}
+L_1 = d_0 d_0^{*} + d_1^{*} d_1.
+\end{equation}
+Projected transverse runs are still evolved in the same restricted subspace
+\begin{equation}
+\ker(d_0^{*}) \cap (\mathcal{H}^1)^\perp
+\end{equation}
+with the same frozen projector used in Atlas-0 and Atlas-1.
+
+The second-order packet dynamics is unchanged:
+\begin{equation}
+\partial_t^2 q = -L q,
+\end{equation}
+with $L=L_0$ in the scalar sector and $L=L_1$ in the projected transverse sector. Atlas-2 also inherits the same observable contract used in the earlier atlas stages:
+\begin{itemize}
+\item packet center shift,
+\item width ratio,
+\item spectral centroid and spread,
+\item sector leakage,
+\item norm drift,
+\item constraint norm,
+\item anisotropy score,
+\item coherence score,
+\item primary regime label,
+\item secondary sector label.
+\end{itemize}
+
+The new Atlas-2 field is a transition-type label. The pilot stores both the baseline regime $R_0$ and the paired-stress regime $R_1$, and then assigns one of five operational transition types:
+\begin{itemize}
+\item stable,
+\item regime shift,
+\item regime softening,
+\item fragmentation induced,
+\item chaos induced.
+\end{itemize}
+The present pilot activates only the first three of these.
+
+\section{Atlas-2 Pilot Design}
+\subsection{Baseline seed set}
+Atlas-2 reuses the same ten committed baseline seeds selected in Atlas-1:
+\begin{itemize}
+\item 3 ballistic-coherent seeds,
+\item 3 ballistic-dispersive seeds,
+\item 2 diffusive seeds,
+\item 1 chaotic-or-irregular seed,
+\item 1 fragmenting seed.
+\end{itemize}
+This keeps the transition pilot directly comparable to Atlas-1 and avoids mixing a new seed selection problem into the first paired-stress test.
+
+\subsection{Paired perturbation channels}
+Only two paired-stress channels are used in the pilot:
+\begin{enumerate}
+\item edge-weight noise with strength $0.03$ composed with anisotropic bias of factor $1.05$,
+\item sparse graph defects with density $0.03$ composed with kernel-width jitter of strength $0.05$.
+\end{enumerate}
+For each baseline seed, both pairs are applied once, producing
+\begin{equation}
+10 \times 2 = 20
+\end{equation}
+runs in total.
+
+All runs use the same baseline spatial resolution,
+\begin{equation}
+n = 16,
+\end{equation}
+the same frozen kernel width $\epsilon = 0.2$, and the same final time
+\begin{equation}
+t_{\mathrm{final}} = 0.9
+\end{equation}
+as Atlas-0 and Atlas-1. The time step is again chosen from the same spectral-radius heuristic used in the previous atlas stages.
+
+In the implementation, paired perturbations are composed multiplicatively at the edge-scale level before the corresponding perturbed operators are assembled. This keeps Atlas-2 close to Atlas-1 numerically while still introducing a genuine interaction between two stress channels.
+
+\section{Official Constraint Protocol}
+The main methodological lesson of Atlas-1 carries directly into Atlas-2. For projected transverse runs, the official regime label must be evaluated with the same frozen divergence condition that defines the frozen transverse projector. If one instead evaluates the projected trajectory against a paired perturbed divergence operator, the classifier can register false failures that reflect a mismatch of structures rather than a morphology collapse.
+
+Atlas-2 therefore records two constraint diagnostics for transverse runs:
+\begin{itemize}
+\item the official frozen-constraint read
+\begin{equation}
+C_{\mathrm{frozen}}^{\max} = \max_t \|d_{0,\mathrm{frozen}}^{*} q(t)\|,
+\end{equation}
+used for official labels,
+\item the auxiliary paired perturbed read
+\begin{equation}
+C_{\mathrm{pair}}^{\max} = \max_t \|d_{0,\mathrm{pair}}^{*} q(t)\|,
+\end{equation}
+stored only as a sensitivity diagnostic.
+\end{itemize}
+
+Across the eight transverse pilot runs,
+\begin{equation}
+\max C_{\mathrm{frozen}}^{\max} = 1.22 \times 10^{-16},
+\end{equation}
+while
+\begin{equation}
+\max C_{\mathrm{pair}}^{\max} = 1.09 \times 10^{-1}.
+\end{equation}
+The mean sector leakage over the same transverse subset remains
+\begin{equation}
+1.60 \times 10^{-16}.
+\end{equation}
+This confirms that the transverse projected morphology remains numerically closed under the official frozen constraint, even while the auxiliary paired perturbed divergence can become appreciable.
+
+As in Atlas-1, this is not a cosmetic bookkeeping choice. It is part of the committed instrument definition. Atlas-2 official labels are therefore always reported using the frozen-constraint read.
+
+\section{Transition-Type Classification}
+The transition-type label is defined operationally from the baseline label, the perturbed label, width growth, coherence change, and threshold crossings already present in the existing atlas diagnostics. The rules used in the pilot are:
+\begin{itemize}
+\item \texttt{stable} if $R_1 = R_0$,
+\item \texttt{fragmentation induced} if the perturbed label is Fragmenting,
+\item \texttt{chaos induced} if the perturbed label is Chaotic or irregular,
+\item \texttt{regime softening} if the paired-stress label falls to a lower regime rank or if coherence loss or width growth exceeds the softening threshold,
+\item \texttt{regime shift} otherwise.
+\end{itemize}
+No new theoretical score is introduced. The transition type is a thin layer on top of the existing Atlas-0/1 metrics.
+
+\section{Atlas-2 Pilot Results}
+\subsection{Transition counts}
+The pilot outcome is shown in Table~\ref{tab:transition-counts}. The dominant feature is again stability. Eighteen of the twenty paired-stress runs preserve the baseline regime label. The only regime changes are two diffusive-to-ballistic-dispersive transitions.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lc}
+\hline
+Transition & Count \\
+\hline
+Ballistic coherent $\rightarrow$ Ballistic coherent & 6 \\
+Ballistic dispersive $\rightarrow$ Ballistic dispersive & 6 \\
+Diffusive $\rightarrow$ Diffusive & 2 \\
+Diffusive $\rightarrow$ Ballistic dispersive & 2 \\
+Chaotic or irregular $\rightarrow$ Chaotic or irregular & 2 \\
+Fragmenting $\rightarrow$ Fragmenting & 2 \\
+\hline
+\end{tabular}
+\caption{Official Atlas-2 pilot transition counts under paired stress.}
+\label{tab:transition-counts}
+\end{table}
+
+The corresponding perturbed regime counts are therefore
+\begin{equation}
+6 \text{ ballistic coherent},\;
+8 \text{ ballistic dispersive},\;
+2 \text{ diffusive},\;
+2 \text{ chaotic},\;
+2 \text{ fragmenting}.
+\end{equation}
+
+\subsection{Transition-type counts}
+The transition-type summary is even more compact:
+\begin{equation}
+18 \text{ stable},\quad 1 \text{ regime shift},\quad 1 \text{ regime softening}.
+\end{equation}
+Neither fragmentation-induced nor chaos-induced transitions appear in this first pilot.
+
+The two changed runs are:
+\begin{enumerate}
+\item a periodic scalar diffusive seed under edge-noise plus anisotropic-bias stress,
+\item an open transverse diffusive seed under defect-plus-jitter stress.
+\end{enumerate}
+In both cases the perturbed label moves from Diffusive to Ballistic dispersive. The first is classified as a regime shift because the coherence and width diagnostics remain comparatively close to the baseline diffusive read. The second is classified as a regime softening because it combines the label change with a larger coherence loss,
+\begin{equation}
+\Delta S_{\mathrm{coh}} = -2.75 \times 10^{-2},
+\end{equation}
+even though the final label is still Ballistic dispersive.
+
+\subsection{Persistence by perturbation pair}
+Both paired-stress channels show the same pilot persistence:
+\begin{equation}
+P_{\mathrm{pair}} = 0.9.
+\end{equation}
+The symmetry of this first result is useful. It suggests that the transition topology is not dominated by a single paired channel in this small pilot, even though the two changed runs occur on different pairs.
+
+The sector split is also comparable to the Atlas-1 picture:
+\begin{equation}
+\text{scalar stability} = \frac{11}{12} \approx 0.917,
+\qquad
+\text{transverse stability} = \frac{7}{8} = 0.875.
+\end{equation}
+This does not support a strong claim that one sector is dramatically more fragile under paired stress. Instead, the same conclusion as Atlas-1 survives: the soft edge of the current atlas is the diffusive class rather than the coherent classes.
+
+\section{Morphology Diagnostics Under Paired Stress}
+Atlas-2 is useful not only because it counts transitions, but because it indicates how those transitions are reached.
+
+For the edge-noise plus anisotropic-bias pair, the mean coherence change across the ten pilot runs is slightly positive,
+\begin{equation}
+\langle \Delta S_{\mathrm{coh}} \rangle \approx 4.53 \times 10^{-3},
+\end{equation}
+while the mean width ratio is
+\begin{equation}
+\langle \rho_W \rangle \approx 1.189.
+\end{equation}
+This is the pair containing the scalar diffusive-to-dispersive regime shift.
+
+For the defects-plus-kernel-jitter pair, the mean coherence change is slightly negative,
+\begin{equation}
+\langle \Delta S_{\mathrm{coh}} \rangle \approx -5.98 \times 10^{-3},
+\end{equation}
+with mean width ratio
+\begin{equation}
+\langle \rho_W \rangle \approx 1.173.
+\end{equation}
+This is the pair containing the transverse diffusive-to-dispersive regime softening event.
+
+As in Atlas-0 and Atlas-1, anisotropy remains a descriptive morphology diagnostic only. No refinement or continuum-limit claim is made from the anisotropy values. In the two changed runs the anisotropy remains elevated, at approximately $2.31$ for the scalar regime shift and $2.25$ for the transverse regime softening, but these values are not given any geometric interpretation here.
+
+The main pilot result is therefore not that paired perturbations generate new classes. It is that they preserve most of the existing classes while exposing a small transition corridor inside the diffusive subset.
+
+\section{Discussion}
+Atlas-2 shows that the atlas can be pushed one layer beyond stability without immediately dissolving into noise. The first paired-stress pilot still produces a readable transition map. In particular:
+\begin{itemize}
+\item coherent classes remain stable under both paired perturbation channels,
+\item chaotic and fragmenting classes also remain stable in the pilot,
+\item the only class that deforms is the diffusive class,
+\item both deformations move into the neighboring ballistic-dispersive class rather than into more irregular classes.
+\end{itemize}
+
+This is already useful. It suggests that the present atlas has an internal ordering rather than a flat label list. The coherent classes are robust. The irregular classes are also robust, but in a different sense: they remain where they are. The diffusive classes occupy a softer boundary and can be pushed toward dispersive transport without triggering fragmentation or chaos in the selected pilot window.
+
+That is the right level of conclusion for Stage 10C. The current pilot is too small to claim a full phase diagram or a universal transition topology. It does, however, justify the statement that the atlas now contains not only states and one-axis persistence, but also a first readable map of paired-stress deformations.
+
+The limits remain clear. Atlas-2 uses only ten seeds, only two perturbation pairs, and only one strength per component. It does not yet examine resolution dependence, larger perturbation ladders, or collective behavior. The next major decision therefore remains open: either the atlas is mature enough to justify Stage 11 resolution probing, or the morphology taxonomy should be refined further before any scaling claims are attempted.
+
+\section{Interpretation Boundary}
+The Atlas-2 pilot establishes only transition structure in regime space under paired stress. It does not establish continuum reconstruction, geometric emergence, particle content, gauge structure, or any relativistic claim. The transition matrix and transition-type labels are morphology instruments only.
+
+This boundary is especially important here because paired perturbations are the first place where one might be tempted to overread the atlas as a proto-phase diagram in a physical sense. The present paper does not do that. It documents a small, reproducible transition topology on a frozen discrete operator architecture and nothing more.
+
+\section{Conclusion}
+Stage 10C extends the pre-geometric atlas from baseline morphology and one-axis resilience to paired-stress transition structure. On a 20-run pilot built from ten committed baseline seeds, the atlas remains highly stable:
+\begin{equation}
+18/20 = 0.9.
+\end{equation}
+Only two runs change class, and both move from Diffusive to Ballistic dispersive. No paired perturbation in the pilot induces new fragmentation or chaos.
+
+The paper's contribution is therefore modest but important. Atlas-2 shows that the regime vocabulary introduced in Atlas-0 and tested in Atlas-1 can still produce a readable topology when perturbation channels are paired. This is the first stage in the program where transitions, rather than just states and single-axis persistence, become explicit numerical objects.
+
+Whether this is sufficient to justify Stage 11 should depend on discipline rather than momentum. If later review confirms that these transition patterns are representative and not merely pilot-specific, then resolution studies become meaningful. If not, the correct move will be to refine the atlas before scaling it.
+
+\appendix
+\section{Atlas-2 Pilot Pairs}
+The two committed paired perturbation channels are:
+\begin{align}
+\text{Pair A} &: \text{edge-weight noise } 0.03 + \text{ anisotropic bias } 1.05, \\
+\text{Pair B} &: \text{sparse graph defects } 0.03 + \text{ kernel-width jitter } 0.05.
+\end{align}
+
+\section{Changed Runs}
+The two non-stable runs in the pilot are:
+\begin{itemize}
+\item \texttt{A0\_scalar\_periodic\_medium\_highk\_amp05} under edge-noise plus anisotropic bias,
+\item \texttt{A0\_transverse\_open\_narrow\_highk\_amp05} under defects plus kernel jitter.
+\end{itemize}
+Both move from Diffusive to Ballistic dispersive. The second is the only paired-stress run in the pilot that combines a regime change with a notable coherence decrease while remaining constraint-clean under the official frozen divergence read.
+
+\section{Official and Auxiliary Constraint Records}
+For transverse runs the Atlas-2 CSV and JSON outputs store both
+\begin{equation}
+C_{\mathrm{frozen}}^{\max}
+\end{equation}
+and
+\begin{equation}
+C_{\mathrm{pair}}^{\max}.
+\end{equation}
+Official labels use $C_{\mathrm{frozen}}^{\max}$. The paired perturbed divergence is retained only as an auxiliary sensitivity diagnostic.
+
+\end{document}

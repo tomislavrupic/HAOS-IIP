@@ -1,0 +1,261 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{cite}
+
+\geometry{margin=1in}
+
+\title{Collective Interaction Morphology on a Frozen Kernel-Induced Cochain Operator Architecture}
+\author{Tomislav Rupi\'c\\Independent Researcher\\\v{S}ibenik, Croatia}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Earlier stages of the HAOS/IIP program established a frozen kernel-induced cochain operator architecture, finite-window packet propagation on scalar and projected transverse sectors, and a pre-geometric atlas for single-packet morphology, resilience, and transition structure. The present paper opens the collective layer of that program. Stage 11A introduces a five-run collective interaction baseline built from the strongest coherent periodic transverse seed in the Atlas-0 table, while Stage 11B adds two sharper probes designed to test counter-propagation and tighter phase contrast. The objective is classification only: to determine whether multiple packets on the frozen linear architecture remain independent, form transient overlap corridors, or generate longer-lived composite envelopes. The collective observables are pairwise centroid distance, normalized overlap, phase-lock indicator, composite lifetime, and an exchange-or-merger flag, recorded together with the standard atlas diagnostics. Across the full seven-run Stage 11 set, five runs are classified as transient binding and two as metastable composite. Moderate-separation pairs remain in an interference corridor with zero composite lifetime, while tight-overlap configurations support a long-lived composite envelope with maximal mean overlap $0.5243$ and composite lifetime $1.1455$. A counter-propagating pair strengthens overlap and reduces pair separation but still remains below the exchange threshold. Constraint and leakage control remain at numerical precision, with maximal frozen constraint norm $5.40\times 10^{-15}$ and maximal sector leakage $1.02\times 10^{-14}$. The result is therefore morphological rather than dynamical in a force-like sense: in the current frozen linear architecture, collective behavior is dominated by superposition structure, overlap persistence, and the appearance of a metastable composite envelope in the strongest-overlap configurations.
+\end{abstract}
+
+\section{Introduction}
+The earlier HAOS/IIP sequence proceeded by freezing each operator layer before testing what that layer supports. Scalar and projected transverse packet dynamics were first documented on the frozen cochain architecture, after which the Stage 10 atlas organized single-packet behavior into baseline morphology classes, one-axis resilience classes, and paired-stress transition structure. Those atlas layers remained intentionally local: they classified the behavior of isolated packet seeds or perturbations of isolated packet seeds under a fixed observable grammar.
+
+Stage 11 asks a different question. Once single-packet morphology has been mapped, the next issue is not further perturbation of one packet but the behavior of several packets occupying the same frozen architecture at once. The objective is still classification before interpretation. The question is therefore not whether the architecture produces a physical force law, but whether coherent packets remain dynamically independent, exhibit persistent overlap corridors, or form longer-lived composite envelopes when their supports interact.
+
+This paper documents the first collective layer of the atlas in two steps:
+\begin{itemize}
+\item Stage 11A: a five-run collective interaction baseline,
+\item Stage 11B: two sharper probes focused on counter-propagation and tighter phase-sensitive overlap.
+\end{itemize}
+The aim is to identify interaction morphology on the frozen linear substrate while keeping the interpretation boundary explicit. No gravity, curvature, force, particle, or continuum claim is made. The present study concerns superposition morphology only.
+
+\section{Frozen Collective Setup}
+All Stage 11 runs are performed on the same frozen kernel-induced cochain architecture used in the earlier stages. No kernel definition, weighting rule, cochain operator, or projector is modified. The active sector is the projected transverse edge sector on a periodic domain, derived from the strongest coherent periodic transverse seed in the Atlas-0 baseline table:
+\begin{equation}
+\texttt{A0\_transverse\_periodic\_wide\_midk\_amp05}.
+\end{equation}
+The shared packet family is therefore fixed across Stage 11:
+\begin{itemize}
+\item projected transverse sector,
+\item periodic boundary,
+\item Gaussian packet bandwidth $0.1$,
+\item carrier $k = 1.0$,
+\item amplitude scale $0.5$,
+\item cosine-carrier phase pattern.
+\end{itemize}
+Only the collective geometry is varied: packet count, initial separation, relative phase offset, amplitude symmetry, and in the sharper follow-up one counter-propagating kick pattern.
+
+Each packet component evolves under the same frozen second-order transverse dynamics,
+\begin{equation}
+\partial_t^2 q = -L_1 q,
+\qquad
+L_1 = d_0 d_0^{*} + d_1^{*} d_1,
+\end{equation}
+with all component updates projected by the same frozen transverse projector throughout the integration.
+
+\section{Collective Observables and Taxonomy}
+Stage 11 reuses the atlas observables for width, norm, spectral moments, anisotropy, leakage, and constraint behavior, and adds five collective observables.
+
+For packet components $q^{(a)}(t)$ with centers $x^{(a)}_c(t)$, the mean pairwise centroid distance is
+\begin{equation}
+D(t) = \frac{1}{N_{\mathrm{pairs}}}\sum_{a<b} \bigl\|x^{(b)}_c(t)-x^{(a)}_c(t)\bigr\|,
+\end{equation}
+using the same periodic displacement rule as the single-packet atlas.
+
+Let $w^{(a)}_i(t)=|q^{(a)}_i(t)|^2$. The mean pairwise overlap is
+\begin{equation}
+O(t) = \frac{1}{N_{\mathrm{pairs}}}\sum_{a<b}
+\frac{\sum_i \sqrt{w^{(a)}_i(t) w^{(b)}_i(t)}}{\sqrt{\left(\sum_i w^{(a)}_i(t)\right)\left(\sum_i w^{(b)}_i(t)\right)}}.
+\end{equation}
+The phase-lock indicator is the time-average of the absolute pairwise alignment,
+\begin{equation}
+P(t)=\frac{1}{N_{\mathrm{pairs}}}\sum_{a<b}
+\left|\frac{\langle q^{(a)}(t),q^{(b)}(t)\rangle}{\|q^{(a)}(t)\|\,\|q^{(b)}(t)\|}\right|,
+\qquad
+P_{\mathrm{lock}} = \langle P(t)\rangle_t.
+\end{equation}
+A composite lifetime is then defined by the amount of sampled time spent above the fixed overlap threshold $O(t)\ge 0.35$,
+\begin{equation}
+\tau_{\mathrm{comp}} = \Delta t\,\#\{t_n : O(t_n) \ge 0.35\}.
+\end{equation}
+The final collective diagnostic is a categorical exchange-or-merger flag. In the current implementation,
+\begin{itemize}
+\item a \emph{merger} flag would require $O_{\max}>0.65$ and $\tau_{\mathrm{comp}}>0.18$,
+\item an \emph{exchange} flag would require at least two pair-distance oscillations together with $O_{\max}>0.18$.
+\end{itemize}
+Neither threshold is triggered in the present seven-run study.
+
+The collective regime labels are rule-based and descriptive only:
+\begin{itemize}
+\item dispersive independent regime,
+\item transient binding regime,
+\item metastable composite regime,
+\item oscillatory exchange regime,
+\item large-scale drift field regime.
+\end{itemize}
+In the present Stage 11 set only two labels are active: transient binding and metastable composite.
+
+\section{Stage 11A: Collective Interaction Baseline}
+\subsection{Baseline run design}
+Stage 11A consists of five canonical runs selected to isolate interaction geometry while keeping the underlying packet family fixed:
+\begin{enumerate}
+\item symmetric in-phase pair,
+\item symmetric out-of-phase pair,
+\item asymmetric-amplitude pair,
+\item near-overlap clustered pair,
+\item three-packet chain.
+\end{enumerate}
+The first three runs use the same moderate initial pair separation $D(0)\approx 0.30$. The clustered pair uses a tighter initial separation $D(0)\approx 0.14$, and the three-packet chain begins with an equal-spacing mean pair distance $D(0)=1/3$.
+
+This baseline is intended to answer three limited questions. First, whether moderate-separation packets remain largely independent or develop a reproducible overlap corridor. Second, whether stronger initial overlap produces a longer-lived composite envelope. Third, whether adding a third packet produces a qualitatively new collective motif at this scale.
+
+\subsection{Baseline results}
+The Stage 11A regime counts are
+\begin{equation}
+4\;\text{transient binding},\qquad 1\;\text{metastable composite}.
+\end{equation}
+The four moderate or distributed configurations all remain in the transient-binding corridor, while the only metastable composite occurs in the strongest-overlap configuration. Table~\ref{tab:11A-runs} summarizes the five runs.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lcccc}
+\hline
+Run & Label & $O_{\max}$ & $\tau_{\mathrm{comp}}$ & $P_{\mathrm{lock}}$ \\
+\hline
+In-phase pair & Transient binding & 0.2927 & 0.0000 & 0.1243 \\
+Out-of-phase pair & Transient binding & 0.2927 & 0.0000 & 0.1243 \\
+Asymmetric pair & Transient binding & 0.2927 & 0.0000 & 0.1243 \\
+Near-overlap pair & Metastable composite & 0.5243 & 1.1455 & 0.2567 \\
+Three-packet chain & Transient binding & 0.2839 & 0.0000 & 0.0818 \\
+\hline
+\end{tabular}
+\caption{Stage 11A collective baseline results. Only the near-overlap clustered pair enters the metastable composite class.}
+\label{tab:11A-runs}
+\end{table}
+
+Three baseline facts are immediate.
+First, the three moderate-separation pair cases are nearly indistinguishable at the level of the recorded collective metrics. Their maximal mean overlap is the same to four decimal places, their composite lifetime is zero, and their pair distance returns to its initial value at the end of the window. In this packet family, phase inversion and amplitude asymmetry at this spacing do not by themselves produce a distinct collective class.
+
+Second, the near-overlap clustered pair produces a qualitatively different morphology. Its maximal mean overlap rises to
+\begin{equation}
+O_{\max}=0.5243,
+\end{equation}
+and the overlap remains above threshold for
+\begin{equation}
+\tau_{\mathrm{comp}} = 1.1455.
+\end{equation}
+This is the first clear composite-envelope case in the collective atlas.
+
+Third, the three-packet chain does not activate a higher collective class in the current pilot. Its overlap and phase-lock values remain below the baseline clustered pair, and the classifier leaves it in the transient-binding corridor.
+
+The numerical control remains clean throughout the baseline pilot. Across the five Stage 11A runs, the maximal frozen constraint norm is
+\begin{equation}
+\max C^{\max}_{\mathrm{frozen}} = 5.40\times 10^{-15},
+\end{equation}
+and the maximal sector leakage is
+\begin{equation}
+\max \ell^{\max}_{\mathrm{sec}} = 1.02\times 10^{-14}.
+\end{equation}
+These values remain at numerical precision relative to the scale of the collective observables.
+
+\section{Stage 11B: Sharp Interaction Probes}
+\subsection{Probe design}
+Stage 11B asks a narrower follow-up question: which kinematic tightening, if any, produces a qualitatively sharper collective morphology than the baseline five-run set? Two probes are added:
+\begin{enumerate}
+\item a counter-propagating pair at the same moderate separation as the baseline pair,
+\item a tight phase-sensitive pair at the same clustered separation as the baseline composite case but with a relative phase offset of $\pi$.
+\end{enumerate}
+The counter-propagating pair is implemented by assigning opposite kick signs to the two otherwise identical packet components. The tight phase-sensitive pair keeps the stronger-overlap clustered geometry but imposes maximal phase contrast.
+
+\subsection{Probe results}
+The Stage 11B regime counts are
+\begin{equation}
+1\;\text{transient binding},\qquad 1\;\text{metastable composite}.
+\end{equation}
+The detailed results are shown in Table~\ref{tab:11B-runs}.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lcccccc}
+\hline
+Run & Label & $D(0)$ & $D_{\mathrm{final}}$ & $O_{\max}$ & $\tau_{\mathrm{comp}}$ & $P_{\mathrm{lock}}$ \\
+\hline
+Counter-propagating pair & Transient binding & 0.3000 & 0.1648 & 0.3981 & 0.3273 & 0.0974 \\
+Tight phase-sensitive pair & Metastable composite & 0.1400 & 0.1400 & 0.5243 & 1.1455 & 0.2567 \\
+\hline
+\end{tabular}
+\caption{Stage 11B sharp interaction probes. The counter-propagating pair strengthens overlap without crossing into exchange behavior, while the tight phase-sensitive pair remains in the metastable composite class.}
+\label{tab:11B-runs}
+\end{table}
+
+The counter-propagating pair sharpens the interaction corridor. The mean pair distance decreases from approximately $0.30$ to $0.1648$ by the end of the window and the maximal mean overlap rises to $0.3981$, well above the moderate-separation baseline value $0.2927$. However, the probe still does not activate exchange or merger. The oscillation count remains zero, the exchange-or-merger flag remains \texttt{none}, and the label stays transient binding.
+
+The tight phase-sensitive pair confirms the dominant baseline signal. With tighter overlap geometry, the system again supports a long-lived composite envelope. The key point is that the recorded values are essentially identical to the in-phase clustered baseline case: the maximal overlap remains $0.5243$ and the composite lifetime remains $1.1455$. In this packet family and time window, geometry is therefore the stronger separator than phase contrast.
+
+\section{Unified Stage 11 Read}
+The seven frozen Stage 11 runs produce the aggregate label count
+\begin{equation}
+5\;\text{transient binding},\qquad 2\;\text{metastable composite}.
+\end{equation}
+No run activates dispersive independent, oscillatory exchange, or large-scale drift field behavior. No run triggers the merger or exchange flag. The strongest observed collective motif is therefore a metastable composite envelope, not a scattering or orbit-like event.
+
+The collective picture can be summarized in four statements.
+
+First, the collective sector does not collapse into trivial independent propagation. Even the moderate-separation cases remain inside a reproducible overlap corridor with maximal mean overlap near $0.29$ and nonzero phase-lock indicator.
+
+Second, overlap geometry is the dominant separator in the current packet family. Tight spacing, not phase inversion by itself, is what moves the system from transient binding to metastable composite morphology.
+
+Third, counter-propagation strengthens the interaction picture without changing its qualitative class. The moderate-separation pair becomes more compressed and more overlapped, but it still does not enter oscillatory exchange.
+
+Fourth, the numerical control boundary remains clean across the entire Stage 11 set. The maximal frozen constraint norm remains below
+\begin{equation}
+5.40\times 10^{-15},
+\end{equation}
+and the maximal sector leakage remains below
+\begin{equation}
+1.02\times 10^{-14}.
+\end{equation}
+This keeps the collective atlas on the same controlled projected-transverse footing as the earlier single-packet studies.
+
+\section{Interpretation Boundary}
+The present paper does not establish an effective force law, attraction, repulsion, curvature, mass, or gravity analogue. It does not establish a nonlinear interaction sector. The frozen Stage 11 dynamics remains linear, and the observed collective behavior must therefore be read as superposition morphology, overlap persistence, and interference structure within that linear projected-transverse architecture.
+
+What the present paper does establish is narrower and more useful. It shows that once several coherent packets are placed on the same frozen architecture, the resulting morphology is not exhausted by independent propagation. There is a reproducible transient-binding corridor, there is a reproducible metastable composite envelope in the strongest-overlap configurations, and the stronger separator in the present packet family is overlap geometry rather than phase contrast.
+
+That is enough to justify a later coarse-grained collective-envelope stage. It is not enough to justify interaction-language stronger than morphology.
+
+\section{Conclusion}
+Stage 11 opens the collective layer of the frozen HAOS/IIP atlas. A five-run baseline collective interaction pilot and a two-run sharp-probe follow-up have now been recorded on the same projected transverse packet family used in the strongest coherent part of Atlas-0.
+
+The main result is a controlled two-class morphology split. Moderate-separation packet ensembles remain in a transient-binding corridor. Tight-overlap configurations produce a long-lived composite envelope. Counter-propagation sharpens the overlap corridor but does not yet produce exchange-scattering or merger. Constraint and leakage diagnostics remain at numerical precision throughout.
+
+The resulting picture is therefore clean. In the present frozen linear architecture, collective behavior is dominated by superposition morphology and overlap persistence. The strongest collective motif currently observed is a metastable composite envelope in tight-overlap configurations. This provides a stable endpoint for Stage 11 and a disciplined starting point for a later coarse-grained collective-envelope atlas.
+
+\appendix
+\section{Frozen Run Inventory}
+The Stage 11 layer frozen in the repository consists of seven runs:
+\begin{itemize}
+\item five baseline canonical runs in Stage 11A,
+\item two sharper follow-up probes in Stage 11B.
+\end{itemize}
+All seven use the same frozen projected transverse packet family derived from the Atlas-0 seed \texttt{A0\_transverse\_periodic\_wide\_midk\_amp05}. The only changed quantities are packet count, initial geometry, relative phase, amplitude symmetry, and one counter-propagating kick assignment.
+
+\section{Inactive Labels in the Current Stage 11 Set}
+The Stage 11 classifier contains five descriptive labels, but only two are active in the present data:
+\begin{itemize}
+\item transient binding regime,
+\item metastable composite regime.
+\end{itemize}
+The following labels remain inactive in the frozen seven-run set:
+\begin{itemize}
+\item dispersive independent regime,
+\item oscillatory exchange regime,
+\item large-scale drift field regime.
+\end{itemize}
+This is a statement about the present packet family and time window only, not a universality claim for the broader architecture.
+
+\end{document}

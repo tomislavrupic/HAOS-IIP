@@ -13,7 +13,10 @@ Current releases:
 - `04.1` Gauge-Like Diagnostics on a Kernel-Induced Cochain Operator Architecture
 - `05.1` Wave-Packet Propagation and Constraint Stability on a Frozen Cochain Operator Architecture
 - `06.1` Pre-Geometric Morphology Survey on a Frozen Kernel-Induced Cochain Operator Architecture
+- `07.1` Perturbation Resilience of Pre-Geometric Morphology Classes on a Frozen Kernel-Induced Cochain Operator Architecture
+- `08.1` Transition Structure of Pre-Geometric Morphology Classes on a Frozen Kernel-Induced Cochain Operator Architecture
 - `09.1` A Pre-Geometric Atlas of Morphology, Resilience, and Transition Structure on a Frozen Kernel-Induced Cochain Operator Architecture
+- `10.1` Collective Interaction Morphology on a Frozen Kernel-Induced Cochain Operator Architecture
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
