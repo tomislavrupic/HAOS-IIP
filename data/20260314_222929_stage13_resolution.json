@@ -1,0 +1,2000 @@
+{
+  "stage": "Stage 13",
+  "description": "Stage 13 pilot for coupled resolution-interaction morphology on the frozen projected transverse architecture.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent transverse seed reused through Stages 11\u201313"
+  },
+  "axis_sets": [
+    "A",
+    "B",
+    "C"
+  ],
+  "summary_labels": [
+    "scale-robust composite",
+    "scale-fragile composite",
+    "scale-induced diffusion",
+    "resolution-dependent morphology"
+  ],
+  "output_label_counts": {
+    "resolution-dependent morphology": 6,
+    "scale-fragile composite": 6
+  },
+  "cases": [
+    {
+      "case": {
+        "case_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.43,
+            0.5,
+            0.5
+          ],
+          [
+            0.57,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 11 metastable composite and Stage 12 basin-dominated representative"
+      },
+      "axis_set": "A",
+      "low_run": {
+        "case_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.43,
+            0.5,
+            0.5
+          ],
+          [
+            0.57,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 11 metastable composite and Stage 12 basin-dominated representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.43,
+            0.5,
+            0.5
+          ],
+          [
+            0.57,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 11 metastable composite and Stage 12 basin-dominated representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.10846105723739474,
+        "width_ratio": 1.2571495761329414,
+        "coherence_ratio": 0.41820627447506026,
+        "max_anisotropy": 1.249086100597106,
+        "max_constraint_norm": 9.164891230168893e-16,
+        "max_sector_leakage": 6.153619936984355e-16,
+        "max_mean_overlap": 0.6076420689588664,
+        "composite_lifetime": 1.490176306107283,
+        "phase_lock_indicator": 0.26125757596420485,
+        "initial_mean_pair_distance": 0.1452246304443734,
+        "min_mean_pair_distance": 0.13148987375401888,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.3873697916666667,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.018423287149784043,
+        "mean_envelope_variance_sigma4": 3.175062708405969e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.08203104634942104,
+        "width_ratio": 1.0244670957676512,
+        "coherence_ratio": 0.8779818433534327,
+        "max_anisotropy": 1.2832395021118121,
+        "max_constraint_norm": 5.385209693415433e-15,
+        "max_sector_leakage": 5.937714681704628e-15,
+        "max_mean_overlap": 0.5242863264046332,
+        "composite_lifetime": 1.4728236774190981,
+        "phase_lock_indicator": 0.23156778186378182,
+        "initial_mean_pair_distance": 0.13999999183378886,
+        "min_mean_pair_distance": 0.13999999183378886,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.040608723958333336,
+        "mean_dominant_area_fraction_sigma4": 0.27587890625,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.025059791164928343,
+        "mean_envelope_variance_sigma4": 0.020803045749115155,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "class flip under refinement",
+      "output_label": "resolution-dependent morphology",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.43,
+            0.5,
+            0.5
+          ],
+          [
+            0.57,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 11 metastable composite and Stage 12 basin-dominated representative"
+      },
+      "axis_set": "B",
+      "low_run": {
+        "case_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.43,
+            0.5,
+            0.5
+          ],
+          [
+            0.57,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 11 metastable composite and Stage 12 basin-dominated representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.43,
+            0.5,
+            0.5
+          ],
+          [
+            0.57,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.05,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 11 metastable composite and Stage 12 basin-dominated representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.10846105723739474,
+        "width_ratio": 1.2571495761329414,
+        "coherence_ratio": 0.41820627447506026,
+        "max_anisotropy": 1.249086100597106,
+        "max_constraint_norm": 9.164891230168893e-16,
+        "max_sector_leakage": 6.153619936984355e-16,
+        "max_mean_overlap": 0.6076420689588664,
+        "composite_lifetime": 1.490176306107283,
+        "phase_lock_indicator": 0.26125757596420485,
+        "initial_mean_pair_distance": 0.1452246304443734,
+        "min_mean_pair_distance": 0.13148987375401888,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.3873697916666667,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.018423287149784043,
+        "mean_envelope_variance_sigma4": 3.175062708405969e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.06145689323556902,
+        "width_ratio": 1.2358572468994191,
+        "coherence_ratio": 0.4525274105727285,
+        "max_anisotropy": 1.8700204266206932,
+        "max_constraint_norm": 2.7618146099194137e-15,
+        "max_sector_leakage": 2.7964190069908045e-15,
+        "max_mean_overlap": 0.3627310264710068,
+        "composite_lifetime": 0.490941225806366,
+        "phase_lock_indicator": 0.07472110601348676,
+        "initial_mean_pair_distance": 0.13856657113157445,
+        "min_mean_pair_distance": 0.13856657113157445,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.028238932291666668,
+        "mean_dominant_area_fraction_sigma4": 0.17610677083333334,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.022499328158080978,
+        "mean_envelope_variance_sigma4": 0.02562476248414028,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "coarse-only drift",
+      "output_label": "resolution-dependent morphology",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.43,
+            0.5,
+            0.5
+          ],
+          [
+            0.57,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 11 metastable composite and Stage 12 basin-dominated representative"
+      },
+      "axis_set": "C",
+      "low_run": {
+        "case_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.43,
+            0.5,
+            0.5
+          ],
+          [
+            0.57,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 11 metastable composite and Stage 12 basin-dominated representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.46499999999999997,
+            0.5,
+            0.5
+          ],
+          [
+            0.5349999999999999,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 11 metastable composite and Stage 12 basin-dominated representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.10846105723739474,
+        "width_ratio": 1.2571495761329414,
+        "coherence_ratio": 0.41820627447506026,
+        "max_anisotropy": 1.249086100597106,
+        "max_constraint_norm": 9.164891230168893e-16,
+        "max_sector_leakage": 6.153619936984355e-16,
+        "max_mean_overlap": 0.6076420689588664,
+        "composite_lifetime": 1.490176306107283,
+        "phase_lock_indicator": 0.26125757596420485,
+        "initial_mean_pair_distance": 0.1452246304443734,
+        "min_mean_pair_distance": 0.13148987375401888,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.3873697916666667,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.018423287149784043,
+        "mean_envelope_variance_sigma4": 3.175062708405969e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.07147289086008135,
+        "width_ratio": 0.9929350509573627,
+        "coherence_ratio": 0.9614200721352403,
+        "max_anisotropy": 1.5633025898034114,
+        "max_constraint_norm": 6.049804771390756e-15,
+        "max_sector_leakage": 5.400415452658691e-15,
+        "max_mean_overlap": 0.8117181862195868,
+        "composite_lifetime": 1.4728236774190981,
+        "phase_lock_indicator": 0.7364677603607523,
+        "initial_mean_pair_distance": 0.0700000040093739,
+        "min_mean_pair_distance": 0.0699999618053857,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.035237630208333336,
+        "mean_dominant_area_fraction_sigma4": 0.24015299479166666,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.024059968493023078,
+        "mean_envelope_variance_sigma4": 0.022158569168251843,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "class flip under refinement",
+      "output_label": "resolution-dependent morphology",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "asymmetric_density_cluster",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.42,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.58,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "compact but asymmetric Stage 12 basin-dominated representative"
+      },
+      "axis_set": "A",
+      "low_run": {
+        "case_id": "asymmetric_density_cluster",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.42,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.58,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "compact but asymmetric Stage 12 basin-dominated representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "asymmetric_density_cluster",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.42,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.58,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "compact but asymmetric Stage 12 basin-dominated representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.08049636584631858,
+        "width_ratio": 1.1788660731702498,
+        "coherence_ratio": 0.48922205720168943,
+        "max_anisotropy": 1.9043505113623258,
+        "max_constraint_norm": 1.0881316267743202e-15,
+        "max_sector_leakage": 8.186859852700856e-16,
+        "max_mean_overlap": 0.6960615387324439,
+        "composite_lifetime": 1.490176306107283,
+        "phase_lock_indicator": 0.5116921891686848,
+        "initial_mean_pair_distance": 0.113843849915448,
+        "min_mean_pair_distance": 0.09412682447517629,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.2740885416666667,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.02209189913882537,
+        "mean_envelope_variance_sigma4": 4.411746799086528e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.07320690516039363,
+        "width_ratio": 0.9797511971958164,
+        "coherence_ratio": 0.9907678742072469,
+        "max_anisotropy": 1.689434597173673,
+        "max_constraint_norm": 4.169344677831717e-15,
+        "max_sector_leakage": 4.5705040683440134e-15,
+        "max_mean_overlap": 0.6696954370960749,
+        "composite_lifetime": 1.4728236774190981,
+        "phase_lock_indicator": 0.4847141968559205,
+        "initial_mean_pair_distance": 0.10666665935696451,
+        "min_mean_pair_distance": 0.10666665935696451,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.032633463541666664,
+        "mean_dominant_area_fraction_sigma4": 0.21012369791666666,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.024216583994360427,
+        "mean_envelope_variance_sigma4": 0.023722819770419342,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "coarse-only drift",
+      "output_label": "scale-fragile composite",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "asymmetric_density_cluster",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.42,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.58,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "compact but asymmetric Stage 12 basin-dominated representative"
+      },
+      "axis_set": "B",
+      "low_run": {
+        "case_id": "asymmetric_density_cluster",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.42,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.58,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "compact but asymmetric Stage 12 basin-dominated representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "asymmetric_density_cluster",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.42,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.58,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.05,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "compact but asymmetric Stage 12 basin-dominated representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.08049636584631858,
+        "width_ratio": 1.1788660731702498,
+        "coherence_ratio": 0.48922205720168943,
+        "max_anisotropy": 1.9043505113623258,
+        "max_constraint_norm": 1.0881316267743202e-15,
+        "max_sector_leakage": 8.186859852700856e-16,
+        "max_mean_overlap": 0.6960615387324439,
+        "composite_lifetime": 1.490176306107283,
+        "phase_lock_indicator": 0.5116921891686848,
+        "initial_mean_pair_distance": 0.113843849915448,
+        "min_mean_pair_distance": 0.09412682447517629,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.2740885416666667,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.02209189913882537,
+        "mean_envelope_variance_sigma4": 4.411746799086528e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.061015027150341905,
+        "width_ratio": 1.204694538346483,
+        "coherence_ratio": 0.4455644382717422,
+        "max_anisotropy": 1.6866898198804383,
+        "max_constraint_norm": 2.8435226769164914e-15,
+        "max_sector_leakage": 2.4393734467230357e-15,
+        "max_mean_overlap": 0.43833338154447327,
+        "composite_lifetime": 1.4728236774190981,
+        "phase_lock_indicator": 0.2320237220675013,
+        "initial_mean_pair_distance": 0.10528197135215918,
+        "min_mean_pair_distance": 0.10528197135215918,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.022379557291666668,
+        "mean_dominant_area_fraction_sigma4": 0.13997395833333334,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.01944288888258779,
+        "mean_envelope_variance_sigma4": 0.028071117233813437,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "softening under refinement",
+      "output_label": "scale-fragile composite",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "asymmetric_density_cluster",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.42,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.58,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "compact but asymmetric Stage 12 basin-dominated representative"
+      },
+      "axis_set": "C",
+      "low_run": {
+        "case_id": "asymmetric_density_cluster",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.42,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.58,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "compact but asymmetric Stage 12 basin-dominated representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "asymmetric_density_cluster",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.45999999999999996,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.54,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.35,
+          0.2
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "compact but asymmetric Stage 12 basin-dominated representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.08049636584631858,
+        "width_ratio": 1.1788660731702498,
+        "coherence_ratio": 0.48922205720168943,
+        "max_anisotropy": 1.9043505113623258,
+        "max_constraint_norm": 1.0881316267743202e-15,
+        "max_sector_leakage": 8.186859852700856e-16,
+        "max_mean_overlap": 0.6960615387324439,
+        "composite_lifetime": 1.490176306107283,
+        "phase_lock_indicator": 0.5116921891686848,
+        "initial_mean_pair_distance": 0.113843849915448,
+        "min_mean_pair_distance": 0.09412682447517629,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.2740885416666667,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.02209189913882537,
+        "mean_envelope_variance_sigma4": 4.411746799086528e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.06769668124849082,
+        "width_ratio": 0.9777264285345931,
+        "coherence_ratio": 0.9818832540850081,
+        "max_anisotropy": 1.7628476110149396,
+        "max_constraint_norm": 4.32669073993102e-15,
+        "max_sector_leakage": 4.9418026496079924e-15,
+        "max_mean_overlap": 0.8797851245615087,
+        "composite_lifetime": 1.4728236774190981,
+        "phase_lock_indicator": 0.8272404297637617,
+        "initial_mean_pair_distance": 0.053333338974947665,
+        "min_mean_pair_distance": 0.053333275842389526,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.0341796875,
+        "mean_dominant_area_fraction_sigma4": 0.22086588541666666,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.024225676484683527,
+        "mean_envelope_variance_sigma4": 0.023206112351320102,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "coarse-only drift",
+      "output_label": "scale-fragile composite",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "three_packet_chain",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.2,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.8,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          1.5707963267948966,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 multi-basin fluctuating representative"
+      },
+      "axis_set": "A",
+      "low_run": {
+        "case_id": "three_packet_chain",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.2,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.8,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          1.5707963267948966,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 multi-basin fluctuating representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "three_packet_chain",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.2,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.8,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          1.5707963267948966,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 multi-basin fluctuating representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.325345402012745,
+        "width_ratio": 0.9895871839482002,
+        "coherence_ratio": 0.8447241233592042,
+        "max_anisotropy": 6.599114314177951,
+        "max_constraint_norm": 1.1043344845183183e-15,
+        "max_sector_leakage": 8.655474199859567e-16,
+        "max_mean_overlap": 0.4224233022859269,
+        "composite_lifetime": 0.4967254353690943,
+        "phase_lock_indicator": 0.11026719708325645,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.4661458333333333,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.023591531441589934,
+        "mean_envelope_variance_sigma4": 3.6657533931074705e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "multi-basin fluctuating regime",
+        "center_shift": 0.23703810964051852,
+        "width_ratio": 0.9437200157602095,
+        "coherence_ratio": 1.2514388569965567,
+        "max_anisotropy": 7.332532797509511,
+        "max_constraint_norm": 3.805167230983069e-15,
+        "max_sector_leakage": 5.5640556615954585e-15,
+        "max_mean_overlap": 0.28385810101886083,
+        "composite_lifetime": 0.0,
+        "phase_lock_indicator": 0.09128595410898087,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "mean_basin_count_sigma2": 1.3333333333333333,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.07194010416666667,
+        "mean_dominant_area_fraction_sigma4": 0.369384765625,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.037176916217032764,
+        "mean_envelope_variance_sigma4": 0.02622359399834803,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "coarse-only drift",
+      "output_label": "resolution-dependent morphology",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "three_packet_chain",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.2,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.8,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          1.5707963267948966,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 multi-basin fluctuating representative"
+      },
+      "axis_set": "B",
+      "low_run": {
+        "case_id": "three_packet_chain",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.2,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.8,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          1.5707963267948966,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 multi-basin fluctuating representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "three_packet_chain",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.2,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.8,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          1.5707963267948966,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.05,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 multi-basin fluctuating representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.325345402012745,
+        "width_ratio": 0.9895871839482002,
+        "coherence_ratio": 0.8447241233592042,
+        "max_anisotropy": 6.599114314177951,
+        "max_constraint_norm": 1.1043344845183183e-15,
+        "max_sector_leakage": 8.655474199859567e-16,
+        "max_mean_overlap": 0.4224233022859269,
+        "composite_lifetime": 0.4967254353690943,
+        "phase_lock_indicator": 0.11026719708325645,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.4661458333333333,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.023591531441589934,
+        "mean_envelope_variance_sigma4": 3.6657533931074705e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "dispersive independent regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.06800520835764456,
+        "width_ratio": 1.0460672447248194,
+        "coherence_ratio": 0.4713986412134854,
+        "max_anisotropy": 19.713831127838915,
+        "max_constraint_norm": 1.9567513224341276e-15,
+        "max_sector_leakage": 2.135332566148292e-15,
+        "max_mean_overlap": 0.13077211925191565,
+        "composite_lifetime": 0.0,
+        "phase_lock_indicator": 0.028686720842292585,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.07755533854166667,
+        "mean_dominant_area_fraction_sigma4": 0.2989908854166667,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.042705981384872305,
+        "mean_envelope_variance_sigma4": 0.035846236238158406,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "softening under refinement",
+      "output_label": "resolution-dependent morphology",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "three_packet_chain",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.2,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.8,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          1.5707963267948966,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 multi-basin fluctuating representative"
+      },
+      "axis_set": "C",
+      "low_run": {
+        "case_id": "three_packet_chain",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.2,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.8,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          1.5707963267948966,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 multi-basin fluctuating representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "three_packet_chain",
+        "packet_count": 3,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          1.5707963267948966,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 multi-basin fluctuating representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.325345402012745,
+        "width_ratio": 0.9895871839482002,
+        "coherence_ratio": 0.8447241233592042,
+        "max_anisotropy": 6.599114314177951,
+        "max_constraint_norm": 1.1043344845183183e-15,
+        "max_sector_leakage": 8.655474199859567e-16,
+        "max_mean_overlap": 0.4224233022859269,
+        "composite_lifetime": 0.4967254353690943,
+        "phase_lock_indicator": 0.11026719708325645,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.4661458333333333,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.023591531441589934,
+        "mean_envelope_variance_sigma4": 3.6657533931074705e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.14794221874723534,
+        "width_ratio": 0.9379025295455058,
+        "coherence_ratio": 0.6910905564527582,
+        "max_anisotropy": 2.752740882215471,
+        "max_constraint_norm": 5.63577738106615e-15,
+        "max_sector_leakage": 5.9329636791350316e-15,
+        "max_mean_overlap": 0.5520980574867947,
+        "composite_lifetime": 1.4728236774190981,
+        "phase_lock_indicator": 0.35162066701505745,
+        "initial_mean_pair_distance": 0.1999999957180704,
+        "min_mean_pair_distance": 0.1999999957180704,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.037679036458333336,
+        "mean_dominant_area_fraction_sigma4": 0.237548828125,
+        "coarse_persistence_sigma2": 0.6666666666666666,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.026516731161318863,
+        "mean_envelope_variance_sigma4": 0.024045871310320637,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "class flip under refinement",
+      "output_label": "resolution-dependent morphology",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "counter_propagating_corridor",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 diffuse corridor representative"
+      },
+      "axis_set": "A",
+      "low_run": {
+        "case_id": "counter_propagating_corridor",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 diffuse corridor representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "counter_propagating_corridor",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 diffuse corridor representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.0,
+        "width_ratio": 0.9255999177161897,
+        "coherence_ratio": 1.0542009608157725,
+        "max_anisotropy": 2.0857542378205656,
+        "max_constraint_norm": 8.38978593777799e-16,
+        "max_sector_leakage": 9.626148823283628e-16,
+        "max_mean_overlap": 0.7177719869808804,
+        "composite_lifetime": 0.9934508707381886,
+        "phase_lock_indicator": 0.3476056613808087,
+        "initial_mean_pair_distance": 0.2873382120894967,
+        "min_mean_pair_distance": 0.12325494774264989,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.3782552083333333,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.01901058462940648,
+        "mean_envelope_variance_sigma4": 3.244550632384084e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.0,
+        "width_ratio": 0.8342091967755315,
+        "coherence_ratio": 1.0637608245560566,
+        "max_anisotropy": 2.186838033329191,
+        "max_constraint_norm": 4.963794292527593e-15,
+        "max_sector_leakage": 7.34226370722711e-15,
+        "max_mean_overlap": 0.3981103509665894,
+        "composite_lifetime": 0.490941225806366,
+        "phase_lock_indicator": 0.12243831202201283,
+        "initial_mean_pair_distance": 0.2999999935771056,
+        "min_mean_pair_distance": 0.16478571826606192,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.057291666666666664,
+        "mean_dominant_area_fraction_sigma4": 0.3324381510416667,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.028913643446288394,
+        "mean_envelope_variance_sigma4": 0.02014704379284421,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "softening under refinement",
+      "output_label": "scale-fragile composite",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "counter_propagating_corridor",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 diffuse corridor representative"
+      },
+      "axis_set": "B",
+      "low_run": {
+        "case_id": "counter_propagating_corridor",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 diffuse corridor representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "counter_propagating_corridor",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "bandwidth": 0.05,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 diffuse corridor representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.0,
+        "width_ratio": 0.9255999177161897,
+        "coherence_ratio": 1.0542009608157725,
+        "max_anisotropy": 2.0857542378205656,
+        "max_constraint_norm": 8.38978593777799e-16,
+        "max_sector_leakage": 9.626148823283628e-16,
+        "max_mean_overlap": 0.7177719869808804,
+        "composite_lifetime": 0.9934508707381886,
+        "phase_lock_indicator": 0.3476056613808087,
+        "initial_mean_pair_distance": 0.2873382120894967,
+        "min_mean_pair_distance": 0.12325494774264989,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.3782552083333333,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.01901058462940648,
+        "mean_envelope_variance_sigma4": 3.244550632384084e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "transient binding regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.0,
+        "width_ratio": 0.9602170738623854,
+        "coherence_ratio": 0.37781063586909863,
+        "max_anisotropy": 5.867939148848867,
+        "max_constraint_norm": 2.965432935308825e-15,
+        "max_sector_leakage": 3.0822861723989837e-15,
+        "max_mean_overlap": 0.21827940474257418,
+        "composite_lifetime": 0.0,
+        "phase_lock_indicator": 0.04311791118023168,
+        "initial_mean_pair_distance": 0.2987487967040232,
+        "min_mean_pair_distance": 0.2047849806409049,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.038899739583333336,
+        "mean_dominant_area_fraction_sigma4": 0.1982421875,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.02703253718199791,
+        "mean_envelope_variance_sigma4": 0.025640249365121274,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "softening under refinement",
+      "output_label": "scale-fragile composite",
+      "recoverability_flag": "more stable with refinement"
+    },
+    {
+      "case": {
+        "case_id": "counter_propagating_corridor",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 diffuse corridor representative"
+      },
+      "axis_set": "C",
+      "low_run": {
+        "case_id": "counter_propagating_corridor",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 diffuse corridor representative",
+        "n_side": 8
+      },
+      "high_run": {
+        "case_id": "counter_propagating_corridor",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.425,
+            0.5,
+            0.5
+          ],
+          [
+            0.575,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "bandwidth": 0.1,
+        "base_resolution": 8,
+        "refined_resolution": 16,
+        "selection_note": "Stage 12 diffuse corridor representative",
+        "n_side": 16
+      },
+      "low_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "center_shift": 0.0,
+        "width_ratio": 0.9255999177161897,
+        "coherence_ratio": 1.0542009608157725,
+        "max_anisotropy": 2.0857542378205656,
+        "max_constraint_norm": 8.38978593777799e-16,
+        "max_sector_leakage": 9.626148823283628e-16,
+        "max_mean_overlap": 0.7177719869808804,
+        "composite_lifetime": 0.9934508707381886,
+        "phase_lock_indicator": 0.3476056613808087,
+        "initial_mean_pair_distance": 0.2873382120894967,
+        "min_mean_pair_distance": 0.12325494774264989,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.3782552083333333,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.01901058462940648,
+        "mean_envelope_variance_sigma4": 3.244550632384084e-05,
+        "t_final": 0.9934508707381886
+      },
+      "high_summary": {
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "basin-dominated regime",
+        "center_shift": 0.0,
+        "width_ratio": 0.862500778018024,
+        "coherence_ratio": 1.7260465801368825,
+        "max_anisotropy": 1.7495833706085382,
+        "max_constraint_norm": 5.315881650385872e-15,
+        "max_sector_leakage": 5.933845413747933e-15,
+        "max_mean_overlap": 0.9695327881197254,
+        "composite_lifetime": 1.4728236774190981,
+        "phase_lock_indicator": 0.7330318024029233,
+        "initial_mean_pair_distance": 0.14999998910146328,
+        "min_mean_pair_distance": 0.014785787262178385,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.037272135416666664,
+        "mean_dominant_area_fraction_sigma4": 0.244384765625,
+        "coarse_persistence_sigma2": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma2": 0.024279378529587104,
+        "mean_envelope_variance_sigma4": 0.022087614047972593,
+        "t_final": 0.981882451612732
+      },
+      "transition_type": "coarse-only drift",
+      "output_label": "scale-fragile composite",
+      "recoverability_flag": "more stable with refinement"
+    }
+  ],
+  "conclusion": "Stage 13 measures how frozen interaction and coarse-envelope labels behave under coupled scale variation without making continuum or nonlinear claims."
+}
