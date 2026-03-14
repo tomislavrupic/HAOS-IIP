@@ -493,3 +493,12 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260310_194548_loop_response_extended_perimeter.png`, `plots/20260310_194548_loop_response_extended_area.png`
 - Observation: extending the loop-size range preserves a smooth nonlocal loop response and sharpens the fitted scaling exponents relative to the original 1-4 scan
 - Conclusion: the extended loop scan strengthens the nonlocal diagnostic, but perimeter-versus-area interpretation still depends on the chosen square-loop family
+
+## Stage 9A Scalar Wave-Packet Propagation
+- Date: 2026-03-10T20:26:16
+- Config: sizes=[16, 20, 24], epsilon=0.2, sigma=0.08, t_final=0.45
+- Results: `data/20260310_202616_stage9_scalar_packet_dynamics.json`
+- Plots: `plots/20260310_202616_scalar_packet_position.png`, `plots/20260310_202616_scalar_packet_width.png`, `plots/20260310_202616_scalar_packet_energy.png`
+- Observation: the scalar packet evolves smoothly on the frozen kernel Laplacian with controlled spreading and small energy drift across the tested lattice sizes
+- Conclusion: the scalar sector supports coherent second-order packet propagation on the validated architecture
+
