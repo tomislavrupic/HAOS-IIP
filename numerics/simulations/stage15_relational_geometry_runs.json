@@ -1,0 +1,208 @@
+{
+  "description": "Stage 15 pilot for emergent relational geometry diagnostics on frozen collective and coarse-field representatives.",
+  "note_name": "Stage_15_Emergent_Relational_Geometry_v1.md",
+  "selection_rationale": "The pilot uses one compact composite triplet, one transport-dominated corridor control, and one diffuse triad. The compact three-packet cluster is chosen over the two-packet tight pair so triangle and ball-growth diagnostics are non-degenerate.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent periodic transverse seed carried through Stages 11-15"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "selection_note": "The 12->24 ladder is used for the first pilot because the 8->16 ladder in Stage 13 primarily exposed the lower bound of coarse readability rather than stable relational ordering."
+  },
+  "cases": [
+    {
+      "case_id": "asymmetric_density_cluster",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage13_case_id": "asymmetric_density_cluster",
+      "regime_role": "clustered_composite_anchor",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "supports_triangle_tests": true,
+      "supports_ball_growth": true,
+      "selection_note": "compact composite case used as the primary relational-ordering anchor"
+    },
+    {
+      "case_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage13_case_id": "counter_propagating_corridor",
+      "regime_role": "transport_control",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.5, 0.5], [0.65, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "supports_triangle_tests": false,
+      "supports_ball_growth": false,
+      "selection_note": "transport-dominated control for cone-order and directionality diagnostics"
+    },
+    {
+      "case_id": "symmetric_wide_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage13_case_id": null,
+      "regime_role": "diffuse_triad_control",
+      "packet_count": 3,
+      "packet_centers": [[0.18, 0.5, 0.5], [0.5, 0.5, 0.5], [0.82, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "supports_triangle_tests": true,
+      "supports_ball_growth": true,
+      "selection_note": "diffuse triad control for weakly structured field ordering"
+    }
+  ],
+  "distance_candidates": [
+    {
+      "distance_id": "persistence_distance",
+      "label": "Persistence distance",
+      "formula": "d_p(i,j) = 1 / (epsilon + <overlap_ij>_T)",
+      "parameters": {
+        "epsilon": 0.001,
+        "window": "full sampled time window",
+        "symmetrization": "already symmetric by construction"
+      },
+      "derived_records": [
+        "mean_overlap_ij",
+        "symmetry_deviation",
+        "temporal_stability",
+        "scale_change_drift"
+      ]
+    },
+    {
+      "distance_id": "phase_correlation_distance",
+      "label": "Phase-correlation distance",
+      "formula": "d_phi(i,j) = 1 - |<phase_lock_ij>_T|",
+      "parameters": {
+        "window": "full sampled time window",
+        "symmetrization": "absolute phase-lock average"
+      },
+      "derived_records": [
+        "mean_phase_lock_ij",
+        "ordering_stability",
+        "resolution_sensitivity"
+      ]
+    },
+    {
+      "distance_id": "transport_delay_distance",
+      "label": "Transport-delay distance",
+      "formula": "d_tau(i,j) = t_arrival(i->j)",
+      "parameters": {
+        "arrival_threshold": 0.15,
+        "response_field": "smoothed envelope response at the destination packet center",
+        "symmetrized_form": "0.5 * (d_tau(i,j) + d_tau(j,i))"
+      },
+      "derived_records": [
+        "directionality",
+        "arrival_shell_ordering",
+        "refinement_scaling"
+      ]
+    }
+  ],
+  "metric_tests": {
+    "symmetry": {
+      "records": ["mean_absolute_asymmetry", "max_absolute_asymmetry"],
+      "stable_threshold": 0.05,
+      "fragile_threshold": 0.1,
+      "weak_threshold": 0.25
+    },
+    "triangle_inequality": {
+      "records": ["violation_rate", "mean_violation_magnitude", "max_violation_magnitude"],
+      "stable_threshold": 0.05,
+      "fragile_threshold": 0.15,
+      "weak_threshold": 0.4,
+      "skip_when_packet_count_below": 3
+    },
+    "ordering_persistence": {
+      "records": ["ordering_flip_fraction", "pair_rank_correlation"],
+      "stable_threshold": 0.05,
+      "fragile_threshold": 0.2,
+      "weak_threshold": 0.45
+    }
+  },
+  "higher_level_probes": {
+    "effective_dimensionality": {
+      "enabled_for": ["persistence_distance"],
+      "records": ["ball_growth_curve", "effective_dimension", "dimension_drift"],
+      "stable_dimension_drift_threshold": 0.25,
+      "skip_when_packet_count_below": 3
+    },
+    "propagation_cones": {
+      "enabled_for": ["transport_delay_distance"],
+      "records": ["shell_distortion_metric", "ordering_breakdown_frequency"],
+      "stable_shell_breakdown_threshold": 0.1
+    },
+    "loop_defects": {
+      "enabled_for": ["persistence_distance", "phase_correlation_distance", "transport_delay_distance"],
+      "records": ["loop_inconsistency_index", "geodesic_deviation_analog", "scale_drift"],
+      "skip_when_packet_count_below": 3
+    }
+  },
+  "classification_rules": {
+    "no_coherent_relational_ordering": {
+      "ordering_flip_fraction_min": 0.45,
+      "symmetry_mean_min": 0.25,
+      "triangle_violation_rate_min": 0.4,
+      "note": "assigned when any available core diagnostic is strongly unstable"
+    },
+    "weak_ordering_with_high_metric_violation": {
+      "ordering_flip_fraction_max": 0.45,
+      "ordering_flip_fraction_min": 0.2,
+      "symmetry_mean_max": 0.25,
+      "triangle_violation_rate_max": 0.4,
+      "triangle_violation_rate_min": 0.15,
+      "note": "assigned when ordering exists but metric violations remain large"
+    },
+    "scale_fragile_metric_like_ordering": {
+      "ordering_flip_fraction_max": 0.2,
+      "symmetry_mean_max": 0.1,
+      "triangle_violation_rate_max": 0.15,
+      "shell_breakdown_frequency_max": 0.2,
+      "dimension_drift_max": 0.5,
+      "note": "assigned when a usable ordering exists but shifts materially across the refinement pair"
+    },
+    "scale_stable_metric_like_ordering": {
+      "ordering_flip_fraction_max": 0.05,
+      "symmetry_mean_max": 0.05,
+      "triangle_violation_rate_max": 0.05,
+      "shell_breakdown_frequency_max": 0.1,
+      "dimension_drift_max": 0.25,
+      "note": "assigned only when all available diagnostics remain bounded and refinement-stable"
+    }
+  },
+  "plot_layout": {
+    "matrix_plot": "distance_matrix_grid.png",
+    "metric_summary_plot": "metric_violation_summary.png",
+    "ordering_stability_plot": "ordering_flip_heatmap.png",
+    "dimension_plot": "effective_dimensionality_growth.png",
+    "cone_plot": "transport_delay_shells.png",
+    "loop_plot": "loop_defect_summary.png"
+  },
+  "output_table_fields": [
+    "case_id",
+    "distance_id",
+    "n_side",
+    "mean_absolute_asymmetry",
+    "max_absolute_asymmetry",
+    "triangle_violation_rate",
+    "mean_violation_magnitude",
+    "ordering_flip_fraction",
+    "pair_rank_correlation",
+    "effective_dimension",
+    "dimension_drift",
+    "shell_distortion_metric",
+    "ordering_breakdown_frequency",
+    "loop_inconsistency_index",
+    "geodesic_deviation_analog",
+    "relational_ordering_label"
+  ]
+}
