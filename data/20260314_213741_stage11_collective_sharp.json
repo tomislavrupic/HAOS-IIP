@@ -1,0 +1,510 @@
+{
+  "stage": "Stage 11",
+  "description": "Collective wave interaction atlas pilot on the frozen projected transverse architecture.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent periodic transverse seed from Atlas-0"
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "S11B_collective_counter_propagating_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5,
+            0.5
+          ],
+          [
+            0.65,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          0.0
+        ],
+        "kick_signs": [
+          1.0,
+          -1.0
+        ],
+        "interaction_regime": "counter_propagating_overlap",
+        "selection_note": "counter-propagating pair to probe exchange or scattering more aggressively"
+      },
+      "summary": {
+        "packet_count": 2,
+        "center_shift": 0.0,
+        "path_length": 0.0,
+        "path_efficiency": 0.0,
+        "initial_width": 0.2731808791532375,
+        "final_width": 0.22789000177285604,
+        "width_change": -0.045290877380381483,
+        "width_ratio": 0.8342091967755323,
+        "relative_norm_change": 0.28190537811378996,
+        "relative_energy_drift": 0.00048519221827074757,
+        "max_anisotropy": 2.186838033329191,
+        "max_constraint_norm": 4.996634654295745e-15,
+        "max_sector_leakage": 6.3612814937860744e-15,
+        "coherence_initial": 0.004329069002121188,
+        "coherence_final": 0.004605094011256495,
+        "coherence_ratio": 1.0637608245560555,
+        "spectral_centroid_initial": 0.6557487140283197,
+        "spectral_centroid_final": 0.5678289671789687,
+        "spectral_spread_initial": 0.5553454158132392,
+        "spectral_spread_final": 0.46090422830010186,
+        "initial_mean_pair_distance": 0.2999999935771056,
+        "final_mean_pair_distance": 0.16478571826606192,
+        "min_mean_pair_distance": 0.16478571826606192,
+        "max_mean_overlap": 0.3981103509665895,
+        "phase_lock_indicator": 0.09739155762281067,
+        "phase_lock_event_count": 0,
+        "composite_lifetime": 0.3272941505375773,
+        "oscillation_count": 0,
+        "exchange_or_merger_flag": "none",
+        "t_final": 0.9818824516127319
+      },
+      "collective_regime_label": "transient binding regime",
+      "times": [
+        0.0,
+        0.16364707526878866,
+        0.3272941505375773,
+        0.490941225806366,
+        0.6545883010751546,
+        0.8182353763439433,
+        0.9818824516127319
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "component_center_traces": [
+        [
+          [
+            0.3500000032114472,
+            0.5,
+            0.5
+          ],
+          [
+            0.3674662872828114,
+            0.5,
+            0.5
+          ],
+          [
+            0.38313106076202263,
+            0.5,
+            0.5
+          ],
+          [
+            0.39590893464404964,
+            0.5,
+            0.5
+          ],
+          [
+            0.40560175131455134,
+            0.5,
+            0.5
+          ],
+          [
+            0.4126159114743895,
+            0.5,
+            0.5
+          ],
+          [
+            0.41760714086696904,
+            0.5,
+            0.5
+          ]
+        ],
+        [
+          [
+            0.6499999967885528,
+            0.5,
+            0.5
+          ],
+          [
+            0.6325337127171886,
+            0.5,
+            0.5
+          ],
+          [
+            0.6168689392379775,
+            0.5,
+            0.5
+          ],
+          [
+            0.6040910653559503,
+            0.5,
+            0.5
+          ],
+          [
+            0.5943982486854485,
+            0.5,
+            0.5
+          ],
+          [
+            0.5873840885256104,
+            0.5,
+            0.5
+          ],
+          [
+            0.582392859133031,
+            0.5,
+            0.5
+          ]
+        ]
+      ],
+      "pair_distance_series": [
+        0.2999999935771056,
+        0.2650674254343772,
+        0.23373787847595484,
+        0.20818213071190061,
+        0.1887964973708972,
+        0.17476817705122094,
+        0.16478571826606192
+      ],
+      "overlap_series": [
+        0.2926953608953255,
+        0.31559836782541784,
+        0.3286933368449098,
+        0.33399568929808043,
+        0.3381560841526699,
+        0.35864731638221425,
+        0.3981103509665895
+      ],
+      "phase_alignment_series": [
+        0.11187239255209627,
+        0.09970801958111802,
+        0.07027810776333432,
+        0.02263482575827669,
+        0.04216644855723608,
+        0.12180501419090718,
+        0.21327609495670613
+      ],
+      "coherences": [
+        0.004329069002121188,
+        0.004113996779829687,
+        0.004035293538713506,
+        0.004075925276790142,
+        0.004203140694948675,
+        0.004389085667570813,
+        0.004605094011256495
+      ],
+      "constraint_norms": [
+        4.996634654295745e-15,
+        1.577486451707787e-16,
+        1.003280705265804e-16,
+        1.0641147570622373e-16,
+        1.3652482416760496e-16,
+        1.0572174737738238e-16,
+        1.3961617176163358e-16
+      ],
+      "sector_leakages": [
+        6.3612814937860744e-15,
+        1.362469512987886e-16,
+        6.32000987188339e-16,
+        2.3644876722610005e-16,
+        1.310153793486807e-16,
+        1.0827912877429042e-16,
+        2.185287386493585e-16
+      ]
+    },
+    {
+      "run": {
+        "run_id": "S11B_collective_tight_phase_sensitive_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.43,
+            0.5,
+            0.5
+          ],
+          [
+            0.57,
+            0.5,
+            0.5
+          ]
+        ],
+        "packet_amplitudes": [
+          0.5,
+          0.5
+        ],
+        "phase_offsets_rad": [
+          0.0,
+          3.141592653589793
+        ],
+        "kick_signs": [
+          1.0,
+          1.0
+        ],
+        "interaction_regime": "tight_phase_sensitive_overlap",
+        "selection_note": "clustered pair with strong phase contrast to test composite lifetime sensitivity"
+      },
+      "summary": {
+        "packet_count": 2,
+        "center_shift": 0.05038628440807136,
+        "path_length": 0.05038628440807136,
+        "path_efficiency": 1.0,
+        "initial_width": 0.17845475882203468,
+        "final_width": 0.17503409010826768,
+        "width_change": -0.0034206687137670055,
+        "width_ratio": 0.9808317316033119,
+        "relative_norm_change": 0.30096243581666393,
+        "relative_energy_drift": 0.003056889939350673,
+        "max_anisotropy": 2.3066445091344874,
+        "max_constraint_norm": 1.847080808939487e-15,
+        "max_sector_leakage": 1.5430926156924439e-15,
+        "coherence_initial": 0.007838037181781428,
+        "coherence_final": 0.008173776451528423,
+        "coherence_ratio": 1.0428346104975594,
+        "spectral_centroid_initial": 0.969209134052682,
+        "spectral_centroid_final": 1.104209703567132,
+        "spectral_spread_initial": 0.5562239482608937,
+        "spectral_spread_final": 0.586415468809892,
+        "initial_mean_pair_distance": 0.13999999183378886,
+        "final_mean_pair_distance": 0.1400001963934583,
+        "min_mean_pair_distance": 0.13999999183378886,
+        "max_mean_overlap": 0.524286326404634,
+        "phase_lock_indicator": 0.25674329029669934,
+        "phase_lock_event_count": 0,
+        "composite_lifetime": 1.1455295268815207,
+        "oscillation_count": 0,
+        "exchange_or_merger_flag": "none",
+        "t_final": 0.9818824516127319
+      },
+      "collective_regime_label": "metastable composite regime",
+      "times": [
+        0.0,
+        0.16364707526878866,
+        0.3272941505375773,
+        0.490941225806366,
+        0.6545883010751546,
+        0.8182353763439433,
+        0.9818824516127319
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5190254706106028,
+          0.5,
+          0.5
+        ],
+        [
+          0.533722776873838,
+          0.5,
+          0.5
+        ],
+        [
+          0.542829648502357,
+          0.5,
+          0.5
+        ],
+        [
+          0.5475199672366904,
+          0.5,
+          0.5
+        ],
+        [
+          0.5495553189522431,
+          0.5,
+          0.5
+        ],
+        [
+          0.5503862844080714,
+          0.5,
+          0.5
+        ]
+      ],
+      "component_center_traces": [
+        [
+          [
+            0.43000000408310557,
+            0.5,
+            0.5
+          ],
+          [
+            0.4474662708037984,
+            0.5,
+            0.5
+          ],
+          [
+            0.4631310323473896,
+            0.5,
+            0.5
+          ],
+          [
+            0.4759089032525221,
+            0.5,
+            0.5
+          ],
+          [
+            0.48560172085452824,
+            0.5,
+            0.5
+          ],
+          [
+            0.4926158778003029,
+            0.5,
+            0.5
+          ],
+          [
+            0.49760709356281696,
+            0.5,
+            0.5
+          ]
+        ],
+        [
+          [
+            0.5699999959168944,
+            0.5,
+            0.5
+          ],
+          [
+            0.5874662772745354,
+            0.5,
+            0.5
+          ],
+          [
+            0.6031310757399995,
+            0.5,
+            0.5
+          ],
+          [
+            0.615908991299366,
+            0.5,
+            0.5
+          ],
+          [
+            0.625601850100383,
+            0.5,
+            0.5
+          ],
+          [
+            0.6326160418105832,
+            0.5,
+            0.5
+          ],
+          [
+            0.6376072899562752,
+            0.5,
+            0.5
+          ]
+        ]
+      ],
+      "pair_distance_series": [
+        0.13999999183378886,
+        0.14000000647073696,
+        0.14000004339260985,
+        0.14000008804684394,
+        0.1400001292458548,
+        0.14000016401028026,
+        0.1400001963934583
+      ],
+      "overlap_series": [
+        0.524286326404634,
+        0.5070279382519446,
+        0.4783480327446765,
+        0.46779839920936805,
+        0.4480211600129147,
+        0.4700199796457475,
+        0.5029090814399025
+      ],
+      "phase_alignment_series": [
+        0.369966114988761,
+        0.3566584952779158,
+        0.31998729853242674,
+        0.26820073671397165,
+        0.2112105133521268,
+        0.15765315596123597,
+        0.1135267172504576
+      ],
+      "coherences": [
+        0.007838037181781428,
+        0.007908268603902962,
+        0.008086605665797188,
+        0.008285620961265186,
+        0.008403691188572197,
+        0.008372891515270235,
+        0.008173776451528423
+      ],
+      "constraint_norms": [
+        1.847080808939487e-15,
+        9.217133487427218e-17,
+        9.999007485825991e-17,
+        1.1031230596631735e-16,
+        9.038119607872787e-17,
+        1.4804242931813365e-16,
+        1.0359937465092338e-16
+      ],
+      "sector_leakages": [
+        1.5430926156924439e-15,
+        2.905422734173748e-16,
+        1.6611937832235137e-16,
+        3.110626377736021e-16,
+        2.3537434299306767e-16,
+        1.650858806822626e-16,
+        1.441597276438275e-16
+      ]
+    }
+  ],
+  "regime_counts": {
+    "transient binding regime": 1,
+    "metastable composite regime": 1
+  },
+  "labels": [
+    "dispersive independent regime",
+    "transient binding regime",
+    "metastable composite regime",
+    "oscillatory exchange regime",
+    "large-scale drift field regime"
+  ],
+  "conclusion": "Stage 11 pilot maps interaction morphology for five canonical multi-packet transverse cases without introducing any new operators."
+}

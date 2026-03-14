@@ -34,7 +34,6 @@ from stage10_common import (
     weighted_center,
 )
 
-NOTE_PATH = ATLAS_NOTES / 'Stage_11_Collective_Wave_Interaction_Atlas_v1.md'
 RUNSHEET_PATH = REPO_ROOT / 'numerics' / 'simulations' / 'stage11_collective_runs.json'
 WORK_PLOT_DIR = Path('/tmp') / 'haos_iip_stage11_collective_plots'
 WORK_PLOT_DIR.mkdir(parents=True, exist_ok=True)
@@ -108,6 +107,7 @@ def build_component_packet(
     center: np.ndarray,
     amplitude: float,
     phase_offset: float,
+    kick_sign: float,
     bandwidth: float,
     central_k: float,
     phase_pattern: str,
@@ -139,7 +139,7 @@ def build_component_packet(
     q0 = np.asarray(projector(raw), dtype=float)
     q0 = q0 / max(float(np.linalg.norm(q0)), 1.0e-12)
 
-    raw_v = (delta[:, kick_axis] / max(bandwidth * bandwidth, 1.0e-12)) * raw
+    raw_v = kick_sign * (delta[:, kick_axis] / max(bandwidth * bandwidth, 1.0e-12)) * raw
     v0 = np.asarray(projector(raw_v), dtype=float)
     v0 = v0 / max(float(np.linalg.norm(v0)), 1.0e-12)
     return amplitude * q0, amplitude * v0
@@ -219,7 +219,7 @@ def classify_collective(summary: dict[str, float | int | str]) -> str:
     return 'dispersive independent regime'
 
 
-def run_case(run: dict[str, Any], defaults: dict[str, Any], base: dict[str, Any]) -> tuple[dict[str, Any], list[Path]]:
+def run_case(run: dict[str, Any], defaults: dict[str, Any], base: dict[str, Any], work_plot_dir: Path) -> tuple[dict[str, Any], list[Path]]:
     data, projector = build_transverse_setup(
         n_side=int(defaults['n_side']),
         epsilon=float(defaults['epsilon']),
@@ -230,11 +230,13 @@ def run_case(run: dict[str, Any], defaults: dict[str, Any], base: dict[str, Any]
     kick_axis = int(defaults['kick_axis'])
     packet_qs: list[np.ndarray] = []
     packet_vs: list[np.ndarray] = []
-    for center, amp, phase in zip(run['packet_centers'], run['packet_amplitudes'], run['phase_offsets_rad']):
+    kick_signs = run.get('kick_signs', [1.0] * int(run['packet_count']))
+    for center, amp, phase, kick_sign in zip(run['packet_centers'], run['packet_amplitudes'], run['phase_offsets_rad'], kick_signs):
         q0, v0 = build_component_packet(
             center=np.asarray(center, dtype=float),
             amplitude=float(amp),
             phase_offset=float(phase),
+            kick_sign=float(kick_sign),
             bandwidth=float(base['bandwidth']),
             central_k=float(base['central_k']),
             phase_pattern=str(base['phase_pattern']),
@@ -415,7 +417,7 @@ def run_case(run: dict[str, Any], defaults: dict[str, Any], base: dict[str, Any]
 
     plot_paths: list[Path] = []
     total_q = np.sum(packet_qs, axis=0)
-    field_path = WORK_PLOT_DIR / f"stage11_{run['run_id']}_field_snapshot.png"
+    field_path = work_plot_dir / f"stage11_{run['run_id']}_field_snapshot.png"
     create_field_snapshot(field_path, run['run_id'], data.midpoints, total_q, str(base['boundary_type']), int(defaults['slice_axis']))
     plot_paths.append(field_path)
 
@@ -428,7 +430,7 @@ def run_case(run: dict[str, Any], defaults: dict[str, Any], base: dict[str, Any]
     ax.set_title(f'Centroid traces: {run["run_id"]}')
     ax.grid(alpha=0.25)
     ax.legend(fontsize=8)
-    centroid_path = WORK_PLOT_DIR / f"stage11_{run['run_id']}_centroid_traces.png"
+    centroid_path = work_plot_dir / f"stage11_{run['run_id']}_centroid_traces.png"
     fig.savefig(centroid_path, dpi=180, bbox_inches='tight')
     plt.close(fig)
     plot_paths.append(centroid_path)
@@ -439,7 +441,7 @@ def run_case(run: dict[str, Any], defaults: dict[str, Any], base: dict[str, Any]
     ax.set_ylabel('mean pair distance')
     ax.set_title(f'Pair distance: {run["run_id"]}')
     ax.grid(alpha=0.25)
-    distance_path = WORK_PLOT_DIR / f"stage11_{run['run_id']}_pair_distance.png"
+    distance_path = work_plot_dir / f"stage11_{run['run_id']}_pair_distance.png"
     fig.savefig(distance_path, dpi=180, bbox_inches='tight')
     plt.close(fig)
     plot_paths.append(distance_path)
@@ -452,7 +454,7 @@ def run_case(run: dict[str, Any], defaults: dict[str, Any], base: dict[str, Any]
     ax.set_title(f'Overlap and phase lock: {run["run_id"]}')
     ax.grid(alpha=0.25)
     ax.legend(fontsize=8)
-    overlap_path = WORK_PLOT_DIR / f"stage11_{run['run_id']}_overlap_phase.png"
+    overlap_path = work_plot_dir / f"stage11_{run['run_id']}_overlap_phase.png"
     fig.savefig(overlap_path, dpi=180, bbox_inches='tight')
     plt.close(fig)
     plot_paths.append(overlap_path)
@@ -538,18 +540,24 @@ def main() -> None:
     runsheet = load_runsheet(args.runsheet)
     runs = selected_runs(runsheet['runs'], args.run_ids, args.max_runs)
     base = runsheet['base_seed_reference']
+    stem = args.runsheet.stem
+    experiment_slug = stem.replace('_runs', '')
+    note_name = runsheet.get('note_name', 'Stage_11_Collective_Wave_Interaction_Atlas_v1.md')
+    note_path = ATLAS_NOTES / note_name
+    work_plot_dir = Path('/tmp') / f'haos_iip_{experiment_slug}_plots'
+    work_plot_dir.mkdir(parents=True, exist_ok=True)
 
     payload_runs: list[dict[str, Any]] = []
     rows: list[dict[str, Any]] = []
     plot_paths: list[Path] = []
     for run in runs:
-        payload, row, per_run_plots = run_case(run, defaults, base)
+        payload, row, per_run_plots = run_case(run, defaults, base, work_plot_dir)
         payload_runs.append(payload)
         rows.append(row)
         plot_paths.extend(per_run_plots)
 
     regime_counts = dict(Counter(row['collective_regime_label'] for row in rows))
-    summary_plot = WORK_PLOT_DIR / 'stage11_collective_morphology_map.png'
+    summary_plot = work_plot_dir / f'{experiment_slug}_morphology_map.png'
     create_summary_plot(summary_plot, rows)
     plot_paths.append(summary_plot)
 
@@ -564,7 +572,7 @@ def main() -> None:
     }
 
     json_path, csv_path, stamped_plots, _ = save_atlas_payload(
-        experiment_slug='stage11_collective_wave_interaction',
+        experiment_slug=experiment_slug,
         result=result,
         csv_rows=rows,
         csv_fieldnames=CSV_FIELDS,
@@ -572,7 +580,7 @@ def main() -> None:
     )
 
     write_note(
-        NOTE_PATH,
+        note_path,
         json_rel=str(json_path.relative_to(REPO_ROOT)),
         csv_rel=str(csv_path.relative_to(REPO_ROOT)),
         rows=rows,

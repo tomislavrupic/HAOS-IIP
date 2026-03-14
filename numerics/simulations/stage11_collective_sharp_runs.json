@@ -1,0 +1,42 @@
+{
+  "description": "Stage 11 sharper follow-up probes extending the collective baseline with counter-propagation and tighter phase sensitivity.",
+  "note_name": "Stage_11B_Sharp_Interaction_Probes_v1.md",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent periodic transverse seed from Atlas-0"
+  },
+  "runs": [
+    {
+      "run_id": "S11B_collective_counter_propagating_pair",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.35, 0.5, 0.5],
+        [0.65, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "interaction_regime": "counter_propagating_overlap",
+      "selection_note": "counter-propagating pair to probe exchange or scattering more aggressively"
+    },
+    {
+      "run_id": "S11B_collective_tight_phase_sensitive_pair",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.43, 0.5, 0.5],
+        [0.57, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0],
+      "interaction_regime": "tight_phase_sensitive_overlap",
+      "selection_note": "clustered pair with strong phase contrast to test composite lifetime sensitivity"
+    }
+  ]
+}
