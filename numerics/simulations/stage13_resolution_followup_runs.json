@@ -1,0 +1,41 @@
+{
+  "description": "Stage 13B follow-up for coupled resolution-interaction morphology on the strongest composite representatives.",
+  "note_name": "Stage_13B_Resolution_Interaction_Followup_v1.md",
+  "axis_sets": ["A", "B", "C"],
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent transverse seed reused through Stages 11–13"
+  },
+  "cases": [
+    {
+      "case_id": "tight_clustered_pair",
+      "packet_count": 2,
+      "packet_centers": [[0.43, 0.5, 0.5], [0.57, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, 1.0],
+      "bandwidth": 0.1,
+      "base_resolution": 12,
+      "refined_resolution": 24,
+      "selection_note": "follow-up of the strongest clustered composite representative from Stages 11–12"
+    },
+    {
+      "case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "bandwidth": 0.1,
+      "base_resolution": 12,
+      "refined_resolution": 24,
+      "selection_note": "follow-up of the strongest asymmetric basin-forming composite from Stage 12"
+    }
+  ]
+}

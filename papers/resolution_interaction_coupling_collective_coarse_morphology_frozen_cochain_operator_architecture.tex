@@ -1,0 +1,178 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+
+\title{Resolution--Interaction Coupling of Collective and Coarse-Grained Morphology on a Frozen Kernel-Induced Cochain Operator Architecture}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+A frozen kernel-induced cochain operator architecture was previously used to construct a single-packet morphology atlas, a collective interaction atlas, and a coarse-grained envelope atlas. Stage 13 extends this program by coupling resolution changes to interaction and coarse-graining scales rather than treating refinement as an isolated diagnostic. The present study compares Stage 11 interaction labels and Stage 12 coarse-envelope labels across a first executable doubled ladder $(8 \rightarrow 16)$ and a focused follow-up ladder $(12 \rightarrow 24)$ on the strongest composite representatives. Four representative cases are used in the executable pilot and two in the focused follow-up. Three coupled transforms are tested in each case: $(N \rightarrow 2N, \sigma \rightarrow 2\sigma)$, $(N \rightarrow 2N, w \rightarrow w/2)$, and $(N \rightarrow 2N, d \rightarrow d/2)$. The dominant signal is progressive sharpening of coarse basin structure under refinement, together with persistent fragility of composite interaction labels under width coupling. No case qualifies as scale-robust composite on the tested ladders. Stage 13 should therefore be read as a scale-coupling diagnostic: it identifies resolution-sensitive morphology and scale-fragile composites, but does not support continuum, force, or nonlinear interaction claims.
+\end{abstract}
+
+\section{Introduction}
+
+Stages 10--12 established a layered diagnostic program on a frozen kernel-induced cochain operator architecture. Stage 10 defined a morphology instrument for single-packet transport and mapped baseline, resilience, and transition structure. Stage 11 extended the same frozen transverse packet family into collective interaction morphology and identified transient binding corridors together with a small number of metastable composite envelopes. Stage 12 then coarse-grained these collective configurations and showed that compact clusters can sharpen into basin-dominated envelope structure while wider or corridor-like arrangements remain diffuse.
+
+These results motivate a more specific question. If collective and coarse-grained structures are already visible, how do they behave when resolution changes are coupled directly to interaction and coarse-graining scales? Stage 13 addresses that question. The goal is not to claim refinement convergence or continuum emergence. The goal is narrower: determine whether the collective and coarse-grained morphology classes already identified in Stages 11 and 12 persist, soften, or reorganize when scale changes are introduced in a controlled coupled manner.
+
+The guiding principle remains the same as in earlier atlas stages: classification before interpretation. Stage 13 is therefore a scale-coupling diagnostic, not a continuum reconstruction study.
+
+\section{Frozen Context}
+
+The operator architecture is unchanged throughout Stage 13. The projected transverse sector, periodic boundary condition, Gaussian kernel construction, and packet family inherited from the strongest coherent Stage 10 seed remain frozen. The common packet family is characterized by bandwidth $w=0.1$, carrier type given by a cosine packet, central wave number $k=1.0$, and amplitude scale $0.5$.
+
+Stage 13 reuses two previously frozen diagnostic layers:
+\begin{itemize}
+\item the Stage 11 collective interaction labels,
+\item the Stage 12 coarse-grained envelope labels.
+\end{itemize}
+
+No new interaction law, nonlinear correction, or alternative classifier is introduced.
+
+\section{Coupled-Scale Protocol}
+
+Each Stage 13 comparison is built from a pair of runs at resolutions $N$ and $2N$. Three coupled transforms are tested:
+\begin{align}
+\text{A}:& \quad N \rightarrow 2N, \qquad \sigma \rightarrow 2\sigma, \\
+\text{B}:& \quad N \rightarrow 2N, \qquad w \rightarrow w/2, \\
+\text{C}:& \quad N \rightarrow 2N, \qquad d \rightarrow d/2,
+\end{align}
+where $\sigma$ denotes the coarse-graining scale, $w$ the packet width, and $d$ the characteristic packet separation.
+
+The collective observables are inherited from Stage 11:
+\begin{itemize}
+\item pairwise centroid distance,
+\item overlap integral,
+\item phase-lock indicator,
+\item composite lifetime,
+\item exchange or merger flag,
+\item collective morphology label.
+\end{itemize}
+
+The coarse observables are inherited from Stage 12:
+\begin{itemize}
+\item envelope field at fixed smoothing scales,
+\item basin count,
+\item dominant basin area fraction,
+\item coarse persistence,
+\item coarse-envelope morphology label.
+\end{itemize}
+
+Stage 13 adds coupled-scale output labels:
+\begin{itemize}
+\item scale-robust composite,
+\item scale-fragile composite,
+\item scale-induced diffusion,
+\item resolution-dependent morphology.
+\end{itemize}
+
+These labels are descriptive only. They summarize how the frozen Stage 11 and Stage 12 labels behave across coupled scale changes.
+
+\section{Executable Pilot: \(8 \rightarrow 16\)}
+
+A first executable pilot was run on four representative cases:
+\begin{itemize}
+\item tight clustered pair,
+\item asymmetric density cluster,
+\item three-packet chain,
+\item counter-propagating corridor.
+\end{itemize}
+
+Each case was tested under the three coupled transforms A--C, producing $12$ comparisons in total.
+
+The output-label counts were:
+\begin{itemize}
+\item resolution-dependent morphology: $6$,
+\item scale-fragile composite: $6$.
+\end{itemize}
+
+The transition-type counts were:
+\begin{itemize}
+\item coarse-only drift: $5$,
+\item softening under refinement: $4$,
+\item class flip under refinement: $3$.
+\end{itemize}
+
+A notable limitation of this first executable ladder is that the low-resolution side ($N=8$) is uniformly coarse. In practice, every case begins with a diffuse coarse-field label at the lower resolution. Refinement to $N=16$ then sharpens the coarse structure, typically toward basin-dominated organization. This makes the pilot useful as an executable baseline, but it also means that the ladder is partly probing the lower bound of usable coarse-grained resolution.
+
+Even with that limitation, the pilot already separates two behaviors. The tight clustered pair and three-packet chain appear as resolution-dependent morphology: their interaction labels and coarse labels reorganize under some of the coupled transforms. By contrast, the asymmetric density cluster and counter-propagating corridor enter the scale-fragile composite class: they support composite-like structure, but not in a way that remains invariant across all coupled transforms.
+
+\section{Focused Follow-Up: \(12 \rightarrow 24\)}
+
+A narrower follow-up was then run on the two strongest composite representatives:
+\begin{itemize}
+\item tight clustered pair,
+\item asymmetric density cluster.
+\end{itemize}
+
+Again, the three coupled transforms A--C were tested, giving $6$ comparisons in total.
+
+Unlike the first executable ladder, the follow-up remains fully inside the composite corridor at the low-resolution side. Both cases begin as metastable composite regimes at $N=12$. The output-label counts are therefore simpler:
+\begin{itemize}
+\item scale-fragile composite: $6$.
+\end{itemize}
+
+The transition-type counts are:
+\begin{itemize}
+\item coarse-only drift: $4$,
+\item softening under refinement: $2$.
+\end{itemize}
+
+The detailed behavior is consistent across both cases. Under transforms A and C, the interaction label remains metastable composite while the coarse label sharpens from diffuse coarse field to basin-dominated regime. Under transform B, which couples refinement to packet-width narrowing, the interaction label softens from metastable composite to transient binding while the coarse label still sharpens to basin-dominated regime.
+
+This is the clearest Stage 13 signal. The strongest composite cases are not scale-robust, but they are also not washed out by refinement. Instead, their envelope structure becomes more organized while their interaction identity remains vulnerable to width coupling.
+
+\section{Combined Read}
+
+Combining the executable pilot and the focused follow-up gives $18$ coupled comparisons. Across that combined set:
+\begin{itemize}
+\item no case qualifies as scale-robust composite,
+\item no case produces a scale-induced diffusion label,
+\item all comparisons are classified as more stable with refinement in the operational Stage 13 recoverability score,
+\item coarse organization strengthens consistently with refinement,
+\item width coupling is the most destabilizing transform for composite interaction labels.
+\end{itemize}
+
+The combined transition counts are:
+\begin{itemize}
+\item coarse-only drift: $9$,
+\item softening under refinement: $6$,
+\item class flip under refinement: $3$.
+\end{itemize}
+
+The interpretation of these counts is straightforward. Stage 13 does not reveal a resolution-invariant composite class on the tested ladders. Instead, it reveals a systematic asymmetry between interaction morphology and coarse-envelope morphology. The coarse layer sharpens with refinement relatively reliably, while the interaction layer remains more fragile, especially when refinement is coupled to narrowing packet width.
+
+This suggests that the coarse-grained basin layer may be the more stable organizational description at the present stage of the program. The interaction morphology is still meaningful, but it has not yet separated clearly into robust and refinement-invariant composite classes.
+
+\section{Interpretation Boundary}
+
+Stage 13 remains diagnostic only. It does not establish:
+\begin{itemize}
+\item continuum emergence,
+\item nonlinear effective interaction,
+\item force-like behavior,
+\item geometric reconstruction.
+\end{itemize}
+
+The present results support only the following bounded claims:
+\begin{itemize}
+\item collective and coarse-grained morphology can be compared consistently across coupled scale transforms,
+\item coarse envelope organization strengthens under refinement on the tested ladders,
+\item composite interaction labels remain fragile under some coupled transforms, most notably width coupling,
+\item the strongest Stage 11/12 composite cases are not yet scale-robust composites.
+\end{itemize}
+
+\section{Conclusion}
+
+Stage 13 introduces a coupled resolution--interaction diagnostic layer on top of the frozen Stage 11 and Stage 12 classifiers. A first executable doubled ladder $(8 \rightarrow 16)$ establishes a practical baseline and shows widespread resolution-sensitive sharpening of coarse morphology. A focused follow-up ladder $(12 \rightarrow 24)$ on the strongest composite representatives confirms a more specific result: coarse basin organization persists and strengthens under refinement, but composite interaction labels remain fragile under at least one of the tested coupled transforms.
+
+The immediate consequence is methodological rather than interpretive. Stage 13 justifies continuing the program with scale-coupled diagnostics, but it does not justify continuum or emergent-force language. The next sensible step is to treat coarse-grained basin structure as the more stable layer and to continue probing which interaction motifs, if any, become robust only at higher coupled resolutions.
+
+\end{document}
