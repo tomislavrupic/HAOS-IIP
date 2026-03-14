@@ -541,3 +541,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260314_135326_DK_first_vs_second_order_comparison.png`
 - Observation: first-order DK propagation and the induced second-order Hodge evolution remain closely matched at the packet level over the tested time window, while each evolution preserves its own conserved quantity with small drift
 - Conclusion: the first-order DK dynamics is consistent with its validated squared Hodge dynamics in the tested 2D packet regime
+## Stage 9B DK Holonomy Packet Response
+- Date: 2026-03-14T13:52:45
+- Config: n=16, epsilon=0.2, sigma=0.08, phases=[0.0, 0.2617993877991494, 0.5235987755982988, 0.7853981633974483]
+- Results: `data/20260314_135245_DK_holonomy_packet_response.json`
+- Plots: `plots/20260314_135245_DK_holonomy_packet_paths.png`, `plots/20260314_135245_DK_holonomy_packet_widths.png`, `plots/20260314_135245_DK_holonomy_grade_weights.png`
+- Observation: flat torus-cycle holonomy modifies DK packet transport and spreading smoothly while preserving stable norm and grade evolution
+- Conclusion: the DK packet response remains coherent under the tested flat holonomy phases on the validated 2D cochain architecture
+
