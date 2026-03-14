@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{cite}
+
+\geometry{margin=1in}
+
+\title{Coarse-Grained Collective Envelope Structure on a Frozen Kernel-Induced Cochain Operator Architecture}
+\author{Tomislav Rupi\'c\\Independent Researcher\\\v{S}ibenik, Croatia}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Stage 11 of the HAOS/IIP numerical sequence established that multiple coherent packets on the frozen projected transverse architecture do not reduce to trivial independent propagation. Moderate-separation configurations remain inside a transient-binding corridor, while tight-overlap configurations generate a metastable composite envelope. The present paper introduces Stage 12, a coarse-grained atlas layer designed to test whether those collective states produce stable organizational morphology when observed at larger spatial scales. The same frozen projected transverse operator, periodic boundary, and coherent packet family are retained. Five canonical Stage 12 runs are constructed from the strongest coherent Stage 11 seed family: a tight clustered pair, a three-packet chain, a symmetric wide triad, an asymmetric density cluster, and a counter-propagating composite corridor. Coarse observables are defined by Gaussian-smoothed envelope fields at two fixed scales, connected super-threshold basin maps, dominant-basin area fraction, basin lifetime, and a coarse persistence score. The resulting five-run pilot yields a readable three-class split: two basin-dominated runs, one multi-basin fluctuating run, and two diffuse coarse-field runs. The tight clustered pair and asymmetric density cluster produce the strongest basin-dominated envelopes, the three-packet chain generates the only clear multi-basin fluctuating morphology, and the symmetric wide triad and counter-propagating corridor remain diffuse at coarse scale. Constraint and sector-leakage control remain at numerical precision throughout, with maximal frozen constraint norm $5.65\times 10^{-15}$ and maximal sector leakage $1.29\times 10^{-14}$. The result is therefore organizational rather than dynamical in a stronger sense: Stage 12 identifies stable coarse-grained superposition structure, not nonlinear effective interactions.
+\end{abstract}
+
+\section{Introduction}
+The frozen HAOS/IIP program has progressed by separating construction from behavior. Earlier stages established the kernel-induced cochain operators, the projected transverse sector, and finite-window packet propagation on the frozen architecture. Stage 10 then organized single-packet behavior into a pre-geometric atlas of baseline morphology, one-axis resilience, and paired-stress transition structure. Stage 11 opened the collective layer: once multiple packets occupy the same projected transverse architecture, their superposition pattern is no longer exhausted by isolated transport labels. Moderate-separation cases remain in a transient-binding corridor, while tight-overlap cases can generate a metastable composite envelope.
+
+Stage 12 asks the next narrow question. If the collective field is observed at larger spatial scales, does the superposed packet configuration produce stable envelope-level organization that is more rigid than the local packet detail? The purpose of the present paper is to define and document that coarse-grained morphology layer.
+
+The interpretation boundary remains strict. This paper does not claim an effective force law, an emergent geometry, a particle sector, or a nonlinear interaction mechanism. The frozen dynamics is still linear. The question is purely organizational: whether coarse-grained basin structure appears reproducibly on top of the frozen superposition field.
+
+\section{Frozen Stage 12 Setup}
+All Stage 12 runs inherit the same frozen numerical substrate used in the strongest coherent part of Stage 11. The active sector is the projected transverse edge sector on a periodic graph/cochain domain. No kernel, operator, projector, weighting rule, or classifier from earlier stages is modified.
+
+The shared packet family is fixed to the strongest coherent Stage 11 seed family:
+\begin{itemize}
+\item projected transverse sector,
+\item periodic boundary,
+\item bandwidth $0.1$,
+\item cosine carrier,
+\item central $k = 1.0$,
+\item amplitude scale $0.5$.
+\end{itemize}
+As in Stage 11, packet components evolve under the frozen second-order projected transverse dynamics
+\begin{equation}
+\partial_t^2 q = -L_1 q,
+\qquad
+L_1 = d_0 d_0^{*} + d_1^{*} d_1,
+\end{equation}
+with the same frozen transverse projector applied at every update step.
+
+Only the collective geometry is varied in the Stage 12 pilot. The five canonical runs are:
+\begin{enumerate}
+\item tight clustered pair,
+\item three-packet chain,
+\item symmetric wide triad,
+\item asymmetric density cluster,
+\item counter-propagating composite corridor.
+\end{enumerate}
+These runs were chosen to probe whether the coarse-grained organization tracks Stage 11 overlap strength, packet density, or corridor-like interaction geometry.
+
+\section{Coarse Observables and Regime Labels}
+Stage 12 reuses the Stage 11 diagnostics for width, norm, spectral moments, coherence, anisotropy, leakage, and frozen constraint behavior. The new layer is a coarse spatial envelope analysis.
+
+Let $q(t)$ denote the total projected transverse state. A pointwise proxy magnitude is first accumulated on an $n\times n\times n$ lattice from the edge-midpoint amplitudes and then Gaussian smoothed at two fixed scales, corresponding to $\sigma=2$ and $\sigma=4$ grid units. Denote the resulting coarse envelope by
+\begin{equation}
+E_{\sigma}(x,t) = G_{\sigma} * |\psi(x,t)|,
+\end{equation}
+where $G_{\sigma}$ is the periodic Gaussian smoothing kernel and $|\psi|$ denotes the accumulated nonnegative magnitude proxy.
+
+At each time slice, a basin map is defined by a fixed relative threshold,
+\begin{equation}
+E_{\sigma}(x,t) > \alpha\, \max_x E_{\sigma}(x,t),
+\qquad \alpha = 0.6.
+\end{equation}
+Connected components of this super-threshold mask define the coarse basins. From these, Stage 12 records:
+\begin{itemize}
+\item basin count,
+\item dominant-basin area fraction,
+\item basin lifetime,
+\item coarse persistence score,
+\item envelope variance.
+\end{itemize}
+
+If the dominant connected component at time $t$ contains $N_{\mathrm{dom}}(t)$ coarse cells on a grid of size $N_{\mathrm{grid}}$, the dominant-basin area fraction is
+\begin{equation}
+A_{\mathrm{dom}}(t) = \frac{N_{\mathrm{dom}}(t)}{N_{\mathrm{grid}}}.
+\end{equation}
+The Stage 12 implementation uses a simple overlap-based identity rule between consecutive dominant basin masks, so the coarse persistence score is the time-average of a binary stability flag,
+\begin{equation}
+P_{\mathrm{coarse}} = \langle \chi_{\mathrm{stable}}(t) \rangle_t.
+\end{equation}
+The basin lifetime is defined as the total sampled time during which the dominant basin remains above a fixed area threshold in the coarse field. In the present pilot, only the $\sigma=4$ summaries enter the final label, while the $\sigma=2$ summaries are used to detect multi-basin splitting.
+
+The three coarse labels are descriptive only:
+\begin{itemize}
+\item basin-dominated regime,
+\item multi-basin fluctuating regime,
+\item diffuse coarse field regime.
+\end{itemize}
+The label rule is fixed within Stage 12 and depends only on basin count, dominant-basin area fraction, basin lifetime, coarse persistence, and envelope variance. No earlier classifier is altered.
+
+\section{Stage 12 Pilot Design}
+The Stage 12 pilot contains exactly five runs, all on the same frozen projected transverse packet family. The run design is summarized in Table~\ref{tab:stage12-runs}.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{ll}
+\hline
+Run ID & Collective pattern \\
+\hline
+\texttt{S12\_tight\_clustered\_pair} & strongest compact Stage 11 overlap case \\
+\texttt{S12\_three\_packet\_chain} & three-packet relay/chain geometry \\
+\texttt{S12\_symmetric\_wide\_triad} & widely separated symmetric triad \\
+\texttt{S12\_asymmetric\_density\_cluster} & uneven compact density cluster \\
+\texttt{S12\_counter\_propagating\_composite\_corridor} & compressed corridor with opposite kicks \\
+\hline
+\end{tabular}
+\caption{Stage 12 pilot run inventory. All five runs use the same frozen projected transverse packet family and differ only in collective geometry and phase/amplitude arrangement.}
+\label{tab:stage12-runs}
+\end{table}
+
+This design intentionally reuses the strongest Stage 11 motifs rather than broadening the parameter space. The objective is not coverage but the first readable separation between compact basin-dominated structure, fluctuating multi-basin structure, and diffuse coarse organization.
+
+\section{Results}
+The Stage 12 pilot produces the following coarse-regime counts:
+\begin{equation}
+2\;\text{basin-dominated},\qquad 1\;\text{multi-basin fluctuating},\qquad 2\;\text{diffuse coarse field}.
+\end{equation}
+The per-run results are summarized in Table~\ref{tab:stage12-results}.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lcccc}
+\hline
+Run & Label & $\langle A_{\mathrm{dom}}\rangle_{\sigma=4}$ & $P_{\mathrm{coarse}}$ & $\langle N_{\mathrm{basin}}\rangle_{\sigma=2}$ \\
+\hline
+Tight clustered pair & Basin-dominated & 0.2759 & 1.0000 & 1.0000 \\
+Three-packet chain & Multi-basin fluctuating & 0.3747 & 1.0000 & 1.1429 \\
+Symmetric wide triad & Diffuse coarse field & 0.6475 & 1.0000 & 1.0000 \\
+Asymmetric density cluster & Basin-dominated & 0.2123 & 1.0000 & 1.0000 \\
+Counter-propagating corridor & Diffuse coarse field & 0.3399 & 1.0000 & 1.0000 \\
+\hline
+\end{tabular}
+\caption{Stage 12 coarse-regime labels and the main coarse summaries. The distinguishing quantity for the chain is the elevated fine-scale basin count, while the compact clusters remain the cleanest basin-dominated cases.}
+\label{tab:stage12-results}
+\end{table}
+
+Two results are immediate.
+
+First, the compact cluster geometries produce the strongest basin-dominated envelopes. The tight clustered pair and the asymmetric density cluster both remain in the basin-dominated class for the full sampled window. Their mean dominant-basin area fractions at $\sigma=4$ are
+\begin{equation}
+0.2759 \quad \text{and} \quad 0.2123,
+\end{equation}
+respectively, with coarse persistence equal to unity in both cases. This is the clearest Stage 12 confirmation that the strongest Stage 11 overlap motifs survive coarse observation as coherent envelope organization.
+
+Second, the three-packet chain is the only run that develops a distinct multi-basin fluctuating signature. Its mean basin count at the finer coarse scale rises to
+\begin{equation}
+\langle N_{\mathrm{basin}}\rangle_{\sigma=2} = 1.1429,
+\end{equation}
+which is the only value above one in the final pilot table. The chain therefore becomes the first Stage 12 indication that a collective packet arrangement can maintain more than one coarse organizational center across the observed window.
+
+The remaining two runs, the symmetric wide triad and the counter-propagating corridor, are classified as diffuse coarse field regimes. In both cases the local packet arrangement does not translate into a compact coarse basin that dominates the entire organization criterion. The wide triad is particularly useful here: despite its larger $\sigma=4$ dominant-basin area fraction,
+\begin{equation}
+\langle A_{\mathrm{dom}}\rangle_{\sigma=4} = 0.6475,
+\end{equation}
+it remains in the diffuse class because the wide arrangement does not define the same compact basin profile as the tight-overlap cluster cases. The label should therefore be read as a morphology category, not as a monotone ordering by any single metric.
+
+\section{Constraint Control and Coarse Interpretation Boundary}
+As in the earlier projected transverse studies, the Stage 12 pilot remains numerically controlled. Across the five runs, the maximal frozen constraint norm is
+\begin{equation}
+\max C^{\max}_{\mathrm{frozen}} = 5.65\times 10^{-15},
+\end{equation}
+and the maximal sector leakage is
+\begin{equation}
+\max \ell^{\max}_{\mathrm{sec}} = 1.29\times 10^{-14}.
+\end{equation}
+These values remain at numerical precision relative to the envelope observables.
+
+The interpretation boundary is therefore the same one used in Stage 11. Stage 12 identifies coarse-grained organizational morphology and does not imply nonlinear effective interactions. The coarse basins reported here are envelope-level features of the frozen linear superposition field, not emergent potentials, forces, or curvature in a stronger sense.
+
+What the present paper does establish is narrower but useful. Compact multi-packet configurations can persist as basin-dominated envelope organization under fixed coarse smoothing, while chain-like and broader geometries can separate into multi-basin or diffuse coarse classes. That is exactly the kind of structural split needed before any later resolution-coupling study.
+
+\section{Conclusion}
+Stage 12 introduces the coarse-grained collective-envelope layer of the frozen HAOS/IIP atlas. A five-run pilot built directly on the strongest Stage 11 packet family produces the first readable separation between compact basin-dominated structure, multi-basin fluctuation, and diffuse coarse organization.
+
+The strongest signal is not a new interaction claim but a new scale of morphology. Tight compact clusters remain the clearest basin-dominated cases under coarse smoothing. The three-packet chain becomes the first multi-basin fluctuating case. Wider or corridor-like geometries remain diffuse. Throughout, the projected transverse constraint and sector identity stay controlled at numerical precision.
+
+This is a good stopping point for the present layer. Stage 12 now provides a coarse organizational atlas on top of the frozen linear collective sector. The natural next question is not stronger interpretation but coupling: whether these coarse organizational classes remain stable when collective morphology is re-tested across resolution changes.
+
+\appendix
+\section{Pilot Inventory}
+The frozen Stage 12 pilot consists of five runs only:
+\begin{itemize}
+\item tight clustered pair,
+\item three-packet chain,
+\item symmetric wide triad,
+\item asymmetric density cluster,
+\item counter-propagating composite corridor.
+\end{itemize}
+This is a pilot atlas, not a coverage study.
+
+\section{Active Labels}
+All three Stage 12 labels are active in the final frozen pilot:
+\begin{itemize}
+\item basin-dominated regime,
+\item multi-basin fluctuating regime,
+\item diffuse coarse field regime.
+\end{itemize}
+This is the first atlas layer in which the full label vocabulary defined for the stage is exercised by the pilot itself.
+
+\end{document}

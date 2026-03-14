@@ -17,6 +17,7 @@ Current releases:
 - `08.1` Transition Structure of Pre-Geometric Morphology Classes on a Frozen Kernel-Induced Cochain Operator Architecture
 - `09.1` A Pre-Geometric Atlas of Morphology, Resilience, and Transition Structure on a Frozen Kernel-Induced Cochain Operator Architecture
 - `10.1` Collective Interaction Morphology on a Frozen Kernel-Induced Cochain Operator Architecture
+- `11.1` Coarse-Grained Collective Envelope Structure on a Frozen Kernel-Induced Cochain Operator Architecture
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
