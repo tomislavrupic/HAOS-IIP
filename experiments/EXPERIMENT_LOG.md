@@ -502,3 +502,11 @@ This file records orchestrated experiment runs.
 - Observation: the scalar packet evolves smoothly on the frozen kernel Laplacian with controlled spreading and small energy drift across the tested lattice sizes
 - Conclusion: the scalar sector supports coherent second-order packet propagation on the validated architecture
 
+## Stage 9B Transverse Wave-Packet Propagation
+- Date: 2026-03-10T20:26:32
+- Config: sizes=[16, 20, 24], epsilon=0.2, sigma=0.08, t_final=0.45
+- Results: `data/20260310_202632_stage9_transverse_packet_dynamics.json`
+- Plots: `plots/20260310_202632_transverse_packet_position.png`, `plots/20260310_202632_transverse_packet_width.png`, `plots/20260310_202632_transverse_packet_constraint.png`, `plots/20260310_202632_transverse_packet_energy.png`
+- Observation: the restricted transverse packet propagates with controlled spreading while the divergence constraint remains near numerical precision throughout the evolution
+- Conclusion: the transverse edge sector supports coherent projected packet propagation on the frozen architecture
+

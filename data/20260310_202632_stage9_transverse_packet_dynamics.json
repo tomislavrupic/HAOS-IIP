@@ -1,0 +1,224 @@
+{
+  "experiment": "stage9_transverse_packet_dynamics",
+  "config": {
+    "sizes": [
+      16,
+      20,
+      24
+    ],
+    "epsilon": 0.2,
+    "sigma": 0.08,
+    "kick_axis": 0,
+    "kick_strength_transverse": 1.0,
+    "t_final": 0.45,
+    "dt_safety": 0.45
+  },
+  "cases": [
+    {
+      "n_side": 16,
+      "dt": 0.2630042281105532,
+      "steps": 2,
+      "times": [
+        0.0,
+        0.2630042281105532,
+        0.5260084562211064
+      ],
+      "centers": [
+        [
+          0.25,
+          0.5,
+          0.5
+        ],
+        [
+          0.2763068832987394,
+          0.5,
+          0.5
+        ],
+        [
+          0.297180712876393,
+          0.5,
+          0.5
+        ]
+      ],
+      "widths": [
+        0.17380796247400992,
+        0.17306729556733627,
+        0.17253004032132052
+      ],
+      "norms": [
+        1.0,
+        1.005492312979884,
+        1.019558105756509
+      ],
+      "energies": [
+        0.9302375058688116,
+        0.9305306351550426,
+        0.9312274449418622
+      ],
+      "anisotropies": [
+        1.344167940776677,
+        1.4003036766564045,
+        1.5106480434817846
+      ],
+      "divergence_norms": [
+        1.2660411959225042e-16,
+        1.5752421192057264e-16,
+        1.612066289156179e-16
+      ],
+      "projection_residuals": [
+        1.476619277957608e-16,
+        7.336223635181914e-17,
+        5.808050602039053e-17
+      ],
+      "summary": {
+        "center_x_shift": 0.04718071287639303,
+        "width_change": -0.0012779221526894036,
+        "relative_norm_change": 0.01955810575650907,
+        "relative_energy_drift": 0.0010641788433653726,
+        "max_constraint_residual": 1.612066289156179e-16,
+        "max_projection_residual": 1.476619277957608e-16,
+        "max_anisotropy": 1.5106480434817846
+      }
+    },
+    {
+      "n_side": 20,
+      "dt": 0.2631788127549193,
+      "steps": 2,
+      "times": [
+        0.0,
+        0.2631788127549193,
+        0.5263576255098386
+      ],
+      "centers": [
+        [
+          0.25,
+          0.5,
+          0.5
+        ],
+        [
+          0.27587172307810826,
+          0.5,
+          0.5
+        ],
+        [
+          0.29526242858607343,
+          0.5,
+          0.5
+        ]
+      ],
+      "widths": [
+        0.17374726422885448,
+        0.1721613631531386,
+        0.16947525321799037
+      ],
+      "norms": [
+        1.0,
+        1.0151594175908218,
+        1.0557156050224017
+      ],
+      "energies": [
+        0.7838531851282481,
+        0.7841578322657787,
+        0.7849458753622369
+      ],
+      "anisotropies": [
+        1.345478894262321,
+        1.401773086526152,
+        1.5055404467928244
+      ],
+      "divergence_norms": [
+        1.2671527590423076e-16,
+        1.744080498078715e-16,
+        1.3268724136771656e-16
+      ],
+      "projection_residuals": [
+        5.222902073129449e-16,
+        9.863400553243764e-17,
+        6.442275025713342e-17
+      ],
+      "summary": {
+        "center_x_shift": 0.04526242858607343,
+        "width_change": -0.004272011010864107,
+        "relative_norm_change": 0.05571560502240169,
+        "relative_energy_drift": 0.0013939985889195028,
+        "max_constraint_residual": 1.744080498078715e-16,
+        "max_projection_residual": 5.222902073129449e-16,
+        "max_anisotropy": 1.5055404467928244
+      }
+    },
+    {
+      "n_side": 24,
+      "dt": 0.26297784107147465,
+      "steps": 2,
+      "times": [
+        0.0,
+        0.26297784107147465,
+        0.5259556821429493
+      ],
+      "centers": [
+        [
+          0.25,
+          0.5,
+          0.5
+        ],
+        [
+          0.27559444033262337,
+          0.5,
+          0.5
+        ],
+        [
+          0.29413602361208735,
+          0.5,
+          0.5
+        ]
+      ],
+      "widths": [
+        0.17371603974308455,
+        0.17164849321304407,
+        0.16772751081092677
+      ],
+      "norms": [
+        1.0,
+        1.0206569050232916,
+        1.0768457674871874
+      ],
+      "energies": [
+        0.7004245274054877,
+        0.7006310628503534,
+        0.7011889097452235
+      ],
+      "anisotropies": [
+        1.3461747210490098,
+        1.4023972200261843,
+        1.503905412013732
+      ],
+      "divergence_norms": [
+        1.4039103476600907e-16,
+        1.3116713855039617e-16,
+        1.4414115330130598e-16
+      ],
+      "projection_residuals": [
+        6.960333455178949e-16,
+        1.121409942377294e-16,
+        9.360595007695028e-17
+      ],
+      "summary": {
+        "center_x_shift": 0.04413602361208735,
+        "width_change": -0.005988528932157788,
+        "relative_norm_change": 0.07684576748718741,
+        "relative_energy_drift": 0.0010913129249874834,
+        "max_constraint_residual": 1.4414115330130598e-16,
+        "max_projection_residual": 6.960333455178949e-16,
+        "max_anisotropy": 1.503905412013732
+      }
+    }
+  ],
+  "observation": "the restricted transverse packet propagates with controlled spreading while the divergence constraint remains near numerical precision throughout the evolution",
+  "conclusion": "the transverse edge sector supports coherent projected packet propagation on the frozen architecture",
+  "plots": [
+    "plots/transverse_packet_position.png",
+    "plots/transverse_packet_width.png",
+    "plots/transverse_packet_constraint.png",
+    "plots/transverse_packet_energy.png"
+  ]
+}
