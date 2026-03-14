@@ -1,0 +1,19 @@
+case_id,distance_id,n_side,mean_absolute_asymmetry,max_absolute_asymmetry,triangle_violation_rate,mean_violation_magnitude,ordering_flip_fraction,pair_rank_correlation,effective_dimension,dimension_drift,shell_distortion_metric,ordering_breakdown_frequency,loop_inconsistency_index,geodesic_deviation_analog,relational_ordering_label
+asymmetric_density_cluster,persistence_distance,12,0.0,0.0,0.0,0.0,0.3333333333333333,0.5,0.7848006818177199,0.016944072904552687,,,0.4691827903399972,0.6308605844562094,weak ordering with high metric violation
+asymmetric_density_cluster,persistence_distance,24,0.0,0.0,0.0,0.0,0.3333333333333333,0.5,0.8017447547222726,0.016944072904552687,,,0.4705773391024896,0.6284669853896603,weak ordering with high metric violation
+asymmetric_density_cluster,phase_correlation_distance,12,0.0,0.0,0.3333333333333333,0.07491124682747725,0.3333333333333333,0.5,,,,,0.5727104352206379,0.7296324811910021,weak ordering with high metric violation
+asymmetric_density_cluster,phase_correlation_distance,24,0.0,0.0,0.3333333333333333,0.06130236808260688,0.3333333333333333,0.5,,,,,0.5478991884638774,0.7168469677831023,weak ordering with high metric violation
+asymmetric_density_cluster,transport_delay_distance,12,0.2187207087974159,0.32808106319612385,0.0,0.0,0.6666666666666666,1.0,,,0.0,0.3333333333333333,0.496969696969697,0.5454545454545455,no coherent relational ordering
+asymmetric_density_cluster,transport_delay_distance,24,0.3272613133333907,0.3272613133333907,0.0,0.0,0.6666666666666666,1.0,,,0.06666666666666667,0.3333333333333333,0.5,0.5,no coherent relational ordering
+counter_propagating_corridor,persistence_distance,12,0.0,0.0,,,0.0,1.0,,,,,,,scale-stable metric-like ordering
+counter_propagating_corridor,persistence_distance,24,0.0,0.0,,,0.0,1.0,,,,,,,scale-stable metric-like ordering
+counter_propagating_corridor,phase_correlation_distance,12,0.0,0.0,,,0.0,1.0,,,,,,,scale-stable metric-like ordering
+counter_propagating_corridor,phase_correlation_distance,24,0.0,0.0,,,0.0,1.0,,,,,,,scale-stable metric-like ordering
+counter_propagating_corridor,transport_delay_distance,12,0.0,0.0,,,0.0,1.0,,,0.0,0.0,,,scale-stable metric-like ordering
+counter_propagating_corridor,transport_delay_distance,24,0.0,0.0,,,0.0,1.0,,,0.0,0.0,,,scale-stable metric-like ordering
+symmetric_wide_triad,persistence_distance,12,0.0,0.0,0.0,0.0,0.3333333333333333,0.5,4.131489094604651,0.7374228193336965,,,0.49906375541752884,0.526866215017498,weak ordering with high metric violation
+symmetric_wide_triad,persistence_distance,24,0.0,0.0,0.0,0.0,0.3333333333333333,0.5,3.394066275270955,0.7374228193336965,,,0.4986448031629065,0.5309195814293343,weak ordering with high metric violation
+symmetric_wide_triad,phase_correlation_distance,12,0.0,0.0,0.0,0.0,0.0,1.0,,,,,0.49996276079851437,0.5052643601458106,scale-stable metric-like ordering
+symmetric_wide_triad,phase_correlation_distance,24,0.0,0.0,0.0,0.0,0.0,1.0,,,,,0.4999409965599743,0.5066087720522628,scale-stable metric-like ordering
+symmetric_wide_triad,transport_delay_distance,12,0.32808106319612385,0.32808106319612385,0.0,0.0,0.0,1.0,,,0.20000000000000004,0.0,0.5,0.5,no coherent relational ordering
+symmetric_wide_triad,transport_delay_distance,24,0.3272613133333907,0.3272613133333907,0.0,0.0,0.0,1.0,,,0.19999999999999998,0.0,0.5,0.5,no coherent relational ordering

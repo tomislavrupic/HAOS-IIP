@@ -1,0 +1,1078 @@
+{
+  "stage": "Stage 15",
+  "description": "Stage 15 pilot for emergent relational geometry diagnostics on frozen collective and coarse-field representatives.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent periodic transverse seed carried through Stages 11-15"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "selection_note": "The 12->24 ladder is used for the first pilot because the 8->16 ladder in Stage 13 primarily exposed the lower bound of coarse readability rather than stable relational ordering."
+  },
+  "cases": {
+    "asymmetric_density_cluster": {
+      "base": {
+        "case_id": "asymmetric_density_cluster",
+        "n_side": 12,
+        "times": [
+          0.0,
+          0.6561621263922476,
+          0.9842431895883714
+        ],
+        "distance_payloads": {
+          "persistence_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                1.3240463120061685,
+                2.2617660398115413
+              ],
+              [
+                1.3240463120061685,
+                1.0,
+                1.325080165857597
+              ],
+              [
+                2.2617660398115413,
+                1.325080165857597,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                1.3240463120061685,
+                2.2617660398115413
+              ],
+              [
+                1.3240463120061685,
+                1.0,
+                1.325080165857597
+              ],
+              [
+                2.2617660398115413,
+                1.325080165857597,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": 0.7848006818177199,
+            "ball_growth_radii": [
+              1.3240463120061685,
+              1.325080165857597,
+              2.2617660398115413
+            ],
+            "ball_growth_volumes": [
+              1.6666666666666667,
+              2.3333333333333335,
+              3.0
+            ],
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": 0.4691827903399972,
+            "geodesic_deviation_analog": 0.6308605844562094
+          },
+          "phase_correlation_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                0.3216944573262337,
+                0.8681136687015923
+              ],
+              [
+                0.3216944573262337,
+                1.0,
+                0.3216854708929269
+              ],
+              [
+                0.8681136687015923,
+                0.3216854708929269,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                0.3216944573262337,
+                0.8681136687015923
+              ],
+              [
+                0.3216944573262337,
+                1.0,
+                0.3216854708929269
+              ],
+              [
+                0.8681136687015923,
+                0.3216854708929269,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": 0.3333333333333333,
+            "mean_violation_magnitude": 0.07491124682747725,
+            "max_violation_magnitude": 0.22473374048243178,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": 0.5727104352206379,
+            "geodesic_deviation_analog": 0.7296324811910021
+          },
+          "transport_delay_distance": {
+            "raw_matrix": [
+              [
+                0.0,
+                0.6561621263922476,
+                0.6561621263922476
+              ],
+              [
+                0.9842431895883714,
+                0.0,
+                0.9842431895883714
+              ],
+              [
+                0.9842431895883714,
+                0.9842431895883714,
+                0.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                0.0,
+                0.8202026579903094,
+                0.8202026579903094
+              ],
+              [
+                0.8202026579903094,
+                0.0,
+                0.9842431895883714
+              ],
+              [
+                0.8202026579903094,
+                0.9842431895883714,
+                0.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.2187207087974159,
+            "max_absolute_asymmetry": 0.32808106319612385,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": 0.0,
+            "loop_inconsistency_index": 0.496969696969697,
+            "geodesic_deviation_analog": 0.5454545454545455
+          }
+        },
+        "constraint_max": 1.4478819106361465e-15,
+        "sector_leakage": 2.3961542895424422e-15
+      },
+      "refined": {
+        "case_id": "asymmetric_density_cluster",
+        "n_side": 24,
+        "times": [
+          0.0,
+          0.6545226266667814,
+          0.9817839400001721
+        ],
+        "distance_payloads": {
+          "persistence_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                1.376532124431468,
+                2.323329341526484
+              ],
+              [
+                1.376532124431468,
+                1.0,
+                1.3746206840879893
+              ],
+              [
+                2.323329341526484,
+                1.3746206840879893,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                1.376532124431468,
+                2.323329341526484
+              ],
+              [
+                1.376532124431468,
+                1.0,
+                1.3746206840879893
+              ],
+              [
+                2.323329341526484,
+                1.3746206840879893,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": 0.8017447547222726,
+            "ball_growth_radii": [
+              1.3746206840879893,
+              1.376532124431468,
+              2.323329341526484
+            ],
+            "ball_growth_volumes": [
+              1.6666666666666667,
+              2.3333333333333335,
+              3.0
+            ],
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": 0.4705773391024896,
+            "geodesic_deviation_analog": 0.6284669853896603
+          },
+          "phase_correlation_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                0.34591240586371963,
+                0.8757321134735102
+              ],
+              [
+                0.34591240586371963,
+                1.0,
+                0.34591260336196994
+              ],
+              [
+                0.8757321134735102,
+                0.34591260336196994,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                0.34591240586371963,
+                0.8757321134735102
+              ],
+              [
+                0.34591240586371963,
+                1.0,
+                0.34591260336196994
+              ],
+              [
+                0.8757321134735102,
+                0.34591260336196994,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": 0.3333333333333333,
+            "mean_violation_magnitude": 0.06130236808260688,
+            "max_violation_magnitude": 0.18390710424782064,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": 0.5478991884638774,
+            "geodesic_deviation_analog": 0.7168469677831023
+          },
+          "transport_delay_distance": {
+            "raw_matrix": [
+              [
+                0.0,
+                0.6545226266667814,
+                0.6545226266667814
+              ],
+              [
+                0.9817839400001721,
+                0.0,
+                0.6545226266667814
+              ],
+              [
+                0.9817839400001721,
+                0.9817839400001721,
+                0.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                0.0,
+                0.8181532833334768,
+                0.8181532833334768
+              ],
+              [
+                0.8181532833334768,
+                0.0,
+                0.8181532833334768
+              ],
+              [
+                0.8181532833334768,
+                0.8181532833334768,
+                0.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.3272613133333907,
+            "max_absolute_asymmetry": 0.3272613133333907,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": 0.06666666666666667,
+            "loop_inconsistency_index": 0.5,
+            "geodesic_deviation_analog": 0.5
+          }
+        },
+        "constraint_max": 4.8809226581918535e-15,
+        "sector_leakage": 6.26990894244305e-15
+      }
+    },
+    "counter_propagating_corridor": {
+      "base": {
+        "case_id": "counter_propagating_corridor",
+        "n_side": 12,
+        "times": [
+          0.0,
+          0.6561621263922476,
+          0.9842431895883714
+        ],
+        "distance_payloads": {
+          "persistence_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                2.596865766008324
+              ],
+              [
+                2.596865766008324,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                2.596865766008324
+              ],
+              [
+                2.596865766008324,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": null,
+            "mean_violation_magnitude": null,
+            "max_violation_magnitude": null,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": null,
+            "geodesic_deviation_analog": null
+          },
+          "phase_correlation_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                0.8048732355598971
+              ],
+              [
+                0.8048732355598971,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                0.8048732355598971
+              ],
+              [
+                0.8048732355598971,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": null,
+            "mean_violation_magnitude": null,
+            "max_violation_magnitude": null,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": null,
+            "geodesic_deviation_analog": null
+          },
+          "transport_delay_distance": {
+            "raw_matrix": [
+              [
+                0.0,
+                0.6561621263922476
+              ],
+              [
+                0.6561621263922476,
+                0.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                0.0,
+                0.6561621263922476
+              ],
+              [
+                0.6561621263922476,
+                0.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": null,
+            "mean_violation_magnitude": null,
+            "max_violation_magnitude": null,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": 0.0,
+            "loop_inconsistency_index": null,
+            "geodesic_deviation_analog": null
+          }
+        },
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15
+      },
+      "refined": {
+        "case_id": "counter_propagating_corridor",
+        "n_side": 24,
+        "times": [
+          0.0,
+          0.6545226266667814,
+          0.9817839400001721
+        ],
+        "distance_payloads": {
+          "persistence_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                3.0483801882644896
+              ],
+              [
+                3.0483801882644896,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                3.0483801882644896
+              ],
+              [
+                3.0483801882644896,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": null,
+            "mean_violation_magnitude": null,
+            "max_violation_magnitude": null,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": null,
+            "geodesic_deviation_analog": null
+          },
+          "phase_correlation_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                0.9275483120636984
+              ],
+              [
+                0.9275483120636984,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                0.9275483120636984
+              ],
+              [
+                0.9275483120636984,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": null,
+            "mean_violation_magnitude": null,
+            "max_violation_magnitude": null,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": null,
+            "geodesic_deviation_analog": null
+          },
+          "transport_delay_distance": {
+            "raw_matrix": [
+              [
+                0.0,
+                0.6545226266667814
+              ],
+              [
+                0.6545226266667814,
+                0.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                0.0,
+                0.6545226266667814
+              ],
+              [
+                0.6545226266667814,
+                0.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": null,
+            "mean_violation_magnitude": null,
+            "max_violation_magnitude": null,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": 0.0,
+            "loop_inconsistency_index": null,
+            "geodesic_deviation_analog": null
+          }
+        },
+        "constraint_max": 6.144603938777107e-15,
+        "sector_leakage": 1.006254848448033e-14
+      }
+    },
+    "symmetric_wide_triad": {
+      "base": {
+        "case_id": "symmetric_wide_triad",
+        "n_side": 12,
+        "times": [
+          0.0,
+          0.6561621263922476,
+          0.9842431895883714
+        ],
+        "distance_payloads": {
+          "persistence_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                3.6072803334281702,
+                4.005909287827125
+              ],
+              [
+                3.6072803334281702,
+                1.0,
+                3.6183197313742372
+              ],
+              [
+                4.005909287827125,
+                3.6183197313742372,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                3.6072803334281702,
+                4.005909287827125
+              ],
+              [
+                3.6072803334281702,
+                1.0,
+                3.6183197313742372
+              ],
+              [
+                4.005909287827125,
+                3.6183197313742372,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": 4.131489094604651,
+            "ball_growth_radii": [
+              3.6072803334281702,
+              3.6183197313742372,
+              4.005909287827125
+            ],
+            "ball_growth_volumes": [
+              1.6666666666666667,
+              2.3333333333333335,
+              3.0
+            ],
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": 0.49906375541752884,
+            "geodesic_deviation_analog": 0.526866215017498
+          },
+          "phase_correlation_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                0.8766005850558563,
+                0.8952384469657868
+              ],
+              [
+                0.8766005850558563,
+                1.0,
+                0.8766181051803483
+              ],
+              [
+                0.8952384469657868,
+                0.8766181051803483,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                0.8766005850558563,
+                0.8952384469657868
+              ],
+              [
+                0.8766005850558563,
+                1.0,
+                0.8766181051803483
+              ],
+              [
+                0.8952384469657868,
+                0.8766181051803483,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": 0.49996276079851437,
+            "geodesic_deviation_analog": 0.5052643601458106
+          },
+          "transport_delay_distance": {
+            "raw_matrix": [
+              [
+                0.0,
+                0.6561621263922476,
+                0.9842431895883714
+              ],
+              [
+                0.9842431895883714,
+                0.0,
+                0.6561621263922476
+              ],
+              [
+                0.6561621263922476,
+                0.9842431895883714,
+                0.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                0.0,
+                0.8202026579903094,
+                0.8202026579903094
+              ],
+              [
+                0.8202026579903094,
+                0.0,
+                0.8202026579903094
+              ],
+              [
+                0.8202026579903094,
+                0.8202026579903094,
+                0.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.32808106319612385,
+            "max_absolute_asymmetry": 0.32808106319612385,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": 0.20000000000000004,
+            "loop_inconsistency_index": 0.5,
+            "geodesic_deviation_analog": 0.5
+          }
+        },
+        "constraint_max": 2.0228247686178265e-15,
+        "sector_leakage": 5.5236216373583976e-15
+      },
+      "refined": {
+        "case_id": "symmetric_wide_triad",
+        "n_side": 24,
+        "times": [
+          0.0,
+          0.6545226266667814,
+          0.9817839400001721
+        ],
+        "distance_payloads": {
+          "persistence_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                4.010075265658056,
+                4.537763519077469
+              ],
+              [
+                4.010075265658056,
+                1.0,
+                4.009623795018311
+              ],
+              [
+                4.537763519077469,
+                4.009623795018311,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                4.010075265658056,
+                4.537763519077469
+              ],
+              [
+                4.010075265658056,
+                1.0,
+                4.009623795018311
+              ],
+              [
+                4.537763519077469,
+                4.009623795018311,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": 3.394066275270955,
+            "ball_growth_radii": [
+              4.009623795018311,
+              4.010075265658056,
+              4.537763519077469
+            ],
+            "ball_growth_volumes": [
+              1.6666666666666667,
+              2.3333333333333335,
+              3.0
+            ],
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": 0.4986448031629065,
+            "geodesic_deviation_analog": 0.5309195814293343
+          },
+          "phase_correlation_distance": {
+            "raw_matrix": [
+              [
+                1.0,
+                0.8877038866647786,
+                0.91148325700087
+              ],
+              [
+                0.8877038866647786,
+                1.0,
+                0.8877053713766281
+              ],
+              [
+                0.91148325700087,
+                0.8877053713766281,
+                1.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                1.0,
+                0.8877038866647786,
+                0.91148325700087
+              ],
+              [
+                0.8877038866647786,
+                1.0,
+                0.8877053713766281
+              ],
+              [
+                0.91148325700087,
+                0.8877053713766281,
+                1.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.0,
+            "max_absolute_asymmetry": 0.0,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": null,
+            "loop_inconsistency_index": 0.4999409965599743,
+            "geodesic_deviation_analog": 0.5066087720522628
+          },
+          "transport_delay_distance": {
+            "raw_matrix": [
+              [
+                0.0,
+                0.6545226266667814,
+                0.9817839400001721
+              ],
+              [
+                0.9817839400001721,
+                0.0,
+                0.6545226266667814
+              ],
+              [
+                0.6545226266667814,
+                0.9817839400001721,
+                0.0
+              ]
+            ],
+            "sym_matrix": [
+              [
+                0.0,
+                0.8181532833334768,
+                0.8181532833334768
+              ],
+              [
+                0.8181532833334768,
+                0.0,
+                0.8181532833334768
+              ],
+              [
+                0.8181532833334768,
+                0.8181532833334768,
+                0.0
+              ]
+            ],
+            "mean_absolute_asymmetry": 0.3272613133333907,
+            "max_absolute_asymmetry": 0.3272613133333907,
+            "triangle_violation_rate": 0.0,
+            "mean_violation_magnitude": 0.0,
+            "max_violation_magnitude": 0.0,
+            "effective_dimension": null,
+            "ball_growth_radii": null,
+            "ball_growth_volumes": null,
+            "shell_distortion_metric": 0.19999999999999998,
+            "loop_inconsistency_index": 0.5,
+            "geodesic_deviation_analog": 0.5
+          }
+        },
+        "constraint_max": 7.059870024660381e-15,
+        "sector_leakage": 1.2106642717665814e-14
+      }
+    }
+  },
+  "summary_rows": [
+    {
+      "case_id": "asymmetric_density_cluster",
+      "distance_id": "persistence_distance",
+      "ordering_flip_fraction": 0.3333333333333333,
+      "pair_rank_correlation": 0.5,
+      "mean_absolute_asymmetry": 0.0,
+      "max_absolute_asymmetry": 0.0,
+      "triangle_violation_rate": 0.0,
+      "mean_violation_magnitude": 0.0,
+      "effective_dimension_base": 0.7848006818177199,
+      "effective_dimension_refined": 0.8017447547222726,
+      "dimension_drift": 0.016944072904552687,
+      "shell_distortion_metric": null,
+      "ordering_breakdown_frequency": null,
+      "loop_inconsistency_index": 0.4705773391024896,
+      "geodesic_deviation_analog": 0.6308605844562094,
+      "relational_ordering_label": "weak ordering with high metric violation",
+      "effective_dimension": 0.8017447547222726
+    },
+    {
+      "case_id": "asymmetric_density_cluster",
+      "distance_id": "phase_correlation_distance",
+      "ordering_flip_fraction": 0.3333333333333333,
+      "pair_rank_correlation": 0.5,
+      "mean_absolute_asymmetry": 0.0,
+      "max_absolute_asymmetry": 0.0,
+      "triangle_violation_rate": 0.3333333333333333,
+      "mean_violation_magnitude": 0.07491124682747725,
+      "effective_dimension_base": null,
+      "effective_dimension_refined": null,
+      "dimension_drift": null,
+      "shell_distortion_metric": null,
+      "ordering_breakdown_frequency": null,
+      "loop_inconsistency_index": 0.5727104352206379,
+      "geodesic_deviation_analog": 0.7296324811910021,
+      "relational_ordering_label": "weak ordering with high metric violation",
+      "effective_dimension": null
+    },
+    {
+      "case_id": "asymmetric_density_cluster",
+      "distance_id": "transport_delay_distance",
+      "ordering_flip_fraction": 0.6666666666666666,
+      "pair_rank_correlation": 1.0,
+      "mean_absolute_asymmetry": 0.3272613133333907,
+      "max_absolute_asymmetry": 0.32808106319612385,
+      "triangle_violation_rate": 0.0,
+      "mean_violation_magnitude": 0.0,
+      "effective_dimension_base": null,
+      "effective_dimension_refined": null,
+      "dimension_drift": null,
+      "shell_distortion_metric": 0.06666666666666667,
+      "ordering_breakdown_frequency": 0.3333333333333333,
+      "loop_inconsistency_index": 0.5,
+      "geodesic_deviation_analog": 0.5454545454545455,
+      "relational_ordering_label": "no coherent relational ordering",
+      "effective_dimension": null
+    },
+    {
+      "case_id": "counter_propagating_corridor",
+      "distance_id": "persistence_distance",
+      "ordering_flip_fraction": 0.0,
+      "pair_rank_correlation": 1.0,
+      "mean_absolute_asymmetry": 0.0,
+      "max_absolute_asymmetry": 0.0,
+      "triangle_violation_rate": null,
+      "mean_violation_magnitude": null,
+      "effective_dimension_base": null,
+      "effective_dimension_refined": null,
+      "dimension_drift": null,
+      "shell_distortion_metric": null,
+      "ordering_breakdown_frequency": null,
+      "loop_inconsistency_index": null,
+      "geodesic_deviation_analog": null,
+      "relational_ordering_label": "scale-stable metric-like ordering",
+      "effective_dimension": null
+    },
+    {
+      "case_id": "counter_propagating_corridor",
+      "distance_id": "phase_correlation_distance",
+      "ordering_flip_fraction": 0.0,
+      "pair_rank_correlation": 1.0,
+      "mean_absolute_asymmetry": 0.0,
+      "max_absolute_asymmetry": 0.0,
+      "triangle_violation_rate": null,
+      "mean_violation_magnitude": null,
+      "effective_dimension_base": null,
+      "effective_dimension_refined": null,
+      "dimension_drift": null,
+      "shell_distortion_metric": null,
+      "ordering_breakdown_frequency": null,
+      "loop_inconsistency_index": null,
+      "geodesic_deviation_analog": null,
+      "relational_ordering_label": "scale-stable metric-like ordering",
+      "effective_dimension": null
+    },
+    {
+      "case_id": "counter_propagating_corridor",
+      "distance_id": "transport_delay_distance",
+      "ordering_flip_fraction": 0.0,
+      "pair_rank_correlation": 1.0,
+      "mean_absolute_asymmetry": 0.0,
+      "max_absolute_asymmetry": 0.0,
+      "triangle_violation_rate": null,
+      "mean_violation_magnitude": null,
+      "effective_dimension_base": null,
+      "effective_dimension_refined": null,
+      "dimension_drift": null,
+      "shell_distortion_metric": 0.0,
+      "ordering_breakdown_frequency": 0.0,
+      "loop_inconsistency_index": null,
+      "geodesic_deviation_analog": null,
+      "relational_ordering_label": "scale-stable metric-like ordering",
+      "effective_dimension": null
+    },
+    {
+      "case_id": "symmetric_wide_triad",
+      "distance_id": "persistence_distance",
+      "ordering_flip_fraction": 0.3333333333333333,
+      "pair_rank_correlation": 0.5,
+      "mean_absolute_asymmetry": 0.0,
+      "max_absolute_asymmetry": 0.0,
+      "triangle_violation_rate": 0.0,
+      "mean_violation_magnitude": 0.0,
+      "effective_dimension_base": 4.131489094604651,
+      "effective_dimension_refined": 3.394066275270955,
+      "dimension_drift": 0.7374228193336965,
+      "shell_distortion_metric": null,
+      "ordering_breakdown_frequency": null,
+      "loop_inconsistency_index": 0.49906375541752884,
+      "geodesic_deviation_analog": 0.5309195814293343,
+      "relational_ordering_label": "weak ordering with high metric violation",
+      "effective_dimension": 3.394066275270955
+    },
+    {
+      "case_id": "symmetric_wide_triad",
+      "distance_id": "phase_correlation_distance",
+      "ordering_flip_fraction": 0.0,
+      "pair_rank_correlation": 1.0,
+      "mean_absolute_asymmetry": 0.0,
+      "max_absolute_asymmetry": 0.0,
+      "triangle_violation_rate": 0.0,
+      "mean_violation_magnitude": 0.0,
+      "effective_dimension_base": null,
+      "effective_dimension_refined": null,
+      "dimension_drift": null,
+      "shell_distortion_metric": null,
+      "ordering_breakdown_frequency": null,
+      "loop_inconsistency_index": 0.49996276079851437,
+      "geodesic_deviation_analog": 0.5066087720522628,
+      "relational_ordering_label": "scale-stable metric-like ordering",
+      "effective_dimension": null
+    },
+    {
+      "case_id": "symmetric_wide_triad",
+      "distance_id": "transport_delay_distance",
+      "ordering_flip_fraction": 0.0,
+      "pair_rank_correlation": 1.0,
+      "mean_absolute_asymmetry": 0.32808106319612385,
+      "max_absolute_asymmetry": 0.32808106319612385,
+      "triangle_violation_rate": 0.0,
+      "mean_violation_magnitude": 0.0,
+      "effective_dimension_base": null,
+      "effective_dimension_refined": null,
+      "dimension_drift": null,
+      "shell_distortion_metric": 0.20000000000000004,
+      "ordering_breakdown_frequency": 0.0,
+      "loop_inconsistency_index": 0.5,
+      "geodesic_deviation_analog": 0.5,
+      "relational_ordering_label": "no coherent relational ordering",
+      "effective_dimension": null
+    }
+  ],
+  "relational_ordering_counts": {
+    "weak ordering with high metric violation": 3,
+    "no coherent relational ordering": 2,
+    "scale-stable metric-like ordering": 4
+  },
+  "conclusion": "Stage 15 tests whether frozen collective interaction data induce stable metric-like relational ordering under refinement."
+}
