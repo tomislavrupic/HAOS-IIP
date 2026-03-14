@@ -1,0 +1,139 @@
+{
+  "description": "Stage 11 collective wave interaction pilot built from the strongest coherent Atlas-0 transverse seed.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent periodic transverse seed from Atlas-0"
+  },
+  "shared_rules": {
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "packet_family": "coherent transverse gaussian carrier family",
+    "packet_bandwidth": 0.1,
+    "central_k": 1.0,
+    "phase_pattern": "cosine-carrier",
+    "base_amplitude": 0.5,
+    "axes_varied": [
+      "packet_count",
+      "initial_separation",
+      "relative_phase_offset",
+      "amplitude_symmetry"
+    ],
+    "axes_frozen": [
+      "kernel definition",
+      "weighting rules",
+      "cochain operators",
+      "boundary type",
+      "carrier family"
+    ]
+  },
+  "additional_observables": [
+    "pairwise_centroid_distance_over_time",
+    "phase_lock_indicator",
+    "overlap_integral",
+    "composite_lifetime",
+    "exchange_or_merger_flag"
+  ],
+  "classification_labels": [
+    "dispersive independent regime",
+    "transient binding regime",
+    "metastable composite regime",
+    "oscillatory exchange regime",
+    "large-scale drift field regime"
+  ],
+  "runs": [
+    {
+      "run_id": "S11_collective_symmetric_in_phase_pair",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.35, 0.5, 0.5],
+        [0.65, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "interaction_regime": "weak_overlap",
+      "selection_note": "clean symmetric baseline interaction case",
+      "questions": [
+        "do packets pass through cleanly",
+        "do they weakly bind",
+        "do they reinforce into a composite envelope"
+      ]
+    },
+    {
+      "run_id": "S11_collective_symmetric_out_of_phase_pair",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.35, 0.5, 0.5],
+        [0.65, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 3.141592653589793],
+      "interaction_regime": "weak_overlap",
+      "selection_note": "first interference-structure case",
+      "questions": [
+        "does destructive interference create persistent separation",
+        "does repulsion-like drift appear",
+        "does nodal trapping persist"
+      ]
+    },
+    {
+      "run_id": "S11_collective_asymmetric_amplitude_pair",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.35, 0.5, 0.5],
+        [0.65, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.25],
+      "phase_offsets_rad": [0.0, 0.0],
+      "interaction_regime": "weak_overlap",
+      "selection_note": "tests whether symmetry breaking skews transport",
+      "questions": [
+        "does the stronger packet dominate transport",
+        "does it drag the weaker one",
+        "does a skewed composite form"
+      ]
+    },
+    {
+      "run_id": "S11_collective_near_overlap_clustered_pair",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.43, 0.5, 0.5],
+        [0.57, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "interaction_regime": "sustained_overlap",
+      "selection_note": "strongest local interaction stress test",
+      "questions": [
+        "does immediate merger occur",
+        "does oscillatory exchange appear",
+        "does the pair form a transient composite",
+        "does fast fragmentation appear"
+      ]
+    },
+    {
+      "run_id": "S11_collective_three_packet_chain",
+      "packet_count": 3,
+      "packet_centers": [
+        [0.2, 0.5, 0.5],
+        [0.5, 0.5, 0.5],
+        [0.8, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 1.5707963267948966, 0.0],
+      "interaction_regime": "chain_like_propagation",
+      "selection_note": "first nontrivial collective pattern without exploding complexity",
+      "questions": [
+        "does synchronization emerge",
+        "does a standing corridor form",
+        "does relay transfer appear",
+        "does collective drift appear"
+      ]
+    }
+  ]
+}
