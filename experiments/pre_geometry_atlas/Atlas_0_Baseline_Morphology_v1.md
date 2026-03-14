@@ -1,17 +1,13 @@
 # Atlas-0 Baseline Morphology v1
 
-Atlas-0 is the baseline morphology pass for Stage 10.
+Timestamped summary: `data/20260314_142258_stage10_atlas0_baseline_morphology.json`
 
-Purpose:
-- fix the experimental grammar for pre-geometry classification
-- keep observables consistent across runs
-- classify packet behavior before interpretation
+Timestamped run table: `data/20260314_142258_stage10_atlas0_baseline_morphology.csv`
 
-Current scaffold:
-- explicit run sheet in `numerics/simulations/stage10_atlas0_runs.json`
-- shared metrics and export helpers in `numerics/simulations/stage10_common.py`
-- regime labeling in `numerics/simulations/stage10_regime_labels.py`
-- Atlas-0 driver in `numerics/simulations/stage10_atlas0.py`
+Executed runs: A0_scalar_periodic_medium_lowk_amp10, A0_scalar_open_wide_highk_amp05, A0_transverse_periodic_medium_lowk_amp10, A0_transverse_open_narrow_midk_amp05
 
-Interpretation boundary:
-Atlas-0 is a morphology and constraint-classification framework only. It does not assert continuum physics or particle content.
+Regime counts: {'Ballistic dispersive': 2, 'Diffusive': 1, 'Ballistic coherent': 1}
+
+Sector counts: {'Scalar-dominant': 2, 'Transverse-dominant': 2}
+
+Interpretation boundary: Atlas-0 classifies packet morphology and constraint behavior only. It does not assert continuum physics or particle content.

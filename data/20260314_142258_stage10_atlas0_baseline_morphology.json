@@ -1,0 +1,876 @@
+{
+  "experiment": "stage10_atlas0_baseline_morphology",
+  "config": {
+    "n_side": 16,
+    "epsilon": 0.2,
+    "t_final": 0.9,
+    "dt_safety": 0.28,
+    "selected_run_ids": [
+      "A0_scalar_periodic_medium_lowk_amp10",
+      "A0_scalar_open_wide_highk_amp05",
+      "A0_transverse_periodic_medium_lowk_amp10",
+      "A0_transverse_open_narrow_midk_amp05"
+    ]
+  },
+  "executed_runs": [
+    {
+      "run": {
+        "run_id": "A0_scalar_periodic_medium_lowk_amp10",
+        "atlas_phase": "Atlas-0",
+        "graph_type": "regular-lattice",
+        "kernel_type": "default-gaussian",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "initial_seed_type": "single-gaussian-packet",
+        "central_k": 0.0,
+        "bandwidth": 0.08,
+        "amplitude": 1.0,
+        "phase_pattern": "flat",
+        "packet_count": 1,
+        "random_seed": 10,
+        "notes": "Atlas-0 baseline morphology"
+      },
+      "metrics": {
+        "times": [
+          0.0,
+          0.16375984438766159,
+          0.32751968877532317,
+          0.4912795331629848,
+          0.6550393775506463,
+          0.8187992219383079,
+          0.9825590663259696
+        ],
+        "centers": [
+          [
+            0.25,
+            0.5,
+            0.5
+          ],
+          [
+            0.2683526493937083,
+            0.5,
+            0.5
+          ],
+          [
+            0.2850855416257727,
+            0.5,
+            0.5
+          ],
+          [
+            0.29909878327723893,
+            0.5,
+            0.5
+          ],
+          [
+            0.30998842547063976,
+            0.5,
+            0.5
+          ],
+          [
+            0.3178991378193312,
+            0.5,
+            0.5
+          ],
+          [
+            0.3232822093190544,
+            0.5,
+            0.5
+          ]
+        ],
+        "widths": [
+          0.09797928897365939,
+          0.09780655075774303,
+          0.09770356063357045,
+          0.09865168054237716,
+          0.10157995449248378,
+          0.10683610415970642,
+          0.11411185566327758
+        ],
+        "norms": [
+          1.0000000000000002,
+          1.002231647415898,
+          1.0085328606755755,
+          1.0178220481823985,
+          1.028591028249471,
+          1.0392375361201402,
+          1.048372482796021
+        ],
+        "energies": [
+          0.9204248395767043,
+          0.9204713764308827,
+          0.9205992546451156,
+          0.9207766606163104,
+          0.9209607616400228,
+          0.9211095659228417,
+          0.9211929114309243
+        ],
+        "anisotropies": [
+          1.0000000000000033,
+          1.0540643493676964,
+          1.2066172339758314,
+          1.4003214236448207,
+          1.5017971211550545,
+          1.4224947839441686,
+          1.2376119782979917
+        ],
+        "spectral_centroids": [
+          0.8408496791534082,
+          0.8440193504045812,
+          0.852537099426507,
+          0.8638305653220519,
+          0.8747093697267408,
+          0.8823792729258066,
+          0.8851148049392509
+        ],
+        "spectral_spreads": [
+          0.6379754190830567,
+          0.6407318823959284,
+          0.6477684286318769,
+          0.6561064554605154,
+          0.6625420711974602,
+          0.6648631586182882,
+          0.6623069435197563
+        ],
+        "sector_leakages": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "constraint_norms": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coherences": [
+          0.030332088062647183,
+          0.030498603635493716,
+          0.030716265027430516,
+          0.030357159094224713,
+          0.02890260814961657,
+          0.026266630890686683,
+          0.022806654155067274
+        ],
+        "summary": {
+          "center_shift": 0.07328220931905438,
+          "path_length": 0.07328220931905438,
+          "path_efficiency": 1.0,
+          "initial_width": 0.09797928897365939,
+          "final_width": 0.11411185566327758,
+          "width_change": 0.016132566689618197,
+          "width_ratio": 1.1646528246796652,
+          "relative_norm_change": 0.048372482796020785,
+          "relative_energy_drift": 0.0008344753652815793,
+          "max_anisotropy": 1.5017971211550545,
+          "max_constraint_norm": 0.0,
+          "max_sector_leakage": 0.0,
+          "coherence_initial": 0.030332088062647183,
+          "coherence_final": 0.022806654155067274,
+          "coherence_ratio": 0.7518985870001085,
+          "spectral_centroid_initial": 0.8408496791534082,
+          "spectral_centroid_final": 0.8851148049392509,
+          "spectral_spread_initial": 0.6379754190830567,
+          "spectral_spread_final": 0.6623069435197563
+        }
+      },
+      "summary": {
+        "run_id": "A0_scalar_periodic_medium_lowk_amp10",
+        "atlas_phase": "Atlas-0",
+        "graph_type": "regular-lattice",
+        "kernel_type": "default-gaussian",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "initial_seed_type": "single-gaussian-packet",
+        "central_k": 0.0,
+        "bandwidth": 0.08,
+        "amplitude": 1.0,
+        "phase_pattern": "flat",
+        "packet_count": 1,
+        "random_seed": 10,
+        "constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "norm_drift": 0.048372482796020785,
+        "anisotropy_score": 1.5017971211550545,
+        "coherence_score": 0.7518985870001085,
+        "proto_spacetime_score": 4,
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "notes": "Atlas-0 baseline morphology",
+        "center_shift": 0.07328220931905438,
+        "width_ratio": 1.1646528246796652,
+        "spectral_centroid_final": 0.8851148049392509,
+        "spectral_spread_final": 0.6623069435197563
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "integration": {
+        "dt": 0.16375984438766159,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A0_scalar_open_wide_highk_amp05",
+        "atlas_phase": "Atlas-0",
+        "graph_type": "regular-lattice",
+        "kernel_type": "default-gaussian",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "initial_seed_type": "single-gaussian-packet",
+        "central_k": 2.0,
+        "bandwidth": 0.1,
+        "amplitude": 0.5,
+        "phase_pattern": "cosine-carrier",
+        "packet_count": 1,
+        "random_seed": 10,
+        "notes": "Atlas-0 baseline morphology"
+      },
+      "metrics": {
+        "times": [
+          0.0,
+          0.16401956913010315,
+          0.3280391382602063,
+          0.49205870739030944,
+          0.6560782765204126,
+          0.8200978456505158,
+          0.9841174147806189
+        ],
+        "centers": [
+          [
+            0.2500057713207413,
+            0.49999999999999756,
+            0.49999999999999795
+          ],
+          [
+            0.2655540391041462,
+            0.49999999999999994,
+            0.49999999999999983
+          ],
+          [
+            0.27914455434632507,
+            0.4999999999999993,
+            0.49999999999999917
+          ],
+          [
+            0.2892820201870751,
+            0.49999999999999944,
+            0.499999999999999
+          ],
+          [
+            0.2951170372196843,
+            0.4999999999999984,
+            0.49999999999999817
+          ],
+          [
+            0.2963188139378427,
+            0.49999999999999895,
+            0.4999999999999988
+          ],
+          [
+            0.29281498168572523,
+            0.4999999999999998,
+            0.49999999999999933
+          ]
+        ],
+        "widths": [
+          0.11090431064782366,
+          0.11195970354772078,
+          0.1153722980850828,
+          0.12167907259565118,
+          0.13118147232689167,
+          0.14370022836014562,
+          0.15866040138229448
+        ],
+        "norms": [
+          0.5,
+          0.4993551777135892,
+          0.4970087626757051,
+          0.4919972656280746,
+          0.4832089976822033,
+          0.46991040300354675,
+          0.45224256820596487
+        ],
+        "energies": [
+          0.2635678141487963,
+          0.2636201343900537,
+          0.26375975884630143,
+          0.2639351508347273,
+          0.2640799579322807,
+          0.2641367203112105,
+          0.2640773002864677
+        ],
+        "anisotropies": [
+          2.1741343586330166,
+          2.079380246853208,
+          1.799397193637786,
+          1.4073603513870552,
+          1.04039378067437,
+          1.3010928085894609,
+          1.7043778611378875
+        ],
+        "spectral_centroids": [
+          1.108542513190371,
+          1.126594973580164,
+          1.1731882126550777,
+          1.2368753425735026,
+          1.3030493907266123,
+          1.3578453935802342,
+          1.3905077096773029
+        ],
+        "spectral_spreads": [
+          0.7555963512994477,
+          0.7730602965177453,
+          0.822327578696574,
+          0.883305859977637,
+          0.9388127143278865,
+          0.9798267144058014,
+          1.0036186948774664
+        ],
+        "sector_leakages": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "constraint_norms": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coherences": [
+          0.03141397279328941,
+          0.03202575754657557,
+          0.031086437704812984,
+          0.028185868623600372,
+          0.02392519118307603,
+          0.01945795762576352,
+          0.015747984349611017
+        ],
+        "summary": {
+          "center_shift": 0.04280921036498392,
+          "path_length": 0.049816874869218875,
+          "path_efficiency": 0.8593315112071614,
+          "initial_width": 0.11090431064782366,
+          "final_width": 0.15866040138229448,
+          "width_change": 0.04775609073447082,
+          "width_ratio": 1.4306062627819776,
+          "relative_norm_change": -0.09551486358807026,
+          "relative_energy_drift": 0.0019330362446446099,
+          "max_anisotropy": 2.1741343586330166,
+          "max_constraint_norm": 0.0,
+          "max_sector_leakage": 0.0,
+          "coherence_initial": 0.03141397279328941,
+          "coherence_final": 0.015747984349611017,
+          "coherence_ratio": 0.5013050865370033,
+          "spectral_centroid_initial": 1.108542513190371,
+          "spectral_centroid_final": 1.3905077096773029,
+          "spectral_spread_initial": 0.7555963512994477,
+          "spectral_spread_final": 1.0036186948774664
+        }
+      },
+      "summary": {
+        "run_id": "A0_scalar_open_wide_highk_amp05",
+        "atlas_phase": "Atlas-0",
+        "graph_type": "regular-lattice",
+        "kernel_type": "default-gaussian",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "initial_seed_type": "single-gaussian-packet",
+        "central_k": 2.0,
+        "bandwidth": 0.1,
+        "amplitude": 0.5,
+        "phase_pattern": "cosine-carrier",
+        "packet_count": 1,
+        "random_seed": 10,
+        "constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "norm_drift": -0.09551486358807026,
+        "anisotropy_score": 2.1741343586330166,
+        "coherence_score": 0.5013050865370033,
+        "proto_spacetime_score": 3,
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "notes": "Atlas-0 baseline morphology",
+        "center_shift": 0.04280921036498392,
+        "width_ratio": 1.4306062627819776,
+        "spectral_centroid_final": 1.3905077096773029,
+        "spectral_spread_final": 1.0036186948774664
+      },
+      "labels": {
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "integration": {
+        "dt": 0.16401956913010315,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A0_transverse_periodic_medium_lowk_amp10",
+        "atlas_phase": "Atlas-0",
+        "graph_type": "regular-lattice",
+        "kernel_type": "default-gaussian",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "initial_seed_type": "single-gaussian-packet",
+        "central_k": 0.0,
+        "bandwidth": 0.08,
+        "amplitude": 1.0,
+        "phase_pattern": "flat",
+        "packet_count": 1,
+        "random_seed": 10,
+        "notes": "Atlas-0 baseline morphology"
+      },
+      "metrics": {
+        "times": [
+          0.0,
+          0.16364707526878866,
+          0.3272941505375773,
+          0.490941225806366,
+          0.6545883010751546,
+          0.8182353763439433,
+          0.981882451612732
+        ],
+        "centers": [
+          [
+            0.25,
+            0.5,
+            0.5
+          ],
+          [
+            0.26659048527220763,
+            0.5,
+            0.5
+          ],
+          [
+            0.2817572064847045,
+            0.5,
+            0.5
+          ],
+          [
+            0.29451093193290623,
+            0.5,
+            0.5
+          ],
+          [
+            0.3044621440096176,
+            0.5,
+            0.5
+          ],
+          [
+            0.3117184232409813,
+            0.5,
+            0.5
+          ],
+          [
+            0.31668655456575845,
+            0.5,
+            0.5
+          ]
+        ],
+        "widths": [
+          0.17380796247400992,
+          0.1734758183077915,
+          0.17294025570440208,
+          0.172709838136613,
+          0.17333105594200748,
+          0.1751582058554122,
+          0.17820975766171918
+        ],
+        "norms": [
+          1.0,
+          1.0019685305839752,
+          1.0075343192239883,
+          1.0157611182435347,
+          1.0253359556408224,
+          1.0348526534102898,
+          1.0430792167044478
+        ],
+        "energies": [
+          0.9302375058688116,
+          0.9302773303302253,
+          0.9303869804160774,
+          0.9305397481059567,
+          0.9306994621360564,
+          0.9308302727527559,
+          0.9309058496854496
+        ],
+        "anisotropies": [
+          1.344167940776677,
+          1.365743085709558,
+          1.4248233579276097,
+          1.4940718614636932,
+          1.5413134084374638,
+          1.5425725345778352,
+          1.4998765362485538
+        ],
+        "spectral_centroids": [
+          0.860475011737623,
+          0.8631122239753457,
+          0.8702130409700349,
+          0.8796582882810905,
+          0.8887826236078228,
+          0.8952012817563882,
+          0.8973886432597926
+        ],
+        "spectral_spreads": [
+          0.632158242256937,
+          0.6343920707139107,
+          0.6401332380539623,
+          0.6470282589259179,
+          0.6524761229694642,
+          0.6546044914488478,
+          0.6526968175544147
+        ],
+        "sector_leakages": [
+          1.476619277957608e-16,
+          7.505057293301752e-17,
+          1.0170320478933493e-16,
+          5.1001990898169585e-17,
+          7.839999024123661e-17,
+          5.102700112617454e-17,
+          5.397347555154021e-17
+        ],
+        "constraint_norms": [
+          1.2660411959225042e-16,
+          1.1832135259850286e-16,
+          1.6748383086377357e-16,
+          1.1284549270278904e-16,
+          2.4002388672810645e-16,
+          1.1050847786056107e-16,
+          1.5835047727873094e-16
+        ],
+        "coherences": [
+          0.014806290282838688,
+          0.0149073272010414,
+          0.015097479733596725,
+          0.01511070128906162,
+          0.014691105888169303,
+          0.013733962953518067,
+          0.012328405827156873
+        ],
+        "summary": {
+          "center_shift": 0.06668655456575845,
+          "path_length": 0.06668655456575845,
+          "path_efficiency": 1.0,
+          "initial_width": 0.17380796247400992,
+          "final_width": 0.17820975766171918,
+          "width_change": 0.004401795187709251,
+          "width_ratio": 1.0253256244711313,
+          "relative_norm_change": 0.04307921670444781,
+          "relative_energy_drift": 0.0007184657815036594,
+          "max_anisotropy": 1.5425725345778352,
+          "max_constraint_norm": 2.4002388672810645e-16,
+          "max_sector_leakage": 1.476619277957608e-16,
+          "coherence_initial": 0.014806290282838688,
+          "coherence_final": 0.012328405827156873,
+          "coherence_ratio": 0.8326465030505433,
+          "spectral_centroid_initial": 0.860475011737623,
+          "spectral_centroid_final": 0.8973886432597926,
+          "spectral_spread_initial": 0.632158242256937,
+          "spectral_spread_final": 0.6526968175544147
+        }
+      },
+      "summary": {
+        "run_id": "A0_transverse_periodic_medium_lowk_amp10",
+        "atlas_phase": "Atlas-0",
+        "graph_type": "regular-lattice",
+        "kernel_type": "default-gaussian",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "initial_seed_type": "single-gaussian-packet",
+        "central_k": 0.0,
+        "bandwidth": 0.08,
+        "amplitude": 1.0,
+        "phase_pattern": "flat",
+        "packet_count": 1,
+        "random_seed": 10,
+        "constraint_max": 2.4002388672810645e-16,
+        "sector_leakage": 1.476619277957608e-16,
+        "norm_drift": 0.04307921670444781,
+        "anisotropy_score": 1.5425725345778352,
+        "coherence_score": 0.8326465030505433,
+        "proto_spacetime_score": 4,
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "notes": "Atlas-0 baseline morphology",
+        "center_shift": 0.06668655456575845,
+        "width_ratio": 1.0253256244711313,
+        "spectral_centroid_final": 0.8973886432597926,
+        "spectral_spread_final": 0.6526968175544147
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "integration": {
+        "dt": 0.16364707526878866,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A0_transverse_open_narrow_midk_amp05",
+        "atlas_phase": "Atlas-0",
+        "graph_type": "regular-lattice",
+        "kernel_type": "default-gaussian",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "initial_seed_type": "single-gaussian-packet",
+        "central_k": 1.0,
+        "bandwidth": 0.06,
+        "amplitude": 0.5,
+        "phase_pattern": "cosine-carrier",
+        "packet_count": 1,
+        "random_seed": 10,
+        "notes": "Atlas-0 baseline morphology"
+      },
+      "metrics": {
+        "times": [
+          0.0,
+          0.16447885807953877,
+          0.32895771615907754,
+          0.4934365742386163,
+          0.6579154323181551,
+          0.8223942903976939,
+          0.9868731484772326
+        ],
+        "centers": [
+          [
+            0.25283058439138595,
+            0.5000000000000037,
+            0.4999999999999984
+          ],
+          [
+            0.2644648066531082,
+            0.4999999999999981,
+            0.49999999999999833
+          ],
+          [
+            0.275714539746578,
+            0.5000000000000033,
+            0.5000000000000004
+          ],
+          [
+            0.28635872712916866,
+            0.4999999999999986,
+            0.49999999999999944
+          ],
+          [
+            0.29596533174332174,
+            0.49999999999999833,
+            0.5000000000000017
+          ],
+          [
+            0.3038407960435232,
+            0.4999999999999963,
+            0.49999999999999833
+          ],
+          [
+            0.30927349026879736,
+            0.5000000000000003,
+            0.49999999999999895
+          ]
+        ],
+        "widths": [
+          0.13141484427488315,
+          0.13146760942241215,
+          0.13291939073274459,
+          0.1359106485382661,
+          0.1403758020021806,
+          0.14585892914891924,
+          0.15145588165636262
+        ],
+        "norms": [
+          0.5000000000000001,
+          0.4964369116756924,
+          0.48463385520899865,
+          0.46675299310652674,
+          0.4462565664322929,
+          0.42724662220292303,
+          0.41342443814558477
+        ],
+        "energies": [
+          0.3344466554809348,
+          0.33439762896494907,
+          0.3341764774789313,
+          0.3338584669881387,
+          0.3335533491413829,
+          0.33336122160178905,
+          0.33333399423583004
+        ],
+        "anisotropies": [
+          1.6190830993079812,
+          1.6613419473153,
+          1.7392378835304672,
+          1.8226322264244132,
+          1.870189073395744,
+          1.846329205546097,
+          1.7489792517349037
+        ],
+        "spectral_centroids": [
+          1.6755732438474775,
+          1.6718835589535002,
+          1.6502383520134485,
+          1.6179543477581173,
+          1.5901300704586225,
+          1.5870208778895716,
+          1.624217542299531
+        ],
+        "spectral_spreads": [
+          1.148185605750075,
+          1.1538166306141775,
+          1.152478139620943,
+          1.1482266628827138,
+          1.15086690034673,
+          1.1720188285406075,
+          1.2131314660645904
+        ],
+        "sector_leakages": [
+          1.320245651863874e-16,
+          1.0695003152470188e-16,
+          1.2186794314410742e-16,
+          1.366658395245082e-16,
+          3.8591372561276504e-17,
+          1.3838526559369561e-16,
+          1.1486596655537922e-16
+        ],
+        "constraint_norms": [
+          8.48013593264927e-17,
+          8.183616730927349e-17,
+          6.288347012189589e-17,
+          1.0318656366813549e-16,
+          5.3089485881760787e-17,
+          7.48722749089547e-17,
+          7.10365344784802e-17
+        ],
+        "coherences": [
+          0.0435677497382004,
+          0.047661842936735394,
+          0.04764283200269493,
+          0.04197808125727004,
+          0.033402202620539626,
+          0.027124772739038443,
+          0.025019849425403362
+        ],
+        "summary": {
+          "center_shift": 0.05644290587741141,
+          "path_length": 0.05644290587741141,
+          "path_efficiency": 1.0,
+          "initial_width": 0.13141484427488315,
+          "final_width": 0.15145588165636262,
+          "width_change": 0.02004103738147947,
+          "width_ratio": 1.1525020821815168,
+          "relative_norm_change": -0.17315112370883065,
+          "relative_energy_drift": -0.00332687209416019,
+          "max_anisotropy": 1.870189073395744,
+          "max_constraint_norm": 1.0318656366813549e-16,
+          "max_sector_leakage": 1.3838526559369561e-16,
+          "coherence_initial": 0.0435677497382004,
+          "coherence_final": 0.025019849425403362,
+          "coherence_ratio": 0.5742745396709311,
+          "spectral_centroid_initial": 1.6755732438474775,
+          "spectral_centroid_final": 1.624217542299531,
+          "spectral_spread_initial": 1.148185605750075,
+          "spectral_spread_final": 1.2131314660645904
+        }
+      },
+      "summary": {
+        "run_id": "A0_transverse_open_narrow_midk_amp05",
+        "atlas_phase": "Atlas-0",
+        "graph_type": "regular-lattice",
+        "kernel_type": "default-gaussian",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "initial_seed_type": "single-gaussian-packet",
+        "central_k": 1.0,
+        "bandwidth": 0.06,
+        "amplitude": 0.5,
+        "phase_pattern": "cosine-carrier",
+        "packet_count": 1,
+        "random_seed": 10,
+        "constraint_max": 1.0318656366813549e-16,
+        "sector_leakage": 1.3838526559369561e-16,
+        "norm_drift": -0.17315112370883065,
+        "anisotropy_score": 1.870189073395744,
+        "coherence_score": 0.5742745396709311,
+        "proto_spacetime_score": 3,
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "notes": "Atlas-0 baseline morphology",
+        "center_shift": 0.05644290587741141,
+        "width_ratio": 1.1525020821815168,
+        "spectral_centroid_final": 1.624217542299531,
+        "spectral_spread_final": 1.2131314660645904
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "integration": {
+        "dt": 0.16447885807953877,
+        "steps": 6
+      }
+    }
+  ],
+  "regime_counts": {
+    "Ballistic dispersive": 2,
+    "Diffusive": 1,
+    "Ballistic coherent": 1
+  },
+  "sector_counts": {
+    "Scalar-dominant": 2,
+    "Transverse-dominant": 2
+  },
+  "observation": "Atlas-0 executes cleanly on the frozen architecture and returns reproducible morphology labels, transport summaries, and constraint diagnostics for the selected scalar and projected transverse runs.",
+  "conclusion": "The Stage 10 scaffold is in place and the Atlas-0 baseline pass can now classify packet behavior before interpretation."
+}
