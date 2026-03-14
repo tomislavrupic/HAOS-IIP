@@ -1,0 +1,69 @@
+{
+  "representative_id": "tight_clustered_pair",
+  "condition_id": "weak_feedback",
+  "feedback_eps": 0.03,
+  "resolution": 12,
+  "sample_count": 5,
+  "mean_projection_survival_ratio": 0.9750268780098407,
+  "min_projection_survival_ratio": 0.9746683149353029,
+  "max_projection_survival_ratio": 0.9752867037493611,
+  "mean_projected_vs_base_force_ratio": 0.02185210775485208,
+  "max_projected_vs_base_force_ratio": 0.022605695406573766,
+  "samples": [
+    {
+      "index": 0,
+      "time": 0.0,
+      "raw_feedback_norm": 0.019715260833659702,
+      "projected_feedback_norm": 0.019228031752018853,
+      "projection_survival_ratio": 0.9752867037493611,
+      "projected_vs_base_force_ratio": 0.020899630228837094,
+      "raw_feedback_max": 0.005462920471812649,
+      "projected_feedback_max": 0.004985193804608697,
+      "base_force_norm": 0.9200177965583436
+    },
+    {
+      "index": 2,
+      "time": 0.3280810631961238,
+      "raw_feedback_norm": 0.01948019676552224,
+      "projected_feedback_norm": 0.018997397796607956,
+      "projection_survival_ratio": 0.975215909021577,
+      "projected_vs_base_force_ratio": 0.021516680385148538,
+      "raw_feedback_max": 0.00505809556050146,
+      "projected_feedback_max": 0.00459246739869,
+      "base_force_norm": 0.8829149039979481
+    },
+    {
+      "index": 3,
+      "time": 0.4921215947941857,
+      "raw_feedback_norm": 0.019001138064616736,
+      "projected_feedback_norm": 0.018524780454249167,
+      "projection_survival_ratio": 0.9749300484661692,
+      "projected_vs_base_force_ratio": 0.021987137398027632,
+      "raw_feedback_max": 0.004917081566158064,
+      "projected_feedback_max": 0.004487185885587157,
+      "base_force_norm": 0.8425280707942883
+    },
+    {
+      "index": 4,
+      "time": 0.6561621263922476,
+      "raw_feedback_norm": 0.018238671759643207,
+      "projected_feedback_norm": 0.01777665547062954,
+      "projection_survival_ratio": 0.9746683149353029,
+      "projected_vs_base_force_ratio": 0.02231148505490769,
+      "raw_feedback_max": 0.004743632808093799,
+      "projected_feedback_max": 0.004333532509518896,
+      "base_force_norm": 0.7967490925360589
+    },
+    {
+      "index": 6,
+      "time": 0.9842431895883714,
+      "raw_feedback_norm": 0.016842423434624453,
+      "projected_feedback_norm": 0.01642325201275114,
+      "projection_survival_ratio": 0.9751121669930477,
+      "projected_vs_base_force_ratio": 0.022605695406573766,
+      "raw_feedback_max": 0.0039252496202027256,
+      "projected_feedback_max": 0.0035714903799280075,
+      "base_force_norm": 0.7265094799063442
+    }
+  ]
+}
