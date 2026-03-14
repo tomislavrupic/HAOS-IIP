@@ -1,0 +1,2230 @@
+{
+  "experiment": "stage10_atlas2_transition_structure",
+  "baseline_artifact": "data/20260314_143113_stage10_atlas0_baseline_morphology.csv",
+  "config": {
+    "n_side": 16,
+    "epsilon": 0.2,
+    "t_final": 0.9,
+    "dt_safety": 0.28,
+    "selected_run_ids": [
+      "A2_A0_transverse_periodic_wide_midk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_transverse_periodic_wide_midk_amp05_defects_plus_kernel_jitter",
+      "A2_A0_transverse_open_wide_lowk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_transverse_open_wide_lowk_amp05_defects_plus_kernel_jitter",
+      "A2_A0_scalar_periodic_wide_lowk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_scalar_periodic_wide_lowk_amp05_defects_plus_kernel_jitter",
+      "A2_A0_scalar_periodic_medium_lowk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_scalar_periodic_medium_lowk_amp05_defects_plus_kernel_jitter",
+      "A2_A0_scalar_open_medium_midk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_scalar_open_medium_midk_amp05_defects_plus_kernel_jitter",
+      "A2_A0_transverse_open_wide_highk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_transverse_open_wide_highk_amp05_defects_plus_kernel_jitter",
+      "A2_A0_scalar_periodic_medium_highk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_scalar_periodic_medium_highk_amp05_defects_plus_kernel_jitter",
+      "A2_A0_transverse_open_narrow_highk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_transverse_open_narrow_highk_amp05_defects_plus_kernel_jitter",
+      "A2_A0_scalar_periodic_wide_highk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_scalar_periodic_wide_highk_amp05_defects_plus_kernel_jitter",
+      "A2_A0_scalar_open_narrow_highk_amp05_edge_noise_plus_anisotropic_bias",
+      "A2_A0_scalar_open_narrow_highk_amp05_defects_plus_kernel_jitter"
+    ]
+  },
+  "executed_runs": [
+    {
+      "run": {
+        "run_id": "A2_A0_transverse_periodic_wide_midk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_periodic_wide_midk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "coherence_score": 0.969380853838808,
+        "width_ratio": 0.9835875192395414
+      },
+      "summary": {
+        "run_id": "A2_A0_transverse_periodic_wide_midk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "transition_type": "stable",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "constraint_max": 1.0123522872797132e-16,
+        "constraint_max_perturbed": 0.006698642748786448,
+        "baseline_constraint_max": 8.036762689291721e-17,
+        "sector_leakage": 9.655122928587289e-17,
+        "baseline_sector_leakage": 9.205078871863103e-17,
+        "norm_drift": 0.09082799413016283,
+        "anisotropy_score": 1.6926274675119812,
+        "coherence_score": 0.9751227324156136,
+        "baseline_coherence_score": 0.969380853838808,
+        "coherence_delta": 0.005741878576805637,
+        "center_shift": 0.06764188023078478,
+        "width_ratio": 0.9841904140583849,
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_periodic_wide_midk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000221497441082,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9863162006427602,
+              "face_scale_max": 1.0137375348796314
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.0399452776800087,
+        "face_scale_min": 0.9872967223085081,
+        "face_scale_max": 1.0262444448459906
+      },
+      "integration": {
+        "dt": 0.16105883003892227,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_transverse_periodic_wide_midk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_periodic_wide_midk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "coherence_score": 0.969380853838808,
+        "width_ratio": 0.9835875192395414
+      },
+      "summary": {
+        "run_id": "A2_A0_transverse_periodic_wide_midk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_periodic_wide_midk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "transverse",
+        "boundary_type": "periodic",
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "transition_type": "stable",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "constraint_max": 1.0203913239998734e-16,
+        "constraint_max_perturbed": 0.05609425070551126,
+        "baseline_constraint_max": 8.036762689291721e-17,
+        "sector_leakage": 1.0101285849321374e-16,
+        "baseline_sector_leakage": 9.205078871863103e-17,
+        "norm_drift": 0.10656546741913117,
+        "anisotropy_score": 1.6972661714586896,
+        "coherence_score": 0.9721033877757375,
+        "baseline_coherence_score": 0.969380853838808,
+        "coherence_delta": 0.00272253393692945,
+        "center_shift": 0.06703978369485279,
+        "width_ratio": 0.975905300817015,
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_periodic_wide_midk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 369,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.4871708245126285,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997430486234051,
+              "edge_scale_max": 1.0002325272682895,
+              "face_scale_min": 0.9997721851312348,
+              "face_scale_max": 1.000219281254743
+            }
+          }
+        ],
+        "edge_scale_min": 0.31614654781466633,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.48715960786028856,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16507986331216631,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_transverse_open_wide_lowk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_wide_lowk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.9125263439158239,
+        "width_ratio": 0.9801566834088237
+      },
+      "summary": {
+        "run_id": "A2_A0_transverse_open_wide_lowk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "transition_type": "stable",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "constraint_max": 8.088637309440093e-17,
+        "constraint_max_perturbed": 0.0069440803192706195,
+        "baseline_constraint_max": 9.461137674160213e-17,
+        "sector_leakage": 1.6007710340863892e-16,
+        "baseline_sector_leakage": 2.1672933891806193e-16,
+        "norm_drift": 0.12132071997035163,
+        "anisotropy_score": 1.4393834328370927,
+        "coherence_score": 0.9180629968941213,
+        "baseline_coherence_score": 0.9125263439158239,
+        "coherence_delta": 0.005536652978297418,
+        "center_shift": 0.06758442555705287,
+        "width_ratio": 0.9800831064874739,
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_wide_lowk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000378139353094,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9855920999376862,
+              "face_scale_max": 1.0140384656774226
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848878430385755,
+        "edge_scale_max": 1.0399384222156849,
+        "face_scale_min": 0.9872739830010968,
+        "face_scale_max": 1.0265586179468753
+      },
+      "integration": {
+        "dt": 0.16197966417318022,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_transverse_open_wide_lowk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_wide_lowk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.9125263439158239,
+        "width_ratio": 0.9801566834088237
+      },
+      "summary": {
+        "run_id": "A2_A0_transverse_open_wide_lowk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_wide_lowk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "transition_type": "stable",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "constraint_max": 9.700043850804305e-17,
+        "constraint_max_perturbed": 0.1086166895274353,
+        "baseline_constraint_max": 9.461137674160213e-17,
+        "sector_leakage": 1.9498653391852393e-16,
+        "baseline_sector_leakage": 2.1672933891806193e-16,
+        "norm_drift": 0.13396367911192583,
+        "anisotropy_score": 1.4332081816336746,
+        "coherence_score": 0.9046459429411993,
+        "baseline_coherence_score": 0.9125263439158239,
+        "coherence_delta": -0.007880400974624613,
+        "center_shift": 0.06584424781705622,
+        "width_ratio": 0.9719503716068394,
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_wide_lowk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 346,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.658113883008419,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997076516091015,
+              "edge_scale_max": 1.0002645685962401,
+              "face_scale_min": 0.9997375765827073,
+              "face_scale_max": 1.000238055439099
+            }
+          }
+        ],
+        "edge_scale_min": 0.31613579303868194,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.6579826127742051,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.1660617316338613,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_periodic_wide_lowk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_wide_lowk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.879721809467974,
+        "width_ratio": 1.102947758680942
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_periodic_wide_lowk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.1453959713331006,
+        "anisotropy_score": 1.4334330859395736,
+        "coherence_score": 0.8837339999325314,
+        "baseline_coherence_score": 0.879721809467974,
+        "coherence_delta": 0.004012190464557475,
+        "center_shift": 0.08632452189576773,
+        "width_ratio": 1.0997992759265753,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_wide_lowk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000221497441082,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9863162006427602,
+              "face_scale_max": 1.0137375348796314
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.0399452776800087,
+        "face_scale_min": 0.9872967223085081,
+        "face_scale_max": 1.0262444448459906
+      },
+      "integration": {
+        "dt": 0.16242292892306492,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_periodic_wide_lowk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "baseline_regime": "Ballistic coherent",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_wide_lowk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.879721809467974,
+        "width_ratio": 1.102947758680942
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_periodic_wide_lowk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_wide_lowk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "baseline_regime": "Ballistic coherent",
+        "perturbed_regime": "Ballistic coherent",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.16263328995007512,
+        "anisotropy_score": 1.436098234860135,
+        "coherence_score": 0.8795767066174043,
+        "baseline_coherence_score": 0.879721809467974,
+        "coherence_delta": -0.0001451028505696783,
+        "center_shift": 0.0851331341424293,
+        "width_ratio": 1.1021417725509284,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_wide_lowk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic coherent",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 369,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.4871708245126285,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997430486234051,
+              "edge_scale_max": 1.0002325272682895,
+              "face_scale_min": 0.9997721851312348,
+              "face_scale_max": 1.000219281254743
+            }
+          }
+        ],
+        "edge_scale_min": 0.31614654781466633,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.48715960786028856,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16523007387538755,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_periodic_medium_lowk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_medium_lowk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7518985870001085,
+        "width_ratio": 1.1646528246796652
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_periodic_medium_lowk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.04200764032954373,
+        "anisotropy_score": 1.4987972598051753,
+        "coherence_score": 0.7565082335228596,
+        "baseline_coherence_score": 0.7518985870001085,
+        "coherence_delta": 0.0046096465227510874,
+        "center_shift": 0.07394119034359481,
+        "width_ratio": 1.1604819474166257,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_medium_lowk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000221497441082,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9863162006427602,
+              "face_scale_max": 1.0137375348796314
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.0399452776800087,
+        "face_scale_min": 0.9872967223085081,
+        "face_scale_max": 1.0262444448459906
+      },
+      "integration": {
+        "dt": 0.16242292892306492,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_periodic_medium_lowk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_medium_lowk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7518985870001085,
+        "width_ratio": 1.1646528246796652
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_periodic_medium_lowk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_medium_lowk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.06402898174502746,
+        "anisotropy_score": 1.4998098335885264,
+        "coherence_score": 0.7456042294833806,
+        "baseline_coherence_score": 0.7518985870001085,
+        "coherence_delta": -0.006294357516727911,
+        "center_shift": 0.07186895815799757,
+        "width_ratio": 1.1623282106728157,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_medium_lowk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 4,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 1,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 369,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.4871708245126285,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997430486234051,
+              "edge_scale_max": 1.0002325272682895,
+              "face_scale_min": 0.9997721851312348,
+              "face_scale_max": 1.000219281254743
+            }
+          }
+        ],
+        "edge_scale_min": 0.31614654781466633,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.48715960786028856,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16523007387538755,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_open_medium_midk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_open_medium_midk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_medium_midk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.70026294603859,
+        "width_ratio": 1.1936861022844496
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_open_medium_midk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.026018282978164334,
+        "anisotropy_score": 1.9942285321566486,
+        "coherence_score": 0.7065344493782437,
+        "baseline_coherence_score": 0.70026294603859,
+        "coherence_delta": 0.006271503339653761,
+        "center_shift": 0.06933103853580026,
+        "width_ratio": 1.188883351381667,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_open_medium_midk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000378139353094,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9855920999376862,
+              "face_scale_max": 1.0140384656774226
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848878430385755,
+        "edge_scale_max": 1.0399384222156849,
+        "face_scale_min": 0.9872739830010968,
+        "face_scale_max": 1.0265586179468753
+      },
+      "integration": {
+        "dt": 0.16266032462456165,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_open_medium_midk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_open_medium_midk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_medium_midk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.70026294603859,
+        "width_ratio": 1.1936861022844496
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_open_medium_midk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_open_medium_midk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": 0.025128084421864098,
+        "anisotropy_score": 2.0378383144101377,
+        "coherence_score": 0.7061057594928938,
+        "baseline_coherence_score": 0.70026294603859,
+        "coherence_delta": 0.005842813454303819,
+        "center_shift": 0.06427341691024113,
+        "width_ratio": 1.1799583840789956,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_open_medium_midk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 346,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.658113883008419,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997076516091015,
+              "edge_scale_max": 1.0002645685962401,
+              "face_scale_min": 0.9997375765827073,
+              "face_scale_max": 1.000238055439099
+            }
+          }
+        ],
+        "edge_scale_min": 0.31613579303868194,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.6579826127742051,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.16564982395345418,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_transverse_open_wide_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_wide_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_highk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.5926741982872317,
+        "width_ratio": 1.1514206435758483
+      },
+      "summary": {
+        "run_id": "A2_A0_transverse_open_wide_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "transition_type": "stable",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "constraint_max": 7.382695389816652e-17,
+        "constraint_max_perturbed": 0.006326269926180567,
+        "baseline_constraint_max": 1.1224456549061128e-16,
+        "sector_leakage": 1.303324608797449e-16,
+        "baseline_sector_leakage": 1.7058133323461127e-16,
+        "norm_drift": -0.1232163089837125,
+        "anisotropy_score": 2.0986316773283167,
+        "coherence_score": 0.6002030768802039,
+        "baseline_coherence_score": 0.5926741982872317,
+        "coherence_delta": 0.0075288785929722435,
+        "center_shift": 0.063774466910258,
+        "width_ratio": 1.1490217921676957,
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_wide_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000378139353094,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9855920999376862,
+              "face_scale_max": 1.0140384656774226
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848878430385755,
+        "edge_scale_max": 1.0399384222156849,
+        "face_scale_min": 0.9872739830010968,
+        "face_scale_max": 1.0265586179468753
+      },
+      "integration": {
+        "dt": 0.16197966417318022,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_transverse_open_wide_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_wide_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_wide_highk_amp05",
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.5926741982872317,
+        "width_ratio": 1.1514206435758483
+      },
+      "summary": {
+        "run_id": "A2_A0_transverse_open_wide_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_wide_highk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "baseline_regime": "Ballistic dispersive",
+        "perturbed_regime": "Ballistic dispersive",
+        "transition_type": "stable",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "constraint_max": 8.127891431263841e-17,
+        "constraint_max_perturbed": 0.09528774758184635,
+        "baseline_constraint_max": 1.1224456549061128e-16,
+        "sector_leakage": 1.7693805128451632e-16,
+        "baseline_sector_leakage": 1.7058133323461127e-16,
+        "norm_drift": -0.09031541717496494,
+        "anisotropy_score": 2.1010655609499596,
+        "coherence_score": 0.6070814520315625,
+        "baseline_coherence_score": 0.5926741982872317,
+        "coherence_delta": 0.014407253744330828,
+        "center_shift": 0.05919546899213308,
+        "width_ratio": 1.1235842067396582,
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_wide_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 346,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.658113883008419,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997076516091015,
+              "edge_scale_max": 1.0002645685962401,
+              "face_scale_min": 0.9997375765827073,
+              "face_scale_max": 1.000238055439099
+            }
+          }
+        ],
+        "edge_scale_min": 0.31613579303868194,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.6579826127742051,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.1660617316338613,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_periodic_medium_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_medium_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7547960878771556,
+        "width_ratio": 1.280130483241594
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_periodic_medium_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Ballistic dispersive",
+        "transition_type": "regime_shift",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.13264659683359625,
+        "anisotropy_score": 2.311516009310924,
+        "coherence_score": 0.7548689606579132,
+        "baseline_coherence_score": 0.7547960878771556,
+        "coherence_delta": 7.287278075762682e-05,
+        "center_shift": 0.05017767889837654,
+        "width_ratio": 1.2798602765079352,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_medium_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000221497441082,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9863162006427602,
+              "face_scale_max": 1.0137375348796314
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.0399452776800087,
+        "face_scale_min": 0.9872967223085081,
+        "face_scale_max": 1.0262444448459906
+      },
+      "integration": {
+        "dt": 0.16242292892306492,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_periodic_medium_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_medium_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.7547960878771556,
+        "width_ratio": 1.280130483241594
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_periodic_medium_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_medium_highk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Diffusive",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.09872405458559852,
+        "anisotropy_score": 2.328063419231005,
+        "coherence_score": 0.7303556828631159,
+        "baseline_coherence_score": 0.7547960878771556,
+        "coherence_delta": -0.024440405014039657,
+        "center_shift": 0.04783651236518315,
+        "width_ratio": 1.2728892461634385,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_medium_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Diffusive",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 369,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.4871708245126285,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997430486234051,
+              "edge_scale_max": 1.0002325272682895,
+              "face_scale_min": 0.9997721851312348,
+              "face_scale_max": 1.000219281254743
+            }
+          }
+        ],
+        "edge_scale_min": 0.31614654781466633,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.48715960786028856,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16523007387538755,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_transverse_open_narrow_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_narrow_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_narrow_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.4703163028355739,
+        "width_ratio": 1.217226377434563
+      },
+      "summary": {
+        "run_id": "A2_A0_transverse_open_narrow_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Diffusive",
+        "transition_type": "stable",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "constraint_max": 9.195948725599816e-17,
+        "constraint_max_perturbed": 0.00542961124674365,
+        "baseline_constraint_max": 8.427874118603003e-17,
+        "sector_leakage": 1.8859306695064463e-16,
+        "baseline_sector_leakage": 1.8026840879665943e-16,
+        "norm_drift": -0.2600826365202959,
+        "anisotropy_score": 2.2159881654732754,
+        "coherence_score": 0.4734375253588822,
+        "baseline_coherence_score": 0.4703163028355739,
+        "coherence_delta": 0.00312122252330832,
+        "center_shift": 0.046827312825957194,
+        "width_ratio": 1.215581119411455,
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_narrow_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000378139353094,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9855920999376862,
+              "face_scale_max": 1.0140384656774226
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848878430385755,
+        "edge_scale_max": 1.0399384222156849,
+        "face_scale_min": 0.9872739830010968,
+        "face_scale_max": 1.0265586179468753
+      },
+      "integration": {
+        "dt": 0.16197966417318022,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_transverse_open_narrow_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "baseline_regime": "Diffusive",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_narrow_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_transverse_open_narrow_highk_amp05",
+        "regime_label": "Diffusive",
+        "sector_label": "Transverse-dominant",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "coherence_score": 0.4703163028355739,
+        "width_ratio": 1.217226377434563
+      },
+      "summary": {
+        "run_id": "A2_A0_transverse_open_narrow_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_transverse_open_narrow_highk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "transverse",
+        "boundary_type": "open",
+        "baseline_regime": "Diffusive",
+        "perturbed_regime": "Ballistic dispersive",
+        "transition_type": "regime_softening",
+        "baseline_sector_label": "Transverse-dominant",
+        "sector_label": "Transverse-dominant",
+        "constraint_max": 1.2196447019928315e-16,
+        "constraint_max_perturbed": 0.09045363110316977,
+        "baseline_constraint_max": 8.427874118603003e-17,
+        "sector_leakage": 2.335695101769405e-16,
+        "baseline_sector_leakage": 1.8026840879665943e-16,
+        "norm_drift": -0.19098296708125967,
+        "anisotropy_score": 2.2499508641349126,
+        "coherence_score": 0.44283196997728524,
+        "baseline_coherence_score": 0.4703163028355739,
+        "coherence_delta": -0.027484332858288663,
+        "center_shift": 0.03676199506258112,
+        "width_ratio": 1.1505473832531954,
+        "notes": "Atlas-2 pilot transition-structure test from A0_transverse_open_narrow_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Ballistic dispersive",
+        "sector_label": "Transverse-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 346,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.658113883008419,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997076516091015,
+              "edge_scale_max": 1.0002645685962401,
+              "face_scale_min": 0.9997375765827073,
+              "face_scale_max": 1.000238055439099
+            }
+          }
+        ],
+        "edge_scale_min": 0.31613579303868194,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.6579826127742051,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.1660617316338613,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_periodic_wide_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "baseline_regime": "Chaotic or irregular",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_wide_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.6308160840820418,
+        "width_ratio": 1.391860851953139
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_periodic_wide_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "baseline_regime": "Chaotic or irregular",
+        "perturbed_regime": "Chaotic or irregular",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.0667612418704747,
+        "anisotropy_score": 2.173065688185156,
+        "coherence_score": 0.6288030337885583,
+        "baseline_coherence_score": 0.6308160840820418,
+        "coherence_delta": -0.0020130502934835315,
+        "center_shift": 0.05081501929206315,
+        "width_ratio": 1.3931334629231789,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_wide_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000221497441082,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9863162006427602,
+              "face_scale_max": 1.0137375348796314
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848870846888701,
+        "edge_scale_max": 1.0399452776800087,
+        "face_scale_min": 0.9872967223085081,
+        "face_scale_max": 1.0262444448459906
+      },
+      "integration": {
+        "dt": 0.16242292892306492,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_periodic_wide_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "baseline_regime": "Chaotic or irregular",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_wide_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "coherence_score": 0.6308160840820418,
+        "width_ratio": 1.391860851953139
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_periodic_wide_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_periodic_wide_highk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "scalar",
+        "boundary_type": "periodic",
+        "baseline_regime": "Chaotic or irregular",
+        "perturbed_regime": "Chaotic or irregular",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.03498570781135434,
+        "anisotropy_score": 2.173065688185156,
+        "coherence_score": 0.6262904925467908,
+        "baseline_coherence_score": 0.6308160840820418,
+        "coherence_delta": -0.004525591535251006,
+        "center_shift": 0.05004676192447896,
+        "width_ratio": 1.3847688735164583,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_periodic_wide_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Chaotic or irregular",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 369,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.4871708245126285,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997430486234051,
+              "edge_scale_max": 1.0002325272682895,
+              "face_scale_min": 0.9997721851312348,
+              "face_scale_max": 1.000219281254743
+            }
+          }
+        ],
+        "edge_scale_min": 0.31614654781466633,
+        "edge_scale_max": 1.0002325272682895,
+        "face_scale_min": 0.48715960786028856,
+        "face_scale_max": 1.000219281254743
+      },
+      "integration": {
+        "dt": 0.16523007387538755,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_open_narrow_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "baseline_regime": "Fragmenting",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "component_perturbations": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 303
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_open_narrow_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_narrow_highk_amp05",
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.4218853401641373,
+        "width_ratio": 1.4415403269865972
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_open_narrow_highk_amp05_edge_noise_plus_anisotropic_bias",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "perturbation_pair": "edge_noise_plus_anisotropic_bias",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "baseline_regime": "Fragmenting",
+        "perturbed_regime": "Fragmenting",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.25419275862612506,
+        "anisotropy_score": 2.786063146383944,
+        "coherence_score": 0.4323475813700421,
+        "baseline_coherence_score": 0.4218853401641373,
+        "coherence_delta": 0.010462241205904776,
+        "center_shift": 0.0477125854588801,
+        "width_ratio": 1.4357550820896567,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_open_narrow_highk_amp05 via edge_noise_plus_anisotropic_bias"
+      },
+      "labels": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "edge_noise_plus_anisotropic_bias",
+        "components": [
+          {
+            "axis": "edge_weight_noise",
+            "strength": 0.03,
+            "seed": 101,
+            "metadata": {
+              "distribution": "uniform",
+              "weight_factor_mean": 1.0000378139353094,
+              "edge_scale_min": 0.9848870846888701,
+              "edge_scale_max": 1.014884322819558,
+              "face_scale_min": 0.9855920999376862,
+              "face_scale_max": 1.0140384656774226
+            }
+          },
+          {
+            "axis": "anisotropic_bias",
+            "strength": 1.05,
+            "seed": 0,
+            "metadata": {
+              "preferred_axis": "x",
+              "bias_factor": 1.05,
+              "edge_scale_min": 1.0,
+              "edge_scale_max": 1.02469507659596,
+              "face_scale_min": 1.0,
+              "face_scale_max": 1.01234753829798
+            }
+          }
+        ],
+        "edge_scale_min": 0.9848878430385755,
+        "edge_scale_max": 1.0399384222156849,
+        "face_scale_min": 0.9872739830010968,
+        "face_scale_max": 1.0265586179468753
+      },
+      "integration": {
+        "dt": 0.16266032462456165,
+        "steps": 6
+      }
+    },
+    {
+      "run": {
+        "run_id": "A2_A0_scalar_open_narrow_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "baseline_regime": "Fragmenting",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "component_perturbations": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404
+          }
+        ],
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_open_narrow_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "baseline": {
+        "run_id": "A0_scalar_open_narrow_highk_amp05",
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "coherence_score": 0.4218853401641373,
+        "width_ratio": 1.4415403269865972
+      },
+      "summary": {
+        "run_id": "A2_A0_scalar_open_narrow_highk_amp05_defects_plus_kernel_jitter",
+        "atlas_phase": "Atlas-2",
+        "baseline_run_id": "A0_scalar_open_narrow_highk_amp05",
+        "perturbation_pair": "defects_plus_kernel_jitter",
+        "operator_sector": "scalar",
+        "boundary_type": "open",
+        "baseline_regime": "Fragmenting",
+        "perturbed_regime": "Fragmenting",
+        "transition_type": "stable",
+        "baseline_sector_label": "Scalar-dominant",
+        "sector_label": "Scalar-dominant",
+        "constraint_max": 0.0,
+        "constraint_max_perturbed": 0.0,
+        "baseline_constraint_max": 0.0,
+        "sector_leakage": 0.0,
+        "baseline_sector_leakage": 0.0,
+        "norm_drift": -0.14732684447187963,
+        "anisotropy_score": 3.02138871935386,
+        "coherence_score": 0.40984776470738477,
+        "baseline_coherence_score": 0.4218853401641373,
+        "coherence_delta": -0.012037575456752547,
+        "center_shift": 0.035888776104181584,
+        "width_ratio": 1.409352088776372,
+        "notes": "Atlas-2 pilot transition-structure test from A0_scalar_open_narrow_highk_amp05 via defects_plus_kernel_jitter"
+      },
+      "labels": {
+        "regime_label": "Fragmenting",
+        "sector_label": "Scalar-dominant",
+        "proto_spacetime_score": 3,
+        "proto_spacetime_components": {
+          "stable_propagation": 1,
+          "low_leakage": 1,
+          "bounded_constraint_growth": 1,
+          "low_directional_distortion": 0,
+          "reproducible_under_refinement": 0
+        }
+      },
+      "paired_perturbation_metadata": {
+        "pair_name": "defects_plus_kernel_jitter",
+        "components": [
+          {
+            "axis": "sparse_graph_defects",
+            "strength": 0.03,
+            "seed": 202,
+            "metadata": {
+              "defect_count": 346,
+              "defect_density": 0.03,
+              "weakened_weight_factor": 0.1,
+              "edge_scale_min": 0.31622776601683794,
+              "edge_scale_max": 1.0,
+              "face_scale_min": 0.658113883008419,
+              "face_scale_max": 1.0
+            }
+          },
+          {
+            "axis": "kernel_width_jitter",
+            "strength": 0.05,
+            "seed": 404,
+            "metadata": {
+              "epsilon": 0.2,
+              "jitter_strength": 0.05,
+              "edge_scale_min": 0.9997076516091015,
+              "edge_scale_max": 1.0002645685962401,
+              "face_scale_min": 0.9997375765827073,
+              "face_scale_max": 1.000238055439099
+            }
+          }
+        ],
+        "edge_scale_min": 0.31613579303868194,
+        "edge_scale_max": 1.0002645685962401,
+        "face_scale_min": 0.6579826127742051,
+        "face_scale_max": 1.000238055439099
+      },
+      "integration": {
+        "dt": 0.16564982395345418,
+        "steps": 6
+      }
+    }
+  ],
+  "regime_counts": {
+    "Ballistic coherent": 6,
+    "Ballistic dispersive": 8,
+    "Diffusive": 2,
+    "Chaotic or irregular": 2,
+    "Fragmenting": 2
+  },
+  "transition_counts": {
+    "Ballistic coherent -> Ballistic coherent": 6,
+    "Ballistic dispersive -> Ballistic dispersive": 6,
+    "Diffusive -> Ballistic dispersive": 2,
+    "Diffusive -> Diffusive": 2,
+    "Chaotic or irregular -> Chaotic or irregular": 2,
+    "Fragmenting -> Fragmenting": 2
+  },
+  "transition_type_counts": {
+    "stable": 18,
+    "regime_shift": 1,
+    "regime_softening": 1
+  },
+  "persistence_by_pair": {
+    "defects_plus_kernel_jitter": 0.9,
+    "edge_noise_plus_anisotropic_bias": 0.9
+  },
+  "observation": "Atlas-2 pilot executes cleanly on frozen Atlas-1 seeds and returns regime transitions under paired perturbations.",
+  "conclusion": "The Atlas-2 pilot is operational as a small transition-structure map and can now be inspected before any scaling or Stage 11 work."
+}

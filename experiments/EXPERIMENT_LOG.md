@@ -571,3 +571,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260314_153736_stage10_atlas1_transition_heatmap.png`, `plots/20260314_153736_stage10_atlas1_persistence_by_regime.png`, `plots/20260314_153736_stage10_atlas1_coherence_change.png`, `plots/20260314_153736_stage10_atlas1_constraint_leakage.png`, `plots/20260314_153736_stage10_atlas1_stable_A1_A0_transverse_periodic_wide_midk_amp05_anisotropic_bias_field_snapshot.png`, `plots/20260314_153736_stage10_atlas1_stable_A1_A0_transverse_periodic_wide_midk_amp05_anisotropic_bias_width_trace.png`, `plots/20260314_153736_stage10_atlas1_stable_A1_A0_transverse_periodic_wide_midk_amp05_anisotropic_bias_constraint_trace.png`, `plots/20260314_153736_stage10_atlas1_unstable_A1_A0_transverse_open_narrow_highk_amp05_sparse_graph_defects_field_snapshot.png`, `plots/20260314_153736_stage10_atlas1_unstable_A1_A0_transverse_open_narrow_highk_amp05_sparse_graph_defects_width_trace.png`, `plots/20260314_153736_stage10_atlas1_unstable_A1_A0_transverse_open_narrow_highk_amp05_sparse_graph_defects_constraint_trace.png`
 - Observation: The corrected pilot remains highly persistent under mild one-axis perturbations when labels are evaluated with the same frozen divergence constraint used by the frozen transverse projector.
 - Conclusion: Atlas-1 now functions as a consistent morphology-resilience instrument, with the perturbed divergence retained only as an auxiliary sensitivity diagnostic.
+
+## Stage 10C Atlas-2 Transition Structure
+- Date: 2026-03-14T16:13:18
+- Config: pilot_baseline_seeds=10 perturbation_pairs=edge_noise_plus_anisotropic_bias,defects_plus_kernel_jitter n_side=16 epsilon=0.2
+- Results: `data/20260314_161318_stage10_atlas2_transition_structure.json`
+- Plots: `plots/20260314_161318_stage10_atlas2_transition_matrix.png`, `plots/20260314_161318_stage10_atlas2_regime_transition_map.png`
+- Observation: Paired perturbations reveal how baseline regime labels deform under controlled stress interactions while preserving the Atlas-0/1 measurement grammar.
+- Conclusion: Atlas-2 is operational as a pilot transition-topology instrument on the frozen architecture.
