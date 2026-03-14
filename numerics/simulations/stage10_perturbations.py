@@ -181,4 +181,48 @@ def build_perturbed_operators(
     raise ValueError(f'unsupported perturbation axis: {perturbation_axis}')
 
 
-__all__ = ['PerturbedOperators', 'build_perturbed_operators']
+def build_paired_perturbed_operators(
+    data: Stage10Complex,
+    perturbations: list[dict[str, Any]],
+    epsilon: float,
+    pair_name: str,
+) -> PerturbedOperators:
+    if len(perturbations) != 2:
+        raise ValueError('Atlas-2 paired perturbations require exactly two component perturbations')
+
+    components: list[PerturbedOperators] = []
+    combined_scales = np.ones(len(data.edge_axes), dtype=float)
+    for spec in perturbations:
+        item = build_perturbed_operators(
+            data=data,
+            perturbation_axis=str(spec['axis']),
+            perturbation_strength=float(spec['strength']),
+            seed=int(spec.get('seed', 0)),
+            epsilon=epsilon,
+        )
+        components.append(item)
+        combined_scales *= item.edge_scales
+
+    metadata = {
+        'pair_name': pair_name,
+        'components': [
+            {
+                'axis': item.axis,
+                'strength': item.strength,
+                'seed': item.seed,
+                'metadata': item.metadata,
+            }
+            for item in components
+        ],
+    }
+    return _operators_from_edge_scales(
+        data=data,
+        edge_scales=combined_scales,
+        axis='paired_perturbation',
+        strength=1.0,
+        seed=0,
+        metadata=metadata,
+    )
+
+
+__all__ = ['PerturbedOperators', 'build_perturbed_operators', 'build_paired_perturbed_operators']
