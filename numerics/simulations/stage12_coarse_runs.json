@@ -1,0 +1,68 @@
+{
+  "description": "Stage 12 pilot atlas for coarse-grained collective envelope structure on the frozen projected transverse architecture.",
+  "note_name": "Stage_12_Coarse_Grained_Field_Structure_v1.md",
+  "coarse_scales": [2, 4],
+  "alpha": 0.6,
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent periodic transverse seed carried from Stage 11"
+  },
+  "runs": [
+    {
+      "run_id": "S12_tight_clustered_pair",
+      "packet_count": 2,
+      "packet_centers": [[0.43, 0.5, 0.5], [0.57, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, 1.0],
+      "cluster_pattern": "tight_clustered_pair",
+      "selection_note": "strongest Stage 11 overlap geometry used as the coarse baseline"
+    },
+    {
+      "run_id": "S12_three_packet_chain",
+      "packet_count": 3,
+      "packet_centers": [[0.2, 0.5, 0.5], [0.5, 0.5, 0.5], [0.8, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 1.5707963267948966, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "cluster_pattern": "three_packet_chain",
+      "selection_note": "tests whether a chain produces a stable envelope corridor under coarse graining"
+    },
+    {
+      "run_id": "S12_symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [[0.18, 0.5, 0.5], [0.5, 0.5, 0.5], [0.82, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "cluster_pattern": "symmetric_wide_triad",
+      "selection_note": "widely separated symmetric triad for multi-basin comparison"
+    },
+    {
+      "run_id": "S12_asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "cluster_pattern": "asymmetric_density_cluster",
+      "selection_note": "tests whether an uneven compact cluster coarse-grains into a dominant basin"
+    },
+    {
+      "run_id": "S12_counter_propagating_composite_corridor",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.5, 0.5], [0.65, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "cluster_pattern": "counter_propagating_composite_corridor",
+      "selection_note": "counter-propagating corridor to test whether compressed overlap produces a stable coarse basin"
+    }
+  ]
+}
