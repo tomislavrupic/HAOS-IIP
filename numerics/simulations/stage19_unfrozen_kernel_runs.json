@@ -1,0 +1,174 @@
+{
+  "description": "Stage 19A pilot for bounded unfrozen-kernel back-reaction driven by local energy-density stress on the projected transverse architecture.",
+  "note_name": "Stage_19_Unfrozen_Kernel_Back_Reaction_v1.md",
+  "selection_rationale": "Phase II opens by testing one minimal substrate back-reaction mechanism: slow local edge-weight adaptation driven by local occupation or envelope-energy. The pilot stays intentionally narrow so the new regime can fail cleanly.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent periodic transverse seed carried through the frozen phases and retained for the Phase II opening"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "followup_gate": "Promote only if at least one representative shows composite lifetime gain, basin persistence gain, or a new stabilized class under the bounded back-reaction law.",
+    "selection_note": "The first executable Stage 19A pilot stays at n=12; refinement is reserved for selective positives only."
+  },
+  "kernel_backreaction": {
+    "stage_id": "19A",
+    "dynamic_quantity": "edge weights on the frozen kernel support",
+    "kernel_update_form": "K_ij(t) = K0_ij * (1 + eps * S_ij(t))",
+    "stress_update_form": "S_ij(t + dt) = (1 - dt/tau_relax) * S_ij(t) + rho_ij(t) - rho_bar_ij(t)",
+    "canonical_source": "rho_ij(t) = |A_ij(t)|^2",
+    "source_choice": "strict local amplitude or envelope-energy first; phase sources deferred unless amplitude-driven back-reaction earns follow-up",
+    "sign_choice": "higher local occupation increases local effective coupling",
+    "hard_constraints": [
+      "support(K) = support(K0)",
+      "K_ij = K_ji",
+      "|K_ij - K0_ij| <= kappa_max",
+      "no graph-topology changes",
+      "no thresholding",
+      "no sigma modulation",
+      "no combined amplitude plus phase source"
+    ]
+  },
+  "parameter_policy": {
+    "eps_values": {
+      "null": 0.0,
+      "very_weak": 0.01,
+      "weak": 0.02
+    },
+    "tau_relax_choices": {
+      "base_pilot": {
+        "tau_crossing_multiple": 1.0,
+        "selection_note": "Use one relaxation time near packet crossing time for the first 9-run pilot."
+      },
+      "followup_only": {
+        "tau_crossing_multiple": 3.0,
+        "selection_note": "A clearly slower relaxation time is reserved for a promoted follow-up only."
+      }
+    },
+    "kappa_max": 0.1,
+    "normalization": "zero-centered local stress normalization or equivalent capped renormalization to prevent secular kernel inflation"
+  },
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage15_case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "strongest composite anchor and main substrate-capture candidate"
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage15_case_id": "symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [[0.18, 0.5, 0.5], [0.5, 0.5, 0.5], [0.82, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "structured ordering candidate and likely basin-stabilization test"
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.5, 0.5], [0.65, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "notes": "transport-style control and expected null candidate"
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "null_control",
+      "label": "null control",
+      "eps": 0.0,
+      "tau_relax_multiple": 1.0
+    },
+    {
+      "condition_id": "very_weak_backreaction",
+      "label": "very weak local energy-density back-reaction",
+      "eps": 0.01,
+      "tau_relax_multiple": 1.0
+    },
+    {
+      "condition_id": "weak_backreaction",
+      "label": "weak local energy-density back-reaction",
+      "eps": 0.02,
+      "tau_relax_multiple": 1.0
+    }
+  ],
+  "observables": {
+    "interaction_morphology": [
+      "composite_lifetime",
+      "binding_persistence",
+      "overlap_integral_evolution"
+    ],
+    "coarse_structure": [
+      "coarse_basin_persistence",
+      "dominant_basin_area_fraction",
+      "morphology_classification_label",
+      "coarse_classification_label"
+    ],
+    "kernel_specific": [
+      "kernel_deviation_norm",
+      "max_local_kernel_deformation",
+      "substrate_relaxation_memory_score",
+      "local_stress_persistence"
+    ]
+  },
+  "output_labels": [
+    "no kernel back-reaction effect",
+    "transient substrate response",
+    "scale-fragile substrate-assisted persistence",
+    "scale-stable substrate-assisted persistence"
+  ],
+  "early_stop_rule": {
+    "freeze_negative_if_all_9_runs_show": [
+      "no composite lifetime gain",
+      "no basin persistence gain",
+      "no new stabilized ordering or morphology class"
+    ],
+    "do_not_count": [
+      "correlation shifts alone",
+      "small kernel deformation alone",
+      "transient visual sharpening without persistence gain"
+    ]
+  },
+  "positive_signal_definition": {
+    "count_as_structural_emergence_only_if": [
+      "statistically stable composite persistence increase",
+      "clear basin stabilization",
+      "or a new morphology class robust under refinement"
+    ],
+    "if_positive": [
+      "map only the minimal parameter window",
+      "immediately run scale-robustness check before interpretation"
+    ]
+  },
+  "runs": [
+    {"run_id": "S19A_clustered_anchor__null__n12", "representative_id": "clustered_composite_anchor", "condition_id": "null_control", "eps": 0.0, "tau_relax_multiple": 1.0, "resolution": 12},
+    {"run_id": "S19A_clustered_anchor__very_weak__n12", "representative_id": "clustered_composite_anchor", "condition_id": "very_weak_backreaction", "eps": 0.01, "tau_relax_multiple": 1.0, "resolution": 12},
+    {"run_id": "S19A_clustered_anchor__weak__n12", "representative_id": "clustered_composite_anchor", "condition_id": "weak_backreaction", "eps": 0.02, "tau_relax_multiple": 1.0, "resolution": 12},
+
+    {"run_id": "S19A_triad__null__n12", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "null_control", "eps": 0.0, "tau_relax_multiple": 1.0, "resolution": 12},
+    {"run_id": "S19A_triad__very_weak__n12", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "very_weak_backreaction", "eps": 0.01, "tau_relax_multiple": 1.0, "resolution": 12},
+    {"run_id": "S19A_triad__weak__n12", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "weak_backreaction", "eps": 0.02, "tau_relax_multiple": 1.0, "resolution": 12},
+
+    {"run_id": "S19A_corridor__null__n12", "representative_id": "counter_propagating_corridor", "condition_id": "null_control", "eps": 0.0, "tau_relax_multiple": 1.0, "resolution": 12},
+    {"run_id": "S19A_corridor__very_weak__n12", "representative_id": "counter_propagating_corridor", "condition_id": "very_weak_backreaction", "eps": 0.01, "tau_relax_multiple": 1.0, "resolution": 12},
+    {"run_id": "S19A_corridor__weak__n12", "representative_id": "counter_propagating_corridor", "condition_id": "weak_backreaction", "eps": 0.02, "tau_relax_multiple": 1.0, "resolution": 12}
+  ]
+}
