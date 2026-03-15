@@ -1,0 +1,336 @@
+{
+  "description": "Stage 17 pilot for emergent phase-synchronization dynamics on the frozen projected transverse architecture.",
+  "note_name": "Stage_17_Emergent_Phase_Synchronization_Dynamics_v1.md",
+  "selection_rationale": "The pilot tests whether weak phase-coupled feedback produces self-sustained synchronization in one phase-ordered triad, one transport-dominated corridor, and one clustered composite anchor. The base layer is intentionally limited to nine runs so the first read stays diagnostic rather than exploratory.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent periodic transverse seed carried through Stages 11-17"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "followup_gate": "Only promote a case to the 12->24 ladder if the base pilot shows a real synchronization gain over null without global artificial coherence.",
+    "selection_note": "The first pilot is kept at n=12 so the synchronization read stays directly comparable to Stages 15 and 16."
+  },
+  "phase_proxies": {
+    "canonical": {
+      "phase_proxy_id": "analytic_envelope_phase",
+      "label": "analytic envelope phase",
+      "construction": "packet-local weighted signal around the evolving centroid, passed through a Hilbert transform and read as the analytic-signal phase",
+      "why_selected": [
+        "local to the packet support",
+        "continuous phase time series for R(t)",
+        "comparable across triad, corridor, and clustered anchor"
+      ]
+    },
+    "control": {
+      "phase_proxy_id": "dominant_mode_projection_phase",
+      "label": "dominant-mode projection phase",
+      "construction": "complex phase of the local packet state projected onto the dominant narrowband carrier mode",
+      "why_selected": [
+        "numerically rigid spectral control",
+        "checks whether any locking signal is extraction-method dependent",
+        "reuses the frozen carrier structure rather than inventing a new mode basis"
+      ]
+    }
+  },
+  "phase_coupling": {
+    "feedback_form": "dX/dt += eps * sum_j W_ij * sin(phi_j - phi_i)",
+    "weight_source": "frozen kernel-induced packet coupling graph with bounded local normalization",
+    "normalization_rule": "no global coherence normalization; each row is clipped and normalized only over local packet neighbors",
+    "feedback_phase_source": "dominant_mode_projection_phase",
+    "feedback_phase_note": "The control proxy is used for the actual feedback step because it is instantaneous and local; the analytic-envelope phase remains the canonical scoring signal.",
+    "selection_note": "The coupling is derived from internal packet relations and remains in the very-weak/weak regime only."
+  },
+  "conditions": [
+    {
+      "condition_id": "null_control",
+      "label": "null control",
+      "phase_coupling_eps": 0.0
+    },
+    {
+      "condition_id": "very_weak_phase_coupling",
+      "label": "very weak phase coupling",
+      "phase_coupling_eps": 0.01
+    },
+    {
+      "condition_id": "weak_phase_coupling",
+      "label": "weak phase coupling",
+      "phase_coupling_eps": 0.02
+    }
+  ],
+  "representatives": [
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage15_case_id": "symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [[0.18, 0.5, 0.5], [0.5, 0.5, 0.5], [0.82, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "best non-degenerate phase-ordered carrier for synchronization diagnostics"
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.5, 0.5], [0.65, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "notes": "transport-dominated control for corridor locking and frequency pulling"
+    },
+    {
+      "representative_id": "clustered_composite_anchor",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage15_case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "dense interaction anchor for testing whether synchronization can appear where binding remained fragile"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "S17_phase_ordered_symmetric_triad__null_control__n12",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "phase_proxy": "analytic_envelope_phase",
+      "control_phase_proxy": "dominant_mode_projection_phase",
+      "phase_coupling_eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "packet_count": 3,
+      "notes": "baseline for phase-ordered triad"
+    },
+    {
+      "run_id": "S17_phase_ordered_symmetric_triad__very_weak_phase_coupling__n12",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "phase_proxy": "analytic_envelope_phase",
+      "control_phase_proxy": "dominant_mode_projection_phase",
+      "phase_coupling_eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "packet_count": 3,
+      "notes": "very weak phase-coupling probe for phase-ordered triad"
+    },
+    {
+      "run_id": "S17_phase_ordered_symmetric_triad__weak_phase_coupling__n12",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "phase_proxy": "analytic_envelope_phase",
+      "control_phase_proxy": "dominant_mode_projection_phase",
+      "phase_coupling_eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "packet_count": 3,
+      "notes": "weak phase-coupling probe for phase-ordered triad"
+    },
+    {
+      "run_id": "S17_counter_propagating_corridor__null_control__n12",
+      "representative_id": "counter_propagating_corridor",
+      "phase_proxy": "analytic_envelope_phase",
+      "control_phase_proxy": "dominant_mode_projection_phase",
+      "phase_coupling_eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "packet_count": 2,
+      "notes": "baseline for transport-dominated corridor"
+    },
+    {
+      "run_id": "S17_counter_propagating_corridor__very_weak_phase_coupling__n12",
+      "representative_id": "counter_propagating_corridor",
+      "phase_proxy": "analytic_envelope_phase",
+      "control_phase_proxy": "dominant_mode_projection_phase",
+      "phase_coupling_eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "packet_count": 2,
+      "notes": "very weak phase-coupling probe for transport corridor"
+    },
+    {
+      "run_id": "S17_counter_propagating_corridor__weak_phase_coupling__n12",
+      "representative_id": "counter_propagating_corridor",
+      "phase_proxy": "analytic_envelope_phase",
+      "control_phase_proxy": "dominant_mode_projection_phase",
+      "phase_coupling_eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "packet_count": 2,
+      "notes": "weak phase-coupling probe for transport corridor"
+    },
+    {
+      "run_id": "S17_clustered_composite_anchor__null_control__n12",
+      "representative_id": "clustered_composite_anchor",
+      "phase_proxy": "analytic_envelope_phase",
+      "control_phase_proxy": "dominant_mode_projection_phase",
+      "phase_coupling_eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "packet_count": 3,
+      "notes": "baseline for clustered composite anchor"
+    },
+    {
+      "run_id": "S17_clustered_composite_anchor__very_weak_phase_coupling__n12",
+      "representative_id": "clustered_composite_anchor",
+      "phase_proxy": "analytic_envelope_phase",
+      "control_phase_proxy": "dominant_mode_projection_phase",
+      "phase_coupling_eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "packet_count": 3,
+      "notes": "very weak phase-coupling probe for clustered anchor"
+    },
+    {
+      "run_id": "S17_clustered_composite_anchor__weak_phase_coupling__n12",
+      "representative_id": "clustered_composite_anchor",
+      "phase_proxy": "analytic_envelope_phase",
+      "control_phase_proxy": "dominant_mode_projection_phase",
+      "phase_coupling_eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "packet_count": 3,
+      "notes": "weak phase-coupling probe for clustered anchor"
+    }
+  ],
+  "synchronization_metrics": [
+    "kuramoto_order_parameter",
+    "mean_R",
+    "max_R",
+    "phase_variance",
+    "frequency_spread",
+    "cluster_count",
+    "cluster_stability"
+  ],
+  "morphology_coupling_checks": [
+    "composite_lifetime",
+    "binding_persistence",
+    "coarse_persistence"
+  ],
+  "delta_metrics_vs_null": [
+    "mean_R_delta",
+    "phase_variance_delta",
+    "cluster_stability_delta",
+    "composite_lifetime_delta",
+    "binding_persistence_delta",
+    "coarse_persistence_delta"
+  ],
+  "anti_false_positive_scoring": {
+    "gate_1_dual_proxy_consistency": {
+      "rule": "candidate positive only if the canonical proxy shows a gain and the control proxy does not contradict it strongly",
+      "interpretation": {
+        "agreement": "stronger evidence",
+        "canonical_only": "extraction-sensitive",
+        "control_only": "likely proxy artifact",
+        "contradiction": "not a positive"
+      }
+    },
+    "gate_2_sustained_order_not_peak_order": {
+      "records": [
+        "mean_R",
+        "median_R",
+        "R_fraction_above_threshold"
+      ],
+      "R_threshold": 0.7,
+      "rule": "require sustained increase in at least two of the three records; one-frame peaks do not count"
+    },
+    "gate_3_phase_variance_compression": {
+      "records": [
+        "phase_variance_mean",
+        "phase_variance_median",
+        "rolling_phase_variance"
+      ],
+      "rule": "candidate positive must show lower phase variance than null over a nontrivial time fraction"
+    },
+    "gate_4_cluster_stability": {
+      "records": [
+        "cluster_count",
+        "dominant_partition_dwell_fraction"
+      ],
+      "rule": "do not count constant flicker as locking; require either stable cluster count or longer dominant-partition dwell than null"
+    },
+    "gate_5_frequency_compression": {
+      "records": [
+        "mean_frequency_spread",
+        "median_frequency_spread"
+      ],
+      "rule": "require lower frequency spread than null; phase alignment without frequency pulling is weak evidence"
+    },
+    "gate_6_morphology_cross_check": {
+      "records": [
+        "composite_lifetime_delta",
+        "binding_persistence_delta",
+        "coarse_persistence_delta"
+      ],
+      "rule": "any claimed positive must show at least one morphology correlate; otherwise classify as transient synchronization"
+    },
+    "gate_7_symmetry_caution": {
+      "cases": [
+        "counter_propagating_corridor",
+        "phase_ordered_symmetric_triad"
+      ],
+      "rule": "high R alone is insufficient; require frequency compression, cluster stability, and preferably one morphology correlate"
+    }
+  },
+  "output_labels": [
+    "no synchronization effect",
+    "transient synchronization",
+    "scale-fragile phase locking",
+    "scale-stable phase locking"
+  ],
+  "system_level_labels": [
+    "no phase channel",
+    "localized locking only",
+    "candidate collective oscillator regime"
+  ],
+  "strict_stopping_rule": {
+    "freeze_negative_if_all_9_runs_show": [
+      "no increase in mean or sustained R(t)",
+      "no reduction in phase variance",
+      "no stabilized cluster structure",
+      "no morphology change"
+    ],
+    "instruction": "Do not increase epsilon blindly if the base pilot is null."
+  },
+  "output_table_fields": [
+    "run_id",
+    "representative_id",
+    "condition_id",
+    "phase_proxy",
+    "control_phase_proxy",
+    "phase_coupling_eps",
+    "resolution",
+    "mean_R_canonical",
+    "median_R_canonical",
+    "R_fraction_canonical",
+    "mean_R_control",
+    "median_R_control",
+    "R_fraction_control",
+    "phase_variance_delta",
+    "frequency_spread_delta",
+    "cluster_dwell_delta",
+    "morphology_correlate_flag",
+    "sync_label"
+  ],
+  "note_on_freeze_rule": {
+    "freeze_negative_if": "all 9 runs show no sustained R gain, no variance compression, no cluster stabilization, and no morphology correlate",
+    "purpose": "prevents coefficient chasing after a null base pilot"
+  }
+}
