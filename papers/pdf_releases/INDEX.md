@@ -56,6 +56,7 @@ The intended public reading order is:
 
 1. `19.2` Unfrozen Kernel Back-Reaction and Mesoscopic Substrate Reinforcement Probes on a Kernel-Induced Cochain Operator Architecture
 2. `19.1` same paper, initial release (superseded by `19.2`)
+3. `20.1` Mutual Registration and Constraint-Coupled Interaction Probe on a Kernel-Induced Cochain Operator Architecture
 
 ## 3. Full release list
 
@@ -80,6 +81,7 @@ The intended public reading order is:
 - `18.1` Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture
 - `19.2` Unfrozen Kernel Back-Reaction and Mesoscopic Substrate Reinforcement Probes on a Kernel-Induced Cochain Operator Architecture
 - `19.1` Unfrozen Kernel Back-Reaction and Mesoscopic Substrate Reinforcement Probes on a Kernel-Induced Cochain Operator Architecture (superseded)
+- `20.1` Mutual Registration and Constraint-Coupled Interaction Probe on a Kernel-Induced Cochain Operator Architecture
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
