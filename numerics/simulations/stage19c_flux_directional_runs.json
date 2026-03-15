@@ -1,0 +1,98 @@
+{
+  "stage": "19C_flux_directional_substrate_back_reaction",
+  "description": "Minimal 9-run pilot for flux-driven directional substrate back-reaction on the frozen kernel-induced cochain architecture.",
+  "base_resolution": 12,
+  "refinement_resolution": 24,
+  "promotion_required": true,
+  "promotion_rule": {
+    "persistence_gain_required": true,
+    "directional_transport_stabilization_required": true,
+    "localized_effect_required": true,
+    "bounded_kernel_deformation_required": true
+  },
+  "negative_freeze_rule": {
+    "all_9_runs_no_composite_lifetime_gain": true,
+    "all_9_runs_no_binding_persistence_gain": true,
+    "all_9_runs_no_coarse_basin_persistence_gain": true,
+    "all_9_runs_no_new_stabilized_ordering_class": true,
+    "all_9_runs_no_directional_transport_locking": true
+  },
+  "common_fields": {
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "packet_family": "frozen_stage13_family",
+    "coupling_class": "flux_directional_substrate_back_reaction",
+    "flux_estimator": "smoothed_signed_edge_flux",
+    "flux_memory_class": "single_horizon_exponential_decay",
+    "flux_memory_tau": 0.3,
+    "flux_smoothing_sigma": 2.0,
+    "kernel_update_projection": "bounded_directional",
+    "kernel_update_clamp": 0.05,
+    "delta_units": "dimensionless"
+  },
+  "runs": [
+    {
+      "run_id": "S19C_clustered_anchor_null",
+      "representative_id": "clustered_composite_anchor",
+      "condition": "null",
+      "delta": 0.0,
+      "notes": "Null control for clustered composite anchor."
+    },
+    {
+      "run_id": "S19C_clustered_anchor_vweak",
+      "representative_id": "clustered_composite_anchor",
+      "condition": "very_weak",
+      "delta": 0.01,
+      "notes": "Very weak flux-directional back-reaction on clustered composite anchor."
+    },
+    {
+      "run_id": "S19C_clustered_anchor_weak",
+      "representative_id": "clustered_composite_anchor",
+      "condition": "weak",
+      "delta": 0.02,
+      "notes": "Weak flux-directional back-reaction on clustered composite anchor."
+    },
+    {
+      "run_id": "S19C_symmetric_triad_null",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "condition": "null",
+      "delta": 0.0,
+      "notes": "Null control for phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "S19C_symmetric_triad_vweak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "condition": "very_weak",
+      "delta": 0.01,
+      "notes": "Very weak flux-directional back-reaction on phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "S19C_symmetric_triad_weak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "condition": "weak",
+      "delta": 0.02,
+      "notes": "Weak flux-directional back-reaction on phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "S19C_corridor_null",
+      "representative_id": "counter_propagating_corridor",
+      "condition": "null",
+      "delta": 0.0,
+      "notes": "Null control for counter-propagating corridor."
+    },
+    {
+      "run_id": "S19C_corridor_vweak",
+      "representative_id": "counter_propagating_corridor",
+      "condition": "very_weak",
+      "delta": 0.01,
+      "notes": "Very weak flux-directional back-reaction on counter-propagating corridor."
+    },
+    {
+      "run_id": "S19C_corridor_weak",
+      "representative_id": "counter_propagating_corridor",
+      "condition": "weak",
+      "delta": 0.02,
+      "notes": "Weak flux-directional back-reaction on counter-propagating corridor."
+    }
+  ]
+}
