@@ -1,0 +1,158 @@
+{
+  "stage": "23.4_dk_metastable_transport_window_scan",
+  "description": "Minimal 9-run DK clustered transport-window scan around the Stage 23.3 refinement-stable clustered family.",
+  "base_resolution": 12,
+  "promotion_required": false,
+  "exploratory_positive_rule": {
+    "stable_metastable_transport_family_required": true,
+    "persistence_claims_allowed": false
+  },
+  "negative_freeze_rule": {
+    "all_9_runs_unresolved_mixed_or_dispersive": true,
+    "all_9_runs_no_transport_family": true
+  },
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "representative_id": "tight_clustered_pair_in_phase",
+    "packet_family": "stage23_3_refinement_stable_clustered_family",
+    "base_amplitude_scale": 1.0,
+    "base_width": 0.08,
+    "base_separation": 0.08,
+    "base_phase_offset": 0.0,
+    "kernel_type": "static_gaussian",
+    "grade_coupling_modulation": 0.0,
+    "kernel_stretch_x": 1.0,
+    "kernel_stretch_y": 1.0,
+    "resolution": 12,
+    "observables": [
+      "persistence_gain",
+      "collision_class",
+      "grade_exchange_amplitude",
+      "grade_exchange_coherence",
+      "transport_span",
+      "post_collision_energy_asymmetry",
+      "recurrence_indicator"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S23_4_sep_tight_baseline",
+      "triplet": "separation_scaling",
+      "variant_label": "tight_clustered_baseline",
+      "separation": 0.08,
+      "sigma_a": 0.08,
+      "sigma_b": 0.08,
+      "phase_offset": 0.0,
+      "grade_coupling_modulation": 0.0,
+      "kernel_stretch_x": 1.0,
+      "kernel_stretch_y": 1.0,
+      "notes": "Tight clustered baseline from the Stage 23.3 stable family."
+    },
+    {
+      "run_id": "S23_4_sep_medium_clustered",
+      "triplet": "separation_scaling",
+      "variant_label": "medium_clustered",
+      "separation": 0.12,
+      "sigma_a": 0.08,
+      "sigma_b": 0.08,
+      "phase_offset": 0.0,
+      "grade_coupling_modulation": 0.0,
+      "kernel_stretch_x": 1.0,
+      "kernel_stretch_y": 1.0,
+      "notes": "Slightly wider clustered seed to test transport-window sensitivity to separation."
+    },
+    {
+      "run_id": "S23_4_sep_near_overlap",
+      "triplet": "separation_scaling",
+      "variant_label": "near_overlapping_seed",
+      "separation": 0.04,
+      "sigma_a": 0.08,
+      "sigma_b": 0.08,
+      "phase_offset": 0.0,
+      "grade_coupling_modulation": 0.0,
+      "kernel_stretch_x": 1.0,
+      "kernel_stretch_y": 1.0,
+      "notes": "Near-overlapping clustered seed."
+    },
+    {
+      "run_id": "S23_4_width_symmetric",
+      "triplet": "width_contrast",
+      "variant_label": "symmetric_widths",
+      "separation": 0.08,
+      "sigma_a": 0.08,
+      "sigma_b": 0.08,
+      "phase_offset": 0.0,
+      "grade_coupling_modulation": 0.0,
+      "kernel_stretch_x": 1.0,
+      "kernel_stretch_y": 1.0,
+      "notes": "Width-control duplication for width-contrast triplet."
+    },
+    {
+      "run_id": "S23_4_width_a_wider",
+      "triplet": "width_contrast",
+      "variant_label": "probe_a_wider",
+      "separation": 0.08,
+      "sigma_a": 0.10,
+      "sigma_b": 0.06,
+      "phase_offset": 0.0,
+      "grade_coupling_modulation": 0.0,
+      "kernel_stretch_x": 1.0,
+      "kernel_stretch_y": 1.0,
+      "notes": "Probe A wider than probe B."
+    },
+    {
+      "run_id": "S23_4_width_b_wider",
+      "triplet": "width_contrast",
+      "variant_label": "probe_b_wider",
+      "separation": 0.08,
+      "sigma_a": 0.06,
+      "sigma_b": 0.10,
+      "phase_offset": 0.0,
+      "grade_coupling_modulation": 0.0,
+      "kernel_stretch_x": 1.0,
+      "kernel_stretch_y": 1.0,
+      "notes": "Probe B wider than probe A."
+    },
+    {
+      "run_id": "S23_4_phase_in_phase",
+      "triplet": "phase_transport_tuning",
+      "variant_label": "in_phase",
+      "separation": 0.08,
+      "sigma_a": 0.08,
+      "sigma_b": 0.08,
+      "phase_offset": 0.0,
+      "grade_coupling_modulation": 0.0,
+      "kernel_stretch_x": 1.0,
+      "kernel_stretch_y": 1.0,
+      "notes": "Phase-control duplication for phase-transport triplet."
+    },
+    {
+      "run_id": "S23_4_phase_quarter_offset",
+      "triplet": "phase_transport_tuning",
+      "variant_label": "quarter_phase_offset",
+      "separation": 0.08,
+      "sigma_a": 0.08,
+      "sigma_b": 0.08,
+      "phase_offset": 1.5707963267948966,
+      "grade_coupling_modulation": 0.0,
+      "kernel_stretch_x": 1.0,
+      "kernel_stretch_y": 1.0,
+      "notes": "Quarter-phase offset."
+    },
+    {
+      "run_id": "S23_4_phase_half_offset",
+      "triplet": "phase_transport_tuning",
+      "variant_label": "half_phase_offset",
+      "separation": 0.08,
+      "sigma_a": 0.08,
+      "sigma_b": 0.08,
+      "phase_offset": 3.141592653589793,
+      "grade_coupling_modulation": 0.0,
+      "kernel_stretch_x": 1.0,
+      "kernel_stretch_y": 1.0,
+      "notes": "Half-phase offset."
+    }
+  ]
+}
