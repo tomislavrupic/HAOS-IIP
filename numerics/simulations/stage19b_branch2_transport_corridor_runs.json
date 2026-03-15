@@ -1,0 +1,98 @@
+{
+  "stage": "19B_branch2_transport_corridor_reinforcement",
+  "description": "Minimal 9-run pilot for mesoscopic transport-corridor reinforcement on frozen kernel-induced cochain architecture.",
+  "base_resolution": 12,
+  "refinement_resolution": 24,
+  "promotion_required": true,
+  "promotion_rule": {
+    "composite_lifetime_gain_required": true,
+    "binding_persistence_gain_required": true,
+    "ordering_or_transport_shift_required": true,
+    "bounded_kernel_deformation_required": true
+  },
+  "negative_freeze_rule": {
+    "all_9_runs_no_composite_lifetime_gain": true,
+    "all_9_runs_no_binding_persistence_gain": true,
+    "all_9_runs_no_coarse_basin_persistence_gain": true,
+    "all_9_runs_no_new_stabilized_ordering_class": true,
+    "all_9_runs_no_corridor_transport_locking": true
+  },
+  "common_fields": {
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "packet_family": "frozen_stage13_family",
+    "coupling_class": "transport_corridor_reinforcement",
+    "corridor_estimator": "smoothed_flux_magnitude",
+    "corridor_memory_class": "single_horizon_exponential_decay",
+    "corridor_memory_tau": 0.25,
+    "corridor_smoothing_sigma": 2.0,
+    "kernel_update_projection": "bounded_smoothed",
+    "kernel_update_clamp": 0.05,
+    "delta_units": "dimensionless"
+  },
+  "runs": [
+    {
+      "run_id": "S19B2_clustered_anchor_null",
+      "representative_id": "clustered_composite_anchor",
+      "condition": "null",
+      "delta": 0.0,
+      "notes": "Null control for clustered composite anchor."
+    },
+    {
+      "run_id": "S19B2_clustered_anchor_vweak",
+      "representative_id": "clustered_composite_anchor",
+      "condition": "very_weak",
+      "delta": 0.01,
+      "notes": "Very weak corridor reinforcement on clustered composite anchor."
+    },
+    {
+      "run_id": "S19B2_clustered_anchor_weak",
+      "representative_id": "clustered_composite_anchor",
+      "condition": "weak",
+      "delta": 0.02,
+      "notes": "Weak corridor reinforcement on clustered composite anchor."
+    },
+    {
+      "run_id": "S19B2_symmetric_triad_null",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "condition": "null",
+      "delta": 0.0,
+      "notes": "Null control for phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "S19B2_symmetric_triad_vweak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "condition": "very_weak",
+      "delta": 0.01,
+      "notes": "Very weak corridor reinforcement on phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "S19B2_symmetric_triad_weak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "condition": "weak",
+      "delta": 0.02,
+      "notes": "Weak corridor reinforcement on phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "S19B2_corridor_null",
+      "representative_id": "counter_propagating_corridor",
+      "condition": "null",
+      "delta": 0.0,
+      "notes": "Null control for counter-propagating corridor."
+    },
+    {
+      "run_id": "S19B2_corridor_vweak",
+      "representative_id": "counter_propagating_corridor",
+      "condition": "very_weak",
+      "delta": 0.01,
+      "notes": "Very weak corridor reinforcement on counter-propagating corridor."
+    },
+    {
+      "run_id": "S19B2_corridor_weak",
+      "representative_id": "counter_propagating_corridor",
+      "condition": "weak",
+      "delta": 0.02,
+      "notes": "Weak corridor reinforcement on counter-propagating corridor."
+    }
+  ]
+}
