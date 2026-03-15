@@ -1,0 +1,212 @@
+{
+  "description": "Stage 18 pilot for emergent memory or retarded interaction dynamics on the frozen projected transverse architecture.",
+  "note_name": "Stage_18_Emergent_Memory_Retarded_Interaction_Dynamics_v1.md",
+  "selection_rationale": "The pilot tests whether delayed or finite-memory coupling can produce collective organization that instantaneous weak couplings could not. The full design is 27 runs, but a Branch-A-first 9-run screen is frozen alongside it to allow an early negative stop.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "strongest coherent periodic transverse seed carried through Stages 11-18"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "followup_gate": "Promote only if sustained morphology change or a new ordering label appears and the effect survives anti-false-positive checks.",
+    "selection_note": "The base pilot stays at n=12; refinement is reserved for selective positives only."
+  },
+  "memory_classes": [
+    {
+      "memory_class_id": "A_single_lag_retarded_term",
+      "label": "single-lag retarded term",
+      "description": "feedback uses a single delayed state sample state(t - tau)",
+      "delay_rule": "tau proportional to packet width",
+      "parameters": {
+        "very_weak": {"tau_over_w": 0.5},
+        "weak": {"tau_over_w": 1.0}
+      },
+      "branch_a_first": true
+    },
+    {
+      "memory_class_id": "B_exponential_memory_kernel",
+      "label": "exponential memory kernel",
+      "description": "feedback uses a short exponential memory convolution over past states",
+      "delay_rule": "kernel decay time proportional to packet width",
+      "parameters": {
+        "very_weak": {"tau_over_w": 0.5, "kernel_decay": "exp"},
+        "weak": {"tau_over_w": 1.0, "kernel_decay": "exp"}
+      },
+      "branch_a_first": false
+    },
+    {
+      "memory_class_id": "C_short_window_memory_average",
+      "label": "short-window finite-memory average",
+      "description": "feedback uses a finite moving average of recent states",
+      "delay_rule": "window length proportional to packet width",
+      "parameters": {
+        "very_weak": {"window_over_w": 0.5},
+        "weak": {"window_over_w": 1.0}
+      },
+      "branch_a_first": false
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "null_control",
+      "label": "null control",
+      "memory_strength": 0.0,
+      "variant": "none"
+    },
+    {
+      "condition_id": "very_weak_memory_coupling",
+      "label": "very weak delayed or memory coupling",
+      "memory_strength": 0.01,
+      "variant": "very_weak"
+    },
+    {
+      "condition_id": "weak_memory_coupling",
+      "label": "weak delayed or memory coupling",
+      "memory_strength": 0.02,
+      "variant": "weak"
+    }
+  ],
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage15_case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "strong composite anchor and main hysteresis candidate"
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.5, 0.5], [0.65, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "notes": "diffuse transport control and expected null candidate"
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage15_case_id": "symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [[0.18, 0.5, 0.5], [0.5, 0.5, 0.5], [0.82, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "structured ordering candidate and likely transient stabilization case"
+    }
+  ],
+  "observables": {
+    "interaction_morphology": [
+      "composite_lifetime",
+      "binding_persistence",
+      "overlap_integral_evolution"
+    ],
+    "collective_ordering": [
+      "coarse_basin_persistence",
+      "relational_ordering_flip_rate",
+      "transport_delay_shell_structure"
+    ],
+    "memory_specific": [
+      "delayed_response_correlation",
+      "history_dependent_trajectory_deviation",
+      "hysteresis_indicator"
+    ]
+  },
+  "output_labels": [
+    "no memory dynamic effect",
+    "transient history response",
+    "scale-fragile memory-assisted ordering",
+    "scale-stable memory-assisted ordering"
+  ],
+  "promotion_rule": {
+    "promote_only_if": [
+      "sustained ordering gain vs null",
+      "morphology improvement in the same direction",
+      "effect survives proxy change",
+      "effect persists after refinement"
+    ],
+    "positive_labels": [
+      "delay-induced transient ordering",
+      "scale-fragile delayed stabilization",
+      "candidate collective timing channel"
+    ],
+    "otherwise": "freeze negative"
+  },
+  "anti_false_positive_safeguards": [
+    "global coherence increase across all representatives",
+    "ordering that disappears at refinement",
+    "single-cycle delay resonance",
+    "improvement without morphology correlate",
+    "proxy-dependent signals"
+  ],
+  "negative_freeze_rule": {
+    "freeze_negative_if": [
+      "no morphology metric improves vs null",
+      "no new ordering class appears",
+      "delayed term produces only transient trajectory deformation",
+      "refinement destroys any weak signal"
+    ]
+  },
+  "branch_a_first_variant": {
+    "enabled": true,
+    "memory_class_id": "A_single_lag_retarded_term",
+    "base_run_count": 9,
+    "locked_tau_over_w": 0.5,
+    "selection_note": "The first executable screen uses one fixed delay scale tied to packet width. Delay scanning is deferred until a Branch-A positive exists.",
+    "decision_gate": {
+      "freeze_negative_if_all_9_runs_show": [
+        "no composite gain",
+        "no basin persistence gain",
+        "no new ordering class"
+      ],
+      "expand_to_full_27_only_if": [
+        "one representative shows sustained improvement",
+        "or one representative shows a new ordering label"
+      ]
+    }
+  },
+  "runs": [
+    {"run_id": "S18_A_clustered_anchor__null_control__n12", "memory_class_id": "A_single_lag_retarded_term", "representative_id": "clustered_composite_anchor", "condition_id": "null_control", "memory_strength": 0.0, "resolution": 12},
+    {"run_id": "S18_A_clustered_anchor__very_weak__n12", "memory_class_id": "A_single_lag_retarded_term", "representative_id": "clustered_composite_anchor", "condition_id": "very_weak_memory_coupling", "memory_strength": 0.01, "resolution": 12},
+    {"run_id": "S18_A_clustered_anchor__weak__n12", "memory_class_id": "A_single_lag_retarded_term", "representative_id": "clustered_composite_anchor", "condition_id": "weak_memory_coupling", "memory_strength": 0.02, "resolution": 12},
+    {"run_id": "S18_A_corridor__null_control__n12", "memory_class_id": "A_single_lag_retarded_term", "representative_id": "counter_propagating_corridor", "condition_id": "null_control", "memory_strength": 0.0, "resolution": 12},
+    {"run_id": "S18_A_corridor__very_weak__n12", "memory_class_id": "A_single_lag_retarded_term", "representative_id": "counter_propagating_corridor", "condition_id": "very_weak_memory_coupling", "memory_strength": 0.01, "resolution": 12},
+    {"run_id": "S18_A_corridor__weak__n12", "memory_class_id": "A_single_lag_retarded_term", "representative_id": "counter_propagating_corridor", "condition_id": "weak_memory_coupling", "memory_strength": 0.02, "resolution": 12},
+    {"run_id": "S18_A_triad__null_control__n12", "memory_class_id": "A_single_lag_retarded_term", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "null_control", "memory_strength": 0.0, "resolution": 12},
+    {"run_id": "S18_A_triad__very_weak__n12", "memory_class_id": "A_single_lag_retarded_term", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "very_weak_memory_coupling", "memory_strength": 0.01, "resolution": 12},
+    {"run_id": "S18_A_triad__weak__n12", "memory_class_id": "A_single_lag_retarded_term", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "weak_memory_coupling", "memory_strength": 0.02, "resolution": 12},
+
+    {"run_id": "S18_B_clustered_anchor__null_control__n12", "memory_class_id": "B_exponential_memory_kernel", "representative_id": "clustered_composite_anchor", "condition_id": "null_control", "memory_strength": 0.0, "resolution": 12},
+    {"run_id": "S18_B_clustered_anchor__very_weak__n12", "memory_class_id": "B_exponential_memory_kernel", "representative_id": "clustered_composite_anchor", "condition_id": "very_weak_memory_coupling", "memory_strength": 0.01, "resolution": 12},
+    {"run_id": "S18_B_clustered_anchor__weak__n12", "memory_class_id": "B_exponential_memory_kernel", "representative_id": "clustered_composite_anchor", "condition_id": "weak_memory_coupling", "memory_strength": 0.02, "resolution": 12},
+    {"run_id": "S18_B_corridor__null_control__n12", "memory_class_id": "B_exponential_memory_kernel", "representative_id": "counter_propagating_corridor", "condition_id": "null_control", "memory_strength": 0.0, "resolution": 12},
+    {"run_id": "S18_B_corridor__very_weak__n12", "memory_class_id": "B_exponential_memory_kernel", "representative_id": "counter_propagating_corridor", "condition_id": "very_weak_memory_coupling", "memory_strength": 0.01, "resolution": 12},
+    {"run_id": "S18_B_corridor__weak__n12", "memory_class_id": "B_exponential_memory_kernel", "representative_id": "counter_propagating_corridor", "condition_id": "weak_memory_coupling", "memory_strength": 0.02, "resolution": 12},
+    {"run_id": "S18_B_triad__null_control__n12", "memory_class_id": "B_exponential_memory_kernel", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "null_control", "memory_strength": 0.0, "resolution": 12},
+    {"run_id": "S18_B_triad__very_weak__n12", "memory_class_id": "B_exponential_memory_kernel", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "very_weak_memory_coupling", "memory_strength": 0.01, "resolution": 12},
+    {"run_id": "S18_B_triad__weak__n12", "memory_class_id": "B_exponential_memory_kernel", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "weak_memory_coupling", "memory_strength": 0.02, "resolution": 12},
+
+    {"run_id": "S18_C_clustered_anchor__null_control__n12", "memory_class_id": "C_short_window_memory_average", "representative_id": "clustered_composite_anchor", "condition_id": "null_control", "memory_strength": 0.0, "resolution": 12},
+    {"run_id": "S18_C_clustered_anchor__very_weak__n12", "memory_class_id": "C_short_window_memory_average", "representative_id": "clustered_composite_anchor", "condition_id": "very_weak_memory_coupling", "memory_strength": 0.01, "resolution": 12},
+    {"run_id": "S18_C_clustered_anchor__weak__n12", "memory_class_id": "C_short_window_memory_average", "representative_id": "clustered_composite_anchor", "condition_id": "weak_memory_coupling", "memory_strength": 0.02, "resolution": 12},
+    {"run_id": "S18_C_corridor__null_control__n12", "memory_class_id": "C_short_window_memory_average", "representative_id": "counter_propagating_corridor", "condition_id": "null_control", "memory_strength": 0.0, "resolution": 12},
+    {"run_id": "S18_C_corridor__very_weak__n12", "memory_class_id": "C_short_window_memory_average", "representative_id": "counter_propagating_corridor", "condition_id": "very_weak_memory_coupling", "memory_strength": 0.01, "resolution": 12},
+    {"run_id": "S18_C_corridor__weak__n12", "memory_class_id": "C_short_window_memory_average", "representative_id": "counter_propagating_corridor", "condition_id": "weak_memory_coupling", "memory_strength": 0.02, "resolution": 12},
+    {"run_id": "S18_C_triad__null_control__n12", "memory_class_id": "C_short_window_memory_average", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "null_control", "memory_strength": 0.0, "resolution": 12},
+    {"run_id": "S18_C_triad__very_weak__n12", "memory_class_id": "C_short_window_memory_average", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "very_weak_memory_coupling", "memory_strength": 0.01, "resolution": 12},
+    {"run_id": "S18_C_triad__weak__n12", "memory_class_id": "C_short_window_memory_average", "representative_id": "phase_ordered_symmetric_triad", "condition_id": "weak_memory_coupling", "memory_strength": 0.02, "resolution": 12}
+  ]
+}
