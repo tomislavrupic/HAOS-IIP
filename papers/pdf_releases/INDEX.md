@@ -52,6 +52,11 @@ The intended public reading order is:
 4. `17.1` Emergent Memory Retarded Interaction Dynamics Probe on a Frozen Kernel-Induced Cochain Operator Architecture
 5. `18.1` Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture
 
+### 2.5 Part V. Phase II opening
+
+1. `19.2` Unfrozen Kernel Back-Reaction and Mesoscopic Substrate Reinforcement Probes on a Kernel-Induced Cochain Operator Architecture
+2. `19.1` same paper, initial release (superseded by `19.2`)
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -73,6 +78,8 @@ The intended public reading order is:
 - `16.1` Emergent Phase Synchronization Dynamics Probe on a Frozen Kernel-Induced Cochain Operator Architecture
 - `17.1` Emergent Memory Retarded Interaction Dynamics Probe on a Frozen Kernel-Induced Cochain Operator Architecture
 - `18.1` Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture
+- `19.2` Unfrozen Kernel Back-Reaction and Mesoscopic Substrate Reinforcement Probes on a Kernel-Induced Cochain Operator Architecture
+- `19.1` Unfrozen Kernel Back-Reaction and Mesoscopic Substrate Reinforcement Probes on a Kernel-Induced Cochain Operator Architecture (superseded)
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
