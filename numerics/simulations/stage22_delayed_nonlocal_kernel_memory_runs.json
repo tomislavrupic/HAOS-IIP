@@ -1,0 +1,469 @@
+{
+  "stage": "22_delayed_nonlocal_kernel_memory_probe",
+  "description": "Base 27-run persistence-first pilot for delayed nonlocal kernel memory on the frozen projected transverse architecture.",
+  "note_name": "Stage_22_Delayed_Nonlocal_Kernel_Memory_v1.md",
+  "experiment_slug": "stage22_delayed_nonlocal_kernel_memory",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and projected transverse seed carried from the late Phase I ladder into the Phase II substrate tests"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "followup_gate": "Promote only if a run shows composite lifetime gain, binding persistence gain, coarse basin persistence gain, or corridor dwell stabilization.",
+    "promotion_required": true
+  },
+  "kernel_law": {
+    "driver": "smoothed_local_energy_density",
+    "spatial_smoothing_sigma": 4.0,
+    "memory_horizon_tau": 0.25,
+    "kernel_update_clamp": 0.05,
+    "support_preserving": true,
+    "symmetric_weights_only": true,
+    "interpretation": "temporally extended and spatially distributed kernel memory without new packet species or coefficient escalation",
+    "memory_classes": [
+      {
+        "memory_class_id": "A_single_lag_retarded",
+        "label": "single-lag retarded reinforcement",
+        "update_form": "K = K0 * (1 + eps * Phi(t-tau))"
+      },
+      {
+        "memory_class_id": "B_exponential_history",
+        "label": "exponential history kernel",
+        "update_form": "K = K0 * (1 + eps * int exp(-s/tau) Phi(t-s) ds)"
+      },
+      {
+        "memory_class_id": "C_window_average",
+        "label": "finite-window historical averaging",
+        "update_form": "K = K0 * (1 + eps * avg_{[t-tau,t]} Phi)"
+      }
+    ]
+  },
+  "parameter_policy": {
+    "eps_values": {
+      "null": 0.0,
+      "very_weak": 0.01,
+      "weak": 0.02
+    },
+    "memory_tau": 0.25,
+    "spatial_smoothing_sigma": 4.0,
+    "kernel_update_clamp": 0.05,
+    "no_stronger_than_weak": true
+  },
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage15_case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [
+        [
+          0.42,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.58,
+          0.5,
+          0.5
+        ]
+      ],
+      "packet_amplitudes": [
+        0.5,
+        0.35,
+        0.2
+      ],
+      "phase_offsets_rad": [
+        0.0,
+        0.0,
+        3.141592653589793
+      ],
+      "kick_signs": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "notes": "strongest composite anchor and main candidate for any substrate-assisted persistence gain"
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage15_case_id": "symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [
+        [
+          0.18,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.82,
+          0.5,
+          0.5
+        ]
+      ],
+      "packet_amplitudes": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "phase_offsets_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kick_signs": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "notes": "structured ordering candidate and likely basin-stabilization test"
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [
+        [
+          0.35,
+          0.5,
+          0.5
+        ],
+        [
+          0.65,
+          0.5,
+          0.5
+        ]
+      ],
+      "packet_amplitudes": [
+        0.5,
+        0.5
+      ],
+      "phase_offsets_rad": [
+        0.0,
+        0.0
+      ],
+      "kick_signs": [
+        1.0,
+        -1.0
+      ],
+      "notes": "transport-style control and expected null candidate"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "S22A_clustered_anchor_null",
+      "representative_id": "clustered_composite_anchor",
+      "memory_class_id": "A_single_lag_retarded",
+      "condition_id": "null",
+      "eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "single-lag retarded reinforcement / null"
+    },
+    {
+      "run_id": "S22A_clustered_anchor_very_weak",
+      "representative_id": "clustered_composite_anchor",
+      "memory_class_id": "A_single_lag_retarded",
+      "condition_id": "very_weak",
+      "eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "single-lag retarded reinforcement / very_weak"
+    },
+    {
+      "run_id": "S22A_clustered_anchor_weak",
+      "representative_id": "clustered_composite_anchor",
+      "memory_class_id": "A_single_lag_retarded",
+      "condition_id": "weak",
+      "eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "single-lag retarded reinforcement / weak"
+    },
+    {
+      "run_id": "S22A_symmetric_triad_null",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "memory_class_id": "A_single_lag_retarded",
+      "condition_id": "null",
+      "eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "single-lag retarded reinforcement / null"
+    },
+    {
+      "run_id": "S22A_symmetric_triad_very_weak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "memory_class_id": "A_single_lag_retarded",
+      "condition_id": "very_weak",
+      "eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "single-lag retarded reinforcement / very_weak"
+    },
+    {
+      "run_id": "S22A_symmetric_triad_weak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "memory_class_id": "A_single_lag_retarded",
+      "condition_id": "weak",
+      "eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "single-lag retarded reinforcement / weak"
+    },
+    {
+      "run_id": "S22A_corridor_null",
+      "representative_id": "counter_propagating_corridor",
+      "memory_class_id": "A_single_lag_retarded",
+      "condition_id": "null",
+      "eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "single-lag retarded reinforcement / null"
+    },
+    {
+      "run_id": "S22A_corridor_very_weak",
+      "representative_id": "counter_propagating_corridor",
+      "memory_class_id": "A_single_lag_retarded",
+      "condition_id": "very_weak",
+      "eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "single-lag retarded reinforcement / very_weak"
+    },
+    {
+      "run_id": "S22A_corridor_weak",
+      "representative_id": "counter_propagating_corridor",
+      "memory_class_id": "A_single_lag_retarded",
+      "condition_id": "weak",
+      "eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "single-lag retarded reinforcement / weak"
+    },
+    {
+      "run_id": "S22B_clustered_anchor_null",
+      "representative_id": "clustered_composite_anchor",
+      "memory_class_id": "B_exponential_history",
+      "condition_id": "null",
+      "eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "exponential history kernel / null"
+    },
+    {
+      "run_id": "S22B_clustered_anchor_very_weak",
+      "representative_id": "clustered_composite_anchor",
+      "memory_class_id": "B_exponential_history",
+      "condition_id": "very_weak",
+      "eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "exponential history kernel / very_weak"
+    },
+    {
+      "run_id": "S22B_clustered_anchor_weak",
+      "representative_id": "clustered_composite_anchor",
+      "memory_class_id": "B_exponential_history",
+      "condition_id": "weak",
+      "eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "exponential history kernel / weak"
+    },
+    {
+      "run_id": "S22B_symmetric_triad_null",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "memory_class_id": "B_exponential_history",
+      "condition_id": "null",
+      "eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "exponential history kernel / null"
+    },
+    {
+      "run_id": "S22B_symmetric_triad_very_weak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "memory_class_id": "B_exponential_history",
+      "condition_id": "very_weak",
+      "eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "exponential history kernel / very_weak"
+    },
+    {
+      "run_id": "S22B_symmetric_triad_weak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "memory_class_id": "B_exponential_history",
+      "condition_id": "weak",
+      "eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "exponential history kernel / weak"
+    },
+    {
+      "run_id": "S22B_corridor_null",
+      "representative_id": "counter_propagating_corridor",
+      "memory_class_id": "B_exponential_history",
+      "condition_id": "null",
+      "eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "exponential history kernel / null"
+    },
+    {
+      "run_id": "S22B_corridor_very_weak",
+      "representative_id": "counter_propagating_corridor",
+      "memory_class_id": "B_exponential_history",
+      "condition_id": "very_weak",
+      "eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "exponential history kernel / very_weak"
+    },
+    {
+      "run_id": "S22B_corridor_weak",
+      "representative_id": "counter_propagating_corridor",
+      "memory_class_id": "B_exponential_history",
+      "condition_id": "weak",
+      "eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "exponential history kernel / weak"
+    },
+    {
+      "run_id": "S22C_clustered_anchor_null",
+      "representative_id": "clustered_composite_anchor",
+      "memory_class_id": "C_window_average",
+      "condition_id": "null",
+      "eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "finite-window historical averaging / null"
+    },
+    {
+      "run_id": "S22C_clustered_anchor_very_weak",
+      "representative_id": "clustered_composite_anchor",
+      "memory_class_id": "C_window_average",
+      "condition_id": "very_weak",
+      "eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "finite-window historical averaging / very_weak"
+    },
+    {
+      "run_id": "S22C_clustered_anchor_weak",
+      "representative_id": "clustered_composite_anchor",
+      "memory_class_id": "C_window_average",
+      "condition_id": "weak",
+      "eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "finite-window historical averaging / weak"
+    },
+    {
+      "run_id": "S22C_symmetric_triad_null",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "memory_class_id": "C_window_average",
+      "condition_id": "null",
+      "eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "finite-window historical averaging / null"
+    },
+    {
+      "run_id": "S22C_symmetric_triad_very_weak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "memory_class_id": "C_window_average",
+      "condition_id": "very_weak",
+      "eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "finite-window historical averaging / very_weak"
+    },
+    {
+      "run_id": "S22C_symmetric_triad_weak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "memory_class_id": "C_window_average",
+      "condition_id": "weak",
+      "eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "finite-window historical averaging / weak"
+    },
+    {
+      "run_id": "S22C_corridor_null",
+      "representative_id": "counter_propagating_corridor",
+      "memory_class_id": "C_window_average",
+      "condition_id": "null",
+      "eps": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "finite-window historical averaging / null"
+    },
+    {
+      "run_id": "S22C_corridor_very_weak",
+      "representative_id": "counter_propagating_corridor",
+      "memory_class_id": "C_window_average",
+      "condition_id": "very_weak",
+      "eps": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "finite-window historical averaging / very_weak"
+    },
+    {
+      "run_id": "S22C_corridor_weak",
+      "representative_id": "counter_propagating_corridor",
+      "memory_class_id": "C_window_average",
+      "condition_id": "weak",
+      "eps": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "finite-window historical averaging / weak"
+    }
+  ]
+}
