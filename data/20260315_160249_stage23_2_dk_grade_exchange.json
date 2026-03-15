@@ -1,0 +1,2788 @@
+{
+  "experiment": "23_2_dk_grade_exchange_texture_scan",
+  "description": "Focused DK grade-exchange and collision-texture stability scan across the strongest Phase III collision families.",
+  "fixed_parameters": {
+    "epsilon": 0.2,
+    "graph_type": "regular_lattice",
+    "boundary_type": "periodic",
+    "width_class": "baseline_coherent_width",
+    "bandwidth": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.6,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0
+  },
+  "runs": [
+    {
+      "config": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.12528656129226287,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.46,
+            0.5
+          ],
+          [
+            0.54,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            0.4,
+            0.0
+          ],
+          [
+            -0.4,
+            0.0
+          ]
+        ],
+        "notes": "initially close pair for clustered texture testing"
+      },
+      "run": {
+        "run_id": "S23_2_clustered_in_phase_n12",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "phase_offset_rad": 0.0,
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "notes": "clustered / in phase / n12"
+      },
+      "metrics": {
+        "run_id": "S23_2_clustered_in_phase_n12",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.13029498979418913,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3332473143907768,
+        "omega1_weight_final": 0.574547004678644,
+        "omega2_weight_final": 0.09220568093057938,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "initially close pair for clustered texture testing",
+        "grade_transfer_onset_time": 0.3758596838767886,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6666060904848018,
+        "omega2_peak_weight": 0.09220568093057938,
+        "grade_exchange_signature": "clustered_mixed_encounter",
+        "texture_stable_under_refinement": 1
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "peak_count_series": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "total_grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.33338392310381487,
+          0.6621470145832031,
+          0.004469062312982097
+        ],
+        [
+          0.33335642983318076,
+          0.6491947955390032,
+          0.017448774627816195
+        ],
+        [
+          0.33331820469544804,
+          0.6289696916042591,
+          0.03771210370029285
+        ],
+        [
+          0.3332786241341662,
+          0.603331487171084,
+          0.06338988869474975
+        ],
+        [
+          0.3332473143907768,
+          0.574547004678644,
+          0.09220568093057938
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5000006041674486,
+          0.5
+        ],
+        [
+          0.5000011976454289,
+          0.5
+        ],
+        [
+          0.5000017730945236,
+          0.5
+        ],
+        [
+          0.5000023291495008,
+          0.5
+        ],
+        [
+          0.5000028717310164,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.1248093167474574,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.46,
+            0.5
+          ],
+          [
+            0.54,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            0.4,
+            0.0
+          ],
+          [
+            -0.4,
+            0.0
+          ]
+        ],
+        "notes": "initially close pair for clustered texture testing"
+      },
+      "run": {
+        "run_id": "S23_2_clustered_in_phase_n24",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "phase_offset_rad": 0.0,
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "notes": "clustered / in phase / n24"
+      },
+      "metrics": {
+        "run_id": "S23_2_clustered_in_phase_n24",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7488559004847444,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.04166666666666674,
+        "final_mean_separation": 0.04166666666666674,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7488559004847444,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.041397300375089076,
+        "omega0_weight_initial": 0.3333333333333335,
+        "omega1_weight_initial": 0.6666666666666665,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333333333333301,
+        "omega1_weight_final": 0.6373943548486263,
+        "omega2_weight_final": 0.029272311818043538,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "initially close pair for clustered texture testing",
+        "grade_transfer_onset_time": 0.4992372669898296,
+        "grade_transfer_duty_cycle": 0.3333333333333333,
+        "omega1_peak_weight": 0.6666666666666665,
+        "omega2_peak_weight": 0.029272311818043538,
+        "grade_exchange_signature": "clustered_mixed_encounter",
+        "texture_stable_under_refinement": 1
+      },
+      "times": [
+        0.0,
+        0.1248093167474574,
+        0.2496186334949148,
+        0.3744279502423722,
+        0.4992372669898296,
+        0.624046583737287
+      ],
+      "mean_pair_distances": [
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674
+      ],
+      "minimum_pair_distances": [
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674
+      ],
+      "peak_count_series": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "total_grade_weights": [
+        [
+          0.3333333333333335,
+          0.6666666666666665,
+          0.0
+        ],
+        [
+          0.3333333333333334,
+          0.6654259487529361,
+          0.0012407179137305423
+        ],
+        [
+          0.33333333333333315,
+          0.6617397576127929,
+          0.004926909053873889
+        ],
+        [
+          0.3333333333333325,
+          0.6557144573955936,
+          0.010952209271073878
+        ],
+        [
+          0.33333333333333165,
+          0.6475223267875402,
+          0.019144339879128124
+        ],
+        [
+          0.3333333333333301,
+          0.6373943548486263,
+          0.029272311818043538
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ]
+        ],
+        [
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.12528656129226287,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.46,
+            0.5
+          ],
+          [
+            0.54,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            0.4,
+            0.0
+          ],
+          [
+            -0.4,
+            0.0
+          ]
+        ],
+        "notes": "initially close pair for clustered texture testing"
+      },
+      "run": {
+        "run_id": "S23_2_clustered_out_of_phase_n12",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "out_of_phase",
+        "phase_offset_rad": 3.141592653589793,
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "notes": "clustered / out of phase / n12"
+      },
+      "metrics": {
+        "run_id": "S23_2_clustered_out_of_phase_n12",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "out_of_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through with grade exchange",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.12528656129226287,
+        "binding_persistence": 0.16666666666666666,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.8333333333333334,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.12528656129226287,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.23032142391559055,
+        "omega0_weight_initial": 0.3329158941950537,
+        "omega1_weight_initial": 0.6670841058049463,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3339244598828644,
+        "omega1_weight_final": 0.5037203244548358,
+        "omega2_weight_final": 0.1623552156622997,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "initially close pair for clustered texture testing",
+        "grade_transfer_onset_time": 0.3758596838767886,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6670841058049463,
+        "omega2_peak_weight": 0.1623552156622997,
+        "grade_exchange_signature": "strong_pass_through_exchange",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.16666666666666674,
+        0.16666666666666674,
+        0.16666666666666674,
+        0.16666666666666674,
+        0.16666666666666674,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.16666666666666674,
+        0.16666666666666674,
+        0.16666666666666674,
+        0.16666666666666674,
+        0.16666666666666674,
+        0.08333333333333326
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "total_grade_weights": [
+        [
+          0.3329158941950537,
+          0.6670841058049463,
+          0.0
+        ],
+        [
+          0.3329841696999022,
+          0.6584004600980449,
+          0.008615370202052998
+        ],
+        [
+          0.333172321837545,
+          0.6335588067261166,
+          0.03326887143633821
+        ],
+        [
+          0.33343449190146285,
+          0.5959835419636684,
+          0.07058196613486861
+        ],
+        [
+          0.3337070665250462,
+          0.5507430619299101,
+          0.1155498715450436
+        ],
+        [
+          0.3339244598828644,
+          0.5037203244548358,
+          0.1623552156622997
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.4999963315772955,
+          0.5
+        ],
+        [
+          0.4999927387557419,
+          0.5
+        ],
+        [
+          0.4999892755814772,
+          0.5
+        ],
+        [
+          0.4999859578754293,
+          0.5
+        ],
+        [
+          0.49998275529274827,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.1248093167474574,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.46,
+            0.5
+          ],
+          [
+            0.54,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            0.4,
+            0.0
+          ],
+          [
+            -0.4,
+            0.0
+          ]
+        ],
+        "notes": "initially close pair for clustered texture testing"
+      },
+      "run": {
+        "run_id": "S23_2_clustered_out_of_phase_n24",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "out_of_phase",
+        "phase_offset_rad": 3.141592653589793,
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "notes": "clustered / out of phase / n24"
+      },
+      "metrics": {
+        "run_id": "S23_2_clustered_out_of_phase_n24",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "out_of_phase",
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through dispersive",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.16666666666666663,
+        "final_mean_separation": 0.16666666666666663,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.0818630890775758,
+        "omega0_weight_initial": 0.33333333333333304,
+        "omega1_weight_initial": 0.6666666666666671,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333333333333512,
+        "omega1_weight_final": 0.6087807212510257,
+        "omega2_weight_final": 0.05788594541562309,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "initially close pair for clustered texture testing",
+        "grade_transfer_onset_time": 0.3744279502423722,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6666666666666671,
+        "omega2_peak_weight": 0.05788594541562309,
+        "grade_exchange_signature": "dispersive_exchange_tail",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.1248093167474574,
+        0.2496186334949148,
+        0.3744279502423722,
+        0.4992372669898296,
+        0.624046583737287
+      ],
+      "mean_pair_distances": [
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663
+      ],
+      "minimum_pair_distances": [
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.33333333333333304,
+          0.6666666666666671,
+          0.0
+        ],
+        [
+          0.33333333333333337,
+          0.6641370950742307,
+          0.0025295715924358387
+        ],
+        [
+          0.33333333333333465,
+          0.6566597978446215,
+          0.01000686882204379
+        ],
+        [
+          0.3333333333333376,
+          0.6445626884154677,
+          0.022103978251194704
+        ],
+        [
+          0.3333333333333426,
+          0.6283715959380204,
+          0.038295070728637026
+        ],
+        [
+          0.3333333333333512,
+          0.6087807212510257,
+          0.05788594541562309
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ]
+        ],
+        [
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.12528656129226287,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "counter_propagating_corridor_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5
+          ],
+          [
+            0.65,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "notes": "corridor-like head-on geometry"
+      },
+      "run": {
+        "run_id": "S23_2_corridor_in_phase_n12",
+        "geometry_id": "counter_propagating_corridor_pair",
+        "phase_id": "in_phase",
+        "phase_offset_rad": 0.0,
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "notes": "corridor / in phase / n12"
+      },
+      "metrics": {
+        "run_id": "S23_2_corridor_in_phase_n12",
+        "geometry_id": "counter_propagating_corridor_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through with grade exchange",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.7517193677535772,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.25,
+        "final_mean_separation": 0.25,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.14776211252063692,
+        "omega0_weight_initial": 0.33340991636165723,
+        "omega1_weight_initial": 0.6665900836383427,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3332224669118291,
+        "omega1_weight_final": 0.5622003427081184,
+        "omega2_weight_final": 0.10457719038005263,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "corridor-like head-on geometry",
+        "grade_transfer_onset_time": 0.3758596838767886,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6665900836383427,
+        "omega2_peak_weight": 0.10457719038005263,
+        "grade_exchange_signature": "weak_pass_through_exchange",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337,
+        0.25,
+        0.25
+      ],
+      "minimum_pair_distances": [
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337,
+        0.25,
+        0.25
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.33340991636165723,
+          0.6665900836383427,
+          0.0
+        ],
+        [
+          0.3333959454888335,
+          0.6612297489107171,
+          0.005374305600449403
+        ],
+        [
+          0.33335801497012374,
+          0.6458116048413194,
+          0.020830380188557082
+        ],
+        [
+          0.333306910670047,
+          0.6222179836326255,
+          0.044475105697327655
+        ],
+        [
+          0.33325708452873143,
+          0.5932517904215318,
+          0.07349112504973691
+        ],
+        [
+          0.3332224669118291,
+          0.5622003427081184,
+          0.10457719038005263
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.500000064554275,
+          0.5
+        ],
+        [
+          0.5000001334372659,
+          0.5
+        ],
+        [
+          0.5000002169117028,
+          0.5
+        ],
+        [
+          0.5000003344502116,
+          0.5
+        ],
+        [
+          0.5000005135515581,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.1248093167474574,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "counter_propagating_corridor_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5
+          ],
+          [
+            0.65,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "notes": "corridor-like head-on geometry"
+      },
+      "run": {
+        "run_id": "S23_2_corridor_in_phase_n24",
+        "geometry_id": "counter_propagating_corridor_pair",
+        "phase_id": "in_phase",
+        "phase_offset_rad": 0.0,
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "notes": "corridor / in phase / n24"
+      },
+      "metrics": {
+        "run_id": "S23_2_corridor_in_phase_n24",
+        "geometry_id": "counter_propagating_corridor_pair",
+        "phase_id": "in_phase",
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through dispersive",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.7488559004847444,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.29166666666666674,
+        "final_mean_separation": 0.29166666666666674,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.050858760124207356,
+        "omega0_weight_initial": 0.33333333333319115,
+        "omega1_weight_initial": 0.6666666666668087,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33333333332973375,
+        "omega1_weight_final": 0.6307040925019705,
+        "omega2_weight_final": 0.03596257416829572,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "corridor-like head-on geometry",
+        "grade_transfer_onset_time": 0.4992372669898296,
+        "grade_transfer_duty_cycle": 0.3333333333333333,
+        "omega1_peak_weight": 0.6666666666668087,
+        "omega2_peak_weight": 0.03596257416829572,
+        "grade_exchange_signature": "texture_null",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.1248093167474574,
+        0.2496186334949148,
+        0.3744279502423722,
+        0.4992372669898296,
+        0.624046583737287
+      ],
+      "mean_pair_distances": [
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674
+      ],
+      "minimum_pair_distances": [
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.33333333333319115,
+          0.6666666666668087,
+          0.0
+        ],
+        [
+          0.3333333333330679,
+          0.6651092370492198,
+          0.0015574296177124137
+        ],
+        [
+          0.33333333333268994,
+          0.6604987426431044,
+          0.006167924024205847
+        ],
+        [
+          0.3333333333320334,
+          0.6530171712515125,
+          0.013649495416454013
+        ],
+        [
+          0.3333333333310624,
+          0.6429567480474614,
+          0.023709918621476138
+        ],
+        [
+          0.33333333332973375,
+          0.6307040925019705,
+          0.03596257416829572
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5000000000000513,
+          0.5
+        ],
+        [
+          0.5000000000001021,
+          0.5
+        ],
+        [
+          0.5000000000001525,
+          0.5
+        ],
+        [
+          0.5000000000002018,
+          0.5
+        ],
+        [
+          0.5000000000002497,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ]
+        ],
+        [
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.12528656129226287,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "counter_propagating_corridor_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5
+          ],
+          [
+            0.65,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "notes": "corridor-like head-on geometry"
+      },
+      "run": {
+        "run_id": "S23_2_corridor_out_of_phase_n12",
+        "geometry_id": "counter_propagating_corridor_pair",
+        "phase_id": "out_of_phase",
+        "phase_offset_rad": 3.141592653589793,
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "notes": "corridor / out of phase / n12"
+      },
+      "metrics": {
+        "run_id": "S23_2_corridor_out_of_phase_n12",
+        "geometry_id": "counter_propagating_corridor_pair",
+        "phase_id": "out_of_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through with grade exchange",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.7517193677535772,
+        "coarse_basin_persistence": 0.8333333333333334,
+        "minimum_separation": 0.25,
+        "final_mean_separation": 0.25,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.17828903695844878,
+        "omega0_weight_initial": 0.33338668893004714,
+        "omega1_weight_initial": 0.6666133110699529,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3332804532386139,
+        "omega1_weight_final": 0.5405970754420003,
+        "omega2_weight_final": 0.12612247131938584,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "corridor-like head-on geometry",
+        "grade_transfer_onset_time": 0.3758596838767886,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6666133110699529,
+        "omega2_peak_weight": 0.12612247131938584,
+        "grade_exchange_signature": "strong_pass_through_exchange",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337,
+        0.25,
+        0.25
+      ],
+      "minimum_pair_distances": [
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337,
+        0.25,
+        0.25
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.33338668893004714,
+          0.6666133110699529,
+          0.0
+        ],
+        [
+          0.3333805148539112,
+          0.6602673188145949,
+          0.006352166331493825
+        ],
+        [
+          0.3333630648383222,
+          0.6419541070683868,
+          0.024682828093290917
+        ],
+        [
+          0.33333739372216675,
+          0.6137395031951793,
+          0.05292310308265402
+        ],
+        [
+          0.33330807030985155,
+          0.5787245671426543,
+          0.08796736254749415
+        ],
+        [
+          0.3332804532386139,
+          0.5405970754420003,
+          0.12612247131938584
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.49999748030735214,
+          0.5
+        ],
+        [
+          0.4999950039096024,
+          0.5
+        ],
+        [
+          0.49999259491808257,
+          0.5
+        ],
+        [
+          0.49999024464074915,
+          0.5
+        ],
+        [
+          0.4999879076175253,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ],
+          [
+            0.375,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.1248093167474574,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "counter_propagating_corridor_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.35,
+            0.5
+          ],
+          [
+            0.65,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "notes": "corridor-like head-on geometry"
+      },
+      "run": {
+        "run_id": "S23_2_corridor_out_of_phase_n24",
+        "geometry_id": "counter_propagating_corridor_pair",
+        "phase_id": "out_of_phase",
+        "phase_offset_rad": 3.141592653589793,
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "notes": "corridor / out of phase / n24"
+      },
+      "metrics": {
+        "run_id": "S23_2_corridor_out_of_phase_n24",
+        "geometry_id": "counter_propagating_corridor_pair",
+        "phase_id": "out_of_phase",
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through dispersive",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.7488559004847444,
+        "coarse_basin_persistence": 0.8333333333333334,
+        "minimum_separation": 0.29166666666666674,
+        "final_mean_separation": 0.29166666666666674,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.05929800459587363,
+        "omega0_weight_initial": 0.3333333333334823,
+        "omega1_weight_initial": 0.6666666666665177,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33333333333710263,
+        "omega1_weight_final": 0.6247366455041342,
+        "omega2_weight_final": 0.04193002115876307,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "corridor-like head-on geometry",
+        "grade_transfer_onset_time": 0.3744279502423722,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6666666666665177,
+        "omega2_peak_weight": 0.04193002115876307,
+        "grade_exchange_signature": "texture_null",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.1248093167474574,
+        0.2496186334949148,
+        0.3744279502423722,
+        0.4992372669898296,
+        0.624046583737287
+      ],
+      "mean_pair_distances": [
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674
+      ],
+      "minimum_pair_distances": [
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674,
+        0.29166666666666674
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.3333333333334823,
+          0.6666666666665177,
+          0.0
+        ],
+        [
+          0.33333333333361126,
+          0.6648640745631149,
+          0.0018025921032738489
+        ],
+        [
+          0.33333333333400705,
+          0.6595213262279999,
+          0.007145340437992986
+        ],
+        [
+          0.33333333333469456,
+          0.6508301082420798,
+          0.01583655842322562
+        ],
+        [
+          0.3333333333357113,
+          0.6390988046232893,
+          0.02756786204099935
+        ],
+        [
+          0.33333333333710263,
+          0.6247366455041342,
+          0.04193002115876307
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.49999999999994427,
+          0.5
+        ],
+        [
+          0.499999999999889,
+          0.5
+        ],
+        [
+          0.49999999999983435,
+          0.5
+        ],
+        [
+          0.49999999999978106,
+          0.5
+        ],
+        [
+          0.4999999999997291,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.3541666666666667,
+            0.5208333333333334
+          ]
+        ],
+        [
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.6458333333333334,
+            0.5208333333333334
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.12528656129226287,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "offset_glancing_collision",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.3,
+            0.46
+          ],
+          [
+            0.7,
+            0.54
+          ]
+        ],
+        "kick_vectors": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "notes": "small transverse offset for deflection and exchange testing"
+      },
+      "run": {
+        "run_id": "S23_2_glancing_in_phase_n12",
+        "geometry_id": "offset_glancing_collision",
+        "phase_id": "in_phase",
+        "phase_offset_rad": 0.0,
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "notes": "glancing / in phase / n12"
+      },
+      "metrics": {
+        "run_id": "S23_2_glancing_in_phase_n12",
+        "geometry_id": "offset_glancing_collision",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through with grade exchange",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.8333333333333334,
+        "minimum_separation": 0.3435921354681384,
+        "final_mean_separation": 0.3435921354681384,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.1607857382668321,
+        "omega0_weight_initial": 0.3332443442742844,
+        "omega1_weight_initial": 0.6667556557257157,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3327227110077947,
+        "omega1_weight_final": 0.5533246840052866,
+        "omega2_weight_final": 0.1139526049869187,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "small transverse offset for deflection and exchange testing",
+        "grade_transfer_onset_time": 0.3758596838767886,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6667556557257157,
+        "omega2_peak_weight": 0.1139526049869187,
+        "grade_exchange_signature": "strong_pass_through_exchange",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.42491829279939874,
+        0.42491829279939874,
+        0.42491829279939874,
+        0.3435921354681384,
+        0.3435921354681384,
+        0.3435921354681384
+      ],
+      "minimum_pair_distances": [
+        0.42491829279939874,
+        0.42491829279939874,
+        0.42491829279939874,
+        0.3435921354681384,
+        0.3435921354681384,
+        0.3435921354681384
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.3332443442742844,
+          0.6667556557257157,
+          0.0
+        ],
+        [
+          0.33323840684272493,
+          0.6609551423998874,
+          0.005806450757387803
+        ],
+        [
+          0.33321235906944324,
+          0.6442576140926567,
+          0.02253002683790007
+        ],
+        [
+          0.3331426341901019,
+          0.6186661364345759,
+          0.04819122937532211
+        ],
+        [
+          0.3329936198689841,
+          0.5871758554671869,
+          0.07983052466382899
+        ],
+        [
+          0.3327227110077947,
+          0.5533246840052866,
+          0.1139526049869187
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5000026673288926,
+          0.499999999793016
+        ],
+        [
+          0.5000052804167445,
+          0.499999998128984
+        ],
+        [
+          0.5000078011544065,
+          0.499999994502887
+        ],
+        [
+          0.5000102199940277,
+          0.49999998983748406
+        ],
+        [
+          0.5000125617513205,
+          0.49999998619466046
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.2916666666666667,
+            0.4583333333333333
+          ],
+          [
+            0.2916666666666667,
+            0.4583333333333333
+          ],
+          [
+            0.2916666666666667,
+            0.4583333333333333
+          ],
+          [
+            0.375,
+            0.4583333333333333
+          ],
+          [
+            0.375,
+            0.4583333333333333
+          ],
+          [
+            0.375,
+            0.4583333333333333
+          ]
+        ],
+        [
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.1248093167474574,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "offset_glancing_collision",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.3,
+            0.46
+          ],
+          [
+            0.7,
+            0.54
+          ]
+        ],
+        "kick_vectors": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "notes": "small transverse offset for deflection and exchange testing"
+      },
+      "run": {
+        "run_id": "S23_2_glancing_in_phase_n24",
+        "geometry_id": "offset_glancing_collision",
+        "phase_id": "in_phase",
+        "phase_offset_rad": 0.0,
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "notes": "glancing / in phase / n24"
+      },
+      "metrics": {
+        "run_id": "S23_2_glancing_in_phase_n24",
+        "geometry_id": "offset_glancing_collision",
+        "phase_id": "in_phase",
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through dispersive",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.6666666666666666,
+        "minimum_separation": 0.4249182927993987,
+        "final_mean_separation": 0.4249182927993987,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.054616776469475756,
+        "omega0_weight_initial": 0.33333333334873644,
+        "omega1_weight_initial": 0.6666666666512635,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33321314446805683,
+        "omega1_weight_final": 0.6281070083485697,
+        "omega2_weight_final": 0.038679847183373646,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "small transverse offset for deflection and exchange testing",
+        "grade_transfer_onset_time": 0.3744279502423722,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6666666666512635,
+        "omega2_peak_weight": 0.038679847183373646,
+        "grade_exchange_signature": "texture_null",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.1248093167474574,
+        0.2496186334949148,
+        0.3744279502423722,
+        0.4992372669898296,
+        0.624046583737287
+      ],
+      "mean_pair_distances": [
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987
+      ],
+      "minimum_pair_distances": [
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.33333333334873644,
+          0.6666666666512635,
+          0.0
+        ],
+        [
+          0.33332905283783887,
+          0.6650013043464202,
+          0.0016696428157408048
+        ],
+        [
+          0.33331594804614656,
+          0.6600690364206675,
+          0.0066150155331858975
+        ],
+        [
+          0.33329322865506983,
+          0.6520579248059651,
+          0.014648846538965192
+        ],
+        [
+          0.3332595762446594,
+          0.6412703187445769,
+          0.025470105010763806
+        ],
+        [
+          0.33321314446805683,
+          0.6281070083485697,
+          0.038679847183373646
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.49999999999999245,
+          0.5
+        ],
+        [
+          0.4999999999999851,
+          0.49999999999999933
+        ],
+        [
+          0.4999999999999778,
+          0.4999999999999978
+        ],
+        [
+          0.49999999999997047,
+          0.49999999999999445
+        ],
+        [
+          0.4999999999999629,
+          0.4999999999999891
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ]
+        ],
+        [
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.12528656129226287,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "offset_glancing_collision",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.3,
+            0.46
+          ],
+          [
+            0.7,
+            0.54
+          ]
+        ],
+        "kick_vectors": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "notes": "small transverse offset for deflection and exchange testing"
+      },
+      "run": {
+        "run_id": "S23_2_glancing_out_of_phase_n12",
+        "geometry_id": "offset_glancing_collision",
+        "phase_id": "out_of_phase",
+        "phase_offset_rad": 3.141592653589793,
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "notes": "glancing / out of phase / n12"
+      },
+      "metrics": {
+        "run_id": "S23_2_glancing_out_of_phase_n12",
+        "geometry_id": "offset_glancing_collision",
+        "phase_id": "out_of_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through with grade exchange",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.3435921354681384,
+        "final_mean_separation": 0.3435921354681384,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.16472372051185116,
+        "omega0_weight_initial": 0.33324280715822713,
+        "omega1_weight_initial": 0.6667571928417728,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3341716829323242,
+        "omega1_weight_final": 0.5498182730199227,
+        "omega2_weight_final": 0.1160100440477533,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "small transverse offset for deflection and exchange testing",
+        "grade_transfer_onset_time": 0.3758596838767886,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6667571928417728,
+        "omega2_peak_weight": 0.1160100440477533,
+        "grade_exchange_signature": "strong_pass_through_exchange",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.42491829279939874,
+        0.42491829279939874,
+        0.42491829279939874,
+        0.3435921354681384,
+        0.3435921354681384,
+        0.3435921354681384
+      ],
+      "minimum_pair_distances": [
+        0.42491829279939874,
+        0.42491829279939874,
+        0.42491829279939874,
+        0.3435921354681384,
+        0.3435921354681384,
+        0.3435921354681384
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.33324280715822713,
+          0.6667571928417728,
+          0.0
+        ],
+        [
+          0.33327641970001015,
+          0.6608431437024296,
+          0.005880436597560105
+        ],
+        [
+          0.3333786529481165,
+          0.643790691257138,
+          0.02283065579474551
+        ],
+        [
+          0.33355432539788454,
+          0.617561245168317,
+          0.04888442943379849
+        ],
+        [
+          0.33381322943598696,
+          0.5850849447532375,
+          0.08110182581077556
+        ],
+        [
+          0.3341716829323242,
+          0.5498182730199227,
+          0.1160100440477533
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5000023332416521,
+          0.5000000002074845
+        ],
+        [
+          0.5000046105532924,
+          0.5000000018755304
+        ],
+        [
+          0.500006789515687,
+          0.5000000055102807
+        ],
+        [
+          0.5000088521406121,
+          0.5000000101863826
+        ],
+        [
+          0.5000108110461468,
+          0.5000000138363372
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.2916666666666667,
+            0.4583333333333333
+          ],
+          [
+            0.2916666666666667,
+            0.4583333333333333
+          ],
+          [
+            0.2916666666666667,
+            0.4583333333333333
+          ],
+          [
+            0.375,
+            0.4583333333333333
+          ],
+          [
+            0.375,
+            0.4583333333333333
+          ],
+          [
+            0.375,
+            0.4583333333333333
+          ]
+        ],
+        [
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ],
+          [
+            0.7083333333333334,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.1248093167474574,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "offset_glancing_collision",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.3,
+            0.46
+          ],
+          [
+            0.7,
+            0.54
+          ]
+        ],
+        "kick_vectors": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "notes": "small transverse offset for deflection and exchange testing"
+      },
+      "run": {
+        "run_id": "S23_2_glancing_out_of_phase_n24",
+        "geometry_id": "offset_glancing_collision",
+        "phase_id": "out_of_phase",
+        "phase_offset_rad": 3.141592653589793,
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "notes": "glancing / out of phase / n24"
+      },
+      "metrics": {
+        "run_id": "S23_2_glancing_out_of_phase_n24",
+        "geometry_id": "offset_glancing_collision",
+        "phase_id": "out_of_phase",
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through dispersive",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.4249182927993987,
+        "final_mean_separation": 0.4249182927993987,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.055346360022163685,
+        "omega0_weight_initial": 0.33333333331789433,
+        "omega1_weight_initial": 0.6666666666821056,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33345380334591346,
+        "omega1_weight_final": 0.6274707842468417,
+        "omega2_weight_final": 0.03907541240724497,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "small transverse offset for deflection and exchange testing",
+        "grade_transfer_onset_time": 0.3744279502423722,
+        "grade_transfer_duty_cycle": 0.5,
+        "omega1_peak_weight": 0.6666666666821056,
+        "omega2_peak_weight": 0.03907541240724497,
+        "grade_exchange_signature": "texture_null",
+        "texture_stable_under_refinement": 0
+      },
+      "times": [
+        0.0,
+        0.1248093167474574,
+        0.2496186334949148,
+        0.3744279502423722,
+        0.4992372669898296,
+        0.624046583737287
+      ],
+      "mean_pair_distances": [
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987
+      ],
+      "minimum_pair_distances": [
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987,
+        0.4249182927993987
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.33333333331789433,
+          0.6666666666821056,
+          0.0
+        ],
+        [
+          0.3333376238418167,
+          0.6649776408133471,
+          0.0016847353448361992
+        ],
+        [
+          0.33335075928840224,
+          0.65997349093151,
+          0.006675749780087771
+        ],
+        [
+          0.33337353182496393,
+          0.6518396024014972,
+          0.014786865773538807
+        ],
+        [
+          0.33340726295551554,
+          0.6408738568192586,
+          0.025718880225225837
+        ],
+        [
+          0.33345380334591346,
+          0.6274707842468417,
+          0.03907541240724497
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5000000000000075,
+          0.5
+        ],
+        [
+          0.5000000000000151,
+          0.5000000000000007
+        ],
+        [
+          0.5000000000000224,
+          0.5000000000000022
+        ],
+        [
+          0.50000000000003,
+          0.5000000000000056
+        ],
+        [
+          0.5000000000000374,
+          0.5000000000000109
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ],
+          [
+            0.3125,
+            0.4791666666666667
+          ]
+        ],
+        [
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ],
+          [
+            0.7291666666666666,
+            0.5625
+          ]
+        ]
+      ]
+    }
+  ],
+  "summary": {
+    "collision_labels": {
+      "unresolved / mixed": 2,
+      "pass-through with grade exchange": 5,
+      "pass-through dispersive": 5
+    },
+    "persistence_labels": {
+      "weak persistence gain": 3,
+      "no persistence gain": 9
+    },
+    "grade_exchange_signatures": {
+      "clustered_mixed_encounter": 2,
+      "strong_pass_through_exchange": 4,
+      "dispersive_exchange_tail": 1,
+      "weak_pass_through_exchange": 1,
+      "texture_null": 4
+    },
+    "stable_family_count": 1,
+    "stable_keys": [
+      "tight_clustered_pair::in_phase"
+    ],
+    "max_grade_transfer_amplitude": 0.23032142391559055
+  }
+}

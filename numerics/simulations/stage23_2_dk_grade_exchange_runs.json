@@ -1,0 +1,58 @@
+{
+  "stage": "23_2_dk_grade_exchange_texture_scan",
+  "description": "Focused DK grade-exchange and collision-texture stability scan across the strongest Phase III collision families.",
+  "note_name": "Stage_23_2_DK_Grade_Exchange_Texture_Scan_v1.md",
+  "experiment_slug": "stage23_2_dk_grade_exchange",
+  "fixed_parameters": {
+    "epsilon": 0.2,
+    "graph_type": "regular_lattice",
+    "boundary_type": "periodic",
+    "width_class": "baseline_coherent_width",
+    "bandwidth": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.6,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0
+  },
+  "phase_relations": [
+    {"phase_id": "in_phase", "phase_offset_rad": 0.0},
+    {"phase_id": "out_of_phase", "phase_offset_rad": 3.141592653589793}
+  ],
+  "geometries": [
+    {
+      "geometry_id": "counter_propagating_corridor_pair",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.50], [0.65, 0.50]],
+      "kick_vectors": [[1.0, 0.0], [-1.0, 0.0]],
+      "notes": "corridor-like head-on geometry"
+    },
+    {
+      "geometry_id": "offset_glancing_collision",
+      "packet_count": 2,
+      "packet_centers": [[0.30, 0.46], [0.70, 0.54]],
+      "kick_vectors": [[1.0, 0.0], [-1.0, 0.0]],
+      "notes": "small transverse offset for deflection and exchange testing"
+    },
+    {
+      "geometry_id": "tight_clustered_pair",
+      "packet_count": 2,
+      "packet_centers": [[0.46, 0.50], [0.54, 0.50]],
+      "kick_vectors": [[0.4, 0.0], [-0.4, 0.0]],
+      "notes": "initially close pair for clustered texture testing"
+    }
+  ],
+  "runs": [
+    {"run_id": "S23_2_corridor_in_phase_n12", "geometry_id": "counter_propagating_corridor_pair", "phase_id": "in_phase", "phase_offset_rad": 0.0, "resolution": 12, "graph_type": "regular_lattice", "notes": "corridor / in phase / n12"},
+    {"run_id": "S23_2_corridor_out_of_phase_n12", "geometry_id": "counter_propagating_corridor_pair", "phase_id": "out_of_phase", "phase_offset_rad": 3.141592653589793, "resolution": 12, "graph_type": "regular_lattice", "notes": "corridor / out of phase / n12"},
+    {"run_id": "S23_2_glancing_in_phase_n12", "geometry_id": "offset_glancing_collision", "phase_id": "in_phase", "phase_offset_rad": 0.0, "resolution": 12, "graph_type": "regular_lattice", "notes": "glancing / in phase / n12"},
+    {"run_id": "S23_2_glancing_out_of_phase_n12", "geometry_id": "offset_glancing_collision", "phase_id": "out_of_phase", "phase_offset_rad": 3.141592653589793, "resolution": 12, "graph_type": "regular_lattice", "notes": "glancing / out of phase / n12"},
+    {"run_id": "S23_2_clustered_in_phase_n12", "geometry_id": "tight_clustered_pair", "phase_id": "in_phase", "phase_offset_rad": 0.0, "resolution": 12, "graph_type": "regular_lattice", "notes": "clustered / in phase / n12"},
+    {"run_id": "S23_2_clustered_out_of_phase_n12", "geometry_id": "tight_clustered_pair", "phase_id": "out_of_phase", "phase_offset_rad": 3.141592653589793, "resolution": 12, "graph_type": "regular_lattice", "notes": "clustered / out of phase / n12"},
+    {"run_id": "S23_2_corridor_in_phase_n24", "geometry_id": "counter_propagating_corridor_pair", "phase_id": "in_phase", "phase_offset_rad": 0.0, "resolution": 24, "graph_type": "regular_lattice", "notes": "corridor / in phase / n24"},
+    {"run_id": "S23_2_corridor_out_of_phase_n24", "geometry_id": "counter_propagating_corridor_pair", "phase_id": "out_of_phase", "phase_offset_rad": 3.141592653589793, "resolution": 24, "graph_type": "regular_lattice", "notes": "corridor / out of phase / n24"},
+    {"run_id": "S23_2_glancing_in_phase_n24", "geometry_id": "offset_glancing_collision", "phase_id": "in_phase", "phase_offset_rad": 0.0, "resolution": 24, "graph_type": "regular_lattice", "notes": "glancing / in phase / n24"},
+    {"run_id": "S23_2_glancing_out_of_phase_n24", "geometry_id": "offset_glancing_collision", "phase_id": "out_of_phase", "phase_offset_rad": 3.141592653589793, "resolution": 24, "graph_type": "regular_lattice", "notes": "glancing / out of phase / n24"},
+    {"run_id": "S23_2_clustered_in_phase_n24", "geometry_id": "tight_clustered_pair", "phase_id": "in_phase", "phase_offset_rad": 0.0, "resolution": 24, "graph_type": "regular_lattice", "notes": "clustered / in phase / n24"},
+    {"run_id": "S23_2_clustered_out_of_phase_n24", "geometry_id": "tight_clustered_pair", "phase_id": "out_of_phase", "phase_offset_rad": 3.141592653589793, "resolution": 24, "graph_type": "regular_lattice", "notes": "clustered / out of phase / n24"}
+  ]
+}

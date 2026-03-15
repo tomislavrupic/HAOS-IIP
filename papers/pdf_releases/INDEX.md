@@ -60,6 +60,10 @@ The intended public reading order is:
 4. `21.1` Delayed Nonlocal Kernel Memory Probe on a Kernel-Induced Cochain Operator Architecture
 5. `22.1` Phase II Boundary of Weak Reinforcement, Registration, and Delayed Memory on a Kernel-Induced Cochain Operator Architecture
 
+### 2.6 Part VI. Phase III opener
+
+1. `23.1` Dirac-Kahler Collision Texture and Grade-Exchange Baseline on a Kernel-Induced Cochain Operator Architecture
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -86,6 +90,7 @@ The intended public reading order is:
 - `20.1` Mutual Registration and Constraint-Coupled Interaction Probe on a Kernel-Induced Cochain Operator Architecture
 - `21.1` Delayed Nonlocal Kernel Memory Probe on a Kernel-Induced Cochain Operator Architecture
 - `22.1` Phase II Boundary of Weak Reinforcement, Registration, and Delayed Memory on a Kernel-Induced Cochain Operator Architecture
+- `23.1` Dirac-Kahler Collision Texture and Grade-Exchange Baseline on a Kernel-Induced Cochain Operator Architecture
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
