@@ -1,0 +1,123 @@
+{
+  "stage": "23.3_dk_clustered_texture_stabilization",
+  "description": "Minimal 9-run targeted scan around the refinement-stable DK clustered in-phase family from Stage 23.2.",
+  "base_resolution": 12,
+  "refinement_resolution": 24,
+  "promotion_required": true,
+  "promotion_rule": {
+    "composite_lifetime_gain_required": true,
+    "bounded_oscillatory_separation_required": true,
+    "grade_exchange_coherence_required": true,
+    "refinement_survival_required": true
+  },
+  "negative_freeze_rule": {
+    "all_9_runs_no_bounded_composite_regime": true,
+    "all_9_runs_only_weak_or_null_persistence_gain": true,
+    "all_9_runs_no_refinement_promotion": true
+  },
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "representative_id": "tight_clustered_pair_in_phase",
+    "packet_family": "stage23_2_refinement_stable_clustered_family",
+    "base_phase_relation": "in_phase",
+    "base_amplitude_scale": 1.0,
+    "base_width_class": "baseline_coherent_width",
+    "kernel_type": "static_gaussian",
+    "resolution": 12,
+    "observables": [
+      "composite_lifetime",
+      "binding_persistence",
+      "minimum_separation",
+      "separation_trace",
+      "grade_weight_trace",
+      "phase_difference_trace",
+      "collision_label",
+      "persistence_label"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S23_3_probeA_control",
+      "probe_class": "internal_grade_coupling",
+      "strength_label": "control",
+      "alpha": 0.0,
+      "beta": 0.0,
+      "gamma": 0.0,
+      "notes": "Control for internal grade-coupling probe."
+    },
+    {
+      "run_id": "S23_3_probeA_vweak",
+      "probe_class": "internal_grade_coupling",
+      "strength_label": "very_weak",
+      "alpha": 0.01,
+      "beta": 0.0,
+      "gamma": 0.0,
+      "notes": "Very weak local redistribution between 0- and 1-form components."
+    },
+    {
+      "run_id": "S23_3_probeA_weak",
+      "probe_class": "internal_grade_coupling",
+      "strength_label": "weak",
+      "alpha": 0.02,
+      "beta": 0.0,
+      "gamma": 0.0,
+      "notes": "Weak local redistribution between 0- and 1-form components."
+    },
+    {
+      "run_id": "S23_3_probeB_control",
+      "probe_class": "phase_locked_composite_constraint",
+      "strength_label": "control",
+      "alpha": 0.0,
+      "beta": 0.0,
+      "gamma": 0.0,
+      "notes": "Control for phase-locked composite constraint probe."
+    },
+    {
+      "run_id": "S23_3_probeB_vweak",
+      "probe_class": "phase_locked_composite_constraint",
+      "strength_label": "very_weak",
+      "alpha": 0.0,
+      "beta": 0.01,
+      "gamma": 0.0,
+      "notes": "Very weak smooth phase-alignment term when clustered separation condition is met."
+    },
+    {
+      "run_id": "S23_3_probeB_weak",
+      "probe_class": "phase_locked_composite_constraint",
+      "strength_label": "weak",
+      "alpha": 0.0,
+      "beta": 0.02,
+      "gamma": 0.0,
+      "notes": "Weak smooth phase-alignment term when clustered separation condition is met."
+    },
+    {
+      "run_id": "S23_3_probeC_control",
+      "probe_class": "self_induced_effective_curvature",
+      "strength_label": "control",
+      "alpha": 0.0,
+      "beta": 0.0,
+      "gamma": 0.0,
+      "notes": "Control for self-induced effective curvature probe."
+    },
+    {
+      "run_id": "S23_3_probeC_vweak",
+      "probe_class": "self_induced_effective_curvature",
+      "strength_label": "very_weak",
+      "alpha": 0.0,
+      "beta": 0.0,
+      "gamma": 0.01,
+      "notes": "Very weak graded-energy modulation of the static Gaussian kernel."
+    },
+    {
+      "run_id": "S23_3_probeC_weak",
+      "probe_class": "self_induced_effective_curvature",
+      "strength_label": "weak",
+      "alpha": 0.0,
+      "beta": 0.0,
+      "gamma": 0.02,
+      "notes": "Weak graded-energy modulation of the static Gaussian kernel."
+    }
+  ]
+}
