@@ -41,6 +41,7 @@ from stage12_coarse_field_structure import (
 )
 
 RUNSHEET_PATH = REPO_ROOT / 'numerics' / 'simulations' / 'stage19b_mesoscopic_runs.json'
+REFERENCE_RUNSHEET_PATH = REPO_ROOT / 'numerics' / 'simulations' / 'stage19b_mesoscopic_runs.json'
 SETUP_CACHE: dict[tuple[int, str, float, float], tuple[Any, Any]] = {}
 WORK_PLOT_DIR = Path('/tmp') / 'haos_iip_stage19b_mesoscopic'
 WORK_PLOT_DIR.mkdir(parents=True, exist_ok=True)
@@ -67,8 +68,8 @@ CSV_FIELDS = [
     'reinforcement_field_norm',
     'kernel_deviation_norm',
     'max_local_kernel_deformation',
-    'basin_residence_signal_strength',
-    'dominant_basin_dwell_fraction',
+    'mesoscopic_signal_strength',
+    'mesoscopic_support_fraction',
     'new_ordering_class',
     'composite_lifetime_delta',
     'binding_persistence_delta',
@@ -84,7 +85,7 @@ CSV_FIELDS = [
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description='Run the Stage 19B mesoscopic basin-residence substrate pilot.')
+    parser = argparse.ArgumentParser(description='Run a Stage 19B mesoscopic substrate pilot.')
     parser.add_argument('--runsheet', type=Path, default=RUNSHEET_PATH)
     parser.add_argument('--run-ids', nargs='*', default=[])
     parser.add_argument('--append-log', action='store_true')
@@ -93,6 +94,63 @@ def parse_args() -> argparse.Namespace:
 
 def load_runsheet(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding='utf-8'))
+
+
+def branch_kind_from_runsheet(runsheet: dict[str, Any]) -> str:
+    if runsheet.get('common_fields', {}).get('coupling_class') == 'transport_corridor_reinforcement':
+        return 'transport_corridor'
+    return str(runsheet.get('kernel_law', {}).get('substrate_law', 'basin_residence'))
+
+
+def default_note_name(branch_kind: str) -> str:
+    if branch_kind == 'transport_corridor':
+        return 'Stage_19B_Branch2_Transport_Corridor_Reinforcement_v1.md'
+    return 'Stage_19B_Mesoscopic_Substrate_Reinforcement_v1.md'
+
+
+def default_experiment_slug(branch_kind: str) -> str:
+    if branch_kind == 'transport_corridor':
+        return 'stage19b_branch2_transport_corridor'
+    return 'stage19b_mesoscopic'
+
+
+def normalize_stage19b_runsheet(runsheet: dict[str, Any]) -> dict[str, Any]:
+    branch_kind = branch_kind_from_runsheet(runsheet)
+    if 'representatives' in runsheet and 'base_seed_reference' in runsheet:
+        normalized = dict(runsheet)
+        normalized['branch_kind'] = branch_kind
+        normalized.setdefault('note_name', default_note_name(branch_kind))
+        normalized.setdefault('experiment_slug', default_experiment_slug(branch_kind))
+        return normalized
+
+    reference = load_runsheet(REFERENCE_RUNSHEET_PATH)
+    normalized_runs = []
+    common = runsheet.get('common_fields', {})
+    for run in runsheet['runs']:
+        condition = str(run['condition'])
+        normalized_runs.append({
+            'run_id': run['run_id'],
+            'representative_id': run['representative_id'],
+            'substrate_law': branch_kind,
+            'condition_id': condition,
+            'delta': float(run['delta']),
+            'resolution': int(runsheet.get('base_resolution', 12)),
+            'boundary_type': str(common.get('boundary_type', 'periodic')),
+            'operator_sector': str(common.get('operator_sector', 'projected_transverse')),
+            'promotion_candidate': False,
+            'notes': run.get('notes', ''),
+        })
+
+    return {
+        'description': runsheet['description'],
+        'note_name': default_note_name(branch_kind),
+        'experiment_slug': default_experiment_slug(branch_kind),
+        'branch_kind': branch_kind,
+        'base_seed_reference': reference['base_seed_reference'],
+        'representatives': reference['representatives'],
+        'common_fields': common,
+        'runs': normalized_runs,
+    }
 
 
 def selected_runs(runs: list[dict[str, Any]], run_ids: list[str]) -> list[dict[str, Any]]:
@@ -104,6 +162,34 @@ def selected_runs(runs: list[dict[str, Any]], run_ids: list[str]) -> list[dict[s
 
 def lookup_by_id(items: list[dict[str, Any]], key: str) -> dict[str, dict[str, Any]]:
     return {item[key]: item for item in items}
+
+
+def is_null_condition(condition_id: str) -> bool:
+    return condition_id in {'null_control', 'null'}
+
+
+def condition_order(condition_id: str) -> int:
+    order = {
+        'null_control': 0,
+        'null': 0,
+        'very_weak_basin_residence': 1,
+        'very_weak': 1,
+        'weak_basin_residence': 2,
+        'weak': 2,
+    }
+    return order.get(condition_id, 99)
+
+
+def condition_label(condition_id: str) -> str:
+    labels = {
+        'null_control': 'null',
+        'null': 'null',
+        'very_weak_basin_residence': '0.01',
+        'very_weak': '0.01',
+        'weak_basin_residence': '0.02',
+        'weak': '0.02',
+    }
+    return labels.get(condition_id, condition_id)
 
 
 def get_cached_setup(n_side: int, defaults: dict[str, Any], boundary_type: str) -> tuple[Any, Any]:
@@ -231,6 +317,25 @@ def dominant_basin_signal(
     return signal, dominant_mask, dominant_fraction, stable_flag
 
 
+def smoothed_flux_signal(
+    midpoints: np.ndarray,
+    q: np.ndarray,
+    v: np.ndarray,
+    n_side: int,
+    sigma: float,
+) -> tuple[np.ndarray, float]:
+    flux = np.abs(q * v)
+    grid = edge_field_to_grid(midpoints, flux, n_side)
+    env = np.maximum(gaussian_smooth_periodic(grid, sigma), 0.0)
+    max_env = float(np.max(env))
+    coords = np.floor(midpoints * n_side).astype(int) % n_side
+    sampled = env[coords[:, 0], coords[:, 1], coords[:, 2]].astype(float)
+    if max_env <= 0.0:
+        return sampled, 0.0
+    support_fraction = float(np.mean((sampled >= 0.5 * max_env).astype(float)))
+    return sampled, support_fraction
+
+
 def estimate_crossing_time(base: dict[str, Any], dt: float) -> float:
     width_time = 2.0 * float(base['bandwidth']) / max(float(base['central_k']), 1.0e-12)
     return max(width_time, 4.0 * dt)
@@ -239,19 +344,20 @@ def estimate_crossing_time(base: dict[str, Any], dt: float) -> float:
 def simulate_run(
     run: dict[str, Any],
     rep: dict[str, Any],
-    condition: dict[str, Any],
     runsheet: dict[str, Any],
     defaults: dict[str, Any],
     base: dict[str, Any],
 ) -> tuple[dict[str, Any], list[Path]]:
     resolution = int(run['resolution'])
     boundary_type = str(base['boundary_type'])
+    branch_kind = str(runsheet.get('branch_kind', 'basin_residence'))
+    common_fields = runsheet.get('common_fields', {})
     data, projector = get_cached_setup(resolution, defaults, boundary_type)
     b0, c, abs_c, face_counts = recover_unweighted_incidence(data)
     kick_axis = int(defaults['kick_axis'])
     bandwidth = float(base['bandwidth'])
     delta = float(run['delta'])
-    kappa_max = float(runsheet.get('parameter_policy', {}).get('kappa_max', 0.1))
+    kappa_max = float(common_fields.get('kernel_update_clamp', runsheet.get('parameter_policy', {}).get('kappa_max', 0.1)))
 
     packet_qs: list[np.ndarray] = []
     packet_vs: list[np.ndarray] = []
@@ -277,9 +383,9 @@ def simulate_run(
     baseline_operator = data.L1
     dt = suggested_dt(baseline_operator, float(defaults['dt_safety']))
     steps = max(2, int(np.ceil(float(defaults['t_final']) / dt)))
-    tau_residence = estimate_crossing_time(base, dt)
-    tau_residence = max(tau_residence, 2.0 * dt)
-    decay = max(0.0, 1.0 - dt / tau_residence)
+    tau_memory = float(common_fields.get('corridor_memory_tau', estimate_crossing_time(base, dt)))
+    tau_memory = max(tau_memory, 2.0 * dt)
+    decay = max(0.0, 1.0 - dt / tau_memory)
     leakage_fn = make_leakage_fn(projector)
 
     reinforcement_field = np.zeros_like(baseline_edge_weights)
@@ -299,8 +405,8 @@ def simulate_run(
     kernel_deviation_series: list[float] = []
     max_deformation_series: list[float] = []
     reinforcement_norm_series: list[float] = []
-    basin_signal_series: list[float] = []
-    stable_basin_series: list[float] = []
+    mesoscopic_signal_series: list[float] = []
+    mesoscopic_support_series: list[float] = []
     coarse: dict[float, dict[str, Any]] = {
         sigma: {
             'dominant_area_fractions': [],
@@ -371,27 +477,41 @@ def simulate_run(
     record(0.0, baseline_operator)
     for step_idx in range(steps):
         total_q = np.sum(packet_qs, axis=0)
+        total_v = np.sum(packet_vs, axis=0)
         if delta > 0.0:
-            basin_signal, update_mask, dominant_fraction, stable_flag = dominant_basin_signal(
-                data.midpoints,
-                total_q,
-                resolution,
-                BASIN_SIGMA,
-                update_mask,
-            )
-            basin_signal_centered = basin_signal - float(np.mean(basin_signal))
-            reinforcement_field = decay * reinforcement_field + basin_signal_centered
+            if branch_kind == 'transport_corridor':
+                corridor_signal, support_fraction = smoothed_flux_signal(
+                    data.midpoints,
+                    total_q,
+                    total_v,
+                    resolution,
+                    float(common_fields.get('corridor_smoothing_sigma', 2.0)),
+                )
+                signal = corridor_signal
+                support_fraction = float(support_fraction)
+            else:
+                basin_signal, update_mask, dominant_fraction, stable_flag = dominant_basin_signal(
+                    data.midpoints,
+                    total_q,
+                    resolution,
+                    BASIN_SIGMA,
+                    update_mask,
+                )
+                signal = basin_signal
+                support_fraction = float(stable_flag * dominant_fraction)
+            signal_centered = signal - float(np.mean(signal))
+            reinforcement_field = decay * reinforcement_field + signal_centered
             field_cap = kappa_max / max(delta, 1.0e-12)
             reinforcement_field = np.clip(reinforcement_field, -field_cap, field_cap)
             scale = np.clip(1.0 + delta * reinforcement_field, 1.0 - kappa_max, 1.0 + kappa_max)
             current_edge_weights = baseline_edge_weights * scale
-            basin_signal_series.append(float(np.mean(np.abs(basin_signal))))
-            stable_basin_series.append(float(stable_flag * dominant_fraction))
+            mesoscopic_signal_series.append(float(np.mean(np.abs(signal))))
+            mesoscopic_support_series.append(support_fraction)
         else:
             reinforcement_field[:] = 0.0
             current_edge_weights = baseline_edge_weights.copy()
-            basin_signal_series.append(0.0)
-            stable_basin_series.append(0.0)
+            mesoscopic_signal_series.append(0.0)
+            mesoscopic_support_series.append(0.0)
             update_mask = None
 
         operator, _face_weights = dynamic_operator(b0, c, abs_c, face_counts, current_edge_weights)
@@ -440,7 +560,8 @@ def simulate_run(
     binding_mask = (np.asarray(pair_distance_series) <= 0.25) & (np.asarray(overlap_series) >= 0.35)
     binding_persistence = float(np.mean(binding_mask.astype(float))) if binding_mask.size else 0.0
     transport_locking = int(
-        rep['representative_id'] == 'counter_propagating_corridor'
+        branch_kind == 'transport_corridor'
+        and rep['representative_id'] == 'counter_propagating_corridor'
         and len(pair_distance_series) >= 3
         and float(np.std(pair_distance_series)) <= 0.02
         and binding_persistence >= 0.5
@@ -452,7 +573,7 @@ def simulate_run(
         'condition_id': run['condition_id'],
         'substrate_law': run['substrate_law'],
         'delta': delta,
-        'tau_residence': tau_residence,
+        'tau_residence': tau_memory,
         'resolution': resolution,
         'interaction_label': interaction_label,
         'coarse_label': coarse_label,
@@ -462,8 +583,8 @@ def simulate_run(
         'reinforcement_field_norm': float(np.max(reinforcement_norm_series)) if reinforcement_norm_series else 0.0,
         'kernel_deviation_norm': float(np.max(kernel_deviation_series)) if kernel_deviation_series else 0.0,
         'max_local_kernel_deformation': float(np.max(max_deformation_series)) if max_deformation_series else 0.0,
-        'basin_residence_signal_strength': float(np.mean(basin_signal_series)) if basin_signal_series else 0.0,
-        'dominant_basin_dwell_fraction': float(np.mean(stable_basin_series)) if stable_basin_series else 0.0,
+        'mesoscopic_signal_strength': float(np.mean(mesoscopic_signal_series)) if mesoscopic_signal_series else 0.0,
+        'mesoscopic_support_fraction': float(np.mean(mesoscopic_support_series)) if mesoscopic_support_series else 0.0,
         'new_ordering_class': 0,
         'composite_lifetime_delta': 0.0,
         'binding_persistence_delta': 0.0,
@@ -529,7 +650,7 @@ def simulate_run(
         'kernel_deviation_series': kernel_deviation_series,
         'max_deformation_series': max_deformation_series,
         'reinforcement_norm_series': reinforcement_norm_series,
-        'basin_signal_series': basin_signal_series,
+        'mesoscopic_signal_series': mesoscopic_signal_series,
     }
     return result, plot_paths
 
@@ -539,9 +660,11 @@ def classify_base_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
     best_score = None
     base_map = {(row['representative_id'], row['condition_id']): row for row in rows}
     for row in rows:
-        if row['condition_id'] == 'null_control':
+        if is_null_condition(str(row['condition_id'])):
             continue
         null_row = base_map.get((row['representative_id'], 'null_control'))
+        if null_row is None:
+            null_row = base_map.get((row['representative_id'], 'null'))
         if null_row is None:
             continue
         row['composite_lifetime_delta'] = float(row['composite_lifetime']) - float(null_row['composite_lifetime'])
@@ -551,12 +674,13 @@ def classify_base_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
             interaction_rank(str(row['interaction_label'])) > interaction_rank(str(null_row['interaction_label']))
             or coarse_rank(str(row['coarse_label'])) > coarse_rank(str(null_row['coarse_label']))
         )
+        transport_lock_gain = int(int(row['transport_channel_locking']) > int(null_row['transport_channel_locking']))
         gate_hit = (
             row['composite_lifetime_delta'] >= COMPOSITE_GAIN_MIN
             or row['binding_persistence_delta'] >= BINDING_GAIN_MIN
             or row['coarse_persistence_delta'] >= COARSE_GAIN_MIN
             or row['new_ordering_class'] == 1
-            or row['transport_channel_locking'] == 1
+            or transport_lock_gain == 1
         )
         row['gate_met'] = int(gate_hit)
         if gate_hit:
@@ -565,7 +689,7 @@ def classify_base_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
                 float(row['composite_lifetime_delta'])
                 + float(row['binding_persistence_delta'])
                 + float(row['coarse_persistence_delta'])
-                + float(row['transport_channel_locking'])
+                + float(transport_lock_gain)
             )
             if best_score is None or score > best_score:
                 best_score = score
@@ -580,20 +704,16 @@ def classify_base_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
     return rows, promoted
 
 
-def create_summary_plots(rows: list[dict[str, Any]]) -> list[Path]:
+def create_summary_plots(rows: list[dict[str, Any]], branch_kind: str) -> list[Path]:
     plot_paths: list[Path] = []
     reps = sorted({row['representative_id'] for row in rows})
-    conds = ['null_control', 'very_weak_basin_residence', 'weak_basin_residence']
-    labels = {
-        'null_control': 'null',
-        'very_weak_basin_residence': '0.01',
-        'weak_basin_residence': '0.02',
-    }
+    conds = sorted({str(row['condition_id']) for row in rows}, key=condition_order)
     row_map = {(row['representative_id'], row['condition_id']): row for row in rows}
     if not all((rep, cond) in row_map for rep in reps for cond in conds):
         return plot_paths
 
-    comparison = WORK_PLOT_DIR / 'stage19b_basin_residence_comparison.png'
+    comparison_name = 'stage19b_basin_residence_comparison.png' if branch_kind == 'basin_residence' else 'stage19b_branch2_transport_corridor_comparison.png'
+    comparison = WORK_PLOT_DIR / comparison_name
     x = np.arange(len(reps))
     width = 0.22
     fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.8))
@@ -604,8 +724,8 @@ def create_summary_plots(rows: list[dict[str, Any]]) -> list[Path]:
             row = row_map[(rep, cond)]
             lifetimes.append(float(row['composite_lifetime']))
             coarse_pers.append(float(row['coarse_persistence_sigma4']))
-        axes[0].bar(x + (idx - 1) * width, lifetimes, width=width, label=labels[cond])
-        axes[1].bar(x + (idx - 1) * width, coarse_pers, width=width, label=labels[cond])
+        axes[0].bar(x + (idx - 1) * width, lifetimes, width=width, label=condition_label(cond))
+        axes[1].bar(x + (idx - 1) * width, coarse_pers, width=width, label=condition_label(cond))
     axes[0].set_title('Composite lifetime')
     axes[1].set_title('Coarse persistence (sigma=4)')
     for ax in axes:
@@ -613,24 +733,26 @@ def create_summary_plots(rows: list[dict[str, Any]]) -> list[Path]:
         ax.set_xticklabels(reps, rotation=20, ha='right')
         ax.grid(alpha=0.25, axis='y')
         ax.legend(fontsize=8)
-    fig.suptitle('Stage 19B null vs basin-residence reinforcement')
+    branch_title = 'basin-residence reinforcement' if branch_kind == 'basin_residence' else 'transport-corridor reinforcement'
+    fig.suptitle(f'Stage 19B null vs {branch_title}')
     fig.savefig(comparison, dpi=180, bbox_inches='tight')
     plt.close(fig)
     plot_paths.append(comparison)
 
-    kernel_plot = WORK_PLOT_DIR / 'stage19b_reinforcement_summary.png'
+    kernel_name = 'stage19b_reinforcement_summary.png' if branch_kind == 'basin_residence' else 'stage19b_branch2_transport_reinforcement_summary.png'
+    kernel_plot = WORK_PLOT_DIR / kernel_name
     fig, axes = plt.subplots(1, 2, figsize=(11.5, 4.8))
     for idx, cond in enumerate(conds):
         deviations = []
-        dwells = []
+        supports = []
         for rep in reps:
             row = row_map[(rep, cond)]
             deviations.append(float(row['kernel_deviation_norm']))
-            dwells.append(float(row['dominant_basin_dwell_fraction']))
-        axes[0].bar(x + (idx - 1) * width, deviations, width=width, label=labels[cond])
-        axes[1].bar(x + (idx - 1) * width, dwells, width=width, label=labels[cond])
+            supports.append(float(row['mesoscopic_support_fraction']))
+        axes[0].bar(x + (idx - 1) * width, deviations, width=width, label=condition_label(cond))
+        axes[1].bar(x + (idx - 1) * width, supports, width=width, label=condition_label(cond))
     axes[0].set_title('Kernel deviation norm')
-    axes[1].set_title('Dominant basin dwell fraction')
+    axes[1].set_title('Mesoscopic support fraction')
     for ax in axes:
         ax.set_xticks(x)
         ax.set_xticklabels(reps, rotation=20, ha='right')
@@ -640,7 +762,8 @@ def create_summary_plots(rows: list[dict[str, Any]]) -> list[Path]:
     plt.close(fig)
     plot_paths.append(kernel_plot)
 
-    response = WORK_PLOT_DIR / 'stage19b_response_matrix.png'
+    response_name = 'stage19b_response_matrix.png' if branch_kind == 'basin_residence' else 'stage19b_branch2_transport_response_matrix.png'
+    response = WORK_PLOT_DIR / response_name
     label_map = {
         'no mesoscopic substrate effect': 0,
         'transient mesoscopic substrate response': 1,
@@ -655,10 +778,10 @@ def create_summary_plots(rows: list[dict[str, Any]]) -> list[Path]:
     fig, ax = plt.subplots(figsize=(7.0, 4.8))
     im = ax.imshow(data, cmap='viridis', vmin=0, vmax=3)
     ax.set_xticks(range(len(conds)))
-    ax.set_xticklabels([labels[cond] for cond in conds])
+    ax.set_xticklabels([condition_label(cond) for cond in conds])
     ax.set_yticks(range(len(reps)))
     ax.set_yticklabels(reps)
-    ax.set_title('Stage 19B basin-residence response matrix')
+    ax.set_title(f"Stage 19B {'basin-residence' if branch_kind == 'basin_residence' else 'transport-corridor'} response matrix")
     plt.colorbar(im, ax=ax, fraction=0.045, pad=0.04)
     fig.savefig(response, dpi=180, bbox_inches='tight')
     plt.close(fig)
@@ -666,16 +789,23 @@ def create_summary_plots(rows: list[dict[str, Any]]) -> list[Path]:
     return plot_paths
 
 
-def write_note(path: Path, json_rel: str, csv_rel: str, rows: list[dict[str, Any]], label_counts: dict[str, int], promoted: dict[str, Any] | None) -> None:
+def write_note(path: Path, json_rel: str, csv_rel: str, rows: list[dict[str, Any]], label_counts: dict[str, int], promoted: dict[str, Any] | None, branch_kind: str) -> None:
+    title = '# Stage 19B Mesoscopic Substrate Reinforcement v1' if branch_kind == 'basin_residence' else '# Stage 19B Branch 2 Transport-Corridor Reinforcement v1'
+    description = (
+        'This Stage 19B pilot tests whether bounded basin-residence reinforcement on the kernel edge weights can create the first mesoscopic substrate-assisted persistence effect.'
+        if branch_kind == 'basin_residence'
+        else 'This Stage 19B Branch 2 pilot tests whether bounded transport-corridor reinforcement on the kernel edge weights can create mesoscopic transport memory with persistence consequences.'
+    )
+    support_label = 'basin dwell fraction' if branch_kind == 'basin_residence' else 'corridor support fraction'
     lines = [
-        '# Stage 19B Mesoscopic Substrate Reinforcement v1',
+        title,
         '',
         f'Timestamped summary: `{json_rel}`',
         f'Timestamped run table: `{csv_rel}`',
         '',
         f'Output-label counts: {label_counts}',
         '',
-        'This Stage 19B pilot tests whether bounded basin-residence reinforcement on the kernel edge weights can create the first mesoscopic substrate-assisted persistence effect.',
+        description,
         '',
         'Base comparisons:',
         '',
@@ -688,7 +818,7 @@ def write_note(path: Path, json_rel: str, csv_rel: str, rows: list[dict[str, Any
             f"  - coarse persistence delta: `{row['coarse_persistence_delta']:.4f}`",
             f"  - reinforcement field norm: `{row['reinforcement_field_norm']:.4f}`",
             f"  - kernel deviation norm: `{row['kernel_deviation_norm']:.4f}`",
-            f"  - basin dwell fraction: `{row['dominant_basin_dwell_fraction']:.4f}`",
+            f"  - {support_label}: `{row['mesoscopic_support_fraction']:.4f}`",
             f"  - gate met: `{row['gate_met']}`",
             f"  - label: `{row['output_label']}`",
         ])
@@ -707,10 +837,10 @@ def write_note(path: Path, json_rel: str, csv_rel: str, rows: list[dict[str, Any
 def main() -> None:
     args = parse_args()
     defaults = load_stage10_defaults()
-    runsheet = load_runsheet(args.runsheet)
+    runsheet = normalize_stage19b_runsheet(load_runsheet(args.runsheet))
+    branch_kind = str(runsheet.get('branch_kind', 'basin_residence'))
     base = runsheet['base_seed_reference']
     rep_lookup = lookup_by_id(runsheet['representatives'], 'representative_id')
-    cond_lookup = lookup_by_id(runsheet['conditions'], 'condition_id')
     runs = selected_runs(runsheet['runs'], args.run_ids)
     if not runs:
         raise SystemExit('no Stage 19B runs selected')
@@ -719,36 +849,39 @@ def main() -> None:
     plot_paths: list[Path] = []
     for run in runs:
         rep = rep_lookup[run['representative_id']]
-        condition = cond_lookup[run['condition_id']]
-        payload, run_plots = simulate_run(run, rep, condition, runsheet, defaults, base)
+        payload, run_plots = simulate_run(run, rep, runsheet, defaults, base)
         rows.append(payload['summary'])
         plot_paths.extend(run_plots)
 
     rows, promoted = classify_base_rows(rows)
     label_counts = dict(Counter(row['output_label'] for row in rows))
-    plot_paths.extend(create_summary_plots(rows))
+    plot_paths.extend(create_summary_plots(rows, branch_kind))
 
     result = {
-        'stage': 'Stage 19B',
+        'stage': runsheet.get('stage', 'Stage 19B'),
         'description': runsheet['description'],
-        'kernel_law': runsheet['kernel_law'],
-        'parameter_policy': runsheet['parameter_policy'],
+        'kernel_law': runsheet.get('kernel_law', runsheet.get('common_fields', {})),
+        'parameter_policy': runsheet.get('parameter_policy', runsheet.get('common_fields', {})),
         'base_seed_reference': base,
         'base_runs': [{'run_id': row['run_id'], 'summary': row} for row in rows],
         'output_label_counts': label_counts,
         'promoted_followup': promoted,
-        'conclusion': 'Stage 19B tests whether minimal bounded basin-residence reinforcement can create mesoscopic substrate-assisted persistence on the projected transverse architecture.',
+        'conclusion': (
+            'Stage 19B tests whether minimal bounded basin-residence reinforcement can create mesoscopic substrate-assisted persistence on the projected transverse architecture.'
+            if branch_kind == 'basin_residence'
+            else 'Stage 19B Branch 2 tests whether minimal bounded transport-corridor reinforcement can create mesoscopic transport memory with persistence consequences on the projected transverse architecture.'
+        ),
     }
 
     json_path, csv_path, stamped_plots, _timestamp = save_atlas_payload(
-        experiment_slug='stage19b_mesoscopic',
+        experiment_slug=str(runsheet.get('experiment_slug', default_experiment_slug(branch_kind))),
         result=result,
         csv_rows=rows,
         csv_fieldnames=CSV_FIELDS,
         plot_paths=plot_paths,
     )
     note_path = ATLAS_NOTES / runsheet['note_name']
-    write_note(note_path, str(json_path.relative_to(REPO_ROOT)), str(csv_path.relative_to(REPO_ROOT)), rows, label_counts, promoted)
+    write_note(note_path, str(json_path.relative_to(REPO_ROOT)), str(csv_path.relative_to(REPO_ROOT)), rows, label_counts, promoted, branch_kind)
 
     print(f'wrote {json_path}')
     print(f'wrote {csv_path}')
