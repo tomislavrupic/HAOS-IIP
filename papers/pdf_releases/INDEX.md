@@ -21,6 +21,7 @@ Current releases:
 - `12.1` Resolution-Interaction Coupling of Collective and Coarse-Grained Morphology on a Frozen Kernel-Induced Cochain Operator Architecture
 - `13.1` Effective Binding Existence Tests on a Frozen Kernel-Induced Cochain Operator Architecture
 - `14.1` Emergent Relational Geometry Probe on a Frozen Kernel-Induced Cochain Operator Architecture
+- `15.1` Relational Feedback Dynamics Probe on a Frozen Kernel-Induced Cochain Operator Architecture
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
