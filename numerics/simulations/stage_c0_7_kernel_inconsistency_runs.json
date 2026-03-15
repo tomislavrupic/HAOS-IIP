@@ -1,0 +1,169 @@
+{
+  "stage": "C0.7_kernel_update_inconsistency_forcing_and_explicit_irreversibility",
+  "description": "Nine-run protected sequencing scan on the no-distance edge-graph control branch. The C0.6 positive-mismatch forcing schedules are kept fixed, but once mismatch accumulation starts the survivor update is forced into an alternating adjacency versus graph-shell regime and explicit composition-level inconsistency is counted.",
+  "note_name": "Stage_C0_7_Kernel_Inconsistency_Forcing_v1.md",
+  "experiment_slug": "stage_c0_7_kernel_inconsistency_forcing",
+  "architecture_notice": "This branch keeps graph size, adjacency and graph-shell kernels, the clustered / corridor / triad representative families, the projected-transverse sector, and the shell-weight measurement vocabulary fixed. Only the post-mismatch update rule changes: survivor updates are deliberately alternated across adjacency and graph-shell kernels.",
+  "baseline_notice": "C0.7 keeps the corrected C0.6 forcing schedules and the protected topology-stability rule active, but adds an explicit composition-level inconsistency probe. The key quantity is the disagreement between adjacency-to-shell and shell-to-adjacency survivor refinements on the same forced graph.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and representative seeds used in Paper 24.1, C0.6, and C0.7"
+  },
+  "parameter_policy": {
+    "max_shell": 3,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "active_threshold_sigma": 1.0,
+    "min_active_count": 48,
+    "seed_edge_count": 12,
+    "seed_shell_cap": 4,
+    "max_steps": 8,
+    "mismatch_density_threshold": 0.001,
+    "rho_stability_window": 2,
+    "random_seed": 3303,
+    "min_degree_floor": 3,
+    "ultra_weak_rewire_ops": 16,
+    "weak_rewire_ops": 48,
+    "moderate_rewire_ops": 144,
+    "moderate_delete_insert_ops": 96,
+    "cluster_patch_ops": 96,
+    "localized_defect_ops": 72,
+    "degree_biased_ops": 120,
+    "connectivity_stress_ops": 96,
+    "patch_radius": 2,
+    "localized_radius": 1,
+    "motif_patch_radius": 2,
+    "motif_max_radius": 4,
+    "motif_candidate_count": 8,
+    "hub_leaf_count": 4
+  },
+  "forcing_protocols": [
+    {
+      "forcing_protocol_id": "noise_seeded_inconsistency",
+      "label": "Noise-seeded inconsistency forcing",
+      "definition": "Use the exact C0.3 incidence-noise ladder as the forcing schedule, then deliberately alternate adjacency and graph-shell survivor updates once mismatch is live."
+    },
+    {
+      "forcing_protocol_id": "motif_seeded_inconsistency",
+      "label": "Motif-seeded inconsistency forcing",
+      "definition": "Use the exact C0.4 motif ladder as the forcing schedule, then deliberately alternate adjacency and graph-shell survivor updates once mismatch is live."
+    },
+    {
+      "forcing_protocol_id": "hybrid_seeded_inconsistency",
+      "label": "Hybrid seeded inconsistency forcing",
+      "definition": "At each step compare the scheduled noise and motif forcings, then run the alternating-kernel inconsistency probe on the protected candidate with the strongest failure signal."
+    }
+  ],
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "protected_topology_label": "trapped_local",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0]
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "protected_topology_label": "smeared_transfer",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.5, 0.5], [0.65, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0]
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "protected_topology_label": "split_channel_exchange",
+      "packet_count": 3,
+      "packet_centers": [[0.18, 0.5, 0.5], [0.5, 0.5, 0.5], [0.82, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0]
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "C07_noise_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "forcing_protocol_id": "noise_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Noise-seeded inconsistency forcing on the clustered composite anchor."
+    },
+    {
+      "run_id": "C07_noise_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "forcing_protocol_id": "noise_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Noise-seeded inconsistency forcing on the counter-propagating corridor."
+    },
+    {
+      "run_id": "C07_noise_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "forcing_protocol_id": "noise_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Noise-seeded inconsistency forcing on the phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "C07_motif_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "forcing_protocol_id": "motif_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Motif-seeded inconsistency forcing on the clustered composite anchor."
+    },
+    {
+      "run_id": "C07_motif_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "forcing_protocol_id": "motif_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Motif-seeded inconsistency forcing on the counter-propagating corridor."
+    },
+    {
+      "run_id": "C07_motif_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "forcing_protocol_id": "motif_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Motif-seeded inconsistency forcing on the phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "C07_hybrid_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "forcing_protocol_id": "hybrid_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Hybrid inconsistency forcing on the clustered composite anchor."
+    },
+    {
+      "run_id": "C07_hybrid_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "forcing_protocol_id": "hybrid_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Hybrid inconsistency forcing on the counter-propagating corridor."
+    },
+    {
+      "run_id": "C07_hybrid_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "forcing_protocol_id": "hybrid_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Hybrid inconsistency forcing on the phase-ordered symmetric triad."
+    }
+  ]
+}
