@@ -1,0 +1,136 @@
+{
+  "stage": "23.5_dk_energy_flow_topology_mapping",
+  "description": "Minimal 9-run local topology map for DK collision-driven energy-flow structure, following the negative 23.4 transport-window scan.",
+  "base_resolution": 12,
+  "refinement_resolution": 24,
+  "refinement_allowed": true,
+  "refinement_gate": {
+    "stable_topology_label_required": true,
+    "flow_class_preserved_under_local_variation_required": true,
+    "edge_current_structure_reproducible_required": true
+  },
+  "negative_freeze_rule": {
+    "all_9_runs_diffuse_or_unresolved": true,
+    "all_9_runs_no_repeatable_channel_or_loop_structure": true,
+    "all_9_runs_topology_labels_collapse_under_local_variation": true
+  },
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "resolution": 12,
+    "source_family": "stage23_3_and_23_4_clustered_local_texture",
+    "flow_estimator": "edge_current_plus_grade_transfer",
+    "topology_labels": [
+      "single_channel_transport",
+      "split_channel_transport",
+      "looped_circulation",
+      "braid_like_exchange",
+      "diffuse_washout",
+      "unresolved_mixed_topology"
+    ],
+    "secondary_labels": [
+      "grade_balanced",
+      "zero_form_dominant",
+      "one_form_dominant",
+      "transfer_dominant"
+    ],
+    "observables": [
+      "edge_current_map",
+      "grade_flow_trace",
+      "transport_span",
+      "flow_concentration_index",
+      "recirculation_score",
+      "channel_count",
+      "loop_count",
+      "grade_asymmetry_index",
+      "topology_label"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S23_5_baseline_clustered_in_phase",
+      "family_id": "tight_clustered_pair_in_phase",
+      "variation_class": "baseline",
+      "initial_phase_offset": 0.0,
+      "width_ratio_a_to_b": 1.0,
+      "separation_scale": "tight_baseline",
+      "notes": "Reference DK clustered local texture family."
+    },
+    {
+      "run_id": "S23_5_clustered_phase_quarter",
+      "family_id": "tight_clustered_pair_phase_offset",
+      "variation_class": "phase_variation",
+      "initial_phase_offset": 0.25,
+      "width_ratio_a_to_b": 1.0,
+      "separation_scale": "tight_baseline",
+      "notes": "Quarter-phase detuning around the baseline clustered family."
+    },
+    {
+      "run_id": "S23_5_clustered_phase_half",
+      "family_id": "tight_clustered_pair_phase_offset",
+      "variation_class": "phase_variation",
+      "initial_phase_offset": 0.5,
+      "width_ratio_a_to_b": 1.0,
+      "separation_scale": "tight_baseline",
+      "notes": "Half-phase detuning around the baseline clustered family."
+    },
+
+    {
+      "run_id": "S23_5_width_symmetric",
+      "family_id": "tight_clustered_pair_width_contrast",
+      "variation_class": "width_variation",
+      "initial_phase_offset": 0.0,
+      "width_ratio_a_to_b": 1.0,
+      "separation_scale": "tight_baseline",
+      "notes": "Symmetric-width clustered control."
+    },
+    {
+      "run_id": "S23_5_width_a_wider",
+      "family_id": "tight_clustered_pair_width_contrast",
+      "variation_class": "width_variation",
+      "initial_phase_offset": 0.0,
+      "width_ratio_a_to_b": 1.15,
+      "separation_scale": "tight_baseline",
+      "notes": "A-packet wider than B within the clustered family."
+    },
+    {
+      "run_id": "S23_5_width_b_wider",
+      "family_id": "tight_clustered_pair_width_contrast",
+      "variation_class": "width_variation",
+      "initial_phase_offset": 0.0,
+      "width_ratio_a_to_b": 0.87,
+      "separation_scale": "tight_baseline",
+      "notes": "B-packet wider than A within the clustered family."
+    },
+
+    {
+      "run_id": "S23_5_sep_tight",
+      "family_id": "tight_clustered_pair_separation",
+      "variation_class": "separation_variation",
+      "initial_phase_offset": 0.0,
+      "width_ratio_a_to_b": 1.0,
+      "separation_scale": "tight_baseline",
+      "notes": "Tight clustered separation reference."
+    },
+    {
+      "run_id": "S23_5_sep_medium",
+      "family_id": "tight_clustered_pair_separation",
+      "variation_class": "separation_variation",
+      "initial_phase_offset": 0.0,
+      "width_ratio_a_to_b": 1.0,
+      "separation_scale": "medium_clustered",
+      "notes": "Moderately expanded clustered separation."
+    },
+    {
+      "run_id": "S23_5_sep_near_overlap",
+      "family_id": "tight_clustered_pair_separation",
+      "variation_class": "separation_variation",
+      "initial_phase_offset": 0.0,
+      "width_ratio_a_to_b": 1.0,
+      "separation_scale": "near_overlap",
+      "notes": "Near-overlapping clustered encounter."
+    }
+  ]
+}

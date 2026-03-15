@@ -1,0 +1,66 @@
+# Stage 23.5 DK Energy Flow Topology Mapping v1
+
+Timestamped JSON: `data/20260315_180056_stage23_5_dk_energy_flow_topology.json`
+Timestamped CSV: `data/20260315_180056_stage23_5_dk_energy_flow_topology.csv`
+
+Total runs: 9
+
+## Topology labels
+- braid_like_exchange: 8
+- unresolved_mixed_topology: 1
+
+## Secondary labels
+- transfer_dominant: 9
+
+## Stable topology families
+- ['separation_variation', 'width_variation']
+
+## Plots
+- `plots/20260315_180056_stage23_5_S23_5_baseline_clustered_in_phase_collision_trajectory.png`
+- `plots/20260315_180056_stage23_5_S23_5_baseline_clustered_in_phase_separation_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_baseline_clustered_in_phase_grade_weight_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_baseline_clustered_in_phase_grade_flow_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_baseline_clustered_in_phase_edge_current_map.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_quarter_collision_trajectory.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_quarter_separation_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_quarter_grade_weight_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_quarter_grade_flow_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_quarter_edge_current_map.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_half_collision_trajectory.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_half_separation_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_half_grade_weight_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_half_grade_flow_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_clustered_phase_half_edge_current_map.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_symmetric_collision_trajectory.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_symmetric_separation_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_symmetric_grade_weight_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_symmetric_grade_flow_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_symmetric_edge_current_map.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_a_wider_collision_trajectory.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_a_wider_separation_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_a_wider_grade_weight_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_a_wider_grade_flow_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_a_wider_edge_current_map.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_b_wider_collision_trajectory.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_b_wider_separation_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_b_wider_grade_weight_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_b_wider_grade_flow_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_width_b_wider_edge_current_map.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_tight_collision_trajectory.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_tight_separation_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_tight_grade_weight_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_tight_grade_flow_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_tight_edge_current_map.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_medium_collision_trajectory.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_medium_separation_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_medium_grade_weight_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_medium_grade_flow_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_medium_edge_current_map.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_near_overlap_collision_trajectory.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_near_overlap_separation_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_near_overlap_grade_weight_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_near_overlap_grade_flow_trace.png`
+- `plots/20260315_180056_stage23_5_S23_5_sep_near_overlap_edge_current_map.png`
+- `plots/20260315_180056_stage23_5_topology_class_matrix.png`
+- `plots/20260315_180056_stage23_5_flow_concentration_panel.png`
+- `plots/20260315_180056_stage23_5_grade_asymmetry_summary.png`
