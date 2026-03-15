@@ -1,0 +1,279 @@
+{
+  "stage": "23_1_dk_collision_geometry_scan",
+  "description": "Minimal 10-run Dirac-Kaehler collision geometry scan for Phase III focused opener.",
+  "note_name": "Stage_23_1_DK_Collision_Geometry_Scan_v1.md",
+  "experiment_slug": "stage23_1_dk_collision",
+  "architecture": {
+    "operator_sector": "dirac_kaehler",
+    "baseline_comparison_sector": "scalar_transverse",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "promotion_required": true,
+    "promotion_rule": "Promote only if a collision family shows nontrivial collision-class change, persistence increase, reproducibility under phase flip or small perturbation, and clean behavior at n=24."
+  },
+  "state_representation": {
+    "active_grades": [
+      0,
+      1
+    ],
+    "optional_grades": [
+      2
+    ],
+    "norm": "|Psi|^2 = |psi^(0)|^2 + |psi^(1)|^2",
+    "no_extra_fields": true,
+    "no_reinforcement": true,
+    "no_gating": true,
+    "no_memory": true
+  },
+  "fixed_parameters": {
+    "epsilon": 0.2,
+    "resolution": 12,
+    "graph_type": "regular_lattice",
+    "boundary_type": "periodic",
+    "width_class": "baseline_coherent_width",
+    "bandwidth": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.6,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0
+  },
+  "phase_relations": [
+    {
+      "phase_id": "in_phase",
+      "phase_offset_rad": 0.0
+    },
+    {
+      "phase_id": "out_of_phase",
+      "phase_offset_rad": 3.141592653589793
+    }
+  ],
+  "geometries": [
+    {
+      "geometry_id": "head_on_symmetric_pair",
+      "packet_count": 2,
+      "packet_centers": [
+        [
+          0.30,
+          0.50
+        ],
+        [
+          0.70,
+          0.50
+        ]
+      ],
+      "kick_vectors": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0
+        ]
+      ],
+      "notes": "two identical packets launched directly toward each other"
+    },
+    {
+      "geometry_id": "counter_propagating_corridor_pair",
+      "packet_count": 2,
+      "packet_centers": [
+        [
+          0.35,
+          0.50
+        ],
+        [
+          0.65,
+          0.50
+        ]
+      ],
+      "kick_vectors": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0
+        ]
+      ],
+      "notes": "corridor-like head-on geometry matching the late atlas control"
+    },
+    {
+      "geometry_id": "offset_glancing_collision",
+      "packet_count": 2,
+      "packet_centers": [
+        [
+          0.30,
+          0.46
+        ],
+        [
+          0.70,
+          0.54
+        ]
+      ],
+      "kick_vectors": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0
+        ]
+      ],
+      "notes": "small transverse offset for deflection and grade-transfer testing"
+    },
+    {
+      "geometry_id": "tight_clustered_pair",
+      "packet_count": 2,
+      "packet_centers": [
+        [
+          0.46,
+          0.50
+        ],
+        [
+          0.54,
+          0.50
+        ]
+      ],
+      "kick_vectors": [
+        [
+          0.4,
+          0.0
+        ],
+        [
+          -0.4,
+          0.0
+        ]
+      ],
+      "notes": "initially close pair for metastable composite or grade-beating behavior"
+    },
+    {
+      "geometry_id": "symmetric_triad_collision",
+      "packet_count": 3,
+      "packet_centers": [
+        [
+          0.26,
+          0.50
+        ],
+        [
+          0.74,
+          0.50
+        ],
+        [
+          0.50,
+          0.74
+        ]
+      ],
+      "kick_vectors": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0
+        ]
+      ],
+      "notes": "three-packet symmetric encounter for collective grade oscillation or central trapping"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "S23_1_head_on_in_phase",
+      "geometry_id": "head_on_symmetric_pair",
+      "phase_id": "in_phase",
+      "phase_offset_rad": 0.0,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "head-on symmetric pair / in phase"
+    },
+    {
+      "run_id": "S23_1_head_on_out_of_phase",
+      "geometry_id": "head_on_symmetric_pair",
+      "phase_id": "out_of_phase",
+      "phase_offset_rad": 3.141592653589793,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "head-on symmetric pair / out of phase"
+    },
+    {
+      "run_id": "S23_1_corridor_in_phase",
+      "geometry_id": "counter_propagating_corridor_pair",
+      "phase_id": "in_phase",
+      "phase_offset_rad": 0.0,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "corridor pair / in phase"
+    },
+    {
+      "run_id": "S23_1_corridor_out_of_phase",
+      "geometry_id": "counter_propagating_corridor_pair",
+      "phase_id": "out_of_phase",
+      "phase_offset_rad": 3.141592653589793,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "corridor pair / out of phase"
+    },
+    {
+      "run_id": "S23_1_glancing_in_phase",
+      "geometry_id": "offset_glancing_collision",
+      "phase_id": "in_phase",
+      "phase_offset_rad": 0.0,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "offset glancing collision / in phase"
+    },
+    {
+      "run_id": "S23_1_glancing_out_of_phase",
+      "geometry_id": "offset_glancing_collision",
+      "phase_id": "out_of_phase",
+      "phase_offset_rad": 3.141592653589793,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "offset glancing collision / out of phase"
+    },
+    {
+      "run_id": "S23_1_clustered_in_phase",
+      "geometry_id": "tight_clustered_pair",
+      "phase_id": "in_phase",
+      "phase_offset_rad": 0.0,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "tight clustered pair / in phase"
+    },
+    {
+      "run_id": "S23_1_clustered_out_of_phase",
+      "geometry_id": "tight_clustered_pair",
+      "phase_id": "out_of_phase",
+      "phase_offset_rad": 3.141592653589793,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "tight clustered pair / out of phase"
+    },
+    {
+      "run_id": "S23_1_triad_in_phase",
+      "geometry_id": "symmetric_triad_collision",
+      "phase_id": "in_phase",
+      "phase_offset_rad": 0.0,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "symmetric triad collision / in phase"
+    },
+    {
+      "run_id": "S23_1_triad_out_of_phase",
+      "geometry_id": "symmetric_triad_collision",
+      "phase_id": "out_of_phase",
+      "phase_offset_rad": 3.141592653589793,
+      "resolution": 12,
+      "graph_type": "regular_lattice",
+      "notes": "symmetric triad collision / out of phase"
+    }
+  ]
+}
