@@ -1,0 +1,40 @@
+# Stage 23.1 Scalar Collision Control v1
+
+Timestamped JSON: `data/20260315_140932_stage23_1_scalar_collision_control.json`
+Timestamped CSV: `data/20260315_140932_stage23_1_scalar_collision_control.csv`
+
+Total runs: 10
+Candidate bounded collision regimes: 1
+
+## Collision labels
+- metastable composite: 1
+- pass-through dispersive: 9
+
+## Persistence labels
+- candidate bounded collision regime: 1
+- no persistence gain: 9
+
+## Plots
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_head_on_in_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_head_on_in_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_head_on_out_of_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_head_on_out_of_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_corridor_in_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_corridor_in_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_corridor_out_of_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_corridor_out_of_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_glancing_in_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_glancing_in_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_glancing_out_of_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_glancing_out_of_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_clustered_in_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_clustered_in_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_clustered_out_of_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_clustered_out_of_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_triad_in_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_triad_in_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_triad_out_of_phase_collision_trajectory.png`
+- `plots/20260315_140932_stage23_1_scalar_S23_1_scalar_triad_out_of_phase_separation_trace.png`
+- `plots/20260315_140932_stage23_1_scalar_collision_class_matrix.png`
+- `plots/20260315_140932_stage23_1_scalar_persistence_comparison_panel.png`
+- `plots/20260315_140932_stage23_1_scalar_collision_summary.png`

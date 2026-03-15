@@ -1,0 +1,475 @@
+{
+  "experiment": "23_1_dk_clustered_refinement",
+  "description": "Stage 23.1 Dirac-Kaehler clustered-pair refinement follow-up at n=24 after the initial collision scan.",
+  "fixed_parameters": {
+    "epsilon": 0.2,
+    "resolution": 24,
+    "graph_type": "regular_lattice",
+    "boundary_type": "periodic",
+    "width_class": "baseline_coherent_width",
+    "bandwidth": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.6,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0
+  },
+  "runs": [
+    {
+      "config": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.1248093167474574,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.46,
+            0.5
+          ],
+          [
+            0.54,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            0.4,
+            0.0
+          ],
+          [
+            -0.4,
+            0.0
+          ]
+        ],
+        "notes": "initially close pair for clustered DK refinement"
+      },
+      "run": {
+        "run_id": "S23_1_clustered_in_phase_n24",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "phase_offset_rad": 0.0,
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "notes": "tight clustered pair / in phase / n24"
+      },
+      "metrics": {
+        "run_id": "S23_1_clustered_in_phase_n24",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7488559004847444,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.04166666666666674,
+        "final_mean_separation": 0.04166666666666674,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7488559004847444,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.041397300375089076,
+        "omega0_weight_initial": 0.3333333333333335,
+        "omega1_weight_initial": 0.6666666666666665,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333333333333301,
+        "omega1_weight_final": 0.6373943548486263,
+        "omega2_weight_final": 0.029272311818043538,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "initially close pair for clustered DK refinement"
+      },
+      "times": [
+        0.0,
+        0.1248093167474574,
+        0.2496186334949148,
+        0.3744279502423722,
+        0.4992372669898296,
+        0.624046583737287
+      ],
+      "mean_pair_distances": [
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674
+      ],
+      "minimum_pair_distances": [
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674,
+        0.04166666666666674
+      ],
+      "peak_count_series": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "total_grade_weights": [
+        [
+          0.3333333333333335,
+          0.6666666666666665,
+          0.0
+        ],
+        [
+          0.3333333333333334,
+          0.6654259487529361,
+          0.0012407179137305423
+        ],
+        [
+          0.33333333333333315,
+          0.6617397576127929,
+          0.004926909053873889
+        ],
+        [
+          0.3333333333333325,
+          0.6557144573955936,
+          0.010952209271073878
+        ],
+        [
+          0.33333333333333165,
+          0.6475223267875402,
+          0.019144339879128124
+        ],
+        [
+          0.3333333333333301,
+          0.6373943548486263,
+          0.029272311818043538
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ],
+          [
+            0.4791666666666667,
+            0.5208333333333334
+          ]
+        ],
+        [
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ],
+          [
+            0.5208333333333334,
+            0.5208333333333334
+          ]
+        ]
+      ]
+    },
+    {
+      "config": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "bandwidth": 0.08,
+        "amplitude": 0.5,
+        "t_final": 0.6,
+        "dt": 0.1248093167474574,
+        "steps": 5,
+        "kick_cycles": 1.0
+      },
+      "geometry": {
+        "geometry_id": "tight_clustered_pair",
+        "packet_count": 2,
+        "packet_centers": [
+          [
+            0.46,
+            0.5
+          ],
+          [
+            0.54,
+            0.5
+          ]
+        ],
+        "kick_vectors": [
+          [
+            0.4,
+            0.0
+          ],
+          [
+            -0.4,
+            0.0
+          ]
+        ],
+        "notes": "initially close pair for clustered DK refinement"
+      },
+      "run": {
+        "run_id": "S23_1_clustered_out_of_phase_n24",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "out_of_phase",
+        "phase_offset_rad": 3.141592653589793,
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "notes": "tight clustered pair / out of phase / n24"
+      },
+      "metrics": {
+        "run_id": "S23_1_clustered_out_of_phase_n24",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "out_of_phase",
+        "resolution": 24,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 2,
+        "collision_label": "pass-through dispersive",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.16666666666666663,
+        "final_mean_separation": 0.16666666666666663,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.0818630890775758,
+        "omega0_weight_initial": 0.33333333333333304,
+        "omega1_weight_initial": 0.6666666666666671,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333333333333512,
+        "omega1_weight_final": 0.6087807212510257,
+        "omega2_weight_final": 0.05788594541562309,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "initially close pair for clustered DK refinement"
+      },
+      "times": [
+        0.0,
+        0.1248093167474574,
+        0.2496186334949148,
+        0.3744279502423722,
+        0.4992372669898296,
+        0.624046583737287
+      ],
+      "mean_pair_distances": [
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663
+      ],
+      "minimum_pair_distances": [
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663
+      ],
+      "peak_count_series": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_grade_weights": [
+        [
+          0.33333333333333304,
+          0.6666666666666671,
+          0.0
+        ],
+        [
+          0.33333333333333337,
+          0.6641370950742307,
+          0.0025295715924358387
+        ],
+        [
+          0.33333333333333465,
+          0.6566597978446215,
+          0.01000686882204379
+        ],
+        [
+          0.3333333333333376,
+          0.6445626884154677,
+          0.022103978251194704
+        ],
+        [
+          0.3333333333333426,
+          0.6283715959380204,
+          0.038295070728637026
+        ],
+        [
+          0.3333333333333512,
+          0.6087807212510257,
+          0.05788594541562309
+        ]
+      ],
+      "total_centers": [
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ],
+          [
+            0.4375,
+            0.5208333333333334
+          ]
+        ],
+        [
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ],
+          [
+            0.6041666666666666,
+            0.5208333333333334
+          ]
+        ]
+      ]
+    }
+  ],
+  "summary": {
+    "collision_labels": {
+      "unresolved / mixed": 1,
+      "pass-through dispersive": 1
+    },
+    "persistence_labels": {
+      "weak persistence gain": 1,
+      "no persistence gain": 1
+    },
+    "candidate_bounded_collision_regimes": 0
+  }
+}

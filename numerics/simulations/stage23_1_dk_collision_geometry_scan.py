@@ -6,17 +6,18 @@ import argparse
 import json
 import math
 from collections import Counter
-from itertools import combinations
+from itertools import combinations, permutations
 from pathlib import Path
 from typing import Any
 
 import numpy as np
+import scipy.sparse as sp
+import scipy.sparse.linalg as spla
 
 from stage10_common import ATLAS_NOTES, REPO_ROOT, plt, save_atlas_payload
 from stage9b_common import (
     append_log,
     build_dk2d_complex,
-    crank_nicolson_evolution,
     first_order_dt,
     gaussian_profile,
     load_stage9b_config,
@@ -36,6 +37,7 @@ CSV_FIELDS = [
     'resolution',
     'graph_type',
     'packet_count',
+    'initial_peak_count',
     'collision_label',
     'persistence_label',
     'composite_lifetime',
@@ -68,6 +70,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--runsheet', type=Path, default=RUNSHEET_PATH)
     parser.add_argument('--run-ids', nargs='*', default=[])
     parser.add_argument('--append-log', action='store_true')
+    parser.add_argument('--note-path', type=Path, default=None)
     return parser.parse_args()
 
 
@@ -112,6 +115,126 @@ def packet_state(
     psi = np.concatenate(parts)
     psi /= max(np.linalg.norm(psi), 1.0e-12)
     return float(amplitude) * psi
+
+
+def crank_nicolson_states(operator: sp.csr_matrix, psi0: np.ndarray, dt: float, steps: int) -> list[np.ndarray]:
+    psi = np.asarray(psi0, dtype=complex).copy()
+    ident = sp.identity(operator.shape[0], dtype=complex, format='csr')
+    lhs = (ident - 0.5j * dt * operator).tocsc()
+    rhs_op = (ident + 0.5j * dt * operator).tocsr()
+    solve = spla.factorized(lhs)
+    states = [psi.copy()]
+    for _ in range(steps):
+        psi = solve(rhs_op @ psi)
+        states.append(np.asarray(psi, dtype=complex))
+    return states
+
+
+def grade_weights(vec: np.ndarray, block_sizes: tuple[int, ...]) -> list[float]:
+    weights: list[float] = []
+    start = 0
+    total = float(np.sum(np.abs(vec) ** 2)) or 1.0
+    for size in block_sizes:
+        part = vec[start:start + size]
+        weights.append(float(np.sum(np.abs(part) ** 2) / total))
+        start += size
+    return weights
+
+
+def weighted_center(positions: np.ndarray, weights: np.ndarray) -> np.ndarray:
+    total = float(np.sum(weights))
+    if total <= 0.0:
+        return np.zeros(2, dtype=float)
+    center = np.zeros(2, dtype=float)
+    for axis in range(2):
+        angles = 2.0 * math.pi * positions[:, axis]
+        s = float(np.sum(weights * np.sin(angles)))
+        c = float(np.sum(weights * np.cos(angles)))
+        center[axis] = ((math.atan2(s, c) / (2.0 * math.pi)) + 1.0) % 1.0
+    return center
+
+
+def field_grid_2d(positions: np.ndarray, vec: np.ndarray, n_side: int) -> np.ndarray:
+    grid = np.zeros((n_side, n_side), dtype=float)
+    coords = np.floor(np.asarray(positions) * n_side).astype(int) % n_side
+    weights = np.abs(vec) ** 2
+    for idx, coord in enumerate(coords):
+        grid[coord[0], coord[1]] += float(weights[idx])
+    return grid
+
+
+def local_peak_candidates(grid: np.ndarray) -> list[tuple[float, tuple[int, int]]]:
+    n_side = grid.shape[0]
+    peaks: list[tuple[float, tuple[int, int]]] = []
+    for i in range(n_side):
+        for j in range(n_side):
+            value = float(grid[i, j])
+            if value <= 0.0:
+                continue
+            is_peak = True
+            for di in (-1, 0, 1):
+                for dj in (-1, 0, 1):
+                    if di == 0 and dj == 0:
+                        continue
+                    ni = (i + di) % n_side
+                    nj = (j + dj) % n_side
+                    if grid[ni, nj] > value:
+                        is_peak = False
+                        break
+                if not is_peak:
+                    break
+            if is_peak:
+                peaks.append((value, (i, j)))
+    if not peaks:
+        flat_idx = int(np.argmax(grid))
+        peaks.append((float(grid.flat[flat_idx]), np.unravel_index(flat_idx, grid.shape)))
+    peaks.sort(key=lambda item: item[0], reverse=True)
+    return peaks
+
+
+def top_peak_positions(grid: np.ndarray, count: int) -> tuple[list[np.ndarray], int]:
+    peaks = local_peak_candidates(grid)
+    raw_count = len(peaks)
+    taken = set()
+    positions: list[np.ndarray] = []
+    n_side = grid.shape[0]
+    for _, (i, j) in peaks:
+        if len(positions) >= count:
+            break
+        taken.add((i, j))
+        positions.append(np.array([(i + 0.5) / n_side, (j + 0.5) / n_side], dtype=float))
+    if len(positions) < count:
+        flat_order = np.argsort(grid.ravel())[::-1]
+        for flat_idx in flat_order:
+            ij = np.unravel_index(int(flat_idx), grid.shape)
+            if ij in taken:
+                continue
+            positions.append(np.array([(ij[0] + 0.5) / n_side, (ij[1] + 0.5) / n_side], dtype=float))
+            taken.add(ij)
+            if len(positions) >= count:
+                break
+    while len(positions) < count:
+        positions.append(positions[-1].copy())
+    return positions[:count], raw_count
+
+
+def pairing_cost(points_a: list[np.ndarray], points_b: list[np.ndarray]) -> float:
+    total = 0.0
+    for a, b in zip(points_a, points_b):
+        total += float(np.linalg.norm(periodic_displacement(np.asarray([b]), np.asarray(a))[0]))
+    return total
+
+
+def ordered_peaks(grid: np.ndarray, count: int, anchors: list[np.ndarray] | None, previous: list[np.ndarray] | None) -> tuple[list[np.ndarray], int]:
+    peaks, raw_count = top_peak_positions(grid, count)
+    if anchors is not None:
+        best = min(permutations(peaks, len(peaks)), key=lambda perm: pairing_cost(list(anchors), list(perm)))
+        return [np.asarray(p, dtype=float) for p in best], raw_count
+    if previous is not None:
+        best = min(permutations(peaks, len(peaks)), key=lambda perm: pairing_cost(list(previous), list(perm)))
+        return [np.asarray(p, dtype=float) for p in best], raw_count
+    peaks.sort(key=lambda p: (p[0], p[1]))
+    return peaks, raw_count
 
 
 def mean_pair_distance(centers: list[np.ndarray]) -> float:
@@ -173,6 +296,7 @@ def angle_between(a: np.ndarray, b: np.ndarray) -> float:
 
 def classify_collision(
     geometry_id: str,
+    initial_peak_count: int,
     reflection_fraction: float,
     deflection_angle: float,
     grade_transfer_amplitude: float,
@@ -181,9 +305,13 @@ def classify_collision(
     t_final: float,
 ) -> str:
     if bound_tail_fraction >= 0.6 and grade_transfer_amplitude >= 0.18:
-        return 'oscillatory grade-trapped'
+        if initial_peak_count >= 2:
+            return 'oscillatory grade-trapped'
+        return 'unresolved / mixed'
     if bound_tail_fraction >= 0.6:
-        return 'metastable composite'
+        if initial_peak_count >= 2:
+            return 'metastable composite'
+        return 'unresolved / mixed'
     if reflection_fraction >= 0.75:
         return 'reflective / exclusion-like'
     if deflection_angle >= 0.35:
@@ -207,7 +335,7 @@ def plot_trajectories(path: Path, run_id: str, center_histories: list[np.ndarray
     fig, ax = plt.subplots(figsize=(5.6, 5.0))
     colors = ['tab:blue', 'tab:orange', 'tab:green']
     for idx, centers in enumerate(center_histories):
-        ax.plot(centers[:, 0], centers[:, 1], color=colors[idx % len(colors)], label=f'packet {idx + 1}')
+        ax.plot(centers[:, 0], centers[:, 1], color=colors[idx % len(colors)], label=f'peak {idx + 1}')
         ax.scatter([centers[0, 0]], [centers[0, 1]], color=colors[idx % len(colors)], marker='o', s=20)
         ax.scatter([centers[-1, 0]], [centers[-1, 1]], color=colors[idx % len(colors)], marker='x', s=30)
     ax.set_xlim(0.0, 1.0)
@@ -314,7 +442,7 @@ def plot_grade_transfer_summary(path: Path, rows: list[dict[str, Any]]) -> None:
     plt.close(fig)
 
 
-def simulate_run(run: dict[str, Any], geometry: dict[str, Any], defaults: dict[str, Any], fixed: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any], list[Path]]:
+def simulate_run(run: dict[str, Any], geometry: dict[str, Any], fixed: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any], list[Path]]:
     resolution = int(run['resolution'])
     epsilon = float(fixed['epsilon'])
     bandwidth = float(fixed['bandwidth'])
@@ -329,8 +457,6 @@ def simulate_run(run: dict[str, Any], geometry: dict[str, Any], defaults: dict[s
     phase_offset = float(run['phase_offset_rad'])
 
     packet_states: list[np.ndarray] = []
-    center_histories: list[np.ndarray] = []
-    per_packet_grade_histories: list[np.ndarray] = []
     kick_vectors = [np.asarray(vec, dtype=float) for vec in geometry['kick_vectors']]
     for idx, center in enumerate(geometry['packet_centers']):
         packet_states.append(
@@ -349,16 +475,28 @@ def simulate_run(run: dict[str, Any], geometry: dict[str, Any], defaults: dict[s
     total_psi0 = np.sum(packet_states, axis=0)
     dt = first_order_dt(complex_data.dirac_kahler, dt_scale)
     steps = max(2, int(math.ceil(t_final / dt)))
+    states = crank_nicolson_states(complex_data.dirac_kahler, total_psi0, dt, steps)
+    times = [idx * dt for idx in range(len(states))]
 
-    total_run = crank_nicolson_evolution(complex_data.dirac_kahler, total_psi0, dt, steps, positions, block_sizes)
-    for packet_state_0 in packet_states:
-        packet_run = crank_nicolson_evolution(complex_data.dirac_kahler, packet_state_0, dt, steps, positions, block_sizes)
-        center_histories.append(np.asarray(packet_run['centers'], dtype=float))
-        per_packet_grade_histories.append(np.asarray(packet_run['grade_weights'], dtype=float))
+    grade_hist = np.asarray([grade_weights(state, block_sizes) for state in states], dtype=float)
+    total_centers = np.asarray([weighted_center(positions, np.abs(state) ** 2) for state in states], dtype=float)
+    basin_ids = [basin_id(center) for center in total_centers]
+    coarse_basin_persistence = longest_constant_run(basin_ids)
 
-    times = total_run['times']
+    peak_tracks: list[list[np.ndarray]] = [[] for _ in range(int(geometry['packet_count']))]
+    raw_peak_counts: list[int] = []
+    previous: list[np.ndarray] | None = None
+    anchors = [np.asarray(center, dtype=float) for center in geometry['packet_centers']]
+    for idx, state in enumerate(states):
+        grid = field_grid_2d(positions, state, resolution)
+        current, raw_count = ordered_peaks(grid, int(geometry['packet_count']), anchors if idx == 0 else None, previous)
+        raw_peak_counts.append(raw_count)
+        for track, point in zip(peak_tracks, current):
+            track.append(point.copy())
+        previous = [point.copy() for point in current]
+    center_histories = [np.asarray(track, dtype=float) for track in peak_tracks]
+
     sample_dt = float(np.median(np.diff(times))) if len(times) >= 2 else dt
-    total_grade_hist = np.asarray(total_run['grade_weights'], dtype=float)
     mean_pair_distances, min_pair_distances = mean_pair_separation_series(center_histories)
     close_threshold = 2.0 * bandwidth
     composite_lifetime = float(np.sum(mean_pair_distances <= close_threshold) * sample_dt)
@@ -367,14 +505,13 @@ def simulate_run(run: dict[str, Any], geometry: dict[str, Any], defaults: dict[s
     min_separation = float(np.min(min_pair_distances)) if min_pair_distances.size else 0.0
     final_mean_separation = float(mean_pair_distances[-1]) if mean_pair_distances.size else 0.0
     post_collision_trend = final_mean_separation - min_separation
-
     tail = mean_pair_distances[max(0, int(0.75 * len(mean_pair_distances))):]
     bound_tail_fraction = float(np.mean(tail <= close_threshold)) if tail.size else 0.0
+    initial_peak_count = int(raw_peak_counts[0]) if raw_peak_counts else 0
 
     reflection_votes = 0
     deflection_angles: list[float] = []
     circulation_terms: list[float] = []
-    corridor_flags: list[float] = []
     for centers, kick in zip(center_histories, kick_vectors):
         net_disp = periodic_displacement(centers[-1][None, :], centers[0])[0]
         kick_unit = kick / max(np.linalg.norm(kick), 1.0e-12)
@@ -385,8 +522,7 @@ def simulate_run(run: dict[str, Any], geometry: dict[str, Any], defaults: dict[s
         if len(centers) >= 3:
             velocity_0 = periodic_displacement(centers[1][None, :], centers[0])[0]
             velocity_1 = periodic_displacement(centers[-1][None, :], centers[-2])[0]
-            circulation_terms.append(float(np.cross(velocity_0, velocity_1)))
-        corridor_flags.append(float(abs(centers[-1, 1] - 0.5) <= 0.08))
+            circulation_terms.append(float(velocity_0[0] * velocity_1[1] - velocity_0[1] * velocity_1[0]))
     reflection_fraction = float(reflection_votes / max(len(center_histories), 1))
     deflection_angle_proxy = float(np.mean(deflection_angles)) if deflection_angles else 0.0
     localized_circulation_proxy = float(np.mean(np.abs(circulation_terms))) if circulation_terms else 0.0
@@ -398,16 +534,13 @@ def simulate_run(run: dict[str, Any], geometry: dict[str, Any], defaults: dict[s
             flags.append(float(all(abs(hist[step, 1] - 0.5) <= 0.08 for hist in center_histories)))
         corridor_dwell = float(np.sum(flags) * sample_dt)
 
-    total_centers = np.asarray(total_run['centers'], dtype=float)
-    basin_ids = [basin_id(center) for center in total_centers]
-    coarse_basin_persistence = longest_constant_run(basin_ids)
-
-    initial_grade = total_grade_hist[0]
-    final_grade = total_grade_hist[-1]
-    grade_transfer_amplitude = float(np.max(np.linalg.norm(total_grade_hist - initial_grade[None, :], axis=1)))
+    initial_grade = grade_hist[0]
+    final_grade = grade_hist[-1]
+    grade_transfer_amplitude = float(np.max(np.linalg.norm(grade_hist - initial_grade[None, :], axis=1)))
 
     collision_label = classify_collision(
         geometry_id=geometry['geometry_id'],
+        initial_peak_count=initial_peak_count,
         reflection_fraction=reflection_fraction,
         deflection_angle=deflection_angle_proxy,
         grade_transfer_amplitude=grade_transfer_amplitude,
@@ -431,6 +564,7 @@ def simulate_run(run: dict[str, Any], geometry: dict[str, Any], defaults: dict[s
         'resolution': resolution,
         'graph_type': run['graph_type'],
         'packet_count': int(geometry['packet_count']),
+        'initial_peak_count': initial_peak_count,
         'collision_label': collision_label,
         'persistence_label': persistence_label,
         'composite_lifetime': composite_lifetime,
@@ -474,10 +608,10 @@ def simulate_run(run: dict[str, Any], geometry: dict[str, Any], defaults: dict[s
         'times': times,
         'mean_pair_distances': mean_pair_distances.tolist(),
         'minimum_pair_distances': min_pair_distances.tolist(),
-        'total_grade_weights': total_grade_hist.tolist(),
+        'peak_count_series': raw_peak_counts,
+        'total_grade_weights': grade_hist.tolist(),
         'total_centers': total_centers.tolist(),
-        'per_packet_centers': [hist.tolist() for hist in center_histories],
-        'per_packet_grade_weights': [hist.tolist() for hist in per_packet_grade_histories],
+        'peak_tracks': [hist.tolist() for hist in center_histories],
     }
 
     plot_paths: list[Path] = []
@@ -485,14 +619,14 @@ def simulate_run(run: dict[str, Any], geometry: dict[str, Any], defaults: dict[s
     sep_path = WORK_PLOT_DIR / f"stage23_1_{run['run_id']}_separation_trace.png"
     grade_path = WORK_PLOT_DIR / f"stage23_1_{run['run_id']}_grade_weight_trace.png"
     plot_trajectories(traj_path, run['run_id'], center_histories, geometry['geometry_id'])
-    plot_trace(sep_path, run['run_id'], times, mean_pair_distances, 'mean pair distance', 'Separation trace')
-    plot_grades(grade_path, run['run_id'], times, total_grade_hist)
+    plot_trace(sep_path, run['run_id'], times, mean_pair_distances, 'mean peak separation', 'Separation trace')
+    plot_grades(grade_path, run['run_id'], times, grade_hist)
     plot_paths.extend([traj_path, sep_path, grade_path])
 
     return row, detail, plot_paths
 
 
-def write_note(json_path: Path, csv_path: Path, rows: list[dict[str, Any]], stamped_plots: list[str]) -> None:
+def write_note(json_path: Path, csv_path: Path, rows: list[dict[str, Any]], stamped_plots: list[str], note_path: Path | None = None) -> None:
     collision_counts = Counter(row['collision_label'] for row in rows)
     persistence_counts = Counter(row['persistence_label'] for row in rows)
     gated = sum(int(row['gate_met']) for row in rows)
@@ -521,7 +655,8 @@ def write_note(json_path: Path, csv_path: Path, rows: list[dict[str, Any]], stam
     ])
     for plot in stamped_plots:
         lines.append(f'- `{plot}`')
-    NOTE_PATH.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    target = note_path or NOTE_PATH
+    target.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
 
 def main() -> None:
@@ -529,7 +664,6 @@ def main() -> None:
     runsheet = load_runsheet(args.runsheet)
     runs = selected_runs(runsheet['runs'], args.run_ids)
     geometry_by_id = lookup_by_id(runsheet['geometries'], 'geometry_id')
-    defaults = load_stage9b_config()
     fixed = runsheet['fixed_parameters']
 
     rows: list[dict[str, Any]] = []
@@ -537,7 +671,7 @@ def main() -> None:
     plot_paths: list[Path] = []
     for run in runs:
         geometry = geometry_by_id[run['geometry_id']]
-        row, detail, run_plots = simulate_run(run, geometry, defaults, fixed)
+        row, detail, run_plots = simulate_run(run, geometry, fixed)
         rows.append(row)
         details.append(detail)
         plot_paths.extend(run_plots)
@@ -570,7 +704,7 @@ def main() -> None:
         CSV_FIELDS,
         plot_paths,
     )
-    write_note(json_path, csv_path, rows, stamped_plots)
+    write_note(json_path, csv_path, rows, stamped_plots, note_path=args.note_path)
 
     if args.append_log:
         observation = 'the Stage 23.1 DK collision scan was executed with the minimal 10-run geometry-phase matrix'

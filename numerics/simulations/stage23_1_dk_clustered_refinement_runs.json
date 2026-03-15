@@ -1,0 +1,42 @@
+{
+  "stage": "23_1_dk_clustered_refinement",
+  "description": "Stage 23.1 Dirac-Kaehler clustered-pair refinement follow-up at n=24 after the initial collision scan.",
+  "note_name": "Stage_23_1_DK_Clustered_Refinement_v1.md",
+  "experiment_slug": "stage23_1_dk_clustered_refinement",
+  "architecture": {
+    "operator_sector": "dirac_kaehler",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "base_resolution": 24,
+    "promotion_source": "stage23_1_tight_clustered_pair"
+  },
+  "fixed_parameters": {
+    "epsilon": 0.2,
+    "resolution": 24,
+    "graph_type": "regular_lattice",
+    "boundary_type": "periodic",
+    "width_class": "baseline_coherent_width",
+    "bandwidth": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.6,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0
+  },
+  "phase_relations": [
+    {"phase_id": "in_phase", "phase_offset_rad": 0.0},
+    {"phase_id": "out_of_phase", "phase_offset_rad": 3.141592653589793}
+  ],
+  "geometries": [
+    {
+      "geometry_id": "tight_clustered_pair",
+      "packet_count": 2,
+      "packet_centers": [[0.46, 0.50], [0.54, 0.50]],
+      "kick_vectors": [[0.4, 0.0], [-0.4, 0.0]],
+      "notes": "initially close pair for clustered DK refinement"
+    }
+  ],
+  "runs": [
+    {"run_id": "S23_1_clustered_in_phase_n24", "geometry_id": "tight_clustered_pair", "phase_id": "in_phase", "phase_offset_rad": 0.0, "resolution": 24, "graph_type": "regular_lattice", "notes": "tight clustered pair / in phase / n24"},
+    {"run_id": "S23_1_clustered_out_of_phase_n24", "geometry_id": "tight_clustered_pair", "phase_id": "out_of_phase", "phase_offset_rad": 3.141592653589793, "resolution": 24, "graph_type": "regular_lattice", "notes": "tight clustered pair / out of phase / n24"}
+  ]
+}
