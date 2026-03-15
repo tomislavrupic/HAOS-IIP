@@ -64,6 +64,10 @@ The intended public reading order is:
 
 1. `23.1` Dirac-Kahler Collision Texture and Grade-Exchange Baseline on a Kernel-Induced Cochain Operator Architecture
 
+### 2.7 Part VII. Combinatorial control branch
+
+1. `24.1` Combinatorial Kernel Austerity, Degree-Spectrum Protection, Incidence-Noise Robustness, and Controlled Motif Injection on a No-Distance Edge-Graph Control Branch
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -91,6 +95,7 @@ The intended public reading order is:
 - `21.1` Delayed Nonlocal Kernel Memory Probe on a Kernel-Induced Cochain Operator Architecture
 - `22.1` Phase II Boundary of Weak Reinforcement, Registration, and Delayed Memory on a Kernel-Induced Cochain Operator Architecture
 - `23.1` Dirac-Kahler Collision Texture and Grade-Exchange Baseline on a Kernel-Induced Cochain Operator Architecture
+- `24.1` Combinatorial Kernel Austerity, Degree-Spectrum Protection, Incidence-Noise Robustness, and Controlled Motif Injection on a No-Distance Edge-Graph Control Branch
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
