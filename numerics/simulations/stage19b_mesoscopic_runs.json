@@ -1,0 +1,287 @@
+{
+  "description": "Stage 19B minimal pilot for mesoscopic substrate reinforcement driven by basin residence on the projected transverse architecture.",
+  "note_name": "Stage_19B_Mesoscopic_Substrate_Reinforcement_v1.md",
+  "selection_rationale": "Stage 19A showed that bounded local energy-density back-reaction is real but regime-inert. Stage 19B changes the substrate law class by aligning bounded kernel reinforcement with the strongest collective signal already present in the atlas: coarse basin residence.",
+  "branch_policy": {
+    "stage_id": "19B",
+    "pilot_branch": "basin_residence",
+    "pilot_only": true,
+    "selection_note": "Run only the basin-residence branch first. Do not execute transport-corridor or cluster-density reinforcement unless this branch either promotes a representative or is frozen early negative and a second branch is explicitly authorized."
+  },
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and projected transverse seed carried from the late Phase I ladder into the Phase II substrate tests"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "followup_gate": "Promote only if at least one run shows composite lifetime increase, binding persistence increase, coarse basin persistence increase, a new stabilized ordering class, or transport channel locking, and the effect is sustained rather than transient.",
+    "selection_note": "The first executable 19B pass stays at n=12. No refinement is run unless one representative earns promotion."
+  },
+  "kernel_law": {
+    "update_form": "K(x,y,t) = K0(x,y) * (1 + delta * S(x,y,t))",
+    "substrate_law": "basin_residence",
+    "signal_form": "S_B(x,y,t) proportional to local time-averaged basin persistence and dwell within the dominant coarse envelope basin",
+    "constraints": [
+      "delta << 1",
+      "S bounded and low-frequency",
+      "no explicit metric construction",
+      "no long-range instantaneous forcing",
+      "support(K) = support(K0)",
+      "K_xy = K_yx",
+      "same projected transverse sector as Stage 19A"
+    ],
+    "interpretation": "substrate aligns weakly with stable attractor geography rather than microscopic collisions"
+  },
+  "parameter_policy": {
+    "delta_values": {
+      "null": 0.0,
+      "very_weak": 0.01,
+      "weak": 0.02
+    },
+    "memory_window": "same smoothing and coarse-graining discipline as the late Phase I basin diagnostics",
+    "basin_threshold": "use the same coarse persistence threshold family already frozen in Stage 12 and Stage 13 comparisons",
+    "no_stronger_than_weak": true
+  },
+  "branch_ranking": [
+    {
+      "branch_id": "basin_residence",
+      "rank": 1,
+      "status": "pilot_now",
+      "reason": "most aligned with the strongest structural signal already present in the atlas: basin sharpening and coarse persistence"
+    },
+    {
+      "branch_id": "transport_corridor",
+      "rank": 2,
+      "status": "defer",
+      "reason": "most relevant if repeated path usage is the missing substrate signal, but likely more kinematic than basin residence"
+    },
+    {
+      "branch_id": "cluster_density",
+      "rank": 3,
+      "status": "defer",
+      "reason": "closest to the already-failed local reinforcement logic and therefore least likely to produce a qualitatively new regime shift"
+    }
+  ],
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage15_case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "strongest composite anchor and main candidate for any substrate-assisted persistence gain"
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage15_case_id": "symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [[0.18, 0.5, 0.5], [0.5, 0.5, 0.5], [0.82, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "structured ordering candidate and likely basin-stabilization test"
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.5, 0.5], [0.65, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "notes": "transport-style control and expected null candidate"
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "null_control",
+      "label": "null control",
+      "substrate_law": "basin_residence",
+      "delta": 0.0,
+      "promotion_candidate": false
+    },
+    {
+      "condition_id": "very_weak_basin_residence",
+      "label": "very weak basin-residence reinforcement",
+      "substrate_law": "basin_residence",
+      "delta": 0.01,
+      "promotion_candidate": false
+    },
+    {
+      "condition_id": "weak_basin_residence",
+      "label": "weak basin-residence reinforcement",
+      "substrate_law": "basin_residence",
+      "delta": 0.02,
+      "promotion_candidate": false
+    }
+  ],
+  "observables": {
+    "interaction_morphology": [
+      "composite_lifetime",
+      "binding_persistence",
+      "overlap_integral_evolution"
+    ],
+    "coarse_structure": [
+      "coarse_basin_persistence",
+      "dominant_basin_area_fraction",
+      "coarse_classification_label",
+      "morphology_classification_label"
+    ],
+    "mesoscopic_substrate": [
+      "reinforcement_field_norm",
+      "max_local_kernel_deformation",
+      "cluster_dwell_statistics",
+      "basin_residence_signal_strength"
+    ],
+    "ordering": [
+      "new_stabilized_ordering_class",
+      "transport_channel_locking"
+    ]
+  },
+  "promotion_rule": {
+    "promote_only_if_any_appear": [
+      "composite lifetime increase",
+      "binding persistence increase",
+      "coarse basin persistence increase",
+      "new stabilized ordering class",
+      "transport channel locking"
+    ],
+    "and_require": [
+      "effect is sustained",
+      "effect is not transient",
+      "effect survives morphology cross-check"
+    ]
+  },
+  "negative_freeze_rule": {
+    "freeze_negative_if_all_9_runs_show": [
+      "reinforcement field remains bounded",
+      "kernel deformation is non-zero but tiny",
+      "no regime-level persistence gain",
+      "no ordering capture",
+      "no basin stabilization",
+      "no refinement promotion"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S19B_clustered_anchor_null",
+      "representative_id": "clustered_composite_anchor",
+      "substrate_law": "basin_residence",
+      "condition_id": "null_control",
+      "delta": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "promotion_candidate": false,
+      "notes": "branch-1 pilot: strongest composite anchor"
+    },
+    {
+      "run_id": "S19B_clustered_anchor_vweak",
+      "representative_id": "clustered_composite_anchor",
+      "substrate_law": "basin_residence",
+      "condition_id": "very_weak_basin_residence",
+      "delta": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "promotion_candidate": false,
+      "notes": "branch-1 pilot: strongest composite anchor"
+    },
+    {
+      "run_id": "S19B_clustered_anchor_weak",
+      "representative_id": "clustered_composite_anchor",
+      "substrate_law": "basin_residence",
+      "condition_id": "weak_basin_residence",
+      "delta": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "promotion_candidate": false,
+      "notes": "branch-1 pilot: strongest composite anchor"
+    },
+    {
+      "run_id": "S19B_symmetric_triad_null",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "substrate_law": "basin_residence",
+      "condition_id": "null_control",
+      "delta": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "promotion_candidate": false,
+      "notes": "branch-1 pilot: symmetric triad"
+    },
+    {
+      "run_id": "S19B_symmetric_triad_vweak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "substrate_law": "basin_residence",
+      "condition_id": "very_weak_basin_residence",
+      "delta": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "promotion_candidate": false,
+      "notes": "branch-1 pilot: symmetric triad"
+    },
+    {
+      "run_id": "S19B_symmetric_triad_weak",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "substrate_law": "basin_residence",
+      "condition_id": "weak_basin_residence",
+      "delta": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "promotion_candidate": false,
+      "notes": "branch-1 pilot: symmetric triad"
+    },
+    {
+      "run_id": "S19B_corridor_null",
+      "representative_id": "counter_propagating_corridor",
+      "substrate_law": "basin_residence",
+      "condition_id": "null_control",
+      "delta": 0.0,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "promotion_candidate": false,
+      "notes": "branch-1 pilot: corridor control"
+    },
+    {
+      "run_id": "S19B_corridor_vweak",
+      "representative_id": "counter_propagating_corridor",
+      "substrate_law": "basin_residence",
+      "condition_id": "very_weak_basin_residence",
+      "delta": 0.01,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "promotion_candidate": false,
+      "notes": "branch-1 pilot: corridor control"
+    },
+    {
+      "run_id": "S19B_corridor_weak",
+      "representative_id": "counter_propagating_corridor",
+      "substrate_law": "basin_residence",
+      "condition_id": "weak_basin_residence",
+      "delta": 0.02,
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "transverse",
+      "promotion_candidate": false,
+      "notes": "branch-1 pilot: corridor control"
+    }
+  ]
+}
