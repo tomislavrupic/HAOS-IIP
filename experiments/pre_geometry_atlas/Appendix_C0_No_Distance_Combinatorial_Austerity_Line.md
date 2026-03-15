@@ -1,5 +1,10 @@
 # Appendix C0 - No-Distance Combinatorial Austerity Line
 
+Release numbering:
+- reserved next-paper support number: `25.1`
+- `24.1` remains the frozen C0.1-C0.4 synthesis paper
+- Appendix C0 is carried forward as the combinatorial austerity support appendix for the next numbered paper, not as a rewrite of `24.1`
+
 Archive role:
 - Appendix C0 collects the pure no-distance combinatorial branch from `C0.1` through `C0.8`
 - the original Phase I and Phase II files remain untouched
