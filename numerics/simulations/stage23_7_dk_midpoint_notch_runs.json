@@ -1,0 +1,96 @@
+{
+  "stage": "23.7_dk_midpoint_notch_topology_scan",
+  "description": "Local notch scan of the smeared midpoint detuning window identified in Stage 23.6, using the clustered DK braid-exchange baseline.",
+  "base_resolution": 12,
+  "refinement_allowed": false,
+  "negative_freeze_rule": {
+    "all_9_runs_same_topology_without_metric_structure": true,
+    "all_9_runs_metric_fluctuation_without_reproducible_label_change": true,
+    "no_sharp_or_broad_midpoint_structure_detected": true
+  },
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "representative_id": "tight_clustered_pair_in_phase_phase_corridor",
+    "source_family": "stage23_6_braid_exchange_phase_protected_family",
+    "resolution": 12,
+    "width_ratio_a_to_b": 1.0,
+    "separation_scale": "tight_baseline",
+    "skew": 0.0,
+    "beta": 0.02,
+    "amplitude_scale": 1.0,
+    "observables": [
+      "topology_label",
+      "flow_concentration_index",
+      "grade_exchange_coherence",
+      "channel_count",
+      "recirculation_score",
+      "grade_asymmetry_index",
+      "phase_alignment_metric"
+    ],
+    "allowed_topology_labels": [
+      "braid_like_exchange",
+      "transfer_smeared",
+      "fragmented_exchange",
+      "unresolved_mixed_topology"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S23_7_phase_anchor_low",
+      "phase_offset_fraction_of_pi": 0.375,
+      "role": "anchor",
+      "notes": "Lower anchor outside the suspected midpoint smear window."
+    },
+    {
+      "run_id": "S23_7_phase_notch_1",
+      "phase_offset_fraction_of_pi": 0.425,
+      "role": "notch",
+      "notes": "First lower-midpoint sample."
+    },
+    {
+      "run_id": "S23_7_phase_notch_2",
+      "phase_offset_fraction_of_pi": 0.45,
+      "role": "notch",
+      "notes": "Second lower-midpoint sample."
+    },
+    {
+      "run_id": "S23_7_phase_midpoint_left",
+      "phase_offset_fraction_of_pi": 0.475,
+      "role": "notch",
+      "notes": "Immediate left neighborhood of the midpoint."
+    },
+    {
+      "run_id": "S23_7_phase_midpoint",
+      "phase_offset_fraction_of_pi": 0.5,
+      "role": "midpoint",
+      "notes": "Exact midpoint sample corresponding to the smeared window detected in Stage 23.6."
+    },
+    {
+      "run_id": "S23_7_phase_midpoint_right",
+      "phase_offset_fraction_of_pi": 0.525,
+      "role": "notch",
+      "notes": "Immediate right neighborhood of the midpoint."
+    },
+    {
+      "run_id": "S23_7_phase_notch_3",
+      "phase_offset_fraction_of_pi": 0.55,
+      "role": "notch",
+      "notes": "First upper-midpoint sample."
+    },
+    {
+      "run_id": "S23_7_phase_notch_4",
+      "phase_offset_fraction_of_pi": 0.575,
+      "role": "notch",
+      "notes": "Second upper-midpoint sample."
+    },
+    {
+      "run_id": "S23_7_phase_anchor_high",
+      "phase_offset_fraction_of_pi": 0.625,
+      "role": "anchor",
+      "notes": "Upper anchor outside the suspected midpoint smear window."
+    }
+  ]
+}
