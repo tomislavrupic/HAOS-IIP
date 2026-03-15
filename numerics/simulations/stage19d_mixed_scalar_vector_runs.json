@@ -1,0 +1,46 @@
+{
+  "stage": "19D_mixed_scalar_vector_substrate_reinforcement",
+  "description": "Minimal 9-run persistence-first pilot for mixed scalar + vector substrate reinforcement on the frozen kernel-induced cochain architecture.",
+  "base_resolution": 12,
+  "refinement_resolution": 24,
+  "promotion_required": true,
+  "promotion_rule": {
+    "persistence_gain_required": true,
+    "stable_full_horizon_required": true,
+    "bounded_kernel_deformation_required": true,
+    "no_numerical_instability_required": true
+  },
+  "negative_freeze_rule": {
+    "all_9_runs_no_composite_lifetime_gain": true,
+    "all_9_runs_no_binding_persistence_gain": true,
+    "all_9_runs_no_coarse_basin_persistence_gain": true,
+    "all_9_runs_no_corridor_dwell_or_locking_gain": true
+  },
+  "common_fields": {
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "packet_family": "frozen_stage13_family",
+    "coupling_class": "mixed_scalar_vector_substrate_reinforcement",
+    "scalar_estimator": "smoothed_amplitude_density",
+    "vector_estimator": "smoothed_signed_edge_flux",
+    "memory_class": "single_horizon_exponential_decay",
+    "memory_tau": 0.3,
+    "scalar_smoothing_sigma": 2.0,
+    "vector_smoothing_sigma": 2.0,
+    "kernel_update_clamp": 0.05,
+    "delta_units": "dimensionless"
+  },
+  "runs": [
+    {"run_id": "S19D_clustered_anchor_null", "representative_id": "clustered_composite_anchor", "condition": "null", "eps_s": 0.0, "eps_v": 0.0, "notes": "Null control for clustered composite anchor."},
+    {"run_id": "S19D_clustered_anchor_balanced_low", "representative_id": "clustered_composite_anchor", "condition": "balanced_low", "eps_s": 0.01, "eps_v": 0.01, "notes": "Balanced low mixed scalar-vector reinforcement on clustered composite anchor."},
+    {"run_id": "S19D_clustered_anchor_balanced_moderate", "representative_id": "clustered_composite_anchor", "condition": "balanced_moderate", "eps_s": 0.02, "eps_v": 0.02, "notes": "Balanced moderate mixed scalar-vector reinforcement on clustered composite anchor."},
+
+    {"run_id": "S19D_symmetric_triad_null", "representative_id": "phase_ordered_symmetric_triad", "condition": "null", "eps_s": 0.0, "eps_v": 0.0, "notes": "Null control for phase-ordered symmetric triad."},
+    {"run_id": "S19D_symmetric_triad_balanced_low", "representative_id": "phase_ordered_symmetric_triad", "condition": "balanced_low", "eps_s": 0.01, "eps_v": 0.01, "notes": "Balanced low mixed scalar-vector reinforcement on phase-ordered symmetric triad."},
+    {"run_id": "S19D_symmetric_triad_balanced_moderate", "representative_id": "phase_ordered_symmetric_triad", "condition": "balanced_moderate", "eps_s": 0.02, "eps_v": 0.02, "notes": "Balanced moderate mixed scalar-vector reinforcement on phase-ordered symmetric triad."},
+
+    {"run_id": "S19D_corridor_null", "representative_id": "counter_propagating_corridor", "condition": "null", "eps_s": 0.0, "eps_v": 0.0, "notes": "Null control for counter-propagating corridor."},
+    {"run_id": "S19D_corridor_balanced_low", "representative_id": "counter_propagating_corridor", "condition": "balanced_low", "eps_s": 0.01, "eps_v": 0.01, "notes": "Balanced low mixed scalar-vector reinforcement on counter-propagating corridor."},
+    {"run_id": "S19D_corridor_balanced_moderate", "representative_id": "counter_propagating_corridor", "condition": "balanced_moderate", "eps_s": 0.02, "eps_v": 0.02, "notes": "Balanced moderate mixed scalar-vector reinforcement on counter-propagating corridor."}
+  ]
+}

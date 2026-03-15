@@ -1,0 +1,188 @@
+# Stage 19D Mixed Scalar + Vector Substrate Reinforcement v1
+
+Timestamped summary: `data/20260315_113228_stage19d_mixed_scalar_vector.json`
+Timestamped run table: `data/20260315_113228_stage19d_mixed_scalar_vector.csv`
+
+Output-label counts: {'no mixed substrate effect': 9}
+
+This Stage 19D pilot tests whether bounded mixed scalar-density and vector-flux substrate reinforcement can produce a persistence gain that neither channel produced alone.
+
+Base comparisons:
+
+- `clustered_composite_anchor` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - scalar field norm: `0.0000`
+  - vector field norm: `0.0000`
+  - mixed field norm: `0.0000`
+  - kernel deviation norm: `0.0000`
+  - scalar signal strength: `0.1165`
+  - vector signal strength: `0.0001`
+  - scalar support fraction: `0.0515`
+  - directional support fraction: `0.0470`
+  - trajectory curvature proxy: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport anisotropy index: `0.8046`
+  - energy dispersion shift: `0.0004`
+  - mixed transport stabilized: `0`
+  - gate met: `0`
+  - label: `no mixed substrate effect`
+- `clustered_composite_anchor` / `balanced_low`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - scalar field norm: `0.3248`
+  - vector field norm: `0.0002`
+  - mixed field norm: `0.0032`
+  - kernel deviation norm: `0.0032`
+  - scalar signal strength: `0.1166`
+  - vector signal strength: `0.0001`
+  - scalar support fraction: `0.0515`
+  - directional support fraction: `0.0466`
+  - trajectory curvature proxy: `0.0006`
+  - corridor dwell time: `0.0000`
+  - transport anisotropy index: `0.8046`
+  - energy dispersion shift: `0.0066`
+  - mixed transport stabilized: `0`
+  - gate met: `0`
+  - label: `no mixed substrate effect`
+- `clustered_composite_anchor` / `balanced_moderate`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - scalar field norm: `0.3249`
+  - vector field norm: `0.0002`
+  - mixed field norm: `0.0065`
+  - kernel deviation norm: `0.0065`
+  - scalar signal strength: `0.1166`
+  - vector signal strength: `0.0001`
+  - scalar support fraction: `0.0515`
+  - directional support fraction: `0.0458`
+  - trajectory curvature proxy: `0.0012`
+  - corridor dwell time: `0.0000`
+  - transport anisotropy index: `0.8046`
+  - energy dispersion shift: `0.0129`
+  - mixed transport stabilized: `0`
+  - gate met: `0`
+  - label: `no mixed substrate effect`
+- `phase_ordered_symmetric_triad` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - scalar field norm: `0.0000`
+  - vector field norm: `0.0000`
+  - mixed field norm: `0.0000`
+  - kernel deviation norm: `0.0000`
+  - scalar signal strength: `0.2777`
+  - vector signal strength: `0.0000`
+  - scalar support fraction: `0.1801`
+  - directional support fraction: `0.1001`
+  - trajectory curvature proxy: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport anisotropy index: `0.8266`
+  - energy dispersion shift: `0.0020`
+  - mixed transport stabilized: `0`
+  - gate met: `0`
+  - label: `no mixed substrate effect`
+- `phase_ordered_symmetric_triad` / `balanced_low`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - scalar field norm: `0.4713`
+  - vector field norm: `0.0001`
+  - mixed field norm: `0.0047`
+  - kernel deviation norm: `0.0047`
+  - scalar signal strength: `0.2779`
+  - vector signal strength: `0.0000`
+  - scalar support fraction: `0.1801`
+  - directional support fraction: `0.0992`
+  - trajectory curvature proxy: `0.0002`
+  - corridor dwell time: `0.0000`
+  - transport anisotropy index: `0.8263`
+  - energy dispersion shift: `0.0075`
+  - mixed transport stabilized: `0`
+  - gate met: `0`
+  - label: `no mixed substrate effect`
+- `phase_ordered_symmetric_triad` / `balanced_moderate`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - scalar field norm: `0.4712`
+  - vector field norm: `0.0001`
+  - mixed field norm: `0.0094`
+  - kernel deviation norm: `0.0094`
+  - scalar signal strength: `0.2780`
+  - vector signal strength: `0.0000`
+  - scalar support fraction: `0.1801`
+  - directional support fraction: `0.0989`
+  - trajectory curvature proxy: `0.0005`
+  - corridor dwell time: `0.0000`
+  - transport anisotropy index: `0.8259`
+  - energy dispersion shift: `0.0129`
+  - mixed transport stabilized: `0`
+  - gate met: `0`
+  - label: `no mixed substrate effect`
+- `counter_propagating_corridor` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - scalar field norm: `0.0000`
+  - vector field norm: `0.0000`
+  - mixed field norm: `0.0000`
+  - kernel deviation norm: `0.0000`
+  - scalar signal strength: `0.1541`
+  - vector signal strength: `0.0001`
+  - scalar support fraction: `0.0685`
+  - directional support fraction: `0.0400`
+  - trajectory curvature proxy: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport anisotropy index: `0.7941`
+  - energy dispersion shift: `-0.0003`
+  - mixed transport stabilized: `0`
+  - gate met: `0`
+  - label: `no mixed substrate effect`
+- `counter_propagating_corridor` / `balanced_low`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - scalar field norm: `0.3350`
+  - vector field norm: `0.0002`
+  - mixed field norm: `0.0034`
+  - kernel deviation norm: `0.0034`
+  - scalar signal strength: `0.1541`
+  - vector signal strength: `0.0001`
+  - scalar support fraction: `0.0685`
+  - directional support fraction: `0.0400`
+  - trajectory curvature proxy: `0.1759`
+  - corridor dwell time: `0.0000`
+  - transport anisotropy index: `0.7938`
+  - energy dispersion shift: `0.0037`
+  - mixed transport stabilized: `0`
+  - gate met: `0`
+  - label: `no mixed substrate effect`
+- `counter_propagating_corridor` / `balanced_moderate`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - scalar field norm: `0.3350`
+  - vector field norm: `0.0002`
+  - mixed field norm: `0.0067`
+  - kernel deviation norm: `0.0067`
+  - scalar signal strength: `0.1541`
+  - vector signal strength: `0.0001`
+  - scalar support fraction: `0.0685`
+  - directional support fraction: `0.0400`
+  - trajectory curvature proxy: `0.1781`
+  - corridor dwell time: `0.0000`
+  - transport anisotropy index: `0.7935`
+  - energy dispersion shift: `0.0077`
+  - mixed transport stabilized: `0`
+  - gate met: `0`
+  - label: `no mixed substrate effect`
+
+Promoted follow-up: `none`
+
+Interpretation boundary:
+- any positive effect is read only as bounded mixed scalar-vector substrate-assisted persistence
+- no geometric or force-law claim is made here
