@@ -1,0 +1,1585 @@
+{
+  "experiment": "23.3_dk_clustered_texture_stabilization",
+  "description": "Minimal 9-run targeted scan around the refinement-stable DK clustered in-phase family from Stage 23.2.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "representative_id": "tight_clustered_pair_in_phase",
+    "packet_family": "stage23_2_refinement_stable_clustered_family",
+    "base_phase_relation": "in_phase",
+    "base_amplitude_scale": 1.0,
+    "base_width_class": "baseline_coherent_width",
+    "kernel_type": "static_gaussian",
+    "resolution": 12,
+    "observables": [
+      "composite_lifetime",
+      "binding_persistence",
+      "minimum_separation",
+      "separation_trace",
+      "grade_weight_trace",
+      "phase_difference_trace",
+      "collision_label",
+      "persistence_label"
+    ]
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "S23_3_probeA_control",
+        "probe_class": "internal_grade_coupling",
+        "strength_label": "control",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "notes": "Control for internal grade-coupling probe."
+      },
+      "metrics": {
+        "run_id": "S23_3_probeA_control",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.10464656477277524,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333095964913642,
+        "omega1_weight_final": 0.5926519874435708,
+        "omega2_weight_final": 0.07403841606506482,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "Control for internal grade-coupling probe.",
+        "probe_class": "internal_grade_coupling",
+        "strength_label": "control",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "phase_difference_mean": 7.734473188262629e-05,
+        "phase_difference_std": 6.89970998576428e-05,
+        "bounded_oscillatory_separation": 0,
+        "grade_exchange_coherence": 0.0,
+        "promotion_candidate": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "phase_differences": [
+        0.0,
+        0.0,
+        4.708022397981182e-05,
+        9.290045234955358e-05,
+        0.0001386624653116897,
+        0.00018542524965470264
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.3333726652522443,
+          0.6498996805812826,
+          0.016727654166473226
+        ],
+        [
+          0.33335396757677,
+          0.6324038044512876,
+          0.034242227971942346
+        ],
+        [
+          0.33333251610029696,
+          0.6125272879698194,
+          0.05414019592988365
+        ],
+        [
+          0.3333095964913642,
+          0.5926519874435708,
+          0.07403841606506482
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "run": {
+        "run_id": "S23_3_probeA_vweak",
+        "probe_class": "internal_grade_coupling",
+        "strength_label": "very_weak",
+        "alpha": 0.01,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "notes": "Very weak local redistribution between 0- and 1-form components."
+      },
+      "metrics": {
+        "run_id": "S23_3_probeA_vweak",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.10487903739375967,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3343388252674317,
+        "omega1_weight_final": 0.5919774690550956,
+        "omega2_weight_final": 0.07368370567747269,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "Very weak local redistribution between 0- and 1-form components.",
+        "probe_class": "internal_grade_coupling",
+        "strength_label": "very_weak",
+        "alpha": 0.01,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "phase_difference_mean": 7.757085966046222e-05,
+        "phase_difference_std": 6.916882184453681e-05,
+        "bounded_oscillatory_separation": 0,
+        "grade_exchange_coherence": 0.0,
+        "promotion_candidate": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "phase_differences": [
+        0.0,
+        0.0,
+        4.7280348350664525e-05,
+        9.321982631860237e-05,
+        0.00013905420935422796,
+        0.00018587077393927842
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3336528947990467,
+          0.6618911586236464,
+          0.004455946577306881
+        ],
+        [
+          0.3338966017800308,
+          0.6494187314206525,
+          0.01668466679931675
+        ],
+        [
+          0.3340978592252078,
+          0.6317783226192882,
+          0.03412381815550393
+        ],
+        [
+          0.33424483524565846,
+          0.6118425060389341,
+          0.05391265871540761
+        ],
+        [
+          0.3343388252674317,
+          0.5919774690550956,
+          0.07368370567747269
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "run": {
+        "run_id": "S23_3_probeA_weak",
+        "probe_class": "internal_grade_coupling",
+        "strength_label": "weak",
+        "alpha": 0.02,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "notes": "Weak local redistribution between 0- and 1-form components."
+      },
+      "metrics": {
+        "run_id": "S23_3_probeA_weak",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.6666666666666666,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.10512485846678729,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33536452592631893,
+        "omega1_weight_final": 0.5913058750462293,
+        "omega2_weight_final": 0.07332959902745177,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "Weak local redistribution between 0- and 1-form components.",
+        "probe_class": "internal_grade_coupling",
+        "strength_label": "weak",
+        "alpha": 0.02,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "phase_difference_mean": 7.77957597092686e-05,
+        "phase_difference_std": 6.933928451991348e-05,
+        "bounded_oscillatory_separation": 0,
+        "grade_exchange_coherence": 0.0,
+        "promotion_candidate": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "phase_differences": [
+        0.0,
+        0.0,
+        4.748015721256493e-05,
+        9.353798881672759e-05,
+        0.00013944362797779775,
+        0.00018631278424852127
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.33391857876095127,
+          0.6616325918400697,
+          0.004448829398978994
+        ],
+        [
+          0.33441915943654094,
+          0.6489390784228679,
+          0.016641762140591234
+        ],
+        [
+          0.3348393597405931,
+          0.631154992826479,
+          0.03400564743292796
+        ],
+        [
+          0.335153967090782,
+          0.6111604635552578,
+          0.05368556935396019
+        ],
+        [
+          0.33536452592631893,
+          0.5913058750462293,
+          0.07332959902745177
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "run": {
+        "run_id": "S23_3_probeB_control",
+        "probe_class": "phase_locked_composite_constraint",
+        "strength_label": "control",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "notes": "Control for phase-locked composite constraint probe."
+      },
+      "metrics": {
+        "run_id": "S23_3_probeB_control",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.10464656477277524,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333095964913642,
+        "omega1_weight_final": 0.5926519874435708,
+        "omega2_weight_final": 0.07403841606506482,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "Control for phase-locked composite constraint probe.",
+        "probe_class": "phase_locked_composite_constraint",
+        "strength_label": "control",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "phase_difference_mean": 7.734473188262629e-05,
+        "phase_difference_std": 6.89970998576428e-05,
+        "bounded_oscillatory_separation": 0,
+        "grade_exchange_coherence": 0.0,
+        "promotion_candidate": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "phase_differences": [
+        0.0,
+        0.0,
+        4.708022397981182e-05,
+        9.290045234955358e-05,
+        0.0001386624653116897,
+        0.00018542524965470264
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.3333726652522443,
+          0.6498996805812826,
+          0.016727654166473226
+        ],
+        [
+          0.33335396757677,
+          0.6324038044512876,
+          0.034242227971942346
+        ],
+        [
+          0.33333251610029696,
+          0.6125272879698194,
+          0.05414019592988365
+        ],
+        [
+          0.3333095964913642,
+          0.5926519874435708,
+          0.07403841606506482
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "run": {
+        "run_id": "S23_3_probeB_vweak",
+        "probe_class": "phase_locked_composite_constraint",
+        "strength_label": "very_weak",
+        "alpha": 0.0,
+        "beta": 0.01,
+        "gamma": 0.0,
+        "notes": "Very weak smooth phase-alignment term when clustered separation condition is met."
+      },
+      "metrics": {
+        "run_id": "S23_3_probeB_vweak",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.1046465647727736,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33330959649136416,
+        "omega1_weight_final": 0.5926519874435721,
+        "omega2_weight_final": 0.07403841606506374,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "Very weak smooth phase-alignment term when clustered separation condition is met.",
+        "probe_class": "phase_locked_composite_constraint",
+        "strength_label": "very_weak",
+        "alpha": 0.0,
+        "beta": 0.01,
+        "gamma": 0.0,
+        "phase_difference_mean": 7.734473233900196e-05,
+        "phase_difference_std": 6.899710041725247e-05,
+        "bounded_oscillatory_separation": 0,
+        "grade_exchange_coherence": 0.8333333333333334,
+        "promotion_candidate": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "phase_differences": [
+        0.0,
+        0.0,
+        4.708022397981182e-05,
+        9.290045263021796e-05,
+        0.00013866246613103428,
+        0.00018542525129294773
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.33337266525224435,
+          0.6498996805812826,
+          0.016727654166473187
+        ],
+        [
+          0.33335396757677,
+          0.632403804451288,
+          0.034242227971942124
+        ],
+        [
+          0.3333325161002969,
+          0.61252728796982,
+          0.05414019592988307
+        ],
+        [
+          0.33330959649136416,
+          0.5926519874435721,
+          0.07403841606506374
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "run": {
+        "run_id": "S23_3_probeB_weak",
+        "probe_class": "phase_locked_composite_constraint",
+        "strength_label": "weak",
+        "alpha": 0.0,
+        "beta": 0.02,
+        "gamma": 0.0,
+        "notes": "Weak smooth phase-alignment term when clustered separation condition is met."
+      },
+      "metrics": {
+        "run_id": "S23_3_probeB_weak",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.10464656477276908,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333095964913642,
+        "omega1_weight_final": 0.5926519874435752,
+        "omega2_weight_final": 0.07403841606506045,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "Weak smooth phase-alignment term when clustered separation condition is met.",
+        "probe_class": "phase_locked_composite_constraint",
+        "strength_label": "weak",
+        "alpha": 0.0,
+        "beta": 0.02,
+        "gamma": 0.0,
+        "phase_difference_mean": 7.734473279530363e-05,
+        "phase_difference_std": 6.899710097684546e-05,
+        "bounded_oscillatory_separation": 0,
+        "grade_exchange_coherence": 0.8333333333333334,
+        "promotion_candidate": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "phase_differences": [
+        0.0,
+        0.0,
+        4.708022397981182e-05,
+        9.290045291043825e-05,
+        0.00013866246695037887,
+        0.00018542525293119283
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.3333726652522442,
+          0.6498996805812827,
+          0.016727654166473066
+        ],
+        [
+          0.33335396757677,
+          0.6324038044512886,
+          0.034242227971941465
+        ],
+        [
+          0.33333251610029685,
+          0.6125272879698217,
+          0.054140195929881306
+        ],
+        [
+          0.3333095964913642,
+          0.5926519874435752,
+          0.07403841606506045
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "run": {
+        "run_id": "S23_3_probeC_control",
+        "probe_class": "self_induced_effective_curvature",
+        "strength_label": "control",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "notes": "Control for self-induced effective curvature probe."
+      },
+      "metrics": {
+        "run_id": "S23_3_probeC_control",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.10464656477277524,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333095964913642,
+        "omega1_weight_final": 0.5926519874435708,
+        "omega2_weight_final": 0.07403841606506482,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "Control for self-induced effective curvature probe.",
+        "probe_class": "self_induced_effective_curvature",
+        "strength_label": "control",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.0,
+        "phase_difference_mean": 7.734473188262629e-05,
+        "phase_difference_std": 6.89970998576428e-05,
+        "bounded_oscillatory_separation": 0,
+        "grade_exchange_coherence": 0.0,
+        "promotion_candidate": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "phase_differences": [
+        0.0,
+        0.0,
+        4.708022397981182e-05,
+        9.290045234955358e-05,
+        0.0001386624653116897,
+        0.00018542524965470264
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.3333726652522443,
+          0.6498996805812826,
+          0.016727654166473226
+        ],
+        [
+          0.33335396757677,
+          0.6324038044512876,
+          0.034242227971942346
+        ],
+        [
+          0.33333251610029696,
+          0.6125272879698194,
+          0.05414019592988365
+        ],
+        [
+          0.3333095964913642,
+          0.5926519874435708,
+          0.07403841606506482
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "run": {
+        "run_id": "S23_3_probeC_vweak",
+        "probe_class": "self_induced_effective_curvature",
+        "strength_label": "very_weak",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.01,
+        "notes": "Very weak graded-energy modulation of the static Gaussian kernel."
+      },
+      "metrics": {
+        "run_id": "S23_3_probeC_vweak",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.10464656477277524,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333095964913642,
+        "omega1_weight_final": 0.5926519874435708,
+        "omega2_weight_final": 0.07403841606506482,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "Very weak graded-energy modulation of the static Gaussian kernel.",
+        "probe_class": "self_induced_effective_curvature",
+        "strength_label": "very_weak",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.01,
+        "phase_difference_mean": 7.734473188262629e-05,
+        "phase_difference_std": 6.89970998576428e-05,
+        "bounded_oscillatory_separation": 0,
+        "grade_exchange_coherence": 0.0,
+        "promotion_candidate": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "phase_differences": [
+        0.0,
+        0.0,
+        4.708022397981182e-05,
+        9.290045234955358e-05,
+        0.0001386624653116897,
+        0.00018542524965470264
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.3333726652522443,
+          0.6498996805812826,
+          0.016727654166473226
+        ],
+        [
+          0.33335396757677,
+          0.6324038044512876,
+          0.034242227971942346
+        ],
+        [
+          0.33333251610029696,
+          0.6125272879698194,
+          0.05414019592988365
+        ],
+        [
+          0.3333095964913642,
+          0.5926519874435708,
+          0.07403841606506482
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    },
+    {
+      "run": {
+        "run_id": "S23_3_probeC_weak",
+        "probe_class": "self_induced_effective_curvature",
+        "strength_label": "weak",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.02,
+        "notes": "Weak graded-energy modulation of the static Gaussian kernel."
+      },
+      "metrics": {
+        "run_id": "S23_3_probeC_weak",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "in_phase",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved / mixed",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.7517193677535772,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 1.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.7517193677535772,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.10464656477277524,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3333095964913642,
+        "omega1_weight_final": 0.5926519874435708,
+        "omega2_weight_final": 0.07403841606506482,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "notes": "Weak graded-energy modulation of the static Gaussian kernel.",
+        "probe_class": "self_induced_effective_curvature",
+        "strength_label": "weak",
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.02,
+        "phase_difference_mean": 7.734473188262629e-05,
+        "phase_difference_std": 6.89970998576428e-05,
+        "bounded_oscillatory_separation": 0,
+        "grade_exchange_coherence": 0.0,
+        "promotion_candidate": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144
+      ],
+      "mean_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "minimum_pair_distances": [
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326,
+        0.08333333333333326
+      ],
+      "phase_differences": [
+        0.0,
+        0.0,
+        4.708022397981182e-05,
+        9.290045234955358e-05,
+        0.0001386624653116897,
+        0.00018542524965470264
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.3333726652522443,
+          0.6498996805812826,
+          0.016727654166473226
+        ],
+        [
+          0.33335396757677,
+          0.6324038044512876,
+          0.034242227971942346
+        ],
+        [
+          0.33333251610029696,
+          0.6125272879698194,
+          0.05414019592988365
+        ],
+        [
+          0.3333095964913642,
+          0.5926519874435708,
+          0.07403841606506482
+        ]
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ]
+    }
+  ],
+  "summary": {
+    "collision_labels": {
+      "unresolved / mixed": 9
+    },
+    "persistence_labels": {
+      "weak persistence gain": 9
+    },
+    "promotion_candidates": 0
+  }
+}
