@@ -1,161 +1,191 @@
-# Stage 23 - Dirac-Kahler Baseline Packet Propagation
+# Stage 23 - Dirac-Kaehler Baseline Packet Propagation
 
-Phase III opener
+Phase III opener - fermionic constraint sector
 
 ## Purpose
 
-Stages 14-22 established a strong boundary for the frozen kernel-induced cochain architecture under weak bosonic-style transport and weak modification laws:
-- frozen transport does not bind
-- substrate reinforcement does not bind
-- mesoscopic reinforcement does not bind
-- directional reinforcement does not bind
-- delayed historical reinforcement does not anchor
-- selective interaction gating does not stabilize persistence
+To test whether introducing a Dirac-Kaehler operator sector
 
-Stage 23 therefore changes operator sector rather than feedback law.
+\[
+D_{DK} = d + \delta
+\]
 
-The goal is not to claim fermionic binding or emergent matter.
-The goal is to test whether first-order graded propagation in a Dirac-Kahler sector changes the persistence landscape at all.
+creates new persistence-level propagation regimes such as exclusion, reflection, orbital trapping, or composite stabilization that were impossible in the purely scalar / bosonic architecture.
 
-## Core Question
+This stage is strictly baseline atlas replication under a new propagator class.
+No memory fields.
+No adaptive kernels.
+No reinforcement laws.
 
-When the same baseline packet families are propagated under a Dirac-Kahler sector, do morphology, overlap persistence, and coarse organization change qualitatively relative to the scalar / transverse baseline?
+The goal is classification, not interpretation.
 
-This is a baseline operator-class probe, not a binding claim.
+## Core Hypothesis
 
-## Architectural Constraint
+All Phase I-II failures indicate:
 
-Keep fixed wherever possible:
-- same graph / cochain support
-- same representative initial conditions
-- same normalization discipline
-- same persistence metrics
-- same promotion ladder
-- same refinement rule:
-  - `n = 12` base
-  - `n = 24` only on earned promotion
+Linear superposition without exclusion implies no anchoring.
 
-Change only:
-- operator sector
-- graded packet propagation law
+Dirac-Kaehler propagation introduces:
+- multi-grade state structure
+- geometric anti-commuting transport
+- intrinsic coupling between localization and orientation
+- possible effective exclusion constraints
 
-Do not introduce:
-- new reinforcement memory
-- selective interaction gating
-- topology rewriting
-- coefficient escalation
+This stage tests whether these features alone produce:
+- bounded composite motion
+- persistent corridor locking
+- phase-protected clustering
+- new ordering classes
 
-## Structural Hypothesis
+## Architecture Modification
 
-The earlier stages repeatedly tested modifications of coupling and substrate response on top of essentially the same transport ontology.
+Replace the scalar evolution operator with a discrete Dirac-Kaehler propagator.
 
-Stage 23 tests whether persistence failure is tied to that operator class itself.
+Instead of:
+- scalar packet field
+- transverse projector dynamics
 
-Dirac-Kahler propagation introduces:
-- graded structure
-- first-order dynamics
-- sign-sensitive propagation
-- richer interference geometry
-- possible changes in localization and escape behavior
+use:
+- graded cochain state
+- Dirac-Kaehler propagation step
 
-The bounded hypothesis is:
+## State Representation
 
-If persistence requires a new operator class rather than stronger weak-coupling modifications, the Dirac-Kahler sector should alter morphology or overlap persistence before any later binding-specific mechanisms are added.
+Each packet becomes
 
-## Representatives
+\[
+\Psi = \{\psi^{(0)}, \psi^{(1)}, \psi^{(2)}, \ldots\}
+\]
 
-Use the same canonical three:
-1. clustered_composite_anchor
-2. counter_propagating_corridor
-3. phase_ordered_symmetric_triad
+Minimal baseline implementation:
+- 0-form component
+- 1-form component
 
-This preserves comparability with Stages 14-22.
+Higher grades are optional and not required for Stage 23.
 
-## Minimal Pilot Structure
+State norm:
 
-Run a narrow baseline comparison only:
-- scalar / transverse baseline control
-- Dirac-Kahler sector baseline
-- weak sector-coupled comparison setting only if needed for numerical parity
+\[
+|\Psi|^2 = |\psi^{(0)}|^2 + |\psi^{(1)}|^2
+\]
 
-Keep the base pilot small and falsification-first.
+## Propagation Rule
 
-Recommended first pass:
-- `3` representatives
-- `2` sectors
-- optional single calibration parity run per representative only if required
+Discrete update:
 
-Do not widen into a large parameter sweep.
+\[
+\Psi_{t+\Delta t} = \Psi_t - i\,\Delta t\, D_{DK}\Psi_t
+\]
 
-## Primary Observables
+where:
+- \(d\) is the graph exterior derivative
+- \(\delta\) is the adjoint divergence operator
 
-Persistence-first metrics:
-- composite lifetime
-- overlap persistence
-- binding persistence
-- coarse basin persistence
+No nonlinear terms.
+No feedback coupling.
 
-Morphology / transport metrics:
-- packet coherence
-- grade mixing
-- escape time from composite-like encounters
-- corridor dwell
-- emergence of new graded morphology classes
+## Atlas Replication Protocol
 
-Secondary diagnostics:
-- localization width evolution
-- graded component occupancy
-- interference texture change
+Re-run the Stage 10 baseline configuration grid under the Dirac-Kaehler sector.
 
-Do not over-interpret secondary texture unless persistence shifts with it.
+Initial state variations:
+- packet width
+- phase coherence
+- amplitude profile
+- single vs multi-packet
+- localized vs distributed seeds
 
-## Promotion Gate
+Graph structure variations:
+- regular lattice
+- perturbed lattice
+- anisotropic connectivity
+- clustered regions
 
-Promote to refinement only if at least one appears:
-- composite lifetime increase over scalar baseline
-- overlap persistence increase
-- coarse basin persistence increase
-- new stable graded morphology class
+Relative geometry cases:
+- head-on propagation
+- corridor counter-flow
+- symmetric triad
+- clustered composite
 
-and:
-- the effect is selective, not global smoothing
-- the effect survives `12 -> 24`
+## Primary Diagnostics
 
-## Negative Freeze Rule
+Measure only persistence-relevant quantities:
+1. composite lifetime
+2. binding persistence
+3. corridor dwell time
+4. basin occupation duration
+5. new ordering class emergence
 
-Freeze Stage 23 negative if:
-- Dirac-Kahler propagation changes transport texture only
-- persistence metrics remain null against baseline
-- no new stable graded regime appears
-- refinement destroys any apparent improvement
+Secondary observables:
+- phase-locked rotation
+- bounce / reflection events
+- grade-transfer oscillations
+- localized circulation
 
-This would mean:
+## Classification Criteria
 
-Changing operator order and graded structure is still insufficient, by itself, to open a persistence channel in the current architecture.
+A regime qualifies as a Phase III positive signal if:
+- lifetime increase exceeds the scalar baseline envelope
+- motion becomes bounded or cyclic
+- an ordering class not previously observed appears
+- persistence survives parameter perturbation
 
-## Positive Outcome Definition
+Otherwise classify as:
+- transient deformation
+- grade-mixing dispersion
+- non-persistent intersection
 
-Count Stage 23 as structurally positive only if:
-- a representative exhibits a real persistence gain
-- or a genuinely new graded regime becomes necessary to classify the dynamics
-- and the effect survives refinement
+## Run Structure
 
-Texture change alone does not count.
+Baseline grid only.
+
+No parameter sweeps beyond Stage 10 ranges.
+
+Recommended minimal pilot:
+- 3 representative packet geometries
+- 3 graph structures
+- 3 coherence settings
+
+Total: 27 Dirac-Kaehler runs
+
+## Expected Outcome Space
+
+Possible discoveries:
+- exclusion-like packet scattering
+- orbit-stabilized composites
+- phase-protected trapping corridors
+- topologically stabilized clusters
+
+Possible null:
+- Dirac-Kaehler propagation reduces to effective scalar dispersion
+- no persistence regime change
+
+Both outcomes are decisive.
+
+## Stage 23 Success Condition
+
+Success is not binding.
+
+Success is demonstrating whether fermionic transport changes the qualitative atlas topology.
+
+If yes, Phase III continues.
+If no, the architecture likely requires constraint rather than operator change.
 
 ## Interpretation Boundary
 
-Even a positive Stage 23 result implies only:
-- operator class matters for persistence landscape
-- graded propagation may support qualitatively new collective organization
+Do not interpret:
+- longer transport texture alone
+- richer interference texture alone
+- local circulation alone
 
-It does not imply:
-- fermionic matter analogues
-- exclusion physics
-- physical Dirac equivalence
-- emergent binding law
+as emergent binding or physical fermionic matter.
 
-## Strategic Role
+Stage 23 asks only whether operator class changes the persistence landscape.
 
-Stage 23 is justified because Phase I-II closed the weak bosonic reinforcement and gating family.
+## Forward Link
 
-The next lawful move is to reopen the validated Dirac-Kahler sector as a new operator-class baseline, not as a conclusion about fermionic binding.
+If useful after the baseline atlas replication, the next focused step is:
+
+Stage 23.1 - Dirac-Kaehler Collision Geometry Scan
+
+A short, focused probe to test whether exclusion-like behavior actually appears in collision geometry.
