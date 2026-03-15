@@ -1,0 +1,126 @@
+{
+  "stage": "21_mutual_registration_constraint_coupled_interaction",
+  "description": "Base 27-run persistence-first pilot for registration-gated interaction eligibility on the frozen projected transverse architecture.",
+  "note_name": "Stage_21_Mutual_Registration_Constraint_Coupled_Interaction_v1.md",
+  "experiment_slug": "stage21_mutual_registration",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "followup_gate": "Promote only if a run shows persistence gain and survives morphology cross-check.",
+    "promotion_required": true
+  },
+  "coupling_law": {
+    "form": "F_AB = eps * R_align(A,B,t) * F_base",
+    "base_force": "pairwise state-alignment drive projector(q_j - q_i)",
+    "strict_clamp": 0.25,
+    "no_cumulative_memory": true,
+    "interpretation": "selective interaction gating without substrate back-reaction"
+  },
+  "parameter_policy": {
+    "eps_values": {
+      "null": 0.0,
+      "very_weak": 0.01,
+      "weak": 0.02
+    },
+    "phase_sigma": 0.35,
+    "velocity_sigma": 0.4,
+    "distance_sigma": 0.25,
+    "motif_threshold": 0.5,
+    "no_stronger_than_weak": true
+  },
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage15_case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "strongest composite anchor and main candidate for any registration-assisted persistence gain"
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage15_case_id": "symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [[0.18, 0.5, 0.5], [0.5, 0.5, 0.5], [0.82, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "structured ordering candidate and likely phase-registration test"
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.5, 0.5], [0.65, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "notes": "transport-style control and corridor-locking test"
+    }
+  ],
+  "registration_classes": [
+    {
+      "registration_class": "phase_coherence",
+      "description": "registration activates under phase-like state compatibility and velocity compatibility"
+    },
+    {
+      "registration_class": "spatial_configuration",
+      "description": "registration activates under bounded separation and overlap-compatible geometry"
+    },
+    {
+      "registration_class": "composite_topology",
+      "description": "registration activates under motif-level ordering compatibility"
+    }
+  ],
+  "runs": [
+    {"run_id": "S21_phase_clustered_null", "representative_id": "clustered_composite_anchor", "registration_class": "phase_coherence", "condition_id": "null", "eps": 0.0, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "phase coherence null control"},
+    {"run_id": "S21_phase_clustered_vweak", "representative_id": "clustered_composite_anchor", "registration_class": "phase_coherence", "condition_id": "very_weak", "eps": 0.01, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "phase coherence very weak"},
+    {"run_id": "S21_phase_clustered_weak", "representative_id": "clustered_composite_anchor", "registration_class": "phase_coherence", "condition_id": "weak", "eps": 0.02, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "phase coherence weak"},
+
+    {"run_id": "S21_phase_triad_null", "representative_id": "phase_ordered_symmetric_triad", "registration_class": "phase_coherence", "condition_id": "null", "eps": 0.0, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "phase coherence null control"},
+    {"run_id": "S21_phase_triad_vweak", "representative_id": "phase_ordered_symmetric_triad", "registration_class": "phase_coherence", "condition_id": "very_weak", "eps": 0.01, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "phase coherence very weak"},
+    {"run_id": "S21_phase_triad_weak", "representative_id": "phase_ordered_symmetric_triad", "registration_class": "phase_coherence", "condition_id": "weak", "eps": 0.02, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "phase coherence weak"},
+
+    {"run_id": "S21_phase_corridor_null", "representative_id": "counter_propagating_corridor", "registration_class": "phase_coherence", "condition_id": "null", "eps": 0.0, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "phase coherence null control"},
+    {"run_id": "S21_phase_corridor_vweak", "representative_id": "counter_propagating_corridor", "registration_class": "phase_coherence", "condition_id": "very_weak", "eps": 0.01, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "phase coherence very weak"},
+    {"run_id": "S21_phase_corridor_weak", "representative_id": "counter_propagating_corridor", "registration_class": "phase_coherence", "condition_id": "weak", "eps": 0.02, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "phase coherence weak"},
+
+    {"run_id": "S21_spatial_clustered_null", "representative_id": "clustered_composite_anchor", "registration_class": "spatial_configuration", "condition_id": "null", "eps": 0.0, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "spatial configuration null control"},
+    {"run_id": "S21_spatial_clustered_vweak", "representative_id": "clustered_composite_anchor", "registration_class": "spatial_configuration", "condition_id": "very_weak", "eps": 0.01, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "spatial configuration very weak"},
+    {"run_id": "S21_spatial_clustered_weak", "representative_id": "clustered_composite_anchor", "registration_class": "spatial_configuration", "condition_id": "weak", "eps": 0.02, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "spatial configuration weak"},
+
+    {"run_id": "S21_spatial_triad_null", "representative_id": "phase_ordered_symmetric_triad", "registration_class": "spatial_configuration", "condition_id": "null", "eps": 0.0, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "spatial configuration null control"},
+    {"run_id": "S21_spatial_triad_vweak", "representative_id": "phase_ordered_symmetric_triad", "registration_class": "spatial_configuration", "condition_id": "very_weak", "eps": 0.01, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "spatial configuration very weak"},
+    {"run_id": "S21_spatial_triad_weak", "representative_id": "phase_ordered_symmetric_triad", "registration_class": "spatial_configuration", "condition_id": "weak", "eps": 0.02, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "spatial configuration weak"},
+
+    {"run_id": "S21_spatial_corridor_null", "representative_id": "counter_propagating_corridor", "registration_class": "spatial_configuration", "condition_id": "null", "eps": 0.0, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "spatial configuration null control"},
+    {"run_id": "S21_spatial_corridor_vweak", "representative_id": "counter_propagating_corridor", "registration_class": "spatial_configuration", "condition_id": "very_weak", "eps": 0.01, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "spatial configuration very weak"},
+    {"run_id": "S21_spatial_corridor_weak", "representative_id": "counter_propagating_corridor", "registration_class": "spatial_configuration", "condition_id": "weak", "eps": 0.02, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "spatial configuration weak"},
+
+    {"run_id": "S21_topology_clustered_null", "representative_id": "clustered_composite_anchor", "registration_class": "composite_topology", "condition_id": "null", "eps": 0.0, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "composite topology null control"},
+    {"run_id": "S21_topology_clustered_vweak", "representative_id": "clustered_composite_anchor", "registration_class": "composite_topology", "condition_id": "very_weak", "eps": 0.01, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "composite topology very weak"},
+    {"run_id": "S21_topology_clustered_weak", "representative_id": "clustered_composite_anchor", "registration_class": "composite_topology", "condition_id": "weak", "eps": 0.02, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "composite topology weak"},
+
+    {"run_id": "S21_topology_triad_null", "representative_id": "phase_ordered_symmetric_triad", "registration_class": "composite_topology", "condition_id": "null", "eps": 0.0, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "composite topology null control"},
+    {"run_id": "S21_topology_triad_vweak", "representative_id": "phase_ordered_symmetric_triad", "registration_class": "composite_topology", "condition_id": "very_weak", "eps": 0.01, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "composite topology very weak"},
+    {"run_id": "S21_topology_triad_weak", "representative_id": "phase_ordered_symmetric_triad", "registration_class": "composite_topology", "condition_id": "weak", "eps": 0.02, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "composite topology weak"},
+
+    {"run_id": "S21_topology_corridor_null", "representative_id": "counter_propagating_corridor", "registration_class": "composite_topology", "condition_id": "null", "eps": 0.0, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "composite topology null control"},
+    {"run_id": "S21_topology_corridor_vweak", "representative_id": "counter_propagating_corridor", "registration_class": "composite_topology", "condition_id": "very_weak", "eps": 0.01, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "composite topology very weak"},
+    {"run_id": "S21_topology_corridor_weak", "representative_id": "counter_propagating_corridor", "registration_class": "composite_topology", "condition_id": "weak", "eps": 0.02, "resolution": 12, "boundary_type": "periodic", "operator_sector": "projected_transverse", "notes": "composite topology weak"}
+  ]
+}

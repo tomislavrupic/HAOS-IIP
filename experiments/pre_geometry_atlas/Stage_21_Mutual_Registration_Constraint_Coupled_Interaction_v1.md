@@ -1,0 +1,452 @@
+# Stage 21 Mutual Registration / Constraint-Coupled Interaction v1
+
+Timestamped summary: `data/20260315_131916_stage21_mutual_registration.json`
+Timestamped run table: `data/20260315_131916_stage21_mutual_registration.csv`
+
+Output-label counts: {'no registration effect': 27}
+
+This Stage 21 pilot tests whether bounded registration-gated pairwise interaction can create persistence without introducing substrate memory.
+
+## phase_coherence
+
+- `clustered_composite_anchor` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.1825`
+  - max registration strength: `0.5563`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0000`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `clustered_composite_anchor` / `very_weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.1827`
+  - max registration strength: `0.5575`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0017`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `clustered_composite_anchor` / `weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.1829`
+  - max registration strength: `0.5588`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0033`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `counter_propagating_corridor` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.0648`
+  - max registration strength: `0.0939`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0000`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `counter_propagating_corridor` / `very_weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.0647`
+  - max registration strength: `0.0938`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0004`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `counter_propagating_corridor` / `weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.0647`
+  - max registration strength: `0.0937`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0008`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `phase_ordered_symmetric_triad` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.0124`
+  - max registration strength: `0.0170`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0000`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `phase_ordered_symmetric_triad` / `very_weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.0124`
+  - max registration strength: `0.0170`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0001`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `phase_ordered_symmetric_triad` / `weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.0124`
+  - max registration strength: `0.0170`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0003`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+## spatial_configuration
+
+- `clustered_composite_anchor` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.5514`
+  - max registration strength: `0.6971`
+  - registration duty cycle: `1.0000`
+  - effective interaction energy fraction: `0.0000`
+  - encounter dwell mean: `1.4764`
+  - motif survival time: `1.4764`
+  - corridor dwell time: `1.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `clustered_composite_anchor` / `very_weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.5516`
+  - max registration strength: `0.6971`
+  - registration duty cycle: `1.0000`
+  - effective interaction energy fraction: `0.0067`
+  - encounter dwell mean: `1.4764`
+  - motif survival time: `1.4764`
+  - corridor dwell time: `1.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `clustered_composite_anchor` / `weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.5519`
+  - max registration strength: `0.6971`
+  - registration duty cycle: `1.0000`
+  - effective interaction energy fraction: `0.0134`
+  - encounter dwell mean: `1.4764`
+  - motif survival time: `1.4764`
+  - corridor dwell time: `1.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `counter_propagating_corridor` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.2129`
+  - max registration strength: `0.3396`
+  - registration duty cycle: `0.3333`
+  - effective interaction energy fraction: `0.0000`
+  - encounter dwell mean: `0.4921`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.3333`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `counter_propagating_corridor` / `very_weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.2131`
+  - max registration strength: `0.3402`
+  - registration duty cycle: `0.3333`
+  - effective interaction energy fraction: `0.0014`
+  - encounter dwell mean: `0.4921`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.3333`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `counter_propagating_corridor` / `weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.2132`
+  - max registration strength: `0.3407`
+  - registration duty cycle: `0.3333`
+  - effective interaction energy fraction: `0.0027`
+  - encounter dwell mean: `0.4921`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.3333`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `phase_ordered_symmetric_triad` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.0461`
+  - max registration strength: `0.0554`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0000`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `phase_ordered_symmetric_triad` / `very_weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.0461`
+  - max registration strength: `0.0554`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0005`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `phase_ordered_symmetric_triad` / `weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.0461`
+  - max registration strength: `0.0554`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0011`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+## composite_topology
+
+- `clustered_composite_anchor` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.3109`
+  - max registration strength: `0.4483`
+  - registration duty cycle: `1.0000`
+  - effective interaction energy fraction: `0.0000`
+  - encounter dwell mean: `1.4764`
+  - motif survival time: `1.4764`
+  - corridor dwell time: `1.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `clustered_composite_anchor` / `very_weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.3114`
+  - max registration strength: `0.4483`
+  - registration duty cycle: `1.0000`
+  - effective interaction energy fraction: `0.0036`
+  - encounter dwell mean: `1.4764`
+  - motif survival time: `1.4764`
+  - corridor dwell time: `1.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `clustered_composite_anchor` / `weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.3119`
+  - max registration strength: `0.4483`
+  - registration duty cycle: `1.0000`
+  - effective interaction energy fraction: `0.0073`
+  - encounter dwell mean: `1.4764`
+  - motif survival time: `1.4764`
+  - corridor dwell time: `1.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `counter_propagating_corridor` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.2044`
+  - max registration strength: `0.2817`
+  - registration duty cycle: `0.3333`
+  - effective interaction energy fraction: `0.0000`
+  - encounter dwell mean: `0.4921`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.3333`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `counter_propagating_corridor` / `very_weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.2047`
+  - max registration strength: `0.2823`
+  - registration duty cycle: `0.3333`
+  - effective interaction energy fraction: `0.0012`
+  - encounter dwell mean: `0.4921`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.3333`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `counter_propagating_corridor` / `weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.2049`
+  - max registration strength: `0.2830`
+  - registration duty cycle: `0.3333`
+  - effective interaction energy fraction: `0.0024`
+  - encounter dwell mean: `0.4921`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.3333`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `phase_ordered_symmetric_triad` / `null`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.1247`
+  - max registration strength: `0.1301`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0000`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `phase_ordered_symmetric_triad` / `very_weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.1246`
+  - max registration strength: `0.1301`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0015`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+- `phase_ordered_symmetric_triad` / `weak`
+  - composite lifetime delta: `0.0000`
+  - binding persistence delta: `0.0000`
+  - coarse persistence delta: `0.0000`
+  - corridor dwell delta: `0.0000`
+  - mean registration strength: `0.1246`
+  - max registration strength: `0.1301`
+  - registration duty cycle: `0.0000`
+  - effective interaction energy fraction: `0.0029`
+  - encounter dwell mean: `0.0000`
+  - motif survival time: `0.0000`
+  - corridor dwell time: `0.0000`
+  - transport locking: `0`
+  - gate met: `0`
+  - label: `no registration effect`
+
+Promoted follow-up: `none`
+
+Interpretation boundary:
+- any positive effect is read only as bounded registration-assisted persistence
+- no substrate memory, geometry, or force-law claim is made here
