@@ -1,0 +1,118 @@
+{
+  "stage": "23.6_dk_phase_sensitivity_braid_exchange",
+  "description": "Minimal 9-run phase-sensitivity and braid-exchange stability scan around the clustered DK braid-like exchange family from Stage 23.5.",
+  "base_resolution": 12,
+  "refinement_allowed": false,
+  "positive_rule": {
+    "finite_braid_phase_corridor_required": true,
+    "or_new_repeatable_topology_family_required": true
+  },
+  "negative_rule": {
+    "braid_collapse_under_detuning": true,
+    "or_fragmentation_into_mixed_or_dispersive_classes": true
+  },
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "resolution": 12,
+    "source_family": "stage23_5_clustered_braid_exchange_family",
+    "mean_width": 0.08,
+    "separation_scale": "tight_baseline",
+    "amplitude_scale": 1.0,
+    "max_local_phase_skew_fraction": 0.10,
+    "observables": [
+      "topology_label",
+      "flow_concentration_index",
+      "grade_exchange_coherence",
+      "channel_count",
+      "loop_count",
+      "recirculation_score",
+      "phase_alignment_metric"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S23_6_phase_baseline",
+      "run_class": "phase_corridor",
+      "variant_label": "in_phase_baseline",
+      "phase_offset_fraction_of_pi": 0.0,
+      "local_phase_skew_fraction": 0.0,
+      "beta": 0.0,
+      "notes": "In-phase clustered baseline."
+    },
+    {
+      "run_id": "S23_6_phase_quarter",
+      "run_class": "phase_corridor",
+      "variant_label": "quarter_offset",
+      "phase_offset_fraction_of_pi": 0.25,
+      "local_phase_skew_fraction": 0.0,
+      "beta": 0.0,
+      "notes": "Quarter step along the in-phase to anti-phase corridor."
+    },
+    {
+      "run_id": "S23_6_phase_half",
+      "run_class": "phase_corridor",
+      "variant_label": "half_offset",
+      "phase_offset_fraction_of_pi": 0.5,
+      "local_phase_skew_fraction": 0.0,
+      "beta": 0.0,
+      "notes": "Half step along the in-phase to anti-phase corridor."
+    },
+    {
+      "run_id": "S23_6_phase_three_quarter",
+      "run_class": "phase_corridor",
+      "variant_label": "three_quarter_offset",
+      "phase_offset_fraction_of_pi": 0.75,
+      "local_phase_skew_fraction": 0.0,
+      "beta": 0.0,
+      "notes": "Three-quarter step along the in-phase to anti-phase corridor."
+    },
+    {
+      "run_id": "S23_6_phase_antiphase",
+      "run_class": "phase_corridor",
+      "variant_label": "anti_phase",
+      "phase_offset_fraction_of_pi": 1.0,
+      "local_phase_skew_fraction": 0.0,
+      "beta": 0.0,
+      "notes": "Full anti-phase endpoint."
+    },
+    {
+      "run_id": "S23_6_skew_positive",
+      "run_class": "phase_skew",
+      "variant_label": "positive_skew",
+      "phase_offset_fraction_of_pi": 0.0,
+      "local_phase_skew_fraction": 0.10,
+      "beta": 0.0,
+      "notes": "Slight positive local phase gradient across packet support."
+    },
+    {
+      "run_id": "S23_6_skew_negative",
+      "run_class": "phase_skew",
+      "variant_label": "negative_skew",
+      "phase_offset_fraction_of_pi": 0.0,
+      "local_phase_skew_fraction": -0.10,
+      "beta": 0.0,
+      "notes": "Slight negative local phase gradient across packet support."
+    },
+    {
+      "run_id": "S23_6_beta_vweak",
+      "run_class": "beta_sensitivity",
+      "variant_label": "beta_0p01",
+      "phase_offset_fraction_of_pi": 0.0,
+      "local_phase_skew_fraction": 0.0,
+      "beta": 0.01,
+      "notes": "Very weak grade-coupling modulation sensitivity check."
+    },
+    {
+      "run_id": "S23_6_beta_weak",
+      "run_class": "beta_sensitivity",
+      "variant_label": "beta_0p02",
+      "phase_offset_fraction_of_pi": 0.0,
+      "local_phase_skew_fraction": 0.0,
+      "beta": 0.02,
+      "notes": "Weak grade-coupling modulation sensitivity check."
+    }
+  ]
+}
