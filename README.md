@@ -25,6 +25,22 @@ Those three sectors are:
 - [docs/canon/GAUGE_PROGRAM.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/GAUGE_PROGRAM.md)
 - [docs/canon/OPEN_PROBLEMS.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/OPEN_PROBLEMS.md)
 
+## Phase I publication path
+
+Phase I is packaged as one capstone paper plus a living archive rather than as 19 independent publications.
+
+- [papers/README.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/papers/README.md)
+- [papers/pdf_releases/18.1 Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture.pdf](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/papers/pdf_releases/18.1%20Limits%20of%20Frozen%20Pre-Geometry%20on%20a%20Kernel-Induced%20Cochain%20Operator%20Architecture.pdf)
+- [papers/pdf_releases/INDEX.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/papers/pdf_releases/INDEX.md)
+
+Boundary line:
+
+> Frozen pre-geometry can organize, but it does not bind.
+
+Archive snapshot:
+
+- Zenodo DOI `10.5281/zenodo.18938323`
+
 ## Repository layout
 
 - `docs/canon/`: stabilized technical statements

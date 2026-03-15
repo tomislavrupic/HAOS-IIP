@@ -5,7 +5,55 @@ Naming convention:
 - `PP` = paper number in the research sequence
 - `V` = release version for that paper
 
-Current releases:
+## 1. Phase I release structure
+
+This folder contains the full frozen-program release stack.
+
+1. Primary citation target: `18.1`
+2. Support archive: `00.1` through `17.1`
+3. Zenodo archive DOI: `10.5281/zenodo.18938323`
+
+The intended public reading order is:
+
+1. read `18.1` as the capstone paper
+2. use `00.1` through `17.1` as technical appendices / experiment notes
+3. consult the repository numerics, plots, and experiment notes for full mechanics
+
+## 2. Compression map
+
+### 2.1 Part I. Architecture
+
+1. `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
+2. `01.1` Kernel-Induced Operator Architecture and the Emergence of a Transverse Spectral Band on Discrete Substrates
+3. `02.1` Continuum Reconstruction and Scalar-Transverse Coupling in Kernel-Induced Operator Systems
+4. `03.1` Dirac-Kaehler Factorization on a Validated Cochain Operator Architecture
+5. `04.1` Gauge-Like Diagnostics on a Kernel-Induced Cochain Operator Architecture
+
+### 2.2 Part II. Transport and morphology
+
+1. `05.1` Wave-Packet Propagation and Constraint Stability on a Frozen Cochain Operator Architecture
+2. `06.1` Pre-Geometric Morphology Survey on a Frozen Kernel-Induced Cochain Operator Architecture
+3. `07.1` Perturbation Resilience of Pre-Geometric Morphology Classes on a Frozen Kernel-Induced Cochain Operator Architecture
+4. `08.1` Transition Structure of Pre-Geometric Morphology Classes on a Frozen Kernel-Induced Cochain Operator Architecture
+5. `09.1` A Pre-Geometric Atlas of Morphology, Resilience, and Transition Structure on a Frozen Kernel-Induced Cochain Operator Architecture
+6. `10.1` Collective Interaction Morphology on a Frozen Kernel-Induced Cochain Operator Architecture
+
+### 2.3 Part III. Collective organization
+
+1. `11.1` Coarse-Grained Collective Envelope Structure on a Frozen Kernel-Induced Cochain Operator Architecture
+2. `12.1` Resolution-Interaction Coupling of Collective and Coarse-Grained Morphology on a Frozen Kernel-Induced Cochain Operator Architecture
+3. `13.1` Effective Binding Existence Tests on a Frozen Kernel-Induced Cochain Operator Architecture
+
+### 2.4 Part IV. Boundary limit
+
+1. `14.1` Emergent Relational Geometry Probe on a Frozen Kernel-Induced Cochain Operator Architecture
+2. `15.1` Relational Feedback Dynamics Probe on a Frozen Kernel-Induced Cochain Operator Architecture
+3. `16.1` Emergent Phase Synchronization Dynamics Probe on a Frozen Kernel-Induced Cochain Operator Architecture
+4. `17.1` Emergent Memory Retarded Interaction Dynamics Probe on a Frozen Kernel-Induced Cochain Operator Architecture
+5. `18.1` Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture
+
+## 3. Full release list
+
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
 - `01.1` Kernel-Induced Operator Architecture and the Emergence of a Transverse Spectral Band on Discrete Substrates
 - `02.1` Continuum Reconstruction and Scalar-Transverse Coupling in Kernel-Induced Operator Systems
