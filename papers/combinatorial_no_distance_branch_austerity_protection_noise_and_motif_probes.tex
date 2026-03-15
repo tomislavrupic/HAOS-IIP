@@ -1,0 +1,397 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Combinatorial Kernel Austerity, Degree-Spectrum Protection, Incidence-Noise Robustness, and Controlled Motif Injection on a No-Distance Edge-Graph Control Branch}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper collects Stages C0.1 through C0.4 of the HAOS/IIP combinatorial austerity line into a single bounded report. The line was opened to answer a sharp critique: how much of the pre-geometric interaction structure survives when coordinate distance is removed from the kernel definition? The branch is implemented as an explicit projected-transverse edge-graph control operator because the frozen local Hodge branch already uses uniform nearest-neighbor edge weights, so a naive ``metric removal'' claim would otherwise be vacuous. Stage C0.1 compares a Gaussian midpoint kernel, a pure adjacency kernel, and a graph-shell kernel on three representative encounter families. All non-Gaussian kernels preserve the Gaussian interaction and coarse-field classes in that explicit control branch, although secondary transport texture shifts materially. Stage C0.2 holds the graph-shell kernel fixed and scans the degree spectrum. The topology labels remain stable across uniform, mild-spread, and strong-heterogeneity families, but transport span and flow concentration drift substantially as heterogeneity increases. Stage C0.3 then freezes the same graph-shell branch and injects nine incidence-noise perturbations. No braid-like exchange baseline is present in the branch, so the test is anchored to the nearest exchange-like surrogate, the counter-propagating corridor. All nine perturbations remain in the smeared-transfer class, implying robustness of the surrogate but no protected braid topology. Stage C0.4 asks the constructive complement by injecting triangle, diamond, and hub micro-star motifs into three representative encounter families with matched no-motif baselines. No motif seeds a reproducible new topology class; eight of the nine motif runs stay neutral, and the only non-neutral case is a single diamond-induced channel-splitting response on the symmetric triad. The combined conclusion is therefore narrow but useful: the no-distance branch supports real graph-structural persistence classes and transport reshaping, but the present evidence does not support a reproducible combinatorial braid family or a motif-seeded topology mechanism.
+\end{abstract}
+
+\section{Introduction}
+
+The purpose of the C0 line is not to replace the existing HAOS/IIP frozen architecture. It is to isolate one specific methodological question:
+\begin{quote}
+\emph{How much of the observed structure survives once coordinate distance is removed from the interaction kernel?}
+\end{quote}
+
+That question matters because the baseline frozen program uses a weighted graph/cochain architecture in which locality is encoded through kernel structure. If the strongest empirical effects disappear once geometric distance is removed, then the program should be described as a metric-coded mesoscopic pre-geometry rather than as a strict combinatorial line. If some effects survive, then at least part of the behavior is genuinely graph-structural.
+
+Stages C0.1 through C0.4 were designed as a minimal sequence around that issue:
+\begin{itemize}
+\item C0.1 asks whether the primary interaction classes survive metric removal.
+\item C0.2 asks whether the surviving classes are protected by the degree spectrum.
+\item C0.3 asks whether the exchange-like surrogate survives controlled incidence noise.
+\item C0.4 asks whether local motifs can seed or redirect topology in the same no-distance branch.
+\end{itemize}
+
+The present paper combines those four stages into one bounded account. It does not claim geometry emergence, particles, confinement, or a universal graph law. It reports only what the current no-distance branch does under the tested control families.
+
+\section{Architecture and Honesty Boundary}
+
+\subsection{Why an explicit edge-graph control branch is needed}
+
+The first methodological point is easy to miss. The frozen local Hodge branch already uses uniform nearest-neighbor edge weights. That means a naive ``remove metric distance'' exercise would not actually test what the critique intended to test. To make the question non-vacuous, the C0 line instantiates an explicit projected-transverse edge-graph control operator and varies the kernel on that branch.
+
+In all four stages the dynamical packet law, the projected-transverse state sector, the graph size, and the shell-weight measurement stack are kept fixed. The only allowed structural ingredients are graph-internal:
+\begin{itemize}
+\item adjacency,
+\item bounded path length in edge count,
+\item local degree,
+\item local motif incidence,
+\item combinatorial Laplacian structure.
+\end{itemize}
+
+Euclidean coordinates, Gaussian distance falloff in physical space, and any other continuous embedding oracle are excluded from the combinatorial kernels.
+
+\subsection{Representative encounter families}
+
+The branch uses the same three representative seeds throughout the first two stages:
+\begin{itemize}
+\item \texttt{clustered\_composite\_anchor},
+\item \texttt{counter\_propagating\_corridor},
+\item \texttt{phase\_ordered\_symmetric\_triad}.
+\end{itemize}
+
+These representatives serve different roles. The clustered anchor is the strongest persistence-family seed, the corridor is the nearest exchange-like transport surrogate, and the symmetric triad is the best symmetry-stress probe.
+
+\subsection{Important negative boundary}
+
+The most important negative boundary in the whole synthesis appears before C0.3 and C0.4. The current no-distance combinatorial branch does \emph{not} yet produce a clean \texttt{braid\_like\_exchange} baseline. That fact constrains the later interpretation. C0.3 can test robustness of the nearest exchange-like surrogate, but not protection of a braid family that has not actually appeared. C0.4 can test motif sensitivity, but not ``growth of braid topology'' in the strong sense.
+
+That honesty boundary is not a weakness of the report. It is the main reason the present synthesis is useful: it clarifies exactly what has and has not been opened by the no-distance branch.
+
+\section{Stage C0.1: Combinatorial Kernel Austerity Probe}
+
+\subsection{Design}
+
+Stage C0.1 compares three kernel classes on the same three representative seeds:
+\begin{itemize}
+\item Gaussian midpoint kernel,
+\item pure adjacency kernel,
+\item graph-shell kernel.
+\end{itemize}
+This gives a $3 \times 3 = 9$ run matrix. The branch keeps packet initialization and measurement fixed while replacing coordinate-distance weighting with adjacency-only or shell-only interaction weights.
+
+The authoritative outputs are:
+\begin{itemize}
+\item JSON: \texttt{data/20260315\_185133\_stage\_c0\_1\_combinatorial\_kernel\_probe.json},
+\item CSV: \texttt{data/20260315\_185133\_stage\_c0\_1\_combinatorial\_kernel\_probe.csv},
+\item note: \texttt{experiments/pre\_geometry\_atlas/Stage\_C0\_1\_Combinatorial\_Kernel\_Austerity\_Probe\_v1.md}.
+\end{itemize}
+
+\subsection{Result}
+
+All non-Gaussian kernels preserve the Gaussian interaction and coarse-field classes on this explicit control branch. The clustered anchor remains the only metastable composite family. The corridor and triad remain transient-binding families. The coarse field remains diffuse in all nine runs.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{@{}llllrrr@{}}
+\toprule
+Representative & Kernel & Interaction label & Coarse label & Lifetime & Binding & Transport span \\
+\midrule
+Clustered anchor & Gaussian & metastable composite & diffuse & 1.4764 & 1.0000 & 0.0385 \\
+Clustered anchor & Adjacency & metastable composite & diffuse & 1.4764 & 1.0000 & 0.0354 \\
+Clustered anchor & Graph-shell & metastable composite & diffuse & 1.4764 & 1.0000 & 0.0401 \\
+Corridor & Gaussian & transient binding & diffuse & 0.0000 & 0.0000 & 0.0000 \\
+Corridor & Adjacency & transient binding & diffuse & 0.0000 & 0.0000 & 0.0000 \\
+Corridor & Graph-shell & transient binding & diffuse & 0.0000 & 0.0000 & 0.0000 \\
+Triad & Gaussian & transient binding & diffuse & 0.0000 & 0.0000 & 0.1605 \\
+Triad & Adjacency & transient binding & diffuse & 0.0000 & 0.0000 & 0.0263 \\
+Triad & Graph-shell & transient binding & diffuse & 0.0000 & 0.0000 & 0.1305 \\
+\bottomrule
+\end{tabular}
+\caption{Stage C0.1 summary. Primary interaction labels survive metric removal in the explicit edge-graph control branch, but transport span can shift materially, especially on the symmetric triad.}
+\label{tab:c01}
+\end{table}
+
+The strongest positive result of C0.1 is not a new class. It is the survival of an existing one after metric removal. The strongest caution is that transport texture does not remain identical. The triad transport span moves from $0.1605$ under the Gaussian control to $0.0263$ under pure adjacency and $0.1305$ under graph-shell. So the correct statement is:
+\begin{quote}
+\emph{Primary persistence-class behavior survives removal of coordinate-distance weighting in the explicit control branch, but the full dynamical texture does not remain identical.}
+\end{quote}
+
+\section{Stage C0.2: Degree-Spectrum Protection Test}
+
+\subsection{Design}
+
+Stage C0.2 freezes the graph-shell kernel opened in C0.1 and varies only the degree landscape of the underlying line graph:
+\begin{itemize}
+\item degree-uniform baseline,
+\item mild degree spread,
+\item strong degree heterogeneity.
+\end{itemize}
+The same three representative encounter families are reused, producing another 9-run matrix.
+
+The authoritative outputs are:
+\begin{itemize}
+\item JSON: \texttt{data/20260315\_191032\_stage\_c0\_2\_degree\_spectrum\_protection.json},
+\item CSV: \texttt{data/20260315\_191032\_stage\_c0\_2\_degree\_spectrum\_protection.csv},
+\item note: \texttt{experiments/pre\_geometry\_atlas/Stage\_C0\_2\_Degree\_Spectrum\_Protection\_Test\_v1.md}.
+\end{itemize}
+
+\subsection{Result}
+
+The topology labels remain stable across all three degree families:
+\begin{itemize}
+\item clustered anchor stays \texttt{trapped},
+\item corridor stays \texttt{transfer\_smeared},
+\item triad stays \texttt{dispersive}.
+\end{itemize}
+The topology counts are therefore exactly balanced:
+\begin{equation}
+\{\texttt{trapped}:3,\ \texttt{transfer\_smeared}:3,\ \texttt{dispersive}:3\}.
+\end{equation}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{@{}llllrrr@{}}
+\toprule
+Representative & Degree family & Topology & Interaction label & Flow concentration & Transport span & Degree corr. \\
+\midrule
+Clustered anchor & Uniform & trapped & metastable composite & 100.9894 & 0.0401 & 0.0000 \\
+Clustered anchor & Mild & trapped & metastable composite & 94.2676 & 0.0333 & -0.0167 \\
+Clustered anchor & Strong & trapped & metastable composite & 106.1010 & 0.1093 & -0.0019 \\
+Corridor & Uniform & transfer\_smeared & transient binding & 46.1431 & 0.0000 & 0.0000 \\
+Corridor & Mild & transfer\_smeared & transient binding & 42.7827 & 0.0031 & -0.0108 \\
+Corridor & Strong & transfer\_smeared & transient binding & 38.7711 & 0.0275 & -0.0030 \\
+Triad & Uniform & dispersive & transient binding & 34.1220 & 0.1305 & 0.0000 \\
+Triad & Mild & dispersive & transient binding & 31.6399 & 0.3934 & 0.0006 \\
+Triad & Strong & dispersive & transient binding & 32.9102 & 0.4475 & -0.0024 \\
+\bottomrule
+\end{tabular}
+\caption{Stage C0.2 summary. Degree variation does not overturn the coarse topology labels, but it clearly reshapes transport span and flow concentration inside those classes.}
+\label{tab:c02}
+\end{table}
+
+The quantitative drifts are substantial:
+\begin{itemize}
+\item the clustered anchor transport span grows from $0.0401$ to $0.1093$ under strong heterogeneity,
+\item the corridor flow concentration falls from $46.1431$ to $38.7711$,
+\item the triad transport span grows from $0.1305$ to $0.4475$.
+\end{itemize}
+
+At the same time, degree-localization correlation and hub-attraction diagnostics remain weak. So the correct reading is not that degree heterogeneity seeds a new topology. It is that degree heterogeneity reshapes transport texture while leaving the coarse label intact.
+
+\section{Stage C0.3: Topology-Exchange Robustness Under Incidence Noise}
+
+\subsection{Design}
+
+Stage C0.3 asks the next natural question: if a no-distance exchange-like surrogate exists, does it survive small incidence perturbations? Because the branch still lacks a genuine braid-like exchange baseline, the scan is anchored to the nearest honest surrogate, the counter-propagating corridor.
+
+The 9-run perturbation set is:
+\begin{enumerate}
+\item baseline no-noise,
+\item ultra-weak rewiring,
+\item weak rewiring,
+\item moderate rewiring,
+\item moderate deletion-insertion,
+\item clustered rewiring patch,
+\item random localized defect pair,
+\item degree-biased perturbation,
+\item connectivity-edge stress test.
+\end{enumerate}
+
+The authoritative outputs are:
+\begin{itemize}
+\item JSON: \texttt{data/20260315\_192917\_stage\_c0\_3\_incidence\_noise\_robustness.json},
+\item CSV: \texttt{data/20260315\_192917\_stage\_c0\_3\_incidence\_noise\_robustness.csv},
+\item note: \texttt{experiments/pre\_geometry\_atlas/Stage\_C0\_3\_Topology\_Exchange\_Robustness\_Under\_Incidence\_Noise\_v1.md}.
+\end{itemize}
+
+\subsection{Result}
+
+No braid-like exchange appears anywhere in the C0.3 matrix. All nine runs remain in the \texttt{smeared\_transfer} class:
+\begin{equation}
+\{\texttt{smeared\_transfer}:9\}.
+\end{equation}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Perturbation & Flow concentration & Exchange coherence & Transport span & Degree shift & Clustering shift \\
+\midrule
+Baseline no-noise & 46.1431 & 0.2158 & 0.0000 & 0.0000 & 0.0000 \\
+Ultra-weak rewiring & 42.9971 & 0.2330 & 0.0067 & 0.0786 & -0.0008 \\
+Weak rewiring & 40.6109 & 0.2560 & 0.0051 & 0.1361 & -0.0024 \\
+Moderate rewiring & 40.1626 & 0.2528 & 0.0061 & 0.2357 & -0.0071 \\
+Moderate delete-insert & 40.7380 & 0.2449 & 0.0078 & 0.2722 & -0.0046 \\
+Clustered patch & 39.2678 & 0.2529 & 0.0006 & 0.1811 & -0.0027 \\
+Localized defect pair & 37.1418 & 0.2443 & 0.0003 & 0.2097 & -0.0010 \\
+Degree-biased & 40.1548 & 0.2450 & 0.0031 & 0.2178 & -0.0059 \\
+Connectivity stress & 42.8851 & 0.2350 & 0.0001 & 0.0278 & 0.0000 \\
+\bottomrule
+\end{tabular}
+\caption{Stage C0.3 summary. The corridor surrogate survives all tested incidence perturbations as a smeared-transfer class, but no braid family opens.}
+\label{tab:c03}
+\end{table}
+
+The key facts are:
+\begin{itemize}
+\item the minimum flow concentration is still $37.1418$ under the localized defect pair,
+\item the largest degree-spectrum drift is $0.2722$ under delete-insert noise,
+\item the largest clustering shift magnitude is only $0.0071$,
+\item \texttt{loop\_count} and recurrence remain zero across the scan.
+\end{itemize}
+
+So C0.3 is not a collapse result. It is a clarification result. The branch exhibits a robust smeared-transfer surrogate under incidence noise, but not a protected braid topology.
+
+\section{Stage C0.4: Controlled Motif Injection}
+
+\subsection{Design}
+
+Stage C0.4 asks the constructive complement to C0.3:
+\begin{quote}
+\emph{Can small local motifs seed or redirect topology in the no-distance branch?}
+\end{quote}
+
+The motif set is intentionally small:
+\begin{itemize}
+\item triangle cluster,
+\item diamond,
+\item hub micro-star.
+\end{itemize}
+
+Each motif is injected into each of the three representative encounter families, producing another 9-run matrix. Every motif run is compared to an internally matched no-motif baseline on the same representative and packet family. This point matters because the branch still has no clean braid-like baseline.
+
+The authoritative outputs are:
+\begin{itemize}
+\item JSON: \texttt{data/20260315\_194023\_stage\_c0\_4\_controlled\_motif\_injection.json},
+\item CSV: \texttt{data/20260315\_194023\_stage\_c0\_4\_controlled\_motif\_injection.csv},
+\item note: \texttt{experiments/pre\_geometry\_atlas/Stage\_C0\_4\_Controlled\_Motif\_Injection\_v1.md}.
+\end{itemize}
+
+\subsection{Result}
+
+The matched-baseline classes remain stable by representative:
+\begin{itemize}
+\item clustered anchor remains \texttt{trapped\_local},
+\item corridor remains \texttt{smeared\_transfer},
+\item triad remains \texttt{split\_channel\_exchange}.
+\end{itemize}
+
+The topology counts are therefore
+\begin{equation}
+\{\texttt{trapped\_local}:3,\ \texttt{smeared\_transfer}:3,\ \texttt{split\_channel\_exchange}:3\},
+\end{equation}
+and no run opens a braid-like class.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{@{}llllrrrr@{}}
+\toprule
+Motif & Representative & Baseline topology & Run topology & Effect class & Flow conc. & Coherence & Motif corr. \\
+\midrule
+Triangle & Clustered anchor & trapped\_local & trapped\_local & neutral & 100.8386 & 0.5977 & 0.6887 \\
+Triangle & Corridor & smeared\_transfer & smeared\_transfer & neutral & 45.7050 & 0.2153 & 0.5241 \\
+Triangle & Triad & split\_channel\_exchange & split\_channel\_exchange & neutral & 34.0526 & 0.2004 & 0.4463 \\
+Diamond & Clustered anchor & trapped\_local & trapped\_local & neutral & 100.2721 & 0.5946 & 0.7346 \\
+Diamond & Corridor & smeared\_transfer & smeared\_transfer & neutral & 44.8195 & 0.2143 & 0.5345 \\
+Diamond & Triad & split\_channel\_exchange & split\_channel\_exchange & channel-splitting & 32.6046 & 0.2002 & 0.4586 \\
+Hub star & Clustered anchor & trapped\_local & trapped\_local & neutral & 95.9955 & 0.6076 & 0.6881 \\
+Hub star & Corridor & smeared\_transfer & smeared\_transfer & neutral & 43.5703 & 0.2280 & 0.5017 \\
+Hub star & Triad & split\_channel\_exchange & split\_channel\_exchange & neutral & 32.1157 & 0.1998 & 0.4300 \\
+\bottomrule
+\end{tabular}
+\caption{Stage C0.4 summary. Only one motif-run pair, the diamond on the symmetric triad, is classified as non-neutral, and even there the topology remains inside the split-channel family.}
+\label{tab:c04}
+\end{table}
+
+The effect counts are
+\begin{equation}
+\{\texttt{neutral / no significant effect}:8,\ \texttt{channel-splitting}:1\}.
+\end{equation}
+
+That means C0.4 is not positive on the requested criterion. It does show one isolated sensitivity:
+\begin{itemize}
+\item the diamond motif on the symmetric triad is classified as \texttt{channel-splitting}.
+\end{itemize}
+But no motif class reproduces a non-neutral topology shift across more than one representative. So there is no evidence yet that local motifs act as a general topology-seeding mechanism in this branch.
+
+\section{Combined Interpretation}
+
+The combined C0.1--C0.4 line supports four bounded statements.
+
+\subsection{What survives metric removal}
+
+The first positive statement is real and should be kept. In the explicit edge-graph control branch, removal of coordinate-distance weighting does not erase the primary interaction classes. The clustered anchor remains a persistent composite family, while the corridor and triad remain transient-binding families under adjacency-only and shell-only kernels.
+
+\subsection{What the degree spectrum does}
+
+The degree spectrum is not the active coarse topology axis in the first scan. It does not change the labels. But it does reshape transport span and concentration strongly enough that it cannot be dismissed as irrelevant texture. In the present data, degree heterogeneity acts as a deformation axis inside existing classes, not as a topology generator.
+
+\subsection{What incidence noise does}
+
+Incidence noise does not destroy the nearest exchange-like surrogate, but it also does not reveal a hidden braid family. The robust statement is therefore not ``braid survives damage.'' It is:
+\begin{quote}
+\emph{the current no-distance corridor surrogate is incidence-robust at the smeared-transfer level.}
+\end{quote}
+
+\subsection{What local motifs do}
+
+Local motifs do not yet act as reproducible topology seeds. The triangle and hub micro-star families remain neutral across the first pass. The diamond motif shows one isolated channel-splitting response on the symmetric triad, which is interesting enough to remember but not strong enough to count as a seeded topology mechanism.
+
+\section{What the C0 Line Establishes}
+
+Taken together, the four stages support the following compressed boundary statement:
+\begin{quote}
+\emph{The no-distance combinatorial edge-graph branch supports real graph-structural persistence classes and transport reshaping, but it does not yet support a reproducible braid-like exchange family or a motif-seeded topology mechanism.}
+\end{quote}
+
+That sentence is stronger than a pure negative result and weaker than a topology-discovery claim. It is probably the right level of honesty for the current evidence.
+
+The line has clarified at least three things:
+\begin{enumerate}
+\item the strongest persistence-class signatures are not mere artifacts of explicit coordinate-distance kernels;
+\item degree and incidence structure matter operationally, but mostly by deforming transport texture rather than by opening new stable topology labels;
+\item local motifs, at least in the tested triangle, diamond, and hub forms, are not yet sufficient to grow a new exchange-topology family from the current branch.
+\end{enumerate}
+
+\section{Reproducibility Record}
+
+The present synthesis is built from four frozen stage outputs:
+\begin{itemize}
+\item C0.1: \texttt{20260315\_185133\_stage\_c0\_1\_combinatorial\_kernel\_probe},
+\item C0.2: \texttt{20260315\_191032\_stage\_c0\_2\_degree\_spectrum\_protection},
+\item C0.3: \texttt{20260315\_192917\_stage\_c0\_3\_incidence\_noise\_robustness},
+\item C0.4: \texttt{20260315\_194023\_stage\_c0\_4\_controlled\_motif\_injection}.
+\end{itemize}
+
+The corresponding stage notes are:
+\begin{itemize}
+\item \texttt{experiments/pre\_geometry\_atlas/Stage\_C0\_1\_Combinatorial\_Kernel\_Austerity\_Probe\_v1.md},
+\item \texttt{experiments/pre\_geometry\_atlas/Stage\_C0\_2\_Degree\_Spectrum\_Protection\_Test\_v1.md},
+\item \texttt{experiments/pre\_geometry\_atlas/Stage\_C0\_3\_Topology\_Exchange\_Robustness\_Under\_Incidence\_Noise\_v1.md},
+\item \texttt{experiments/pre\_geometry\_atlas/Stage\_C0\_4\_Controlled\_Motif\_Injection\_v1.md}.
+\end{itemize}
+
+The runner sources are:
+\begin{itemize}
+\item \texttt{numerics/simulations/stage\_c0\_1\_combinatorial\_kernel\_probe.py},
+\item \texttt{numerics/simulations/stage\_c0\_2\_degree\_spectrum\_protection.py},
+\item \texttt{numerics/simulations/stage\_c0\_3\_incidence\_noise\_robustness.py},
+\item \texttt{numerics/simulations/stage\_c0\_4\_controlled\_motif\_injection.py}.
+\end{itemize}
+
+\section{Conclusion}
+
+The C0 line asked a legitimate and necessary question: what remains once the hidden metric is removed? The answer is neither trivial survival nor total collapse.
+
+What survives is a graph-structural persistence and transport taxonomy. What does not yet survive is a reproducible braid-like exchange family. Degree variation and incidence perturbation reshape the branch without destroying its nearest exchange-like surrogate. Motif injection yields one isolated channel-splitting response, but no repeated topology seeding across the representative set.
+
+The present branch should therefore be described conservatively. It is a successful combinatorial austerity control line, and it has shown that some key observables are genuinely graph-structural. It has not yet crossed the stronger boundary into a protected no-distance braid family or a constructive motif-growth mechanism.
+
+\end{document}

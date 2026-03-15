@@ -1,0 +1,188 @@
+{
+  "stage": "C0.2_degree_spectrum_protection_test",
+  "description": "Minimal 9-run combinatorial degree-spectrum protection scan on the projected-transverse edge-graph control branch. The graph-shell kernel is kept fixed while the underlying line-graph degree landscape is varied across uniform, mild-spread, and strong-heterogeneity families.",
+  "note_name": "Stage_C0_2_Degree_Spectrum_Protection_Test_v1.md",
+  "experiment_slug": "stage_c0_2_degree_spectrum_protection",
+  "kernel_mode_family": {
+    "kernel_class_id": "graph_shell",
+    "label": "graph-shell",
+    "definition": "W_ij = a,b,c by graph shell distance 1,2,3 on the degree-perturbed line graph, with no coordinate distance and no Gaussian embedding."
+  },
+  "architecture_notice": "This branch varies only the combinatorial degree spectrum of the explicit edge-graph control operator. Packet initialization, projected-transverse state sector, and measurement stack remain fixed.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and representative seeds as C0.1"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "promotion_required": false,
+    "followup_gate": "Promote only if degree variation changes topology class or produces reproducible defect-pinning / hub-guided flow."
+  },
+  "parameter_policy": {
+    "max_shell": 3,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "match_lambda_to_frozen_L1": true,
+    "random_seed": 2202,
+    "min_degree_floor": 3,
+    "mild_rewire_operations": 480,
+    "strong_rewire_operations": 2400,
+    "strong_hub_count": 4,
+    "defect_quantile": 0.1
+  },
+  "graph_families": [
+    {
+      "graph_family_id": "degree_uniform_baseline",
+      "label": "Degree-uniform baseline",
+      "description": "Original regular line graph with uniform local degree."
+    },
+    {
+      "graph_family_id": "mild_degree_spread",
+      "label": "Mild degree spread",
+      "description": "Sparse local rewiring that introduces degree +/-1 style fluctuations while preserving connectedness."
+    },
+    {
+      "graph_family_id": "strong_degree_heterogeneity",
+      "label": "Strong degree heterogeneity",
+      "description": "Hub-biased rewiring that creates clustered high-degree regions and low-degree pockets on the line graph."
+    }
+  ],
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage15_case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [
+        [0.42, 0.5, 0.5],
+        [0.5, 0.5, 0.5],
+        [0.58, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "clustered encounter / strongest composite anchor"
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.35, 0.5, 0.5],
+        [0.65, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "notes": "corridor-like counterflow control"
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage15_case_id": "symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [
+        [0.18, 0.5, 0.5],
+        [0.5, 0.5, 0.5],
+        [0.82, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "symmetric exchange-pair surrogate / ordered triad"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "C02_uniform_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "graph_family_id": "degree_uniform_baseline",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Uniform degree baseline on clustered encounter."
+    },
+    {
+      "run_id": "C02_uniform_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "graph_family_id": "degree_uniform_baseline",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Uniform degree baseline on corridor counterflow."
+    },
+    {
+      "run_id": "C02_uniform_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "graph_family_id": "degree_uniform_baseline",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Uniform degree baseline on symmetric triad."
+    },
+    {
+      "run_id": "C02_mild_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "graph_family_id": "mild_degree_spread",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Mild degree spread on clustered encounter."
+    },
+    {
+      "run_id": "C02_mild_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "graph_family_id": "mild_degree_spread",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Mild degree spread on corridor counterflow."
+    },
+    {
+      "run_id": "C02_mild_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "graph_family_id": "mild_degree_spread",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Mild degree spread on symmetric triad."
+    },
+    {
+      "run_id": "C02_strong_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "graph_family_id": "strong_degree_heterogeneity",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Strong degree heterogeneity on clustered encounter."
+    },
+    {
+      "run_id": "C02_strong_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "graph_family_id": "strong_degree_heterogeneity",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Strong degree heterogeneity on corridor counterflow."
+    },
+    {
+      "run_id": "C02_strong_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "graph_family_id": "strong_degree_heterogeneity",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Strong degree heterogeneity on symmetric triad."
+    }
+  ]
+}

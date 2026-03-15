@@ -1,0 +1,180 @@
+{
+  "stage": "C0.1_combinatorial_kernel_austerity_probe",
+  "description": "Minimal 9-run control matrix for a projected-transverse edge-graph kernel branch comparing a metric Gaussian operator against adjacency-only and graph-shell combinatorial operators on the canonical persistence representatives.",
+  "note_name": "Stage_C0_1_Combinatorial_Kernel_Austerity_Probe_v1.md",
+  "experiment_slug": "stage_c0_1_combinatorial_kernel_probe",
+  "architecture_notice": "The frozen regular-lattice Hodge branch already uses uniform nearest-neighbor edge weights, so this probe instantiates an explicit edge-graph kernel operator to make the metric-removal question non-vacuous.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and representative seeds used in the late persistence-first transverse stages"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "promotion_required": false,
+    "followup_gate": "Promote only if a non-Gaussian kernel preserves a regime-level structure worth refinement."
+  },
+  "parameter_policy": {
+    "max_shell": 3,
+    "gaussian_sigma_multiple_h": 1.5,
+    "gaussian_support_match_shells": true,
+    "adjacency_degree_normalized": true,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "match_lambda_to_frozen_L1": true
+  },
+  "kernel_classes": [
+    {
+      "kernel_class_id": "gaussian_midpoint",
+      "label": "Gaussian baseline",
+      "definition": "W_ij = exp(-||m_i-m_j||^2 / (2 sigma^2)) on the line-graph neighborhood truncated at shell <= 3"
+    },
+    {
+      "kernel_class_id": "pure_adjacency",
+      "label": "Pure adjacency",
+      "definition": "W_ij = 1/sqrt(d_i d_j) for adjacent line-graph edges and 0 otherwise"
+    },
+    {
+      "kernel_class_id": "graph_shell",
+      "label": "Graph-shell",
+      "definition": "W_ij = a,b,c by line-graph shell distance 1,2,3 and 0 beyond shell 3"
+    }
+  ],
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage15_case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [
+        [0.42, 0.5, 0.5],
+        [0.5, 0.5, 0.5],
+        [0.58, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "strongest composite anchor and main candidate for any structure that survives austerity"
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.35, 0.5, 0.5],
+        [0.65, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "notes": "transport-style control and corridor survival test"
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage15_case_id": "symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [
+        [0.18, 0.5, 0.5],
+        [0.5, 0.5, 0.5],
+        [0.82, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "structured ordering candidate and symmetry control"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "C01_gaussian_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "kernel_class_id": "gaussian_midpoint",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Gaussian midpoint kernel on clustered composite anchor."
+    },
+    {
+      "run_id": "C01_gaussian_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "kernel_class_id": "gaussian_midpoint",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Gaussian midpoint kernel on counter-propagating corridor."
+    },
+    {
+      "run_id": "C01_gaussian_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "kernel_class_id": "gaussian_midpoint",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Gaussian midpoint kernel on phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "C01_adjacency_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "kernel_class_id": "pure_adjacency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Pure adjacency kernel on clustered composite anchor."
+    },
+    {
+      "run_id": "C01_adjacency_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "kernel_class_id": "pure_adjacency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Pure adjacency kernel on counter-propagating corridor."
+    },
+    {
+      "run_id": "C01_adjacency_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "kernel_class_id": "pure_adjacency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Pure adjacency kernel on phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "C01_shell_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "kernel_class_id": "graph_shell",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Graph-shell kernel on clustered composite anchor."
+    },
+    {
+      "run_id": "C01_shell_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "kernel_class_id": "graph_shell",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Graph-shell kernel on counter-propagating corridor."
+    },
+    {
+      "run_id": "C01_shell_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "kernel_class_id": "graph_shell",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Graph-shell kernel on phase-ordered symmetric triad."
+    }
+  ]
+}

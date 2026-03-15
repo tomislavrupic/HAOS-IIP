@@ -1,0 +1,812 @@
+{
+  "stage": "C0.1_combinatorial_kernel_austerity_probe",
+  "description": "Minimal 9-run control matrix for a projected-transverse edge-graph kernel branch comparing a metric Gaussian operator against adjacency-only and graph-shell combinatorial operators on the canonical persistence representatives.",
+  "architecture_notice": "The frozen regular-lattice Hodge branch already uses uniform nearest-neighbor edge weights, so this probe instantiates an explicit edge-graph kernel operator to make the metric-removal question non-vacuous.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and representative seeds used in the late persistence-first transverse stages"
+  },
+  "parameter_policy": {
+    "max_shell": 3,
+    "gaussian_sigma_multiple_h": 1.5,
+    "gaussian_support_match_shells": true,
+    "adjacency_degree_normalized": true,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "match_lambda_to_frozen_L1": true
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "C01_gaussian_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "kernel_class_id": "gaussian_midpoint",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Gaussian midpoint kernel on clustered composite anchor."
+      },
+      "kernel_class": {
+        "kernel_class_id": "gaussian_midpoint",
+        "label": "Gaussian baseline",
+        "definition": "W_ij = exp(-||m_i-m_j||^2 / (2 sigma^2)) on the line-graph neighborhood truncated at shell <= 3"
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920022,
+        "raw_lambda_max": 84.61553202851265,
+        "scale_factor": 0.1377284400338347,
+        "support_entries": 839808,
+        "sigma": 0.125,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C01_gaussian_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "kernel_class_id": "gaussian_midpoint",
+        "kernel_label": "Gaussian baseline",
+        "resolution": 12,
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 1.4763647843825571,
+        "binding_persistence_score": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "transport_span": 0.03848625950129801,
+        "corridor_dwell_time": 1.4763647843825571,
+        "initial_mean_pair_distance": 0.10667568629397062,
+        "min_mean_pair_distance": 0.10663910019821654,
+        "final_mean_pair_distance": 0.10667667748694909,
+        "max_mean_overlap": 0.6624857825475964,
+        "phase_lock_indicator": 0.5253241104458141,
+        "constraint_max": 1.4478819106361465e-15,
+        "sector_leakage": 2.3961542895424422e-15,
+        "operator_lambda_max": 11.653965228920022,
+        "operator_scale_factor": 0.1377284400338347,
+        "delta_vs_gaussian_composite_lifetime": 0.0,
+        "delta_vs_gaussian_binding_persistence": 0.0,
+        "delta_vs_gaussian_coarse_persistence": 0.0,
+        "interaction_changed_vs_gaussian": 0,
+        "coarse_changed_vs_gaussian": 0,
+        "notes": "Gaussian midpoint kernel on clustered composite anchor."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.10667568629397062,
+        0.10663910019821654,
+        0.10667667748694909
+      ],
+      "overlap_series": [
+        0.6589911080270985,
+        0.6579803820484721,
+        0.6624857825475964
+      ],
+      "phase_alignment_series": [
+        0.5796316492693468,
+        0.45873144876529487,
+        0.5376092333028004
+      ],
+      "coarse_summary": {
+        "t_final": 0.9842431895883714,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.0626929012345679,
+        "coarse_persistence_sigma2": 1.0,
+        "mean_envelope_variance_sigma2": 0.02753679786984983,
+        "basin_lifetime_sigma2": 1.4763647843825571,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma4": 0.9953703703703703,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma4": 0.006751401666810555,
+        "basin_lifetime_sigma4": 1.4763647843825571
+      }
+    },
+    {
+      "run": {
+        "run_id": "C01_adjacency_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "kernel_class_id": "pure_adjacency",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Pure adjacency kernel on clustered composite anchor."
+      },
+      "kernel_class": {
+        "kernel_class_id": "pure_adjacency",
+        "label": "Pure adjacency",
+        "definition": "W_ij = 1/sqrt(d_i d_j) for adjacent line-graph edges and 0 otherwise"
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920022,
+        "raw_lambda_max": 1.1999858531120313,
+        "scale_factor": 9.711752183325116,
+        "support_entries": 51840,
+        "sigma": 0.125,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C01_adjacency_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "kernel_class_id": "pure_adjacency",
+        "kernel_label": "Pure adjacency",
+        "resolution": 12,
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 1.4763647843825571,
+        "binding_persistence_score": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "transport_span": 0.03535415565334679,
+        "corridor_dwell_time": 1.4763647843825571,
+        "initial_mean_pair_distance": 0.10667568629397062,
+        "min_mean_pair_distance": 0.10662024437040557,
+        "final_mean_pair_distance": 0.10665631383792429,
+        "max_mean_overlap": 0.69432677057382,
+        "phase_lock_indicator": 0.5188530285141713,
+        "constraint_max": 1.4478819106361465e-15,
+        "sector_leakage": 2.3961542895424422e-15,
+        "operator_lambda_max": 11.653965228920022,
+        "operator_scale_factor": 9.711752183325116,
+        "delta_vs_gaussian_composite_lifetime": 0.0,
+        "delta_vs_gaussian_binding_persistence": 0.0,
+        "delta_vs_gaussian_coarse_persistence": 0.0,
+        "interaction_changed_vs_gaussian": 0,
+        "coarse_changed_vs_gaussian": 0,
+        "notes": "Pure adjacency kernel on clustered composite anchor."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.10667568629397062,
+        0.10662024437040557,
+        0.10665631383792429
+      ],
+      "overlap_series": [
+        0.6589911080270985,
+        0.69432677057382,
+        0.6625742701955785
+      ],
+      "phase_alignment_series": [
+        0.5796316492693468,
+        0.45794951245422816,
+        0.5189779238189387
+      ],
+      "coarse_summary": {
+        "t_final": 0.9842431895883714,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.0626929012345679,
+        "coarse_persistence_sigma2": 1.0,
+        "mean_envelope_variance_sigma2": 0.02751292659992177,
+        "basin_lifetime_sigma2": 1.4763647843825571,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma4": 0.9951774691358025,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma4": 0.006744869643467405,
+        "basin_lifetime_sigma4": 1.4763647843825571
+      }
+    },
+    {
+      "run": {
+        "run_id": "C01_shell_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "kernel_class_id": "graph_shell",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Graph-shell kernel on clustered composite anchor."
+      },
+      "kernel_class": {
+        "kernel_class_id": "graph_shell",
+        "label": "Graph-shell",
+        "definition": "W_ij = a,b,c by line-graph shell distance 1,2,3 and 0 beyond shell 3"
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920024,
+        "raw_lambda_max": 62.4710252639959,
+        "scale_factor": 0.18654992742109813,
+        "support_entries": 839808,
+        "sigma": 0.125,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C01_shell_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "kernel_class_id": "graph_shell",
+        "kernel_label": "Graph-shell",
+        "resolution": 12,
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 1.4763647843825571,
+        "binding_persistence_score": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "transport_span": 0.04009723085354362,
+        "corridor_dwell_time": 1.4763647843825571,
+        "initial_mean_pair_distance": 0.10667568629397062,
+        "min_mean_pair_distance": 0.10663753013207994,
+        "final_mean_pair_distance": 0.106676965919571,
+        "max_mean_overlap": 0.6601554536075559,
+        "phase_lock_indicator": 0.5280841337629698,
+        "constraint_max": 1.4478819106361465e-15,
+        "sector_leakage": 2.3961542895424422e-15,
+        "operator_lambda_max": 11.653965228920024,
+        "operator_scale_factor": 0.18654992742109813,
+        "delta_vs_gaussian_composite_lifetime": 0.0,
+        "delta_vs_gaussian_binding_persistence": 0.0,
+        "delta_vs_gaussian_coarse_persistence": 0.0,
+        "interaction_changed_vs_gaussian": 0,
+        "coarse_changed_vs_gaussian": 0,
+        "notes": "Graph-shell kernel on clustered composite anchor."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.10667568629397062,
+        0.10663753013207994,
+        0.106676965919571
+      ],
+      "overlap_series": [
+        0.6589911080270985,
+        0.6544669924926142,
+        0.6601554536075559
+      ],
+      "phase_alignment_series": [
+        0.5796316492693468,
+        0.46819660486930026,
+        0.5364241471502625
+      ],
+      "coarse_summary": {
+        "t_final": 0.9842431895883714,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.0628858024691358,
+        "coarse_persistence_sigma2": 1.0,
+        "mean_envelope_variance_sigma2": 0.0274994756726762,
+        "basin_lifetime_sigma2": 1.4763647843825571,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma4": 0.9953703703703703,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma4": 0.006745145033208431,
+        "basin_lifetime_sigma4": 1.4763647843825571
+      }
+    },
+    {
+      "run": {
+        "run_id": "C01_gaussian_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "kernel_class_id": "gaussian_midpoint",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Gaussian midpoint kernel on counter-propagating corridor."
+      },
+      "kernel_class": {
+        "kernel_class_id": "gaussian_midpoint",
+        "label": "Gaussian baseline",
+        "definition": "W_ij = exp(-||m_i-m_j||^2 / (2 sigma^2)) on the line-graph neighborhood truncated at shell <= 3"
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920022,
+        "raw_lambda_max": 84.61553202851265,
+        "scale_factor": 0.1377284400338347,
+        "support_entries": 839808,
+        "sigma": 0.125,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C01_gaussian_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "kernel_class_id": "gaussian_midpoint",
+        "kernel_label": "Gaussian baseline",
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.0,
+        "binding_persistence_score": 0.0,
+        "coarse_persistence_sigma4": 1.0,
+        "transport_span": 4.440892098500626e-16,
+        "corridor_dwell_time": 0.9842431895883714,
+        "initial_mean_pair_distance": 0.300051743607888,
+        "min_mean_pair_distance": 0.2880537582901287,
+        "final_mean_pair_distance": 0.2880537582901287,
+        "max_mean_overlap": 0.33594345276955817,
+        "phase_lock_indicator": 0.10529230087656356,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "operator_lambda_max": 11.653965228920022,
+        "operator_scale_factor": 0.1377284400338347,
+        "delta_vs_gaussian_composite_lifetime": 0.0,
+        "delta_vs_gaussian_binding_persistence": 0.0,
+        "delta_vs_gaussian_coarse_persistence": 0.0,
+        "interaction_changed_vs_gaussian": 0,
+        "coarse_changed_vs_gaussian": 0,
+        "notes": "Gaussian midpoint kernel on counter-propagating corridor."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.33756814500890137,
+        0.2880537582901287
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.2857709623496605,
+        0.33594345276955817
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.07347203490522915,
+        0.13041630484700054
+      ],
+      "coarse_summary": {
+        "t_final": 0.9842431895883714,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.11246141975308642,
+        "coarse_persistence_sigma2": 1.0,
+        "mean_envelope_variance_sigma2": 0.029631926482136087,
+        "basin_lifetime_sigma2": 1.4763647843825571,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma4": 0.004753779230877136,
+        "basin_lifetime_sigma4": 1.4763647843825571
+      }
+    },
+    {
+      "run": {
+        "run_id": "C01_adjacency_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "kernel_class_id": "pure_adjacency",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Pure adjacency kernel on counter-propagating corridor."
+      },
+      "kernel_class": {
+        "kernel_class_id": "pure_adjacency",
+        "label": "Pure adjacency",
+        "definition": "W_ij = 1/sqrt(d_i d_j) for adjacent line-graph edges and 0 otherwise"
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920022,
+        "raw_lambda_max": 1.1999858531120313,
+        "scale_factor": 9.711752183325116,
+        "support_entries": 51840,
+        "sigma": 0.125,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C01_adjacency_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "kernel_class_id": "pure_adjacency",
+        "kernel_label": "Pure adjacency",
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.0,
+        "binding_persistence_score": 0.0,
+        "coarse_persistence_sigma4": 1.0,
+        "transport_span": 0.0,
+        "corridor_dwell_time": 1.4763647843825571,
+        "initial_mean_pair_distance": 0.300051743607888,
+        "min_mean_pair_distance": 0.2895603430455547,
+        "final_mean_pair_distance": 0.2895603430455547,
+        "max_mean_overlap": 0.34195349156040467,
+        "phase_lock_indicator": 0.046269758796090556,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "operator_lambda_max": 11.653965228920022,
+        "operator_scale_factor": 9.711752183325116,
+        "delta_vs_gaussian_composite_lifetime": 0.0,
+        "delta_vs_gaussian_binding_persistence": 0.0,
+        "delta_vs_gaussian_coarse_persistence": 0.0,
+        "interaction_changed_vs_gaussian": 0,
+        "coarse_changed_vs_gaussian": 0,
+        "notes": "Pure adjacency kernel on counter-propagating corridor."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.30198479471273704,
+        0.2895603430455547
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.34195349156040467,
+        0.331271604217136
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.004971252052081791,
+        0.021849461458728823
+      ],
+      "coarse_summary": {
+        "t_final": 0.9842431895883714,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.1076388888888889,
+        "coarse_persistence_sigma2": 1.0,
+        "mean_envelope_variance_sigma2": 0.028622131054799757,
+        "basin_lifetime_sigma2": 1.4763647843825571,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma4": 0.004650635036751065,
+        "basin_lifetime_sigma4": 1.4763647843825571
+      }
+    },
+    {
+      "run": {
+        "run_id": "C01_shell_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "kernel_class_id": "graph_shell",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Graph-shell kernel on counter-propagating corridor."
+      },
+      "kernel_class": {
+        "kernel_class_id": "graph_shell",
+        "label": "Graph-shell",
+        "definition": "W_ij = a,b,c by line-graph shell distance 1,2,3 and 0 beyond shell 3"
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920024,
+        "raw_lambda_max": 62.4710252639959,
+        "scale_factor": 0.18654992742109813,
+        "support_entries": 839808,
+        "sigma": 0.125,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C01_shell_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "kernel_class_id": "graph_shell",
+        "kernel_label": "Graph-shell",
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.0,
+        "binding_persistence_score": 0.0,
+        "coarse_persistence_sigma4": 1.0,
+        "transport_span": 0.0,
+        "corridor_dwell_time": 0.9842431895883714,
+        "initial_mean_pair_distance": 0.300051743607888,
+        "min_mean_pair_distance": 0.2885415195855207,
+        "final_mean_pair_distance": 0.2885415195855207,
+        "max_mean_overlap": 0.33292704384289,
+        "phase_lock_indicator": 0.09869039640011461,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "operator_lambda_max": 11.653965228920024,
+        "operator_scale_factor": 0.18654992742109813,
+        "delta_vs_gaussian_composite_lifetime": 0.0,
+        "delta_vs_gaussian_binding_persistence": 0.0,
+        "delta_vs_gaussian_coarse_persistence": 0.0,
+        "interaction_changed_vs_gaussian": 0,
+        "coarse_changed_vs_gaussian": 0,
+        "notes": "Graph-shell kernel on counter-propagating corridor."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.338668419459408,
+        0.2885415195855207
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.2861776540763221,
+        0.33292704384289
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.05831100663067285,
+        0.12577161969220993
+      ],
+      "coarse_summary": {
+        "t_final": 0.9842431895883714,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.11246141975308642,
+        "coarse_persistence_sigma2": 1.0,
+        "mean_envelope_variance_sigma2": 0.029629061717177285,
+        "basin_lifetime_sigma2": 1.4763647843825571,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma4": 0.004731796525541847,
+        "basin_lifetime_sigma4": 1.4763647843825571
+      }
+    },
+    {
+      "run": {
+        "run_id": "C01_gaussian_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "kernel_class_id": "gaussian_midpoint",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Gaussian midpoint kernel on phase-ordered symmetric triad."
+      },
+      "kernel_class": {
+        "kernel_class_id": "gaussian_midpoint",
+        "label": "Gaussian baseline",
+        "definition": "W_ij = exp(-||m_i-m_j||^2 / (2 sigma^2)) on the line-graph neighborhood truncated at shell <= 3"
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920022,
+        "raw_lambda_max": 84.61553202851265,
+        "scale_factor": 0.1377284400338347,
+        "support_entries": 839808,
+        "sigma": 0.125,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C01_gaussian_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "kernel_class_id": "gaussian_midpoint",
+        "kernel_label": "Gaussian baseline",
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.0,
+        "binding_persistence_score": 0.0,
+        "coarse_persistence_sigma4": 1.0,
+        "transport_span": 0.1605251658333556,
+        "corridor_dwell_time": 1.4763647843825571,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "final_mean_pair_distance": 0.3333333333362239,
+        "max_mean_overlap": 0.28216842562326105,
+        "phase_lock_indicator": 0.11613272160101351,
+        "constraint_max": 2.0228247686178265e-15,
+        "sector_leakage": 5.5236216373583976e-15,
+        "operator_lambda_max": 11.653965228920022,
+        "operator_scale_factor": 0.1377284400338347,
+        "delta_vs_gaussian_composite_lifetime": 0.0,
+        "delta_vs_gaussian_binding_persistence": 0.0,
+        "delta_vs_gaussian_coarse_persistence": 0.0,
+        "interaction_changed_vs_gaussian": 0,
+        "coarse_changed_vs_gaussian": 0,
+        "notes": "Gaussian midpoint kernel on phase-ordered symmetric triad."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.3333333333333333,
+        0.3333333333613746,
+        0.3333333333362239
+      ],
+      "overlap_series": [
+        0.27771373515987224,
+        0.28216842562326105,
+        0.2732375560631581
+      ],
+      "phase_alignment_series": [
+        0.11512679873437466,
+        0.10241162760891787,
+        0.13085973845974802
+      ],
+      "coarse_summary": {
+        "t_final": 0.9842431895883714,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.24826388888888887,
+        "coarse_persistence_sigma2": 1.0,
+        "mean_envelope_variance_sigma2": 0.038961552960269506,
+        "basin_lifetime_sigma2": 1.4763647843825571,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma4": 0.004291243528942386,
+        "basin_lifetime_sigma4": 1.4763647843825571
+      }
+    },
+    {
+      "run": {
+        "run_id": "C01_adjacency_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "kernel_class_id": "pure_adjacency",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Pure adjacency kernel on phase-ordered symmetric triad."
+      },
+      "kernel_class": {
+        "kernel_class_id": "pure_adjacency",
+        "label": "Pure adjacency",
+        "definition": "W_ij = 1/sqrt(d_i d_j) for adjacent line-graph edges and 0 otherwise"
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920022,
+        "raw_lambda_max": 1.1999858531120313,
+        "scale_factor": 9.711752183325116,
+        "support_entries": 51840,
+        "sigma": 0.125,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C01_adjacency_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "kernel_class_id": "pure_adjacency",
+        "kernel_label": "Pure adjacency",
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.0,
+        "binding_persistence_score": 0.0,
+        "coarse_persistence_sigma4": 1.0,
+        "transport_span": 0.026282278324592782,
+        "corridor_dwell_time": 1.4763647843825571,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "final_mean_pair_distance": 0.3333333333660993,
+        "max_mean_overlap": 0.3031849981614765,
+        "phase_lock_indicator": 0.11461386489181202,
+        "constraint_max": 2.0228247686178265e-15,
+        "sector_leakage": 5.5236216373583976e-15,
+        "operator_lambda_max": 11.653965228920022,
+        "operator_scale_factor": 9.711752183325116,
+        "delta_vs_gaussian_composite_lifetime": 0.0,
+        "delta_vs_gaussian_binding_persistence": 0.0,
+        "delta_vs_gaussian_coarse_persistence": 0.0,
+        "interaction_changed_vs_gaussian": 0,
+        "coarse_changed_vs_gaussian": 0,
+        "notes": "Pure adjacency kernel on phase-ordered symmetric triad."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.3333333333333333,
+        0.33333333336980875,
+        0.3333333333660993
+      ],
+      "overlap_series": [
+        0.27771373515987224,
+        0.3031849981614765,
+        0.2956478989073746
+      ],
+      "phase_alignment_series": [
+        0.11512679873437466,
+        0.09984088909831818,
+        0.12887390684274325
+      ],
+      "coarse_summary": {
+        "t_final": 0.9842431895883714,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.24594907407407407,
+        "coarse_persistence_sigma2": 1.0,
+        "mean_envelope_variance_sigma2": 0.038266711693134614,
+        "basin_lifetime_sigma2": 1.4763647843825571,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma4": 0.004339441466204957,
+        "basin_lifetime_sigma4": 1.4763647843825571
+      }
+    },
+    {
+      "run": {
+        "run_id": "C01_shell_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "kernel_class_id": "graph_shell",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Graph-shell kernel on phase-ordered symmetric triad."
+      },
+      "kernel_class": {
+        "kernel_class_id": "graph_shell",
+        "label": "Graph-shell",
+        "definition": "W_ij = a,b,c by line-graph shell distance 1,2,3 and 0 beyond shell 3"
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920024,
+        "raw_lambda_max": 62.4710252639959,
+        "scale_factor": 0.18654992742109813,
+        "support_entries": 839808,
+        "sigma": 0.125,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C01_shell_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "kernel_class_id": "graph_shell",
+        "kernel_label": "Graph-shell",
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.0,
+        "binding_persistence_score": 0.0,
+        "coarse_persistence_sigma4": 1.0,
+        "transport_span": 0.1304799213686561,
+        "corridor_dwell_time": 1.4763647843825571,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "final_mean_pair_distance": 0.3333333333364609,
+        "max_mean_overlap": 0.28515254885413477,
+        "phase_lock_indicator": 0.11646104957640806,
+        "constraint_max": 2.0228247686178265e-15,
+        "sector_leakage": 5.5236216373583976e-15,
+        "operator_lambda_max": 11.653965228920024,
+        "operator_scale_factor": 0.18654992742109813,
+        "delta_vs_gaussian_composite_lifetime": 0.0,
+        "delta_vs_gaussian_binding_persistence": 0.0,
+        "delta_vs_gaussian_coarse_persistence": 0.0,
+        "interaction_changed_vs_gaussian": 0,
+        "coarse_changed_vs_gaussian": 0,
+        "notes": "Graph-shell kernel on phase-ordered symmetric triad."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.3333333333333333,
+        0.3333333333603569,
+        0.3333333333364609
+      ],
+      "overlap_series": [
+        0.27771373515987224,
+        0.28515254885413477,
+        0.27287612595352934
+      ],
+      "phase_alignment_series": [
+        0.11512679873437466,
+        0.10243399964044965,
+        0.13182235035439985
+      ],
+      "coarse_summary": {
+        "t_final": 0.9842431895883714,
+        "mean_basin_count_sigma2": 1.0,
+        "mean_dominant_area_fraction_sigma2": 0.24845679012345678,
+        "coarse_persistence_sigma2": 1.0,
+        "mean_envelope_variance_sigma2": 0.039041918354782164,
+        "basin_lifetime_sigma2": 1.4763647843825571,
+        "mean_basin_count_sigma4": 1.0,
+        "mean_dominant_area_fraction_sigma4": 1.0,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_envelope_variance_sigma4": 0.004298438788777609,
+        "basin_lifetime_sigma4": 1.4763647843825571
+      }
+    }
+  ],
+  "interaction_label_counts": {
+    "metastable composite regime": 3,
+    "transient binding regime": 6
+  },
+  "coarse_label_counts": {
+    "diffuse coarse field regime": 9
+  },
+  "observation": "all non-Gaussian kernels preserve the Gaussian interaction and coarse-field classes on the projected-transverse edge-graph control branch",
+  "conclusion": "the primary persistence observables in this explicit control branch survive removal of coordinate-distance weighting, although secondary transport texture can still shift"
+}

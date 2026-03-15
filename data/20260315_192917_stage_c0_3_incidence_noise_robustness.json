@@ -1,0 +1,1894 @@
+{
+  "stage": "C0.3_topology_exchange_robustness_under_incidence_noise",
+  "description": "Nine-run incidence-noise robustness scan on the no-distance combinatorial graph-shell branch. The packet update rule and graph-shell kernel are frozen while the line-graph incidence structure is perturbed by controlled rewiring and delete-insert operators.",
+  "architecture_notice": "This branch varies only the combinatorial incidence structure of the explicit edge-graph control operator. Packet initialization, projected-transverse state sector, graph size, and shell-weight kernel family remain frozen.",
+  "baseline_notice": "The current C0.1-C0.2 combinatorial branch does not yet contain a clean braid_like_exchange baseline. C0.3 therefore anchors to the nearest exchange-like protected surrogate, counter_propagating_corridor, and treats braid detection as an allowed outcome rather than an assumed starting point.",
+  "kernel_mode_family": {
+    "kernel_class_id": "graph_shell",
+    "label": "graph-shell",
+    "definition": "W_ij depends only on graph-shell distance 1,2,3 on the perturbed edge-incidence graph, with no coordinate distance and no Gaussian embedding."
+  },
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family as C0.1-C0.2"
+  },
+  "parameter_policy": {
+    "max_shell": 3,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "match_lambda_to_frozen_L1": true,
+    "random_seed": 3303,
+    "min_degree_floor": 3,
+    "active_threshold_sigma": 1.0,
+    "baseline_flow_tolerance": 5.0,
+    "baseline_coherence_tolerance": 0.04,
+    "braid_transport_floor": 0.08,
+    "ultra_weak_rewire_ops": 16,
+    "weak_rewire_ops": 48,
+    "moderate_rewire_ops": 144,
+    "moderate_delete_insert_ops": 96,
+    "cluster_patch_ops": 96,
+    "localized_defect_ops": 72,
+    "degree_biased_ops": 120,
+    "connectivity_stress_ops": 96,
+    "patch_radius": 2,
+    "localized_radius": 1
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "C03_baseline_no_noise",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "baseline_no_noise",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "No-noise corridor control."
+      },
+      "perturbation": {
+        "perturbation_id": "baseline_no_noise",
+        "label": "Baseline no-noise",
+        "mode": "baseline",
+        "notes": "Unperturbed incidence graph control."
+      },
+      "perturbation_summary": {
+        "mutation_completed": 0,
+        "mutation_attempts": 0,
+        "touched_node_fraction": 0.0,
+        "edge_change_fraction": 0.0,
+        "seed_nodes": [],
+        "connectivity_ok": 1,
+        "mutation_log_excerpt": []
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920024,
+        "raw_lambda_max": 62.4710252639959,
+        "scale_factor": 0.18654992742109813,
+        "support_entries": 839808,
+        "degree_mean": 10.0,
+        "degree_std": 0.0,
+        "mean_clustering": 0.44444444444444464
+      },
+      "summary": {
+        "run_id": "C03_baseline_no_noise",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "baseline_no_noise",
+        "perturbation_label": "Baseline no-noise",
+        "topology_class": "smeared_transfer",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 46.14307883826136,
+        "exchange_coherence": 0.21580872012150232,
+        "transport_span": 0.0,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.0,
+        "clustering_coefficient_shift": 0.0,
+        "mean_degree": 10.0,
+        "degree_std": 0.0,
+        "max_mean_overlap": 0.33292704384289,
+        "phase_lock_indicator": 0.09869039640011461,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "mutation_completed": 0,
+        "mutation_attempts": 0,
+        "touched_node_fraction": 0.0,
+        "edge_change_fraction": 0.0,
+        "delta_vs_baseline_concentration": 0.0,
+        "delta_vs_baseline_coherence": 0.0,
+        "delta_vs_baseline_transport_span": 0.0,
+        "notes": "No-noise corridor control."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.338668419459408,
+        0.2885415195855207
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.2861776540763221,
+        0.33292704384289
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.05831100663067285,
+        0.12577161969220993
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.006566628301020195,
+        0.009816154349353729
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C03_ultra_weak_rewiring",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "ultra_weak_rewiring",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Ultra-weak random rewiring."
+      },
+      "perturbation": {
+        "perturbation_id": "ultra_weak_rewiring",
+        "label": "Ultra-weak rewiring",
+        "mode": "endpoint_rewire",
+        "notes": "Very small random endpoint rewiring at fixed edge count."
+      },
+      "perturbation_summary": {
+        "mutation_completed": 16,
+        "mutation_attempts": 16,
+        "touched_node_fraction": 0.009259259259259259,
+        "edge_change_fraction": 0.0012345679012345679,
+        "seed_nodes": [],
+        "connectivity_ok": 1,
+        "mutation_log_excerpt": [
+          {
+            "kind": "endpoint_rewire",
+            "u": 266,
+            "v": 263,
+            "w": 1708
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 397,
+            "v": 361,
+            "w": 620
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 116,
+            "v": 79,
+            "w": 527
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 393,
+            "v": 827,
+            "w": 4198
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 2742,
+            "v": 3139,
+            "w": 396
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 1772,
+            "v": 1341,
+            "w": 5158
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3678,
+            "v": 3677,
+            "w": 4987
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 4617,
+            "v": 4185,
+            "w": 1930
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 1977,
+            "v": 1545,
+            "w": 1388
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 1165,
+            "v": 1200,
+            "w": 2183
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 5112,
+            "v": 5113,
+            "w": 2753
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 498,
+            "v": 499,
+            "w": 905
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 82,
+            "v": 4833,
+            "w": 2122
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 4718,
+            "v": 4287,
+            "w": 978
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3410,
+            "v": 3376,
+            "w": 2752
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 2834,
+            "v": 2797,
+            "w": 4703
+          }
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920013,
+        "raw_lambda_max": 79.22105533531803,
+        "scale_factor": 0.1471069172152835,
+        "support_entries": 845678,
+        "degree_mean": 10.0,
+        "degree_std": 0.07856742013183861,
+        "mean_clustering": 0.443647119341564
+      },
+      "summary": {
+        "run_id": "C03_ultra_weak_rewiring",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "ultra_weak_rewiring",
+        "perturbation_label": "Ultra-weak rewiring",
+        "topology_class": "smeared_transfer",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 42.997122648475354,
+        "exchange_coherence": 0.23301039404847668,
+        "transport_span": 0.006749726580225221,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.07856742013183862,
+        "clustering_coefficient_shift": -0.0007973251028806638,
+        "mean_degree": 10.0,
+        "degree_std": 0.07856742013183861,
+        "max_mean_overlap": 0.34581639742974146,
+        "phase_lock_indicator": 0.12020439066721189,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "mutation_completed": 16,
+        "mutation_attempts": 16,
+        "touched_node_fraction": 0.009259259259259259,
+        "edge_change_fraction": 0.0012345679012345679,
+        "delta_vs_baseline_concentration": -3.1459561897860056,
+        "delta_vs_baseline_coherence": 0.01720167392697436,
+        "delta_vs_baseline_transport_span": 0.006749726580225221,
+        "notes": "Ultra-weak random rewiring."
+      },
+      "times": [
+        0.0,
+        0.6561621263922478,
+        0.9842431895883716
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.31832024181959745,
+        0.31166487897594236
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.34581639742974146,
+        0.30598480306904147
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.1650092056970306,
+        0.08361540342714403
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.005233735981816134,
+        0.009550654004831505
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C03_weak_rewiring",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "weak_rewiring",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Weak random rewiring."
+      },
+      "perturbation": {
+        "perturbation_id": "weak_rewiring",
+        "label": "Weak rewiring",
+        "mode": "endpoint_rewire",
+        "notes": "Weak random endpoint rewiring at fixed edge count."
+      },
+      "perturbation_summary": {
+        "mutation_completed": 48,
+        "mutation_attempts": 48,
+        "touched_node_fraction": 0.027584876543209878,
+        "edge_change_fraction": 0.003703703703703704,
+        "seed_nodes": [],
+        "connectivity_ok": 1,
+        "mutation_log_excerpt": [
+          {
+            "kind": "endpoint_rewire",
+            "u": 5017,
+            "v": 5053,
+            "w": 337
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3885,
+            "v": 4317,
+            "w": 247
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 4202,
+            "v": 4205,
+            "w": 3290
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 1049,
+            "v": 1050,
+            "w": 1850
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 396,
+            "v": 398,
+            "w": 1632
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 1312,
+            "v": 1313,
+            "w": 1679
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 358,
+            "v": 5109,
+            "w": 2017
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 1712,
+            "v": 1675,
+            "w": 2772
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 2189,
+            "v": 2192,
+            "w": 148
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 1132,
+            "v": 735,
+            "w": 4746
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3837,
+            "v": 3802,
+            "w": 2657
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 4522,
+            "v": 4523,
+            "w": 4169
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 4811,
+            "v": 4814,
+            "w": 4413
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 384,
+            "v": 383,
+            "w": 4573
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 40,
+            "v": 4827,
+            "w": 2574
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 5147,
+            "v": 4713,
+            "w": 1038
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 5011,
+            "v": 5047,
+            "w": 2792
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3292,
+            "v": 3326,
+            "w": 1059
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 984,
+            "v": 1417,
+            "w": 3109
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3815,
+            "v": 3778,
+            "w": 1369
+          }
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920006,
+        "raw_lambda_max": 91.75867157992138,
+        "scale_factor": 0.12700669079291838,
+        "support_entries": 857078,
+        "degree_mean": 10.0,
+        "degree_std": 0.13608276348795434,
+        "mean_clustering": 0.4420668880159621
+      },
+      "summary": {
+        "run_id": "C03_weak_rewiring",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "weak_rewiring",
+        "perturbation_label": "Weak rewiring",
+        "topology_class": "smeared_transfer",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 40.61091660626288,
+        "exchange_coherence": 0.25599863419627267,
+        "transport_span": 0.005059998129717131,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.13608276348795434,
+        "clustering_coefficient_shift": -0.00237755642848253,
+        "mean_degree": 10.0,
+        "degree_std": 0.13608276348795434,
+        "max_mean_overlap": 0.38135025082219365,
+        "phase_lock_indicator": 0.13064701757035163,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "mutation_completed": 48,
+        "mutation_attempts": 48,
+        "touched_node_fraction": 0.027584876543209878,
+        "edge_change_fraction": 0.003703703703703704,
+        "delta_vs_baseline_concentration": -5.532162231998477,
+        "delta_vs_baseline_coherence": 0.04018991407477035,
+        "delta_vs_baseline_transport_span": 0.005059998129717131,
+        "notes": "Weak random rewiring."
+      },
+      "times": [
+        0.0,
+        0.656162126392248,
+        0.9842431895883721
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.2895874744067749,
+        0.3213464324322164
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.38135025082219365,
+        0.2955483953818712
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.22129412526764233,
+        0.058658364565951464
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.005676366248602713,
+        0.009083468912738993
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C03_moderate_rewiring",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "moderate_rewiring",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Moderate random rewiring."
+      },
+      "perturbation": {
+        "perturbation_id": "moderate_rewiring",
+        "label": "Moderate rewiring",
+        "mode": "endpoint_rewire",
+        "notes": "Moderate random endpoint rewiring at fixed edge count."
+      },
+      "perturbation_summary": {
+        "mutation_completed": 144,
+        "mutation_attempts": 144,
+        "touched_node_fraction": 0.08024691358024691,
+        "edge_change_fraction": 0.01103395061728395,
+        "seed_nodes": [],
+        "connectivity_ok": 1,
+        "mutation_log_excerpt": [
+          {
+            "kind": "endpoint_rewire",
+            "u": 744,
+            "v": 1176,
+            "w": 858
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3098,
+            "v": 3064,
+            "w": 1471
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 1708,
+            "v": 1311,
+            "w": 200
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 985,
+            "v": 986,
+            "w": 3864
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 2803,
+            "v": 2801,
+            "w": 2648
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 1609,
+            "v": 1646,
+            "w": 3681
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 2092,
+            "v": 2056,
+            "w": 2677
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 2687,
+            "v": 2688,
+            "w": 2928
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3223,
+            "v": 3222,
+            "w": 2926
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 4345,
+            "v": 4741,
+            "w": 912
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3750,
+            "v": 4182,
+            "w": 829
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 4945,
+            "v": 4946,
+            "w": 3417
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 4167,
+            "v": 3735,
+            "w": 639
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 2412,
+            "v": 2844,
+            "w": 4147
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3555,
+            "v": 3952,
+            "w": 489
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3581,
+            "v": 3150,
+            "w": 3065
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 337,
+            "v": 373,
+            "w": 811
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 3164,
+            "v": 3163,
+            "w": 2661
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 425,
+            "v": 388,
+            "w": 3285
+          },
+          {
+            "kind": "endpoint_rewire",
+            "u": 952,
+            "v": 953,
+            "w": 1393
+          }
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920008,
+        "raw_lambda_max": 95.80548066690291,
+        "scale_factor": 0.12164194728523518,
+        "support_entries": 891388,
+        "degree_mean": 10.0,
+        "degree_std": 0.23570226039551584,
+        "mean_clustering": 0.4373805431965155
+      },
+      "summary": {
+        "run_id": "C03_moderate_rewiring",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "moderate_rewiring",
+        "perturbation_label": "Moderate rewiring",
+        "topology_class": "smeared_transfer",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 40.16262493717135,
+        "exchange_coherence": 0.2528232493002379,
+        "transport_span": 0.006145973449024237,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.2357022603955158,
+        "clustering_coefficient_shift": -0.007063901247929161,
+        "mean_degree": 10.0,
+        "degree_std": 0.23570226039551584,
+        "max_mean_overlap": 0.3769242807620765,
+        "phase_lock_indicator": 0.12872221783839932,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "mutation_completed": 144,
+        "mutation_attempts": 144,
+        "touched_node_fraction": 0.08024691358024691,
+        "edge_change_fraction": 0.01103395061728395,
+        "delta_vs_baseline_concentration": -5.980453901090009,
+        "delta_vs_baseline_coherence": 0.0370145291787356,
+        "delta_vs_baseline_transport_span": 0.006145973449024237,
+        "notes": "Moderate random rewiring."
+      },
+      "times": [
+        0.0,
+        0.656162126392248,
+        0.9842431895883721
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.2852397243377692,
+        0.32622019250985307
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.3769242807620765,
+        0.288688354809688
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.22228241047756342,
+        0.05189568016017349
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.005980655276272321,
+        0.009062641032240767
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C03_moderate_delete_insert",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "moderate_deletion_insertion",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Moderate delete plus insert perturbation."
+      },
+      "perturbation": {
+        "perturbation_id": "moderate_deletion_insertion",
+        "label": "Moderate deletion-insertion",
+        "mode": "delete_insert",
+        "notes": "Moderate delete plus insert perturbation at fixed edge count."
+      },
+      "perturbation_summary": {
+        "mutation_completed": 96,
+        "mutation_attempts": 96,
+        "touched_node_fraction": 0.07214506172839506,
+        "edge_change_fraction": 0.007407407407407408,
+        "seed_nodes": [],
+        "connectivity_ok": 1,
+        "mutation_log_excerpt": [
+          {
+            "kind": "delete_insert",
+            "u": 1005,
+            "v": 573,
+            "a": 4711,
+            "b": 2187
+          },
+          {
+            "kind": "delete_insert",
+            "u": 3859,
+            "v": 3463,
+            "a": 3411,
+            "b": 216
+          },
+          {
+            "kind": "delete_insert",
+            "u": 1910,
+            "v": 1476,
+            "a": 4239,
+            "b": 2129
+          },
+          {
+            "kind": "delete_insert",
+            "u": 3324,
+            "v": 3323,
+            "a": 1574,
+            "b": 4993
+          },
+          {
+            "kind": "delete_insert",
+            "u": 280,
+            "v": 314,
+            "a": 4708,
+            "b": 4265
+          },
+          {
+            "kind": "delete_insert",
+            "u": 1001,
+            "v": 998,
+            "a": 2830,
+            "b": 2078
+          },
+          {
+            "kind": "delete_insert",
+            "u": 1786,
+            "v": 1785,
+            "a": 4976,
+            "b": 4352
+          },
+          {
+            "kind": "delete_insert",
+            "u": 2213,
+            "v": 2216,
+            "a": 3178,
+            "b": 1596
+          },
+          {
+            "kind": "delete_insert",
+            "u": 575,
+            "v": 141,
+            "a": 4248,
+            "b": 3600
+          },
+          {
+            "kind": "delete_insert",
+            "u": 2790,
+            "v": 3187,
+            "a": 3145,
+            "b": 870
+          },
+          {
+            "kind": "delete_insert",
+            "u": 2805,
+            "v": 2807,
+            "a": 1161,
+            "b": 4192
+          },
+          {
+            "kind": "delete_insert",
+            "u": 1611,
+            "v": 2044,
+            "a": 5083,
+            "b": 628
+          },
+          {
+            "kind": "delete_insert",
+            "u": 3985,
+            "v": 3983,
+            "a": 3097,
+            "b": 1
+          },
+          {
+            "kind": "delete_insert",
+            "u": 3020,
+            "v": 3019,
+            "a": 3536,
+            "b": 1200
+          },
+          {
+            "kind": "delete_insert",
+            "u": 4481,
+            "v": 4480,
+            "a": 4857,
+            "b": 3092
+          },
+          {
+            "kind": "delete_insert",
+            "u": 3510,
+            "v": 3509,
+            "a": 3765,
+            "b": 2533
+          },
+          {
+            "kind": "delete_insert",
+            "u": 4797,
+            "v": 10,
+            "a": 3713,
+            "b": 2825
+          },
+          {
+            "kind": "delete_insert",
+            "u": 2329,
+            "v": 2364,
+            "a": 3623,
+            "b": 2416
+          },
+          {
+            "kind": "delete_insert",
+            "u": 2025,
+            "v": 2456,
+            "a": 3913,
+            "b": 2102
+          },
+          {
+            "kind": "delete_insert",
+            "u": 990,
+            "v": 1423,
+            "a": 794,
+            "b": 1269
+          }
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.65396522892003,
+        "raw_lambda_max": 95.48836457115999,
+        "scale_factor": 0.12204591922019185,
+        "support_entries": 877752,
+        "degree_mean": 10.0,
+        "degree_std": 0.2721655269759087,
+        "mean_clustering": 0.43981385448399346
+      },
+      "summary": {
+        "run_id": "C03_moderate_delete_insert",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "moderate_deletion_insertion",
+        "perturbation_label": "Moderate deletion-insertion",
+        "topology_class": "smeared_transfer",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 40.73800054616819,
+        "exchange_coherence": 0.24487991394182906,
+        "transport_span": 0.007775210509152038,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.2721655269759087,
+        "clustering_coefficient_shift": -0.004630589960451181,
+        "mean_degree": 10.0,
+        "degree_std": 0.2721655269759087,
+        "max_mean_overlap": 0.36372442289629486,
+        "phase_lock_indicator": 0.12603540498736324,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "mutation_completed": 96,
+        "mutation_attempts": 96,
+        "touched_node_fraction": 0.07214506172839506,
+        "edge_change_fraction": 0.007407407407407408,
+        "delta_vs_baseline_concentration": -5.405078292093172,
+        "delta_vs_baseline_coherence": 0.029071193820326746,
+        "delta_vs_baseline_transport_span": 0.007775210509152038,
+        "notes": "Moderate delete plus insert perturbation."
+      },
+      "times": [
+        0.0,
+        0.6561621263922474,
+        0.984243189588371
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.2889847016863681,
+        0.32695998013810934
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.36372442289629486,
+        0.2868791022974217
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.20754198548100117,
+        0.05857566660362743
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.005763755524484746,
+        0.00922432644032022
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C03_clustered_patch",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "clustered_rewiring_patch",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Localized patch rewiring."
+      },
+      "perturbation": {
+        "perturbation_id": "clustered_rewiring_patch",
+        "label": "Clustered rewiring patch",
+        "mode": "patch_rewire",
+        "notes": "Localized rewiring inside a BFS patch on the incidence graph."
+      },
+      "perturbation_summary": {
+        "mutation_completed": 96,
+        "mutation_attempts": 96,
+        "touched_node_fraction": 0.015625,
+        "edge_change_fraction": 0.006172839506172839,
+        "seed_nodes": [
+          1040
+        ],
+        "connectivity_ok": 1,
+        "mutation_log_excerpt": [
+          {
+            "kind": "patch_rewire",
+            "u": 576,
+            "v": 144,
+            "w": 1079
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1471,
+            "v": 1470,
+            "w": 1438
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1077,
+            "v": 1511,
+            "w": 606
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1438,
+            "v": 1402,
+            "w": 1010
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1438,
+            "v": 1475,
+            "w": 606
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 642,
+            "v": 1075,
+            "w": 1002
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 611,
+            "v": 144,
+            "w": 603
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1042,
+            "v": 1079,
+            "w": 607
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1475,
+            "v": 1474,
+            "w": 1438
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1041,
+            "v": 1472,
+            "w": 574
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1041,
+            "v": 1475,
+            "w": 1034
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1473,
+            "v": 1870,
+            "w": 1043
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 174,
+            "v": 607,
+            "w": 1005
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1042,
+            "v": 1077,
+            "w": 1004
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 576,
+            "v": 1010,
+            "w": 1007
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 610,
+            "v": 213,
+            "w": 1435
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1469,
+            "v": 1470,
+            "w": 174
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1471,
+            "v": 1438,
+            "w": 1075
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 1438,
+            "v": 1437,
+            "w": 1042
+          },
+          {
+            "kind": "patch_rewire",
+            "u": 603,
+            "v": 171,
+            "w": 1010
+          }
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228919999,
+        "raw_lambda_max": 94.72774963284064,
+        "scale_factor": 0.1230258849607441,
+        "support_entries": 845042,
+        "degree_mean": 10.0,
+        "degree_std": 0.18108895570007358,
+        "mean_clustering": 0.44179309630698527
+      },
+      "summary": {
+        "run_id": "C03_clustered_patch",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "clustered_rewiring_patch",
+        "perturbation_label": "Clustered rewiring patch",
+        "topology_class": "smeared_transfer",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 39.26778985942059,
+        "exchange_coherence": 0.25294706324392935,
+        "transport_span": 0.0005773462454392624,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.18108895570007358,
+        "clustering_coefficient_shift": -0.002651348137459375,
+        "mean_degree": 10.0,
+        "degree_std": 0.18108895570007358,
+        "max_mean_overlap": 0.3812768644314223,
+        "phase_lock_indicator": 0.12461726205643636,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "mutation_completed": 96,
+        "mutation_attempts": 96,
+        "touched_node_fraction": 0.015625,
+        "edge_change_fraction": 0.006172839506172839,
+        "delta_vs_baseline_concentration": -6.875288978840771,
+        "delta_vs_baseline_coherence": 0.03713834312242703,
+        "delta_vs_baseline_transport_span": 0.0005773462454392624,
+        "notes": "Localized patch rewiring."
+      },
+      "times": [
+        0.0,
+        0.6561621263922482,
+        0.9842431895883723
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.2724300277586582,
+        0.3280618960101971
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.3812768644314223,
+        0.28718574947348385
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.22750620133393312,
+        0.03435702195791491
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.005890713201441569,
+        0.008877242436996008
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C03_localized_defect_pair",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "random_localized_defect_pair",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Random localized defect-pair perturbation."
+      },
+      "perturbation": {
+        "perturbation_id": "random_localized_defect_pair",
+        "label": "Random localized defect pair",
+        "mode": "localized_defect_pair",
+        "notes": "Two localized defect neighborhoods perturbed without disconnecting the graph."
+      },
+      "perturbation_summary": {
+        "mutation_completed": 72,
+        "mutation_attempts": 72,
+        "touched_node_fraction": 0.009259259259259259,
+        "edge_change_fraction": 0.003780864197530864,
+        "seed_nodes": [
+          269,
+          4750
+        ],
+        "connectivity_ok": 1,
+        "mutation_log_excerpt": [
+          {
+            "kind": "localized_defect",
+            "u": 5019,
+            "v": 4587,
+            "a": 5019,
+            "b": 5022
+          },
+          {
+            "kind": "localized_defect",
+            "u": 5022,
+            "v": 5021,
+            "a": 267,
+            "b": 272
+          },
+          {
+            "kind": "localized_defect",
+            "u": 269,
+            "v": 272,
+            "a": 5022,
+            "b": 4355
+          },
+          {
+            "kind": "localized_defect",
+            "u": 4317,
+            "v": 4316,
+            "a": 4352,
+            "b": 4749
+          },
+          {
+            "kind": "localized_defect",
+            "u": 4749,
+            "v": 4714,
+            "a": 3921,
+            "b": 232
+          },
+          {
+            "kind": "localized_defect",
+            "u": 267,
+            "v": 5019,
+            "a": 4353,
+            "b": 5022
+          },
+          {
+            "kind": "localized_defect",
+            "u": 4750,
+            "v": 4749,
+            "a": 267,
+            "b": 4353
+          },
+          {
+            "kind": "localized_defect",
+            "u": 269,
+            "v": 267,
+            "a": 4748,
+            "b": 272
+          },
+          {
+            "kind": "localized_defect",
+            "u": 232,
+            "v": 230,
+            "a": 4355,
+            "b": 267
+          },
+          {
+            "kind": "localized_defect",
+            "u": 5019,
+            "v": 266,
+            "a": 4714,
+            "b": 271
+          },
+          {
+            "kind": "localized_defect",
+            "u": 4714,
+            "v": 4317,
+            "a": 5019,
+            "b": 4714
+          },
+          {
+            "kind": "localized_defect",
+            "u": 271,
+            "v": 308,
+            "a": 235,
+            "b": 4353
+          },
+          {
+            "kind": "localized_defect",
+            "u": 267,
+            "v": 699,
+            "a": 4353,
+            "b": 4749
+          },
+          {
+            "kind": "localized_defect",
+            "u": 5022,
+            "v": 235,
+            "a": 4750,
+            "b": 271
+          },
+          {
+            "kind": "localized_defect",
+            "u": 270,
+            "v": 5022,
+            "a": 5019,
+            "b": 4353
+          },
+          {
+            "kind": "localized_defect",
+            "u": 4352,
+            "v": 4750,
+            "a": 270,
+            "b": 4750
+          },
+          {
+            "kind": "localized_defect",
+            "u": 4352,
+            "v": 4747,
+            "a": 268,
+            "b": 4750
+          },
+          {
+            "kind": "localized_defect",
+            "u": 4714,
+            "v": 5019,
+            "a": 4749,
+            "b": 271
+          },
+          {
+            "kind": "localized_defect",
+            "u": 4317,
+            "v": 4749,
+            "a": 235,
+            "b": 4317
+          },
+          {
+            "kind": "localized_defect",
+            "u": 4750,
+            "v": 268,
+            "a": 4751,
+            "b": 5019
+          }
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920006,
+        "raw_lambda_max": 106.00127093555227,
+        "scale_factor": 0.10994175000038932,
+        "support_entries": 843742,
+        "degree_mean": 10.0,
+        "degree_std": 0.20971762320196527,
+        "mean_clustering": 0.44344855675874206
+      },
+      "summary": {
+        "run_id": "C03_localized_defect_pair",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "random_localized_defect_pair",
+        "perturbation_label": "Random localized defect pair",
+        "topology_class": "smeared_transfer",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 37.14181423142336,
+        "exchange_coherence": 0.24432642076182606,
+        "transport_span": 0.00031384957589161065,
+        "channel_count": 11,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.20971762320196527,
+        "clustering_coefficient_shift": -0.000995887685702579,
+        "mean_degree": 10.0,
+        "degree_std": 0.20971762320196527,
+        "max_mean_overlap": 0.37304370192904196,
+        "phase_lock_indicator": 0.11560913959461015,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "mutation_completed": 72,
+        "mutation_attempts": 72,
+        "touched_node_fraction": 0.009259259259259259,
+        "edge_change_fraction": 0.003780864197530864,
+        "delta_vs_baseline_concentration": -9.001264606838,
+        "delta_vs_baseline_coherence": 0.028517700640323745,
+        "delta_vs_baseline_transport_span": 0.00031384957589161065,
+        "notes": "Random localized defect-pair perturbation."
+      },
+      "times": [
+        0.0,
+        0.656162126392248,
+        0.9842431895883721
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.2435903013919235,
+        0.3374346078188033
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.37304370192904196,
+        0.27525951905336243
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.23123146774890588,
+        0.0036073881574634568
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.006965208758810926,
+        0.008322353612535898
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C03_degree_biased",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "degree_biased_perturbation",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Degree-biased incidence perturbation."
+      },
+      "perturbation": {
+        "perturbation_id": "degree_biased_perturbation",
+        "label": "Degree-biased perturbation",
+        "mode": "degree_biased",
+        "notes": "Incidence rewiring biased toward high-degree targets."
+      },
+      "perturbation_summary": {
+        "mutation_completed": 120,
+        "mutation_attempts": 120,
+        "touched_node_fraction": 0.06770833333333333,
+        "edge_change_fraction": 0.009259259259259259,
+        "seed_nodes": [],
+        "connectivity_ok": 1,
+        "mutation_log_excerpt": [
+          {
+            "kind": "degree_biased",
+            "u": 2590,
+            "v": 1761,
+            "w": 4968
+          },
+          {
+            "kind": "degree_biased",
+            "u": 2295,
+            "v": 2729,
+            "w": 909
+          },
+          {
+            "kind": "degree_biased",
+            "u": 2092,
+            "v": 2126,
+            "w": 4545
+          },
+          {
+            "kind": "degree_biased",
+            "u": 3308,
+            "v": 3271,
+            "w": 147
+          },
+          {
+            "kind": "degree_biased",
+            "u": 1869,
+            "v": 2303,
+            "w": 972
+          },
+          {
+            "kind": "degree_biased",
+            "u": 1453,
+            "v": 1417,
+            "w": 2308
+          },
+          {
+            "kind": "degree_biased",
+            "u": 1829,
+            "v": 1827,
+            "w": 1957
+          },
+          {
+            "kind": "degree_biased",
+            "u": 3779,
+            "v": 3777,
+            "w": 4584
+          },
+          {
+            "kind": "degree_biased",
+            "u": 3772,
+            "v": 3809,
+            "w": 4194
+          },
+          {
+            "kind": "degree_biased",
+            "u": 4282,
+            "v": 4246,
+            "w": 4921
+          },
+          {
+            "kind": "degree_biased",
+            "u": 4785,
+            "v": 4787,
+            "w": 2313
+          },
+          {
+            "kind": "degree_biased",
+            "u": 4235,
+            "v": 3801,
+            "w": 3041
+          },
+          {
+            "kind": "degree_biased",
+            "u": 570,
+            "v": 572,
+            "w": 4002
+          },
+          {
+            "kind": "degree_biased",
+            "u": 1993,
+            "v": 1560,
+            "w": 1789
+          },
+          {
+            "kind": "degree_biased",
+            "u": 2719,
+            "v": 2717,
+            "w": 4761
+          },
+          {
+            "kind": "degree_biased",
+            "u": 5150,
+            "v": 4719,
+            "w": 2642
+          },
+          {
+            "kind": "degree_biased",
+            "u": 2545,
+            "v": 2543,
+            "w": 2562
+          },
+          {
+            "kind": "degree_biased",
+            "u": 4661,
+            "v": 4663,
+            "w": 897
+          },
+          {
+            "kind": "degree_biased",
+            "u": 1455,
+            "v": 1456,
+            "w": 4818
+          },
+          {
+            "kind": "degree_biased",
+            "u": 1948,
+            "v": 1985,
+            "w": 1229
+          }
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920013,
+        "raw_lambda_max": 102.23058372770984,
+        "scale_factor": 0.11399685694801709,
+        "support_entries": 883002,
+        "degree_mean": 10.0,
+        "degree_std": 0.2178387102966406,
+        "mean_clustering": 0.438536085613632
+      },
+      "summary": {
+        "run_id": "C03_degree_biased",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "degree_biased_perturbation",
+        "perturbation_label": "Degree-biased perturbation",
+        "topology_class": "smeared_transfer",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 40.154836860190706,
+        "exchange_coherence": 0.24497964306113199,
+        "transport_span": 0.0031324017229408243,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.2178387102966406,
+        "clustering_coefficient_shift": -0.005908358830812643,
+        "mean_degree": 10.0,
+        "degree_std": 0.2178387102966406,
+        "max_mean_overlap": 0.36526468127231704,
+        "phase_lock_indicator": 0.12469460484994695,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "mutation_completed": 120,
+        "mutation_attempts": 120,
+        "touched_node_fraction": 0.06770833333333333,
+        "edge_change_fraction": 0.009259259259259259,
+        "delta_vs_baseline_concentration": -5.988241978070654,
+        "delta_vs_baseline_coherence": 0.029170922939629668,
+        "delta_vs_baseline_transport_span": 0.0031324017229408243,
+        "notes": "Degree-biased incidence perturbation."
+      },
+      "times": [
+        0.0,
+        0.6561621263922478,
+        0.9842431895883716
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.26631924968105175,
+        0.33495413370800564
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.36526468127231704,
+        0.27768389720727543
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.22585102357985923,
+        0.036244228092520606
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.0062462133872285795,
+        0.009353156278608804
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C03_connectivity_stress",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "connectivity_edge_stress_test",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Connectivity-edge stress test."
+      },
+      "perturbation": {
+        "perturbation_id": "connectivity_edge_stress_test",
+        "label": "Connectivity-edge stress test",
+        "mode": "connectivity_stress",
+        "notes": "Perturb edges with low shared-neighbor support while preserving connectedness."
+      },
+      "perturbation_summary": {
+        "mutation_completed": 96,
+        "mutation_attempts": 96,
+        "touched_node_fraction": 0.01890432098765432,
+        "edge_change_fraction": 7.716049382716049e-05,
+        "seed_nodes": [],
+        "connectivity_ok": 1,
+        "mutation_log_excerpt": [
+          {
+            "kind": "connectivity_stress",
+            "u": 2582,
+            "v": 2583,
+            "w": 3825
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 2582,
+            "v": 3825,
+            "w": 1052
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 1052,
+            "v": 2582,
+            "w": 268
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 1052,
+            "w": 2461
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 2461,
+            "w": 3893
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 3893,
+            "w": 2736
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 2736,
+            "w": 4455
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 4455,
+            "w": 2514
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 2514,
+            "w": 3730
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 3730,
+            "w": 1988
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 1988,
+            "w": 4377
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 4377,
+            "w": 1183
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 1183,
+            "w": 564
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 564,
+            "w": 4992
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 4992,
+            "w": 2940
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 2940,
+            "w": 3335
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 3335,
+            "w": 4916
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 4916,
+            "w": 2413
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 2413,
+            "w": 3271
+          },
+          {
+            "kind": "connectivity_stress",
+            "u": 268,
+            "v": 3271,
+            "w": 4451
+          }
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.65396522892003,
+        "raw_lambda_max": 78.30756741008955,
+        "scale_factor": 0.1488229760463542,
+        "support_entries": 840218,
+        "degree_mean": 10.0,
+        "degree_std": 0.027777777777777776,
+        "mean_clustering": 0.4443961217109367
+      },
+      "summary": {
+        "run_id": "C03_connectivity_stress",
+        "representative_id": "counter_propagating_corridor",
+        "perturbation_id": "connectivity_edge_stress_test",
+        "perturbation_label": "Connectivity-edge stress test",
+        "topology_class": "smeared_transfer",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 42.885086676156774,
+        "exchange_coherence": 0.23504418262947915,
+        "transport_span": 0.00011589920791576384,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.027777777777777776,
+        "clustering_coefficient_shift": -4.832273350796612e-05,
+        "mean_degree": 10.0,
+        "degree_std": 0.027777777777777776,
+        "max_mean_overlap": 0.3487163110633726,
+        "phase_lock_indicator": 0.12137205419558572,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "mutation_completed": 96,
+        "mutation_attempts": 96,
+        "touched_node_fraction": 0.01890432098765432,
+        "edge_change_fraction": 7.716049382716049e-05,
+        "delta_vs_baseline_concentration": -3.2579921621045855,
+        "delta_vs_baseline_coherence": 0.019235462507976836,
+        "delta_vs_baseline_transport_span": 0.00011589920791576384,
+        "notes": "Connectivity-edge stress test."
+      },
+      "times": [
+        0.0,
+        0.6561621263922474,
+        0.984243189588371
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.3181031921477642,
+        0.3100307287109268
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.3487163110633726,
+        0.3069497534474457
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.1685174725648586,
+        0.08361012714443748
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.0052290164456550315,
+        0.009499878888671525
+      ]
+    }
+  ],
+  "topology_counts": {
+    "smeared_transfer": 9
+  },
+  "interaction_label_counts": {
+    "transient binding regime": 9
+  },
+  "coarse_label_counts": {
+    "diffuse coarse field regime": 9
+  },
+  "observation": "the no-noise baseline remains a smeared-transfer surrogate and most perturbed runs stay inside that surrogate class",
+  "conclusion": "this branch does not yet exhibit a braid-like exchange baseline; C0.3 currently shows robustness of the smeared exchange surrogate rather than protected braid topology"
+}

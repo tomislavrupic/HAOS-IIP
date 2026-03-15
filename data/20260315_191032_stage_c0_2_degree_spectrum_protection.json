@@ -1,0 +1,1011 @@
+{
+  "stage": "C0.2_degree_spectrum_protection_test",
+  "description": "Minimal 9-run combinatorial degree-spectrum protection scan on the projected-transverse edge-graph control branch. The graph-shell kernel is kept fixed while the underlying line-graph degree landscape is varied across uniform, mild-spread, and strong-heterogeneity families.",
+  "architecture_notice": "This branch varies only the combinatorial degree spectrum of the explicit edge-graph control operator. Packet initialization, projected-transverse state sector, and measurement stack remain fixed.",
+  "kernel_mode_family": {
+    "kernel_class_id": "graph_shell",
+    "label": "graph-shell",
+    "definition": "W_ij = a,b,c by graph shell distance 1,2,3 on the degree-perturbed line graph, with no coordinate distance and no Gaussian embedding."
+  },
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and representative seeds as C0.1"
+  },
+  "parameter_policy": {
+    "max_shell": 3,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "match_lambda_to_frozen_L1": true,
+    "random_seed": 2202,
+    "min_degree_floor": 3,
+    "mild_rewire_operations": 480,
+    "strong_rewire_operations": 2400,
+    "strong_hub_count": 4,
+    "defect_quantile": 0.1
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "C02_uniform_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "graph_family_id": "degree_uniform_baseline",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Uniform degree baseline on clustered encounter."
+      },
+      "graph_family": {
+        "graph_family_id": "degree_uniform_baseline",
+        "label": "Degree-uniform baseline",
+        "description": "Original regular line graph with uniform local degree."
+      },
+      "graph_family_summary": {
+        "degree_mean": 10.0,
+        "degree_std": 0.0,
+        "degree_min": 10.0,
+        "degree_max": 10.0,
+        "mutation_completed": 0,
+        "mutation_attempts": 0,
+        "hub_nodes": []
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920024,
+        "raw_lambda_max": 62.4710252639959,
+        "scale_factor": 0.18654992742109813,
+        "support_entries": 839808,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C02_uniform_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "graph_family_id": "degree_uniform_baseline",
+        "graph_family_label": "Degree-uniform baseline",
+        "kernel_class_id": "graph_shell",
+        "topology_label": "trapped",
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "transfer_smeared": 0,
+        "trapped": 1,
+        "dispersive": 0,
+        "defect_pinned": 0,
+        "channel_split": 0,
+        "flow_concentration_index": 100.98943572852035,
+        "transport_span": 0.04009723085354362,
+        "coherence_metric": 0.01932425136447247,
+        "overlap_persistence": 1.0,
+        "degree_localization_correlation": 0.0,
+        "defect_pinning_score": 0.0,
+        "hub_attraction_score": 0.0,
+        "hub_mass_fraction": 0.0,
+        "low_degree_mass_fraction": 0.0,
+        "degree_mean": 10.0,
+        "degree_std": 0.0,
+        "degree_min": 10.0,
+        "degree_max": 10.0,
+        "initial_mean_pair_distance": 0.10667568629397062,
+        "min_mean_pair_distance": 0.10663753013207994,
+        "final_mean_pair_distance": 0.106676965919571,
+        "max_mean_overlap": 0.6601554536075559,
+        "phase_lock_indicator": 0.5280841337629698,
+        "constraint_max": 1.4478819106361465e-15,
+        "sector_leakage": 2.3961542895424422e-15,
+        "operator_lambda_max": 11.653965228920024,
+        "operator_scale_factor": 0.18654992742109813,
+        "delta_vs_uniform_transport_span": 0.0,
+        "delta_vs_uniform_flow_concentration": 0.0,
+        "delta_vs_uniform_degree_localization": 0.0,
+        "topology_changed_vs_uniform": 0,
+        "notes": "Uniform degree baseline on clustered encounter."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.10667568629397062,
+        0.10663753013207994,
+        0.106676965919571
+      ],
+      "overlap_series": [
+        0.6589911080270985,
+        0.6544669924926142,
+        0.6601554536075559
+      ],
+      "phase_alignment_series": [
+        0.5796316492693468,
+        0.46819660486930026,
+        0.5364241471502625
+      ],
+      "coherences": [
+        0.022383214780052247,
+        0.014655563349612764,
+        0.0209339759637524
+      ],
+      "mean_degree_trace": [
+        10.000000000000002,
+        9.999999999999996,
+        10.0
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C02_mild_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "graph_family_id": "mild_degree_spread",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Mild degree spread on clustered encounter."
+      },
+      "graph_family": {
+        "graph_family_id": "mild_degree_spread",
+        "label": "Mild degree spread",
+        "description": "Sparse local rewiring that introduces degree +/-1 style fluctuations while preserving connectedness."
+      },
+      "graph_family_summary": {
+        "degree_mean": 10.0,
+        "degree_std": 0.43256698617770656,
+        "degree_min": 8.0,
+        "degree_max": 13.0,
+        "mutation_completed": 480,
+        "mutation_attempts": 480,
+        "hub_nodes": []
+      },
+      "operator_summary": {
+        "lambda_max": 11.65396522892003,
+        "raw_lambda_max": 86.635437964247,
+        "scale_factor": 0.134517300342262,
+        "support_entries": 903504,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C02_mild_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "graph_family_id": "mild_degree_spread",
+        "graph_family_label": "Mild degree spread",
+        "kernel_class_id": "graph_shell",
+        "topology_label": "trapped",
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "transfer_smeared": 0,
+        "trapped": 1,
+        "dispersive": 0,
+        "defect_pinned": 0,
+        "channel_split": 0,
+        "flow_concentration_index": 94.26760030540349,
+        "transport_span": 0.03334485652192017,
+        "coherence_metric": 0.017254369013709595,
+        "overlap_persistence": 1.0,
+        "degree_localization_correlation": -0.016665883693475943,
+        "defect_pinning_score": 0.11904476483236516,
+        "hub_attraction_score": -0.1609510254942718,
+        "hub_mass_fraction": 0.04945292903477146,
+        "low_degree_mass_fraction": 0.11904476483236516,
+        "degree_mean": 10.0,
+        "degree_std": 0.43256698617770656,
+        "degree_min": 8.0,
+        "degree_max": 13.0,
+        "initial_mean_pair_distance": 0.10667568629397062,
+        "min_mean_pair_distance": 0.10645385282722553,
+        "final_mean_pair_distance": 0.10645385282722553,
+        "max_mean_overlap": 0.6974788268252171,
+        "phase_lock_indicator": 0.5023855060767853,
+        "constraint_max": 1.4478819106361465e-15,
+        "sector_leakage": 2.3961542895424422e-15,
+        "operator_lambda_max": 11.65396522892003,
+        "operator_scale_factor": 0.134517300342262,
+        "delta_vs_uniform_transport_span": -0.006752374331623449,
+        "delta_vs_uniform_flow_concentration": -6.7218354231168576,
+        "delta_vs_uniform_degree_localization": -0.016665883693475943,
+        "topology_changed_vs_uniform": 0,
+        "notes": "Mild degree spread on clustered encounter."
+      },
+      "times": [
+        0.0,
+        0.6561621263922474,
+        0.984243189588371
+      ],
+      "pair_distance_series": [
+        0.10667568629397062,
+        0.10646016878983888,
+        0.10645385282722553
+      ],
+      "overlap_series": [
+        0.6589911080270985,
+        0.6974788268252171,
+        0.6629405244746346
+      ],
+      "phase_alignment_series": [
+        0.5796316492693468,
+        0.3973030471552697,
+        0.5302218218057395
+      ],
+      "coherences": [
+        0.022383214780052247,
+        0.009528968227092585,
+        0.019850924033983957
+      ],
+      "mean_degree_trace": [
+        9.933180213530427,
+        9.940796877756327,
+        9.923075925789353
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C02_strong_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "graph_family_id": "strong_degree_heterogeneity",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Strong degree heterogeneity on clustered encounter."
+      },
+      "graph_family": {
+        "graph_family_id": "strong_degree_heterogeneity",
+        "label": "Strong degree heterogeneity",
+        "description": "Hub-biased rewiring that creates clustered high-degree regions and low-degree pockets on the line graph."
+      },
+      "graph_family_summary": {
+        "degree_mean": 10.0,
+        "degree_std": 16.713071970507336,
+        "degree_min": 5.0,
+        "degree_max": 656.0,
+        "mutation_completed": 2400,
+        "mutation_attempts": 2400,
+        "hub_nodes": [
+          2304,
+          2651,
+          3715,
+          2710
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920061,
+        "raw_lambda_max": 2524.6974695401873,
+        "scale_factor": 0.004615984833637319,
+        "support_entries": 13265886,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C02_strong_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "graph_family_id": "strong_degree_heterogeneity",
+        "graph_family_label": "Strong degree heterogeneity",
+        "kernel_class_id": "graph_shell",
+        "topology_label": "trapped",
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "transfer_smeared": 0,
+        "trapped": 1,
+        "dispersive": 0,
+        "defect_pinned": 0,
+        "channel_split": 0,
+        "flow_concentration_index": 106.10102266285978,
+        "transport_span": 0.10930938806347237,
+        "coherence_metric": 0.02947504487905414,
+        "overlap_persistence": 1.0,
+        "degree_localization_correlation": -0.001895087741262648,
+        "defect_pinning_score": 0.05259954393079533,
+        "hub_attraction_score": -0.019428210183815343,
+        "hub_mass_fraction": 0.003958065549719135,
+        "low_degree_mass_fraction": 0.05259954393079533,
+        "degree_mean": 10.0,
+        "degree_std": 16.713071970507336,
+        "degree_min": 5.0,
+        "degree_max": 656.0,
+        "initial_mean_pair_distance": 0.10667568629397062,
+        "min_mean_pair_distance": 0.10667568629397062,
+        "final_mean_pair_distance": 0.11341182785181535,
+        "max_mean_overlap": 0.6589911080270985,
+        "phase_lock_indicator": 0.45089496223829356,
+        "constraint_max": 1.4478819106361465e-15,
+        "sector_leakage": 2.3961542895424422e-15,
+        "operator_lambda_max": 11.653965228920061,
+        "operator_scale_factor": 0.004615984833637319,
+        "delta_vs_uniform_transport_span": 0.06921215720992875,
+        "delta_vs_uniform_flow_concentration": 5.111586934339428,
+        "delta_vs_uniform_degree_localization": -0.001895087741262648,
+        "topology_changed_vs_uniform": 0,
+        "notes": "Strong degree heterogeneity on clustered encounter."
+      },
+      "times": [
+        0.0,
+        0.6561621263922465,
+        0.9842431895883696
+      ],
+      "pair_distance_series": [
+        0.10667568629397062,
+        0.1155623742292209,
+        0.11341182785181535
+      ],
+      "overlap_series": [
+        0.6589911080270985,
+        0.6218023055099202,
+        0.582945879230368
+      ],
+      "phase_alignment_series": [
+        0.5796316492693468,
+        0.38445379008509645,
+        0.3885994473604372
+      ],
+      "coherences": [
+        0.022383214780052247,
+        0.04112512390888584,
+        0.024916795948224338
+      ],
+      "mean_degree_trace": [
+        9.718727116338066,
+        9.610950456067293,
+        9.65209395315928
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C02_uniform_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "graph_family_id": "degree_uniform_baseline",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Uniform degree baseline on corridor counterflow."
+      },
+      "graph_family": {
+        "graph_family_id": "degree_uniform_baseline",
+        "label": "Degree-uniform baseline",
+        "description": "Original regular line graph with uniform local degree."
+      },
+      "graph_family_summary": {
+        "degree_mean": 10.0,
+        "degree_std": 0.0,
+        "degree_min": 10.0,
+        "degree_max": 10.0,
+        "mutation_completed": 0,
+        "mutation_attempts": 0,
+        "hub_nodes": []
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920024,
+        "raw_lambda_max": 62.4710252639959,
+        "scale_factor": 0.18654992742109813,
+        "support_entries": 839808,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C02_uniform_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "graph_family_id": "degree_uniform_baseline",
+        "graph_family_label": "Degree-uniform baseline",
+        "kernel_class_id": "graph_shell",
+        "topology_label": "transfer_smeared",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "transfer_smeared": 1,
+        "trapped": 0,
+        "dispersive": 0,
+        "defect_pinned": 0,
+        "channel_split": 0,
+        "flow_concentration_index": 46.14307883826136,
+        "transport_span": 0.0,
+        "coherence_metric": 0.008928419736728003,
+        "overlap_persistence": 0.0,
+        "degree_localization_correlation": 0.0,
+        "defect_pinning_score": 0.0,
+        "hub_attraction_score": 0.0,
+        "hub_mass_fraction": 0.0,
+        "low_degree_mass_fraction": 0.0,
+        "degree_mean": 10.0,
+        "degree_std": 0.0,
+        "degree_min": 10.0,
+        "degree_max": 10.0,
+        "initial_mean_pair_distance": 0.300051743607888,
+        "min_mean_pair_distance": 0.2885415195855207,
+        "final_mean_pair_distance": 0.2885415195855207,
+        "max_mean_overlap": 0.33292704384289,
+        "phase_lock_indicator": 0.09869039640011461,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "operator_lambda_max": 11.653965228920024,
+        "operator_scale_factor": 0.18654992742109813,
+        "delta_vs_uniform_transport_span": 0.0,
+        "delta_vs_uniform_flow_concentration": 0.0,
+        "delta_vs_uniform_degree_localization": 0.0,
+        "topology_changed_vs_uniform": 0,
+        "notes": "Uniform degree baseline on corridor counterflow."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.338668419459408,
+        0.2885415195855207
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.2861776540763221,
+        0.33292704384289
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.05831100663067285,
+        0.12577161969220993
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.006566628301020195,
+        0.009816154349353729
+      ],
+      "mean_degree_trace": [
+        10.0,
+        9.999999999999998,
+        10.0
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C02_mild_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "graph_family_id": "mild_degree_spread",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Mild degree spread on corridor counterflow."
+      },
+      "graph_family": {
+        "graph_family_id": "mild_degree_spread",
+        "label": "Mild degree spread",
+        "description": "Sparse local rewiring that introduces degree +/-1 style fluctuations while preserving connectedness."
+      },
+      "graph_family_summary": {
+        "degree_mean": 10.0,
+        "degree_std": 0.43256698617770656,
+        "degree_min": 8.0,
+        "degree_max": 13.0,
+        "mutation_completed": 480,
+        "mutation_attempts": 480,
+        "hub_nodes": []
+      },
+      "operator_summary": {
+        "lambda_max": 11.65396522892003,
+        "raw_lambda_max": 86.635437964247,
+        "scale_factor": 0.134517300342262,
+        "support_entries": 903504,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C02_mild_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "graph_family_id": "mild_degree_spread",
+        "graph_family_label": "Mild degree spread",
+        "kernel_class_id": "graph_shell",
+        "topology_label": "transfer_smeared",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "transfer_smeared": 1,
+        "trapped": 0,
+        "dispersive": 0,
+        "defect_pinned": 0,
+        "channel_split": 0,
+        "flow_concentration_index": 42.78267475539064,
+        "transport_span": 0.0030961109541305532,
+        "coherence_metric": 0.008484339759261108,
+        "overlap_persistence": 0.0,
+        "degree_localization_correlation": -0.01084926478298065,
+        "defect_pinning_score": 0.09713922187595067,
+        "hub_attraction_score": -0.0701291262025814,
+        "hub_mass_fraction": 0.06568117785040146,
+        "low_degree_mass_fraction": 0.09713922187595067,
+        "degree_mean": 10.0,
+        "degree_std": 0.43256698617770656,
+        "degree_min": 8.0,
+        "degree_max": 13.0,
+        "initial_mean_pair_distance": 0.300051743607888,
+        "min_mean_pair_distance": 0.300051743607888,
+        "final_mean_pair_distance": 0.3176691214947067,
+        "max_mean_overlap": 0.35843081174858976,
+        "phase_lock_indicator": 0.12835689193555064,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "operator_lambda_max": 11.65396522892003,
+        "operator_scale_factor": 0.134517300342262,
+        "delta_vs_uniform_transport_span": 0.0030961109541305532,
+        "delta_vs_uniform_flow_concentration": -3.3604040828707227,
+        "delta_vs_uniform_degree_localization": -0.01084926478298065,
+        "topology_changed_vs_uniform": 0,
+        "notes": "Mild degree spread on corridor counterflow."
+      },
+      "times": [
+        0.0,
+        0.6561621263922474,
+        0.984243189588371
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.3081578611119323,
+        0.3176691214947067
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.35843081174858976,
+        0.3001396974448954
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.19549315391445404,
+        0.07758895901473675
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.005314312101720743,
+        0.009736230616252495
+      ],
+      "mean_degree_trace": [
+        9.955185407783645,
+        9.972484291671726,
+        9.987669760327762
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C02_strong_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "graph_family_id": "strong_degree_heterogeneity",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Strong degree heterogeneity on corridor counterflow."
+      },
+      "graph_family": {
+        "graph_family_id": "strong_degree_heterogeneity",
+        "label": "Strong degree heterogeneity",
+        "description": "Hub-biased rewiring that creates clustered high-degree regions and low-degree pockets on the line graph."
+      },
+      "graph_family_summary": {
+        "degree_mean": 10.0,
+        "degree_std": 16.713071970507336,
+        "degree_min": 5.0,
+        "degree_max": 656.0,
+        "mutation_completed": 2400,
+        "mutation_attempts": 2400,
+        "hub_nodes": [
+          2304,
+          2651,
+          3715,
+          2710
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920061,
+        "raw_lambda_max": 2524.6974695401873,
+        "scale_factor": 0.004615984833637319,
+        "support_entries": 13265886,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C02_strong_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "graph_family_id": "strong_degree_heterogeneity",
+        "graph_family_label": "Strong degree heterogeneity",
+        "kernel_class_id": "graph_shell",
+        "topology_label": "transfer_smeared",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "transfer_smeared": 1,
+        "trapped": 0,
+        "dispersive": 0,
+        "defect_pinned": 0,
+        "channel_split": 0,
+        "flow_concentration_index": 38.771081545167405,
+        "transport_span": 0.027472138488023247,
+        "coherence_metric": 0.010957923104342465,
+        "overlap_persistence": 0.0,
+        "degree_localization_correlation": -0.002953908157867047,
+        "defect_pinning_score": 0.08131451004413831,
+        "hub_attraction_score": -0.01815418256526259,
+        "hub_mass_fraction": 0.017726821847332118,
+        "low_degree_mass_fraction": 0.08131451004413831,
+        "degree_mean": 10.0,
+        "degree_std": 16.713071970507336,
+        "degree_min": 5.0,
+        "degree_max": 656.0,
+        "initial_mean_pair_distance": 0.300051743607888,
+        "min_mean_pair_distance": 0.2138499044553825,
+        "final_mean_pair_distance": 0.3270685347254034,
+        "max_mean_overlap": 0.3384000406364265,
+        "phase_lock_indicator": 0.0816973324771979,
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "operator_lambda_max": 11.653965228920061,
+        "operator_scale_factor": 0.004615984833637319,
+        "delta_vs_uniform_transport_span": 0.027472138488023247,
+        "delta_vs_uniform_flow_concentration": -7.371997293093955,
+        "delta_vs_uniform_degree_localization": -0.002953908157867047,
+        "topology_changed_vs_uniform": 0,
+        "notes": "Strong degree heterogeneity on corridor counterflow."
+      },
+      "times": [
+        0.0,
+        0.6561621263922465,
+        0.9842431895883696
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.2138499044553825,
+        0.3270685347254034
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.3384000406364265,
+        0.2527960522248897
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.055748720782342186,
+        0.07735471377179047
+      ],
+      "coherences": [
+        0.010402476559810086,
+        0.01098842386200856,
+        0.011482868891208742
+      ],
+      "mean_degree_trace": [
+        9.65330289990234,
+        9.657677576291714,
+        9.810511569303795
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C02_uniform_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "graph_family_id": "degree_uniform_baseline",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Uniform degree baseline on symmetric triad."
+      },
+      "graph_family": {
+        "graph_family_id": "degree_uniform_baseline",
+        "label": "Degree-uniform baseline",
+        "description": "Original regular line graph with uniform local degree."
+      },
+      "graph_family_summary": {
+        "degree_mean": 10.0,
+        "degree_std": 0.0,
+        "degree_min": 10.0,
+        "degree_max": 10.0,
+        "mutation_completed": 0,
+        "mutation_attempts": 0,
+        "hub_nodes": []
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920024,
+        "raw_lambda_max": 62.4710252639959,
+        "scale_factor": 0.18654992742109813,
+        "support_entries": 839808,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C02_uniform_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "graph_family_id": "degree_uniform_baseline",
+        "graph_family_label": "Degree-uniform baseline",
+        "kernel_class_id": "graph_shell",
+        "topology_label": "dispersive",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "transfer_smeared": 0,
+        "trapped": 0,
+        "dispersive": 1,
+        "defect_pinned": 0,
+        "channel_split": 0,
+        "flow_concentration_index": 34.12195691990792,
+        "transport_span": 0.1304799213686561,
+        "coherence_metric": 0.00660536048596246,
+        "overlap_persistence": 0.0,
+        "degree_localization_correlation": 0.0,
+        "defect_pinning_score": 0.0,
+        "hub_attraction_score": 0.0,
+        "hub_mass_fraction": 0.0,
+        "low_degree_mass_fraction": 0.0,
+        "degree_mean": 10.0,
+        "degree_std": 0.0,
+        "degree_min": 10.0,
+        "degree_max": 10.0,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "final_mean_pair_distance": 0.3333333333364609,
+        "max_mean_overlap": 0.28515254885413477,
+        "phase_lock_indicator": 0.11646104957640806,
+        "constraint_max": 2.0228247686178265e-15,
+        "sector_leakage": 5.5236216373583976e-15,
+        "operator_lambda_max": 11.653965228920024,
+        "operator_scale_factor": 0.18654992742109813,
+        "delta_vs_uniform_transport_span": 0.0,
+        "delta_vs_uniform_flow_concentration": 0.0,
+        "delta_vs_uniform_degree_localization": 0.0,
+        "topology_changed_vs_uniform": 0,
+        "notes": "Uniform degree baseline on symmetric triad."
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "pair_distance_series": [
+        0.3333333333333333,
+        0.3333333333603569,
+        0.3333333333364609
+      ],
+      "overlap_series": [
+        0.27771373515987224,
+        0.28515254885413477,
+        0.27287612595352934
+      ],
+      "phase_alignment_series": [
+        0.11512679873437466,
+        0.10243399964044965,
+        0.13182235035439985
+      ],
+      "coherences": [
+        0.007181954791201836,
+        0.004794484143231102,
+        0.007839642523454444
+      ],
+      "mean_degree_trace": [
+        10.0,
+        10.000000000000002,
+        10.0
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C02_mild_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "graph_family_id": "mild_degree_spread",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Mild degree spread on symmetric triad."
+      },
+      "graph_family": {
+        "graph_family_id": "mild_degree_spread",
+        "label": "Mild degree spread",
+        "description": "Sparse local rewiring that introduces degree +/-1 style fluctuations while preserving connectedness."
+      },
+      "graph_family_summary": {
+        "degree_mean": 10.0,
+        "degree_std": 0.43256698617770656,
+        "degree_min": 8.0,
+        "degree_max": 13.0,
+        "mutation_completed": 480,
+        "mutation_attempts": 480,
+        "hub_nodes": []
+      },
+      "operator_summary": {
+        "lambda_max": 11.65396522892003,
+        "raw_lambda_max": 86.635437964247,
+        "scale_factor": 0.134517300342262,
+        "support_entries": 903504,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C02_mild_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "graph_family_id": "mild_degree_spread",
+        "graph_family_label": "Mild degree spread",
+        "kernel_class_id": "graph_shell",
+        "topology_label": "dispersive",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "transfer_smeared": 0,
+        "trapped": 0,
+        "dispersive": 1,
+        "defect_pinned": 0,
+        "channel_split": 0,
+        "flow_concentration_index": 31.63988635320451,
+        "transport_span": 0.39336784843021594,
+        "coherence_metric": 0.006418108441206843,
+        "overlap_persistence": 0.0,
+        "degree_localization_correlation": 0.0005952082802216456,
+        "defect_pinning_score": 0.08095796300010713,
+        "hub_attraction_score": 0.0032946746876355653,
+        "hub_mass_fraction": 0.07448947231628332,
+        "low_degree_mass_fraction": 0.08095796300010713,
+        "degree_mean": 10.0,
+        "degree_std": 0.43256698617770656,
+        "degree_min": 8.0,
+        "degree_max": 13.0,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "final_mean_pair_distance": 0.3333349121809683,
+        "max_mean_overlap": 0.28156704698251195,
+        "phase_lock_indicator": 0.10772099569052866,
+        "constraint_max": 2.0228247686178265e-15,
+        "sector_leakage": 5.5236216373583976e-15,
+        "operator_lambda_max": 11.65396522892003,
+        "operator_scale_factor": 0.134517300342262,
+        "delta_vs_uniform_transport_span": 0.26288792706155983,
+        "delta_vs_uniform_flow_concentration": -2.4820705667034133,
+        "delta_vs_uniform_degree_localization": 0.0005952082802216456,
+        "topology_changed_vs_uniform": 0,
+        "notes": "Mild degree spread on symmetric triad."
+      },
+      "times": [
+        0.0,
+        0.6561621263922474,
+        0.984243189588371
+      ],
+      "pair_distance_series": [
+        0.3333333333333333,
+        0.3333400196539096,
+        0.3333349121809683
+      ],
+      "overlap_series": [
+        0.27771373515987224,
+        0.28156704698251195,
+        0.2737121719477748
+      ],
+      "phase_alignment_series": [
+        0.11512679873437466,
+        0.08227252527099033,
+        0.125763663066221
+      ],
+      "coherences": [
+        0.007181954791201836,
+        0.004792274095347821,
+        0.007280096437070872
+      ],
+      "mean_degree_trace": [
+        10.003956799829538,
+        9.96450550653488,
+        10.011908114516775
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C02_strong_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "graph_family_id": "strong_degree_heterogeneity",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Strong degree heterogeneity on symmetric triad."
+      },
+      "graph_family": {
+        "graph_family_id": "strong_degree_heterogeneity",
+        "label": "Strong degree heterogeneity",
+        "description": "Hub-biased rewiring that creates clustered high-degree regions and low-degree pockets on the line graph."
+      },
+      "graph_family_summary": {
+        "degree_mean": 10.0,
+        "degree_std": 16.713071970507336,
+        "degree_min": 5.0,
+        "degree_max": 656.0,
+        "mutation_completed": 2400,
+        "mutation_attempts": 2400,
+        "hub_nodes": [
+          2304,
+          2651,
+          3715,
+          2710
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920061,
+        "raw_lambda_max": 2524.6974695401873,
+        "scale_factor": 0.004615984833637319,
+        "support_entries": 13265886,
+        "max_shell": 3
+      },
+      "summary": {
+        "run_id": "C02_strong_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "graph_family_id": "strong_degree_heterogeneity",
+        "graph_family_label": "Strong degree heterogeneity",
+        "kernel_class_id": "graph_shell",
+        "topology_label": "dispersive",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "braid_like_exchange": 0,
+        "transfer_smeared": 0,
+        "trapped": 0,
+        "dispersive": 1,
+        "defect_pinned": 0,
+        "channel_split": 0,
+        "flow_concentration_index": 32.910155241693104,
+        "transport_span": 0.4474814509830621,
+        "coherence_metric": 0.009910774178190503,
+        "overlap_persistence": 0.0,
+        "degree_localization_correlation": -0.0024371503302998117,
+        "defect_pinning_score": 0.15561954057908312,
+        "hub_attraction_score": -0.013767236628053212,
+        "hub_mass_fraction": 0.15561954057908312,
+        "low_degree_mass_fraction": 0.0708078771175004,
+        "degree_mean": 10.0,
+        "degree_std": 16.713071970507336,
+        "degree_min": 5.0,
+        "degree_max": 656.0,
+        "initial_mean_pair_distance": 0.3333333333333333,
+        "min_mean_pair_distance": 0.3333333333333333,
+        "final_mean_pair_distance": 0.3338605595857938,
+        "max_mean_overlap": 0.27771373515987224,
+        "phase_lock_indicator": 0.08963827309351492,
+        "constraint_max": 2.0228247686178265e-15,
+        "sector_leakage": 5.5236216373583976e-15,
+        "operator_lambda_max": 11.653965228920061,
+        "operator_scale_factor": 0.004615984833637319,
+        "delta_vs_uniform_transport_span": 0.317001529614406,
+        "delta_vs_uniform_flow_concentration": -1.2118016782148189,
+        "delta_vs_uniform_degree_localization": -0.0024371503302998117,
+        "topology_changed_vs_uniform": 0,
+        "notes": "Strong degree heterogeneity on symmetric triad."
+      },
+      "times": [
+        0.0,
+        0.6561621263922465,
+        0.9842431895883696
+      ],
+      "pair_distance_series": [
+        0.3333333333333333,
+        0.33388571905027353,
+        0.3338605595857938
+      ],
+      "overlap_series": [
+        0.27771373515987224,
+        0.1998956278204336,
+        0.21061320244680595
+      ],
+      "phase_alignment_series": [
+        0.11512679873437466,
+        0.0753519528773167,
+        0.07843606766885342
+      ],
+      "coherences": [
+        0.007181954791201836,
+        0.01179617618321602,
+        0.010754191560153654
+      ],
+      "mean_degree_trace": [
+        9.760453067981988,
+        9.619133025523276,
+        9.930076074589701
+      ]
+    }
+  ],
+  "topology_counts": {
+    "trapped": 3,
+    "transfer_smeared": 3,
+    "dispersive": 3
+  },
+  "interaction_label_counts": {
+    "metastable composite regime": 3,
+    "transient binding regime": 6
+  },
+  "coarse_label_counts": {
+    "diffuse coarse field regime": 9
+  },
+  "observation": "topology labels remain stable across the scan, but transport span or flow concentration shifts materially once the degree spectrum broadens",
+  "conclusion": "degree spectrum is not overturning the coarse topology classes here, but it is reshaping transport texture and localization inside those classes"
+}

@@ -1,0 +1,195 @@
+{
+  "stage": "C0.4_controlled_motif_injection",
+  "description": "Nine-run controlled motif-injection scan on the no-distance graph-shell branch. Each motif run is compared to an internally matched no-motif baseline on the same representative and packet family.",
+  "note_name": "Stage_C0_4_Controlled_Motif_Injection_v1.md",
+  "experiment_slug": "stage_c0_4_controlled_motif_injection",
+  "kernel_mode_family": {
+    "kernel_class_id": "graph_shell",
+    "label": "graph-shell",
+    "definition": "W_ij depends only on graph-shell distance 1,2,3 on the edge-incidence graph, with no coordinate distance and no Gaussian embedding."
+  },
+  "architecture_notice": "This branch keeps the projected-transverse packet dynamics and graph-shell combinatorial kernel fixed while injecting one local combinatorial motif into the edge-graph operator.",
+  "baseline_notice": "Each motif run is compared against a matched no-motif baseline on the same representative. The current branch does not yet contain a clean braid_like_exchange baseline, so motif effects are measured relative to the existing no-distance topology class for that representative.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family as C0.1-C0.3"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "promotion_required": false,
+    "followup_gate": "Promote only if at least one motif class reproducibly changes topology or creates motif-localized pinning across the 3 encounter families."
+  },
+  "parameter_policy": {
+    "max_shell": 3,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "match_lambda_to_frozen_L1": true,
+    "random_seed": 4404,
+    "min_degree_floor": 3,
+    "active_threshold_sigma": 1.0,
+    "motif_patch_radius": 2,
+    "motif_max_radius": 4,
+    "motif_candidate_count": 8,
+    "hub_leaf_count": 4,
+    "topology_flow_tolerance": 5.0,
+    "topology_coherence_tolerance": 0.03,
+    "effect_flow_tolerance": 5.0,
+    "effect_coherence_tolerance": 0.03,
+    "effect_routing_tolerance": 0.2
+  },
+  "motifs": [
+    {
+      "motif_id": "triangle_cluster",
+      "label": "Triangle cluster",
+      "description": "Local 3-cycle closure intended to test whether short-cycle closure sharpens exchange coherence."
+    },
+    {
+      "motif_id": "diamond",
+      "label": "Diamond",
+      "description": "Shared-edge double triangle intended to test whether local route redundancy seeds smeared or split exchange."
+    },
+    {
+      "motif_id": "hub_micro_star",
+      "label": "Hub micro-star",
+      "description": "Local hubbing motif intended to test whether micro-hubs pin, disrupt, or redirect exchange-like flow."
+    }
+  ],
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "source_stage12_run_id": "S12_asymmetric_density_cluster",
+      "source_stage15_case_id": "asymmetric_density_cluster",
+      "packet_count": 3,
+      "packet_centers": [
+        [0.42, 0.5, 0.5],
+        [0.5, 0.5, 0.5],
+        [0.58, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "clustered composite anchor"
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.35, 0.5, 0.5],
+        [0.65, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "notes": "corridor-like counterflow"
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "source_stage12_run_id": "S12_symmetric_wide_triad",
+      "source_stage15_case_id": "symmetric_wide_triad",
+      "packet_count": 3,
+      "packet_centers": [
+        [0.18, 0.5, 0.5],
+        [0.5, 0.5, 0.5],
+        [0.82, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0],
+      "notes": "symmetric exchange-pair surrogate / ordered triad"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "C04_triangle_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "motif_id": "triangle_cluster",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Triangle motif on clustered composite anchor."
+    },
+    {
+      "run_id": "C04_triangle_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "motif_id": "triangle_cluster",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Triangle motif on corridor counterflow."
+    },
+    {
+      "run_id": "C04_triangle_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "motif_id": "triangle_cluster",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Triangle motif on symmetric triad."
+    },
+    {
+      "run_id": "C04_diamond_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "motif_id": "diamond",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Diamond motif on clustered composite anchor."
+    },
+    {
+      "run_id": "C04_diamond_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "motif_id": "diamond",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Diamond motif on corridor counterflow."
+    },
+    {
+      "run_id": "C04_diamond_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "motif_id": "diamond",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Diamond motif on symmetric triad."
+    },
+    {
+      "run_id": "C04_hub_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "motif_id": "hub_micro_star",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Hub micro-star on clustered composite anchor."
+    },
+    {
+      "run_id": "C04_hub_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "motif_id": "hub_micro_star",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Hub micro-star on corridor counterflow."
+    },
+    {
+      "run_id": "C04_hub_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "motif_id": "hub_micro_star",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Hub micro-star on symmetric triad."
+    }
+  ]
+}

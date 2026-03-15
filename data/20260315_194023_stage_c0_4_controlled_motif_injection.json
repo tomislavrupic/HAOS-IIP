@@ -1,0 +1,1955 @@
+{
+  "stage": "C0.4_controlled_motif_injection",
+  "description": "Nine-run controlled motif-injection scan on the no-distance graph-shell branch. Each motif run is compared to an internally matched no-motif baseline on the same representative and packet family.",
+  "architecture_notice": "This branch keeps the projected-transverse packet dynamics and graph-shell combinatorial kernel fixed while injecting one local combinatorial motif into the edge-graph operator.",
+  "baseline_notice": "Each motif run is compared against a matched no-motif baseline on the same representative. The current branch does not yet contain a clean braid_like_exchange baseline, so motif effects are measured relative to the existing no-distance topology class for that representative.",
+  "kernel_mode_family": {
+    "kernel_class_id": "graph_shell",
+    "label": "graph-shell",
+    "definition": "W_ij depends only on graph-shell distance 1,2,3 on the edge-incidence graph, with no coordinate distance and no Gaussian embedding."
+  },
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family as C0.1-C0.3"
+  },
+  "parameter_policy": {
+    "max_shell": 3,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "match_lambda_to_frozen_L1": true,
+    "random_seed": 4404,
+    "min_degree_floor": 3,
+    "active_threshold_sigma": 1.0,
+    "motif_patch_radius": 2,
+    "motif_max_radius": 4,
+    "motif_candidate_count": 8,
+    "hub_leaf_count": 4,
+    "topology_flow_tolerance": 5.0,
+    "topology_coherence_tolerance": 0.03,
+    "effect_flow_tolerance": 5.0,
+    "effect_coherence_tolerance": 0.03,
+    "effect_routing_tolerance": 0.2
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "C04_triangle_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "motif_id": "triangle_cluster",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Triangle motif on clustered composite anchor."
+      },
+      "motif": {
+        "motif_id": "triangle_cluster",
+        "label": "Triangle cluster",
+        "description": "Local 3-cycle closure intended to test whether short-cycle closure sharpens exchange coherence."
+      },
+      "baseline_summary": {
+        "flow_concentration_index": 100.98943572852035,
+        "exchange_coherence": 0.5941197936852629,
+        "transport_span": 0.04009723085354362,
+        "channel_count": 6,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "max_mean_overlap": 0.6601554536075559,
+        "motif_occupancy_correlation": 0.6862101347387524,
+        "motif_mass_fraction": 0.16559871683277697,
+        "pinning_score": 0.16559871683277697,
+        "routing_asymmetry": 0.7236181482290521,
+        "topology_label": "trapped_local"
+      },
+      "motif_injection": {
+        "motif_nodes": [
+          2359,
+          2395,
+          2431
+        ],
+        "seed_nodes": [
+          2395
+        ],
+        "patch_nodes": [
+          1530,
+          1566,
+          1926,
+          1927,
+          1959,
+          1961,
+          1962,
+          1963,
+          1964,
+          1965,
+          1995,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2034,
+          2323,
+          2356,
+          2357,
+          2358,
+          2359,
+          2360,
+          2362,
+          2390,
+          2391,
+          2392,
+          2393,
+          2394,
+          2395,
+          2396,
+          2397,
+          2398,
+          2399,
+          2426,
+          2427,
+          2428,
+          2429,
+          2430,
+          2431,
+          2432,
+          2433,
+          2434,
+          2435,
+          2465,
+          2466,
+          2467,
+          2468,
+          2791,
+          2825,
+          2826,
+          2827,
+          2828,
+          2861,
+          2862,
+          2863,
+          2864
+        ],
+        "desired_edges": [
+          [
+            2359,
+            2395
+          ],
+          [
+            2359,
+            2431
+          ],
+          [
+            2395,
+            2431
+          ]
+        ],
+        "added_edges": [
+          [
+            2359,
+            2431
+          ]
+        ],
+        "removed_edges": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920024,
+        "raw_lambda_max": 64.58847941588377,
+        "scale_factor": 0.18043411664610343,
+        "support_entries": 839926,
+        "degree_mean": 10.0,
+        "degree_std": 0.027777777777777776,
+        "mean_clustering": 0.44440742299538605
+      },
+      "summary": {
+        "run_id": "C04_triangle_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "motif_id": "triangle_cluster",
+        "motif_label": "Triangle cluster",
+        "baseline_topology": "trapped_local",
+        "topology_label": "trapped_local",
+        "effect_class": "neutral / no significant effect",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 0,
+        "split_channel_exchange": 0,
+        "defect_pinned": 0,
+        "trapped_local": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 100.83862832066583,
+        "exchange_coherence": 0.5976512149973561,
+        "transport_span": 0.03777236588284615,
+        "channel_count": 5,
+        "loop_count": 1,
+        "motif_occupancy_correlation": 0.6886614414543226,
+        "motif_mass_fraction": 0.16606327176624353,
+        "pinning_score": 0.16606327176624353,
+        "routing_asymmetry": 0.7251090335391761,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.027777777777777776,
+        "clustering_coefficient_shift": -3.702144905859406e-05,
+        "delta_vs_baseline_concentration": -0.15080740785451496,
+        "delta_vs_baseline_coherence": 0.0035314213120931637,
+        "delta_vs_baseline_channel_count": -1,
+        "notes": "Triangle motif on clustered composite anchor.",
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "max_mean_overlap": 0.6704628281125933
+      },
+      "times": [
+        0.0,
+        0.6561621263922476,
+        0.9842431895883714
+      ],
+      "motif_mass_trace": [
+        0.1703314404223095,
+        0.1552206689867967,
+        0.1655167584300407
+      ],
+      "pair_distance_series": [
+        0.10667568629397062,
+        0.1060962078880995,
+        0.10671929001156494
+      ],
+      "overlap_series": [
+        0.6589911080270985,
+        0.6704628281125933,
+        0.6611304506384627
+      ],
+      "phase_alignment_series": [
+        0.5796316492693468,
+        0.45930471650968024,
+        0.5355824398673296
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C04_triangle_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "motif_id": "triangle_cluster",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Triangle motif on corridor counterflow."
+      },
+      "motif": {
+        "motif_id": "triangle_cluster",
+        "label": "Triangle cluster",
+        "description": "Local 3-cycle closure intended to test whether short-cycle closure sharpens exchange coherence."
+      },
+      "baseline_summary": {
+        "flow_concentration_index": 46.14307883826136,
+        "exchange_coherence": 0.21580872012150232,
+        "transport_span": 0.0,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "max_mean_overlap": 0.33292704384289,
+        "motif_occupancy_correlation": 0.5216417938931166,
+        "motif_mass_fraction": 0.08486760601719492,
+        "pinning_score": 0.08486760601719492,
+        "routing_asymmetry": 0.9928214605477943,
+        "topology_label": "smeared_transfer"
+      },
+      "motif_injection": {
+        "motif_nodes": [
+          1927,
+          1963,
+          1999
+        ],
+        "seed_nodes": [
+          1963
+        ],
+        "patch_nodes": [
+          1098,
+          1134,
+          1494,
+          1495,
+          1527,
+          1529,
+          1530,
+          1531,
+          1532,
+          1533,
+          1563,
+          1565,
+          1566,
+          1567,
+          1568,
+          1569,
+          1602,
+          1891,
+          1924,
+          1925,
+          1926,
+          1927,
+          1928,
+          1930,
+          1958,
+          1959,
+          1960,
+          1961,
+          1962,
+          1963,
+          1964,
+          1965,
+          1966,
+          1967,
+          1994,
+          1995,
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2002,
+          2003,
+          2033,
+          2034,
+          2035,
+          2036,
+          2359,
+          2393,
+          2394,
+          2395,
+          2396,
+          2429,
+          2430,
+          2431,
+          2432
+        ],
+        "desired_edges": [
+          [
+            1927,
+            1963
+          ],
+          [
+            1927,
+            1999
+          ],
+          [
+            1963,
+            1999
+          ]
+        ],
+        "added_edges": [
+          [
+            1927,
+            1999
+          ]
+        ],
+        "removed_edges": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920013,
+        "raw_lambda_max": 65.95455660541312,
+        "scale_factor": 0.1766968929628668,
+        "support_entries": 839926,
+        "degree_mean": 10.0,
+        "degree_std": 0.027777777777777776,
+        "mean_clustering": 0.44440742299538605
+      },
+      "summary": {
+        "run_id": "C04_triangle_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "motif_id": "triangle_cluster",
+        "motif_label": "Triangle cluster",
+        "baseline_topology": "smeared_transfer",
+        "topology_label": "smeared_transfer",
+        "effect_class": "neutral / no significant effect",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "split_channel_exchange": 0,
+        "defect_pinned": 0,
+        "trapped_local": 0,
+        "unresolved": 0,
+        "flow_concentration_index": 45.704991768357736,
+        "exchange_coherence": 0.21525866293758042,
+        "transport_span": 0.009365185158255107,
+        "channel_count": 10,
+        "loop_count": 1,
+        "motif_occupancy_correlation": 0.524130443055828,
+        "motif_mass_fraction": 0.0848577914005257,
+        "pinning_score": 0.0848577914005257,
+        "routing_asymmetry": 0.9929696990926828,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.027777777777777776,
+        "clustering_coefficient_shift": -3.702144905859406e-05,
+        "delta_vs_baseline_concentration": -0.43808706990362367,
+        "delta_vs_baseline_coherence": -0.0005500571839218982,
+        "delta_vs_baseline_channel_count": 0,
+        "notes": "Triangle motif on corridor counterflow.",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "max_mean_overlap": 0.3270994004228453
+      },
+      "times": [
+        0.0,
+        0.6561621263922478,
+        0.9842431895883716
+      ],
+      "motif_mass_trace": [
+        0.08849660054038472,
+        0.06750681937000563,
+        0.08898427760819592
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.33706769165995515,
+        0.29359252048744094
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.29175871375834145,
+        0.3270994004228453
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.08100107823042829,
+        0.11726413524905725
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C04_triangle_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "motif_id": "triangle_cluster",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Triangle motif on symmetric triad."
+      },
+      "motif": {
+        "motif_id": "triangle_cluster",
+        "label": "Triangle cluster",
+        "description": "Local 3-cycle closure intended to test whether short-cycle closure sharpens exchange coherence."
+      },
+      "baseline_summary": {
+        "flow_concentration_index": 34.12195691990792,
+        "exchange_coherence": 0.20080679921527142,
+        "transport_span": 0.1304799213686561,
+        "channel_count": 12,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "max_mean_overlap": 0.28515254885413477,
+        "motif_occupancy_correlation": 0.4438091414108237,
+        "motif_mass_fraction": 0.062005330651679,
+        "pinning_score": 0.062005330651679,
+        "routing_asymmetry": 0.991998308707997,
+        "topology_label": "split_channel_exchange"
+      },
+      "motif_injection": {
+        "motif_nodes": [
+          1063,
+          1099,
+          1135
+        ],
+        "seed_nodes": [
+          1099
+        ],
+        "patch_nodes": [
+          234,
+          270,
+          630,
+          631,
+          663,
+          665,
+          666,
+          667,
+          668,
+          669,
+          699,
+          701,
+          702,
+          703,
+          704,
+          705,
+          738,
+          1027,
+          1060,
+          1061,
+          1062,
+          1063,
+          1064,
+          1066,
+          1094,
+          1095,
+          1096,
+          1097,
+          1098,
+          1099,
+          1100,
+          1101,
+          1102,
+          1103,
+          1130,
+          1131,
+          1132,
+          1133,
+          1134,
+          1135,
+          1136,
+          1137,
+          1138,
+          1139,
+          1169,
+          1170,
+          1171,
+          1172,
+          1495,
+          1529,
+          1530,
+          1531,
+          1532,
+          1565,
+          1566,
+          1567,
+          1568
+        ],
+        "desired_edges": [
+          [
+            1063,
+            1099
+          ],
+          [
+            1063,
+            1135
+          ],
+          [
+            1099,
+            1135
+          ]
+        ],
+        "added_edges": [
+          [
+            1063,
+            1135
+          ]
+        ],
+        "removed_edges": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920017,
+        "raw_lambda_max": 63.49804032283116,
+        "scale_factor": 0.18353267549155777,
+        "support_entries": 839926,
+        "degree_mean": 10.0,
+        "degree_std": 0.027777777777777776,
+        "mean_clustering": 0.44440742299538605
+      },
+      "summary": {
+        "run_id": "C04_triangle_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "motif_id": "triangle_cluster",
+        "motif_label": "Triangle cluster",
+        "baseline_topology": "split_channel_exchange",
+        "topology_label": "split_channel_exchange",
+        "effect_class": "neutral / no significant effect",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 0,
+        "split_channel_exchange": 1,
+        "defect_pinned": 0,
+        "trapped_local": 0,
+        "unresolved": 0,
+        "flow_concentration_index": 34.05255716870781,
+        "exchange_coherence": 0.20040886266114163,
+        "transport_span": 0.3930637179710643,
+        "channel_count": 12,
+        "loop_count": 1,
+        "motif_occupancy_correlation": 0.4462694897816208,
+        "motif_mass_fraction": 0.06228111829010857,
+        "pinning_score": 0.06228111829010857,
+        "routing_asymmetry": 0.9919996477390188,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.027777777777777776,
+        "clustering_coefficient_shift": -3.702144905859406e-05,
+        "delta_vs_baseline_concentration": -0.0693997512001161,
+        "delta_vs_baseline_coherence": -0.00039793655412978524,
+        "delta_vs_baseline_channel_count": 0,
+        "notes": "Triangle motif on symmetric triad.",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "max_mean_overlap": 0.2847004610984023
+      },
+      "times": [
+        0.0,
+        0.6561621263922478,
+        0.9842431895883716
+      ],
+      "motif_mass_trace": [
+        0.062481055535203806,
+        0.05541870519827313,
+        0.06521785649250422
+      ],
+      "pair_distance_series": [
+        0.3333333333333333,
+        0.3333337577028566,
+        0.33333333985378905
+      ],
+      "overlap_series": [
+        0.27771373515987224,
+        0.2847004610984023,
+        0.27347760202188603
+      ],
+      "phase_alignment_series": [
+        0.11512679873437466,
+        0.10149753779460184,
+        0.13172745614266634
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C04_diamond_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "motif_id": "diamond",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Diamond motif on clustered composite anchor."
+      },
+      "motif": {
+        "motif_id": "diamond",
+        "label": "Diamond",
+        "description": "Shared-edge double triangle intended to test whether local route redundancy seeds smeared or split exchange."
+      },
+      "baseline_summary": {
+        "flow_concentration_index": 100.98943572852035,
+        "exchange_coherence": 0.5941197936852629,
+        "transport_span": 0.04009723085354362,
+        "channel_count": 6,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "max_mean_overlap": 0.6601554536075559,
+        "motif_occupancy_correlation": 0.7316740674168158,
+        "motif_mass_fraction": 0.2039252430374625,
+        "pinning_score": 0.2039252430374625,
+        "routing_asymmetry": 0.31538596639683714,
+        "topology_label": "trapped_local"
+      },
+      "motif_injection": {
+        "motif_nodes": [
+          2359,
+          2395,
+          2791,
+          2827
+        ],
+        "seed_nodes": [
+          2395,
+          2359,
+          2827
+        ],
+        "patch_nodes": [
+          1530,
+          1566,
+          1926,
+          1927,
+          1959,
+          1961,
+          1962,
+          1963,
+          1964,
+          1965,
+          1995,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2034,
+          2323,
+          2356,
+          2357,
+          2358,
+          2359,
+          2360,
+          2362,
+          2390,
+          2391,
+          2392,
+          2393,
+          2394,
+          2395,
+          2396,
+          2397,
+          2398,
+          2399,
+          2426,
+          2427,
+          2428,
+          2429,
+          2430,
+          2431,
+          2432,
+          2433,
+          2434,
+          2435,
+          2465,
+          2466,
+          2467,
+          2468,
+          2791,
+          2825,
+          2826,
+          2827,
+          2828,
+          2861,
+          2862,
+          2863,
+          2864
+        ],
+        "desired_edges": [
+          [
+            2359,
+            2395
+          ],
+          [
+            2359,
+            2791
+          ],
+          [
+            2359,
+            2827
+          ],
+          [
+            2395,
+            2827
+          ],
+          [
+            2791,
+            2827
+          ]
+        ],
+        "added_edges": [
+          [
+            2359,
+            2791
+          ],
+          [
+            2359,
+            2827
+          ],
+          [
+            2395,
+            2827
+          ]
+        ],
+        "removed_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            432
+          ],
+          [
+            1,
+            36
+          ]
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.65396522892002,
+        "raw_lambda_max": 62.877461865101324,
+        "scale_factor": 0.1853440785177158,
+        "support_entries": 839806,
+        "degree_mean": 10.0,
+        "degree_std": 0.062112999374994156,
+        "mean_clustering": 0.4443728510858142
+      },
+      "summary": {
+        "run_id": "C04_diamond_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "motif_id": "diamond",
+        "motif_label": "Diamond",
+        "baseline_topology": "trapped_local",
+        "topology_label": "trapped_local",
+        "effect_class": "neutral / no significant effect",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 0,
+        "split_channel_exchange": 0,
+        "defect_pinned": 0,
+        "trapped_local": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 100.27205764051921,
+        "exchange_coherence": 0.5945988121469861,
+        "transport_span": 0.039014295751946315,
+        "channel_count": 5,
+        "loop_count": 2,
+        "motif_occupancy_correlation": 0.7345824252434302,
+        "motif_mass_fraction": 0.203999785113325,
+        "pinning_score": 0.203999785113325,
+        "routing_asymmetry": 0.3172325427526599,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.06211299937499416,
+        "clustering_coefficient_shift": -7.159335863043959e-05,
+        "delta_vs_baseline_concentration": -0.7173780880011407,
+        "delta_vs_baseline_coherence": 0.00047901846172315743,
+        "delta_vs_baseline_channel_count": -1,
+        "notes": "Diamond motif on clustered composite anchor.",
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "max_mean_overlap": 0.6608196794007267
+      },
+      "times": [
+        0.0,
+        0.6561621263922477,
+        0.9842431895883715
+      ],
+      "motif_mass_trace": [
+        0.22127620922746566,
+        0.1275163663915666,
+        0.21675825310238478
+      ],
+      "pair_distance_series": [
+        0.10667568629397062,
+        0.105952197591473,
+        0.1066396758287194
+      ],
+      "overlap_series": [
+        0.6589911080270985,
+        0.6535546892213431,
+        0.6608196794007267
+      ],
+      "phase_alignment_series": [
+        0.5796316492693468,
+        0.46881914319734497,
+        0.5366830422130443
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C04_diamond_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "motif_id": "diamond",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Diamond motif on corridor counterflow."
+      },
+      "motif": {
+        "motif_id": "diamond",
+        "label": "Diamond",
+        "description": "Shared-edge double triangle intended to test whether local route redundancy seeds smeared or split exchange."
+      },
+      "baseline_summary": {
+        "flow_concentration_index": 46.14307883826136,
+        "exchange_coherence": 0.21580872012150232,
+        "transport_span": 0.0,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "max_mean_overlap": 0.33292704384289,
+        "motif_occupancy_correlation": 0.5286061270912322,
+        "motif_mass_fraction": 0.09938993929763307,
+        "pinning_score": 0.09938993929763307,
+        "routing_asymmetry": 0.9920021825654172,
+        "topology_label": "smeared_transfer"
+      },
+      "motif_injection": {
+        "motif_nodes": [
+          1927,
+          1960,
+          1963,
+          1999
+        ],
+        "seed_nodes": [
+          1963,
+          1927,
+          1999
+        ],
+        "patch_nodes": [
+          1098,
+          1134,
+          1494,
+          1495,
+          1527,
+          1529,
+          1530,
+          1531,
+          1532,
+          1533,
+          1563,
+          1565,
+          1566,
+          1567,
+          1568,
+          1569,
+          1602,
+          1891,
+          1924,
+          1925,
+          1926,
+          1927,
+          1928,
+          1930,
+          1958,
+          1959,
+          1960,
+          1961,
+          1962,
+          1963,
+          1964,
+          1965,
+          1966,
+          1967,
+          1994,
+          1995,
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2002,
+          2003,
+          2033,
+          2034,
+          2035,
+          2036,
+          2359,
+          2393,
+          2394,
+          2395,
+          2396,
+          2429,
+          2430,
+          2431,
+          2432
+        ],
+        "desired_edges": [
+          [
+            1927,
+            1960
+          ],
+          [
+            1927,
+            1963
+          ],
+          [
+            1927,
+            1999
+          ],
+          [
+            1960,
+            1999
+          ],
+          [
+            1963,
+            1999
+          ]
+        ],
+        "added_edges": [
+          [
+            1927,
+            1960
+          ],
+          [
+            1927,
+            1999
+          ],
+          [
+            1960,
+            1999
+          ]
+        ],
+        "removed_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            432
+          ],
+          [
+            1,
+            36
+          ]
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920011,
+        "raw_lambda_max": 71.54429377889042,
+        "scale_factor": 0.16289161040483421,
+        "support_entries": 840012,
+        "degree_mean": 10.0,
+        "degree_std": 0.06514466333088097,
+        "mean_clustering": 0.4443442081752268
+      },
+      "summary": {
+        "run_id": "C04_diamond_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "motif_id": "diamond",
+        "motif_label": "Diamond",
+        "baseline_topology": "smeared_transfer",
+        "topology_label": "smeared_transfer",
+        "effect_class": "neutral / no significant effect",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "split_channel_exchange": 0,
+        "defect_pinned": 0,
+        "trapped_local": 0,
+        "unresolved": 0,
+        "flow_concentration_index": 44.81946268594703,
+        "exchange_coherence": 0.21432439525101946,
+        "transport_span": 0.01576740309371268,
+        "channel_count": 9,
+        "loop_count": 2,
+        "motif_occupancy_correlation": 0.5345394309208972,
+        "motif_mass_fraction": 0.0990240017638923,
+        "pinning_score": 0.0990240017638923,
+        "routing_asymmetry": 0.9924118698207671,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.06514466333088097,
+        "clustering_coefficient_shift": -0.00010023626921784601,
+        "delta_vs_baseline_concentration": -1.3236161523143295,
+        "delta_vs_baseline_coherence": -0.0014843248704828615,
+        "delta_vs_baseline_channel_count": -1,
+        "notes": "Diamond motif on corridor counterflow.",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "max_mean_overlap": 0.3176319304290612
+      },
+      "times": [
+        0.0,
+        0.6561621263922479,
+        0.9842431895883719
+      ],
+      "motif_mass_trace": [
+        0.10348056824272313,
+        0.0735975874527734,
+        0.10542398303218312
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.3308339990263195,
+        0.30138325657858794
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.31295062466946166,
+        0.3176319304290612
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.11761870996803732,
+        0.1034433073734348
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C04_diamond_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "motif_id": "diamond",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Diamond motif on symmetric triad."
+      },
+      "motif": {
+        "motif_id": "diamond",
+        "label": "Diamond",
+        "description": "Shared-edge double triangle intended to test whether local route redundancy seeds smeared or split exchange."
+      },
+      "baseline_summary": {
+        "flow_concentration_index": 34.12195691990792,
+        "exchange_coherence": 0.20080679921527142,
+        "transport_span": 0.1304799213686561,
+        "channel_count": 12,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "max_mean_overlap": 0.28515254885413477,
+        "motif_occupancy_correlation": 0.44639703633758687,
+        "motif_mass_fraction": 0.0721076748545174,
+        "pinning_score": 0.0721076748545174,
+        "routing_asymmetry": 0.9920081088146427,
+        "topology_label": "split_channel_exchange"
+      },
+      "motif_injection": {
+        "motif_nodes": [
+          1027,
+          1063,
+          1099,
+          1135
+        ],
+        "seed_nodes": [
+          1099,
+          1063,
+          1135
+        ],
+        "patch_nodes": [
+          234,
+          270,
+          630,
+          631,
+          663,
+          665,
+          666,
+          667,
+          668,
+          669,
+          699,
+          701,
+          702,
+          703,
+          704,
+          705,
+          738,
+          1027,
+          1060,
+          1061,
+          1062,
+          1063,
+          1064,
+          1066,
+          1094,
+          1095,
+          1096,
+          1097,
+          1098,
+          1099,
+          1100,
+          1101,
+          1102,
+          1103,
+          1130,
+          1131,
+          1132,
+          1133,
+          1134,
+          1135,
+          1136,
+          1137,
+          1138,
+          1139,
+          1169,
+          1170,
+          1171,
+          1172,
+          1495,
+          1529,
+          1530,
+          1531,
+          1532,
+          1565,
+          1566,
+          1567,
+          1568
+        ],
+        "desired_edges": [
+          [
+            1027,
+            1063
+          ],
+          [
+            1027,
+            1135
+          ],
+          [
+            1063,
+            1099
+          ],
+          [
+            1063,
+            1135
+          ],
+          [
+            1099,
+            1135
+          ]
+        ],
+        "added_edges": [
+          [
+            1027,
+            1135
+          ],
+          [
+            1063,
+            1135
+          ]
+        ],
+        "removed_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            432
+          ]
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920027,
+        "raw_lambda_max": 74.22275236610763,
+        "scale_factor": 0.1570133800945056,
+        "support_entries": 840078,
+        "degree_mean": 10.0,
+        "degree_std": 0.048112522432468816,
+        "mean_clustering": 0.4443692881192883
+      },
+      "summary": {
+        "run_id": "C04_diamond_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "motif_id": "diamond",
+        "motif_label": "Diamond",
+        "baseline_topology": "split_channel_exchange",
+        "topology_label": "split_channel_exchange",
+        "effect_class": "channel-splitting",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 0,
+        "split_channel_exchange": 1,
+        "defect_pinned": 0,
+        "trapped_local": 0,
+        "unresolved": 0,
+        "flow_concentration_index": 32.60464509695522,
+        "exchange_coherence": 0.20021722030195435,
+        "transport_span": 0.5200088536179086,
+        "channel_count": 13,
+        "loop_count": 2,
+        "motif_occupancy_correlation": 0.4585609275340405,
+        "motif_mass_fraction": 0.0723533676482037,
+        "pinning_score": 0.0723533676482037,
+        "routing_asymmetry": 0.9922671715386603,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.04811252243246881,
+        "clustering_coefficient_shift": -7.515632515636694e-05,
+        "delta_vs_baseline_concentration": -1.5173118229527063,
+        "delta_vs_baseline_coherence": -0.0005895789133170681,
+        "delta_vs_baseline_channel_count": 1,
+        "notes": "Diamond motif on symmetric triad.",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "max_mean_overlap": 0.2884892184045826
+      },
+      "times": [
+        0.0,
+        0.6561621263922474,
+        0.984243189588371
+      ],
+      "motif_mass_trace": [
+        0.07327939122594002,
+        0.05165754336923145,
+        0.07937286502674595
+      ],
+      "pair_distance_series": [
+        0.3333333333333333,
+        0.3333352348239073,
+        0.33333343305088575
+      ],
+      "overlap_series": [
+        0.27771373515987224,
+        0.2884892184045826,
+        0.2755797493815445
+      ],
+      "phase_alignment_series": [
+        0.11512679873437466,
+        0.09177807905520195,
+        0.1289307888084018
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C04_hub_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "motif_id": "hub_micro_star",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Hub micro-star on clustered composite anchor."
+      },
+      "motif": {
+        "motif_id": "hub_micro_star",
+        "label": "Hub micro-star",
+        "description": "Local hubbing motif intended to test whether micro-hubs pin, disrupt, or redirect exchange-like flow."
+      },
+      "baseline_summary": {
+        "flow_concentration_index": 100.98943572852035,
+        "exchange_coherence": 0.5941197936852629,
+        "transport_span": 0.04009723085354362,
+        "channel_count": 6,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "max_mean_overlap": 0.6601554536075559,
+        "motif_occupancy_correlation": 0.6851892416073921,
+        "motif_mass_fraction": 0.21364641962840553,
+        "pinning_score": 0.21364641962840553,
+        "routing_asymmetry": 0.3955834647763751,
+        "topology_label": "trapped_local"
+      },
+      "motif_injection": {
+        "motif_nodes": [
+          2359,
+          2395,
+          2431,
+          2755,
+          2827
+        ],
+        "seed_nodes": [
+          2827
+        ],
+        "patch_nodes": [
+          1962,
+          1998,
+          2358,
+          2359,
+          2391,
+          2393,
+          2394,
+          2395,
+          2396,
+          2397,
+          2427,
+          2429,
+          2430,
+          2431,
+          2432,
+          2433,
+          2466,
+          2755,
+          2788,
+          2789,
+          2790,
+          2791,
+          2792,
+          2794,
+          2822,
+          2823,
+          2824,
+          2825,
+          2826,
+          2827,
+          2828,
+          2829,
+          2830,
+          2831,
+          2858,
+          2859,
+          2860,
+          2861,
+          2862,
+          2863,
+          2864,
+          2865,
+          2866,
+          2867,
+          2897,
+          2898,
+          2899,
+          2900,
+          3223,
+          3257,
+          3258,
+          3259,
+          3260,
+          3293,
+          3294,
+          3295,
+          3296
+        ],
+        "desired_edges": [
+          [
+            2359,
+            2827
+          ],
+          [
+            2395,
+            2827
+          ],
+          [
+            2431,
+            2827
+          ],
+          [
+            2755,
+            2827
+          ]
+        ],
+        "added_edges": [
+          [
+            2359,
+            2827
+          ],
+          [
+            2395,
+            2827
+          ],
+          [
+            2431,
+            2827
+          ],
+          [
+            2755,
+            2827
+          ]
+        ],
+        "removed_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            432
+          ],
+          [
+            1,
+            36
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.65396522892003,
+        "raw_lambda_max": 76.89890239775255,
+        "scale_factor": 0.15154917515780592,
+        "support_entries": 840020,
+        "degree_mean": 10.0,
+        "degree_std": 0.07856742013183861,
+        "mean_clustering": 0.4443308095796523
+      },
+      "summary": {
+        "run_id": "C04_hub_clustered_anchor",
+        "representative_id": "clustered_composite_anchor",
+        "motif_id": "hub_micro_star",
+        "motif_label": "Hub micro-star",
+        "baseline_topology": "trapped_local",
+        "topology_label": "trapped_local",
+        "effect_class": "neutral / no significant effect",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 0,
+        "split_channel_exchange": 0,
+        "defect_pinned": 0,
+        "trapped_local": 1,
+        "unresolved": 0,
+        "flow_concentration_index": 95.99547592207495,
+        "exchange_coherence": 0.6076191160420938,
+        "transport_span": 0.02375223519543655,
+        "channel_count": 4,
+        "loop_count": 3,
+        "motif_occupancy_correlation": 0.688134061066332,
+        "motif_mass_fraction": 0.20915815714095612,
+        "pinning_score": 0.20915815714095612,
+        "routing_asymmetry": 0.36987535256953524,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.07856742013183862,
+        "clustering_coefficient_shift": -0.00011363486479232243,
+        "delta_vs_baseline_concentration": -4.993959806445403,
+        "delta_vs_baseline_coherence": 0.013499322356830934,
+        "delta_vs_baseline_channel_count": -2,
+        "notes": "Hub micro-star on clustered composite anchor.",
+        "interaction_label": "metastable composite regime",
+        "coarse_label": "diffuse coarse field regime",
+        "max_mean_overlap": 0.7060665075574893
+      },
+      "times": [
+        0.0,
+        0.6561621263922474,
+        0.984243189588371
+      ],
+      "motif_mass_trace": [
+        0.22871822303879333,
+        0.10618698670788686,
+        0.22151960750866395
+      ],
+      "pair_distance_series": [
+        0.10667568629397062,
+        0.10526358513228688,
+        0.10610892727777532
+      ],
+      "overlap_series": [
+        0.6589911080270985,
+        0.7060665075574893,
+        0.665648415356301
+      ],
+      "phase_alignment_series": [
+        0.5796316492693468,
+        0.41310180650042794,
+        0.5347817178103201
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C04_hub_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "motif_id": "hub_micro_star",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Hub micro-star on corridor counterflow."
+      },
+      "motif": {
+        "motif_id": "hub_micro_star",
+        "label": "Hub micro-star",
+        "description": "Local hubbing motif intended to test whether micro-hubs pin, disrupt, or redirect exchange-like flow."
+      },
+      "baseline_summary": {
+        "flow_concentration_index": 46.14307883826136,
+        "exchange_coherence": 0.21580872012150232,
+        "transport_span": 0.0,
+        "channel_count": 10,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "max_mean_overlap": 0.33292704384289,
+        "motif_occupancy_correlation": 0.4972499289006062,
+        "motif_mass_fraction": 0.10467275051128451,
+        "pinning_score": 0.10467275051128451,
+        "routing_asymmetry": 0.9912306017763416,
+        "topology_label": "smeared_transfer"
+      },
+      "motif_injection": {
+        "motif_nodes": [
+          3619,
+          3652,
+          3655,
+          3691,
+          3724
+        ],
+        "seed_nodes": [
+          3652
+        ],
+        "patch_nodes": [
+          2787,
+          2823,
+          3183,
+          3184,
+          3216,
+          3218,
+          3219,
+          3220,
+          3221,
+          3222,
+          3252,
+          3254,
+          3255,
+          3256,
+          3257,
+          3258,
+          3291,
+          3580,
+          3613,
+          3614,
+          3615,
+          3616,
+          3617,
+          3619,
+          3647,
+          3648,
+          3649,
+          3650,
+          3651,
+          3652,
+          3653,
+          3654,
+          3655,
+          3656,
+          3683,
+          3684,
+          3685,
+          3686,
+          3687,
+          3688,
+          3689,
+          3690,
+          3691,
+          3692,
+          3722,
+          3723,
+          3724,
+          3725,
+          4048,
+          4082,
+          4083,
+          4084,
+          4085,
+          4118,
+          4119,
+          4120,
+          4121
+        ],
+        "desired_edges": [
+          [
+            3619,
+            3652
+          ],
+          [
+            3652,
+            3655
+          ],
+          [
+            3652,
+            3691
+          ],
+          [
+            3652,
+            3724
+          ]
+        ],
+        "added_edges": [
+          [
+            3619,
+            3652
+          ],
+          [
+            3652,
+            3655
+          ],
+          [
+            3652,
+            3691
+          ],
+          [
+            3652,
+            3724
+          ]
+        ],
+        "removed_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            432
+          ],
+          [
+            1,
+            36
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.653965228920017,
+        "raw_lambda_max": 76.89796410072441,
+        "scale_factor": 0.15155102433733011,
+        "support_entries": 840020,
+        "degree_mean": 10.0,
+        "degree_std": 0.07856742013183861,
+        "mean_clustering": 0.4443308095796523
+      },
+      "summary": {
+        "run_id": "C04_hub_corridor",
+        "representative_id": "counter_propagating_corridor",
+        "motif_id": "hub_micro_star",
+        "motif_label": "Hub micro-star",
+        "baseline_topology": "smeared_transfer",
+        "topology_label": "smeared_transfer",
+        "effect_class": "neutral / no significant effect",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 1,
+        "split_channel_exchange": 0,
+        "defect_pinned": 0,
+        "trapped_local": 0,
+        "unresolved": 0,
+        "flow_concentration_index": 43.57029905490492,
+        "exchange_coherence": 0.22802201292921587,
+        "transport_span": 0.010513870779632822,
+        "channel_count": 9,
+        "loop_count": 2,
+        "motif_occupancy_correlation": 0.5017351057759959,
+        "motif_mass_fraction": 0.10258254394316597,
+        "pinning_score": 0.10258254394316597,
+        "routing_asymmetry": 0.9917935609649186,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.07856742013183862,
+        "clustering_coefficient_shift": -0.00011363486479232243,
+        "delta_vs_baseline_concentration": -2.572779783356438,
+        "delta_vs_baseline_coherence": 0.01221329280771355,
+        "delta_vs_baseline_channel_count": -1,
+        "notes": "Hub micro-star on corridor counterflow.",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "max_mean_overlap": 0.33806866814349384
+      },
+      "times": [
+        0.0,
+        0.6561621263922478,
+        0.9842431895883716
+      ],
+      "motif_mass_trace": [
+        0.11025120725995015,
+        0.05844094226045775,
+        0.11282667492252409
+      ],
+      "pair_distance_series": [
+        0.300051743607888,
+        0.32125110747508606,
+        0.30835907795992484
+      ],
+      "overlap_series": [
+        0.2975631144144779,
+        0.33806866814349384,
+        0.309035033174087
+      ],
+      "phase_alignment_series": [
+        0.11198856287746106,
+        0.15315039317478538,
+        0.08878711709256723
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C04_hub_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "motif_id": "hub_micro_star",
+        "resolution": 12,
+        "boundary_type": "periodic",
+        "operator_sector": "projected_transverse",
+        "notes": "Hub micro-star on symmetric triad."
+      },
+      "motif": {
+        "motif_id": "hub_micro_star",
+        "label": "Hub micro-star",
+        "description": "Local hubbing motif intended to test whether micro-hubs pin, disrupt, or redirect exchange-like flow."
+      },
+      "baseline_summary": {
+        "flow_concentration_index": 34.12195691990792,
+        "exchange_coherence": 0.20080679921527142,
+        "transport_span": 0.1304799213686561,
+        "channel_count": 12,
+        "loop_count": 0,
+        "recurrence_indicator": 0.0,
+        "max_mean_overlap": 0.28515254885413477,
+        "motif_occupancy_correlation": 0.4203035552386607,
+        "motif_mass_fraction": 0.07605137985309147,
+        "pinning_score": 0.07605137985309147,
+        "routing_asymmetry": 0.9904777259057482,
+        "topology_label": "split_channel_exchange"
+      },
+      "motif_injection": {
+        "motif_nodes": [
+          1030,
+          1063,
+          1099,
+          1102,
+          1135
+        ],
+        "seed_nodes": [
+          1102
+        ],
+        "patch_nodes": [
+          237,
+          273,
+          633,
+          634,
+          666,
+          668,
+          669,
+          670,
+          671,
+          672,
+          702,
+          704,
+          705,
+          706,
+          707,
+          708,
+          741,
+          1030,
+          1063,
+          1064,
+          1065,
+          1066,
+          1067,
+          1069,
+          1097,
+          1098,
+          1099,
+          1100,
+          1101,
+          1102,
+          1103,
+          1104,
+          1105,
+          1106,
+          1133,
+          1134,
+          1135,
+          1136,
+          1137,
+          1138,
+          1139,
+          1140,
+          1141,
+          1142,
+          1172,
+          1173,
+          1174,
+          1175,
+          1498,
+          1532,
+          1533,
+          1534,
+          1535,
+          1568,
+          1569,
+          1570,
+          1571
+        ],
+        "desired_edges": [
+          [
+            1030,
+            1102
+          ],
+          [
+            1063,
+            1102
+          ],
+          [
+            1099,
+            1102
+          ],
+          [
+            1102,
+            1135
+          ]
+        ],
+        "added_edges": [
+          [
+            1030,
+            1102
+          ],
+          [
+            1063,
+            1102
+          ],
+          [
+            1099,
+            1102
+          ],
+          [
+            1102,
+            1135
+          ]
+        ],
+        "removed_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            432
+          ],
+          [
+            1,
+            36
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "operator_summary": {
+        "lambda_max": 11.65396522892006,
+        "raw_lambda_max": 76.89526733936206,
+        "scale_factor": 0.15155633931913587,
+        "support_entries": 840020,
+        "degree_mean": 10.0,
+        "degree_std": 0.07856742013183861,
+        "mean_clustering": 0.4443308095796523
+      },
+      "summary": {
+        "run_id": "C04_hub_triad",
+        "representative_id": "phase_ordered_symmetric_triad",
+        "motif_id": "hub_micro_star",
+        "motif_label": "Hub micro-star",
+        "baseline_topology": "split_channel_exchange",
+        "topology_label": "split_channel_exchange",
+        "effect_class": "neutral / no significant effect",
+        "braid_like_exchange": 0,
+        "smeared_transfer": 0,
+        "split_channel_exchange": 1,
+        "defect_pinned": 0,
+        "trapped_local": 0,
+        "unresolved": 0,
+        "flow_concentration_index": 32.115731619347265,
+        "exchange_coherence": 0.1997552855353799,
+        "transport_span": 0.5125527863477551,
+        "channel_count": 12,
+        "loop_count": 2,
+        "motif_occupancy_correlation": 0.4300178403173546,
+        "motif_mass_fraction": 0.07542389154234769,
+        "pinning_score": 0.07542389154234769,
+        "routing_asymmetry": 0.9907768577834601,
+        "recurrence_indicator": 0.0,
+        "degree_spectrum_shift": 0.07856742013183862,
+        "clustering_coefficient_shift": -0.00011363486479232243,
+        "delta_vs_baseline_concentration": -2.006225300560658,
+        "delta_vs_baseline_coherence": -0.0010515136798915081,
+        "delta_vs_baseline_channel_count": 0,
+        "notes": "Hub micro-star on symmetric triad.",
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "max_mean_overlap": 0.2884811386100439
+      },
+      "times": [
+        0.0,
+        0.6561621263922466,
+        0.9842431895883699
+      ],
+      "motif_mass_trace": [
+        0.07701611217584398,
+        0.045533500041505436,
+        0.08498300764612698
+      ],
+      "pair_distance_series": [
+        0.3333333333333333,
+        0.3333395446622381,
+        0.33333337623809284
+      ],
+      "overlap_series": [
+        0.27771373515987224,
+        0.2884811386100439,
+        0.2758901165041856
+      ],
+      "phase_alignment_series": [
+        0.11512679873437466,
+        0.08963953580082469,
+        0.1283219628469485
+      ]
+    }
+  ],
+  "topology_counts": {
+    "trapped_local": 3,
+    "smeared_transfer": 3,
+    "split_channel_exchange": 3
+  },
+  "effect_class_counts": {
+    "neutral / no significant effect": 8,
+    "channel-splitting": 1
+  },
+  "observation": "motif injection causes isolated quantitative shifts, but no motif class produces a repeated new topology across the 3 encounter families",
+  "conclusion": "C0.4 is weakly exploratory rather than positive: motif effects appear local and case-specific, not yet reproducible as a seeded topology class"
+}

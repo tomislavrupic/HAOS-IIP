@@ -1,0 +1,208 @@
+{
+  "stage": "C0.3_topology_exchange_robustness_under_incidence_noise",
+  "description": "Nine-run incidence-noise robustness scan on the no-distance combinatorial graph-shell branch. The packet update rule and graph-shell kernel are frozen while the line-graph incidence structure is perturbed by controlled rewiring and delete-insert operators.",
+  "note_name": "Stage_C0_3_Topology_Exchange_Robustness_Under_Incidence_Noise_v1.md",
+  "experiment_slug": "stage_c0_3_incidence_noise_robustness",
+  "kernel_mode_family": {
+    "kernel_class_id": "graph_shell",
+    "label": "graph-shell",
+    "definition": "W_ij depends only on graph-shell distance 1,2,3 on the perturbed edge-incidence graph, with no coordinate distance and no Gaussian embedding."
+  },
+  "architecture_notice": "This branch varies only the combinatorial incidence structure of the explicit edge-graph control operator. Packet initialization, projected-transverse state sector, graph size, and shell-weight kernel family remain frozen.",
+  "baseline_notice": "The current C0.1-C0.2 combinatorial branch does not yet contain a clean braid_like_exchange baseline. C0.3 therefore anchors to the nearest exchange-like protected surrogate, counter_propagating_corridor, and treats braid detection as an allowed outcome rather than an assumed starting point.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family as C0.1-C0.2"
+  },
+  "resolution_policy": {
+    "base_resolution": 12,
+    "promotion_required": false,
+    "followup_gate": "Promote only if a braid_like_exchange class appears reproducibly or if the smeared-transfer surrogate shows a sharp incidence-noise threshold."
+  },
+  "parameter_policy": {
+    "max_shell": 3,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "match_lambda_to_frozen_L1": true,
+    "random_seed": 3303,
+    "min_degree_floor": 3,
+    "active_threshold_sigma": 1.0,
+    "baseline_flow_tolerance": 5.0,
+    "baseline_coherence_tolerance": 0.04,
+    "braid_transport_floor": 0.08,
+    "ultra_weak_rewire_ops": 16,
+    "weak_rewire_ops": 48,
+    "moderate_rewire_ops": 144,
+    "moderate_delete_insert_ops": 96,
+    "cluster_patch_ops": 96,
+    "localized_defect_ops": 72,
+    "degree_biased_ops": 120,
+    "connectivity_stress_ops": 96,
+    "patch_radius": 2,
+    "localized_radius": 1
+  },
+  "representatives": [
+    {
+      "representative_id": "counter_propagating_corridor",
+      "source_stage12_run_id": "S12_counter_propagating_composite_corridor",
+      "source_stage15_case_id": "counter_propagating_corridor",
+      "packet_count": 2,
+      "packet_centers": [
+        [0.35, 0.5, 0.5],
+        [0.65, 0.5, 0.5]
+      ],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0],
+      "notes": "Nearest exchange-like protected surrogate from C0.1-C0.2."
+    }
+  ],
+  "perturbations": [
+    {
+      "perturbation_id": "baseline_no_noise",
+      "label": "Baseline no-noise",
+      "mode": "baseline",
+      "notes": "Unperturbed incidence graph control."
+    },
+    {
+      "perturbation_id": "ultra_weak_rewiring",
+      "label": "Ultra-weak rewiring",
+      "mode": "endpoint_rewire",
+      "notes": "Very small random endpoint rewiring at fixed edge count."
+    },
+    {
+      "perturbation_id": "weak_rewiring",
+      "label": "Weak rewiring",
+      "mode": "endpoint_rewire",
+      "notes": "Weak random endpoint rewiring at fixed edge count."
+    },
+    {
+      "perturbation_id": "moderate_rewiring",
+      "label": "Moderate rewiring",
+      "mode": "endpoint_rewire",
+      "notes": "Moderate random endpoint rewiring at fixed edge count."
+    },
+    {
+      "perturbation_id": "moderate_deletion_insertion",
+      "label": "Moderate deletion-insertion",
+      "mode": "delete_insert",
+      "notes": "Moderate delete plus insert perturbation at fixed edge count."
+    },
+    {
+      "perturbation_id": "clustered_rewiring_patch",
+      "label": "Clustered rewiring patch",
+      "mode": "patch_rewire",
+      "notes": "Localized rewiring inside a BFS patch on the incidence graph."
+    },
+    {
+      "perturbation_id": "random_localized_defect_pair",
+      "label": "Random localized defect pair",
+      "mode": "localized_defect_pair",
+      "notes": "Two localized defect neighborhoods perturbed without disconnecting the graph."
+    },
+    {
+      "perturbation_id": "degree_biased_perturbation",
+      "label": "Degree-biased perturbation",
+      "mode": "degree_biased",
+      "notes": "Incidence rewiring biased toward high-degree targets."
+    },
+    {
+      "perturbation_id": "connectivity_edge_stress_test",
+      "label": "Connectivity-edge stress test",
+      "mode": "connectivity_stress",
+      "notes": "Perturb edges with low shared-neighbor support while preserving connectedness."
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "C03_baseline_no_noise",
+      "representative_id": "counter_propagating_corridor",
+      "perturbation_id": "baseline_no_noise",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "No-noise corridor control."
+    },
+    {
+      "run_id": "C03_ultra_weak_rewiring",
+      "representative_id": "counter_propagating_corridor",
+      "perturbation_id": "ultra_weak_rewiring",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Ultra-weak random rewiring."
+    },
+    {
+      "run_id": "C03_weak_rewiring",
+      "representative_id": "counter_propagating_corridor",
+      "perturbation_id": "weak_rewiring",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Weak random rewiring."
+    },
+    {
+      "run_id": "C03_moderate_rewiring",
+      "representative_id": "counter_propagating_corridor",
+      "perturbation_id": "moderate_rewiring",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Moderate random rewiring."
+    },
+    {
+      "run_id": "C03_moderate_delete_insert",
+      "representative_id": "counter_propagating_corridor",
+      "perturbation_id": "moderate_deletion_insertion",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Moderate delete plus insert perturbation."
+    },
+    {
+      "run_id": "C03_clustered_patch",
+      "representative_id": "counter_propagating_corridor",
+      "perturbation_id": "clustered_rewiring_patch",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Localized patch rewiring."
+    },
+    {
+      "run_id": "C03_localized_defect_pair",
+      "representative_id": "counter_propagating_corridor",
+      "perturbation_id": "random_localized_defect_pair",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Random localized defect-pair perturbation."
+    },
+    {
+      "run_id": "C03_degree_biased",
+      "representative_id": "counter_propagating_corridor",
+      "perturbation_id": "degree_biased_perturbation",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Degree-biased incidence perturbation."
+    },
+    {
+      "run_id": "C03_connectivity_stress",
+      "representative_id": "counter_propagating_corridor",
+      "perturbation_id": "connectivity_edge_stress_test",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "operator_sector": "projected_transverse",
+      "notes": "Connectivity-edge stress test."
+    }
+  ]
+}
