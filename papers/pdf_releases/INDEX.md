@@ -76,6 +76,10 @@ The intended public reading order is:
 2. `25.2` Final Combinatorial Austerity Closure Note on the No-Distance Combinatorial Austerity Line
 3. `25.3` Full Combinatorial Austerity Closure of the No-Distance C Line
 
+### 2.9 Part IX. Phase III clustered DK closure
+
+1. `26.1` Effective Smeared-Transfer Closure in a Clustered DK Sector
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -109,6 +113,7 @@ The intended public reading order is:
 - `25.1` No-Distance Combinatorial Austerity Line from Metric Removal to Harmonic-Address Selection, Armed-State Irreversibility, C0-to-DK Bridge Tests, and Integrated Austerity Resolution
 - `25.2` Final Combinatorial Austerity Closure Note on the No-Distance Combinatorial Austerity Line
 - `25.3` Full Combinatorial Austerity Closure of the No-Distance C Line
+- `26.1` Effective Smeared-Transfer Closure in a Clustered DK Sector
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

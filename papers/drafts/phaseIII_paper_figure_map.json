@@ -1,0 +1,76 @@
+{
+  "default_title": "Effective Smeared-Transfer Closure in a Clustered DK Sector",
+  "alternative_titles": [
+    "Phase-Corridor-Controlled Texture Transition in a Clustered DK Branch",
+    "Reduction and One-Sided Closure of a Clustered DK Interaction Sector"
+  ],
+  "branch_scope": "frozen clustered DK sector only",
+  "figures": [
+    {
+      "figure_id": "Figure_1",
+      "paper_role": "family non-generality and topology survival summary",
+      "source_stages": [
+        "23.10 / III-C1"
+      ],
+      "source_paths": [
+        "plots/20260316_102709_stage23_10_topology_survival_matrix.png",
+        "plots/20260316_102709_stage23_10_family_comparison_persistence_panel.png"
+      ],
+      "caption_draft": "Clustered and non-clustered comparison summary from the mechanism non-generality pass. The clustered baseline retains the braid label, mild clustered degradation shifts to transfer-smeared behavior, and non-clustered families do not recover a robust braid sector.",
+      "usage_note": "May be used as a single figure with two panels or as one unchanged primary figure plus one supporting inset.",
+      "scientific_status": "existing_summary_assets_only"
+    },
+    {
+      "figure_id": "Figure_2",
+      "paper_role": "effective reduction and one-sided phase closure",
+      "source_stages": [
+        "23.11 / III-C2",
+        "23.12 / III-C3"
+      ],
+      "source_paths": [
+        "plots/20260316_104146_stage23_11_effective_phase_diagram.png",
+        "plots/20260316_105448_stage23_12_effective_phase_map.png",
+        "plots/20260316_105448_stage23_12_topology_survival_heatmap.png"
+      ],
+      "caption_draft": "Reduced-model and phase-closure summary for the clustered sector. The surrogate reproduces the tested anchor lattice, while the closure pass isolates a one-sided smeared-dominant stable region and leaves no stable braid phase.",
+      "usage_note": "Prefer a two-panel editorial recomposition using existing outputs only.",
+      "scientific_status": "existing_summary_assets_only"
+    },
+    {
+      "figure_id": "Figure_3",
+      "paper_role": "mechanism isolation comparison",
+      "source_stages": [
+        "23.13 / III-C4"
+      ],
+      "source_paths": [
+        "plots/20260316_110320_stage23_13_mechanism_branch_comparison_matrix.png",
+        "plots/20260316_110320_stage23_13_braid_survival_vs_ablation_panel.png",
+        "plots/20260316_110320_stage23_13_coherence_collapse_panel.png"
+      ],
+      "caption_draft": "Branch-wise ablation summary for the clustered braid/smear split. Phase-corridor flattening gives the clean discriminative collapse, whereas geometry-overlap weakening and 0<->1 operator cross-coupling suppression act only as secondary supports.",
+      "usage_note": "Use the comparison matrix as primary and the braid-survival panel as secondary support.",
+      "scientific_status": "existing_summary_assets_only"
+    },
+    {
+      "figure_id": "Figure_4",
+      "paper_role": "final positive and negative claim ledger summary",
+      "source_stages": [
+        "23.14 / III-C5"
+      ],
+      "source_paths": [
+        "plots/20260316_111201_stage23_14_phaseIII_positive_core_table.png",
+        "plots/20260316_111201_stage23_14_phaseIII_negative_boundary_table.png",
+        "plots/20260316_111201_stage23_14_phaseIII_mechanism_and_phase_closure_panel.png",
+        "plots/20260316_111201_stage23_14_phaseIII_claim_status_matrix.png"
+      ],
+      "caption_draft": "Frozen Phase III claim architecture. The positive core is limited to clustered-sector reduction, one-sided smeared closure, and phase-corridor-primary mechanism control, while family-wide braid claims and braid-phase closure remain excluded.",
+      "usage_note": "Prefer the positive and negative tables as a paired figure; use the mechanism-and-phase closure panel as the compact manuscript summary graphic.",
+      "scientific_status": "existing_summary_assets_only"
+    }
+  ],
+  "editorial_constraints": {
+    "new_scientific_figures_allowed": false,
+    "editorial_recomposition_allowed": true,
+    "scope_warning": "Do not use figure captions that universalize clustered braid texture into a family-wide mechanism."
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "experiment": "23.14_phaseIII_final_consolidation_and_freeze",
+  "description": "Final Phase III consolidation and freeze for the frozen HAOS (Harmonic Address Operating System) / IIP (Interaction Invariance Physics) clustered Dirac-Kahler branch.",
+  "phaseIII_status": "complete",
+  "phaseIII_consolidation_complete": true,
+  "phaseIII_inputs_consistent": true,
+  "phaseIII_freeze_valid": true,
+  "positive_core_frozen": true,
+  "negative_boundaries_frozen": true,
+  "mechanism_question_closed": true,
+  "family_wide_braid_mechanism": false,
+  "effective_model_valid": true,
+  "phase_diagram_closed": true,
+  "closure_class": "smeared_dominant_closed_phase_diagram",
+  "stable_braid_phase_present": false,
+  "localized_encounter_phase_present": false,
+  "mechanism_primary": "phase_corridor_primary",
+  "geometry_overlap_role": "secondary_support",
+  "operator_cross_coupling_role": "secondary_support",
+  "grade_transfer_primary": false,
+  "phaseIII_minimal_read": "clustered DK sector closes as a finite smeared-transfer effective regime; braid is texture-level and phase-corridor-controlled, not a family-wide intrinsic mechanism",
+  "consistency_checks": {
+    "stage23_10_zero_non_clustered_braid_hits": true,
+    "stage23_11_effective_model_valid_true": true,
+    "stage23_12_phase_diagram_closed_true": true,
+    "stage23_12_no_stable_braid_phase": true,
+    "stage23_13_phase_corridor_primary": true,
+    "positive_core_noncontradictory": true
+  },
+  "inputs": {
+    "stage23_10": {
+      "stage_label": "23.10 / III-C1",
+      "note_path": "experiments/pre_geometry_atlas/Stage_23_10_DK_Braid_Mechanism_Isolation_Probe_v1.md",
+      "json_path": "data/20260316_102709_stage23_10_dk_braid_mechanism_isolation_probe.json",
+      "csv_path": "data/20260316_102709_stage23_10_dk_braid_mechanism_isolation_probe.csv"
+    },
+    "stage23_11": {
+      "stage_label": "23.11 / III-C2",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C2_Minimal_Effective_Model_Extraction_v1.md",
+      "json_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.json",
+      "csv_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.csv"
+    },
+    "stage23_12": {
+      "stage_label": "23.12 / III-C3",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C3_Effective_Phase_Diagram_Closure_v1.md",
+      "json_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.json",
+      "csv_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.csv"
+    },
+    "stage23_13": {
+      "stage_label": "23.13 / III-C4",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C4_Mechanism_Isolation_Probe_v1.md",
+      "json_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.json",
+      "csv_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.csv"
+    }
+  },
+  "upstream_facts": {
+    "stage23_10": {
+      "classification": "clustered_texture_artefact",
+      "classification_payload": {
+        "robust_non_clustered_braid_hits": 0,
+        "non_clustered_braid_hits": 0,
+        "clustered_braid_hits": 2,
+        "clustered_degraded_collapse": true
+      },
+      "topology_counts": {
+        "braid_like_exchange": 2,
+        "transfer_smeared": 7
+      }
+    },
+    "stage23_11": {
+      "effective_model_valid": true,
+      "metrics": {
+        "topology_agreement_fraction": 1.0,
+        "detuning_threshold_error": 0.0,
+        "phase_band_width_error": 0.0,
+        "single_smeared_band_reproduced": true,
+        "mean_survival_time_envelope_mismatch": 0.013920729032473655,
+        "observed_detuning_threshold": 0.5,
+        "predicted_detuning_threshold": 0.5
+      },
+      "observed_topology_counts": {
+        "braid_like_exchange": 2,
+        "transfer_smeared": 4,
+        "unresolved": 3
+      },
+      "predicted_topology_counts": {
+        "braid_like_exchange": 2,
+        "transfer_smeared": 4,
+        "unresolved": 3
+      }
+    },
+    "stage23_12": {
+      "phase_diagram_closed": true,
+      "closure_classification": "smeared_dominant_closed_phase_diagram",
+      "stable_connected_region_present": true,
+      "finite_boundary_flag": true,
+      "bidirectional_preservation_flag": true,
+      "boundary_segment_count": 5,
+      "stable_phase_counts": {
+        "transient_mixed_phase": 10,
+        "smeared_transfer_phase": 5
+      },
+      "dominant_topology_counts": {
+        "braid_like_exchange": 6,
+        "transfer_smeared": 9
+      },
+      "stable_components": [
+        {
+          "label": "smeared_transfer_phase",
+          "size": 5,
+          "cells": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "width_min": 1.35,
+          "width_max": 1.35,
+          "phase_min": 0.375,
+          "phase_max": 0.575
+        }
+      ]
+    },
+    "stage23_13": {
+      "overall_summary": {
+        "overall_mechanism_label": "phase_corridor_primary",
+        "overall_statement": "braid-like exchange in the DK sector is primarily controlled by phase corridor, with geometry overlap and operator cross-coupling acting as secondary support"
+      },
+      "branch_summary": {
+        "A_grade_transfer_suppression": {
+          "branch_id": "A_grade_transfer_suppression",
+          "branch_label": "Grade-transfer suppression",
+          "label": "no_clear_mechanism_signal",
+          "summary": {
+            "weak_collapse": false,
+            "moderate_collapse": false,
+            "mean_sensitivity_score": 0.0,
+            "max_sensitivity_score": 0.0,
+            "control_topology": "braid_like_exchange",
+            "weak_topology": "braid_like_exchange",
+            "moderate_topology": "braid_like_exchange"
+          }
+        },
+        "B_phase_corridor_flattening": {
+          "branch_id": "B_phase_corridor_flattening",
+          "branch_label": "Phase-corridor flattening",
+          "label": "phase_corridor_primary",
+          "summary": {
+            "weak_collapse": true,
+            "moderate_collapse": true,
+            "mean_sensitivity_score": 0.5521327463164741,
+            "max_sensitivity_score": 0.5527189761632604,
+            "control_topology": "braid_like_exchange",
+            "weak_topology": "transfer_smeared",
+            "moderate_topology": "transfer_smeared"
+          }
+        },
+        "C_geometry_overlap_weakening": {
+          "branch_id": "C_geometry_overlap_weakening",
+          "branch_label": "Geometry-overlap weakening",
+          "label": "coupled_mechanism_no_single_primary",
+          "summary": {
+            "weak_collapse": false,
+            "moderate_collapse": true,
+            "mean_sensitivity_score": 0.325,
+            "max_sensitivity_score": 0.65,
+            "control_topology": "braid_like_exchange",
+            "weak_topology": "braid_like_exchange",
+            "moderate_topology": "transfer_smeared"
+          }
+        },
+        "D_operator_cross_coupling_suppression": {
+          "branch_id": "D_operator_cross_coupling_suppression",
+          "branch_label": "Operator cross-coupling suppression",
+          "label": "coupled_mechanism_no_single_primary",
+          "summary": {
+            "weak_collapse": false,
+            "moderate_collapse": true,
+            "mean_sensitivity_score": 0.39853226992826996,
+            "max_sensitivity_score": 0.7772377571754503,
+            "control_topology": "braid_like_exchange",
+            "weak_topology": "braid_like_exchange",
+            "moderate_topology": "transfer_smeared"
+          }
+        }
+      }
+    }
+  },
+  "claim_ledger": [
+    {
+      "claim_id": "P3_POS_01",
+      "claim_text": "The tested clustered DK braid/smear sector admits a valid two-state effective surrogate on the anchor lattice.",
+      "status": "survives",
+      "supporting_stage": "23.11 / III-C2",
+      "supporting_metric_or_fact": "effective_model_valid = TRUE; topology agreement = 1.0000; threshold error = 0.0000",
+      "scope": "clustered_sector_only",
+      "notes": "Valid only as a clustered texture surrogate."
+    },
+    {
+      "claim_id": "P3_POS_02",
+      "claim_text": "The clustered DK sector closes as a finite smeared_dominant_closed_phase_diagram.",
+      "status": "survives",
+      "supporting_stage": "23.12 / III-C3",
+      "supporting_metric_or_fact": "phase_diagram_closed = True; closure_classification = smeared_dominant_closed_phase_diagram",
+      "scope": "phase_closure",
+      "notes": "Closure is one-sided and smeared-dominant."
+    },
+    {
+      "claim_id": "P3_POS_03",
+      "claim_text": "Only the strong-asymmetry row width_ratio = 1.35 survives as refinement-/beta-/reverse-stable across the sampled phase corridor.",
+      "status": "survives",
+      "supporting_stage": "23.12 / III-C3",
+      "supporting_metric_or_fact": "stable component = smeared_transfer_phase; width_min = width_max = 1.35; phase range 0.375 -> 0.575",
+      "scope": "phase_closure",
+      "notes": "No symmetric or moderate-asymmetry cell closes stably."
+    },
+    {
+      "claim_id": "P3_POS_04",
+      "claim_text": "phase_corridor_primary is the controlling mechanism classification for the braid/smear split in the clustered sector.",
+      "status": "survives",
+      "supporting_stage": "23.13 / III-C4",
+      "supporting_metric_or_fact": "overall_mechanism_label = phase_corridor_primary",
+      "scope": "mechanism_read",
+      "notes": "Weak and moderate phase flattening both flip the clustered control to transfer_smeared."
+    },
+    {
+      "claim_id": "P3_POS_05",
+      "claim_text": "Geometry overlap and 0 <-> 1 operator cross-coupling act as bounded secondary supports only.",
+      "status": "bounded_support",
+      "supporting_stage": "23.13 / III-C4",
+      "supporting_metric_or_fact": "Both branches collapse braid only at moderate ablation, not weak ablation.",
+      "scope": "mechanism_read",
+      "notes": "Secondary support only; not primary control."
+    },
+    {
+      "claim_id": "P3_NEG_01",
+      "claim_text": "The DK braid does not generalize beyond clustered seeds and is not a family-wide intrinsic mechanism.",
+      "status": "fails",
+      "supporting_stage": "23.10 / III-C1",
+      "supporting_metric_or_fact": "non_clustered_braid_hits = 0; robust_non_clustered_braid_hits = 0",
+      "scope": "not_family_wide",
+      "notes": "Family-wide braid generalization fails on this branch."
+    },
+    {
+      "claim_id": "P3_NEG_02",
+      "claim_text": "No stable closed braid phase survives the full closure pass.",
+      "status": "fails",
+      "supporting_stage": "23.12 / III-C3",
+      "supporting_metric_or_fact": "stable_phase_counts = {'transient_mixed_phase': 10, 'smeared_transfer_phase': 5}",
+      "scope": "phase_closure",
+      "notes": "Braid remains transient and does not close as a stable phase."
+    },
+    {
+      "claim_id": "P3_NEG_03",
+      "claim_text": "No localized encounter phase survives the closure pass.",
+      "status": "fails",
+      "supporting_stage": "23.12 / III-C3",
+      "supporting_metric_or_fact": "stable_phase_counts = {'transient_mixed_phase': 10, 'smeared_transfer_phase': 5}",
+      "scope": "phase_closure",
+      "notes": "Localized encounter phase absent from the stable closure set."
+    },
+    {
+      "claim_id": "P3_NEG_04",
+      "claim_text": "Grade transfer is not the primary driver on the frozen branch.",
+      "status": "fails",
+      "supporting_stage": "23.13 / III-C4",
+      "supporting_metric_or_fact": "grade-transfer branch label = no_clear_mechanism_signal",
+      "scope": "mechanism_read",
+      "notes": "Grade-transfer-primary mechanism claim fails."
+    },
+    {
+      "claim_id": "P3_NEG_05",
+      "claim_text": "The observed clustered braid-like exchange may not be elevated into a universal topological law.",
+      "status": "excluded",
+      "supporting_stage": "23.10 / III-C1; 23.12 / III-C3; 23.13 / III-C4",
+      "supporting_metric_or_fact": "Clustered-only scope, absence of stable braid closure, and phase-corridor-primary control bound the interpretation.",
+      "scope": "clustered_sector_only",
+      "notes": "Universal mechanism reading is excluded on this branch."
+    }
+  ]
+}

@@ -1,0 +1,3204 @@
+{
+  "experiment": "23.10_dk_braid_mechanism_isolation_probe",
+  "description": "Nine-run diagnostic lattice separating intrinsic DK braid exchange from clustered seed texture under geometry degradation, motif injection, anisotropy, and distributed seeding.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "base_epsilon": 0.2,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "beta": 0.02,
+    "repeatability_phase_jitter_fraction_of_pi": [
+      -0.03,
+      -0.015,
+      0.015,
+      0.03
+    ],
+    "allowed_topology_labels": [
+      "braid_like_exchange",
+      "transfer_smeared",
+      "dispersive_pass",
+      "localized_capture"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S23_10_clustered_baseline",
+      "family_id": "clustered_baseline_control",
+      "family_label": "Clustered baseline",
+      "family_group": "clustered",
+      "notes": "Tight equal-width clustered pair at the refinement-stable braid anchor.",
+      "base_resolution": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "dt": 0.12528656129226287,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 3.0,
+          "flow_concentration_index": 0.8885757457351036,
+          "grade_transfer_asymmetry": 0.19947487406642878,
+          "grade_exchange_coherence": 0.4834026186148435,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.8657894637225318,
+            0.8746018697984701,
+            0.890353757492869,
+            0.905264845680751,
+            0.9187408809479581,
+            0.9164240604279424,
+            0.9001412777710731,
+            0.8844701432934527,
+            0.8759779509491927
+          ],
+          "alignment_trace": [
+            0.5102207366674372,
+            0.5102031672707774,
+            0.511858607986232,
+            0.5150455569065978,
+            0.5195851304912418,
+            0.5252784425412798,
+            0.5319230993891881,
+            0.5393266353984181,
+            0.5473158109631169
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.008121246375422258,
+            0.029219843899818312,
+            0.05805702940526396,
+            0.08926132539773772,
+            0.11891356535998057,
+            0.1448679376124721,
+            0.16636468576522115,
+            0.18348991506332568
+          ],
+          "center_histories": [
+            [
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.4583333333333333,
+                0.5416666666666666
+              ],
+              [
+                0.4583333333333333,
+                0.5416666666666666
+              ]
+            ]
+          ],
+          "channel_count": 1
+        }
+      },
+      "refined_resolution": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "dt": 0.1248093167474574,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 4.0,
+          "flow_concentration_index": 0.8942347152022955,
+          "grade_transfer_asymmetry": 0.25887254418853156,
+          "grade_exchange_coherence": 0.40421144381054075,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange"
+          ],
+          "flow_trace": [
+            0.8721382213865868,
+            0.8741954308666746,
+            0.8791437195403098,
+            0.8867270200776036,
+            0.8958256789792498,
+            0.9053282543033445,
+            0.9127721173675003,
+            0.9182533666641781,
+            0.9187914864809158
+          ],
+          "alignment_trace": [
+            0.5103147453651716,
+            0.5103075669203575,
+            0.5108149269580987,
+            0.5118231931482131,
+            0.5133149899259402,
+            0.515269692769638,
+            0.5176639949558778,
+            0.5204725170741287,
+            0.5236684296937477
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.0026619643839858875,
+            0.009411372826017245,
+            0.019764642725722134,
+            0.03297785847840783,
+            0.04821566439636007,
+            0.0646515240860842,
+            0.081541746125472,
+            0.09826925917393042
+          ],
+          "center_histories": [
+            [
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ]
+            ]
+          ],
+          "channel_count": 1
+        }
+      },
+      "repeatability_trials": [
+        {
+          "phase_jitter_fraction_of_pi": -0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.8897613151736056,
+          "match_reference": 0
+        },
+        {
+          "phase_jitter_fraction_of_pi": -0.015,
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 0.3758596838767886,
+          "flow_concentration_index": 0.889184548338907,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.015,
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 0.3758596838767886,
+          "flow_concentration_index": 0.8879331654291583,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.03,
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 0.3758596838767886,
+          "flow_concentration_index": 0.8872549471823445,
+          "match_reference": 1
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_clustered_degraded",
+      "family_id": "clustered_degraded",
+      "family_label": "Clustered degraded",
+      "family_group": "clustered",
+      "notes": "Mild width asymmetry and small separation / alignment offset applied to the clustered control.",
+      "base_resolution": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "dt": 0.12528656129226287,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 3.0,
+          "flow_concentration_index": 0.8785413961770466,
+          "grade_transfer_asymmetry": 0.19500766426249083,
+          "grade_exchange_coherence": 0.48712500484306376,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.8510075852325247,
+            0.8601002992411927,
+            0.8762129365041164,
+            0.8942715722155379,
+            0.9034630012595245,
+            0.9006990086709797,
+            0.8919922337272586,
+            0.8821516036917671,
+            0.8721550554207288
+          ],
+          "alignment_trace": [
+            0.558729891911801,
+            0.5586829606059149,
+            0.5608214130957995,
+            0.5649493289910515,
+            0.5708148656760841,
+            0.5781366083785724,
+            0.5866284301153062,
+            0.5960195382903442,
+            0.6060681075166392
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.008340410487435813,
+            0.029940496578611402,
+            0.059260714572081735,
+            0.09071471775115501,
+            0.12032532099558593,
+            0.14599837738520677,
+            0.16706455390642974,
+            0.18369433270630256
+          ],
+          "center_histories": [
+            [
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ]
+            ]
+          ],
+          "channel_count": 1
+        }
+      },
+      "refined_resolution": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "dt": 0.1248093167474574,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 4.0,
+          "flow_concentration_index": 0.8781093526381019,
+          "grade_transfer_asymmetry": 0.2553951870991597,
+          "grade_exchange_coherence": 0.40600283893242783,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange"
+          ],
+          "flow_trace": [
+            0.8526369390015652,
+            0.8554554682659633,
+            0.860732641313846,
+            0.8687141488446163,
+            0.8791034560452327,
+            0.8899534125279881,
+            0.89938220858175,
+            0.9059142653663252,
+            0.9095367150138587
+          ],
+          "alignment_trace": [
+            0.5588259668854473,
+            0.5588169371835549,
+            0.5594795666146157,
+            0.5607948954161888,
+            0.5627381062851498,
+            0.5652792975228008,
+            0.5683843681198633,
+            0.5720159686904644,
+            0.5761344723386455
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.002743056926215268,
+            0.009708342229901816,
+            0.020367674056362552,
+            0.033925450790492286,
+            0.049495622386787286,
+            0.06621042610959602,
+            0.08329881110454235,
+            0.10013068019057364
+          ],
+          "center_histories": [
+            [
+              [
+                0.5625,
+                0.4791666666666667
+              ],
+              [
+                0.5625,
+                0.4791666666666667
+              ],
+              [
+                0.5625,
+                0.4791666666666667
+              ],
+              [
+                0.5625,
+                0.4791666666666667
+              ],
+              [
+                0.5625,
+                0.4791666666666667
+              ],
+              [
+                0.5625,
+                0.4791666666666667
+              ],
+              [
+                0.5625,
+                0.4791666666666667
+              ],
+              [
+                0.5625,
+                0.4791666666666667
+              ],
+              [
+                0.5625,
+                0.4791666666666667
+              ]
+            ],
+            [
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ]
+            ]
+          ],
+          "channel_count": 1
+        }
+      },
+      "repeatability_trials": [
+        {
+          "phase_jitter_fraction_of_pi": -0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.3758596838767886,
+          "flow_concentration_index": 0.8802092474680759,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": -0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.3758596838767886,
+          "flow_concentration_index": 0.879389865707622,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.3758596838767886,
+          "flow_concentration_index": 0.8776631405168994,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.3758596838767886,
+          "flow_concentration_index": 0.8767546254591433,
+          "match_reference": 1
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_clustered_topology_broken",
+      "family_id": "clustered_topology_broken",
+      "family_label": "Clustered topology-broken",
+      "family_group": "clustered",
+      "notes": "Clustered control with phase skew plus a mild graded-support surrogate for local degree disorder on the regular DK lattice.",
+      "base_resolution": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "dt": 0.12528656129226287,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 4.0,
+          "flow_concentration_index": 0.894159503582986,
+          "grade_transfer_asymmetry": 0.20109571059930026,
+          "grade_exchange_coherence": 0.47258998173160516,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.8780705082548438,
+            0.8858131772694304,
+            0.900101731266547,
+            0.9110153543846762,
+            0.9182711482336124,
+            0.9128964810251475,
+            0.896857054979492,
+            0.8877135135890191,
+            0.881402615712488
+          ],
+          "alignment_trace": [
+            0.661242289578353,
+            0.6597103013892205,
+            0.6590939477153326,
+            0.6593364957192724,
+            0.6603598088175205,
+            0.6620724783589177,
+            0.6643779146134752,
+            0.6671812625865738,
+            0.6703945137656193
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.0073307439002066165,
+            0.02593993824270569,
+            0.05176667326334273,
+            0.08042127346333706,
+            0.10845706059760417,
+            0.1337544661252336,
+            0.15534789288549322,
+            0.17306007633200998
+          ],
+          "center_histories": [
+            [
+              [
+                0.5416666666666666,
+                0.4583333333333333
+              ],
+              [
+                0.5416666666666666,
+                0.4583333333333333
+              ],
+              [
+                0.4583333333333333,
+                0.5416666666666666
+              ],
+              [
+                0.4583333333333333,
+                0.5416666666666666
+              ],
+              [
+                0.4583333333333333,
+                0.5416666666666666
+              ],
+              [
+                0.4583333333333333,
+                0.5416666666666666
+              ],
+              [
+                0.4583333333333333,
+                0.5416666666666666
+              ],
+              [
+                0.4583333333333333,
+                0.5416666666666666
+              ],
+              [
+                0.4583333333333333,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.5416666666666666
+              ]
+            ]
+          ],
+          "channel_count": 1
+        }
+      },
+      "refined_resolution": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "dt": 0.1248093167474574,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 4.0,
+          "flow_concentration_index": 0.9045210073024549,
+          "grade_transfer_asymmetry": 0.25936697171485157,
+          "grade_exchange_coherence": 0.4011412045512598,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange",
+            "braid_like_exchange"
+          ],
+          "flow_trace": [
+            0.8857407092152637,
+            0.8879526370658358,
+            0.8922619451350275,
+            0.899175040470195,
+            0.9078541160777877,
+            0.9169217722772236,
+            0.9235697157847841,
+            0.9264631456833085,
+            0.9253081858322635
+          ],
+          "alignment_trace": [
+            0.6612909481875453,
+            0.6604810359804936,
+            0.6599476538940181,
+            0.6596860361600355,
+            0.6596894785037793,
+            0.6599495491140832,
+            0.6604563416628735,
+            0.6611987560836186,
+            0.6621647925934466
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.0025264320483194404,
+            0.008459051350726221,
+            0.01749825571523877,
+            0.029085293879056572,
+            0.04257627731423281,
+            0.05731563084351463,
+            0.07269136554811334,
+            0.08817181078973356
+          ],
+          "center_histories": [
+            [
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ],
+              [
+                0.5625,
+                0.5208333333333334
+              ]
+            ]
+          ],
+          "channel_count": 1
+        }
+      },
+      "repeatability_trials": [
+        {
+          "phase_jitter_fraction_of_pi": -0.03,
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 0.5011462451690515,
+          "flow_concentration_index": 0.8947751580266341,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": -0.015,
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 0.5011462451690515,
+          "flow_concentration_index": 0.8944763511212861,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.015,
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 0.5011462451690515,
+          "flow_concentration_index": 0.8938238637941949,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.03,
+          "topology_class": "braid_like_exchange",
+          "braid_survival_time": 0.5011462451690515,
+          "flow_concentration_index": 0.8934686236369739,
+          "match_reference": 1
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_corridor_baseline",
+      "family_id": "corridor_baseline",
+      "family_label": "Corridor baseline",
+      "family_group": "corridor",
+      "notes": "Counter-propagating corridor pair under the same operator and phase anchor as the clustered control.",
+      "base_resolution": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "dt": 0.12528656129226287,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7105969182827715,
+          "grade_transfer_asymmetry": 0.201919473788511,
+          "grade_exchange_coherence": 0.47974811453298544,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.6528683307065276,
+            0.6656693533737482,
+            0.6851929250862825,
+            0.7100307389471007,
+            0.7292277061955574,
+            0.7452187298884052,
+            0.7540580409903846,
+            0.7494424501243758,
+            0.7395706932009065
+          ],
+          "alignment_trace": [
+            0.972983754407517,
+            0.9729677393392339,
+            0.9740266045798605,
+            0.976059651844968,
+            0.9789078054800919,
+            0.9823773000026589,
+            0.9862635075147058,
+            0.990370767216215,
+            0.9945261029397735
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.007764498024370965,
+            0.02803134521033202,
+            0.05590793992304919,
+            0.08629641223747944,
+            0.11541305066428216,
+            0.14113422249357244,
+            0.16265820718321056,
+            0.18000413842606774
+          ],
+          "center_histories": [
+            [
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ]
+            ]
+          ],
+          "channel_count": 2
+        }
+      },
+      "refined_resolution": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "dt": 0.1248093167474574,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6813221920728776,
+          "grade_transfer_asymmetry": 0.2616221760720448,
+          "grade_exchange_coherence": 0.4027930194976321,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.6567689253288652,
+            0.6589698473164377,
+            0.6635729705410186,
+            0.6705595229918201,
+            0.6800254821440878,
+            0.6915783944724689,
+            0.7038069118640728,
+            0.7155428510320395,
+            0.7251800584882777
+          ],
+          "alignment_trace": [
+            0.9729879505559662,
+            0.9729841742590515,
+            0.9732619800367711,
+            0.973813139666712,
+            0.9746239572534392,
+            0.9756759222577917,
+            0.9769465155903188,
+            0.9784101123291175,
+            0.980038923624614
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.002540879018313755,
+            0.008940283584563873,
+            0.018766726695046,
+            0.031339054573771126,
+            0.045886618778734636,
+            0.06164133913604355,
+            0.07790651280395566,
+            0.09409847869964537
+          ],
+          "center_histories": [
+            [
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ]
+            ]
+          ],
+          "channel_count": 2
+        }
+      },
+      "repeatability_trials": [
+        {
+          "phase_jitter_fraction_of_pi": -0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7084744488967639,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": -0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7095307119550952,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7116714092561318,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7127523822295156,
+          "match_reference": 1
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_corridor_motif_injected",
+      "family_id": "corridor_motif_injected",
+      "family_label": "Corridor motif-injected",
+      "family_group": "corridor",
+      "notes": "Corridor baseline with a weak third packet inserted to form a triangular encounter motif without changing the operator class.",
+      "base_resolution": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "dt": 0.12528656129226287,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6624354606290817,
+          "grade_transfer_asymmetry": 0.2286167651463974,
+          "grade_exchange_coherence": 0.4876019231852879,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.6079572946948296,
+            0.6220100171793226,
+            0.64067377073782,
+            0.6640581767124513,
+            0.6812653688562943,
+            0.6943685845077562,
+            0.7012702616097539,
+            0.6969311564856449,
+            0.688570814789177
+          ],
+          "alignment_trace": [
+            0.9300365989508594,
+            0.9300245943975707,
+            0.9310625423167649,
+            0.9330521713866713,
+            0.9358622935777756,
+            0.9393401346848469,
+            0.9433235575681314,
+            0.9476534667631331,
+            0.952184713632701
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.009240136049667278,
+            0.0335581187984034,
+            0.06671425274570147,
+            0.10233080934148657,
+            0.13583067391587875,
+            0.16478416376377708,
+            0.18839611984341054,
+            0.2068382405748949
+          ],
+          "center_histories": [
+            [
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.625,
+                0.5416666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7083333333333334
+              ],
+              [
+                0.5416666666666666,
+                0.7083333333333334
+              ],
+              [
+                0.5416666666666666,
+                0.7083333333333334
+              ],
+              [
+                0.5416666666666666,
+                0.7083333333333334
+              ],
+              [
+                0.5416666666666666,
+                0.7083333333333334
+              ],
+              [
+                0.5416666666666666,
+                0.7083333333333334
+              ]
+            ]
+          ],
+          "channel_count": 2
+        }
+      },
+      "refined_resolution": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "dt": 0.1248093167474574,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6412663671886019,
+          "grade_transfer_asymmetry": 0.27370731779937374,
+          "grade_exchange_coherence": 0.40455230392943653,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.6125091435269153,
+            0.6165124821508129,
+            0.6227873817532692,
+            0.630839720005642,
+            0.6404745759927661,
+            0.6512717675685814,
+            0.6619235955142461,
+            0.6718716503599709,
+            0.6802257072360086
+          ],
+          "alignment_trace": [
+            0.9300292056544007,
+            0.9300282665471982,
+            0.9303742424539052,
+            0.9310569327165129,
+            0.9320622789360736,
+            0.9333727029758137,
+            0.934967484250183,
+            0.9368231944084572,
+            0.938914201841506
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.002870585261331554,
+            0.01043781386944617,
+            0.022136134581460565,
+            0.03708445873295933,
+            0.05429297307624002,
+            0.07278636265047751,
+            0.0916939380550886,
+            0.11030120944780242
+          ],
+          "center_histories": [
+            [
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.6875,
+                0.5208333333333334
+              ],
+              [
+                0.6875,
+                0.5208333333333334
+              ],
+              [
+                0.6875,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.4791666666666667,
+                0.6458333333333334
+              ],
+              [
+                0.4791666666666667,
+                0.6458333333333334
+              ],
+              [
+                0.4791666666666667,
+                0.6458333333333334
+              ],
+              [
+                0.4791666666666667,
+                0.6458333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.6458333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.6458333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.6458333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.6458333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.6458333333333334
+              ]
+            ]
+          ],
+          "channel_count": 2
+        }
+      },
+      "repeatability_trials": [
+        {
+          "phase_jitter_fraction_of_pi": -0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6594990012302164,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": -0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6610742565573738,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6634322890523652,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.663881195285936,
+          "match_reference": 1
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_corridor_anisotropic_kernel",
+      "family_id": "corridor_anisotropic_kernel",
+      "family_label": "Corridor anisotropic",
+      "family_group": "corridor",
+      "notes": "Corridor baseline with weak local anisotropy realized as an anisotropic support deformation while preserving the Gaussian kernel class.",
+      "base_resolution": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "dt": 0.12528656129226287,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7129022115914335,
+          "grade_transfer_asymmetry": 0.2012459232110947,
+          "grade_exchange_coherence": 0.48192012858619954,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.6665085380234211,
+            0.6788819329103539,
+            0.6974756628921642,
+            0.7161672733203717,
+            0.734874454418227,
+            0.7466067064986017,
+            0.7439912540617217,
+            0.7396347453430505,
+            0.7333078541573637
+          ],
+          "alignment_trace": [
+            0.9558187190354144,
+            0.9558019210252758,
+            0.9569470567730973,
+            0.9591429831722494,
+            0.9622206027785859,
+            0.9659776550764706,
+            0.9702032076978636,
+            0.9746976272008837,
+            0.9792860024219872
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.007953133097160345,
+            0.02867598120642722,
+            0.05706265162313344,
+            0.08784472312442988,
+            0.11717225291320134,
+            0.14293678022028747,
+            0.16438689535290268,
+            0.1815946541442266
+          ],
+          "center_histories": [
+            [
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ],
+              [
+                0.375,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ],
+              [
+                0.7083333333333334,
+                0.5416666666666666
+              ]
+            ]
+          ],
+          "channel_count": 1
+        }
+      },
+      "refined_resolution": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "dt": 0.1248093167474574,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6982315711949879,
+          "grade_transfer_asymmetry": 0.2608037048238334,
+          "grade_exchange_coherence": 0.4036498613092951,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.6700477269873322,
+            0.6728432230683391,
+            0.6783657217026127,
+            0.6866308009617604,
+            0.6970777895037616,
+            0.7090654015414216,
+            0.7209374583645035,
+            0.7326697715420073,
+            0.7412330942547224
+          ],
+          "alignment_trace": [
+            0.9558197205654294,
+            0.955815531878177,
+            0.9561219604575355,
+            0.9567297634229041,
+            0.9576241405816461,
+            0.9587854276707415,
+            0.9601899440409319,
+            0.9618109347884879,
+            0.963619546771727
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.0025886338005991273,
+            0.009123920793741885,
+            0.01915272552166876,
+            0.0319647878714565,
+            0.04675929270411209,
+            0.06274235438504278,
+            0.0791989878304093,
+            0.09553556873961251
+          ],
+          "center_histories": [
+            [
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ],
+              [
+                0.3541666666666667,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.6458333333333334,
+                0.5208333333333334
+              ]
+            ]
+          ],
+          "channel_count": 1
+        }
+      },
+      "repeatability_trials": [
+        {
+          "phase_jitter_fraction_of_pi": -0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7118584967381069,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": -0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7123779849949493,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7134305409857766,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.7139622001211925,
+          "match_reference": 1
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_triad_baseline",
+      "family_id": "triad_baseline",
+      "family_label": "Triad baseline",
+      "family_group": "triad",
+      "notes": "Symmetric triad encounter with balanced support across packets.",
+      "base_resolution": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "dt": 0.12528656129226287,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5684230536192396,
+          "grade_transfer_asymmetry": 0.20063632176919666,
+          "grade_exchange_coherence": 0.48642314173965523,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.5326525719227297,
+            0.5399574728596893,
+            0.5561027925491552,
+            0.5718688758836329,
+            0.5864762287490413,
+            0.5986983658539384,
+            0.6000918480210079,
+            0.5959842749628987,
+            0.5908560468983942
+          ],
+          "alignment_trace": [
+            0.9929816828539932,
+            0.9929782960410496,
+            0.9933369487623229,
+            0.9940215706889786,
+            0.9949717288236422,
+            0.9961127087936257,
+            0.997365632423047,
+            0.9986557397988094,
+            0.999917947910858
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.008332102789822222,
+            0.029994059367514567,
+            0.059438974961282594,
+            0.09104302232931351,
+            0.12081337696705644,
+            0.14666357021468365,
+            0.167935258892137,
+            0.18480041333915417
+          ],
+          "center_histories": [
+            [
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ]
+            ]
+          ],
+          "channel_count": 3
+        }
+      },
+      "refined_resolution": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "dt": 0.1248093167474574,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5665637806690764,
+          "grade_transfer_asymmetry": 0.258910416660966,
+          "grade_exchange_coherence": 0.4056714195781831,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.539514363734151,
+            0.5429177930446365,
+            0.5486531822157001,
+            0.5564624592605105,
+            0.5660439730831631,
+            0.5766125260110786,
+            0.5873468405512946,
+            0.5967918200081705,
+            0.6051726842477527
+          ],
+          "alignment_trace": [
+            0.9929804556713624,
+            0.9929796265320562,
+            0.9930819465068691,
+            0.9932841730105104,
+            0.9935806063149937,
+            0.9939633956839559,
+            0.9944229210811482,
+            0.9949482211585834,
+            0.9955274379617866
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.002716643973302011,
+            0.009633792259218373,
+            0.020235560490469356,
+            0.03373174384875594,
+            0.049239925445527445,
+            0.06589610492251276,
+            0.08293411513023906,
+            0.09972976990157598
+          ],
+          "center_histories": [
+            [
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ]
+            ]
+          ],
+          "channel_count": 3
+        }
+      },
+      "repeatability_trials": [
+        {
+          "phase_jitter_fraction_of_pi": -0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5686274908283535,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": -0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5685366550506796,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5682905499806266,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5681442210976896,
+          "match_reference": 1
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_triad_degree_skewed",
+      "family_id": "triad_degree_skewed",
+      "family_label": "Triad degree-skewed",
+      "family_group": "triad",
+      "notes": "Triad baseline with mild localized graded-support skew used as a degree-spectrum surrogate on the otherwise regular DK lattice.",
+      "base_resolution": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "dt": 0.12528656129226287,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5692797867013719,
+          "grade_transfer_asymmetry": 0.19540397513366908,
+          "grade_exchange_coherence": 0.4864873871385639,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.5314172474054143,
+            0.5417791328242185,
+            0.5587436887317098,
+            0.5740375671092799,
+            0.5864276238326326,
+            0.5927647896003364,
+            0.5941307137387607,
+            0.5923139477947341,
+            0.5880045307761639
+          ],
+          "alignment_trace": [
+            0.9932641446960041,
+            0.9927710091122872,
+            0.9926424665336798,
+            0.9928762563308768,
+            0.9934398043936274,
+            0.9942778757351858,
+            0.9953219883371403,
+            0.9964994273799314,
+            0.9977404318534198
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.008006253078468794,
+            0.028967102903177142,
+            0.057509281488685275,
+            0.08816064137924669,
+            0.11702339033795597,
+            0.14205762827271223,
+            0.1626211394742388,
+            0.17888582012521656
+          ],
+          "center_histories": [
+            [
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ],
+              [
+                0.2916666666666667,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ],
+              [
+                0.7916666666666666,
+                0.5416666666666666
+              ]
+            ],
+            [
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ],
+              [
+                0.5416666666666666,
+                0.7916666666666666
+              ]
+            ]
+          ],
+          "channel_count": 3
+        }
+      },
+      "refined_resolution": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "dt": 0.1248093167474574,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5676324003322158,
+          "grade_transfer_asymmetry": 0.2481109398237547,
+          "grade_exchange_coherence": 0.40492527717882254,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.5404873751734778,
+            0.5437599733308923,
+            0.5495056498489396,
+            0.5580388419132246,
+            0.568372002159461,
+            0.5792992874355422,
+            0.5895334964047393,
+            0.5980909154804205,
+            0.605287966988448
+          ],
+          "alignment_trace": [
+            0.9932629445485968,
+            0.9930179964450132,
+            0.9928749902031869,
+            0.9928357559047566,
+            0.9928994288164842,
+            0.9930625947645271,
+            0.9933195401629561,
+            0.9936625830125589,
+            0.9940824575760345
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.002560190088418917,
+            0.009206021237868364,
+            0.019435294275054794,
+            0.032483738999470886,
+            0.04749517785399737,
+            0.06362897919105774,
+            0.08013809965992473,
+            0.09641298281907833
+          ],
+          "center_histories": [
+            [
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ],
+              [
+                0.2708333333333333,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ],
+              [
+                0.7708333333333334,
+                0.5208333333333334
+              ]
+            ],
+            [
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ],
+              [
+                0.5208333333333334,
+                0.7708333333333334
+              ]
+            ]
+          ],
+          "channel_count": 3
+        }
+      },
+      "repeatability_trials": [
+        {
+          "phase_jitter_fraction_of_pi": -0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5695301947645559,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": -0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5694163070036992,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5691261520097743,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5689601724667606,
+          "match_reference": 1
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_distributed_random_seed",
+      "family_id": "distributed_random_seed",
+      "family_label": "Distributed random seed",
+      "family_group": "distributed",
+      "notes": "Deterministic pseudo-random distributed packet seed used as the farthest non-clustered comparison family.",
+      "base_resolution": {
+        "resolution": 12,
+        "epsilon": 0.2,
+        "dt": 0.12528656129226287,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6041795641818696,
+          "grade_transfer_asymmetry": 0.19424089370775421,
+          "grade_exchange_coherence": 0.4974460262488301,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.5390571330930327,
+            0.5554340103840668,
+            0.5844035375310975,
+            0.6131841263943699,
+            0.634126724102217,
+            0.6427147693041759,
+            0.6426584139501009,
+            0.6375744128833767,
+            0.6271718358881422
+          ],
+          "alignment_trace": [
+            0.9999895380771425,
+            0.9999895022028118,
+            0.9999943789452178,
+            0.9999963779609844,
+            0.9999845952401554,
+            0.9999728998258182,
+            0.9999641021507879,
+            0.9999606235096246,
+            0.9999640864155781
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.009358310459188232,
+            0.03344225421602632,
+            0.0654986113520678,
+            0.099049131643778,
+            0.12980776731702173,
+            0.15577889892278568,
+            0.17654892151774162,
+            0.19254562965283764
+          ],
+          "center_histories": [
+            [
+              [
+                0.20833333333333334,
+                0.2916666666666667
+              ],
+              [
+                0.20833333333333334,
+                0.2916666666666667
+              ],
+              [
+                0.20833333333333334,
+                0.2916666666666667
+              ],
+              [
+                0.20833333333333334,
+                0.2916666666666667
+              ],
+              [
+                0.20833333333333334,
+                0.2916666666666667
+              ],
+              [
+                0.20833333333333334,
+                0.2916666666666667
+              ],
+              [
+                0.20833333333333334,
+                0.2916666666666667
+              ],
+              [
+                0.20833333333333334,
+                0.2916666666666667
+              ],
+              [
+                0.20833333333333334,
+                0.2916666666666667
+              ]
+            ],
+            [
+              [
+                0.375,
+                0.7083333333333334
+              ],
+              [
+                0.375,
+                0.7083333333333334
+              ],
+              [
+                0.375,
+                0.7083333333333334
+              ],
+              [
+                0.375,
+                0.7083333333333334
+              ],
+              [
+                0.375,
+                0.7083333333333334
+              ],
+              [
+                0.375,
+                0.7083333333333334
+              ],
+              [
+                0.375,
+                0.7083333333333334
+              ],
+              [
+                0.375,
+                0.7083333333333334
+              ],
+              [
+                0.375,
+                0.7083333333333334
+              ]
+            ],
+            [
+              [
+                0.625,
+                0.375
+              ],
+              [
+                0.625,
+                0.375
+              ],
+              [
+                0.625,
+                0.375
+              ],
+              [
+                0.625,
+                0.375
+              ],
+              [
+                0.625,
+                0.375
+              ],
+              [
+                0.625,
+                0.375
+              ],
+              [
+                0.625,
+                0.375
+              ],
+              [
+                0.625,
+                0.375
+              ],
+              [
+                0.625,
+                0.375
+              ]
+            ],
+            [
+              [
+                0.875,
+                0.7916666666666666
+              ],
+              [
+                0.875,
+                0.7916666666666666
+              ],
+              [
+                0.875,
+                0.7916666666666666
+              ],
+              [
+                0.875,
+                0.7916666666666666
+              ],
+              [
+                0.875,
+                0.7916666666666666
+              ],
+              [
+                0.875,
+                0.7916666666666666
+              ],
+              [
+                0.875,
+                0.7916666666666666
+              ],
+              [
+                0.875,
+                0.7916666666666666
+              ],
+              [
+                0.875,
+                0.7916666666666666
+              ]
+            ]
+          ],
+          "channel_count": 4
+        }
+      },
+      "refined_resolution": {
+        "resolution": 24,
+        "epsilon": 0.2,
+        "dt": 0.1248093167474574,
+        "steps": 8,
+        "metrics": {
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.5923724349557953,
+          "grade_transfer_asymmetry": 0.2506708884693112,
+          "grade_exchange_coherence": 0.4109117258401278,
+          "topology_trace": [
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "dispersive_pass",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared",
+            "transfer_smeared"
+          ],
+          "flow_trace": [
+            0.5521663087515002,
+            0.5565405954179453,
+            0.5650625014761039,
+            0.5774726750520802,
+            0.5935741560744541,
+            0.6104423161122436,
+            0.6260322366594643,
+            0.6386193046518978,
+            0.6485555668308144
+          ],
+          "alignment_trace": [
+            0.9999895456842915,
+            0.9999895382293608,
+            0.9999902931393436,
+            0.9999917832374065,
+            0.999993926725887,
+            0.999996593951737,
+            0.9999996178479439,
+            0.9999971931145543,
+            0.9999940407714117
+          ],
+          "grade_exchange_trace": [
+            0.0,
+            0.0030809050672007607,
+            0.011032688036598537,
+            0.02315316050206817,
+            0.038432391343350115,
+            0.05577252902015774,
+            0.07413040745676973,
+            0.09261303485143024,
+            0.11052349892504594
+          ],
+          "center_histories": [
+            [
+              [
+                0.1875,
+                0.22916666666666666
+              ],
+              [
+                0.1875,
+                0.22916666666666666
+              ],
+              [
+                0.1875,
+                0.22916666666666666
+              ],
+              [
+                0.1875,
+                0.22916666666666666
+              ],
+              [
+                0.1875,
+                0.22916666666666666
+              ],
+              [
+                0.1875,
+                0.22916666666666666
+              ],
+              [
+                0.1875,
+                0.22916666666666666
+              ],
+              [
+                0.1875,
+                0.22916666666666666
+              ],
+              [
+                0.1875,
+                0.22916666666666666
+              ]
+            ],
+            [
+              [
+                0.3958333333333333,
+                0.7291666666666666
+              ],
+              [
+                0.3958333333333333,
+                0.7291666666666666
+              ],
+              [
+                0.3958333333333333,
+                0.7291666666666666
+              ],
+              [
+                0.3958333333333333,
+                0.7291666666666666
+              ],
+              [
+                0.3958333333333333,
+                0.7291666666666666
+              ],
+              [
+                0.3958333333333333,
+                0.7291666666666666
+              ],
+              [
+                0.3958333333333333,
+                0.7291666666666666
+              ],
+              [
+                0.3958333333333333,
+                0.7291666666666666
+              ],
+              [
+                0.3958333333333333,
+                0.7291666666666666
+              ]
+            ],
+            [
+              [
+                0.6458333333333334,
+                0.3541666666666667
+              ],
+              [
+                0.6458333333333334,
+                0.3541666666666667
+              ],
+              [
+                0.6458333333333334,
+                0.3541666666666667
+              ],
+              [
+                0.6458333333333334,
+                0.3541666666666667
+              ],
+              [
+                0.6458333333333334,
+                0.3541666666666667
+              ],
+              [
+                0.6458333333333334,
+                0.3541666666666667
+              ],
+              [
+                0.6458333333333334,
+                0.3541666666666667
+              ],
+              [
+                0.6458333333333334,
+                0.3541666666666667
+              ],
+              [
+                0.6458333333333334,
+                0.3541666666666667
+              ]
+            ],
+            [
+              [
+                0.8541666666666666,
+                0.7708333333333334
+              ],
+              [
+                0.8541666666666666,
+                0.7708333333333334
+              ],
+              [
+                0.8541666666666666,
+                0.7708333333333334
+              ],
+              [
+                0.8541666666666666,
+                0.7708333333333334
+              ],
+              [
+                0.8541666666666666,
+                0.7708333333333334
+              ],
+              [
+                0.8541666666666666,
+                0.7708333333333334
+              ],
+              [
+                0.8541666666666666,
+                0.7708333333333334
+              ],
+              [
+                0.8541666666666666,
+                0.7708333333333334
+              ],
+              [
+                0.8541666666666666,
+                0.7708333333333334
+              ]
+            ]
+          ],
+          "channel_count": 4
+        }
+      },
+      "repeatability_trials": [
+        {
+          "phase_jitter_fraction_of_pi": -0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6041879970479841,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": -0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6041832014067254,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.015,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6041770648139567,
+          "match_reference": 1
+        },
+        {
+          "phase_jitter_fraction_of_pi": 0.03,
+          "topology_class": "transfer_smeared",
+          "braid_survival_time": 0.0,
+          "flow_concentration_index": 0.6041756704017386,
+          "match_reference": 1
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "classification": "clustered_texture_artefact",
+    "classification_payload": {
+      "robust_non_clustered_braid_hits": 0,
+      "non_clustered_braid_hits": 0,
+      "clustered_braid_hits": 2,
+      "clustered_degraded_collapse": true
+    },
+    "topology_counts": {
+      "braid_like_exchange": 2,
+      "transfer_smeared": 7
+    }
+  }
+}

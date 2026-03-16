@@ -1,0 +1,1066 @@
+{
+  "experiment": "23.12_dk_effective_phase_diagram_closure",
+  "description": "Stage III-C3 closure of the clustered Dirac-Kahler collision sector on the frozen HAOS (Harmonic Address Operating System) / IIP (Interaction Invariance Physics) architecture.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "architecture_label": "frozen_haos_iip_clustered_dk_collision_sector",
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "base_epsilon": 0.2,
+    "mean_width": 0.08,
+    "separation": 0.08,
+    "amplitude_scale": 1.0,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "weak_beta_values": [
+      0.01,
+      0.02
+    ],
+    "phase_values_fraction_of_pi": [
+      0.375,
+      0.475,
+      0.5,
+      0.55,
+      0.575
+    ],
+    "width_regimes": [
+      {
+        "width_regime": "symmetric_clustered",
+        "width_ratio_a_to_b": 1.0
+      },
+      {
+        "width_regime": "moderate_asymmetry",
+        "width_ratio_a_to_b": 1.15
+      },
+      {
+        "width_regime": "strong_asymmetry",
+        "width_ratio_a_to_b": 1.35
+      }
+    ],
+    "allowed_topology_labels": [
+      "braid_like_exchange",
+      "transfer_smeared",
+      "localized_capture",
+      "dispersive_pass"
+    ],
+    "allowed_phase_labels": [
+      "stable_braid_phase",
+      "smeared_transfer_phase",
+      "localized_encounter_phase",
+      "transient_mixed_phase"
+    ]
+  },
+  "cells": [
+    {
+      "run_id": "S23_12_p0375_w100",
+      "phase_label": "protected_braid_anchor",
+      "phase_offset_fraction_of_pi": 0.375,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "dominant_forward_topology": "braid_like_exchange",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.5011462451690515,
+          "flow_concentration_index": 0.8954188806891632,
+          "grade_exchange_coherence": 0.4682639588415184,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.3744279502423722,
+          "flow_concentration_index": 0.9040803000839448,
+          "grade_exchange_coherence": 0.39512439006051264,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.5011462451690515,
+          "flow_concentration_index": 0.8954144522256555,
+          "grade_exchange_coherence": 0.46962210689772493,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.3744279502423722,
+          "flow_concentration_index": 0.9040548121707687,
+          "grade_exchange_coherence": 0.39839063693148974,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0475_w100",
+      "phase_label": "lower_corridor",
+      "phase_offset_fraction_of_pi": 0.475,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "dominant_forward_topology": "braid_like_exchange",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8934044516138545,
+          "grade_exchange_coherence": 0.4720523168391277,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.9011045358583045,
+          "grade_exchange_coherence": 0.39674914313614645,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.893396713358537,
+          "grade_exchange_coherence": 0.47340033971534407,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.9010795862059339,
+          "grade_exchange_coherence": 0.399907197301072,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0500_w100",
+      "phase_label": "midpoint_band",
+      "phase_offset_fraction_of_pi": 0.5,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "dominant_forward_topology": "transfer_smeared",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.6264328064613144,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8927731263710412,
+          "grade_exchange_coherence": 0.47329541981879686,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.9001888594516683,
+          "grade_exchange_coherence": 0.397294363189049,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.6264328064613144,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8927644958523745,
+          "grade_exchange_coherence": 0.474640217299701,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.4992372669898296,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.9001641100955983,
+          "grade_exchange_coherence": 0.40041880002190106,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0550_w100",
+      "phase_label": "upper_corridor",
+      "phase_offset_fraction_of_pi": 0.55,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "dominant_forward_topology": "transfer_smeared",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.6264328064613144,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8913245221551539,
+          "grade_exchange_coherence": 0.47623917918734926,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.8981051420459919,
+          "grade_exchange_coherence": 0.39860787819833415,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.6264328064613144,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8913140307564781,
+          "grade_exchange_coherence": 0.47757654328373195,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.4992372669898296,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.8980808673411917,
+          "grade_exchange_coherence": 0.4016560944490401,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0575_w100",
+      "phase_label": "smeared_region",
+      "phase_offset_fraction_of_pi": 0.575,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "dominant_forward_topology": "transfer_smeared",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.6264328064613144,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8904943782199184,
+          "grade_exchange_coherence": 0.4779757747776183,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.8969252091715826,
+          "grade_exchange_coherence": 0.399397007278817,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.6264328064613144,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8904831884883382,
+          "grade_exchange_coherence": 0.4793088897114103,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.4992372669898296,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.8969012132640706,
+          "grade_exchange_coherence": 0.4024023465045989,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0375_w115",
+      "phase_label": "protected_braid_anchor",
+      "phase_offset_fraction_of_pi": 0.375,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "dominant_forward_topology": "braid_like_exchange",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.5011462451690515,
+          "flow_concentration_index": 0.8935945405518726,
+          "grade_exchange_coherence": 0.4694315504254258,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.8977467619098388,
+          "grade_exchange_coherence": 0.3955729670349449,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.5011462451690515,
+          "flow_concentration_index": 0.8936070719625833,
+          "grade_exchange_coherence": 0.47078544751402296,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.8977250985834972,
+          "grade_exchange_coherence": 0.3987973544351645,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0475_w115",
+      "phase_label": "lower_corridor",
+      "phase_offset_fraction_of_pi": 0.475,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "dominant_forward_topology": "braid_like_exchange",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8897811687581709,
+          "grade_exchange_coherence": 0.4735186122455631,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.8932834752457306,
+          "grade_exchange_coherence": 0.397351273474988,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8897938081395804,
+          "grade_exchange_coherence": 0.4748604959885618,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "braid_like_exchange",
+          "forward_survival_time": 0.4992372669898296,
+          "reverse_survival_time": 0.2496186334949148,
+          "flow_concentration_index": 0.893258664711417,
+          "grade_exchange_coherence": 0.4004612583613476,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0500_w115",
+      "phase_label": "midpoint_band",
+      "phase_offset_fraction_of_pi": 0.5,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "dominant_forward_topology": "braid_like_exchange",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8886666739818462,
+          "grade_exchange_coherence": 0.47483090904038094,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.624046583737287,
+          "flow_concentration_index": 0.892011348013465,
+          "grade_exchange_coherence": 0.39793561624749885,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8886792648291182,
+          "grade_exchange_coherence": 0.4761690621723999,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.4992372669898296,
+          "reverse_survival_time": 0.624046583737287,
+          "flow_concentration_index": 0.8919869546867103,
+          "grade_exchange_coherence": 0.40101090517512533,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0550_w115",
+      "phase_label": "upper_corridor",
+      "phase_offset_fraction_of_pi": 0.55,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "dominant_forward_topology": "braid_like_exchange",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8862163425865832,
+          "grade_exchange_coherence": 0.4778986265127297,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.7488559004847444,
+          "flow_concentration_index": 0.889176092879311,
+          "grade_exchange_coherence": 0.3993256662102322,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.5011462451690515,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8862288460467019,
+          "grade_exchange_coherence": 0.47922830724783205,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.4992372669898296,
+          "reverse_survival_time": 0.7488559004847444,
+          "flow_concentration_index": 0.8891526075283133,
+          "grade_exchange_coherence": 0.4023233685334993,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0575_w115",
+      "phase_label": "smeared_region",
+      "phase_offset_fraction_of_pi": 0.575,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "dominant_forward_topology": "transfer_smeared",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "transient_mixed_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.12528656129226287,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8848710595935785,
+          "grade_exchange_coherence": 0.4796866703470425,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.4992372669898296,
+          "reverse_survival_time": 0.7488559004847444,
+          "flow_concentration_index": 0.8876004860754836,
+          "grade_exchange_coherence": 0.400150926296764,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.12528656129226287,
+          "reverse_survival_time": 0.7517193677535772,
+          "flow_concentration_index": 0.8848835634900108,
+          "grade_exchange_coherence": 0.4810115726512715,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "braid_like_exchange",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.4992372669898296,
+          "reverse_survival_time": 0.7488559004847444,
+          "flow_concentration_index": 0.8875774930275245,
+          "grade_exchange_coherence": 0.40310553279545464,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0375_w135",
+      "phase_label": "protected_braid_anchor",
+      "phase_offset_fraction_of_pi": 0.375,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "dominant_forward_topology": "transfer_smeared",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "smeared_transfer_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.12528656129226287,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8841191019134619,
+          "grade_exchange_coherence": 0.471159664801153,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.8806489158391587,
+          "grade_exchange_coherence": 0.3961646572662845,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.12528656129226287,
+          "reverse_survival_time": 0.6264328064613144,
+          "flow_concentration_index": 0.8841339871529068,
+          "grade_exchange_coherence": 0.47250489933132683,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.0,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.8806271039812893,
+          "grade_exchange_coherence": 0.3993121679016424,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0475_w135",
+      "phase_label": "lower_corridor",
+      "phase_offset_fraction_of_pi": 0.475,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "dominant_forward_topology": "transfer_smeared",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "smeared_transfer_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.12528656129226287,
+          "reverse_survival_time": 0.7517193677535772,
+          "flow_concentration_index": 0.8786875389114702,
+          "grade_exchange_coherence": 0.4757818667572279,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.1248093167474574,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.8743441038622464,
+          "grade_exchange_coherence": 0.3982257931184288,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.12528656129226287,
+          "reverse_survival_time": 0.7517193677535772,
+          "flow_concentration_index": 0.878702275598212,
+          "grade_exchange_coherence": 0.4771104327444265,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.2496186334949148,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.874324130760062,
+          "grade_exchange_coherence": 0.401247246398265,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0500_w135",
+      "phase_label": "midpoint_band",
+      "phase_offset_fraction_of_pi": 0.5,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "dominant_forward_topology": "transfer_smeared",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "smeared_transfer_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.12528656129226287,
+          "reverse_survival_time": 0.7517193677535772,
+          "flow_concentration_index": 0.8771146763637998,
+          "grade_exchange_coherence": 0.47723494936222466,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.1248093167474574,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.8725233706918796,
+          "grade_exchange_coherence": 0.39889018153028927,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.12528656129226287,
+          "reverse_survival_time": 0.7517193677535772,
+          "flow_concentration_index": 0.8771294831041885,
+          "grade_exchange_coherence": 0.47855845087476556,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.2496186334949148,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.8725037002343188,
+          "grade_exchange_coherence": 0.40187434798158733,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0550_w135",
+      "phase_label": "upper_corridor",
+      "phase_offset_fraction_of_pi": 0.55,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "dominant_forward_topology": "transfer_smeared",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "smeared_transfer_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.25057312258452574,
+          "reverse_survival_time": 0.7517193677535772,
+          "flow_concentration_index": 0.8736802066082929,
+          "grade_exchange_coherence": 0.4805850999037372,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.1248093167474574,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.8685593256925064,
+          "grade_exchange_coherence": 0.40045071402436017,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.25057312258452574,
+          "reverse_survival_time": 0.7517193677535772,
+          "flow_concentration_index": 0.8736952644019217,
+          "grade_exchange_coherence": 0.4818972599678871,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.2496186334949148,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.868537274222839,
+          "grade_exchange_coherence": 0.40335281140990276,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_12_p0575_w135",
+      "phase_label": "smeared_region",
+      "phase_offset_fraction_of_pi": 0.575,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "dominant_forward_topology": "transfer_smeared",
+      "dominant_reverse_topology": "transfer_smeared",
+      "derived_phase_label": "smeared_transfer_phase",
+      "variant_checks": [
+        {
+          "beta": 0.01,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.25057312258452574,
+          "reverse_survival_time": 0.7517193677535772,
+          "flow_concentration_index": 0.8718089754953733,
+          "grade_exchange_coherence": 0.4825111037252841,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.01,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.2496186334949148,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.8663890755774305,
+          "grade_exchange_coherence": 0.4013655374651081,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 12,
+          "dt": 0.12528656129226287,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.25057312258452574,
+          "reverse_survival_time": 0.7517193677535772,
+          "flow_concentration_index": 0.8718242117295045,
+          "grade_exchange_coherence": 0.4838169540310548,
+          "separation_oscillation_indicator": 0.0
+        },
+        {
+          "beta": 0.02,
+          "resolution": 24,
+          "dt": 0.1248093167474574,
+          "steps": 8,
+          "forward_topology_class": "transfer_smeared",
+          "reverse_topology_class": "transfer_smeared",
+          "forward_survival_time": 0.2496186334949148,
+          "reverse_survival_time": 0.8736652172322018,
+          "flow_concentration_index": 0.8663674843126044,
+          "grade_exchange_coherence": 0.40422275335712066,
+          "separation_oscillation_indicator": 0.0
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "phase_diagram_closed": true,
+    "closure_classification": "smeared_dominant_closed_phase_diagram",
+    "stable_connected_region_present": true,
+    "finite_boundary_flag": true,
+    "bidirectional_preservation_flag": true,
+    "boundary_segment_count": 5,
+    "stable_phase_counts": {
+      "transient_mixed_phase": 10,
+      "smeared_transfer_phase": 5
+    },
+    "dominant_topology_counts": {
+      "braid_like_exchange": 6,
+      "transfer_smeared": 9
+    },
+    "stable_components": [
+      {
+        "label": "smeared_transfer_phase",
+        "size": 5,
+        "cells": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "width_min": 1.35,
+        "width_max": 1.35,
+        "phase_min": 0.375,
+        "phase_max": 0.575
+      }
+    ]
+  }
+}

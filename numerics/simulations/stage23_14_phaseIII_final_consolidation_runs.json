@@ -1,0 +1,59 @@
+{
+  "stage": "23.14_phaseIII_final_consolidation_and_freeze",
+  "description": "Final Phase III consolidation and freeze for the frozen HAOS (Harmonic Address Operating System) / IIP (Interaction Invariance Physics) clustered Dirac-Kahler branch.",
+  "note_name": "Stage_III_C5_Final_Consolidation_and_Freeze_v1.md",
+  "required_inputs": {
+    "stage23_10": {
+      "stage_label": "23.10 / III-C1",
+      "note_path": "experiments/pre_geometry_atlas/Stage_23_10_DK_Braid_Mechanism_Isolation_Probe_v1.md",
+      "json_path": "data/20260316_102709_stage23_10_dk_braid_mechanism_isolation_probe.json",
+      "csv_path": "data/20260316_102709_stage23_10_dk_braid_mechanism_isolation_probe.csv"
+    },
+    "stage23_11": {
+      "stage_label": "23.11 / III-C2",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C2_Minimal_Effective_Model_Extraction_v1.md",
+      "json_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.json",
+      "csv_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.csv"
+    },
+    "stage23_12": {
+      "stage_label": "23.12 / III-C3",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C3_Effective_Phase_Diagram_Closure_v1.md",
+      "json_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.json",
+      "csv_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.csv"
+    },
+    "stage23_13": {
+      "stage_label": "23.13 / III-C4",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C4_Mechanism_Isolation_Probe_v1.md",
+      "json_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.json",
+      "csv_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.csv"
+    }
+  },
+  "claim_ids": {
+    "positive": [
+      "P3_POS_01",
+      "P3_POS_02",
+      "P3_POS_03",
+      "P3_POS_04",
+      "P3_POS_05"
+    ],
+    "negative": [
+      "P3_NEG_01",
+      "P3_NEG_02",
+      "P3_NEG_03",
+      "P3_NEG_04",
+      "P3_NEG_05"
+    ]
+  },
+  "required_status_values": [
+    "survives",
+    "fails",
+    "excluded",
+    "bounded_support"
+  ],
+  "required_summary_labels": {
+    "closure_class": "smeared_dominant_closed_phase_diagram",
+    "mechanism_primary": "phase_corridor_primary",
+    "geometry_overlap_role": "secondary_support",
+    "operator_cross_coupling_role": "secondary_support"
+  }
+}

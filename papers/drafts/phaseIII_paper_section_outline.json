@@ -1,0 +1,223 @@
+{
+  "default_title": "Effective Smeared-Transfer Closure in a Clustered DK Sector",
+  "alternative_titles": [
+    "Phase-Corridor-Controlled Texture Transition in a Clustered DK Branch",
+    "Reduction and One-Sided Closure of a Clustered DK Interaction Sector"
+  ],
+  "objective": "State the actual closed content of Phase III on the frozen clustered DK branch without enlarging the scientific scope.",
+  "sections": [
+    {
+      "section_id": "01_title",
+      "title": "Title",
+      "purpose": "Set a restrained title that centers the smeared-transfer closure rather than braid discovery.",
+      "required_points": [
+        "Use the default title unless editorial needs require one of the two restrained alternatives."
+      ]
+    },
+    {
+      "section_id": "02_abstract",
+      "title": "Abstract",
+      "purpose": "State what failed, what survived, what closed, and what mechanism controls the local split.",
+      "required_points": [
+        "Braid does not generalize beyond clustered seeds.",
+        "A valid two-state clustered-sector reduction survives.",
+        "Phase closure is one-sided and smeared-dominant.",
+        "Phase corridor is the primary control variable."
+      ],
+      "source_stages": [
+        "23.10",
+        "23.11",
+        "23.12",
+        "23.13",
+        "23.14"
+      ]
+    },
+    {
+      "section_id": "03_scope",
+      "title": "Scope and branch discipline",
+      "purpose": "Freeze clustered-sector scope and prevent later inflation.",
+      "required_points": [
+        "Branch-bounded analysis only.",
+        "No family-wide intrinsic braid mechanism claim.",
+        "No universal braid ontology.",
+        "Texture-level braid is not promoted into a stable closed phase."
+      ],
+      "source_stages": [
+        "23.10",
+        "23.14"
+      ]
+    },
+    {
+      "section_id": "04_setup",
+      "title": "Setup and frozen branch assumptions",
+      "purpose": "Summarize only the implementation constraints needed for interpretation.",
+      "required_points": [
+        "Regular DK lattice and static Gaussian kernel class.",
+        "Graded-support skew surrogate where literal degree change is unavailable.",
+        "3x3 anchor lattice for the reduction stage.",
+        "Internal beta probe in the closure stage.",
+        "Bounded blockwise grade-fraction anchoring surrogate in the grade-transfer ablation."
+      ],
+      "source_stages": [
+        "23.10",
+        "23.11",
+        "23.12",
+        "23.13"
+      ]
+    },
+    {
+      "section_id": "05_non_generality",
+      "title": "Non-generality of braid across families",
+      "purpose": "Present the decisive family-comparison negative result.",
+      "required_points": [
+        "robust non-clustered braid hits = 0",
+        "raw non-clustered braid hits = 0",
+        "clustered braid hits = 2",
+        "clustered degraded collapse = true",
+        "Interpretation: braid does not generalize beyond clustered seeds."
+      ],
+      "source_stages": [
+        "23.10"
+      ],
+      "candidate_figures": [
+        "Figure_1"
+      ]
+    },
+    {
+      "section_id": "06_reduction",
+      "title": "Minimal effective reduction in the clustered sector",
+      "purpose": "State the surviving local effective validity without overturning non-generality.",
+      "required_points": [
+        "effective_model_valid = TRUE",
+        "topology agreement = 1.0000",
+        "detuning threshold error = 0.0000",
+        "phase-band width error = 0.0000",
+        "mean survival-time envelope mismatch = 0.0139"
+      ],
+      "source_stages": [
+        "23.11"
+      ],
+      "candidate_figures": [
+        "Figure_2"
+      ]
+    },
+    {
+      "section_id": "07_closure",
+      "title": "Effective phase diagram closure",
+      "purpose": "Show that the stable closed content is one-sided and smeared-dominant.",
+      "required_points": [
+        "phase_diagram_closed = TRUE",
+        "closure class = smeared_dominant_closed_phase_diagram",
+        "stable region only at width_ratio = 1.35",
+        "sampled phase corridor 0.375 -> 0.575",
+        "no stable braid phase",
+        "no localized encounter phase"
+      ],
+      "source_stages": [
+        "23.12"
+      ],
+      "candidate_figures": [
+        "Figure_2"
+      ]
+    },
+    {
+      "section_id": "08_mechanism",
+      "title": "Mechanism isolation",
+      "purpose": "State the clean mechanism sentence for the clustered sector.",
+      "required_points": [
+        "mechanism read = phase_corridor_primary",
+        "geometry overlap = secondary support",
+        "0 <-> 1 operator cross-coupling = secondary support",
+        "grade transfer != primary driver"
+      ],
+      "source_stages": [
+        "23.13"
+      ],
+      "candidate_figures": [
+        "Figure_3"
+      ]
+    },
+    {
+      "section_id": "09_claim_ledger",
+      "title": "Final Phase III claim ledger",
+      "purpose": "Summarize the frozen positive core and negative boundaries in compact manuscript form.",
+      "required_points": [
+        "clustered-sector two-state effective surrogate",
+        "smeared-dominant one-sided closure",
+        "narrow stable region",
+        "phase corridor primary",
+        "geometry and operator cross-coupling secondary",
+        "family-wide braid mechanism fails",
+        "stable braid phase fails",
+        "localized encounter phase fails",
+        "grade-transfer-primary reading fails",
+        "universalization of clustered braid texture excluded"
+      ],
+      "source_stages": [
+        "23.14"
+      ],
+      "candidate_figures": [
+        "Figure_4"
+      ]
+    },
+    {
+      "section_id": "10_discussion",
+      "title": "Discussion",
+      "purpose": "Clarify the true content of the branch without enlarging its scope.",
+      "required_points": [
+        "Texture and mechanism were separated.",
+        "Phase closure lands on the smeared side.",
+        "Local braid texture remains descriptively useful but not structurally sovereign."
+      ]
+    },
+    {
+      "section_id": "11_standard_physics",
+      "title": "Restricted correspondence to standard physics",
+      "purpose": "Clarify the limited, branch-bounded relevance of the frozen result to standard physics language without implying equivalence.",
+      "required_points": [
+        "Restricted correspondence only at the level of effective modeling.",
+        "Local phase-controlled regime structure is compared only structurally, not identified with continuum theory.",
+        "Geometry overlap and 0 <-> 1 operator cross-coupling are bounded secondary supports rather than universal invariants.",
+        "No Maxwell, Dirac, gauge, spacetime, conserved-quantity, or observable-dictionary equivalence is licensed."
+      ]
+    },
+    {
+      "section_id": "12_limits",
+      "title": "Limits of interpretation",
+      "purpose": "State all remaining negative boundaries explicitly.",
+      "required_points": [
+        "branch-bounded scope",
+        "clustered-sector restriction",
+        "no family-wide portability",
+        "no stable braid-phase evidence",
+        "no claim beyond frozen operator class",
+        "reopening requires a structurally new branch"
+      ]
+    },
+    {
+      "section_id": "13_conclusion",
+      "title": "Conclusion",
+      "purpose": "End with the frozen Phase III sentence in concise publishable form.",
+      "required_points": [
+        "The surviving Phase III content is a finite smeared-transfer effective sector.",
+        "The local split is phase-corridor controlled.",
+        "Braid remains a clustered texture descriptor rather than a family-wide intrinsic mechanism."
+      ]
+    }
+  ],
+  "style_constraints": {
+    "tone": [
+      "restrained",
+      "technical",
+      "branch-bounded",
+      "negative-boundary preserving"
+    ],
+    "avoid": [
+      "universalization",
+      "ontology inflation",
+      "discovery language",
+      "family-wide braid claims",
+      "stable braid phase language"
+    ]
+  }
+}
