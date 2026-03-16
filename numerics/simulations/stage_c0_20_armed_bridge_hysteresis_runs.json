@@ -1,0 +1,56 @@
+{
+  "stage": "c0_20_armed_bridge_hysteresis_probe",
+  "description": "Bridge hysteresis probe from the real armed braid window, testing whether forward and reverse detuning retrace after selector restoration.",
+  "common_fields": {
+    "address_modulus": 4.0,
+    "eta_match": 0.8,
+    "eta_mismatch": 0.45,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58,
+    "sigma_shell": 1.15,
+    "kick_cycles": 0.35,
+    "dt_scale": 0.24,
+    "arming_steps": 144,
+    "forward_steps": 12,
+    "hold_steps": 12,
+    "return_settle_steps": 8,
+    "grade0_scale": 1.0,
+    "grade1_scale": 0.85,
+    "grade2_scale": 0.25,
+    "combined_latch_strength": 0.18
+  },
+  "families": [
+    {
+      "family_id": "clustered_composite_anchor",
+      "family_label": "Clustered composite anchor",
+      "left_seed": 0,
+      "right_seed": 6
+    },
+    {
+      "family_id": "counter_propagating_corridor",
+      "family_label": "Counter-propagating corridor",
+      "left_seed": 0,
+      "right_seed": 8
+    },
+    {
+      "family_id": "phase_ordered_symmetric_triad",
+      "family_label": "Phase-ordered symmetric triad",
+      "left_seed": 0,
+      "right_seed": 8
+    }
+  ],
+  "protocols": [
+    {
+      "protocol_id": "plain_forward_reverse",
+      "protocol_label": "Plain forward-reverse"
+    },
+    {
+      "protocol_id": "frozen_combined_forward_reverse",
+      "protocol_label": "Frozen combined forward-reverse"
+    },
+    {
+      "protocol_id": "frozen_hold_forward_reverse",
+      "protocol_label": "Frozen hold forward-reverse"
+    }
+  ]
+}

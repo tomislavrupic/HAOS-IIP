@@ -1,0 +1,57 @@
+{
+  "stage": "c0_17_bridge_cycle_latch_withdrawal_probe",
+  "description": "Bridge-local latch test on the derived C0-to-DK complex, asking whether bounded cycle or path retention can keep topology after harmonic selector withdrawal.",
+  "common_fields": {
+    "address_modulus": 4.0,
+    "eta_match": 0.8,
+    "eta_mismatch": 0.45,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58,
+    "sigma_shell": 1.15,
+    "kick_cycles": 0.35,
+    "dt_scale": 0.24,
+    "arming_steps": 32,
+    "withdrawal_steps": 48,
+    "grade0_scale": 1.0,
+    "grade1_scale": 0.85,
+    "grade2_scale": 0.25,
+    "cycle_latch_strength": 0.28,
+    "path_latch_strength": 0.24,
+    "combined_latch_strength": 0.18,
+    "withdrawal_delta": 1.0
+  },
+  "families": [
+    {
+      "family_id": "clustered_composite_anchor",
+      "family_label": "Clustered composite anchor",
+      "left_seed": 0,
+      "right_seed": 6
+    },
+    {
+      "family_id": "counter_propagating_corridor",
+      "family_label": "Counter-propagating corridor",
+      "left_seed": 0,
+      "right_seed": 8
+    },
+    {
+      "family_id": "phase_ordered_symmetric_triad",
+      "family_label": "Phase-ordered symmetric triad",
+      "left_seed": 0,
+      "right_seed": 8
+    }
+  ],
+  "latch_rules": [
+    {
+      "latch_id": "cycle_occupancy_latch",
+      "latch_label": "Cycle occupancy latch"
+    },
+    {
+      "latch_id": "edge_path_reuse_latch",
+      "latch_label": "Edge-path reuse latch"
+    },
+    {
+      "latch_id": "combined_cycle_path_latch",
+      "latch_label": "Combined cycle-plus-path latch"
+    }
+  ]
+}

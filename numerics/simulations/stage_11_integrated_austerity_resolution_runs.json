@@ -1,0 +1,56 @@
+{
+  "stage": "stage_11_integrated_austerity_resolution_probe",
+  "description": "Integrated convergence experiment coupling mismatch evolution, signed combinatorial field update, intrinsic harmonic-address sectoring, and topology survival on matched no-distance graph families.",
+  "common_fields": {
+    "address_modulus": 5.0,
+    "eta_match": 0.85,
+    "eta_mismatch": 0.42,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58,
+    "kernel_radius_center": 2,
+    "radius_offsets": [
+      -1,
+      0,
+      1
+    ],
+    "steps": 48,
+    "epsilon_field": 0.082,
+    "epsilon_mismatch": 0.115,
+    "kernel_width": 1.15,
+    "grade0_scale": 1.0,
+    "grade1_scale": 0.85,
+    "grade2_scale": 0.25,
+    "motif_boost_strength": 0.14,
+    "degree_skew_strength": 0.12
+  },
+  "families": [
+    {
+      "family_id": "clustered_braid_seed",
+      "family_label": "Clustered braid seed",
+      "left_seed": 0,
+      "right_seed": 6
+    },
+    {
+      "family_id": "corridor_transport_seed",
+      "family_label": "Corridor transport seed",
+      "left_seed": 0,
+      "right_seed": 6
+    },
+    {
+      "family_id": "triad_competition_seed",
+      "family_label": "Triad competition seed",
+      "left_seed": 0,
+      "right_seed": 6
+    }
+  ],
+  "detuning_samples": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "protection_strengths": [
+    0.8,
+    1.0,
+    1.2
+  ]
+}

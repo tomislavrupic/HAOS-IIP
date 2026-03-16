@@ -72,7 +72,7 @@ The intended public reading order is:
 
 ### 2.8 Part VIII. Extended combinatorial control branch
 
-1. `25.1` No-Distance Combinatorial Austerity Line from Metric Removal to Harmonic-Address Selection, Hysteresis, Selector Withdrawal, and C0-to-DK Bridge Validation
+1. `25.1` No-Distance Combinatorial Austerity Line from Metric Removal to Harmonic-Address Selection, Armed-State Irreversibility, C0-to-DK Bridge Tests, and Integrated Austerity Resolution
 
 ## 3. Full release list
 
@@ -104,7 +104,7 @@ The intended public reading order is:
 - `23.1` Dirac-Kahler Collision Texture and Grade-Exchange Baseline on a Kernel-Induced Cochain Operator Architecture
 - `23.2` Dirac-Kahler Braid Topology and Protection Structure on a Kernel-Induced Cochain Operator Architecture
 - `24.1` Combinatorial Kernel Austerity, Degree-Spectrum Protection, Incidence-Noise Robustness, and Controlled Motif Injection on a No-Distance Edge-Graph Control Branch
-- `25.1` No-Distance Combinatorial Austerity Line from Metric Removal to Harmonic-Address Selection, Hysteresis, Selector Withdrawal, and C0-to-DK Bridge Validation
+- `25.1` No-Distance Combinatorial Austerity Line from Metric Removal to Harmonic-Address Selection, Armed-State Irreversibility, C0-to-DK Bridge Tests, and Integrated Austerity Resolution
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
