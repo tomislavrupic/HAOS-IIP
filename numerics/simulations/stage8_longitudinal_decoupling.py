@@ -65,28 +65,34 @@ def main() -> None:
     exact_norm = float(np.linalg.norm(exact_field)) or 1.0
     exact_field = exact_field / exact_norm
 
-    P_A = project_transverse(A, exact_projector, harmonic_projector)
-    P_A = P_A / (float(np.linalg.norm(P_A)) or 1.0)
+    P_A_unnormalized = project_transverse(A, exact_projector, harmonic_projector)
+    norm_P_A = float(np.linalg.norm(P_A_unnormalized))
+    P_A = P_A_unnormalized / (norm_P_A or 1.0)
     base_energy = float(np.dot(P_A, data.upper @ P_A))
     base_weights = np.abs(V.T @ P_A) ** 2
     base_divfree = A - exact_projector.apply(A)
 
-    projection_residuals: list[float] = []
-    energy_residuals: list[float] = []
-    spectral_weight_residuals: list[float] = []
-    divfree_residuals: list[float] = []
+    P_exact = project_transverse(exact_field, exact_projector, harmonic_projector)
+    divfree_exact = exact_field - exact_projector.apply(exact_field)
 
-    for alpha in alphas:
-        A_prime = A + alpha * exact_field
-        P_prime = project_transverse(A_prime, exact_projector, harmonic_projector)
-        P_prime = P_prime / (float(np.linalg.norm(P_prime)) or 1.0)
-        energy_prime = float(np.dot(P_prime, data.upper @ P_prime))
-        weights_prime = np.abs(V.T @ P_prime) ** 2
-        divfree_prime = A_prime - exact_projector.apply(A_prime)
-        projection_residuals.append(float(np.linalg.norm(P_prime - P_A) / max(np.linalg.norm(P_A), 1.0e-12)))
-        energy_residuals.append(float(abs(energy_prime - base_energy) / max(abs(base_energy), 1.0e-12)))
-        spectral_weight_residuals.append(float(np.linalg.norm(weights_prime - base_weights) / max(np.linalg.norm(base_weights), 1.0e-12)))
-        divfree_residuals.append(float(np.linalg.norm(divfree_prime - base_divfree) / max(np.linalg.norm(base_divfree), 1.0e-12)))
+    denom_projection = max(np.linalg.norm(P_A), 1.0e-12)
+    denom_energy = max(abs(base_energy), 1.0e-12)
+    denom_spectral = max(np.linalg.norm(base_weights), 1.0e-12)
+    denom_divfree = max(np.linalg.norm(base_divfree), 1.0e-12)
+
+    alphas_arr = np.array(alphas)
+    P_primes_unnormalized = P_A_unnormalized[:, np.newaxis] + alphas_arr * P_exact[:, np.newaxis]
+    norms_prime = np.linalg.norm(P_primes_unnormalized, axis=0)
+    P_primes = P_primes_unnormalized / np.where(norms_prime > 0, norms_prime, 1.0)
+
+    energies_prime = np.einsum('ij,ij->j', P_primes, data.upper @ P_primes)
+    weights_prime = np.abs(V.T @ P_primes) ** 2
+    divfree_primes = base_divfree[:, np.newaxis] + alphas_arr * divfree_exact[:, np.newaxis]
+
+    projection_residuals = (np.linalg.norm(P_primes - P_A[:, np.newaxis], axis=0) / denom_projection).tolist()
+    energy_residuals = (np.abs(energies_prime - base_energy) / denom_energy).tolist()
+    spectral_weight_residuals = (np.linalg.norm(weights_prime - base_weights[:, np.newaxis], axis=0) / denom_spectral).tolist()
+    divfree_residuals = (np.linalg.norm(divfree_primes - base_divfree[:, np.newaxis], axis=0) / denom_divfree).tolist()
 
     plot_res = REPO_ROOT / 'plots' / 'decoupling_residuals.png'
     fig, ax = plt.subplots(figsize=(6.4, 4.8))
