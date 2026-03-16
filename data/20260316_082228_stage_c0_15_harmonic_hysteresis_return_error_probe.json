@@ -1,0 +1,1667 @@
+{
+  "experiment": "c0_15_harmonic_hysteresis_return_error_probe",
+  "description": "Forward/reverse detuning hysteresis scan on the harmonic-address no-distance branch, testing return error and path dependence without adding new locking rules.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_projected_transverse_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_address_weighted_combinatorial",
+    "source_family": "stage23_2_clustered_mixed_encounter_seed",
+    "resolution": 12,
+    "epsilon": 0.2,
+    "mean_width": 0.08,
+    "amplitude": 0.5,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0,
+    "phase_offset_fraction_of_pi": 0.0,
+    "local_phase_skew_fraction": 0.0,
+    "beta": 0.0,
+    "separation": 0.08,
+    "address_modulus": 4.0,
+    "eta_match": 0.8,
+    "eta_mismatch": 0.45,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58,
+    "segment_steps": 6,
+    "degree_bias_amplitude": 0.14,
+    "motif_bias_amplitude": 0.16,
+    "protocol_envelope": [
+      0.0,
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      0.5,
+      0.0
+    ],
+    "motif_patch_radius": 2,
+    "motif_max_radius": 4,
+    "motif_candidate_count": 8,
+    "return_flow_tolerance": 0.035,
+    "return_selectivity_tolerance": 0.04,
+    "return_coherence_tolerance": 0.04,
+    "hysteresis_area_tolerance": 0.025,
+    "irreversibility_area_threshold": 0.06
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "C015_exact_plain",
+        "run_order": 0,
+        "family_id": "exact_match_corridor",
+        "family_label": "Exact-match corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "plain_cycle",
+        "protocol_label": "Plain detuning cycle",
+        "delta_schedule": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          0.5,
+          0.25,
+          0.0
+        ],
+        "notes": "Exact-match forward/reverse cycle without extra perturbation."
+      },
+      "metrics": {
+        "run_id": "C015_exact_plain",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "plain_cycle",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "irreversible_witness",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.1863389981249824,
+        "final_mean_separation": 0.1863389981249824,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.03243177904441812,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 1,
+        "promoted_followup": 0,
+        "run_order": 0,
+        "family_id": "exact_match_corridor",
+        "family_label": "Exact-match corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "plain_cycle",
+        "protocol_label": "Plain detuning cycle",
+        "initial_delta": 0.0,
+        "final_delta": 0.0,
+        "initial_topology_class": "transfer_smeared",
+        "final_topology_class": "unresolved",
+        "topology_return_error": 1.0,
+        "flow_return_error": 0.09972923128231015,
+        "selectivity_return_error": 0.0,
+        "coherence_return_error": 0.09231823395518157,
+        "hysteresis_area_flow_concentration": 0.02604748116230586,
+        "hysteresis_area_selectivity": 0.011899979183753975,
+        "hysteresis_area_coherence": 0.05383418939659848,
+        "irreversible_witness": 1,
+        "retrace_class": "irreversible_witness",
+        "peak_hysteresis_metric": 0.05383418939659848,
+        "notes": "Exact-match forward/reverse cycle without extra perturbation."
+      },
+      "delta_schedule": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        0.5,
+        0.25,
+        0.0
+      ],
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635,
+        5.262035574275041
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "unresolved",
+        "transfer_smeared",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved"
+      ],
+      "flow_trace": [
+        0.9029408581833669,
+        0.8705972651484494,
+        0.8342716324494873,
+        0.8748450925263717,
+        0.8600158216752865,
+        0.8291440507532806,
+        0.8032116269010567
+      ],
+      "selectivity_trace": [
+        1.0,
+        0.947216032344807,
+        0.9049824954049485,
+        0.8650281314166307,
+        0.945860940090911,
+        0.9743767267368416,
+        1.0
+      ],
+      "coherence_trace": [
+        0.42684492670841834,
+        0.5905706478539934,
+        0.61919596761786,
+        0.36204353324589017,
+        0.46752311483571096,
+        0.49722943363626476,
+        0.5191631606635999
+      ],
+      "segment_windows": [
+        {
+          "delta": 0.0,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9029408581833669,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.42684492670841834
+        },
+        {
+          "delta": 0.25,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8705972651484494,
+          "address_selectivity_index": 0.947216032344807,
+          "exchange_coherence": 0.5905706478539934
+        },
+        {
+          "delta": 0.5,
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8342716324494873,
+          "address_selectivity_index": 0.9049824954049485,
+          "exchange_coherence": 0.61919596761786
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8748450925263717,
+          "address_selectivity_index": 0.8650281314166307,
+          "exchange_coherence": 0.36204353324589017
+        },
+        {
+          "delta": 0.5,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8600158216752865,
+          "address_selectivity_index": 0.945860940090911,
+          "exchange_coherence": 0.46752311483571096
+        },
+        {
+          "delta": 0.25,
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8291440507532806,
+          "address_selectivity_index": 0.9743767267368416,
+          "exchange_coherence": 0.49722943363626476
+        },
+        {
+          "delta": 0.0,
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8032116269010567,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.5191631606635999
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C015_exact_degree",
+        "run_order": 1,
+        "family_id": "exact_match_corridor",
+        "family_label": "Exact-match corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "degree_skew_cycle",
+        "protocol_label": "Degree-skew cycle",
+        "delta_schedule": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          0.5,
+          0.25,
+          0.0
+        ],
+        "notes": "Exact-match cycle with bounded degree-skew bias during the excursion."
+      },
+      "metrics": {
+        "run_id": "C015_exact_degree",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "degree_skew_cycle",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "transfer_smeared",
+        "persistence_label": "hysteretic_retrace",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.01383941756877332,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 1,
+        "family_id": "exact_match_corridor",
+        "family_label": "Exact-match corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "degree_skew_cycle",
+        "protocol_label": "Degree-skew cycle",
+        "initial_delta": 0.0,
+        "final_delta": 0.0,
+        "initial_topology_class": "transfer_smeared",
+        "final_topology_class": "transfer_smeared",
+        "topology_return_error": 0.0,
+        "flow_return_error": 0.035658153023314765,
+        "selectivity_return_error": 0.0,
+        "coherence_return_error": 0.10212495101376118,
+        "hysteresis_area_flow_concentration": 0.013876009875337617,
+        "hysteresis_area_selectivity": 0.014475407081233002,
+        "hysteresis_area_coherence": 0.04753679249596556,
+        "irreversible_witness": 0,
+        "retrace_class": "hysteretic_retrace",
+        "peak_hysteresis_metric": 0.04753679249596556,
+        "notes": "Exact-match cycle with bounded degree-skew bias during the excursion."
+      },
+      "delta_schedule": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        0.5,
+        0.25,
+        0.0
+      ],
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635,
+        5.262035574275041
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared"
+      ],
+      "flow_trace": [
+        0.9029408581833669,
+        0.8719192198386151,
+        0.844764107210421,
+        0.880004976857774,
+        0.8874364419885629,
+        0.8882580154392372,
+        0.8672827051600521
+      ],
+      "selectivity_trace": [
+        1.0,
+        0.9471312376934177,
+        0.9064631867228501,
+        0.8759317548160118,
+        0.9543976557253832,
+        0.9810656315170831,
+        1.0
+      ],
+      "coherence_trace": [
+        0.42684492670841834,
+        0.5981257563770446,
+        0.5772288737290644,
+        0.6509780989657836,
+        0.4625401076028299,
+        0.5163854449631802,
+        0.5289698777221795
+      ],
+      "segment_windows": [
+        {
+          "delta": 0.0,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9029408581833669,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.42684492670841834
+        },
+        {
+          "delta": 0.25,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8719192198386151,
+          "address_selectivity_index": 0.9471312376934177,
+          "exchange_coherence": 0.5981257563770446
+        },
+        {
+          "delta": 0.5,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.844764107210421,
+          "address_selectivity_index": 0.9064631867228501,
+          "exchange_coherence": 0.5772288737290644
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.880004976857774,
+          "address_selectivity_index": 0.8759317548160118,
+          "exchange_coherence": 0.6509780989657836
+        },
+        {
+          "delta": 0.5,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8874364419885629,
+          "address_selectivity_index": 0.9543976557253832,
+          "exchange_coherence": 0.4625401076028299
+        },
+        {
+          "delta": 0.25,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8882580154392372,
+          "address_selectivity_index": 0.9810656315170831,
+          "exchange_coherence": 0.5163854449631802
+        },
+        {
+          "delta": 0.0,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8672827051600521,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.5289698777221795
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C015_exact_motif",
+        "run_order": 2,
+        "family_id": "exact_match_corridor",
+        "family_label": "Exact-match corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "motif_cycle",
+        "protocol_label": "Motif cycle",
+        "delta_schedule": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          0.5,
+          0.25,
+          0.0
+        ],
+        "notes": "Exact-match cycle with local motif bias during the excursion."
+      },
+      "metrics": {
+        "run_id": "C015_exact_motif",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "motif_cycle",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "irreversible_witness",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.042891877082085694,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 1,
+        "promoted_followup": 0,
+        "run_order": 2,
+        "family_id": "exact_match_corridor",
+        "family_label": "Exact-match corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "motif_cycle",
+        "protocol_label": "Motif cycle",
+        "initial_delta": 0.0,
+        "final_delta": 0.0,
+        "initial_topology_class": "transfer_smeared",
+        "final_topology_class": "unresolved",
+        "topology_return_error": 1.0,
+        "flow_return_error": 0.08475051159476032,
+        "selectivity_return_error": 0.0,
+        "coherence_return_error": 0.07285562086668462,
+        "hysteresis_area_flow_concentration": 0.022000167486387154,
+        "hysteresis_area_selectivity": 0.010597830397810301,
+        "hysteresis_area_coherence": 0.05622427370429071,
+        "irreversible_witness": 1,
+        "retrace_class": "irreversible_witness",
+        "peak_hysteresis_metric": 0.05622427370429071,
+        "notes": "Exact-match cycle with local motif bias during the excursion."
+      },
+      "delta_schedule": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        0.5,
+        0.25,
+        0.0
+      ],
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635,
+        5.262035574275041
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "unresolved",
+        "transfer_smeared",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved"
+      ],
+      "flow_trace": [
+        0.9029408581833669,
+        0.8709242121797285,
+        0.8350813044277947,
+        0.875861638212861,
+        0.8590981260293296,
+        0.8373072088323275,
+        0.8181903465886066
+      ],
+      "selectivity_trace": [
+        1.0,
+        0.946542352042483,
+        0.9009803236114989,
+        0.8509183799926541,
+        0.9363344461664644,
+        0.9712566123562415,
+        1.0
+      ],
+      "coherence_trace": [
+        0.42684492670841834,
+        0.5931890637386595,
+        0.6185075351866574,
+        0.3713296064796677,
+        0.4539365169619585,
+        0.48700528846718844,
+        0.49970054757510296
+      ],
+      "segment_windows": [
+        {
+          "delta": 0.0,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9029408581833669,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.42684492670841834
+        },
+        {
+          "delta": 0.25,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8709242121797285,
+          "address_selectivity_index": 0.946542352042483,
+          "exchange_coherence": 0.5931890637386595
+        },
+        {
+          "delta": 0.5,
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8350813044277947,
+          "address_selectivity_index": 0.9009803236114989,
+          "exchange_coherence": 0.6185075351866574
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.875861638212861,
+          "address_selectivity_index": 0.8509183799926541,
+          "exchange_coherence": 0.3713296064796677
+        },
+        {
+          "delta": 0.5,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8590981260293296,
+          "address_selectivity_index": 0.9363344461664644,
+          "exchange_coherence": 0.4539365169619585
+        },
+        {
+          "delta": 0.25,
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8373072088323275,
+          "address_selectivity_index": 0.9712566123562415,
+          "exchange_coherence": 0.48700528846718844
+        },
+        {
+          "delta": 0.0,
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8181903465886066,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.49970054757510296
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C015_threshold_plain",
+        "run_order": 3,
+        "family_id": "threshold_corridor",
+        "family_label": "Threshold corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "plain_cycle",
+        "protocol_label": "Plain detuning cycle",
+        "delta_schedule": [
+          0.625,
+          0.6875,
+          0.75,
+          0.8125,
+          0.75,
+          0.6875,
+          0.625
+        ],
+        "notes": "Near-threshold forward/reverse cycle without extra perturbation."
+      },
+      "metrics": {
+        "run_id": "C015_threshold_plain",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "plain_cycle",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "transfer_smeared",
+        "persistence_label": "hysteretic_retrace",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.1863389981249824,
+        "final_mean_separation": 0.1863389981249824,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.018950304482676306,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 3,
+        "family_id": "threshold_corridor",
+        "family_label": "Threshold corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "plain_cycle",
+        "protocol_label": "Plain detuning cycle",
+        "initial_delta": 0.625,
+        "final_delta": 0.625,
+        "initial_topology_class": "transfer_smeared",
+        "final_topology_class": "transfer_smeared",
+        "topology_return_error": 0.0,
+        "flow_return_error": 0.04610112909476127,
+        "selectivity_return_error": 0.032291141713870486,
+        "coherence_return_error": 0.10444916028193568,
+        "hysteresis_area_flow_concentration": 0.005019020193920268,
+        "hysteresis_area_selectivity": 0.0036479302976729355,
+        "hysteresis_area_coherence": 0.010194533991032118,
+        "irreversible_witness": 0,
+        "retrace_class": "hysteretic_retrace",
+        "peak_hysteresis_metric": 0.010194533991032118,
+        "notes": "Near-threshold forward/reverse cycle without extra perturbation."
+      },
+      "delta_schedule": [
+        0.625,
+        0.6875,
+        0.75,
+        0.8125,
+        0.75,
+        0.6875,
+        0.625
+      ],
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635,
+        5.262035574275041
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared"
+      ],
+      "flow_trace": [
+        0.9071650881584324,
+        0.9054630595256792,
+        0.8987506598595625,
+        0.893141939218479,
+        0.8737948874728969,
+        0.8606871871636683,
+        0.8610639590636712
+      ],
+      "selectivity_trace": [
+        0.8979172638358175,
+        0.8836131918591632,
+        0.9084016355455625,
+        0.9158794744477213,
+        0.9174236538669697,
+        0.9213234966042914,
+        0.930208405549688
+      ],
+      "coherence_trace": [
+        0.4111952257699168,
+        0.5775530159911266,
+        0.5734732997773735,
+        0.5039654647446553,
+        0.4972047954708131,
+        0.5047993044288608,
+        0.5156443860518525
+      ],
+      "segment_windows": [
+        {
+          "delta": 0.625,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9071650881584324,
+          "address_selectivity_index": 0.8979172638358175,
+          "exchange_coherence": 0.4111952257699168
+        },
+        {
+          "delta": 0.6875,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9054630595256792,
+          "address_selectivity_index": 0.8836131918591632,
+          "exchange_coherence": 0.5775530159911266
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.8987506598595625,
+          "address_selectivity_index": 0.9084016355455625,
+          "exchange_coherence": 0.5734732997773735
+        },
+        {
+          "delta": 0.8125,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.893141939218479,
+          "address_selectivity_index": 0.9158794744477213,
+          "exchange_coherence": 0.5039654647446553
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8737948874728969,
+          "address_selectivity_index": 0.9174236538669697,
+          "exchange_coherence": 0.4972047954708131
+        },
+        {
+          "delta": 0.6875,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8606871871636683,
+          "address_selectivity_index": 0.9213234966042914,
+          "exchange_coherence": 0.5047993044288608
+        },
+        {
+          "delta": 0.625,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8610639590636712,
+          "address_selectivity_index": 0.930208405549688,
+          "exchange_coherence": 0.5156443860518525
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C015_threshold_degree",
+        "run_order": 4,
+        "family_id": "threshold_corridor",
+        "family_label": "Threshold corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "degree_skew_cycle",
+        "protocol_label": "Degree-skew cycle",
+        "delta_schedule": [
+          0.625,
+          0.6875,
+          0.75,
+          0.8125,
+          0.75,
+          0.6875,
+          0.625
+        ],
+        "notes": "Near-threshold cycle with bounded degree-skew bias."
+      },
+      "metrics": {
+        "run_id": "C015_threshold_degree",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "degree_skew_cycle",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "transfer_smeared",
+        "persistence_label": "hysteretic_retrace",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.006409029581980184,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 4,
+        "family_id": "threshold_corridor",
+        "family_label": "Threshold corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "degree_skew_cycle",
+        "protocol_label": "Degree-skew cycle",
+        "initial_delta": 0.625,
+        "final_delta": 0.625,
+        "initial_topology_class": "transfer_smeared",
+        "final_topology_class": "transfer_smeared",
+        "topology_return_error": 0.0,
+        "flow_return_error": 0.00511167372695065,
+        "selectivity_return_error": 0.05651802122532534,
+        "coherence_return_error": 0.019745004615934314,
+        "hysteresis_area_flow_concentration": 0.0008379727587861444,
+        "hysteresis_area_selectivity": 0.006542391837183172,
+        "hysteresis_area_coherence": 0.013645200902554548,
+        "irreversible_witness": 0,
+        "retrace_class": "hysteretic_retrace",
+        "peak_hysteresis_metric": 0.013645200902554548,
+        "notes": "Near-threshold cycle with bounded degree-skew bias."
+      },
+      "delta_schedule": [
+        0.625,
+        0.6875,
+        0.75,
+        0.8125,
+        0.75,
+        0.6875,
+        0.625
+      ],
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635,
+        5.262035574275041
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "transfer_smeared"
+      ],
+      "flow_trace": [
+        0.9071650881584324,
+        0.9062598539532132,
+        0.9025731205218541,
+        0.9072071811651587,
+        0.8965895697381449,
+        0.9141198058384615,
+        0.9020534144314818
+      ],
+      "selectivity_trace": [
+        0.8979172638358175,
+        0.8841756894120115,
+        0.9131014477424378,
+        0.9294486065848477,
+        0.9398675579188099,
+        0.9472118931060935,
+        0.9544352850611428
+      ],
+      "coherence_trace": [
+        0.4111952257699168,
+        0.58300726621629,
+        0.5965489330233369,
+        0.5690455727664363,
+        0.6041629682855428,
+        0.3783635717144873,
+        0.4309402303858511
+      ],
+      "segment_windows": [
+        {
+          "delta": 0.625,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9071650881584324,
+          "address_selectivity_index": 0.8979172638358175,
+          "exchange_coherence": 0.4111952257699168
+        },
+        {
+          "delta": 0.6875,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9062598539532132,
+          "address_selectivity_index": 0.8841756894120115,
+          "exchange_coherence": 0.58300726621629
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9025731205218541,
+          "address_selectivity_index": 0.9131014477424378,
+          "exchange_coherence": 0.5965489330233369
+        },
+        {
+          "delta": 0.8125,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9072071811651587,
+          "address_selectivity_index": 0.9294486065848477,
+          "exchange_coherence": 0.5690455727664363
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.8965895697381449,
+          "address_selectivity_index": 0.9398675579188099,
+          "exchange_coherence": 0.6041629682855428
+        },
+        {
+          "delta": 0.6875,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9141198058384615,
+          "address_selectivity_index": 0.9472118931060935,
+          "exchange_coherence": 0.3783635717144873
+        },
+        {
+          "delta": 0.625,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9020534144314818,
+          "address_selectivity_index": 0.9544352850611428,
+          "exchange_coherence": 0.4309402303858511
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C015_threshold_motif",
+        "run_order": 5,
+        "family_id": "threshold_corridor",
+        "family_label": "Threshold corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "motif_cycle",
+        "protocol_label": "Motif cycle",
+        "delta_schedule": [
+          0.625,
+          0.6875,
+          0.75,
+          0.8125,
+          0.75,
+          0.6875,
+          0.625
+        ],
+        "notes": "Near-threshold cycle with local motif bias."
+      },
+      "metrics": {
+        "run_id": "C015_threshold_motif",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "motif_cycle",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "transfer_smeared",
+        "persistence_label": "hysteretic_retrace",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.027673155951262043,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 5,
+        "family_id": "threshold_corridor",
+        "family_label": "Threshold corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "motif_cycle",
+        "protocol_label": "Motif cycle",
+        "initial_delta": 0.625,
+        "final_delta": 0.625,
+        "initial_topology_class": "transfer_smeared",
+        "final_topology_class": "transfer_smeared",
+        "topology_return_error": 0.0,
+        "flow_return_error": 0.03027381093571435,
+        "selectivity_return_error": 0.04811526866684268,
+        "coherence_return_error": 0.10485254301640062,
+        "hysteresis_area_flow_concentration": 0.003665059423472703,
+        "hysteresis_area_selectivity": 0.005530764567585139,
+        "hysteresis_area_coherence": 0.009237696604795089,
+        "irreversible_witness": 0,
+        "retrace_class": "hysteretic_retrace",
+        "peak_hysteresis_metric": 0.009237696604795089,
+        "notes": "Near-threshold cycle with local motif bias."
+      },
+      "delta_schedule": [
+        0.625,
+        0.6875,
+        0.75,
+        0.8125,
+        0.75,
+        0.6875,
+        0.625
+      ],
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635,
+        5.262035574275041
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared"
+      ],
+      "flow_trace": [
+        0.9071650881584324,
+        0.9055849191351505,
+        0.8995030356401783,
+        0.8979092242605268,
+        0.8803942546135078,
+        0.8716352643407796,
+        0.8768912772227181
+      ],
+      "selectivity_trace": [
+        0.8979172638358175,
+        0.8834746418180971,
+        0.9087319118019996,
+        0.9204073904436325,
+        0.9295344554904588,
+        0.9375079687218084,
+        0.9460325325026602
+      ],
+      "coherence_trace": [
+        0.4111952257699168,
+        0.5777919051526136,
+        0.5489226613124857,
+        0.48748835357164416,
+        0.4965742322900885,
+        0.508589245495291,
+        0.5160477687863174
+      ],
+      "segment_windows": [
+        {
+          "delta": 0.625,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9071650881584324,
+          "address_selectivity_index": 0.8979172638358175,
+          "exchange_coherence": 0.4111952257699168
+        },
+        {
+          "delta": 0.6875,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9055849191351505,
+          "address_selectivity_index": 0.8834746418180971,
+          "exchange_coherence": 0.5777919051526136
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.8995030356401783,
+          "address_selectivity_index": 0.9087319118019996,
+          "exchange_coherence": 0.5489226613124857
+        },
+        {
+          "delta": 0.8125,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.8979092242605268,
+          "address_selectivity_index": 0.9204073904436325,
+          "exchange_coherence": 0.48748835357164416
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8803942546135078,
+          "address_selectivity_index": 0.9295344554904588,
+          "exchange_coherence": 0.4965742322900885
+        },
+        {
+          "delta": 0.6875,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8716352643407796,
+          "address_selectivity_index": 0.9375079687218084,
+          "exchange_coherence": 0.508589245495291
+        },
+        {
+          "delta": 0.625,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8768912772227181,
+          "address_selectivity_index": 0.9460325325026602,
+          "exchange_coherence": 0.5160477687863174
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C015_fragile_plain",
+        "run_order": 6,
+        "family_id": "fragile_corridor",
+        "family_label": "Fragile corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "plain_cycle",
+        "protocol_label": "Plain detuning cycle",
+        "delta_schedule": [
+          1.0,
+          0.875,
+          0.75,
+          0.625,
+          0.75,
+          0.875,
+          1.0
+        ],
+        "notes": "Fragile incompatible control with forward/reverse cycle."
+      },
+      "metrics": {
+        "run_id": "C015_fragile_plain",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "plain_cycle",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "transfer_smeared",
+        "persistence_label": "hysteretic_retrace",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.1863389981249824,
+        "final_mean_separation": 0.1863389981249824,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.015810263052010956,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 6,
+        "family_id": "fragile_corridor",
+        "family_label": "Fragile corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "plain_cycle",
+        "protocol_label": "Plain detuning cycle",
+        "initial_delta": 1.0,
+        "final_delta": 1.0,
+        "initial_topology_class": "transfer_smeared",
+        "final_topology_class": "transfer_smeared",
+        "topology_return_error": 0.0,
+        "flow_return_error": 0.017722628086780268,
+        "selectivity_return_error": 0.06267242687284635,
+        "coherence_return_error": 0.06151942890521783,
+        "hysteresis_area_flow_concentration": -0.013222499402082533,
+        "hysteresis_area_selectivity": -0.0065120720528273335,
+        "hysteresis_area_coherence": -0.027391830616915726,
+        "irreversible_witness": 0,
+        "retrace_class": "hysteretic_retrace",
+        "peak_hysteresis_metric": -0.0065120720528273335,
+        "notes": "Fragile incompatible control with forward/reverse cycle."
+      },
+      "delta_schedule": [
+        1.0,
+        0.875,
+        0.75,
+        0.625,
+        0.75,
+        0.875,
+        1.0
+      ],
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635,
+        5.262035574275041
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared"
+      ],
+      "flow_trace": [
+        0.9073021511277076,
+        0.9235837813661631,
+        0.9150333591502698,
+        0.8805278289447362,
+        0.854921122225454,
+        0.8567212186553009,
+        0.8895795230409274
+      ],
+      "selectivity_trace": [
+        0.8213843964555657,
+        0.8772588411330509,
+        0.9292136121221394,
+        0.9353582810487483,
+        0.9017862540934394,
+        0.8843055251048964,
+        0.8840568233284121
+      ],
+      "coherence_trace": [
+        0.40972936562700785,
+        0.5856579817895792,
+        0.6090802762436669,
+        0.4975875482593194,
+        0.48048027621888173,
+        0.46158305131925487,
+        0.4712487945322257
+      ],
+      "segment_windows": [
+        {
+          "delta": 1.0,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9073021511277076,
+          "address_selectivity_index": 0.8213843964555657,
+          "exchange_coherence": 0.40972936562700785
+        },
+        {
+          "delta": 0.875,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9235837813661631,
+          "address_selectivity_index": 0.8772588411330509,
+          "exchange_coherence": 0.5856579817895792
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9150333591502698,
+          "address_selectivity_index": 0.9292136121221394,
+          "exchange_coherence": 0.6090802762436669
+        },
+        {
+          "delta": 0.625,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8805278289447362,
+          "address_selectivity_index": 0.9353582810487483,
+          "exchange_coherence": 0.4975875482593194
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.854921122225454,
+          "address_selectivity_index": 0.9017862540934394,
+          "exchange_coherence": 0.48048027621888173
+        },
+        {
+          "delta": 0.875,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8567212186553009,
+          "address_selectivity_index": 0.8843055251048964,
+          "exchange_coherence": 0.46158305131925487
+        },
+        {
+          "delta": 1.0,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8895795230409274,
+          "address_selectivity_index": 0.8840568233284121,
+          "exchange_coherence": 0.4712487945322257
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C015_fragile_degree",
+        "run_order": 7,
+        "family_id": "fragile_corridor",
+        "family_label": "Fragile corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "degree_skew_cycle",
+        "protocol_label": "Degree-skew cycle",
+        "delta_schedule": [
+          1.0,
+          0.875,
+          0.75,
+          0.625,
+          0.75,
+          0.875,
+          1.0
+        ],
+        "notes": "Fragile incompatible control with bounded degree-skew bias."
+      },
+      "metrics": {
+        "run_id": "C015_fragile_degree",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "degree_skew_cycle",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "irreversible_witness",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.009922302679036205,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 1,
+        "promoted_followup": 0,
+        "run_order": 7,
+        "family_id": "fragile_corridor",
+        "family_label": "Fragile corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "degree_skew_cycle",
+        "protocol_label": "Degree-skew cycle",
+        "initial_delta": 1.0,
+        "final_delta": 1.0,
+        "initial_topology_class": "transfer_smeared",
+        "final_topology_class": "braid_like_exchange",
+        "topology_return_error": 1.0,
+        "flow_return_error": 0.019546064493503712,
+        "selectivity_return_error": 0.09780767212040153,
+        "coherence_return_error": 0.10141904653654216,
+        "hysteresis_area_flow_concentration": -0.004977917330583649,
+        "hysteresis_area_selectivity": -0.011445086747418017,
+        "hysteresis_area_coherence": -0.03191887742168011,
+        "irreversible_witness": 1,
+        "retrace_class": "irreversible_witness",
+        "peak_hysteresis_metric": -0.004977917330583649,
+        "notes": "Fragile incompatible control with bounded degree-skew bias."
+      },
+      "delta_schedule": [
+        1.0,
+        0.875,
+        0.75,
+        0.625,
+        0.75,
+        0.875,
+        1.0
+      ],
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635,
+        5.262035574275041
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange"
+      ],
+      "flow_trace": [
+        0.9073021511277076,
+        0.9241793441406302,
+        0.9185103189913326,
+        0.8979291315673329,
+        0.8822686989669489,
+        0.9122498477549047,
+        0.9268482156212113
+      ],
+      "selectivity_trace": [
+        0.8213843964555657,
+        0.8783950288642699,
+        0.9332539190985335,
+        0.9441092454331863,
+        0.9238270247579767,
+        0.9163384396131349,
+        0.9191920685759672
+      ],
+      "coherence_trace": [
+        0.40972936562700785,
+        0.5906456114315854,
+        0.6408159588863657,
+        0.7262576606030402,
+        0.4419987376674955,
+        0.4854127259358507,
+        0.51114841216355
+      ],
+      "segment_windows": [
+        {
+          "delta": 1.0,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9073021511277076,
+          "address_selectivity_index": 0.8213843964555657,
+          "exchange_coherence": 0.40972936562700785
+        },
+        {
+          "delta": 0.875,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9241793441406302,
+          "address_selectivity_index": 0.8783950288642699,
+          "exchange_coherence": 0.5906456114315854
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9185103189913326,
+          "address_selectivity_index": 0.9332539190985335,
+          "exchange_coherence": 0.6408159588863657
+        },
+        {
+          "delta": 0.625,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.8979291315673329,
+          "address_selectivity_index": 0.9441092454331863,
+          "exchange_coherence": 0.7262576606030402
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8822686989669489,
+          "address_selectivity_index": 0.9238270247579767,
+          "exchange_coherence": 0.4419987376674955
+        },
+        {
+          "delta": 0.875,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9122498477549047,
+          "address_selectivity_index": 0.9163384396131349,
+          "exchange_coherence": 0.4854127259358507
+        },
+        {
+          "delta": 1.0,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9268482156212113,
+          "address_selectivity_index": 0.9191920685759672,
+          "exchange_coherence": 0.51114841216355
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C015_fragile_motif",
+        "run_order": 8,
+        "family_id": "fragile_corridor",
+        "family_label": "Fragile corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "motif_cycle",
+        "protocol_label": "Motif cycle",
+        "delta_schedule": [
+          1.0,
+          0.875,
+          0.75,
+          0.625,
+          0.75,
+          0.875,
+          1.0
+        ],
+        "notes": "Fragile incompatible control with local motif bias."
+      },
+      "metrics": {
+        "run_id": "C015_fragile_motif",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "motif_cycle",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "irreversible_witness",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.020003329739973756,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 1,
+        "promoted_followup": 0,
+        "run_order": 8,
+        "family_id": "fragile_corridor",
+        "family_label": "Fragile corridor",
+        "family_mode": "packet_dominant",
+        "protocol": "motif_cycle",
+        "protocol_label": "Motif cycle",
+        "initial_delta": 1.0,
+        "final_delta": 1.0,
+        "initial_topology_class": "transfer_smeared",
+        "final_topology_class": "braid_like_exchange",
+        "topology_return_error": 1.0,
+        "flow_return_error": 0.0016961397591062077,
+        "selectivity_return_error": 0.08966879896101132,
+        "coherence_return_error": 0.08655124701762085,
+        "hysteresis_area_flow_concentration": -0.00929950040538894,
+        "hysteresis_area_selectivity": -0.010185966091631762,
+        "hysteresis_area_coherence": -0.023104482286022857,
+        "irreversible_witness": 1,
+        "retrace_class": "irreversible_witness",
+        "peak_hysteresis_metric": -0.00929950040538894,
+        "notes": "Fragile incompatible control with local motif bias."
+      },
+      "delta_schedule": [
+        1.0,
+        0.875,
+        0.75,
+        0.625,
+        0.75,
+        0.875,
+        1.0
+      ],
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635,
+        5.262035574275041
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "braid_like_exchange"
+      ],
+      "flow_trace": [
+        0.9073021511277076,
+        0.9236729297989212,
+        0.9158085263142,
+        0.8870895076439342,
+        0.8684066535381315,
+        0.873825932823397,
+        0.9056060113686014
+      ],
+      "selectivity_trace": [
+        0.8213843964555657,
+        0.8777085597405445,
+        0.9311121454655339,
+        0.940070881221469,
+        0.9140170159772707,
+        0.9058143242489614,
+        0.911053195416577
+      ],
+      "coherence_trace": [
+        0.40972936562700785,
+        0.5854023661244031,
+        0.5839539084096672,
+        0.492385656373525,
+        0.49420327817186077,
+        0.4887174464639339,
+        0.4962806126446287
+      ],
+      "segment_windows": [
+        {
+          "delta": 1.0,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9073021511277076,
+          "address_selectivity_index": 0.8213843964555657,
+          "exchange_coherence": 0.40972936562700785
+        },
+        {
+          "delta": 0.875,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9236729297989212,
+          "address_selectivity_index": 0.8777085597405445,
+          "exchange_coherence": 0.5854023661244031
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9158085263142,
+          "address_selectivity_index": 0.9311121454655339,
+          "exchange_coherence": 0.5839539084096672
+        },
+        {
+          "delta": 0.625,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8870895076439342,
+          "address_selectivity_index": 0.940070881221469,
+          "exchange_coherence": 0.492385656373525
+        },
+        {
+          "delta": 0.75,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8684066535381315,
+          "address_selectivity_index": 0.9140170159772707,
+          "exchange_coherence": 0.49420327817186077
+        },
+        {
+          "delta": 0.875,
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.873825932823397,
+          "address_selectivity_index": 0.9058143242489614,
+          "exchange_coherence": 0.4887174464639339
+        },
+        {
+          "delta": 1.0,
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9056060113686014,
+          "address_selectivity_index": 0.911053195416577,
+          "exchange_coherence": 0.4962806126446287
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "retrace_counts": {
+      "irreversible_witness": 4,
+      "hysteretic_retrace": 5
+    },
+    "irreversible_count": 4,
+    "verdict": "path dependence appears in part of the matrix, but broad irreversibility is not yet established"
+  }
+}

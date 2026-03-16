@@ -3,14 +3,14 @@
 Release numbering:
 - reserved next-paper support number: `25.1`
 - `24.1` remains the frozen C0.1-C0.4 synthesis paper
-- `25.1` is the expanded C0.1-C0.14 synthesis paper
+- `25.1` is the expanded C0.1-C0.16 plus bridge-validation synthesis paper
 - Appendix C0 is carried forward as the combinatorial austerity support appendix for `25.1`, not as a rewrite of `24.1`
 
 Archive role:
-- Appendix C0 collects the no-distance combinatorial branch from `C0.1` through `C0.14`
+- Appendix C0 collects the no-distance combinatorial branch from `C0.1` through `C0.16` together with the first `C0-to-DK` bridge validation note
 - the original Phase I and Phase II files remain untouched
 - Paper `24.1` remains the primary frozen write-up for `C0.1-C0.4`
-- Paper `25.1` is the updated synthesis across the full C0 line
+- Paper `25.1` is the updated synthesis across the full C0 line plus the first bridge-validation result
 
 Authoritative trail:
 - `C0.1-C0.4` synthesis paper: `papers/combinatorial_no_distance_branch_austerity_protection_noise_and_motif_probes.tex`
@@ -24,15 +24,19 @@ Authoritative trail:
 - `C0.12` authoritative stamp: `data/20260315_214453_stage_c0_12_harmonic_detuning_continuum_scan.json`
 - `C0.13` authoritative stamp: `data/20260315_215213_stage_c0_13_topology_phase_boundary_refinement.json`
 - `C0.14` authoritative stamp: `data/20260315_220029_stage_c0_14_topology_locking_mechanism_probe.json`
+- `C0.15` authoritative stamp: `data/20260316_082228_stage_c0_15_harmonic_hysteresis_return_error_probe.json`
+- `C0.16` authoritative stamp: `data/20260316_082239_stage_c0_16_selector_withdrawal_topology_retention_probe.json`
+- `C0-to-DK bridge` authoritative stamp: `data/20260316_084155_stage_c0_dk_bridge_validation.json`
 
 Series boundary:
 
-“The C0 line (C0.1-C0.14) shows that the no-distance branch supports real graph-structural class survival, reproducible incidence-driven mismatch accumulation, partial kernel inconsistency under softer survivor maps, and weak harmonic-address topology selection, but it does not yet support broad irreversibility scaling or topology locking. The branch therefore remains a bounded control line, not a replacement core or a Phase II rescue mechanism.”
+“The C0 line (C0.1-C0.16) shows that the no-distance branch supports real graph-structural class survival, reproducible incidence-driven mismatch accumulation, partial kernel inconsistency under softer survivor maps, weak harmonic-address topology selection, and a real C0-to-DK bridge scaffold, but it does not yet support broad irreversibility scaling or topology locking. The branch therefore remains a bounded control line, not a replacement core or a Phase II rescue mechanism.”
 
 Forward-compatible note:
 - the current Phase II kernel back-reaction idea can be cited against this boundary without rewriting the C0 files
-- the harmonic-address branch opened in `C0.10-C0.14` adds a topology-selection window on the clustered DK seed, but still terminates in a locking null result
-- the natural next controls after `C0.14` are strength scans or new latch families, not a retroactive reinterpretation of the present no-distance results
+- the harmonic-address branch opened in `C0.10-C0.16` adds a topology-selection window, a partial hysteresis signal, and a selector-withdrawal null on the clustered DK seed
+- the C0-to-DK bridge note closes the signed chain identities on the tested representative families, but still leaves orientation source, evolution-law equivalence, intrinsic grading, and family-wide recovery conditional
+- the natural next controls after `C0.16` are stronger derivational tests, not a retroactive reinterpretation of the present no-distance results
 
 Numerical boundary:
 - `C0.6` opens positive mismatch accumulation in `9/9` runs and protected arrow forcing in `6/9` runs
@@ -44,8 +48,12 @@ Numerical boundary:
 - `C0.12` shows a sharp detuning threshold: braid-like exchange survives through `delta = 0.625` and flips near `delta = 0.750`
 - `C0.13` refines that threshold into a narrow protected window that collapses under motif-weak-plus and degree skew, but does not satisfy the strict three-sample boundary rule
 - `C0.14` closes the line negatively: all `9/9` locking runs remain `no_locking_effect`
+- `C0.15` adds a partial hysteresis signal: `4/9` runs classify as `irreversible_witness`, but broad irreversibility is still not established
+- `C0.16` sharpens the locking null: `0/9` runs retain a locked class after selector withdrawal
+- the `C0-to-DK bridge` note closes the signed chain identities exactly on the tested representative families and recovers a clustered-only detuning/protection signal on the derived complex
 
 Combined archive read:
 - `C0.1-C0.4` establish graph-structural class survival without coordinate distance, but no seeded braid mechanism
 - `C0.5-C0.9` establish limited protected sequencing and partial inconsistency opening, but no broad irreversibility claim
-- `C0.10-C0.14` establish harmonic-address topology selection and detuning structure, but no topology locking
+- `C0.10-C0.16` establish harmonic-address topology selection, detuning structure, partial hysteresis, and a selector-withdrawal locking null
+- the bridge note establishes a real C0-derived DK scaffold, but not a completed derivation of the graded sector

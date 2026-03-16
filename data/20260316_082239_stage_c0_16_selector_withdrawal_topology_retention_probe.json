@@ -1,0 +1,1395 @@
+{
+  "experiment": "c0_16_selector_withdrawal_topology_retention_probe",
+  "description": "Selector-withdrawal retention test on the harmonic-address no-distance branch, asking whether selected topology persists after the address selector is removed.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_projected_transverse_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "selector_withdrawal_no_distance_combinatorial",
+    "source_family": "stage23_2_clustered_mixed_encounter_seed",
+    "resolution": 12,
+    "epsilon": 0.2,
+    "mean_width": 0.08,
+    "amplitude": 0.5,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0,
+    "phase_offset_fraction_of_pi": 0.0,
+    "local_phase_skew_fraction": 0.0,
+    "beta": 0.0,
+    "separation": 0.08,
+    "address_modulus": 4.0,
+    "eta_match": 0.8,
+    "eta_mismatch": 0.45,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58,
+    "arming_segments": 3,
+    "withdrawal_segments": 3,
+    "segment_steps": 6,
+    "degree_bias_amplitude": 0.14,
+    "motif_bias_amplitude": 0.16,
+    "withdrawal_retention_threshold": 0.67,
+    "withdrawal_braid_dwell_threshold": 0.34
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "C016_exact_plain",
+        "run_order": 0,
+        "family_id": "exact_match_braid_seed",
+        "family_label": "Exact-match braid seed",
+        "family_mode": "packet_dominant",
+        "arming_delta": 0.0,
+        "withdrawal_protocol": "plain_withdrawal",
+        "withdrawal_label": "Selector off",
+        "notes": "Exact-match selected braid seed with selector removed and no extra perturbation."
+      },
+      "metrics": {
+        "run_id": "C016_exact_plain",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "plain_withdrawal",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "no_locking_after_withdrawal",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 5.7803716515775154e-05,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 0,
+        "family_id": "exact_match_braid_seed",
+        "family_label": "Exact-match braid seed",
+        "family_mode": "packet_dominant",
+        "withdrawal_protocol": "plain_withdrawal",
+        "withdrawal_label": "Selector off",
+        "arming_delta": 0.0,
+        "armed_topology_class": "transfer_smeared",
+        "post_withdrawal_topology_class": "unresolved",
+        "withdrawal_braid_dwell_time": 0.0,
+        "withdrawal_class_retention": 0.0,
+        "post_withdrawal_selectivity": 1.0,
+        "post_withdrawal_coherence": 0.6325340190363752,
+        "post_withdrawal_flow_concentration": 0.7670188344919416,
+        "selector_off_recurrence": 0.0,
+        "locking_after_withdrawal_label": "no_locking_after_withdrawal",
+        "notes": "Exact-match selected braid seed with selector removed and no extra perturbation."
+      },
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved",
+        "unresolved",
+        "unresolved"
+      ],
+      "selectivity_trace": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "flow_trace": [
+        0.9029408581833669,
+        0.8641512293321727,
+        0.8077398089930785,
+        0.8285675767569161,
+        0.755967488529724,
+        0.7165214381891852
+      ],
+      "coherence_trace": [
+        0.42684492670841834,
+        0.59058654558328,
+        0.6207494627401426,
+        0.6277605003166462,
+        0.5981329934151052,
+        0.6717085633773741
+      ],
+      "phase_split": {
+        "arming_segments": 3,
+        "withdrawal_segments": 3
+      },
+      "windows": [
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9029408581833669,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.42684492670841834
+        },
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8641512293321727,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.59058654558328
+        },
+        {
+          "phase": "arming",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8077398089930785,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.6207494627401426
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8285675767569161,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.6277605003166462
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.755967488529724,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.5981329934151052
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7165214381891852,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.6717085633773741
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C016_exact_degree",
+        "run_order": 1,
+        "family_id": "exact_match_braid_seed",
+        "family_label": "Exact-match braid seed",
+        "family_mode": "packet_dominant",
+        "arming_delta": 0.0,
+        "withdrawal_protocol": "degree_skew_withdrawal",
+        "withdrawal_label": "Selector off + degree skew",
+        "notes": "Exact-match selected braid seed with selector removed and bounded degree-skew perturbation."
+      },
+      "metrics": {
+        "run_id": "C016_exact_degree",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "degree_skew_withdrawal",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "no_locking_after_withdrawal",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 4.8943368668783336e-05,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 1,
+        "family_id": "exact_match_braid_seed",
+        "family_label": "Exact-match braid seed",
+        "family_mode": "packet_dominant",
+        "withdrawal_protocol": "degree_skew_withdrawal",
+        "withdrawal_label": "Selector off + degree skew",
+        "arming_delta": 0.0,
+        "armed_topology_class": "transfer_smeared",
+        "post_withdrawal_topology_class": "unresolved",
+        "withdrawal_braid_dwell_time": 0.0,
+        "withdrawal_class_retention": 0.0,
+        "post_withdrawal_selectivity": 1.0,
+        "post_withdrawal_coherence": 0.6224198313557371,
+        "post_withdrawal_flow_concentration": 0.766547134166414,
+        "selector_off_recurrence": 0.0,
+        "locking_after_withdrawal_label": "no_locking_after_withdrawal",
+        "notes": "Exact-match selected braid seed with selector removed and bounded degree-skew perturbation."
+      },
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved",
+        "unresolved",
+        "unresolved"
+      ],
+      "selectivity_trace": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "flow_trace": [
+        0.9029408581833669,
+        0.8641512293321727,
+        0.8077398089930785,
+        0.8284779250103779,
+        0.7555444222596652,
+        0.7156190552291987
+      ],
+      "coherence_trace": [
+        0.42684492670841834,
+        0.59058654558328,
+        0.6207494627401426,
+        0.6280010479782179,
+        0.6020549969226416,
+        0.637203449166352
+      ],
+      "phase_split": {
+        "arming_segments": 3,
+        "withdrawal_segments": 3
+      },
+      "windows": [
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9029408581833669,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.42684492670841834
+        },
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8641512293321727,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.59058654558328
+        },
+        {
+          "phase": "arming",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8077398089930785,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.6207494627401426
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8284779250103779,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.6280010479782179
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7555444222596652,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.6020549969226416
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7156190552291987,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.637203449166352
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C016_exact_motif",
+        "run_order": 2,
+        "family_id": "exact_match_braid_seed",
+        "family_label": "Exact-match braid seed",
+        "family_mode": "packet_dominant",
+        "arming_delta": 0.0,
+        "withdrawal_protocol": "motif_withdrawal",
+        "withdrawal_label": "Selector off + motif perturbation",
+        "notes": "Exact-match selected braid seed with selector removed and local motif perturbation."
+      },
+      "metrics": {
+        "run_id": "C016_exact_motif",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "motif_withdrawal",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "no_locking_after_withdrawal",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.01785534896505534,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 2,
+        "family_id": "exact_match_braid_seed",
+        "family_label": "Exact-match braid seed",
+        "family_mode": "packet_dominant",
+        "withdrawal_protocol": "motif_withdrawal",
+        "withdrawal_label": "Selector off + motif perturbation",
+        "arming_delta": 0.0,
+        "armed_topology_class": "transfer_smeared",
+        "post_withdrawal_topology_class": "unresolved",
+        "withdrawal_braid_dwell_time": 0.0,
+        "withdrawal_class_retention": 0.0,
+        "post_withdrawal_selectivity": 1.0,
+        "post_withdrawal_coherence": 0.4693353799732923,
+        "post_withdrawal_flow_concentration": 0.7754750016952525,
+        "selector_off_recurrence": 0.0,
+        "locking_after_withdrawal_label": "no_locking_after_withdrawal",
+        "notes": "Exact-match selected braid seed with selector removed and local motif perturbation."
+      },
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved",
+        "unresolved",
+        "unresolved"
+      ],
+      "selectivity_trace": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "flow_trace": [
+        0.9029408581833669,
+        0.8641512293321727,
+        0.8077398089930785,
+        0.8296399856553635,
+        0.7613867163071046,
+        0.7353983031232896
+      ],
+      "coherence_trace": [
+        0.42684492670841834,
+        0.59058654558328,
+        0.6207494627401426,
+        0.489098019063025,
+        0.44710212001428207,
+        0.47180600084256974
+      ],
+      "phase_split": {
+        "arming_segments": 3,
+        "withdrawal_segments": 3
+      },
+      "windows": [
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9029408581833669,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.42684492670841834
+        },
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8641512293321727,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.59058654558328
+        },
+        {
+          "phase": "arming",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8077398089930785,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.6207494627401426
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8296399856553635,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.489098019063025
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7613867163071046,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.44710212001428207
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7353983031232896,
+          "address_selectivity_index": 1.0,
+          "exchange_coherence": 0.47180600084256974
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C016_threshold_plain",
+        "run_order": 3,
+        "family_id": "threshold_protected_seed",
+        "family_label": "Threshold protected seed",
+        "family_mode": "packet_dominant",
+        "arming_delta": 0.69,
+        "withdrawal_protocol": "plain_withdrawal",
+        "withdrawal_label": "Selector off",
+        "notes": "Near-threshold protected seed with selector removed and no extra perturbation."
+      },
+      "metrics": {
+        "run_id": "C016_threshold_plain",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "plain_withdrawal",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "selector_dependent_collapse",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.1863389981249824,
+        "final_mean_separation": 0.1863389981249824,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.0176638938746404,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 3,
+        "family_id": "threshold_protected_seed",
+        "family_label": "Threshold protected seed",
+        "family_mode": "packet_dominant",
+        "withdrawal_protocol": "plain_withdrawal",
+        "withdrawal_label": "Selector off",
+        "arming_delta": 0.69,
+        "armed_topology_class": "braid_like_exchange",
+        "post_withdrawal_topology_class": "unresolved",
+        "withdrawal_braid_dwell_time": 0.0,
+        "withdrawal_class_retention": 0.0,
+        "post_withdrawal_selectivity": 0.8804373601923329,
+        "post_withdrawal_coherence": 0.5129478700209498,
+        "post_withdrawal_flow_concentration": 0.7837198749666703,
+        "selector_off_recurrence": 0.0,
+        "locking_after_withdrawal_label": "selector_dependent_collapse",
+        "notes": "Near-threshold protected seed with selector removed and no extra perturbation."
+      },
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved"
+      ],
+      "selectivity_trace": [
+        0.8839384988557881,
+        0.8883015289452781,
+        0.9220988899308248,
+        0.9213170289209949,
+        0.8814170272317668,
+        0.8385780244242369
+      ],
+      "flow_trace": [
+        0.9075035741745759,
+        0.9081632801295071,
+        0.8997377894093633,
+        0.8592809348724086,
+        0.7778008108605963,
+        0.7140778791670062
+      ],
+      "coherence_trace": [
+        0.40988376050456604,
+        0.5780982038453797,
+        0.574875163974566,
+        0.48193554120380633,
+        0.5161686413480492,
+        0.5407394275109938
+      ],
+      "phase_split": {
+        "arming_segments": 3,
+        "withdrawal_segments": 3
+      },
+      "windows": [
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9075035741745759,
+          "address_selectivity_index": 0.8839384988557881,
+          "exchange_coherence": 0.40988376050456604
+        },
+        {
+          "phase": "arming",
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9081632801295071,
+          "address_selectivity_index": 0.8883015289452781,
+          "exchange_coherence": 0.5780982038453797
+        },
+        {
+          "phase": "arming",
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.8997377894093633,
+          "address_selectivity_index": 0.9220988899308248,
+          "exchange_coherence": 0.574875163974566
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8592809348724086,
+          "address_selectivity_index": 0.9213170289209949,
+          "exchange_coherence": 0.48193554120380633
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7778008108605963,
+          "address_selectivity_index": 0.8814170272317668,
+          "exchange_coherence": 0.5161686413480492
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7140778791670062,
+          "address_selectivity_index": 0.8385780244242369,
+          "exchange_coherence": 0.5407394275109938
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C016_threshold_degree",
+        "run_order": 4,
+        "family_id": "threshold_protected_seed",
+        "family_label": "Threshold protected seed",
+        "family_mode": "packet_dominant",
+        "arming_delta": 0.69,
+        "withdrawal_protocol": "degree_skew_withdrawal",
+        "withdrawal_label": "Selector off + degree skew",
+        "notes": "Near-threshold protected seed with selector removed and bounded degree-skew perturbation."
+      },
+      "metrics": {
+        "run_id": "C016_threshold_degree",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "degree_skew_withdrawal",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "selector_dependent_collapse",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.1863389981249824,
+        "final_mean_separation": 0.1863389981249824,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.017659333501435354,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 4,
+        "family_id": "threshold_protected_seed",
+        "family_label": "Threshold protected seed",
+        "family_mode": "packet_dominant",
+        "withdrawal_protocol": "degree_skew_withdrawal",
+        "withdrawal_label": "Selector off + degree skew",
+        "arming_delta": 0.69,
+        "armed_topology_class": "braid_like_exchange",
+        "post_withdrawal_topology_class": "unresolved",
+        "withdrawal_braid_dwell_time": 0.0,
+        "withdrawal_class_retention": 0.0,
+        "post_withdrawal_selectivity": 0.8804352549990764,
+        "post_withdrawal_coherence": 0.5129624374273678,
+        "post_withdrawal_flow_concentration": 0.7836323926182839,
+        "selector_off_recurrence": 0.0,
+        "locking_after_withdrawal_label": "selector_dependent_collapse",
+        "notes": "Near-threshold protected seed with selector removed and bounded degree-skew perturbation."
+      },
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved"
+      ],
+      "selectivity_trace": [
+        0.8839384988557881,
+        0.8883015289452781,
+        0.9220988899308248,
+        0.9213170057691625,
+        0.8814162900252036,
+        0.8385724692028629
+      ],
+      "flow_trace": [
+        0.9075035741745759,
+        0.9081632801295071,
+        0.8997377894093633,
+        0.8592694200794072,
+        0.7777433783062108,
+        0.7138843794692337
+      ],
+      "coherence_trace": [
+        0.40988376050456604,
+        0.5780982038453797,
+        0.574875163974566,
+        0.4819359090645543,
+        0.5161725542421393,
+        0.5407788489754098
+      ],
+      "phase_split": {
+        "arming_segments": 3,
+        "withdrawal_segments": 3
+      },
+      "windows": [
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9075035741745759,
+          "address_selectivity_index": 0.8839384988557881,
+          "exchange_coherence": 0.40988376050456604
+        },
+        {
+          "phase": "arming",
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9081632801295071,
+          "address_selectivity_index": 0.8883015289452781,
+          "exchange_coherence": 0.5780982038453797
+        },
+        {
+          "phase": "arming",
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.8997377894093633,
+          "address_selectivity_index": 0.9220988899308248,
+          "exchange_coherence": 0.574875163974566
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8592694200794072,
+          "address_selectivity_index": 0.9213170057691625,
+          "exchange_coherence": 0.4819359090645543
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7777433783062108,
+          "address_selectivity_index": 0.8814162900252036,
+          "exchange_coherence": 0.5161725542421393
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7138843794692337,
+          "address_selectivity_index": 0.8385724692028629,
+          "exchange_coherence": 0.5407788489754098
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C016_threshold_motif",
+        "run_order": 5,
+        "family_id": "threshold_protected_seed",
+        "family_label": "Threshold protected seed",
+        "family_mode": "packet_dominant",
+        "arming_delta": 0.69,
+        "withdrawal_protocol": "motif_withdrawal",
+        "withdrawal_label": "Selector off + motif perturbation",
+        "notes": "Near-threshold protected seed with selector removed and local motif perturbation."
+      },
+      "metrics": {
+        "run_id": "C016_threshold_motif",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "motif_withdrawal",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "selector_dependent_collapse",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.1863389981249824,
+        "final_mean_separation": 0.1863389981249824,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.016337961450870984,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 5,
+        "family_id": "threshold_protected_seed",
+        "family_label": "Threshold protected seed",
+        "family_mode": "packet_dominant",
+        "withdrawal_protocol": "motif_withdrawal",
+        "withdrawal_label": "Selector off + motif perturbation",
+        "arming_delta": 0.69,
+        "armed_topology_class": "braid_like_exchange",
+        "post_withdrawal_topology_class": "unresolved",
+        "withdrawal_braid_dwell_time": 0.0,
+        "withdrawal_class_retention": 0.0,
+        "post_withdrawal_selectivity": 0.8880465355399864,
+        "post_withdrawal_coherence": 0.5225637777525075,
+        "post_withdrawal_flow_concentration": 0.7896621697010932,
+        "selector_off_recurrence": 0.0,
+        "locking_after_withdrawal_label": "selector_dependent_collapse",
+        "notes": "Near-threshold protected seed with selector removed and local motif perturbation."
+      },
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved"
+      ],
+      "selectivity_trace": [
+        0.8839384988557881,
+        0.8883015289452781,
+        0.9220988899308248,
+        0.9223745596876967,
+        0.8876404097824965,
+        0.854124637149766
+      ],
+      "flow_trace": [
+        0.9075035741745759,
+        0.9081632801295071,
+        0.8997377894093633,
+        0.8604672230437451,
+        0.7832799091743854,
+        0.7252393768851491
+      ],
+      "coherence_trace": [
+        0.40988376050456604,
+        0.5780982038453797,
+        0.574875163974566,
+        0.48194607743902934,
+        0.5221362042274066,
+        0.5636090515910868
+      ],
+      "phase_split": {
+        "arming_segments": 3,
+        "withdrawal_segments": 3
+      },
+      "windows": [
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9075035741745759,
+          "address_selectivity_index": 0.8839384988557881,
+          "exchange_coherence": 0.40988376050456604
+        },
+        {
+          "phase": "arming",
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9081632801295071,
+          "address_selectivity_index": 0.8883015289452781,
+          "exchange_coherence": 0.5780982038453797
+        },
+        {
+          "phase": "arming",
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.8997377894093633,
+          "address_selectivity_index": 0.9220988899308248,
+          "exchange_coherence": 0.574875163974566
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8604672230437451,
+          "address_selectivity_index": 0.9223745596876967,
+          "exchange_coherence": 0.48194607743902934
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7832799091743854,
+          "address_selectivity_index": 0.8876404097824965,
+          "exchange_coherence": 0.5221362042274066
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7252393768851491,
+          "address_selectivity_index": 0.854124637149766,
+          "exchange_coherence": 0.5636090515910868
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C016_fragile_plain",
+        "run_order": 6,
+        "family_id": "fragile_incompatible_control",
+        "family_label": "Fragile incompatible control",
+        "family_mode": "packet_dominant",
+        "arming_delta": 1.0,
+        "withdrawal_protocol": "plain_withdrawal",
+        "withdrawal_label": "Selector off",
+        "notes": "Fragile incompatible control with selector removed and no extra perturbation."
+      },
+      "metrics": {
+        "run_id": "C016_fragile_plain",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "plain_withdrawal",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "no_locking_after_withdrawal",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.1863389981249824,
+        "final_mean_separation": 0.1863389981249824,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.013482320412229576,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 6,
+        "family_id": "fragile_incompatible_control",
+        "family_label": "Fragile incompatible control",
+        "family_mode": "packet_dominant",
+        "withdrawal_protocol": "plain_withdrawal",
+        "withdrawal_label": "Selector off",
+        "arming_delta": 1.0,
+        "armed_topology_class": "transfer_smeared",
+        "post_withdrawal_topology_class": "unresolved",
+        "withdrawal_braid_dwell_time": 0.0,
+        "withdrawal_class_retention": 0.3333333333333333,
+        "post_withdrawal_selectivity": 0.8041050122473793,
+        "post_withdrawal_coherence": 0.5078426988058103,
+        "post_withdrawal_flow_concentration": 0.804226498903536,
+        "selector_off_recurrence": 0.0,
+        "locking_after_withdrawal_label": "no_locking_after_withdrawal",
+        "notes": "Fragile incompatible control with selector removed and no extra perturbation."
+      },
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved"
+      ],
+      "selectivity_trace": [
+        0.8213843964555657,
+        0.8565507370743339,
+        0.8996525281197735,
+        0.8700554639954206,
+        0.8023855905853559,
+        0.7398739821613616
+      ],
+      "flow_trace": [
+        0.9073021511277076,
+        0.9266244137844915,
+        0.9253078675422781,
+        0.8748959727114692,
+        0.797713490506913,
+        0.7400700334922256
+      ],
+      "coherence_trace": [
+        0.40972936562700785,
+        0.5878469053376816,
+        0.6394392646380757,
+        0.4582032648873563,
+        0.5191647635409207,
+        0.546160067989154
+      ],
+      "phase_split": {
+        "arming_segments": 3,
+        "withdrawal_segments": 3
+      },
+      "windows": [
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9073021511277076,
+          "address_selectivity_index": 0.8213843964555657,
+          "exchange_coherence": 0.40972936562700785
+        },
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9266244137844915,
+          "address_selectivity_index": 0.8565507370743339,
+          "exchange_coherence": 0.5878469053376816
+        },
+        {
+          "phase": "arming",
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9253078675422781,
+          "address_selectivity_index": 0.8996525281197735,
+          "exchange_coherence": 0.6394392646380757
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8748959727114692,
+          "address_selectivity_index": 0.8700554639954206,
+          "exchange_coherence": 0.4582032648873563
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.797713490506913,
+          "address_selectivity_index": 0.8023855905853559,
+          "exchange_coherence": 0.5191647635409207
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7400700334922256,
+          "address_selectivity_index": 0.7398739821613616,
+          "exchange_coherence": 0.546160067989154
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C016_fragile_degree",
+        "run_order": 7,
+        "family_id": "fragile_incompatible_control",
+        "family_label": "Fragile incompatible control",
+        "family_mode": "packet_dominant",
+        "arming_delta": 1.0,
+        "withdrawal_protocol": "degree_skew_withdrawal",
+        "withdrawal_label": "Selector off + degree skew",
+        "notes": "Fragile incompatible control with selector removed and bounded degree-skew perturbation."
+      },
+      "metrics": {
+        "run_id": "C016_fragile_degree",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "degree_skew_withdrawal",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "no_locking_after_withdrawal",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.1863389981249824,
+        "final_mean_separation": 0.1863389981249824,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.013478294523214931,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 7,
+        "family_id": "fragile_incompatible_control",
+        "family_label": "Fragile incompatible control",
+        "family_mode": "packet_dominant",
+        "withdrawal_protocol": "degree_skew_withdrawal",
+        "withdrawal_label": "Selector off + degree skew",
+        "arming_delta": 1.0,
+        "armed_topology_class": "transfer_smeared",
+        "post_withdrawal_topology_class": "unresolved",
+        "withdrawal_braid_dwell_time": 0.0,
+        "withdrawal_class_retention": 0.3333333333333333,
+        "post_withdrawal_selectivity": 0.8041020197666425,
+        "post_withdrawal_coherence": 0.5078594403531519,
+        "post_withdrawal_flow_concentration": 0.8041593093704802,
+        "selector_off_recurrence": 0.0,
+        "locking_after_withdrawal_label": "no_locking_after_withdrawal",
+        "notes": "Fragile incompatible control with selector removed and bounded degree-skew perturbation."
+      },
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved"
+      ],
+      "selectivity_trace": [
+        0.8213843964555657,
+        0.8565507370743339,
+        0.8996525281197735,
+        0.870055409296519,
+        0.8023845588935204,
+        0.7398660911098881
+      ],
+      "flow_trace": [
+        0.9073021511277076,
+        0.9266244137844915,
+        0.9253078675422781,
+        0.8748885921519178,
+        0.7976751223017854,
+        0.7399142136577374
+      ],
+      "coherence_trace": [
+        0.40972936562700785,
+        0.5878469053376816,
+        0.6394392646380757,
+        0.4582034389049542,
+        0.5191696194027049,
+        0.5462052627517964
+      ],
+      "phase_split": {
+        "arming_segments": 3,
+        "withdrawal_segments": 3
+      },
+      "windows": [
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9073021511277076,
+          "address_selectivity_index": 0.8213843964555657,
+          "exchange_coherence": 0.40972936562700785
+        },
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9266244137844915,
+          "address_selectivity_index": 0.8565507370743339,
+          "exchange_coherence": 0.5878469053376816
+        },
+        {
+          "phase": "arming",
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9253078675422781,
+          "address_selectivity_index": 0.8996525281197735,
+          "exchange_coherence": 0.6394392646380757
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8748885921519178,
+          "address_selectivity_index": 0.870055409296519,
+          "exchange_coherence": 0.4582034389049542
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7976751223017854,
+          "address_selectivity_index": 0.8023845588935204,
+          "exchange_coherence": 0.5191696194027049
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7399142136577374,
+          "address_selectivity_index": 0.7398660911098881,
+          "exchange_coherence": 0.5462052627517964
+        }
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C016_fragile_motif",
+        "run_order": 8,
+        "family_id": "fragile_incompatible_control",
+        "family_label": "Fragile incompatible control",
+        "family_mode": "packet_dominant",
+        "arming_delta": 1.0,
+        "withdrawal_protocol": "motif_withdrawal",
+        "withdrawal_label": "Selector off + motif perturbation",
+        "notes": "Fragile incompatible control with selector removed and local motif perturbation."
+      },
+      "metrics": {
+        "run_id": "C016_fragile_motif",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "motif_withdrawal",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "unresolved",
+        "persistence_label": "no_locking_after_withdrawal",
+        "composite_lifetime": 0.0,
+        "binding_persistence": 0.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.1863389981249824,
+        "final_mean_separation": 0.1863389981249824,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 0.0,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.0073852407483775695,
+        "omega0_weight_initial": 0.0,
+        "omega1_weight_initial": 0.0,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.0,
+        "omega1_weight_final": 0.0,
+        "omega2_weight_final": 0.0,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 8,
+        "family_id": "fragile_incompatible_control",
+        "family_label": "Fragile incompatible control",
+        "family_mode": "packet_dominant",
+        "withdrawal_protocol": "motif_withdrawal",
+        "withdrawal_label": "Selector off + motif perturbation",
+        "arming_delta": 1.0,
+        "armed_topology_class": "transfer_smeared",
+        "post_withdrawal_topology_class": "unresolved",
+        "withdrawal_braid_dwell_time": 0.0,
+        "withdrawal_class_retention": 0.3333333333333333,
+        "post_withdrawal_selectivity": 0.8138110771950613,
+        "post_withdrawal_coherence": 0.5437801365475204,
+        "post_withdrawal_flow_concentration": 0.8113652916661621,
+        "selector_off_recurrence": 0.0,
+        "locking_after_withdrawal_label": "no_locking_after_withdrawal",
+        "notes": "Fragile incompatible control with selector removed and local motif perturbation."
+      },
+      "segment_times": [
+        0.7517193677535772,
+        1.5034387355071543,
+        2.2551581032607317,
+        3.0068774710143087,
+        3.758596838767886,
+        4.5103162065214635
+      ],
+      "topology_trace": [
+        "transfer_smeared",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "transfer_smeared",
+        "unresolved",
+        "unresolved"
+      ],
+      "selectivity_trace": [
+        0.8213843964555657,
+        0.8565507370743339,
+        0.8996525281197735,
+        0.8715345874871457,
+        0.8108154445361558,
+        0.7590831995618822
+      ],
+      "flow_trace": [
+        0.9073021511277076,
+        0.9266244137844915,
+        0.9253078675422781,
+        0.8764158951114069,
+        0.8036728166408119,
+        0.7540071632462673
+      ],
+      "coherence_trace": [
+        0.40972936562700785,
+        0.5878469053376816,
+        0.6394392646380757,
+        0.4682447827407137,
+        0.5384456602640513,
+        0.6246499666377965
+      ],
+      "phase_split": {
+        "arming_segments": 3,
+        "withdrawal_segments": 3
+      },
+      "windows": [
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9073021511277076,
+          "address_selectivity_index": 0.8213843964555657,
+          "exchange_coherence": 0.40972936562700785
+        },
+        {
+          "phase": "arming",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.9266244137844915,
+          "address_selectivity_index": 0.8565507370743339,
+          "exchange_coherence": 0.5878469053376816
+        },
+        {
+          "phase": "arming",
+          "topology_class": "braid_like_exchange",
+          "flow_concentration_index": 0.9253078675422781,
+          "address_selectivity_index": 0.8996525281197735,
+          "exchange_coherence": 0.6394392646380757
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "transfer_smeared",
+          "flow_concentration_index": 0.8764158951114069,
+          "address_selectivity_index": 0.8715345874871457,
+          "exchange_coherence": 0.4682447827407137
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.8036728166408119,
+          "address_selectivity_index": 0.8108154445361558,
+          "exchange_coherence": 0.5384456602640513
+        },
+        {
+          "phase": "withdrawal",
+          "topology_class": "unresolved",
+          "flow_concentration_index": 0.7540071632462673,
+          "address_selectivity_index": 0.7590831995618822,
+          "exchange_coherence": 0.6246499666377965
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "withdrawal_labels": {
+      "no_locking_after_withdrawal": 6,
+      "selector_dependent_collapse": 3
+    },
+    "post_topology_counts": {
+      "unresolved": 9
+    },
+    "verdict": "selected topology collapses once the selector is removed, so the locking case does not improve here"
+  }
+}

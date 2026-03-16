@@ -1,0 +1,108 @@
+{
+  "stage": "c0_dk_bridge_validation",
+  "description": "C0-to-DK bridge validation on representative no-distance graph families using a signed combinatorial complex, deterministic harmonic-address dressing, and focused detuning/protection scans.",
+  "common_fields": {
+    "address_modulus": 4.0,
+    "detuning_samples": [
+      0.0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1.0
+    ],
+    "eta_match": 0.8,
+    "eta_mismatch": 0.45,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58,
+    "sigma_shell": 1.15,
+    "kick_cycles": 0.35,
+    "dt_scale": 0.24,
+    "t_final": 1.2,
+    "steps": 72,
+    "grade0_scale": 1.0,
+    "grade1_scale": 0.85,
+    "grade2_scale": 0.25,
+    "protection_degree_skew_strength": 0.12
+  },
+  "families": [
+    {
+      "family_id": "clustered_composite_anchor",
+      "family_label": "Clustered composite anchor",
+      "left_seed": 0,
+      "right_seed": 6
+    },
+    {
+      "family_id": "counter_propagating_corridor",
+      "family_label": "Counter-propagating corridor",
+      "left_seed": 0,
+      "right_seed": 8
+    },
+    {
+      "family_id": "phase_ordered_symmetric_triad",
+      "family_label": "Phase-ordered symmetric triad",
+      "left_seed": 0,
+      "right_seed": 8
+    }
+  ],
+  "protection_variants": [
+    {
+      "variant_id": "balanced_baseline",
+      "variant_label": "Balanced baseline",
+      "delta": 0.0,
+      "left_sigma_scale": 1.0,
+      "right_sigma_scale": 1.0,
+      "grade0_scale": 1.0,
+      "grade1_scale": 0.85,
+      "grade2_scale": 0.25,
+      "degree_skew_strength": 0.0
+    },
+    {
+      "variant_id": "phase_edge_probe",
+      "variant_label": "Phase-edge probe",
+      "delta": 0.75,
+      "left_sigma_scale": 1.0,
+      "right_sigma_scale": 1.0,
+      "grade0_scale": 1.0,
+      "grade1_scale": 0.85,
+      "grade2_scale": 0.25,
+      "degree_skew_strength": 0.0
+    },
+    {
+      "variant_id": "width_asymmetry_probe",
+      "variant_label": "Width asymmetry probe",
+      "delta": 0.0,
+      "left_sigma_scale": 0.85,
+      "right_sigma_scale": 1.35,
+      "grade0_scale": 1.0,
+      "grade1_scale": 0.85,
+      "grade2_scale": 0.25,
+      "degree_skew_strength": 0.0
+    },
+    {
+      "variant_id": "degree_skew_probe",
+      "variant_label": "Mild degree-skew probe",
+      "delta": 0.0,
+      "left_sigma_scale": 1.0,
+      "right_sigma_scale": 1.0,
+      "grade0_scale": 1.0,
+      "grade1_scale": 0.85,
+      "grade2_scale": 0.25,
+      "degree_skew_strength": 0.12
+    },
+    {
+      "variant_id": "zero_form_enhanced_probe",
+      "variant_label": "Zero-form enhanced probe",
+      "delta": 0.0,
+      "left_sigma_scale": 1.0,
+      "right_sigma_scale": 1.0,
+      "grade0_scale": 1.35,
+      "grade1_scale": 0.45,
+      "grade2_scale": 0.15,
+      "degree_skew_strength": 0.0
+    }
+  ]
+}
