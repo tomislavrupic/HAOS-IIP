@@ -1,0 +1,80 @@
+{
+  "stage": "stage_12_intrinsic_grading_and_structural_irreversibility_probe",
+  "description": "Label-free closure probe for intrinsic grading, bidirectional irreversibility, and family-wide protection on the no-distance combinatorial austerity line.",
+  "common_fields": {
+    "address_modulus": 5.0,
+    "kernel_width": 1.15,
+    "kernel_radius_center": 2,
+    "radius_offsets": [
+      -1,
+      0,
+      1
+    ],
+    "latent_detunings": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "protection_strengths": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "phase_steps": 8,
+    "restore_steps": 8,
+    "segment_kick": 0.16,
+    "epsilon_field": 0.082,
+    "epsilon_mismatch": 0.115,
+    "grade0_scale": 1.0,
+    "grade1_scale": 0.85,
+    "grade2_scale": 0.25,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58
+  },
+  "families": [
+    {
+      "family_id": "clustered_braid_seed",
+      "family_label": "Clustered protected seed",
+      "left_seed": 0,
+      "right_seed": 6
+    },
+    {
+      "family_id": "corridor_transport_seed",
+      "family_label": "Corridor weak-protection seed",
+      "left_seed": 0,
+      "right_seed": 6
+    },
+    {
+      "family_id": "triad_competition_seed",
+      "family_label": "Triad competitive seed",
+      "left_seed": 0,
+      "right_seed": 6
+    }
+  ],
+  "protocols": [
+    {
+      "protocol_id": "forward_only",
+      "protocol_label": "Forward only"
+    },
+    {
+      "protocol_id": "forward_reverse_restore",
+      "protocol_label": "Forward, reverse, restore"
+    },
+    {
+      "protocol_id": "forward_reverse_reperturb",
+      "protocol_label": "Forward, reverse, re-perturb"
+    }
+  ],
+  "resolutions": [
+    {
+      "resolution_id": "base",
+      "resolution_label": "Base resolution",
+      "substeps": 1
+    },
+    {
+      "resolution_id": "refined",
+      "resolution_label": "Refinement doubling",
+      "substeps": 2
+    }
+  ]
+}

@@ -7,7 +7,7 @@ Release numbering:
 - Appendix C0 is carried forward as the combinatorial austerity support appendix for `25.1`, not as a rewrite of `24.1`
 
 Archive role:
-- Appendix C0 collects the no-distance combinatorial branch from `C0.1` through `C0.20` together with the first `C0-to-DK` bridge validation note and the integrated Stage 11 convergence probe
+- Appendix C0 collects the no-distance combinatorial branch from `C0.1` through `C0.20` together with the first `C0-to-DK` bridge validation note, the integrated Stage 11 convergence probe, and the final `Stage 12` closure probe
 - the original Phase I and Phase II files remain untouched
 - Paper `24.1` remains the primary frozen write-up for `C0.1-C0.4`
 - Paper `25.1` is the updated synthesis across the full C0 line plus the first bridge-validation result
@@ -32,17 +32,18 @@ Authoritative trail:
 - `C0.19` authoritative stamp: `data/20260316_090413_stage_c0_19_peak_braid_withdrawal_probe.json`
 - `C0.20` authoritative stamp: `data/20260316_090412_stage_c0_20_armed_bridge_hysteresis_probe.json`
 - `Stage 11` authoritative stamp: `data/20260316_091114_stage_11_integrated_austerity_resolution_probe.json`
+- `Stage 12` authoritative stamp: `data/20260316_093434_stage_12_intrinsic_grading_and_structural_irreversibility_probe.json`
 
 Series boundary:
 
-“The C0 line (C0.1-C0.20) shows that the no-distance branch supports real graph-structural class survival, reproducible incidence-driven mismatch accumulation, partial kernel inconsistency under softer survivor maps, weak harmonic-address topology selection, explicit clustered armed-state irreversibility on the bridge scaffold, and a real C0-to-DK bridge candidate, but it does not yet support topology locking, intrinsic grading, or family-wide recovery. The branch therefore remains a bounded control line, not a replacement core or a Phase II rescue mechanism.”
+“The combinatorial austerity line, closed here by Stage 12, shows that the no-distance branch supports real graph-structural class survival, reproducible incidence-driven mismatch accumulation, weak harmonic-address topology selection, explicit armed-state irreversibility on restricted bridge settings, and a real C0-to-DK bridge candidate, but it does not close intrinsic grading, topology locking, or family-wide recovery. The line is therefore frozen as a bounded negative/split closure result, not a replacement core or a Phase II rescue mechanism.”
 
 Forward-compatible note:
 - the current Phase II kernel back-reaction idea can be cited against this boundary without rewriting the C0 files
 - the harmonic-address branch opened in `C0.10-C0.16` adds a topology-selection window, a partial hysteresis signal, and a selector-withdrawal null on the clustered DK seed
 - the late bridge stages `C0.17-C0.20` show that fair selector withdrawal still does not lock topology, but armed-state bridge hysteresis yields an explicit clustered irreversibility witness
-- the C0-to-DK bridge note and `Stage 11` together now split the open obligations: orientation and evolution couple positively, while intrinsic grading and family-wide recovery remain conditional
-- the natural next controls after `Stage 11` are stronger grading/recovery derivations, not a retroactive reinterpretation of the present no-distance results
+- the C0-to-DK bridge note, `Stage 11`, and `Stage 12` together now freeze the obligation map: evolution equivalence remains positive, structural irreversibility remains limited but real, while intrinsic grading and family-wide recovery remain negative and the orientation ledger does not survive the label-free closure probe
+- the line is therefore treated as closed; later work should branch away from Appendix C0 rather than extend it by reinterpretation
 
 Numerical boundary:
 - `C0.6` opens positive mismatch accumulation in `9/9` runs and protected arrow forcing in `6/9` runs
@@ -60,10 +61,15 @@ Numerical boundary:
 - `C0.19` shows that even fair bridge withdrawal from the real clustered braid window yields only `topology_afterglow`, not locking
 - `C0.20` adds the strongest late bridge positive: all three clustered armed-state forward/reverse protocols classify as `irreversible_witness`
 - `Stage 11` resolves negatively overall: `O_C0_ORIENT` and `O_C0_EVOLUTION` are positive, while `O_C0_GRADING` and `O_C0_RECOVERY` remain negative
+- `Stage 12` closes the austerity line negatively: `O_C0_EVOLUTION` and a limited irreversibility signal survive, but `O_C0_ORIENT` fails under label-free cycling, intrinsic grading remains non-monotone, and family-wide recovery stays fragmented
 
 Combined archive read:
 - `C0.1-C0.4` establish graph-structural class survival without coordinate distance, but no seeded braid mechanism
 - `C0.5-C0.9` establish limited protected sequencing and partial inconsistency opening, but no broad irreversibility claim
 - `C0.10-C0.16` establish harmonic-address topology selection, detuning structure, partial hysteresis, and a selector-withdrawal locking null
 - `C0.17-C0.20` establish a stronger late bridge boundary: no locking after fair withdrawal, but explicit clustered armed-state irreversibility
-- the bridge note and `Stage 11` establish a real C0-derived DK scaffold and a partially converged obligation map, but not a completed derivation of the graded sector
+- the bridge note plus `Stage 11-12` establish a real C0-derived DK scaffold and a final negative closure boundary, but not a completed derivation of the graded sector
+
+Closure status:
+- Appendix C0 is now frozen and closed at `Stage 12`
+- future work on intrinsic grading, universal protection, or full irreversibility should start as a new branch, not as `C0.21+`
