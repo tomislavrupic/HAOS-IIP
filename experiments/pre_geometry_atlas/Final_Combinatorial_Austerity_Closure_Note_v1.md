@@ -1,4 +1,4 @@
-# Final Combinatorial Austerity Closure Note v1
+# 25.2 Final Combinatorial Austerity Closure Note v1
 
 Stage 12 closes the no-distance combinatorial austerity line.
 

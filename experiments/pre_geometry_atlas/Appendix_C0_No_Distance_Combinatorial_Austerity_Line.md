@@ -1,10 +1,10 @@
 # Appendix C0 - No-Distance Combinatorial Austerity Line
 
 Release numbering:
-- reserved next-paper support number: `25.1`
 - `24.1` remains the frozen C0.1-C0.4 synthesis paper
 - `25.1` is the expanded C0.1-C0.20 plus integrated-resolution synthesis paper
-- Appendix C0 is carried forward as the combinatorial austerity support appendix for `25.1`, not as a rewrite of `24.1`
+- `25.2` is the numbered final closure support note for the closed combinatorial austerity line
+- Appendix C0 is carried forward as the combinatorial austerity support appendix for `25.1`, with the terminal closure note frozen as `25.2`, not as a rewrite of `24.1`
 
 Archive role:
 - Appendix C0 collects the no-distance combinatorial branch from `C0.1` through `C0.20` together with the first `C0-to-DK` bridge validation note, the integrated Stage 11 convergence probe, and the final `Stage 12` closure probe
@@ -72,4 +72,5 @@ Combined archive read:
 
 Closure status:
 - Appendix C0 is now frozen and closed at `Stage 12`
+- The numbered closure note for that freeze is `25.2`
 - future work on intrinsic grading, universal protection, or full irreversibility should start as a new branch, not as `C0.21+`
