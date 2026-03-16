@@ -2,19 +2,12 @@
 
 from __future__ import annotations
 
-import math
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 
 from L1_stage2_common import (
-    PLOTS,
-    REPO_ROOT,
-    RESULTS,
-    EXPERIMENT_LOG,
-    save_result_payload,
-    append_log,
     ensure_matplotlib,
 )
 from L1_transverse_band_test import analyze_case as analyze_band_case
