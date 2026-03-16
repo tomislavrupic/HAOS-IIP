@@ -18,6 +18,7 @@ Those three sectors are:
 
 ## Canonical entry points
 
+- [docs/canon/HAOS_IIP_CORE_AXIOMS.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/HAOS_IIP_CORE_AXIOMS.md)
 - [docs/canon/HAOS_IIP_CORE_THEORY.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/HAOS_IIP_CORE_THEORY.md)
 - [docs/canon/KERNEL_DEFINITION.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/KERNEL_DEFINITION.md)
 - [docs/canon/OPERATOR_STRUCTURE.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/OPERATOR_STRUCTURE.md)
@@ -68,6 +69,12 @@ It currently gives the strongest explicit numerical result in the repo:
 ## Current architecture
 
 The repository no longer assumes that one node Laplacian explains every sector.
+
+The frozen core now lives above this architecture:
+
+```text
+core axioms -> model families -> experiments
+```
 
 Instead:
 

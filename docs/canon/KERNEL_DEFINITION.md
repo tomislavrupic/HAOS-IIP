@@ -34,6 +34,23 @@ $$
 
 The symbol `epsilon_c` is reserved for coherence threshold, not kernel width.
 
+`[P]` The sharpest reading is spectral:
+
+- `delta` is the perturbation size
+- `T` is the admissible recovery horizon
+- `lambda_1` is the first nonzero Laplacian eigenvalue
+- `epsilon_c` is the viable coherence threshold
+
+So on this operator branch, HAOS recoverability is implemented as a low-spectrum stability test: perturbations must be damped below the viable coherence threshold quickly enough to restore operational structure.
+
+`[P]` A state-level coherence score compatible with this branch is
+
+$$
+C_L(x) = 1 - \frac{\langle x, Lx\rangle}{\lambda_{\max}(L)\,\|x\|^2},
+$$
+
+which simply says that low-energy modes are more coherent than noisy high-frequency ones.
+
 ## Practical conventions
 
 `[E]` Current numerics choose `epsilon_k` from local spacing statistics, typically a multiple of mean nearest-neighbor squared distance.

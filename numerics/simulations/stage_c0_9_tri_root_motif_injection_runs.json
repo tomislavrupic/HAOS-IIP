@@ -1,0 +1,171 @@
+{
+  "stage": "C0.9_tri_root_and_three_layer_multi_motif_injection",
+  "description": "Nine-run protected sequencing scan on the no-distance edge-graph control branch. The weaker bounded-path kernel from C0.8 is kept fixed, but the motif ladder is extended to tri-root and three-layer constructions before adjacency-versus-weaker-kernel inconsistency is forced.",
+  "note_name": "Stage_C0_9_Tri_Root_Motif_Injection_v1.md",
+  "experiment_slug": "stage_c0_9_tri_root_motif_injection",
+  "architecture_notice": "This branch keeps graph size, the clustered / corridor / triad representative families, the projected-transverse sector, and the shell-weight measurement vocabulary fixed. Only the forcing family changes: the weaker bounded-path survivor kernel from C0.8 is retained, while the motif ladder is upgraded from bi-root and two-layer motifs to tri-root and three-layer constructions.",
+  "baseline_notice": "C0.9 inherits the corrected C0.6 positive-mismatch forcing logic and the C0.8 bounded-path kernel, keeps the protected topology-stability rule active, and asks whether tri-root / 3-layer motifs can scale the partial C0.8 inconsistency signal into broad protected irreversibility under adjacency-versus-bounded-path alternation.",
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and representative seeds used in Paper 24.1 and C0.1-C0.8"
+  },
+  "parameter_policy": {
+    "max_shell": 4,
+    "graph_shell_weights": {
+      "1": 1.0,
+      "2": 0.5,
+      "3": 0.25
+    },
+    "bounded_path_max_hop": 4,
+    "bounded_path_levels": 8,
+    "active_threshold_sigma": 1.0,
+    "min_active_count": 48,
+    "seed_edge_count": 12,
+    "seed_shell_cap": 4,
+    "max_steps": 8,
+    "mismatch_density_threshold": 0.001,
+    "rho_stability_window": 2,
+    "random_seed": 3303,
+    "min_degree_floor": 3,
+    "ultra_weak_rewire_ops": 16,
+    "weak_rewire_ops": 48,
+    "moderate_rewire_ops": 144,
+    "moderate_delete_insert_ops": 96,
+    "cluster_patch_ops": 96,
+    "localized_defect_ops": 72,
+    "degree_biased_ops": 120,
+    "connectivity_stress_ops": 96,
+    "patch_radius": 2,
+    "localized_radius": 1,
+    "motif_patch_radius": 2,
+    "motif_max_radius": 4,
+    "motif_candidate_count": 8,
+    "hub_leaf_count": 4
+  },
+  "forcing_protocols": [
+    {
+      "forcing_protocol_id": "noise_seeded_tri_root_inconsistency",
+      "label": "Noise-seeded tri-root inconsistency",
+      "definition": "Use the exact C0.3 incidence-noise ladder as the forcing schedule, then alternate adjacency and the weaker bounded-path survivor map once mismatch is live."
+    },
+    {
+      "forcing_protocol_id": "tri_root_motif_seeded_inconsistency",
+      "label": "Tri-root motif-seeded inconsistency",
+      "definition": "Use the tri-root and 3-layer motif ladder as the forcing schedule, then alternate adjacency and the weaker bounded-path survivor map once mismatch is live."
+    },
+    {
+      "forcing_protocol_id": "hybrid_seeded_tri_root_inconsistency",
+      "label": "Hybrid noise plus tri-root inconsistency",
+      "definition": "At each step combine the scheduled incidence-noise perturbation with the scheduled tri-root / 3-layer motif injection, then alternate adjacency and the weaker bounded-path survivor map once mismatch is live."
+    }
+  ],
+  "representatives": [
+    {
+      "representative_id": "clustered_composite_anchor",
+      "protected_topology_label": "trapped_local",
+      "packet_count": 3,
+      "packet_centers": [[0.42, 0.5, 0.5], [0.5, 0.5, 0.5], [0.58, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.35, 0.2],
+      "phase_offsets_rad": [0.0, 0.0, 3.141592653589793],
+      "kick_signs": [1.0, 1.0, 1.0]
+    },
+    {
+      "representative_id": "counter_propagating_corridor",
+      "protected_topology_label": "smeared_transfer",
+      "packet_count": 2,
+      "packet_centers": [[0.35, 0.5, 0.5], [0.65, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0],
+      "kick_signs": [1.0, -1.0]
+    },
+    {
+      "representative_id": "phase_ordered_symmetric_triad",
+      "protected_topology_label": "split_channel_exchange",
+      "packet_count": 3,
+      "packet_centers": [[0.18, 0.5, 0.5], [0.5, 0.5, 0.5], [0.82, 0.5, 0.5]],
+      "packet_amplitudes": [0.5, 0.5, 0.5],
+      "phase_offsets_rad": [0.0, 0.0, 0.0],
+      "kick_signs": [1.0, 1.0, 1.0]
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "C09_noise_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "forcing_protocol_id": "noise_seeded_tri_root_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Noise-seeded tri-root inconsistency forcing on the clustered composite anchor."
+    },
+    {
+      "run_id": "C09_noise_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "forcing_protocol_id": "noise_seeded_tri_root_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Noise-seeded tri-root inconsistency forcing on the counter-propagating corridor."
+    },
+    {
+      "run_id": "C09_noise_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "forcing_protocol_id": "noise_seeded_tri_root_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Noise-seeded tri-root inconsistency forcing on the phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "C09_motif_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "forcing_protocol_id": "tri_root_motif_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Tri-root motif-seeded inconsistency forcing on the clustered composite anchor."
+    },
+    {
+      "run_id": "C09_motif_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "forcing_protocol_id": "tri_root_motif_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Tri-root motif-seeded inconsistency forcing on the counter-propagating corridor."
+    },
+    {
+      "run_id": "C09_motif_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "forcing_protocol_id": "tri_root_motif_seeded_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Tri-root motif-seeded inconsistency forcing on the phase-ordered symmetric triad."
+    },
+    {
+      "run_id": "C09_hybrid_clustered_anchor",
+      "representative_id": "clustered_composite_anchor",
+      "forcing_protocol_id": "hybrid_seeded_tri_root_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Hybrid tri-root inconsistency forcing on the clustered composite anchor."
+    },
+    {
+      "run_id": "C09_hybrid_corridor",
+      "representative_id": "counter_propagating_corridor",
+      "forcing_protocol_id": "hybrid_seeded_tri_root_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Hybrid tri-root inconsistency forcing on the counter-propagating corridor."
+    },
+    {
+      "run_id": "C09_hybrid_triad",
+      "representative_id": "phase_ordered_symmetric_triad",
+      "forcing_protocol_id": "hybrid_seeded_tri_root_inconsistency",
+      "resolution": 12,
+      "boundary_type": "periodic",
+      "notes": "Hybrid tri-root inconsistency forcing on the phase-ordered symmetric triad."
+    }
+  ]
+}

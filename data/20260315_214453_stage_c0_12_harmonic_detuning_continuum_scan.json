@@ -1,0 +1,1576 @@
+{
+  "experiment": "c0_12_harmonic_detuning_continuum_scan",
+  "description": "Dense harmonic detuning scan on the clustered DK address-weighted seed, testing whether topology bias decays smoothly, sharply, or in plateaus.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_projected_transverse_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_address_weighted_combinatorial",
+    "source_family": "stage23_2_clustered_mixed_encounter_seed",
+    "resolution": 12,
+    "epsilon": 0.2,
+    "mean_width": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0,
+    "phase_offset_fraction_of_pi": 0.0,
+    "local_phase_skew_fraction": 0.0,
+    "beta": 0.0,
+    "separation": 0.08,
+    "address_modulus": 4.0,
+    "eta_match": 0.8,
+    "eta_mismatch": 0.45,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "C012_detune_000",
+        "run_order": 0,
+        "variant_label": "delta_0p000",
+        "delta": 0.0,
+        "notes": "Exact harmonic address match."
+      },
+      "metrics": {
+        "run_id": "C012_detune_000",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "delta_0p000",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.17190896124425192,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33323614542029767,
+        "omega1_weight_final": 0.5451270570725559,
+        "omega2_weight_final": 0.12163679750714633,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 0,
+        "variant_label": "delta_0p000",
+        "delta": 0.0,
+        "right_address": 0.0,
+        "topology_class": "braid_like_exchange",
+        "flow_concentration_index": 0.8989005747474713,
+        "address_selectivity_index": 1.0,
+        "address_sorting_score": 1.0,
+        "topology_survival_time": 0.3758596838767886,
+        "transfer_asymmetry": 0.3130252767144346,
+        "transfer_smear_index": 0.31946751619821434,
+        "grade_exchange_coherence": 0.4621643928561001,
+        "channel_count": 0,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9999390686899704,
+        "continuity_band_label": "exact_band",
+        "notes": "Exact harmonic address match."
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "topology_trace": [
+        "address_induced_smear",
+        "address_induced_smear",
+        "address_induced_smear",
+        "mixed",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "transfer_smeared"
+      ],
+      "topology_trace_values": [
+        3.0,
+        3.0,
+        3.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "phase_differences": [
+        0.0,
+        4.708022397981182e-05,
+        9.290045234955358e-05,
+        0.0001386624653116897,
+        0.00018542524965470264,
+        0.0002341045057465685,
+        0.0002854827192670939,
+        0.0003402268220686899,
+        0.00039890976528678124
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.3333726652522443,
+          0.6498996805812826,
+          0.016727654166473226
+        ],
+        [
+          0.33335396757677,
+          0.6324038044512876,
+          0.034242227971942346
+        ],
+        [
+          0.33333251610029696,
+          0.6125272879698194,
+          0.05414019592988365
+        ],
+        [
+          0.3333095964913642,
+          0.5926519874435708,
+          0.07403841606506482
+        ],
+        [
+          0.33328584617099566,
+          0.5743500539230938,
+          0.09236409990591052
+        ],
+        [
+          0.3332614115364501,
+          0.5584271433144609,
+          0.10831144514908915
+        ],
+        [
+          0.33323614542029767,
+          0.5451270570725559,
+          0.12163679750714633
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.006306655220969616,
+        0.02364146774411951,
+        0.04839760471096926,
+        0.07652242459522603,
+        0.10464656477277524,
+        0.1305462175292359,
+        0.15308191048220535,
+        0.17190896124425192
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8930595767872651,
+        0.9048115261005265,
+        0.9159095476779745,
+        0.9237195584798692,
+        0.9179907170945846,
+        0.9019617142428367,
+        0.890670853575472,
+        0.8810183565371846
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C012_detune_0125",
+        "run_order": 1,
+        "variant_label": "delta_0p125",
+        "delta": 0.125,
+        "notes": "Very mild detuning."
+      },
+      "metrics": {
+        "run_id": "C012_detune_0125",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "delta_0p125",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.1696559302143575,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33240954535115236,
+        "omega1_weight_final": 0.547136442809006,
+        "omega2_weight_final": 0.12045401183984157,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 1,
+        "variant_label": "delta_0p125",
+        "delta": 0.125,
+        "right_address": 0.25,
+        "topology_class": "braid_like_exchange",
+        "flow_concentration_index": 0.9006176181291127,
+        "address_selectivity_index": 0.9789913646874377,
+        "address_sorting_score": 0.53781002312363,
+        "topology_survival_time": 0.5011462451690515,
+        "transfer_asymmetry": 0.30903772439449056,
+        "transfer_smear_index": 0.3204118779085001,
+        "grade_exchange_coherence": 0.45855862605388703,
+        "channel_count": 0,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9996646884263346,
+        "continuity_band_label": "exact_band",
+        "notes": "Very mild detuning."
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "topology_trace": [
+        "address_induced_smear",
+        "address_induced_smear",
+        "address_induced_smear",
+        "mixed",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange"
+      ],
+      "topology_trace_values": [
+        3.0,
+        3.0,
+        3.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phase_differences": [
+        0.0,
+        -0.0001433228635416839,
+        -0.0003359901529607079,
+        -0.0005816149112289892,
+        -0.0008812885649072122,
+        -0.0012339967545358377,
+        -0.001637163201059888,
+        -0.002087219007150143,
+        -0.002580115933032978
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.33283490273475597,
+          0.6627931687553272,
+          0.00437192850991679
+        ],
+        [
+          0.33239926133439807,
+          0.6511897734112732,
+          0.016410965254328645
+        ],
+        [
+          0.3321086757626461,
+          0.6342385520786382,
+          0.03365277215871562
+        ],
+        [
+          0.3319624743180322,
+          0.6147312999224127,
+          0.05330622575955504
+        ],
+        [
+          0.3319439857944023,
+          0.5950279177307827,
+          0.07302809647481491
+        ],
+        [
+          0.332028946204754,
+          0.5767211129206896,
+          0.09124994087455644
+        ],
+        [
+          0.3321918942307501,
+          0.5606598940453797,
+          0.10714821172387021
+        ],
+        [
+          0.33240954535115236,
+          0.547136442809006,
+          0.12045401183984157
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.005827917260179911,
+        0.022538232798822576,
+        0.046709939437336014,
+        0.07439486949611557,
+        0.1022674922364639,
+        0.12809263845416666,
+        0.1506876924514672,
+        0.1696559302143575
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8929428009917773,
+        0.9043225163215204,
+        0.9162743423239269,
+        0.9250133428594504,
+        0.9208244715111326,
+        0.9052942271112377,
+        0.8949995354203432,
+        0.88673262718748
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C012_detune_0250",
+        "run_order": 2,
+        "variant_label": "delta_0p250",
+        "delta": 0.25,
+        "notes": "Mild detuning quarter step."
+      },
+      "metrics": {
+        "run_id": "C012_detune_0250",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "delta_0p250",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.16805373553638706,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3310944991632039,
+        "omega1_weight_final": 0.5489405460171113,
+        "omega2_weight_final": 0.11996495481968476,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 2,
+        "variant_label": "delta_0p250",
+        "delta": 0.25,
+        "right_address": 0.5,
+        "topology_class": "braid_like_exchange",
+        "flow_concentration_index": 0.9022009595718061,
+        "address_selectivity_index": 0.9594738377465454,
+        "address_sorting_score": 0.5542122152120038,
+        "topology_survival_time": 0.5011462451690515,
+        "transfer_asymmetry": 0.30517151732374054,
+        "transfer_smear_index": 0.3214663801925348,
+        "grade_exchange_coherence": 0.4548662800431241,
+        "channel_count": 0,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9992804156565411,
+        "continuity_band_label": "mild_band",
+        "notes": "Mild detuning quarter step."
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "topology_trace": [
+        "address_induced_smear",
+        "address_induced_smear",
+        "address_induced_smear",
+        "mixed",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange"
+      ],
+      "topology_trace_values": [
+        3.0,
+        3.0,
+        3.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phase_differences": [
+        0.0,
+        -0.00033443160589952114,
+        -0.0007617111065081339,
+        -0.0012905794358499811,
+        -0.00192445833761834,
+        -0.0026622577268193837,
+        -0.003499457255130789,
+        -0.004429255110500296,
+        -0.005443617405112455
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.33227688751059353,
+          0.6634275547100937,
+          0.004295557779312745
+        ],
+        [
+          0.3314002608042906,
+          0.6524482282323429,
+          0.016151510963366512
+        ],
+        [
+          0.3308045519527865,
+          0.6360092509251815,
+          0.033186197122031996
+        ],
+        [
+          0.3304854726923724,
+          0.6168353347566069,
+          0.05267919255102064
+        ],
+        [
+          0.3304069290528829,
+          0.5972691390310115,
+          0.07232393191610556
+        ],
+        [
+          0.33051761355204307,
+          0.5789271520971864,
+          0.09055523435077063
+        ],
+        [
+          0.33076350945822514,
+          0.5627037380039701,
+          0.10653275253780467
+        ],
+        [
+          0.3310944991632039,
+          0.5489405460171113,
+          0.11996495481968476
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.005459179834488349,
+        0.0215706051176561,
+        0.04521277521946127,
+        0.07253057602373997,
+        0.10023615124790552,
+        0.1260798151314076,
+        0.1488349596660403,
+        0.16805373553638706
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8928253911964756,
+        0.9038319205486444,
+        0.9164912391028727,
+        0.9259774510343117,
+        0.9235232164338683,
+        0.9089317680999989,
+        0.8992340200518271,
+        0.8920288272094948
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C012_detune_0375",
+        "run_order": 3,
+        "variant_label": "delta_0p375",
+        "delta": 0.375,
+        "notes": "Intermediate low-mid detuning."
+      },
+      "metrics": {
+        "run_id": "C012_detune_0375",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "delta_0p375",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.16711118815804232,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3293448342514235,
+        "omega1_weight_final": 0.5505172150514173,
+        "omega2_weight_final": 0.12013795069715916,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 3,
+        "variant_label": "delta_0p375",
+        "delta": 0.375,
+        "right_address": 0.75,
+        "topology_class": "braid_like_exchange",
+        "flow_concentration_index": 0.9036889500197375,
+        "address_selectivity_index": 0.9410664188159993,
+        "address_sorting_score": 0.567820404650662,
+        "topology_survival_time": 0.5011462451690515,
+        "transfer_asymmetry": 0.3013953542707961,
+        "transfer_smear_index": 0.3225507933056476,
+        "grade_exchange_coherence": 0.4512094633689673,
+        "channel_count": 0,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9989089875938706,
+        "continuity_band_label": "mild_band",
+        "notes": "Intermediate low-mid detuning."
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "topology_trace": [
+        "address_induced_smear",
+        "address_induced_smear",
+        "address_induced_smear",
+        "mixed",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange"
+      ],
+      "topology_trace_values": [
+        3.0,
+        3.0,
+        3.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phase_differences": [
+        0.0,
+        -0.0005262499891753869,
+        -0.0011841716438882877,
+        -0.001987804986704589,
+        -0.002942962396342619,
+        -0.0040483833950255566,
+        -0.00529732282471107,
+        -0.006679262191902957,
+        -0.008181491612893055
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3317126576809474,
+          0.6640531963897562,
+          0.004234145929296258
+        ],
+        [
+          0.3303759301333544,
+          0.6536735399362594,
+          0.015950529930386228
+        ],
+        [
+          0.3294428637573177,
+          0.6377116027933741,
+          0.0328455334493083
+        ],
+        [
+          0.32890527895894967,
+          0.6188311329546949,
+          0.05226358808635536
+        ],
+        [
+          0.32870719230912127,
+          0.5993629095969908,
+          0.07192989809388793
+        ],
+        [
+          0.3287693965135475,
+          0.5809511832921144,
+          0.09027942019433824
+        ],
+        [
+          0.3290080681200864,
+          0.5645383752096698,
+          0.10645355667024389
+        ],
+        [
+          0.3293448342514235,
+          0.5505172150514173,
+          0.12013795069715916
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.005222247384150459,
+        0.02075520340300197,
+        0.043924153368056634,
+        0.0709512298056505,
+        0.09857748695253755,
+        0.12453322029609698,
+        0.14754461641813071,
+        0.16711118815804232
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8927074299182178,
+        0.9033398632928911,
+        0.9165555927319748,
+        0.9267503670573799,
+        0.9261276256052727,
+        0.9126841523351689,
+        0.9034354337824472,
+        0.897031185529721
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C012_detune_0500",
+        "run_order": 4,
+        "variant_label": "delta_0p500",
+        "delta": 0.5,
+        "notes": "Mid-detuning corridor."
+      },
+      "metrics": {
+        "run_id": "C012_detune_0500",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "delta_0p500",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.16682301254283868,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3272218143322504,
+        "omega1_weight_final": 0.5518516200541475,
+        "omega2_weight_final": 0.12092656561360213,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 4,
+        "variant_label": "delta_0p500",
+        "delta": 0.5,
+        "right_address": 1.0,
+        "topology_class": "braid_like_exchange",
+        "flow_concentration_index": 0.9050963672608597,
+        "address_selectivity_index": 0.923727904817829,
+        "address_sorting_score": 0.5805034764980586,
+        "topology_survival_time": 0.5011462451690515,
+        "transfer_asymmetry": 0.29769906565193544,
+        "transfer_smear_index": 0.32358835785655393,
+        "grade_exchange_coherence": 0.44772691702603246,
+        "channel_count": 0,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9985512499741724,
+        "continuity_band_label": "mid_band",
+        "notes": "Mid-detuning corridor."
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "topology_trace": [
+        "address_induced_smear",
+        "address_induced_smear",
+        "address_induced_smear",
+        "mixed",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange"
+      ],
+      "topology_trace_values": [
+        3.0,
+        3.0,
+        3.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phase_differences": [
+        0.0,
+        -0.0007187820299403569,
+        -0.0016032803947165775,
+        -0.0026728658377503933,
+        -0.003935686004358008,
+        -0.005390108055953746,
+        -0.007026771534706544,
+        -0.008830839515606481,
+        -0.010784108569220408
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3311422147688826,
+          0.6646699125784532,
+          0.004187872652664034
+        ],
+        [
+          0.3293265706163818,
+          0.6548642248973489,
+          0.01580920448626928
+        ],
+        [
+          0.3280250374285542,
+          0.639341445404711,
+          0.03263351716673469
+        ],
+        [
+          0.32722612774530396,
+          0.6207109331437987,
+          0.05206293911089746
+        ],
+        [
+          0.32685465258688656,
+          0.6012977902477048,
+          0.0718475571654086
+        ],
+        [
+          0.3268041514113518,
+          0.5827789185448157,
+          0.09041693004383257
+        ],
+        [
+          0.32696170727211604,
+          0.5661482417410464,
+          0.10689005098683747
+        ],
+        [
+          0.3272218143322504,
+          0.5518516200541475,
+          0.12092656561360213
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.00513392554197555,
+        0.02010834651780979,
+        0.04286177902861276,
+        0.06967751881476184,
+        0.09731396318961597,
+        0.1234732396346452,
+        0.146828592582943,
+        0.16682301254283868
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8925888993025735,
+        0.9028407168326941,
+        0.916479168019176,
+        0.9274362410513781,
+        0.9284806604909892,
+        0.9163565396808195,
+        0.9076189618694412,
+        0.9018326368313258
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C012_detune_0625",
+        "run_order": 5,
+        "variant_label": "delta_0p625",
+        "delta": 0.625,
+        "notes": "Intermediate upper detuning."
+      },
+      "metrics": {
+        "run_id": "C012_detune_0625",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "delta_0p625",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.16782560852148531,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3228037257208837,
+        "omega1_weight_final": 0.553585488396734,
+        "omega2_weight_final": 0.12361078588238221,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 5,
+        "variant_label": "delta_0p625",
+        "delta": 0.625,
+        "right_address": 1.25,
+        "topology_class": "braid_like_exchange",
+        "flow_concentration_index": 0.907342518149655,
+        "address_selectivity_index": 0.8958655391667141,
+        "address_sorting_score": 0.6015724976813412,
+        "topology_survival_time": 0.5011462451690515,
+        "transfer_asymmetry": 0.29145952393370766,
+        "transfer_smear_index": 0.3250918492112653,
+        "grade_exchange_coherence": 0.44247378342781435,
+        "channel_count": 0,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9979605702111847,
+        "continuity_band_label": "mid_band",
+        "notes": "Intermediate upper detuning."
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "topology_trace": [
+        "address_induced_smear",
+        "address_induced_smear",
+        "address_induced_smear",
+        "mixed",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange"
+      ],
+      "topology_trace_values": [
+        3.0,
+        3.0,
+        3.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phase_differences": [
+        0.0,
+        -0.0010574425308300661,
+        -0.002328378599347758,
+        -0.0038411740875350375,
+        -0.005607600519946132,
+        -0.007624608967650381,
+        -0.009877078294524555,
+        -0.012340953731928561,
+        -0.01498628204672725
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.33012899987782734,
+          0.6657271422962856,
+          0.004143857825887075
+        ],
+        [
+          0.32743099673330994,
+          0.6568602328658476,
+          0.015708770400842374
+        ],
+        [
+          0.32541359307108797,
+          0.6420072542478834,
+          0.03257915268102857
+        ],
+        [
+          0.3240637188687711,
+          0.6237001838702311,
+          0.05223609726099783
+        ],
+        [
+          0.3232779088310962,
+          0.6042723406930751,
+          0.07244975047582873
+        ],
+        [
+          0.3229081912406687,
+          0.5854726720008951,
+          0.09161913675843615
+        ],
+        [
+          0.3227980655201872,
+          0.5683956158547216,
+          0.10880631862509124
+        ],
+        [
+          0.3228037257208837,
+          0.553585488396734,
+          0.12361078588238221
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.005348246679002249,
+        0.019424302743720694,
+        0.04159554524432438,
+        0.06823913200633024,
+        0.0961082523873376,
+        0.12282771716098348,
+        0.1469570828840077,
+        0.16782560852148531
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8923797872688556,
+        0.9019392958299296,
+        0.9160573582863584,
+        0.9286413460633444,
+        0.9313278388394544,
+        0.9223858366338555,
+        0.9152179684985711,
+        0.9101357743100869
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C012_detune_0750",
+        "run_order": 6,
+        "variant_label": "delta_0p750",
+        "delta": 0.75,
+        "notes": "Strong detuning."
+      },
+      "metrics": {
+        "run_id": "C012_detune_0750",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "delta_0p750",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "transfer_smeared",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.1705610443467893,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.31778189292558634,
+        "omega1_weight_final": 0.5545674759221846,
+        "omega2_weight_final": 0.12765063115222894,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 6,
+        "variant_label": "delta_0p750",
+        "delta": 0.75,
+        "right_address": 1.5,
+        "topology_class": "transfer_smeared",
+        "flow_concentration_index": 0.9091005190317475,
+        "address_selectivity_index": 0.8706469224550102,
+        "address_sorting_score": 0.6205643058680297,
+        "topology_survival_time": 0.5011462451690515,
+        "transfer_asymmetry": 0.2852608877140026,
+        "transfer_smear_index": 0.3260281483802161,
+        "grade_exchange_coherence": 0.43884318420782037,
+        "channel_count": 0,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9974183258862359,
+        "continuity_band_label": "strong_band",
+        "notes": "Strong detuning."
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "topology_trace": [
+        "address_induced_smear",
+        "address_induced_smear",
+        "address_induced_smear",
+        "mixed",
+        "transfer_smeared",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange",
+        "braid_like_exchange"
+      ],
+      "topology_trace_values": [
+        3.0,
+        3.0,
+        3.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phase_differences": [
+        0.0,
+        -0.001398322940397101,
+        -0.003042433335880279,
+        -0.00496866330886192,
+        -0.007191357229040296,
+        -0.009704744525405928,
+        -0.012486235830560855,
+        -0.01550039839353401,
+        -0.01870296030419727
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.32909679723366414,
+          0.6667555048549122,
+          0.004147697911423563
+        ],
+        [
+          0.3254618786340957,
+          0.658738154800921,
+          0.015799966564983
+        ],
+        [
+          0.3226446675055273,
+          0.6444187731285198,
+          0.032936559365952967
+        ],
+        [
+          0.3206402865240259,
+          0.6262787496252431,
+          0.0530809638507312
+        ],
+        [
+          0.3193291717393996,
+          0.6066887156043745,
+          0.07398211265622588
+        ],
+        [
+          0.31853570115274127,
+          0.5874936480401945,
+          0.09397065080706404
+        ],
+        [
+          0.3180751054593947,
+          0.5699038109596907,
+          0.11202108358091455
+        ],
+        [
+          0.31778189292558634,
+          0.5545674759221846,
+          0.12765063115222894
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.005974185850685747,
+        0.019350981093449213,
+        0.041141708740860414,
+        0.0678714818132522,
+        0.09623544905253016,
+        0.12373369839456284,
+        0.14877741693447655,
+        0.1705610443467893
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8921693298305726,
+        0.9010311243114054,
+        0.9143629235253764,
+        0.9291438787184849,
+        0.9328776354707288,
+        0.9273297391887342,
+        0.9221484729987766,
+        0.918365711576624
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C012_detune_0875",
+        "run_order": 7,
+        "variant_label": "delta_0p875",
+        "delta": 0.875,
+        "notes": "Near-maximal detuning."
+      },
+      "metrics": {
+        "run_id": "C012_detune_0875",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "delta_0p875",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "transfer_smeared",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.1747381335509849,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.31245322388725616,
+        "omega1_weight_final": 0.5548560445638538,
+        "omega2_weight_final": 0.13269073154888988,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 7,
+        "variant_label": "delta_0p875",
+        "delta": 0.875,
+        "right_address": 1.75,
+        "topology_class": "transfer_smeared",
+        "flow_concentration_index": 0.9103204803102093,
+        "address_selectivity_index": 0.8470902308060182,
+        "address_sorting_score": 0.6363227111062053,
+        "topology_survival_time": 0.0,
+        "transfer_asymmetry": 0.279119771377208,
+        "transfer_smear_index": 0.3262067937879538,
+        "grade_exchange_coherence": 0.4372659321138832,
+        "channel_count": 0,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9969281156758832,
+        "continuity_band_label": "strong_band",
+        "notes": "Near-maximal detuning."
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "topology_trace": [
+        "address_induced_smear",
+        "address_induced_smear",
+        "address_induced_smear",
+        "mixed",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared"
+      ],
+      "topology_trace_values": [
+        3.0,
+        3.0,
+        3.0,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "phase_differences": [
+        0.0,
+        -0.0017414454764135279,
+        -0.00374494322786445,
+        -0.006053091864151927,
+        -0.008681286819506084,
+        -0.011619485075427427,
+        -0.01483593970624586,
+        -0.018282015740175073,
+        -0.02189727511812123
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.32804565218846454,
+          0.6677540215719833,
+          0.0042003262395521185
+        ],
+        [
+          0.3234215989984134,
+          0.6604907354062283,
+          0.016087665595358444
+        ],
+        [
+          0.3197290335013587,
+          0.6465579693484278,
+          0.033712997150213676
+        ],
+        [
+          0.3169860134661854,
+          0.6284196032299585,
+          0.05459438330385621
+        ],
+        [
+          0.31507413581307503,
+          0.6085206125074486,
+          0.0764052516794763
+        ],
+        [
+          0.31380810562867467,
+          0.588831098914809,
+          0.09736079545651626
+        ],
+        [
+          0.31299200468172533,
+          0.5706921851346429,
+          0.11631581018363168
+        ],
+        [
+          0.31245322388725616,
+          0.5548560445638538,
+          0.13269073154888988
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.006896690708778232,
+        0.019891141975469682,
+        0.04153579389421428,
+        0.06861467445049851,
+        0.09771028269613544,
+        0.12614149800727517,
+        0.15213508030374834,
+        0.1747381335509849
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.891957582141543,
+        0.9000819711694235,
+        0.9120757296682047,
+        0.9286392653895191,
+        0.9333488317416603,
+        0.9307733578960177,
+        0.9283866441327914,
+        0.9264034289413224
+      ]
+    },
+    {
+      "run": {
+        "run_id": "C012_detune_1000",
+        "run_order": 8,
+        "variant_label": "delta_1p000",
+        "delta": 1.0,
+        "notes": "Maximal incompatibility."
+      },
+      "metrics": {
+        "run_id": "C012_detune_1000",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "delta_1p000",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "transfer_smeared",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.18003373253881783,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.30704438030618053,
+        "omega1_weight_final": 0.5545396910944937,
+        "omega2_weight_final": 0.1384159285993259,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "run_order": 8,
+        "variant_label": "delta_1p000",
+        "delta": 1.0,
+        "right_address": 2.0,
+        "topology_class": "transfer_smeared",
+        "flow_concentration_index": 0.9108108675470109,
+        "address_selectivity_index": 0.8247858630373119,
+        "address_sorting_score": 0.6495717260746244,
+        "topology_survival_time": 0.0,
+        "transfer_asymmetry": 0.2727199576748241,
+        "transfer_smear_index": 0.32564630401367123,
+        "grade_exchange_coherence": 0.4378965244256466,
+        "channel_count": 0,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9964930300932164,
+        "continuity_band_label": "max_band",
+        "notes": "Maximal incompatibility."
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "topology_trace": [
+        "address_induced_smear",
+        "address_induced_smear",
+        "address_induced_smear",
+        "mixed",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared",
+        "transfer_smeared"
+      ],
+      "topology_trace_values": [
+        3.0,
+        3.0,
+        3.0,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "phase_differences": [
+        0.0,
+        -0.002086832658302562,
+        -0.004435402801485466,
+        -0.007092250296321989,
+        -0.010071921700800512,
+        -0.01335848720535271,
+        -0.01690967316488967,
+        -0.020662591572025324,
+        -0.024540078660427955
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3269756266458276,
+          0.6687217126025773,
+          0.004302660751595102
+        ],
+        [
+          0.32131285840913126,
+          0.6621111165575333,
+          0.01657602503333552
+        ],
+        [
+          0.3166785545663799,
+          0.6484091426898455,
+          0.034912302743774555
+        ],
+        [
+          0.31313274494880056,
+          0.6301029740930922,
+          0.056764280958107066
+        ],
+        [
+          0.31057829309492163,
+          0.6097571298561622,
+          0.07966457704891637
+        ],
+        [
+          0.3088381148809874,
+          0.5894988752452661,
+          0.10166300987374659
+        ],
+        [
+          0.30771809102478165,
+          0.5708108821022189,
+          0.12147102687299942
+        ],
+        [
+          0.30704438030618053,
+          0.5545396910944937,
+          0.1384159285993259
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.008011435669079187,
+        0.020998123543307164,
+        0.04277149615094517,
+        0.07046400420487228,
+        0.10049279334149562,
+        0.12993797469832719,
+        0.1568157516762785,
+        0.18003373253881783
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8917445958956058,
+        0.8991549069496205,
+        0.9096962811187154,
+        0.9264809440883849,
+        0.9326763127415161,
+        0.9325073001372448,
+        0.9329632779230718,
+        0.9326129568206439
+      ]
+    }
+  ],
+  "summary": {
+    "topology_counts": {
+      "braid_like_exchange": 6,
+      "transfer_smeared": 3
+    },
+    "assessment": "sharp_transition_threshold",
+    "continuity_note": "Topology stays in one protected class and then switches once near delta=0.750. Selectivity decays monotonically, while the sorting curve shows secondary texture inside the protected branch rather than a second topology transition."
+  }
+}

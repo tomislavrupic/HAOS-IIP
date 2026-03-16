@@ -1,0 +1,121 @@
+{
+  "stage": "c0_11_harmonic_address_resonance_ladder",
+  "description": "Clustered DK harmonic-address resonance ladder scan on the no-distance branch, testing discrete 5-class phase indexing and two structural control toggles.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_projected_transverse_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_combinatorial_dk_operator",
+    "source_family": "stage23_2_clustered_mixed_encounter_seed",
+    "resolution": 12,
+    "refinement_resolution": 24,
+    "epsilon": 0.2,
+    "mean_width": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0,
+    "beta": 0.0,
+    "local_phase_skew_fraction": 0.0,
+    "separation": 0.08,
+    "harmonic_modulus": 5,
+    "graph_delta_scale_fraction": 0.18,
+    "degree_skew_leaf_count": 2,
+    "motif_patch_radius": 2,
+    "motif_max_radius": 4,
+    "motif_candidate_count": 8,
+    "min_degree_floor": 1
+  },
+  "runs": [
+    {
+      "run_id": "C011_same_address_baseline",
+      "run_order": 0,
+      "variant_label": "same_address_baseline",
+      "left_address": 0,
+      "right_address": 0,
+      "address_mode": "fixed_pair",
+      "structural_control": "baseline",
+      "notes": "Same-address clustered baseline."
+    },
+    {
+      "run_id": "C011_difference_1",
+      "run_order": 1,
+      "variant_label": "difference_1",
+      "left_address": 0,
+      "right_address": 1,
+      "address_mode": "fixed_pair",
+      "structural_control": "baseline",
+      "notes": "Address difference 1 on the clustered seed."
+    },
+    {
+      "run_id": "C011_difference_2",
+      "run_order": 2,
+      "variant_label": "difference_2",
+      "left_address": 0,
+      "right_address": 2,
+      "address_mode": "fixed_pair",
+      "structural_control": "baseline",
+      "notes": "Address difference 2 on the clustered seed."
+    },
+    {
+      "run_id": "C011_difference_3",
+      "run_order": 3,
+      "variant_label": "difference_3",
+      "left_address": 0,
+      "right_address": 3,
+      "address_mode": "fixed_pair",
+      "structural_control": "baseline",
+      "notes": "Address difference 3 on the clustered seed."
+    },
+    {
+      "run_id": "C011_difference_4",
+      "run_order": 4,
+      "variant_label": "difference_4",
+      "left_address": 0,
+      "right_address": 4,
+      "address_mode": "fixed_pair",
+      "structural_control": "baseline",
+      "notes": "Address difference 4 on the clustered seed."
+    },
+    {
+      "run_id": "C011_random_pairing_control",
+      "run_order": 5,
+      "variant_label": "random_pairing_control",
+      "left_address": 0,
+      "right_address": 0,
+      "address_mode": "randomized",
+      "structural_control": "baseline",
+      "notes": "Randomized address-pairing control with deterministic seeded sampling."
+    },
+    {
+      "run_id": "C011_difference_2_degree_skew",
+      "run_order": 6,
+      "variant_label": "difference_2_degree_skew",
+      "left_address": 0,
+      "right_address": 2,
+      "address_mode": "fixed_pair",
+      "structural_control": "degree_skew",
+      "notes": "Address difference 2 with mild local degree-spectrum skew."
+    },
+    {
+      "run_id": "C011_difference_3_motif",
+      "run_order": 7,
+      "variant_label": "difference_3_motif",
+      "left_address": 0,
+      "right_address": 3,
+      "address_mode": "fixed_pair",
+      "structural_control": "triangle_motif",
+      "notes": "Address difference 3 with local triangle motif injection."
+    },
+    {
+      "run_id": "C011_same_address_refinement",
+      "run_order": 8,
+      "variant_label": "same_address_refinement",
+      "left_address": 0,
+      "right_address": 0,
+      "address_mode": "fixed_pair",
+      "structural_control": "baseline",
+      "notes": "Duplicate same-address baseline included to foreground refinement stability."
+    }
+  ]
+}

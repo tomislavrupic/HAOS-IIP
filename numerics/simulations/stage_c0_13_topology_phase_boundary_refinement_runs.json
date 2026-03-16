@@ -1,0 +1,96 @@
+{
+  "stage": "c0_13_topology_phase_boundary_refinement",
+  "description": "Narrow-band detuning refinement around the C0.12 harmonic topology threshold, with one secondary sensitivity axis varied at a time.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_projected_transverse_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_address_weighted_combinatorial",
+    "source_family": "stage23_2_clustered_mixed_encounter_seed",
+    "resolution": 12,
+    "epsilon": 0.2,
+    "mean_width": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0,
+    "separation": 0.08,
+    "phase_offset_fraction_of_pi": 0.0,
+    "local_phase_skew_fraction": 0.0,
+    "address_modulus": 4.0,
+    "eta_match": 0.8,
+    "eta_mismatch": 0.45,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58,
+    "graph_delta_scale_fraction": 0.18,
+    "degree_skew_leaf_count": 2,
+    "degree_skew_leaf_count_asymmetric": 4,
+    "motif_patch_radius": 2,
+    "motif_max_radius": 4,
+    "motif_candidate_count": 8,
+    "min_degree_floor": 1
+  },
+  "detuning_samples": [0.66, 0.69, 0.72, 0.75, 0.78, 0.81, 0.84],
+  "families": [
+    {
+      "family_id": "baseline",
+      "family_order": 0,
+      "family_label": "Baseline",
+      "motif_protection_strength": "baseline",
+      "degree_skew": "symmetric",
+      "grade_coupling_amplitude": "beta0",
+      "beta": 0.0,
+      "notes": "Baseline boundary refinement corridor with no added structural bias."
+    },
+    {
+      "family_id": "motif_weak_plus",
+      "family_order": 1,
+      "family_label": "Motif weak plus",
+      "motif_protection_strength": "weak_plus",
+      "degree_skew": "symmetric",
+      "grade_coupling_amplitude": "beta0",
+      "beta": 0.0,
+      "notes": "Triangle-supportive motif protection enhancement."
+    },
+    {
+      "family_id": "motif_weak_minus",
+      "family_order": 2,
+      "family_label": "Motif weak minus",
+      "motif_protection_strength": "weak_minus",
+      "degree_skew": "symmetric",
+      "grade_coupling_amplitude": "beta0",
+      "beta": 0.0,
+      "notes": "Local anti-closure motif dilution control."
+    },
+    {
+      "family_id": "degree_mild",
+      "family_order": 3,
+      "family_label": "Degree mild",
+      "motif_protection_strength": "baseline",
+      "degree_skew": "mild",
+      "grade_coupling_amplitude": "beta0",
+      "beta": 0.0,
+      "notes": "Mild degree-skew refinement family."
+    },
+    {
+      "family_id": "degree_asymmetric",
+      "family_order": 4,
+      "family_label": "Degree asymmetric",
+      "motif_protection_strength": "baseline",
+      "degree_skew": "asymmetric",
+      "grade_coupling_amplitude": "beta0",
+      "beta": 0.0,
+      "notes": "Stronger asymmetric degree-skew refinement family."
+    },
+    {
+      "family_id": "beta_weak",
+      "family_order": 5,
+      "family_label": "Beta weak",
+      "motif_protection_strength": "baseline",
+      "degree_skew": "symmetric",
+      "grade_coupling_amplitude": "betaweak",
+      "beta": 0.01,
+      "notes": "Weak grade-coupling refinement family."
+    }
+  ]
+}

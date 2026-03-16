@@ -58,15 +58,21 @@ The intended public reading order is:
 2. `19.1` same paper, initial release (superseded by `19.2`)
 3. `20.1` Mutual Registration and Constraint-Coupled Interaction Probe on a Kernel-Induced Cochain Operator Architecture
 4. `21.1` Delayed Nonlocal Kernel Memory Probe on a Kernel-Induced Cochain Operator Architecture
-5. `22.1` Phase II Boundary of Weak Reinforcement, Registration, and Delayed Memory on a Kernel-Induced Cochain Operator Architecture
+5. `22.2` Persistence-Level Null Results for Weak Substrate-Law Reinforcement on a Kernel-Induced Cochain Operator Architecture
+6. `22.1` initial Phase II boundary release (superseded by `22.2`)
 
 ### 2.6 Part VI. Phase III opener
 
 1. `23.1` Dirac-Kahler Collision Texture and Grade-Exchange Baseline on a Kernel-Induced Cochain Operator Architecture
+2. `23.2` Dirac-Kahler Braid Topology and Protection Structure on a Kernel-Induced Cochain Operator Architecture
 
 ### 2.7 Part VII. Combinatorial control branch
 
 1. `24.1` Combinatorial Kernel Austerity, Degree-Spectrum Protection, Incidence-Noise Robustness, and Controlled Motif Injection on a No-Distance Edge-Graph Control Branch
+
+### 2.8 Part VIII. Extended combinatorial control branch
+
+1. `25.1` No-Distance Combinatorial Austerity Line from Metric Removal to Harmonic-Address Selection and Locking Null Results on an Edge-Graph Control Branch
 
 ## 3. Full release list
 
@@ -93,9 +99,12 @@ The intended public reading order is:
 - `19.1` Unfrozen Kernel Back-Reaction and Mesoscopic Substrate Reinforcement Probes on a Kernel-Induced Cochain Operator Architecture (superseded)
 - `20.1` Mutual Registration and Constraint-Coupled Interaction Probe on a Kernel-Induced Cochain Operator Architecture
 - `21.1` Delayed Nonlocal Kernel Memory Probe on a Kernel-Induced Cochain Operator Architecture
+- `22.2` Persistence-Level Null Results for Weak Substrate-Law Reinforcement on a Kernel-Induced Cochain Operator Architecture
 - `22.1` Phase II Boundary of Weak Reinforcement, Registration, and Delayed Memory on a Kernel-Induced Cochain Operator Architecture
 - `23.1` Dirac-Kahler Collision Texture and Grade-Exchange Baseline on a Kernel-Induced Cochain Operator Architecture
+- `23.2` Dirac-Kahler Braid Topology and Protection Structure on a Kernel-Induced Cochain Operator Architecture
 - `24.1` Combinatorial Kernel Austerity, Degree-Spectrum Protection, Incidence-Noise Robustness, and Controlled Motif Injection on a No-Distance Edge-Graph Control Branch
+- `25.1` No-Distance Combinatorial Austerity Line from Metric Removal to Harmonic-Address Selection and Locking Null Results on an Edge-Graph Control Branch
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

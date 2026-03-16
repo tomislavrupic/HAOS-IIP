@@ -1,0 +1,92 @@
+{
+  "stage": "c0_12_harmonic_detuning_continuum_scan",
+  "description": "Dense harmonic detuning scan on the clustered DK address-weighted seed, testing whether topology bias decays smoothly, sharply, or in plateaus.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_projected_transverse_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_address_weighted_combinatorial",
+    "source_family": "stage23_2_clustered_mixed_encounter_seed",
+    "resolution": 12,
+    "epsilon": 0.2,
+    "mean_width": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0,
+    "phase_offset_fraction_of_pi": 0.0,
+    "local_phase_skew_fraction": 0.0,
+    "beta": 0.0,
+    "separation": 0.08,
+    "address_modulus": 4.0,
+    "eta_match": 0.8,
+    "eta_mismatch": 0.45,
+    "support_floor_fraction": 0.03,
+    "dominant_ratio_threshold": 0.58
+  },
+  "runs": [
+    {
+      "run_id": "C012_detune_000",
+      "run_order": 0,
+      "variant_label": "delta_0p000",
+      "delta": 0.0,
+      "notes": "Exact harmonic address match."
+    },
+    {
+      "run_id": "C012_detune_0125",
+      "run_order": 1,
+      "variant_label": "delta_0p125",
+      "delta": 0.125,
+      "notes": "Very mild detuning."
+    },
+    {
+      "run_id": "C012_detune_0250",
+      "run_order": 2,
+      "variant_label": "delta_0p250",
+      "delta": 0.25,
+      "notes": "Mild detuning quarter step."
+    },
+    {
+      "run_id": "C012_detune_0375",
+      "run_order": 3,
+      "variant_label": "delta_0p375",
+      "delta": 0.375,
+      "notes": "Intermediate low-mid detuning."
+    },
+    {
+      "run_id": "C012_detune_0500",
+      "run_order": 4,
+      "variant_label": "delta_0p500",
+      "delta": 0.5,
+      "notes": "Mid-detuning corridor."
+    },
+    {
+      "run_id": "C012_detune_0625",
+      "run_order": 5,
+      "variant_label": "delta_0p625",
+      "delta": 0.625,
+      "notes": "Intermediate upper detuning."
+    },
+    {
+      "run_id": "C012_detune_0750",
+      "run_order": 6,
+      "variant_label": "delta_0p750",
+      "delta": 0.75,
+      "notes": "Strong detuning."
+    },
+    {
+      "run_id": "C012_detune_0875",
+      "run_order": 7,
+      "variant_label": "delta_0p875",
+      "delta": 0.875,
+      "notes": "Near-maximal detuning."
+    },
+    {
+      "run_id": "C012_detune_1000",
+      "run_order": 8,
+      "variant_label": "delta_1p000",
+      "delta": 1.0,
+      "notes": "Maximal incompatibility."
+    }
+  ]
+}

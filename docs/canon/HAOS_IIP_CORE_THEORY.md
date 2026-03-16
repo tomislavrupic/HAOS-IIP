@@ -1,5 +1,11 @@
 # HAOS_IIP_CORE_THEORY
 
+Canonical boundary:
+
+- the frozen HAOS-IIP core is defined in [HAOS_IIP_CORE_AXIOMS.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/HAOS_IIP_CORE_AXIOMS.md)
+- this file is an operator-theoretic realization layer beneath that core
+- kernel choices, continuum bridges, and sector lifts in this file are model statements, not the axioms themselves
+
 Status labels:
 
 - `[E]` established in the current notes or explicit experiments
@@ -15,6 +21,49 @@ Minimal operator form:
 $$
 x(t) = e^{-L_0 t}x(0), \qquad e^{-\lambda_1 T}\delta < \epsilon_c.
 $$
+
+`[E]` In the current operator realization, the low end of the interaction spectrum carries the recoverability burden.
+
+For
+
+$$
+L_0 = D-A,
+\qquad
+0=\lambda_0 \le \lambda_1 \le \lambda_2 \le \dots,
+$$
+
+the primary recoverability diagnostic is the first nonzero eigenvalue `lambda_1`, with the low-mode band used as a refinement when one gap is not enough.
+
+Current reading:
+
+- if `lambda_1` is too small, perturbations linger, split clusters, or fail to re-enter the viable coherence band
+- if `lambda_1` is large enough, bounded perturbations decay below the coherence threshold within the allowed horizon
+
+This is the cleanest mathematical compression of the HAOS recoverability test on the scalar interaction branch:
+
+$$
+\text{recoverable coherence} \iff e^{-\lambda_1 T}\delta < \epsilon_c.
+$$
+
+`[P]` A useful state-dependent coherence functional on this branch is the normalized Rayleigh diagnostic
+
+$$
+C_L(x) = 1 - \frac{\langle x, L_0 x \rangle}{\lambda_{\max}(L_0)\,\|x\|^2},
+\qquad
+0 \le C_L(x) \le 1.
+$$
+
+Low-spectrum states satisfy `C_L(x) -> 1`, while high-frequency or noisy states drive `C_L(x) -> 0`.
+
+This gives a viable band
+
+$$
+x \in \mathcal V_{\epsilon_c}
+\iff
+C_L(x) \ge \epsilon_c,
+$$
+
+with recoverability interpreted as dynamics that return perturbed states into `mathcal V_{epsilon_c}` inside the horizon `T`.
 
 ## 2. Interaction kernel
 
@@ -49,6 +98,8 @@ L_0 = B^T W B.
 $$
 
 The spectral gap `lambda_1` of `L0` is the primary recoverability diagnostic in the current program.
+
+`[P]` More cautiously: the gap is the minimal summary statistic, while the low-spectrum band carries the more faithful picture whenever several near-zero modes compete.
 
 ## 4. Continuum limit of `L0`
 

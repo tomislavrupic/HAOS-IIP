@@ -1,0 +1,400 @@
+# Stage C0.13 Topology Phase Boundary Refinement v1
+
+Timestamped JSON: `data/20260315_215213_stage_c0_13_topology_phase_boundary_refinement.json`
+Timestamped CSV: `data/20260315_215213_stage_c0_13_topology_phase_boundary_refinement.csv`
+
+Global read: `harmonic addressing produces fragmented multi-window protection`
+
+## Protection-sensitivity table
+- `Baseline`: resolved=`0`, boundary_delta=`None`, max_sharpness=`78.180`, adjacent_variance=`0.254`
+- `Motif weak plus`: resolved=`0`, boundary_delta=`None`, max_sharpness=`15.298`, adjacent_variance=`0.000`
+- `Motif weak minus`: resolved=`0`, boundary_delta=`None`, max_sharpness=`78.180`, adjacent_variance=`0.254`
+- `Degree mild`: resolved=`0`, boundary_delta=`None`, max_sharpness=`0.571`, adjacent_variance=`0.000`
+- `Degree asymmetric`: resolved=`0`, boundary_delta=`None`, max_sharpness=`0.601`, adjacent_variance=`0.000`
+- `Beta weak`: resolved=`0`, boundary_delta=`None`, max_sharpness=`78.180`, adjacent_variance=`0.254`
+
+## Per-run summary
+- `C013_baseline_d0p66`
+  - family: `Baseline`
+  - delta: `0.660`
+  - topology class: `address_protected_braid`
+  - topology stability index: `0.4444`
+  - address selectivity index: `0.8886`
+  - boundary sharpness metric: `0.2029`
+- `C013_baseline_d0p69`
+  - family: `Baseline`
+  - delta: `0.690`
+  - topology class: `address_protected_braid`
+  - topology stability index: `0.4444`
+  - address selectivity index: `0.8825`
+  - boundary sharpness metric: `78.1799`
+- `C013_baseline_d0p72`
+  - family: `Baseline`
+  - delta: `0.720`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8765`
+  - boundary sharpness metric: `78.1729`
+- `C013_baseline_d0p75`
+  - family: `Baseline`
+  - delta: `0.750`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8706`
+  - boundary sharpness metric: `0.3887`
+- `C013_baseline_d0p78`
+  - family: `Baseline`
+  - delta: `0.780`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8649`
+  - boundary sharpness metric: `15.1976`
+- `C013_baseline_d0p81`
+  - family: `Baseline`
+  - delta: `0.810`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8592`
+  - boundary sharpness metric: `15.1920`
+- `C013_baseline_d0p84`
+  - family: `Baseline`
+  - delta: `0.840`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8535`
+  - boundary sharpness metric: `0.1872`
+- `C013_motif_weak_plus_d0p66`
+  - family: `Motif weak plus`
+  - delta: `0.660`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8679`
+  - boundary sharpness metric: `0.2441`
+- `C013_motif_weak_plus_d0p69`
+  - family: `Motif weak plus`
+  - delta: `0.690`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8606`
+  - boundary sharpness metric: `15.2983`
+- `C013_motif_weak_plus_d0p72`
+  - family: `Motif weak plus`
+  - delta: `0.720`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8534`
+  - boundary sharpness metric: `15.2891`
+- `C013_motif_weak_plus_d0p75`
+  - family: `Motif weak plus`
+  - delta: `0.750`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8464`
+  - boundary sharpness metric: `0.4656`
+- `C013_motif_weak_plus_d0p78`
+  - family: `Motif weak plus`
+  - delta: `0.780`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8394`
+  - boundary sharpness metric: `0.4574`
+- `C013_motif_weak_plus_d0p81`
+  - family: `Motif weak plus`
+  - delta: `0.810`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8326`
+  - boundary sharpness metric: `0.4496`
+- `C013_motif_weak_plus_d0p84`
+  - family: `Motif weak plus`
+  - delta: `0.840`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8259`
+  - boundary sharpness metric: `0.2229`
+- `C013_motif_weak_minus_d0p66`
+  - family: `Motif weak minus`
+  - delta: `0.660`
+  - topology class: `address_protected_braid`
+  - topology stability index: `0.4444`
+  - address selectivity index: `0.8886`
+  - boundary sharpness metric: `0.2029`
+- `C013_motif_weak_minus_d0p69`
+  - family: `Motif weak minus`
+  - delta: `0.690`
+  - topology class: `address_protected_braid`
+  - topology stability index: `0.4444`
+  - address selectivity index: `0.8825`
+  - boundary sharpness metric: `78.1799`
+- `C013_motif_weak_minus_d0p72`
+  - family: `Motif weak minus`
+  - delta: `0.720`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8765`
+  - boundary sharpness metric: `78.1729`
+- `C013_motif_weak_minus_d0p75`
+  - family: `Motif weak minus`
+  - delta: `0.750`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8706`
+  - boundary sharpness metric: `0.3887`
+- `C013_motif_weak_minus_d0p78`
+  - family: `Motif weak minus`
+  - delta: `0.780`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8649`
+  - boundary sharpness metric: `15.1976`
+- `C013_motif_weak_minus_d0p81`
+  - family: `Motif weak minus`
+  - delta: `0.810`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8592`
+  - boundary sharpness metric: `15.1920`
+- `C013_motif_weak_minus_d0p84`
+  - family: `Motif weak minus`
+  - delta: `0.840`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8535`
+  - boundary sharpness metric: `0.1872`
+- `C013_degree_mild_d0p66`
+  - family: `Degree mild`
+  - delta: `0.660`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8434`
+  - boundary sharpness metric: `0.2888`
+- `C013_degree_mild_d0p69`
+  - family: `Degree mild`
+  - delta: `0.690`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8348`
+  - boundary sharpness metric: `0.5712`
+- `C013_degree_mild_d0p72`
+  - family: `Degree mild`
+  - delta: `0.720`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8263`
+  - boundary sharpness metric: `0.5587`
+- `C013_degree_mild_d0p75`
+  - family: `Degree mild`
+  - delta: `0.750`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8180`
+  - boundary sharpness metric: `0.5466`
+- `C013_degree_mild_d0p78`
+  - family: `Degree mild`
+  - delta: `0.780`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8099`
+  - boundary sharpness metric: `0.5348`
+- `C013_degree_mild_d0p81`
+  - family: `Degree mild`
+  - delta: `0.810`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8020`
+  - boundary sharpness metric: `0.5233`
+- `C013_degree_mild_d0p84`
+  - family: `Degree mild`
+  - delta: `0.840`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.7942`
+  - boundary sharpness metric: `0.2588`
+- `C013_degree_asymmetric_d0p66`
+  - family: `Degree asymmetric`
+  - delta: `0.660`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8371`
+  - boundary sharpness metric: `0.3037`
+- `C013_degree_asymmetric_d0p69`
+  - family: `Degree asymmetric`
+  - delta: `0.690`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8280`
+  - boundary sharpness metric: `0.6007`
+- `C013_degree_asymmetric_d0p72`
+  - family: `Degree asymmetric`
+  - delta: `0.720`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8191`
+  - boundary sharpness metric: `0.5877`
+- `C013_degree_asymmetric_d0p75`
+  - family: `Degree asymmetric`
+  - delta: `0.750`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8104`
+  - boundary sharpness metric: `0.5750`
+- `C013_degree_asymmetric_d0p78`
+  - family: `Degree asymmetric`
+  - delta: `0.780`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8019`
+  - boundary sharpness metric: `0.5625`
+- `C013_degree_asymmetric_d0p81`
+  - family: `Degree asymmetric`
+  - delta: `0.810`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.7935`
+  - boundary sharpness metric: `0.5501`
+- `C013_degree_asymmetric_d0p84`
+  - family: `Degree asymmetric`
+  - delta: `0.840`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.7854`
+  - boundary sharpness metric: `0.2720`
+- `C013_beta_weak_d0p66`
+  - family: `Beta weak`
+  - delta: `0.660`
+  - topology class: `address_protected_braid`
+  - topology stability index: `0.4444`
+  - address selectivity index: `0.8885`
+  - boundary sharpness metric: `0.2030`
+- `C013_beta_weak_d0p69`
+  - family: `Beta weak`
+  - delta: `0.690`
+  - topology class: `address_protected_braid`
+  - topology stability index: `0.4444`
+  - address selectivity index: `0.8824`
+  - boundary sharpness metric: `78.1801`
+- `C013_beta_weak_d0p72`
+  - family: `Beta weak`
+  - delta: `0.720`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8764`
+  - boundary sharpness metric: `78.1730`
+- `C013_beta_weak_d0p75`
+  - family: `Beta weak`
+  - delta: `0.750`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8706`
+  - boundary sharpness metric: `0.3888`
+- `C013_beta_weak_d0p78`
+  - family: `Beta weak`
+  - delta: `0.780`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.1111`
+  - address selectivity index: `0.8648`
+  - boundary sharpness metric: `15.1977`
+- `C013_beta_weak_d0p81`
+  - family: `Beta weak`
+  - delta: `0.810`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8591`
+  - boundary sharpness metric: `15.1921`
+- `C013_beta_weak_d0p84`
+  - family: `Beta weak`
+  - delta: `0.840`
+  - topology class: `transfer_smeared`
+  - topology stability index: `0.5556`
+  - address selectivity index: `0.8535`
+  - boundary sharpness metric: `0.1873`
+
+## Plots
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p66_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p66_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p69_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p69_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p72_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p72_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p75_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p75_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p78_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p78_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p81_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p81_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p84_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_baseline_d0p84_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p66_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p66_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p69_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p69_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p72_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p72_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p75_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p75_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p78_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p78_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p81_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p81_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p84_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_plus_d0p84_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p66_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p66_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p69_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p69_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p72_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p72_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p75_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p75_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p78_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p78_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p81_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p81_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p84_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_motif_weak_minus_d0p84_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p66_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p66_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p69_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p69_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p72_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p72_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p75_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p75_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p78_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p78_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p81_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p81_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p84_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_mild_d0p84_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p66_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p66_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p69_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p69_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p72_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p72_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p75_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p75_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p78_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p78_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p81_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p81_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p84_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_degree_asymmetric_d0p84_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p66_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p66_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p69_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p69_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p72_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p72_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p75_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p75_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p78_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p78_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p81_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p81_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p84_topology_vs_time_trace.png`
+- `plots/20260315_215213_stage_c0_13_C013_beta_weak_d0p84_selectivity_trace.png`
+- `plots/20260315_215213_stage_c0_13_topology_phase_diagram_panel.png`
+- `plots/20260315_215213_stage_c0_13_boundary_sharpness_heatmap.png`
+- `plots/20260315_215213_stage_c0_13_topology_vs_detuning_trace.png`
+- `plots/20260315_215213_stage_c0_13_selectivity_vs_detuning_trace.png`

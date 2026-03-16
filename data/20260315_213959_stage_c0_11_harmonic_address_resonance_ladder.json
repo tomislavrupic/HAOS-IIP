@@ -1,0 +1,2164 @@
+{
+  "experiment": "c0_11_harmonic_address_resonance_ladder",
+  "description": "Clustered DK harmonic-address resonance ladder scan on the no-distance branch, testing discrete 5-class phase indexing and two structural control toggles.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_projected_transverse_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_combinatorial_dk_operator",
+    "source_family": "stage23_2_clustered_mixed_encounter_seed",
+    "resolution": 12,
+    "refinement_resolution": 24,
+    "epsilon": 0.2,
+    "mean_width": 0.08,
+    "amplitude": 0.5,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "kick_cycles": 1.0,
+    "beta": 0.0,
+    "local_phase_skew_fraction": 0.0,
+    "separation": 0.08,
+    "harmonic_modulus": 5,
+    "graph_delta_scale_fraction": 0.18,
+    "degree_skew_leaf_count": 2,
+    "motif_patch_radius": 2,
+    "motif_max_radius": 4,
+    "motif_candidate_count": 8,
+    "min_degree_floor": 1
+  },
+  "runs": [
+    {
+      "run": {
+        "run_id": "C011_same_address_baseline",
+        "run_order": 0,
+        "variant_label": "same_address_baseline",
+        "left_address": 0,
+        "right_address": 0,
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "notes": "Same-address clustered baseline."
+      },
+      "metrics": {
+        "run_id": "C011_same_address_baseline",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "same_address_baseline",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.17190896124425192,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33323614542029767,
+        "omega1_weight_final": 0.5451270570725559,
+        "omega2_weight_final": 0.12163679750714633,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "variant_label": "same_address_baseline",
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "left_address": 0,
+        "right_address": 0,
+        "address_difference": 0,
+        "address_band_difference": 0,
+        "topology_class": "braid_like_exchange",
+        "grade_exchange_coherence": 0.4621643928561001,
+        "resonance_alignment_index": 0.9999999867876268,
+        "topology_stability_flag": 0,
+        "refinement_topology_class": "localized_capture",
+        "refinement_resonance_alignment_index": 1.0,
+        "flow_concentration_index": 0.8989005747474713,
+        "transport_span": 0.0,
+        "channel_count": 1,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9999390686899704,
+        "structural_edge_delta": 0,
+        "ladder_band_label": "band_0_exact",
+        "notes": "Same-address clustered baseline.",
+        "run_order": 0
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "phase_differences": [
+        0.0,
+        4.708022397981182e-05,
+        9.290045234955358e-05,
+        0.0001386624653116897,
+        0.00018542524965470264,
+        0.0002341045057465685,
+        0.0002854827192670939,
+        0.0003402268220686899,
+        0.00039890976528678124
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.3333726652522443,
+          0.6498996805812826,
+          0.016727654166473226
+        ],
+        [
+          0.33335396757677,
+          0.6324038044512876,
+          0.034242227971942346
+        ],
+        [
+          0.33333251610029696,
+          0.6125272879698194,
+          0.05414019592988365
+        ],
+        [
+          0.3333095964913642,
+          0.5926519874435708,
+          0.07403841606506482
+        ],
+        [
+          0.33328584617099566,
+          0.5743500539230938,
+          0.09236409990591052
+        ],
+        [
+          0.3332614115364501,
+          0.5584271433144609,
+          0.10831144514908915
+        ],
+        [
+          0.33323614542029767,
+          0.5451270570725559,
+          0.12163679750714633
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.006306655220969616,
+        0.02364146774411951,
+        0.04839760471096926,
+        0.07652242459522603,
+        0.10464656477277524,
+        0.1305462175292359,
+        0.15308191048220535,
+        0.17190896124425192
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8930595767872651,
+        0.9048115261005265,
+        0.9159095476779745,
+        0.9237195584798692,
+        0.9179907170945846,
+        0.9019617142428367,
+        0.890670853575472,
+        0.8810183565371846
+      ],
+      "expected_phase_offset": 0.0
+    },
+    {
+      "run": {
+        "run_id": "C011_difference_1",
+        "run_order": 1,
+        "variant_label": "difference_1",
+        "left_address": 0,
+        "right_address": 1,
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "notes": "Address difference 1 on the clustered seed."
+      },
+      "metrics": {
+        "run_id": "C011_difference_1",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "difference_1",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "dispersive_pass",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.17595704289606193,
+        "omega0_weight_initial": 0.3333601199675369,
+        "omega1_weight_initial": 0.666639880032463,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3334058718637595,
+        "omega1_weight_final": 0.5421965921639749,
+        "omega2_weight_final": 0.12439753597226581,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "variant_label": "difference_1",
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "left_address": 0,
+        "right_address": 1,
+        "address_difference": 1,
+        "address_band_difference": 1,
+        "topology_class": "dispersive_pass",
+        "grade_exchange_coherence": 0.4677419922799029,
+        "resonance_alignment_index": 0.17311898514044727,
+        "topology_stability_flag": 0,
+        "refinement_topology_class": "localized_capture",
+        "refinement_resonance_alignment_index": 0.1678724243634914,
+        "flow_concentration_index": 0.894989441610348,
+        "transport_span": 0.0,
+        "channel_count": 1,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.6731326961344487,
+        "structural_edge_delta": 0,
+        "ladder_band_label": "band_1_adjacent",
+        "notes": "Address difference 1 on the clustered seed.",
+        "run_order": 1
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "phase_differences": [
+        -1.0480110980258601,
+        -1.0479680713566926,
+        -1.0453114493951379,
+        -1.0402467989490076,
+        -1.0330358508192696,
+        -1.0239716676816024,
+        -1.0133545337583052,
+        -1.0014718704027117,
+        -0.9885839443158799
+      ],
+      "grade_weights": [
+        [
+          0.3333601199675369,
+          0.666639880032463,
+          0.0
+        ],
+        [
+          0.3333673417442807,
+          0.6618780805497038,
+          0.004754577706015646
+        ],
+        [
+          0.3333713988735688,
+          0.6488833469885452,
+          0.017745254137886073
+        ],
+        [
+          0.33337414326598797,
+          0.6305096558876386,
+          0.036116200846373445
+        ],
+        [
+          0.3333770746948825,
+          0.6098929466557614,
+          0.056729978649356146
+        ],
+        [
+          0.3333812214892681,
+          0.5895569903867545,
+          0.07706178812397738
+        ],
+        [
+          0.33338720177577813,
+          0.5710921620771547,
+          0.09552063614706721
+        ],
+        [
+          0.3333953563120987,
+          0.5552500779586756,
+          0.11135456572922567
+        ],
+        [
+          0.3334058718637595,
+          0.5421965921639749,
+          0.12439753597226581
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.006729100655407559,
+        0.025103558261163457,
+        0.051085939914850685,
+        0.08024029668862764,
+        0.108996749998665,
+        0.13510573292733316,
+        0.15750405885684957,
+        0.17595704289606193
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.5416666666666666,
+            0.4583333333333333
+          ],
+          [
+            0.5416666666666666,
+            0.4583333333333333
+          ],
+          [
+            0.5416666666666666,
+            0.4583333333333333
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ],
+      "flow_concentration_trace": [
+        0.8777554529068439,
+        0.8838784308416775,
+        0.8989085260329109,
+        0.9111283233287477,
+        0.9213730962991121,
+        0.9178031696511936,
+        0.9002337893474932,
+        0.8892721821383659,
+        0.8815869234569853
+      ],
+      "expected_phase_offset": 1.2566370614359172
+    },
+    {
+      "run": {
+        "run_id": "C011_difference_2",
+        "run_order": 2,
+        "variant_label": "difference_2",
+        "left_address": 0,
+        "right_address": 2,
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "notes": "Address difference 2 on the clustered seed."
+      },
+      "metrics": {
+        "run_id": "C011_difference_2",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "difference_2",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "dispersive_pass",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.8770059290458401,
+        "binding_persistence": 0.7777777777777778,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333337,
+        "final_mean_separation": 0.16666666666666674,
+        "post_collision_separation_trend": 0.08333333333333337,
+        "encounter_dwell_time": 0.8770059290458401,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.1954725920845401,
+        "omega0_weight_initial": 0.33311802240824323,
+        "omega1_weight_initial": 0.6668819775917566,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3337185837144618,
+        "omega1_weight_final": 0.528362680075147,
+        "omega2_weight_final": 0.1379187362103912,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "variant_label": "difference_2",
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "left_address": 0,
+        "right_address": 2,
+        "address_difference": 2,
+        "address_band_difference": 2,
+        "topology_class": "dispersive_pass",
+        "grade_exchange_coherence": 0.5035250263650891,
+        "resonance_alignment_index": 0.22114661094349256,
+        "topology_stability_flag": 1,
+        "refinement_topology_class": "dispersive_pass",
+        "refinement_resonance_alignment_index": 0.24017296162728302,
+        "flow_concentration_index": 0.8835528842348696,
+        "transport_span": 0.08333333333333337,
+        "channel_count": 1,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.48884822632696023,
+        "structural_edge_delta": 0,
+        "ladder_band_label": "band_2_offset",
+        "notes": "Address difference 2 on the clustered seed.",
+        "run_order": 2
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "phase_differences": [
+        -1.6784257233230335,
+        -1.6784400788567382,
+        -1.669115762677885,
+        -1.651294704469388,
+        -1.6260926883340705,
+        -1.5947765358992578,
+        -1.5586457609177367,
+        -1.5189354637384613,
+        -1.4767491951489577
+      ],
+      "grade_weights": [
+        [
+          0.33311802240824323,
+          0.6668819775917566,
+          0.0
+        ],
+        [
+          0.3331649238966174,
+          0.6600054503776904,
+          0.00682962572569221
+        ],
+        [
+          0.333237756049606,
+          0.6420034762136935,
+          0.024758767736700483
+        ],
+        [
+          0.3333232726453772,
+          0.6182748531357969,
+          0.048401874218825934
+        ],
+        [
+          0.33341081847342,
+          0.5938594996353522,
+          0.07272968189122785
+        ],
+        [
+          0.33349475941079837,
+          0.5718932594851497,
+          0.09461198110405188
+        ],
+        [
+          0.33357350371274436,
+          0.5536680475159393,
+          0.11275844877131631
+        ],
+        [
+          0.33364764809320685,
+          0.5393041280531765,
+          0.1270482238536167
+        ],
+        [
+          0.3337185837144618,
+          0.528362680075147,
+          0.1379187362103912
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.009691883915340777,
+        0.03509915592721631,
+        0.06859618140561505,
+        0.1030629644655564,
+        0.13406873411328607,
+        0.15978757522330814,
+        0.1800489916123205,
+        0.1954725920845401
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ]
+        ]
+      ],
+      "flow_concentration_trace": [
+        0.8527809242358451,
+        0.863463389398727,
+        0.8811234986207063,
+        0.9020259626244684,
+        0.9150796366112205,
+        0.9149345206167198,
+        0.9001039768463567,
+        0.8828767397628728,
+        0.8690106511584231
+      ],
+      "expected_phase_offset": 2.5132741228718345
+    },
+    {
+      "run": {
+        "run_id": "C011_difference_3",
+        "run_order": 3,
+        "variant_label": "difference_3",
+        "left_address": 0,
+        "right_address": 3,
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "notes": "Address difference 3 on the clustered seed."
+      },
+      "metrics": {
+        "run_id": "C011_difference_3",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "difference_3",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "dispersive_pass",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.12528656129226287,
+        "binding_persistence": 0.1111111111111111,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333331,
+        "final_mean_separation": 0.16666666666666674,
+        "post_collision_separation_trend": 0.08333333333333343,
+        "encounter_dwell_time": 0.12528656129226287,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.19561428925380392,
+        "omega0_weight_initial": 0.3331180224082433,
+        "omega1_weight_initial": 0.6668819775917567,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3334121784458047,
+        "omega1_weight_final": 0.528414943730355,
+        "omega2_weight_final": 0.13817287782384022,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "variant_label": "difference_3",
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "left_address": 0,
+        "right_address": 3,
+        "address_difference": 3,
+        "address_band_difference": 2,
+        "topology_class": "dispersive_pass",
+        "grade_exchange_coherence": 0.5032732996388456,
+        "resonance_alignment_index": 0.2210763269825418,
+        "topology_stability_flag": 1,
+        "refinement_topology_class": "dispersive_pass",
+        "refinement_resonance_alignment_index": 0.24017296162728277,
+        "flow_concentration_index": 0.8805721013349311,
+        "transport_span": 0.08333333333333343,
+        "channel_count": 1,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.4889045702149989,
+        "structural_edge_delta": 0,
+        "ladder_band_label": "band_2_offset",
+        "notes": "Address difference 3 on the clustered seed.",
+        "run_order": 3
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "phase_differences": [
+        1.6784257233230333,
+        1.6784113659071096,
+        1.6690566761120005,
+        1.651199642354019,
+        1.6259527475255826,
+        1.59458010988274,
+        1.5583790833994957,
+        1.5185830868696595,
+        1.4762943920892582
+      ],
+      "grade_weights": [
+        [
+          0.3331180224082433,
+          0.6668819775917567,
+          0.0
+        ],
+        [
+          0.3331248701714268,
+          0.6600438644479694,
+          0.00683126538060388
+        ],
+        [
+          0.33316044655141686,
+          0.6420693077666104,
+          0.02477024568197253
+        ],
+        [
+          0.33321023744863426,
+          0.6183550636217245,
+          0.048434698929641196
+        ],
+        [
+          0.3332623059113364,
+          0.5939431744252694,
+          0.07279451966339416
+        ],
+        [
+          0.33330991405806415,
+          0.5719730715971392,
+          0.09471701434479658
+        ],
+        [
+          0.3333506149160271,
+          0.5537399231294976,
+          0.1129094619544754
+        ],
+        [
+          0.33338438339733784,
+          0.53936632969445,
+          0.12724928690821216
+        ],
+        [
+          0.3334121784458047,
+          0.528414943730355,
+          0.13817287782384022
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.00966571388772371,
+        0.035060454286916024,
+        0.06856230701685558,
+        0.10304917233104358,
+        0.13408598012429496,
+        0.15984281399570208,
+        0.1801463083870855,
+        0.19561428925380392
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.4583333333333333,
+            0.4583333333333333
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ]
+        ]
+      ],
+      "flow_concentration_trace": [
+        0.8544207772828432,
+        0.865911132141445,
+        0.8843295322707485,
+        0.9035582355721093,
+        0.9137294451119603,
+        0.912256758706615,
+        0.8938011748965724,
+        0.8758539984662664,
+        0.8696774292976639
+      ],
+      "expected_phase_offset": -2.5132741228718345
+    },
+    {
+      "run": {
+        "run_id": "C011_difference_4",
+        "run_order": 4,
+        "variant_label": "difference_4",
+        "left_address": 0,
+        "right_address": 4,
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "notes": "Address difference 4 on the clustered seed."
+      },
+      "metrics": {
+        "run_id": "C011_difference_4",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "difference_4",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "dispersive_pass",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.17603581241017172,
+        "omega0_weight_initial": 0.3333601199675369,
+        "omega1_weight_initial": 0.6666398800324631,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.3331804756655652,
+        "omega1_weight_final": 0.5422536827202682,
+        "omega2_weight_final": 0.12456584161416664,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "variant_label": "difference_4",
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "left_address": 0,
+        "right_address": 4,
+        "address_difference": 4,
+        "address_band_difference": 1,
+        "topology_class": "dispersive_pass",
+        "grade_exchange_coherence": 0.4675641208787648,
+        "resonance_alignment_index": 0.17298753622317092,
+        "topology_stability_flag": 0,
+        "refinement_topology_class": "localized_capture",
+        "refinement_resonance_alignment_index": 0.16787242436349054,
+        "flow_concentration_index": 0.894272243759579,
+        "transport_span": 0.0,
+        "channel_count": 1,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.6730232685173797,
+        "structural_edge_delta": 0,
+        "ladder_band_label": "band_1_adjacent",
+        "notes": "Address difference 4 on the clustered seed.",
+        "run_order": 4
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "phase_differences": [
+        1.0480110980258601,
+        1.0480541263766856,
+        1.0454810331260038,
+        1.0404992759622074,
+        1.033372241192379,
+        1.0243943979433983,
+        1.0138671974242213,
+        1.0020790148511658,
+        0.9892908927835009
+      ],
+      "grade_weights": [
+        [
+          0.3333601199675369,
+          0.6666398800324631,
+          0.0
+        ],
+        [
+          0.3333464550032559,
+          0.6618983713233217,
+          0.00475517367342244
+        ],
+        [
+          0.33332988105164696,
+          0.6489204433348243,
+          0.01774967561352875
+        ],
+        [
+          0.3333106424672137,
+          0.6305593928705957,
+          0.03612996466219043
+        ],
+        [
+          0.33328907543361563,
+          0.609950984876531,
+          0.05675993968985336
+        ],
+        [
+          0.33326537499980735,
+          0.5896192574555429,
+          0.07711536754464969
+        ],
+        [
+          0.3332395226955863,
+          0.5711551753943566,
+          0.09560530191005712
+        ],
+        [
+          0.3332113227800419,
+          0.5553111078721765,
+          0.11147756934778141
+        ],
+        [
+          0.3331804756655652,
+          0.5422536827202682,
+          0.12456584161416664
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.006715189366988994,
+        0.02508047718164785,
+        0.05106053611500613,
+        0.08022048762580451,
+        0.10899066561082978,
+        0.13512112017313066,
+        0.1575479803710902,
+        0.17603581241017172
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ],
+      "flow_concentration_trace": [
+        0.8829529902506837,
+        0.8895966369822486,
+        0.9021992967054249,
+        0.9135825295058607,
+        0.9208478834529401,
+        0.9150644263047891,
+        0.901927112535459,
+        0.8883726741190122,
+        0.8793822869448825
+      ],
+      "expected_phase_offset": -1.2566370614359172
+    },
+    {
+      "run": {
+        "run_id": "C011_random_pairing_control",
+        "run_order": 5,
+        "variant_label": "random_pairing_control",
+        "left_address": 0,
+        "right_address": 0,
+        "address_mode": "randomized",
+        "structural_control": "baseline",
+        "notes": "Randomized address-pairing control with deterministic seeded sampling."
+      },
+      "metrics": {
+        "run_id": "C011_random_pairing_control",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "random_pairing_control",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "dispersive_pass",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.12528656129226287,
+        "binding_persistence": 0.1111111111111111,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333331,
+        "final_mean_separation": 0.16666666666666674,
+        "post_collision_separation_trend": 0.08333333333333343,
+        "encounter_dwell_time": 0.12528656129226287,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.19561428925380392,
+        "omega0_weight_initial": 0.3331180224082433,
+        "omega1_weight_initial": 0.6668819775917567,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33341217844580473,
+        "omega1_weight_final": 0.528414943730355,
+        "omega2_weight_final": 0.13817287782384022,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "variant_label": "random_pairing_control",
+        "address_mode": "randomized",
+        "structural_control": "baseline",
+        "left_address": 4,
+        "right_address": 2,
+        "address_difference": 3,
+        "address_band_difference": 2,
+        "topology_class": "dispersive_pass",
+        "grade_exchange_coherence": 0.5032732996388457,
+        "resonance_alignment_index": 0.22107632698254187,
+        "topology_stability_flag": 1,
+        "refinement_topology_class": "dispersive_pass",
+        "refinement_resonance_alignment_index": 0.24017296162728252,
+        "flow_concentration_index": 0.8805721013349315,
+        "transport_span": 0.08333333333333343,
+        "channel_count": 1,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.48890457021499867,
+        "structural_edge_delta": 0,
+        "ladder_band_label": "band_2_offset",
+        "notes": "Randomized address-pairing control with deterministic seeded sampling.",
+        "run_order": 5
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "phase_differences": [
+        1.6784257233230333,
+        1.6784113659071096,
+        1.6690566761119996,
+        1.651199642354019,
+        1.6259527475255826,
+        1.5945801098827408,
+        1.5583790833994966,
+        1.5185830868696604,
+        1.476294392089259
+      ],
+      "grade_weights": [
+        [
+          0.3331180224082433,
+          0.6668819775917567,
+          0.0
+        ],
+        [
+          0.33312487017142683,
+          0.6600438644479693,
+          0.006831265380603878
+        ],
+        [
+          0.33316044655141697,
+          0.6420693077666104,
+          0.024770245681972527
+        ],
+        [
+          0.3332102374486343,
+          0.6183550636217244,
+          0.04843469892964118
+        ],
+        [
+          0.3332623059113363,
+          0.5939431744252696,
+          0.07279451966339417
+        ],
+        [
+          0.33330991405806426,
+          0.5719730715971392,
+          0.09471701434479657
+        ],
+        [
+          0.3333506149160271,
+          0.5537399231294974,
+          0.11290946195447536
+        ],
+        [
+          0.33338438339733795,
+          0.53936632969445,
+          0.12724928690821213
+        ],
+        [
+          0.33341217844580473,
+          0.528414943730355,
+          0.13817287782384022
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.009665713887723788,
+        0.035060454286916024,
+        0.06856230701685564,
+        0.1030491723310435,
+        0.13408598012429496,
+        0.15984281399570222,
+        0.18014630838708548,
+        0.19561428925380392
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.4583333333333333,
+            0.4583333333333333
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ]
+        ]
+      ],
+      "flow_concentration_trace": [
+        0.8544207772828434,
+        0.865911132141445,
+        0.8843295322707485,
+        0.9035582355721092,
+        0.9137294451119603,
+        0.9122567587066149,
+        0.8938011748965725,
+        0.8758539984662664,
+        0.8696774292976639
+      ],
+      "expected_phase_offset": -2.5132741228718345
+    },
+    {
+      "run": {
+        "run_id": "C011_difference_2_degree_skew",
+        "run_order": 6,
+        "variant_label": "difference_2_degree_skew",
+        "left_address": 0,
+        "right_address": 2,
+        "address_mode": "fixed_pair",
+        "structural_control": "degree_skew",
+        "notes": "Address difference 2 with mild local degree-spectrum skew."
+      },
+      "metrics": {
+        "run_id": "C011_difference_2_degree_skew",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "difference_2_degree_skew",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "dispersive_pass",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 0.8770059290458401,
+        "binding_persistence": 0.7777777777777778,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333337,
+        "final_mean_separation": 0.16666666666666674,
+        "post_collision_separation_trend": 0.08333333333333337,
+        "encounter_dwell_time": 0.8770059290458401,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.20488624404234854,
+        "omega0_weight_initial": 0.33311802240824323,
+        "omega1_weight_initial": 0.6668819775917566,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33603515511120063,
+        "omega1_weight_final": 0.5205689868981633,
+        "omega2_weight_final": 0.14339585799063595,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "variant_label": "difference_2_degree_skew",
+        "address_mode": "fixed_pair",
+        "structural_control": "degree_skew",
+        "left_address": 0,
+        "right_address": 2,
+        "address_difference": 2,
+        "address_band_difference": 2,
+        "topology_class": "dispersive_pass",
+        "grade_exchange_coherence": 0.5048717823111014,
+        "resonance_alignment_index": 0.22676218514853616,
+        "topology_stability_flag": 1,
+        "refinement_topology_class": "dispersive_pass",
+        "refinement_resonance_alignment_index": 0.2405024921558515,
+        "flow_concentration_index": 0.8823035737814487,
+        "transport_span": 0.08333333333333337,
+        "channel_count": 1,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.4844266814925161,
+        "structural_edge_delta": 4,
+        "ladder_band_label": "band_2_offset",
+        "notes": "Address difference 2 with mild local degree-spectrum skew.",
+        "run_order": 6
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "phase_differences": [
+        -1.6784257233230335,
+        -1.682046977058812,
+        -1.6761860938745423,
+        -1.661780985865161,
+        -1.6400001675621652,
+        -1.6121256282002956,
+        -1.5794434154303059,
+        -1.5431564879993105,
+        -1.5043266689765726
+      ],
+      "grade_weights": [
+        [
+          0.33311802240824323,
+          0.6668819775917566,
+          0.0
+        ],
+        [
+          0.33509584197953457,
+          0.6580349499532138,
+          0.006869208067251634
+        ],
+        [
+          0.3366568173936213,
+          0.6383839029656979,
+          0.024959279640680735
+        ],
+        [
+          0.3376445334253215,
+          0.6133886384964748,
+          0.04896682807820354
+        ],
+        [
+          0.3380632486262655,
+          0.5880228286618682,
+          0.07391392271186628
+        ],
+        [
+          0.3380063935077279,
+          0.5653350796376617,
+          0.09665852685461038
+        ],
+        [
+          0.33758735850872906,
+          0.5465589386378417,
+          0.11585370285342925
+        ],
+        [
+          0.33690492807269434,
+          0.531786698493936,
+          0.13130837343336968
+        ],
+        [
+          0.33603515511120063,
+          0.5205689868981633,
+          0.14339585799063595
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.011373991725200034,
+        0.0380477196100193,
+        0.07266207319909661,
+        0.10819652768434614,
+        0.14028021767094986,
+        0.16709185836878804,
+        0.1884329165054417,
+        0.20488624404234854
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ]
+        ]
+      ],
+      "flow_concentration_trace": [
+        0.8527809242358451,
+        0.863080667473646,
+        0.8804228157910722,
+        0.901125085414829,
+        0.9140144429014244,
+        0.9135981227970017,
+        0.8982565424504122,
+        0.8804093640202479,
+        0.8659562922353036
+      ],
+      "expected_phase_offset": 2.5132741228718345
+    },
+    {
+      "run": {
+        "run_id": "C011_difference_3_motif",
+        "run_order": 7,
+        "variant_label": "difference_3_motif",
+        "left_address": 0,
+        "right_address": 3,
+        "address_mode": "fixed_pair",
+        "structural_control": "triangle_motif",
+        "notes": "Address difference 3 with local triangle motif injection."
+      },
+      "metrics": {
+        "run_id": "C011_difference_3_motif",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "difference_3_motif",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "dispersive_pass",
+        "persistence_label": "no persistence gain",
+        "composite_lifetime": 0.12528656129226287,
+        "binding_persistence": 0.1111111111111111,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333331,
+        "final_mean_separation": 0.16666666666666674,
+        "post_collision_separation_trend": 0.08333333333333343,
+        "encounter_dwell_time": 0.12528656129226287,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.19805894947016547,
+        "omega0_weight_initial": 0.3331180224082433,
+        "omega1_weight_initial": 0.6668819775917567,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33630290050473804,
+        "omega1_weight_final": 0.5252678754115295,
+        "omega2_weight_final": 0.13842922408373243,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "variant_label": "difference_3_motif",
+        "address_mode": "fixed_pair",
+        "structural_control": "triangle_motif",
+        "left_address": 0,
+        "right_address": 3,
+        "address_difference": 3,
+        "address_band_difference": 2,
+        "topology_class": "dispersive_pass",
+        "grade_exchange_coherence": 0.5072606641029677,
+        "resonance_alignment_index": 0.2254928070248147,
+        "topology_stability_flag": 1,
+        "refinement_topology_class": "dispersive_pass",
+        "refinement_resonance_alignment_index": 0.24051741094905843,
+        "flow_concentration_index": 0.8801731810485864,
+        "transport_span": 0.08333333333333343,
+        "channel_count": 1,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.48541979387068945,
+        "structural_edge_delta": 2,
+        "ladder_band_label": "band_2_offset",
+        "notes": "Address difference 3 with local triangle motif injection.",
+        "run_order": 7
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "phase_differences": [
+        1.6784257233230333,
+        1.681301890745594,
+        1.6746471376751204,
+        1.659402365576316,
+        1.6367643174183746,
+        1.6080597007680986,
+        1.5746272889735815,
+        1.5377237144947564,
+        1.4984604183521952
+      ],
+      "grade_weights": [
+        [
+          0.3331180224082433,
+          0.6668819775917567,
+          0.0
+        ],
+        [
+          0.33451904302131497,
+          0.6586211018241651,
+          0.0068598551545199435
+        ],
+        [
+          0.33554761216553153,
+          0.639598513207329,
+          0.02485387462713947
+        ],
+        [
+          0.33617039325326853,
+          0.615265604253188,
+          0.04856400249354352
+        ],
+        [
+          0.33646331961508663,
+          0.5905818962577526,
+          0.07295478412716082
+        ],
+        [
+          0.3365388533953908,
+          0.5685581491952857,
+          0.09490299740932358
+        ],
+        [
+          0.33649589410242287,
+          0.550382136306804,
+          0.11312196959077303
+        ],
+        [
+          0.3364034186673281,
+          0.5361091808963857,
+          0.12748740043628612
+        ],
+        [
+          0.33630290050473804,
+          0.5252678754115295,
+          0.13842922408373243
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.010828782939316299,
+        0.036986557276754276,
+        0.07093679794433189,
+        0.10561862502427494,
+        0.13669621879355473,
+        0.16241983573657895,
+        0.18266186097297382,
+        0.19805894947016547
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.4583333333333333,
+            0.4583333333333333
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ],
+          [
+            0.625,
+            0.5416666666666666
+          ]
+        ]
+      ],
+      "flow_concentration_trace": [
+        0.8544207772828432,
+        0.8656774660306027,
+        0.8839868269288104,
+        0.9031890156769157,
+        0.9133466369613492,
+        0.9118295881596409,
+        0.8932562461266292,
+        0.875205799743445,
+        0.8690018250458816
+      ],
+      "expected_phase_offset": -2.5132741228718345
+    },
+    {
+      "run": {
+        "run_id": "C011_same_address_refinement",
+        "run_order": 8,
+        "variant_label": "same_address_refinement",
+        "left_address": 0,
+        "right_address": 0,
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "notes": "Duplicate same-address baseline included to foreground refinement stability."
+      },
+      "metrics": {
+        "run_id": "C011_same_address_refinement",
+        "geometry_id": "tight_clustered_pair",
+        "phase_id": "same_address_refinement",
+        "resolution": 12,
+        "graph_type": "regular_lattice",
+        "packet_count": 2,
+        "initial_peak_count": 1,
+        "collision_label": "braid_like_exchange",
+        "persistence_label": "weak persistence gain",
+        "composite_lifetime": 1.1275790516303659,
+        "binding_persistence": 1.0,
+        "corridor_dwell": 0.0,
+        "coarse_basin_persistence": 0.0,
+        "minimum_separation": 0.08333333333333326,
+        "final_mean_separation": 0.08333333333333326,
+        "post_collision_separation_trend": 0.0,
+        "encounter_dwell_time": 1.1275790516303659,
+        "deflection_angle_proxy": 0.0,
+        "reflection_fraction": 0.0,
+        "grade_transfer_amplitude": 0.17190896124425192,
+        "omega0_weight_initial": 0.3333939095151982,
+        "omega1_weight_initial": 0.6666060904848018,
+        "omega2_weight_initial": 0.0,
+        "omega0_weight_final": 0.33323614542029767,
+        "omega1_weight_final": 0.5451270570725559,
+        "omega2_weight_final": 0.12163679750714633,
+        "localized_circulation_proxy": 0.0,
+        "new_collision_class": 1,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "variant_label": "same_address_refinement",
+        "address_mode": "fixed_pair",
+        "structural_control": "baseline",
+        "left_address": 0,
+        "right_address": 0,
+        "address_difference": 0,
+        "address_band_difference": 0,
+        "topology_class": "braid_like_exchange",
+        "grade_exchange_coherence": 0.4621643928561001,
+        "resonance_alignment_index": 0.9999999867876268,
+        "topology_stability_flag": 0,
+        "refinement_topology_class": "localized_capture",
+        "refinement_resonance_alignment_index": 1.0,
+        "flow_concentration_index": 0.8989005747474713,
+        "transport_span": 0.0,
+        "channel_count": 1,
+        "loop_count": 0,
+        "phase_alignment_metric": 0.9999390686899704,
+        "structural_edge_delta": 0,
+        "ladder_band_label": "band_0_exact",
+        "notes": "Duplicate same-address baseline included to foreground refinement stability.",
+        "run_order": 8
+      },
+      "times": [
+        0.0,
+        0.12528656129226287,
+        0.25057312258452574,
+        0.3758596838767886,
+        0.5011462451690515,
+        0.6264328064613144,
+        0.7517193677535772,
+        0.8770059290458401,
+        1.002292490338103
+      ],
+      "phase_differences": [
+        0.0,
+        4.708022397981182e-05,
+        9.290045234955358e-05,
+        0.0001386624653116897,
+        0.00018542524965470264,
+        0.0002341045057465685,
+        0.0002854827192670939,
+        0.0003402268220686899,
+        0.00039890976528678124
+      ],
+      "grade_weights": [
+        [
+          0.3333939095151982,
+          0.6666060904848018,
+          0.0
+        ],
+        [
+          0.3333867034345717,
+          0.6621502192183841,
+          0.004463077347044161
+        ],
+        [
+          0.3333726652522443,
+          0.6498996805812826,
+          0.016727654166473226
+        ],
+        [
+          0.33335396757677,
+          0.6324038044512876,
+          0.034242227971942346
+        ],
+        [
+          0.33333251610029696,
+          0.6125272879698194,
+          0.05414019592988365
+        ],
+        [
+          0.3333095964913642,
+          0.5926519874435708,
+          0.07403841606506482
+        ],
+        [
+          0.33328584617099566,
+          0.5743500539230938,
+          0.09236409990591052
+        ],
+        [
+          0.3332614115364501,
+          0.5584271433144609,
+          0.10831144514908915
+        ],
+        [
+          0.33323614542029767,
+          0.5451270570725559,
+          0.12163679750714633
+        ]
+      ],
+      "grade_exchange_trace": [
+        0.0,
+        0.006306655220969616,
+        0.02364146774411951,
+        0.04839760471096926,
+        0.07652242459522603,
+        0.10464656477277524,
+        0.1305462175292359,
+        0.15308191048220535,
+        0.17190896124425192
+      ],
+      "peak_tracks": [
+        [
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ],
+          [
+            0.4583333333333333,
+            0.5416666666666666
+          ]
+        ],
+        [
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ],
+          [
+            0.5416666666666666,
+            0.5416666666666666
+          ]
+        ]
+      ],
+      "flow_concentration_trace": [
+        0.888520375151831,
+        0.8930595767872651,
+        0.9048115261005265,
+        0.9159095476779745,
+        0.9237195584798692,
+        0.9179907170945846,
+        0.9019617142428367,
+        0.890670853575472,
+        0.8810183565371846
+      ],
+      "expected_phase_offset": 0.0
+    }
+  ],
+  "summary": {
+    "topology_counts": {
+      "braid_like_exchange": 2,
+      "dispersive_pass": 7
+    },
+    "stability_count": 5,
+    "verdict": "Yes",
+    "classification_note": "A harmonic resonance ladder is present, but it is split across observables: topology shows 2 visible bands, with d0 isolated from the dispersive d1-d4 sector, while resonance alignment further stratifies that sector into d1/d4 (0.173) versus d2/d3 (0.221). Sensitive transitions appear at 0->1."
+  }
+}
