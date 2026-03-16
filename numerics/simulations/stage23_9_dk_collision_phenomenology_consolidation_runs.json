@@ -1,0 +1,59 @@
+{
+  "stage": "23.9_dk_collision_phenomenology_consolidation",
+  "description": "Phase III consolidation lattice across clustered, corridor, and triad DK seed families with detuning, kernel-radius, refinement, and bidirectional return checks.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "base_epsilon": 0.2,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "beta": 0.02,
+    "phase_detunings_fraction_of_pi": [0.0, 0.25, 0.375, 0.45, 0.5, 0.575, 0.625, 0.75],
+    "kernel_radius_offsets_in_steps": [-1, 0, 1],
+    "topology_labels": [
+      "braid_like_exchange",
+      "transfer_smeared",
+      "localized_capture",
+      "unresolved_mixed"
+    ]
+  },
+  "families": [
+    {
+      "family_id": "clustered_dk_baseline",
+      "family_label": "Clustered DK baseline",
+      "packet_count": 2,
+      "centers": [[0.46, 0.50], [0.54, 0.50]],
+      "kicks": [[0.4, 0.0], [-0.4, 0.0]],
+      "sigma": 0.08,
+      "grade0_scale": 1.0,
+      "grade1_scale": 1.0,
+      "notes": "Tight clustered baseline aligned with the Stage 23 braid window."
+    },
+    {
+      "family_id": "corridor_transport_family",
+      "family_label": "Corridor family",
+      "packet_count": 2,
+      "centers": [[0.35, 0.50], [0.65, 0.50]],
+      "kicks": [[1.0, 0.0], [-1.0, 0.0]],
+      "sigma": 0.09,
+      "grade0_scale": 1.0,
+      "grade1_scale": 1.0,
+      "notes": "Moderate separation corridor family with broader support."
+    },
+    {
+      "family_id": "triad_competition_family",
+      "family_label": "Triad family",
+      "packet_count": 3,
+      "centers": [[0.26, 0.50], [0.74, 0.50], [0.50, 0.74]],
+      "kicks": [[1.0, 0.0], [-1.0, 0.0], [0.0, -1.0]],
+      "sigma": 0.085,
+      "grade0_scale": 1.2,
+      "grade1_scale": 0.8,
+      "notes": "Three-packet competitive family with asymmetric grade weight."
+    }
+  ]
+}
