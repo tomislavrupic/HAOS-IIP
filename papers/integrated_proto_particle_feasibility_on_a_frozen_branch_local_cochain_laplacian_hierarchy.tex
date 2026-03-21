@@ -1,0 +1,241 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Integrated Proto-Particle Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper freezes a single integrated feasibility run on top of the already frozen HAOS-IIP authority stack. The run is not allowed to alter the Phase V recovery readout definitions, the Phase VI branch-local operator hierarchy $\Delta_h$, the Phase VII spectral-feasibility baseline, the Phase VIII short-time trace contract, or the Phase IX coefficient-ratio and rescaled-descriptor contract. Its only purpose is to test a combined question: whether the frozen branch simultaneously preserves large-scale scaling coherence, supports at least one localized excitation candidate, and retains that candidate under deterministic perturbations better than a deterministic altered-connectivity control. The hierarchy is extended by one additional deterministic level, $n_{\mathrm{side}} = 60$, and the already frozen short-time bridge law remains tight on that extension with maximum branch trace prediction error $3.19 \times 10^{-4}$ and branch ratio span $2.80 \times 10^{-2}$. Three deterministic excitation families are scanned, and two pass the scan-level localization gate at $n_{\mathrm{side}}=60$. Of these, only the low-mode localized wavepacket remains aggregate-persistent on both repeat levels $n_{\mathrm{side}} \in \{48,60\}$, with aggregate overlaps $0.999198$ and $0.999423$ and recovery-style scores $0.811520$ and $0.887477$. The corresponding deterministic control remains diffusive at both repeat levels. The result is bounded: the integrated run establishes proto-particle feasibility for the frozen operator hierarchy. It does not assert particles, continuum limits, geometric structure, or physical correspondence.
+\end{abstract}
+
+\section{Scope and Frozen Contracts}
+
+The integrated run is a feasibility instrument only. It is not a particle claim, a continuum program, or a geometric interpretation layer. It consumes the following frozen authority contracts without change:
+\begin{itemize}
+\item the Phase V recovery-statistics readout definitions;
+\item the Phase VI branch-local periodic DK2D block cochain Laplacian hierarchy $\Delta_h$;
+\item the Phase VII spectral-feasibility manifest;
+\item the Phase VIII operational short-time window and deterministic probe grid;
+\item the Phase IX coefficient-ratio and rescaled-descriptor contract.
+\end{itemize}
+
+The concrete references used here are:
+\begin{itemize}
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json};
+\item \url{phase9-invariants/phase9_manifest.json};
+\item \url{phaseX-proto-particle/phaseX_integrated_manifest.json}.
+\end{itemize}
+
+Nothing in this paper modifies earlier phases or \texttt{haos\_core}. The integrated phase is fully self-contained inside \texttt{phaseX-proto-particle/}.
+
+\section{Integrated Program}
+
+The frozen branch hierarchy remains ordered by
+\[
+h = \frac{1}{n_{\mathrm{side}}},
+\]
+and the integrated run extends the Phase VI hierarchy by one deterministic level:
+\[
+n_{\mathrm{side}} \in \{12,24,36,48,60\}.
+\]
+
+The run performs four linked checks:
+\begin{enumerate}
+\item refinement-extension scaling coherence for the frozen short-time trace descriptors;
+\item localized excitation scanning on the branch and on one deterministic altered-connectivity control;
+\item deterministic perturbation persistence tests on the selected candidates;
+\item repeat-level consistency at $n_{\mathrm{side}}=48$ and $n_{\mathrm{side}}=60$.
+\end{enumerate}
+
+The three deterministic excitation families are:
+\begin{itemize}
+\item low-mode localized wavepacket;
+\item mid-spectrum localized superposition;
+\item random localized seed.
+\end{itemize}
+
+Evolution is defined by the fixed rule
+\[
+\psi(\tau) = e^{-\tau \Delta_h}\psi(0),
+\]
+on the frozen branch, and by the same rule on the deterministic control hierarchy with altered connectivity texture but matched node counts.
+
+The deterministic evolution grid is
+\[
+\tau \in \{0.0,0.1,0.2,0.4,0.8\}.
+\]
+
+Candidate selection at scan level $n_{\mathrm{side}}=60$ uses only explicit structural criteria:
+\begin{itemize}
+\item localization width growth;
+\item spatial concentration retention;
+\item participation-ratio growth.
+\end{itemize}
+
+Persistence is then tested under three declared perturbations:
+\begin{itemize}
+\item amplitude jitter;
+\item local connectivity shuffle;
+\item spectral truncation shift with cutoff $\lambda \le 0.5$.
+\end{itemize}
+
+\section{Scaling Coherence Under Extension}
+
+The integrated phase reuses the frozen Phase VIII window
+\[
+t \in \{0.02,0.03,0.05,0.075,0.1\}
+\]
+and the frozen Phase IX descriptor family. The same compact branch predictor is carried forward:
+\[
+T_h(t) \approx h^{-2}\bigl(b_0(h) + b_1(h)t + b_2(h)t^2\bigr).
+\]
+
+At the extension level $n_{\mathrm{side}}=60$, the branch stays coherent:
+\begin{itemize}
+\item maximum short-window trace prediction error: $0.000319310430$;
+\item ratio span across the extended hierarchy: $0.027957610451$;
+\item invariant span across the extended hierarchy: $0.072031851080$;
+\item spectral radius sequence:
+\[
+7.862310,\;7.965353,\;7.984583,\;7.991324,\;7.994446.
+\]
+\end{itemize}
+
+The deterministic control is also computable on the same extension, but it remains descriptor-shifted:
+\begin{itemize}
+\item control short-window trace prediction error at $n_{\mathrm{side}}=60$: $0.000670557652$;
+\item control R5 ratios:
+\[
+\frac{b_1}{b_0} = -5.150258900129,\qquad
+\frac{b_2}{b_0} = 11.442568506369.
+\]
+\end{itemize}
+
+This scaling section is not itself the success claim. The integrated success claim requires scaling coherence together with localized persistence and control degradation.
+
+\section{Localized Excitation Scan}
+
+The scan is run at two levels, $n_{\mathrm{side}}=48$ and $n_{\mathrm{side}}=60$, with candidate admission decided on the branch at $n_{\mathrm{side}}=60$. The branch scan results are:
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+family & level & width growth & concentration ratio & participation growth \\
+\midrule
+low-mode localized wavepacket & 48 & 0.051663 & 0.904832 & 0.105585 \\
+mid-spectrum localized superposition & 48 & 0.098506 & 0.831013 & 0.205024 \\
+random localized seed & 48 & 0.118300 & 0.757714 & 0.540386 \\
+low-mode localized wavepacket & 60 & 0.033618 & 0.936314 & 0.068191 \\
+mid-spectrum localized superposition & 60 & 0.066013 & 0.881099 & 0.135663 \\
+random localized seed & 60 & 0.093276 & 0.790069 & 0.347085 \\
+\bottomrule
+\end{tabular}
+\caption{Branch scan metrics before perturbation testing.}
+\label{tab:branch_scan}
+\end{table}
+
+Two branch families pass the scan-level localization gate:
+\[
+\{\texttt{low\_mode\_localized\_wavepacket},\;
+\texttt{mid\_spectrum\_localized\_superposition}\}.
+\]
+The low-mode localized wavepacket is the strongest candidate because it carries the smallest width growth and the strongest concentration retention on both repeat levels.
+
+\section{Deterministic Perturbation Persistence}
+
+For each candidate the integrated phase computes:
+\begin{itemize}
+\item overlap with the unperturbed evolved excitation;
+\item recovery-style structural score;
+\item aggregate persistence class.
+\end{itemize}
+
+The low-mode wavepacket produces the decisive result:
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+hierarchy & level & overlap & recovery score & width growth & class \\
+\midrule
+branch & 48 & 0.999198 & 0.811520 & 0.051663 & persistent \\
+branch & 60 & 0.999423 & 0.887477 & 0.033618 & persistent \\
+control & 48 & 0.995974 & 0.655399 & 0.085819 & diffusive \\
+control & 60 & 0.999034 & 0.855823 & 0.056241 & diffusive \\
+\bottomrule
+\end{tabular}
+\caption{Aggregate persistence result for the strongest candidate under the declared perturbation set.}
+\label{tab:persistence}
+\end{table}
+
+The mid-spectrum superposition does not remain stable under the full integrated test. Its aggregate classification is unstable on the branch at both repeat levels. The random localized seed fails already at scan stage and is not promoted to persistence testing.
+
+The control result matters here. The control hierarchy does not destroy scaling coherence outright, but it does fail to retain a persistent excitation candidate under the same perturbation contract. That is the required degraded-persistence comparison for this phase.
+
+\section{Integrated Success Logic}
+
+The integrated phase was required to satisfy four conditions simultaneously:
+\begin{enumerate}
+\item at least one excitation candidate remains localized under evolution;
+\item persistence classification is consistent across refinement;
+\item scaling descriptors remain coherent;
+\item the deterministic control exhibits degraded persistence behavior.
+\end{enumerate}
+
+The final manifest records all four as satisfied:
+\begin{itemize}
+\item localized candidate exists: true;
+\item refinement consistency holds: true;
+\item scaling descriptors coherent: true;
+\item control persistence degraded: true.
+\end{itemize}
+
+The surviving candidate set and persistence result are therefore:
+\begin{itemize}
+\item branch persistent scan candidates:
+\[
+\{\texttt{low\_mode\_localized\_wavepacket}\};
+\]
+\item branch refinement-stable candidates:
+\[
+\{\texttt{low\_mode\_localized\_wavepacket}\};
+\]
+\item control persistent candidate count at scan level: $0$.
+\end{itemize}
+
+\section{Bounded Interpretation}
+
+The integrated result is narrow by construction. It supports only the following claim: within the already frozen spectral-trace and operator contracts, one branch excitation family remains compact enough under deterministic evolution and deterministic perturbations to define a reproducible proto-particle feasibility signal, and the altered-connectivity control does not match that persistence class.
+
+This is not a particle discovery claim. It is not a continuum limit. It is not a geometric interpretation. It is not a physical correspondence statement. It is only an integrated feasibility statement built on the already frozen authority layers.
+
+\section{Conclusion}
+
+The integrated proto-particle phase extends the branch hierarchy by one deterministic level, preserves the frozen short-time scaling structure, identifies one robust localized wavepacket family, and shows that this family remains persistence-stable across the repeat levels $n_{\mathrm{side}} \in \{48,60\}$ while the deterministic altered-connectivity control remains diffusive. The artifact bundle is frozen in:
+\begin{itemize}
+\item \url{phaseX-proto-particle/phaseX_integrated_manifest.json};
+\item \url{phaseX-proto-particle/phaseX_integrated_summary.md};
+\item \url{phaseX-proto-particle/runs/proto_particle_candidates.json};
+\item \url{phaseX-proto-particle/runs/localization_metrics_ledger.csv};
+\item \url{phaseX-proto-particle/runs/persistence_classification.csv};
+\item \url{phaseX-proto-particle/runs/scaling_prediction_errors.csv};
+\item \url{phaseX-proto-particle/runs/phaseX_runs.json}.
+\end{itemize}
+
+Integrated run establishes proto-particle feasibility for the frozen operator hierarchy.
+
+\end{document}

@@ -1,0 +1,192 @@
+{
+  "timestamp": "2026-03-21T17:51:32Z",
+  "phase": "X",
+  "phase_name": "phaseX-proto-particle",
+  "stage_identifier": "phaseX-proto-particle",
+  "status": "passed",
+  "success": true,
+  "objective": "integrated_proto_particle_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase9_manifest_reference": "phase9-invariants/phase9_manifest.json",
+  "config_reference": "phaseX-proto-particle/configs/proto_particle_feasibility_config.json",
+  "refinement_hierarchy": {
+    "base_levels": [
+      12,
+      24,
+      36,
+      48
+    ],
+    "extended_levels": [
+      12,
+      24,
+      36,
+      48,
+      60
+    ],
+    "repeat_levels": [
+      48,
+      60
+    ]
+  },
+  "scaling_coherence": {
+    "branch_trace_prediction_error_R5": 0.00031931043,
+    "branch_ratio_span": 0.027957610451,
+    "branch_invariant_span": 0.07203185108,
+    "control_trace_prediction_error_R5": 0.000670557652,
+    "control_ratio_span": 0.027056554897,
+    "control_invariant_span": 0.071068996497,
+    "branch_spectral_radius_values": [
+      7.862309796963,
+      7.965353020924,
+      7.984582776023,
+      7.991324152244,
+      7.99444637301
+    ],
+    "control_spectral_radius_values": [
+      7.862309796963,
+      7.965353020924,
+      7.984582776023,
+      7.991324152244,
+      7.99444637301
+    ]
+  },
+  "candidate_scan": {
+    "selected_branch_candidates": [
+      "low_mode_localized_wavepacket",
+      "mid_spectrum_localized_superposition"
+    ],
+    "branch_scan_level": 60,
+    "branch_scan_records": {
+      "low_mode_localized_wavepacket@48": {
+        "base_width_growth": 0.051662668587,
+        "base_concentration_ratio": 0.904831589977,
+        "base_participation_growth": 0.105585457371,
+        "final_localization_width": 0.084133013487,
+        "final_spatial_concentration": 0.019532392064,
+        "final_spectral_energy_spread": 0.083121797526
+      },
+      "mid_spectrum_localized_superposition@48": {
+        "base_width_growth": 0.098505589055,
+        "base_concentration_ratio": 0.831012789459,
+        "base_participation_growth": 0.20502393949,
+        "final_localization_width": 0.060417807398,
+        "final_spatial_concentration": 0.037953338273,
+        "final_spectral_energy_spread": 0.271291433027
+      },
+      "random_localized_seed@48": {
+        "base_width_growth": 0.118299639255,
+        "base_concentration_ratio": 0.757714109729,
+        "base_participation_growth": 0.540386090183,
+        "final_localization_width": 0.054733991318,
+        "final_spatial_concentration": 0.106651553472,
+        "final_spectral_energy_spread": 0.402308227212
+      },
+      "low_mode_localized_wavepacket@60": {
+        "base_width_growth": 0.033617625,
+        "base_concentration_ratio": 0.936313940059,
+        "base_participation_growth": 0.068191384751,
+        "final_localization_width": 0.08268941,
+        "final_spatial_concentration": 0.012935676376,
+        "final_spectral_energy_spread": 0.055900453398
+      },
+      "mid_spectrum_localized_superposition@60": {
+        "base_width_growth": 0.066013458164,
+        "base_concentration_ratio": 0.881099409346,
+        "base_participation_growth": 0.135662523009,
+        "final_localization_width": 0.058630740199,
+        "final_spatial_concentration": 0.025754146254,
+        "final_spectral_energy_spread": 0.192936387879
+      },
+      "random_localized_seed@60": {
+        "base_width_growth": 0.093276129749,
+        "base_concentration_ratio": 0.79006932784,
+        "base_participation_growth": 0.347084654407,
+        "final_localization_width": 0.051326096756,
+        "final_spatial_concentration": 0.078224725026,
+        "final_spectral_energy_spread": 0.301932036469
+      }
+    },
+    "control_scan_records": {
+      "low_mode_localized_wavepacket@48": {
+        "base_width_growth": 0.08581880195,
+        "base_concentration_ratio": 0.849492031965,
+        "base_participation_growth": 0.178085920593,
+        "final_localization_width": 0.086865504156,
+        "final_spatial_concentration": 0.018337789714,
+        "final_spectral_energy_spread": 0.129839433047
+      },
+      "mid_spectrum_localized_superposition@48": {
+        "base_width_growth": 0.160046241891,
+        "base_concentration_ratio": 0.747197006867,
+        "base_participation_growth": 0.341958452722,
+        "final_localization_width": 0.063802543304,
+        "final_spatial_concentration": 0.034125372218,
+        "final_spectral_energy_spread": 0.388886361281
+      },
+      "random_localized_seed@48": {
+        "base_width_growth": 0.196822243172,
+        "base_concentration_ratio": 0.624934661773,
+        "base_participation_growth": 0.937267215997,
+        "final_localization_width": 0.058577196994,
+        "final_spatial_concentration": 0.0879622692,
+        "final_spectral_energy_spread": 0.533166149861
+      },
+      "low_mode_localized_wavepacket@60": {
+        "base_width_growth": 0.056241238,
+        "base_concentration_ratio": 0.896980800471,
+        "base_participation_growth": 0.115247512874,
+        "final_localization_width": 0.08449929904,
+        "final_spatial_concentration": 0.012392268078,
+        "final_spectral_energy_spread": 0.089654776522
+      },
+      "mid_spectrum_localized_superposition@60": {
+        "base_width_growth": 0.108172195455,
+        "base_concentration_ratio": 0.816436423967,
+        "base_participation_growth": 0.226420806211,
+        "final_localization_width": 0.06094947075,
+        "final_spatial_concentration": 0.023864075775,
+        "final_spectral_energy_spread": 0.289037611514
+      },
+      "random_localized_seed@60": {
+        "base_width_growth": 0.152809596209,
+        "base_concentration_ratio": 0.678534837808,
+        "base_participation_growth": 0.599724914212,
+        "final_localization_width": 0.054121017798,
+        "final_spatial_concentration": 0.067181700691,
+        "final_spectral_energy_spread": 0.424100087845
+      }
+    }
+  },
+  "persistence_results": {
+    "branch_persistent_scan_candidates": [
+      "low_mode_localized_wavepacket"
+    ],
+    "branch_refinement_stable_candidates": [
+      "low_mode_localized_wavepacket"
+    ],
+    "control_persistent_scan_candidate_count": 0
+  },
+  "success_flags": {
+    "localized_candidate_exists": true,
+    "refinement_consistency_holds": true,
+    "scaling_descriptors_coherent": true,
+    "control_persistence_degraded": true
+  },
+  "artifacts": {
+    "proto_particle_candidates_json": "phaseX-proto-particle/runs/proto_particle_candidates.json",
+    "localization_metrics_ledger_csv": "phaseX-proto-particle/runs/localization_metrics_ledger.csv",
+    "persistence_classification_csv": "phaseX-proto-particle/runs/persistence_classification.csv",
+    "scaling_prediction_errors_csv": "phaseX-proto-particle/runs/scaling_prediction_errors.csv",
+    "summary_md": "phaseX-proto-particle/phaseX_integrated_summary.md",
+    "manifest_json": "phaseX-proto-particle/phaseX_integrated_manifest.json",
+    "width_plot": "phaseX-proto-particle/plots/phaseX_localization_width_vs_time.svg",
+    "overlap_plot": "phaseX-proto-particle/plots/phaseX_excitation_overlap_vs_perturbation.svg",
+    "refinement_plot": "phaseX-proto-particle/plots/phaseX_refinement_scaling_of_candidate_modes.svg",
+    "runs_json": "phaseX-proto-particle/runs/phaseX_runs.json",
+    "builder_script": "phaseX-proto-particle/build_integrated_proto_particle_feasibility.py"
+  },
+  "runtime_seconds": 0.407392,
+  "claim_boundary": "This integrated phase is limited to proto-particle feasibility diagnostics on the frozen operator and spectral-trace contracts. It does not assert particles, continuum limits, geometric structure, or physical correspondence.",
+  "conclusion": "Integrated run establishes proto-particle feasibility for the frozen operator hierarchy."
+}

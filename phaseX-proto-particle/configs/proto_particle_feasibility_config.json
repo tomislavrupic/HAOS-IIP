@@ -1,0 +1,34 @@
+{
+  "phase_name": "phaseX-proto-particle",
+  "deterministic_seed_record": {
+    "randomness_used": false,
+    "note": "All spectra, states, perturbations, and thresholds are deterministic."
+  },
+  "refinement_extension_multiplier": 5,
+  "scan_levels": [48, 60],
+  "tau_grid": [0.0, 0.1, 0.2, 0.4, 0.8],
+  "candidate_selection": {
+    "scan_level_n_side": 60,
+    "max_width_growth": 0.1,
+    "min_concentration_ratio": 0.85,
+    "max_participation_growth": 0.2
+  },
+  "persistence_thresholds": {
+    "persistent_max_width_growth": 0.06,
+    "persistent_min_concentration_ratio": 0.9,
+    "persistent_min_overlap": 0.92,
+    "persistent_min_recovery_score": 0.8,
+    "diffusive_max_width_growth": 0.12,
+    "diffusive_min_concentration_ratio": 0.75,
+    "diffusive_min_overlap": 0.8,
+    "diffusive_min_recovery_score": 0.55
+  },
+  "control_graph": {
+    "label": "periodic_diagonal_augmented_control",
+    "diagonal_weight_scale": 0.35
+  },
+  "spectral_truncation_shift": {
+    "label": "lambda_le_0_5_shift",
+    "cutoff": 0.5
+  }
+}

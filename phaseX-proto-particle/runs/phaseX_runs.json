@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-03-21T17:51:32Z",
+  "phase_name": "phaseX-proto-particle",
+  "builder_script": "phaseX-proto-particle/build_integrated_proto_particle_feasibility.py",
+  "config_reference": "phaseX-proto-particle/configs/proto_particle_feasibility_config.json",
+  "references": {
+    "phase6_manifest": "phase6-operator/phase6_operator_manifest.json",
+    "phase8_manifest": "phase8-trace/phase8_trace_manifest.json",
+    "phase9_manifest": "phase9-invariants/phase9_manifest.json"
+  },
+  "scan_levels": [
+    48,
+    60
+  ],
+  "repeat_levels": [
+    48,
+    60
+  ],
+  "tau_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.4,
+    0.8
+  ],
+  "selected_branch_candidates": [
+    "low_mode_localized_wavepacket",
+    "mid_spectrum_localized_superposition"
+  ],
+  "runtime_seconds": 0.407392
+}
