@@ -112,6 +112,10 @@ The intended public reading order is:
 
 1. `35.1` Localized-Mode Protection and Failure-Mechanism Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
+### 2.18 Part XVIII. Two-mode interaction and identity preservation
+
+1. `36.1` Two-Mode Interaction and Identity-Preservation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -154,6 +158,7 @@ The intended public reading order is:
 - `33.1` Cautious Continuum-Bridge Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `34.1` Integrated Proto-Particle Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `35.1` Localized-Mode Protection and Failure-Mechanism Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+- `36.1` Two-Mode Interaction and Identity-Preservation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

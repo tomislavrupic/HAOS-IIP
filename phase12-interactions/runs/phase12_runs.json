@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-03-21T20:18:40Z",
+  "phase_name": "phase12-interactions",
+  "stage_identifier": "phase12-interactions",
+  "config_reference": "phase12-interactions/configs/phase12_interaction_config.json",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phasex_manifest_reference": "phaseX-proto-particle/phaseX_integrated_manifest.json",
+  "phase11_manifest_reference": "phase11-protection/phase11_manifest.json",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_levels": [
+    48,
+    60,
+    72,
+    84
+  ],
+  "separation_lattice_units": [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24
+  ],
+  "placement_schedules": [
+    {
+      "label": "axis_x_symmetric",
+      "direction": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "label": "diagonal_symmetric",
+      "direction": [
+        0.707106781187,
+        0.707106781187
+      ]
+    }
+  ],
+  "evaluation_tau": 0.8,
+  "persistence_tau_grid": [
+    0.0,
+    0.4,
+    0.8,
+    1.2,
+    1.6,
+    2.0,
+    2.4,
+    3.0,
+    3.6,
+    4.2
+  ],
+  "phase8_short_time_window": [
+    0.02,
+    0.03,
+    0.05,
+    0.075,
+    0.1
+  ],
+  "phase8_spectral_truncation_methods": [
+    {
+      "label": "full_exact",
+      "cutoff": null
+    },
+    {
+      "label": "lambda_le_7_5",
+      "cutoff": 7.5
+    },
+    {
+      "label": "lambda_le_7_8",
+      "cutoff": 7.8
+    }
+  ],
+  "deterministic_seed_record": {
+    "randomness_used": false,
+    "note": "All placements, separations, and probe schedules are deterministic."
+  },
+  "runtime_seconds": 0.848442
+}

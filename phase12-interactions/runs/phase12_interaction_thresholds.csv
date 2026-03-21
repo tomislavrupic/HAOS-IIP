@@ -1,0 +1,17 @@
+hierarchy_label,schedule_label,n_side,h,interaction_onset_lattice_units,interaction_onset_physical,identity_loss_threshold_lattice_units,identity_loss_threshold_physical,survival_min_separation_lattice_units,survival_min_separation_physical,non_survival_max_separation_lattice_units,non_survival_max_separation_physical,baseline_far_separation_lattice_units,baseline_far_min_identity,baseline_far_persistence_tau,survival_band_size
+frozen_branch,axis_x_symmetric,48,0.020833333333,8,0.166666666667,,,12,0.25,8,0.166666666667,24,0.998827415436,4.2,4
+frozen_branch,axis_x_symmetric,60,0.016666666667,12,0.2,,,16,0.266666666667,12,0.2,24,0.999449586012,4.2,3
+frozen_branch,axis_x_symmetric,72,0.013888888889,12,0.166666666667,,,16,0.222222222222,12,0.166666666667,24,0.999065039578,4.2,3
+frozen_branch,axis_x_symmetric,84,0.011904761905,16,0.190476190476,,,20,0.238095238095,16,0.190476190476,24,0.996067544241,4.2,2
+frozen_branch,diagonal_symmetric,48,0.020833333333,8,0.166666666667,,,12,0.25,8,0.166666666667,24,0.998827410143,4.2,4
+frozen_branch,diagonal_symmetric,60,0.016666666667,8,0.133333333333,,,12,0.2,8,0.133333333333,24,0.99946651565,4.2,4
+frozen_branch,diagonal_symmetric,72,0.013888888889,12,0.166666666667,,,16,0.222222222222,12,0.166666666667,24,0.99915958644,4.2,3
+frozen_branch,diagonal_symmetric,84,0.011904761905,12,0.142857142857,,,16,0.190476190476,12,0.142857142857,24,0.996189505861,4.2,3
+periodic_diagonal_augmented_control,axis_x_symmetric,48,0.020833333333,8,0.166666666667,,,12,0.25,8,0.166666666667,24,0.997001318189,4.2,4
+periodic_diagonal_augmented_control,axis_x_symmetric,60,0.016666666667,12,0.2,,,16,0.266666666667,12,0.2,24,0.998584392387,4.2,3
+periodic_diagonal_augmented_control,axis_x_symmetric,72,0.013888888889,12,0.166666666667,,,16,0.222222222222,12,0.166666666667,24,0.998522218462,4.2,3
+periodic_diagonal_augmented_control,axis_x_symmetric,84,0.011904761905,16,0.190476190476,,,20,0.238095238095,16,0.190476190476,24,0.99549424924,4.2,2
+periodic_diagonal_augmented_control,diagonal_symmetric,48,0.020833333333,8,0.166666666667,,,12,0.25,8,0.166666666667,24,0.997001650293,4.2,4
+periodic_diagonal_augmented_control,diagonal_symmetric,60,0.016666666667,8,0.133333333333,,,12,0.2,8,0.133333333333,24,0.998619084187,4.2,4
+periodic_diagonal_augmented_control,diagonal_symmetric,72,0.013888888889,12,0.166666666667,,,16,0.222222222222,12,0.166666666667,24,0.99868718388,4.2,3
+periodic_diagonal_augmented_control,diagonal_symmetric,84,0.011904761905,12,0.142857142857,,,16,0.190476190476,12,0.142857142857,24,0.995721402538,4.2,3

@@ -1,0 +1,195 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Two-Mode Interaction and Identity-Preservation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase XII of the frozen HAOS-IIP program asks whether two copies of the already frozen persistent localized branch candidate
+\texttt{low\_mode\_localized\_wavepacket} preserve identity and exhibit structured interaction outcomes under deterministic placement sweeps. The phase is not allowed to modify the Phase V readout layer, the Phase VI branch-local operator hierarchy $\Delta_h$, the Phase VII spectral-feasibility manifest, the Phase VIII short-time trace contract, the Phase IX coefficient-stabilization diagnostics, the Phase X cautious bridge bundle, the Phase X proto-particle candidate definition, or the Phase XI survival-basin characterization. It therefore tests interaction structure only through deterministic two-mode placement on the frozen branch and on a matched altered-connectivity control. Across refinement levels $n_{\mathrm{side}}\in\{48,60,72,84\}$, separation distances $\{4,8,12,16,20,24\}$ in lattice units, and two deterministic placement schedules, the branch produces reproducible interaction classes with non-trivial separation structure. The branch yields $16$ merger-class outcomes and $6$ decoherence outcomes, while the control yields only $7$ merger-class outcomes and $15$ decoherence outcomes on the same scan. Mean branch/control regime-map distance is $0.1875$, branch successive-refinement map distance averages $0.1944$, and branch schedule distance averages $0.0833$. The branch retains higher evaluation-time norm than the control by $0.024632172441$ on average, while the control exhibits a larger low-mode occupancy inflation by $0.040266723284$. The interaction-onset physical threshold band remains bounded with relative span $0.4000$, and the branch maintains survival over up to four scanned separations. The result is bounded: Phase XII establishes two-mode interaction and identity-preservation feasibility for the frozen operator hierarchy. It does not assert particles, forces, fields, or physical scattering laws.
+\end{abstract}
+
+\section{Scope and Frozen Contracts}
+
+Phase XII is an interaction-structure diagnostic only. It does not introduce a new operator, a new normalization, or a new interpretive layer. It consumes the following frozen authority contracts without change:
+\begin{itemize}
+\item the Phase V recovery-statistics readout layer;
+\item the Phase VI branch-local periodic DK2D block cochain Laplacian hierarchy $\Delta_h$;
+\item the Phase VII spectral-feasibility outputs;
+\item the Phase VIII short-time trace window and probe grid;
+\item the Phase IX coefficient stabilization diagnostics;
+\item the Phase X cautious continuum-bridge feasibility bundle;
+\item the Phase X proto-particle candidate definition;
+\item the Phase XI localized-mode protection and failure-channel characterization.
+\end{itemize}
+
+The concrete artifact references used here are:
+\begin{itemize}
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase7-spectral/phase7_spectral_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json};
+\item \url{phase9-invariants/phase9_manifest.json};
+\item \url{phase10-bridge/phase10_manifest.json};
+\item \url{phaseX-proto-particle/phaseX_integrated_manifest.json};
+\item \url{phase11-protection/phase11_manifest.json};
+\item \url{phase12-interactions/phase12_manifest.json}.
+\end{itemize}
+
+Nothing in this phase modifies earlier manifests or \texttt{haos\_core}. All logic is isolated inside \texttt{phase12-interactions/}.
+
+\section{Two-Mode Interaction Program}
+
+The frozen candidate remains
+\[
+\texttt{low\_mode\_localized\_wavepacket},
+\]
+already validated as persistent and refinement-stable in earlier phases. Phase XII builds two-candidate initial states on the refinement-ordered hierarchy
+\[
+h = \frac{1}{n_{\mathrm{side}}},
+\qquad
+n_{\mathrm{side}} \in \{48,60,72,84\},
+\]
+with separation distances
+\[
+d \in \{4,8,12,16,20,24\}
+\]
+expressed in lattice units.
+
+Two deterministic placement schedules are scanned:
+\begin{enumerate}
+\item \texttt{axis\_x\_symmetric};
+\item \texttt{diagonal\_symmetric}.
+\end{enumerate}
+
+The phase uses the same fixed evaluation time inherited from Phase XI,
+\[
+\tau = 0.8,
+\]
+and the same deterministic persistence-time grid
+\[
+\tau \in \{0.0,0.4,0.8,1.2,1.6,2.0,2.4,3.0,3.6,4.2\}.
+\]
+The operational short-time trace contract from Phase VIII,
+\[
+t \in \{0.02,0.03,0.05,0.075,0.1\},
+\]
+is reused unchanged as part of the frozen spectral-trace contract.
+
+\section{Identity and Outcome Diagnostics}
+
+For each two-mode configuration, Phase XII records:
+\begin{itemize}
+\item left and right local identity overlap with the corresponding single-candidate reference profile;
+\item center overlap with a midpoint-centered reference;
+\item local-mass retention around each candidate center;
+\item persistence time on the frozen $\tau$ grid;
+\item norm retention and low-mode occupancy ratio at the evaluation time;
+\item an outcome class: \texttt{survival}, \texttt{merger}, \texttt{decoherence}, or \texttt{annihilation\_like\_decay}.
+\end{itemize}
+
+The classifier is deliberately restrained. Survival requires identity and local-mass retention through the frozen evaluation window. Merger is reserved for configurations with strong midpoint concentration, compact pair width, sufficient norm retention, and controlled low-mode inflation. Remaining non-annihilating breakdown is labeled decoherence.
+
+\section{Outcome Structure and Branch/Control Separation}
+
+The branch and deterministic control do not produce the same mixture of interaction classes. Over the full scan:
+\begin{itemize}
+\item branch survival outcomes: $26$ of $48$;
+\item control survival outcomes: $26$ of $48$;
+\item branch merger outcomes: $16$;
+\item control merger outcomes: $7$;
+\item branch decoherence outcomes: $6$;
+\item control decoherence outcomes: $15$.
+\end{itemize}
+
+The important separation is therefore not raw survival count alone, but where the non-survival band lands. The branch converts a larger part of the close-separation scan into merger-class outcomes, while the control converts a larger part into decoherence.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}ccccccc@{}}
+\toprule
+hierarchy & $n_{\mathrm{side}}$ & 4 & 8 & 12 & 16 & 20 / 24 \\
+\midrule
+branch & 60 & decoherence & merger & merger & survival & survival \\
+control & 60 & decoherence & decoherence & decoherence & survival & survival \\
+\bottomrule
+\end{tabular}
+\caption{Representative axis-symmetric outcome map at $n_{\mathrm{side}}=60$.}
+\label{tab:outcome_map}
+\end{table}
+
+Table~\ref{tab:outcome_map} shows the cleanest qualitative split: the branch supports an intermediate merger band at separations $8$ and $12$, while the control pushes the same region into decoherence.
+
+\section{Refinement Stability and Threshold Scaling}
+
+Phase XII measures whether the interaction maps remain coherent across refinement and schedule. The main map-stability numbers are:
+\begin{itemize}
+\item mean branch successive-refinement regime-map distance: $0.194444444444$;
+\item mean branch schedule distance: $0.083333333333$;
+\item mean branch/control regime-map distance: $0.1875$.
+\end{itemize}
+
+These values stay inside the bounded consistency band adopted for the phase. New regime classes do not appear chaotically across refinement. Instead, the same small set of classes persists, with moderate boundary movement in the close-separation region.
+
+The interaction-onset threshold also remains bounded when expressed in physical separation $d/n_{\mathrm{side}}$. For both branch and control, the onset values lie in:
+\[
+\left\{
+\frac{8}{48},\frac{12}{60},\frac{12}{72},\frac{16}{84},
+\frac{8}{48},\frac{8}{60},\frac{12}{72},\frac{12}{84}
+\right\},
+\]
+which yields a relative span of approximately $0.4000$ over the full schedule set. This is not a continuum law; it is a bounded refinement-ordered threshold band.
+
+The branch survival band is non-trivial. Its survival-band sizes across the scanned schedule/level combinations are
+\[
+[4,3,3,2,4,4,3,3],
+\]
+while the control mean survival-band size is $3.25$ separations. The branch therefore retains a compact but meaningful identity-preserving band while also supporting a stronger structured merger region than the control.
+
+\section{Evaluation-Time Spectral/Norm Signatures}
+
+The most stable quantitative branch/control differences at the evaluation time are:
+\begin{itemize}
+\item mean branch minus control norm retention:
+\[
+0.024632172441;
+\]
+\item mean control minus branch low-mode occupancy ratio:
+\[
+0.040266723284.
+\]
+\end{itemize}
+
+These numbers provide the cleanest branch-specific interaction signature in this phase. The branch preserves more norm under the same interaction scan, while the control shifts more strongly into inflated low-mode occupancy. This is not a particle or field statement. It is a bounded branch/control discrimination result on a frozen hierarchy.
+
+\section{Bounded Interpretation}
+
+The Phase XII result is narrow by design. It supports the following claim only: within the already frozen operator, spectral, and localized-mode contracts, two copies of the persistent branch candidate exhibit reproducible interaction classes, retain identity over a non-trivial separation band, and remain distinguishable from a deterministic altered-connectivity control by the mixture of merger versus decoherence outcomes and by evaluation-time norm and low-mode signatures.
+
+This is not a particle claim. It is not a force-law claim. It is not a scattering claim. It is not a field-theory claim. It is not a continuum statement. It is only a two-mode interaction and identity-preservation feasibility result on a frozen branch-local hierarchy.
+
+\section{Conclusion}
+
+Phase XII freezes a deterministic two-mode placement protocol over the already validated localized branch candidate and shows that the resulting interaction maps are reproducible, refinement-ordered, and branch-specific. The frozen artifact bundle is:
+\begin{itemize}
+\item \url{phase12-interactions/phase12_manifest.json};
+\item \url{phase12-interactions/phase12_summary.md};
+\item \url{phase12-interactions/runs/phase12_interaction_outcome_ledger.csv};
+\item \url{phase12-interactions/runs/phase12_identity_metrics_ledger.csv};
+\item \url{phase12-interactions/runs/phase12_interaction_thresholds.csv};
+\item \url{phase12-interactions/runs/phase12_runs.json}.
+\end{itemize}
+
+Phase XII establishes two-mode interaction and identity-preservation feasibility for the frozen operator hierarchy.
+
+\end{document}

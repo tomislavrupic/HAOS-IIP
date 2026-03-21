@@ -1,0 +1,19 @@
+phase: 12
+name: phase12-interactions
+purpose: two-mode interaction and identity-preservation feasibility
+inputs:
+  - phase11-protection/phase11_manifest.json
+  - phaseX-proto-particle/phaseX_integrated_manifest.json
+  - phase6-operator/phase6_operator_manifest.json
+  - phase8-trace/phase8_trace_manifest.json
+outputs:
+  - phase12-interactions/runs/phase12_interaction_outcome_ledger.csv
+  - phase12-interactions/runs/phase12_identity_metrics_ledger.csv
+  - phase12-interactions/runs/phase12_interaction_thresholds.csv
+  - phase12-interactions/phase12_manifest.json
+  - phase12-interactions/phase12_summary.md
+constraints:
+  - frozen candidate definition only
+  - frozen operator hierarchy only
+  - deterministic placement schedules only
+  - no physical interpretation

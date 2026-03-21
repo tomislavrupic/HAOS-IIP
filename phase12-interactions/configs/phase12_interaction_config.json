@@ -1,0 +1,51 @@
+{
+  "phase_name": "phase12-interactions",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_levels": [48, 60, 72, 84],
+  "separation_lattice_units": [4, 8, 12, 16, 20, 24],
+  "placement_schedules": [
+    {
+      "label": "axis_x_symmetric",
+      "direction": [1.0, 0.0]
+    },
+    {
+      "label": "diagonal_symmetric",
+      "direction": [0.707106781187, 0.707106781187]
+    }
+  ],
+  "evaluation_tau": 0.8,
+  "persistence_tau_grid": [0.0, 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 3.0, 3.6, 4.2],
+  "windows": {
+    "identity_sigma": 0.1,
+    "local_mass_sigma": 0.11
+  },
+  "persistence_thresholds": {
+    "min_identity": 0.88,
+    "min_local_mass_ratio": 0.78
+  },
+  "outcome_thresholds": {
+    "survival_min_identity": 0.88,
+    "survival_min_local_mass_ratio": 0.78,
+    "merger_min_center_identity": 0.82,
+    "merger_max_pair_width": 0.115,
+    "merger_min_norm_retention": 0.94,
+    "merger_max_low_mode_ratio": 1.055,
+    "annihilation_like_max_norm_retention": 0.72
+  },
+  "interaction_thresholds": {
+    "non_negligible_identity_drop": 0.08,
+    "non_negligible_persistence_drop": 0.2,
+    "identity_loss_floor": 0.8
+  },
+  "control_graph": {
+    "label": "periodic_diagonal_augmented_control",
+    "diagonal_weight_scale": 0.35
+  },
+  "spectral_identity_proxy": {
+    "low_mode_band_multiplier": 2.1
+  },
+  "deterministic_seed_record": {
+    "randomness_used": false,
+    "note": "All placements, separations, and probe schedules are deterministic."
+  }
+}

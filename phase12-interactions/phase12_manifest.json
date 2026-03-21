@@ -1,0 +1,206 @@
+{
+  "timestamp": "2026-03-21T20:18:40Z",
+  "phase": 12,
+  "phase_name": "phase12-interactions",
+  "stage_identifier": "phase12-interactions",
+  "status": "passed",
+  "success": true,
+  "objective": "two_mode_interaction_and_identity_preservation_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase7_manifest_reference": "phase7-spectral/phase7_spectral_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase9_manifest_reference": "phase9-invariants/phase9_manifest.json",
+  "phase10_manifest_reference": "phase10-bridge/phase10_manifest.json",
+  "phasex_manifest_reference": "phaseX-proto-particle/phaseX_integrated_manifest.json",
+  "phase11_manifest_reference": "phase11-protection/phase11_manifest.json",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the refinement-order parameter inherited from the frozen operator hierarchy.",
+    "levels": [
+      48,
+      60,
+      72,
+      84
+    ]
+  },
+  "evaluation_protocol": {
+    "evaluation_tau": 0.8,
+    "persistence_tau_grid": [
+      0.0,
+      0.4,
+      0.8,
+      1.2,
+      1.6,
+      2.0,
+      2.4,
+      3.0,
+      3.6,
+      4.2
+    ],
+    "placement_schedules": [
+      {
+        "label": "axis_x_symmetric",
+        "direction": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "label": "diagonal_symmetric",
+        "direction": [
+          0.707106781187,
+          0.707106781187
+        ]
+      }
+    ],
+    "separation_lattice_units": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "phase8_short_time_window": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ],
+    "phase8_spectral_truncation_methods": [
+      {
+        "label": "full_exact",
+        "cutoff": null
+      },
+      {
+        "label": "lambda_le_7_5",
+        "cutoff": 7.5
+      },
+      {
+        "label": "lambda_le_7_8",
+        "cutoff": 7.8
+      }
+    ]
+  },
+  "map_stability": {
+    "branch_successive_refinement_distances": [
+      0.333333333333,
+      0.166666666667,
+      0.166666666667,
+      0.166666666667,
+      0.333333333333,
+      0.0
+    ],
+    "control_successive_refinement_distances": [
+      0.166666666667,
+      0.0,
+      0.5,
+      0.0,
+      0.333333333333,
+      0.0
+    ],
+    "branch_schedule_distances": [
+      0.0,
+      0.166666666667,
+      0.0,
+      0.166666666667
+    ],
+    "control_schedule_distances": [
+      0.0,
+      0.166666666667,
+      0.333333333333,
+      0.166666666667
+    ],
+    "branch_control_map_distances": [
+      0.0,
+      0.333333333333,
+      0.5,
+      0.166666666667,
+      0.0,
+      0.166666666667,
+      0.166666666667,
+      0.166666666667
+    ]
+  },
+  "threshold_scaling": {
+    "branch_onset_physical_values": [
+      0.166666666667,
+      0.2,
+      0.166666666667,
+      0.190476190476,
+      0.166666666667,
+      0.133333333333,
+      0.166666666667,
+      0.142857142857
+    ],
+    "control_onset_physical_values": [
+      0.166666666667,
+      0.2,
+      0.166666666667,
+      0.190476190476,
+      0.166666666667,
+      0.133333333333,
+      0.166666666667,
+      0.142857142857
+    ],
+    "branch_onset_relative_span": 0.400000000002,
+    "control_onset_relative_span": 0.400000000002,
+    "branch_survival_band_sizes": [
+      4,
+      3,
+      3,
+      2,
+      4,
+      4,
+      3,
+      3
+    ],
+    "control_survival_band_sizes": [
+      4,
+      3,
+      3,
+      2,
+      4,
+      4,
+      3,
+      3
+    ]
+  },
+  "survival_counts": {
+    "branch": 26,
+    "control": 26
+  },
+  "outcome_counts": {
+    "branch_merger": 16,
+    "control_merger": 7,
+    "branch_decoherence": 6,
+    "control_decoherence": 15
+  },
+  "mean_evaluation_differences": {
+    "branch_minus_control_norm_retention": 0.024632172441,
+    "control_minus_branch_low_mode_ratio": 0.040266723284
+  },
+  "success_flags": {
+    "reproducible_regime_classes": true,
+    "nontrivial_identity_band": true,
+    "interaction_thresholds_structured": true,
+    "control_hierarchy_different": true
+  },
+  "artifacts": {
+    "interaction_outcome_ledger_csv": "phase12-interactions/runs/phase12_interaction_outcome_ledger.csv",
+    "identity_metrics_ledger_csv": "phase12-interactions/runs/phase12_identity_metrics_ledger.csv",
+    "interaction_thresholds_csv": "phase12-interactions/runs/phase12_interaction_thresholds.csv",
+    "summary_md": "phase12-interactions/phase12_summary.md",
+    "manifest_json": "phase12-interactions/phase12_manifest.json",
+    "persistence_plot": "phase12-interactions/plots/phase12_persistence_time_vs_separation.svg",
+    "identity_plot": "phase12-interactions/plots/phase12_identity_metric_vs_time.svg",
+    "regime_map_plot": "phase12-interactions/plots/phase12_interaction_regime_map.svg",
+    "threshold_plot": "phase12-interactions/plots/phase12_threshold_scaling_vs_refinement.svg",
+    "runs_json": "phase12-interactions/runs/phase12_runs.json",
+    "builder_script": "phase12-interactions/build_two_mode_interaction.py"
+  },
+  "runtime_seconds": 0.848442,
+  "claim_boundary": "Phase XII is limited to two-mode interaction and identity-preservation diagnostics on the frozen operator hierarchy and frozen localized candidate. It does not assert particles, forces, fields, scattering laws, or physical correspondence.",
+  "conclusion": "Phase XII establishes two-mode interaction and identity-preservation feasibility for the frozen operator hierarchy."
+}
