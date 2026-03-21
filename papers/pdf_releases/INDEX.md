@@ -185,6 +185,7 @@ The intended public reading order is:
 - `40.1` Emergent Temporal-Ordering Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `41.1` Causal-Closure Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `42.1` Proto-Geometric Distance-Surrogate Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+- `43.1` Ordering, Causal Closure, and Proto-Geometric Distance-Surrogate Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

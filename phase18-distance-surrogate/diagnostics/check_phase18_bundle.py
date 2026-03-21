@@ -16,6 +16,7 @@ EXPECTED_FILES = [
     RUNS_DIR / "phase18_shell_ordering_metrics.csv",
     RUNS_DIR / "phase18_refinement_scaling.csv",
     RUNS_DIR / "phase18_triangle_violation_rate.csv",
+    RUNS_DIR / "phase18_runs.json",
 ]
 
 MAX_SHELL_OVERLAP_THRESHOLD = 0.40

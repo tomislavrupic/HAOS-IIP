@@ -39,6 +39,7 @@ OUTPUT_FILES = {
     "shell_ordering": RUNS_DIR / "phase18_shell_ordering_metrics.csv",
     "refinement_scaling": RUNS_DIR / "phase18_refinement_scaling.csv",
     "triangle_violation": RUNS_DIR / "phase18_triangle_violation_rate.csv",
+    "runs": RUNS_DIR / "phase18_runs.json",
     "manifest": PHASE_DIR / "phase18_manifest.json",
     "summary": PHASE_DIR / "phase18_summary.md",
 }
@@ -547,6 +548,26 @@ def main() -> None:
             else "Phase XVIII does not yet establish proto-geometric distance-surrogate feasibility for the frozen operator hierarchy."
         ),
     }
+    runs_payload = {
+        "phase": 18,
+        "timestamp": manifest["timestamp"],
+        "mode": "artifact_reuse",
+        "disturbance_family": PROBE_NAME,
+        "refinements": [int(value) for value in TARGET_REFINEMENTS],
+        "selected_seed_pair": selected_seeds,
+        "ensemble_size": int(TARGET_ENSEMBLE_SIZE),
+        "threshold_policy": manifest["threshold_policy"],
+        "input_files": manifest["input_files"],
+        "output_files": {
+            "distance_surrogate_ledger": str(OUTPUT_FILES["distance_surrogate"]),
+            "shell_ordering_metrics": str(OUTPUT_FILES["shell_ordering"]),
+            "refinement_scaling": str(OUTPUT_FILES["refinement_scaling"]),
+            "triangle_violation_rate": str(OUTPUT_FILES["triangle_violation"]),
+            "manifest": str(OUTPUT_FILES["manifest"]),
+            "summary": str(OUTPUT_FILES["summary"]),
+        },
+    }
+    OUTPUT_FILES["runs"].write_text(json.dumps(runs_payload, indent=2) + "\n")
     OUTPUT_FILES["manifest"].write_text(json.dumps(manifest, indent=2) + "\n")
 
     summary_lines = [

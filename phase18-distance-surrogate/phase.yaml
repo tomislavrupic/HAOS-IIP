@@ -15,6 +15,7 @@ outputs:
   - phase18_shell_ordering_metrics.csv
   - phase18_refinement_scaling.csv
   - phase18_triangle_violation_rate.csv
+  - phase18_runs.json
   - phase18_manifest.json
   - phase18_summary.md
 constraints:
