@@ -1,0 +1,13 @@
+phase: 7
+phase_name: phase7-spectral
+primary_track: spectral_feasibility
+inputs:
+  - phase6-operator/phase6_operator_manifest.json
+  - phase5-readout/phase5_authoritative_manifest.json
+outputs:
+  - runs/phase7_spectral_scaling_ledger.csv
+  - phase7_spectral_summary.md
+  - phase7_spectral_manifest.json
+  - plots/phase7_eigenvalue_vs_h.svg
+  - plots/phase7_spectral_radius_vs_h.svg
+  - plots/phase7_trace_proxy_vs_h.svg

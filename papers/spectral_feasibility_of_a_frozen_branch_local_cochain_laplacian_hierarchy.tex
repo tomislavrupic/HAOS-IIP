@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Spectral Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase VII of the frozen HAOS-IIP program tests one narrow question: whether the already frozen branch-local operator hierarchy supports a stable descriptive spectral regime across refinement. The phase does not modify the operator family, the refinement hierarchy, or the Phase V readout observable. Track A, the spectral-feasibility program, is selected as the authoritative outcome because the frozen operator diagnostics are already clean, while observable-coupling work is better treated as a later secondary study. The tested family is the periodic DK2D block cochain Laplacian $\Delta_h$ on the deterministic hierarchy $h = 1/n_{\mathrm{side}}$ with $n_{\mathrm{side}} \in \{12,24,36,48\}$. Across these levels, the first three distinct positive low-mode bands show stable power-law fits with exponents $1.972182$, $1.972182$, and $1.924244$, all with $R^2 \ge 0.999835$. The sampled spectral radius is monotone, the nullspace estimate remains fixed at $4$, a normalized low-mode density surrogate stays tightly collapsed with maximum pairwise distance $0.041667$, and a truncated short-time trace proxy is monotone for $t \in \{0.25,0.5,1.0\}$. The result is bounded: Phase VII establishes spectral feasibility for the frozen operator hierarchy. It does not establish continuum operators, geometric invariants, universal coefficients, or physical correspondence.
+\end{abstract}
+
+\section{Scope and Authority}
+
+This paper freezes the authority state of Phase VII in the current HAOS-IIP repository. Phase VII is constrained by two earlier freezes. Phase V defines the frozen recovery-statistics observable, and Phase VI defines the frozen branch-local operator family. Phase VII is not allowed to alter either of them. Its purpose is only to determine whether the operator hierarchy supports a stable descriptive spectral program.
+
+The phase offers two possible tracks: a spectral-feasibility track and an observable-coupling track. The authoritative outcome in this paper is Track A, the spectral-feasibility program. Track B is not executed as an authority path in this bundle. The reason is simple: the frozen operator diagnostics already show stable nullspace behavior, monotone envelope behavior, and robust low-mode ordering, while Phase V contains a bounded robustness edge-case classifier flip that makes coupling the less clean primary statement.
+
+\section{Frozen Inputs}
+
+The Phase VII authority bundle references the following frozen artifacts:
+\begin{itemize}
+\item operator manifest: \url{phase6-operator/phase6_operator_manifest.json};
+\item Phase V authority manifest: \url{phase5-readout/phase5_authoritative_manifest.json};
+\item Phase VII summary: \url{phase7-spectral/phase7_spectral_summary.md};
+\item Phase VII manifest: \url{phase7-spectral/phase7_spectral_manifest.json}.
+\end{itemize}
+
+The tested operator family is fixed:
+\[
+O_h = \Delta_h,
+\]
+where $\Delta_h$ is the branch-local periodic DK2D block cochain Laplacian already frozen in Phase VI. The refinement hierarchy is also fixed:
+\[
+h = \frac{1}{n_{\mathrm{side}}}, \qquad n_{\mathrm{side}} \in \{12,24,36,48\}.
+\]
+No renormalization, topology change, or hierarchy change is introduced in Phase VII.
+
+\section{Phase VII Probe Set}
+
+The Track A probe set consists of five deterministic checks:
+\begin{enumerate}
+\item low-mode scaling of the first distinct positive eigenvalue bands across refinement;
+\item spectral-envelope tracking through the sampled spectral radius;
+\item kernel-structure stability through the nullspace estimate;
+\item normalized density-proxy collapse using an empirical CDF of the first 24 sampled positive modes after normalization by the first positive band;
+\item a short-time trace proxy defined by the truncated low-mode sum
+\[
+\sum_i e^{-t\lambda_i}
+\]
+for the deterministic set $t \in \{0.25, 0.5, 1.0\}$.
+\end{enumerate}
+
+All seeds are fixed and recorded in the manifest. The sampled lowest-mode solver uses seed rule $7000 + n_{\mathrm{side}}$, and the highest-mode solver uses seed rule $9000 + n_{\mathrm{side}}$.
+
+\section{Per-Level Diagnostic Ledger}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrrrrrr@{}}
+\toprule
+Level & $n_{\mathrm{side}}$ & $h$ & band 1 & band 2 & band 3 & radius & nullspace \\
+\midrule
+R1 & 12 & 0.083333 & 0.263337 & 0.526675 & 0.982789 & 7.862310 & 4 \\
+R2 & 24 & 0.041667 & 0.067853 & 0.135706 & 0.266789 & 7.965353 & 4 \\
+R3 & 36 & 0.027778 & 0.030326 & 0.060652 & 0.120382 & 7.984583 & 4 \\
+R4 & 48 & 0.020833 & 0.017092 & 0.034183 & 0.068074 & 7.991324 & 4 \\
+\bottomrule
+\end{tabular}
+\caption{Per-level spectral-feasibility ledger on the frozen hierarchy.}
+\label{tab:levels}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Trace proxy & R1 & R2 & R3 \\
+\midrule
+$t = 0.25$ & 36.135313 & 38.939069 & 39.468497 \\
+$t = 0.50$ & 32.768913 & 37.917121 & 38.947173 \\
+$t = 1.00$ & 27.241831 & 35.983284 & 37.934121 \\
+\bottomrule
+\end{tabular}
+\caption{Trace proxy values on the first three refinement levels. The R4 values continue the same monotone trend: $39.728129$, $39.458847$, and $38.927927$.}
+\label{tab:trace}
+\end{table}
+
+The structural picture is clean. The first three sampled positive bands decrease monotonically under refinement, the sampled spectral radius increases mildly and monotonically, and the nullspace estimate remains fixed at $4$ at every level.
+
+\section{Low-Mode Scaling Stability}
+
+The first three distinct positive bands fit a power law in $h$ with excellent agreement:
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Band & Exponent & $R^2$ & Monotone under refinement \\
+\midrule
+1 & 1.972182 & 0.999979 & True \\
+2 & 1.972182 & 0.999979 & True \\
+3 & 1.924244 & 0.999835 & True \\
+\bottomrule
+\end{tabular}
+\caption{Low-mode power-law fits on the frozen hierarchy.}
+\label{tab:fits}
+\end{table}
+
+The exponent span across these three bands is only $0.047938$. That small spread, together with the uniformly high $R^2$ values, supports a stable descriptive low-mode scaling regime on the branch. The claim remains descriptive: Phase VII records a coherent scaling pattern across the frozen hierarchy, not a universal law.
+
+\section{Envelope, Density Surrogate, and Trace Proxy}
+
+The sampled spectral radius values are
+\[
+7.862310,\;
+7.965353,\;
+7.984583,\;
+7.991324 ,
+\]
+which form a monotone refinement sequence. The nullspace estimate stays fixed at
+\[
+[4,4,4,4].
+\]
+
+The normalized density surrogate also stays compact after scaling. Its maximum pairwise empirical-CDF distance across all refinement pairs is $0.041667$, and the mean pairwise distance is $0.0208335$. This indicates that after normalization by the first positive band, the low-mode profile remains tightly aligned across refinement.
+
+The short-time trace proxy is also stable in the required qualitative sense. For each tested $t$ value, the truncated trace sum increases monotonically as refinement increases. This does not establish a heat-kernel expansion or any asymptotic coefficient structure. It only shows that the branch supports a coherent trace-like diagnostic without qualitative contradictions.
+
+\section{Bounded Interpretation}
+
+The authority statement is narrow:
+\begin{quote}
+The frozen branch-local cochain-Laplacian hierarchy supports a stable descriptive spectral-feasibility regime across the declared deterministic refinement levels.
+\end{quote}
+
+This statement is supported by four combined facts:
+\begin{enumerate}
+\item low-mode bands fit a common scaling regime without parameter drift;
+\item the sampled spectral envelope remains monotone;
+\item the kernel estimate remains fixed;
+\item the normalized density proxy and the trace proxy remain qualitatively stable.
+\end{enumerate}
+
+These facts are sufficient to lock a spectral-feasibility baseline for later stages. They are not sufficient to claim a continuum operator, a geometric invariant, a universal coefficient family, or any physical correspondence.
+
+\section{Non-Claims}
+
+This paper does not claim:
+\begin{enumerate}
+\item a continuum limit;
+\item heat-kernel asymptotics;
+\item geometric coefficients or spectral invariants;
+\item quantum or relativistic correspondence;
+\item observable--spectral coupling as an authority result.
+\end{enumerate}
+
+\section{Conclusion}
+
+Phase VII closes on the spectral-feasibility track. The frozen cochain-Laplacian family shows stable low-mode scaling, stable nullspace structure, monotone spectral-envelope behavior, tight normalized low-mode collapse, and monotone short-time trace proxies across the declared refinement hierarchy. This is enough to lock the spectral-feasibility baseline for all later spectral stages on the current branch.
+
+Phase VII establishes spectral feasibility for the frozen operator hierarchy.
+
+\end{document}
