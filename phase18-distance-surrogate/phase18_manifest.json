@@ -1,0 +1,56 @@
+{
+  "phase": 18,
+  "phase_name": "distance-surrogate",
+  "timestamp": "2026-03-21T21:39:40.441693+00:00",
+  "mode": "artifact_reuse",
+  "disturbance_family": "bias_onset",
+  "selected_seed_pair": [
+    "1303",
+    "1302"
+  ],
+  "refinements": [
+    60,
+    72,
+    84
+  ],
+  "ensemble_size": 7,
+  "threshold_policy": "fixed bias_onset thresholds inherited unchanged from Phase XV-XVI authority slice",
+  "input_files": {
+    "phase15_effective_speed": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase15-propagation/runs/phase15_effective_speed_ledger.csv",
+    "phase15_influence_range": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase15-propagation/runs/phase15_influence_range_ledger.csv",
+    "phase15_propagation": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase15-propagation/runs/phase15_propagation_ledger.csv",
+    "phase16_front_arrival": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv",
+    "phase16_monotonic_parameter": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase16-temporal-ordering/runs/phase16_monotonic_parameter_ledger.csv",
+    "phase17_influence_graph": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase17-causal-closure/runs/phase17_influence_graph_ledger.csv",
+    "phase17_causal_distance": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase17-causal-closure/runs/phase17_causal_distance_metrics.csv",
+    "phase17_order_compatibility": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase17-causal-closure/runs/phase17_propagation_order_compatibility.csv"
+  },
+  "gates": {
+    "shell_ordering_coherent": true,
+    "refinement_scaling_stable": true,
+    "branch_control_separated": true,
+    "triangle_consistency_bounded": true,
+    "success": true
+  },
+  "branch_metrics": {
+    "monotonic_shell_fraction": 1.0,
+    "max_shell_overlap_fraction": 0.36577920989033486,
+    "max_adjacent_slope_drift": 0.00476189285714268,
+    "max_causal_depth_drift": 0.0,
+    "mean_order_compatibility": 0.96409388653,
+    "triangle_violation_rate": 0.0
+  },
+  "control_metrics": {
+    "monotonic_shell_fraction": 1.0,
+    "max_shell_overlap_fraction": 0.44471648285594,
+    "max_adjacent_slope_drift": 0.5846153749999999,
+    "max_causal_depth_drift": 0.7142857142850001,
+    "mean_order_compatibility": 0.9629816985276666,
+    "triangle_violation_rate": 0.0
+  },
+  "control_failures": [
+    "shell_ordering",
+    "refinement_scaling"
+  ],
+  "closure_statement": "Phase XVIII establishes proto-geometric distance-surrogate feasibility for the frozen operator hierarchy."
+}

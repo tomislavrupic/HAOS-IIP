@@ -1,0 +1,24 @@
+phase: 18
+name: distance-surrogate
+purpose: proto-geometric distance-surrogate feasibility from frozen Phase XV-XVII artifacts
+inputs:
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase15-propagation/runs/phase15_effective_speed_ledger.csv
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase15-propagation/runs/phase15_influence_range_ledger.csv
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase15-propagation/runs/phase15_propagation_ledger.csv
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase16-temporal-ordering/runs/phase16_monotonic_parameter_ledger.csv
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase17-causal-closure/runs/phase17_influence_graph_ledger.csv
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase17-causal-closure/runs/phase17_causal_distance_metrics.csv
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase17-causal-closure/runs/phase17_propagation_order_compatibility.csv
+outputs:
+  - phase18_distance_surrogate_ledger.csv
+  - phase18_shell_ordering_metrics.csv
+  - phase18_refinement_scaling.csv
+  - phase18_triangle_violation_rate.csv
+  - phase18_manifest.json
+  - phase18_summary.md
+constraints:
+  - artifact-only
+  - bias_onset only
+  - refinements 60,72,84 only
+  - no earlier phase imports

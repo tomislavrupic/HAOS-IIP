@@ -1,0 +1,13 @@
+hierarchy_label,n_side,seed,sampled_triplets,triangle_violation_rate
+frozen_branch,60,1303,1,0.000000000000
+frozen_branch,60,1302,1,0.000000000000
+frozen_branch,72,1303,1,0.000000000000
+frozen_branch,72,1302,1,0.000000000000
+frozen_branch,84,1303,1,0.000000000000
+frozen_branch,84,1302,1,0.000000000000
+periodic_diagonal_augmented_control,60,1303,1,0.000000000000
+periodic_diagonal_augmented_control,60,1302,1,0.000000000000
+periodic_diagonal_augmented_control,72,1303,1,0.000000000000
+periodic_diagonal_augmented_control,72,1302,1,0.000000000000
+periodic_diagonal_augmented_control,84,1303,1,0.000000000000
+periodic_diagonal_augmented_control,84,1302,1,0.000000000000

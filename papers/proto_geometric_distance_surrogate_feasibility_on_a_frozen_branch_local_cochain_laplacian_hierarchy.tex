@@ -1,0 +1,204 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Proto-Geometric Distance-Surrogate Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase XVIII of the frozen HAOS-IIP program is intentionally restricted to artifact reuse. It is not allowed to modify the Phase V recovery-statistics readout, the Phase VI frozen operator hierarchy $\Delta_h$, the Phase VII spectral-feasibility bundle, the Phase VIII short-time trace window, the Phase IX coefficient-stabilization bundle, the Phase X continuum-bridge bundle, the Phase XI protection-basin bundle, the Phase XII interaction bundle, the Phase XIII multi-mode sector bundle, the Phase XIV collective-dynamics bundle, the Phase XV propagation bundle, the Phase XVI temporal-ordering bundle, or the Phase XVII causal-closure bundle. It therefore consumes only frozen CSV/JSON artifacts from Phases XV--XVII and asks a narrower question: do causal depth and propagation arrival order define a coherent distance surrogate on the already frozen \texttt{bias\_onset} slice? Restricting the authority probe to $n_{\mathrm{side}} \in \{60,72,84\}$, ensemble size $7$, branch seeds $\{1303,1302\}$, and the matched deterministic control \texttt{periodic\_diagonal\_augmented\_control}, the branch attains monotonic shell fraction $1.0$, max shell overlap $0.36577920989033486$, max adjacent slope drift $0.00476189285714268$, causal-depth drift $0.0$, mean order compatibility $0.96409388653$, and triangle-violation rate $0.0$, while the control fails both shell-ordering and refinement-scaling gates with max shell overlap $0.44471648285594$, max adjacent slope drift $0.5846153749999999$, and causal-depth drift $0.7142857142850001$. The result is bounded: Phase XVIII establishes proto-geometric distance-surrogate feasibility for the frozen operator hierarchy. It does not assert metric emergence, geometry, spacetime, or any new dynamics.
+\end{abstract}
+
+\section{Scope and Frozen Inputs}
+
+Phase XVIII is a post-processing authority probe only. No simulations are rerun. No earlier phase source code is imported. The builder is allowed to read only the following frozen ledgers:
+\begin{itemize}
+\item \url{phase15-propagation/runs/phase15_effective_speed_ledger.csv};
+\item \url{phase15-propagation/runs/phase15_influence_range_ledger.csv};
+\item \url{phase15-propagation/runs/phase15_propagation_ledger.csv};
+\item \url{phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv};
+\item \url{phase16-temporal-ordering/runs/phase16_monotonic_parameter_ledger.csv};
+\item \url{phase17-causal-closure/runs/phase17_influence_graph_ledger.csv};
+\item \url{phase17-causal-closure/runs/phase17_causal_distance_metrics.csv};
+\item \url{phase17-causal-closure/runs/phase17_propagation_order_compatibility.csv}.
+\end{itemize}
+
+All new logic is isolated inside \texttt{phase18-distance-surrogate/}. Earlier manifests and \texttt{haos\_core} remain untouched.
+
+\section{Minimal Authority Slice}
+
+The authority slice is deliberately frozen to the smallest deterministic matrix that still supports an honest decision:
+\begin{itemize}
+\item disturbance family: \texttt{bias\_onset};
+\item refinements: $n_{\mathrm{side}} \in \{60,72,84\}$;
+\item ensemble size: $7$;
+\item branch seeds: $\{1303,1302\}$ inherited from the frozen Phase XVII slice;
+\item control hierarchy: \texttt{periodic\_diagonal\_augmented\_control};
+\item threshold policy: the fixed Phase XV--XVI \texttt{bias\_onset} thresholds, reused unchanged.
+\end{itemize}
+
+The probe does not widen the seed set, does not change thresholds, and does not introduce a new disturbance family. The goal is not a larger scan. The goal is a cheapest honest compatibility test.
+
+\section{Distance-Surrogate Construction}
+
+Phase XVIII defines two derived quantities for the frozen causal slice:
+\[
+\tilde d(i,j)=\operatorname{depth}(i,j)\,\bar v_{\mathrm{eff}}(h),
+\]
+\[
+\tilde \tau(i,j)=t_{\mathrm{arr}}(i,j),
+\]
+where $\operatorname{depth}(i,j)$ is the Phase XVII causal-depth relation on the frozen DAG slice, $\bar v_{\mathrm{eff}}(h)$ is the Phase XV mean effective speed at refinement $h=1/n_{\mathrm{side}}$, and $t_{\mathrm{arr}}(i,j)$ is the Phase XVI front-arrival proxy on the same frozen disturbance family.
+
+The purpose is not to prove equality between $\tilde d$ and $\tilde \tau$. The purpose is only to test monotone compatibility between a causal-depth ordering and a propagation-time ordering.
+
+\section{Diagnostics}
+
+Phase XVIII computes only four minimal diagnostic families.
+
+\subsection{Shell Ordering Coherence}
+
+At fixed seed and refinement, nodes are binned by causal-depth shell relative to the frozen source event. The authority metric is the shell-overlap fraction between the front-near and front-far arrival bands. Shell ordering is accepted when shell-mean arrival remains monotone and the maximum overlap stays below a fixed threshold
+\[
+\theta_{\mathrm{overlap}}=0.40.
+\]
+
+\subsection{Refinement Scaling Stability}
+
+For each refinement, the mean arrival time is regressed against shell depth using the frozen source, front-near, and front-far shells. The key metric is adjacent refinement drift of the slope:
+\[
+\Delta m_{\max}=\max_k |m_{R_k}-m_{R_{k+1}}|.
+\]
+The authority threshold is
+\[
+\theta_{\mathrm{slope}}=0.06.
+\]
+Mean causal-depth drift is also tracked with acceptance threshold
+\[
+\theta_{\mathrm{depth}}=0.10.
+\]
+
+\subsection{Branch/Control Separation}
+
+The same shell and scaling diagnostics are repeated on the matched deterministic control. Phase XVIII passes only if the control fails at least one matched gate or broadens materially relative to the branch.
+
+\subsection{Triangle Consistency}
+
+An ultra-cheap consistency probe samples triangle relations on the surrogate depth scale and records the fraction of triples violating
+\[
+\tilde d(i,k)\leq \tilde d(i,j)+\tilde d(j,k).
+\]
+This is not treated as full geometry. It is only a bounded consistency check.
+
+\section{Branch Results}
+
+The branch aggregate metrics are:
+\[
+\text{monotonic shell fraction}=1.0,
+\]
+\[
+\text{max shell overlap}=0.36577920989033486,
+\]
+\[
+\text{max adjacent slope drift}=0.00476189285714268,
+\]
+\[
+\text{max causal-depth drift}=0.0,
+\]
+\[
+\text{mean order compatibility}=0.96409388653,
+\]
+\[
+\text{triangle-violation rate}=0.0.
+\]
+
+The three-level branch ledger is compact:
+\begin{center}
+\begin{tabular}{ccccccc}
+\toprule
+$n_{\mathrm{side}}$ & $\bar v_{\mathrm{eff}}$ & depth$_{\mathrm{near}}$ & depth$_{\mathrm{far}}$ & mean near & mean far & slope \\
+\midrule
+60 & 0.198349068578 & 2 & 3 & 2.2000000 & 2.9666665 & 1.004761857143 \\
+72 & 0.201150768915 & 2 & 3 & 2.2000000 & 2.9666665 & 1.004761857143 \\
+84 & 0.193818379973 & 2 & 3 & 2.2666665 & 2.9666665 & 1.009523750000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The key point is not that the branch becomes geometric in any strong sense. The key point is that shell ordering stays monotone, depth stays frozen, and the arrival-vs-depth slope stays in a very narrow band across the full authority slice.
+
+\section{Control Comparison}
+
+The matched deterministic control broadens materially:
+\[
+\text{max shell overlap}=0.44471648285594,
+\]
+\[
+\text{max adjacent slope drift}=0.5846153749999999,
+\]
+\[
+\text{max causal-depth drift}=0.7142857142850001,
+\]
+\[
+\text{mean order compatibility}=0.9629816985276666.
+\]
+
+Its ledger makes the failure mode visible:
+\begin{center}
+\begin{tabular}{ccccccc}
+\toprule
+$n_{\mathrm{side}}$ & $\bar v_{\mathrm{eff}}$ & depth$_{\mathrm{near}}$ & depth$_{\mathrm{far}}$ & mean near & mean far & slope \\
+\midrule
+60 & 0.209070338088 & 3 & 4 & 2.2000000 & 2.6666665 & 0.682051250000 \\
+72 & 0.201058061836 & 2 & 2 & 2.2000000 & 2.8666665 & 1.266666625000 \\
+84 & 0.203746462337 & 2 & 3 & 2.1333335 & 3.0666665 & 1.028571392857 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The control fails in two ways that matter for the surrogate claim. First, its shell-overlap gate is broken by the broadest arrival-band overlap. Second, its causal-depth structure is not stable across refinement: the front-far depth collapses onto the front-near shell at $n_{\mathrm{side}}=72$, and the fitted slope widens accordingly.
+
+\section{Success Logic}
+
+Phase XVIII declares success only if all of the following are true on the branch:
+\begin{enumerate}
+\item shell ordering remains monotone and compact;
+\item refinement scaling stays within the fixed drift band;
+\item branch/control separation is preserved;
+\item triangle-consistency violations remain bounded.
+\end{enumerate}
+
+The branch clears all four:
+\begin{itemize}
+\item shell ordering coherent: true;
+\item refinement scaling stable: true;
+\item branch/control separated: true;
+\item triangle consistency bounded: true.
+\end{itemize}
+
+The control fails two matched gates:
+\begin{itemize}
+\item shell ordering;
+\item refinement scaling.
+\end{itemize}
+
+\section{Bounded Interpretation}
+
+Phase XVIII does not claim metric emergence. It does not identify a continuum line element. It does not infer spacetime, relativistic light-cones, or geometric coefficients.
+
+The bounded statement is narrower. On the frozen branch-local hierarchy, and using only frozen Phase XV--XVII artifacts, causal-depth ordering, propagation-arrival ordering, and effective-speed scaling are mutually compatible on the minimal authority slice. That is sufficient for a proto-geometric distance-surrogate feasibility statement. It is not sufficient for a geometry claim.
+
+\section{Conclusion}
+
+Phase XVIII establishes proto-geometric distance-surrogate feasibility for the frozen operator hierarchy.
+
+\end{document}
