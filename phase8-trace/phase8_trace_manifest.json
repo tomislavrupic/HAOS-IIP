@@ -1,0 +1,465 @@
+{
+  "timestamp": "2026-03-21T15:16:37Z",
+  "phase": 8,
+  "phase_name": "phase8-trace",
+  "stage_identifier": "phase8-trace",
+  "status": "passed",
+  "success": true,
+  "objective": "short_time_trace_asymptotic_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase5_manifest_reference": "phase5-readout/phase5_authoritative_manifest.json",
+  "phase7_manifest_reference": "phase7-spectral/phase7_spectral_manifest.json",
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the lattice-spacing surrogate used to order refinements.",
+    "level_parameter": "n_side",
+    "construction_rule_constant": true,
+    "refinement_multipliers": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "levels": [
+      {
+        "level_id": "R1",
+        "refinement_multiplier": 1,
+        "n_side": 12,
+        "h": 0.083333333333
+      },
+      {
+        "level_id": "R2",
+        "refinement_multiplier": 2,
+        "n_side": 24,
+        "h": 0.041666666667
+      },
+      {
+        "level_id": "R3",
+        "refinement_multiplier": 3,
+        "n_side": 36,
+        "h": 0.027777777778
+      },
+      {
+        "level_id": "R4",
+        "refinement_multiplier": 4,
+        "n_side": 48,
+        "h": 0.020833333333
+      }
+    ]
+  },
+  "trace_proxy_definition": {
+    "label": "exact_torus_mode_spectrum",
+    "formula": "T_h(t) = Tr(exp(-t * delta_h))",
+    "evaluation_method": "exact torus-mode spectrum induced by the frozen periodic DK2D cochain-Laplacian block structure",
+    "deterministic_seed_record": {
+      "randomness_used": false,
+      "note": "No stochastic probes were used; the trace is evaluated from the exact frozen mode spectrum."
+    },
+    "probe_times": [
+      0.01,
+      0.015,
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "spectral_truncation_methods": [
+      {
+        "label": "full_exact",
+        "cutoff": null
+      },
+      {
+        "label": "lambda_le_7_5",
+        "cutoff": 7.5
+      },
+      {
+        "label": "lambda_le_7_8",
+        "cutoff": 7.8
+      }
+    ]
+  },
+  "validation": {
+    "validated_level_n_side": 12,
+    "max_abs_eigenvalue_difference": 0.0,
+    "max_abs_trace_difference": 0.0
+  },
+  "operational_short_time_window": {
+    "score": [
+      5,
+      -0.01937630503789765,
+      -0.005211400534,
+      -0.039036855531
+    ],
+    "start_index": 2,
+    "end_index": 6,
+    "probe_times": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ],
+    "max_slope_dispersion": 0.005211400534,
+    "max_normalized_trace_relative_range": 0.005820971051,
+    "max_kernel_share": 0.010092438116,
+    "max_lambda_le_7_5_relative_trace_error": 0.039036855531,
+    "max_lambda_le_7_8_relative_trace_error": 0.014977531175,
+    "min_full_fit_r_squared": 0.999996416672,
+    "max_full_fit_subgrid_rel_drift": 0.019376305038,
+    "full_fit_window": [
+      {
+        "level_id": "R1",
+        "fit": {
+          "b0": 3.992541196696,
+          "b1": -15.196408636509,
+          "b2": 27.978374055231,
+          "r_squared": 0.999996635281
+        },
+        "subgrid_fit": {
+          "b0": 3.994453894789,
+          "b1": -15.272387091461,
+          "b2": 28.512051935089,
+          "r_squared": 1.0
+        },
+        "max_subgrid_rel_drift": 0.01907465669
+      },
+      {
+        "level_id": "R2",
+        "fit": {
+          "b0": 3.992270826129,
+          "b1": -15.38315827383,
+          "b2": 28.598645942437,
+          "r_squared": 0.99999646149
+        },
+        "subgrid_fit": {
+          "b0": 3.994250963407,
+          "b1": -15.46180598209,
+          "b2": 29.151046302402,
+          "r_squared": 1.0
+        },
+        "max_subgrid_rel_drift": 0.019315612392
+      },
+      {
+        "level_id": "R3",
+        "fit": {
+          "b0": 3.992219728715,
+          "b1": -15.417962259342,
+          "b2": 28.714851153143,
+          "r_squared": 0.999996428345
+        },
+        "subgrid_fit": {
+          "b0": 3.994212601131,
+          "b1": -15.497113974038,
+          "b2": 29.27078653374,
+          "r_squared": 1.0
+        },
+        "max_subgrid_rel_drift": 0.019360552407
+      },
+      {
+        "level_id": "R4",
+        "fit": {
+          "b0": 3.992201767437,
+          "b1": -15.43015999025,
+          "b2": 28.755622542545,
+          "r_squared": 0.999996416672
+        },
+        "subgrid_fit": {
+          "b0": 3.994199115575,
+          "b1": -15.509488832467,
+          "b2": 29.312800256484,
+          "r_squared": 1.0
+        },
+        "max_subgrid_rel_drift": 0.019376305038
+      }
+    ]
+  },
+  "time_metrics": {
+    "per_time": [
+      {
+        "probe_time": 0.01,
+        "max_slope_dispersion": 0.000775769659,
+        "max_normalized_trace_relative_range": 0.000638756524,
+        "max_kernel_share": 0.007221483179,
+        "lambda_le_7_5_max_relative_trace_error": 0.040547887892,
+        "lambda_le_7_5_max_log_slope_difference": 0.001954669303,
+        "lambda_le_7_8_max_relative_trace_error": 0.015581659598,
+        "lambda_le_7_8_max_log_slope_difference": 0.000762232745
+      },
+      {
+        "probe_time": 0.015,
+        "max_slope_dispersion": 0.000955069313,
+        "max_normalized_trace_relative_range": 0.000953397484,
+        "max_kernel_share": 0.007363053198,
+        "lambda_le_7_5_max_relative_trace_error": 0.039787172516,
+        "lambda_le_7_5_max_log_slope_difference": 0.002399525735,
+        "lambda_le_7_8_max_relative_trace_error": 0.015277369445,
+        "lambda_le_7_8_max_log_slope_difference": 0.000935400232
+      },
+      {
+        "probe_time": 0.02,
+        "max_slope_dispersion": 0.001260704553,
+        "max_normalized_trace_relative_range": 0.001264880157,
+        "max_kernel_share": 0.007506673711,
+        "lambda_le_7_5_max_relative_trace_error": 0.039036855531,
+        "lambda_le_7_5_max_log_slope_difference": 0.003152505453,
+        "lambda_le_7_8_max_relative_trace_error": 0.014977531175,
+        "lambda_le_7_8_max_log_slope_difference": 0.001228269066
+      },
+      {
+        "probe_time": 0.03,
+        "max_slope_dispersion": 0.001872181624,
+        "max_normalized_trace_relative_range": 0.001878373242,
+        "max_kernel_share": 0.007800114643,
+        "lambda_le_7_5_max_relative_trace_error": 0.037567224332,
+        "lambda_le_7_5_max_log_slope_difference": 0.004632676211,
+        "lambda_le_7_8_max_relative_trace_error": 0.014391097986,
+        "lambda_le_7_8_max_log_slope_difference": 0.001802776477
+      },
+      {
+        "probe_time": 0.05,
+        "max_slope_dispersion": 0.002972961777,
+        "max_normalized_trace_relative_range": 0.003067515519,
+        "max_kernel_share": 0.008412117856,
+        "lambda_le_7_5_max_relative_trace_error": 0.034750520235,
+        "lambda_le_7_5_max_log_slope_difference": 0.007218240104,
+        "lambda_le_7_8_max_relative_trace_error": 0.013270382112,
+        "lambda_le_7_8_max_log_slope_difference": 0.002802639677
+      },
+      {
+        "probe_time": 0.075,
+        "max_slope_dispersion": 0.004161996207,
+        "max_normalized_trace_relative_range": 0.004483237187,
+        "max_kernel_share": 0.009225092725,
+        "lambda_le_7_5_max_relative_trace_error": 0.031454712406,
+        "lambda_le_7_5_max_log_slope_difference": 0.009888889054,
+        "lambda_le_7_8_max_relative_trace_error": 0.011964693121,
+        "lambda_le_7_8_max_log_slope_difference": 0.003829502835
+      },
+      {
+        "probe_time": 0.1,
+        "max_slope_dispersion": 0.005211400534,
+        "max_normalized_trace_relative_range": 0.005820971051,
+        "max_kernel_share": 0.010092438116,
+        "lambda_le_7_5_max_relative_trace_error": 0.02840153031,
+        "lambda_le_7_5_max_log_slope_difference": 0.012088522808,
+        "lambda_le_7_8_max_relative_trace_error": 0.010760887366,
+        "lambda_le_7_8_max_log_slope_difference": 0.004667266857
+      },
+      {
+        "probe_time": 0.15,
+        "max_slope_dispersion": 0.006848076558,
+        "max_normalized_trace_relative_range": 0.00826630205,
+        "max_kernel_share": 0.011993739274,
+        "lambda_le_7_5_max_relative_trace_error": 0.022986793072,
+        "lambda_le_7_5_max_log_slope_difference": 0.015157012315,
+        "lambda_le_7_8_max_relative_trace_error": 0.008640839752,
+        "lambda_le_7_8_max_log_slope_difference": 0.00581611702
+      },
+      {
+        "probe_time": 0.2,
+        "max_slope_dispersion": 0.007878906503,
+        "max_normalized_trace_relative_range": 0.010413823114,
+        "max_kernel_share": 0.014120629725,
+        "lambda_le_7_5_max_relative_trace_error": 0.018426771523,
+        "lambda_le_7_5_max_log_slope_difference": 0.016648650178,
+        "lambda_le_7_8_max_relative_trace_error": 0.006872025817,
+        "lambda_le_7_8_max_log_slope_difference": 0.006347150592
+      },
+      {
+        "probe_time": 0.3,
+        "max_slope_dispersion": 0.008308053648,
+        "max_normalized_trace_relative_range": 0.013875379299,
+        "max_kernel_share": 0.01905005045,
+        "lambda_le_7_5_max_relative_trace_error": 0.011517041974,
+        "lambda_le_7_5_max_log_slope_difference": 0.016149862386,
+        "lambda_le_7_8_max_relative_trace_error": 0.004227185071,
+        "lambda_le_7_8_max_log_slope_difference": 0.006073691797
+      },
+      {
+        "probe_time": 0.5,
+        "max_slope_dispersion": 0.005967383539,
+        "max_normalized_trace_relative_range": 0.018020997913,
+        "max_kernel_share": 0.031404501564,
+        "lambda_le_7_5_max_relative_trace_error": 0.004066385243,
+        "lambda_le_7_5_max_log_slope_difference": 0.010803124767,
+        "lambda_le_7_8_max_relative_trace_error": 0.001445077565,
+        "lambda_le_7_8_max_log_slope_difference": 0.00396059064
+      },
+      {
+        "probe_time": 0.75,
+        "max_slope_dispersion": 0.001758223914,
+        "max_normalized_trace_relative_range": 0.019776891555,
+        "max_kernel_share": 0.050367603147,
+        "lambda_le_7_5_max_relative_trace_error": 0.000948130079,
+        "lambda_le_7_5_max_log_slope_difference": 0.0047312745,
+        "lambda_le_7_8_max_relative_trace_error": 0.000323328678,
+        "lambda_le_7_8_max_log_slope_difference": 0.001676887707
+      },
+      {
+        "probe_time": 1.0,
+        "max_slope_dispersion": 4.5398832e-05,
+        "max_normalized_trace_relative_range": 0.019763763366,
+        "max_kernel_share": 0.07144669841,
+        "lambda_le_7_5_max_relative_trace_error": 0.000195436191,
+        "lambda_le_7_5_max_log_slope_difference": 0.002617905738,
+        "lambda_le_7_8_max_relative_trace_error": 6.3887903e-05,
+        "lambda_le_7_8_max_log_slope_difference": 0.000902006211
+      }
+    ]
+  },
+  "coefficient_like_surrogate": {
+    "formula": "T_h(t) \u2248 h^(-2) * (b0(h) + b1(h) * t + b2(h) * t^2)",
+    "fit_window": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ],
+    "full_exact": {
+      "per_level": [
+        {
+          "level_id": "R1",
+          "n_side": 12,
+          "h": 0.083333333333,
+          "fit": {
+            "b0": 3.992541196696,
+            "b1": -15.196408636509,
+            "b2": 27.978374055231,
+            "r_squared": 0.999996635281
+          }
+        },
+        {
+          "level_id": "R2",
+          "n_side": 24,
+          "h": 0.041666666667,
+          "fit": {
+            "b0": 3.992270826129,
+            "b1": -15.38315827383,
+            "b2": 28.598645942437,
+            "r_squared": 0.99999646149
+          }
+        },
+        {
+          "level_id": "R3",
+          "n_side": 36,
+          "h": 0.027777777778,
+          "fit": {
+            "b0": 3.992219728715,
+            "b1": -15.417962259342,
+            "b2": 28.714851153143,
+            "r_squared": 0.999996428345
+          }
+        },
+        {
+          "level_id": "R4",
+          "n_side": 48,
+          "h": 0.020833333333,
+          "fit": {
+            "b0": 3.992201767437,
+            "b1": -15.43015999025,
+            "b2": 28.755622542545,
+            "r_squared": 0.999996416672
+          }
+        }
+      ],
+      "relative_spans": {
+        "b0": 8.5020802e-05,
+        "b1": 0.015221236998,
+        "b2": 0.027260519706
+      },
+      "trends": {
+        "b0": "nonincreasing",
+        "b1": "nonincreasing",
+        "b2": "nondecreasing"
+      },
+      "max_relative_span": 0.027260519706,
+      "min_r_squared": 0.999996416672
+    },
+    "truncation_robustness": {
+      "lambda_le_7_5": {
+        "cutoff": 7.5,
+        "max_relative_coefficient_difference_vs_full": 0.110877321888,
+        "max_log_slope_difference_vs_full": 0.010940479377
+      },
+      "lambda_le_7_8": {
+        "cutoff": 7.8,
+        "max_relative_coefficient_difference_vs_full": 0.044047599547,
+        "max_log_slope_difference_vs_full": 0.004232595036
+      }
+    }
+  },
+  "truncation_robustness": {
+    "lambda_le_7_5": {
+      "cutoff": 7.5,
+      "max_relative_coefficient_difference_vs_full": 0.110877321888,
+      "max_log_slope_difference_vs_full": 0.010940479377
+    },
+    "lambda_le_7_8": {
+      "cutoff": 7.8,
+      "max_relative_coefficient_difference_vs_full": 0.044047599547,
+      "max_log_slope_difference_vs_full": 0.004232595036
+    }
+  },
+  "kernel_sensitivity": {
+    "probe_times": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ],
+    "per_level": [
+      {
+        "level_id": "R1",
+        "max_kernel_share_in_window": 0.010092438116,
+        "max_log_slope_difference_vs_full_in_window": 0.003044349031
+      },
+      {
+        "level_id": "R2",
+        "max_kernel_share_in_window": 0.002534856564,
+        "max_log_slope_difference_vs_full_in_window": 0.000767693818
+      },
+      {
+        "level_id": "R3",
+        "max_kernel_share_in_window": 0.001127579105,
+        "max_log_slope_difference_vs_full_in_window": 0.000341744711
+      },
+      {
+        "level_id": "R4",
+        "max_kernel_share_in_window": 0.000634455825,
+        "max_log_slope_difference_vs_full_in_window": 0.000192339335
+      }
+    ],
+    "max_kernel_share_in_operational_window": 0.010092438116,
+    "max_log_slope_difference_vs_kernel_subtracted_trace_in_operational_window": 0.003044349031
+  },
+  "artifacts": {
+    "trace_scaling_ledger_csv": "phase8-trace/runs/phase8_trace_scaling_ledger.csv",
+    "trace_summary_md": "phase8-trace/phase8_trace_summary.md",
+    "trace_manifest_json": "phase8-trace/phase8_trace_manifest.json",
+    "trace_vs_t_plot": "phase8-trace/plots/phase8_trace_vs_t.svg",
+    "slope_vs_t_plot": "phase8-trace/plots/phase8_log_trace_slope_vs_t.svg",
+    "coefficient_plot": "phase8-trace/plots/phase8_coefficient_like_terms_vs_refinement.svg",
+    "runs_json": "phase8-trace/runs/phase8_runs.json",
+    "builder_script": "phase8-trace/build_trace_asymptotic_feasibility.py"
+  },
+  "failure_flags": {
+    "operational_window_missing": false,
+    "trace_nonmonotone_in_t": false,
+    "slope_instability": false,
+    "normalized_curve_separation": false,
+    "coefficient_fit_instability": false,
+    "probe_choice_instability": false,
+    "truncation_instability": false,
+    "kernel_distortion": false
+  },
+  "claim_boundary": "Phase VIII authority is limited to short-time trace asymptotic feasibility diagnostics on the frozen branch-local cochain-Laplacian hierarchy. It does not assert continuum limits, geometric coefficients, universal asymptotic coefficients, Seeley-DeWitt structure, or any physical correspondence.",
+  "conclusion": "Phase VIII establishes short-time trace asymptotic feasibility for the frozen operator hierarchy."
+}

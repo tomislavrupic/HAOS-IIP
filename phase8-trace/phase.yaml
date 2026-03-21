@@ -1,0 +1,15 @@
+phase: 8
+phase_name: phase8-trace
+purpose: short-time trace asymptotic feasibility
+inputs:
+  - phase5-readout/phase5_authoritative_manifest.json
+  - phase6-operator/phase6_operator_manifest.json
+  - phase7-spectral/phase7_spectral_manifest.json
+outputs:
+  - runs/phase8_trace_scaling_ledger.csv
+  - phase8_trace_summary.md
+  - phase8_trace_manifest.json
+  - plots/phase8_trace_vs_t.svg
+  - plots/phase8_log_trace_slope_vs_t.svg
+  - plots/phase8_coefficient_like_terms_vs_refinement.svg
+  - runs/phase8_runs.json

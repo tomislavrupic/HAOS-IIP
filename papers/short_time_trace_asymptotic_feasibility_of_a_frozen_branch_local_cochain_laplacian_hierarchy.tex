@@ -1,0 +1,236 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Short-Time Trace Asymptotic Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase VIII of the frozen HAOS-IIP program tests one narrow question: whether the already frozen branch-local cochain-Laplacian hierarchy supports a reproducible short-time trace asymptotic regime across refinement. The phase does not modify Phase V, Phase VI, or Phase VII. It evaluates the exact trace proxy
+\[
+T_h(t) = \mathrm{Tr}\!\left(e^{-t \Delta_h}\right)
+\]
+on the deterministic hierarchy $h = 1 / n_{\mathrm{side}}$ with $n_{\mathrm{side}} \in \{12,24,36,48\}$. The trace is computed from the exact torus-mode spectrum induced by the frozen periodic DK2D block cochain-Laplacian structure, with direct dense validation on the coarsest level. A reproducible operational short-time window is identified on the fixed probe grid:
+\[
+t \in \{0.02, 0.03, 0.05, 0.075, 0.1\}.
+\]
+Across this window, the maximum cross-refinement log-slope dispersion is $0.005211$, the maximum normalized trace-spacing range is $0.005821$, the maximum kernel share is $0.010092$, and the maximum kernel-subtracted slope drift is $0.003044$. A size-factored quadratic surrogate
+\[
+T_h(t) \approx h^{-2}\bigl(b_0(h) + b_1(h)t + b_2(h)t^2\bigr)
+\]
+fits all refinement levels with $R^2 \ge 0.999996$, while the largest coefficient span across refinement is $0.027261$. Deterministic spectral cutoffs at $\lambda \le 7.5$ and $\lambda \le 7.8$ preserve the qualitative regime. The result is bounded: Phase VIII establishes short-time trace asymptotic feasibility for the frozen operator hierarchy. It does not establish continuum correspondence, geometric coefficients, universal asymptotic coefficients, or any physical law.
+\end{abstract}
+
+\section{Scope and Freeze Conditions}
+
+Phase VIII is a feasibility instrument, not an interpretive layer. It consumes three already frozen authorities:
+\begin{itemize}
+\item the Phase V recovery-statistics authority manifest;
+\item the Phase VI operator freeze manifest;
+\item the Phase VII spectral-feasibility manifest.
+\end{itemize}
+
+The phase is not allowed to change the operator construction, the refinement hierarchy, the Phase V observable, or the Phase VII spectral baseline. Its only task is to determine whether a stable short-time trace regime can be identified and frozen on the current branch.
+
+\section{Frozen Inputs}
+
+The frozen operator is the branch-local periodic DK2D block cochain Laplacian
+\[
+\Delta_h,
+\]
+defined on the deterministic hierarchy
+\[
+h = \frac{1}{n_{\mathrm{side}}}, \qquad n_{\mathrm{side}} \in \{12,24,36,48\}.
+\]
+
+The authoritative references used by the phase are:
+\begin{itemize}
+\item \url{phase5-readout/phase5_authoritative_manifest.json};
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase7-spectral/phase7_spectral_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json}.
+\end{itemize}
+
+The master deterministic probe grid is fixed to
+\[
+\{0.01, 0.015, 0.02, 0.03, 0.05, 0.075, 0.1, 0.15, 0.2, 0.3, 0.5, 0.75, 1.0\}.
+\]
+This grid, together with the selected operational window, is now part of the frozen spectral-trace contract for later stages.
+
+\section{Trace Proxy and Validation}
+
+The trace proxy is defined by
+\[
+T_h(t) = \mathrm{Tr}\!\left(e^{-t \Delta_h}\right).
+\]
+No stochastic estimator is used. Instead, the trace is evaluated from the exact torus-mode spectrum induced by the block structure of the frozen periodic DK2D cochain-Laplacian. On the coarsest level, direct dense diagonalization and the exact mode-spectrum construction agree to machine precision, with maximum eigenvalue difference $0$ and maximum trace difference $0$ on the full probe grid.
+
+Two deterministic cutoff probes are also recorded:
+\begin{itemize}
+\item $\lambda \le 7.5$;
+\item $\lambda \le 7.8$.
+\end{itemize}
+These do not redefine the phase. They only test whether the qualitative short-time regime survives bounded spectral truncation.
+
+\section{Operational Short-Time Window}
+
+The phase searches the declared probe grid for the longest contiguous window satisfying simultaneous constraints on:
+\begin{enumerate}
+\item cross-refinement log-slope dispersion;
+\item normalized trace-spacing stability;
+\item kernel-share suppression;
+\item truncation error bounds;
+\item coefficient-fit stability.
+\end{enumerate}
+
+The selected operational short-time window is
+\[
+\{0.02, 0.03, 0.05, 0.075, 0.1\}.
+\]
+
+Its recorded worst-case diagnostics are:
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Metric & value \\
+\midrule
+max log-slope dispersion & 0.005211400534 \\
+max normalized trace relative range & 0.005820971051 \\
+max kernel share & 0.010092438116 \\
+max relative trace error for $\lambda \le 7.5$ & 0.039036855531 \\
+max relative trace error for $\lambda \le 7.8$ & 0.014977531175 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The full trace remains monotone decreasing in $t$ at every refinement level.
+
+\section{Trace and Slope Ledger}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Level & $n_{\mathrm{side}}$ & $h$ & $T_h(0.02)$ & $T_h(0.075)$ & $T_h(0.1)$ \\
+\midrule
+R1 & 12 & 0.083333 & 532.859180 & 433.599978 & 396.336342 \\
+R2 & 24 & 0.041667 & 2129.284951 & 1728.204937 & 1577.998557 \\
+R3 & 36 & 0.027778 & 4789.988313 & 3885.867004 & 3547.422953 \\
+R4 & 48 & 0.020833 & 8514.972194 & 6906.592208 & 6304.615453 \\
+\bottomrule
+\end{tabular}
+\caption{Representative trace values on the frozen hierarchy inside the operational window.}
+\label{tab:trace}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Level & $S_h(0.02)$ & $S_h(0.03)$ & $S_h(0.05)$ & $S_h(0.075)$ & $S_h(0.1)$ \\
+\midrule
+R1 & -0.078531 & -0.118156 & -0.192277 & -0.277148 & -0.359390 \\
+R2 & -0.079538 & -0.119652 & -0.194652 & -0.280474 & -0.363554 \\
+R3 & -0.079726 & -0.119931 & -0.195095 & -0.281093 & -0.364329 \\
+R4 & -0.079792 & -0.120029 & -0.195250 & -0.281310 & -0.364601 \\
+\bottomrule
+\end{tabular}
+\caption{Log-trace slopes $S_h(t) = d(\log T_h)/d(\log t)$ across the selected window.}
+\label{tab:slopes}
+\end{table}
+
+The slope table shows the main Phase VIII signal: the curves are not identical, but they remain tightly clustered and refinement ordered through the full selected window.
+
+\section{Coefficient-Like Surrogate}
+
+Phase VIII uses one descriptive surrogate only:
+\[
+T_h(t) \approx h^{-2}\bigl(b_0(h) + b_1(h)t + b_2(h)t^2\bigr).
+\]
+This is not interpreted as a geometric expansion. It is only a compact descriptive fit used to test drift and refinement smoothness.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Level & $h$ & $b_0(h)$ & $b_1(h)$ & $b_2(h)$ & $R^2$ \\
+\midrule
+R1 & 0.083333 & 3.992541196696 & -15.196408636509 & 27.978374055231 & 0.999996635281 \\
+R2 & 0.041667 & 3.992270826129 & -15.383158273830 & 28.598645942437 & 0.999996461490 \\
+R3 & 0.027778 & 3.992219728715 & -15.417962259342 & 28.714851153143 & 0.999996428345 \\
+R4 & 0.020833 & 3.992201767437 & -15.430159990250 & 28.755622542545 & 0.999996416672 \\
+\bottomrule
+\end{tabular}
+\caption{Coefficient-like surrogate fits on the operational short-time window.}
+\label{tab:coefficients}
+\end{table}
+
+The coefficient spans across refinement are:
+\[
+\mathrm{span}(b_0)=0.000085020802,\quad
+\mathrm{span}(b_1)=0.015221236998,\quad
+\mathrm{span}(b_2)=0.027260519706.
+\]
+The minimum fit quality is
+\[
+R^2_{\min} = 0.999996416672.
+\]
+The maximum probe-subgrid coefficient drift inside the selected window is $0.019376305038$.
+
+\section{Truncation and Kernel Robustness}
+
+The truncation robustness checks are:
+\begin{center}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Cutoff & max coefficient relative diff. & max log-slope diff. \\
+\midrule
+$\lambda \le 7.5$ & 0.110877321888 & 0.010940479377 \\
+$\lambda \le 7.8$ & 0.044047599547 & 0.004232595036 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The kernel contribution is also controlled inside the selected window. The maximum kernel share is $0.010092438116$, and the maximum log-slope difference between the full trace and the kernel-subtracted trace is $0.003044349031$.
+
+These numbers justify a bounded feasibility statement. They do not justify a stronger asymptotic interpretation.
+
+\section{Bounded Interpretation}
+
+Phase VIII supports the following narrow authority statement:
+\begin{quote}
+The frozen branch-local cochain-Laplacian hierarchy supports a reproducible operational short-time trace regime on the declared probe grid, with stable slope behavior, smooth coefficient-like drift, and bounded truncation sensitivity across refinement.
+\end{quote}
+
+This statement is enough to freeze the spectral-trace baseline for later stages. It is not enough to identify geometric coefficients, universal asymptotic data, or a continuum object. Later phases may build on this baseline, but they may not silently redefine the operational window or the deterministic probe grid.
+
+\section{Non-Claims}
+
+This paper does not claim:
+\begin{enumerate}
+\item continuum correspondence;
+\item geometric or universal asymptotic coefficients;
+\item Seeley--DeWitt structure as an achieved result;
+\item heat-kernel asymptotics beyond the present feasibility test;
+\item physical law or correspondence.
+\end{enumerate}
+
+\section{Conclusion}
+
+Phase VIII locks one bounded result on the frozen branch: a reproducible short-time trace regime exists on the declared probe grid, its slope behavior is stable across refinement, its coefficient-like quantities drift smoothly, and its qualitative structure survives deterministic truncation checks. This freezes the spectral-trace baseline for subsequent phases without granting any continuum or geometric interpretation.
+
+Phase VIII establishes short-time trace asymptotic feasibility for the frozen operator hierarchy.
+
+\end{document}
