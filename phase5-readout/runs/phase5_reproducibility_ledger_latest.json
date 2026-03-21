@@ -1,0 +1,143 @@
+{
+  "phase": 5,
+  "phase_name": "phase5-readout",
+  "audit_name": "phase5b_reproducibility_ledger_v1",
+  "source_config": "phase5-readout/configs/phase5_readout_scaffold.json",
+  "input_mode": "frozen_sector",
+  "control_class": "stable_frozen_sector",
+  "schedule_labels": [
+    "schedule_alpha",
+    "schedule_beta",
+    "schedule_gamma",
+    "schedule_delta",
+    "schedule_epsilon"
+  ],
+  "runs": [
+    {
+      "schedule_label": "schedule_alpha",
+      "seed": 17367470055750772009,
+      "scaling_class": "linear_like",
+      "mean_recovery_score": 0.710119,
+      "variance_recovery_score": 0.019314,
+      "min_recovery_score": 0.301267,
+      "max_recovery_score": 1.0,
+      "nonzero_recovery_fraction": 1.0,
+      "runtime_seconds": 0.008583
+    },
+    {
+      "schedule_label": "schedule_beta",
+      "seed": 12388857442824349012,
+      "scaling_class": "linear_like",
+      "mean_recovery_score": 0.710827,
+      "variance_recovery_score": 0.019905,
+      "min_recovery_score": 0.360498,
+      "max_recovery_score": 1.0,
+      "nonzero_recovery_fraction": 1.0,
+      "runtime_seconds": 0.011629
+    },
+    {
+      "schedule_label": "schedule_gamma",
+      "seed": 1026864188023400524,
+      "scaling_class": "linear_like",
+      "mean_recovery_score": 0.712044,
+      "variance_recovery_score": 0.019701,
+      "min_recovery_score": 0.36844,
+      "max_recovery_score": 1.0,
+      "nonzero_recovery_fraction": 1.0,
+      "runtime_seconds": 0.011359
+    },
+    {
+      "schedule_label": "schedule_delta",
+      "seed": 3314838301525576826,
+      "scaling_class": "linear_like",
+      "mean_recovery_score": 0.707721,
+      "variance_recovery_score": 0.021046,
+      "min_recovery_score": 0.315418,
+      "max_recovery_score": 1.0,
+      "nonzero_recovery_fraction": 1.0,
+      "runtime_seconds": 0.008589
+    },
+    {
+      "schedule_label": "schedule_epsilon",
+      "seed": 798952121670131484,
+      "scaling_class": "linear_like",
+      "mean_recovery_score": 0.713945,
+      "variance_recovery_score": 0.020704,
+      "min_recovery_score": 0.31275,
+      "max_recovery_score": 1.0,
+      "nonzero_recovery_fraction": 1.0,
+      "runtime_seconds": 0.008369
+    }
+  ],
+  "pairwise_histogram_l1": [
+    {
+      "left_schedule_label": "schedule_alpha",
+      "right_schedule_label": "schedule_beta",
+      "histogram_l1_distance": 0.035156
+    },
+    {
+      "left_schedule_label": "schedule_alpha",
+      "right_schedule_label": "schedule_gamma",
+      "histogram_l1_distance": 0.046875
+    },
+    {
+      "left_schedule_label": "schedule_alpha",
+      "right_schedule_label": "schedule_delta",
+      "histogram_l1_distance": 0.072267
+    },
+    {
+      "left_schedule_label": "schedule_alpha",
+      "right_schedule_label": "schedule_epsilon",
+      "histogram_l1_distance": 0.054688
+    },
+    {
+      "left_schedule_label": "schedule_beta",
+      "right_schedule_label": "schedule_gamma",
+      "histogram_l1_distance": 0.054687
+    },
+    {
+      "left_schedule_label": "schedule_beta",
+      "right_schedule_label": "schedule_delta",
+      "histogram_l1_distance": 0.076171
+    },
+    {
+      "left_schedule_label": "schedule_beta",
+      "right_schedule_label": "schedule_epsilon",
+      "histogram_l1_distance": 0.066406
+    },
+    {
+      "left_schedule_label": "schedule_gamma",
+      "right_schedule_label": "schedule_delta",
+      "histogram_l1_distance": 0.08789
+    },
+    {
+      "left_schedule_label": "schedule_gamma",
+      "right_schedule_label": "schedule_epsilon",
+      "histogram_l1_distance": 0.044921
+    },
+    {
+      "left_schedule_label": "schedule_delta",
+      "right_schedule_label": "schedule_epsilon",
+      "histogram_l1_distance": 0.058593
+    }
+  ],
+  "aggregate": {
+    "dominant_scaling_class": "linear_like",
+    "class_consistency_fraction": 1.0,
+    "mean_recovery_score_average": 0.710931,
+    "mean_recovery_score_range": 0.006224,
+    "variance_recovery_score_average": 0.020134,
+    "variance_recovery_score_range": 0.001732,
+    "average_runtime_seconds": 0.009706,
+    "observed_scaling_classes": [
+      "linear_like"
+    ],
+    "average_histogram_l1_distance": 0.059765,
+    "max_histogram_l1_distance": 0.08789,
+    "min_histogram_l1_distance": 0.035156
+  },
+  "artifacts": {
+    "stamped_json": "phase5-readout/runs/20260321_152311_phase5_reproducibility_ledger.json",
+    "latest_json": "phase5-readout/runs/phase5_reproducibility_ledger_latest.json"
+  }
+}

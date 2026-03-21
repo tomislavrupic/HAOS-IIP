@@ -1,56 +1,119 @@
 {
-  "phase": "5_readout_scaffold",
-  "description": "Phase V JSON-first scaffold over frozen Phase III and Phase IV outputs.",
-  "frozen_inputs": {
-    "phase3_candidates": [
-      "phase3-stability/runs/phase3_stability_bundle_latest.json",
-      "data/20260316_111201_stage23_14_phaseIII_final_consolidation_and_freeze.json"
-    ],
-    "phase4_candidates": [
-      "phase4-sector-freeze/runs/phase4_sector_freeze_bundle_latest.json",
-      "data/20260316_122247_stage24_5_phaseIV_consolidation_and_freeze.json"
-    ]
-  },
-  "dummy_inputs": {
-    "phase3": {
-      "experiment": "dummy_phase3_stability",
-      "phaseIII_freeze_valid": true,
-      "phaseIII_minimal_read": "dummy clustered stability closure",
-      "claim_ledger": [
-        {
-          "claim_id": "P3_DUMMY_01",
-          "status": "survives"
-        },
-        {
-          "claim_id": "P3_DUMMY_02",
-          "status": "fails"
-        }
-      ]
+  "schema_version": 1,
+  "max_phase4_bundle_bytes": 65536,
+  "histogram_bins": 10,
+  "control_classes": {
+    "stable_frozen_sector": {
+      "load_offset": 0.04,
+      "load_scale": 0.42,
+      "recovery_bias": 0.62,
+      "shuffle_scale": 0.03
     },
-    "phase4": {
-      "experiment": "dummy_phase4_sector_freeze",
-      "phaseIV_freeze_valid": true,
-      "phaseIV_minimal_read": "dummy bounded selector freeze",
-      "selector_threshold_fixed": 0.5,
-      "extension_status_counts": {
-        "law_survives_ordering_survives": 1,
-        "law_survives_ordering_degrades": 1,
-        "law_fails_ordering_not_applicable": 0
-      },
-      "claim_ledger": [
-        {
-          "claim_id": "P4_DUMMY_01",
-          "status": "survives_portably"
-        },
-        {
-          "claim_id": "P4_DUMMY_02",
-          "status": "survives_locally"
-        }
-      ]
+    "degraded_sector_control": {
+      "load_offset": 0.26,
+      "load_scale": 0.62,
+      "recovery_bias": 0.30,
+      "shuffle_scale": 0.10
+    },
+    "shuffled_null_control": {
+      "load_offset": 0.66,
+      "load_scale": 0.80,
+      "recovery_bias": 0.06,
+      "shuffle_scale": 0.28
     }
   },
-  "outputs": [
-    "phase5_readout_bundle.json",
-    "phase5_recovery_histogram.json"
-  ]
+  "frozen_sector": {
+    "sector_identifier": "phaseIV_stable_smeared_sector",
+    "phase4_candidates": [
+      "phase4-sector-freeze/runs/phase4_sector_freeze_bundle_latest.json"
+    ],
+    "phase4_extension_config_candidates": [
+      "phase4-sector-freeze/configs/stage24_4_stable_smeared_law_and_ordering_extension_boundary_runs.json"
+    ],
+    "baseline_extension_id": "IVA4_E1_baseline",
+    "policy": {
+      "policy_id": "phase5_incidence_austerity_v1",
+      "trials": 1024,
+      "incidence_sites": 24,
+      "flip_probability": 0.12,
+      "max_incidence_shift": 4,
+      "max_phase_drift_fraction_of_pi": 0.04,
+      "amplitude_jitter": 0.12,
+      "preserve_operator_sector": true,
+      "preserve_boundary_type": true,
+      "preserve_kernel_type": true
+    }
+  },
+  "dummy_sector": {
+    "sector_identifier": "dummy_sector_control_seed",
+    "graph_reference_or_seed": {
+      "reference_type": "synthetic_seed",
+      "extension_id": "DUMMY_E1_baseline",
+      "extension_class": "synthetic_clustered_seed",
+      "extension_level": "baseline",
+      "width_ratio_a_to_b": 1.25,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.4, 0.45, 0.5, 0.55, 0.6]
+    },
+    "kernel_configuration_snapshot": {
+      "operator_sector": "dummy_minimal_0_1_form",
+      "boundary_type": "periodic",
+      "graph_type": "synthetic_lattice",
+      "kernel_type": "synthetic_static_gaussian",
+      "base_resolution": 8,
+      "refined_resolution": 16,
+      "mean_width": 0.08,
+      "base_separation": 0.08,
+      "amplitude_scale": 1.0,
+      "t_final": 0.8,
+      "dt_scale": 0.35,
+      "weak_beta_values": [0.01]
+    },
+    "selector_configuration": {
+      "selector_id": "DUMMY_M1",
+      "selector_family": "threshold_rule",
+      "target_definition": "dummy_stable_sector = 1 iff dummy_flow_concentration_index <= 0.82",
+      "law_expression": "dummy_stable_sector = 1 iff dummy_flow_concentration_index <= 0.82",
+      "primary_inputs": ["dummy_flow_concentration_index"],
+      "context_inputs": [],
+      "threshold": 0.82
+    },
+    "invariant_baseline_vector": {
+      "law_fit_score": 1.0,
+      "stable_subset_size": 5,
+      "stable_rho": -0.96,
+      "ordering_gap": 0.92,
+      "monotonic_consistency_score": 0.98
+    },
+    "perturbation_policy_descriptor": {
+      "policy_id": "phase5_dummy_incidence_austerity_v1",
+      "trials": 1024,
+      "incidence_sites": 20,
+      "flip_probability": 0.14,
+      "max_incidence_shift": 4,
+      "max_phase_drift_fraction_of_pi": 0.05,
+      "amplitude_jitter": 0.16,
+      "preserve_operator_sector": true,
+      "preserve_boundary_type": true,
+      "preserve_kernel_type": true
+    }
+  },
+  "audit": {
+    "reproducibility_schedules": [
+      "schedule_alpha",
+      "schedule_beta",
+      "schedule_gamma",
+      "schedule_delta",
+      "schedule_epsilon"
+    ],
+    "policy_variation_bands": {
+      "flip_probability": [0.11, 0.12, 0.13],
+      "max_phase_drift_fraction_of_pi": [0.035, 0.04, 0.045],
+      "amplitude_jitter": [0.1, 0.12, 0.14]
+    }
+  }
 }

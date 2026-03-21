@@ -14,16 +14,45 @@ if str(ROOT) not in sys.path:
 from haos_core import read_json, relpath
 
 
-def build_report(bundle: dict) -> dict:
-    summary = bundle["summary"]
+def build_report(bundle: dict[str, object]) -> dict[str, object]:
+    audit_name = bundle.get("audit_name")
+    if isinstance(audit_name, str):
+        summary = dict(bundle.get("summary", {}))
+        aggregate = dict(bundle.get("aggregate", {}))
+        success = dict(bundle.get("success", {}))
+        controls = dict(bundle.get("controls", {}))
+        stable_control = dict(controls.get("stable_frozen_sector", {}))
+        stable_aggregate = dict(stable_control.get("aggregate", {}))
+        return {
+            "phase": bundle.get("phase_name", "phase5-readout"),
+            "audit": audit_name,
+            "dominant_scaling_class": summary.get(
+                "stable_dominant_scaling_class",
+                aggregate.get("dominant_scaling_class", stable_aggregate.get("dominant_scaling_class")),
+            ),
+            "class_consistency_fraction": summary.get(
+                "stable_class_consistency_fraction",
+                aggregate.get("class_consistency_fraction", stable_aggregate.get("class_consistency_fraction")),
+            ),
+            "overall_classifier_stability_fraction": summary.get(
+                "policy_classifier_stability_fraction",
+                aggregate.get("overall_classifier_stability_fraction"),
+            ),
+            "overall_pass": summary.get("overall_pass", success.get("overall_pass")),
+        }
+    summary = dict(bundle["summary"])
+    artifacts = dict(bundle.get("artifacts", {"latest_json": relpath(ROOT / "phase5-readout" / "runs" / "phase5_readout_bundle_latest.json")}))
     return {
         "phase": bundle["phase_name"],
-        "bundle": bundle["artifacts"]["latest_json"],
+        "bundle": artifacts["latest_json"],
         "input_mode": bundle["input_mode"],
-        "recovery_ready": summary["recovery_ready"],
-        "phase3_freeze_valid": summary["phase3_freeze_valid"],
-        "phase4_freeze_valid": summary["phase4_freeze_valid"],
-        "combined_status_histogram": summary["combined_status_histogram"],
+        "control_class": bundle["control_class"],
+        "sector_identifier": summary["sector_identifier"],
+        "trial_count": summary["trial_count"],
+        "mean_recovery_score": summary["mean_recovery_score"],
+        "nonzero_recovery_fraction": summary["nonzero_recovery_fraction"],
+        "scaling_class": summary["scaling_class"],
+        "runtime_seconds": summary["runtime_seconds"],
     }
 
 

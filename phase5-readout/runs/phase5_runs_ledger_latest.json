@@ -1,0 +1,173 @@
+{
+  "timestamp": "2026-03-21T14:23:11Z",
+  "phase": 5,
+  "phase_name": "phase5-readout",
+  "authority_mode": "phase5close_v1",
+  "source_config": "phase5-readout/configs/phase5_readout_scaffold.json",
+  "baseline_frozen_run": {
+    "bundle": "phase5-readout/runs/phase5_readout_bundle_latest.json",
+    "recovery_histogram": "phase5-readout/runs/phase5_recovery_histogram_latest.json",
+    "scaling_fit": "phase5-readout/runs/phase5_scaling_fit_latest.json",
+    "summary": {
+      "experiment": "5_coherence_recovery_readout",
+      "input_mode": "frozen_sector",
+      "control_class": "stable_frozen_sector",
+      "schedule_label": "default",
+      "sector_identifier": "phaseIV_stable_smeared_sector",
+      "recovery_score_name": "structural_recovery_score",
+      "trial_count": 1024,
+      "mean_recovery_score": 0.71327,
+      "variance_recovery_score": 0.02064,
+      "min_recovery_score": 0.365148,
+      "max_recovery_score": 1.0,
+      "nonzero_recovery_fraction": 1.0,
+      "scaling_class": "linear_like",
+      "runtime_seconds": 0.0091
+    }
+  },
+  "audit_runs": {
+    "reproducibility": {
+      "latest_json": "phase5-readout/runs/phase5_reproducibility_ledger_latest.json",
+      "aggregate": {
+        "dominant_scaling_class": "linear_like",
+        "class_consistency_fraction": 1.0,
+        "mean_recovery_score_average": 0.710931,
+        "mean_recovery_score_range": 0.006224,
+        "variance_recovery_score_average": 0.020134,
+        "variance_recovery_score_range": 0.001732,
+        "average_runtime_seconds": 0.009706,
+        "observed_scaling_classes": [
+          "linear_like"
+        ],
+        "average_histogram_l1_distance": 0.059765,
+        "max_histogram_l1_distance": 0.08789,
+        "min_histogram_l1_distance": 0.035156
+      }
+    },
+    "robustness": {
+      "latest_json": "phase5-readout/runs/phase5_robustness_audit_latest.json",
+      "aggregate": {
+        "baseline_scaling_class": "linear_like",
+        "overall_classifier_stability_fraction": 0.888889,
+        "max_histogram_l1_from_baseline": 0.15039,
+        "max_mean_recovery_score_span": 0.025673,
+        "observed_scaling_classes": [
+          "linear_like",
+          "quadratic_like"
+        ]
+      },
+      "success": {
+        "stable_policy_class_consistent": false,
+        "stable_policy_tightly_clustered": true,
+        "overall_pass": true
+      },
+      "edge_case_classifier_flips": [
+        {
+          "parameter": "amplitude_jitter",
+          "parameter_value": 0.14,
+          "scaling_class": "quadratic_like",
+          "mean_recovery_score": 0.70482,
+          "histogram_l1_from_baseline": 0.095705
+        }
+      ]
+    },
+    "control_discrimination": {
+      "latest_json": "phase5-readout/runs/phase5_control_discrimination_latest.json",
+      "success": {
+        "stable_runs_clustered": true,
+        "null_runs_separated": true,
+        "degraded_runs_intermediate": true,
+        "degraded_runs_distinct": true,
+        "overall_pass": true
+      },
+      "control_aggregates": {
+        "stable_frozen_sector": {
+          "dominant_scaling_class": "linear_like",
+          "class_consistency_fraction": 1.0,
+          "mean_recovery_score_average": 0.710931,
+          "mean_recovery_score_range": 0.006224,
+          "variance_recovery_score_average": 0.020134,
+          "variance_recovery_score_range": 0.001732,
+          "average_runtime_seconds": 0.009706,
+          "observed_scaling_classes": [
+            "linear_like"
+          ],
+          "average_histogram_l1_distance": 0.059765,
+          "max_histogram_l1_distance": 0.08789,
+          "min_histogram_l1_distance": 0.035156
+        },
+        "degraded_sector_control": {
+          "dominant_scaling_class": "unstable",
+          "class_consistency_fraction": 0.8,
+          "mean_recovery_score_average": 0.37559,
+          "mean_recovery_score_range": 0.004037,
+          "variance_recovery_score_average": 0.014149,
+          "variance_recovery_score_range": 0.00184,
+          "average_runtime_seconds": 0.009542,
+          "observed_scaling_classes": [
+            "mixed",
+            "unstable"
+          ],
+          "average_histogram_l1_distance": 0.067383,
+          "max_histogram_l1_distance": 0.087892,
+          "min_histogram_l1_distance": 0.027342
+        },
+        "shuffled_null_control": {
+          "dominant_scaling_class": "unstable",
+          "class_consistency_fraction": 1.0,
+          "mean_recovery_score_average": 0.061472,
+          "mean_recovery_score_range": 0.0024,
+          "variance_recovery_score_average": 0.001054,
+          "variance_recovery_score_range": 0.000245,
+          "average_runtime_seconds": 0.007834,
+          "observed_scaling_classes": [
+            "unstable"
+          ],
+          "average_histogram_l1_distance": 0.025391,
+          "max_histogram_l1_distance": 0.041015,
+          "min_histogram_l1_distance": 0.005859
+        }
+      },
+      "pairwise_separation": [
+        {
+          "left_control_class": "stable_frozen_sector",
+          "right_control_class": "degraded_sector_control",
+          "average_histogram_l1_distance": 1.553125,
+          "average_mean_recovery_score_gap": 0.335341,
+          "scaling_class_overlap_fraction": 0.0,
+          "distinct": true
+        },
+        {
+          "left_control_class": "stable_frozen_sector",
+          "right_control_class": "shuffled_null_control",
+          "average_histogram_l1_distance": 2.0,
+          "average_mean_recovery_score_gap": 0.649459,
+          "scaling_class_overlap_fraction": 0.0,
+          "distinct": true
+        },
+        {
+          "left_control_class": "degraded_sector_control",
+          "right_control_class": "shuffled_null_control",
+          "average_histogram_l1_distance": 1.861328,
+          "average_mean_recovery_score_gap": 0.314118,
+          "scaling_class_overlap_fraction": 0.8,
+          "distinct": true
+        }
+      ]
+    }
+  },
+  "authority_artifacts": {
+    "summary_note": "phase5-readout/phase5_authoritative_summary.md",
+    "manifest": "phase5-readout/phase5_authoritative_manifest.json",
+    "figures": {
+      "histogram_controls_svg": "phase5-readout/phase5_summary_figures/phase5_histogram_controls.svg",
+      "reproducibility_sweep_svg": "phase5-readout/phase5_summary_figures/phase5_reproducibility_sweep_summary.svg",
+      "robustness_variation_svg": "phase5-readout/phase5_summary_figures/phase5_robustness_variation_summary.svg"
+    }
+  },
+  "success": true,
+  "artifacts": {
+    "stamped_json": "phase5-readout/runs/20260321_152311_phase5_runs_ledger.json",
+    "latest_json": "phase5-readout/runs/phase5_runs_ledger_latest.json"
+  }
+}

@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Deterministic Coherence-Recovery Readout, Robustness, and Control Discrimination on a Frozen Phase IV Sector}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase V of the frozen HAOS-IIP repository closes as a deterministic readout instrument rather than a theory-expansion layer. The instrument consumes a frozen Phase IV sector bundle, compresses it into a fixed six-field input schema, applies bounded perturbation ensembles, and evaluates one structural recovery score per trial. The authoritative stable-frozen run remains in a high-recovery regime with scaling label \texttt{linear\_like}. A five-schedule reproducibility sweep keeps the dominant stable label fixed with class consistency $= 1.000000$, mean-score range $= 0.006224$, and max pairwise histogram $L^1$ distance $= 0.087890$. Narrow one-at-a-time policy variation remains tightly clustered even though one amplitude-jitter edge case flips the descriptive label to \texttt{quadratic\_like}. Frozen degraded and shuffled-null controls remain clearly separated from the stable sector in both recovery level and histogram distance. The claim is therefore bounded: within the tested perturbation schedules, policy band, and control classes, Phase V provides a reproducible diagnostic readout of recovery statistics and control discrimination. No universal scaling claim, classifier invariance claim, or theory extension is made beyond that regime.
+\end{abstract}
+
+\section{Scope and Authority Discipline}
+
+This paper freezes the final authority state of Phase V in the current HAOS-IIP repository. The objective is diagnostic closure only. Phase V is treated as a readout rig that measures recovery statistics on a frozen Phase IV sector bundle under deterministic perturbation schedules and bounded controls. It is not a new physical model, not a redesign of Phase III or Phase IV, and not an expansion of the mathematical framework.
+
+All positive statements in this paper are branch-bounded. They apply only to the current frozen runner, the current Phase IV stable sector bundle, the current perturbation-policy band, and the three declared control classes. The descriptive scaling classifier is treated as an instrument label, not as an ontological statement.
+
+\section{Frozen Input and Readout Definition}
+
+The authoritative frozen-mode Phase V input object contains exactly six fields. No larger upstream payload is admitted into the readout layer.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}p{2.1in}p{4.2in}@{}}
+\toprule
+Field & Role in the frozen readout \\
+\midrule
+\texttt{sector\_identifier} & Names the frozen sector instance under test. \\
+\texttt{graph\_reference\_or\_seed} & Provides the graph anchor or synthetic seed reference. \\
+\texttt{kernel\_configuration\_snapshot} & Freezes the transport/kernel configuration used by the sector. \\
+\texttt{selector\_configuration} & Freezes the selector expression and threshold context. \\
+\texttt{invariant\_baseline\_vector} & Stores the baseline invariant values used for normalization. \\
+\texttt{perturbation\_policy\_descriptor} & Declares the deterministic trial count and bounded perturbation policy. \\
+\bottomrule
+\end{tabular}
+\caption{Canonical Phase V frozen input schema.}
+\label{tab:schema}
+\end{table}
+
+The recovery score is frozen as a single structural score. For each perturbation trial, five invariant-recovery components are normalized against the baseline and clamped to $[0,1]$:
+\[
+S_{\mathrm{recovery}}=\frac{1}{5}
+\left(
+S_{\mathrm{law\_fit}}+
+S_{\mathrm{subset}}+
+S_{\rho}+
+S_{\mathrm{gap}}+
+S_{\mathrm{monotonic}}
+\right).
+\]
+The components correspond to \texttt{law\_fit\_score}, \texttt{stable\_subset\_size}, \texttt{stable\_rho}, \texttt{ordering\_gap}, and \texttt{monotonic\_consistency\_score}. No alternate score is introduced in the authority freeze.
+
+\section{Run Modes and Baseline Stable Readout}
+
+Phase V retains two modes, \texttt{frozen\_sector} and \texttt{dummy\_sector}. The authoritative paper is about the frozen-sector path. The dummy path remains only as a scaffolding and smoke-test branch. Three control classes are used throughout the audit layer: the stable frozen sector, the degraded control, and the shuffled null control.
+
+The baseline authoritative frozen run uses $1024$ perturbation trials. Its latest frozen summary is listed in Table~\ref{tab:baseline}. This single run is not the full authority argument by itself; it is the anchor that is then audited by reproducibility, robustness, and control-discrimination passes.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Baseline frozen stable metric & Value \\
+\midrule
+Scaling class & \texttt{linear\_like} \\
+Mean recovery score & 0.713270 \\
+Variance recovery score & 0.020640 \\
+Minimum recovery score & 0.365148 \\
+Maximum recovery score & 1.000000 \\
+Nonzero recovery fraction & 1.000000 \\
+Trials & 1024 \\
+\bottomrule
+\end{tabular}
+\caption{Authoritative baseline frozen stable run.}
+\label{tab:baseline}
+\end{table}
+
+\section{Reproducibility Sweep}
+
+The frozen stable sector was rerun across five deterministic perturbation schedules labeled alpha through epsilon. The purpose of the sweep was not to optimize the result but to verify that the same instrument remains in a narrow and class-stable regime across deterministic schedule relabelings.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Reproducibility metric & Value \\
+\midrule
+Dominant stable scaling class & \texttt{linear\_like} \\
+Stable class consistency fraction & 1.000000 \\
+Mean recovery score average & 0.710931 \\
+Mean recovery score range & 0.006224 \\
+Variance recovery score average & 0.020134 \\
+Variance recovery score range & 0.001732 \\
+Average pairwise histogram $L^1$ distance & 0.059765 \\
+Maximum pairwise histogram $L^1$ distance & 0.087890 \\
+\bottomrule
+\end{tabular}
+\caption{Stable frozen reproducibility summary over five deterministic schedules.}
+\label{tab:repro}
+\end{table}
+
+The stable readout therefore satisfies a narrow-cluster reproducibility condition. The label remains fixed as \texttt{linear\_like}, the score range remains small, and the distributional drift across schedules remains modest.
+
+\section{Robustness Under Mild Policy Variation}
+
+Robustness was tested by varying one perturbation parameter at a time within a narrow band around the frozen baseline. The tested parameters were flip probability, maximum phase drift fraction of $\pi$, and amplitude jitter. The aggregate result is summarized in Table~\ref{tab:robustness}.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Robustness metric & Value \\
+\midrule
+Baseline scaling class & \texttt{linear\_like} \\
+Overall classifier stability fraction & 0.888889 \\
+Max histogram $L^1$ distance from baseline & 0.150390 \\
+Max mean recovery score span & 0.025673 \\
+Stable policy class-consistent & False \\
+Stable policy tightly clustered & True \\
+\bottomrule
+\end{tabular}
+\caption{Aggregate robustness summary under narrow one-at-a-time policy variation.}
+\label{tab:robustness}
+\end{table}
+
+The key edge case must be recorded explicitly. At \texttt{amplitude\_jitter} $= 0.14$, the descriptive classifier flips from \texttt{linear\_like} to \texttt{quadratic\_like}, with mean recovery score $= 0.704820$ and histogram $L^1$ distance from the robustness baseline $= 0.095705$. That flip is treated as a boundary marker for the descriptive classifier rather than as evidence for a new mechanism. The overall robustness result therefore closes on tight clustering, not on absolute label invariance.
+
+\section{Control Discrimination}
+
+The same five-schedule sweep was then run across the stable, degraded, and null control classes. The stable aggregate remains high-recovery and \texttt{linear\_like}. The degraded aggregate moves to an intermediate recovery regime with dominant \texttt{unstable} class and one \texttt{mixed} observation. The null control remains sharply low-recovery and consistently \texttt{unstable}.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}p{2.15in}ccc@{}}
+\toprule
+Control class & Dominant class & Mean recovery & Class consistency \\
+\midrule
+\texttt{stable\_frozen\_sector} & \texttt{linear\_like} & 0.710931 & 1.000000 \\
+\texttt{degraded\_sector\_control} & \texttt{unstable} & 0.375590 & 0.800000 \\
+\texttt{shuffled\_null\_control} & \texttt{unstable} & 0.061472 & 1.000000 \\
+\bottomrule
+\end{tabular}
+\caption{Aggregate control results over five deterministic schedules.}
+\label{tab:controls}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}p{2.45in}ccc@{}}
+\toprule
+Control pair & Avg.\ histogram $L^1$ & Avg.\ mean-score gap & Distinct \\
+\midrule
+Stable vs.\ degraded & 1.553125 & 0.335341 & True \\
+Stable vs.\ null & 2.000000 & 0.649459 & True \\
+Degraded vs.\ null & 1.861328 & 0.314118 & True \\
+\bottomrule
+\end{tabular}
+\caption{Pairwise separation metrics across control classes.}
+\label{tab:pairwise}
+\end{table}
+
+These pairwise distances are large relative to the internal schedule-to-schedule drift of the stable branch. That is the central separation result of Phase V: stable, degraded, and null controls occupy clearly distinct distributional regimes within the tested branch.
+
+\section{Claim Boundary and Non-Claims}
+
+The authority claim is intentionally narrow:
+
+\begin{quote}
+Within the tested frozen Phase IV bundle, perturbation schedules, narrow policy band, and declared control classes, Phase V acts as a deterministic recovery-histogram readout that is reproducible, tightly clustered under mild policy variation, and clearly discriminative between stable, degraded, and null controls.
+\end{quote}
+
+The paper does \emph{not} claim any of the following:
+
+\begin{enumerate}
+\item universal scaling behavior outside the tested perturbation band;
+\item classifier invariance under arbitrary policy changes;
+\item a new physical mechanism implied by the edge-case classifier flip;
+\item a theory extension beyond the frozen Phase IV sector and the current Phase V readout instrument.
+\end{enumerate}
+
+\section{Conclusion}
+
+Phase V closes as an authority-layer diagnostic. The stable frozen sector remains class-consistent across deterministic schedules and tightly clustered under narrow perturbation-policy variation. The one recorded amplitude-jitter edge flip is explicit and bounded. Degraded and null controls remain well separated from the stable branch in recovery level and histogram distance.
+
+That is the closed content of this phase. Phase V does not add a new model or a new ontology. It freezes a reproducible readout instrument and a bounded claim ledger over the current frozen Phase IV sector bundle.
+
+\end{document}

@@ -1,0 +1,42 @@
+{
+  "phase": 5,
+  "phase_name": "phase5-readout",
+  "input_mode": "frozen_sector",
+  "control_class": "stable_frozen_sector",
+  "sector_identifier": "phaseIV_stable_smeared_sector",
+  "scaling_fit": {
+    "classifier_version": "phase5_scaling_v1",
+    "scaling_class": "linear_like",
+    "diagnostics": {
+      "constant_fit": {
+        "coefficients": [
+          0.1
+        ],
+        "rmse": 0.092541
+      },
+      "linear_fit": {
+        "coefficients": [
+          -0.027427,
+          0.254853
+        ],
+        "rmse": 0.056617
+      },
+      "quadratic_fit": {
+        "coefficients": [
+          -0.079783,
+          0.567428,
+          -0.312575
+        ],
+        "rmse": 0.051861
+      },
+      "lower_tail_mass": 0.0,
+      "upper_tail_mass": 0.291992,
+      "frequency_range": 0.254883,
+      "oscillation_count": 1
+    }
+  },
+  "artifacts": {
+    "stamped_json": "phase5-readout/runs/20260321_152311_phase5_scaling_fit.json",
+    "latest_json": "phase5-readout/runs/phase5_scaling_fit_latest.json"
+  }
+}

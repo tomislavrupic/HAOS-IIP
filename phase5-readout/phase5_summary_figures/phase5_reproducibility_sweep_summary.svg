@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" role="img" aria-label="Phase V reproducibility summary">
+<rect width="100%" height="100%" fill="#fcfcf9"/>
+<text x="72" y="30" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#101828">Phase V Reproducibility Sweep Summary</text>
+<text x="72" y="48" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">Stable frozen sector across 5 deterministic schedules.</text>
+<line x1="72" y1="326.00" x2="752" y2="326.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="330.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">0.00</text>
+<line x1="72" y1="261.00" x2="752" y2="261.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="265.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">0.25</text>
+<line x1="72" y1="196.00" x2="752" y2="196.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="200.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">0.50</text>
+<line x1="72" y1="131.00" x2="752" y2="131.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="135.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">0.75</text>
+<line x1="72" y1="66.00" x2="752" y2="66.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="70.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">1.00</text>
+<line x1="72" y1="66" x2="72" y2="326" stroke="#101828" stroke-width="1.4"/>
+<line x1="72" y1="326" x2="752" y2="326" stroke="#101828" stroke-width="1.4"/>
+<rect x="100.00" y="141.37" width="80" height="184.63" fill="#1f7a8c" rx="4"/>
+<text x="140.00" y="133.37" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">0.710119</text>
+<text x="140.00" y="346.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">alpha</text>
+<text x="140.00" y="362.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475467">linear_like</text>
+<rect x="236.00" y="141.18" width="80" height="184.82" fill="#1f7a8c" rx="4"/>
+<text x="276.00" y="133.18" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">0.710827</text>
+<text x="276.00" y="346.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">beta</text>
+<text x="276.00" y="362.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475467">linear_like</text>
+<rect x="372.00" y="140.87" width="80" height="185.13" fill="#1f7a8c" rx="4"/>
+<text x="412.00" y="132.87" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">0.712044</text>
+<text x="412.00" y="346.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">gamma</text>
+<text x="412.00" y="362.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475467">linear_like</text>
+<rect x="508.00" y="141.99" width="80" height="184.01" fill="#1f7a8c" rx="4"/>
+<text x="548.00" y="133.99" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">0.707721</text>
+<text x="548.00" y="346.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">delta</text>
+<text x="548.00" y="362.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475467">linear_like</text>
+<rect x="644.00" y="140.37" width="80" height="185.63" fill="#1f7a8c" rx="4"/>
+<text x="684.00" y="132.37" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">0.713945</text>
+<text x="684.00" y="346.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#101828">epsilon</text>
+<text x="684.00" y="362.00" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475467">linear_like</text>
+<text x="72" y="366" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">dominant class linear_like; class consistency 1.000000; mean-score range 0.006224</text>
+<text x="72" y="384" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">pairwise histogram L1 avg 0.059765; max 0.087890</text>
+</svg>

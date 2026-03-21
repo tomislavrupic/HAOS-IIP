@@ -80,6 +80,10 @@ The intended public reading order is:
 
 1. `26.1` Effective Smeared-Transfer Closure in a Clustered DK Sector
 
+### 2.10 Part X. Phase V readout authority
+
+1. `28.1` Deterministic Coherence-Recovery Readout, Robustness, and Control Discrimination on a Frozen Phase IV Sector
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -114,6 +118,7 @@ The intended public reading order is:
 - `25.2` Final Combinatorial Austerity Closure Note on the No-Distance Combinatorial Austerity Line
 - `25.3` Full Combinatorial Austerity Closure of the No-Distance C Line
 - `26.1` Effective Smeared-Transfer Closure in a Clustered DK Sector
+- `28.1` Deterministic Coherence-Recovery Readout, Robustness, and Control Discrimination on a Frozen Phase IV Sector
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

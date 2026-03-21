@@ -1,15 +1,34 @@
 phase: 5
 name: phase5-readout
-purpose: scaffold a JSON-first readout over frozen phase outputs
+purpose: deterministic recovery histogram and scaling readout over frozen Phase IV bundles
 inputs:
-  - dummy_phase_bundle
-  - phase3_stability_bundle_or_authoritative_23_14_json
-  - phase4_sector_freeze_bundle_or_authoritative_24_5_json
+  - frozen_sector_bundle
+  - dummy_sector_schema
 outputs:
   - phase5_readout_bundle.json
   - phase5_recovery_histogram.json
+  - phase5_scaling_fit.json
+  - phase5_reproducibility_ledger.json
+  - phase5_robustness_audit.json
+  - phase5_control_discrimination.json
+  - phase5_authoritative_summary.md
+  - phase5_authoritative_manifest.json
+  - phase5_summary_figures/
+  - phase5_runs_ledger.json
+schema:
+  - sector_identifier
+  - graph_reference_or_seed
+  - kernel_configuration_snapshot
+  - selector_configuration
+  - invariant_baseline_vector
+  - perturbation_policy_descriptor
 rules:
   - no phase imports
   - haos_core only
   - json outputs first
-  - dummy path must stay runnable
+  - frozen mode consumes only necessary bundle fields
+  - reject oversized phase4 bundles
+  - at least 1000 trials per sector
+  - audit runs use deterministic schedule labels only
+  - controls are compared from bundle inputs, never phase imports
+  - authority freeze records edge-case classifier flips explicitly

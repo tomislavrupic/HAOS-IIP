@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460" role="img" aria-label="Phase V histogram comparison">
+<rect width="100%" height="100%" fill="#fcfcf9"/>
+<text x="72" y="30" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#101828">Phase V Stable vs Degraded vs Null Histogram Comparison</text>
+<text x="72" y="48" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">Mean normalized frequency across 5 deterministic schedules.</text>
+<line x1="72" y1="356.00" x2="752" y2="356.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="360.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">0.00</text>
+<line x1="72" y1="281.00" x2="752" y2="281.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="285.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">0.25</text>
+<line x1="72" y1="206.00" x2="752" y2="206.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="210.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">0.50</text>
+<line x1="72" y1="131.00" x2="752" y2="131.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="135.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">0.75</text>
+<line x1="72" y1="56.00" x2="752" y2="56.00" stroke="#e4e7ec" stroke-width="1"/>
+<text x="26" y="60.00" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">1.00</text>
+<line x1="106.00" y1="56" x2="106.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="174.00" y1="56" x2="174.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="242.00" y1="56" x2="242.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="310.00" y1="56" x2="310.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="378.00" y1="56" x2="378.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="446.00" y1="56" x2="446.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="514.00" y1="56" x2="514.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="582.00" y1="56" x2="582.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="650.00" y1="56" x2="650.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="718.00" y1="56" x2="718.00" y2="356" stroke="#f2f4f7" stroke-width="1"/>
+<line x1="72" y1="56" x2="72" y2="356" stroke="#101828" stroke-width="1.4"/>
+<line x1="72" y1="356" x2="752" y2="356" stroke="#101828" stroke-width="1.4"/>
+<polyline fill="none" stroke="#1f7a8c" stroke-width="3" points="72.00,356.00 147.56,356.00 223.11,356.00 298.67,354.07 374.22,329.87 449.78,316.62 525.33,278.01 600.89,287.15 676.44,305.73 752.00,320.55"/>
+<polyline fill="none" stroke="#ca8a04" stroke-width="3" points="72.00,353.89 147.56,340.59 223.11,277.60 298.67,285.57 374.22,261.31 449.78,324.95 525.33,348.09 600.89,356.00 676.44,356.00 752.00,356.00"/>
+<polyline fill="none" stroke="#b42318" stroke-width="3" points="72.00,78.38 147.56,337.07 223.11,352.54 298.67,356.00 374.22,356.00 449.78,356.00 525.33,356.00 600.89,356.00 676.44,356.00 752.00,356.00"/>
+<rect x="780" y="90" width="14" height="14" fill="#1f7a8c" rx="2"/>
+<text x="802" y="101" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#101828">Stable frozen sector</text>
+<text x="802" y="117" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">mean 0.710931, class linear_like</text>
+<rect x="780" y="138" width="14" height="14" fill="#ca8a04" rx="2"/>
+<text x="802" y="149" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#101828">Degraded control</text>
+<text x="802" y="165" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">mean 0.375590, class unstable</text>
+<rect x="780" y="186" width="14" height="14" fill="#b42318" rx="2"/>
+<text x="802" y="197" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#101828">Shuffled null control</text>
+<text x="802" y="213" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">mean 0.061472, class unstable</text>
+<text x="72" y="390" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">x-axis: recovery score bin center</text>
+<text x="72" y="408" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475467">y-axis: normalized frequency</text>
+</svg>

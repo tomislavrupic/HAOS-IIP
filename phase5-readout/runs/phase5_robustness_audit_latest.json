@@ -1,0 +1,196 @@
+{
+  "phase": 5,
+  "phase_name": "phase5-readout",
+  "audit_name": "phase5b_robustness_audit_v1",
+  "source_config": "phase5-readout/configs/phase5_readout_scaffold.json",
+  "input_mode": "frozen_sector",
+  "control_class": "stable_frozen_sector",
+  "baseline": {
+    "schedule_label": "policy_band_anchor",
+    "seed": 15429100979972793408,
+    "scaling_class": "linear_like",
+    "mean_recovery_score": 0.719291,
+    "variance_recovery_score": 0.021997,
+    "min_recovery_score": 0.306391,
+    "max_recovery_score": 1.0,
+    "nonzero_recovery_fraction": 1.0,
+    "runtime_seconds": 0.00839
+  },
+  "parameter_sweeps": [
+    {
+      "parameter": "flip_probability",
+      "baseline_value": 0.12,
+      "runs": [
+        {
+          "schedule_label": "policy_band::flip_probability",
+          "seed": 811913668669534835,
+          "scaling_class": "linear_like",
+          "mean_recovery_score": 0.722204,
+          "variance_recovery_score": 0.019032,
+          "min_recovery_score": 0.3744,
+          "max_recovery_score": 1.0,
+          "nonzero_recovery_fraction": 1.0,
+          "runtime_seconds": 0.015913,
+          "parameter": "flip_probability",
+          "parameter_value": 0.11,
+          "histogram_l1_from_baseline": 0.138671
+        },
+        {
+          "schedule_label": "policy_band::flip_probability",
+          "seed": 811913668669534835,
+          "scaling_class": "linear_like",
+          "mean_recovery_score": 0.716613,
+          "variance_recovery_score": 0.019229,
+          "min_recovery_score": 0.359154,
+          "max_recovery_score": 1.0,
+          "nonzero_recovery_fraction": 1.0,
+          "runtime_seconds": 0.008675,
+          "parameter": "flip_probability",
+          "parameter_value": 0.12,
+          "histogram_l1_from_baseline": 0.144531
+        },
+        {
+          "schedule_label": "policy_band::flip_probability",
+          "seed": 811913668669534835,
+          "scaling_class": "linear_like",
+          "mean_recovery_score": 0.711157,
+          "variance_recovery_score": 0.019443,
+          "min_recovery_score": 0.359154,
+          "max_recovery_score": 1.0,
+          "nonzero_recovery_fraction": 1.0,
+          "runtime_seconds": 0.013148,
+          "parameter": "flip_probability",
+          "parameter_value": 0.13,
+          "histogram_l1_from_baseline": 0.15039
+        }
+      ],
+      "classifier_stability_fraction": 1.0,
+      "mean_recovery_score_span": 0.011047,
+      "variance_recovery_score_span": 0.000411,
+      "max_histogram_l1_from_baseline": 0.15039
+    },
+    {
+      "parameter": "max_phase_drift_fraction_of_pi",
+      "baseline_value": 0.04,
+      "runs": [
+        {
+          "schedule_label": "policy_band::max_phase_drift_fraction_of_pi",
+          "seed": 9748852027271303550,
+          "scaling_class": "linear_like",
+          "mean_recovery_score": 0.710678,
+          "variance_recovery_score": 0.020565,
+          "min_recovery_score": 0.363852,
+          "max_recovery_score": 1.0,
+          "nonzero_recovery_fraction": 1.0,
+          "runtime_seconds": 0.010387,
+          "parameter": "max_phase_drift_fraction_of_pi",
+          "parameter_value": 0.035,
+          "histogram_l1_from_baseline": 0.103516
+        },
+        {
+          "schedule_label": "policy_band::max_phase_drift_fraction_of_pi",
+          "seed": 9748852027271303550,
+          "scaling_class": "linear_like",
+          "mean_recovery_score": 0.710678,
+          "variance_recovery_score": 0.020565,
+          "min_recovery_score": 0.363852,
+          "max_recovery_score": 1.0,
+          "nonzero_recovery_fraction": 1.0,
+          "runtime_seconds": 0.011239,
+          "parameter": "max_phase_drift_fraction_of_pi",
+          "parameter_value": 0.04,
+          "histogram_l1_from_baseline": 0.103516
+        },
+        {
+          "schedule_label": "policy_band::max_phase_drift_fraction_of_pi",
+          "seed": 9748852027271303550,
+          "scaling_class": "linear_like",
+          "mean_recovery_score": 0.710678,
+          "variance_recovery_score": 0.020565,
+          "min_recovery_score": 0.363852,
+          "max_recovery_score": 1.0,
+          "nonzero_recovery_fraction": 1.0,
+          "runtime_seconds": 0.018898,
+          "parameter": "max_phase_drift_fraction_of_pi",
+          "parameter_value": 0.045,
+          "histogram_l1_from_baseline": 0.103516
+        }
+      ],
+      "classifier_stability_fraction": 1.0,
+      "mean_recovery_score_span": 0.0,
+      "variance_recovery_score_span": 0.0,
+      "max_histogram_l1_from_baseline": 0.103516
+    },
+    {
+      "parameter": "amplitude_jitter",
+      "baseline_value": 0.12,
+      "runs": [
+        {
+          "schedule_label": "policy_band::amplitude_jitter",
+          "seed": 4142026363111417872,
+          "scaling_class": "linear_like",
+          "mean_recovery_score": 0.730493,
+          "variance_recovery_score": 0.021142,
+          "min_recovery_score": 0.368377,
+          "max_recovery_score": 1.0,
+          "nonzero_recovery_fraction": 1.0,
+          "runtime_seconds": 0.014168,
+          "parameter": "amplitude_jitter",
+          "parameter_value": 0.1,
+          "histogram_l1_from_baseline": 0.125
+        },
+        {
+          "schedule_label": "policy_band::amplitude_jitter",
+          "seed": 4142026363111417872,
+          "scaling_class": "linear_like",
+          "mean_recovery_score": 0.717258,
+          "variance_recovery_score": 0.022,
+          "min_recovery_score": 0.312846,
+          "max_recovery_score": 1.0,
+          "nonzero_recovery_fraction": 1.0,
+          "runtime_seconds": 0.008569,
+          "parameter": "amplitude_jitter",
+          "parameter_value": 0.12,
+          "histogram_l1_from_baseline": 0.083985
+        },
+        {
+          "schedule_label": "policy_band::amplitude_jitter",
+          "seed": 4142026363111417872,
+          "scaling_class": "quadratic_like",
+          "mean_recovery_score": 0.70482,
+          "variance_recovery_score": 0.022962,
+          "min_recovery_score": 0.297315,
+          "max_recovery_score": 1.0,
+          "nonzero_recovery_fraction": 1.0,
+          "runtime_seconds": 0.008355,
+          "parameter": "amplitude_jitter",
+          "parameter_value": 0.14,
+          "histogram_l1_from_baseline": 0.095705
+        }
+      ],
+      "classifier_stability_fraction": 0.666667,
+      "mean_recovery_score_span": 0.025673,
+      "variance_recovery_score_span": 0.00182,
+      "max_histogram_l1_from_baseline": 0.125
+    }
+  ],
+  "aggregate": {
+    "baseline_scaling_class": "linear_like",
+    "overall_classifier_stability_fraction": 0.888889,
+    "max_histogram_l1_from_baseline": 0.15039,
+    "max_mean_recovery_score_span": 0.025673,
+    "observed_scaling_classes": [
+      "linear_like",
+      "quadratic_like"
+    ]
+  },
+  "success": {
+    "stable_policy_class_consistent": false,
+    "stable_policy_tightly_clustered": true,
+    "overall_pass": true
+  },
+  "artifacts": {
+    "stamped_json": "phase5-readout/runs/20260321_152311_phase5_robustness_audit.json",
+    "latest_json": "phase5-readout/runs/phase5_robustness_audit_latest.json"
+  }
+}

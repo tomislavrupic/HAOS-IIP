@@ -1,0 +1,135 @@
+{
+  "timestamp": "2026-03-21T14:23:11Z",
+  "phase_identifier": "phase5-readout",
+  "status": "passed",
+  "frozen_runner_path": "phase5-readout/runs/run_phase5.py",
+  "config_path": "phase5-readout/configs/phase5_readout_scaffold.json",
+  "diagnostic_outputs": {
+    "baseline_bundle_latest_json": "phase5-readout/runs/phase5_readout_bundle_latest.json",
+    "baseline_histogram_latest_json": "phase5-readout/runs/phase5_recovery_histogram_latest.json",
+    "baseline_scaling_fit_latest_json": "phase5-readout/runs/phase5_scaling_fit_latest.json",
+    "reproducibility_latest_json": "phase5-readout/runs/phase5_reproducibility_ledger_latest.json",
+    "robustness_latest_json": "phase5-readout/runs/phase5_robustness_audit_latest.json",
+    "control_discrimination_latest_json": "phase5-readout/runs/phase5_control_discrimination_latest.json"
+  },
+  "authority_artifacts": {
+    "summary_note": "phase5-readout/phase5_authoritative_summary.md",
+    "runs_ledger_latest_json": "phase5-readout/runs/phase5_runs_ledger_latest.json",
+    "runs_ledger_stamped_json": "phase5-readout/runs/20260321_152311_phase5_runs_ledger.json",
+    "summary_figures": {
+      "histogram_controls_svg": "phase5-readout/phase5_summary_figures/phase5_histogram_controls.svg",
+      "reproducibility_sweep_svg": "phase5-readout/phase5_summary_figures/phase5_reproducibility_sweep_summary.svg",
+      "robustness_variation_svg": "phase5-readout/phase5_summary_figures/phase5_robustness_variation_summary.svg"
+    }
+  },
+  "dominant_stable_class": "linear_like",
+  "reproducibility_metrics": {
+    "schedule_count": 5,
+    "class_consistency_fraction": 1.0,
+    "mean_recovery_score_range": 0.006224,
+    "average_histogram_l1_distance": 0.059765,
+    "max_histogram_l1_distance": 0.08789
+  },
+  "robustness_metrics": {
+    "baseline_scaling_class": "linear_like",
+    "overall_classifier_stability_fraction": 0.888889,
+    "max_histogram_l1_from_baseline": 0.15039,
+    "max_mean_recovery_score_span": 0.025673,
+    "stable_policy_tightly_clustered": true,
+    "stable_policy_class_consistent": false,
+    "edge_case_classifier_flips": [
+      {
+        "parameter": "amplitude_jitter",
+        "parameter_value": 0.14,
+        "scaling_class": "quadratic_like",
+        "mean_recovery_score": 0.70482,
+        "histogram_l1_from_baseline": 0.095705
+      }
+    ]
+  },
+  "control_separation_metrics": {
+    "success": {
+      "stable_runs_clustered": true,
+      "null_runs_separated": true,
+      "degraded_runs_intermediate": true,
+      "degraded_runs_distinct": true,
+      "overall_pass": true
+    },
+    "controls": {
+      "stable_frozen_sector": {
+        "dominant_scaling_class": "linear_like",
+        "class_consistency_fraction": 1.0,
+        "mean_recovery_score_average": 0.710931,
+        "mean_recovery_score_range": 0.006224,
+        "variance_recovery_score_average": 0.020134,
+        "variance_recovery_score_range": 0.001732,
+        "average_runtime_seconds": 0.009706,
+        "observed_scaling_classes": [
+          "linear_like"
+        ],
+        "average_histogram_l1_distance": 0.059765,
+        "max_histogram_l1_distance": 0.08789,
+        "min_histogram_l1_distance": 0.035156
+      },
+      "degraded_sector_control": {
+        "dominant_scaling_class": "unstable",
+        "class_consistency_fraction": 0.8,
+        "mean_recovery_score_average": 0.37559,
+        "mean_recovery_score_range": 0.004037,
+        "variance_recovery_score_average": 0.014149,
+        "variance_recovery_score_range": 0.00184,
+        "average_runtime_seconds": 0.009542,
+        "observed_scaling_classes": [
+          "mixed",
+          "unstable"
+        ],
+        "average_histogram_l1_distance": 0.067383,
+        "max_histogram_l1_distance": 0.087892,
+        "min_histogram_l1_distance": 0.027342
+      },
+      "shuffled_null_control": {
+        "dominant_scaling_class": "unstable",
+        "class_consistency_fraction": 1.0,
+        "mean_recovery_score_average": 0.061472,
+        "mean_recovery_score_range": 0.0024,
+        "variance_recovery_score_average": 0.001054,
+        "variance_recovery_score_range": 0.000245,
+        "average_runtime_seconds": 0.007834,
+        "observed_scaling_classes": [
+          "unstable"
+        ],
+        "average_histogram_l1_distance": 0.025391,
+        "max_histogram_l1_distance": 0.041015,
+        "min_histogram_l1_distance": 0.005859
+      }
+    },
+    "pairwise_separation": [
+      {
+        "left_control_class": "stable_frozen_sector",
+        "right_control_class": "degraded_sector_control",
+        "average_histogram_l1_distance": 1.553125,
+        "average_mean_recovery_score_gap": 0.335341,
+        "scaling_class_overlap_fraction": 0.0,
+        "distinct": true
+      },
+      {
+        "left_control_class": "stable_frozen_sector",
+        "right_control_class": "shuffled_null_control",
+        "average_histogram_l1_distance": 2.0,
+        "average_mean_recovery_score_gap": 0.649459,
+        "scaling_class_overlap_fraction": 0.0,
+        "distinct": true
+      },
+      {
+        "left_control_class": "degraded_sector_control",
+        "right_control_class": "shuffled_null_control",
+        "average_histogram_l1_distance": 1.861328,
+        "average_mean_recovery_score_gap": 0.314118,
+        "scaling_class_overlap_fraction": 0.8,
+        "distinct": true
+      }
+    ]
+  },
+  "success": true,
+  "claim_boundary": "Phase V authority is limited to deterministic recovery-histogram behavior on the frozen Phase IV stable sector bundle under the configured perturbation schedules, policy bands, and control classes. It does not claim universal scaling, theory expansion, or classifier invariance outside this tested regime."
+}
