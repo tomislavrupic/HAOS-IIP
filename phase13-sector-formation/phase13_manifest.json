@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-03-21T20:31:47Z",
+  "phase": 13,
+  "phase_name": "phase13-sector-formation",
+  "stage_identifier": "phase13-sector-formation",
+  "status": "passed",
+  "success": true,
+  "objective": "multi_mode_statistical_sector_formation_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase7_manifest_reference": "phase7-spectral/phase7_spectral_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase9_manifest_reference": "phase9-invariants/phase9_manifest.json",
+  "phase10_manifest_reference": "phase10-bridge/phase10_manifest.json",
+  "phasex_manifest_reference": "phaseX-proto-particle/phaseX_integrated_manifest.json",
+  "phase11_manifest_reference": "phase11-protection/phase11_manifest.json",
+  "phase12_manifest_reference": "phase12-interactions/phase12_manifest.json",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the refinement-order parameter inherited from the frozen operator hierarchy.",
+    "levels": [
+      48,
+      60,
+      72,
+      84
+    ]
+  },
+  "evaluation_protocol": {
+    "evaluation_tau": 0.8,
+    "persistence_tau_grid": [
+      0.0,
+      0.4,
+      0.8,
+      1.2,
+      1.6,
+      2.0,
+      2.4,
+      3.0,
+      3.6,
+      4.2
+    ],
+    "ensemble_sizes": [
+      3,
+      5,
+      7
+    ],
+    "layout_seeds": [
+      1301,
+      1302,
+      1303
+    ],
+    "minimum_physical_separation": 0.12,
+    "phase8_short_time_window": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ]
+  },
+  "evaluation_means": {
+    "branch_survival_fraction": 1.0,
+    "control_survival_fraction": 0.990476190476,
+    "branch_cluster_frequency": 0.238095238095,
+    "control_cluster_frequency": 0.228571428571,
+    "branch_spectral_distortion": -0.2213869077,
+    "control_spectral_distortion": -0.232292030413,
+    "branch_nearest_neighbor_mean": 0.263125976359,
+    "control_nearest_neighbor_mean": 0.2636216034
+  },
+  "stability_metrics": {
+    "branch_seed_std_survival": 0.0,
+    "branch_seed_std_spacing": 0.100627125854,
+    "branch_seed_std_cluster": 0.249443825785,
+    "branch_successive_refinement_survival_distance": 0.0,
+    "branch_successive_refinement_spacing_distance": 0.0,
+    "branch_successive_refinement_spacing_distance_fixed_layout": 0.0,
+    "branch_successive_refinement_cluster_distance_fixed_layout": 0.0,
+    "branch_successive_refinement_exclusion_distance_fixed_layout": 0.0,
+    "branch_pair_histogram_l1_distance_fixed_layout": 0.0,
+    "branch_nearest_neighbor_relative_span": 1.128515499714,
+    "branch_exclusion_radius_relative_span": 1.472772762579,
+    "control_nearest_neighbor_relative_span": 1.126393811695,
+    "control_exclusion_radius_relative_span": 1.469620706549,
+    "max_tau_survival_gap_branch_minus_control": 0.071164021164,
+    "max_tau_spectral_gap_branch_minus_control": 0.046202260651,
+    "terminal_tau": 4.2,
+    "terminal_branch_survival_fraction": 0.957936507937,
+    "terminal_control_survival_fraction": 0.886772486773
+  },
+  "success_flags": {
+    "ensemble_survival_reproducible": true,
+    "spacing_bands_compact": true,
+    "cluster_behavior_stable": true,
+    "control_hierarchy_different": true
+  },
+  "artifacts": {
+    "population_survival_ledger_csv": "phase13-sector-formation/runs/phase13_population_survival_ledger.csv",
+    "spacing_statistics_ledger_csv": "phase13-sector-formation/runs/phase13_spacing_statistics_ledger.csv",
+    "cluster_metrics_csv": "phase13-sector-formation/runs/phase13_cluster_metrics.csv",
+    "spectral_ensemble_proxy_csv": "phase13-sector-formation/runs/phase13_spectral_ensemble_proxy.csv",
+    "summary_md": "phase13-sector-formation/phase13_summary.md",
+    "manifest_json": "phase13-sector-formation/phase13_manifest.json",
+    "survival_plot": "phase13-sector-formation/plots/phase13_survival_fraction_vs_time.svg",
+    "pair_hist_plot": "phase13-sector-formation/plots/phase13_pair_distance_histogram_vs_refinement.svg",
+    "nearest_neighbor_plot": "phase13-sector-formation/plots/phase13_nearest_neighbor_scale_vs_refinement.svg",
+    "cluster_plot": "phase13-sector-formation/plots/phase13_cluster_count_vs_time.svg",
+    "spectral_plot": "phase13-sector-formation/plots/phase13_ensemble_spectral_proxy_vs_population.svg",
+    "runs_json": "phase13-sector-formation/runs/phase13_runs.json",
+    "builder_script": "phase13-sector-formation/build_multi_mode_sector.py"
+  },
+  "runtime_seconds": 1.232515,
+  "claim_boundary": "Phase XIII is limited to multi-mode statistical sector formation diagnostics on the frozen localized candidate and frozen operator hierarchy. It does not assert thermodynamics, particles, gases, kinetic laws, or physical correspondence.",
+  "conclusion": "Phase XIII establishes multi-mode statistical sector formation feasibility for the frozen operator hierarchy."
+}

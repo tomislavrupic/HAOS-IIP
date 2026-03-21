@@ -116,6 +116,10 @@ The intended public reading order is:
 
 1. `36.1` Two-Mode Interaction and Identity-Preservation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
+### 2.19 Part XIX. Multi-mode statistical sector formation
+
+1. `37.1` Multi-Mode Statistical Sector Formation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -159,6 +163,7 @@ The intended public reading order is:
 - `34.1` Integrated Proto-Particle Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `35.1` Localized-Mode Protection and Failure-Mechanism Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `36.1` Two-Mode Interaction and Identity-Preservation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+- `37.1` Multi-Mode Statistical Sector Formation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

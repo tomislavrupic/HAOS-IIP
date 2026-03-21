@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-03-21T20:31:47Z",
+  "phase_name": "phase13-sector-formation",
+  "stage_identifier": "phase13-sector-formation",
+  "config_reference": "phase13-sector-formation/configs/phase13_sector_config.json",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase11_manifest_reference": "phase11-protection/phase11_manifest.json",
+  "phase12_manifest_reference": "phase12-interactions/phase12_manifest.json",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_levels": [
+    48,
+    60,
+    72,
+    84
+  ],
+  "ensemble_sizes": [
+    3,
+    5,
+    7
+  ],
+  "layout_seeds": [
+    1301,
+    1302,
+    1303
+  ],
+  "layout_rule": {
+    "min_separation_physical": 0.12,
+    "max_attempts": 20000
+  },
+  "evaluation_tau": 0.8,
+  "persistence_tau_grid": [
+    0.0,
+    0.4,
+    0.8,
+    1.2,
+    1.6,
+    2.0,
+    2.4,
+    3.0,
+    3.6,
+    4.2
+  ],
+  "phase8_short_time_window": [
+    0.02,
+    0.03,
+    0.05,
+    0.075,
+    0.1
+  ],
+  "deterministic_seed_record": {
+    "randomness_used": true,
+    "generator": "numpy.default_rng",
+    "note": "Layout generation uses fixed deterministic seeds and fixed acceptance rules."
+  },
+  "runtime_seconds": 1.232515
+}

@@ -1,0 +1,194 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Multi-Mode Statistical Sector Formation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase XIII of the frozen HAOS-IIP program asks whether dilute populations of the already frozen persistent localized branch candidate
+\texttt{low\_mode\_localized\_wavepacket} exhibit reproducible population-level organization without changing any earlier contract. The phase is not allowed to modify the Phase V readout layer, the Phase VI branch-local operator hierarchy $\Delta_h$, the Phase VII spectral-feasibility manifest, the Phase VIII short-time trace contract, the Phase IX coefficient-stabilization diagnostics, the Phase X cautious bridge bundle, the Phase X proto-particle candidate definition, the Phase XI survival-basin characterization, or the Phase XII two-mode interaction regime mapping. It therefore tests only whether multi-candidate ensembles remain refinement-ordered, spatially structured, and distinguishable from a deterministic altered-connectivity control. Across refinement levels $n_{\mathrm{side}}\in\{48,60,72,84\}$, ensemble sizes $\{3,5,7\}$, and deterministic layout seeds $\{1301,1302,1303\}$ with minimum physical separation $0.12$, the branch maintains perfect evaluation-time survival, zero fixed-layout refinement drift in spacing, clustering, exclusion radius, and pair-distance histogram structure, and a time-resolved separation from the control that reaches $0.071164021164$ in survival fraction and $0.046202260651$ in spectral distortion. Terminal survival at $\tau=4.2$ is $0.957936507937$ on the branch versus $0.886772486773$ on the control. The result is bounded: Phase XIII establishes multi-mode statistical sector formation feasibility for the frozen operator hierarchy. It does not assert thermodynamics, gases, kinetic laws, or particle-ensemble physics.
+\end{abstract}
+
+\section{Scope and Frozen Contracts}
+
+Phase XIII is a population-structure diagnostic only. It does not introduce a new operator, a new normalization, a new localized candidate, or a new interpretive layer. It consumes the following frozen authority contracts without change:
+\begin{itemize}
+\item the Phase V recovery-statistics readout layer;
+\item the Phase VI branch-local periodic DK2D block cochain Laplacian hierarchy $\Delta_h$;
+\item the Phase VII spectral-feasibility outputs;
+\item the Phase VIII short-time trace operational window and probe grid;
+\item the Phase IX coefficient stabilization diagnostics;
+\item the Phase X cautious continuum-bridge bundle;
+\item the Phase X proto-particle candidate definition;
+\item the Phase XI survival-basin characterization;
+\item the Phase XII two-mode interaction regime mapping.
+\end{itemize}
+
+The concrete frozen references used here are:
+\begin{itemize}
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase7-spectral/phase7_spectral_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json};
+\item \url{phase9-invariants/phase9_manifest.json};
+\item \url{phase10-bridge/phase10_manifest.json};
+\item \url{phaseX-proto-particle/phaseX_integrated_manifest.json};
+\item \url{phase11-protection/phase11_manifest.json};
+\item \url{phase12-interactions/phase12_manifest.json}.
+\end{itemize}
+
+All new logic is isolated inside \texttt{phase13-sector-formation/}. Nothing in this phase modifies earlier manifests or \texttt{haos\_core}.
+
+\section{Dilute Multi-Mode Ensemble Program}
+
+The frozen candidate remains
+\[
+\texttt{low\_mode\_localized\_wavepacket},
+\]
+already validated as persistent and refinement-stable in earlier phases. Phase XIII builds dilute superpositions of this candidate on the refinement-ordered hierarchy
+\[
+h = \frac{1}{n_{\mathrm{side}}},
+\qquad
+n_{\mathrm{side}} \in \{48,60,72,84\},
+\]
+with deterministic ensemble sizes
+\[
+N \in \{3,5,7\},
+\]
+and deterministic layout seeds
+\[
+\{1301,1302,1303\}.
+\]
+
+The ensembles obey a fixed minimum physical separation rule,
+\[
+r_{\min}=0.12,
+\]
+so that the scan stays in the intended dilute regime and avoids strong initial overlap. The time-evolution protocol uses the same persistence-time grid inherited from the frozen localized-mode program,
+\[
+\tau \in \{0.0,0.4,0.8,1.2,1.6,2.0,2.4,3.0,3.6,4.2\},
+\]
+with evaluation time
+\[
+\tau_{\mathrm{eval}} = 0.8.
+\]
+The Phase VIII short-time trace contract,
+\[
+t \in \{0.02,0.03,0.05,0.075,0.1\},
+\]
+is carried forward unchanged as part of the frozen spectral-trace baseline.
+
+\section{Population Survival and Spacing Diagnostics}
+
+For each refinement level, population size, and seed, Phase XIII records:
+\begin{itemize}
+\item surviving candidate count and survival fraction versus $\tau$;
+\item decay-event timing summary;
+\item pair-distance histogram and normalized density;
+\item nearest-neighbor mean and standard deviation;
+\item effective exclusion radius;
+\item a coarse radial-distribution proxy;
+\item low-mode occupancy and spectral distortion relative to the single-mode baseline.
+\end{itemize}
+
+At the evaluation time $\tau=0.8$, the branch means are:
+\begin{itemize}
+\item branch survival fraction: $1.0$;
+\item branch cluster frequency: $0.238095238095$;
+\item branch spectral distortion: $-0.2213869077$;
+\item branch nearest-neighbor mean: $0.263125976359$.
+\end{itemize}
+
+The corresponding control means are:
+\begin{itemize}
+\item control survival fraction: $0.990476190476$;
+\item control cluster frequency: $0.228571428571$;
+\item control spectral distortion: $-0.232292030413$;
+\item control nearest-neighbor mean: $0.2636216034$.
+\end{itemize}
+
+These evaluation-time means alone are not the main success evidence. The important observation is that the branch remains exactly stable across refinement when one holds the deterministic layout family fixed.
+
+\section{Refinement-Ordered Stability Within Fixed Layout Families}
+
+Phase XIII originally over-penalized seed-to-seed layout variation. The frozen authority result instead judges refinement stability within each fixed deterministic layout family, which is the correct criterion for this phase because the seeds define different reproducible geometries rather than repeated draws from one geometry.
+
+Under that fixed-layout criterion, the branch achieves:
+\begin{itemize}
+\item branch successive-refinement spacing drift: $0.0$;
+\item branch successive-refinement cluster drift: $0.0$;
+\item branch successive-refinement exclusion-radius drift: $0.0$;
+\item branch pair-histogram $L^1$ drift: $0.0$.
+\end{itemize}
+
+These are the cleanest refinement-ordering statements in the phase. Each deterministic layout family is perfectly stable across the scanned refinement hierarchy. The seed-to-seed geometry spread remains visible, but it is deterministic geometry variation, not refinement instability.
+
+\section{Time-Resolved Branch/Control Separation}
+
+The control hierarchy is not distinguished from the branch most clearly at the evaluation time. The decisive separation appears across the full $\tau$ grid. The maximum branch-control gaps are:
+\begin{itemize}
+\item survival-fraction gap: $0.071164021164$;
+\item spectral-distortion gap: $0.046202260651$.
+\end{itemize}
+
+The terminal-time comparison is especially clear:
+\[
+\tau = 4.2:
+\qquad
+S_{\mathrm{branch}} = 0.957936507937,
+\qquad
+S_{\mathrm{control}} = 0.886772486773.
+\]
+
+This is the main population-level discrimination result of Phase XIII. The branch does not merely survive as a collection of independent single modes; it retains a tighter late-time ensemble survival profile and a distinct spectral-occupancy trajectory relative to the altered-connectivity control under the same deterministic seeded layouts.
+
+\section{Cluster and Spacing Structure}
+
+The branch and control do not separate strongly by evaluation-time nearest-neighbor mean alone. Both remain close:
+\[
+\bar{r}_{\mathrm{NN,branch}} = 0.263125976359,
+\qquad
+\bar{r}_{\mathrm{NN,control}} = 0.2636216034.
+\]
+Likewise, the evaluation-time cluster frequencies are close:
+\[
+f_{\mathrm{cluster,branch}} = 0.238095238095,
+\qquad
+f_{\mathrm{cluster,control}} = 0.228571428571.
+\]
+
+The correct bounded reading is therefore not that the branch invents a dramatically different static spacing law, but that it supports a reproducible spacing-and-cluster organization that remains compact under refinement while the control loses more population and departs more strongly in time-resolved survival and spectral-occupancy diagnostics.
+
+This makes the population sector result narrower and stronger at the same time. It is not a claim of thermodynamic structure. It is a claim that the branch supports a stable, refinement-ordered multi-mode organization that stays coherent longer than the deterministic control and carries a measurable population-level spectral signature.
+
+\section{Bounded Interpretation}
+
+The frozen authority claim is limited to the following statement: within the already frozen operator, trace, coefficient, and localized-mode contracts, dilute populations of the persistent branch candidate exhibit reproducible survival curves, stable fixed-layout spacing structure across refinement, and a control-separating late-time survival/spectral signature. These are sufficient for a bounded feasibility statement about multi-mode statistical sector formation.
+
+This is not a thermodynamic claim. It is not a gas claim. It is not a transport-law claim. It is not a kinetic-theory claim. It is not a particle-ensemble claim. It is not a continuum claim. It is only a constrained multi-mode statistical-sector feasibility result on a frozen branch-local hierarchy.
+
+\section{Conclusion}
+
+Phase XIII freezes a deterministic dilute-ensemble protocol over the already validated localized branch candidate and shows that the resulting population observables are refinement-ordered, reproducible within fixed layout families, and distinguishable from a deterministic altered-connectivity control through late-time survival and spectral-occupancy behavior. The frozen artifact bundle is:
+\begin{itemize}
+\item \url{phase13-sector-formation/phase13_manifest.json};
+\item \url{phase13-sector-formation/phase13_summary.md};
+\item \url{phase13-sector-formation/runs/phase13_population_survival_ledger.csv};
+\item \url{phase13-sector-formation/runs/phase13_spacing_statistics_ledger.csv};
+\item \url{phase13-sector-formation/runs/phase13_cluster_metrics.csv};
+\item \url{phase13-sector-formation/runs/phase13_spectral_ensemble_proxy.csv};
+\item \url{phase13-sector-formation/runs/phase13_runs.json}.
+\end{itemize}
+
+Phase XIII establishes multi-mode statistical sector formation feasibility for the frozen operator hierarchy.
+
+\end{document}

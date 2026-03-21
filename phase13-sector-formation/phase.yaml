@@ -1,0 +1,21 @@
+phase: 13
+name: phase13-sector-formation
+purpose: multi-mode statistical sector formation feasibility
+inputs:
+  - phase11-protection/phase11_manifest.json
+  - phase12-interactions/phase12_manifest.json
+  - phase6-operator/phase6_operator_manifest.json
+  - phase8-trace/phase8_trace_manifest.json
+outputs:
+  - phase13-sector-formation/runs/phase13_population_survival_ledger.csv
+  - phase13-sector-formation/runs/phase13_spacing_statistics_ledger.csv
+  - phase13-sector-formation/runs/phase13_cluster_metrics.csv
+  - phase13-sector-formation/runs/phase13_spectral_ensemble_proxy.csv
+  - phase13-sector-formation/phase13_manifest.json
+  - phase13-sector-formation/phase13_summary.md
+constraints:
+  - frozen candidate construction only
+  - frozen operator hierarchy only
+  - deterministic seeded layouts only
+  - dilute initial placement rule only
+  - no thermodynamic or particle interpretation
