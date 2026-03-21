@@ -1,0 +1,41 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='700' height='420' viewBox='0 0 700 420'>
+<rect width='100%' height='100%' fill='white'/>
+<text x='350.0' y='24' text-anchor='middle' font-size='18' font-family='Helvetica, Arial, sans-serif'>Phase XVII Branch vs Control Causal Depth</text>
+<line x1='70' y1='360' x2='680' y2='360' stroke='#333' stroke-width='1.5'/>
+<line x1='70' y1='40' x2='70' y2='360' stroke='#333' stroke-width='1.5'/>
+<text x='350.0' y='402' text-anchor='middle' font-size='12' font-family='Helvetica, Arial, sans-serif'>n_side</text>
+<text x='18' y='210.0' transform='rotate(-90 18 210.0)' text-anchor='middle' font-size='12' font-family='Helvetica, Arial, sans-serif'>mean causal depth</text>
+<line x1='70.00' y1='360' x2='70.00' y2='366' stroke='#333' stroke-width='1'/>
+<text x='70.00' y='382' text-anchor='middle' font-size='11' font-family='Helvetica, Arial, sans-serif'>60</text>
+<line x1='375.00' y1='360' x2='375.00' y2='366' stroke='#333' stroke-width='1'/>
+<text x='375.00' y='382' text-anchor='middle' font-size='11' font-family='Helvetica, Arial, sans-serif'>72</text>
+<line x1='680.00' y1='360' x2='680.00' y2='366' stroke='#333' stroke-width='1'/>
+<text x='680.00' y='382' text-anchor='middle' font-size='11' font-family='Helvetica, Arial, sans-serif'>84</text>
+<line x1='64' y1='360.00' x2='70' y2='360.00' stroke='#333' stroke-width='1'/>
+<text x='60' y='364.00' text-anchor='end' font-size='11' font-family='Helvetica, Arial, sans-serif'>1.500</text>
+<line x1='70' y1='360.00' x2='680' y2='360.00' stroke='#e5e7eb' stroke-width='1'/>
+<line x1='64' y1='280.00' x2='70' y2='280.00' stroke='#333' stroke-width='1'/>
+<text x='60' y='284.00' text-anchor='end' font-size='11' font-family='Helvetica, Arial, sans-serif'>1.714</text>
+<line x1='70' y1='280.00' x2='680' y2='280.00' stroke='#e5e7eb' stroke-width='1'/>
+<line x1='64' y1='200.00' x2='70' y2='200.00' stroke='#333' stroke-width='1'/>
+<text x='60' y='204.00' text-anchor='end' font-size='11' font-family='Helvetica, Arial, sans-serif'>1.929</text>
+<line x1='70' y1='200.00' x2='680' y2='200.00' stroke='#e5e7eb' stroke-width='1'/>
+<line x1='64' y1='120.00' x2='70' y2='120.00' stroke='#333' stroke-width='1'/>
+<text x='60' y='124.00' text-anchor='end' font-size='11' font-family='Helvetica, Arial, sans-serif'>2.143</text>
+<line x1='70' y1='120.00' x2='680' y2='120.00' stroke='#e5e7eb' stroke-width='1'/>
+<line x1='64' y1='40.00' x2='70' y2='40.00' stroke='#333' stroke-width='1'/>
+<text x='60' y='44.00' text-anchor='end' font-size='11' font-family='Helvetica, Arial, sans-serif'>2.357</text>
+<line x1='70' y1='40.00' x2='680' y2='40.00' stroke='#e5e7eb' stroke-width='1'/>
+<polyline fill='none' stroke='#0f766e' stroke-width='2.5' points='70.00,280.00 375.00,280.00 680.00,280.00'/>
+<circle cx='70.00' cy='280.00' r='3.5' fill='#0f766e'/>
+<circle cx='375.00' cy='280.00' r='3.5' fill='#0f766e'/>
+<circle cx='680.00' cy='280.00' r='3.5' fill='#0f766e'/>
+<line x1='500' y1='52' x2='518' y2='52' stroke='#0f766e' stroke-width='2.5'/>
+<text x='524' y='56' font-size='11' font-family='Helvetica, Arial, sans-serif'>branch</text>
+<polyline fill='none' stroke='#b91c1c' stroke-width='2.5' points='70.00,66.67 375.00,333.33 680.00,280.00'/>
+<circle cx='70.00' cy='66.67' r='3.5' fill='#b91c1c'/>
+<circle cx='375.00' cy='333.33' r='3.5' fill='#b91c1c'/>
+<circle cx='680.00' cy='280.00' r='3.5' fill='#b91c1c'/>
+<line x1='500' y1='70' x2='518' y2='70' stroke='#b91c1c' stroke-width='2.5'/>
+<text x='524' y='74' font-size='11' font-family='Helvetica, Arial, sans-serif'>control</text>
+</svg>

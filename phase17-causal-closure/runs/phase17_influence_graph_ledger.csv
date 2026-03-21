@@ -1,0 +1,7 @@
+hierarchy_label,n_side,selected_seed_pair,edge_count,stable_edge_count,mean_edge_reproducibility,edge_set_distance_from_prev
+frozen_branch,60,"1303,1302",9,3,0.666666666667,
+frozen_branch,72,"1303,1302",11,1,0.545454545455,0.333333333333
+frozen_branch,84,"1303,1302",9,3,0.666666666667,0.333333333333
+periodic_diagonal_augmented_control,60,"1303,1302",9,3,0.666666666667,
+periodic_diagonal_augmented_control,72,"1303,1302",11,1,0.545454545455,0.571428571429
+periodic_diagonal_augmented_control,84,"1303,1302",11,1,0.545454545455,0.307692307692

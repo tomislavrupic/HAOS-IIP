@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-03-21T21:24:29Z",
+  "stage_identifier": "phase17-causal-closure",
+  "input_artifacts": {
+    "phase15_manifest_json": "phase15-propagation/phase15_manifest.json",
+    "phase15_influence_range_ledger_csv": "phase15-propagation/runs/phase15_influence_range_ledger.csv",
+    "phase16_manifest_json": "phase16-temporal-ordering/phase16_manifest.json",
+    "phase16_event_ordering_ledger_csv": "phase16-temporal-ordering/runs/phase16_event_ordering_ledger.csv",
+    "phase16_front_arrival_ordering_csv": "phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv",
+    "phase16_ordering_robustness_csv": "phase16-temporal-ordering/runs/phase16_ordering_robustness.csv"
+  },
+  "selected_slice": {
+    "probe_name": "bias_onset",
+    "refinements": [
+      60,
+      72,
+      84
+    ],
+    "ensemble_size": 7,
+    "cleanest_branch_seed": 1303,
+    "contrast_seed": 1302,
+    "control_label": "periodic_diagonal_augmented_control"
+  },
+  "threshold_policy": {
+    "radius_fraction": 0.5,
+    "dispersion_fraction": 0.5,
+    "spectral_fraction": 0.5,
+    "low_k_fraction": 0.5,
+    "width_fraction": 0.5
+  },
+  "phase15_response_threshold_fraction": 0.18,
+  "compatibility_policy": {
+    "baseline_direction_rule": "front_near must precede front_far when near mean latency does not exceed far mean latency",
+    "mismatch_rate": "baseline_direction_mismatch + event_graph_connectivity_noise_graph_distance / (1 + mean_front_distance)",
+    "cycle_graph_rule": "aggregate consecutive event-chain edges across the two selected seeds and score cycles on the resulting directed graph"
+  },
+  "acceptance_gates": {
+    "edge_repro_mean_min": 0.6,
+    "max_edge_set_distance": 0.35,
+    "acyclicity_band_width_max": 0.15,
+    "causal_depth_drift_max": 0.25,
+    "mismatch_mean_max": 0.04,
+    "mismatch_drift_max": 0.005
+  }
+}

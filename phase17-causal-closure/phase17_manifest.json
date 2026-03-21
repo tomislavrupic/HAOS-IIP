@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-03-21T21:24:29Z",
+  "phase": 17,
+  "phase_name": "phase17-causal-closure",
+  "stage_identifier": "phase17-causal-closure",
+  "status": "passed",
+  "success": true,
+  "objective": "low_token_causal_closure_authority_probe",
+  "input_references": {
+    "phase15_manifest_json": "phase15-propagation/phase15_manifest.json",
+    "phase15_influence_range_ledger_csv": "phase15-propagation/runs/phase15_influence_range_ledger.csv",
+    "phase16_manifest_json": "phase16-temporal-ordering/phase16_manifest.json",
+    "phase16_event_ordering_ledger_csv": "phase16-temporal-ordering/runs/phase16_event_ordering_ledger.csv",
+    "phase16_front_arrival_ordering_csv": "phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv",
+    "phase16_ordering_robustness_csv": "phase16-temporal-ordering/runs/phase16_ordering_robustness.csv"
+  },
+  "selected_slice": {
+    "probe_name": "bias_onset",
+    "refinements": [
+      60,
+      72,
+      84
+    ],
+    "ensemble_size": 7,
+    "cleanest_branch_seed": 1303,
+    "contrast_seed": 1302,
+    "control_label": "periodic_diagonal_augmented_control"
+  },
+  "threshold_policy": {
+    "radius_fraction": 0.5,
+    "dispersion_fraction": 0.5,
+    "spectral_fraction": 0.5,
+    "low_k_fraction": 0.5,
+    "width_fraction": 0.5
+  },
+  "aggregate_metrics": {
+    "branch_edge_repro_mean": 0.626262626263,
+    "control_edge_repro_mean": 0.585858585859,
+    "branch_max_edge_set_distance": 0.333333333333,
+    "control_max_edge_set_distance": 0.571428571429,
+    "branch_acyclicity_band_width": 0.10101010101,
+    "control_acyclicity_band_width": 0.393939393939,
+    "branch_mean_causal_depth": 1.714285714286,
+    "control_mean_causal_depth": 1.857142857143,
+    "branch_causal_depth_drift": 0.0,
+    "control_causal_depth_drift": 0.714285714286,
+    "branch_mismatch_mean": 0.03590611347,
+    "control_mismatch_mean": 0.037018301472,
+    "branch_mismatch_drift": 0.001570627202,
+    "control_mismatch_drift": 0.01,
+    "branch_control_depth_gap": -0.142857142857,
+    "branch_control_mismatch_gap": 0.001112188003
+  },
+  "success_flags": {
+    "edge_reproducibility_stable": true,
+    "acyclicity_band_compact": true,
+    "causal_depth_drift_bounded": true,
+    "propagation_order_mismatch_low": true
+  },
+  "control_flags": {
+    "edge_reproducibility_stable": false,
+    "acyclicity_band_compact": false,
+    "causal_depth_drift_bounded": false,
+    "propagation_order_mismatch_low": false
+  },
+  "branch_failed_gate_count": 0,
+  "control_failed_gate_count": 4,
+  "hard_stop_triggered": false,
+  "plot_generation": "enabled",
+  "artifacts": {
+    "manifest_json": "phase17-causal-closure/phase17_manifest.json",
+    "summary_md": "phase17-causal-closure/phase17_summary.md",
+    "influence_graph_ledger_csv": "phase17-causal-closure/runs/phase17_influence_graph_ledger.csv",
+    "dag_statistics_csv": "phase17-causal-closure/runs/phase17_dag_statistics.csv",
+    "causal_distance_metrics_csv": "phase17-causal-closure/runs/phase17_causal_distance_metrics.csv",
+    "propagation_order_compatibility_csv": "phase17-causal-closure/runs/phase17_propagation_order_compatibility.csv",
+    "runs_json": "phase17-causal-closure/runs/phase17_runs.json",
+    "acyclicity_plot": "phase17-causal-closure/plots/phase17_acyclicity_vs_refinement.svg",
+    "mismatch_plot": "phase17-causal-closure/plots/phase17_mismatch_rate_vs_refinement.svg",
+    "depth_plot": "phase17-causal-closure/plots/phase17_branch_vs_control_depth.svg",
+    "builder_script": "phase17-causal-closure/build_causal_closure.py",
+    "checker_script": "phase17-causal-closure/diagnostics/check_phase17_bundle.py"
+  },
+  "claim_boundary": "Phase XVII is limited to a low-token causal-closure authority probe over frozen Phase XV and Phase XVI artifacts. It does not modify earlier phase contracts, import earlier phase scripts, or assert metric, spacetime, or physical causal structure.",
+  "conclusion": "Phase XVII establishes causal-closure feasibility for the frozen operator hierarchy."
+}

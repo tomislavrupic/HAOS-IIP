@@ -1,0 +1,18 @@
+phase: 17
+name: causal_closure
+purpose: low-token causal-closure authority probe over frozen Phase XV and Phase XVI artifacts
+inputs:
+  - phase15-propagation/phase15_manifest.json
+  - phase15-propagation/runs/phase15_influence_range_ledger.csv
+  - phase16-temporal-ordering/phase16_manifest.json
+  - phase16-temporal-ordering/runs/phase16_event_ordering_ledger.csv
+  - phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv
+  - phase16-temporal-ordering/runs/phase16_ordering_robustness.csv
+outputs:
+  - phase17_manifest.json
+  - phase17_summary.md
+  - runs/phase17_influence_graph_ledger.csv
+  - runs/phase17_dag_statistics.csv
+  - runs/phase17_causal_distance_metrics.csv
+  - runs/phase17_propagation_order_compatibility.csv
+  - runs/phase17_runs.json

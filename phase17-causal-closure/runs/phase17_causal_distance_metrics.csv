@@ -1,0 +1,7 @@
+hierarchy_label,n_side,mean_causal_depth,reachable_node_count,front_near_depth,front_far_depth,branch_control_depth_gap
+frozen_branch,60,1.714285714286,7,2,3,-0.571428571429
+frozen_branch,72,1.714285714286,7,2,3,0.142857142857
+frozen_branch,84,1.714285714286,7,2,3,0.000000000000
+periodic_diagonal_augmented_control,60,2.285714285714,7,3,4,0.571428571429
+periodic_diagonal_augmented_control,72,1.571428571429,7,2,2,-0.142857142857
+periodic_diagonal_augmented_control,84,1.714285714286,7,2,3,0.000000000000

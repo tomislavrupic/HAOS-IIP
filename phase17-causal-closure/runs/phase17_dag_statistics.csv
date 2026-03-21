@@ -1,0 +1,7 @@
+hierarchy_label,n_side,cycle_count,cycle_edge_count,acyclicity_score,cycle_persistence_from_prev
+frozen_branch,60,1,4,0.555555555556,
+frozen_branch,72,1,6,0.454545454545,0.333333333333
+frozen_branch,84,1,4,0.555555555556,0.333333333333
+periodic_diagonal_augmented_control,60,1,3,0.666666666667,
+periodic_diagonal_augmented_control,72,1,8,0.272727272727,0.777777777778
+periodic_diagonal_augmented_control,84,1,6,0.454545454545,0.444444444444

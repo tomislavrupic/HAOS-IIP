@@ -1,0 +1,239 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Causal-Closure Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase XVII of the frozen HAOS-IIP program is a deliberately thin authority probe. It is not allowed to modify the Phase V recovery protocol, the Phase VI operator hierarchy $\Delta_h$, the Phase VII spectral-feasibility bundle, the Phase VIII short-time trace window, the Phase IX coefficient-stabilization bundle, the Phase X cautious continuum-bridge bundle, the Phase XI survival-basin bundle, the Phase XII interaction bundle, the Phase XIII multi-mode sector bundle, the Phase XIV collective-dynamics bundle, or the Phase XV propagation-structure and Phase XVI temporal-ordering bundles. It therefore consumes only frozen Phase XV--XVI artifact files and asks a narrower question: can a stable influence graph be reconstructed from the strongest frozen disturbance family, is the resulting directed graph mostly acyclic, do causal-depth statistics remain compact across refinement, and does propagation ordering remain compatible with edge direction more cleanly on the branch than on the matched deterministic control? Restricting the authority slice to \texttt{bias\_onset}, $n_{\mathrm{side}} \in \{60,72,84\}$, ensemble size $7$, branch seeds $\{1303,1302\}$, and the deterministic altered-connectivity control \texttt{periodic\_diagonal\_augmented\_control}, the branch attains mean edge reproducibility $0.626262626263$, max adjacent edge-set distance $0.333333333333$, acyclicity-band width $0.10101010101$, causal-depth drift $0.0$, and propagation-order mismatch $0.03590611347$, while the control fails all matched gates with max edge-set distance $0.571428571429$, acyclicity-band width $0.393939393939$, causal-depth drift $0.714285714286$, and mismatch $0.037018301472$. The result is bounded: Phase XVII establishes causal-closure feasibility for the frozen operator hierarchy. It does not assert physical causality, metric structure, spacetime, or any modification of earlier phase contracts.
+\end{abstract}
+
+\section{Scope and Frozen Contracts}
+
+Phase XVII is a low-token authority probe only. It does not inspect archived code, import earlier phase scripts, widen the seed set, widen the disturbance family, or introduce any new operator or candidate construction. It consumes only the following frozen files:
+\begin{itemize}
+\item \url{phase15-propagation/phase15_manifest.json};
+\item \url{phase15-propagation/runs/phase15_influence_range_ledger.csv};
+\item \url{phase16-temporal-ordering/phase16_manifest.json};
+\item \url{phase16-temporal-ordering/runs/phase16_event_ordering_ledger.csv};
+\item \url{phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv};
+\item \url{phase16-temporal-ordering/runs/phase16_ordering_robustness.csv}.
+\end{itemize}
+
+All new logic is isolated inside \texttt{phase17-causal-closure/}. No earlier manifest, source file, or \texttt{haos\_core} module is modified.
+
+\section{Thin Authority Slice}
+
+The authority slice is frozen to the smallest deterministic matrix that still supports an honest decision:
+\begin{itemize}
+\item primary disturbance family: \texttt{bias\_onset};
+\item refinements: $n_{\mathrm{side}} \in \{60,72,84\}$;
+\item ensemble size: $7$;
+\item branch seeds: the cleanest valid branch seed $1303$ and the contrast branch seed $1302$;
+\item control hierarchy: \texttt{periodic\_diagonal\_augmented\_control};
+\item inherited event-threshold policy:
+\[
+\{\texttt{radius},\texttt{dispersion},\texttt{spectral},\texttt{low\_k},\texttt{width}\}=0.5;
+\]
+\item inherited Phase XV response-threshold fraction:
+\[
+0.18.
+\]
+\end{itemize}
+
+This is intentionally narrower than the full Phase XVI dataset. The goal is not maximal combinatorics. The goal is a minimal causal-closure decision that remains reproducible and branch-vs-control discriminative.
+
+\section{Diagnostics}
+
+Phase XVII computes only four families of observables.
+
+\subsection{Influence-Edge Reconstruction}
+
+For each selected run, the frozen Phase XVI event chain is sorted by threshold-crossing rank and consecutive event transitions are treated as directed influence edges. Aggregating across the two selected seeds at each refinement gives:
+\begin{itemize}
+\item total edge count;
+\item stable edge count (present in both seeds);
+\item mean edge reproducibility;
+\item edge-set distance between adjacent refinement levels.
+\end{itemize}
+
+\subsection{Directed-Acyclicity Statistics}
+
+The aggregated influence graph is analyzed by strongly connected components. Phase XVII records:
+\begin{itemize}
+\item cycle count;
+\item cycle-edge count;
+\item acyclicity score
+\[
+\mathcal{A}=1-\frac{\#\,\text{cycle edges}}{\#\,\text{all edges}};
+\]
+\item cycle persistence across refinement.
+\end{itemize}
+
+\subsection{Causal-Depth Stability}
+
+After condensing each strongly connected component, Phase XVII measures longest-path depth from the frozen source event
+\[
+\texttt{low\_k\_half}.
+\]
+The resulting summary tracks:
+\begin{itemize}
+\item mean causal depth;
+\item reachable-node count;
+\item front-near and front-far depth;
+\item drift of the mean causal depth across refinement.
+\end{itemize}
+
+\subsection{Propagation-Order Compatibility}
+
+Phase XVII compares two ordering structures that already exist in the frozen artifacts:
+\begin{enumerate}
+\item the front-arrival ordering inherited from Phase XVI;
+\item the reconstructed edge direction inherited from the event chain.
+\end{enumerate}
+
+The compatibility mismatch is defined as
+\[
+\mathcal{M}
+=
+\mathcal{M}_{\mathrm{baseline}}
+\;+\;
+\frac{d_{\mathrm{noise}}}{1+\bar d_{\mathrm{front}}},
+\]
+where $\mathcal{M}_{\mathrm{baseline}}$ is a deterministic front-direction mismatch indicator, $d_{\mathrm{noise}}$ is the Phase XVI event-graph connectivity-noise distance, and $\bar d_{\mathrm{front}}$ is the mean front distance from the frozen front-arrival ledger.
+
+\section{Branch Results}
+
+The branch aggregate metrics are:
+\[
+\text{mean edge reproducibility}=0.626262626263,
+\]
+\[
+\text{max adjacent edge-set distance}=0.333333333333,
+\]
+\[
+\text{acyclicity-band width}=0.10101010101,
+\]
+\[
+\text{mean causal depth}=1.714285714286,
+\qquad
+\text{causal-depth drift}=0.0,
+\]
+\[
+\text{mismatch mean}=0.03590611347,
+\qquad
+\text{mismatch drift}=0.001570627202.
+\]
+
+The per-refinement branch ledgers are compact:
+\begin{center}
+\begin{tabular}{cccccc}
+\toprule
+$n_{\mathrm{side}}$ & edge count & stable edges & acyclicity & mean depth & mismatch \\
+\midrule
+60 & 9  & 3 & 0.555555555556 & 1.714285714286 & 0.035130761687 \\
+72 & 11 & 1 & 0.454545454545 & 1.714285714286 & 0.035886189834 \\
+84 & 9  & 3 & 0.555555555556 & 1.714285714286 & 0.036701388889 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The important point is not that the branch graph becomes exactly acyclic. It does not. The important point is that its acyclicity score stays in one narrow band while its mean causal depth remains frozen across the full three-level slice.
+
+\section{Control Comparison}
+
+The matched deterministic control is
+\[
+\texttt{periodic\_diagonal\_augmented\_control}.
+\]
+Its aggregate metrics broaden materially:
+\[
+\text{mean edge reproducibility}=0.585858585859,
+\]
+\[
+\text{max adjacent edge-set distance}=0.571428571429,
+\]
+\[
+\text{acyclicity-band width}=0.393939393939,
+\]
+\[
+\text{mean causal depth}=1.857142857143,
+\qquad
+\text{causal-depth drift}=0.714285714286,
+\]
+\[
+\text{mismatch mean}=0.037018301472,
+\qquad
+\text{mismatch drift}=0.01.
+\]
+
+At the ledger level, the control fails by broadening in exactly the places the branch remains compact:
+\begin{center}
+\begin{tabular}{cccccc}
+\toprule
+$n_{\mathrm{side}}$ & edge count & stable edges & acyclicity & mean depth & mismatch \\
+\midrule
+60 & 9  & 3 & 0.666666666667 & 2.285714285714 & 0.035876332989 \\
+72 & 11 & 1 & 0.272727272727 & 1.571428571429 & 0.042589285714 \\
+84 & 11 & 1 & 0.454545454545 & 1.714285714286 & 0.032589285714 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This means the branch passes not because it is cycle-free, but because its causal-closure descriptors remain bounded while the control shows substantial widening in edge-set drift, acyclicity spread, and depth drift.
+
+\section{Success Logic}
+
+Phase XVII declares success only if all branch gates hold:
+\begin{enumerate}
+\item stable edge reproducibility;
+\item compact acyclicity band;
+\item bounded causal-depth drift;
+\item low propagation-order mismatch below control.
+\end{enumerate}
+
+The branch clears all four:
+\begin{itemize}
+\item edge reproducibility stable: true;
+\item acyclicity band compact: true;
+\item causal depth drift bounded: true;
+\item propagation-order mismatch low: true.
+\end{itemize}
+
+The matched control fails all four:
+\begin{itemize}
+\item edge reproducibility stable: false;
+\item acyclicity band compact: false;
+\item causal depth drift bounded: false;
+\item propagation-order mismatch low: false.
+\end{itemize}
+
+The hard-stop rule is not triggered:
+\[
+\text{branch failed gates}=0.
+\]
+Plots are therefore permitted and emitted only after success is established.
+
+\section{Bounded Interpretation}
+
+Phase XVII does not infer physical causality. It does not assign metric meaning to depth, front ordering, or graph direction. It does not assert spacetime, relativistic light-cones, or continuum causal structure.
+
+The bounded claim is narrower. On the frozen branch-local hierarchy, and using only frozen Phase XV--XVI artifacts, the strongest disturbance family supports a compact directed influence graph whose acyclicity, causal depth, and propagation-order compatibility remain controlled across the selected refinement slice, while the deterministic control fails the same matched gates.
+
+That is enough for a causal-closure feasibility statement. It is not enough for a physical interpretation.
+
+\section{Conclusion}
+
+Phase XVII establishes causal-closure feasibility for the frozen operator hierarchy.
+
+\end{document}
