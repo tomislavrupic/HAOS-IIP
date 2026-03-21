@@ -1,0 +1,127 @@
+{
+  "timestamp": "2026-03-21T21:11:54Z",
+  "phase": 16,
+  "phase_name": "phase16-temporal-ordering",
+  "stage_identifier": "phase16-temporal-ordering",
+  "status": "passed",
+  "success": true,
+  "objective": "emergent_temporal_ordering_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase7_manifest_reference": "phase7-spectral/phase7_spectral_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase9_manifest_reference": "phase9-invariants/phase9_manifest.json",
+  "phase10_manifest_reference": "phase10-bridge/phase10_manifest.json",
+  "phase11_manifest_reference": "phase11-protection/phase11_manifest.json",
+  "phase12_manifest_reference": "phase12-interactions/phase12_manifest.json",
+  "phase13_manifest_reference": "phase13-sector-formation/phase13_manifest.json",
+  "phase14_manifest_reference": "phase14-collective-dynamics/phase14_manifest.json",
+  "phase15_manifest_reference": "phase15-propagation/phase15_manifest.json",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "primary_ordering_probe": "bias_onset",
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the refinement-order parameter inherited from the frozen operator hierarchy.",
+    "levels": [
+      48,
+      60,
+      72,
+      84
+    ]
+  },
+  "evaluation_protocol": {
+    "persistence_tau_grid": [
+      0.0,
+      0.4,
+      0.8,
+      1.2,
+      1.6,
+      2.0,
+      2.4,
+      3.0,
+      3.6,
+      4.2
+    ],
+    "ensemble_sizes": [
+      3,
+      5,
+      7
+    ],
+    "layout_seeds": [
+      1301,
+      1302,
+      1303
+    ],
+    "minimum_physical_separation": 0.12,
+    "ordering_probes": [
+      "density_pulse",
+      "candidate_removal",
+      "bias_onset"
+    ],
+    "event_thresholds": {
+      "radius_fraction": 0.5,
+      "dispersion_fraction": 0.5,
+      "spectral_fraction": 0.5,
+      "low_k_fraction": 0.5,
+      "width_fraction": 0.5
+    },
+    "robustness_perturbations": {
+      "density_gradient_plus": {
+        "density_gradient_strength": 0.19
+      },
+      "amplitude_shift": {
+        "density_pulse_amplitude": 1.23,
+        "bias_strength": 0.058
+      },
+      "event_graph_connectivity_noise": {
+        "edge_weight_noise_scale": 0.05
+      }
+    }
+  },
+  "aggregate_metrics": {
+    "branch_primary_event_distance": 0.142857142857,
+    "control_primary_event_distance": 0.246737213404,
+    "branch_primary_ordering_score": 0.965986394558,
+    "control_primary_ordering_score": 0.941253044428,
+    "branch_primary_front_distance": 0.192592592593,
+    "control_primary_front_distance": 0.226543209877,
+    "branch_primary_monotonicity_mean": 1.0,
+    "control_primary_monotonicity_mean": 1.0,
+    "branch_primary_max_reversals": 0,
+    "control_primary_max_reversals": 0,
+    "branch_primary_robustness_distance": 0.01421957672,
+    "control_primary_robustness_distance": 0.03287037037,
+    "branch_front_variance_mean": 0.824524295748,
+    "control_front_variance_mean": 0.791981304329,
+    "branch_event_graph_noise_distance": 0.064228511093,
+    "control_event_graph_noise_distance": 0.064567440524
+  },
+  "success_flags": {
+    "event_ordering_chains_stable": true,
+    "monotonic_evolution_parameter_identified": true,
+    "front_ordering_dispersion_bounded": true,
+    "ordering_robustness_holds": true,
+    "control_hierarchy_different": true
+  },
+  "control_flags": {
+    "event_ordering_chains_stable": false,
+    "monotonic_evolution_parameter_identified": true,
+    "front_ordering_dispersion_bounded": true,
+    "ordering_robustness_holds": false
+  },
+  "artifacts": {
+    "event_ordering_ledger_csv": "phase16-temporal-ordering/runs/phase16_event_ordering_ledger.csv",
+    "monotonic_parameter_ledger_csv": "phase16-temporal-ordering/runs/phase16_monotonic_parameter_ledger.csv",
+    "front_arrival_ordering_csv": "phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv",
+    "ordering_robustness_csv": "phase16-temporal-ordering/runs/phase16_ordering_robustness.csv",
+    "runs_json": "phase16-temporal-ordering/runs/phase16_runs.json",
+    "summary_md": "phase16-temporal-ordering/phase16_summary.md",
+    "manifest_json": "phase16-temporal-ordering/phase16_manifest.json",
+    "ordering_consistency_plot": "phase16-temporal-ordering/plots/phase16_ordering_consistency_score_vs_refinement.svg",
+    "monotonic_plot": "phase16-temporal-ordering/plots/phase16_monotonic_evolution_variable_vs_progression.svg",
+    "front_variance_plot": "phase16-temporal-ordering/plots/phase16_front_arrival_ordering_variance_vs_refinement.svg",
+    "robustness_plot": "phase16-temporal-ordering/plots/phase16_ordering_graph_distance_under_perturbation.svg",
+    "builder_script": "phase16-temporal-ordering/build_temporal_ordering.py"
+  },
+  "runtime_seconds": 4.050368,
+  "claim_boundary": "Phase XVI is limited to emergent temporal-ordering feasibility diagnostics on the frozen collective sector and frozen operator hierarchy. It does not assert physical time, relativistic causality, metric structure, spacetime emergence, or continuum temporal models.",
+  "conclusion": "Phase XVI establishes emergent temporal-ordering feasibility for the frozen operator hierarchy."
+}

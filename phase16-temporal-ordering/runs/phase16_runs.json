@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-03-21T21:11:54Z",
+  "phase": 16,
+  "stage_identifier": "phase16-temporal-ordering",
+  "deterministic_seed_record": {
+    "randomness_used": true,
+    "generator": "numpy.default_rng",
+    "note": "Phase XVI reuses the frozen Phase XV disturbance protocols and collective observables. Weak robustness perturbations are applied only within the already frozen seeded layout families."
+  },
+  "refinement_levels": [
+    48,
+    60,
+    72,
+    84
+  ],
+  "ensemble_sizes": [
+    3,
+    5,
+    7
+  ],
+  "layout_seeds": [
+    1301,
+    1302,
+    1303
+  ],
+  "tau_grid": [
+    0.0,
+    0.4,
+    0.8,
+    1.2,
+    1.6,
+    2.0,
+    2.4,
+    3.0,
+    3.6,
+    4.2
+  ],
+  "ordering_probes": [
+    "density_pulse",
+    "candidate_removal",
+    "bias_onset"
+  ],
+  "primary_ordering_probe": "bias_onset",
+  "monotonic_parameters": [
+    "integrated_radius_progress",
+    "integrated_dispersion_progress",
+    "integrated_low_k_progress"
+  ],
+  "robustness_perturbations": {
+    "density_gradient_plus": {
+      "density_gradient_strength": 0.19
+    },
+    "amplitude_shift": {
+      "density_pulse_amplitude": 1.23,
+      "bias_strength": 0.058
+    },
+    "event_graph_connectivity_noise": {
+      "edge_weight_noise_scale": 0.05
+    }
+  },
+  "runtime_seconds": 4.050368
+}

@@ -1,0 +1,20 @@
+phase: 16
+name: phase16-temporal-ordering
+purpose: emergent temporal-ordering feasibility on the frozen collective sector
+inputs:
+  - phase15-propagation/phase15_manifest.json
+  - phase14-collective-dynamics/phase14_manifest.json
+  - phase13-sector-formation/phase13_manifest.json
+  - phase6-operator/phase6_operator_manifest.json
+outputs:
+  - phase16-temporal-ordering/runs/phase16_event_ordering_ledger.csv
+  - phase16-temporal-ordering/runs/phase16_monotonic_parameter_ledger.csv
+  - phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv
+  - phase16-temporal-ordering/runs/phase16_ordering_robustness.csv
+  - phase16-temporal-ordering/phase16_manifest.json
+  - phase16-temporal-ordering/phase16_summary.md
+constraints:
+  - Reuse only the frozen Phase XV disturbance protocols and collective variables.
+  - Use the simulation tau grid only as bookkeeping for observable ordering.
+  - Do not modify the frozen delta_h hierarchy or earlier phase manifests.
+  - Keep temporal claims operational and non-ontological.

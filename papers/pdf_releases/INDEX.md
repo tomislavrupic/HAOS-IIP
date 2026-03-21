@@ -128,6 +128,10 @@ The intended public reading order is:
 
 1. `39.1` Effective Propagation Structure and Causal-Scale Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
+### 2.22 Part XXII. Emergent temporal ordering feasibility
+
+1. `40.1` Emergent Temporal-Ordering Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -174,6 +178,7 @@ The intended public reading order is:
 - `37.1` Multi-Mode Statistical Sector Formation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `38.1` Collective Dynamics and Mesoscopic Transport Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `39.1` Effective Propagation Structure and Causal-Scale Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+- `40.1` Emergent Temporal-Ordering Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

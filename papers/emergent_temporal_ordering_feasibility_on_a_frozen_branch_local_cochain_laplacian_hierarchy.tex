@@ -1,0 +1,275 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Emergent Temporal-Ordering Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase XVI of the frozen HAOS-IIP program asks whether the already frozen collective sector supports a stable internal ordering structure derived only from its own observable dynamics. The phase is not allowed to modify the Phase V readout layer, the Phase VI operator hierarchy $\Delta_h$, the Phase VII spectral-feasibility bundle, the Phase VIII short-time trace window, the Phase IX coefficient-stabilization bundle, the Phase X cautious continuum-bridge bundle, the Phase XI survival-basin bundle, the Phase XII interaction bundle, the Phase XIII multi-mode sector bundle, the Phase XIV collective-dynamics bundle, or the Phase XV propagation-structure bundle. It therefore tests only whether event chains reconstructed from the frozen disturbance regime remain reproducible across refinement, whether at least one cumulative observable defines a monotonic evolution parameter, whether front-arrival ordering remains bounded, and whether weak perturbations preserve the same ordering structure on the branch more cleanly than on the deterministic control. Using the frozen Phase XV disturbance families $\{\texttt{density\_pulse}, \texttt{candidate\_removal}, \texttt{bias\_onset}\}$ and taking \texttt{bias\_onset} as the primary nontrivial ordering probe, the branch achieves primary event distance $0.142857142857$, primary ordering score $0.965986394558$, front-order distance $0.192592592593$, and ordering-robustness distance $0.01421957672$, while the deterministic altered-connectivity control broadens to primary event distance $0.246737213404$ and robustness distance $0.03287037037$. Both hierarchies retain a monotonic cumulative evolution parameter, but only the branch clears the full ordering stack while the control fails the matched event-chain and robustness gates. The result is bounded: Phase XVI establishes emergent temporal-ordering feasibility for the frozen operator hierarchy. It does not assert physical time, relativistic causality, metric structure, spacetime emergence, or continuum temporal models.
+\end{abstract}
+
+\section{Scope and Frozen Contracts}
+
+Phase XVI is an ordering-feasibility diagnostic only. It does not introduce clocks, external time parameters, new operators, or new topological rules. It consumes the following frozen authority stack without change:
+\begin{itemize}
+\item the Phase V recovery readout layer;
+\item the Phase VI frozen branch-local periodic DK2D block cochain Laplacian hierarchy $\Delta_h$;
+\item the Phase VII spectral-feasibility bundle;
+\item the Phase VIII short-time trace operational window;
+\item the Phase IX coefficient-stabilization bundle;
+\item the Phase X cautious continuum-bridge bundle;
+\item the Phase XI survival-basin bundle;
+\item the Phase XII interaction bundle;
+\item the Phase XIII multi-mode sector bundle;
+\item the Phase XIV collective-dynamics bundle;
+\item the Phase XV propagation-structure bundle.
+\end{itemize}
+
+The concrete frozen references used here are:
+\begin{itemize}
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase7-spectral/phase7_spectral_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json};
+\item \url{phase9-invariants/phase9_manifest.json};
+\item \url{phase10-bridge/phase10_manifest.json};
+\item \url{phase11-protection/phase11_manifest.json};
+\item \url{phase12-interactions/phase12_manifest.json};
+\item \url{phase13-sector-formation/phase13_manifest.json};
+\item \url{phase14-collective-dynamics/phase14_manifest.json};
+\item \url{phase15-propagation/phase15_manifest.json}.
+\end{itemize}
+
+All new logic is isolated inside \texttt{phase16-temporal-ordering/}. No earlier manifest or \texttt{haos\_core} file is modified.
+
+\section{Frozen Ordering Regime}
+
+The frozen candidate remains
+\[
+\texttt{low\_mode\_localized\_wavepacket},
+\]
+and the refinement hierarchy remains
+\[
+h = \frac{1}{n_{\mathrm{side}}},
+\qquad
+n_{\mathrm{side}} \in \{48,60,72,84\}.
+\]
+Phase XVI reuses the exact seeded dilute layouts from Phases XIII through XV:
+\[
+N \in \{3,5,7\},
+\qquad
+\text{seeds} \in \{1301,1302,1303\},
+\qquad
+r_{\min}=0.12.
+\]
+
+The frozen persistence grid is
+\[
+\tau \in \{0.0,0.4,0.8,1.2,1.6,2.0,2.4,3.0,3.6,4.2\},
+\]
+and remains a bookkeeping parameter only. Phase XVI does not interpret $\tau$ as external time. All temporal claims are stated only in terms of observable ordering.
+
+The disturbance family is reused exactly from Phase XV:
+\begin{enumerate}
+\item \texttt{density\_pulse};
+\item \texttt{candidate\_removal};
+\item \texttt{bias\_onset}.
+\end{enumerate}
+
+The primary ordering carrier is fixed to
+\[
+\texttt{bias\_onset},
+\]
+because it is the only frozen Phase XV probe that produces nontrivial front-arrival latencies across all non-anchor sites. The other two probes remain in the bundle as supporting checks.
+
+\section{Event Vocabulary and Ordering Graphs}
+
+Phase XVI reconstructs event chains from Phase XV observables only. For each disturbed run it records threshold-crossing times for:
+\begin{itemize}
+\item half-maximum disturbance radius;
+\item half-maximum response dispersion;
+\item half-maximum absolute spectral shift;
+\item half-maximum low-$k$ response fraction;
+\item half-maximum absolute width shift;
+\item near-band front-arrival latency;
+\item far-band front-arrival latency.
+\end{itemize}
+
+These event times define a directed ordering graph:
+\[
+A \prec B \quad \text{if and only if} \quad t_A < t_B.
+\]
+The induced chain signature is the event list sorted by threshold-crossing time, with lexical tie-breaking only for determinism.
+
+No new microscopic observable is introduced. Every event is built from the already frozen Phase XV disturbance and response fields.
+
+\section{Primary Ordering Results}
+
+The primary authority probe is \texttt{bias\_onset}. Its branch metrics are:
+\[
+\text{primary event distance} = 0.142857142857,
+\]
+\[
+\text{primary ordering score} = 0.965986394558,
+\]
+\[
+\text{front-order distance} = 0.192592592593,
+\]
+\[
+\text{ordering-robustness distance} = 0.01421957672.
+\]
+
+The matched deterministic control produces:
+\[
+\text{primary event distance} = 0.246737213404,
+\]
+\[
+\text{primary ordering score} = 0.941253044428,
+\]
+\[
+\text{front-order distance} = 0.226543209877,
+\]
+\[
+\text{ordering-robustness distance} = 0.03287037037.
+\]
+
+The bounded reading is direct. The branch remains within the frozen acceptance band for event-chain drift, front-order drift, and robustness under weak admissible perturbations. The control does not.
+
+\section{Monotonic Evolution Parameter}
+
+Phase XVI also asks whether at least one observable-derived cumulative quantity can serve as a monotonic evolution parameter. The primary parameter is the cumulative disturbance-radius progress:
+\[
+\Pi_{\mathrm{radius}}(\tau)
+=
+\int_0^\tau R_{\mathrm{disturbance}}(\tau')\, d\tau',
+\]
+implemented numerically on the frozen $\tau$ grid by deterministic trapezoidal accumulation.
+
+On the branch,
+\[
+\text{mean monotonicity score} = 1.0,
+\qquad
+\text{max reversals} = 0.
+\]
+The control also satisfies this narrow monotonicity test:
+\[
+\text{mean monotonicity score} = 1.0,
+\qquad
+\text{max reversals} = 0.
+\]
+
+This matters for interpretation. Phase XVI does not claim that monotonicity alone distinguishes the branch. It claims only that the branch possesses at least one fully monotonic cumulative evolution variable, and that the full temporal-ordering statement must be read together with the event-chain and robustness gates.
+
+\section{Front Ordering and Dispersion}
+
+For each run, Phase XVI coarse-grains the non-anchor front arrivals into a near-distance band and a far-distance band. The resulting front-arrival ordering remains valid on the branch with bounded refinement drift:
+\[
+\text{branch front-order distance} = 0.192592592593.
+\]
+The control remains close but larger:
+\[
+\text{control front-order distance} = 0.226543209877.
+\]
+
+The raw front-variance means are
+\[
+0.824524295748
+\quad\text{(branch)}
+\qquad\text{and}\qquad
+0.791981304329
+\quad\text{(control)}.
+\]
+This is not the separator. The separator is that the branch clears the bounded front-order drift gate while the control already fails elsewhere in the same ordering stack. Phase XVI therefore treats front variance as a descriptive support metric rather than as a primary authority discriminator.
+
+\section{Ordering Robustness}
+
+Phase XVI probes ordering robustness under three deterministic weak perturbations:
+\begin{enumerate}
+\item a slight increase of the frozen density gradient from $0.18$ to $0.19$;
+\item a slight disturbance-amplitude shift from $(1.25,0.06)$ to $(1.23,0.058)$ in the relevant probe amplitudes;
+\item a diagnostic-only event-graph connectivity noise at scale $0.05$ applied after reconstruction.
+\end{enumerate}
+
+The branch remains within the frozen robustness band,
+\[
+0.01421957672,
+\]
+while the control broadens to
+\[
+0.03287037037.
+\]
+The event-graph connectivity-noise distances remain similar on both hierarchies,
+\[
+0.064228511093
+\quad\text{vs}\quad
+0.064567440524,
+\]
+which is expected because this final perturbation is graph-level bookkeeping noise rather than a dynamical branch/control discriminator. The authority conclusion therefore relies on the dynamical weak perturbations, not on synthetic graph relabeling.
+
+\section{Success Logic}
+
+Phase XVI uses a conservative authority stack:
+\begin{enumerate}
+\item event-ordering chains must remain stable across refinement;
+\item at least one monotonic evolution parameter must be identified;
+\item front-ordering dispersion must remain bounded;
+\item ordering robustness must hold under weak perturbations;
+\item the deterministic control must fail at least one matched ordering-coherence gate.
+\end{enumerate}
+
+The resulting authority flags are:
+\begin{itemize}
+\item event ordering chains stable: true;
+\item monotonic evolution parameter identified: true;
+\item front ordering dispersion bounded: true;
+\item ordering robustness holds: true;
+\item control hierarchy different: true.
+\end{itemize}
+
+The matched control-side diagnostic record is:
+\begin{itemize}
+\item control event ordering chains stable: false;
+\item control monotonic evolution parameter identified: true;
+\item control front ordering dispersion bounded: true;
+\item control ordering robustness holds: false.
+\end{itemize}
+
+This is the right bounded reading of the phase. The branch does not win because it alone has a monotonic cumulative variable. It wins because the full event-chain and robustness stack remains compact on the branch while the deterministic control fails the matched chain-stability and robustness tests.
+
+\section{Bounded Interpretation}
+
+Phase XVI does not claim physical time. It does not claim relativistic causality. It does not claim metric signature or spacetime emergence. It only claims that the already frozen collective sector supports a reproducible internal ordering relation built from its own observable thresholds and front arrivals.
+
+In particular, the phase shows that:
+\begin{itemize}
+\item event chains can be reconstructed from frozen disturbance and response observables;
+\item at least one cumulative evolution parameter remains strictly monotonic;
+\item front-arrival ordering can be tracked in a refinement-ordered way;
+\item weak perturbations preserve the ordering graph more cleanly on the branch than on the deterministic control.
+\end{itemize}
+
+\section{Conclusion}
+
+Phase XVI freezes a deterministic event-ordering probe suite over the already validated propagation regime and shows that the resulting event-chain, cumulative-progress, front-order, and robustness diagnostics remain bounded on the branch while the deterministic control fails part of the same ordering stack. The frozen artifact bundle is:
+\begin{itemize}
+\item \url{phase16-temporal-ordering/phase16_manifest.json};
+\item \url{phase16-temporal-ordering/phase16_summary.md};
+\item \url{phase16-temporal-ordering/runs/phase16_event_ordering_ledger.csv};
+\item \url{phase16-temporal-ordering/runs/phase16_monotonic_parameter_ledger.csv};
+\item \url{phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv};
+\item \url{phase16-temporal-ordering/runs/phase16_ordering_robustness.csv};
+\item \url{phase16-temporal-ordering/runs/phase16_runs.json}.
+\end{itemize}
+
+Phase XVI establishes emergent temporal-ordering feasibility for the frozen operator hierarchy.
+
+\end{document}

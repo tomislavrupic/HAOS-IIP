@@ -1,0 +1,77 @@
+{
+  "phase_name": "phase16-temporal-ordering",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_levels": [48, 60, 72, 84],
+  "ensemble_sizes": [3, 5, 7],
+  "layout_seeds": [1301, 1302, 1303],
+  "evaluation_tau": 0.8,
+  "persistence_tau_grid": [0.0, 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 3.0, 3.6, 4.2],
+  "layout_rule": {
+    "min_separation_physical": 0.12,
+    "max_attempts": 20000
+  },
+  "candidate_windows": {
+    "identity_sigma": 0.1,
+    "local_mass_sigma": 0.11
+  },
+  "survival_thresholds": {
+    "min_identity": 0.88,
+    "min_local_mass_ratio": 0.78
+  },
+  "spectral_identity_proxy": {
+    "low_mode_band_multiplier": 2.1
+  },
+  "transport_probe": {
+    "density_gradient_strength": 0.18,
+    "response_threshold_fraction": 0.18,
+    "x_bin_count": 8
+  },
+  "disturbance_probes": {
+    "density_pulse_amplitude": 1.25,
+    "candidate_removal_amplitude": 0.65,
+    "bias_strength": 0.06,
+    "bias_remove_tau": 1.2,
+    "phase_kick_axis": "x"
+  },
+  "ordering_probes": ["density_pulse", "candidate_removal", "bias_onset"],
+  "ordering_primary_probe": "bias_onset",
+  "event_thresholds": {
+    "radius_fraction": 0.5,
+    "dispersion_fraction": 0.5,
+    "spectral_fraction": 0.5,
+    "low_k_fraction": 0.5,
+    "width_fraction": 0.5
+  },
+  "monotonic_parameters": [
+    "integrated_radius_progress",
+    "integrated_dispersion_progress",
+    "integrated_low_k_progress"
+  ],
+  "robustness_perturbations": {
+    "density_gradient_plus": {
+      "density_gradient_strength": 0.19
+    },
+    "amplitude_shift": {
+      "density_pulse_amplitude": 1.23,
+      "bias_strength": 0.058
+    },
+    "event_graph_connectivity_noise": {
+      "edge_weight_noise_scale": 0.05
+    }
+  },
+  "success_thresholds": {
+    "max_primary_event_distance": 0.18,
+    "min_primary_monotonicity_score": 0.999999,
+    "max_primary_front_distance": 0.23,
+    "max_primary_robustness_distance": 0.015
+  },
+  "control_graph": {
+    "label": "periodic_diagonal_augmented_control",
+    "diagonal_weight_scale": 0.35
+  },
+  "deterministic_seed_record": {
+    "randomness_used": true,
+    "generator": "numpy.default_rng",
+    "note": "Phase XVI reuses the frozen Phase XV disturbance protocols and collective observables. Weak robustness perturbations are applied only within the already frozen seeded layout families."
+  }
+}
