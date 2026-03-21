@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-03-21T20:00:35Z",
+  "phase_name": "phase11-protection",
+  "builder_script": "phase11-protection/build_localized_mode_protection.py",
+  "config_reference": "phase11-protection/configs/phase11_protection_config.json",
+  "references": {
+    "phase6_manifest": "phase6-operator/phase6_operator_manifest.json",
+    "phase7_manifest": "phase7-spectral/phase7_spectral_manifest.json",
+    "phase8_manifest": "phase8-trace/phase8_trace_manifest.json",
+    "phase9_manifest": "phase9-invariants/phase9_manifest.json",
+    "phase10_manifest": "phase10-bridge/phase10_manifest.json",
+    "phasex_manifest": "phaseX-proto-particle/phaseX_integrated_manifest.json",
+    "phasex_candidates": "phaseX-proto-particle/runs/proto_particle_candidates.json"
+  },
+  "refinement_levels": [
+    48,
+    60,
+    72,
+    84
+  ],
+  "evaluation_tau": 0.8,
+  "persistence_tau_grid": [
+    0.0,
+    0.4,
+    0.8,
+    1.2,
+    1.6,
+    2.0,
+    2.4,
+    3.0,
+    3.6,
+    4.2
+  ],
+  "perturbation_grids": {
+    "local_stiffness_defect": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "connectivity_micro_surgery": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "phase_randomization_window": [
+      0.0,
+      0.02,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.12,
+      0.14,
+      0.16
+    ],
+    "boundary_leakage_probe": [
+      0.0,
+      0.2,
+      0.4,
+      0.8,
+      1.2,
+      1.6,
+      2.0
+    ]
+  },
+  "runtime_seconds": 29.407851
+}

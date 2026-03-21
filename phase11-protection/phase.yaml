@@ -1,0 +1,18 @@
+phase: 11
+name: phase11-protection
+purpose: localized mode protection and failure-mechanism feasibility
+frozen_inputs:
+  - phase6-operator/phase6_operator_manifest.json
+  - phase7-spectral/phase7_spectral_manifest.json
+  - phase8-trace/phase8_trace_manifest.json
+  - phase9-invariants/phase9_manifest.json
+  - phase10-bridge/phase10_manifest.json
+  - phaseX-proto-particle/phaseX_integrated_manifest.json
+  - phaseX-proto-particle/runs/proto_particle_candidates.json
+outputs:
+  - phase11-protection/runs/phase11_perturbation_survival_ledger.csv
+  - phase11-protection/runs/phase11_failure_classification.csv
+  - phase11-protection/runs/phase11_persistence_scaling.csv
+  - phase11-protection/phase11_summary.md
+  - phase11-protection/phase11_manifest.json
+  - phase11-protection/runs/phase11_runs.json

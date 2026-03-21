@@ -1,0 +1,228 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Localized-Mode Protection and Failure-Mechanism Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase XI of the frozen HAOS-IIP program asks whether the already frozen localized candidate
+\texttt{low\_mode\_localized\_wavepacket} is protected by reproducible structural mechanisms or is only an accidental configuration. The phase is not allowed to alter the Phase V readout layer, the Phase VI branch-local operator hierarchy $\Delta_h$, the Phase VII spectral-feasibility manifest, the Phase VIII short-time trace contract, the Phase IX coefficient-stabilization contract, the Phase X cautious bridge bundle, or the Phase X proto-particle candidate definition. It therefore tests protection only through deterministic perturbation channels on the frozen branch and on a matched altered-connectivity control. Four probe classes are used: local stiffness defects, connectivity micro-surgery, bounded phase randomization, and boundary leakage. The branch exhibits a bounded survival basin with refinement-ordered first-failure amplitudes for local stiffness defects, increasing from $0.5$ at $n_{\mathrm{side}}=48$ to $0.7$ at $60$ and $0.9$ at $72$, with no failure observed up to amplitude $1.0$ at $84$. Phase-randomization failure is sharp and refinement-stable, with first failure at amplitude $0.08$ on every tested level. The branch persistence times grow across refinement as $\tau(h) = [1.2, 2.0, 2.4, 3.6]$, with fitted power-law exponent $q = 1.8684$ and $R^2 = 0.9774$, while the control times remain shorter, $[0.4,1.2,1.6,2.0]$. Failure channels are consistent: strong local stiffness defects are spectral-mixing dominated, connectivity micro-surgery is topological-defect triggered, phase randomization is incoherence triggered, and the scanned boundary leakage channel remains inside the persistent basin. The result is bounded: Phase XI establishes localized-mode protection and failure-mechanism feasibility for the frozen operator hierarchy. It does not assert particles, fields, or new physical interpretation.
+\end{abstract}
+
+\section{Scope and Frozen Contracts}
+
+Phase XI is a protection and failure-mode diagnostic only. It does not introduce a new operator, a new normalization, or a new interpretive layer. It consumes the following frozen authority contracts without change:
+\begin{itemize}
+\item the Phase V recovery-statistics readout layer;
+\item the Phase VI branch-local periodic DK2D block cochain Laplacian hierarchy $\Delta_h$;
+\item the Phase VII spectral-feasibility outputs;
+\item the Phase VIII short-time trace window and probe grid;
+\item the Phase IX coefficient stabilization diagnostics;
+\item the Phase X cautious continuum-bridge feasibility bundle;
+\item the Phase X proto-particle candidate definition.
+\end{itemize}
+
+The concrete artifact references used here are:
+\begin{itemize}
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase7-spectral/phase7_spectral_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json};
+\item \url{phase9-invariants/phase9_manifest.json};
+\item \url{phase10-bridge/phase10_manifest.json};
+\item \url{phaseX-proto-particle/phaseX_integrated_manifest.json};
+\item \url{phase11-protection/phase11_manifest.json}.
+\end{itemize}
+
+Nothing in this phase modifies earlier manifests or \texttt{haos\_core}. All logic is isolated inside \texttt{phase11-protection/}.
+
+\section{Protection Program}
+
+The frozen candidate is the Phase X refinement-stable branch excitation
+\[
+\texttt{low\_mode\_localized\_wavepacket},
+\]
+evaluated on the refinement-ordered branch hierarchy
+\[
+h = \frac{1}{n_{\mathrm{side}}}, \qquad
+n_{\mathrm{side}} \in \{48,60,72,84\}.
+\]
+
+The phase uses one fixed evaluation time
+\[
+\tau = 0.8,
+\]
+and one fixed persistence-time grid
+\[
+\tau \in \{0.0, 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 3.0, 3.6, 4.2\}.
+\]
+
+Four deterministic perturbation classes are scanned:
+\begin{enumerate}
+\item local stiffness defect in a compact neighborhood;
+\item connectivity micro-surgery with fixed edge rewiring/removal pattern;
+\item bounded phase-randomization window on the initial state;
+\item boundary leakage probe implemented as deterministic dissipative coupling outside a radius threshold.
+\end{enumerate}
+
+For each perturbation, Phase XI records localization width, concentration, participation growth, overlap with the unperturbed branch excitation, a recovery-style score, a persistence class, and a failure-mechanism label.
+
+\section{Bounded Survival Basin}
+
+The clearest refinement-ordered protection result comes from the local stiffness defect probe.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$n_{\mathrm{side}}$ & $h$ & max persistent amplitude & first failure amplitude \\
+\midrule
+48 & 0.020833 & 0.4 & 0.5 \\
+60 & 0.016667 & 0.6 & 0.7 \\
+72 & 0.013889 & 0.8 & 0.9 \\
+84 & 0.011905 & 1.0 & none observed up to 1.0 \\
+\bottomrule
+\end{tabular}
+\caption{Branch local-stiffness survival basin.}
+\label{tab:stiffness_basin}
+\end{table}
+
+This gives a refinement-ordered first-failure sequence
+\[
+0.5,\;0.7,\;0.9,\;>1.0,
+\]
+which is the main protection-basin result of the phase.
+
+The phase-randomization window shows a different kind of structure. Its threshold is not widening with refinement; instead it is sharply locked:
+\[
+\text{first failure amplitude} = 0.08
+\]
+on every tested level. This indicates a narrow coherence-sensitive channel rather than a broad structural damage channel.
+
+The branch mean survival fractions across the full scanned grids are:
+\begin{itemize}
+\item local stiffness defect: $0.7273$;
+\item connectivity micro-surgery: $0.9583$;
+\item phase randomization: $0.4444$;
+\item boundary leakage: $1.0$.
+\end{itemize}
+
+The boundary leakage result is deliberately bounded: it does not claim immunity. It states only that over the declared amplitude range the scanned leakage channel did not exit the persistence basin.
+
+\section{Failure Mechanisms}
+
+Phase XI does not just label survival or failure. It also tags the dominant failure channel for each perturbation family. The branch produces a consistent map:
+\begin{itemize}
+\item local stiffness defect: spectral-mixing dominated;
+\item connectivity micro-surgery: topological-defect triggered;
+\item phase randomization window: incoherence triggered;
+\item boundary leakage probe: survives on the scanned range.
+\end{itemize}
+
+This is the main failure-mechanism result. Breakdown does not appear random. Different perturbation classes fail through distinct and reproducible channels.
+
+\section{Persistence-Time Scaling}
+
+Phase XI defines the candidate persistence time as the largest value on the declared $\tau$ grid for which the excitation remains inside the frozen scan-level compactness gate. On the branch, the persistence times are
+\[
+\tau(h) = [1.2,\;2.0,\;2.4,\;3.6].
+\]
+On the deterministic control they are
+\[
+\tau_{\mathrm{ctrl}}(h) = [0.4,\;1.2,\;1.6,\;2.0].
+\]
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$n_{\mathrm{side}}$ & branch $\tau$ & control $\tau$ & branch/control ratio \\
+\midrule
+48 & 1.2 & 0.4 & 3.0 \\
+60 & 2.0 & 1.2 & 1.666667 \\
+72 & 2.4 & 1.6 & 1.5 \\
+84 & 3.6 & 2.0 & 1.8 \\
+\bottomrule
+\end{tabular}
+\caption{Persistence-time comparison between branch and control.}
+\label{tab:tau_scaling}
+\end{table}
+
+The branch fit to a minimal power law
+\[
+\tau(h) \sim h^{-q}
+\]
+gives
+\[
+q = 1.868386844019,
+\qquad
+R^2 = 0.977397586681.
+\]
+The control fit is less clean and stays below the branch at every tested level:
+\[
+q_{\mathrm{ctrl}} = 2.819218651794,
+\qquad
+R^2 = 0.907048419900.
+\]
+
+The Phase XI success criterion does not require a universal exponent. It requires structured scaling and clear branch/control separation. Those conditions are met.
+
+\section{Structural Correlates}
+
+The phase also tests whether simple structural diagnostics track survival and persistence. The strongest branch correlate is the coefficient-ratio shift proxy inherited from the frozen spectral-trace stack:
+\[
+\mathrm{corr}(\tau,\text{ratio-shift proxy}) = -0.930992601909.
+\]
+
+The operator-survival indicator also shows a nontrivial relation to local structure:
+\begin{itemize}
+\item branch survival vs local spectral density proxy: $0.492373478603$;
+\item branch survival vs local connectivity variance: $-0.804337994826$.
+\end{itemize}
+
+These are not interpretive invariants. They are descriptive correlates showing that protection is not numerically random with respect to the already frozen branch descriptors.
+
+\section{Control Comparison}
+
+The deterministic altered-connectivity control is tested under the same perturbation grids and the same classification rules. Its mean survival fractions are lower:
+\begin{itemize}
+\item local stiffness defect: $0.5$;
+\item connectivity micro-surgery: $0.5$;
+\item phase randomization: $0.2222$;
+\item boundary leakage: $0.5$.
+\end{itemize}
+
+At the coarser refinement levels $n_{\mathrm{side}} = 48$ and $60$, the control leaves the persistent basin immediately under several perturbation families, with first failure amplitude $0.0$. This is the key qualitative separation. The branch has a measurable protection basin where the control does not.
+
+\section{Bounded Interpretation}
+
+The Phase XI result is narrow by design. It supports the following claim only: within the already frozen operator and spectral-trace contracts, the localized branch candidate has a deterministic survival basin, its breakdown channels are class-specific and reproducible, and its persistence time grows across refinement more strongly than the matched control.
+
+This is not a particle claim. It is not a field-dynamics claim. It is not a continuum statement. It is not a new operator program. It is only a protection and failure-mechanism feasibility result on a frozen hierarchy.
+
+\section{Conclusion}
+
+Phase XI identifies a bounded protection basin for the frozen localized mode, with refinement-ordered local-stiffness failure thresholds, a sharp and repeatable incoherence threshold under phase randomization, structured persistence-time growth, and a clear deterministic-control separation. The artifact bundle is frozen in:
+\begin{itemize}
+\item \url{phase11-protection/phase11_manifest.json};
+\item \url{phase11-protection/phase11_summary.md};
+\item \url{phase11-protection/runs/phase11_perturbation_survival_ledger.csv};
+\item \url{phase11-protection/runs/phase11_failure_classification.csv};
+\item \url{phase11-protection/runs/phase11_persistence_scaling.csv};
+\item \url{phase11-protection/runs/phase11_runs.json}.
+\end{itemize}
+
+Phase XI establishes localized-mode protection and failure-mechanism feasibility for the frozen operator hierarchy.
+
+\end{document}

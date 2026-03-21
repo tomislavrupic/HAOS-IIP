@@ -1,0 +1,346 @@
+{
+  "timestamp": "2026-03-21T20:00:35Z",
+  "phase": 11,
+  "phase_name": "phase11-protection",
+  "stage_identifier": "phase11-protection",
+  "status": "passed",
+  "success": true,
+  "objective": "localized_mode_protection_and_failure_mechanism_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase7_manifest_reference": "phase7-spectral/phase7_spectral_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase9_manifest_reference": "phase9-invariants/phase9_manifest.json",
+  "phase10_manifest_reference": "phase10-bridge/phase10_manifest.json",
+  "phasex_manifest_reference": "phaseX-proto-particle/phaseX_integrated_manifest.json",
+  "phasex_candidate_reference": "phaseX-proto-particle/runs/proto_particle_candidates.json",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the lattice-spacing surrogate used to order protection diagnostics.",
+    "levels": [
+      48,
+      60,
+      72,
+      84
+    ]
+  },
+  "evaluation_protocol": {
+    "evaluation_tau": 0.8,
+    "persistence_tau_grid": [
+      0.0,
+      0.4,
+      0.8,
+      1.2,
+      1.6,
+      2.0,
+      2.4,
+      3.0,
+      3.6,
+      4.2
+    ],
+    "short_time_window": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ],
+    "perturbation_grids": {
+      "local_stiffness_defect": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "connectivity_micro_surgery": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "phase_randomization_window": [
+        0.0,
+        0.02,
+        0.04,
+        0.06,
+        0.08,
+        0.1,
+        0.12,
+        0.14,
+        0.16
+      ],
+      "boundary_leakage_probe": [
+        0.0,
+        0.2,
+        0.4,
+        0.8,
+        1.2,
+        1.6,
+        2.0
+      ]
+    }
+  },
+  "survival_basins": {
+    "frozen_branch": {
+      "local_stiffness_defect": {
+        "n48": {
+          "max_persistent_amplitude": 0.4,
+          "first_failure_amplitude": 0.5,
+          "persistent_amplitude_count": 5
+        },
+        "n60": {
+          "max_persistent_amplitude": 0.6,
+          "first_failure_amplitude": 0.7,
+          "persistent_amplitude_count": 7
+        },
+        "n72": {
+          "max_persistent_amplitude": 0.8,
+          "first_failure_amplitude": 0.9,
+          "persistent_amplitude_count": 9
+        },
+        "n84": {
+          "max_persistent_amplitude": 1.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 11
+        },
+        "thresholds_refinement_ordered": true
+      },
+      "connectivity_micro_surgery": {
+        "n48": {
+          "max_persistent_amplitude": 0.6,
+          "first_failure_amplitude": 0.8,
+          "persistent_amplitude_count": 5
+        },
+        "n60": {
+          "max_persistent_amplitude": 1.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 6
+        },
+        "n72": {
+          "max_persistent_amplitude": 1.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 6
+        },
+        "n84": {
+          "max_persistent_amplitude": 1.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 6
+        },
+        "thresholds_refinement_ordered": true
+      },
+      "phase_randomization_window": {
+        "n48": {
+          "max_persistent_amplitude": 0.06,
+          "first_failure_amplitude": 0.08,
+          "persistent_amplitude_count": 4
+        },
+        "n60": {
+          "max_persistent_amplitude": 0.06,
+          "first_failure_amplitude": 0.08,
+          "persistent_amplitude_count": 4
+        },
+        "n72": {
+          "max_persistent_amplitude": 0.06,
+          "first_failure_amplitude": 0.08,
+          "persistent_amplitude_count": 4
+        },
+        "n84": {
+          "max_persistent_amplitude": 0.06,
+          "first_failure_amplitude": 0.08,
+          "persistent_amplitude_count": 4
+        },
+        "thresholds_refinement_ordered": true
+      },
+      "boundary_leakage_probe": {
+        "n48": {
+          "max_persistent_amplitude": 2.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 7
+        },
+        "n60": {
+          "max_persistent_amplitude": 2.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 7
+        },
+        "n72": {
+          "max_persistent_amplitude": 2.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 7
+        },
+        "n84": {
+          "max_persistent_amplitude": 2.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 7
+        },
+        "thresholds_refinement_ordered": true
+      }
+    },
+    "periodic_diagonal_augmented_control": {
+      "local_stiffness_defect": {
+        "n48": {
+          "max_persistent_amplitude": null,
+          "first_failure_amplitude": 0.0,
+          "persistent_amplitude_count": 0
+        },
+        "n60": {
+          "max_persistent_amplitude": null,
+          "first_failure_amplitude": 0.0,
+          "persistent_amplitude_count": 0
+        },
+        "n72": {
+          "max_persistent_amplitude": 1.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 11
+        },
+        "n84": {
+          "max_persistent_amplitude": 1.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 11
+        },
+        "thresholds_refinement_ordered": true
+      },
+      "connectivity_micro_surgery": {
+        "n48": {
+          "max_persistent_amplitude": null,
+          "first_failure_amplitude": 0.0,
+          "persistent_amplitude_count": 0
+        },
+        "n60": {
+          "max_persistent_amplitude": null,
+          "first_failure_amplitude": 0.0,
+          "persistent_amplitude_count": 0
+        },
+        "n72": {
+          "max_persistent_amplitude": 1.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 6
+        },
+        "n84": {
+          "max_persistent_amplitude": 1.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 6
+        },
+        "thresholds_refinement_ordered": true
+      },
+      "phase_randomization_window": {
+        "n48": {
+          "max_persistent_amplitude": null,
+          "first_failure_amplitude": 0.0,
+          "persistent_amplitude_count": 0
+        },
+        "n60": {
+          "max_persistent_amplitude": null,
+          "first_failure_amplitude": 0.0,
+          "persistent_amplitude_count": 0
+        },
+        "n72": {
+          "max_persistent_amplitude": 0.06,
+          "first_failure_amplitude": 0.08,
+          "persistent_amplitude_count": 4
+        },
+        "n84": {
+          "max_persistent_amplitude": 0.06,
+          "first_failure_amplitude": 0.08,
+          "persistent_amplitude_count": 4
+        },
+        "thresholds_refinement_ordered": true
+      },
+      "boundary_leakage_probe": {
+        "n48": {
+          "max_persistent_amplitude": null,
+          "first_failure_amplitude": 0.0,
+          "persistent_amplitude_count": 0
+        },
+        "n60": {
+          "max_persistent_amplitude": null,
+          "first_failure_amplitude": 0.0,
+          "persistent_amplitude_count": 0
+        },
+        "n72": {
+          "max_persistent_amplitude": 2.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 7
+        },
+        "n84": {
+          "max_persistent_amplitude": 2.0,
+          "first_failure_amplitude": null,
+          "persistent_amplitude_count": 7
+        },
+        "thresholds_refinement_ordered": true
+      }
+    }
+  },
+  "persistence_scaling": {
+    "branch_tau_values": [
+      1.2,
+      2.0,
+      2.4,
+      3.6
+    ],
+    "control_tau_values": [
+      0.4,
+      1.2,
+      1.6,
+      2.0
+    ],
+    "branch_power_law_fit": {
+      "prefactor": 0.000884976966,
+      "exponent_q": 1.868386844019,
+      "r_squared": 0.977397586681
+    },
+    "control_power_law_fit": {
+      "prefactor": 8.772113e-06,
+      "exponent_q": 2.819218651794,
+      "r_squared": 0.9070484199
+    },
+    "branch_over_control_tau_ratio": [
+      3.0,
+      1.666667,
+      1.5,
+      1.8
+    ]
+  },
+  "failure_mechanisms": {
+    "local_stiffness_defect": "spectral_mixing_dominated",
+    "connectivity_micro_surgery": "topological_defect_triggered",
+    "phase_randomization_window": "incoherence_triggered",
+    "boundary_leakage_probe": "survives"
+  },
+  "structural_correlates": {
+    "branch_persistence_vs_ratio_shift_correlation": -0.930992601909,
+    "branch_persistence_vs_local_spectral_density_correlation": 0.0,
+    "branch_persistence_vs_local_connectivity_variance_correlation": 0.0,
+    "branch_survival_vs_local_spectral_density_correlation": 0.492373478603,
+    "branch_survival_vs_local_connectivity_variance_correlation": -0.804337994826
+  },
+  "success_flags": {
+    "bounded_survival_basin_identified": true,
+    "refinement_ordered_failure_threshold_found": true,
+    "persistence_time_structured_scaling": true,
+    "deterministic_control_different": true
+  },
+  "artifacts": {
+    "survival_ledger_csv": "phase11-protection/runs/phase11_perturbation_survival_ledger.csv",
+    "failure_classification_csv": "phase11-protection/runs/phase11_failure_classification.csv",
+    "persistence_scaling_csv": "phase11-protection/runs/phase11_persistence_scaling.csv",
+    "summary_md": "phase11-protection/phase11_summary.md",
+    "manifest_json": "phase11-protection/phase11_manifest.json",
+    "width_plot": "phase11-protection/plots/phase11_localization_width_vs_time.svg",
+    "survival_plot": "phase11-protection/plots/phase11_survival_probability_vs_perturbation.svg",
+    "persistence_plot": "phase11-protection/plots/phase11_persistence_time_vs_refinement.svg",
+    "gap_plot": "phase11-protection/plots/phase11_spectral_gap_shift_vs_defect_strength.svg",
+    "runs_json": "phase11-protection/runs/phase11_runs.json",
+    "builder_script": "phase11-protection/build_localized_mode_protection.py"
+  },
+  "runtime_seconds": 29.407851,
+  "claim_boundary": "Phase XI is limited to localized-mode protection and failure-mechanism diagnostics on the frozen operator hierarchy. It does not assert particles, field dynamics, continuum limits, or new physical structure.",
+  "conclusion": "Phase XI establishes localized-mode protection and failure-mechanism feasibility for the frozen operator hierarchy."
+}
