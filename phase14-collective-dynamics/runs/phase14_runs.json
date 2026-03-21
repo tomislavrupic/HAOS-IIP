@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-03-21T20:46:13Z",
+  "phase_name": "phase14-collective-dynamics",
+  "stage_identifier": "phase14-collective-dynamics",
+  "config_reference": "phase14-collective-dynamics/configs/phase14_collective_config.json",
+  "phase13_manifest_reference": "phase13-sector-formation/phase13_manifest.json",
+  "phase11_manifest_reference": "phase11-protection/phase11_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_levels": [
+    48,
+    60,
+    72,
+    84
+  ],
+  "ensemble_sizes": [
+    3,
+    5,
+    7
+  ],
+  "layout_seeds": [
+    1301,
+    1302,
+    1303
+  ],
+  "layout_rule": {
+    "min_separation_physical": 0.12,
+    "max_attempts": 20000
+  },
+  "evaluation_tau": 0.8,
+  "persistence_tau_grid": [
+    0.0,
+    0.4,
+    0.8,
+    1.2,
+    1.6,
+    2.0,
+    2.4,
+    3.0,
+    3.6,
+    4.2
+  ],
+  "phase8_short_time_window": [
+    0.02,
+    0.03,
+    0.05,
+    0.075,
+    0.1
+  ],
+  "transport_probe": {
+    "density_gradient_strength": 0.18
+  },
+  "response_probe": {
+    "bias_strengths": [
+      0.0,
+      0.03,
+      0.06
+    ],
+    "bias_remove_tau": 1.2,
+    "phase_kick_axis": "x"
+  },
+  "fluctuation_probe": {
+    "x_bin_count": 8
+  },
+  "deterministic_seed_record": {
+    "randomness_used": true,
+    "generator": "numpy.default_rng",
+    "note": "Phase XIV reuses the frozen Phase XIII layout seeds and acceptance rule, with deterministic weak-gradient and weak-drive probes layered on top."
+  },
+  "runtime_seconds": 2.120552
+}

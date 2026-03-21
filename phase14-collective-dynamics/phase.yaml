@@ -1,0 +1,21 @@
+phase: 14
+name: phase14-collective-dynamics
+purpose: mesoscopic collective-dynamics feasibility on the frozen dilute candidate sector
+inputs:
+  - phase13-sector-formation/phase13_manifest.json
+  - phase11-protection/phase11_manifest.json
+  - phase8-trace/phase8_trace_manifest.json
+  - phase6-operator/phase6_operator_manifest.json
+outputs:
+  - phase14-collective-dynamics/phase14_manifest.json
+  - phase14-collective-dynamics/phase14_summary.md
+  - phase14-collective-dynamics/runs/phase14_transport_ledger.csv
+  - phase14-collective-dynamics/runs/phase14_relaxation_times.csv
+  - phase14-collective-dynamics/runs/phase14_fluctuation_spectra.csv
+  - phase14-collective-dynamics/runs/phase14_density_response.csv
+  - phase14-collective-dynamics/runs/phase14_equation_of_state_proxy.csv
+rules:
+  - do not modify frozen earlier phases
+  - reuse the frozen phase13 layout families unchanged
+  - use only frozen candidate definitions and frozen tau grid
+  - keep collective observables derived from existing microscopic quantities only

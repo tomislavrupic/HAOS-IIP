@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-03-21T20:46:13Z",
+  "phase": 14,
+  "phase_name": "phase14-collective-dynamics",
+  "stage_identifier": "phase14-collective-dynamics",
+  "status": "passed",
+  "success": true,
+  "objective": "collective_dynamics_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase7_manifest_reference": "phase7-spectral/phase7_spectral_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase9_manifest_reference": "phase9-invariants/phase9_manifest.json",
+  "phase10_manifest_reference": "phase10-bridge/phase10_manifest.json",
+  "phase11_manifest_reference": "phase11-protection/phase11_manifest.json",
+  "phase12_manifest_reference": "phase12-interactions/phase12_manifest.json",
+  "phase13_manifest_reference": "phase13-sector-formation/phase13_manifest.json",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the refinement-order parameter inherited from the frozen operator hierarchy.",
+    "levels": [
+      48,
+      60,
+      72,
+      84
+    ]
+  },
+  "evaluation_protocol": {
+    "evaluation_tau": 0.8,
+    "persistence_tau_grid": [
+      0.0,
+      0.4,
+      0.8,
+      1.2,
+      1.6,
+      2.0,
+      2.4,
+      3.0,
+      3.6,
+      4.2
+    ],
+    "ensemble_sizes": [
+      3,
+      5,
+      7
+    ],
+    "layout_seeds": [
+      1301,
+      1302,
+      1303
+    ],
+    "minimum_physical_separation": 0.12,
+    "phase8_short_time_window": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ],
+    "transport_probe": {
+      "density_gradient_strength": 0.18
+    },
+    "response_probe": {
+      "bias_strengths": [
+        0.0,
+        0.03,
+        0.06
+      ],
+      "bias_remove_tau": 1.2,
+      "phase_kick_axis": "x"
+    },
+    "fluctuation_probe": {
+      "x_bin_count": 8
+    }
+  },
+  "aggregate_metrics": {
+    "branch_transport_fixed_layout_drift": 4.96377e-07,
+    "branch_transport_seed_std": 4.58998e-07,
+    "control_transport_fixed_layout_drift": 8.18198e-07,
+    "control_transport_seed_std": 3.85702e-07,
+    "branch_relaxation_ratio_mean": 21.291666666667,
+    "branch_relaxation_ratio_relative_span": 1.095890410959,
+    "branch_relaxation_ratio_min": 11.666666666667,
+    "branch_relaxation_tau_fixed_layout_drift": 0.0,
+    "control_relaxation_ratio_mean": 46.8125,
+    "control_relaxation_ratio_relative_span": 1.794392523364,
+    "control_relaxation_ratio_min": 21.0,
+    "control_relaxation_tau_fixed_layout_drift": 0.0,
+    "branch_low_k_power_drift": 0.010741131495,
+    "branch_low_k_power_seed_std": 0.260844698506,
+    "branch_fluctuation_slope_seed_std": 0.634521006766,
+    "branch_fluctuation_slope_drift": 0.071723739164,
+    "control_low_k_power_drift": 0.012764985221,
+    "control_low_k_power_seed_std": 0.260831604959,
+    "control_fluctuation_slope_seed_std": 0.650892663441,
+    "control_fluctuation_slope_drift": 0.091386800581,
+    "branch_linearity_error": 1.909447461951,
+    "control_linearity_error": 2.339411982051,
+    "branch_identity_linearity_error": 0.817861405229,
+    "control_identity_linearity_error": 1.112362308706,
+    "branch_identity_min_max_bias": 0.911071849788,
+    "branch_survival_min_max_bias": 0.8,
+    "control_identity_min_max_bias": 0.906418960798,
+    "control_survival_min_max_bias": 0.666666666667,
+    "branch_identity_mean_max_bias": 0.962058695177,
+    "branch_survival_mean_max_bias": 0.974603174603,
+    "control_identity_mean_max_bias": 0.960213196078,
+    "control_survival_mean_max_bias": 0.937037037037,
+    "branch_max_bias_mode_response_mean": -1.716929e-05,
+    "control_max_bias_mode_response_mean": -2.0267875e-05,
+    "branch_spacing_survival_correlation": 0.634277945065,
+    "control_spacing_survival_correlation": 0.530402574451
+  },
+  "success_flags": {
+    "transport_descriptor_stable": true,
+    "collective_relaxation_slower_than_microscopic": true,
+    "fluctuation_scaling_consistent": true,
+    "weak_bias_response_linear_identity_preserving": true,
+    "control_hierarchy_different": true
+  },
+  "control_flags": {
+    "transport_descriptor_stable": true,
+    "collective_relaxation_slower_than_microscopic": true,
+    "fluctuation_scaling_consistent": false,
+    "weak_bias_response_linear_identity_preserving": false
+  },
+  "artifacts": {
+    "transport_ledger_csv": "phase14-collective-dynamics/runs/phase14_transport_ledger.csv",
+    "relaxation_times_csv": "phase14-collective-dynamics/runs/phase14_relaxation_times.csv",
+    "fluctuation_spectra_csv": "phase14-collective-dynamics/runs/phase14_fluctuation_spectra.csv",
+    "density_response_csv": "phase14-collective-dynamics/runs/phase14_density_response.csv",
+    "equation_of_state_proxy_csv": "phase14-collective-dynamics/runs/phase14_equation_of_state_proxy.csv",
+    "runs_json": "phase14-collective-dynamics/runs/phase14_runs.json",
+    "summary_md": "phase14-collective-dynamics/phase14_summary.md",
+    "manifest_json": "phase14-collective-dynamics/phase14_manifest.json",
+    "drift_plot": "phase14-collective-dynamics/plots/phase14_density_centroid_drift_vs_time.svg",
+    "variance_plot": "phase14-collective-dynamics/plots/phase14_variance_growth_vs_time.svg",
+    "relaxation_plot": "phase14-collective-dynamics/plots/phase14_relaxation_time_vs_refinement.svg",
+    "fluctuation_plot": "phase14-collective-dynamics/plots/phase14_fluctuation_power_vs_scale.svg",
+    "equation_of_state_plot": "phase14-collective-dynamics/plots/phase14_survival_fraction_vs_spacing.svg",
+    "builder_script": "phase14-collective-dynamics/build_collective_dynamics.py"
+  },
+  "runtime_seconds": 2.120552,
+  "claim_boundary": "Phase XIV is limited to collective-dynamics feasibility diagnostics on the frozen dilute candidate sector and frozen operator hierarchy. It does not assert hydrodynamics, thermodynamics, continuum medium laws, or physical correspondence.",
+  "conclusion": "Phase XIV establishes collective dynamics feasibility for the frozen operator hierarchy."
+}

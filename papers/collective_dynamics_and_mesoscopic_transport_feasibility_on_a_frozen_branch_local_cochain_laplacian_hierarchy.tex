@@ -1,0 +1,210 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Collective Dynamics and Mesoscopic Transport Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase XIV of the frozen HAOS-IIP program asks whether the already frozen dilute sector of the persistent localized candidate
+\texttt{low\_mode\_localized\_wavepacket} behaves as a mesoscopic collective medium under weak deterministic probes. The phase is not allowed to modify the Phase V readout protocol, the Phase VI branch-local operator hierarchy $\Delta_h$, the Phase VII spectral-feasibility outputs, the Phase VIII short-time trace window, the Phase IX coefficient-stabilization diagnostics, the Phase X cautious bridge bundle, the Phase XI protection-basin structure, the Phase XII two-mode interaction rules, or the Phase XIII multi-mode statistical sector formation bundle. It therefore tests only whether collective transport, collective relaxation, fluctuation scaling, and weak-bias response can be defined reproducibly on top of the already frozen layouts and observables. Across refinement levels $n_{\mathrm{side}}\in\{48,60,72,84\}$, population sizes $\{3,5,7\}$, and deterministic layout seeds $\{1301,1302,1303\}$, the branch exhibits extremely small fixed-layout transport drift ($4.96377\times 10^{-7}$), collective-to-microscopic relaxation ratios between $11.666666666667$ and $35.0$, low-wavenumber fluctuation drift $0.010741131495$ with fluctuation-slope drift $0.071723739164$, and weak-bias aggregate identity-loss linearity error $0.817861405229$ while retaining mean identity $0.962058695177$ and mean survival $0.974603174603$ under the maximum weak drive. The deterministic altered-connectivity control fails the same stack at least in fluctuation scaling and weak-bias response, with fluctuation-slope drift $0.091386800581$, aggregate identity-loss linearity error $1.112362308706$, and mean survival $0.937037037037$ under the maximum weak drive. The result is bounded: Phase XIV establishes collective dynamics feasibility for the frozen operator hierarchy. It does not assert hydrodynamics, thermodynamics, continuum medium laws, or physical correspondence.
+\end{abstract}
+
+\section{Scope and Frozen Contracts}
+
+Phase XIV is a mesoscopic diagnostic only. It does not introduce a new candidate, a new operator, a new normalization, or a new interpretive layer. It consumes the following frozen authority contracts without change:
+\begin{itemize}
+\item the Phase V recovery-statistics readout protocol;
+\item the Phase VI branch-local periodic DK2D block cochain Laplacian hierarchy $\Delta_h$;
+\item the Phase VII spectral-feasibility outputs;
+\item the Phase VIII short-time trace operational window and probe grid;
+\item the Phase IX coefficient-stabilization diagnostics;
+\item the Phase X cautious continuum-bridge bundle;
+\item the Phase XI protection-basin characterization;
+\item the Phase XII two-mode interaction regime mapping;
+\item the Phase XIII multi-mode statistical sector formation bundle.
+\end{itemize}
+
+The concrete frozen references used here are:
+\begin{itemize}
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase7-spectral/phase7_spectral_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json};
+\item \url{phase9-invariants/phase9_manifest.json};
+\item \url{phase10-bridge/phase10_manifest.json};
+\item \url{phase11-protection/phase11_manifest.json};
+\item \url{phase12-interactions/phase12_manifest.json};
+\item \url{phase13-sector-formation/phase13_manifest.json}.
+\end{itemize}
+
+All new logic is isolated inside \texttt{phase14-collective-dynamics/}. No earlier manifest or \texttt{haos\_core} file is modified.
+
+\section{Collective Probe Design}
+
+The frozen candidate remains
+\[
+\texttt{low\_mode\_localized\_wavepacket},
+\]
+and the refinement hierarchy remains
+\[
+h = \frac{1}{n_{\mathrm{side}}},
+\qquad
+n_{\mathrm{side}} \in \{48,60,72,84\}.
+\]
+Phase XIV reuses the exact seeded dilute layouts from Phase XIII:
+\[
+N \in \{3,5,7\},
+\qquad
+\text{seeds} \in \{1301,1302,1303\},
+\qquad
+r_{\min}=0.12.
+\]
+
+The frozen persistence-time grid is
+\[
+\tau \in \{0.0,0.4,0.8,1.2,1.6,2.0,2.4,3.0,3.6,4.2\},
+\]
+with evaluation time
+\[
+\tau_{\mathrm{eval}}=0.8,
+\]
+and the Phase VIII short-time trace contract is carried forward unchanged:
+\[
+t \in \{0.02,0.03,0.05,0.075,0.1\}.
+\]
+
+Phase XIV adds only weak deterministic mesoscopic probes on top of those frozen structures:
+\begin{enumerate}
+\item a weak initial density gradient of strength $0.18$ across the $x$ direction;
+\item a collective relaxation-time extraction from the seeded density-mode amplitude;
+\item a coarse fluctuation-spectrum proxy on $8$ $x$-bins;
+\item a weak phase-coherent driving sweep with strengths $\{0.0,0.03,0.06\}$ and deterministic bias removal at $\tau=1.2$;
+\item a spacing-density equation-of-state proxy using the already frozen seeded layouts.
+\end{enumerate}
+
+No new microscopic observable is introduced. All collective quantities are derived from previously frozen ingredients: survival fraction, localization width, spectral ensemble proxy, pair-distance statistics, and identity metrics.
+
+\section{Transport Stability}
+
+The first Phase XIV requirement is that at least one collective transport descriptor be bounded and refinement-stable. The chosen descriptor is the terminal effective-diffusion proxy derived from the growth of the candidate-weighted spatial variance.
+
+Within each fixed seeded layout family, the branch exhibits essentially zero refinement drift:
+\[
+\text{branch transport fixed-layout drift}
+= 4.96377\times 10^{-7},
+\]
+with seed spread
+\[
+4.58998\times 10^{-7}.
+\]
+The control is similarly stable in this one narrow descriptor:
+\[
+8.18198\times 10^{-7}.
+\]
+
+This means the existence claim for a transport descriptor is satisfied, but it is not by itself a branch/control separator. The bounded interpretation is therefore that the frozen sector admits a well-defined slow transport observable, not that transport alone distinguishes the branch.
+
+\section{Collective Relaxation Versus Microscopic Persistence}
+
+Phase XIV compares a collective relaxation time extracted from the slowest $x$-mode density amplitude with the already frozen microscopic persistence times from Phase XI. The branch ratios are large at every refinement level:
+\[
+\tau_{\mathrm{collective}}/\tau_{\mathrm{micro}}
+\in \{35.0,\,21.0,\,17.5,\,11.666666666667\},
+\]
+so the minimum branch ratio is
+\[
+11.666666666667.
+\]
+The fixed-layout drift of the extracted collective relaxation time is exactly zero on the scanned hierarchy.
+
+The control also exhibits slow collective relaxation by this crude ratio, so the Phase XIV success logic does not rely on the branch being uniquely slow. Instead, the point is that the branch supports a stable mesoscopic timescale that clearly exceeds microscopic persistence and remains refinement-ordered under the frozen seeded layouts.
+
+\section{Fluctuation Scaling}
+
+The clearest branch/control separation appears in the fluctuation-spectrum probe. For each ensemble and seed, Phase XIV coarse-grains the candidate-weighted density profile into $8$ bins along the $x$ direction and tracks:
+\begin{itemize}
+\item terminal low-wavenumber power;
+\item a coarse fluctuation slope over the non-zero wavenumber bins.
+\end{itemize}
+
+The branch fluctuation metrics remain bounded across refinement within fixed layout families:
+\[
+\text{branch low-}k\text{ drift} = 0.010741131495,
+\qquad
+\text{branch slope drift} = 0.071723739164.
+\]
+The control low-$k$ drift remains close,
+\[
+0.012764985221,
+\]
+but the control fluctuation-slope drift rises beyond the branch-side acceptance band:
+\[
+0.091386800581.
+\]
+
+This is the sharpest collective branch/control separator in the phase. The branch preserves a coherent fluctuation-shape hierarchy, while the control fails that same bounded criterion.
+
+\section{Weak-Bias Response}
+
+The weak-bias probe initially looked ambiguous when judged by the raw shift of the density-mode amplitude, which remains near zero for symmetry reasons. The cleaner mesoscopic observable is the aggregate identity-loss response under the weak phase-coherent drive.
+
+Using that aggregate identity-loss response, the branch obtains:
+\begin{itemize}
+\item identity-loss linearity error: $0.817861405229$;
+\item mean identity at maximum weak bias: $0.962058695177$;
+\item mean survival at maximum weak bias: $0.974603174603$.
+\end{itemize}
+
+The control degrades more strongly under the same weak drive:
+\begin{itemize}
+\item identity-loss linearity error: $1.112362308706$;
+\item mean identity at maximum weak bias: $0.960213196078$;
+\item mean survival at maximum weak bias: $0.937037037037$.
+\end{itemize}
+
+The point is again bounded. Phase XIV does not claim a transport law or a driven-medium equation. It only claims that a weak deterministic bias produces an approximately linear aggregate response on the branch while preserving the frozen candidate identity and survival better than the control.
+
+\section{Spacing-Density Proxy}
+
+The final probe treats the frozen seeded layouts themselves as a deterministic density ladder through their initial nearest-neighbor scale. The branch shows a positive spacing-survival correlation
+\[
+0.634277945065,
+\]
+while the control yields
+\[
+0.530402574451.
+\]
+This is not yet a full separator by itself, but it supports the broader claim that the branch sector admits a smooth spacing-sensitive mesoscopic descriptor rather than a purely erratic population response.
+
+\section{Bounded Interpretation}
+
+The frozen authority claim is narrow: within the already frozen operator, trace, coefficient, localized-mode, interaction, and sector-formation contracts, the dilute branch sector supports at least one bounded transport descriptor, a collective timescale that exceeds microscopic persistence, coherent fluctuation scaling, and a weak-bias aggregate response that preserves identity and survival more effectively than the deterministic altered-connectivity control.
+
+This is not a hydrodynamic claim. It is not a thermodynamic claim. It is not a continuum-medium claim. It is not a field-theory claim. It is not a transport-equation claim. It is only a constrained collective-dynamics feasibility result on a frozen branch-local hierarchy.
+
+\section{Conclusion}
+
+Phase XIV freezes a deterministic mesoscopic probe suite over the already validated dilute branch sector and shows that the resulting transport, relaxation, fluctuation, and weak-bias observables are reproducible and bounded, with the control hierarchy failing part of the same test stack. The frozen artifact bundle is:
+\begin{itemize}
+\item \url{phase14-collective-dynamics/phase14_manifest.json};
+\item \url{phase14-collective-dynamics/phase14_summary.md};
+\item \url{phase14-collective-dynamics/runs/phase14_transport_ledger.csv};
+\item \url{phase14-collective-dynamics/runs/phase14_relaxation_times.csv};
+\item \url{phase14-collective-dynamics/runs/phase14_fluctuation_spectra.csv};
+\item \url{phase14-collective-dynamics/runs/phase14_density_response.csv};
+\item \url{phase14-collective-dynamics/runs/phase14_equation_of_state_proxy.csv};
+\item \url{phase14-collective-dynamics/runs/phase14_runs.json}.
+\end{itemize}
+
+Phase XIV establishes collective dynamics feasibility for the frozen operator hierarchy.
+
+\end{document}
