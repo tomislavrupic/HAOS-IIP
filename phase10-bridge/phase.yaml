@@ -1,0 +1,17 @@
+phase: 10
+phase_name: phase10-bridge
+inputs:
+  - phase6-operator/phase6_operator_manifest.json
+  - phase8-trace/phase8_trace_manifest.json
+  - phase9-invariants/phase9_manifest.json
+outputs:
+  - runs/phase10_extension_ledger.csv
+  - runs/phase10_effective_scaling_ledger.csv
+  - runs/phase10_coarse_grain_summary.csv
+  - phase10_summary.md
+  - phase10_manifest.json
+  - plots/phase10_descriptor_vs_extended_refinement.svg
+  - plots/phase10_prediction_error_vs_refinement.svg
+  - plots/phase10_coarse_grain_spectral_comparison.svg
+  - plots/phase10_multi_descriptor_correlation.svg
+  - runs/phase10_runs.json

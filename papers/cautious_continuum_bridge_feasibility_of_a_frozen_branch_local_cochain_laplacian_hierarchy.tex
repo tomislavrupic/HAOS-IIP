@@ -1,0 +1,308 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Cautious Continuum-Bridge Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase X of the frozen HAOS-IIP program asks whether the already frozen Phase IX spectral-trace descriptors support a cautious large-scale bridge description without changing any prior authority layer. The phase is not allowed to alter the Phase V readout layer, the Phase VI branch-local operator hierarchy, the Phase VII spectral-feasibility baseline, the Phase VIII short-time window and probe grid, or the Phase IX ratio and rescaled-descriptor contract. It extends the deterministic refinement hierarchy by one level, from $n_{\mathrm{side}} \in \{12,24,36,48\}$ to $\{12,24,36,48,60\}$, and tests whether the branch continues to obey the same compact trace law
+\[
+T_h(t) \approx h^{-2}\bigl(b_0(h) + b_1(h)t + b_2(h)t^2\bigr),
+\]
+with $b_k(h)$ tracked under the same $h^2$ correction family already selected by earlier stages. On the new refinement level, the branch achieves maximum short-window trace prediction error $3.19 \times 10^{-4}$ under the frozen $h^2$ law, while the corresponding deterministic open-grid control incurs error $2.79 \times 10^{-3}$ under that same law. The branch ratio-limit candidates drift by at most $9.77 \times 10^{-6}$ after extension, the largest invariant-limit drift is $3.36 \times 10^{-3}$, and the coarse spectral projection $\lambda \le 7.5$ preserves the branch low-mode ladder exactly while keeping the maximum short-window trace error at $0.03904$ and the maximum ratio drift at $0.07203$. The first principal-component share of the branch descriptor cloud is $0.9761$, and successive descriptor distances continue to shrink on the extended hierarchy. The result is bounded: Phase X establishes cautious continuum-bridge feasibility for the frozen operator hierarchy. It does not establish a continuum limit, geometric coefficients, metric structure, or physical correspondence.
+\end{abstract}
+
+\section{Scope and Authority}
+
+Phase X is a bridge-feasibility diagnostic only. It is not an interpretive continuum program. The phase consumes five already frozen authority layers:
+\begin{itemize}
+\item the Phase V recovery-statistics authority;
+\item the Phase VI branch-local cochain-Laplacian operator freeze;
+\item the Phase VII spectral-feasibility manifest;
+\item the Phase VIII short-time trace contract, including the frozen operational window and deterministic probe grid;
+\item the Phase IX coefficient-ratio and rescaled-descriptor contract.
+\end{itemize}
+
+Phase X may not change any of those layers. Its only purpose is to determine whether the frozen descriptor family admits a compact extension law, whether a transparent coarse reduction preserves the same branch signatures, and whether the branch remains distinguishable from a deterministic control hierarchy under the same test.
+
+\section{Frozen Inputs}
+
+The frozen operator remains the branch-local periodic DK2D block cochain Laplacian
+\[
+\Delta_h,
+\]
+on the deterministic hierarchy
+\[
+h = \frac{1}{n_{\mathrm{side}}}.
+\]
+The inherited frozen levels are
+\[
+n_{\mathrm{side}} \in \{12,24,36,48\},
+\]
+and Phase X adds exactly one deterministic extension level:
+\[
+n_{\mathrm{side}} = 60.
+\]
+
+The frozen trace contract reused without change is:
+\begin{itemize}
+\item operational short-time window:
+\[
+\{0.02, 0.03, 0.05, 0.075, 0.1\};
+\]
+\item fixed master probe grid:
+\[
+\{0.01,0.015,0.02,0.03,0.05,0.075,0.1,0.15,0.2,0.3,0.5,0.75,1.0\};
+\]
+\item deterministic truncation checkpoints: full exact spectrum, $\lambda \le 7.5$, and $\lambda \le 7.8$.
+\end{itemize}
+
+The frozen descriptor contract reused without change is:
+\begin{itemize}
+\item ratio candidates:
+\[
+\frac{b_1(h)}{b_0(h)}, \qquad \frac{b_2(h)}{b_0(h)};
+\]
+\item rescaled descriptors:
+\[
+I_0(h), \qquad I_1(h), \qquad I_2(h).
+\]
+\end{itemize}
+
+The authority references used in this paper are:
+\begin{itemize}
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json};
+\item \url{phase9-invariants/phase9_manifest.json};
+\item \url{phase10-bridge/phase10_manifest.json}.
+\end{itemize}
+
+\section{Phase X Probe Set}
+
+Phase X performs four deterministic checks:
+\begin{enumerate}
+\item refinement-extension stability at the new level $n_{\mathrm{side}} = 60$;
+\item effective scaling prediction using the already selected branch family
+\[
+b_k(h) = b_{k,\infty} + c_k h^2;
+\]
+\item a transparent coarse-grain reduction by spectral truncation projection at $\lambda \le 7.5$;
+\item branch-versus-control comparison against the deterministic open-grid scalar-block hierarchy frozen in Phase IX.
+\end{enumerate}
+
+No stochastic sampling or free parameter search is used anywhere in the phase.
+
+\section{Extended Hierarchy and Branch Descriptors}
+
+The branch extension produces the following level sequence:
+\[
+n_{\mathrm{side}} \in \{12,24,36,48,60\}, \qquad
+h \in \left\{\frac{1}{12}, \frac{1}{24}, \frac{1}{36}, \frac{1}{48}, \frac{1}{60}\right\}.
+\]
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Level & $n_{\mathrm{side}}$ & $h$ & $b_0(h)$ & $b_1/b_0$ & $b_2/b_0$ \\
+\midrule
+R1 & 12 & 0.083333 & 3.992541196728 & -3.806199582632 & 7.007660704511 \\
+R2 & 24 & 0.041667 & 3.992270826065 & -3.853235149568 & 7.163503476583 \\
+R3 & 36 & 0.027778 & 3.992219728651 & -3.862002421471 & 7.192703083601 \\
+R4 & 48 & 0.020833 & 3.992201767565 & -3.865075186356 & 7.202948201941 \\
+R5 & 60 & 0.016667 & 3.992193440591 & -3.866498178779 & 7.207694668199 \\
+\bottomrule
+\end{tabular}
+\caption{Branch extension summary for the frozen scaled coefficient and ratio descriptors.}
+\label{tab:branch_descriptors}
+\end{table}
+
+The associated rescaled descriptor $I_2(h)$ continues its bounded refinement ordering:
+\[
+29.980777,\;31.242075,\;31.724840,\;32.025149,\;32.245726.
+\]
+The branch spectral radii also remain monotone:
+\[
+7.862310,\;7.965353,\;7.984583,\;7.991324,\;7.994446.
+\]
+
+\section{Primary Effective Scaling Description}
+
+Phase X tests only one primary bridge law:
+\[
+T_h(t) \approx h^{-2}\bigl(b_0(h) + b_1(h)t + b_2(h)t^2\bigr),
+\qquad
+b_k(h) = b_{k,\infty} + c_k h^2.
+\]
+This is not a continuum claim. It is a compact descriptive law used solely to test extension stability on the frozen branch.
+
+The branch limit candidates obtained from the frozen levels R1--R4 are:
+\[
+b_{0,\infty} = 3.992179654625,\qquad
+b_{1,\infty} = -15.445632893201,\qquad
+b_{2,\infty} = 28.806767863436.
+\]
+The corresponding ratio-limit candidates are
+\[
+\left(\frac{b_1}{b_0}\right)_{\infty} = -3.868971692687,
+\qquad
+\left(\frac{b_2}{b_0}\right)_{\infty} = 7.215797137512.
+\]
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Quantity & prediction model & predicted R5 & observed R5 & relative error \\
+\midrule
+$b_0$ & linear in $h^2$ & 3.992194122077 & 3.992193440591 & $1.71 \times 10^{-7}$ \\
+$b_1$ & linear in $h^2$ & -15.435662686887 & -15.435808667377 & $9.46 \times 10^{-6}$ \\
+$b_2$ & linear in $h^2$ & 28.773624605423 & 28.774511376163 & $3.08 \times 10^{-5}$ \\
+$b_1/b_0$ & linear in $h^2$ & -3.866460489170 & -3.866498178779 & $9.75 \times 10^{-6}$ \\
+$b_2/b_0$ & linear in $h^2$ & 7.207469850163 & 7.207694668199 & $3.12 \times 10^{-5}$ \\
+\bottomrule
+\end{tabular}
+\caption{Out-of-sample R5 prediction from the frozen R1--R4 branch law.}
+\label{tab:prediction}
+\end{table}
+
+The strongest branch summary metric is the full short-window trace reconstruction error at R5:
+\[
+\max_{t \in \{0.02,0.03,0.05,0.075,0.1\}}
+\frac{|T_h^{\mathrm{pred}}(t) - T_h^{\mathrm{obs}}(t)|}{T_h^{\mathrm{obs}}(t)}
+= 0.000319310430.
+\]
+The weaker linear-in-$h$ comparator yields larger error,
+\[
+0.000787679864,
+\]
+so the already selected $h^2$ branch law remains preferred after extension.
+
+\section{Invariant-Like Extension Stability}
+
+Phase X reuses the Phase IX rescaled descriptors unchanged and tests only whether they remain predictable under the same refinement ordering. The R1--R4 linear-in-$h$ tracking law gives the R5 predictions:
+\[
+I_0(60) \approx 4.478786,\qquad
+I_1(60) \approx -17.360180,\qquad
+I_2(60) \approx 32.018996,
+\]
+against the observed values
+\[
+4.510466,\qquad -17.482267,\qquad 32.245726.
+\]
+
+The largest branch invariant prediction error at R5 is
+\[
+0.007030258844,
+\]
+and the largest invariant-limit drift after adding the new level is
+\[
+0.003355553451.
+\]
+This is not a claim of invariant convergence in any geometric sense. It is only evidence that the already frozen Phase IX descriptor family remains bounded and refinement ordered under the minimal extension.
+
+\section{Coarse-Grain Projection}
+
+Phase X uses one explicit coarse-grain reduction only: a spectral truncation projection at
+\[
+\lambda \le 7.5.
+\]
+This projection is transparent and deterministic. It is not presented as a continuum reduction. It is only a bounded test of whether the branch keeps the same low-structure signals after a declared spectral tail removal.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+Level & retained mode fraction & radius loss & max trace error & max ratio drift \\
+\midrule
+R1 & 0.965278 & 0.526675 & 0.039036855531 & 0.072025040590 \\
+R2 & 0.963542 & 0.533577 & 0.034705612444 & 0.064585660656 \\
+R3 & 0.962191 & 0.497335 & 0.032543365610 & 0.060760820234 \\
+R4 & 0.957899 & 0.535317 & 0.030162854707 & 0.056486969979 \\
+R5 & 0.959722 & 0.513354 & 0.028401530310 & 0.053306989211 \\
+\bottomrule
+\end{tabular}
+\caption{Branch coarse-grain summary under the declared $\lambda \le 7.5$ projection.}
+\label{tab:coarse}
+\end{table}
+
+The key point is not that the projection is exact in any global sense. It is not. The key point is that the branch low-mode ladder is preserved exactly at every refinement level, while the short-window trace and ratio drifts remain bounded and refinement ordered.
+
+\section{Control Comparison}
+
+Phase X repeats the same extension test on the deterministic open-grid scalar-block control hierarchy inherited from Phase IX. The control is not compared under a model chosen for the control. It is compared under the same branch bridge law.
+
+The separation is clear:
+\begin{itemize}
+\item branch R5 short-window trace error under the $h^2$ bridge law: $0.000319310430$;
+\item control R5 short-window trace error under the same law: $0.002787392461$;
+\item trace-error multiplier (control / branch): $8.7294$;
+\item branch max ratio prediction error under the $h^2$ law: $3.12 \times 10^{-5}$;
+\item control max ratio prediction error under the same law: $0.010111494021$;
+\item ratio-error multiplier (control / branch): $324.07$;
+\item branch best coefficient family remains linear in $h^2$ for all three scaled coefficients;
+\item control best coefficient family remains linear in $h$ for all three scaled coefficients.
+\end{itemize}
+
+This is the main Phase X control result: the branch bridge description is not just compact; it is also branch-specific under the declared test.
+
+\section{Descriptor Coherence}
+
+The six-component branch descriptor cloud
+\[
+\left(\frac{b_1}{b_0}, \frac{b_2}{b_0}, I_0, I_1, I_2, \rho_{\max}\right)
+\]
+remains compact under extension. The first principal-component share is
+\[
+0.976145251662,
+\]
+and the successive Euclidean descriptor distances shrink as
+\[
+1.380711351232,\;0.537844315440,\;0.337987034953,\;0.249597345438.
+\]
+The correlation between $b_2/b_0$ and $I_2$ across the extended branch is
+\[
+0.973005596404.
+\]
+Again, this is only a structural coherence signal. It is not an invariant interpretation.
+
+\section{Bounded Interpretation}
+
+Phase X supports one narrow authority statement:
+\begin{quote}
+The frozen branch-local hierarchy admits a cautious bridge description in which the Phase IX ratio and rescaled-descriptor contract remains stable under one deterministic refinement extension, a compact $h^2$ trace law predicts the new refinement level with bounded error, and a declared coarse spectral projection preserves the same low-structure ordering while the deterministic altered-connectivity control fails the same bridge law.
+\end{quote}
+
+This statement is enough to freeze a branch-local bridge-feasibility baseline for later work. It is not enough to claim a continuum object, geometric meaning, or any physical embedding.
+
+\section{Non-Claims}
+
+This paper does not claim:
+\begin{enumerate}
+\item a continuum limit;
+\item geometric coefficients or metric structure;
+\item physical correspondence;
+\item universality of the descriptor family;
+\item that the coarse-grain projection is a derivation rather than a bounded diagnostic reduction.
+\end{enumerate}
+
+\section{Conclusion}
+
+Phase X closes one bounded result on the frozen branch. The already frozen spectral-trace descriptors survive one deterministic refinement extension, the branch keeps a compact $h^2$ prediction law on the declared short-time window, the same branch signatures survive a transparent coarse spectral projection, and the deterministic control hierarchy fails the same bridge law by a wide margin. This is enough for a cautious bridge-feasibility statement and nothing stronger.
+
+Phase X establishes cautious continuum-bridge feasibility for the frozen operator hierarchy.
+
+\end{document}

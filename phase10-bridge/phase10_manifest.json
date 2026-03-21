@@ -1,0 +1,224 @@
+{
+  "timestamp": "2026-03-21T16:10:16Z",
+  "phase": 10,
+  "phase_name": "phase10-bridge",
+  "stage_identifier": "phase10-bridge",
+  "status": "passed",
+  "success": true,
+  "objective": "cautious_continuum_bridge_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase9_manifest_reference": "phase9-invariants/phase9_manifest.json",
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the lattice-spacing surrogate used to order refinements.",
+    "level_parameter": "n_side",
+    "construction_rule_constant": true,
+    "refinement_multipliers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "levels": [
+      {
+        "level_id": "R1",
+        "refinement_multiplier": 1,
+        "n_side": 12,
+        "h": 0.083333333333
+      },
+      {
+        "level_id": "R2",
+        "refinement_multiplier": 2,
+        "n_side": 24,
+        "h": 0.041666666667
+      },
+      {
+        "level_id": "R3",
+        "refinement_multiplier": 3,
+        "n_side": 36,
+        "h": 0.027777777778
+      },
+      {
+        "level_id": "R4",
+        "refinement_multiplier": 4,
+        "n_side": 48,
+        "h": 0.020833333333
+      },
+      {
+        "level_id": "R5",
+        "refinement_multiplier": 5,
+        "n_side": 60,
+        "h": 0.016666666667
+      }
+    ]
+  },
+  "frozen_trace_contract": {
+    "operational_short_time_window": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ],
+    "master_probe_grid": [
+      0.01,
+      0.015,
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "spectral_truncation_methods": [
+      {
+        "label": "full_exact",
+        "cutoff": null
+      },
+      {
+        "label": "lambda_le_7_5",
+        "cutoff": 7.5
+      },
+      {
+        "label": "lambda_le_7_8",
+        "cutoff": 7.8
+      }
+    ]
+  },
+  "frozen_descriptor_contract": {
+    "ratios": [
+      "b1_over_b0",
+      "b2_over_b0"
+    ],
+    "rescaled_invariants": [
+      "I0",
+      "I1",
+      "I2"
+    ],
+    "phase9_control_hierarchy": {
+      "label": "generic_open_grid_scalar_block_control",
+      "description": "Deterministic control hierarchy with the same total node counts as the frozen branch, constructed as four repeated scalar open-grid Laplacian blocks with open boundary connectivity.",
+      "same_node_counts_as_branch": true,
+      "same_total_dimension_as_branch": true
+    }
+  },
+  "primary_effective_scaling_description": {
+    "trace_prefactor": "h^(-2)",
+    "correction_variable": "h^2",
+    "surrogate": "T_h(t) \u2248 h^(-2) * (b0(h) + b1(h) * t + b2(h) * t^2)",
+    "branch_limit_coefficients": {
+      "b0": 3.992179654625,
+      "b1": -15.445632893201,
+      "b2": 28.806767863436
+    },
+    "branch_ratio_limit_candidates": {
+      "b1_over_b0": -3.868971692687,
+      "b2_over_b0": 7.215797137512
+    },
+    "branch_invariant_limit_candidates": {
+      "I0": 4.48488158993,
+      "I1": -17.435256281568,
+      "I2": 32.63855294095
+    }
+  },
+  "extension_results": {
+    "branch_r5_prediction_errors": {
+      "trace_h2_max_relative_error": 0.00031931043,
+      "trace_h1_comparator_error": 0.000787679864,
+      "scaled_coefficient_h2_max_relative_error": 3.0817967e-05,
+      "ratio_h2_max_relative_error": 3.1201581e-05,
+      "invariant_h1_max_relative_error": 0.007030258844
+    },
+    "branch_limit_drift_after_extension": {
+      "ratios": {
+        "b1_over_b0": 3.053729e-06,
+        "b2_over_b0": 9.769968e-06
+      },
+      "rescaled_invariants": {
+        "I0": 0.003355553451,
+        "I1": 0.002641299819,
+        "I2": 0.002096173935
+      }
+    },
+    "branch_best_scaled_coefficient_models": {
+      "b0": "linear_in_h^2",
+      "b1": "linear_in_h^2",
+      "b2": "linear_in_h^2"
+    },
+    "branch_spectral_radius_values": [
+      7.862309796963,
+      7.965353020924,
+      7.984582776023,
+      7.991324152244,
+      7.99444637301
+    ]
+  },
+  "coarse_grain_projection": {
+    "label": "lambda_le_7_5_spectral_projection",
+    "cutoff": 7.5,
+    "branch_retained_mode_fraction_range": [
+      0.957899305556,
+      0.965277777778
+    ],
+    "branch_max_trace_window_relative_error": 0.039036855531,
+    "branch_max_ratio_relative_drift": 0.07202504059,
+    "branch_low_mode_preserved_at_all_levels": true
+  },
+  "multi_descriptor_coherence": {
+    "branch_first_principal_component_share": 0.976145251662,
+    "branch_descriptor_distance_sequence": [
+      1.380711351232,
+      0.53784431544,
+      0.337987034953,
+      0.249597345438
+    ],
+    "branch_descriptor_distances_shrink": true,
+    "branch_ratio2_vs_invariant2_correlation": 0.973005596404
+  },
+  "control_comparison": {
+    "label": "generic_open_grid_scalar_block_control",
+    "description": "Deterministic control hierarchy with the same total node counts as the frozen branch, constructed as four repeated scalar open-grid Laplacian blocks with open boundary connectivity.",
+    "trace_h2_error_branch": 0.00031931043,
+    "trace_h2_error_control": 0.002787392461,
+    "trace_h2_error_multiplier": 8.729412516922,
+    "ratio_h2_error_branch": 3.1201581e-05,
+    "ratio_h2_error_control": 0.010111494021,
+    "ratio_h2_error_multiplier": 324.069923628011,
+    "control_best_scaled_coefficient_models": {
+      "b0": "linear_in_h^1",
+      "b1": "linear_in_h^1",
+      "b2": "linear_in_h^1"
+    },
+    "control_ratio_limit_drift_max": 0.003186824953
+  },
+  "success_flags": {
+    "extension_preserves_primary_h2_trace_law": true,
+    "ratio_limit_candidates_stable": true,
+    "rescaled_invariants_predictable": true,
+    "coarse_projection_retains_branch_signatures": true,
+    "multi_descriptor_coherence_compact": true,
+    "control_fails_branch_bridge_law": true
+  },
+  "artifacts": {
+    "extension_ledger_csv": "phase10-bridge/runs/phase10_extension_ledger.csv",
+    "effective_scaling_ledger_csv": "phase10-bridge/runs/phase10_effective_scaling_ledger.csv",
+    "coarse_grain_summary_csv": "phase10-bridge/runs/phase10_coarse_grain_summary.csv",
+    "summary_md": "phase10-bridge/phase10_summary.md",
+    "manifest_json": "phase10-bridge/phase10_manifest.json",
+    "descriptor_plot": "phase10-bridge/plots/phase10_descriptor_vs_extended_refinement.svg",
+    "prediction_error_plot": "phase10-bridge/plots/phase10_prediction_error_vs_refinement.svg",
+    "coarse_grain_plot": "phase10-bridge/plots/phase10_coarse_grain_spectral_comparison.svg",
+    "multi_descriptor_correlation_plot": "phase10-bridge/plots/phase10_multi_descriptor_correlation.svg",
+    "runs_json": "phase10-bridge/runs/phase10_runs.json",
+    "builder_script": "phase10-bridge/build_continuum_bridge_feasibility.py"
+  },
+  "runtime_seconds": 0.357135,
+  "claim_boundary": "Phase X authority is limited to cautious continuum-bridge feasibility diagnostics on the frozen operator and spectral-trace contracts. It does not assert a continuum limit, geometric coefficients, metric structure, physical correspondence, or any continuum-derived law.",
+  "conclusion": "Phase X establishes cautious continuum-bridge feasibility for the frozen operator hierarchy."
+}

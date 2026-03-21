@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-03-21T16:10:16Z",
+  "phase": 10,
+  "phase_name": "phase10-bridge",
+  "builder_script": "phase10-bridge/build_continuum_bridge_feasibility.py",
+  "deterministic_seed_record": {
+    "randomness_used": false,
+    "note": "No stochastic probes were used; all spectra, fits, and projections are deterministic."
+  },
+  "references": {
+    "phase6_manifest": "phase6-operator/phase6_operator_manifest.json",
+    "phase8_manifest": "phase8-trace/phase8_trace_manifest.json",
+    "phase9_manifest": "phase9-invariants/phase9_manifest.json"
+  },
+  "hierarchy": {
+    "frozen_levels": [
+      {
+        "level_id": "R1",
+        "refinement_multiplier": 1,
+        "n_side": 12,
+        "h": 0.083333333333
+      },
+      {
+        "level_id": "R2",
+        "refinement_multiplier": 2,
+        "n_side": 24,
+        "h": 0.041666666667
+      },
+      {
+        "level_id": "R3",
+        "refinement_multiplier": 3,
+        "n_side": 36,
+        "h": 0.027777777778
+      },
+      {
+        "level_id": "R4",
+        "refinement_multiplier": 4,
+        "n_side": 48,
+        "h": 0.020833333333
+      }
+    ],
+    "extended_level": {
+      "level_id": "R5",
+      "refinement_multiplier": 5,
+      "n_side": 60,
+      "h": 0.016666666667
+    }
+  },
+  "effective_scaling_definition": {
+    "trace_prefactor": "h^(-2)",
+    "primary_correction_variable": "h^2",
+    "primary_surrogate": "T_h(t) \u2248 h^(-2) * (b0(h) + b1(h) * t + b2(h) * t^2)",
+    "invariant_tracking_variable": "h",
+    "trace_window": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ]
+  },
+  "coarse_grain_definition": {
+    "label": "lambda_le_7_5_spectral_projection",
+    "method": "spectral truncation projection",
+    "cutoff": 7.5
+  },
+  "control_hierarchy": {
+    "label": "generic_open_grid_scalar_block_control",
+    "description": "Deterministic control hierarchy with the same total node counts as the frozen branch, constructed as four repeated scalar open-grid Laplacian blocks with open boundary connectivity.",
+    "same_node_counts_as_branch": true,
+    "same_total_dimension_as_branch": true
+  },
+  "runtime_seconds": 0.357135
+}
