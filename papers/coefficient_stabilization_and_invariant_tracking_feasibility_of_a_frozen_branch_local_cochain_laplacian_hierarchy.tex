@@ -1,0 +1,251 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Coefficient Stabilization and Invariant-Tracking Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase IX of the frozen HAOS-IIP program asks whether the coefficient-like structures extracted from the already frozen Phase VIII short-time trace regime exhibit reproducible stabilization across refinement and whether simple normalized combinations behave invariant-like on the branch. The phase does not alter Phase V, Phase VI, Phase VII, or the frozen Phase VIII short-time window and probe grid. It reuses the exact deterministic trace proxy on the hierarchy $h = 1 / n_{\mathrm{side}}$ with $n_{\mathrm{side}} \in \{12,24,36,48\}$ and tracks the Phase VIII size-factored quadratic surrogate coefficients $b_0(h)$, $b_1(h)$, and $b_2(h)$. Across refinement, the relative spans are $8.50 \times 10^{-5}$, $0.01522$, and $0.02726$, with shrinking successive coefficient-vector distances $0.647775$, $0.121305$, and $0.042557$. The ratio descriptors $b_1/b_0$ and $b_2/b_0$ are materially more stable than the raw trace coefficients, with relative spans $0.01531$ and $0.02734$. Rescaled descriptors $I_0$, $I_1$, and $I_2$, formed using the dominant Phase VII low-mode exponent, remain inside compact refinement bands with largest span $0.06543$. A deterministic open-grid scalar control hierarchy with the same node counts behaves differently: its ratio spans are larger by a factor $4.44$, its final coefficient-vector distance is larger by a factor $8.11$, and its best simple extrapolation family is linear in $h$ rather than linear in $h^2$. The result is bounded: Phase IX establishes coefficient stabilization and invariant-tracking feasibility for the frozen operator hierarchy. It does not establish continuum coefficients, geometric invariants, universality, or physical correspondence.
+\end{abstract}
+
+\section{Scope and Authority}
+
+Phase IX is a stabilization test, not an interpretive extension. The phase consumes four already frozen authority layers:
+\begin{itemize}
+\item the Phase V recovery-statistics authority;
+\item the Phase VI branch-local operator freeze;
+\item the Phase VII spectral-feasibility baseline;
+\item the Phase VIII spectral-trace contract, including the frozen short-time window and deterministic probe grid.
+\end{itemize}
+
+Phase IX is not allowed to modify any of those layers. Its only purpose is to determine whether the coefficient-like objects already exposed by Phase VIII show stabilization, whether normalized combinations behave more regularly than the raw coefficients, and whether the branch can be distinguished from a deterministic generic-graph control.
+
+\section{Frozen Inputs}
+
+The frozen operator remains the branch-local periodic DK2D block cochain Laplacian
+\[
+\Delta_h,
+\]
+on the deterministic refinement hierarchy
+\[
+h = \frac{1}{n_{\mathrm{side}}}, \qquad n_{\mathrm{side}} \in \{12,24,36,48\}.
+\]
+
+The frozen trace contract inherited from Phase VIII is:
+\begin{itemize}
+\item operational short-time window: $\{0.02, 0.03, 0.05, 0.075, 0.1\}$;
+\item exact deterministic trace proxy:
+\[
+T_h(t) = \mathrm{Tr}\!\left(e^{-t \Delta_h}\right);
+\]
+\item deterministic truncation checkpoints: full spectrum, $\lambda \le 7.5$, and $\lambda \le 7.8$.
+\end{itemize}
+
+Phase IX also reuses the dominant Phase VII low-mode exponent
+\[
+p = 1.972182228379
+\]
+as the fixed rescaling exponent for its invariant-like descriptors.
+
+The authority references used in this paper are:
+\begin{itemize}
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase7-spectral/phase7_spectral_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json};
+\item \url{phase9-invariants/phase9_manifest.json};
+\item \url{PHASE_IX_COEFFICIENT_CONTRACT_NOTE.md}.
+\end{itemize}
+
+\section{Phase IX Probe Set}
+
+Phase IX performs five deterministic checks:
+\begin{enumerate}
+\item coefficient convergence tracking for the scaled Phase VIII coefficients $b_0(h)$, $b_1(h)$, and $b_2(h)$;
+\item ratio stabilization for
+\[
+\frac{b_1(h)}{b_0(h)}, \qquad \frac{b_2(h)}{b_0(h)};
+\]
+\item rescaled descriptor tracking for
+\[
+I_k(h) = h^p a_k(h),
+\]
+where $a_k(h)$ are the raw quadratic coefficients extracted from the same frozen window;
+\item cross-refinement distance convergence using the successive Euclidean distance between adjacent coefficient vectors $(b_0,b_1,b_2)$;
+\item a deterministic generic-graph control hierarchy with the same total node counts, realized as four repeated scalar open-grid Laplacian blocks with open boundary connectivity.
+\end{enumerate}
+
+No stochastic sampling is used anywhere in the phase.
+
+\section{Frozen Branch Coefficients}
+
+Phase IX tracks the same size-factored surrogate already frozen in Phase VIII:
+\[
+T_h(t) \approx h^{-2}\bigl(b_0(h) + b_1(h)t + b_2(h)t^2\bigr).
+\]
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Level & $h$ & $b_0(h)$ & $b_1(h)$ & $b_2(h)$ & $R^2$ \\
+\midrule
+R1 & 0.083333 & 3.992541196696 & -15.196408636509 & 27.978374055231 & 0.999996635281 \\
+R2 & 0.041667 & 3.992270826129 & -15.383158273830 & 28.598645942437 & 0.999996461490 \\
+R3 & 0.027778 & 3.992219728715 & -15.417962259342 & 28.714851153144 & 0.999996428345 \\
+R4 & 0.020833 & 3.992201767437 & -15.430159990250 & 28.755622542545 & 0.999996416672 \\
+\bottomrule
+\end{tabular}
+\caption{Phase IX scaled coefficients on the frozen branch.}
+\label{tab:coefficients}
+\end{table}
+
+The relative spans are:
+\[
+\mathrm{span}(b_0)=0.000085020802,\quad
+\mathrm{span}(b_1)=0.015221236998,\quad
+\mathrm{span}(b_2)=0.027260519706.
+\]
+The successive coefficient-vector distances are
+\[
+0.647775,\;0.121305,\;0.042557,
+\]
+which shrink monotonically across refinement. All three coefficients prefer the same simple extrapolation family, linear in $h^2$, with high fit quality.
+
+\section{Ratio Stabilization}
+
+The first normalized descriptors are the dimensionless ratios
+\[
+\frac{b_1(h)}{b_0(h)}, \qquad \frac{b_2(h)}{b_0(h)}.
+\]
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Descriptor & R1 & R2 & R3 & R4 \\
+\midrule
+$b_1/b_0$ & -3.806200 & -3.853235 & -3.862002 & -3.865075 \\
+$b_2/b_0$ & 7.007661 & 7.163503 & 7.192703 & 7.202948 \\
+\bottomrule
+\end{tabular}
+\caption{Dimensionless ratio descriptors on the frozen branch.}
+\label{tab:ratios}
+\end{table}
+
+Their relative spans are
+\[
+0.015305769735 \quad \text{and} \quad 0.027344664673,
+\]
+both far smaller than the largest raw-coefficient span inherited from the unscaled trace fit, which is approximately $2.0077$. This is the first main Phase IX stabilization signal: the ratios are more stable than the raw coefficients.
+
+The subset sensitivity remains bounded. Using the front four or rear four probe times of the frozen Phase VIII window changes the ratios by at most $0.06968$ relative to the full-window values. The deterministic truncation probes also remain bounded, with maximum ratio drift $0.07203$ for $\lambda \le 7.5$ and smaller drift for $\lambda \le 7.8$.
+
+\section{Rescaled Invariant-Like Descriptors}
+
+Phase IX next tracks the rescaled raw-coefficient descriptors
+\[
+I_k(h) = h^p a_k(h),
+\]
+with $p = 1.972182228379$ fixed from Phase VII.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Descriptor & R1 & R2 & R3 & R4 \\
+\midrule
+$I_0$ & 4.278286 & 4.361284 & 4.410698 & 4.446117 \\
+$I_1$ & -16.284011 & -16.805054 & -17.034126 & -17.184576 \\
+$I_2$ & 29.980777 & 31.242075 & 31.724840 & 32.025149 \\
+\bottomrule
+\end{tabular}
+\caption{Rescaled invariant-like descriptors on the frozen branch.}
+\label{tab:invariants}
+\end{table}
+
+Their relative spans are
+\[
+0.038369228803,\quad 0.053519229865,\quad 0.065434108792.
+\]
+These values are not flat in any literal sense, but they remain compact and refinement ordered. The largest subset-induced drift is $0.07057$, and the largest truncation-induced drift is $0.11088$. This is enough for a bounded invariant-tracking statement, not for a geometric interpretation.
+
+\section{Generic-Graph Control Comparison}
+
+Phase IX uses one deterministic control hierarchy only: a same-node-count open-grid scalar-block control built from four repeated open-boundary scalar Laplacian blocks. It keeps the same total dimensions as the frozen branch, but its connectivity pattern differs.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Control coefficient & relative span & best extrapolation & limit estimate \\
+\midrule
+$b_0$ & 0.000302231342 & linear in $h$ & 3.992101755014 \\
+$b_1$ & 0.078116509612 & linear in $h$ & -15.517159116109 \\
+$b_2$ & 0.121073848083 & linear in $h$ & 29.012971564412 \\
+\bottomrule
+\end{tabular}
+\caption{Control-hierarchy coefficient summary.}
+\label{tab:control}
+\end{table}
+
+The separation is clear:
+\begin{itemize}
+\item control max ratio span: $0.121364602609$;
+\item branch max ratio span: $0.027344664673$;
+\item ratio-span multiplier (control / branch): $4.4383$;
+\item final coefficient-vector distance multiplier (control / branch): $8.1097$;
+\item branch best extrapolation family: linear in $h^2$ for all three scaled coefficients;
+\item control best extrapolation family: linear in $h$ for all three scaled coefficients.
+\end{itemize}
+
+This is the second main Phase IX signal: the branch is not just stabilizing in isolation; it stabilizes differently from the deterministic generic control.
+
+\section{Bounded Interpretation}
+
+Phase IX supports the following narrow authority statement:
+\begin{quote}
+The frozen branch-local hierarchy supports reproducible coefficient stabilization, ratio stabilization, and invariant-like refinement tracking inside the already frozen Phase VIII short-time trace contract.
+\end{quote}
+
+This statement is justified by four combined facts:
+\begin{enumerate}
+\item at least one scaled coefficient, $b_0$, shows an immediate plateau-level span;
+\item the dimensionless ratios are materially more stable than the raw trace coefficients;
+\item the rescaled descriptors remain in compact refinement bands under the frozen probe subsets and truncation checks;
+\item the deterministic open-grid control behaves differently in both span magnitude and extrapolation family.
+\end{enumerate}
+
+These facts are enough to freeze the Phase IX descriptor layer for later phases. They are not enough to claim a continuum invariant, a geometric coefficient, or a universal law.
+
+\section{Non-Claims}
+
+This paper does not claim:
+\begin{enumerate}
+\item continuum coefficients;
+\item geometric interpretation of any descriptor;
+\item universal invariants;
+\item physical correspondence or law;
+\item any continuum bridge.
+\end{enumerate}
+
+\section{Conclusion}
+
+Phase IX closes with a bounded stabilization result on the frozen branch. The Phase VIII coefficient-like structures do not drift arbitrarily under refinement; their scaled versions compactify, their normalized ratios stabilize more strongly than the raw coefficients, their rescaled descriptors remain in bounded refinement bands, and the frozen branch is cleanly distinguishable from a deterministic generic-graph control. This is sufficient to freeze the Phase IX descriptor layer inside the spectral-trace contract for later stages.
+
+Phase IX establishes coefficient stabilization and invariant-tracking feasibility for the frozen operator hierarchy.
+
+\end{document}

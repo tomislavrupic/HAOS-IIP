@@ -96,6 +96,10 @@ The intended public reading order is:
 
 1. `31.1` Short-Time Trace Asymptotic Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
+### 2.14 Part XIV. Phase IX coefficient stabilization
+
+1. `32.1` Coefficient Stabilization and Invariant-Tracking Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -134,6 +138,7 @@ The intended public reading order is:
 - `29.1` Frozen Branch-Local Cochain-Laplacian Operator Family and Spectral Feasibility Across a Deterministic Refinement Hierarchy
 - `30.1` Spectral Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `31.1` Short-Time Trace Asymptotic Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy
+- `32.1` Coefficient Stabilization and Invariant-Tracking Feasibility of a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

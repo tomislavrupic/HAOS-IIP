@@ -1,0 +1,817 @@
+{
+  "timestamp": "2026-03-21T15:55:56Z",
+  "phase": 9,
+  "phase_name": "phase9-invariants",
+  "stage_identifier": "phase9-invariants",
+  "status": "passed",
+  "success": true,
+  "objective": "coefficient_stabilization_and_invariant_tracking_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase7_manifest_reference": "phase7-spectral/phase7_spectral_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase8_contract_note_reference": "PHASE_VIII_TRACE_CONTRACT_NOTE.md",
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the lattice-spacing surrogate used to order refinements.",
+    "level_parameter": "n_side",
+    "construction_rule_constant": true,
+    "refinement_multipliers": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "levels": [
+      {
+        "level_id": "R1",
+        "refinement_multiplier": 1,
+        "n_side": 12,
+        "h": 0.083333333333
+      },
+      {
+        "level_id": "R2",
+        "refinement_multiplier": 2,
+        "n_side": 24,
+        "h": 0.041666666667
+      },
+      {
+        "level_id": "R3",
+        "refinement_multiplier": 3,
+        "n_side": 36,
+        "h": 0.027777777778
+      },
+      {
+        "level_id": "R4",
+        "refinement_multiplier": 4,
+        "n_side": 48,
+        "h": 0.020833333333
+      }
+    ]
+  },
+  "trace_contract": {
+    "operational_short_time_window": [
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1
+    ],
+    "master_probe_grid": [
+      0.01,
+      0.015,
+      0.02,
+      0.03,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "trace_method_label": "exact_torus_mode_spectrum",
+    "trace_method_definition": "exact torus-mode spectrum induced by the frozen periodic DK2D cochain-Laplacian block structure",
+    "spectral_truncation_methods": [
+      {
+        "label": "full_exact",
+        "cutoff": null
+      },
+      {
+        "label": "lambda_le_7_5",
+        "cutoff": 7.5
+      },
+      {
+        "label": "lambda_le_7_8",
+        "cutoff": 7.8
+      }
+    ]
+  },
+  "dominant_phase7_low_mode_exponent": {
+    "band_index": 1,
+    "exponent": 1.972182228379
+  },
+  "control_hierarchy": {
+    "label": "generic_open_grid_scalar_block_control",
+    "description": "Deterministic control hierarchy with the same total node counts as the frozen branch, constructed as four repeated scalar open-grid Laplacian blocks with open boundary connectivity.",
+    "same_node_counts_as_branch": true,
+    "same_total_dimension_as_branch": true
+  },
+  "branch_scaled_coefficients": {
+    "b0": {
+      "values": [
+        3.992541196696,
+        3.992270826129,
+        3.992219728715,
+        3.992201767437
+      ],
+      "trend": "nonincreasing",
+      "relative_span": 8.5020802e-05,
+      "successive_abs_differences": [
+        0.000270370567,
+        5.1097414e-05,
+        1.7961278e-05
+      ],
+      "successive_relative_differences": [
+        6.7718917e-05,
+        1.2799085e-05,
+        4.49907e-06
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^2",
+        "limit_estimate": 3.992179654625,
+        "r_squared": 0.999988793788
+      }
+    },
+    "b1": {
+      "values": [
+        -15.196408636509,
+        -15.38315827383,
+        -15.417962259342,
+        -15.43015999025
+      ],
+      "trend": "nonincreasing",
+      "relative_span": 0.015221236998,
+      "successive_abs_differences": [
+        0.186749637321,
+        0.034803985512,
+        0.012197730908
+      ],
+      "successive_relative_differences": [
+        0.012289063935,
+        0.002262473342,
+        0.000791137681
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^2",
+        "limit_estimate": -15.445632893201,
+        "r_squared": 0.999998915236
+      }
+    },
+    "b2": {
+      "values": [
+        27.978374055231,
+        28.598645942437,
+        28.714851153144,
+        28.755622542545
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 0.027260519706,
+      "successive_abs_differences": [
+        0.620271887206,
+        0.116205210707,
+        0.040771389401
+      ],
+      "successive_relative_differences": [
+        0.022169690275,
+        0.004063311632,
+        0.001419871173
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^2",
+        "limit_estimate": 28.806767863436,
+        "r_squared": 0.999996380389
+      }
+    }
+  },
+  "branch_raw_coefficients": {
+    "a0": {
+      "values": [
+        574.925932328858,
+        2299.547995813384,
+        5173.916768332241,
+        9198.032872468932
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 1.999975683229,
+      "successive_abs_differences": [
+        1724.622063484526,
+        2874.368772518857,
+        4024.11610413669
+      ],
+      "successive_relative_differences": [
+        2.999729124234,
+        1.249971202059,
+        0.777769779515
+      ],
+      "drift_shrinks": false,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": 9286.475437461244,
+        "r_squared": 0.724508128199
+      }
+    },
+    "a1": {
+      "values": [
+        -2188.282843674745,
+        -8860.699165583997,
+        -19981.679087787194,
+        -35551.08861867416
+      ],
+      "trend": "nonincreasing",
+      "relative_span": 2.004321359378,
+      "successive_abs_differences": [
+        6672.416321909252,
+        11120.979922203196,
+        15569.40953088697
+      ],
+      "successive_relative_differences": [
+        3.049156255644,
+        1.25509056502,
+        0.779184244852
+      ],
+      "drift_shrinks": false,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": -35893.17645458632,
+        "r_squared": 0.72450372412
+      }
+    },
+    "a2": {
+      "values": [
+        4028.885863985421,
+        16472.8200625794,
+        37214.447093879266,
+        66252.95434014419
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 2.007728209099,
+      "successive_abs_differences": [
+        12443.93419859398,
+        20741.627031299864,
+        29038.507246264926
+      ],
+      "successive_relative_differences": [
+        3.088678761002,
+        1.259142451171,
+        0.780301993283
+      ],
+      "drift_shrinks": false,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": 66890.57413085035,
+        "r_squared": 0.72449396248
+      }
+    }
+  },
+  "branch_ratios": {
+    "b1_over_b0": {
+      "values": [
+        -3.806199582633,
+        -3.853235149567,
+        -3.862002421471,
+        -3.865075186357
+      ],
+      "trend": "nonincreasing",
+      "relative_span": 0.015305769735,
+      "successive_abs_differences": [
+        0.047035566934,
+        0.008767271904,
+        0.003072764886
+      ],
+      "successive_relative_differences": [
+        0.012357619697,
+        0.002275301549,
+        0.000795640331
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^2",
+        "limit_estimate": -3.868971692687,
+        "r_squared": 0.999998860296
+      }
+    },
+    "b2_over_b0": {
+      "values": [
+        7.007660704512,
+        7.163503476583,
+        7.192703083602,
+        7.202948201941
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 0.027344664673,
+      "successive_abs_differences": [
+        0.155842772071,
+        0.029199607019,
+        0.010245118339
+      ],
+      "successive_relative_differences": [
+        0.022238915188,
+        0.004076162888,
+        0.001424376652
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^2",
+        "limit_estimate": 7.215797137512,
+        "r_squared": 0.999996312415
+      }
+    }
+  },
+  "branch_rescaled_invariants": {
+    "I0": {
+      "values": [
+        4.278286099098,
+        4.361284281729,
+        4.410697810555,
+        4.446116798825
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 0.038369228803,
+      "successive_abs_differences": [
+        0.082998182631,
+        0.049413528826,
+        0.03541898827
+      ],
+      "successive_relative_differences": [
+        0.019399867309,
+        0.011330040794,
+        0.008030245959
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": 4.48488158993,
+        "r_squared": 0.965144349006
+      }
+    },
+    "I1": {
+      "values": [
+        -16.284010764769,
+        -16.805053891612,
+        -17.034125624739,
+        -17.184575714784
+      ],
+      "trend": "nonincreasing",
+      "relative_span": 0.053519229865,
+      "successive_abs_differences": [
+        0.521043126843,
+        0.229071733127,
+        0.150450090045
+      ],
+      "successive_relative_differences": [
+        0.031997223188,
+        0.013631121602,
+        0.008832275478
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": -17.435256281568,
+        "r_squared": 0.990855988248
+      }
+    },
+    "I2": {
+      "values": [
+        29.980777379304,
+        31.242075114536,
+        31.724839742812,
+        32.025149001718
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 0.065434108792,
+      "successive_abs_differences": [
+        1.261297735232,
+        0.482764628276,
+        0.300309258906
+      ],
+      "successive_relative_differences": [
+        0.0420702145,
+        0.015452386773,
+        0.009466060706
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": 32.63855294095,
+        "r_squared": 0.997004324673
+      }
+    }
+  },
+  "control_scaled_coefficients": {
+    "b0": {
+      "values": [
+        3.993725215954,
+        3.992893725235,
+        3.992639884389,
+        3.992518423036
+      ],
+      "trend": "nonincreasing",
+      "relative_span": 0.000302231342,
+      "successive_abs_differences": [
+        0.000831490719,
+        0.000253840846,
+        0.000121461353
+      ],
+      "successive_relative_differences": [
+        0.000208199281,
+        6.3573154e-05,
+        3.0421314e-05
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": 3.992101755014,
+        "r_squared": 0.999470655523
+      }
+    },
+    "b1": {
+      "values": [
+        -13.970297727742,
+        -14.763741570525,
+        -15.004301932554,
+        -15.119744788301
+      ],
+      "trend": "nonincreasing",
+      "relative_span": 0.078116509612,
+      "successive_abs_differences": [
+        0.793443842783,
+        0.240560362029,
+        0.115442855747
+      ],
+      "successive_relative_differences": [
+        0.056795056072,
+        0.016293997079,
+        0.007693983783
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": -15.517159116109,
+        "r_squared": 0.999409814861
+      }
+    },
+    "b2": {
+      "values": [
+        24.654488747408,
+        26.889331868908,
+        27.568131669606,
+        27.893375445877
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 0.121073848083,
+      "successive_abs_differences": [
+        2.2348431215,
+        0.678799800698,
+        0.325243776271
+      ],
+      "successive_relative_differences": [
+        0.090646500294,
+        0.025244204802,
+        0.011797817138
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": 29.012971564412,
+        "r_squared": 0.999423337314
+      }
+    }
+  },
+  "control_ratios": {
+    "b1_over_b0": {
+      "values": [
+        -3.498061827572,
+        -3.697504262941,
+        -3.757990293896,
+        -3.787019416382
+      ],
+      "trend": "nonincreasing",
+      "relative_span": 0.078411479366,
+      "successive_abs_differences": [
+        0.199442435369,
+        0.060486030955,
+        0.029029122486
+      ],
+      "successive_relative_differences": [
+        0.057015125861,
+        0.016358610201,
+        0.007724640091
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": -3.886914696571,
+        "r_squared": 0.999413258421
+      }
+    },
+    "b2_over_b0": {
+      "values": [
+        6.173306227709,
+        6.734296908272,
+        6.904737834583,
+        6.986411204752
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 0.121364602609,
+      "successive_abs_differences": [
+        0.560990680563,
+        0.170440926311,
+        0.081673370169
+      ],
+      "successive_relative_differences": [
+        0.090873619398,
+        0.025309386953,
+        0.011828598294
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": 7.267452141395,
+        "r_squared": 0.999426624349
+      }
+    }
+  },
+  "control_rescaled_invariants": {
+    "I0": {
+      "values": [
+        4.279554858237,
+        4.361964756627,
+        4.411162008378,
+        4.4464694583
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 0.03815375941,
+      "successive_abs_differences": [
+        0.08240989839,
+        0.049197251751,
+        0.035307449922
+      ],
+      "successive_relative_differences": [
+        0.019256651946,
+        0.011278690796,
+        0.008004115436
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": 4.484940464312,
+        "r_squared": 0.964808473206
+      }
+    },
+    "I1": {
+      "values": [
+        -14.9701474886,
+        -16.128383282424,
+        -16.577104012289,
+        -16.838866172933
+      ],
+      "trend": "nonincreasing",
+      "relative_span": 0.115863482264,
+      "successive_abs_differences": [
+        1.158235793824,
+        0.448720729865,
+        0.261762160644
+      ],
+      "successive_relative_differences": [
+        0.077369698242,
+        0.027821804703,
+        0.015790584438
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": -17.407926117379,
+        "r_squared": 0.997482010774
+      }
+    },
+    "I2": {
+      "values": [
+        26.419002658176,
+        29.374765774543,
+        30.457917213729,
+        31.064864045054
+      ],
+      "trend": "nondecreasing",
+      "relative_span": 0.15840429672,
+      "successive_abs_differences": [
+        2.955763116367,
+        1.083151439186,
+        0.606946831325
+      ],
+      "successive_relative_differences": [
+        0.111880193004,
+        0.036873534499,
+        0.019927391196
+      ],
+      "drift_shrinks": true,
+      "best_limit_fit": {
+        "model": "linear_in_h^1",
+        "limit_estimate": 32.524720504483,
+        "r_squared": 0.998934657946
+      }
+    }
+  },
+  "vector_distance_convergence": {
+    "frozen_branch": {
+      "transition_labels": [
+        "R1->R2",
+        "R2->R3",
+        "R3->R4"
+      ],
+      "successive_distances": [
+        0.647775203445,
+        0.121305280239,
+        0.04255691666
+      ],
+      "distances_shrink": true,
+      "final_distance": 0.04255691666,
+      "max_distance": 0.647775203445
+    },
+    "generic_open_grid_scalar_block_control": {
+      "transition_labels": [
+        "R1->R2",
+        "R2->R3",
+        "R3->R4"
+      ],
+      "successive_distances": [
+        2.371513778316,
+        0.720165620981,
+        0.34512400916
+      ],
+      "distances_shrink": true,
+      "final_distance": 0.34512400916,
+      "max_distance": 2.371513778316
+    }
+  },
+  "probe_subset_robustness": {
+    "frozen_branch": {
+      "front_window": {
+        "probe_times": [
+          0.02,
+          0.03,
+          0.05,
+          0.075
+        ],
+        "max_relative_drifts_vs_full_window": {
+          "b0": 0.000829841591,
+          "b1": 0.011855876281,
+          "b2": 0.070571240424,
+          "b1_over_b0": 0.011016892414,
+          "b2_over_b0": 0.069683572506,
+          "I0": 0.000829841591,
+          "I1": 0.011855876281,
+          "I2": 0.070571240424
+        }
+      },
+      "rear_window": {
+        "probe_times": [
+          0.03,
+          0.05,
+          0.075,
+          0.1
+        ],
+        "max_relative_drifts_vs_full_window": {
+          "b0": 0.000869479905,
+          "b1": 0.007003781055,
+          "b2": 0.026151404447,
+          "b1_over_b0": 0.006139639443,
+          "b2_over_b0": 0.025303925797,
+          "I0": 0.000869479905,
+          "I1": 0.007003781055,
+          "I2": 0.026151404447
+        }
+      }
+    },
+    "generic_open_grid_scalar_block_control": {
+      "front_window": {
+        "probe_times": [
+          0.02,
+          0.03,
+          0.05,
+          0.075
+        ],
+        "max_relative_drifts_vs_full_window": {
+          "b0": 0.000796624522,
+          "b1": 0.0116158915,
+          "b2": 0.069846133929,
+          "b1_over_b0": 0.010810654945,
+          "b2_over_b0": 0.068994546659,
+          "I0": 0.000796624522,
+          "I1": 0.0116158915,
+          "I2": 0.069846133929
+        }
+      },
+      "rear_window": {
+        "probe_times": [
+          0.03,
+          0.05,
+          0.075,
+          0.1
+        ],
+        "max_relative_drifts_vs_full_window": {
+          "b0": 0.000834503129,
+          "b1": 0.006860588898,
+          "b2": 0.025877337239,
+          "b1_over_b0": 0.006031118756,
+          "b2_over_b0": 0.025063749887,
+          "I0": 0.000834503129,
+          "I1": 0.006860588898,
+          "I2": 0.025877337239
+        }
+      }
+    }
+  },
+  "truncation_robustness": {
+    "frozen_branch": {
+      "lambda_le_7_5": {
+        "cutoff": 7.5,
+        "max_relative_drifts_vs_full_exact": {
+          "b0": 0.041867812169,
+          "b1": 0.078582226784,
+          "b2": 0.110877321888,
+          "b1_over_b0": 0.038318736268,
+          "b2_over_b0": 0.07202504059,
+          "I0": 0.041867812169,
+          "I1": 0.078582226784,
+          "I2": 0.110877321888
+        }
+      },
+      "lambda_le_7_8": {
+        "cutoff": 7.8,
+        "max_relative_drifts_vs_full_exact": {
+          "b0": 0.016107612656,
+          "b1": 0.030792255262,
+          "b2": 0.044047599547,
+          "b1_over_b0": 0.014925049522,
+          "b2_over_b0": 0.02839740123,
+          "I0": 0.016107612656,
+          "I1": 0.030792255261,
+          "I2": 0.044047599547
+        }
+      }
+    },
+    "generic_open_grid_scalar_block_control": {
+      "lambda_le_7_5": {
+        "cutoff": 7.5,
+        "max_relative_drifts_vs_full_exact": {
+          "b0": 0.035822457109,
+          "b1": 0.068600692316,
+          "b2": 0.097754454529,
+          "b1_over_b0": 0.033996057519,
+          "b2_over_b0": 0.064232980612,
+          "I0": 0.03582245711,
+          "I1": 0.068600692316,
+          "I2": 0.097754454528
+        }
+      },
+      "lambda_le_7_8": {
+        "cutoff": 7.8,
+        "max_relative_drifts_vs_full_exact": {
+          "b0": 0.012942678384,
+          "b1": 0.025229383114,
+          "b2": 0.036431627446,
+          "b1_over_b0": 0.012447812767,
+          "b2_over_b0": 0.023796945272,
+          "I0": 0.012942678384,
+          "I1": 0.025229383114,
+          "I2": 0.036431627446
+        }
+      }
+    }
+  },
+  "control_separation_metrics": {
+    "branch_max_ratio_span": 0.027344664673,
+    "control_max_ratio_span": 0.121364602609,
+    "ratio_span_multiplier": 4.438328429342,
+    "branch_final_vector_distance": 0.04255691666,
+    "control_final_vector_distance": 0.34512400916,
+    "final_distance_multiplier": 8.109704279502,
+    "branch_best_fit_models": {
+      "b0": "linear_in_h^2",
+      "b1": "linear_in_h^2",
+      "b2": "linear_in_h^2"
+    },
+    "control_best_fit_models": {
+      "b0": "linear_in_h^1",
+      "b1": "linear_in_h^1",
+      "b2": "linear_in_h^1"
+    },
+    "differing_model_count": 3
+  },
+  "success_flags": {
+    "at_least_one_coefficient_plateau": true,
+    "ratios_more_stable_than_raw": true,
+    "compact_rescaled_band": true,
+    "probe_subset_stable": true,
+    "truncation_stable": true,
+    "control_distinct": true
+  },
+  "artifacts": {
+    "coefficient_stability_ledger_csv": "phase9-invariants/runs/phase9_coefficient_stability_ledger.csv",
+    "invariant_ratios_ledger_csv": "phase9-invariants/runs/phase9_invariant_ratios_ledger.csv",
+    "summary_md": "phase9-invariants/phase9_summary.md",
+    "manifest_json": "phase9-invariants/phase9_manifest.json",
+    "coefficient_plot": "phase9-invariants/plots/phase9_coefficient_vs_refinement.svg",
+    "ratio_plot": "phase9-invariants/plots/phase9_ratio_vs_refinement.svg",
+    "rescaled_invariant_plot": "phase9-invariants/plots/phase9_rescaled_invariant_vs_refinement.svg",
+    "distance_plot": "phase9-invariants/plots/phase9_refinement_distance_convergence.svg",
+    "runs_json": "phase9-invariants/runs/phase9_runs.json",
+    "builder_script": "phase9-invariants/build_coefficient_stability.py"
+  },
+  "claim_boundary": "Phase IX authority is limited to coefficient stabilization and invariant-tracking diagnostics on the frozen short-time trace contract. It does not assert continuum coefficients, geometric meaning, universal asymptotic data, or physical correspondence.",
+  "conclusion": "Phase IX establishes coefficient stabilization and invariant-tracking feasibility for the frozen operator hierarchy."
+}

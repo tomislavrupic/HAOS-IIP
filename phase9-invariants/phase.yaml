@@ -1,0 +1,18 @@
+phase: 9
+phase_name: phase9-invariants
+purpose: coefficient stabilization and invariant-tracking feasibility
+inputs:
+  - phase6-operator/phase6_operator_manifest.json
+  - phase7-spectral/phase7_spectral_manifest.json
+  - phase8-trace/phase8_trace_manifest.json
+  - PHASE_VIII_TRACE_CONTRACT_NOTE.md
+outputs:
+  - runs/phase9_coefficient_stability_ledger.csv
+  - runs/phase9_invariant_ratios_ledger.csv
+  - phase9_summary.md
+  - phase9_manifest.json
+  - plots/phase9_coefficient_vs_refinement.svg
+  - plots/phase9_ratio_vs_refinement.svg
+  - plots/phase9_rescaled_invariant_vs_refinement.svg
+  - plots/phase9_refinement_distance_convergence.svg
+  - runs/phase9_runs.json
