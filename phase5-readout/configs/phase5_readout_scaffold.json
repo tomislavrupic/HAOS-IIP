@@ -1,0 +1,56 @@
+{
+  "phase": "5_readout_scaffold",
+  "description": "Phase V JSON-first scaffold over frozen Phase III and Phase IV outputs.",
+  "frozen_inputs": {
+    "phase3_candidates": [
+      "phase3-stability/runs/phase3_stability_bundle_latest.json",
+      "data/20260316_111201_stage23_14_phaseIII_final_consolidation_and_freeze.json"
+    ],
+    "phase4_candidates": [
+      "phase4-sector-freeze/runs/phase4_sector_freeze_bundle_latest.json",
+      "data/20260316_122247_stage24_5_phaseIV_consolidation_and_freeze.json"
+    ]
+  },
+  "dummy_inputs": {
+    "phase3": {
+      "experiment": "dummy_phase3_stability",
+      "phaseIII_freeze_valid": true,
+      "phaseIII_minimal_read": "dummy clustered stability closure",
+      "claim_ledger": [
+        {
+          "claim_id": "P3_DUMMY_01",
+          "status": "survives"
+        },
+        {
+          "claim_id": "P3_DUMMY_02",
+          "status": "fails"
+        }
+      ]
+    },
+    "phase4": {
+      "experiment": "dummy_phase4_sector_freeze",
+      "phaseIV_freeze_valid": true,
+      "phaseIV_minimal_read": "dummy bounded selector freeze",
+      "selector_threshold_fixed": 0.5,
+      "extension_status_counts": {
+        "law_survives_ordering_survives": 1,
+        "law_survives_ordering_degrades": 1,
+        "law_fails_ordering_not_applicable": 0
+      },
+      "claim_ledger": [
+        {
+          "claim_id": "P4_DUMMY_01",
+          "status": "survives_portably"
+        },
+        {
+          "claim_id": "P4_DUMMY_02",
+          "status": "survives_locally"
+        }
+      ]
+    }
+  },
+  "outputs": [
+    "phase5_readout_bundle.json",
+    "phase5_recovery_histogram.json"
+  ]
+}

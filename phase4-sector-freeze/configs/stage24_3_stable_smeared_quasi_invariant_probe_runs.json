@@ -1,0 +1,72 @@
+{
+  "stage": "24.3_stable_smeared_quasi_invariant_probe",
+  "description": "Phase IV-A3 quasi-invariant probe for the law-defined stable smeared sector on the frozen clustered Dirac-Kahler branch.",
+  "required_inputs": {
+    "stage23_12": {
+      "stage_label": "23.12 / III-C3",
+      "json_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.json",
+      "csv_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.csv"
+    },
+    "stage23_14": {
+      "stage_label": "23.14 / III-C5",
+      "json_path": "data/20260316_111201_stage23_14_phaseIII_final_consolidation_and_freeze.json",
+      "csv_path": "data/20260316_111201_stage23_14_phaseIII_claims_ledger.csv"
+    },
+    "stage24_1": {
+      "stage_label": "24.1 / IV-A1",
+      "json_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.json",
+      "csv_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.csv"
+    },
+    "stage24_2": {
+      "stage_label": "24.2 / IV-A2",
+      "json_path": "data/20260316_115346_stage24_2_smeared_sector_effective_law_extraction.json",
+      "csv_path": "data/20260316_115346_stage24_2_smeared_sector_effective_law_model_ledger.csv"
+    }
+  },
+  "near_threshold_margin": 0.01,
+  "allowed_core_observables": [
+    "topology_survival_time",
+    "refinement_stability_flag",
+    "weak_coupling_stability_flag",
+    "reverse_stability_flag",
+    "flow_concentration_index"
+  ],
+  "allowed_context_coordinates": [
+    "phase_corridor_position",
+    "phase_corridor_width"
+  ],
+  "forbidden_observables": [
+    "transfer_asymmetry",
+    "coherence_decay_rate",
+    "topology_return_error",
+    "braid_like_exchange_indicator",
+    "mechanism_sensitivity_score"
+  ],
+  "candidate_families": [
+    {
+      "candidate_id": "IVA3_Q1",
+      "candidate_type": "support_signature",
+      "description": "Exact closure-support signature built from refinement, weak-coupling, and reverse stability flags."
+    },
+    {
+      "candidate_id": "IVA3_Q2",
+      "candidate_type": "restated_law_band",
+      "description": "Flow-threshold band reported only as a direct restatement of the Stage 24.2 law."
+    },
+    {
+      "candidate_id": "IVA3_Q3",
+      "candidate_type": "ordering_relation",
+      "description": "Inverse ordering relation between flow concentration and topology survival time."
+    },
+    {
+      "candidate_id": "IVA3_Q4",
+      "candidate_type": "affine_envelope",
+      "description": "Stable-sector affine envelope linking topology survival time to flow concentration."
+    },
+    {
+      "candidate_id": "IVA3_Q5",
+      "candidate_type": "bounded_quantity",
+      "description": "Single-observable survival-time envelope tested as a quasi-invariant candidate."
+    }
+  ]
+}

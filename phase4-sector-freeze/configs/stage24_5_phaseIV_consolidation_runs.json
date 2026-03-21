@@ -1,0 +1,97 @@
+{
+  "stage": "24.5_phaseIV_consolidation_and_freeze",
+  "description": "Final Phase IV consolidation and freeze for the bounded local transport package on the frozen clustered Dirac-Kahler branch.",
+  "note_name": "Stage_IV_A5_Phase_IV_Consolidation_and_Freeze_v1.md",
+  "required_inputs": {
+    "stage23_14": {
+      "stage_label": "23.14 / III-C5",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C5_Final_Consolidation_and_Freeze_v1.md",
+      "json_path": "data/20260316_111201_stage23_14_phaseIII_final_consolidation_and_freeze.json",
+      "csv_path": "data/20260316_111201_stage23_14_phaseIII_claims_ledger.csv"
+    },
+    "stage24_1": {
+      "stage_label": "24.1 / IV-A1",
+      "note_path": "experiments/pre_geometry_atlas/Stage_IV_A1_Smeared_Sector_Observable_Ledger_v1.md",
+      "json_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.json",
+      "csv_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.csv"
+    },
+    "stage24_2": {
+      "stage_label": "24.2 / IV-A2",
+      "note_path": "experiments/pre_geometry_atlas/Stage_IV_A2_Smeared_Sector_Effective_Law_Extraction_v1.md",
+      "json_path": "data/20260316_115346_stage24_2_smeared_sector_effective_law_extraction.json",
+      "csv_path": "data/20260316_115346_stage24_2_smeared_sector_effective_law_model_ledger.csv"
+    },
+    "stage24_3": {
+      "stage_label": "24.3 / IV-A3",
+      "note_path": "experiments/pre_geometry_atlas/Stage_IV_A3_Stable_Smeared_Quasi_Invariant_Probe_v1.md",
+      "json_path": "data/20260316_120334_stage24_3_stable_smeared_quasi_invariant_probe.json",
+      "csv_path": "data/20260316_120334_stage24_3_stable_smeared_quasi_invariant_ledger.csv"
+    },
+    "stage24_4": {
+      "stage_label": "24.4 / IV-A4",
+      "note_path": "experiments/pre_geometry_atlas/Stage_IV_A4_Stable_Smeared_Law_and_Ordering_Extension_Boundary_Test_v1.md",
+      "json_path": "data/20260316_121603_stage24_4_stable_smeared_law_and_ordering_extension_boundary_test.json",
+      "csv_path": "data/20260316_121603_stage24_4_stable_smeared_extension_boundary_ledger.csv"
+    }
+  },
+  "expected_observable_core": [
+    "topology_survival_time",
+    "refinement_stability_flag",
+    "weak_coupling_stability_flag",
+    "reverse_stability_flag",
+    "flow_concentration_index"
+  ],
+  "expected_rejected_observables": [
+    "transfer_asymmetry",
+    "coherence_decay_rate",
+    "topology_return_error",
+    "braid_like_exchange_indicator",
+    "mechanism_sensitivity_score"
+  ],
+  "expected_selector_law": "stable_closed_smeared = 1 iff flow_concentration_index <= 0.884308",
+  "expected_ordering_candidate_id": "IVA3_Q3",
+  "expected_status_counts": {
+    "law_survives_ordering_survives": 8,
+    "law_survives_ordering_degrades": 2,
+    "law_fails_ordering_not_applicable": 2
+  },
+  "expected_boundaries": {
+    "clustered_texture_perturbation": "IVA4_E1_moderate",
+    "support_anisotropy_skew": null,
+    "motif_structure_perturbation": "IVA4_E3_mild",
+    "corridor_geometry_perturbation": "IVA4_E4_moderate"
+  },
+  "claim_ids": {
+    "portable_core": [
+      "P4_POS_01",
+      "P4_POS_02",
+      "P4_POS_03",
+      "P4_POS_04",
+      "P4_POS_05"
+    ],
+    "local_structure": [
+      "P4_LOC_01",
+      "P4_LOC_02",
+      "P4_LOC_03",
+      "P4_LOC_04",
+      "P4_LOC_05"
+    ],
+    "negative": [
+      "P4_NEG_01",
+      "P4_NEG_02",
+      "P4_NEG_03",
+      "P4_NEG_04",
+      "P4_NEG_05",
+      "P4_NEG_06",
+      "P4_NEG_07",
+      "P4_NEG_08"
+    ]
+  },
+  "required_status_values": [
+    "survives_portably",
+    "survives_locally",
+    "fails",
+    "excluded",
+    "bounded_support"
+  ]
+}

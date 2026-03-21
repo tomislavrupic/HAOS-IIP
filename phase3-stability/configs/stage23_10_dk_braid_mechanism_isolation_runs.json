@@ -1,0 +1,377 @@
+{
+  "stage": "23.10_dk_braid_mechanism_isolation_probe",
+  "description": "Nine-run diagnostic lattice separating intrinsic DK braid exchange from clustered seed texture under geometry degradation, motif injection, anisotropy, and distributed seeding.",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "base_epsilon": 0.2,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "beta": 0.02,
+    "repeatability_phase_jitter_fraction_of_pi": [-0.03, -0.015, 0.015, 0.03],
+    "allowed_topology_labels": [
+      "braid_like_exchange",
+      "transfer_smeared",
+      "dispersive_pass",
+      "localized_capture"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S23_10_clustered_baseline",
+      "run_order": 0,
+      "family_id": "clustered_baseline_control",
+      "family_label": "Clustered baseline",
+      "family_group": "clustered",
+      "role": "control",
+      "notes": "Tight equal-width clustered pair at the refinement-stable braid anchor.",
+      "packet_specs": [
+        {
+          "center": [0.46, 0.50],
+          "kick": [0.4, 0.0],
+          "sigma": 0.08,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.0,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.54, 0.50],
+          "kick": [-0.4, 0.0],
+          "sigma": 0.08,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.625,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_clustered_degraded",
+      "run_order": 1,
+      "family_id": "clustered_degraded",
+      "family_label": "Clustered degraded",
+      "family_group": "clustered",
+      "role": "degraded",
+      "notes": "Mild width asymmetry and small separation / alignment offset applied to the clustered control.",
+      "packet_specs": [
+        {
+          "center": [0.455, 0.495],
+          "kick": [0.4, 0.0],
+          "sigma": 0.086,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.0,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.548, 0.505],
+          "kick": [-0.4, 0.0],
+          "sigma": 0.074,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.625,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_clustered_topology_broken",
+      "run_order": 2,
+      "family_id": "clustered_topology_broken",
+      "family_label": "Clustered topology-broken",
+      "family_group": "clustered",
+      "role": "broken",
+      "notes": "Clustered control with phase skew plus a mild graded-support surrogate for local degree disorder on the regular DK lattice.",
+      "packet_specs": [
+        {
+          "center": [0.46, 0.50],
+          "kick": [0.4, 0.0],
+          "sigma": 0.08,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.0,
+          "grade0_scale": 1.08,
+          "grade1_scale": 0.92,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.54, 0.50],
+          "kick": [-0.4, 0.0],
+          "sigma": 0.08,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.41,
+          "grade0_scale": 0.92,
+          "grade1_scale": 1.08,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_corridor_baseline",
+      "run_order": 3,
+      "family_id": "corridor_baseline",
+      "family_label": "Corridor baseline",
+      "family_group": "corridor",
+      "role": "comparison",
+      "notes": "Counter-propagating corridor pair under the same operator and phase anchor as the clustered control.",
+      "packet_specs": [
+        {
+          "center": [0.35, 0.50],
+          "kick": [1.0, 0.0],
+          "sigma": 0.09,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.0,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.65, 0.50],
+          "kick": [-1.0, 0.0],
+          "sigma": 0.09,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.625,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_corridor_motif_injected",
+      "run_order": 4,
+      "family_id": "corridor_motif_injected",
+      "family_label": "Corridor motif-injected",
+      "family_group": "corridor",
+      "role": "motif",
+      "notes": "Corridor baseline with a weak third packet inserted to form a triangular encounter motif without changing the operator class.",
+      "packet_specs": [
+        {
+          "center": [0.35, 0.50],
+          "kick": [1.0, 0.0],
+          "sigma": 0.09,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.0,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.65, 0.50],
+          "kick": [-1.0, 0.0],
+          "sigma": 0.09,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.625,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.50, 0.64],
+          "kick": [0.0, -0.35],
+          "sigma": 0.075,
+          "amplitude": 0.32,
+          "phase_offset_fraction_of_pi": -0.25,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_corridor_anisotropic_kernel",
+      "run_order": 5,
+      "family_id": "corridor_anisotropic_kernel",
+      "family_label": "Corridor anisotropic",
+      "family_group": "corridor",
+      "role": "anisotropy",
+      "notes": "Corridor baseline with weak local anisotropy realized as an anisotropic support deformation while preserving the Gaussian kernel class.",
+      "packet_specs": [
+        {
+          "center": [0.35, 0.50],
+          "kick": [1.0, 0.0],
+          "sigma": 0.09,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.0,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.12,
+          "anisotropy_y": 0.8928571429
+        },
+        {
+          "center": [0.65, 0.50],
+          "kick": [-1.0, 0.0],
+          "sigma": 0.09,
+          "amplitude": 0.5,
+          "phase_offset_fraction_of_pi": 0.625,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.12,
+          "anisotropy_y": 0.8928571429
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_triad_baseline",
+      "run_order": 6,
+      "family_id": "triad_baseline",
+      "family_label": "Triad baseline",
+      "family_group": "triad",
+      "role": "comparison",
+      "notes": "Symmetric triad encounter with balanced support across packets.",
+      "packet_specs": [
+        {
+          "center": [0.26, 0.50],
+          "kick": [1.0, 0.0],
+          "sigma": 0.085,
+          "amplitude": 0.42,
+          "phase_offset_fraction_of_pi": 0.0,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.74, 0.50],
+          "kick": [-1.0, 0.0],
+          "sigma": 0.085,
+          "amplitude": 0.42,
+          "phase_offset_fraction_of_pi": 0.625,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.50, 0.74],
+          "kick": [0.0, -1.0],
+          "sigma": 0.085,
+          "amplitude": 0.42,
+          "phase_offset_fraction_of_pi": -0.625,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_triad_degree_skewed",
+      "run_order": 7,
+      "family_id": "triad_degree_skewed",
+      "family_label": "Triad degree-skewed",
+      "family_group": "triad",
+      "role": "degree_surrogate",
+      "notes": "Triad baseline with mild localized graded-support skew used as a degree-spectrum surrogate on the otherwise regular DK lattice.",
+      "packet_specs": [
+        {
+          "center": [0.26, 0.50],
+          "kick": [1.0, 0.0],
+          "sigma": 0.085,
+          "amplitude": 0.42,
+          "phase_offset_fraction_of_pi": 0.0,
+          "grade0_scale": 1.15,
+          "grade1_scale": 0.85,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.74, 0.50],
+          "kick": [-1.0, 0.0],
+          "sigma": 0.085,
+          "amplitude": 0.42,
+          "phase_offset_fraction_of_pi": 0.625,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.50, 0.74],
+          "kick": [0.0, -1.0],
+          "sigma": 0.085,
+          "amplitude": 0.42,
+          "phase_offset_fraction_of_pi": -0.625,
+          "grade0_scale": 0.85,
+          "grade1_scale": 1.15,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        }
+      ]
+    },
+    {
+      "run_id": "S23_10_distributed_random_seed",
+      "run_order": 8,
+      "family_id": "distributed_random_seed",
+      "family_label": "Distributed random seed",
+      "family_group": "distributed",
+      "role": "randomized",
+      "notes": "Deterministic pseudo-random distributed packet seed used as the farthest non-clustered comparison family.",
+      "packet_specs": [
+        {
+          "center": [0.18, 0.23],
+          "kick": [0.55, 0.32],
+          "sigma": 0.07,
+          "amplitude": 0.34,
+          "phase_offset_fraction_of_pi": 0.0,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.37, 0.71],
+          "kick": [0.18, -0.62],
+          "sigma": 0.07,
+          "amplitude": 0.34,
+          "phase_offset_fraction_of_pi": 0.17,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.63, 0.32],
+          "kick": [-0.52, 0.36],
+          "sigma": 0.07,
+          "amplitude": 0.34,
+          "phase_offset_fraction_of_pi": 0.43,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        },
+        {
+          "center": [0.82, 0.77],
+          "kick": [-0.40, -0.28],
+          "sigma": 0.07,
+          "amplitude": 0.34,
+          "phase_offset_fraction_of_pi": 0.71,
+          "grade0_scale": 1.0,
+          "grade1_scale": 1.0,
+          "anisotropy_x": 1.0,
+          "anisotropy_y": 1.0
+        }
+      ]
+    }
+  ]
+}

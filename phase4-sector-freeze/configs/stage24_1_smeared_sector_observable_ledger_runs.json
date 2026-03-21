@@ -1,0 +1,49 @@
+{
+  "stage": "24.1_smeared_sector_observable_ledger",
+  "description": "Phase IV-A1 minimal observable-ledger extraction for the closed smeared-transfer regime on the frozen clustered Dirac-Kahler branch.",
+  "required_inputs": {
+    "stage23_11": {
+      "stage_label": "23.11 / III-C2",
+      "json_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.json",
+      "csv_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.csv"
+    },
+    "stage23_12": {
+      "stage_label": "23.12 / III-C3",
+      "json_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.json",
+      "csv_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.csv"
+    },
+    "stage23_13": {
+      "stage_label": "23.13 / III-C4",
+      "json_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.json",
+      "csv_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.csv"
+    },
+    "stage23_14": {
+      "stage_label": "23.14 / III-C5",
+      "json_path": "data/20260316_111201_stage23_14_phaseIII_final_consolidation_and_freeze.json",
+      "csv_path": "data/20260316_111201_stage23_14_phaseIII_claims_ledger.csv"
+    }
+  },
+  "contrast_policy": "Use only Stage 23.12 transient_mixed_phase cells as contrast controls against the stable smeared-transfer cells.",
+  "candidate_observables": [
+    "phase_corridor_position",
+    "phase_corridor_width",
+    "topology_survival_time",
+    "transfer_asymmetry",
+    "refinement_stability_flag",
+    "weak_coupling_stability_flag",
+    "reverse_stability_flag",
+    "coherence_decay_rate",
+    "grade_exchange_coherence_level",
+    "flow_concentration_index",
+    "topology_return_error",
+    "smeared_regime_membership_flag",
+    "braid_like_exchange_indicator",
+    "mechanism_sensitivity_score"
+  ],
+  "validation_requirements": {
+    "require_smaller_than_candidate_list": true,
+    "require_stable_region_only_scope": true,
+    "require_contrast_controls_only_for_non_smeared_cells": true,
+    "require_no_phaseIII_boundary_violation": true
+  }
+}

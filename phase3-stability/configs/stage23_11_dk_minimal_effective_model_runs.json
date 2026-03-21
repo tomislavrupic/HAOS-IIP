@@ -1,0 +1,94 @@
+{
+  "stage": "23.11_dk_minimal_effective_model_extraction",
+  "description": "Stage III-C2 clustered DK braid-sector reduction onto a two-state effective surrogate using a 3x3 anchor lattice in phase and bounded grade detuning.",
+  "note_name": "Stage_III_C2_Minimal_Effective_Model_Extraction_v1.md",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "source_seed_template": "stage23_clustered_braid_window",
+    "resolution": 12,
+    "mean_width": 0.08,
+    "separation": 0.08,
+    "amplitude_scale": 1.0,
+    "beta": 0.02,
+    "phase_anchor_values_fraction_of_pi": [0.375, 0.5, 0.625],
+    "detuning_values": [0.0, 0.5, 0.75],
+    "max_grade_detuning_span": 0.35,
+    "effective_state_labels": {
+      "X": "signed_separation_envelope",
+      "Y": "net_grade_exchange_amplitude"
+    },
+    "allowed_topology_labels": [
+      "braid_like_exchange",
+      "transfer_smeared",
+      "unresolved"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S23_11_p0375_d000",
+      "run_order": 0,
+      "phase_offset_fraction_of_pi": 0.375,
+      "detuning_delta": 0.0,
+      "notes": "Lower braid-side anchor at zero grade detuning."
+    },
+    {
+      "run_id": "S23_11_p0500_d000",
+      "run_order": 1,
+      "phase_offset_fraction_of_pi": 0.5,
+      "detuning_delta": 0.0,
+      "notes": "Midpoint smeared sample at zero grade detuning."
+    },
+    {
+      "run_id": "S23_11_p0625_d000",
+      "run_order": 2,
+      "phase_offset_fraction_of_pi": 0.625,
+      "detuning_delta": 0.0,
+      "notes": "Upper braid-recovery anchor at zero grade detuning."
+    },
+    {
+      "run_id": "S23_11_p0375_d050",
+      "run_order": 3,
+      "phase_offset_fraction_of_pi": 0.375,
+      "detuning_delta": 0.5,
+      "notes": "Lower braid-side anchor at intermediate grade detuning."
+    },
+    {
+      "run_id": "S23_11_p0500_d050",
+      "run_order": 4,
+      "phase_offset_fraction_of_pi": 0.5,
+      "detuning_delta": 0.5,
+      "notes": "Midpoint sample at intermediate grade detuning."
+    },
+    {
+      "run_id": "S23_11_p0625_d050",
+      "run_order": 5,
+      "phase_offset_fraction_of_pi": 0.625,
+      "detuning_delta": 0.5,
+      "notes": "Upper braid-side anchor at intermediate grade detuning."
+    },
+    {
+      "run_id": "S23_11_p0375_d075",
+      "run_order": 6,
+      "phase_offset_fraction_of_pi": 0.375,
+      "detuning_delta": 0.75,
+      "notes": "Lower braid-side anchor at strong bounded grade detuning."
+    },
+    {
+      "run_id": "S23_11_p0500_d075",
+      "run_order": 7,
+      "phase_offset_fraction_of_pi": 0.5,
+      "detuning_delta": 0.75,
+      "notes": "Midpoint sample at strong bounded grade detuning."
+    },
+    {
+      "run_id": "S23_11_p0625_d075",
+      "run_order": 8,
+      "phase_offset_fraction_of_pi": 0.625,
+      "detuning_delta": 0.75,
+      "notes": "Upper braid-side anchor at strong bounded grade detuning."
+    }
+  ]
+}

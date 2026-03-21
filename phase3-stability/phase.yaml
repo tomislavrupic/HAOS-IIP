@@ -1,0 +1,15 @@
+phase: 3
+name: phase3-stability
+purpose: freeze the authoritative clustered DK stability closure
+inputs:
+  - stage23_10_authoritative_json
+  - stage23_11_authoritative_json
+  - stage23_12_authoritative_json
+  - stage23_13_authoritative_json
+outputs:
+  - phase3_stability_bundle.json
+  - phase3_stability_bundle_latest.json
+rules:
+  - no phase imports
+  - haos_core only
+  - json outputs first

@@ -1,0 +1,185 @@
+{
+  "stage": "23.12_dk_effective_phase_diagram_closure",
+  "description": "Stage III-C3 closure of the clustered Dirac-Kahler collision sector on the frozen HAOS (Harmonic Address Operating System) / IIP (Interaction Invariance Physics) architecture.",
+  "note_name": "Stage_III_C3_Effective_Phase_Diagram_Closure_v1.md",
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "architecture_label": "frozen_haos_iip_clustered_dk_collision_sector",
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "base_epsilon": 0.2,
+    "mean_width": 0.08,
+    "separation": 0.08,
+    "amplitude_scale": 1.0,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "weak_beta_values": [0.01, 0.02],
+    "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575],
+    "width_regimes": [
+      {
+        "width_regime": "symmetric_clustered",
+        "width_ratio_a_to_b": 1.0
+      },
+      {
+        "width_regime": "moderate_asymmetry",
+        "width_ratio_a_to_b": 1.15
+      },
+      {
+        "width_regime": "strong_asymmetry",
+        "width_ratio_a_to_b": 1.35
+      }
+    ],
+    "allowed_topology_labels": [
+      "braid_like_exchange",
+      "transfer_smeared",
+      "localized_capture",
+      "dispersive_pass"
+    ],
+    "allowed_phase_labels": [
+      "stable_braid_phase",
+      "smeared_transfer_phase",
+      "localized_encounter_phase",
+      "transient_mixed_phase"
+    ]
+  },
+  "runs": [
+    {
+      "run_id": "S23_12_p0375_w100",
+      "run_order": 0,
+      "phase_label": "protected_braid_anchor",
+      "phase_offset_fraction_of_pi": 0.375,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "notes": "Symmetric clustered control at the lower braid anchor."
+    },
+    {
+      "run_id": "S23_12_p0475_w100",
+      "run_order": 1,
+      "phase_label": "lower_corridor",
+      "phase_offset_fraction_of_pi": 0.475,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "notes": "Symmetric clustered control at the lower corridor edge."
+    },
+    {
+      "run_id": "S23_12_p0500_w100",
+      "run_order": 2,
+      "phase_label": "midpoint_band",
+      "phase_offset_fraction_of_pi": 0.5,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "notes": "Symmetric clustered control at the midpoint band."
+    },
+    {
+      "run_id": "S23_12_p0550_w100",
+      "run_order": 3,
+      "phase_label": "upper_corridor",
+      "phase_offset_fraction_of_pi": 0.55,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "notes": "Symmetric clustered control at the upper corridor."
+    },
+    {
+      "run_id": "S23_12_p0575_w100",
+      "run_order": 4,
+      "phase_label": "smeared_region",
+      "phase_offset_fraction_of_pi": 0.575,
+      "width_regime": "symmetric_clustered",
+      "width_ratio_a_to_b": 1.0,
+      "notes": "Symmetric clustered control inside the smeared region."
+    },
+    {
+      "run_id": "S23_12_p0375_w115",
+      "run_order": 5,
+      "phase_label": "protected_braid_anchor",
+      "phase_offset_fraction_of_pi": 0.375,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "notes": "Moderate width asymmetry at the lower braid anchor."
+    },
+    {
+      "run_id": "S23_12_p0475_w115",
+      "run_order": 6,
+      "phase_label": "lower_corridor",
+      "phase_offset_fraction_of_pi": 0.475,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "notes": "Moderate width asymmetry at the lower corridor edge."
+    },
+    {
+      "run_id": "S23_12_p0500_w115",
+      "run_order": 7,
+      "phase_label": "midpoint_band",
+      "phase_offset_fraction_of_pi": 0.5,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "notes": "Moderate width asymmetry at the midpoint band."
+    },
+    {
+      "run_id": "S23_12_p0550_w115",
+      "run_order": 8,
+      "phase_label": "upper_corridor",
+      "phase_offset_fraction_of_pi": 0.55,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "notes": "Moderate width asymmetry at the upper corridor."
+    },
+    {
+      "run_id": "S23_12_p0575_w115",
+      "run_order": 9,
+      "phase_label": "smeared_region",
+      "phase_offset_fraction_of_pi": 0.575,
+      "width_regime": "moderate_asymmetry",
+      "width_ratio_a_to_b": 1.15,
+      "notes": "Moderate width asymmetry inside the smeared region."
+    },
+    {
+      "run_id": "S23_12_p0375_w135",
+      "run_order": 10,
+      "phase_label": "protected_braid_anchor",
+      "phase_offset_fraction_of_pi": 0.375,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "notes": "Strong width asymmetry at the lower braid anchor."
+    },
+    {
+      "run_id": "S23_12_p0475_w135",
+      "run_order": 11,
+      "phase_label": "lower_corridor",
+      "phase_offset_fraction_of_pi": 0.475,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "notes": "Strong width asymmetry at the lower corridor edge."
+    },
+    {
+      "run_id": "S23_12_p0500_w135",
+      "run_order": 12,
+      "phase_label": "midpoint_band",
+      "phase_offset_fraction_of_pi": 0.5,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "notes": "Strong width asymmetry at the midpoint band."
+    },
+    {
+      "run_id": "S23_12_p0550_w135",
+      "run_order": 13,
+      "phase_label": "upper_corridor",
+      "phase_offset_fraction_of_pi": 0.55,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "notes": "Strong width asymmetry at the upper corridor."
+    },
+    {
+      "run_id": "S23_12_p0575_w135",
+      "run_order": 14,
+      "phase_label": "smeared_region",
+      "phase_offset_fraction_of_pi": 0.575,
+      "width_regime": "strong_asymmetry",
+      "width_ratio_a_to_b": 1.35,
+      "notes": "Strong width asymmetry inside the smeared region."
+    }
+  ]
+}

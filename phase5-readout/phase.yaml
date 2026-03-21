@@ -1,0 +1,15 @@
+phase: 5
+name: phase5-readout
+purpose: scaffold a JSON-first readout over frozen phase outputs
+inputs:
+  - dummy_phase_bundle
+  - phase3_stability_bundle_or_authoritative_23_14_json
+  - phase4_sector_freeze_bundle_or_authoritative_24_5_json
+outputs:
+  - phase5_readout_bundle.json
+  - phase5_recovery_histogram.json
+rules:
+  - no phase imports
+  - haos_core only
+  - json outputs first
+  - dummy path must stay runnable

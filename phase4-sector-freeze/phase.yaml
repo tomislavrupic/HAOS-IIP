@@ -1,0 +1,16 @@
+phase: 4
+name: phase4-sector-freeze
+purpose: freeze the authoritative bounded smeared-sector package
+inputs:
+  - stage23_14_authoritative_json
+  - stage24_1_authoritative_json
+  - stage24_2_authoritative_json
+  - stage24_3_authoritative_json
+  - stage24_4_authoritative_json
+outputs:
+  - phase4_sector_freeze_bundle.json
+  - phase4_sector_freeze_bundle_latest.json
+rules:
+  - no phase imports
+  - haos_core only
+  - json outputs first
