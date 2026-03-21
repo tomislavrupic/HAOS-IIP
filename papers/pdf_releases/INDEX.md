@@ -124,6 +124,10 @@ The intended public reading order is:
 
 1. `38.1` Collective Dynamics and Mesoscopic Transport Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
+### 2.21 Part XXI. Effective propagation structure and causal-scale feasibility
+
+1. `39.1` Effective Propagation Structure and Causal-Scale Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -169,6 +173,7 @@ The intended public reading order is:
 - `36.1` Two-Mode Interaction and Identity-Preservation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `37.1` Multi-Mode Statistical Sector Formation Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `38.1` Collective Dynamics and Mesoscopic Transport Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+- `39.1` Effective Propagation Structure and Causal-Scale Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

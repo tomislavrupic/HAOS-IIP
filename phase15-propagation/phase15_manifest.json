@@ -1,0 +1,141 @@
+{
+  "timestamp": "2026-03-21T20:58:52Z",
+  "phase": 15,
+  "phase_name": "phase15-propagation",
+  "stage_identifier": "phase15-propagation",
+  "status": "passed",
+  "success": true,
+  "objective": "effective_propagation_structure_feasibility",
+  "operator_manifest_reference": "phase6-operator/phase6_operator_manifest.json",
+  "phase7_manifest_reference": "phase7-spectral/phase7_spectral_manifest.json",
+  "phase8_manifest_reference": "phase8-trace/phase8_trace_manifest.json",
+  "phase9_manifest_reference": "phase9-invariants/phase9_manifest.json",
+  "phase10_manifest_reference": "phase10-bridge/phase10_manifest.json",
+  "phase11_manifest_reference": "phase11-protection/phase11_manifest.json",
+  "phase12_manifest_reference": "phase12-interactions/phase12_manifest.json",
+  "phase13_manifest_reference": "phase13-sector-formation/phase13_manifest.json",
+  "phase14_manifest_reference": "phase14-collective-dynamics/phase14_manifest.json",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the refinement-order parameter inherited from the frozen operator hierarchy.",
+    "levels": [
+      48,
+      60,
+      72,
+      84
+    ]
+  },
+  "evaluation_protocol": {
+    "evaluation_tau": 0.8,
+    "persistence_tau_grid": [
+      0.0,
+      0.4,
+      0.8,
+      1.2,
+      1.6,
+      2.0,
+      2.4,
+      3.0,
+      3.6,
+      4.2
+    ],
+    "ensemble_sizes": [
+      3,
+      5,
+      7
+    ],
+    "layout_seeds": [
+      1301,
+      1302,
+      1303
+    ],
+    "minimum_physical_separation": 0.12,
+    "response_threshold_fraction": 0.18,
+    "transport_probe": {
+      "density_gradient_strength": 0.18,
+      "response_threshold_fraction": 0.18,
+      "x_bin_count": 8
+    },
+    "disturbance_probes": {
+      "density_pulse_amplitude": 1.25,
+      "candidate_removal_amplitude": 0.65,
+      "bias_strength": 0.06,
+      "bias_remove_tau": 1.2,
+      "phase_kick_axis": "x"
+    }
+  },
+  "aggregate_metrics": {
+    "branch_effective_speed_mean": 0.041363141386,
+    "control_effective_speed_mean": 0.046222397796,
+    "branch_effective_speed_drift": 0.016755292342,
+    "control_effective_speed_drift": 0.041888230853,
+    "branch_effective_speed_seed_std": 0.028668837091,
+    "control_effective_speed_seed_std": 0.050961711167,
+    "branch_influence_order_mean": 0.848677248677,
+    "control_influence_order_mean": 0.848677248677,
+    "branch_influence_order_drift": 0.0,
+    "control_influence_order_drift": 0.0,
+    "branch_low_k_transport_mean": 0.544855718563,
+    "control_low_k_transport_mean": 0.541412474134,
+    "branch_low_k_transport_drift": 0.013983435184,
+    "control_low_k_transport_drift": 0.021355474473,
+    "branch_shell_latency_span_mean": 2.333333333333,
+    "control_shell_latency_span_mean": 2.266666666667
+  },
+  "probe_metrics": {
+    "density_pulse": {
+      "branch_speed_mean": 0.041363141386,
+      "control_speed_mean": 0.046222397796,
+      "branch_order_mean": 0.848677248677,
+      "control_order_mean": 0.848677248677,
+      "branch_low_k_mean": 0.544855718563,
+      "control_low_k_mean": 0.541412474134
+    },
+    "candidate_removal": {
+      "branch_speed_mean": 0.046192032634,
+      "control_speed_mean": 0.053100775884,
+      "branch_order_mean": 0.853968253968,
+      "control_order_mean": 0.853968253968,
+      "branch_low_k_mean": 0.547275919308,
+      "control_low_k_mean": 0.543750447952
+    },
+    "bias_onset": {
+      "branch_speed_mean": 0.199043712902,
+      "control_speed_mean": 0.199073838022,
+      "branch_order_mean": 0.695238095238,
+      "control_order_mean": 0.670105820106,
+      "branch_low_k_mean": 0.590697666848,
+      "control_low_k_mean": 0.584145600457
+    }
+  },
+  "success_flags": {
+    "propagation_drift_bounded": true,
+    "effective_speed_band_compact": true,
+    "influence_ordering_stable": true,
+    "low_k_transport_coherent": true,
+    "control_hierarchy_different": true
+  },
+  "control_flags": {
+    "propagation_drift_bounded": false,
+    "effective_speed_band_compact": false,
+    "influence_ordering_stable": true,
+    "low_k_transport_coherent": false
+  },
+  "artifacts": {
+    "propagation_ledger_csv": "phase15-propagation/runs/phase15_propagation_ledger.csv",
+    "effective_speed_ledger_csv": "phase15-propagation/runs/phase15_effective_speed_ledger.csv",
+    "influence_range_ledger_csv": "phase15-propagation/runs/phase15_influence_range_ledger.csv",
+    "transport_descriptor_ledger_csv": "phase15-propagation/runs/phase15_transport_descriptor_ledger.csv",
+    "runs_json": "phase15-propagation/runs/phase15_runs.json",
+    "summary_md": "phase15-propagation/phase15_summary.md",
+    "manifest_json": "phase15-propagation/phase15_manifest.json",
+    "radius_plot": "phase15-propagation/plots/phase15_disturbance_radius_vs_time.svg",
+    "speed_plot": "phase15-propagation/plots/phase15_effective_speed_vs_refinement.svg",
+    "influence_plot": "phase15-propagation/plots/phase15_influence_range_envelope_vs_time.svg",
+    "low_k_plot": "phase15-propagation/plots/phase15_low_k_transport_descriptor_vs_refinement.svg",
+    "builder_script": "phase15-propagation/build_propagation_structure.py"
+  },
+  "runtime_seconds": 2.298404,
+  "claim_boundary": "Phase XV is limited to effective propagation-structure feasibility diagnostics on the frozen collective sector and frozen operator hierarchy. It does not assert metric structure, relativistic light-cones, spacetime emergence, continuum field equations, or physical correspondence.",
+  "conclusion": "Phase XV establishes effective propagation-structure feasibility for the frozen operator hierarchy."
+}

@@ -1,0 +1,45 @@
+{
+  "phase_name": "phase15-propagation",
+  "candidate_label": "low_mode_localized_wavepacket",
+  "refinement_levels": [48, 60, 72, 84],
+  "ensemble_sizes": [3, 5, 7],
+  "layout_seeds": [1301, 1302, 1303],
+  "evaluation_tau": 0.8,
+  "persistence_tau_grid": [0.0, 0.4, 0.8, 1.2, 1.6, 2.0, 2.4, 3.0, 3.6, 4.2],
+  "layout_rule": {
+    "min_separation_physical": 0.12,
+    "max_attempts": 20000
+  },
+  "candidate_windows": {
+    "identity_sigma": 0.1,
+    "local_mass_sigma": 0.11
+  },
+  "survival_thresholds": {
+    "min_identity": 0.88,
+    "min_local_mass_ratio": 0.78
+  },
+  "spectral_identity_proxy": {
+    "low_mode_band_multiplier": 2.1
+  },
+  "transport_probe": {
+    "density_gradient_strength": 0.18,
+    "response_threshold_fraction": 0.18,
+    "x_bin_count": 8
+  },
+  "disturbance_probes": {
+    "density_pulse_amplitude": 1.25,
+    "candidate_removal_amplitude": 0.65,
+    "bias_strength": 0.06,
+    "bias_remove_tau": 1.2,
+    "phase_kick_axis": "x"
+  },
+  "control_graph": {
+    "label": "periodic_diagonal_augmented_control",
+    "diagonal_weight_scale": 0.35
+  },
+  "deterministic_seed_record": {
+    "randomness_used": true,
+    "generator": "numpy.default_rng",
+    "note": "Phase XV reuses the frozen Phase XIII seeded layouts and the frozen Phase XIV collective evolution rules, then layers deterministic local disturbances on top."
+  }
+}

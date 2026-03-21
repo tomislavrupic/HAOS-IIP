@@ -1,0 +1,21 @@
+phase: 15
+name: phase15-propagation
+purpose: effective propagation structure and causal-scale feasibility on the frozen dilute collective sector
+inputs:
+  - phase13-sector-formation/phase13_manifest.json
+  - phase14-collective-dynamics/phase14_manifest.json
+  - phase6-operator/phase6_operator_manifest.json
+  - phase7-spectral/phase7_spectral_manifest.json
+  - phase8-trace/phase8_trace_manifest.json
+outputs:
+  - phase15-propagation/runs/phase15_propagation_ledger.csv
+  - phase15-propagation/runs/phase15_effective_speed_ledger.csv
+  - phase15-propagation/runs/phase15_influence_range_ledger.csv
+  - phase15-propagation/runs/phase15_transport_descriptor_ledger.csv
+  - phase15-propagation/phase15_manifest.json
+  - phase15-propagation/phase15_summary.md
+constraints:
+  - Reuse frozen Phase XIII layout rules unchanged.
+  - Reuse frozen Phase XIV collective evolution policy unchanged.
+  - Use only the frozen delta_h branch and deterministic control hierarchy.
+  - Keep propagation diagnostics descriptive and branch-local.

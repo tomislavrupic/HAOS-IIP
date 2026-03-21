@@ -1,0 +1,226 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Effective Propagation Structure and Causal-Scale Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase XV of the frozen HAOS-IIP program asks whether the already frozen dilute collective sector supports bounded propagation-level structure under deterministic disturbances. The phase is not allowed to modify the Phase V recovery readout, the Phase VI operator hierarchy $\Delta_h$, the Phase VII spectral-feasibility bundle, the Phase VIII short-time trace window, the Phase IX coefficient-stabilization bundle, the Phase X cautious bridge bundle, the Phase XI survival-basin bundle, the Phase XII interaction bundle, the Phase XIII multi-mode sector bundle, or the Phase XIV collective-dynamics bundle. It therefore tests only whether slow collective variables already present in that frozen sector support reproducible disturbance spread, compact effective-speed bands, stable influence-order diagnostics, and coherent long-wavelength transport descriptors. Across refinement levels $n_{\mathrm{side}}\in\{48,60,72,84\}$, ensemble sizes $\{3,5,7\}$, and deterministic seeded layouts $\{1301,1302,1303\}$, the branch exhibits effective-speed drift $0.016755292342$, seed spread $0.028668837091$, influence-order mean $0.848677248677$, and low-$k$ transport drift $0.013983435184$ on the primary density-pulse probe. The deterministic altered-connectivity control fails the matched boundedness tests, with effective-speed drift $0.041888230853$, seed spread $0.050961711167$, and low-$k$ transport drift $0.021355474473$, while its influence-order score remains non-discriminating. The result is bounded: Phase XV establishes effective propagation-structure feasibility for the frozen operator hierarchy. It does not assert metric structure, relativistic light-cones, spacetime emergence, continuum field equations, or physical correspondence.
+\end{abstract}
+
+\section{Scope and Frozen Contracts}
+
+Phase XV is a propagation-feasibility diagnostic only. It does not introduce new localized objects, new operator rules, or new interpretive layers. It consumes the following frozen authority stack without change:
+\begin{itemize}
+\item the Phase V recovery-statistics readout layer;
+\item the Phase VI frozen branch-local periodic DK2D block cochain Laplacian hierarchy $\Delta_h$;
+\item the Phase VII spectral-feasibility bundle;
+\item the Phase VIII short-time trace operational window and probe grid;
+\item the Phase IX coefficient-stabilization diagnostics;
+\item the Phase X cautious continuum-bridge bundle;
+\item the Phase XI localized-mode protection bundle;
+\item the Phase XII two-mode interaction bundle;
+\item the Phase XIII multi-mode sector formation bundle;
+\item the Phase XIV collective-dynamics bundle.
+\end{itemize}
+
+The concrete frozen references used here are:
+\begin{itemize}
+\item \url{phase6-operator/phase6_operator_manifest.json};
+\item \url{phase7-spectral/phase7_spectral_manifest.json};
+\item \url{phase8-trace/phase8_trace_manifest.json};
+\item \url{phase9-invariants/phase9_manifest.json};
+\item \url{phase10-bridge/phase10_manifest.json};
+\item \url{phase11-protection/phase11_manifest.json};
+\item \url{phase12-interactions/phase12_manifest.json};
+\item \url{phase13-sector-formation/phase13_manifest.json};
+\item \url{phase14-collective-dynamics/phase14_manifest.json}.
+\end{itemize}
+
+All new logic is isolated inside \texttt{phase15-propagation/}. No earlier manifest or \texttt{haos\_core} file is modified.
+
+\section{Frozen Population and Propagation Protocol}
+
+The frozen candidate remains
+\[
+\texttt{low\_mode\_localized\_wavepacket},
+\]
+and the refinement hierarchy remains
+\[
+h = \frac{1}{n_{\mathrm{side}}},
+\qquad
+n_{\mathrm{side}} \in \{48,60,72,84\}.
+\]
+Phase XV reuses the exact seeded dilute layouts from Phases XIII and XIV:
+\[
+N \in \{3,5,7\},
+\qquad
+\text{seeds} \in \{1301,1302,1303\},
+\qquad
+r_{\min}=0.12.
+\]
+
+The frozen persistence grid is
+\[
+\tau \in \{0.0,0.4,0.8,1.2,1.6,2.0,2.4,3.0,3.6,4.2\},
+\]
+with evaluation time
+\[
+\tau_{\mathrm{eval}} = 0.8.
+\]
+The short-time trace contract inherited from Phase VIII remains
+\[
+t \in \{0.02,0.03,0.05,0.075,0.1\},
+\]
+but is only used here through the already frozen Phase XIV dynamics contract.
+
+Phase XV layers three deterministic disturbance probes on top of the frozen collective state:
+\begin{enumerate}
+\item a \texttt{density\_pulse} that amplifies one anchor candidate by factor $1.25$;
+\item a \texttt{candidate\_removal} probe that attenuates that same anchor candidate by factor $0.65$;
+\item a \texttt{bias\_onset} probe that reuses the Phase XIV weak coherent drive with bias strength $0.06$ and deterministic removal at $\tau=1.2$.
+\end{enumerate}
+
+The anchor candidate is chosen deterministically as the seeded candidate with minimal $x$ coordinate. No new placement logic is introduced.
+
+\section{Propagation Observables}
+
+Phase XV defines only direct, frozen-compatible collective observables. For each disturbed run, the baseline collective evolution from Phase XIV is recomputed on the same layout and compared with the disturbed evolution. The phase then records:
+\begin{itemize}
+\item a disturbance radius, defined as the maximum anchor-to-candidate distance among sites whose local-mass response exceeds a fixed response threshold;
+\item an effective propagation speed estimated from distance-to-latency ratios;
+\item an influence-order score, which checks whether more distant candidates respond no earlier than nearer candidates;
+\item a low-$k$ response fraction obtained from the coarse $x$-profile of the response field.
+\end{itemize}
+
+The response threshold is frozen as a fixed fraction,
+\[
+0.18,
+\]
+of the maximum response encountered over the deterministic probe window. This avoids the trivial zero-threshold failure mode for the weak-bias onset probe while keeping the definition fully reproducible.
+
+\section{Primary Density-Pulse Results}
+
+The primary authority probe is \texttt{density\_pulse}. Its branch metrics are:
+\[
+\text{effective-speed drift} = 0.016755292342,
+\]
+\[
+\text{effective-speed seed std} = 0.028668837091,
+\]
+\[
+\text{influence-order mean} = 0.848677248677,
+\]
+\[
+\text{low-}k\text{ transport drift} = 0.013983435184.
+\]
+
+The matched deterministic control produces:
+\[
+\text{effective-speed drift} = 0.041888230853,
+\]
+\[
+\text{effective-speed seed std} = 0.050961711167,
+\]
+\[
+\text{influence-order mean} = 0.848677248677,
+\]
+\[
+\text{low-}k\text{ transport drift} = 0.021355474473.
+\]
+
+The influence-order diagnostic is not the separator here: both branch and control preserve a similar ordering score. The separation instead comes from boundedness of the speed band and of the low-$k$ response descriptor. Under those matched gates, the branch passes and the control fails.
+
+\section{Secondary Probe Behavior}
+
+The two secondary deterministic probes remain consistent with the same picture.
+
+For \texttt{candidate\_removal}, the branch and control remain ordered but the control again shows a broader effective-speed band:
+\[
+\bar v_{\mathrm{branch}} = 0.046192032634,
+\qquad
+\bar v_{\mathrm{control}} = 0.053100775884.
+\]
+
+For \texttt{bias\_onset}, both hierarchies respond faster, which is expected because the weak coherent drive acts across the whole seeded sector rather than only at one anchor site:
+\[
+\bar v_{\mathrm{branch}} = 0.199043712902,
+\qquad
+\bar v_{\mathrm{control}} = 0.199073838022.
+\]
+The influence-order scores drop for both hierarchies in that case,
+\[
+0.695238095238
+\quad\text{vs}\quad
+0.670105820106,
+\]
+which is why Phase XV does not use the weak-bias onset probe as the primary authority separator. It remains a secondary consistency check only.
+
+\section{Success Logic}
+
+Phase XV uses a deliberately narrow success stack:
+\begin{enumerate}
+\item branch propagation drift must be bounded;
+\item the branch effective-speed band must remain compact across refinement and seeded layouts;
+\item the branch influence-order diagnostic must remain stable;
+\item the branch low-$k$ transport descriptor must remain coherent;
+\item the deterministic control must fail at least one matched gate.
+\end{enumerate}
+
+The resulting authority flags are:
+\begin{itemize}
+\item branch propagation drift bounded: true;
+\item branch effective-speed band compact: true;
+\item branch influence ordering stable: true;
+\item branch low-$k$ transport coherent: true;
+\item control hierarchy different: true.
+\end{itemize}
+
+The matched control-side diagnostic record is:
+\begin{itemize}
+\item control propagation drift bounded: false;
+\item control effective-speed band compact: false;
+\item control influence ordering stable: true;
+\item control low-$k$ transport coherent: false.
+\end{itemize}
+
+This is the right bounded reading of the phase. The branch does not win because it has a unique ordering score. It wins because its propagation band and long-wavelength response remain compact under the fixed seeded hierarchy while the deterministic control broadens beyond the same bounded gates.
+
+\section{Bounded Interpretation}
+
+Phase XV does not claim a metric. It does not claim a light-cone. It does not claim spacetime emergence. It does not claim continuum transport equations. It only claims that the already frozen collective sector supports reproducible, branch-specific propagation descriptors when disturbed in a deterministic and audit-friendly way.
+
+In particular, the phase shows that:
+\begin{itemize}
+\item disturbance spread can be measured reproducibly on the frozen dilute sector;
+\item characteristic propagation speeds remain bounded on the branch across refinement and seeded layouts;
+\item a simple influence-order proxy can be defined operationally;
+\item long-wavelength response descriptors remain coherent on the branch and fail on the control under matched gates.
+\end{itemize}
+
+\section{Conclusion}
+
+Phase XV freezes a deterministic propagation probe suite over the already validated collective sector and shows that the resulting disturbance-radius, effective-speed, influence-range, and long-wavelength response descriptors remain bounded on the branch while the deterministic control fails part of the same boundedness stack. The frozen artifact bundle is:
+\begin{itemize}
+\item \url{phase15-propagation/phase15_manifest.json};
+\item \url{phase15-propagation/phase15_summary.md};
+\item \url{phase15-propagation/runs/phase15_propagation_ledger.csv};
+\item \url{phase15-propagation/runs/phase15_effective_speed_ledger.csv};
+\item \url{phase15-propagation/runs/phase15_influence_range_ledger.csv};
+\item \url{phase15-propagation/runs/phase15_transport_descriptor_ledger.csv};
+\item \url{phase15-propagation/runs/phase15_runs.json}.
+\end{itemize}
+
+Phase XV establishes effective propagation-structure feasibility for the frozen operator hierarchy.
+
+\end{document}
