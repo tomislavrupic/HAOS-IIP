@@ -1,5 +1,5 @@
 Author: Tomislav Rupić
-Project: HAOS-IIP (Harmonic Address Operating System – Interaction-Induced Phase Program)
+Project: HAOS-IIP (Harmonic Address Operating System – Interaction-Invariant Physics)
 
 All conceptual frameworks, terminology, operator constructions,
 and experimental protocols contained in this repository are
