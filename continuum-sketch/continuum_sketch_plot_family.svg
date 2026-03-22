@@ -1,0 +1,174 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1180' height='820' viewBox='0 0 1180 820'>
+<rect width='100%' height='100%' fill='white'/>
+<text x='590' y='28' text-anchor='middle' font-size='22' font-family='Helvetica, Arial, sans-serif'>Continuum Sketch Observable Family</text>
+<rect x='50' y='50' width='520' height='210' fill='none' stroke='#d1d5db' stroke-width='1'/>
+<text x='310.0' y='70' text-anchor='middle' font-size='14' font-family='Helvetica, Arial, sans-serif'>Low-mode Dispersion Proxy</text>
+<line x1='105' y1='225' x2='550' y2='225' stroke='#374151' stroke-width='1.2'/>
+<line x1='105' y1='85' x2='105' y2='225' stroke='#374151' stroke-width='1.2'/>
+<line x1='105' y1='225.00' x2='550' y2='225.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='229.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.003</text>
+<line x1='105' y1='178.33' x2='550' y2='178.33' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='182.33' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.013</text>
+<line x1='105' y1='131.67' x2='550' y2='131.67' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='135.67' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.022</text>
+<line x1='105' y1='85.00' x2='550' y2='85.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='89.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.031</text>
+<line x1='105.00' y1='225' x2='105.00' y2='229' stroke='#374151' stroke-width='1'/>
+<text x='105.00' y='243' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>48</text>
+<line x1='253.33' y1='225' x2='253.33' y2='229' stroke='#374151' stroke-width='1'/>
+<text x='253.33' y='243' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>60</text>
+<line x1='401.67' y1='225' x2='401.67' y2='229' stroke='#374151' stroke-width='1'/>
+<text x='401.67' y='243' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>72</text>
+<line x1='550.00' y1='225' x2='550.00' y2='229' stroke='#374151' stroke-width='1'/>
+<text x='550.00' y='243' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>84</text>
+<polyline fill='none' stroke='#0f766e' stroke-width='2.2' points='105.00,156.15 253.33,186.69 401.67,203.31 550.00,213.33'/>
+<circle cx='105.00' cy='156.15' r='3' fill='#0f766e'/>
+<circle cx='253.33' cy='186.69' r='3' fill='#0f766e'/>
+<circle cx='401.67' cy='203.31' r='3' fill='#0f766e'/>
+<circle cx='550.00' cy='213.33' r='3' fill='#0f766e'/>
+<polyline fill='none' stroke='#b45309' stroke-width='2.2' points='105.00,96.67 253.33,148.59 401.67,176.83 550.00,193.88'/>
+<circle cx='105.00' cy='96.67' r='3' fill='#b45309'/>
+<circle cx='253.33' cy='148.59' r='3' fill='#b45309'/>
+<circle cx='401.67' cy='176.83' r='3' fill='#b45309'/>
+<circle cx='550.00' cy='193.88' r='3' fill='#b45309'/>
+<line x1='440' y1='97' x2='458' y2='97' stroke='#0f766e' stroke-width='2.2'/>
+<text x='464' y='101' font-size='10' font-family='Helvetica, Arial, sans-serif'>branch</text>
+<line x1='440' y1='113' x2='458' y2='113' stroke='#b45309' stroke-width='2.2'/>
+<text x='464' y='117' font-size='10' font-family='Helvetica, Arial, sans-serif'>control</text>
+<rect x='620' y='50' width='520' height='210' fill='none' stroke='#d1d5db' stroke-width='1'/>
+<text x='880.0' y='70' text-anchor='middle' font-size='14' font-family='Helvetica, Arial, sans-serif'>Effective Propagation Speed</text>
+<line x1='675' y1='225' x2='1120' y2='225' stroke='#374151' stroke-width='1.2'/>
+<line x1='675' y1='85' x2='675' y2='225' stroke='#374151' stroke-width='1.2'/>
+<line x1='675' y1='225.00' x2='1120' y2='225.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='667' y='229.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.179</text>
+<line x1='675' y1='178.33' x2='1120' y2='178.33' stroke='#f3f4f6' stroke-width='1'/>
+<text x='667' y='182.33' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.190</text>
+<line x1='675' y1='131.67' x2='1120' y2='131.67' stroke='#f3f4f6' stroke-width='1'/>
+<text x='667' y='135.67' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.201</text>
+<line x1='675' y1='85.00' x2='1120' y2='85.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='667' y='89.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.212</text>
+<line x1='675.00' y1='225' x2='675.00' y2='229' stroke='#374151' stroke-width='1'/>
+<text x='675.00' y='243' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>48</text>
+<line x1='823.33' y1='225' x2='823.33' y2='229' stroke='#374151' stroke-width='1'/>
+<text x='823.33' y='243' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>60</text>
+<line x1='971.67' y1='225' x2='971.67' y2='229' stroke='#374151' stroke-width='1'/>
+<text x='971.67' y='243' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>72</text>
+<line x1='1120.00' y1='225' x2='1120.00' y2='229' stroke='#374151' stroke-width='1'/>
+<text x='1120.00' y='243' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>84</text>
+<polyline fill='none' stroke='#0f766e' stroke-width='2.2' points='675.00,96.67 823.33,142.65 971.67,130.64 1120.00,162.09'/>
+<circle cx='675.00' cy='96.67' r='3' fill='#0f766e'/>
+<circle cx='823.33' cy='142.65' r='3' fill='#0f766e'/>
+<circle cx='971.67' cy='130.64' r='3' fill='#0f766e'/>
+<circle cx='1120.00' cy='162.09' r='3' fill='#0f766e'/>
+<polyline fill='none' stroke='#b45309' stroke-width='2.2' points='675.00,213.33 823.33,96.67 971.67,131.03 1120.00,119.50'/>
+<circle cx='675.00' cy='213.33' r='3' fill='#b45309'/>
+<circle cx='823.33' cy='96.67' r='3' fill='#b45309'/>
+<circle cx='971.67' cy='131.03' r='3' fill='#b45309'/>
+<circle cx='1120.00' cy='119.50' r='3' fill='#b45309'/>
+<line x1='1010' y1='97' x2='1028' y2='97' stroke='#0f766e' stroke-width='2.2'/>
+<text x='1034' y='101' font-size='10' font-family='Helvetica, Arial, sans-serif'>branch</text>
+<line x1='1010' y1='113' x2='1028' y2='113' stroke='#b45309' stroke-width='2.2'/>
+<text x='1034' y='117' font-size='10' font-family='Helvetica, Arial, sans-serif'>control</text>
+<rect x='50' y='305' width='520' height='210' fill='none' stroke='#d1d5db' stroke-width='1'/>
+<text x='310.0' y='325' text-anchor='middle' font-size='14' font-family='Helvetica, Arial, sans-serif'>Localized-mode Persistence</text>
+<line x1='105' y1='480' x2='550' y2='480' stroke='#374151' stroke-width='1.2'/>
+<line x1='105' y1='340' x2='105' y2='480' stroke='#374151' stroke-width='1.2'/>
+<line x1='105' y1='480.00' x2='550' y2='480.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='484.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.080</text>
+<line x1='105' y1='433.33' x2='550' y2='433.33' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='437.33' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.360</text>
+<line x1='105' y1='386.67' x2='550' y2='386.67' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='390.67' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>2.640</text>
+<line x1='105' y1='340.00' x2='550' y2='340.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='344.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>3.920</text>
+<line x1='105.00' y1='480' x2='105.00' y2='484' stroke='#374151' stroke-width='1'/>
+<text x='105.00' y='498' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>48</text>
+<line x1='253.33' y1='480' x2='253.33' y2='484' stroke='#374151' stroke-width='1'/>
+<text x='253.33' y='498' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>60</text>
+<line x1='401.67' y1='480' x2='401.67' y2='484' stroke='#374151' stroke-width='1'/>
+<text x='401.67' y='498' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>72</text>
+<line x1='550.00' y1='480' x2='550.00' y2='484' stroke='#374151' stroke-width='1'/>
+<text x='550.00' y='498' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>84</text>
+<polyline fill='none' stroke='#0f766e' stroke-width='2.2' points='105.00,439.17 253.33,410.00 401.67,395.42 550.00,351.67'/>
+<circle cx='105.00' cy='439.17' r='3' fill='#0f766e'/>
+<circle cx='253.33' cy='410.00' r='3' fill='#0f766e'/>
+<circle cx='401.67' cy='395.42' r='3' fill='#0f766e'/>
+<circle cx='550.00' cy='351.67' r='3' fill='#0f766e'/>
+<polyline fill='none' stroke='#b45309' stroke-width='2.2' points='105.00,468.33 253.33,439.17 401.67,424.58 550.00,410.00'/>
+<circle cx='105.00' cy='468.33' r='3' fill='#b45309'/>
+<circle cx='253.33' cy='439.17' r='3' fill='#b45309'/>
+<circle cx='401.67' cy='424.58' r='3' fill='#b45309'/>
+<circle cx='550.00' cy='410.00' r='3' fill='#b45309'/>
+<line x1='440' y1='352' x2='458' y2='352' stroke='#0f766e' stroke-width='2.2'/>
+<text x='464' y='356' font-size='10' font-family='Helvetica, Arial, sans-serif'>branch</text>
+<line x1='440' y1='368' x2='458' y2='368' stroke='#b45309' stroke-width='2.2'/>
+<text x='464' y='372' font-size='10' font-family='Helvetica, Arial, sans-serif'>control</text>
+<rect x='620' y='305' width='520' height='210' fill='none' stroke='#d1d5db' stroke-width='1'/>
+<text x='880.0' y='325' text-anchor='middle' font-size='14' font-family='Helvetica, Arial, sans-serif'>Temporal-ordering Consistency</text>
+<line x1='675' y1='480' x2='1120' y2='480' stroke='#374151' stroke-width='1.2'/>
+<line x1='675' y1='340' x2='675' y2='480' stroke='#374151' stroke-width='1.2'/>
+<line x1='675' y1='480.00' x2='1120' y2='480.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='667' y='484.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.716</text>
+<line x1='675' y1='433.33' x2='1120' y2='433.33' stroke='#f3f4f6' stroke-width='1'/>
+<text x='667' y='437.33' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.781</text>
+<line x1='675' y1='386.67' x2='1120' y2='386.67' stroke='#f3f4f6' stroke-width='1'/>
+<text x='667' y='390.67' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.847</text>
+<line x1='675' y1='340.00' x2='1120' y2='340.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='667' y='344.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.912</text>
+<line x1='675.00' y1='480' x2='675.00' y2='484' stroke='#374151' stroke-width='1'/>
+<text x='675.00' y='498' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>48</text>
+<line x1='823.33' y1='480' x2='823.33' y2='484' stroke='#374151' stroke-width='1'/>
+<text x='823.33' y='498' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>60</text>
+<line x1='971.67' y1='480' x2='971.67' y2='484' stroke='#374151' stroke-width='1'/>
+<text x='971.67' y='498' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>72</text>
+<line x1='1120.00' y1='480' x2='1120.00' y2='484' stroke='#374151' stroke-width='1'/>
+<text x='1120.00' y='498' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>84</text>
+<polyline fill='none' stroke='#0f766e' stroke-width='2.2' points='675.00,434.31 823.33,400.28 971.67,390.56 1120.00,387.31'/>
+<circle cx='675.00' cy='434.31' r='3' fill='#0f766e'/>
+<circle cx='823.33' cy='400.28' r='3' fill='#0f766e'/>
+<circle cx='971.67' cy='390.56' r='3' fill='#0f766e'/>
+<circle cx='1120.00' cy='387.31' r='3' fill='#0f766e'/>
+<polyline fill='none' stroke='#b45309' stroke-width='2.2' points='675.00,351.67 823.33,468.33 971.67,419.72 1120.00,398.66'/>
+<circle cx='675.00' cy='351.67' r='3' fill='#b45309'/>
+<circle cx='823.33' cy='468.33' r='3' fill='#b45309'/>
+<circle cx='971.67' cy='419.72' r='3' fill='#b45309'/>
+<circle cx='1120.00' cy='398.66' r='3' fill='#b45309'/>
+<line x1='1010' y1='352' x2='1028' y2='352' stroke='#0f766e' stroke-width='2.2'/>
+<text x='1034' y='356' font-size='10' font-family='Helvetica, Arial, sans-serif'>branch</text>
+<line x1='1010' y1='368' x2='1028' y2='368' stroke='#b45309' stroke-width='2.2'/>
+<text x='1034' y='372' font-size='10' font-family='Helvetica, Arial, sans-serif'>control</text>
+<rect x='50' y='560' width='520' height='210' fill='none' stroke='#d1d5db' stroke-width='1'/>
+<text x='310.0' y='580' text-anchor='middle' font-size='14' font-family='Helvetica, Arial, sans-serif'>Distance-surrogate Shell Slope</text>
+<line x1='105' y1='735' x2='550' y2='735' stroke='#374151' stroke-width='1.2'/>
+<line x1='105' y1='595' x2='105' y2='735' stroke='#374151' stroke-width='1.2'/>
+<line x1='105' y1='735.00' x2='550' y2='735.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='739.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.624</text>
+<line x1='105' y1='688.33' x2='550' y2='688.33' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='692.33' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.857</text>
+<line x1='105' y1='641.67' x2='550' y2='641.67' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='645.67' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.091</text>
+<line x1='105' y1='595.00' x2='550' y2='595.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='97' y='599.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.325</text>
+<line x1='105.00' y1='735' x2='105.00' y2='739' stroke='#374151' stroke-width='1'/>
+<text x='105.00' y='753' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>48</text>
+<line x1='253.33' y1='735' x2='253.33' y2='739' stroke='#374151' stroke-width='1'/>
+<text x='253.33' y='753' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>60</text>
+<line x1='401.67' y1='735' x2='401.67' y2='739' stroke='#374151' stroke-width='1'/>
+<text x='401.67' y='753' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>72</text>
+<line x1='550.00' y1='735' x2='550.00' y2='739' stroke='#374151' stroke-width='1'/>
+<text x='550.00' y='753' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>84</text>
+<polyline fill='none' stroke='#0f766e' stroke-width='2.2' points='105.00,676.04 253.33,658.93 401.67,658.93 550.00,657.98'/>
+<circle cx='105.00' cy='676.04' r='3' fill='#0f766e'/>
+<circle cx='253.33' cy='658.93' r='3' fill='#0f766e'/>
+<circle cx='401.67' cy='658.93' r='3' fill='#0f766e'/>
+<circle cx='550.00' cy='657.98' r='3' fill='#0f766e'/>
+<polyline fill='none' stroke='#b45309' stroke-width='2.2' points='105.00,650.86 253.33,723.33 401.67,606.67 550.00,654.18'/>
+<circle cx='105.00' cy='650.86' r='3' fill='#b45309'/>
+<circle cx='253.33' cy='723.33' r='3' fill='#b45309'/>
+<circle cx='401.67' cy='606.67' r='3' fill='#b45309'/>
+<circle cx='550.00' cy='654.18' r='3' fill='#b45309'/>
+<line x1='440' y1='607' x2='458' y2='607' stroke='#0f766e' stroke-width='2.2'/>
+<text x='464' y='611' font-size='10' font-family='Helvetica, Arial, sans-serif'>branch</text>
+<line x1='440' y1='623' x2='458' y2='623' stroke='#b45309' stroke-width='2.2'/>
+<text x='464' y='627' font-size='10' font-family='Helvetica, Arial, sans-serif'>control</text>
+</svg>

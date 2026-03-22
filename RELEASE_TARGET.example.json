@@ -1,0 +1,6 @@
+{
+  "phase_dir": "phase18-distance-surrogate",
+  "paper": "papers/proto_geometric_distance_surrogate_feasibility_on_a_frozen_branch_local_cochain_laplacian_hierarchy.tex",
+  "commit_message": "Freeze Phase XVIII distance surrogate baseline",
+  "extra": []
+}

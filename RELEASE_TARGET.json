@@ -1,0 +1,12 @@
+{
+  "phase_dir": "continuum-sketch",
+  "paper": "papers/minimal_scaling_sketch_for_proto_continuum_effective_description_on_a_frozen_branch_local_cochain_laplacian_hierarchy.tex",
+  "title": "Minimal Scaling Sketch for a Proto-Continuum Effective Description on a Frozen Branch-Local Cochain-Laplacian Hierarchy",
+  "commit_message": "Freeze continuum sketch baseline",
+  "extra": [
+    "Makefile",
+    "scripts/release_phase.py",
+    "RELEASE_TARGET.example.json",
+    "RELEASE_TARGET.json"
+  ]
+}

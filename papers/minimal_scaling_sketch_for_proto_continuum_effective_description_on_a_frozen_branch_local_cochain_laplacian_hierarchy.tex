@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Minimal Scaling Sketch for a Proto-Continuum Effective Description on a Frozen Branch-Local Cochain-Laplacian Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This note is not a new phase. It is a compression test run after Phase XVIII on the already frozen HAOS-IIP branch. The protocol is intentionally narrow: no new dynamics, no new seeds, no new thresholds, and no new observables are introduced. The sketch reads only previously frozen ledgers and evaluates five quantities on the fixed refinement slice $n_{\mathrm{side}} \in \{48,60,72,84\}$: the low-mode dispersion proxy, the effective propagation speed band, the localized-mode persistence time, the temporal-ordering consistency score, and the distance-surrogate shell slope. The branch remains bounded on this slice, with propagation-speed coefficient of variation $0.027656$ versus $0.051604$ on the matched altered-connectivity control, shell-slope max adjacent drift $0.085714$ versus $0.584615$, and three of the five observables showing smooth refinement trends under simple linear or log-log fits. The bounded conclusion is operational only: the minimal scaling sketch indicates refinement-ordered behavior of key frozen observables that is consistent with a proto-continuum effective description on the tested branch regime. No continuum ontology, universality, metric structure, or physical correspondence is asserted.
+\end{abstract}
+
+\section{Scope}
+
+The sketch is defined entirely by frozen contracts. It does not modify:
+\begin{itemize}
+\item the Phase VI cochain-Laplacian hierarchy;
+\item the Phase X bridge law;
+\item the Phase XI persistence diagnostics;
+\item the Phase XV propagation observables;
+\item the Phase XVI temporal-ordering observable;
+\item the Phase XVII causal-graph slice;
+\item the Phase XVIII distance-surrogate construction;
+\item or the frozen telemetry formulas.
+\end{itemize}
+
+The purpose is narrower than any full authority phase. It asks only whether a small subset of already frozen observables can be organized into a coherent refinement-ordered scaling sketch.
+
+\section{Frozen Inputs}
+
+The refinement slice is fixed to
+\[
+n_{\mathrm{side}} \in \{48,60,72,84\},
+\qquad
+h = 1/n_{\mathrm{side}}.
+\]
+The branch seeds are frozen to $\{1302,1303\}$ and the matched control is \texttt{periodic\_diagonal\_augmented\_control}. For the propagation, ordering, and shell metrics, the disturbance family is frozen to \texttt{bias\_onset}.
+
+Only five observables are evaluated:
+\begin{enumerate}
+\item low-mode dispersion proxy, using the frozen Phase XI spectral gap;
+\item effective propagation speed band from the Phase XV \texttt{bias\_onset} slice;
+\item localized-mode persistence time from Phase XI;
+\item temporal-ordering consistency score derived from the Phase XVI event-time distance on the same seed pair;
+\item distance-surrogate shell slope, using the Phase XVIII least-squares arrival-vs-depth rule extended to $n_{\mathrm{side}}=48$ with the same artifact-only construction.
+\end{enumerate}
+
+No additional observables or fits are introduced.
+
+\section{Observable Trends}
+
+The branch values across the four refinement levels are:
+\begin{itemize}
+\item dispersion proxy: $(0.0170917,\;0.0109486,\;0.00760693,\;0.00559042)$;
+\item effective speed band: $(0.209070,\;0.198349,\;0.201151,\;0.193818)$;
+\item persistence time: $(1.2,\;2.0,\;2.4,\;3.6)$;
+\item ordering consistency score: $(0.780045,\;0.827664,\;0.841270,\;0.845805)$;
+\item shell slope: $(0.919048,\;1.004762,\;1.004762,\;1.009524)$.
+\end{itemize}
+
+The matched control remains visibly broader on the same slice, especially in the ordering and shell observables:
+\begin{itemize}
+\item effective speed band: coefficient of variation $0.051604$;
+\item ordering consistency score: relative span $0.200418$;
+\item shell slope: relative span $0.581341$ and best-fit $R^2 = 0.065301$.
+\end{itemize}
+
+Three branch observables show smooth scaling trends under the allowed low-complexity fits:
+\begin{itemize}
+\item dispersion proxy: log-log fit $R^2 = 0.99999994$ with log-slope $1.996967$;
+\item persistence time: log-log fit $R^2 = 0.977398$;
+\item ordering consistency score: linear-in-$h$ fit $R^2 = 0.924506$.
+\end{itemize}
+
+The remaining two branch observables are still bounded even though their fits are weaker:
+\begin{itemize}
+\item effective speed band: coefficient of variation $0.027656$ and relative span $0.076033$;
+\item shell slope: max adjacent drift $0.085714$ and relative span $0.091898$.
+\end{itemize}
+
+\section{Branch--Control Separation}
+
+The sketch is only useful if the branch remains distinct from the matched deterministic control at mesoscopic scale. That condition is met on every observable:
+\begin{itemize}
+\item mean branch/control gap in persistence time: $1.0$;
+\item mean branch/control gap in ordering consistency: $0.066893$;
+\item mean branch/control gap in shell slope: $0.182463$;
+\item control shell-slope drift: $0.584615$ versus $0.085714$ on the branch.
+\end{itemize}
+
+The low-mode dispersion proxy alone does not separate the hierarchies strongly, which is expected because both branch and control inherit the same coarse refinement ordering. The separation appears in the propagation, ordering, and surrogate layers, which are the observables the sketch is meant to compress.
+
+\section{Bounded Interpretation}
+
+This note does not claim a continuum limit. It does not claim geometry, curvature, field equations, or universality. It records only a bounded structural fact: on the already frozen branch regime, a small set of mesoscopic and kinematic observables can be placed on one common refinement axis without losing coherence, while the matched altered-connectivity control remains less regular on that same axis.
+
+That is enough for a compression test. It is not enough for ontology.
+
+\section{Conclusion}
+
+The minimal scaling sketch indicates bounded refinement-ordered behavior of key frozen observables. This is consistent with a proto-continuum effective description within the tested branch regime. No continuum ontology or universality is asserted.
+
+\end{document}
