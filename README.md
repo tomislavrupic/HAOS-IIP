@@ -151,3 +151,5 @@ See:
 
 Tomislav Rupić  
 Independent multimedia researcher and computational emergence practitioner.
+Website: [tomislav-rupic.com](https://tomislav-rupic.com)  
+Email: [tom.d.vox@gmail.com](mailto:tom.d.vox@gmail.com)
