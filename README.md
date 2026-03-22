@@ -1,145 +1,153 @@
 # HAOS-IIP
 
-HAOS-IIP is a research repository for a weighted interaction-fabric program.
+Emergence diagnostics on a frozen branch-local cochain-Laplacian hierarchy.
 
-The mature architecture is:
+## Overview
 
-```text
-one substrate
-one kernel
-three operator sectors
-```
+HAOS-IIP is a structured numerical research program investigating whether a reproducible emergence ladder can be identified inside a frozen operator hierarchy on discrete graph domains.
 
-Those three sectors are:
+The project focuses on:
 
-- `L0`: node Laplacian for scalar / geometry sector
-- `L1`: edge / Hodge Laplacian for gauge / vector sector
-- `D_H`: Dirac-type lift for fermion / spinor sector
+- bounded feasibility diagnostics
+- controlled refinement hierarchies
+- frozen telemetry definitions
+- reproducible phase bundles
 
-## Canonical entry points
+This repository does not assert geometric structure, physical correspondence, or continuum validity. It provides a computational environment for testing whether such structures could stabilize under disciplined constraints.
 
-- [docs/canon/HAOS_IIP_CORE_AXIOMS.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/HAOS_IIP_CORE_AXIOMS.md)
-- [docs/canon/HAOS_IIP_CORE_THEORY.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/HAOS_IIP_CORE_THEORY.md)
-- [docs/canon/KERNEL_DEFINITION.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/KERNEL_DEFINITION.md)
-- [docs/canon/OPERATOR_STRUCTURE.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/OPERATOR_STRUCTURE.md)
-- [docs/canon/EMERGENT_GEOMETRY.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/EMERGENT_GEOMETRY.md)
-- [docs/canon/GAUGE_PROGRAM.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/GAUGE_PROGRAM.md)
-- [docs/canon/OPEN_PROBLEMS.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/canon/OPEN_PROBLEMS.md)
+## Scope Of The Program
 
-## Phase I publication path
+The program studies emergence inside a frozen branch regime defined by:
 
-Phase I is packaged as one capstone paper plus a living archive rather than as 19 independent publications.
+- a branch-local cochain-Laplacian operator family
+- deterministic initialization routines
+- matched altered-connectivity controls
+- shared telemetry metrics across phases
 
-- [papers/README.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/papers/README.md)
-- [papers/pdf_releases/18.1 Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture.pdf](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/papers/pdf_releases/18.1%20Limits%20of%20Frozen%20Pre-Geometry%20on%20a%20Kernel-Induced%20Cochain%20Operator%20Architecture.pdf)
-- [papers/pdf_releases/INDEX.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/papers/pdf_releases/INDEX.md)
+Primary research questions include:
 
-Boundary line:
+- Does a stable propagation band form under refinement?
+- Can temporal ordering emerge from branch-internal dynamics?
+- Does a consistent causal influence structure close?
+- Can proto-geometric distance surrogates stabilize?
 
-> Frozen pre-geometry can organize, but it does not bind.
+All conclusions are framed as feasibility statements, not ontological claims.
 
-Archive snapshot:
-
-- Zenodo DOI `10.5281/zenodo.18938323`
-
-## Repository layout
-
-- `docs/canon/`: stabilized technical statements
-- `docs/notes/`: retained working theory and applications
-- `docs/archive/`: meta, philosophical, and legacy material
-- `theory/`: topic-grouped source material
-- `numerics/`: reusable simulation starters and future notebooks
-- `experiments/`: experiment-specific code, plots, and result notes
-- `data/`: structured JSON results from orchestrated runs
-- `plots/`: current and timestamped plot outputs
-- `scripts/`: thin orchestration layer for reproducible runs
-- `papers/`: future paper drafts and figures
-- `ai/`: Codex prompts and agent definitions
-
-## Current active experiment
-
-- [experiments/eigenmodes/haos_iip_3d_low_mode_study/HAOS_IIP_3D_Low_Mode_Study_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/experiments/eigenmodes/haos_iip_3d_low_mode_study/HAOS_IIP_3D_Low_Mode_Study_v1.md)
-
-It currently gives the strongest explicit numerical result in the repo:
-
-- the bare 3D node Laplacian `L0` shows scalar geometry-like low modes
-- a phase-dressed scalar branch shows connection sensitivity
-- no autonomous gauge or fermion sector has been derived yet
-
-## Current architecture
-
-The repository no longer assumes that one node Laplacian explains every sector.
-
-The frozen core now lives above this architecture:
+## Repository Structure
 
 ```text
-core axioms -> model families -> experiments
+phase3-stability/ ... phase18-distance-surrogate/  frozen phase bundles and diagnostics
+continuum-sketch/                                  low-cost post-processing scaling test
+telemetry/                                         frozen emergence metrics
+haos_core/                                         shared core primitives
+papers/                                            numbered PDF releases and drafts
+ai/                                                saved Codex prompts and workflow support
 ```
 
-Instead:
+Each phase bundle follows a uniform contract:
 
 ```text
-same substrate
-same kernel
-different operator lifts
+build_*.py
+phase*_manifest.json
+phase*_summary.md
+runs/
+diagnostics/
+(optional) plots/
 ```
 
-## Working rules
+## Quick Start
 
-- Do not delete source material.
-- Preserve old versions with `_vN` suffixes.
-- Use `_CANON` only for stabilized canonical files.
-- Keep speculative claims out of canonical files unless they are labeled `[P]` or `[O]`.
-- Put experiment-specific outputs under `experiments/`, not into theory folders.
-
-## Quick start
-
-Run the repo as a small experiment lab:
+Run an integrity check on a frozen phase bundle:
 
 ```bash
-cd /Volumes/Samsung\ T5/2026/HAOS/HAOS\ DOCS/HAOS-IIP
-python3 scripts/run_experiments.py
+python run_phase.py 18 --check
 ```
 
-Or use:
+Example:
 
 ```bash
-cd /Volumes/Samsung\ T5/2026/HAOS/HAOS\ DOCS/HAOS-IIP
-make run
+python run_phase.py 10 --check
 ```
 
-This does the following:
+No new simulations are required to validate frozen results.
 
-- loads shared parameters from `config.json`
-- runs the reusable scalar and gauge starter experiments
-- runs the weighted edge/Hodge `L1` experiment
-- runs a parameter sweep over `epsilon`, `N`, and substrate choice
-- writes JSON outputs into `data/`
-- writes plots into `plots/`
-- appends a record to `experiments/EXPERIMENT_LOG.md`
+## Program Status
 
-Adjust experiment parameters in `config.json` rather than hard-coding them in the simulation modules.
+Current milestone:
 
-## Direct module runs
+Emergent temporal ordering, causal closure, and proto-geometric distance-surrogate feasibility established within the frozen branch regime.
 
-Run the current 3D low-mode experiment:
+Milestone anchor:
 
-```bash
-cd /Volumes/Samsung\ T5/2026/HAOS/HAOS\ DOCS/HAOS-IIP/experiments/eigenmodes/haos_iip_3d_low_mode_study
-python3 haos_iip_3d_low_modes_v1.py
-```
+- [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md)
 
-Run the reusable starter simulations:
+## Reproducibility Contract
 
-```bash
-cd /Volumes/Samsung\ T5/2026/HAOS/HAOS\ DOCS/HAOS-IIP
-python3 numerics/simulations/laplacian_modes.py
-python3 numerics/simulations/gauge_modes.py
-python3 numerics/simulations/hodge_modes.py
-python3 numerics/simulations/parameter_sweep.py
-python3 numerics/simulations/periodic_twisted_l1.py
-```
+Core experimental layers are frozen and defined in:
 
-## Next explicit target
+- [API_CONTRACT.md](API_CONTRACT.md)
+- [telemetry/frozen_metrics.py](telemetry/frozen_metrics.py)
 
-Build the minimal Dirac-type branch `D_H` after the `L1` edge/Hodge branch has been mapped more cleanly across flux backgrounds and defect perturbations.
+This guarantees:
+
+- stable operator definitions
+- consistent initialization rules
+- invariant telemetry formulas
+- matched control construction
+
+Emergence diagnostics rely only on these frozen interfaces.
+
+## Continuum-Sketch Layer
+
+A minimal post-processing protocol for low-cost scaling inspection is provided in:
+
+- [continuum-sketch/](continuum-sketch/)
+
+This stage performs:
+
+- refinement trend checks
+- propagation-band stability inspection
+- proto-distance scaling diagnostics
+
+It does not introduce new dynamics.
+
+## Papers
+
+Numbered synthesis papers are released in:
+
+- [papers/pdf_releases/](papers/pdf_releases/)
+- [papers/pdf_releases/INDEX.md](papers/pdf_releases/INDEX.md)
+
+Example release:
+
+- [43.1 Ordering, Causal Closure, and Proto-Geometric Distance-Surrogate Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy.pdf](papers/pdf_releases/43.1%20Ordering,%20Causal%20Closure,%20and%20Proto-Geometric%20Distance-Surrogate%20Feasibility%20on%20a%20Frozen%20Branch-Local%20Cochain-Laplacian%20Hierarchy.pdf)
+
+## Limitations
+
+This repository intentionally avoids:
+
+- physical interpretation claims
+- geometric reconstruction claims
+- continuum field-theory derivations
+- cosmological or ontological assertions
+
+The program is strictly a numerical emergence feasibility study.
+
+## Citation
+
+If you use results or methods from this repository, please cite this work using:
+
+- [CITATION.cff](CITATION.cff)
+
+## License
+
+See:
+
+- [LICENSE](LICENSE)
+- [COPYRIGHT.md](COPYRIGHT.md)
+- [THEORY_NOTICE.md](THEORY_NOTICE.md)
+
+## Author
+
+Tomislav Rupić  
+Independent multimedia researcher and computational emergence practitioner.
