@@ -9,3 +9,4 @@ docs/media/videos/*.mov
 *.out
 *.toc
 *.synctex.gz
+examples/output/

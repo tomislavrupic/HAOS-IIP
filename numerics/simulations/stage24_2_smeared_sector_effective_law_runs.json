@@ -1,0 +1,76 @@
+{
+  "stage": "24.2_smeared_sector_effective_law_extraction",
+  "description": "Phase IV-A2 effective-law extraction for the surviving smeared-transfer sector on the frozen clustered Dirac-Kahler branch.",
+  "required_inputs": {
+    "stage23_11": {
+      "stage_label": "23.11 / III-C2",
+      "json_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.json",
+      "csv_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.csv"
+    },
+    "stage23_12": {
+      "stage_label": "23.12 / III-C3",
+      "json_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.json",
+      "csv_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.csv"
+    },
+    "stage23_13": {
+      "stage_label": "23.13 / III-C4",
+      "json_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.json",
+      "csv_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.csv"
+    },
+    "stage23_14": {
+      "stage_label": "23.14 / III-C5",
+      "json_path": "data/20260316_111201_stage23_14_phaseIII_final_consolidation_and_freeze.json",
+      "csv_path": "data/20260316_111201_stage23_14_phaseIII_claims_ledger.csv"
+    },
+    "stage23_15": {
+      "stage_label": "23.15 / III-P1",
+      "paper_path": "papers/drafts/Phase_III_Clustered_DK_Effective_Sector_Draft_v1.md"
+    },
+    "stage24_1": {
+      "stage_label": "24.1 / IV-A1",
+      "json_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.json",
+      "csv_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.csv"
+    }
+  },
+  "target_definition": "stable_closed_smeared = 1 iff Stage 23.12 derived_phase_label == smeared_transfer_phase; otherwise 0 for transient mixed controls on the frozen closure lattice.",
+  "model_families": [
+    {
+      "model_id": "IVA2_M1",
+      "model_family": "threshold_rule",
+      "description": "Single-threshold rule chosen from the accepted core observables."
+    },
+    {
+      "model_id": "IVA2_M2",
+      "model_family": "simple_reduced_surrogate",
+      "description": "Low-parameter linear score surrogate using only the accepted core observables."
+    },
+    {
+      "model_id": "IVA2_M3",
+      "model_family": "context_conditioned_threshold_rule",
+      "description": "Two-bin context-conditioned threshold rule using corridor position only as an external selector."
+    },
+    {
+      "model_id": "IVA2_M4",
+      "model_family": "closure_support_conjunction",
+      "description": "Minimal conjunction over the binary closure-support observables."
+    }
+  ],
+  "allowed_core_observables": [
+    "topology_survival_time",
+    "refinement_stability_flag",
+    "weak_coupling_stability_flag",
+    "reverse_stability_flag",
+    "flow_concentration_index"
+  ],
+  "allowed_context_coordinates": [
+    "phase_corridor_position",
+    "phase_corridor_width"
+  ],
+  "forbidden_observables": [
+    "transfer_asymmetry",
+    "coherence_decay_rate",
+    "topology_return_error",
+    "braid_like_exchange_indicator",
+    "mechanism_sensitivity_score"
+  ]
+}

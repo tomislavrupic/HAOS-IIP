@@ -1,0 +1,77 @@
+{
+  "stage": "21_mutual_registration_constraint_coupled_interaction",
+  "description": "Base 27-run persistence-first pilot for registration-gated interaction eligibility on the frozen projected transverse architecture.",
+  "coupling_law": {
+    "form": "F_AB = eps * R_align(A,B,t) * F_base",
+    "base_force": "pairwise state-alignment drive projector(q_j - q_i)",
+    "strict_clamp": 0.25,
+    "no_cumulative_memory": true,
+    "interpretation": "selective interaction gating without substrate back-reaction"
+  },
+  "parameter_policy": {
+    "eps_values": {
+      "null": 0.0,
+      "very_weak": 0.01,
+      "weak": 0.02
+    },
+    "phase_sigma": 0.35,
+    "velocity_sigma": 0.4,
+    "distance_sigma": 0.25,
+    "motif_threshold": 0.5,
+    "no_stronger_than_weak": true
+  },
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier"
+  },
+  "base_runs": [
+    {
+      "run_id": "S21_phase_corridor_vweak",
+      "summary": {
+        "run_id": "S21_phase_corridor_vweak",
+        "representative_id": "counter_propagating_corridor",
+        "registration_class": "phase_coherence",
+        "condition_id": "very_weak",
+        "eps": 0.01,
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.9842431895883714,
+        "binding_persistence_score": 0.6666666666666666,
+        "coarse_persistence_sigma4": 1.0,
+        "mean_registration_strength": 0.06473971094376164,
+        "max_registration_strength": 0.0937798354715585,
+        "registration_duty_cycle": 0.0,
+        "effective_interaction_energy_fraction": 0.0003946170884613514,
+        "encounter_dwell_mean": 0.0,
+        "motif_survival_time": 0.0,
+        "corridor_dwell_time": 0.0,
+        "transport_channel_locking": 0,
+        "local_transport_anisotropy_index": 1.566616752903214,
+        "trajectory_curvature_proxy": 0.0,
+        "energy_dispersion_shift": -0.0002622808026620849,
+        "new_ordering_class": 0,
+        "composite_lifetime_delta": 0.0,
+        "binding_persistence_delta": 0.0,
+        "coarse_persistence_delta": 0.0,
+        "corridor_dwell_delta": 0.0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "output_label": "no registration effect",
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "notes": "transport-style control and corridor-locking test"
+      }
+    }
+  ],
+  "output_label_counts": {
+    "no registration effect": 1
+  },
+  "promoted_followup": null,
+  "conclusion": "Stage 21 tests whether selective interaction eligibility can create persistence without substrate memory on the projected transverse architecture."
+}

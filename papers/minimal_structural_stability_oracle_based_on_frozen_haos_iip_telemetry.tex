@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper is not a new phase. It is a tool-facing compression of the already frozen HAOS-IIP telemetry layer into one callable stability oracle. The scope is deliberately narrow: given an evolving graph-like trajectory, determine whether it remains coherent, becomes weakly deformed, or collapses into fragmentation. The public implementation is exposed as \texttt{python3 -m haos\_iip.demo stability}. It reuses only frozen telemetry for persistence, ordering, acyclicity, causal depth, and order compatibility, while using a lightweight synthetic proxy for the distance-coherence readout in the public example layer. On the default deterministic bundle, the classifier separates three synthetic scenarios into the intended ladder \texttt{baseline $\to$ stable}, \texttt{perturbed $\to$ marginal}, and \texttt{fragmented $\to$ unstable}. On a small deterministic scan over noise and connectivity-drop parameters, the baseline scenario yields $3$ stable cells, $0$ marginal cells, and $6$ unstable cells. The bounded conclusion is operational only: frozen HAOS-IIP telemetry can act as a structural-stability oracle for small evolving graph-like systems. No claim is made about continuum limits, spacetime emergence, metric geometry, or ontology.
+\end{abstract}
+
+\section{Problem}
+
+The immediate problem addressed here is practical rather than ontological. The question is not whether a new phase should be opened or whether deeper emergence claims are justified. The question is:
+\[
+\text{given a trajectory, can the frozen telemetry layer decide whether the structure remains stable?}
+\]
+
+That question matters because it turns the repository from a research archive into a callable diagnostic surface. A tool that distinguishes coherent, weakly deformed, and fragmented regimes is already useful even if no additional physics program is pursued.
+
+\section{Frozen Telemetry Basis}
+
+The oracle is built only on the already frozen telemetry layer in:
+\begin{itemize}
+\item \texttt{telemetry/frozen\_metrics.py}.
+\end{itemize}
+
+The core frozen computations reused directly are:
+\begin{itemize}
+\item persistence time;
+\item event-threshold arrival ordering;
+\item reconstructed influence edges;
+\item acyclicity score;
+\item causal-depth extraction;
+\item order compatibility.
+\end{itemize}
+
+For public readability, the user-facing output applies one alias layer:
+\begin{itemize}
+\item persistence $\mapsto$ structural retention;
+\item ordering $\mapsto$ temporal consistency;
+\item depth drift $\mapsto$ causal deformation;
+\item distance coherence $\mapsto$ geometric integrity.
+\end{itemize}
+
+The first three remain direct frozen telemetry outputs. The fourth is a lightweight synthetic proxy used only in the demo layer so a small public ladder can be shown without touching any frozen phase bundle.
+
+\section{Synthetic Scenario Surface}
+
+The public demo consumes three deterministic scenarios:
+\begin{itemize}
+\item \texttt{baseline};
+\item \texttt{perturbed};
+\item \texttt{fragmented}.
+\end{itemize}
+
+These are stored in:
+\begin{itemize}
+\item \texttt{examples/scenarios/baseline.json};
+\item \texttt{examples/scenarios/perturbed.json};
+\item \texttt{examples/scenarios/fragmented.json}.
+\end{itemize}
+
+The demo also exposes deterministic generator controls:
+\begin{itemize}
+\item \texttt{--noise};
+\item \texttt{--connectivity-drop};
+\item \texttt{--cluster-split}.
+\end{itemize}
+
+These modifiers perturb only the synthetic scenario layer. They do not edit, reinterpret, or reopen any frozen authority phase.
+
+\section{CLI Interface}
+
+The primary public entrypoint is:
+\begin{verbatim}
+python3 -m haos_iip.demo stability
+\end{verbatim}
+
+Machine-readable mode is available through:
+\begin{verbatim}
+python3 -m haos_iip.demo stability baseline --json
+\end{verbatim}
+
+The JSON payload includes:
+\begin{itemize}
+\item the scenario name;
+\item the classification label;
+\item structural retention;
+\item temporal consistency;
+\item causal deformation;
+\item geometric integrity;
+\item the underlying technical metrics;
+\item artifact paths for the generated CSV and SVG outputs.
+\end{itemize}
+
+Deterministic parameter-space exploration is available through scan mode:
+\begin{verbatim}
+python3 -m haos_iip.demo stability \
+  --scan noise=0.00:0.10:0.05 connectivity=0.00:0.20:0.10
+\end{verbatim}
+
+This writes a scan-grid CSV and a heatmap SVG while preserving the same frozen telemetry basis.
+
+\section{Classification Ladder}
+
+The default deterministic bundle yields the following compact result:
+
+\begin{center}
+\begin{tabular}{lccccr}
+\toprule
+scenario & retention & consistency & deformation & integrity & class \\
+\midrule
+baseline   & 1.000 & 1.000 & 0.000 & 1.000 & stable \\
+perturbed  & 0.750 & 0.833 & 0.062 & 0.625 & marginal \\
+fragmented & 0.250 & 0.656 & 0.172 & 0.375 & unstable \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This is the smallest useful result. The classifier does not just print raw telemetry. It organizes the outputs into an interpretable ladder that a human or an agent can consume quickly.
+
+\section{Deterministic Scan Behavior}
+
+The small scan
+\[
+\texttt{noise} \in \{0.00,0.05,0.10\},
+\qquad
+\texttt{connectivity\_drop} \in \{0.00,0.10,0.20\}
+\]
+was evaluated on the \texttt{baseline} scenario.
+
+The resulting classification counts are:
+\begin{itemize}
+\item stable: $3$;
+\item marginal: $0$;
+\item unstable: $6$.
+\end{itemize}
+
+That scan is intentionally tiny, but it already changes the character of the tool. The system is no longer a static example only; it becomes a deterministic parameter-space explorer over a small synthetic regime.
+
+\section{Why This Matters}
+
+The oracle demonstrates three practical properties at once:
+\begin{itemize}
+\item frozen telemetry can be reused without opening new phases;
+\item the outputs are interpretable enough for a human-facing command-line tool;
+\item the interface is structured enough for downstream agent or pipeline use.
+\end{itemize}
+
+In that sense the result is not ``new physics.'' It is the first usable unit extracted from the broader HAOS-IIP program.
+
+\section{Limits and Non-Claims}
+
+This oracle should be interpreted as:
+\begin{itemize}
+\item a structural-stability diagnostic;
+\item a callable telemetry surface;
+\item a deterministic synthetic scenario explorer.
+\end{itemize}
+
+It should not be interpreted as:
+\begin{itemize}
+\item a new frozen authority phase;
+\item evidence of continuum limits;
+\item evidence of metric geometry;
+\item evidence of spacetime emergence;
+\item evidence of physical ontology.
+\end{itemize}
+
+The public distance readout in particular is a demo-layer proxy, not a new geometrical claim.
+
+\section{Conclusion}
+
+Frozen HAOS-IIP telemetry can be compressed into a minimal structural-stability oracle. The resulting tool distinguishes coherent, weakly perturbed, and strongly fragmented synthetic dynamics; exposes human-readable and machine-readable outputs; and supports a small deterministic scan surface without modifying any frozen phase bundle. That is sufficient to establish a practical diagnostic capability. It is not sufficient to establish ontology.
+
+\end{document}

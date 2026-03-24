@@ -1,0 +1,309 @@
+{
+  "timestamp": "2026-03-21T14:41:26Z",
+  "phase": 6,
+  "phase_name": "phase6-operator",
+  "status": "passed",
+  "selected_operator_class": "cochain_laplacian",
+  "operator_label": "branch_local_periodic_dk2d_cochain_laplacian",
+  "operator_rule": "For each refinement level, build the periodic DK2D complex with the frozen Phase IV base epsilon and set O_h to the full block cochain Laplacian delta_h.",
+  "frozen_inputs": {
+    "phase4_bundle": "phase4-sector-freeze/runs/phase4_sector_freeze_bundle_latest.json",
+    "phase4_config": "phase4-sector-freeze/configs/stage24_4_stable_smeared_law_and_ordering_extension_boundary_runs.json",
+    "phase5_runs_ledger": "phase5-readout/runs/phase5_runs_ledger_latest.json",
+    "phase4_sector_identifier": "phaseIV_stable_smeared_sector",
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "base_epsilon": 0.2
+  },
+  "refinement_hierarchy": {
+    "h_definition": "h = 1 / n_side on the unit-periodic lattice; it is the lattice-spacing surrogate used to order refinements.",
+    "level_parameter": "n_side",
+    "construction_rule_constant": true,
+    "refinement_multipliers": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "levels": [
+      {
+        "level_id": "R1",
+        "refinement_multiplier": 1,
+        "n_side": 12,
+        "h": 0.083333333333
+      },
+      {
+        "level_id": "R2",
+        "refinement_multiplier": 2,
+        "n_side": 24,
+        "h": 0.041666666667
+      },
+      {
+        "level_id": "R3",
+        "refinement_multiplier": 3,
+        "n_side": 36,
+        "h": 0.027777777778
+      },
+      {
+        "level_id": "R4",
+        "refinement_multiplier": 4,
+        "n_side": 48,
+        "h": 0.020833333333
+      }
+    ]
+  },
+  "diagnostic_thresholds": {
+    "hermiticity_tolerance": 1e-12,
+    "semiboundedness_tolerance": 1e-08,
+    "nullspace_tolerance": 1e-08,
+    "reordering_tolerance": 1e-08
+  },
+  "aggregate_diagnostics": {
+    "all_levels_admissible": true,
+    "spectral_radius_non_decreasing": true,
+    "nullspace_estimate_consistent": true,
+    "node_reordering_consistent": true,
+    "first_positive_eigenvalue_positive": true,
+    "max_hermiticity_defect": 0.0,
+    "minimum_sampled_eigenvalue": -0.0,
+    "minimum_random_rayleigh": 3.709132539465,
+    "nullspace_estimate_values": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "spectral_radius_values": [
+      7.862309796963,
+      7.965353020924,
+      7.984582776023,
+      7.991324152244
+    ],
+    "first_positive_eigenvalue_values": [
+      0.263337445092,
+      0.067853205626,
+      0.030325938407,
+      0.017091721482
+    ]
+  },
+  "level_summaries": [
+    {
+      "level_id": "R1",
+      "refinement_multiplier": 1,
+      "n_side": 12,
+      "h": 0.083333333333,
+      "dimension": 576,
+      "zero_form_size": 144,
+      "one_form_size": 288,
+      "two_form_size": 144,
+      "nnz": 2880,
+      "density": 0.008680555556,
+      "sparsity_fraction": 0.991319444444,
+      "hermiticity_defect": 0.0,
+      "minimum_random_rayleigh": 3.709132539465,
+      "sampled_smallest_eigenvalue": -0.0,
+      "sampled_first_positive_eigenvalue": 0.263337445092,
+      "sampled_spectral_radius": 7.862309796963,
+      "nullspace_estimate": 4,
+      "node_reordering_similarity_defect": 0.0,
+      "admissible": true,
+      "sampled_smallest_eigenvalues": [
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.263337445092,
+        0.263337445092,
+        0.263337445092,
+        0.263337445092,
+        0.263337445092,
+        0.263337445092,
+        0.526674890185,
+        0.526674890185
+      ],
+      "sampled_largest_eigenvalues": [
+        7.598972351871,
+        7.598972351871,
+        7.598972351871,
+        7.862309796963,
+        7.862309796963,
+        7.862309796963
+      ],
+      "random_rayleigh_samples": [
+        4.055651816493,
+        3.86746412452,
+        3.937876631048,
+        3.709132539465,
+        4.018870656036,
+        3.922390684976
+      ]
+    },
+    {
+      "level_id": "R2",
+      "refinement_multiplier": 2,
+      "n_side": 24,
+      "h": 0.041666666667,
+      "dimension": 2304,
+      "zero_form_size": 576,
+      "one_form_size": 1152,
+      "two_form_size": 576,
+      "nnz": 11520,
+      "density": 0.002170138889,
+      "sparsity_fraction": 0.997829861111,
+      "hermiticity_defect": 0.0,
+      "minimum_random_rayleigh": 3.821621304156,
+      "sampled_smallest_eigenvalue": -0.0,
+      "sampled_first_positive_eigenvalue": 0.067853205626,
+      "sampled_spectral_radius": 7.965353020924,
+      "nullspace_estimate": 4,
+      "node_reordering_similarity_defect": 0.0,
+      "admissible": true,
+      "sampled_smallest_eigenvalues": [
+        -0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.067853205626,
+        0.067853205626,
+        0.067853205626,
+        0.067853205626,
+        0.067853205626,
+        0.067853205626,
+        0.135706411252,
+        0.135706411252
+      ],
+      "sampled_largest_eigenvalues": [
+        7.829646609673,
+        7.829646609673,
+        7.897499815298,
+        7.897499815298,
+        7.965353020924,
+        7.965353020924
+      ],
+      "random_rayleigh_samples": [
+        4.05564744496,
+        4.017463524964,
+        3.979997752287,
+        3.821621304156,
+        4.002153860042,
+        4.029113967154
+      ]
+    },
+    {
+      "level_id": "R3",
+      "refinement_multiplier": 3,
+      "n_side": 36,
+      "h": 0.027777777778,
+      "dimension": 5184,
+      "zero_form_size": 1296,
+      "one_form_size": 2592,
+      "two_form_size": 1296,
+      "nnz": 25920,
+      "density": 0.000964506173,
+      "sparsity_fraction": 0.999035493827,
+      "hermiticity_defect": 0.0,
+      "minimum_random_rayleigh": 3.948047834415,
+      "sampled_smallest_eigenvalue": -0.0,
+      "sampled_first_positive_eigenvalue": 0.030325938407,
+      "sampled_spectral_radius": 7.984582776023,
+      "nullspace_estimate": 4,
+      "node_reordering_similarity_defect": 0.0,
+      "admissible": true,
+      "sampled_smallest_eigenvalues": [
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.030325938407,
+        0.030325938407,
+        0.030325938407,
+        0.030325938407,
+        0.030325938407,
+        0.030325938407,
+        0.060651876814,
+        0.060651876814
+      ],
+      "sampled_largest_eigenvalues": [
+        7.923930899209,
+        7.923930899209,
+        7.954256837616,
+        7.954256837616,
+        7.984582776023,
+        7.984582776023
+      ],
+      "random_rayleigh_samples": [
+        3.982591300387,
+        4.050807611955,
+        4.046959663755,
+        3.948047834415,
+        3.984812826106,
+        3.980937071781
+      ]
+    },
+    {
+      "level_id": "R4",
+      "refinement_multiplier": 4,
+      "n_side": 48,
+      "h": 0.020833333333,
+      "dimension": 9216,
+      "zero_form_size": 2304,
+      "one_form_size": 4608,
+      "two_form_size": 2304,
+      "nnz": 46080,
+      "density": 0.000542534722,
+      "sparsity_fraction": 0.999457465278,
+      "hermiticity_defect": 0.0,
+      "minimum_random_rayleigh": 3.956721474372,
+      "sampled_smallest_eigenvalue": -0.0,
+      "sampled_first_positive_eigenvalue": 0.017091721482,
+      "sampled_spectral_radius": 7.991324152244,
+      "nullspace_estimate": 4,
+      "node_reordering_similarity_defect": 0.0,
+      "admissible": true,
+      "sampled_smallest_eigenvalues": [
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.017091721482,
+        0.017091721482,
+        0.017091721482,
+        0.017091721482,
+        0.017091721482,
+        0.017091721482,
+        0.034183442965,
+        0.034183442965
+      ],
+      "sampled_largest_eigenvalues": [
+        7.95714070928,
+        7.95714070928,
+        7.974232430762,
+        7.974232430762,
+        7.991324152244,
+        7.991324152244
+      ],
+      "random_rayleigh_samples": [
+        4.057979219271,
+        3.956721474372,
+        3.959396741194,
+        3.968665244738,
+        4.026784214309,
+        3.95920397943
+      ]
+    }
+  ],
+  "artifacts": {
+    "technical_note": "phase6-operator/phase6_operator_freeze.md",
+    "manifest_json": "phase6-operator/phase6_operator_manifest.json",
+    "construction_script": "phase6-operator/build_operator_family.py",
+    "refinement_ledger_csv": "phase6-operator/phase6_refinement_ledger.csv",
+    "runs_json": "phase6-operator/phase6_runs.json"
+  },
+  "success": true,
+  "claim_boundary": "Phase VI authority is limited to the frozen cochain-Laplacian family built on the periodic DK2D branch-local complex across the declared refinement hierarchy. It does not assert continuum Laplacians, heat-kernel asymptotics, geometric coefficients, spectral invariants, or continuum correspondence.",
+  "conclusion": "Phase VI now has a frozen operator family suitable for spectral feasibility testing."
+}

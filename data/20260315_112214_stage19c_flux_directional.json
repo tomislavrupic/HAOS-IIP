@@ -1,0 +1,84 @@
+{
+  "stage": "Stage 19C",
+  "description": "Minimal 9-run pilot for flux-driven directional substrate back-reaction on the frozen kernel-induced cochain architecture.",
+  "kernel_law": {
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "packet_family": "frozen_stage13_family",
+    "coupling_class": "flux_directional_substrate_back_reaction",
+    "flux_estimator": "smoothed_signed_edge_flux",
+    "flux_memory_class": "single_horizon_exponential_decay",
+    "flux_memory_tau": 0.3,
+    "flux_smoothing_sigma": 2.0,
+    "kernel_update_projection": "bounded_directional",
+    "kernel_update_clamp": 0.05,
+    "delta_units": "dimensionless"
+  },
+  "parameter_policy": {
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "packet_family": "frozen_stage13_family",
+    "coupling_class": "flux_directional_substrate_back_reaction",
+    "flux_estimator": "smoothed_signed_edge_flux",
+    "flux_memory_class": "single_horizon_exponential_decay",
+    "flux_memory_tau": 0.3,
+    "flux_smoothing_sigma": 2.0,
+    "kernel_update_projection": "bounded_directional",
+    "kernel_update_clamp": 0.05,
+    "delta_units": "dimensionless"
+  },
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and projected transverse seed carried from the late Phase I ladder into the Phase II substrate tests"
+  },
+  "base_runs": [
+    {
+      "run_id": "S19C_corridor_vweak",
+      "summary": {
+        "run_id": "S19C_corridor_vweak",
+        "representative_id": "counter_propagating_corridor",
+        "condition_id": "very_weak",
+        "substrate_law": "flux_directional",
+        "delta": 0.01,
+        "tau_residence": 0.3280810631961238,
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.9842431895883714,
+        "binding_persistence_score": 0.6666666666666666,
+        "coarse_persistence_sigma4": 1.0,
+        "reinforcement_field_norm": 0.00022657648278427855,
+        "kernel_deviation_norm": 2.265764827840636e-06,
+        "max_local_kernel_deformation": 1.254817760076854e-05,
+        "directional_signal_strength": 6.0858449285743353e-05,
+        "directional_support_fraction": 0.040027006172839504,
+        "trajectory_curvature_proxy": 0.19885479714288903,
+        "corridor_dwell_time": 0.0,
+        "local_transport_anisotropy_index": 0.7941292229654545,
+        "new_ordering_class": 0,
+        "composite_lifetime_delta": 0.0,
+        "binding_persistence_delta": 0.0,
+        "coarse_persistence_delta": 0.0,
+        "transport_channel_locking": 0,
+        "directional_transport_stabilized": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "output_label": "no directional substrate effect",
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "notes": "transport-style control and expected null candidate"
+      }
+    }
+  ],
+  "output_label_counts": {
+    "no directional substrate effect": 1
+  },
+  "promoted_followup": null,
+  "conclusion": "Stage 19C tests whether minimal bounded flux-driven directional substrate back-reaction can create directional transport memory with persistence consequences on the projected transverse architecture."
+}

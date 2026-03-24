@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-03-21T14:41:26Z",
+  "phase": 6,
+  "phase_name": "phase6-operator",
+  "runner": "phase6-operator/build_operator_family.py",
+  "inputs": {
+    "phase4_bundle": "phase4-sector-freeze/runs/phase4_sector_freeze_bundle_latest.json",
+    "phase4_config": "phase4-sector-freeze/configs/stage24_4_stable_smeared_law_and_ordering_extension_boundary_runs.json",
+    "phase5_runs_ledger": "phase5-readout/runs/phase5_runs_ledger_latest.json"
+  },
+  "selected_operator_class": "cochain_laplacian",
+  "refinement_levels": [
+    {
+      "level_id": "R1",
+      "n_side": 12,
+      "h": 0.083333333333,
+      "dimension": 576,
+      "nnz": 2880,
+      "admissible": true,
+      "sampled_smallest_eigenvalue": -0.0,
+      "sampled_first_positive_eigenvalue": 0.263337445092,
+      "sampled_spectral_radius": 7.862309796963,
+      "nullspace_estimate": 4,
+      "node_reordering_similarity_defect": 0.0
+    },
+    {
+      "level_id": "R2",
+      "n_side": 24,
+      "h": 0.041666666667,
+      "dimension": 2304,
+      "nnz": 11520,
+      "admissible": true,
+      "sampled_smallest_eigenvalue": -0.0,
+      "sampled_first_positive_eigenvalue": 0.067853205626,
+      "sampled_spectral_radius": 7.965353020924,
+      "nullspace_estimate": 4,
+      "node_reordering_similarity_defect": 0.0
+    },
+    {
+      "level_id": "R3",
+      "n_side": 36,
+      "h": 0.027777777778,
+      "dimension": 5184,
+      "nnz": 25920,
+      "admissible": true,
+      "sampled_smallest_eigenvalue": -0.0,
+      "sampled_first_positive_eigenvalue": 0.030325938407,
+      "sampled_spectral_radius": 7.984582776023,
+      "nullspace_estimate": 4,
+      "node_reordering_similarity_defect": 0.0
+    },
+    {
+      "level_id": "R4",
+      "n_side": 48,
+      "h": 0.020833333333,
+      "dimension": 9216,
+      "nnz": 46080,
+      "admissible": true,
+      "sampled_smallest_eigenvalue": -0.0,
+      "sampled_first_positive_eigenvalue": 0.017091721482,
+      "sampled_spectral_radius": 7.991324152244,
+      "nullspace_estimate": 4,
+      "node_reordering_similarity_defect": 0.0
+    }
+  ],
+  "aggregate_diagnostics": {
+    "all_levels_admissible": true,
+    "spectral_radius_non_decreasing": true,
+    "nullspace_estimate_consistent": true,
+    "node_reordering_consistent": true,
+    "first_positive_eigenvalue_positive": true,
+    "max_hermiticity_defect": 0.0,
+    "minimum_sampled_eigenvalue": -0.0,
+    "minimum_random_rayleigh": 3.709132539465,
+    "nullspace_estimate_values": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "spectral_radius_values": [
+      7.862309796963,
+      7.965353020924,
+      7.984582776023,
+      7.991324152244
+    ],
+    "first_positive_eigenvalue_values": [
+      0.263337445092,
+      0.067853205626,
+      0.030325938407,
+      0.017091721482
+    ]
+  },
+  "runtime_seconds": 0.625705,
+  "artifacts": {
+    "technical_note": "phase6-operator/phase6_operator_freeze.md",
+    "manifest_json": "phase6-operator/phase6_operator_manifest.json",
+    "refinement_ledger_csv": "phase6-operator/phase6_refinement_ledger.csv",
+    "runs_json": "phase6-operator/phase6_runs.json"
+  },
+  "success": true
+}

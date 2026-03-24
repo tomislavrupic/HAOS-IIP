@@ -1,0 +1,235 @@
+{
+  "stage": "24.4_stable_smeared_law_and_ordering_extension_boundary_test",
+  "description": "Phase IV-A4 boundary test for the fixed Stage 24.2 threshold law and the fixed Stage 24.3 inverse flow-survival ordering relation on the frozen clustered Dirac-Kahler branch.",
+  "required_inputs": {
+    "stage23_10": {
+      "stage_label": "23.10 / III-C1",
+      "json_path": "data/20260316_102709_stage23_10_dk_braid_mechanism_isolation_probe.json",
+      "csv_path": "data/20260316_102709_stage23_10_dk_braid_mechanism_isolation_probe.csv"
+    },
+    "stage23_12": {
+      "stage_label": "23.12 / III-C3",
+      "json_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.json",
+      "csv_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.csv"
+    },
+    "stage23_14": {
+      "stage_label": "23.14 / III-C5",
+      "json_path": "data/20260316_111201_stage23_14_phaseIII_final_consolidation_and_freeze.json",
+      "csv_path": "data/20260316_111201_stage23_14_phaseIII_claims_ledger.csv"
+    },
+    "stage24_1": {
+      "stage_label": "24.1 / IV-A1",
+      "json_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.json",
+      "csv_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.csv"
+    },
+    "stage24_2": {
+      "stage_label": "24.2 / IV-A2",
+      "json_path": "data/20260316_115346_stage24_2_smeared_sector_effective_law_extraction.json",
+      "csv_path": "data/20260316_115346_stage24_2_smeared_sector_effective_law_model_ledger.csv"
+    },
+    "stage24_3": {
+      "stage_label": "24.3 / IV-A3",
+      "json_path": "data/20260316_120334_stage24_3_stable_smeared_quasi_invariant_probe.json",
+      "csv_path": "data/20260316_120334_stage24_3_stable_smeared_quasi_invariant_ledger.csv"
+    }
+  },
+  "common_fields": {
+    "operator_sector": "dirac_kahler_minimal_0_1_form",
+    "boundary_type": "periodic",
+    "graph_type": "regular_lattice",
+    "kernel_type": "static_gaussian",
+    "architecture_label": "frozen_haos_iip_clustered_dk_phaseIV_extension_test",
+    "base_resolution": 12,
+    "refined_resolution": 24,
+    "base_epsilon": 0.2,
+    "mean_width": 0.08,
+    "base_separation": 0.08,
+    "amplitude_scale": 1.0,
+    "t_final": 0.9,
+    "dt_scale": 0.35,
+    "weak_beta_values": [0.01, 0.02],
+    "baseline_phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575],
+    "fixed_flow_threshold": 0.884308,
+    "law_fit_threshold": 1.0,
+    "minimum_ordering_subset_size": 3,
+    "ordering_rho_threshold": -0.9,
+    "ordering_gap_threshold": 0.8,
+    "monotonic_consistency_threshold": 0.9
+  },
+  "extensions": [
+    {
+      "extension_id": "IVA4_E1_baseline",
+      "extension_class": "clustered_texture_perturbation",
+      "extension_level": "baseline",
+      "extension_description": "Strong-asymmetry clustered anchor with no extra structural perturbation.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E1_mild",
+      "extension_class": "clustered_texture_perturbation",
+      "extension_level": "mild",
+      "extension_description": "Mild clustered texture weakening through reduced width asymmetry.",
+      "width_ratio_a_to_b": 1.30,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E1_moderate",
+      "extension_class": "clustered_texture_perturbation",
+      "extension_level": "moderate",
+      "extension_description": "Moderate clustered texture weakening through further reduced width asymmetry.",
+      "width_ratio_a_to_b": 1.20,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E2_baseline",
+      "extension_class": "support_anisotropy_skew",
+      "extension_level": "baseline",
+      "extension_description": "Anchor support with isotropic packet envelope.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E2_mild",
+      "extension_class": "support_anisotropy_skew",
+      "extension_level": "mild",
+      "extension_description": "Mild local support anisotropy with fixed operator and width anchor.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.04,
+      "anisotropy_y": 0.96,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E2_moderate",
+      "extension_class": "support_anisotropy_skew",
+      "extension_level": "moderate",
+      "extension_description": "Moderate support anisotropy within the same clustered branch.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.08,
+      "anisotropy_y": 0.92,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E3_baseline",
+      "extension_class": "motif_structure_perturbation",
+      "extension_level": "baseline",
+      "extension_description": "Anchor clustered pair with no additional local motif packet.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E3_mild",
+      "extension_class": "motif_structure_perturbation",
+      "extension_level": "mild",
+      "extension_description": "Mild local motif injection via a low-amplitude tertiary support packet.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.12,
+      "motif_offset_y": 0.08,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E3_moderate",
+      "extension_class": "motif_structure_perturbation",
+      "extension_level": "moderate",
+      "extension_description": "Moderate motif injection while remaining clustered and operator-frozen.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.24,
+      "motif_offset_y": 0.08,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E4_baseline",
+      "extension_class": "corridor_geometry_perturbation",
+      "extension_level": "baseline",
+      "extension_description": "Baseline phase corridor used in Stage 23.12 and carried into Phase IV.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.375, 0.475, 0.5, 0.55, 0.575]
+    },
+    {
+      "extension_id": "IVA4_E4_mild",
+      "extension_class": "corridor_geometry_perturbation",
+      "extension_level": "mild",
+      "extension_description": "Mild corridor narrowing inside the branch-valid phase window.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.4, 0.45, 0.5, 0.525, 0.55]
+    },
+    {
+      "extension_id": "IVA4_E4_moderate",
+      "extension_class": "corridor_geometry_perturbation",
+      "extension_level": "moderate",
+      "extension_description": "Moderate corridor broadening while remaining local to the clustered branch.",
+      "width_ratio_a_to_b": 1.35,
+      "separation": 0.08,
+      "anisotropy_x": 1.0,
+      "anisotropy_y": 1.0,
+      "motif_amplitude_ratio": 0.0,
+      "motif_offset_y": 0.0,
+      "phase_values_fraction_of_pi": [0.35, 0.45, 0.5, 0.55, 0.6]
+    }
+  ],
+  "allowed_core_observables": [
+    "topology_survival_time",
+    "refinement_stability_flag",
+    "weak_coupling_stability_flag",
+    "reverse_stability_flag",
+    "flow_concentration_index"
+  ],
+  "allowed_context_coordinates": [
+    "phase_corridor_position",
+    "phase_corridor_width"
+  ],
+  "forbidden_observables": [
+    "transfer_asymmetry",
+    "coherence_decay_rate",
+    "topology_return_error",
+    "braid_like_exchange_indicator",
+    "mechanism_sensitivity_score"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "stage": "Stage 19D",
+  "description": "Minimal 9-run persistence-first pilot for mixed scalar + vector substrate reinforcement on the frozen kernel-induced cochain architecture.",
+  "kernel_law": {
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "packet_family": "frozen_stage13_family",
+    "coupling_class": "mixed_scalar_vector_substrate_reinforcement",
+    "scalar_estimator": "smoothed_amplitude_density",
+    "vector_estimator": "smoothed_signed_edge_flux",
+    "memory_class": "single_horizon_exponential_decay",
+    "memory_tau": 0.3,
+    "scalar_smoothing_sigma": 2.0,
+    "vector_smoothing_sigma": 2.0,
+    "kernel_update_clamp": 0.05,
+    "delta_units": "dimensionless"
+  },
+  "parameter_policy": {
+    "operator_sector": "projected_transverse",
+    "boundary_type": "periodic",
+    "packet_family": "frozen_stage13_family",
+    "coupling_class": "mixed_scalar_vector_substrate_reinforcement",
+    "scalar_estimator": "smoothed_amplitude_density",
+    "vector_estimator": "smoothed_signed_edge_flux",
+    "memory_class": "single_horizon_exponential_decay",
+    "memory_tau": 0.3,
+    "scalar_smoothing_sigma": 2.0,
+    "vector_smoothing_sigma": 2.0,
+    "kernel_update_clamp": 0.05,
+    "delta_units": "dimensionless"
+  },
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and projected transverse seed carried from the late Phase I ladder into the Phase II substrate tests"
+  },
+  "base_runs": [
+    {
+      "run_id": "S19D_corridor_balanced_low",
+      "summary": {
+        "run_id": "S19D_corridor_balanced_low",
+        "representative_id": "counter_propagating_corridor",
+        "condition_id": "balanced_low",
+        "substrate_law": "mixed_scalar_vector",
+        "eps_s": 0.01,
+        "eps_v": 0.01,
+        "tau_residence": 0.3280810631961238,
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.9842431895883714,
+        "binding_persistence_score": 0.6666666666666666,
+        "coarse_persistence_sigma4": 1.0,
+        "scalar_field_norm": 0.3349894218984527,
+        "vector_field_norm": 0.0002244967343273625,
+        "mixed_field_norm": 0.003352043094664794,
+        "kernel_deviation_norm": 0.00335206053152886,
+        "max_local_kernel_deformation": 0.01692406858826767,
+        "scalar_signal_strength": 0.15407676260944203,
+        "vector_signal_strength": 6.048557220735697e-05,
+        "scalar_support_fraction": 0.06847993827160494,
+        "directional_support_fraction": 0.040027006172839504,
+        "trajectory_curvature_proxy": 0.17593021451319057,
+        "corridor_dwell_time": 0.0,
+        "local_transport_anisotropy_index": 0.793813997549881,
+        "energy_dispersion_shift": 0.0037063535170440602,
+        "new_ordering_class": 0,
+        "composite_lifetime_delta": 0.0,
+        "binding_persistence_delta": 0.0,
+        "coarse_persistence_delta": 0.0,
+        "transport_channel_locking": 0,
+        "mixed_transport_stabilized": 0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "output_label": "no mixed substrate effect",
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "notes": "transport-style control and expected null candidate"
+      }
+    }
+  ],
+  "output_label_counts": {
+    "no mixed substrate effect": 1
+  },
+  "promoted_followup": null,
+  "conclusion": "Stage 19D tests whether minimal bounded mixed scalar-density and vector-flux substrate reinforcement can create persistence consequences on the projected transverse architecture."
+}

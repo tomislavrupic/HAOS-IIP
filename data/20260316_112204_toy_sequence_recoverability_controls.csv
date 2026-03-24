@@ -1,0 +1,10 @@
+condition_id,family,repair_mode,protected_set,mean_protected_pairwise_coherence,variance,exact_recoverability_rate,trial_count,delta_vs_random_mean,delta_vs_contiguous_mean,beats_random_mean,beats_contiguous_mean,notes
+reported_baseline,reported,baseline,"(0, 1, 2, 5, 6, 8)",0.6898436666674691,0.036011871113811766,0.045275,200000,0.016102999999934253,0.051252999999931825,True,True,fixed candidate subset
+reported_full_repair,reported,full_repair,"(0, 1, 2, 5, 6, 8)",1.0,0.0,1.0,200000,0.0,0.0,False,False,fixed candidate subset
+reported_local_repair,reported,local_repair,"(0, 1, 2, 5, 6, 8)",0.7534920000004676,0.03433167260119718,0.13912,200000,0.015600666666539698,0.04985033333299538,True,True,fixed candidate subset
+random_baseline,random,baseline,,0.6737406666675348,0.036096625189044995,0.03774,200000,,,,,uniform random non-contiguous control
+random_full_repair,random,full_repair,,1.0,0.0,1.0,200000,,,,,uniform random non-contiguous control
+random_local_repair,random,local_repair,,0.7378913333339279,0.03461629130111621,0.11937,200000,,,,,uniform random non-contiguous control
+contiguous_baseline,contiguous,baseline,,0.6385906666675373,0.034778938222597866,0.024235,200000,,,,,uniform contiguous 6-position control
+contiguous_full_repair,contiguous,full_repair,,1.0,0.0,1.0,200000,,,,,uniform contiguous 6-position control
+contiguous_local_repair,contiguous,local_repair,,0.7036416666674722,0.03371620492890698,0.07883,200000,,,,,uniform contiguous 6-position control

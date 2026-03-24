@@ -1,0 +1,111 @@
+{
+  "name": "baseline",
+  "description": "Coherent propagation with monotone ordering and a metric-like distance proxy.",
+  "source": "source",
+  "nodes": ["source", "near", "mid", "far"],
+  "expected_shells": {
+    "source": 0,
+    "near": 1,
+    "mid": 2,
+    "far": 3
+  },
+  "ordering_threshold": 0.6,
+  "tau_grid": [0.0, 0.5, 1.0, 1.5, 2.0],
+  "persistence_history": [
+    {
+      "width_growth": 0.01,
+      "concentration_retention": 0.99,
+      "participation_growth": 0.03,
+      "overlap": 0.99,
+      "recovery_score": 0.98
+    },
+    {
+      "width_growth": 0.02,
+      "concentration_retention": 0.98,
+      "participation_growth": 0.05,
+      "overlap": 0.98,
+      "recovery_score": 0.97
+    },
+    {
+      "width_growth": 0.03,
+      "concentration_retention": 0.97,
+      "participation_growth": 0.08,
+      "overlap": 0.97,
+      "recovery_score": 0.96
+    },
+    {
+      "width_growth": 0.04,
+      "concentration_retention": 0.96,
+      "participation_growth": 0.10,
+      "overlap": 0.96,
+      "recovery_score": 0.95
+    },
+    {
+      "width_growth": 0.05,
+      "concentration_retention": 0.95,
+      "participation_growth": 0.12,
+      "overlap": 0.95,
+      "recovery_score": 0.94
+    }
+  ],
+  "windows": [
+    {
+      "probe_histories": {
+        "source": [0.90, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.20, 0.78, 0.95, 1.00, 1.00],
+        "mid": [0.08, 0.34, 0.80, 0.95, 1.00],
+        "far": [0.00, 0.10, 0.38, 0.77, 0.95]
+      }
+    },
+    {
+      "probe_histories": {
+        "source": [0.92, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.24, 0.75, 0.94, 1.00, 1.00],
+        "mid": [0.10, 0.36, 0.79, 0.94, 1.00],
+        "far": [0.02, 0.16, 0.40, 0.79, 0.95]
+      }
+    },
+    {
+      "probe_histories": {
+        "source": [0.88, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.18, 0.77, 0.96, 1.00, 1.00],
+        "mid": [0.06, 0.33, 0.82, 0.96, 1.00],
+        "far": [0.00, 0.14, 0.42, 0.78, 0.96]
+      }
+    },
+    {
+      "probe_histories": {
+        "source": [0.91, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.22, 0.79, 0.95, 1.00, 1.00],
+        "mid": [0.09, 0.35, 0.81, 0.95, 1.00],
+        "far": [0.01, 0.13, 0.39, 0.80, 0.96]
+      }
+    }
+  ],
+  "distance_proxy": {
+    "source": {
+      "source": 0.0,
+      "near": 1.0,
+      "mid": 2.0,
+      "far": 3.0
+    },
+    "near": {
+      "source": 1.0,
+      "near": 0.0,
+      "mid": 1.0,
+      "far": 2.0
+    },
+    "mid": {
+      "source": 2.0,
+      "near": 1.0,
+      "mid": 0.0,
+      "far": 1.0
+    },
+    "far": {
+      "source": 3.0,
+      "near": 2.0,
+      "mid": 1.0,
+      "far": 0.0
+    }
+  }
+}

@@ -1,0 +1,4 @@
+family_id,family_label,width_ratio_a_to_b,width_retreat_from_anchor,phase_count,law_accuracy,law_survives,predicted_stable_count,true_stable_count,near_threshold_contrast_count,ordering_defined,ordering_rho,ordering_survives,extension_status,notes
+strong_asymmetry,strong asymmetry,1.35,0.0,5,1.0000,True,5,5,0,True,-0.9747,True,law_survives_ordering_survives,Positive support survives in this family.
+moderate_asymmetry,moderate asymmetry,1.15,0.20000000000000018,5,1.0000,True,0,0,4,False,,False,law_survives_ordering_undefined,The threshold law excludes the entire family from the stable smeared sector.
+symmetric_clustered,symmetric clustered,1.0,0.3500000000000001,5,1.0000,True,0,0,1,False,,False,law_survives_ordering_undefined,The threshold law excludes the entire family from the stable smeared sector.

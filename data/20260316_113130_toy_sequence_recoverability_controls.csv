@@ -1,0 +1,46 @@
+perturbation_family,perturbation_description,subset_family,repair_mode,protected_set,mean_protected_pairwise_coherence,variance,exact_recoverability_rate,trial_count,delta_vs_random_mean,delta_vs_contiguous_mean,beats_random_mean,beats_contiguous_mean,notes
+random_swaps,three unconstrained swaps anywhere in the sequence,reported,baseline,"(0, 1, 2, 5, 6, 8)",0.689099999999994,0.03655674555556371,0.0415,2000,0.014799999999999702,0.05886666666666385,True,True,fixed candidate subset
+random_swaps,three unconstrained swaps anywhere in the sequence,reported,full_repair,"(0, 1, 2, 5, 6, 8)",1.0,0.0,1.0,2000,0.0,0.0,False,False,fixed candidate subset
+random_swaps,three unconstrained swaps anywhere in the sequence,reported,local_repair,"(0, 1, 2, 5, 6, 8)",0.7529999999999942,0.035013222222233575,0.143,2000,0.014266666666666539,0.05763333333333276,True,True,fixed candidate subset
+random_swaps,three unconstrained swaps anywhere in the sequence,random,baseline,,0.6742999999999943,0.03543728777778615,0.0335,2000,,,,,uniform random non-contiguous control
+random_swaps,three unconstrained swaps anywhere in the sequence,random,full_repair,,1.0,0.0,1.0,2000,,,,,uniform random non-contiguous control
+random_swaps,three unconstrained swaps anywhere in the sequence,random,local_repair,,0.7387333333333277,0.03412639555556474,0.123,2000,,,,,uniform random non-contiguous control
+random_swaps,three unconstrained swaps anywhere in the sequence,contiguous,baseline,,0.6302333333333302,0.03582150111111698,0.023,2000,,,,,uniform contiguous 6-position control
+random_swaps,three unconstrained swaps anywhere in the sequence,contiguous,full_repair,,1.0,0.0,1.0,2000,,,,,uniform contiguous 6-position control
+random_swaps,three unconstrained swaps anywhere in the sequence,contiguous,local_repair,,0.6953666666666615,0.0347874211111196,0.081,2000,,,,,uniform contiguous 6-position control
+adjacent_swaps,three adjacent swaps at arbitrary positions,reported,baseline,"(0, 1, 2, 5, 6, 8)",0.9432000000000006,0.0024404266666592234,0.3445,2000,0.008666666666670375,0.03833333333334754,True,True,fixed candidate subset
+adjacent_swaps,three adjacent swaps at arbitrary positions,reported,full_repair,"(0, 1, 2, 5, 6, 8)",1.0,0.0,1.0,2000,0.0,0.0,False,False,fixed candidate subset
+adjacent_swaps,three adjacent swaps at arbitrary positions,reported,local_repair,"(0, 1, 2, 5, 6, 8)",0.9869000000000013,0.0008350566666610604,0.8185,2000,0.0049000000000000155,0.025966666666668248,True,True,fixed candidate subset
+adjacent_swaps,three adjacent swaps at arbitrary positions,random,baseline,,0.9345333333333302,0.002745226666666878,0.288,2000,,,,,uniform random non-contiguous control
+adjacent_swaps,three adjacent swaps at arbitrary positions,random,full_repair,,1.0,0.0,1.0,2000,,,,,uniform random non-contiguous control
+adjacent_swaps,three adjacent swaps at arbitrary positions,random,local_repair,,0.9820000000000013,0.001142666666660186,0.76,2000,,,,,uniform random non-contiguous control
+adjacent_swaps,three adjacent swaps at arbitrary positions,contiguous,baseline,,0.904866666666653,0.003709648888915118,0.159,2000,,,,,uniform contiguous 6-position control
+adjacent_swaps,three adjacent swaps at arbitrary positions,contiguous,full_repair,,1.0,0.0,1.0,2000,,,,,uniform contiguous 6-position control
+adjacent_swaps,three adjacent swaps at arbitrary positions,contiguous,local_repair,,0.9609333333333331,0.0022871288888850483,0.55,2000,,,,,uniform contiguous 6-position control
+corridor_limited_swaps,three swaps restricted to one random contiguous corridor of width 4,reported,baseline,"(0, 1, 2, 5, 6, 8)",0.9466666666666673,0.0030666666666601117,0.408,2000,0.024133333333338003,0.07346666666667279,True,True,fixed candidate subset
+corridor_limited_swaps,three swaps restricted to one random contiguous corridor of width 4,reported,full_repair,"(0, 1, 2, 5, 6, 8)",1.0,0.0,1.0,2000,0.0,0.0,False,False,fixed candidate subset
+corridor_limited_swaps,three swaps restricted to one random contiguous corridor of width 4,reported,local_repair,"(0, 1, 2, 5, 6, 8)",0.9861333333333324,0.0012388266666675252,0.849,2000,0.01850000000000296,0.06063333333334242,True,True,fixed candidate subset
+corridor_limited_swaps,three swaps restricted to one random contiguous corridor of width 4,random,baseline,,0.9225333333333293,0.00572780444444998,0.3235,2000,,,,,uniform random non-contiguous control
+corridor_limited_swaps,three swaps restricted to one random contiguous corridor of width 4,random,full_repair,,1.0,0.0,1.0,2000,,,,,uniform random non-contiguous control
+corridor_limited_swaps,three swaps restricted to one random contiguous corridor of width 4,random,local_repair,,0.9676333333333295,0.0033590655555642,0.7045,2000,,,,,uniform random non-contiguous control
+corridor_limited_swaps,three swaps restricted to one random contiguous corridor of width 4,contiguous,baseline,,0.8731999999999945,0.011170648888896961,0.2155,2000,,,,,uniform contiguous 6-position control
+corridor_limited_swaps,three swaps restricted to one random contiguous corridor of width 4,contiguous,full_repair,,1.0,0.0,1.0,2000,,,,,uniform contiguous 6-position control
+corridor_limited_swaps,three swaps restricted to one random contiguous corridor of width 4,contiguous,local_repair,,0.92549999999999,0.008278638888915668,0.521,2000,,,,,uniform contiguous 6-position control
+burst_errors,"one random contiguous burst of width 4, internally permuted",reported,baseline,"(0, 1, 2, 5, 6, 8)",0.940533333333333,0.003214826666662063,0.357,2000,0.027233333333339993,0.076533333333341,True,True,fixed candidate subset
+burst_errors,"one random contiguous burst of width 4, internally permuted",reported,full_repair,"(0, 1, 2, 5, 6, 8)",1.0,0.0,1.0,2000,0.0,0.0,False,False,fixed candidate subset
+burst_errors,"one random contiguous burst of width 4, internally permuted",reported,local_repair,"(0, 1, 2, 5, 6, 8)",0.983399999999999,0.0014044400000002843,0.8155,2000,0.0216666666666685,0.06583333333333952,True,True,fixed candidate subset
+burst_errors,"one random contiguous burst of width 4, internally permuted",random,baseline,,0.913299999999993,0.006227554444456995,0.2735,2000,,,,,uniform random non-contiguous control
+burst_errors,"one random contiguous burst of width 4, internally permuted",random,full_repair,,1.0,0.0,1.0,2000,,,,,uniform random non-contiguous control
+burst_errors,"one random contiguous burst of width 4, internally permuted",random,local_repair,,0.9617333333333306,0.00394899555556083,0.652,2000,,,,,uniform random non-contiguous control
+burst_errors,"one random contiguous burst of width 4, internally permuted",contiguous,baseline,,0.863999999999992,0.011526222222238425,0.1965,2000,,,,,uniform contiguous 6-position control
+burst_errors,"one random contiguous burst of width 4, internally permuted",contiguous,full_repair,,1.0,0.0,1.0,2000,,,,,uniform contiguous 6-position control
+burst_errors,"one random contiguous burst of width 4, internally permuted",contiguous,local_repair,,0.9175666666666595,0.008664745555572617,0.442,2000,,,,,uniform contiguous 6-position control
+anisotropic_local_disruptions,one directional local displacement built from three consecutive adjacent swaps,reported,baseline,"(0, 1, 2, 5, 6, 8)",0.9610333333333368,0.0017860433333193315,0.495,2000,0.025366666666681636,0.06873333333335141,True,True,fixed candidate subset
+anisotropic_local_disruptions,one directional local displacement built from three consecutive adjacent swaps,reported,full_repair,"(0, 1, 2, 5, 6, 8)",1.0,0.0,1.0,2000,0.0,0.0,False,False,fixed candidate subset
+anisotropic_local_disruptions,one directional local displacement built from three consecutive adjacent swaps,reported,local_repair,"(0, 1, 2, 5, 6, 8)",0.9947000000000011,0.0003252433333293947,0.9205,2000,0.020799999999999375,0.055133333333351464,True,True,fixed candidate subset
+anisotropic_local_disruptions,one directional local displacement built from three consecutive adjacent swaps,random,baseline,,0.9356666666666552,0.004185666666691179,0.4265,2000,,,,,uniform random non-contiguous control
+anisotropic_local_disruptions,one directional local displacement built from three consecutive adjacent swaps,random,full_repair,,1.0,0.0,1.0,2000,,,,,uniform random non-contiguous control
+anisotropic_local_disruptions,one directional local displacement built from three consecutive adjacent swaps,random,local_repair,,0.9739000000000018,0.001614345555547625,0.671,2000,,,,,uniform random non-contiguous control
+anisotropic_local_disruptions,one directional local displacement built from three consecutive adjacent swaps,contiguous,baseline,,0.8922999999999854,0.007211821111146821,0.291,2000,,,,,uniform contiguous 6-position control
+anisotropic_local_disruptions,one directional local displacement built from three consecutive adjacent swaps,contiguous,full_repair,,1.0,0.0,1.0,2000,,,,,uniform contiguous 6-position control
+anisotropic_local_disruptions,one directional local displacement built from three consecutive adjacent swaps,contiguous,local_repair,,0.9395666666666497,0.003950034444483053,0.4955,2000,,,,,uniform contiguous 6-position control

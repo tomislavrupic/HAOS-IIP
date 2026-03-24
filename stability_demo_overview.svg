@@ -1,0 +1,127 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='760' viewBox='0 0 1100 760'>
+<rect width='100%' height='100%' fill='white'/>
+<text x='550' y='32' text-anchor='middle' font-size='22' font-family='Helvetica, Arial, sans-serif'>Trajectory Stability Demo</text>
+<text x='550' y='54' text-anchor='middle' font-size='12' fill='#4b5563' font-family='Helvetica, Arial, sans-serif'>Synthetic scenarios evaluated with the frozen telemetry layer plus a lightweight distance proxy</text>
+<rect x='60' y='70' width='470' height='250' fill='none' stroke='#d1d5db' stroke-width='1'/>
+<text x='295.0' y='90' text-anchor='middle' font-size='14' font-family='Helvetica, Arial, sans-serif'>Structural Retention</text>
+<line x1='115' y1='285' x2='510' y2='285' stroke='#374151' stroke-width='1.2'/>
+<line x1='115' y1='105' x2='115' y2='285' stroke='#374151' stroke-width='1.2'/>
+<line x1='115' y1='285.00' x2='510' y2='285.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='289.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.0</text>
+<line x1='115' y1='249.00' x2='510' y2='249.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='253.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.2</text>
+<line x1='115' y1='213.00' x2='510' y2='213.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='217.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.4</text>
+<line x1='115' y1='177.00' x2='510' y2='177.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='181.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.6</text>
+<line x1='115' y1='141.00' x2='510' y2='141.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='145.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.8</text>
+<line x1='115' y1='105.00' x2='510' y2='105.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='109.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.0</text>
+<line x1='115' y1='123.00' x2='510' y2='123.00' stroke='#0f766e' stroke-dasharray='5 4' stroke-width='1.2'/>
+<text x='506' y='119.00' text-anchor='end' font-size='9' fill='#0f766e' font-family='Helvetica, Arial, sans-serif'>stable line</text>
+<line x1='115' y1='168.00' x2='510' y2='168.00' stroke='#b45309' stroke-dasharray='5 4' stroke-width='1.2'/>
+<text x='506' y='164.00' text-anchor='end' font-size='9' fill='#b45309' font-family='Helvetica, Arial, sans-serif'>marginal line</text>
+<rect x='140' y='105.00' width='70' height='180.00' fill='#0f766e' opacity='0.88'/>
+<text x='175.00' y='99.00' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.00</text>
+<text x='175.00' y='303' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>baseline</text>
+<rect x='255' y='150.00' width='70' height='135.00' fill='#b45309' opacity='0.88'/>
+<text x='290.00' y='144.00' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.75</text>
+<text x='290.00' y='303' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>perturbed</text>
+<rect x='370' y='240.00' width='70' height='45.00' fill='#b91c1c' opacity='0.88'/>
+<text x='405.00' y='234.00' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.25</text>
+<text x='405.00' y='303' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>fragmented</text>
+<rect x='570' y='70' width='470' height='250' fill='none' stroke='#d1d5db' stroke-width='1'/>
+<text x='805.0' y='90' text-anchor='middle' font-size='14' font-family='Helvetica, Arial, sans-serif'>Temporal Consistency</text>
+<line x1='625' y1='285' x2='1020' y2='285' stroke='#374151' stroke-width='1.2'/>
+<line x1='625' y1='105' x2='625' y2='285' stroke='#374151' stroke-width='1.2'/>
+<line x1='625' y1='285.00' x2='1020' y2='285.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='289.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.0</text>
+<line x1='625' y1='249.00' x2='1020' y2='249.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='253.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.2</text>
+<line x1='625' y1='213.00' x2='1020' y2='213.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='217.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.4</text>
+<line x1='625' y1='177.00' x2='1020' y2='177.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='181.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.6</text>
+<line x1='625' y1='141.00' x2='1020' y2='141.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='145.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.8</text>
+<line x1='625' y1='105.00' x2='1020' y2='105.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='109.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.0</text>
+<line x1='625' y1='123.00' x2='1020' y2='123.00' stroke='#0f766e' stroke-dasharray='5 4' stroke-width='1.2'/>
+<text x='1016' y='119.00' text-anchor='end' font-size='9' fill='#0f766e' font-family='Helvetica, Arial, sans-serif'>stable line</text>
+<line x1='625' y1='150.00' x2='1020' y2='150.00' stroke='#b45309' stroke-dasharray='5 4' stroke-width='1.2'/>
+<text x='1016' y='146.00' text-anchor='end' font-size='9' fill='#b45309' font-family='Helvetica, Arial, sans-serif'>marginal line</text>
+<rect x='650' y='105.00' width='70' height='180.00' fill='#0f766e' opacity='0.88'/>
+<text x='685.00' y='99.00' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.00</text>
+<text x='685.00' y='303' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>baseline</text>
+<rect x='765' y='135.00' width='70' height='150.00' fill='#b45309' opacity='0.88'/>
+<text x='800.00' y='129.00' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.83</text>
+<text x='800.00' y='303' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>perturbed</text>
+<rect x='880' y='166.88' width='70' height='118.12' fill='#b91c1c' opacity='0.88'/>
+<text x='915.00' y='160.88' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.66</text>
+<text x='915.00' y='303' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>fragmented</text>
+<rect x='60' y='365' width='470' height='250' fill='none' stroke='#d1d5db' stroke-width='1'/>
+<text x='295.0' y='385' text-anchor='middle' font-size='14' font-family='Helvetica, Arial, sans-serif'>Causal Deformation (lower is better)</text>
+<line x1='115' y1='580' x2='510' y2='580' stroke='#374151' stroke-width='1.2'/>
+<line x1='115' y1='400' x2='115' y2='580' stroke='#374151' stroke-width='1.2'/>
+<line x1='115' y1='580.00' x2='510' y2='580.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='584.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.0</text>
+<line x1='115' y1='544.00' x2='510' y2='544.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='548.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.2</text>
+<line x1='115' y1='508.00' x2='510' y2='508.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='512.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.4</text>
+<line x1='115' y1='472.00' x2='510' y2='472.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='476.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.6</text>
+<line x1='115' y1='436.00' x2='510' y2='436.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='440.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.8</text>
+<line x1='115' y1='400.00' x2='510' y2='400.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='107' y='404.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.0</text>
+<line x1='115' y1='571.00' x2='510' y2='571.00' stroke='#0f766e' stroke-dasharray='5 4' stroke-width='1.2'/>
+<text x='506' y='567.00' text-anchor='end' font-size='9' fill='#0f766e' font-family='Helvetica, Arial, sans-serif'>stable line</text>
+<line x1='115' y1='553.00' x2='510' y2='553.00' stroke='#b45309' stroke-dasharray='5 4' stroke-width='1.2'/>
+<text x='506' y='549.00' text-anchor='end' font-size='9' fill='#b45309' font-family='Helvetica, Arial, sans-serif'>marginal line</text>
+<rect x='140' y='580.00' width='70' height='0.00' fill='#0f766e' opacity='0.88'/>
+<text x='175.00' y='574.00' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.00</text>
+<text x='175.00' y='598' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>baseline</text>
+<rect x='255' y='568.75' width='70' height='11.25' fill='#b45309' opacity='0.88'/>
+<text x='290.00' y='562.75' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.06</text>
+<text x='290.00' y='598' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>perturbed</text>
+<rect x='370' y='549.06' width='70' height='30.94' fill='#b91c1c' opacity='0.88'/>
+<text x='405.00' y='543.06' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.17</text>
+<text x='405.00' y='598' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>fragmented</text>
+<rect x='570' y='365' width='470' height='250' fill='none' stroke='#d1d5db' stroke-width='1'/>
+<text x='805.0' y='385' text-anchor='middle' font-size='14' font-family='Helvetica, Arial, sans-serif'>Geometric Integrity</text>
+<line x1='625' y1='580' x2='1020' y2='580' stroke='#374151' stroke-width='1.2'/>
+<line x1='625' y1='400' x2='625' y2='580' stroke='#374151' stroke-width='1.2'/>
+<line x1='625' y1='580.00' x2='1020' y2='580.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='584.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.0</text>
+<line x1='625' y1='544.00' x2='1020' y2='544.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='548.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.2</text>
+<line x1='625' y1='508.00' x2='1020' y2='508.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='512.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.4</text>
+<line x1='625' y1='472.00' x2='1020' y2='472.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='476.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.6</text>
+<line x1='625' y1='436.00' x2='1020' y2='436.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='440.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.8</text>
+<line x1='625' y1='400.00' x2='1020' y2='400.00' stroke='#f3f4f6' stroke-width='1'/>
+<text x='617' y='404.00' text-anchor='end' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.0</text>
+<line x1='625' y1='418.00' x2='1020' y2='418.00' stroke='#0f766e' stroke-dasharray='5 4' stroke-width='1.2'/>
+<text x='1016' y='414.00' text-anchor='end' font-size='9' fill='#0f766e' font-family='Helvetica, Arial, sans-serif'>stable line</text>
+<line x1='625' y1='472.00' x2='1020' y2='472.00' stroke='#b45309' stroke-dasharray='5 4' stroke-width='1.2'/>
+<text x='1016' y='468.00' text-anchor='end' font-size='9' fill='#b45309' font-family='Helvetica, Arial, sans-serif'>marginal line</text>
+<rect x='650' y='400.00' width='70' height='180.00' fill='#0f766e' opacity='0.88'/>
+<text x='685.00' y='394.00' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>1.00</text>
+<text x='685.00' y='598' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>baseline</text>
+<rect x='765' y='467.50' width='70' height='112.50' fill='#b45309' opacity='0.88'/>
+<text x='800.00' y='461.50' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.62</text>
+<text x='800.00' y='598' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>perturbed</text>
+<rect x='880' y='512.50' width='70' height='67.50' fill='#b91c1c' opacity='0.88'/>
+<text x='915.00' y='506.50' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>0.38</text>
+<text x='915.00' y='598' text-anchor='middle' font-size='10' font-family='Helvetica, Arial, sans-serif'>fragmented</text>
+<rect x='260' y='720' width='16' height='16' fill='#0f766e'/>
+<text x='284' y='732' font-size='11' font-family='Helvetica, Arial, sans-serif'>stable</text>
+<rect x='440' y='720' width='16' height='16' fill='#b45309'/>
+<text x='464' y='732' font-size='11' font-family='Helvetica, Arial, sans-serif'>marginal</text>
+<rect x='620' y='720' width='16' height='16' fill='#b91c1c'/>
+<text x='644' y='732' font-size='11' font-family='Helvetica, Arial, sans-serif'>unstable</text>
+</svg>

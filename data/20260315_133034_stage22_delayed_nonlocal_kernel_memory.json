@@ -1,0 +1,97 @@
+{
+  "stage": "22_delayed_nonlocal_kernel_memory_probe",
+  "description": "Base 27-run persistence-first pilot for delayed nonlocal kernel memory on the frozen projected transverse architecture.",
+  "kernel_law": {
+    "driver": "smoothed_local_energy_density",
+    "spatial_smoothing_sigma": 4.0,
+    "memory_horizon_tau": 0.25,
+    "kernel_update_clamp": 0.05,
+    "support_preserving": true,
+    "symmetric_weights_only": true,
+    "interpretation": "temporally extended and spatially distributed kernel memory without new packet species or coefficient escalation",
+    "memory_classes": [
+      {
+        "memory_class_id": "A_single_lag_retarded",
+        "label": "single-lag retarded reinforcement",
+        "update_form": "K = K0 * (1 + eps * Phi(t-tau))"
+      },
+      {
+        "memory_class_id": "B_exponential_history",
+        "label": "exponential history kernel",
+        "update_form": "K = K0 * (1 + eps * int exp(-s/tau) Phi(t-s) ds)"
+      },
+      {
+        "memory_class_id": "C_window_average",
+        "label": "finite-window historical averaging",
+        "update_form": "K = K0 * (1 + eps * avg_{[t-tau,t]} Phi)"
+      }
+    ]
+  },
+  "parameter_policy": {
+    "eps_values": {
+      "null": 0.0,
+      "very_weak": 0.01,
+      "weak": 0.02
+    },
+    "memory_tau": 0.25,
+    "spatial_smoothing_sigma": 4.0,
+    "kernel_update_clamp": 0.05,
+    "no_stronger_than_weak": true
+  },
+  "base_seed_reference": {
+    "run_id": "A0_transverse_periodic_wide_midk_amp05",
+    "operator_sector": "transverse",
+    "boundary_type": "periodic",
+    "bandwidth": 0.1,
+    "central_k": 1.0,
+    "amplitude": 0.5,
+    "phase_pattern": "cosine-carrier",
+    "selection_note": "same frozen packet family and projected transverse seed carried from the late Phase I ladder into the Phase II substrate tests"
+  },
+  "base_runs": [
+    {
+      "run_id": "S22A_corridor_very_weak",
+      "summary": {
+        "run_id": "S22A_corridor_very_weak",
+        "representative_id": "counter_propagating_corridor",
+        "memory_class_id": "A_single_lag_retarded",
+        "condition_id": "very_weak",
+        "eps": 0.01,
+        "tau_memory": 0.25,
+        "delay_steps": 2,
+        "resolution": 12,
+        "interaction_label": "transient binding regime",
+        "coarse_label": "diffuse coarse field regime",
+        "composite_lifetime": 0.9842431895883714,
+        "binding_persistence_score": 0.6666666666666666,
+        "coarse_persistence_sigma4": 1.0,
+        "memory_field_norm": 0.12522767676692054,
+        "kernel_deviation_norm": 0.0012522767676692056,
+        "max_local_kernel_deformation": 0.0035591543283262084,
+        "driver_signal_strength": 0.656053553848806,
+        "memory_activation_duty_cycle": 0.6666666666666666,
+        "corridor_dwell_time": 0.3333333333333333,
+        "transport_channel_locking": 0,
+        "local_transport_anisotropy_index": 1.5664188869606992,
+        "trajectory_curvature_proxy": 0.12559946935053934,
+        "energy_dispersion_shift": 0.0008051651487519715,
+        "new_ordering_class": 0,
+        "composite_lifetime_delta": 0.0,
+        "binding_persistence_delta": 0.0,
+        "coarse_persistence_delta": 0.0,
+        "corridor_dwell_delta": 0.0,
+        "gate_met": 0,
+        "promoted_followup": 0,
+        "output_label": "no delayed memory effect",
+        "constraint_max": 1.7985134491710688e-15,
+        "sector_leakage": 4.042603345939908e-15,
+        "notes": "transport-style control and expected null candidate"
+      }
+    }
+  ],
+  "output_label_counts": {
+    "no delayed memory effect": 1
+  },
+  "promoted_followup": null,
+  "conclusion": "Stage 22 tests whether delayed nonlocal kernel memory can create persistence on the projected transverse architecture."
+}

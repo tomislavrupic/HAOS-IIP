@@ -1,0 +1,111 @@
+{
+  "name": "fragmented",
+  "description": "Strong fragmentation with missing arrivals, depth drift, and an incoherent distance proxy.",
+  "source": "source",
+  "nodes": ["source", "near", "mid", "far"],
+  "expected_shells": {
+    "source": 0,
+    "near": 1,
+    "mid": 2,
+    "far": 3
+  },
+  "ordering_threshold": 0.6,
+  "tau_grid": [0.0, 0.5, 1.0, 1.5, 2.0],
+  "persistence_history": [
+    {
+      "width_growth": 0.04,
+      "concentration_retention": 0.95,
+      "participation_growth": 0.10,
+      "overlap": 0.96,
+      "recovery_score": 0.94
+    },
+    {
+      "width_growth": 0.08,
+      "concentration_retention": 0.89,
+      "participation_growth": 0.18,
+      "overlap": 0.91,
+      "recovery_score": 0.90
+    },
+    {
+      "width_growth": 0.16,
+      "concentration_retention": 0.70,
+      "participation_growth": 0.32,
+      "overlap": 0.68,
+      "recovery_score": 0.58
+    },
+    {
+      "width_growth": 0.22,
+      "concentration_retention": 0.52,
+      "participation_growth": 0.45,
+      "overlap": 0.55,
+      "recovery_score": 0.40
+    },
+    {
+      "width_growth": 0.30,
+      "concentration_retention": 0.40,
+      "participation_growth": 0.60,
+      "overlap": 0.40,
+      "recovery_score": 0.25
+    }
+  ],
+  "windows": [
+    {
+      "probe_histories": {
+        "source": [0.91, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.22, 0.76, 0.94, 1.00, 1.00],
+        "mid": [0.10, 0.35, 0.79, 0.95, 1.00],
+        "far": [0.02, 0.16, 0.41, 0.76, 0.93]
+      }
+    },
+    {
+      "probe_histories": {
+        "source": [0.92, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.05, 0.20, 0.40, 0.76, 0.90],
+        "mid": [0.20, 0.72, 0.90, 1.00, 1.00],
+        "far": [0.00, 0.05, 0.18, 0.32, 0.50]
+      }
+    },
+    {
+      "probe_histories": {
+        "source": [0.90, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.10, 0.42, 0.74, 0.86, 0.94],
+        "mid": [0.05, 0.18, 0.30, 0.42, 0.55],
+        "far": [0.00, 0.10, 0.20, 0.30, 0.40]
+      }
+    },
+    {
+      "probe_histories": {
+        "source": [0.93, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.10, 0.30, 0.45, 0.72, 0.88],
+        "mid": [0.05, 0.12, 0.25, 0.35, 0.45],
+        "far": [0.20, 0.70, 0.82, 0.90, 0.95]
+      }
+    }
+  ],
+  "distance_proxy": {
+    "source": {
+      "source": 0.0,
+      "near": 1.6,
+      "mid": 1.1,
+      "far": 3.0
+    },
+    "near": {
+      "source": 1.6,
+      "near": 0.0,
+      "mid": 0.3,
+      "far": 0.4
+    },
+    "mid": {
+      "source": 1.1,
+      "near": 0.3,
+      "mid": 0.0,
+      "far": 2.2
+    },
+    "far": {
+      "source": 3.0,
+      "near": 0.4,
+      "mid": 2.2,
+      "far": 0.0
+    }
+  }
+}

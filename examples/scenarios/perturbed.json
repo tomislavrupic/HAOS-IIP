@@ -1,0 +1,111 @@
+{
+  "name": "perturbed",
+  "description": "Mild connectivity alteration with partial shell swapping but retained signal continuity.",
+  "source": "source",
+  "nodes": ["source", "near", "mid", "far"],
+  "expected_shells": {
+    "source": 0,
+    "near": 1,
+    "mid": 2,
+    "far": 3
+  },
+  "ordering_threshold": 0.6,
+  "tau_grid": [0.0, 0.5, 1.0, 1.5, 2.0],
+  "persistence_history": [
+    {
+      "width_growth": 0.03,
+      "concentration_retention": 0.96,
+      "participation_growth": 0.08,
+      "overlap": 0.97,
+      "recovery_score": 0.95
+    },
+    {
+      "width_growth": 0.06,
+      "concentration_retention": 0.94,
+      "participation_growth": 0.10,
+      "overlap": 0.95,
+      "recovery_score": 0.93
+    },
+    {
+      "width_growth": 0.08,
+      "concentration_retention": 0.92,
+      "participation_growth": 0.12,
+      "overlap": 0.93,
+      "recovery_score": 0.92
+    },
+    {
+      "width_growth": 0.09,
+      "concentration_retention": 0.90,
+      "participation_growth": 0.18,
+      "overlap": 0.91,
+      "recovery_score": 0.90
+    },
+    {
+      "width_growth": 0.15,
+      "concentration_retention": 0.80,
+      "participation_growth": 0.28,
+      "overlap": 0.82,
+      "recovery_score": 0.74
+    }
+  ],
+  "windows": [
+    {
+      "probe_histories": {
+        "source": [0.90, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.22, 0.76, 0.94, 1.00, 1.00],
+        "mid": [0.10, 0.34, 0.79, 0.95, 1.00],
+        "far": [0.03, 0.18, 0.42, 0.76, 0.92]
+      }
+    },
+    {
+      "probe_histories": {
+        "source": [0.91, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.10, 0.45, 0.78, 0.93, 1.00],
+        "mid": [0.18, 0.70, 0.90, 1.00, 1.00],
+        "far": [0.02, 0.20, 0.42, 0.75, 0.92]
+      }
+    },
+    {
+      "probe_histories": {
+        "source": [0.89, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.20, 0.74, 0.93, 1.00, 1.00],
+        "mid": [0.08, 0.36, 0.78, 0.94, 1.00],
+        "far": [0.03, 0.17, 0.40, 0.77, 0.93]
+      }
+    },
+    {
+      "probe_histories": {
+        "source": [0.92, 1.00, 1.00, 1.00, 1.00],
+        "near": [0.09, 0.44, 0.79, 0.94, 1.00],
+        "mid": [0.16, 0.69, 0.90, 1.00, 1.00],
+        "far": [0.02, 0.18, 0.41, 0.74, 0.91]
+      }
+    }
+  ],
+  "distance_proxy": {
+    "source": {
+      "source": 0.0,
+      "near": 1.0,
+      "mid": 2.1,
+      "far": 3.4
+    },
+    "near": {
+      "source": 1.0,
+      "near": 0.0,
+      "mid": 1.2,
+      "far": 2.0
+    },
+    "mid": {
+      "source": 2.1,
+      "near": 1.2,
+      "mid": 0.0,
+      "far": 0.95
+    },
+    "far": {
+      "source": 3.4,
+      "near": 2.0,
+      "mid": 0.95,
+      "far": 0.0
+    }
+  }
+}

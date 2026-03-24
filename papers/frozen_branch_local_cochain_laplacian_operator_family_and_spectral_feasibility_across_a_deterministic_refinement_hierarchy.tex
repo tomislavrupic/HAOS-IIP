@@ -1,0 +1,168 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Frozen Branch-Local Cochain-Laplacian Operator Family and Spectral Feasibility Across a Deterministic Refinement Hierarchy}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Phase VI of the frozen HAOS-IIP repository is an operator-feasibility stage, not a geometry stage. The phase freezes exactly one branch-valid operator class on the validated periodic DK2D branch and tests whether later spectral work is well-posed. The selected family is the full cochain Laplacian $\Delta_h$ extracted from the branch-local periodic DK2D complex. The refinement hierarchy is fixed by $h = 1 / n_{\mathrm{side}}$ with deterministic levels $n_{\mathrm{side}} \in \{12,24,36,48\}$ and frozen $\epsilon = 0.2$. At each level the program computes symmetry defect, semiboundedness probes, nullspace estimate, node-reordering consistency, first positive eigenvalue sample, and spectral-radius sample. All four levels pass the admissibility diagnostics: the Hermiticity defect is numerically zero, the sampled smallest eigenvalue is nonnegative up to solver precision, the nullspace estimate is stable at $4$, the node-reordering similarity defect is zero, and the sampled spectral radius increases monotonically from $7.862310$ to $7.991324$. The result is bounded. Phase VI freezes a branch-local cochain-Laplacian family suitable for later spectral feasibility work. It does not claim continuum Laplacians, heat-kernel asymptotics, geometric coefficients, spectral invariants, or continuum correspondence.
+\end{abstract}
+
+\section{Scope and Authority Discipline}
+
+This paper freezes the authority state of Phase VI in the current HAOS-IIP repository. The objective is limited to operator construction and admissibility on the already frozen branch. Phase VI does not redesign Phase III, Phase IV, or Phase V. It does not import archived runners. It does not introduce continuum assumptions. Its only purpose is to determine whether a later spectral program is numerically well-posed on one fixed operator family.
+
+Every positive statement in this paper is branch-bounded. The results apply only to the current periodic DK2D branch, the current frozen Phase IV sector bundle, the current Phase V authority ledger, and the deterministic refinement hierarchy frozen here.
+
+\section{Frozen Inputs and Operator Selection}
+
+Phase VI consumes the latest frozen Phase IV bundle
+\url{phase4-sector-freeze/runs/phase4_sector_freeze_bundle_latest.json}
+and the latest Phase V authority ledger
+\url{phase5-readout/runs/phase5_runs_ledger_latest.json}.
+The branch settings inherited from the frozen inputs are:
+\begin{itemize}
+\item sector identifier: \texttt{phaseIV\_stable\_smeared\_sector};
+\item operator sector: \texttt{dirac\_kahler\_minimal\_0\_1\_form};
+\item boundary type: \texttt{periodic};
+\item graph type: \texttt{regular\_lattice};
+\item kernel type: \texttt{static\_gaussian};
+\item base resolution: $12$;
+\item frozen base epsilon: $0.2$.
+\end{itemize}
+
+Exactly one operator class is selected:
+\[
+O_h = \Delta_h .
+\]
+Here $\Delta_h$ is the full block cochain Laplacian of the periodic DK2D complex. This choice is minimal and sufficient for the current stage. A weighted graph Laplacian was not chosen because it would discard the higher-degree cochain structure already frozen in the branch. A discrete Dirac or Hodge--Dirac family was not chosen as the primary family because the cochain Laplacian gives the clearer semibounded feasibility test with less auxiliary machinery.
+
+\section{Deterministic Refinement Hierarchy}
+
+The refinement parameter is frozen as
+\[
+h = \frac{1}{n_{\mathrm{side}}}.
+\]
+It is interpreted only as a lattice-spacing surrogate on the unit-periodic square cell complex. No continuum limit claim is attached to this notation.
+
+The hierarchy is deterministic:
+\[
+n_{\mathrm{side}} = 12m, \qquad m \in \{1,2,3,4\}.
+\]
+At each level the same construction rule is used:
+\begin{enumerate}
+\item build the periodic DK2D complex with the frozen $\epsilon = 0.2$;
+\item extract the full block cochain Laplacian $\Delta_h$;
+\item record dimension, sparsity, and spectral probes;
+\item evaluate the same admissibility diagnostics with the same tolerances.
+\end{enumerate}
+No retuning occurs across refinement levels.
+
+\section{Admissibility Diagnostics}
+
+The admissibility layer computes the following quantities at each refinement level:
+\begin{itemize}
+\item relative Frobenius symmetry defect of $O_h - O_h^{T}$;
+\item sampled smallest eigenvalue and random Rayleigh-quotient lower probe;
+\item nullspace estimate using a fixed numerical threshold;
+\item node-reordering similarity defect under a deterministic torus translation and restoration;
+\item sampled first positive eigenvalue;
+\item sampled spectral radius.
+\end{itemize}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}rrrrrrrrr@{}}
+\toprule
+Level & $n_{\mathrm{side}}$ & $h$ & Dim. & NNZ & Sym. defect & $\lambda_{\min}$ probe & $\lambda_{+}^{(1)}$ & Radius \\
+\midrule
+R1 & 12 & 0.083333 & 576  & 2880  & 0.000000 & -0.000000 & 0.263337 & 7.862310 \\
+R2 & 24 & 0.041667 & 2304 & 11520 & 0.000000 & -0.000000 & 0.067853 & 7.965353 \\
+R3 & 36 & 0.027778 & 5184 & 25920 & 0.000000 & -0.000000 & 0.030326 & 7.984583 \\
+R4 & 48 & 0.020833 & 9216 & 46080 & 0.000000 & -0.000000 & 0.017092 & 7.991324 \\
+\bottomrule
+\end{tabular}
+\caption{Per-level structural and sampled spectral diagnostics for the frozen operator family.}
+\label{tab:levels}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Aggregate admissibility metric & Value \\
+\midrule
+All levels admissible & \texttt{True} \\
+Nullspace estimate values & $[4,4,4,4]$ \\
+Node-reordering consistent & \texttt{True} \\
+First positive eigenvalue positive at all levels & \texttt{True} \\
+Spectral radius nondecreasing & \texttt{True} \\
+Minimum random Rayleigh probe & 3.709132539465 \\
+Maximum symmetry defect & 0.000000000000 \\
+\bottomrule
+\end{tabular}
+\caption{Aggregate admissibility summary across the frozen refinement hierarchy.}
+\label{tab:aggregate}
+\end{table}
+
+The important point is that these properties are computed rather than assumed. Self-adjointness is represented numerically by zero symmetry defect. Semiboundedness is supported by the sampled smallest eigenvalue and the positive random Rayleigh probes. Kernel stability is supported by the fixed nullspace estimate of $4$. Ordering consistency is established directly by the zero similarity defect under deterministic basis reordering.
+
+\section{Basic Spectral Sanity Probes}
+
+Phase VI does not attempt full spectral asymptotics. It performs only the minimal spectral checks needed to decide whether later stages are numerically meaningful.
+
+Three trends are relevant. First, the sampled first positive eigenvalue remains strictly positive at every refinement level, while decreasing with refinement:
+\[
+0.263337,\;
+0.067853,\;
+0.030326,\;
+0.017092 .
+\]
+Second, the sampled spectral radius remains bounded and increases mildly:
+\[
+7.862310,\;
+7.965353,\;
+7.984583,\;
+7.991324 .
+\]
+Third, sparsity improves monotonically as resolution grows, with density decreasing from $0.008681$ at R1 to $0.000543$ at R4. The operator family therefore remains computationally sparse while preserving stable admissibility diagnostics.
+
+These probes are sufficient for the present stage because the purpose is not to extract coefficients or fit asymptotic laws. The purpose is only to verify that the frozen family behaves coherently enough to justify later spectral investigation.
+
+\section{Bounded Interpretation and Non-Claims}
+
+The Phase VI authority claim is intentionally narrow:
+\begin{quote}
+On the current frozen branch, the periodic DK2D cochain-Laplacian family $\Delta_h$ forms a deterministic refinement hierarchy with acceptable admissibility diagnostics and basic spectral sanity behavior.
+\end{quote}
+
+This paper does not claim any of the following:
+\begin{enumerate}
+\item a continuum Laplacian;
+\item heat-kernel asymptotics;
+\item geometric coefficients;
+\item spectral invariants beyond the listed finite probes;
+\item continuum or general-relativistic correspondence.
+\end{enumerate}
+
+The phase closes only at the level of branch-local operator feasibility.
+
+\section{Conclusion}
+
+Phase VI freezes one branch-valid operator family, one deterministic refinement hierarchy, and one computed admissibility ledger. Within that bounded domain, the cochain-Laplacian family is numerically symmetric, semibounded under the sampled probes, stable under deterministic node reordering, and structurally consistent across all tested refinement levels. That is enough to treat the later spectral program as well-posed on this branch.
+
+Phase VI now has a frozen operator family suitable for spectral feasibility testing.
+
+\end{document}

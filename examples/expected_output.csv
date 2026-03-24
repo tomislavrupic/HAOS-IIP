@@ -1,0 +1,7 @@
+narrative_step,source_artifact,branch_metric,control_metric,branch_value,control_value,expected_relation,status
+propagation_band,phase15-propagation/phase15_manifest.json,branch_effective_speed_drift,control_effective_speed_drift,0.016755,0.041888,branch < control,pass
+temporal_ordering,phase16-temporal-ordering/phase16_manifest.json,branch_primary_robustness_distance,control_primary_robustness_distance,0.014220,0.032870,branch < control,pass
+causal_closure,phase17-causal-closure/phase17_manifest.json,branch_causal_depth_drift,control_causal_depth_drift,0.000000,0.714286,branch < control,pass
+distance_surrogate,phase18-distance-surrogate/phase18_manifest.json,branch_max_shell_overlap_fraction,control_max_shell_overlap_fraction,0.365779,0.444716,branch < control,pass
+continuum_speed_band,continuum-sketch/continuum_sketch_table.csv,branch_speed_coefficient_of_variation,control_speed_coefficient_of_variation,0.027656,0.051604,branch < control,pass
+continuum_shell_slope,continuum-sketch/continuum_sketch_table.csv,branch_shell_slope_max_adjacent_drift,control_shell_slope_max_adjacent_drift,0.085714,0.584615,branch < control,pass

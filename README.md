@@ -2,6 +2,8 @@
 
 Emergence diagnostics on a frozen branch-local cochain-Laplacian hierarchy.
 
+Success criterion: running the public reproduction script should produce identical table values and an identical plot to the frozen baseline.
+
 ## Overview
 
 HAOS-IIP is a structured numerical research program investigating whether a reproducible emergence ladder can be identified inside a frozen operator hierarchy on discrete graph domains.
@@ -14,6 +16,8 @@ The project focuses on:
 - reproducible phase bundles
 
 This repository does not assert geometric structure, physical correspondence, or continuum validity. It provides a computational environment for testing whether such structures could stabilize under disciplined constraints.
+
+Public-scope boundary: this reproduces a bounded mesoscopic-to-proto-geometric feasibility arc. It does not claim a continuum limit or physical ontology.
 
 ## Scope Of The Program
 
@@ -38,6 +42,7 @@ All conclusions are framed as feasibility statements, not ontological claims.
 ```text
 phase3-stability/ ... phase18-distance-surrogate/  frozen phase bundles and diagnostics
 continuum-sketch/                                  low-cost post-processing scaling test
+examples/                                          one-command public reproduction spine
 telemetry/                                         frozen emergence metrics
 haos_core/                                         shared core primitives
 papers/                                            numbered PDF releases and drafts
@@ -57,19 +62,73 @@ diagnostics/
 
 ## Quick Start
 
-Run an integrity check on a frozen phase bundle:
+For a cold external read, start with the narrow public reproduction path:
 
 ```bash
-python run_phase.py 18 --check
+python3 examples/quick_reproduce.py
+```
+
+This one command:
+
+- checks the frozen Phase XV-XVIII bundles
+- rebuilds the artifact-only continuum sketch
+- writes a compact public table and figure under `examples/output/`
+- verifies both against `examples/expected_output.csv` and `examples/expected_plot.svg`
+
+If you only want to validate a single frozen bundle, run an integrity check:
+
+```bash
+python3 run_phase.py 18 --check
 ```
 
 Example:
 
 ```bash
-python run_phase.py 10 --check
+python3 run_phase.py 10 --check
 ```
 
 No new simulations are required to validate frozen results.
+
+## Telemetry Demo
+
+HAOS-IIP also exposes a small telemetry-based structural-stability diagnostic. This demo illustrates how HAOS-IIP telemetry can be used as a structural-stability diagnostic for evolving graph-like systems. It is not a claim about physical spacetime emergence.
+
+Run the default demo bundle:
+
+```bash
+python3 -m haos_iip.demo stability
+```
+
+Request a machine-readable payload for one scenario:
+
+```bash
+python3 -m haos_iip.demo stability baseline --json
+```
+
+Run a deterministic scan grid:
+
+```bash
+python3 -m haos_iip.demo stability --scan noise=0.00:0.10:0.05 connectivity=0.00:0.20:0.10
+```
+
+Run a deterministic generated variant:
+
+```bash
+python3 -m haos_iip.demo stability baseline --noise 0.05 --connectivity-drop 0.2 --cluster-split
+```
+
+Public metric aliases:
+
+- `structural_retention` = persistence
+- `temporal_consistency` = ordering
+- `causal_deformation` = depth drift
+- `geometric_integrity` = distance coherence
+
+![Trajectory stability demo](stability_demo_overview.svg)
+
+Short note:
+
+- [A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/applications/A_Minimal_Structural_Stability_Oracle_Based_on_Frozen_HAOS_IIP_Telemetry_v1.md)
 
 ## Program Status
 

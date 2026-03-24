@@ -187,6 +187,7 @@ The intended public reading order is:
 - `42.1` Proto-Geometric Distance-Surrogate Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `43.1` Ordering, Causal Closure, and Proto-Geometric Distance-Surrogate Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `44.1` Minimal Scaling Sketch for a Proto-Continuum Effective Description on a Frozen Branch-Local Cochain-Laplacian Hierarchy
+- `45.1` A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

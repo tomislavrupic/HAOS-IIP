@@ -1,0 +1,278 @@
+{
+  "manifest_version": 1,
+  "generated_for_scope": "Phase III and Phase IV authority chain",
+  "stages": [
+    {
+      "stage_id": "23.10",
+      "phase": "III",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_102709",
+      "prompt_path": "ai/codex_prompts/stage_23_10_dk_braid_mechanism_isolation_probe.md",
+      "script_path": "numerics/simulations/stage23_10_dk_braid_mechanism_isolation_probe.py",
+      "runsheet_path": "numerics/simulations/stage23_10_dk_braid_mechanism_isolation_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_23_10_DK_Braid_Mechanism_Isolation_Probe_v1.md",
+      "json_path": "data/20260316_102709_stage23_10_dk_braid_mechanism_isolation_probe.json",
+      "csv_path": "data/20260316_102709_stage23_10_dk_braid_mechanism_isolation_probe.csv",
+      "plot_paths": [
+        "plots/20260316_102709_stage23_10_mechanism_branch_comparison_matrix.png",
+        "plots/20260316_102709_stage23_10_braid_survival_vs_ablation_panel.png",
+        "plots/20260316_102709_stage23_10_coherence_collapse_panel.png"
+      ],
+      "superseded_runs": [],
+      "commit_ready": true,
+      "notes": "Canonical Phase III-C1 non-generality result."
+    },
+    {
+      "stage_id": "23.11",
+      "phase": "III",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_104146",
+      "prompt_path": "ai/codex_prompts/stage_23_11_dk_minimal_effective_model_extraction.md",
+      "script_path": "numerics/simulations/stage23_11_dk_minimal_effective_model_extraction.py",
+      "runsheet_path": "numerics/simulations/stage23_11_dk_minimal_effective_model_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C2_Minimal_Effective_Model_Extraction_v1.md",
+      "json_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.json",
+      "csv_path": "data/20260316_104146_stage23_11_dk_minimal_effective_model_extraction.csv",
+      "plot_paths": [
+        "plots/20260316_104146_stage23_11_effective_phase_diagram.png",
+        "plots/20260316_104146_stage23_11_failure_map.png"
+      ],
+      "superseded_runs": [],
+      "commit_ready": true,
+      "notes": "Canonical Phase III-C2 reduction result."
+    },
+    {
+      "stage_id": "23.12",
+      "phase": "III",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_105448",
+      "prompt_path": "ai/codex_prompts/stage_23_12_dk_effective_phase_diagram_closure.md",
+      "script_path": "numerics/simulations/stage23_12_dk_effective_phase_diagram_closure.py",
+      "runsheet_path": "numerics/simulations/stage23_12_dk_effective_phase_diagram_closure_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C3_Effective_Phase_Diagram_Closure_v1.md",
+      "json_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.json",
+      "csv_path": "data/20260316_105448_stage23_12_dk_effective_phase_diagram_closure.csv",
+      "plot_paths": [
+        "plots/20260316_105448_stage23_12_effective_phase_map.png",
+        "plots/20260316_105448_stage23_12_topology_survival_heatmap.png",
+        "plots/20260316_105448_stage23_12_refinement_stability_table.png"
+      ],
+      "superseded_runs": [],
+      "commit_ready": true,
+      "notes": "Canonical Phase III-C3 one-sided smeared closure."
+    },
+    {
+      "stage_id": "23.13",
+      "phase": "III",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_110320",
+      "prompt_path": "ai/codex_prompts/stage_23_13_dk_mechanism_isolation_probe.md",
+      "script_path": "numerics/simulations/stage23_13_dk_mechanism_isolation_probe.py",
+      "runsheet_path": "numerics/simulations/stage23_13_dk_mechanism_isolation_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C4_Mechanism_Isolation_Probe_v1.md",
+      "json_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.json",
+      "csv_path": "data/20260316_110320_stage23_13_dk_mechanism_isolation_probe.csv",
+      "plot_paths": [
+        "plots/20260316_110320_stage23_13_mechanism_branch_comparison_matrix.png",
+        "plots/20260316_110320_stage23_13_braid_survival_vs_ablation_panel.png",
+        "plots/20260316_110320_stage23_13_coherence_collapse_panel.png"
+      ],
+      "superseded_runs": [],
+      "commit_ready": true,
+      "notes": "Canonical Phase III-C4 mechanism read."
+    },
+    {
+      "stage_id": "23.14",
+      "phase": "III",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_111201",
+      "prompt_path": "ai/codex_prompts/stage_23_14_phase_iii_consolidation_and_freeze.md",
+      "script_path": "numerics/simulations/stage23_14_phaseIII_final_consolidation_and_freeze.py",
+      "runsheet_path": "numerics/simulations/stage23_14_phaseIII_final_consolidation_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_III_C5_Final_Consolidation_and_Freeze_v1.md",
+      "json_path": "data/20260316_111201_stage23_14_phaseIII_final_consolidation_and_freeze.json",
+      "csv_path": "data/20260316_111201_stage23_14_phaseIII_claims_ledger.csv",
+      "plot_paths": [
+        "plots/20260316_111201_stage23_14_phaseIII_positive_core_table.png",
+        "plots/20260316_111201_stage23_14_phaseIII_negative_boundary_table.png",
+        "plots/20260316_111201_stage23_14_phaseIII_mechanism_and_phase_closure_panel.png",
+        "plots/20260316_111201_stage23_14_phaseIII_claim_status_matrix.png"
+      ],
+      "superseded_runs": [],
+      "commit_ready": true,
+      "notes": "Canonical Phase III freeze package."
+    },
+    {
+      "stage_id": "23.15",
+      "phase": "III",
+      "stage_kind": "paper_draft",
+      "status": "frozen",
+      "authoritative_timestamp": "editorial_package_v1",
+      "prompt_path": "ai/codex_prompts/stage_23_15_phase_iii_paper_consolidation_draft.md",
+      "script_path": null,
+      "runsheet_path": null,
+      "note_path": "papers/drafts/Phase_III_Clustered_DK_Effective_Sector_Draft_v1.md",
+      "json_path": "papers/drafts/phaseIII_paper_figure_map.json",
+      "csv_path": null,
+      "plot_paths": [],
+      "superseded_runs": [],
+      "commit_ready": true,
+      "notes": "Editorial stage. Authoritative package also includes Phase_III_Abstract_v1.md and phaseIII_paper_section_outline.json."
+    },
+    {
+      "stage_id": "24.1",
+      "phase": "IV",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_114317",
+      "prompt_path": "ai/codex_prompts/stage_24_1_smeared_sector_observable_ledger.md",
+      "script_path": "numerics/simulations/stage24_1_smeared_sector_observable_ledger.py",
+      "runsheet_path": "numerics/simulations/stage24_1_smeared_sector_observable_ledger_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_IV_A1_Smeared_Sector_Observable_Ledger_v1.md",
+      "json_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.json",
+      "csv_path": "data/20260316_114317_stage24_1_smeared_sector_observable_ledger.csv",
+      "plot_paths": [
+        "plots/20260316_114317_stage24_1_smeared_sector_observable_table.png",
+        "plots/20260316_114317_stage24_1_smeared_sector_correlation_panel.png",
+        "plots/20260316_114317_stage24_1_smeared_sector_stability_panel.png"
+      ],
+      "superseded_runs": [],
+      "commit_ready": true,
+      "notes": "Canonical Phase IV observable ledger."
+    },
+    {
+      "stage_id": "24.2",
+      "phase": "IV",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_115346",
+      "prompt_path": "ai/codex_prompts/stage_24_2_smeared_sector_effective_law_extraction.md",
+      "script_path": "numerics/simulations/stage24_2_smeared_sector_effective_law_extraction.py",
+      "runsheet_path": "numerics/simulations/stage24_2_smeared_sector_effective_law_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_IV_A2_Smeared_Sector_Effective_Law_Extraction_v1.md",
+      "json_path": "data/20260316_115346_stage24_2_smeared_sector_effective_law_extraction.json",
+      "csv_path": "data/20260316_115346_stage24_2_smeared_sector_effective_law_model_ledger.csv",
+      "plot_paths": [
+        "plots/20260316_115346_stage24_2_law_family_comparison_table.png",
+        "plots/20260316_115346_stage24_2_minimal_law_decision_panel.png",
+        "plots/20260316_115346_stage24_2_prediction_vs_truth_panel.png",
+        "plots/20260316_115346_stage24_2_context_conditioning_panel.png"
+      ],
+      "superseded_runs": [
+        {
+          "timestamp": "20260316_115312",
+          "json_path": "data/20260316_115312_stage24_2_smeared_sector_effective_law_extraction.json",
+          "csv_path": "data/20260316_115312_stage24_2_smeared_sector_effective_law_model_ledger.csv",
+          "plot_paths": [
+            "plots/20260316_115312_stage24_2_law_family_comparison_table.png",
+            "plots/20260316_115312_stage24_2_minimal_law_decision_panel.png",
+            "plots/20260316_115312_stage24_2_prediction_vs_truth_panel.png",
+            "plots/20260316_115312_stage24_2_context_conditioning_panel.png"
+          ],
+          "reason_superseded": "Tie-break logic was corrected to prefer the continuous transport-side separator over an equal-fit binary proxy.",
+          "interpretation_changed": true
+        }
+      ],
+      "commit_ready": true,
+      "notes": "Canonical Phase IV selector-law stage."
+    },
+    {
+      "stage_id": "24.3",
+      "phase": "IV",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_120334",
+      "prompt_path": "ai/codex_prompts/stage_24_3_stable_smeared_quasi_invariant_probe.md",
+      "script_path": "numerics/simulations/stage24_3_stable_smeared_quasi_invariant_probe.py",
+      "runsheet_path": "numerics/simulations/stage24_3_stable_smeared_quasi_invariant_probe_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_IV_A3_Stable_Smeared_Quasi_Invariant_Probe_v1.md",
+      "json_path": "data/20260316_120334_stage24_3_stable_smeared_quasi_invariant_probe.json",
+      "csv_path": "data/20260316_120334_stage24_3_stable_smeared_quasi_invariant_ledger.csv",
+      "plot_paths": [
+        "plots/20260316_120334_stage24_3_quasi_invariant_candidate_table.png",
+        "plots/20260316_120334_stage24_3_selected_relation_panel.png",
+        "plots/20260316_120334_stage24_3_stable_vs_contrast_panel.png"
+      ],
+      "superseded_runs": [],
+      "commit_ready": true,
+      "notes": "Canonical Phase IV local-ordering stage."
+    },
+    {
+      "stage_id": "24.4",
+      "phase": "IV",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_121603",
+      "prompt_path": "ai/codex_prompts/stage_24_4_stable_smeared_law_and_ordering_extension_boundary_test.md",
+      "script_path": "numerics/simulations/stage24_4_stable_smeared_law_and_ordering_extension_boundary_test.py",
+      "runsheet_path": "numerics/simulations/stage24_4_stable_smeared_law_and_ordering_extension_boundary_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_IV_A4_Stable_Smeared_Law_and_Ordering_Extension_Boundary_Test_v1.md",
+      "json_path": "data/20260316_121603_stage24_4_stable_smeared_law_and_ordering_extension_boundary_test.json",
+      "csv_path": "data/20260316_121603_stage24_4_stable_smeared_extension_boundary_ledger.csv",
+      "plot_paths": [
+        "plots/20260316_121603_stage24_4_extension_status_matrix.png",
+        "plots/20260316_121603_stage24_4_law_survival_panel.png",
+        "plots/20260316_121603_stage24_4_ordering_survival_panel.png",
+        "plots/20260316_121603_stage24_4_boundary_transition_map.png"
+      ],
+      "superseded_runs": [
+        {
+          "timestamp": "20260316_121048",
+          "json_path": "data/20260316_121048_stage24_4_stable_smeared_extension_boundary_test.json",
+          "csv_path": "data/20260316_121048_stage24_4_stable_smeared_extension_boundary_ledger.csv",
+          "plot_paths": [
+            "plots/20260316_121048_stage24_4_extension_status_matrix.png",
+            "plots/20260316_121048_stage24_4_family_boundary_table.png",
+            "plots/20260316_121048_stage24_4_law_portability_panel.png",
+            "plots/20260316_121048_stage24_4_ordering_survival_panel.png"
+          ],
+          "reason_superseded": "The earlier read covered only a narrower width-retreat manifold; the authoritative rerun evaluates the full four-class bounded extension lattice.",
+          "interpretation_changed": true
+        }
+      ],
+      "commit_ready": true,
+      "notes": "Canonical Phase IV extension-boundary map."
+    },
+    {
+      "stage_id": "24.5",
+      "phase": "IV",
+      "stage_kind": "simulation",
+      "status": "frozen",
+      "authoritative_timestamp": "20260316_122247",
+      "prompt_path": "ai/codex_prompts/stage_24_5_phase_iv_consolidation_and_freeze.md",
+      "script_path": "numerics/simulations/stage24_5_phaseIV_consolidation_and_freeze.py",
+      "runsheet_path": "numerics/simulations/stage24_5_phaseIV_consolidation_runs.json",
+      "note_path": "experiments/pre_geometry_atlas/Stage_IV_A5_Phase_IV_Consolidation_and_Freeze_v1.md",
+      "json_path": "data/20260316_122247_stage24_5_phaseIV_consolidation_and_freeze.json",
+      "csv_path": "data/20260316_122247_stage24_5_phaseIV_claims_ledger.csv",
+      "plot_paths": [
+        "plots/20260316_122247_stage24_5_phaseIV_portable_core_table.png",
+        "plots/20260316_122247_stage24_5_phaseIV_local_structure_table.png",
+        "plots/20260316_122247_stage24_5_phaseIV_boundary_and_negative_table.png",
+        "plots/20260316_122247_stage24_5_phaseIV_status_map_panel.png"
+      ],
+      "superseded_runs": [
+        {
+          "timestamp": "20260316_122224",
+          "json_path": "data/20260316_122224_stage24_5_phaseIV_consolidation_and_freeze.json",
+          "csv_path": "data/20260316_122224_stage24_5_phaseIV_claims_ledger.csv",
+          "plot_paths": [
+            "plots/20260316_122224_stage24_5_phaseIV_portable_core_table.png",
+            "plots/20260316_122224_stage24_5_phaseIV_local_structure_table.png",
+            "plots/20260316_122224_stage24_5_phaseIV_boundary_and_negative_table.png",
+            "plots/20260316_122224_stage24_5_phaseIV_status_map_panel.png"
+          ],
+          "reason_superseded": "The initial freeze attempt used an overly blunt contradiction check and left the freeze invalid.",
+          "interpretation_changed": false
+        }
+      ],
+      "commit_ready": true,
+      "notes": "Canonical Phase IV freeze package."
+    }
+  ]
+}

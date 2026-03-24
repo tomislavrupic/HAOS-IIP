@@ -1,8 +1,8 @@
 {
-  "phase_dir": "continuum-sketch",
-  "paper": "papers/minimal_scaling_sketch_for_proto_continuum_effective_description_on_a_frozen_branch_local_cochain_laplacian_hierarchy.tex",
-  "title": "Minimal Scaling Sketch for a Proto-Continuum Effective Description on a Frozen Branch-Local Cochain-Laplacian Hierarchy",
-  "commit_message": "Freeze continuum sketch baseline",
+  "phase_dir": ".",
+  "paper": "papers/minimal_structural_stability_oracle_based_on_frozen_haos_iip_telemetry.tex",
+  "title": "A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry",
+  "commit_message": "Freeze structural stability oracle release and collect repo updates",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",

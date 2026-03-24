@@ -1,0 +1,239 @@
+{
+  "experiment": "24.1_smeared_sector_observable_ledger",
+  "description": "Phase IV-A1 minimal observable-ledger extraction for the closed smeared-transfer regime on the frozen clustered Dirac-Kahler branch.",
+  "observable_ledger_valid": true,
+  "stable_smeared_cell_count": 5,
+  "contrast_control_cell_count": 10,
+  "stable_phase_min": 0.375,
+  "stable_phase_max": 0.575,
+  "phase_corridor_width": 0.19999999999999996,
+  "minimal_observable_basis": [
+    "topology_survival_time",
+    "refinement_stability_flag",
+    "weak_coupling_stability_flag",
+    "reverse_stability_flag",
+    "flow_concentration_index"
+  ],
+  "carry_forward_core": [
+    "topology_survival_time",
+    "refinement_stability_flag",
+    "weak_coupling_stability_flag",
+    "reverse_stability_flag",
+    "flow_concentration_index"
+  ],
+  "carry_forward_context": [
+    "phase_corridor_position",
+    "phase_corridor_width"
+  ],
+  "secondary_observables": [
+    "phase_corridor_position",
+    "grade_exchange_coherence_level"
+  ],
+  "derived_observables": [
+    "phase_corridor_width",
+    "smeared_regime_membership_flag"
+  ],
+  "rejected_observables": [
+    "transfer_asymmetry",
+    "coherence_decay_rate",
+    "topology_return_error",
+    "braid_like_exchange_indicator",
+    "mechanism_sensitivity_score"
+  ],
+  "contrast_policy": "Use only Stage 23.12 transient_mixed_phase cells as contrast controls against the stable smeared-transfer cells.",
+  "validation_checks": {
+    "stage23_11_effective_model_valid_true": true,
+    "stage23_12_phase_diagram_closed_true": true,
+    "stage23_12_stable_region_is_smeared_only": true,
+    "stage23_13_phase_corridor_primary": true,
+    "stage23_14_freeze_valid_true": true,
+    "primary_basis_smaller_than_candidate_list": true,
+    "primary_basis_distinguishes_stable_region": true,
+    "no_braid_quantity_promoted_to_primary": true
+  },
+  "final_read": "On the frozen clustered DK branch, the closed smeared-transfer regime is minimally characterized by refinement stability, weak-coupling stability, reverse stability, topology survival time, and flow concentration index, while phase-corridor position and grade-exchange coherence remain secondary or derived descriptors.",
+  "candidate_ledger": [
+    {
+      "observable_id": "phase_corridor_position",
+      "observable_label": "Phase corridor position",
+      "status": "secondary_observable",
+      "allowed_into_phaseIV_core": false,
+      "source_stage": "23.12 / III-C3",
+      "scope": "context_coordinate",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "0.000",
+      "stable_range": "0.3750 -> 0.5750",
+      "contrast_range": "0.3750 -> 0.5750",
+      "rationale": "Phase position organizes where the stable smeared row sits, but the same sampled phases also appear in transient mixed controls, so it is contextual rather than a primary separator."
+    },
+    {
+      "observable_id": "phase_corridor_width",
+      "observable_label": "Phase corridor width",
+      "status": "derived",
+      "allowed_into_phaseIV_core": false,
+      "source_stage": "23.12 / III-C3",
+      "scope": "derived_boundary_summary",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "n/a",
+      "stable_range": "0.200",
+      "contrast_range": "n/a",
+      "rationale": "Corridor width is a boundary summary of the stable smeared component, not a per-cell operational observable."
+    },
+    {
+      "observable_id": "topology_survival_time",
+      "observable_label": "Topology survival time",
+      "status": "primary_observable",
+      "allowed_into_phaseIV_core": true,
+      "source_stage": "23.12 / III-C3",
+      "scope": "stable_smeared_region",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "0.715",
+      "stable_range": "0.0626 -> 0.2501",
+      "contrast_range": "0.1253 -> 0.5011",
+      "rationale": "This is the minimal persistence-carrying observable on the closed branch. It is not sufficient alone, but it is required to carry smeared-sector lifetime structure into 24.2."
+    },
+    {
+      "observable_id": "transfer_asymmetry",
+      "observable_label": "Transfer asymmetry",
+      "status": "reject",
+      "allowed_into_phaseIV_core": false,
+      "source_stage": "none",
+      "scope": "unavailable_on_frozen_branch",
+      "available_on_frozen_branch": false,
+      "sensitivity_score": "n/a",
+      "stable_range": "n/a",
+      "contrast_range": "n/a",
+      "rationale": "No branch-stable transfer-asymmetry quantity is present in the frozen Phase III closure outputs without introducing a new bookkeeping transport model."
+    },
+    {
+      "observable_id": "refinement_stability_flag",
+      "observable_label": "Refinement stability flag",
+      "status": "primary_observable",
+      "allowed_into_phaseIV_core": true,
+      "source_stage": "23.12 / III-C3",
+      "scope": "closure_support",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "1.000",
+      "stable_range": "1.0000 -> 1.0000",
+      "contrast_range": "0.0000 -> 0.0000",
+      "rationale": "Refinement stability is a necessary closure-support observable and perfectly separates the stable smeared cells from the transient mixed controls on the frozen lattice."
+    },
+    {
+      "observable_id": "weak_coupling_stability_flag",
+      "observable_label": "Weak-coupling stability flag",
+      "status": "primary_observable",
+      "allowed_into_phaseIV_core": true,
+      "source_stage": "23.12 / III-C3",
+      "scope": "closure_support",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "0.600",
+      "stable_range": "1.0000 -> 1.0000",
+      "contrast_range": "0.0000 -> 1.0000",
+      "rationale": "The stable smeared component is beta-stable by construction. This flag is not sufficient on its own, but it is indispensable because the closed regime is defined only after the weak-coupling consistency check is passed."
+    },
+    {
+      "observable_id": "reverse_stability_flag",
+      "observable_label": "Reverse stability flag",
+      "status": "primary_observable",
+      "allowed_into_phaseIV_core": true,
+      "source_stage": "23.12 / III-C3",
+      "scope": "closure_support",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "1.000",
+      "stable_range": "1.0000 -> 1.0000",
+      "contrast_range": "0.0000 -> 0.0000",
+      "rationale": "Reverse stability is required by the Phase III closure rule and cleanly separates the stable smeared cells from the transient mixed controls."
+    },
+    {
+      "observable_id": "coherence_decay_rate",
+      "observable_label": "Coherence decay rate",
+      "status": "reject",
+      "allowed_into_phaseIV_core": false,
+      "source_stage": "none",
+      "scope": "unavailable_on_frozen_branch",
+      "available_on_frozen_branch": false,
+      "sensitivity_score": "n/a",
+      "stable_range": "n/a",
+      "contrast_range": "n/a",
+      "rationale": "The frozen closure outputs retain coherence levels, not a regime-stable coherence-decay-rate observable. Promoting a decay metric here would require a new analysis layer not licensed by Phase III."
+    },
+    {
+      "observable_id": "grade_exchange_coherence_level",
+      "observable_label": "Grade-exchange coherence level",
+      "status": "secondary_observable",
+      "allowed_into_phaseIV_core": false,
+      "source_stage": "23.12 / III-C3",
+      "scope": "descriptive_support",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "0.388",
+      "stable_range": "0.4348 -> 0.4430",
+      "contrast_range": "0.4329 -> 0.4410",
+      "rationale": "Coherence remains well-defined across the smeared sector, but its stable and contrast ranges overlap too strongly to justify promotion into the minimal Phase IV core."
+    },
+    {
+      "observable_id": "flow_concentration_index",
+      "observable_label": "Flow concentration index",
+      "status": "primary_observable",
+      "allowed_into_phaseIV_core": true,
+      "source_stage": "23.12 / III-C3",
+      "scope": "stable_smeared_region",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "1.000",
+      "stable_range": "0.8691 -> 0.8824",
+      "contrast_range": "0.8862 -> 0.8997",
+      "rationale": "This is the strongest continuous transport-like separator on the frozen branch: the stable smeared cells occupy a clean low-flow-concentration band disjoint from the transient mixed controls."
+    },
+    {
+      "observable_id": "topology_return_error",
+      "observable_label": "Topology return error",
+      "status": "reject",
+      "allowed_into_phaseIV_core": false,
+      "source_stage": "23.13 / III-C4",
+      "scope": "ablation_specific_metric",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "n/a",
+      "stable_range": "n/a",
+      "contrast_range": "n/a",
+      "rationale": "Return error exists only as a branch-specific ablation diagnostic in Stage 23.13 and does not define the stable smeared sector across the frozen closure lattice."
+    },
+    {
+      "observable_id": "smeared_regime_membership_flag",
+      "observable_label": "Smeared regime membership flag",
+      "status": "derived",
+      "allowed_into_phaseIV_core": false,
+      "source_stage": "23.12 / III-C3",
+      "scope": "derived_target_label",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "1.000",
+      "stable_range": "1",
+      "contrast_range": "0",
+      "rationale": "This is the target label produced by the Phase III closure pass. It is necessary as an outcome variable, but it is not itself a measurable Phase IV observable."
+    },
+    {
+      "observable_id": "braid_like_exchange_indicator",
+      "observable_label": "Braid-like exchange indicator",
+      "status": "reject",
+      "allowed_into_phaseIV_core": false,
+      "source_stage": "23.12 / III-C3; 23.14 / III-C5",
+      "scope": "phaseIII_excluded_claim_space",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "1.000",
+      "stable_range": "0",
+      "contrast_range": "contrast-only",
+      "rationale": "Braid-centered quantities are explicitly excluded from promotion into the Phase IV core. They may appear only as contrast descriptors, because the family-wide braid claim and stable braid-phase claim failed in Phase III."
+    },
+    {
+      "observable_id": "mechanism_sensitivity_score",
+      "observable_label": "Mechanism sensitivity score",
+      "status": "reject",
+      "allowed_into_phaseIV_core": false,
+      "source_stage": "23.13 / III-C4",
+      "scope": "ablation_specific_metric",
+      "available_on_frozen_branch": true,
+      "sensitivity_score": "n/a",
+      "stable_range": "n/a",
+      "contrast_range": "n/a",
+      "rationale": "Mechanism sensitivity is tied to the ablation design of Stage 23.13 and does not characterize the closed smeared sector itself."
+    }
+  ]
+}
