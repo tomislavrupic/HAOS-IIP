@@ -4,6 +4,10 @@ Emergence diagnostics on a frozen branch-local cochain-Laplacian hierarchy.
 
 Success criterion: running the public reproduction script should produce identical table values and an identical plot to the frozen baseline.
 
+<p align="center">
+  <img src="Images/HAOS-IIP%20Continuum-Bridge%20Feasibility%20Path.png" alt="HAOS-IIP continuum-bridge feasibility path" width="100%" />
+</p>
+
 ## Overview
 
 HAOS-IIP is a structured numerical research program investigating whether a reproducible emergence ladder can be identified inside a frozen operator hierarchy on discrete graph domains.
@@ -18,6 +22,21 @@ The project focuses on:
 This repository does not assert geometric structure, physical correspondence, or continuum validity. It provides a computational environment for testing whether such structures could stabilize under disciplined constraints.
 
 Public-scope boundary: this reproduces a bounded mesoscopic-to-proto-geometric feasibility arc. It does not claim a continuum limit or physical ontology.
+
+## Visual Entry Points
+
+The landing page uses only a small curated media set so a cold reader can orient quickly without getting buried in assets.
+
+- [Deterministic validation hierarchy, Phases V-X](Images/HAOS-IIP.png)
+- [Emergent feasibility hierarchy, Phases X-XVIII](Images/Hierarchy%20of%20Emergent%20Feasibility%20Phases.png)
+- [Phase V diagnostic data readout](Images/HAOS-IIP%20Phase%20V%20Diagnostic%20Data%20Readout.png)
+- [Morphological stability network design](Images/Morphological%20Stability%20Network%20Design.png)
+- [Proto-particle feasibility study diagram](Images/Proto-Particle%20Feasibility%20Study%20Diagram.png)
+- [HAOS-IIP system ledger](Images/HAOS-IIP_System_Ledger.pdf)
+- [HAOS-IIP emergence telemetry](Images/HAOS-IIP_EMERGENCE_TELEMETRY.pdf)
+- [System Check: The Cautious Bridge](Images/System_Check__The_Cautious_Bridge.mp4)
+- [Media index](docs/media/MEDIA_INDEX.md)
+- [Image vault](Images/README.md)
 
 ## Scope Of The Program
 
@@ -128,7 +147,7 @@ Public metric aliases:
 
 Short note:
 
-- [A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/applications/A_Minimal_Structural_Stability_Oracle_Based_on_Frozen_HAOS_IIP_Telemetry_v1.md)
+- [A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry](docs/notes/applications/A_Minimal_Structural_Stability_Oracle_Based_on_Frozen_HAOS_IIP_Telemetry_v1.md)
 
 ## Program Status
 
@@ -176,6 +195,11 @@ Numbered synthesis papers are released in:
 
 - [papers/pdf_releases/](papers/pdf_releases/)
 - [papers/pdf_releases/INDEX.md](papers/pdf_releases/INDEX.md)
+
+Supporting repository visuals and media are indexed in:
+
+- [docs/media/MEDIA_INDEX.md](docs/media/MEDIA_INDEX.md)
+- [Images/README.md](Images/README.md)
 
 Example release:
 
