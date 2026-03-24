@@ -136,6 +136,10 @@ The intended public reading order is:
 
 1. `41.1` Causal-Closure Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 
+### 2.24 Part XXIV. Master synthesis
+
+1. `46.1` HAOS-IIP Master Synthesis: Program-Level Compression of the Paper Spine
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -188,6 +192,7 @@ The intended public reading order is:
 - `43.1` Ordering, Causal Closure, and Proto-Geometric Distance-Surrogate Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `44.1` Minimal Scaling Sketch for a Proto-Continuum Effective Description on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `45.1` A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry
+- `46.1` HAOS-IIP Master Synthesis: Program-Level Compression of the Paper Spine
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

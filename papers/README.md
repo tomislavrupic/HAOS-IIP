@@ -2,6 +2,15 @@
 
 This folder is the publication front door for the frozen-architecture program.
 
+## 0. Master synthesis
+
+For a single program-level read across the archive, start with:
+
+1. `haos_iip_master_synthesis_program_level_compression_of_the_paper_spine.pdf`
+2. Source: `haos_iip_master_synthesis_program_level_compression_of_the_paper_spine.tex`
+
+This paper is not a numbered replacement for the release spine. It is a synthesis layer that compresses the current archive into one readable master document while preserving the bounded status of the underlying claims.
+
 Phase I should be read as one bundled result with one primary citation target:
 
 1. `18.1` is the capstone paper for arXiv / journal submission.

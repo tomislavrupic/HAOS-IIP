@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/minimal_structural_stability_oracle_based_on_frozen_haos_iip_telemetry.tex",
-  "title": "A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry",
-  "commit_message": "Freeze structural stability oracle release and collect repo updates",
+  "paper": "papers/haos_iip_master_synthesis_program_level_compression_of_the_paper_spine.tex",
+  "title": "HAOS-IIP Master Synthesis: Program-Level Compression of the Paper Spine",
+  "commit_message": "Freeze master synthesis release 46.1",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",
