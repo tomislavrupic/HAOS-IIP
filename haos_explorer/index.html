@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HAOS-IIP Explorer</title>
+    <meta
+      name="description"
+      content="Interactive public interface for HAOS-IIP: stability playground, oracle architecture, papers, experiment atlas, roadmap, and developer entry."
+    >
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css?v=20260324-explorer1">
+    <script defer src="app.js?v=20260324-explorer1"></script>
+  </head>
+  <body>
+    <div class="ambient-shell" aria-hidden="true"></div>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand-mark" href="#landing">
+          <span class="brand-chip">HAOS-IIP</span>
+          <span class="brand-text">Explorer</span>
+        </a>
+        <nav class="header-nav" aria-label="Section navigation">
+          <a href="#playground">Playground</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#papers">Papers</a>
+          <a href="#atlas">Atlas</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#developers">Developers</a>
+        </nav>
+        <a
+          class="header-link"
+          href="https://github.com/tomislavrupic/HAOS-IIP"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+      </header>
+
+      <main>
+        <section id="landing" class="hero-section">
+          <div class="hero-copy">
+            <p class="eyebrow">Public Interface / Frozen Telemetry / Visual Instrument</p>
+            <h1>Recoverable coherence made visible.</h1>
+            <p class="hero-text">
+              HAOS-IIP Explorer turns the paper spine, frozen telemetry layer, and oracle demo into a single
+              public surface. It explains the framework quickly, lets visitors perturb a stability model, and
+              grounds every claim in repo artifacts instead of abstract language.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#playground">Open The Playground</a>
+              <a class="button button-secondary" href="#papers">Browse The Papers</a>
+            </div>
+
+            <div class="hero-definition">
+              <p class="definition-label">Minimal definition</p>
+              <p class="definition-text">Reality = recoverable coherence under interaction.</p>
+            </div>
+
+            <div class="context-grid">
+              <article class="context-card">
+                <p class="card-label">What problem it solves</p>
+                <p>
+                  It gives researchers and builders a small public diagnostic for asking whether a structured
+                  trajectory remains coherent, deforms weakly, or collapses.
+                </p>
+              </article>
+              <article class="context-card">
+                <p class="card-label">Why stability matters</p>
+                <p>
+                  Stability is the difference between a visual pattern and a reusable instrument. If a state
+                  cannot recover under perturbation, it is not yet ready to support larger claims.
+                </p>
+              </article>
+              <article class="context-card">
+                <p class="card-label">Public proof</p>
+                <p>
+                  The explorer points directly to executable demo code, frozen telemetry, real plots, and the
+                  numbered release stack that anchors the repository.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="hero-stage">
+            <article class="hero-panel">
+              <div class="flow-header">
+                <p class="card-label">One-minute mental model</p>
+                <h2>State -> perturbation -> recovery -> classification</h2>
+              </div>
+              <div class="flow-rail" aria-label="Recovery flow diagram">
+                <div class="flow-node">
+                  <span class="flow-step">01</span>
+                  <strong>State</strong>
+                  <span>seed trajectory</span>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-node">
+                  <span class="flow-step">02</span>
+                  <strong>Perturbation</strong>
+                  <span>noise, drop, timing stress</span>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-node">
+                  <span class="flow-step">03</span>
+                  <strong>Recovery</strong>
+                  <span>retention and ordering checks</span>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-node">
+                  <span class="flow-step">04</span>
+                  <strong>Classification</strong>
+                  <span>stable, marginal, unstable</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="hero-panel hero-proof">
+              <p class="card-label">Cold-start orientation</p>
+              <div class="proof-grid">
+                <div class="proof-card">
+                  <strong>52</strong>
+                  <span>frozen PDF releases in the stack</span>
+                </div>
+                <div class="proof-card">
+                  <strong>4</strong>
+                  <span>public oracle metrics exposed on the site</span>
+                </div>
+                <div class="proof-card">
+                  <strong>3</strong>
+                  <span>canonical demo scenarios from the local CLI</span>
+                </div>
+                <div class="proof-card">
+                  <strong>1</strong>
+                  <span>public idea: make the engine tangible</span>
+                </div>
+              </div>
+              <img
+                class="proof-image"
+                src="../Images/Morphological%20Stability%20Network%20Design.png"
+                alt="Morphological Stability Network Design"
+              >
+            </article>
+          </aside>
+        </section>
+
+        <section id="playground" class="section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Interactive Stability Playground</p>
+              <h2>The oracle as an experience</h2>
+            </div>
+            <p class="section-copy">
+              Exact presets use the same public scenario grammar behind
+              <code>python3 -m haos_iip.demo stability</code>. The slider layer keeps that telemetry shape,
+              then adds a front-end timing control so visitors can feel how recovery changes.
+            </p>
+          </div>
+
+          <div class="playground-grid">
+            <article class="panel panel-controls">
+              <div class="panel-header">
+                <div>
+                  <p class="card-label">Seed scenarios</p>
+                  <h3>Start from real oracle outputs</h3>
+                </div>
+              </div>
+              <div id="preset-grid" class="preset-grid" aria-label="Scenario presets"></div>
+
+              <div class="slider-grid" aria-label="Stability controls">
+                <label class="slider-control">
+                  <span>Noise</span>
+                  <strong id="noise-value">0.00</strong>
+                  <input id="noise-slider" type="range" min="0" max="0.15" step="0.01" value="0">
+                </label>
+
+                <label class="slider-control">
+                  <span>Connectivity drop</span>
+                  <strong id="connectivity-value">0.00</strong>
+                  <input id="connectivity-slider" type="range" min="0" max="0.30" step="0.01" value="0">
+                </label>
+
+                <label class="slider-control">
+                  <span>Perturbation strength</span>
+                  <strong id="perturbation-value">0.00</strong>
+                  <input id="perturbation-slider" type="range" min="0" max="1" step="0.01" value="0">
+                </label>
+
+                <label class="slider-control">
+                  <span>Temporal distortion</span>
+                  <strong id="temporal-value">0.00</strong>
+                  <input id="temporal-slider" type="range" min="0" max="1" step="0.01" value="0">
+                </label>
+              </div>
+
+              <div class="playground-actions">
+                <button id="evaluate-button" class="button button-primary" type="button">
+                  Evaluate Stability
+                </button>
+                <button id="reset-button" class="button button-secondary" type="button">
+                  Reset Modifiers
+                </button>
+              </div>
+
+              <div class="callout-block">
+                <p class="card-label">Implementation note</p>
+                <p>
+                  The exact preset cards mirror the frozen CLI demo. The continuous slider model is a client-side
+                  public surface that preserves the same retention, ordering, depth, and distance vocabulary while
+                  adding a visual timing stress control.
+                </p>
+              </div>
+            </article>
+
+            <article class="panel panel-results">
+              <div class="result-header">
+                <div>
+                  <p class="card-label">Current readout</p>
+                  <h3 id="result-title">baseline -> stable</h3>
+                  <p id="result-subtitle" class="result-subtitle">
+                    Loaded from the baseline scenario with zero modifiers.
+                  </p>
+                </div>
+                <span id="result-badge" class="oracle-badge stable">stable</span>
+              </div>
+
+              <div id="result-stats" class="result-stats" aria-live="polite"></div>
+              <div id="metric-bars" class="metric-bars"></div>
+
+              <div class="result-visuals">
+                <section class="viz-card">
+                  <div class="viz-header">
+                    <div>
+                      <h4>State deformation</h4>
+                      <p>Pulse travel, shell separation, and visible recovery strain.</p>
+                    </div>
+                  </div>
+                  <canvas
+                    id="signal-canvas"
+                    class="signal-canvas"
+                    width="760"
+                    height="320"
+                    aria-label="State deformation visualization"
+                  ></canvas>
+                </section>
+
+                <section class="viz-card">
+                  <div class="viz-header">
+                    <div>
+                      <h4>Neighborhood heatmap</h4>
+                      <p>Noise on the y-axis, connectivity drop on the x-axis. Other controls stay fixed.</p>
+                    </div>
+                  </div>
+                  <div id="heatmap-grid" class="heatmap-grid" aria-label="Stability heatmap"></div>
+                  <p id="heatmap-caption" class="heatmap-caption"></p>
+                </section>
+              </div>
+
+              <section class="viz-card json-card">
+                <div class="viz-header">
+                  <div>
+                    <h4>Oracle payload</h4>
+                    <p>Human-readable metrics with a derived coherence score and decision confidence.</p>
+                  </div>
+                </div>
+                <pre id="oracle-json" class="json-output"></pre>
+              </section>
+            </article>
+          </div>
+        </section>
+
+        <section id="architecture" class="section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Oracle Architecture Viewer</p>
+              <h2>From scenarios to policy and future routing</h2>
+            </div>
+            <p class="section-copy">
+              Click any layer to see the role it plays, where it lives in the repo, and which surfaces are already
+              frozen versus still planned.
+            </p>
+          </div>
+
+          <div class="architecture-grid">
+            <div id="architecture-lanes" class="architecture-lanes" aria-label="Architecture layers"></div>
+            <article class="panel architecture-detail">
+              <div class="panel-header">
+                <div>
+                  <p class="card-label">Selected layer</p>
+                  <h3 id="architecture-title">State layer</h3>
+                </div>
+                <span id="architecture-status" class="status-pill">Frozen</span>
+              </div>
+              <p id="architecture-summary" class="architecture-summary"></p>
+              <ul id="architecture-points" class="detail-points"></ul>
+              <div id="architecture-refs" class="reference-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="papers" class="section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Papers Library</p>
+              <h2>Technical stack, conceptual entry, one reading surface</h2>
+            </div>
+            <div class="mode-toggle" role="tablist" aria-label="Paper summary mode">
+              <button id="conceptual-mode" class="mode-button active" type="button">Conceptual mode</button>
+              <button id="technical-mode" class="mode-button" type="button">Technical mode</button>
+            </div>
+          </div>
+
+          <div id="papers-grid" class="papers-grid"></div>
+        </section>
+
+        <section id="atlas" class="section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Experiment Atlas</p>
+              <h2>Real outputs, not placeholder science art</h2>
+            </div>
+            <p class="section-copy">
+              A curated slice of the repository's actual plot surface: the oracle overview, scan outputs, robustness
+              maps, collapse panels, and prediction checks that give the work visible traction.
+            </p>
+          </div>
+
+          <div class="atlas-grid">
+            <figure class="panel atlas-stage">
+              <img id="atlas-image" class="atlas-image" src="" alt="">
+              <figcaption class="atlas-caption">
+                <div>
+                  <p id="atlas-label" class="card-label"></p>
+                  <h3 id="atlas-title"></h3>
+                  <p id="atlas-summary"></p>
+                </div>
+                <a id="atlas-link" class="button button-secondary atlas-link" href="" target="_blank" rel="noreferrer">
+                  Open Artifact
+                </a>
+              </figcaption>
+            </figure>
+
+            <div id="atlas-thumbs" class="atlas-thumbs" aria-label="Artifact list"></div>
+          </div>
+        </section>
+
+        <section id="roadmap" class="section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Roadmap Timeline</p>
+              <h2>What is frozen, what ships next</h2>
+            </div>
+            <p class="section-copy">
+              The timeline below keeps the public story grounded: shipped phases point to frozen artifacts, while the
+              router and agent layers stay marked as planned surfaces rather than implied completions.
+            </p>
+          </div>
+
+          <div class="roadmap-grid">
+            <div id="roadmap-timeline" class="roadmap-timeline" aria-label="Roadmap timeline"></div>
+            <article class="panel roadmap-detail">
+              <div class="panel-header">
+                <div>
+                  <p class="card-label">Selected milestone</p>
+                  <h3 id="roadmap-title">Phase III opener</h3>
+                </div>
+                <span id="roadmap-status" class="status-pill">Shipped</span>
+              </div>
+              <div class="roadmap-copy">
+                <p><strong>Goal</strong></p>
+                <p id="roadmap-goal"></p>
+                <p><strong>Result</strong></p>
+                <p id="roadmap-result"></p>
+                <p><strong>Artifacts</strong></p>
+                <div id="roadmap-artifacts" class="reference-list"></div>
+                <p><strong>Open questions</strong></p>
+                <ul id="roadmap-questions" class="detail-points"></ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="developers" class="section">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Developer Entry</p>
+              <h2>For builders who want the repo immediately</h2>
+            </div>
+            <p class="section-copy">
+              The explorer is static on purpose. That makes it easy to serve locally today, then swap the playground
+              to a FastAPI or WASM surface later without rewriting the information architecture.
+            </p>
+          </div>
+
+          <div class="developer-grid">
+            <article class="panel developer-card">
+              <div class="panel-header">
+                <div>
+                  <p class="card-label">Run locally</p>
+                  <h3>Static site plus callable demo</h3>
+                </div>
+              </div>
+              <pre class="code-block"><code>python3 -m http.server 8000
+
+# Open:
+# http://localhost:8000/haos_explorer/
+
+python3 -m haos_iip.demo stability baseline --json
+python3 -m haos_iip.demo stability --scan noise=0.00:0.10:0.05 connectivity=0.00:0.20:0.10</code></pre>
+            </article>
+
+            <article class="panel developer-card">
+              <div class="panel-header">
+                <div>
+                  <p class="card-label">Minimal output</p>
+                  <h3>Machine-readable baseline readout</h3>
+                </div>
+              </div>
+              <pre id="developer-json" class="code-block"></pre>
+            </article>
+
+            <article class="panel developer-card">
+              <div class="panel-header">
+                <div>
+                  <p class="card-label">Useful entry points</p>
+                  <h3>Where to extend next</h3>
+                </div>
+              </div>
+              <div class="developer-links">
+                <a href="../README.md" target="_blank" rel="noreferrer">Repository overview</a>
+                <a href="../API_CONTRACT.md" target="_blank" rel="noreferrer">API contract</a>
+                <a href="../haos_iip/demo.py" target="_blank" rel="noreferrer">Public oracle CLI</a>
+                <a href="../telemetry/frozen_metrics.py" target="_blank" rel="noreferrer">Frozen telemetry</a>
+                <a href="../papers/pdf_releases/45.1%20A%20Minimal%20Structural-Stability%20Oracle%20Based%20on%20Frozen%20HAOS-IIP%20Telemetry.pdf" target="_blank" rel="noreferrer">Oracle paper</a>
+                <a href="../atlas_explorer/" target="_blank" rel="noreferrer">Legacy Atlas MVP</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>HAOS-IIP Explorer is a static public surface built from local repo artifacts, frozen telemetry, and the public stability demo.</p>
+      </footer>
+    </div>
+  </body>
+</html>
