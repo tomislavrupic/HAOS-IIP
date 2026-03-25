@@ -4,6 +4,8 @@ This module explores when interaction systems acquire geometry-like structure.
 
 It is an additive sandbox layer for HAOS-IIP. It does not modify the existing operator architecture and does not import continuum assumptions, field equations, or spacetime interpretations.
 
+Canonical figures in this module follow a frozen quiet-numerics standard: single-column layout, serif text, major-tick grids only, monochrome structure with one perceptual gradient, and deterministic SVG/PDF/PNG export.
+
 ## Scope
 
 The module measures only structural diagnostics:
@@ -91,14 +93,19 @@ The cluster-scale sweep stores:
 geometry_emergence/diagnostics/cluster_scale_sweep_full.json
 geometry_emergence/diagnostics/cluster_scale_sweep_summary.json
 geometry_emergence/diagnostics/cluster_scale_transition.svg
+geometry_emergence/diagnostics/cluster_scale_transition.pdf
+geometry_emergence/diagnostics/cluster_scale_transition.png
 ```
 
 The publication-grade canonical figure and bounded interpretation layer store:
 
 ```text
 geometry_emergence/diagnostics/cluster_scale_transition_canonical.svg
+geometry_emergence/diagnostics/cluster_scale_transition_canonical.pdf
+geometry_emergence/diagnostics/cluster_scale_transition_canonical.png
 geometry_emergence/diagnostics/cluster_scale_minimal_interpretation.md
 papers/figures/cluster_scale_transition_canonical.pdf
+papers/figures/cluster_scale_transition_canonical.png
 papers/cluster_scale_dependence_of_coupled_transport_geometry_signatures_in_interaction_graphs.pdf
 ```
 

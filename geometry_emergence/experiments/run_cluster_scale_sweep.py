@@ -19,6 +19,8 @@ DEFAULT_CONFIG_PATH = MODULE_ROOT / "configs" / "cluster_scale_sweep_config.json
 FULL_OUTPUT_PATH = MODULE_ROOT / "diagnostics" / "cluster_scale_sweep_full.json"
 SUMMARY_OUTPUT_PATH = MODULE_ROOT / "diagnostics" / "cluster_scale_sweep_summary.json"
 PLOT_OUTPUT_PATH = MODULE_ROOT / "diagnostics" / "cluster_scale_transition.svg"
+PLOT_PDF_OUTPUT_PATH = MODULE_ROOT / "diagnostics" / "cluster_scale_transition.pdf"
+PLOT_PNG_OUTPUT_PATH = MODULE_ROOT / "diagnostics" / "cluster_scale_transition.png"
 CANONICAL_SUMMARY_PATH = MODULE_ROOT / "diagnostics" / "canonical_transition_summary.json"
 
 os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".mplconfig"))
@@ -26,11 +28,7 @@ os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".mplconfig"))
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-import matplotlib
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
+from geometry_emergence.figure_protocol import build_cluster_scale_phase_diagram, save_figure_bundle
 from geometry_emergence.metrics import (
     compute_effective_dimension,
     compute_flow_bending_index,
@@ -456,46 +454,18 @@ def build_scale_summary(scale: float, seed_runs: list[dict[str, Any]], seed_coun
     }
 
 
-def plot_transition(scale_runs: list[dict[str, Any]], kernel_widths: list[float], threshold: float) -> None:
-    fig, ax = plt.subplots(figsize=(9.5, 6.2), facecolor="white")
-    colors = plt.get_cmap("viridis")(np.linspace(0.15, 0.9, len(scale_runs)))
-
-    for color, scale_entry in zip(colors, scale_runs):
-        scale_label = f"scale {scale_entry['scale']:.2f}"
-        seed_curves = []
-        for seed_run in scale_entry["seed_runs"]:
-            coupled = np.array(
-                seed_run["onset_detection"]["coupled_progress"]["coupled_diagnostic_score"],
-                dtype=float,
-            )
-            seed_curves.append(coupled)
-            ax.plot(
-                kernel_widths,
-                coupled,
-                color=color,
-                alpha=0.18,
-                linewidth=1.1,
-            )
-        mean_curve = np.mean(np.vstack(seed_curves), axis=0)
-        ax.plot(
-            kernel_widths,
-            mean_curve,
-            color=color,
-            linewidth=2.6,
-            label=scale_label,
-        )
-
-    ax.axhline(float(threshold), color="#666666", linestyle="--", linewidth=1.0)
-    ax.set_facecolor("white")
-    ax.set_title("Cluster-Scale Transition Sweep")
-    ax.set_xlabel("Kernel width")
-    ax.set_ylabel("Coupled diagnostic score")
-    ax.grid(alpha=0.22, color="#777777")
-    ax.legend(frameon=False, ncol=2)
-    fig.tight_layout()
-    PLOT_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(PLOT_OUTPUT_PATH, format="svg", bbox_inches="tight", facecolor="white")
-    plt.close(fig)
+def plot_transition(full_payload: dict[str, Any], summary_payload: dict[str, Any]) -> None:
+    figure = build_cluster_scale_phase_diagram(
+        full_payload=full_payload,
+        summary_payload=summary_payload,
+    )
+    save_figure_bundle(
+        figure,
+        svg_path=PLOT_OUTPUT_PATH,
+        pdf_path=PLOT_PDF_OUTPUT_PATH,
+        png_path=PLOT_PNG_OUTPUT_PATH,
+    )
+    figure.clf()
 
 
 def run_cluster_scale_sweep(config: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
@@ -588,11 +558,7 @@ def run_cluster_scale_sweep(config: dict[str, Any]) -> tuple[dict[str, Any], dic
             variance_reduction
         )
 
-    plot_transition(
-        scale_runs=scale_runs,
-        kernel_widths=kernel_widths,
-        threshold=float(config["coupled_threshold"]),
-    )
+    plot_transition(full_payload=full_payload, summary_payload=summary_payload)
     return full_payload, summary_payload
 
 
@@ -608,4 +574,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -174,16 +174,16 @@ The scale dependence is therefore not a flat linear broadening. The sweep resolv
 
 \section{Canonical Figure}
 
-Figure~\ref{fig:canonical} locks the full signal into one publication-grade view. Panel A shows the coupled diagnostic score against kernel width for every cluster scale, with faint per-seed traces and bold mean curves. Panel B shows the onset location by scale using min--max whiskers around the scale mean. The detection fraction is annotated above each point.
+Figure~\ref{fig:canonical} locks the full signal into one publication-grade view using the frozen geometry-emergence visual protocol. The ordering is deliberate: panel A identifies the scale-controlled onset shift, panel B shows where the stable regime is detected across parameter space, and panel C shows the transition-shape morphology for one representative seed without changing the diagnostic rule. The representative seed shown in panel C is seed $23$, selected deterministically as the onset vector closest to the scale-level mean onset profile.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{figures/cluster_scale_transition_canonical.pdf}
-\caption{Canonical cluster-scale transition figure. Top: coupled diagnostic score vs kernel width for all scales, with faint seed traces and bold scale means. Bottom: onset location by cluster scale with min--max whiskers and detected-count annotations.}
+\includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{figures/cluster_scale_transition_canonical.pdf}
+\caption{Transition onset in interaction-graph transport as a function of cluster scale. (A) Mean onset kernel width with seed dispersion. (B) Fraction of seeds exhibiting stable transition across parameter space. (C) Representative transition morphology for one seed showing scale-dependent threshold crossing. All metrics computed using the frozen diagnostic set; operator stack unchanged.}
 \label{fig:canonical}
 \end{figure}
 
-The top panel shows the main mechanism of separation: as scale increases, the coupled curve shifts rightward. The bottom panel shows the same shift in compressed form and makes the mid-scale broadening visually explicit.
+Panel A compresses the onset shift into a scale-level summary and keeps the seed spread visible without exaggeration. Panel B makes the bounded transition regime discrete rather than smoothed, which is important because the sweep itself is discrete. Panel C shows the curve-level morphology directly: larger cluster scales shift the coupled crossing to larger kernel widths while preserving the same threshold rule.
 
 \section{Structural Logging at the Onset Layer}
 
@@ -251,8 +251,13 @@ These commands produce:
 \item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_sweep\_full.json};
 \item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_sweep\_summary.json};
 \item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition.svg};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition.pdf};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition.png};
 \item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition\_canonical.svg};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition\_canonical.pdf};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition\_canonical.png};
 \item \texttt{papers/figures/cluster\_scale\_transition\_canonical.pdf}.
+\item \texttt{papers/figures/cluster\_scale\_transition\_canonical.png}.
 \end{itemize}
 
 \section{Conclusion}

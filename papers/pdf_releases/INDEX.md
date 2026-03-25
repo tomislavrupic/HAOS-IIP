@@ -142,7 +142,8 @@ The intended public reading order is:
 
 ### 2.25 Part XXV. Geometry-emergence transition structure
 
-1. `47.1` Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs
+1. `47.2` Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs
+2. `47.1` same paper, initial release (superseded by `47.2`)
 
 ## 3. Full release list
 
@@ -197,7 +198,8 @@ The intended public reading order is:
 - `44.1` Minimal Scaling Sketch for a Proto-Continuum Effective Description on a Frozen Branch-Local Cochain-Laplacian Hierarchy
 - `45.1` A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry
 - `46.1` HAOS-IIP Master Synthesis: Program-Level Compression of the Paper Spine
-- `47.1` Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs
+- `47.2` Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs
+- `47.1` Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs (superseded)
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
