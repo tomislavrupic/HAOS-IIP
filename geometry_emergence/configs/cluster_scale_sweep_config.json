@@ -1,0 +1,10 @@
+{
+  "graph_size": 72,
+  "seeds": [11, 17, 23, 31, 43],
+  "cluster_scales": [0.5, 0.75, 1.0, 1.25, 1.5],
+  "kernel_width_range": [0.08, 0.18],
+  "kernel_step": 0.003,
+  "transport_steps": 120,
+  "coupled_threshold": 0.62
+}
+

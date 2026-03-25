@@ -1,0 +1,10 @@
+{
+  "base_config_path": "experiments/canonical_transition_config.json",
+  "graph_kind": "clustered",
+  "kernel_width_start": 0.135,
+  "kernel_width_stop": 0.165,
+  "kernel_width_step": 0.002,
+  "seed_panel": [11, 17, 23, 31, 43],
+  "summary_output_path": "diagnostics/clustered_micro_scan_summary.json"
+}
+

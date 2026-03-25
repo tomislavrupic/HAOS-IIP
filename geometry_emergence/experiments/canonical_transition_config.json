@@ -1,0 +1,38 @@
+{
+  "statement": "There exists a bounded kernel-width regime in which transport becomes low-distortion, neighborhoods become persistent, and recoverability improves simultaneously.",
+  "coarse_reference_graph_kind": "clustered",
+  "coarse_reference_seed": 17,
+  "coarse_kernel_widths": [
+    0.05,
+    0.07,
+    0.09,
+    0.11,
+    0.13,
+    0.15,
+    0.18,
+    0.22,
+    0.27,
+    0.33
+  ],
+  "refine_half_width": 0.05,
+  "refine_step": 0.005,
+  "seed_panel": [11, 17, 23, 31, 43],
+  "graph_kinds": ["clustered", "random"],
+  "n_nodes": 72,
+  "embedding_dim": 2,
+  "cluster_count": 3,
+  "cluster_spread": 0.075,
+  "locality_radius_factor": 3.0,
+  "transport_self_weight": 0.05,
+  "transport_steps": 12,
+  "transport_threshold": 0.01,
+  "neighborhood_support_threshold": 0.01,
+  "k_nearest": 6,
+  "burn_in_steps": 6,
+  "recovery_steps": 10,
+  "perturbation_scale": 0.15,
+  "coupled_threshold": 0.5,
+  "summary_output_path": "diagnostics/canonical_transition_summary.json",
+  "plot_output_path": "diagnostics/canonical_transition_primary_metrics.svg"
+}
+

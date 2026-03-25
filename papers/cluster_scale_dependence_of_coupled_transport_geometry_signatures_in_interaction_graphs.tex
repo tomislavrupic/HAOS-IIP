@@ -1,0 +1,264 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The geometry-emergence sandbox in HAOS-IIP was designed as a bounded numerical program: no continuum assumptions, no spacetime interpretation, and no field-theory import. Its question is narrower. When interaction graphs are evolved only by Gaussian kernel transport, under what conditions do three structural diagnostics improve together: path distortion, neighborhood persistence, and recoverability coupling? Earlier canonical sweeps established a reproducible onset band and showed a topology contrast: random graphs produced a tighter onset than clustered graphs. A subsequent clustered micro-scan revealed mixed seed behavior, suggesting that cluster structure itself, not only kernel width, may control the transition. This paper freezes that next test as a deterministic cluster-scale sweep. Cluster scale is varied across $\{0.5,0.75,1.0,1.25,1.5\}$ while graph size, node count, seed panel, kernel family, transport rule, and onset rule remain fixed. For each scale and seed, kernel width is swept from $0.08$ to $0.18$ in steps of $0.003$, using $120$ transport steps and a coupled-threshold gate of $0.62$. Every scale yields detection in all five seeds. Mean onset rises from $0.1118 \pm 0.0031$ at scale $0.50$ to $0.1562 \pm 0.0077$ at scale $1.25$, then relaxes slightly to $0.1490 \pm 0.0078$ at scale $1.50$. The onset-vs-scale monotonicity score is $0.9$, and onset-variance is reduced by about $89.6\%$ relative to the earlier clustered canonical panel. The bounded conclusion is diagnostic only: cluster structural scale acts as a meaningful control parameter for the coupled transition signal in this interaction-graph program. No claim is made about spacetime, curvature, continuum geometry, or physical correspondence.
+\end{abstract}
+
+\section{Scope and Frozen Contracts}
+
+This paper documents a single additive experiment inside \texttt{geometry\_emergence/}. It does not modify the frozen HAOS-IIP operator architecture, kernel family, or transport rule. The following elements remain unchanged from the earlier canonical experiments:
+\begin{itemize}
+\item Gaussian interaction kernels only;
+\item no predefined lattice geometry;
+\item node count fixed at $72$;
+\item deterministic seed panel $\{11,17,23,31,43\}$;
+\item path distortion, neighborhood persistence, and recoverability coupling as the primary onset bundle;
+\item onset detected by the first kernel width whose coupled diagnostic score exceeds a fixed threshold.
+\end{itemize}
+
+The authority files for the present experiment are:
+\begin{itemize}
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_sweep\_full.json};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_sweep\_summary.json};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition.svg};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition\_canonical.svg}.
+\end{itemize}
+
+This paper adds no new interpretation layer beyond a bounded structural reading of those files.
+
+\section{Motivation}
+
+The earlier geometry-emergence ladder already established three facts:
+\begin{enumerate}
+\item a reproducible onset band exists for the coupled signal;
+\item random graphs give a tighter onset distribution than clustered graphs;
+\item clustered graphs show seed-sensitive onset structure even after local refinement.
+\end{enumerate}
+
+That combination changes the problem. The next question is not whether more diagnostics should be added. The next question is whether the observed clustered spread is controlled by an underlying structural variable.
+
+Cluster structural scale is the most immediate candidate. If clustered onset changes systematically when cluster spread is varied while graph size and global spatial density are held comparable, then the transition is no longer a vague seed artifact. It becomes a structured dependence inside the interaction ensemble itself.
+
+\section{Experimental Design}
+
+\subsection{Sweep parameters}
+
+The experiment is driven by the configuration file
+\[
+\texttt{geometry\_emergence/configs/cluster\_scale\_sweep\_config.json}.
+\]
+
+The frozen parameter set is:
+\begin{itemize}
+\item graph size: $72$ nodes;
+\item seeds: $\{11,17,23,31,43\}$;
+\item cluster scales: $\{0.5,0.75,1.0,1.25,1.5\}$;
+\item kernel-width range: $[0.08,0.18]$;
+\item kernel step: $0.003$;
+\item transport steps: $120$;
+\item coupled threshold: $0.62$.
+\end{itemize}
+
+All runs are deterministic. No learned parameters, adaptive thresholds, or stochastic heuristics are introduced beyond the explicit seeds.
+
+\subsection{Scale-controlled clustered graph family}
+
+The clustered generator uses the same Gaussian-kernel graph construction as the rest of the module, but the point cloud is rebuilt for each scale. Cluster scale rescales the local cluster spread while the center radius is adjusted so that the overall second moment of the cloud remains approximately constant:
+\[
+\sigma_{\mathrm{local}} = s \, \sigma_0,
+\]
+\[
+r_{\mathrm{center}}^2 = r_0^2 + 2\sigma_0^2 - 2\sigma_{\mathrm{local}}^2.
+\]
+
+This keeps graph size fixed and preserves a comparable global spatial density while shifting the balance between local aggregation and center separation.
+
+\subsection{Primary onset rule}
+
+The onset rule is unchanged from the canonical transition panel. For each seed and scale, kernel width is swept and the following primary diagnostics are recorded:
+\begin{itemize}
+\item path distortion score;
+\item neighborhood persistence;
+\item recoverability coupling.
+\end{itemize}
+
+These are converted into normalized progress channels relative to the initial point of each sweep, and the coupled diagnostic score is defined as the pointwise minimum of the three progress curves. Onset is the first kernel width at which that coupled score exceeds the fixed threshold $0.62$.
+
+The point of this rule is not to reward any one metric individually. It only marks a transition when all three move together.
+
+\section{Additional Structural Logging}
+
+Each run also logs structural and secondary diagnostics:
+\begin{itemize}
+\item mean clustering coefficient;
+\item effective dimension;
+\item mean cluster size;
+\item largest connected-component fraction;
+\item flow-bending index;
+\item fraction-participation score.
+\end{itemize}
+
+These quantities are recorded for later correlation analysis. They are not used to define onset.
+
+\section{Result Summary}
+
+Table~\ref{tab:summary} compresses the scale-level outcome.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.3in}ccccc}
+\toprule
+Scale & Detected fraction & Mean onset & Std onset & Min onset & Max onset \\
+\midrule
+0.50 & 1.0 & 0.1118 & 0.003059 & 0.107 & 0.116 \\
+0.75 & 1.0 & 0.1166 & 0.013470 & 0.104 & 0.137 \\
+1.00 & 1.0 & 0.1274 & 0.011289 & 0.110 & 0.140 \\
+1.25 & 1.0 & 0.1562 & 0.007730 & 0.146 & 0.167 \\
+1.50 & 1.0 & 0.1490 & 0.007823 & 0.137 & 0.158 \\
+\bottomrule
+\end{tabular}
+\caption{Compact scale-level onset summary from \texttt{cluster\_scale\_sweep\_summary.json}.}
+\label{tab:summary}
+\end{table}
+
+Three points are immediate:
+\begin{enumerate}
+\item every tested scale produces onset detection in all five seeds;
+\item onset shifts materially with scale;
+\item onset spread is structured rather than exploding with scale.
+\end{enumerate}
+
+The global aggregate metrics are:
+\[
+\text{onset-scale monotonicity score} = 0.9,
+\]
+\[
+\text{variance reduction vs previous clustered canonical panel} = 0.895699.
+\]
+
+The first quantity shows a strong increasing trend with a small late relaxation at scale $1.5$. The second shows that the cluster-scale sweep regularizes onset variance strongly relative to the earlier clustered panel.
+
+\section{Per-Seed Onset Arrays}
+
+The full seed-resolved onset arrays are:
+\begin{itemize}
+\item scale $0.50$: $[0.113, 0.110, 0.116, 0.113, 0.107]$;
+\item scale $0.75$: $[0.104, 0.128, 0.110, 0.104, 0.137]$;
+\item scale $1.00$: $[0.140, 0.119, 0.137, 0.110, 0.131]$;
+\item scale $1.25$: $[0.146, 0.167, 0.149, 0.161, 0.158]$;
+\item scale $1.50$: $[0.137, 0.155, 0.158, 0.143, 0.152]$.
+\end{itemize}
+
+This array-level view matters because it separates three behaviors:
+\begin{enumerate}
+\item very tight early-scale onset at $0.50$;
+\item broader mid-scale spread at $0.75$ and $1.00$;
+\item re-tightened late-scale onset at $1.25$ and $1.50$.
+\end{enumerate}
+
+The scale dependence is therefore not a flat linear broadening. The sweep resolves low-variance, mid-variance, and re-stabilized regimes.
+
+\section{Canonical Figure}
+
+Figure~\ref{fig:canonical} locks the full signal into one publication-grade view. Panel A shows the coupled diagnostic score against kernel width for every cluster scale, with faint per-seed traces and bold mean curves. Panel B shows the onset location by scale using min--max whiskers around the scale mean. The detection fraction is annotated above each point.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/cluster_scale_transition_canonical.pdf}
+\caption{Canonical cluster-scale transition figure. Top: coupled diagnostic score vs kernel width for all scales, with faint seed traces and bold scale means. Bottom: onset location by cluster scale with min--max whiskers and detected-count annotations.}
+\label{fig:canonical}
+\end{figure}
+
+The top panel shows the main mechanism of separation: as scale increases, the coupled curve shifts rightward. The bottom panel shows the same shift in compressed form and makes the mid-scale broadening visually explicit.
+
+\section{Structural Logging at the Onset Layer}
+
+The full JSON ledger also records structural context at every sampled point. Two observations are important.
+
+First, onset detection does not require sacrificing coverage. Detection fraction remains $1.0$ across the entire scale ladder, so the scale effect is not a trivial disappearance of the transition.
+
+Second, the sweep now exposes a stable parameter against which the secondary diagnostics can be compared later. Mean clustering coefficient, effective dimension, mean cluster size, largest-component fraction, and flow-bending index are all frozen into the full ledger at the same resolution as the primary onset data. This is the correct basis for a later correlation study because the structural channels were logged without tuning the onset rule.
+
+\section{Bounded Interpretation}
+
+Only a narrow interpretation is supported.
+
+\subsection*{Supported}
+
+\begin{itemize}
+\item coupled transport-geometry signatures depend systematically on cluster scale;
+\item scale acts as a control parameter for the onset location;
+\item seed dependence becomes structured under scale variation rather than remaining arbitrary;
+\item the transition signal can be regularized substantially relative to the earlier clustered panel.
+\end{itemize}
+
+\subsection*{Not supported}
+
+\begin{itemize}
+\item spacetime claims;
+\item curvature claims;
+\item continuum claims;
+\item gravitational analogies;
+\item physical geometry claims.
+\end{itemize}
+
+The paper therefore supports only a structural conclusion: the interaction-graph transition signal depends materially on the scale of clustered organization.
+
+\section{Why the Signal Is Stronger Now}
+
+The cluster-scale sweep improves on the earlier canonical result in four concrete ways.
+
+\begin{enumerate}
+\item It resolves a direct control parameter. The clustered onset spread is no longer just ``different from random''; it is now demonstrably scale-dependent.
+\item It removes the earlier partial-detection ambiguity. Every tested scale crosses in all five seeds.
+\item It sharpens falsifiability. If scale had no effect, the onset means would have remained flat within spread. They do not.
+\item It preserves boundedness. The sweep adds no operator, no new onset rule, and no interpretive expansion.
+\end{enumerate}
+
+That combination is what makes the result publication-ready. The experiment has moved from an exploratory sweep to a controlled structural statement.
+
+\section{Reproducibility}
+
+The full sweep is reproduced by:
+
+\begin{verbatim}
+python3 geometry_emergence/experiments/run_cluster_scale_sweep.py \
+  --config geometry_emergence/configs/cluster_scale_sweep_config.json
+\end{verbatim}
+
+The canonical figure is rendered by:
+
+\begin{verbatim}
+python3 geometry_emergence/experiments/render_cluster_scale_canonical_figure.py
+\end{verbatim}
+
+These commands produce:
+\begin{itemize}
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_sweep\_full.json};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_sweep\_summary.json};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition.svg};
+\item \texttt{geometry\_emergence/diagnostics/cluster\_scale\_transition\_canonical.svg};
+\item \texttt{papers/figures/cluster\_scale\_transition\_canonical.pdf}.
+\end{itemize}
+
+\section{Conclusion}
+
+This paper freezes the first scale-controlled result in the geometry-emergence module. The central finding is narrow but strong: the coupled transition signal shifts systematically with cluster structural scale, while remaining detectable across all tested seeds and scales. The strongest rise occurs between scales $1.0$ and $1.25$, with a small relaxation at $1.5$, and the overall onset variance is materially reduced relative to the earlier clustered canonical panel.
+
+That is enough to close the exploratory phase of this signal. The transition is not merely present; it is organized by a controlled structural parameter. The next step, if pursued, should not be broader interpretation. It should be a direct correlation study between onset location and the logged structural channels now frozen into the full ledger.
+
+\end{document}

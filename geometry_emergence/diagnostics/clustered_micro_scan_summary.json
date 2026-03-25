@@ -1,0 +1,115 @@
+{
+  "graph_kind": "clustered",
+  "kernel_width_window": {
+    "start": 0.135,
+    "stop": 0.165,
+    "step": 0.002
+  },
+  "coupled_threshold": 0.5,
+  "seeds": [
+    11,
+    17,
+    23,
+    31,
+    43
+  ],
+  "onset_detected_count": 2,
+  "onset_missing_seeds": [
+    17,
+    23,
+    31
+  ],
+  "onset_values": [
+    0.163,
+    0.149
+  ],
+  "onset_mean": 0.156,
+  "onset_std": 0.007,
+  "onset_interval": [
+    0.149,
+    0.163
+  ],
+  "seed_summaries": [
+    {
+      "seed": 11,
+      "onset_detected": true,
+      "first_crossing": {
+        "kernel_width": 0.163,
+        "metric_triplet": {
+          "distortion_score": 0.474856,
+          "neighborhood_retention": 0.484268,
+          "recoverability_score": 0.712811
+        },
+        "fraction_participation_score": 0.543639,
+        "structural_logs": {
+          "mean_cluster_size": 72.0,
+          "largest_connected_component_fraction": 1.0,
+          "clustering_coefficient": 0.881729
+        }
+      },
+      "structural_reference": {
+        "kernel_width": 0.163,
+        "mean_cluster_size": 72.0,
+        "largest_connected_component_fraction": 1.0,
+        "clustering_coefficient": 0.881729
+      }
+    },
+    {
+      "seed": 17,
+      "onset_detected": false,
+      "first_crossing": null,
+      "structural_reference": {
+        "kernel_width": 0.145,
+        "mean_cluster_size": 72.0,
+        "largest_connected_component_fraction": 1.0,
+        "clustering_coefficient": 0.902248
+      }
+    },
+    {
+      "seed": 23,
+      "onset_detected": false,
+      "first_crossing": null,
+      "structural_reference": {
+        "kernel_width": 0.147,
+        "mean_cluster_size": 72.0,
+        "largest_connected_component_fraction": 1.0,
+        "clustering_coefficient": 0.909533
+      }
+    },
+    {
+      "seed": 31,
+      "onset_detected": false,
+      "first_crossing": null,
+      "structural_reference": {
+        "kernel_width": 0.141,
+        "mean_cluster_size": 72.0,
+        "largest_connected_component_fraction": 1.0,
+        "clustering_coefficient": 0.9556
+      }
+    },
+    {
+      "seed": 43,
+      "onset_detected": true,
+      "first_crossing": {
+        "kernel_width": 0.149,
+        "metric_triplet": {
+          "distortion_score": 0.476615,
+          "neighborhood_retention": 0.491298,
+          "recoverability_score": 0.672627
+        },
+        "fraction_participation_score": 0.538618,
+        "structural_logs": {
+          "mean_cluster_size": 72.0,
+          "largest_connected_component_fraction": 1.0,
+          "clustering_coefficient": 0.964618
+        }
+      },
+      "structural_reference": {
+        "kernel_width": 0.149,
+        "mean_cluster_size": 72.0,
+        "largest_connected_component_fraction": 1.0,
+        "clustering_coefficient": 0.964618
+      }
+    }
+  ]
+}

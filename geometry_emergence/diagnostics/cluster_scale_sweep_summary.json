@@ -1,0 +1,73 @@
+{
+  "statement": "Deterministic cluster-scale sweep summary for transport-geometry diagnostics.",
+  "config": {
+    "graph_size": 72,
+    "seeds": [
+      11,
+      17,
+      23,
+      31,
+      43
+    ],
+    "cluster_scales": [
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5
+    ],
+    "kernel_width_range": [
+      0.08,
+      0.18
+    ],
+    "kernel_step": 0.003,
+    "transport_steps": 120,
+    "coupled_threshold": 0.62
+  },
+  "per_scale": [
+    {
+      "scale": 0.5,
+      "detected_fraction": 1.0,
+      "mean_onset": 0.1118,
+      "std_onset": 0.003059,
+      "min_onset": 0.107,
+      "max_onset": 0.116
+    },
+    {
+      "scale": 0.75,
+      "detected_fraction": 1.0,
+      "mean_onset": 0.1166,
+      "std_onset": 0.01347,
+      "min_onset": 0.104,
+      "max_onset": 0.137
+    },
+    {
+      "scale": 1.0,
+      "detected_fraction": 1.0,
+      "mean_onset": 0.1274,
+      "std_onset": 0.011289,
+      "min_onset": 0.11,
+      "max_onset": 0.14
+    },
+    {
+      "scale": 1.25,
+      "detected_fraction": 1.0,
+      "mean_onset": 0.1562,
+      "std_onset": 0.00773,
+      "min_onset": 0.146,
+      "max_onset": 0.167
+    },
+    {
+      "scale": 1.5,
+      "detected_fraction": 1.0,
+      "mean_onset": 0.149,
+      "std_onset": 0.007823,
+      "min_onset": 0.137,
+      "max_onset": 0.158
+    }
+  ],
+  "global": {
+    "onset_scale_monotonicity_score": 0.9,
+    "variance_reduction_vs_previous_canonical": 0.895699
+  }
+}
