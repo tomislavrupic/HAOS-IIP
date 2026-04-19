@@ -1,0 +1,64 @@
+{
+  "experiment": "geometry_closure_preflight",
+  "families": [
+    {
+      "label": "scalar_green_response",
+      "operator_family": "kernel graph Laplacian",
+      "substrate_family": "3D cubic kernel graph",
+      "geometry_target": "inverse-distance field / effective 3D Green geometry",
+      "dimension_hint": 3,
+      "source_path": "data/kernel_graph_green_response_latest.json",
+      "observation": "kernel-graph Green response approaches A + B/r on the cubic substrate scan",
+      "conclusion": "the weighted interaction kernel induces a graph Laplacian whose far field is consistent with inverse-distance geometry; direct shell-derivative force estimates remain noisier than the field fit"
+    },
+    {
+      "label": "heat_behavior",
+      "operator_family": "exact_torus_mode_spectrum",
+      "substrate_family": "periodic DK2D branch-local cochain-Laplacian hierarchy",
+      "geometry_target": "short-time heat / trace asymptotic behavior",
+      "dimension_hint": 2,
+      "source_path": "phase8-trace/phase8_trace_manifest.json",
+      "observation": "exact torus-mode spectrum induced by the frozen periodic DK2D cochain-Laplacian block structure",
+      "conclusion": "Phase VIII establishes short-time trace asymptotic feasibility for the frozen operator hierarchy."
+    },
+    {
+      "label": "low_mode_organization",
+      "operator_family": "branch-local cochain-Laplacian spectral hierarchy",
+      "substrate_family": "periodic DK2D branch-local cochain-Laplacian hierarchy",
+      "geometry_target": "low-mode organization / spectral feasibility",
+      "dimension_hint": 2,
+      "source_path": "phase7-spectral/phase7_spectral_manifest.json",
+      "observation": "Phase VII authority is limited to descriptive spectral-feasibility diagnostics on the frozen branch-local cochain-Laplacian family and the declared refinement hierarchy. It does not assert continuum limits, geometric invariants, universal coefficients, physical laws, or observable-spectral coupling beyond this track.",
+      "conclusion": "Phase VII establishes spectral feasibility for the frozen operator hierarchy."
+    },
+    {
+      "label": "shell_arrival_surrogate",
+      "operator_family": "frozen branch-local cochain-Laplacian hierarchy with reused XV-XVII ledgers",
+      "substrate_family": "periodic DK2D branch-local cochain-Laplacian hierarchy",
+      "geometry_target": "shell-arrival / causal-depth distance surrogate",
+      "dimension_hint": 2,
+      "source_path": "phase18-distance-surrogate/phase18_manifest.json",
+      "observation": "branch slope band=1.004762-1.009524",
+      "conclusion": "Phase XVIII establishes proto-geometric distance-surrogate feasibility for the frozen operator hierarchy."
+    }
+  ],
+  "compatibility": {
+    "unique_substrate_families": [
+      "3D cubic kernel graph",
+      "periodic DK2D branch-local cochain-Laplacian hierarchy"
+    ],
+    "unique_operator_families": [
+      "branch-local cochain-Laplacian spectral hierarchy",
+      "exact_torus_mode_spectrum",
+      "frozen branch-local cochain-Laplacian hierarchy with reused XV-XVII ledgers",
+      "kernel graph Laplacian"
+    ],
+    "unique_dimension_hints": [
+      2,
+      3
+    ],
+    "shared_geometry_ready": false
+  },
+  "observation": "the strict geometry-closure criterion is correct, but the current strongest ingredients still split into two incompatible authority families: a 3D cubic kernel-graph Green-response line and a 2D periodic branch-local torus line for heat, low-mode, and shell-arrival diagnostics",
+  "conclusion": "geometry closure is not yet preflight-ready: one effective geometry cannot be claimed until Green response, heat behavior, low-mode organization, and shell-arrival surrogates are rebuilt on the same operator/substrate family instead of being compared across the current 3D kernel-graph and 2D branch-local torus split"
+}

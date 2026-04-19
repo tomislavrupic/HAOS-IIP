@@ -263,6 +263,18 @@
     "boundary_n_sides": [9, 11, 13, 17, 21],
     "boundary_epsilon_coeffs": [0.5, 1.0, 2.0]
   },
+  "scalar_kernel_graph_geometry_bridge": {
+    "n_sides": [9, 11, 13],
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "green_fit_r_max": 0.55,
+    "heat_time_max": 0.03,
+    "heat_time_steps": 61,
+    "msd_fit_window": [0.004, 0.02],
+    "arrival_threshold_fraction": 0.5,
+    "arrival_scan_shells": 9,
+    "low_mode_count": 8
+  },
   "sweep": {
     "epsilon_values": [0.12, 0.2, 0.28],
     "node_values": [216, 343],

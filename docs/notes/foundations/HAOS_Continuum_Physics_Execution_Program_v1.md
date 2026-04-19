@@ -232,6 +232,16 @@ Success criterion:
 
 - any geometry-like statement is downstream of the operator and transport results, not upstream of them
 
+Bounded precursor now executed:
+
+- the scalar shared-family bridge has removed the original geometry-closure category mistake by rebuilding Green response, heat behavior, shell-arrival structure, and low-mode organization on one common scalar kernel-graph carrier
+- primary bounded note: [HAOS_IIP_Bounded_CP4_Geometry_Closure_on_Scalar_Kernel_Graph_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Bounded_CP4_Geometry_Closure_on_Scalar_Kernel_Graph_v1.md)
+
+What remains open in `C3` is therefore narrower than before:
+
+- response / geometry robustness beyond the tested cubic scalar carrier
+- downstream metric, curvature, or current extraction from that same carrier
+
 #### C4. Final bounded continuum statement
 
 `[Q]`

@@ -923,3 +923,18 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260419_221932_transverse_clean_holonomy_symmetry_labels_fractions.png`, `plots/20260419_221932_transverse_clean_holonomy_symmetry_labels_scaled_eigenvalues.png`
 - Observation: the already-resolved holonomy window can be labeled at the family level by combining first-shell momentum support with coarse field-axis and curl-axis readout, rather than demanding a rigid per-mode identity at exact clean symmetry
 - Conclusion: the holonomy-resolved clean window carries the same bounded first-shell family across n=[12, 16, 20]: the first-shell support stays at least 1.000, the coarse field stays fully x-polarized at 1.000, and the window-level ky/kz split only ranges from 0.457-0.508 versus 0.492-0.543; the raw mode ordering still shuffles=True, but the family label set is stable=True, so the clean-baseline identity problem closes in the bounded sense as a symmetry-degenerate first-shell family rather than a missing branch
+
+## geometry closure preflight
+- Date: 2026-04-19T23:20:06
+- Config: authority_inputs=['kernel_graph_green_response_latest.json', 'phase7_spectral_manifest.json', 'phase8_trace_manifest.json', 'phase18_manifest.json']
+- Results: `data/20260419_232006_geometry_closure_preflight.json`
+- Observation: the strict geometry-closure criterion is correct, but the current strongest ingredients still split into two incompatible authority families: a 3D cubic kernel-graph Green-response line and a 2D periodic branch-local torus line for heat, low-mode, and shell-arrival diagnostics
+- Conclusion: geometry closure is not yet preflight-ready: one effective geometry cannot be claimed until Green response, heat behavior, low-mode organization, and shell-arrival surrogates are rebuilt on the same operator/substrate family instead of being compared across the current 3D kernel-graph and 2D branch-local torus split
+
+## scalar kernel graph geometry bridge
+- Date: 2026-04-19T23:44:45
+- Config: n_sides=[9, 11, 13], epsilon_coeff=0.5, cutoff_factor=2.5, heat_time_max=0.03, arrival_threshold_fraction=0.5
+- Results: `data/20260419_234444_scalar_kernel_graph_geometry_bridge.json`
+- Plots: `plots/20260419_234444_scalar_kernel_graph_geometry_bridge_summary.png`, `plots/20260419_234444_scalar_kernel_graph_geometry_bridge_detail.png`
+- Observation: the shared-family scalar kernel-graph carrier now gives one coherent 3D-like geometry read across all four channels: inverse-distance Green response, linear diffusion on shell second moments, shell-arrival times linear in radius squared, and a first low-mode triplet that matches the Euclidean coordinate subspace
+- Conclusion: the previous geometry-closure preflight mismatch is removed on the tested cubic scalar carrier: one bounded metric-like reconstruction now organizes Green response, heat behavior, shell-arrival structure, and low-mode organization on the same operator/substrate family. This is a carrier-level bridge, not yet a universality or full geometry-closure claim beyond the tested cubic local-kernel regime.

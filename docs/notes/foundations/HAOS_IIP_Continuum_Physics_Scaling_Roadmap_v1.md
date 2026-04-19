@@ -254,6 +254,21 @@ Failure condition:
 
 - low modes and propagation surrogates require incompatible geometry readings
 
+Current bounded state:
+
+- the mismatch diagnosis is frozen in [HAOS_IIP_Geometry_Closure_Preflight_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Geometry_Closure_Preflight_v1.md)
+- the first positive shared-family bridge is frozen in [HAOS_IIP_Bounded_CP4_Geometry_Closure_on_Scalar_Kernel_Graph_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Bounded_CP4_Geometry_Closure_on_Scalar_Kernel_Graph_v1.md)
+
+Bounded read:
+
+> `CP4` now passes on the tested local cubic scalar kernel-graph carrier, because Green response, heat behavior, shell-arrival structure, and low-mode organization are all rebuilt on one common operator/substrate family and one common Euclidean shell reconstruction.
+
+Residual boundary:
+
+- this does not yet close universality
+- this does not yet close curvature or response extraction
+- this does not yet license geometry language for every other active family in the repo
+
 ### CP5. Universality contract
 
 Goal:
