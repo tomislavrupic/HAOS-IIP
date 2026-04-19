@@ -32,6 +32,7 @@
 - The authoritative note, JSON, CSV, and manifest paths remain unchanged.
 - The old `stage23_10` to `stage24_5` simulation scripts remain readable as provenance anchors while the new phase folders become the active execution path.
 - The new phase bundles carry compact authority references instead of embedding full upstream JSON payloads.
+- Foundations cleanup release `50.2` closes the post-`50.1` note-level caveats `F2-F4` without changing numerical authority paths or promoting unfinished threshold work into frozen artifacts.
 
 ## Archive Policy
 

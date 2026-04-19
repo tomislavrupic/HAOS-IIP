@@ -240,6 +240,10 @@ This is a change of compatibility coordinates, not an extra physical axiom. `\sq
 
 - `[PS]` the textbook chain identity `d_{k+1}d_k=0` requires choosing compatibility coordinates adapted to the active middle-grade quadratic law
 
+That caveat is now refined in bounded canonical form by
+[HAOS_Canonical_Compatibility_Normalization_F2_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Canonical_Compatibility_Normalization_F2_v1.md),
+which shows that the familiar chain form is induced by the canonical positive square root of the middle-grade compatibility operator and is unique up to unitary equivalence on the active channel.
+
 That is still enough to justify the programmatic statement that a cochain-complex-type structure emerges from multi-grade recoverability rather than being inserted by hand.
 
 ## 7. Consequence for the next theorem

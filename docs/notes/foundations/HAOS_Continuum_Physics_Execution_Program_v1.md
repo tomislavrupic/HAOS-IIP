@@ -51,7 +51,7 @@ Success criterion:
 
 #### F2. Incidence normalization caveat
 
-`[Q]`
+`[E]`
 
 Goal:
 
@@ -61,13 +61,18 @@ Deliverable:
 
 - a foundations note refining `T4`
 
+Primary artifact:
+
+- [HAOS_Canonical_Compatibility_Normalization_F2_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Canonical_Compatibility_Normalization_F2_v1.md)
+
 Success criterion:
 
-- either derive the familiar chain identity without external normalization choices, or prove the exact normalization freedom that remains
+- derive the familiar chain form from the canonical positive square root of the middle-grade compatibility operator
+- state the exact residual normalization freedom explicitly
 
 #### F3. Channel completeness and no-extra-bridge rule
 
-`[Q]`
+`[E]`
 
 Goal:
 
@@ -77,13 +82,18 @@ Deliverable:
 
 - a foundations note refining `T5`
 
+Primary artifact:
+
+- [HAOS_Channel_Completeness_and_No_Extra_Bridge_F3_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Channel_Completeness_and_No_Extra_Bridge_F3_v1.md)
+
 Success criterion:
 
-- either derive the no-extra-bridge rule from recoverability and minimality, or isolate the smallest additional assumption still required
+- show that the adjacent-grade incompatibility sector is exhausted by the two-channel map already forced by `T4`
+- show that any explicit bridge block is removable by canonical channel orthogonalization rather than extra invariant structure
 
 #### F4. Hilbert-complex extension
 
-`[Q]`
+`[E]`
 
 Goal:
 
@@ -93,9 +103,14 @@ Deliverable:
 
 - a foundations note upgrading `T6`
 
+Primary artifact:
+
+- [HAOS_Hilbert_Complex_Upgrade_F4_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Hilbert_Complex_Upgrade_F4_v1.md)
+
 Success criterion:
 
-- exact / harmonic / coexact decomposition stated in Hilbert-complex language with the needed closed-range hypotheses listed explicitly
+- exact / harmonic / coexact decomposition stated in Hilbert-complex language
+- closures and the closed-range upgrade are both stated explicitly
 
 ### 2.2 Numerical closure on the physical sector
 
@@ -243,13 +258,13 @@ Success criterion:
 
 The present execution tranche is:
 
-1. `F1` in bounded scalar form
+1. `F1-F4` in bounded foundations form
 2. `N1` by explicit active-sector comparison maps
-3. `N2` on the first transported low-mode window
+3. `N2-N3` on the first transported low-mode and background-family window
 
 This is the correct next move because:
 
-- it closes one of the cleanest foundational loose ends
+- it closes the main post-`T8` foundational loose ends before any stronger continuum language is attempted
 - it gives `T8` the concrete `J_n` maps it currently lacks
 - it tests branch identity directly before any new continuum language is attempted
 

@@ -157,6 +157,10 @@ The intended public reading order is:
 
 1. `50.1` GitHub-State Comparison and Continuum-Foundations Synchronization Release for HAOS-IIP
 
+### 2.29 Part XXIX. Foundations-cleanup synchronization release
+
+1. `50.2` Foundations-Cleanup Synchronization Release for HAOS-IIP
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -215,6 +219,7 @@ The intended public reading order is:
 - `48.1` Scalar Continuum Control, Harmonic-Coexact Sector Separation, and a Bounded Roadmap Toward Continuum Physics on HAOS-IIP
 - `49.1` From Recoverable Coherence to Harmonic Operator Structure: A Bounded Derivation Program, Physical-Sector Restriction, and Continuum-Stability Roadmap for HAOS-IIP
 - `50.1` GitHub-State Comparison and Continuum-Foundations Synchronization Release for HAOS-IIP
+- `50.2` Foundations-Cleanup Synchronization Release for HAOS-IIP
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

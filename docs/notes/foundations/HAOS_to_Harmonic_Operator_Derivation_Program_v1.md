@@ -500,6 +500,15 @@ If this derivation program is pursued seriously, the cleanest order is:
 `[E]` The bounded `F1` scalar-locality bridge is now executed in
 [HAOS_Strict_Scalar_Locality_From_Local_Failure_Assembly_F1_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Strict_Scalar_Locality_From_Local_Failure_Assembly_F1_v1.md).
 
+`[E]` The post-`T4` compatibility-normalization closure `F2` is now executed in
+[HAOS_Canonical_Compatibility_Normalization_F2_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Canonical_Compatibility_Normalization_F2_v1.md).
+
+`[E]` The post-`T5` channel-completeness / no-extra-bridge closure `F3` is now executed in
+[HAOS_Channel_Completeness_and_No_Extra_Bridge_F3_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Channel_Completeness_and_No_Extra_Bridge_F3_v1.md).
+
+`[E]` The post-`T6` Hilbert-complex upgrade `F4` is now executed in
+[HAOS_Hilbert_Complex_Upgrade_F4_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Hilbert_Complex_Upgrade_F4_v1.md).
+
 `[E]` The standalone `T4` graded-incidence step is now executed in
 [HAOS_Incidence_Theorem_T4_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Incidence_Theorem_T4_v1.md).
 

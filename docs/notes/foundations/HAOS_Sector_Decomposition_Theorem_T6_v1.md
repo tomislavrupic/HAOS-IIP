@@ -299,6 +299,7 @@ So the decomposition is not a borrowed slogan. It is the linear-algebraic conseq
 
 - `T4` is executed in [HAOS_Incidence_Theorem_T4_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Incidence_Theorem_T4_v1.md)
 - `T5` is executed in [HAOS_Hodge_Defect_Theorem_T5_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Hodge_Defect_Theorem_T5_v1.md)
+- the closed-range Hilbert-complex upgrade is now executed in [HAOS_Hilbert_Complex_Upgrade_F4_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Hilbert_Complex_Upgrade_F4_v1.md)
 - the earlier one-form toy-model realization remains in [HAOS_Relational_Scalar_Recoverability_Defect_and_First_Dirichlet_Theorem_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Relational_Scalar_Recoverability_Defect_and_First_Dirichlet_Theorem_v1.md)
 
 ## 9. Shortest honest conclusion

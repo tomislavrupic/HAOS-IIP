@@ -315,6 +315,7 @@ pick Hodge Laplacian
 - `T1` is executed in [HAOS_Quadratic_Defect_Theorem_T1_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Quadratic_Defect_Theorem_T1_v1.md)
 - `T2` is executed in [HAOS_Relational_Dirichlet_Theorem_T2_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Relational_Dirichlet_Theorem_T2_v1.md)
 - `T4` is executed in [HAOS_Incidence_Theorem_T4_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Incidence_Theorem_T4_v1.md)
+- the post-`T5` channel-completeness / no-extra-bridge refinement is now executed in [HAOS_Channel_Completeness_and_No_Extra_Bridge_F3_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Channel_Completeness_and_No_Extra_Bridge_F3_v1.md)
 - the larger toy-model realization remains in [HAOS_Relational_Scalar_Recoverability_Defect_and_First_Dirichlet_Theorem_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_Relational_Scalar_Recoverability_Defect_and_First_Dirichlet_Theorem_v1.md)
 
 ## 10. Shortest honest conclusion

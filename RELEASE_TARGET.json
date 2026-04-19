@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/haos_iip_master_synthesis_program_level_compression_of_the_paper_spine.tex",
-  "title": "HAOS-IIP Master Synthesis: Program-Level Compression of the Paper Spine",
-  "commit_message": "Freeze master synthesis release 46.1",
+  "paper": "papers/foundations_cleanup_synchronization_release_for_haos_iip.tex",
+  "title": "Foundations-Cleanup Synchronization Release for HAOS-IIP",
+  "commit_message": "Freeze foundations cleanup release 50.2",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",
