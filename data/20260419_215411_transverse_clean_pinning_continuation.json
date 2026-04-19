@@ -1,0 +1,131 @@
+{
+  "config": {
+    "sizes": [
+      12,
+      16
+    ],
+    "pinning_strengths": [
+      0.0,
+      0.015
+    ],
+    "restricted_modes": 8,
+    "window_size": 4,
+    "scan_depth": 8,
+    "probe_n_side": 6,
+    "penalty": 10.0
+  },
+  "thresholds": {
+    "min_best_projector_affinity": 0.8,
+    "min_best_mean_principal_cosine": 0.8,
+    "max_best_scaled_window_drift": 0.05,
+    "min_affinity_gain": 0.2
+  },
+  "summary_rows": [
+    {
+      "pinning_strength": 0.0,
+      "resolved_pairs": 0,
+      "total_pairs": 1,
+      "all_pairs_resolved": false,
+      "all_pairs_stable_fixed": false,
+      "worst_fixed_affinity": 0.33314268885487225,
+      "worst_best_affinity": 0.36551978278427555,
+      "worst_best_mean_principal_cosine": 0.5298252564021176,
+      "worst_best_scaled_window_drift": 0.01747217339607869,
+      "largest_affinity_gain": 0.0323770939294033
+    },
+    {
+      "pinning_strength": 0.015,
+      "resolved_pairs": 1,
+      "total_pairs": 1,
+      "all_pairs_resolved": true,
+      "all_pairs_stable_fixed": true,
+      "worst_fixed_affinity": 0.9423379208564647,
+      "worst_best_affinity": 0.956439496481106,
+      "worst_best_mean_principal_cosine": 0.9779281513400817,
+      "worst_best_scaled_window_drift": 0.017483133833471845,
+      "largest_affinity_gain": 0.014101575624641316
+    }
+  ],
+  "pair_rows": [
+    {
+      "pinning_strength": 0.0,
+      "variant": "baseline",
+      "n_from": 12,
+      "n_to": 16,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.33314268885487225,
+        "mean_principal_cosine": 0.4954226355146106,
+        "min_principal_cosine": 0.09410798895521326,
+        "scaled_window_drift": 0.01747217339607869
+      },
+      "best_window": {
+        "start_from": 2,
+        "start_to": 2,
+        "projector_affinity": 0.36551978278427555,
+        "mean_principal_cosine": 0.5298252564021176,
+        "min_principal_cosine": 0.09479936041916728,
+        "scaled_window_drift": 0.01747217339607869
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.0323770939294033,
+        "status": "open",
+        "resolved": false
+      }
+    },
+    {
+      "pinning_strength": 0.015,
+      "variant": "mild_disorder",
+      "n_from": 12,
+      "n_to": 16,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.9423379208564647,
+        "mean_principal_cosine": 0.9707384134505704,
+        "min_principal_cosine": 0.9673486520322233,
+        "scaled_window_drift": 0.01751629053550466
+      },
+      "best_window": {
+        "start_from": 3,
+        "start_to": 3,
+        "projector_affinity": 0.956439496481106,
+        "mean_principal_cosine": 0.9779281513400817,
+        "min_principal_cosine": 0.9682646640342387,
+        "scaled_window_drift": 0.017483133833471845
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": true,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": true,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.014101575624641316,
+        "status": "stable_fixed",
+        "resolved": true
+      }
+    }
+  ],
+  "observation": "the clean-baseline identity question can be sharpened by introducing an infinitesimal symmetry pinning and measuring the same low-window subspace metric as the pinning is removed",
+  "conclusion": "the clean family resolves under infinitesimal pinning: the baseline starts at worst best affinity 0.366, and all adjacent refinement pairs first resolve at pinning strength 0.015; this strongly supports a degenerate clean-family interpretation rather than branch failure",
+  "plots": [
+    "plots/transverse_clean_pinning_continuation_affinity.png",
+    "plots/transverse_clean_pinning_continuation_resolution.png"
+  ]
+}

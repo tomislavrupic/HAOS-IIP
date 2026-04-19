@@ -1,0 +1,168 @@
+{
+  "config": {
+    "epsilon": 0.2,
+    "sizes": [
+      12,
+      16,
+      20
+    ],
+    "variant": "mild_disorder",
+    "disorder_strengths": [
+      0.015,
+      0.06,
+      0.12
+    ],
+    "penalties": [
+      8.0,
+      10.0,
+      12.0
+    ],
+    "restricted_modes": 6,
+    "purity_modes": 4,
+    "transport_modes": 4,
+    "probe_n_side": 6,
+    "scaling_exponent": 2.0,
+    "harmonic_tol": 1e-08,
+    "eig_tol": 1e-08,
+    "flux_tube_phase": 1.5707963267948966
+  },
+  "thresholds": {
+    "max_scaling_drift": 0.05,
+    "max_exact_fraction": 1e-08,
+    "max_harmonic_fraction": 1e-08,
+    "min_coexact_fraction": 0.999999
+  },
+  "combo_rows": [
+    {
+      "penalty": 8.0,
+      "disorder_strength": 0.015,
+      "identity_pass_count": 2,
+      "identity_total_pairs": 2,
+      "purity_pass_count": 3,
+      "purity_total_sizes": 3,
+      "worst_mean_overlap": 0.9705966311821657,
+      "worst_scaling_drift": 0.017516290535339648,
+      "worst_exact_fraction": 1.0785207688568524e-32,
+      "worst_harmonic_fraction": 1.2379504815713065e-31,
+      "worst_coexact_fraction": 1.0,
+      "combo_pass": true
+    },
+    {
+      "penalty": 8.0,
+      "disorder_strength": 0.06,
+      "identity_pass_count": 2,
+      "identity_total_pairs": 2,
+      "purity_pass_count": 3,
+      "purity_total_sizes": 3,
+      "worst_mean_overlap": 0.9704486568888305,
+      "worst_scaling_drift": 0.0176358452013943,
+      "worst_exact_fraction": 1.370494757691494e-32,
+      "worst_harmonic_fraction": 1.8184823551076686e-31,
+      "worst_coexact_fraction": 1.0,
+      "combo_pass": true
+    },
+    {
+      "penalty": 8.0,
+      "disorder_strength": 0.12,
+      "identity_pass_count": 2,
+      "identity_total_pairs": 2,
+      "purity_pass_count": 3,
+      "purity_total_sizes": 3,
+      "worst_mean_overlap": 0.970234421373849,
+      "worst_scaling_drift": 0.01776569492019221,
+      "worst_exact_fraction": 7.275698774527539e-33,
+      "worst_harmonic_fraction": 8.161541913352393e-32,
+      "worst_coexact_fraction": 1.0,
+      "combo_pass": true
+    },
+    {
+      "penalty": 10.0,
+      "disorder_strength": 0.015,
+      "identity_pass_count": 2,
+      "identity_total_pairs": 2,
+      "purity_pass_count": 3,
+      "purity_total_sizes": 3,
+      "worst_mean_overlap": 0.9705965487810366,
+      "worst_scaling_drift": 0.0175162905355043,
+      "worst_exact_fraction": 8.975581155251648e-33,
+      "worst_harmonic_fraction": 9.415038542812197e-32,
+      "worst_coexact_fraction": 1.0,
+      "combo_pass": true
+    },
+    {
+      "penalty": 10.0,
+      "disorder_strength": 0.06,
+      "identity_pass_count": 2,
+      "identity_total_pairs": 2,
+      "purity_pass_count": 3,
+      "purity_total_sizes": 3,
+      "worst_mean_overlap": 0.9704484975615785,
+      "worst_scaling_drift": 0.01763584521261437,
+      "worst_exact_fraction": 7.840641359532729e-33,
+      "worst_harmonic_fraction": 1.529521863590793e-31,
+      "worst_coexact_fraction": 1.0,
+      "combo_pass": true
+    },
+    {
+      "penalty": 10.0,
+      "disorder_strength": 0.12,
+      "identity_pass_count": 2,
+      "identity_total_pairs": 2,
+      "purity_pass_count": 3,
+      "purity_total_sizes": 3,
+      "worst_mean_overlap": 0.9702346845232931,
+      "worst_scaling_drift": 0.01776569501581196,
+      "worst_exact_fraction": 1.510952226682549e-32,
+      "worst_harmonic_fraction": 2.103826908451978e-31,
+      "worst_coexact_fraction": 1.0,
+      "combo_pass": true
+    },
+    {
+      "penalty": 12.0,
+      "disorder_strength": 0.015,
+      "identity_pass_count": 2,
+      "identity_total_pairs": 2,
+      "purity_pass_count": 3,
+      "purity_total_sizes": 3,
+      "worst_mean_overlap": 0.970596494779272,
+      "worst_scaling_drift": 0.017516290535596113,
+      "worst_exact_fraction": 7.307954339514098e-33,
+      "worst_harmonic_fraction": 4.799832606017702e-32,
+      "worst_coexact_fraction": 1.0,
+      "combo_pass": true
+    },
+    {
+      "penalty": 12.0,
+      "disorder_strength": 0.06,
+      "identity_pass_count": 2,
+      "identity_total_pairs": 2,
+      "purity_pass_count": 3,
+      "purity_total_sizes": 3,
+      "worst_mean_overlap": 0.9704483925059473,
+      "worst_scaling_drift": 0.017635845218582823,
+      "worst_exact_fraction": 1.0537178380545022e-32,
+      "worst_harmonic_fraction": 1.3638186550754342e-31,
+      "worst_coexact_fraction": 1.0,
+      "combo_pass": true
+    },
+    {
+      "penalty": 12.0,
+      "disorder_strength": 0.12,
+      "identity_pass_count": 2,
+      "identity_total_pairs": 2,
+      "purity_pass_count": 3,
+      "purity_total_sizes": 3,
+      "worst_mean_overlap": 0.9702348503840562,
+      "worst_scaling_drift": 0.017765695066671347,
+      "worst_exact_fraction": 1.1550689609823985e-32,
+      "worst_harmonic_fraction": 6.06747043251789e-32,
+      "worst_coexact_fraction": 1.0,
+      "combo_pass": true
+    }
+  ],
+  "observation": "the first bounded V5 scan keeps the active-branch contract fixed and asks whether it survives a small family of penalty choices and mild-disorder substrates instead of being re-earned after each parameter change",
+  "conclusion": "all 9 tested operator/substrate combos pass the first bounded V5 universality check: the weakest combo is penalty=8.0, disorder=0.120 with worst mean overlap 0.970, while the largest fixed-alpha drift over the whole family is 0.018; this means the current active-branch contract survives a real bounded mild-disorder and penalty family without changing the physical-sector rule, purity rule, or scaling exponent",
+  "plots": [
+    "plots/transverse_active_branch_universality.png"
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "config": {
+    "sizes": [
+      12,
+      16,
+      20
+    ],
+    "variants": [
+      "baseline",
+      "mild_disorder"
+    ],
+    "restricted_modes": 8,
+    "window_size": 4,
+    "scan_depth": 8,
+    "probe_n_side": 6,
+    "penalty": 10.0,
+    "disorder_strength": 0.12
+  },
+  "thresholds": {
+    "min_best_projector_affinity": 0.8,
+    "min_best_mean_principal_cosine": 0.8,
+    "max_best_scaled_window_drift": 0.05,
+    "min_affinity_gain": 0.2
+  },
+  "pair_rows": [
+    {
+      "variant": "baseline",
+      "n_from": 12,
+      "n_to": 16,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.31080555533172766,
+        "mean_principal_cosine": 0.5163830604561258,
+        "min_principal_cosine": 0.21333991912742883,
+        "scaled_window_drift": 0.017472173396078334
+      },
+      "best_window": {
+        "start_from": 2,
+        "start_to": 2,
+        "projector_affinity": 0.32013358053878416,
+        "mean_principal_cosine": 0.526629482978931,
+        "min_principal_cosine": 0.19097103455548217,
+        "scaled_window_drift": 0.017472173396077793
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.0093280252070565,
+        "status": "open",
+        "resolved": false
+      }
+    },
+    {
+      "variant": "baseline",
+      "n_from": 16,
+      "n_to": 20,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.3161055799509419,
+        "mean_principal_cosine": 0.4900830862054516,
+        "min_principal_cosine": 0.10898010085791181,
+        "scaled_window_drift": 0.008118646731765567
+      },
+      "best_window": {
+        "start_from": 2,
+        "start_to": 2,
+        "projector_affinity": 0.32317663397357377,
+        "mean_principal_cosine": 0.49884221435761966,
+        "min_principal_cosine": 0.14408002318005955,
+        "scaled_window_drift": 0.008118646731765567
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.007071054022631862,
+        "status": "open",
+        "resolved": false
+      }
+    },
+    {
+      "variant": "mild_disorder",
+      "n_from": 12,
+      "n_to": 16,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.94198058857365,
+        "mean_principal_cosine": 0.9705543936240819,
+        "min_principal_cosine": 0.9670336423119883,
+        "scaled_window_drift": 0.01776569501581197
+      },
+      "best_window": {
+        "start_from": 3,
+        "start_to": 3,
+        "projector_affinity": 0.9566139656433714,
+        "mean_principal_cosine": 0.9780182240381572,
+        "min_principal_cosine": 0.9686324997483777,
+        "scaled_window_drift": 0.017568788247637565
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": true,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": true,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.014633377069721454,
+        "status": "stable_fixed",
+        "resolved": true
+      }
+    },
+    {
+      "variant": "mild_disorder",
+      "n_from": 16,
+      "n_to": 20,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.9632662487821866,
+        "mean_principal_cosine": 0.9814597496314759,
+        "min_principal_cosine": 0.9785982630523746,
+        "scaled_window_drift": 0.008312163849114087
+      },
+      "best_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.9632662487821866,
+        "mean_principal_cosine": 0.9814597496314759,
+        "min_principal_cosine": 0.9785982630523746,
+        "scaled_window_drift": 0.008312163849114087
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": true,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": true,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.0,
+        "status": "stable_fixed",
+        "resolved": true
+      }
+    }
+  ],
+  "variant_summary": [
+    {
+      "variant": "baseline",
+      "resolved_pair_count": 0,
+      "total_pairs": 2,
+      "all_pairs_resolved": false,
+      "worst_fixed_affinity": 0.31080555533172766,
+      "worst_best_affinity": 0.32013358053878416,
+      "largest_affinity_gain": 0.0093280252070565,
+      "worst_best_mean_principal_cosine": 0.49884221435761966,
+      "worst_best_scaled_window_drift": 0.017472173396077793
+    },
+    {
+      "variant": "mild_disorder",
+      "resolved_pair_count": 2,
+      "total_pairs": 2,
+      "all_pairs_resolved": true,
+      "worst_fixed_affinity": 0.94198058857365,
+      "worst_best_affinity": 0.9566139656433714,
+      "largest_affinity_gain": 0.014633377069721454,
+      "worst_best_mean_principal_cosine": 0.9780182240381572,
+      "worst_best_scaled_window_drift": 0.017568788247637565
+    }
+  ],
+  "observation": "the clean-baseline identity question can be fast-tracked by scanning low contiguous coexact windows as transported subspaces; this keeps the same active-sector transport map while allowing the clean basis and the low window to rotate or slide inside a bounded scan depth",
+  "conclusion": "the fast-track CB1-lite scan improves low-window identification but does not yet close the clean baseline: the weakest best-window case is baseline 12->16 with best projector affinity 0.320; this means the next shortest move is still CB2-style infinitesimal symmetry pinning, but we now know whether simple window sliding already resolves the issue",
+  "plots": [
+    "plots/transverse_clean_subspace_transport_affinity.png",
+    "plots/transverse_clean_subspace_transport_shift.png"
+  ]
+}

@@ -82,6 +82,175 @@
     "penalty": 10.0,
     "flux_tube_phase": 1.5707963267948966
   },
+  "transverse_active_branch_identity": {
+    "sizes": [12, 16, 20, 24, 28],
+    "variants": ["baseline", "puncture", "line_defect", "flux_tube", "mild_disorder"],
+    "restricted_modes": 6,
+    "transport_modes": 6,
+    "probe_n_side": 6,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966,
+    "disorder_strength": 0.12,
+    "thresholds": {
+      "min_mean_overlap": 0.75,
+      "min_min_overlap": 0.5,
+      "min_mean_principal_cosine": 0.8,
+      "max_max_scaled_eigen_drift": 0.05,
+      "min_mean_assignment_margin": 0.1
+    }
+  },
+  "transverse_active_branch_purity": {
+    "sizes": [12, 16, 20],
+    "variants": ["baseline", "line_defect", "mild_disorder"],
+    "restricted_modes": 6,
+    "purity_modes": 4,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966,
+    "disorder_strength": 0.12,
+    "thresholds": {
+      "max_exact_fraction": 1e-8,
+      "max_harmonic_fraction": 1e-8,
+      "min_coexact_fraction": 0.999999
+    }
+  },
+  "transverse_active_branch_scaling": {
+    "sizes": [12, 16, 20],
+    "variants": ["baseline", "line_defect", "mild_disorder"],
+    "restricted_modes": 6,
+    "transport_modes": 4,
+    "probe_n_side": 6,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966,
+    "disorder_strength": 0.12,
+    "candidate_exponents": [1.5, 1.75, 2.0, 2.25, 2.5],
+    "thresholds": {
+      "max_global_max_drift": 0.05,
+      "max_best_exponent_deviation": 0.25,
+      "min_identity_pairs": 2
+    }
+  },
+  "transverse_active_branch_universality": {
+    "sizes": [12, 16, 20],
+    "variant": "mild_disorder",
+    "disorder_strengths": [0.015, 0.06, 0.12],
+    "penalties": [8.0, 10.0, 12.0],
+    "restricted_modes": 6,
+    "purity_modes": 4,
+    "transport_modes": 4,
+    "probe_n_side": 6,
+    "scaling_exponent": 2.0,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "flux_tube_phase": 1.5707963267948966,
+    "thresholds": {
+      "max_scaling_drift": 0.05,
+      "max_exact_fraction": 1e-8,
+      "max_harmonic_fraction": 1e-8,
+      "min_coexact_fraction": 0.999999
+    }
+  },
+  "transverse_active_branch_effective_closure": {
+    "sizes": [12, 16, 20],
+    "variant": "mild_disorder",
+    "disorder_strengths": [0.015, 0.06, 0.12],
+    "penalties": [8.0, 10.0, 12.0],
+    "restricted_modes": 3,
+    "effective_mode": 0,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "flux_tube_phase": 1.5707963267948966,
+    "thresholds": {
+      "max_relative_curlcurl_residual": 0.08,
+      "max_relative_divergence_norm": 1e-8,
+      "max_adjacent_scaled_response_jump": 0.12
+    }
+  },
+  "transverse_active_branch_effective_closure_v6b": {
+    "sizes": [12, 16, 20],
+    "variant": "mild_disorder",
+    "disorder_strengths": [0.015, 0.06, 0.12],
+    "penalties": [8.0, 10.0, 12.0],
+    "restricted_modes": 3,
+    "effective_mode": 0,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "flux_tube_phase": 1.5707963267948966,
+    "thresholds": {
+      "max_relative_curlcurl_residual": 0.08,
+      "max_relative_divergence_norm": 1e-8,
+      "max_adjacent_scaled_response_jump": 0.12
+    }
+  },
+  "transverse_clean_subspace_transport": {
+    "sizes": [12, 16, 20],
+    "variants": ["baseline", "mild_disorder"],
+    "restricted_modes": 8,
+    "window_size": 4,
+    "scan_depth": 8,
+    "probe_n_side": 6,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966,
+    "disorder_strength": 0.12,
+    "thresholds": {
+      "min_best_projector_affinity": 0.8,
+      "min_best_mean_principal_cosine": 0.8,
+      "max_best_scaled_window_drift": 0.05,
+      "min_affinity_gain": 0.2
+    }
+  },
+  "transverse_clean_pinning_continuation": {
+    "sizes": [12, 16, 20],
+    "pinning_strengths": [0.0, 0.002, 0.005, 0.01, 0.015],
+    "restricted_modes": 8,
+    "window_size": 4,
+    "scan_depth": 8,
+    "probe_n_side": 6,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966,
+    "thresholds": {
+      "min_best_projector_affinity": 0.8,
+      "min_best_mean_principal_cosine": 0.8,
+      "max_best_scaled_window_drift": 0.05,
+      "min_affinity_gain": 0.2
+    }
+  },
+  "transverse_clean_holonomy_continuation": {
+    "sizes": [12, 16],
+    "holonomy_phases": [0.0, 0.05, 0.1],
+    "restricted_modes": 8,
+    "window_size": 4,
+    "scan_depth": 8,
+    "probe_n_side": 6,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "thresholds": {
+      "min_best_projector_affinity": 0.8,
+      "min_best_mean_principal_cosine": 0.8,
+      "max_best_scaled_window_drift": 0.05,
+      "min_affinity_gain": 0.2
+    }
+  },
+  "transverse_clean_holonomy_symmetry_labels": {
+    "sizes": [12, 16, 20],
+    "holonomy_phase": 0.05,
+    "restricted_modes": 8,
+    "active_window_start": 2,
+    "window_size": 4,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0
+  },
   "kernel_operator_convergence": {
     "n_sides": [9, 11, 13, 17, 21],
     "epsilon_coeffs": [0.5, 1.0, 2.0],

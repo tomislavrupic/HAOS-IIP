@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Post-Foundations Validation Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{50.3} of HAOS-IIP as a small post-foundations validation release immediately after \texttt{50.2}. Its purpose is narrow and explicit. Release \texttt{50.2} closed the remaining bounded theorem-ladder cleanup items \texttt{F2--F4}, so the main bottleneck is no longer internal foundations hygiene. Release \texttt{50.3} records the resulting phase change. The scalar branch now has a bounded validated continuum-facing contract on a nontrivial tested class, while the vector side has a derived active physical-sector restriction, explicit refinement comparison maps, and measurable branch-identity diagnostics, but still lacks a numerically closed continuum-facing coexact branch. No new numerics are introduced, no disorder-threshold bundle is frozen, and no stronger continuum claim is made. The role of this paper is to state what is now treated as structurally closed, what current numerics already validate, and what exact validation stack still controls the authority boundary.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{50.3} is intentionally small.
+
+It does not add:
+\begin{itemize}
+\item new theorem steps beyond \texttt{T1--T8};
+\item new foundational cleanup items beyond \texttt{F1--F4};
+\item new scalar or vector result bundles;
+\item stronger continuum claims.
+\end{itemize}
+
+It does add:
+\begin{itemize}
+\item a frozen post-\texttt{50.2} validation boundary;
+\item an explicit statement of what is now treated as structurally closed;
+\item a compact current validated read for the scalar and vector sides;
+\item an ordered validation stack for the next real authority tests.
+\end{itemize}
+
+\section{What Is Now Structurally Closed}
+
+After releases \texttt{50.1} and \texttt{50.2}, the following are treated as closed in the bounded sense used by the repository:
+\begin{enumerate}
+\item the abstract derivation ladder \texttt{T1--T8};
+\item the scalar-locality refinement \texttt{F1};
+\item the incidence-normalization refinement \texttt{F2};
+\item the channel-completeness / no-extra-bridge refinement \texttt{F3};
+\item the Hilbert-complex upgrade \texttt{F4}.
+\end{enumerate}
+
+So the main open bottleneck is no longer
+\begin{quote}
+what operator should the repository mean?
+\end{quote}
+
+It is now
+\begin{quote}
+does the already-derived active physical branch survive validation strongly enough to support bounded continuum language?
+\end{quote}
+
+\section{Current Validated Read}
+
+\subsection{Scalar branch}
+
+The scalar branch already carries a real bounded validation result. The kernel-Laplacian convergence artifacts now support the following compact read:
+\begin{itemize}
+\item the cubic interior control remains clean;
+\item weakly perturbed point sets remain convergent in the local-kernel regime;
+\item reflected Dirichlet and Neumann boundary controls also remain convergent;
+\item wider kernels remain the weak point and are not the main evidence.
+\end{itemize}
+
+So the scalar branch is no longer only a formal target. It is the strongest currently validated continuum-facing part of the repository.
+
+\subsection{Vector / active coexact branch}
+
+The vector side is stronger than it was before \texttt{50.1}, but it is still not numerically closed.
+
+What is now validated is:
+\begin{itemize}
+\item the harmonic / coexact split is explicit rather than inferred;
+\item the harmonic-to-coexact gap is measured directly;
+\item the active coexact sector has explicit refinement comparison maps \(\,J_n\,\);
+\item transported overlap, principal-angle alignment, and scaled-eigen drift now provide measurable branch-identity diagnostics.
+\end{itemize}
+
+At the same time, the present sector-window and transport artifacts still support the following bounded read:
+\begin{itemize}
+\item the raw low \(L_1\) floor remains harmonic;
+\item the coexact branch is real but sits above that floor by a finite scaled gap;
+\item defect and mild-disorder backgrounds can stabilize or compress the active branch substantially more than the clean baseline;
+\item the clean baseline remains weak and mixing-prone on the tested transported low window.
+\end{itemize}
+
+So the present vector conclusion is not that a transverse continuum branch has been established. The bounded conclusion is only that the derived active coexact branch is now measurable as a transported physical object, while its clean-background refinement identity remains open.
+
+\section{The Post-Foundations Validation Stack}
+
+Release \texttt{50.3} records the correct validation order after \texttt{50.2}.
+
+\subsection{V1: active-branch identity under refinement}
+
+The first validation task is to determine whether the same low active coexact family survives as the same physical object across refinement.
+
+Success means:
+\begin{itemize}
+\item transported low-window modes retain strong overlap;
+\item principal-angle alignment remains strong;
+\item scaled-eigen drift stays bounded without arbitrary relabeling.
+\end{itemize}
+
+Failure means that branch identity continues to reshuffle under refinement even after the physical-sector restriction is fixed.
+
+\subsection{V2: symmetry-breaking / disorder-threshold validation}
+
+The second task is to determine whether the weakness of the clean baseline is mainly a symmetry-degeneracy problem or a deeper failure of active-branch survival.
+
+Success means there exists a bounded small-disorder regime in which branch identity becomes robust while staying recognizably on the same active coexact sector.
+
+Failure means either that no bounded disorder regime stabilizes the branch, or that apparent stabilization only occurs after such strong perturbation that the original branch identity is no longer credible.
+
+\subsection{V3: harmonic recontamination and branch purity}
+
+The third task is to test whether the active branch remains physically coexact under refinement rather than drifting back into harmonic or mixed sectors.
+
+Success means the tested low window stays inside the active coexact sector to leading order, with bounded harmonic leakage.
+
+Failure means repeated low-window recontamination by harmonic or mixed content as the refinement grows.
+
+\subsection{V4: scaling closure on the active window}
+
+The fourth task is to determine whether one coherent scaling family \(a_n\) stabilizes the same active window across refinement.
+
+Success means one bounded scaling law keeps the same tracked window finite and comparable.
+
+Failure means the branch only appears stable after repeated window-dependent or case-dependent rescaling.
+
+\subsection{V5: universality checks}
+
+Only after \texttt{V1--V4} should the repository ask whether the current scalar and active-sector contracts survive bounded operator-family and substrate-family variation.
+
+\subsection{V6: effective-law and response closure}
+
+Only after branch identity, threshold stability, purity, scaling closure, and bounded universality are in hand should the repository ask whether the same validated branch closes onto one effective-law family and supports downstream response or geometry-like questions.
+
+\section{What Already Counts as Validation}
+
+Release \texttt{50.3} says that the repository already has enough evidence to state the following honestly:
+\begin{enumerate}
+\item the post-\texttt{T8} program is no longer blocked by missing foundations cleanup;
+\item the scalar branch has bounded operator-level continuum control on a nontrivial tested class;
+\item the vector branch now has a real physical-sector restriction and real refinement-comparison machinery;
+\item branch identity can now fail in specific measurable ways instead of being discussed only rhetorically;
+\item mild disorder and some defect backgrounds already suggest that the weak clean-baseline case is not the same thing as a total failure of the active-sector idea.
+\end{enumerate}
+
+Those are meaningful validation gains.
+
+\section{What 50.3 Still Refuses To Say}
+
+Release \texttt{50.3} does not justify any of the following:
+\begin{itemize}
+\item a closed continuum vector claim;
+\item a Maxwell-like continuum statement;
+\item universality of the active branch;
+\item an effective PDE or action law on the vector branch;
+\item geometry-like or response-like closure on the vector branch.
+\end{itemize}
+
+Those still have to be earned by the validation order above.
+
+\section{Conclusion}
+
+Release \texttt{50.3} marks the phase change from foundations-building to validation.
+
+After \texttt{50.2}, the clean question is no longer whether HAOS-IIP can derive a bounded harmonic operator ladder. It can.
+
+The clean question is whether the already-derived active physical branch survives refinement, threshold perturbation, purity checks, and scaling closure strongly enough to support bounded continuum language.
+
+That is the whole point of \texttt{50.3}.
+
+\end{document}

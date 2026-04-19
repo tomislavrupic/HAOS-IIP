@@ -1,0 +1,264 @@
+{
+  "config": {
+    "epsilon": 0.2,
+    "sizes": [
+      12,
+      16,
+      20
+    ],
+    "variant": "mild_disorder",
+    "disorder_strengths": [
+      0.015,
+      0.06,
+      0.12
+    ],
+    "penalties": [
+      8.0,
+      10.0,
+      12.0
+    ],
+    "restricted_modes": 3,
+    "effective_mode": 0,
+    "harmonic_tol": 1e-08,
+    "eig_tol": 1e-08,
+    "flux_tube_phase": 1.5707963267948966
+  },
+  "thresholds": {
+    "max_relative_curlcurl_residual": 0.08,
+    "max_relative_divergence_norm": 1e-08,
+    "max_adjacent_scaled_response_jump": 0.12
+  },
+  "combo_rows": [
+    {
+      "penalty": 8.0,
+      "disorder_strength": 0.015,
+      "relative_curlcurl_residuals": [
+        0.0497571007026358,
+        0.027976306754947805,
+        0.01810633756751895
+      ],
+      "relative_divergence_norms": [
+        0.0010049370603998217,
+        0.0008324314362857969,
+        0.0007181490998351309
+      ],
+      "scaled_eigenvalues": [
+        37.875976709847876,
+        38.54867014315714,
+        38.863779972947114
+      ],
+      "worst_relative_curlcurl_residual": 0.0497571007026358,
+      "worst_relative_divergence_norm": 0.0010049370603998217,
+      "largest_scaled_eigenvalue": 38.863779972947114,
+      "largest_divergence_norm": 0.0007181490998351309,
+      "max_adjacent_response_jump": 0.005933263939370744,
+      "combo_pass": false
+    },
+    {
+      "penalty": 8.0,
+      "disorder_strength": 0.06,
+      "relative_curlcurl_residuals": [
+        0.04972878786422856,
+        0.03207316127762325,
+        0.02670148518508094
+      ],
+      "relative_divergence_norms": [
+        0.004026298912785167,
+        0.0033244150144297975,
+        0.0028618103277238518
+      ],
+      "scaled_eigenvalues": [
+        37.731218536884576,
+        38.39874878389463,
+        38.71136860188442
+      ],
+      "worst_relative_curlcurl_residual": 0.04972878786422856,
+      "worst_relative_divergence_norm": 0.004026298912785167,
+      "largest_scaled_eigenvalue": 38.71136860188442,
+      "largest_divergence_norm": 0.0028618103277238518,
+      "max_adjacent_response_jump": 0.005933263939370744,
+      "combo_pass": false
+    },
+    {
+      "penalty": 8.0,
+      "disorder_strength": 0.12,
+      "relative_curlcurl_residuals": [
+        0.05602462393345102,
+        0.047337374284260936,
+        0.047378379907186435
+      ],
+      "relative_divergence_norms": [
+        0.008114523015565622,
+        0.0066650044667082905,
+        0.005718115224769827
+      ],
+      "scaled_eigenvalues": [
+        37.51250422523176,
+        38.17263023218268,
+        38.481683834515174
+      ],
+      "worst_relative_curlcurl_residual": 0.05602462393345102,
+      "worst_relative_divergence_norm": 0.008114523015565622,
+      "largest_scaled_eigenvalue": 38.481683834515174,
+      "largest_divergence_norm": 0.005718115224769827,
+      "max_adjacent_response_jump": 0.005933263939370744,
+      "combo_pass": false
+    },
+    {
+      "penalty": 10.0,
+      "disorder_strength": 0.015,
+      "relative_curlcurl_residuals": [
+        0.049757100986654375,
+        0.027976307290967166,
+        0.01810633830864634
+      ],
+      "relative_divergence_norms": [
+        0.0010049348074097,
+        0.0008324304779470342,
+        0.0007181486002815575
+      ],
+      "scaled_eigenvalues": [
+        37.875976709839065,
+        38.54867014315442,
+        38.863779972945906
+      ],
+      "worst_relative_curlcurl_residual": 0.049757100986654375,
+      "worst_relative_divergence_norm": 0.0010049348074097,
+      "largest_scaled_eigenvalue": 38.863779972945906,
+      "largest_divergence_norm": 0.0007181486002815575,
+      "max_adjacent_response_jump": 0.005933263983735968,
+      "combo_pass": false
+    },
+    {
+      "penalty": 10.0,
+      "disorder_strength": 0.06,
+      "relative_curlcurl_residuals": [
+        0.049728787209586976,
+        0.03207317585531199,
+        0.026701505811400735
+      ],
+      "relative_divergence_norms": [
+        0.00402623586784679,
+        0.003324391499651497,
+        0.002861798877848094
+      ],
+      "scaled_eigenvalues": [
+        37.73121853572474,
+        38.39874878356699,
+        38.711368601755105
+      ],
+      "worst_relative_curlcurl_residual": 0.049728787209586976,
+      "worst_relative_divergence_norm": 0.00402623586784679,
+      "largest_scaled_eigenvalue": 38.711368601755105,
+      "largest_divergence_norm": 0.002861798877848094,
+      "max_adjacent_response_jump": 0.005933263983735968,
+      "combo_pass": false
+    },
+    {
+      "penalty": 10.0,
+      "disorder_strength": 0.12,
+      "relative_curlcurl_residuals": [
+        0.05602446888244137,
+        0.04733736274607808,
+        0.047378417503122036
+      ],
+      "relative_divergence_norms": [
+        0.008114075379304026,
+        0.006664851150207925,
+        0.005718044414534486
+      ],
+      "scaled_eigenvalues": [
+        37.51250420710755,
+        38.172630227354965,
+        38.481683832669184
+      ],
+      "worst_relative_curlcurl_residual": 0.05602446888244137,
+      "worst_relative_divergence_norm": 0.008114075379304026,
+      "largest_scaled_eigenvalue": 38.481683832669184,
+      "largest_divergence_norm": 0.005718044414534486,
+      "max_adjacent_response_jump": 0.005933263983735968,
+      "combo_pass": false
+    },
+    {
+      "penalty": 12.0,
+      "disorder_strength": 0.015,
+      "relative_curlcurl_residuals": [
+        0.04975710117404451,
+        0.027976307645789535,
+        0.018106338798813387
+      ],
+      "relative_divergence_norms": [
+        0.0010049333225704564,
+        0.0008324298427711932,
+        0.0007181482675789255
+      ],
+      "scaled_eigenvalues": [
+        37.87597670983438,
+        38.5486701431529,
+        38.86377997294532
+      ],
+      "worst_relative_curlcurl_residual": 0.04975710117404451,
+      "worst_relative_divergence_norm": 0.0010049333225704564,
+      "largest_scaled_eigenvalue": 38.86377997294532,
+      "largest_divergence_norm": 0.0007181482675789255,
+      "max_adjacent_response_jump": 0.00593326400768069,
+      "combo_pass": false
+    },
+    {
+      "penalty": 12.0,
+      "disorder_strength": 0.06,
+      "relative_curlcurl_residuals": [
+        0.04972878681195627,
+        0.03207318552798723,
+        0.02670151951436282
+      ],
+      "relative_divergence_norms": [
+        0.004026194353270278,
+        0.0033243759291768905,
+        0.0028617912772073827
+      ],
+      "scaled_eigenvalues": [
+        37.73121853510598,
+        38.39874878339086,
+        38.711368601685386
+      ],
+      "worst_relative_curlcurl_residual": 0.04972878681195627,
+      "worst_relative_divergence_norm": 0.004026194353270278,
+      "largest_scaled_eigenvalue": 38.711368601685386,
+      "largest_divergence_norm": 0.0028617912772073827,
+      "max_adjacent_response_jump": 0.00593326400768069,
+      "combo_pass": false
+    },
+    {
+      "penalty": 12.0,
+      "disorder_strength": 0.12,
+      "relative_curlcurl_residuals": [
+        0.05602436721506142,
+        0.04733735528223606,
+        0.0473784425413401
+      ],
+      "relative_divergence_norms": [
+        0.008113781064867313,
+        0.006664749700152362,
+        0.005717997427792119
+      ],
+      "scaled_eigenvalues": [
+        37.51250419745291,
+        38.17263022476027,
+        38.481683831672946
+      ],
+      "worst_relative_curlcurl_residual": 0.05602436721506142,
+      "worst_relative_divergence_norm": 0.008113781064867313,
+      "largest_scaled_eigenvalue": 38.481683831672946,
+      "largest_divergence_norm": 0.005717997427792119,
+      "max_adjacent_response_jump": 0.00593326400768069,
+      "combo_pass": false
+    }
+  ],
+  "observation": "the validated mild-disorder active branch admits the same coarse-grained local law test across the full bounded V5 family, and the corresponding scaled law parameter moves smoothly as the disorder strength changes",
+  "conclusion": "the first bounded V6 closure remains open: failing combos = ['(penalty=8.0, disorder=0.015)', '(penalty=8.0, disorder=0.060)', '(penalty=8.0, disorder=0.120)', '(penalty=10.0, disorder=0.015)', '(penalty=10.0, disorder=0.060)', '(penalty=10.0, disorder=0.120)', '(penalty=12.0, disorder=0.015)', '(penalty=12.0, disorder=0.060)', '(penalty=12.0, disorder=0.120)']; max residual = 0.056, max divergence = 8.115e-03, max adjacent response jump = 0.006",
+  "plots": [
+    "plots/transverse_active_branch_effective_closure_residuals.png",
+    "plots/transverse_active_branch_effective_closure_response.png"
+  ]
+}

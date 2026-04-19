@@ -81,6 +81,7 @@ def build_periodic_complex(
     variant: str,
     flux_tube_phase: float = 0.0,
     disorder_strength: float = 0.12,
+    cycle_holonomy_phase: float = 0.0,
 ) -> ComplexData:
     node_index = np.arange(n_side**3).reshape((n_side, n_side, n_side))
     raw_points = np.array(
@@ -115,6 +116,17 @@ def build_periodic_complex(
         "y": np.array([0.0, 1.0, 0.0]),
         "z": np.array([0.0, 0.0, 1.0]),
     }
+
+    def ux(i: int, j: int, k: int) -> complex:
+        return np.exp(1j * cycle_holonomy_phase) if i == n_side - 1 else 1.0 + 0.0j
+
+    def uy(i: int, j: int, k: int) -> complex:
+        return 1.0 + 0.0j
+
+    def uz(i: int, j: int, k: int) -> complex:
+        return 1.0 + 0.0j
+
+    phase_fn = {"x": ux, "y": uy, "z": uz}
 
     edges: list[tuple[int, int]] = []
     edge_axes: list[str] = []
@@ -156,9 +168,10 @@ def build_periodic_complex(
         if variant == "mild_disorder":
             local_edge_weight *= 1.0 + float(disorder_strength) * disorder_profile(midpoint, axis)
         edge_weights.append(local_edge_weight)
+        link_phase = phase_fn[axis](i, j, k)
         b0_rows.extend([edge_idx, edge_idx])
         b0_cols.extend([u, v])
-        b0_data.extend([-1.0 + 0.0j, 1.0 + 0.0j])
+        b0_data.extend([-1.0 + 0.0j, link_phase])
 
     for i in range(n_side):
         for j in range(n_side):
@@ -179,21 +192,21 @@ def build_periodic_complex(
     ci = n_side // 2
     cj = n_side // 2
 
-    def add_face(face_type: str, boundary_keys: list[tuple[str, int, int, int, int]]) -> None:
+    def add_face(face_type: str, boundary_keys: list[tuple[str, int, int, int, int, complex]]) -> None:
         nonlocal face_idx
         oriented_edges: list[tuple[int, complex]] = []
         local_weights: list[float] = []
         phase_multiplier = 1.0 + 0.0j
         if variant == "flux_tube" and face_type == "xy":
-            i0, j0, _ = boundary_keys[0][1:4]
+            i0, j0, _, _, _ = boundary_keys[0][1:6]
             if i0 == ci and j0 == cj:
                 phase_multiplier = np.exp(1j * flux_tube_phase)
-        for boundary_pos, (axis, i, j, k, sign) in enumerate(boundary_keys):
+        for boundary_pos, (axis, i, j, k, sign, phase) in enumerate(boundary_keys):
             key = (axis, i % n_side, j % n_side, k % n_side)
             if key not in edge_map:
                 return
             edge_id = edge_map[key]
-            coeff = complex(sign)
+            coeff = complex(sign) * phase
             if boundary_pos == 0:
                 coeff *= phase_multiplier
             oriented_edges.append((edge_id, coeff))
@@ -211,28 +224,28 @@ def build_periodic_complex(
                 add_face(
                     "xy",
                     [
-                        ("x", i, j, k, +1),
-                        ("y", (i + 1) % n_side, j, k, +1),
-                        ("x", i, (j + 1) % n_side, k, -1),
-                        ("y", i, j, k, -1),
+                        ("x", i, j, k, +1, 1.0 + 0.0j),
+                        ("y", (i + 1) % n_side, j, k, +1, np.conj(ux(i, j, k))),
+                        ("x", i, (j + 1) % n_side, k, -1, np.conj(uy(i, j, k))),
+                        ("y", i, j, k, -1, 1.0 + 0.0j),
                     ],
                 )
                 add_face(
                     "xz",
                     [
-                        ("x", i, j, k, +1),
-                        ("z", (i + 1) % n_side, j, k, +1),
-                        ("x", i, j, (k + 1) % n_side, -1),
-                        ("z", i, j, k, -1),
+                        ("x", i, j, k, +1, 1.0 + 0.0j),
+                        ("z", (i + 1) % n_side, j, k, +1, np.conj(ux(i, j, k))),
+                        ("x", i, j, (k + 1) % n_side, -1, np.conj(uz(i, j, k))),
+                        ("z", i, j, k, -1, 1.0 + 0.0j),
                     ],
                 )
                 add_face(
                     "yz",
                     [
-                        ("y", i, j, k, +1),
-                        ("z", i, (j + 1) % n_side, k, +1),
-                        ("y", i, j, (k + 1) % n_side, -1),
-                        ("z", i, j, k, -1),
+                        ("y", i, j, k, +1, 1.0 + 0.0j),
+                        ("z", i, (j + 1) % n_side, k, +1, np.conj(uy(i, j, k))),
+                        ("y", i, j, (k + 1) % n_side, -1, np.conj(uz(i, j, k))),
+                        ("z", i, j, k, -1, 1.0 + 0.0j),
                     ],
                 )
 
@@ -457,6 +470,7 @@ def analyze_case(
     flux_tube_phase: float,
     disorder_strength: float = 0.12,
     full_mode_scan_count: int | None = None,
+    cycle_holonomy_phase: float = 0.0,
 ) -> dict[str, Any]:
     reference_variant = "baseline" if variant == "flux_tube" else variant
     reference = build_periodic_complex(
@@ -465,6 +479,7 @@ def analyze_case(
         variant=reference_variant,
         flux_tube_phase=0.0,
         disorder_strength=disorder_strength,
+        cycle_holonomy_phase=0.0,
     )
     analysis = build_periodic_complex(
         n_side=n_side,
@@ -472,6 +487,7 @@ def analyze_case(
         variant=variant,
         flux_tube_phase=flux_tube_phase,
         disorder_strength=disorder_strength,
+        cycle_holonomy_phase=cycle_holonomy_phase,
     )
     distances = defect_distances(analysis.midpoints, analysis.edge_axes, variant=variant, n_side=n_side)
 
@@ -518,12 +534,21 @@ def analyze_case(
         lam = float(np.real(np.vdot(vec, analysis.upper @ vec)))
         if lam < 1.0e-10 and len(restricted_spectrum) > 0:
             continue
+        norm_sq = float(np.real(np.vdot(vec, vec))) or 1.0
+        exact_part = exact_projector.apply(vec)
+        harmonic_part = harmonic_projector.apply(vec)
+        exact_fraction = float(np.real(np.vdot(vec, exact_part)) / norm_sq)
+        harmonic_fraction = float(np.real(np.vdot(vec, harmonic_part)) / norm_sq)
+        coexact_fraction = float(max(0.0, 1.0 - exact_fraction - harmonic_fraction))
         restricted_spectrum.append(lam)
         restricted_vectors.append(vec)
         restricted_records.append(
             {
                 "mode_index": len(restricted_spectrum) - 1,
                 "eigenvalue": lam,
+                "exact_fraction": exact_fraction,
+                "harmonic_fraction": harmonic_fraction,
+                "coexact_fraction": coexact_fraction,
                 "divergence_norm": float(np.linalg.norm(reference.d0.conj().T @ vec)),
                 "curl_norm": float(np.linalg.norm(analysis.d1 @ vec)) if analysis.d1.shape[0] else 0.0,
                 "ipr": inverse_participation_ratio(vec),
@@ -548,6 +573,7 @@ def analyze_case(
                 "epsilon": float(epsilon),
                 "flux_tube_phase": float(flux_tube_phase if variant == "flux_tube" else 0.0),
                 "disorder_strength": float(disorder_strength if variant == "mild_disorder" else 0.0),
+                "cycle_holonomy_phase": float(cycle_holonomy_phase),
             },
         "dimensions": {
             "harmonic": int(harmonic_basis.shape[1]),

@@ -145,9 +145,19 @@ def pair_transport_metrics(
     scaled_from = [(n_from**2) * float(value) for value in case_from['restricted_transverse_spectrum'][: len(modes_from)]]
     scaled_to = [(n_to**2) * float(value) for value in case_to['restricted_transverse_spectrum'][: len(modes_to)]]
     matched_pairs: list[dict[str, Any]] = []
+    exact_matches: list[float] = []
+    mode_shifts: list[float] = []
+    assignment_margins: list[float] = []
     for left, right in zip(row_ind, col_ind):
         overlap_value = float(overlap[left, right])
         scaled_drift = abs(scaled_from[left] - scaled_to[right]) / max(abs(scaled_from[left]), abs(scaled_to[right]), 1.0e-12)
+        row_alternatives = np.delete(overlap[left], right)
+        col_alternatives = np.delete(overlap[:, right], left)
+        row_runner_up = float(np.max(row_alternatives)) if row_alternatives.size else 0.0
+        col_runner_up = float(np.max(col_alternatives)) if col_alternatives.size else 0.0
+        assignment_margin = float(max(0.0, min(overlap_value - row_runner_up, overlap_value - col_runner_up)))
+        exact_match = float(left == right)
+        mode_shift = float(abs(left - right))
         matched_pairs.append(
             {
                 'from_mode': int(left),
@@ -156,8 +166,14 @@ def pair_transport_metrics(
                 'scaled_eigen_from': float(scaled_from[left]),
                 'scaled_eigen_to': float(scaled_to[right]),
                 'scaled_eigen_drift': float(scaled_drift),
+                'assignment_margin': assignment_margin,
+                'exact_match': exact_match,
+                'mode_shift': mode_shift,
             }
         )
+        exact_matches.append(exact_match)
+        mode_shifts.append(mode_shift)
+        assignment_margins.append(assignment_margin)
 
     principal = subspace_cosines(modes_from, modes_to)
     leading_pair = next((pair for pair in matched_pairs if pair['from_mode'] == 0), None)
@@ -178,6 +194,11 @@ def pair_transport_metrics(
         'min_principal_cosine': float(np.min(principal)) if principal else math.nan,
         'mean_scaled_eigen_drift': float(np.mean(drifts)),
         'max_scaled_eigen_drift': float(np.max(drifts)),
+        'exact_match_fraction': float(np.mean(exact_matches)),
+        'mean_mode_shift': float(np.mean(mode_shifts)),
+        'max_mode_shift': float(np.max(mode_shifts)),
+        'mean_assignment_margin': float(np.mean(assignment_margins)),
+        'min_assignment_margin': float(np.min(assignment_margins)),
     }
 
 

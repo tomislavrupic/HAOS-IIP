@@ -1,0 +1,595 @@
+{
+  "config": {
+    "epsilon": 0.2,
+    "sizes": [
+      12,
+      16,
+      20
+    ],
+    "variants": [
+      "baseline",
+      "line_defect",
+      "mild_disorder"
+    ],
+    "restricted_modes": 6,
+    "transport_modes": 4,
+    "probe_n_side": 6,
+    "harmonic_tol": 1e-08,
+    "eig_tol": 1e-08,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966,
+    "disorder_strength": 0.12
+  },
+  "thresholds": {
+    "min_mean_overlap": 0.75,
+    "min_min_overlap": 0.5,
+    "min_mean_principal_cosine": 0.8,
+    "max_max_scaled_eigen_drift": 0.05,
+    "min_mean_assignment_margin": 0.1
+  },
+  "pair_results": [
+    {
+      "variant": "baseline",
+      "n_from": 12,
+      "n_to": 16,
+      "metrics": {
+        "variant": "baseline",
+        "n_from": 12,
+        "n_to": 16,
+        "probe_n_side": 6,
+        "transport_modes": 4,
+        "matched_pairs": [
+          {
+            "from_mode": 0,
+            "to_mode": 2,
+            "overlap": 0.7313747727408648,
+            "scaled_eigen_from": 37.92059209331384,
+            "scaled_eigen_to": 38.59492939185768,
+            "scaled_eigen_drift": 0.0174721733960758,
+            "assignment_margin": 0.38386027466360567,
+            "exact_match": 0.0,
+            "mode_shift": 2.0
+          },
+          {
+            "from_mode": 1,
+            "to_mode": 1,
+            "overlap": 0.4283822475733664,
+            "scaled_eigen_from": 37.92059209331383,
+            "scaled_eigen_to": 38.59492939185759,
+            "scaled_eigen_drift": 0.01747217339607382,
+            "assignment_margin": 0.2391933392630224,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 2,
+            "to_mode": 3,
+            "overlap": 0.5782684220790092,
+            "scaled_eigen_from": 37.920592093313815,
+            "scaled_eigen_to": 38.594929391857725,
+            "scaled_eigen_drift": 0.017472173396077623,
+            "assignment_margin": 0.26394598722859763,
+            "exact_match": 0.0,
+            "mode_shift": 1.0
+          },
+          {
+            "from_mode": 3,
+            "to_mode": 0,
+            "overlap": 0.19190897785818856,
+            "scaled_eigen_from": 37.9205920933138,
+            "scaled_eigen_to": 38.59492939185758,
+            "scaled_eigen_drift": 0.017472173396074375,
+            "assignment_margin": 0.0,
+            "exact_match": 0.0,
+            "mode_shift": 3.0
+          }
+        ],
+        "mean_overlap": 0.4824836050628572,
+        "min_overlap": 0.19190897785818856,
+        "leading_mode_overlap": 0.7313747727408648,
+        "principal_cosines": [
+          0.8603553043041673,
+          0.7251789575760403,
+          0.46944521717481963,
+          0.15320579271845783
+        ],
+        "mean_principal_cosine": 0.5520463179433713,
+        "min_principal_cosine": 0.15320579271845783,
+        "mean_scaled_eigen_drift": 0.017472173396075406,
+        "max_scaled_eigen_drift": 0.017472173396077623,
+        "exact_match_fraction": 0.25,
+        "mean_mode_shift": 1.5,
+        "max_mode_shift": 3.0,
+        "mean_assignment_margin": 0.22174990028880642,
+        "min_assignment_margin": 0.0
+      },
+      "evaluation": {
+        "checks": {
+          "mean_overlap": false,
+          "min_overlap": false,
+          "mean_principal_cosine": false,
+          "max_scaled_eigen_drift": true,
+          "mean_assignment_margin": true
+        },
+        "passed": false
+      }
+    },
+    {
+      "variant": "baseline",
+      "n_from": 16,
+      "n_to": 20,
+      "metrics": {
+        "variant": "baseline",
+        "n_from": 16,
+        "n_to": 20,
+        "probe_n_side": 6,
+        "transport_modes": 4,
+        "matched_pairs": [
+          {
+            "from_mode": 0,
+            "to_mode": 0,
+            "overlap": 0.2999338555036784,
+            "scaled_eigen_from": 38.59492939185758,
+            "scaled_eigen_to": 38.91083269655976,
+            "scaled_eigen_drift": 0.008118646731764885,
+            "assignment_margin": 0.0,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 1,
+            "to_mode": 2,
+            "overlap": 0.40766113439944307,
+            "scaled_eigen_from": 38.59492939185759,
+            "scaled_eigen_to": 38.910832696559844,
+            "scaled_eigen_drift": 0.008118646731766875,
+            "assignment_margin": 0.0,
+            "exact_match": 0.0,
+            "mode_shift": 1.0
+          },
+          {
+            "from_mode": 2,
+            "to_mode": 1,
+            "overlap": 0.4082210281150954,
+            "scaled_eigen_from": 38.59492939185768,
+            "scaled_eigen_to": 38.91083269655965,
+            "scaled_eigen_drift": 0.008118646731759611,
+            "assignment_margin": 0.0,
+            "exact_match": 0.0,
+            "mode_shift": 1.0
+          },
+          {
+            "from_mode": 3,
+            "to_mode": 3,
+            "overlap": 0.19678474711956245,
+            "scaled_eigen_from": 38.594929391857725,
+            "scaled_eigen_to": 38.91083269655952,
+            "scaled_eigen_drift": 0.008118646731755073,
+            "assignment_margin": 0.0,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          }
+        ],
+        "mean_overlap": 0.32815019128444484,
+        "min_overlap": 0.19678474711956245,
+        "leading_mode_overlap": 0.2999338555036784,
+        "principal_cosines": [
+          0.7678618089371456,
+          0.6917838134465626,
+          0.2852850794376228,
+          0.23600351747386314
+        ],
+        "mean_principal_cosine": 0.4952335548237985,
+        "min_principal_cosine": 0.23600351747386314,
+        "mean_scaled_eigen_drift": 0.008118646731761612,
+        "max_scaled_eigen_drift": 0.008118646731766875,
+        "exact_match_fraction": 0.5,
+        "mean_mode_shift": 0.5,
+        "max_mode_shift": 1.0,
+        "mean_assignment_margin": 0.0,
+        "min_assignment_margin": 0.0
+      },
+      "evaluation": {
+        "checks": {
+          "mean_overlap": false,
+          "min_overlap": false,
+          "mean_principal_cosine": false,
+          "max_scaled_eigen_drift": true,
+          "mean_assignment_margin": false
+        },
+        "passed": false
+      }
+    },
+    {
+      "variant": "line_defect",
+      "n_from": 12,
+      "n_to": 16,
+      "metrics": {
+        "variant": "line_defect",
+        "n_from": 12,
+        "n_to": 16,
+        "probe_n_side": 6,
+        "transport_modes": 4,
+        "matched_pairs": [
+          {
+            "from_mode": 0,
+            "to_mode": 0,
+            "overlap": 0.8959528908931923,
+            "scaled_eigen_from": 36.300586767662345,
+            "scaled_eigen_to": 37.64687710378774,
+            "scaled_eigen_drift": 0.035761009669243955,
+            "assignment_margin": 0.536204847586495,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 1,
+            "to_mode": 1,
+            "overlap": 0.9360624176195388,
+            "scaled_eigen_from": 36.300586767662345,
+            "scaled_eigen_to": 37.646877103787716,
+            "scaled_eigen_drift": 0.03576100966924341,
+            "assignment_margin": 0.5763143743128415,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 2,
+            "to_mode": 3,
+            "overlap": 0.6268961068927588,
+            "scaled_eigen_from": 36.815465103701655,
+            "scaled_eigen_to": 38.026732879247604,
+            "scaled_eigen_drift": 0.03185305925156079,
+            "assignment_margin": 0.13628093274766112,
+            "exact_match": 0.0,
+            "mode_shift": 1.0
+          },
+          {
+            "from_mode": 3,
+            "to_mode": 2,
+            "overlap": 0.7060148741617162,
+            "scaled_eigen_from": 36.81546510370166,
+            "scaled_eigen_to": 38.02673287924759,
+            "scaled_eigen_drift": 0.03185305925156024,
+            "assignment_margin": 0.2153997000166185,
+            "exact_match": 0.0,
+            "mode_shift": 1.0
+          }
+        ],
+        "mean_overlap": 0.7912315723918015,
+        "min_overlap": 0.6268961068927588,
+        "leading_mode_overlap": 0.8959528908931923,
+        "principal_cosines": [
+          0.9683417424101473,
+          0.966789633502076,
+          0.964070032255746,
+          0.36143736621889105
+        ],
+        "mean_principal_cosine": 0.8151596935967151,
+        "min_principal_cosine": 0.36143736621889105,
+        "mean_scaled_eigen_drift": 0.0338070344604021,
+        "max_scaled_eigen_drift": 0.035761009669243955,
+        "exact_match_fraction": 0.5,
+        "mean_mode_shift": 0.5,
+        "max_mode_shift": 1.0,
+        "mean_assignment_margin": 0.36604996366590403,
+        "min_assignment_margin": 0.13628093274766112
+      },
+      "evaluation": {
+        "checks": {
+          "mean_overlap": true,
+          "min_overlap": true,
+          "mean_principal_cosine": true,
+          "max_scaled_eigen_drift": true,
+          "mean_assignment_margin": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "line_defect",
+      "n_from": 16,
+      "n_to": 20,
+      "metrics": {
+        "variant": "line_defect",
+        "n_from": 16,
+        "n_to": 20,
+        "probe_n_side": 6,
+        "transport_modes": 4,
+        "matched_pairs": [
+          {
+            "from_mode": 0,
+            "to_mode": 0,
+            "overlap": 0.8770285088639718,
+            "scaled_eigen_from": 37.64687710378774,
+            "scaled_eigen_to": 38.29556161098616,
+            "scaled_eigen_drift": 0.01693889526383996,
+            "assignment_margin": 0.42572268701993926,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 1,
+            "to_mode": 1,
+            "overlap": 0.859475606823359,
+            "scaled_eigen_from": 37.646877103787716,
+            "scaled_eigen_to": 38.29556161098625,
+            "scaled_eigen_drift": 0.016938895263842704,
+            "assignment_margin": 0.4081697849793265,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 2,
+            "to_mode": 3,
+            "overlap": 0.6344204293785911,
+            "scaled_eigen_from": 38.02673287924759,
+            "scaled_eigen_to": 38.56417928600336,
+            "scaled_eigen_drift": 0.01393641500237586,
+            "assignment_margin": 0.0,
+            "exact_match": 0.0,
+            "mode_shift": 1.0
+          },
+          {
+            "from_mode": 3,
+            "to_mode": 2,
+            "overlap": 0.505979418810808,
+            "scaled_eigen_from": 38.026732879247604,
+            "scaled_eigen_to": 38.56417928600343,
+            "scaled_eigen_drift": 0.013936415002377309,
+            "assignment_margin": 0.0,
+            "exact_match": 0.0,
+            "mode_shift": 1.0
+          }
+        ],
+        "mean_overlap": 0.7192259909691825,
+        "min_overlap": 0.505979418810808,
+        "leading_mode_overlap": 0.8770285088639718,
+        "principal_cosines": [
+          0.9773784059153963,
+          0.9773318523170175,
+          0.9714636200919835,
+          0.5794038494171834
+        ],
+        "mean_principal_cosine": 0.8763944319353951,
+        "min_principal_cosine": 0.5794038494171834,
+        "mean_scaled_eigen_drift": 0.015437655133108958,
+        "max_scaled_eigen_drift": 0.016938895263842704,
+        "exact_match_fraction": 0.5,
+        "mean_mode_shift": 0.5,
+        "max_mode_shift": 1.0,
+        "mean_assignment_margin": 0.20847311799981644,
+        "min_assignment_margin": 0.0
+      },
+      "evaluation": {
+        "checks": {
+          "mean_overlap": false,
+          "min_overlap": true,
+          "mean_principal_cosine": true,
+          "max_scaled_eigen_drift": true,
+          "mean_assignment_margin": true
+        },
+        "passed": false
+      }
+    },
+    {
+      "variant": "mild_disorder",
+      "n_from": 12,
+      "n_to": 16,
+      "metrics": {
+        "variant": "mild_disorder",
+        "n_from": 12,
+        "n_to": 16,
+        "probe_n_side": 6,
+        "transport_modes": 4,
+        "matched_pairs": [
+          {
+            "from_mode": 0,
+            "to_mode": 0,
+            "overlap": 0.9722032994019669,
+            "scaled_eigen_from": 37.512504207107554,
+            "scaled_eigen_to": 38.17263022735493,
+            "scaled_eigen_drift": 0.017293176192357887,
+            "assignment_margin": 0.961131608142503,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 1,
+            "to_mode": 1,
+            "overlap": 0.9666544034771309,
+            "scaled_eigen_from": 37.53114008421361,
+            "scaled_eigen_to": 38.19319530127863,
+            "scaled_eigen_drift": 0.017334376237508803,
+            "assignment_margin": 0.9289351726870491,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 2,
+            "to_mode": 2,
+            "overlap": 0.9716466684653017,
+            "scaled_eigen_from": 37.65324791316047,
+            "scaled_eigen_to": 38.334283095281066,
+            "scaled_eigen_drift": 0.0177656950158129,
+            "assignment_margin": 0.9339274376752198,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 3,
+            "to_mode": 3,
+            "overlap": 0.9704343667479218,
+            "scaled_eigen_from": 37.75487477414587,
+            "scaled_eigen_to": 38.424403176831035,
+            "scaled_eigen_drift": 0.01742456218783577,
+            "assignment_margin": 0.9683886052482535,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          }
+        ],
+        "mean_overlap": 0.9702346845230804,
+        "min_overlap": 0.9666544034771309,
+        "leading_mode_overlap": 0.9722032994019669,
+        "principal_cosines": [
+          0.9724130184429888,
+          0.9723338382032761,
+          0.9704370755383682,
+          0.9670336423119427
+        ],
+        "mean_principal_cosine": 0.970554393624144,
+        "min_principal_cosine": 0.9670336423119427,
+        "mean_scaled_eigen_drift": 0.01745445240837884,
+        "max_scaled_eigen_drift": 0.0177656950158129,
+        "exact_match_fraction": 1.0,
+        "mean_mode_shift": 0.0,
+        "max_mode_shift": 0.0,
+        "mean_assignment_margin": 0.9480957059382564,
+        "min_assignment_margin": 0.9289351726870491
+      },
+      "evaluation": {
+        "checks": {
+          "mean_overlap": true,
+          "min_overlap": true,
+          "mean_principal_cosine": true,
+          "max_scaled_eigen_drift": true,
+          "mean_assignment_margin": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "mild_disorder",
+      "n_from": 16,
+      "n_to": 20,
+      "metrics": {
+        "variant": "mild_disorder",
+        "n_from": 16,
+        "n_to": 20,
+        "probe_n_side": 6,
+        "transport_modes": 4,
+        "matched_pairs": [
+          {
+            "from_mode": 0,
+            "to_mode": 0,
+            "overlap": 0.982458289522919,
+            "scaled_eigen_from": 38.17263022735493,
+            "scaled_eigen_to": 38.481683832669226,
+            "scaled_eigen_drift": 0.008031187165773767,
+            "assignment_margin": 0.9747721990950275,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 1,
+            "to_mode": 1,
+            "overlap": 0.9812869752141573,
+            "scaled_eigen_from": 38.19319530127863,
+            "scaled_eigen_to": 38.503315824405384,
+            "scaled_eigen_drift": 0.008054384836388177,
+            "assignment_margin": 0.962606888576572,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 2,
+            "to_mode": 2,
+            "overlap": 0.9786711714916856,
+            "scaled_eigen_from": 38.334283095281066,
+            "scaled_eigen_to": 38.655594732381594,
+            "scaled_eigen_drift": 0.008312163849114637,
+            "assignment_margin": 0.9599910848541002,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          },
+          {
+            "from_mode": 3,
+            "to_mode": 3,
+            "overlap": 0.9831146474608566,
+            "scaled_eigen_from": 38.424403176831035,
+            "scaled_eigen_to": 38.73806303006767,
+            "scaled_eigen_drift": 0.008096942095250869,
+            "assignment_margin": 0.9824557995937196,
+            "exact_match": 1.0,
+            "mode_shift": 0.0
+          }
+        ],
+        "mean_overlap": 0.9813827709224047,
+        "min_overlap": 0.9786711714916856,
+        "leading_mode_overlap": 0.982458289522919,
+        "principal_cosines": [
+          0.9831254243526482,
+          0.9824801371046453,
+          0.9816351740162716,
+          0.9785982630523699
+        ],
+        "mean_principal_cosine": 0.9814597496314839,
+        "min_principal_cosine": 0.9785982630523699,
+        "mean_scaled_eigen_drift": 0.008123669486631863,
+        "max_scaled_eigen_drift": 0.008312163849114637,
+        "exact_match_fraction": 1.0,
+        "mean_mode_shift": 0.0,
+        "max_mode_shift": 0.0,
+        "mean_assignment_margin": 0.9699564930298549,
+        "min_assignment_margin": 0.9599910848541002
+      },
+      "evaluation": {
+        "checks": {
+          "mean_overlap": true,
+          "min_overlap": true,
+          "mean_principal_cosine": true,
+          "max_scaled_eigen_drift": true,
+          "mean_assignment_margin": true
+        },
+        "passed": true
+      }
+    }
+  ],
+  "variant_summary": [
+    {
+      "variant": "baseline",
+      "variant_label": "baseline periodic torus",
+      "passing_pairs": 0,
+      "total_pairs": 2,
+      "all_pairs_pass": false,
+      "worst_mean_overlap": 0.32815019128444484,
+      "worst_min_overlap": 0.19190897785818856,
+      "worst_mean_principal_cosine": 0.4952335548237985,
+      "worst_max_scaled_eigen_drift": 0.017472173396077623,
+      "worst_mean_assignment_margin": 0.0,
+      "mean_exact_match_fraction": 0.375
+    },
+    {
+      "variant": "line_defect",
+      "variant_label": "line defect",
+      "passing_pairs": 1,
+      "total_pairs": 2,
+      "all_pairs_pass": false,
+      "worst_mean_overlap": 0.7192259909691825,
+      "worst_min_overlap": 0.505979418810808,
+      "worst_mean_principal_cosine": 0.8151596935967151,
+      "worst_max_scaled_eigen_drift": 0.035761009669243955,
+      "worst_mean_assignment_margin": 0.20847311799981644,
+      "mean_exact_match_fraction": 0.5
+    },
+    {
+      "variant": "mild_disorder",
+      "variant_label": "smooth mild-disorder torus",
+      "passing_pairs": 2,
+      "total_pairs": 2,
+      "all_pairs_pass": true,
+      "worst_mean_overlap": 0.9702346845230804,
+      "worst_min_overlap": 0.9666544034771309,
+      "worst_mean_principal_cosine": 0.970554393624144,
+      "worst_max_scaled_eigen_drift": 0.0177656950158129,
+      "worst_mean_assignment_margin": 0.9480957059382564,
+      "mean_exact_match_fraction": 1.0
+    }
+  ],
+  "observation": "with the active coexact restriction and probe-space transport map held fixed, branch identity can now be tested directly against explicit V1 thresholds instead of being inferred from raw qualitative stability language",
+  "conclusion": "V1 is not yet closed on the full tested family: passing variants = mild_disorder, open variants = baseline, line_defect; the weakest case is baseline with worst mean overlap 0.328 and worst mean assignment margin 0.000, so the active branch is now measurable but still not uniformly stable as the same transported physical object across refinement",
+  "plots": [
+    "plots/transverse_active_branch_identity_overlap.png",
+    "plots/transverse_active_branch_identity_margin.png"
+  ]
+}

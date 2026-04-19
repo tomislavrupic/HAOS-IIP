@@ -787,3 +787,139 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260416_232531_transverse_active_sector_transport_overlap.png`, `plots/20260416_232531_transverse_active_sector_transport_stability.png`
 - Observation: explicit probe-space comparison maps now carry the restricted coexact branch across refinement, so active-sector identity can be measured directly by transported overlaps, principal-angle alignment, and scaled-eigenvalue drift rather than inferred only from separate spectra
 - Conclusion: within the tested low transported window, the strongest refinement pair is mild_disorder 24->28 with mean overlap 0.992, the weakest pair is baseline 20->24 with mean overlap 0.343, and the smallest max scaled-eigen drift is baseline 24->28 at 0.003; this gives `T8` a real `J_n` mechanism and an initial branch-identity test, but the continuum question still depends on whether these transported overlaps stay strong as the window and background family are enlarged
+
+## transverse active-branch identity
+- Date: 2026-04-19T09:53:12
+- Config: epsilon=0.2, sizes=[12, 16, 20, 24, 28], variants=['baseline', 'puncture', 'line_defect', 'flux_tube', 'mild_disorder'], restricted_modes=6, transport_modes=6, probe_n_side=6, disorder_strength=0.12, thresholds={'min_mean_overlap': 0.75, 'min_min_overlap': 0.5, 'min_mean_principal_cosine': 0.8, 'max_max_scaled_eigen_drift': 0.05, 'min_mean_assignment_margin': 0.1}
+- Results: `data/20260419_095312_transverse_active_branch_identity.json`
+- Plots: `plots/20260419_095312_transverse_active_branch_identity_overlap.png`, `plots/20260419_095312_transverse_active_branch_identity_margin.png`
+- Observation: with the active coexact restriction and probe-space transport map held fixed, branch identity can now be tested directly against explicit V1 thresholds instead of being inferred from raw qualitative stability language
+- Conclusion: V1 is not yet closed on the full tested family: passing variants = mild_disorder, open variants = baseline, puncture, line_defect, flux_tube; the weakest case is baseline with worst mean overlap 0.305 and worst mean assignment margin 0.030, so the active branch is now measurable but still not uniformly stable as the same transported physical object across refinement
+
+## transverse active-branch identity
+- Date: 2026-04-19T09:53:20
+- Config: epsilon=0.2, sizes=[12, 16, 20, 24, 28], variants=['baseline', 'line_defect', 'mild_disorder'], restricted_modes=6, transport_modes=4, probe_n_side=6, disorder_strength=0.12, thresholds={'min_mean_overlap': 0.75, 'min_min_overlap': 0.5, 'min_mean_principal_cosine': 0.8, 'max_max_scaled_eigen_drift': 0.05, 'min_mean_assignment_margin': 0.1}
+- Results: `data/20260419_095320_transverse_active_branch_identity.json`
+- Plots: `plots/20260419_095320_transverse_active_branch_identity_overlap.png`, `plots/20260419_095320_transverse_active_branch_identity_margin.png`
+- Observation: with the active coexact restriction and probe-space transport map held fixed, branch identity can now be tested directly against explicit V1 thresholds instead of being inferred from raw qualitative stability language
+- Conclusion: V1 is not yet closed on the full tested family: passing variants = mild_disorder, open variants = baseline, line_defect; the weakest case is baseline with worst mean overlap 0.326 and worst mean assignment margin 0.037, so the active branch is now measurable but still not uniformly stable as the same transported physical object across refinement
+
+## transverse active-branch identity
+- Date: 2026-04-19T09:55:31
+- Config: epsilon=0.2, sizes=[12, 16, 20, 24, 28], variants=['baseline', 'line_defect', 'mild_disorder'], restricted_modes=6, transport_modes=4, probe_n_side=6, disorder_strength=0.12, thresholds={'min_mean_overlap': 0.75, 'min_min_overlap': 0.5, 'min_mean_principal_cosine': 0.8, 'max_max_scaled_eigen_drift': 0.05, 'min_mean_assignment_margin': 0.1}
+- Results: `data/20260419_095531_transverse_active_branch_identity.json`
+- Plots: `plots/20260419_095531_transverse_active_branch_identity_overlap.png`, `plots/20260419_095531_transverse_active_branch_identity_margin.png`
+- Observation: with the active coexact restriction and probe-space transport map held fixed, branch identity can now be tested directly against explicit V1 thresholds instead of being inferred from raw qualitative stability language
+- Conclusion: V1 is not yet closed on the full tested family: passing variants = mild_disorder, open variants = baseline, line_defect; the weakest case is baseline with worst mean overlap 0.324 and worst mean assignment margin 0.010, so the active branch is now measurable but still not uniformly stable as the same transported physical object across refinement
+
+## transverse active-branch identity
+- Date: 2026-04-19T09:59:48
+- Config: epsilon=0.2, sizes=[12, 16, 20], variants=['baseline', 'line_defect', 'mild_disorder'], restricted_modes=6, transport_modes=4, probe_n_side=6, disorder_strength=0.12, thresholds={'min_mean_overlap': 0.75, 'min_min_overlap': 0.5, 'min_mean_principal_cosine': 0.8, 'max_max_scaled_eigen_drift': 0.05, 'min_mean_assignment_margin': 0.1}
+- Results: `data/20260419_095948_transverse_active_branch_identity.json`
+- Plots: `plots/20260419_095948_transverse_active_branch_identity_overlap.png`, `plots/20260419_095948_transverse_active_branch_identity_margin.png`
+- Observation: with the active coexact restriction and probe-space transport map held fixed, branch identity can now be tested directly against explicit V1 thresholds instead of being inferred from raw qualitative stability language
+- Conclusion: V1 is not yet closed on the full tested family: passing variants = mild_disorder, open variants = baseline, line_defect; the weakest case is baseline with worst mean overlap 0.328 and worst mean assignment margin 0.000, so the active branch is now measurable but still not uniformly stable as the same transported physical object across refinement
+
+## transverse active-sector disorder sweep
+- Date: 2026-04-19T10:14:03
+- Config: epsilon=0.2, sizes=[12, 16], disorder_strengths=[0.0, 0.015, 0.03, 0.06, 0.09, 0.12], restricted_modes=6, transport_modes=4, probe_n_side=6
+- Results: `data/20260419_101403_transverse_active_sector_disorder_sweep.json`
+- Plots: `plots/20260419_101403_transverse_active_sector_disorder_sweep_overlap.png`, `plots/20260419_101403_transverse_active_sector_disorder_sweep_drift.png`
+- Observation: with the active-sector comparison map held fixed, the disorder sweep isolates whether branch identity improves continuously under bounded symmetry breaking instead of only under topological defects
+- Conclusion: the largest refinement pair rises from mean overlap 0.397 at disorder strength 0.000 to 0.971 at strength 0.015, and it first crosses the present bounded identity threshold at strength 0.015; because the same `J_n` map is used throughout, this points to a clean-background degeneracy / branch-mixing problem rather than a broken transport construction
+
+## transverse active-sector disorder sweep
+- Date: 2026-04-19T10:19:10
+- Config: epsilon=0.2, sizes=[12, 16, 20], disorder_strengths=[0.0, 0.015, 0.03, 0.06, 0.09, 0.12], restricted_modes=6, transport_modes=4, probe_n_side=6
+- Results: `data/20260419_101910_transverse_active_sector_disorder_sweep.json`
+- Plots: `plots/20260419_101910_transverse_active_sector_disorder_sweep_overlap.png`, `plots/20260419_101910_transverse_active_sector_disorder_sweep_drift.png`
+- Observation: with the active-sector comparison map held fixed, the disorder sweep isolates whether branch identity improves continuously under bounded symmetry breaking instead of only under topological defects
+- Conclusion: the largest refinement pair rises from mean overlap 0.337 at disorder strength 0.000 to 0.981 at strength 0.090, and it first crosses the present bounded identity threshold at strength 0.015; because the same `J_n` map is used throughout, this points to a clean-background degeneracy / branch-mixing problem rather than a broken transport construction
+
+## transverse active-branch purity
+- Date: 2026-04-19T16:40:39
+- Config: epsilon=0.2, sizes=[12, 16, 20], variants=['baseline', 'line_defect', 'mild_disorder'], restricted_modes=6, purity_modes=4, disorder_strength=0.12, thresholds={'max_exact_fraction': 1e-08, 'max_harmonic_fraction': 1e-08, 'min_coexact_fraction': 0.999999}
+- Results: `data/20260419_164039_transverse_active_branch_purity.json`
+- Plots: `plots/20260419_164039_transverse_active_branch_purity.png`
+- Observation: the restricted active branch now carries explicit exact / harmonic / coexact fractions, so harmonic recontamination can be tested directly on the low active window instead of being assumed away
+- Conclusion: all tested variants pass the first bounded V3 purity thresholds, and the worst harmonic leakage remains 2.689e-31; in this first bounded read, the low restricted active window remains physically coexact to leading order under refinement
+
+## transverse active-branch scaling
+- Date: 2026-04-19T16:57:39
+- Config: epsilon=0.2, sizes=[12, 16, 20], variants=['baseline', 'line_defect', 'mild_disorder'], restricted_modes=6, transport_modes=4, probe_n_side=6, candidate_exponents=[1.5, 1.75, 2.0, 2.25, 2.5], thresholds={'max_global_max_drift': 0.05, 'max_best_exponent_deviation': 0.25, 'min_identity_pairs': 2.0}
+- Results: `data/20260419_165739_transverse_active_branch_scaling.json`
+- Plots: `plots/20260419_165739_transverse_active_branch_scaling.png`
+- Observation: with the transported active window fixed, the same exponent scan can now be applied across every adjacent refinement pair, so V4 asks directly whether one scaling family stabilizes the active branch instead of rescuing it with pair-specific rescaling
+- Conclusion: the first bounded V4 read passes: every tested pair has the same pair-best exponent alpha=2.00, and on the V1-passing subset the global choice alpha=2.00 keeps the max scaled-eigen drift bounded at 0.018; this means the tracked active window already closes onto one coherent scaling family in the current bounded regime
+
+## transverse active-branch universality
+- Date: 2026-04-19T17:29:34
+- Config: epsilon=0.2, sizes=[12, 16, 20], variant=mild_disorder, disorder_strengths=[0.015, 0.06, 0.12], penalties=[8.0, 10.0, 12.0], restricted_modes=6, purity_modes=4, transport_modes=4, probe_n_side=6, scaling_exponent=2.0, thresholds={'max_scaling_drift': 0.05, 'max_exact_fraction': 1e-08, 'max_harmonic_fraction': 1e-08, 'min_coexact_fraction': 0.999999}
+- Results: `data/20260419_172934_transverse_active_branch_universality.json`
+- Plots: `plots/20260419_172934_transverse_active_branch_universality.png`
+- Observation: the first bounded V5 scan keeps the active-branch contract fixed and asks whether it survives a small family of penalty choices and mild-disorder substrates instead of being re-earned after each parameter change
+- Conclusion: all 9 tested operator/substrate combos pass the first bounded V5 universality check: the weakest combo is penalty=8.0, disorder=0.120 with worst mean overlap 0.970, while the largest fixed-alpha drift over the whole family is 0.018; this means the current active-branch contract survives a real bounded mild-disorder and penalty family without changing the physical-sector rule, purity rule, or scaling exponent
+
+## transverse active-branch effective closure
+- Date: 2026-04-19T20:19:44
+- Config: epsilon=0.2, sizes=[12, 16, 20], variant=mild_disorder, disorder_strengths=[0.015, 0.06, 0.12], penalties=[8.0, 10.0, 12.0], restricted_modes=3, effective_mode=0, thresholds={'max_relative_curlcurl_residual': 0.08, 'max_relative_divergence_norm': 1e-08, 'max_adjacent_scaled_response_jump': 0.12}
+- Results: `data/20260419_201944_transverse_active_branch_effective_closure.json`
+- Plots: `plots/20260419_201944_transverse_active_branch_effective_closure_residuals.png`, `plots/20260419_201944_transverse_active_branch_effective_closure_response.png`
+- Observation: the validated mild-disorder active branch admits the same coarse-grained local law test across the full bounded V5 family, and the corresponding scaled law parameter moves smoothly as the disorder strength changes
+- Conclusion: the first bounded V6 closure remains open: failing combos = ['(penalty=8.0, disorder=0.015)', '(penalty=8.0, disorder=0.060)', '(penalty=8.0, disorder=0.120)', '(penalty=10.0, disorder=0.015)', '(penalty=10.0, disorder=0.060)', '(penalty=10.0, disorder=0.120)', '(penalty=12.0, disorder=0.015)', '(penalty=12.0, disorder=0.060)', '(penalty=12.0, disorder=0.120)']; max residual = 0.056, max divergence = 8.115e-03, max adjacent response jump = 0.006
+
+## transverse active-branch effective closure v6b
+- Date: 2026-04-19T21:00:29
+- Config: epsilon=0.2, sizes=[12, 16, 20], variant=mild_disorder, disorder_strengths=[0.015, 0.06, 0.12], penalties=[8.0, 10.0, 12.0], restricted_modes=3, effective_mode=0, thresholds={'max_relative_curlcurl_residual': 0.08, 'max_relative_divergence_norm': 1e-08, 'max_adjacent_scaled_response_jump': 0.12}
+- Results: `data/20260419_210029_transverse_active_branch_effective_closure_v6b.json`
+- Plots: `plots/20260419_210029_transverse_active_branch_effective_closure_v6b_divergence.png`, `plots/20260419_210029_transverse_active_branch_effective_closure_v6b_response.png`
+- Observation: once the coarse-grained active field is projected with the same centered-difference transverse symbol used by the reconstruction, the divergence defect collapses while the bounded effective-law response remains smooth across the validated mild-disorder family
+- Conclusion: all 9 tested combos pass `V6b`: the raw divergence defect reaches 8.115e-03, but the projected divergence defect drops to 1.333e-16, the worst projected local-law residual remains 0.055, and the largest adjacent scaled-response jump remains 0.006; this means the original V6 failure was a coarse-graining artifact rather than a breakdown of bounded effective-law closure on the validated active branch
+
+## transverse clean subspace transport
+- Date: 2026-04-19T21:37:06
+- Config: epsilon=0.2, sizes=[12, 16, 20], variants=['baseline', 'mild_disorder'], restricted_modes=8, window_size=4, scan_depth=8, probe_n_side=6, disorder_strength=0.12, thresholds={'min_best_projector_affinity': 0.8, 'min_best_mean_principal_cosine': 0.8, 'max_best_scaled_window_drift': 0.05, 'min_affinity_gain': 0.2}
+- Results: `data/20260419_213706_transverse_clean_subspace_transport.json`
+- Plots: `plots/20260419_213706_transverse_clean_subspace_transport_affinity.png`, `plots/20260419_213706_transverse_clean_subspace_transport_shift.png`
+- Observation: the clean-baseline identity question can be fast-tracked by scanning low contiguous coexact windows as transported subspaces; this keeps the same active-sector transport map while allowing the clean basis and the low window to rotate or slide inside a bounded scan depth
+- Conclusion: the fast-track CB1-lite scan improves low-window identification but does not yet close the clean baseline: the weakest best-window case is baseline 16->20 with best projector affinity 0.342; this means the next shortest move is still CB2-style infinitesimal symmetry pinning, but we now know whether simple window sliding already resolves the issue
+
+## transverse clean subspace transport
+- Date: 2026-04-19T21:38:42
+- Config: epsilon=0.2, sizes=[12, 16, 20], variants=['baseline', 'mild_disorder'], restricted_modes=8, window_size=4, scan_depth=8, probe_n_side=6, disorder_strength=0.12, thresholds={'min_best_projector_affinity': 0.8, 'min_best_mean_principal_cosine': 0.8, 'max_best_scaled_window_drift': 0.05, 'min_affinity_gain': 0.2}
+- Results: `data/20260419_213842_transverse_clean_subspace_transport.json`
+- Plots: `plots/20260419_213842_transverse_clean_subspace_transport_affinity.png`, `plots/20260419_213842_transverse_clean_subspace_transport_shift.png`
+- Observation: the clean-baseline identity question can be fast-tracked by scanning low contiguous coexact windows as transported subspaces; this keeps the same active-sector transport map while allowing the clean basis and the low window to rotate or slide inside a bounded scan depth
+- Conclusion: the fast-track CB1-lite scan improves low-window identification but does not yet close the clean baseline: the weakest best-window case is baseline 12->16 with best projector affinity 0.320; this means the next shortest move is still CB2-style infinitesimal symmetry pinning, but we now know whether simple window sliding already resolves the issue
+
+## transverse clean pinning continuation
+- Date: 2026-04-19T21:54:11
+- Config: epsilon=0.2, sizes=[12, 16], pinning_strengths=[0.0, 0.015], restricted_modes=8, window_size=4, scan_depth=8, probe_n_side=6, thresholds={'min_best_projector_affinity': 0.8, 'min_best_mean_principal_cosine': 0.8, 'max_best_scaled_window_drift': 0.05, 'min_affinity_gain': 0.2}
+- Results: `data/20260419_215411_transverse_clean_pinning_continuation.json`
+- Plots: `plots/20260419_215411_transverse_clean_pinning_continuation_affinity.png`, `plots/20260419_215411_transverse_clean_pinning_continuation_resolution.png`
+- Observation: the clean-baseline identity question can be sharpened by introducing an infinitesimal symmetry pinning and measuring the same low-window subspace metric as the pinning is removed
+- Conclusion: the clean family resolves under infinitesimal pinning: the baseline starts at worst best affinity 0.366, and all adjacent refinement pairs first resolve at pinning strength 0.015; this strongly supports a degenerate clean-family interpretation rather than branch failure
+
+## transverse clean holonomy continuation
+- Date: 2026-04-19T22:02:38
+- Config: epsilon=0.2, sizes=[12, 16], holonomy_phases=[0.0, 0.05, 0.1], restricted_modes=8, window_size=4, scan_depth=8, probe_n_side=6, thresholds={'min_best_projector_affinity': 0.8, 'min_best_mean_principal_cosine': 0.8, 'max_best_scaled_window_drift': 0.05, 'min_affinity_gain': 0.2}
+- Results: `data/20260419_220238_transverse_clean_holonomy_continuation.json`
+- Plots: `plots/20260419_220238_transverse_clean_holonomy_continuation_affinity.png`, `plots/20260419_220238_transverse_clean_holonomy_continuation_resolution.png`
+- Observation: the clean-baseline identity question can be sharpened without changing topology by introducing a tiny cycle holonomy and measuring the same low-window active coexact subspace under refinement
+- Conclusion: the clean family resolves under cycle holonomy: the zero-holonomy case starts at worst best affinity 0.467, and all adjacent refinement pairs first resolve at holonomy phase 0.050; this supports the reading that exact clean symmetry is what obscures branch identity
+
+## transverse clean holonomy continuation
+- Date: 2026-04-19T22:03:22
+- Config: epsilon=0.2, sizes=[16, 20], holonomy_phases=[0.0, 0.05], restricted_modes=8, window_size=4, scan_depth=8, probe_n_side=6, thresholds={'min_best_projector_affinity': 0.8, 'min_best_mean_principal_cosine': 0.8, 'max_best_scaled_window_drift': 0.05, 'min_affinity_gain': 0.2}
+- Results: `data/20260419_220322_transverse_clean_holonomy_continuation.json`
+- Plots: `plots/20260419_220322_transverse_clean_holonomy_continuation_affinity.png`, `plots/20260419_220322_transverse_clean_holonomy_continuation_resolution.png`
+- Observation: the clean-baseline identity question can be sharpened without changing topology by introducing a tiny cycle holonomy and measuring the same low-window active coexact subspace under refinement
+- Conclusion: the clean family resolves under cycle holonomy: the zero-holonomy case starts at worst best affinity 0.342, and all adjacent refinement pairs first resolve at holonomy phase 0.050; this supports the reading that exact clean symmetry is what obscures branch identity
+
+## transverse clean holonomy symmetry labels
+- Date: 2026-04-19T22:19:32
+- Config: epsilon=0.2, sizes=[12, 16, 20], holonomy_phase=0.05, restricted_modes=8, active_window_start=2, window_size=4
+- Results: `data/20260419_221932_transverse_clean_holonomy_symmetry_labels.json`
+- Plots: `plots/20260419_221932_transverse_clean_holonomy_symmetry_labels_fractions.png`, `plots/20260419_221932_transverse_clean_holonomy_symmetry_labels_scaled_eigenvalues.png`
+- Observation: the already-resolved holonomy window can be labeled at the family level by combining first-shell momentum support with coarse field-axis and curl-axis readout, rather than demanding a rigid per-mode identity at exact clean symmetry
+- Conclusion: the holonomy-resolved clean window carries the same bounded first-shell family across n=[12, 16, 20]: the first-shell support stays at least 1.000, the coarse field stays fully x-polarized at 1.000, and the window-level ky/kz split only ranges from 0.457-0.508 versus 0.492-0.543; the raw mode ordering still shuffles=True, but the family label set is stable=True, so the clean-baseline identity problem closes in the bounded sense as a symmetry-degenerate first-shell family rather than a missing branch

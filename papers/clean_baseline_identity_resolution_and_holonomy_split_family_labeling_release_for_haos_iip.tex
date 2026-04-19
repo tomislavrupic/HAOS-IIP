@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{51.2} of HAOS-IIP as the bounded closure of the vector branch's clean-baseline identity problem. Release \texttt{51.1} had already validated the active coexact branch on a bounded mild-disorder family and isolated one remaining clean-baseline question: whether the exact periodic torus carried the same branch or only a symmetry-degenerate subspace with unstable raw mode labels. Release \texttt{51.2} executes the follow-up clean program in bounded form. A simple low-window subspace scan does not close the clean branch by itself, but infinitesimal pinning and tiny cycle holonomy both resolve the same clean family. A final bounded \texttt{CB3} labeling pass then shows that the holonomy-resolved clean window carries the same first-shell, \(A_x\)-polarized active family across \(n = 12, 16, 20\), even though raw mode ordering can still shuffle inside that family. The result is a precise closure: the clean-baseline vector branch is not missing, and its remaining exact-zero ambiguity is a symmetry-degenerate basis-label issue rather than a branch-survival failure.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{51.2} is a local synthesis freeze of the clean-baseline follow-up to \texttt{51.1}.
+
+It does not add:
+\begin{itemize}
+\item a new validation branch beyond the already frozen \texttt{V1--V6b} line;
+\item a broader continuum claim than the bounded branch already validated in \texttt{51.1};
+\item a full point-group irreducible-representation package on the exact clean torus;
+\item a claim that raw exact-zero clean modes now admit a unique one-to-one label without symmetry splitting.
+\end{itemize}
+
+It does add:
+\begin{itemize}
+\item a bounded closure of the clean-baseline identity problem as a symmetry-degenerate family problem;
+\item a compact record of the executed \texttt{CB1-lite}, \texttt{CB2}, \texttt{CB4}, and \texttt{CB3} steps;
+\item a bounded symmetry-label read on the holonomy-resolved clean family;
+\item a sharper final statement of what remains open and what no longer does.
+\end{itemize}
+
+\section{Where 51.1 Left the Repository}
+
+Release \texttt{51.1} had already reduced the vector frontier to one focused question:
+
+\begin{quote}
+does the clean periodic baseline carry the same active coexact branch as the same physical object under refinement, or only a symmetry-degenerate subspace whose identity is not well captured by raw mode-level transport?
+\end{quote}
+
+That question was already narrower than a generic ``vector branch still open'' statement. The validated mild-disorder branch existed, the bounded law-and-response closure existed, and the original \texttt{V6} obstruction had been repaired by the divergence-aware \texttt{V6b} reconstruction. The remaining issue was specifically the clean torus.
+
+\section{Clean-Baseline Follow-Up Ladder}
+
+Table \ref{tab:cb_status} records the bounded execution chain frozen by \texttt{51.2}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}p{1.4cm}p{3.2cm}p{1.6cm}p{6.9cm}@{}}
+\toprule
+Step & Name & Status & Bounded read \\
+\midrule
+\texttt{CB1-lite} & Sliding clean subspace windows & open & Low-window sliding improves the read but does not rescue the clean branch by itself; the best clean affinity remains well below closure threshold. \\
+\texttt{CB2} & Infinitesimal pinning continuation & pass (bounded spot check) & Tiny pinning at \(0.015\) resolves the clean family on \(12 \rightarrow 16\), supporting a degeneracy interpretation rather than branch death. \\
+\texttt{CB4} & Tiny cycle holonomy continuation & pass & A small cycle twist at phase \(0.050\) resolves the clean family on both \(12 \rightarrow 16\) and \(16 \rightarrow 20\) while preserving periodic topology. \\
+\texttt{CB3} & Family-level symmetry labeling & pass (bounded) & The holonomy-resolved window stays on the same first-shell, \(A_x\)-polarized active family across \(n = 12, 16, 20\), even though raw mode ordering can still shuffle. \\
+\bottomrule
+\end{tabular}
+\caption{Clean-baseline identity ladder frozen by release \texttt{51.2}.}
+\label{tab:cb_status}
+\end{table}
+
+\section{What Each Step Actually Showed}
+
+\subsection{CB1-lite}
+
+The first fast-track step asked the cheapest possible rescue question:
+
+\begin{quote}
+if we keep the same active-sector transport map but allow the clean low window to slide inside the first restricted modes, does the clean torus close immediately?
+\end{quote}
+
+The answer was no.
+
+The best clean low-window affinities remained low:
+\begin{itemize}
+\item baseline \(12 \rightarrow 16\): best projector affinity \(0.320\);
+\item baseline \(16 \rightarrow 20\): best projector affinity \(0.323\).
+\end{itemize}
+
+So the clean problem was not merely an indexing mistake about which contiguous window to watch.
+
+\subsection{CB2}
+
+The next question was whether an explicitly tiny symmetry pinning could resolve the clean family.
+
+On the bounded spot check:
+\begin{itemize}
+\item exact clean symmetry at pinning \(0.000\) remained open, with worst best affinity \(0.366\);
+\item tiny pinning \(0.015\) resolved the \(12 \rightarrow 16\) pair, with best affinity \(0.956\).
+\end{itemize}
+
+This was the first direct evidence that the clean issue is symmetry-degenerate rather than a missing branch.
+
+\subsection{CB4}
+
+The strongest controlled probe was then a tiny cycle holonomy. This has two advantages:
+\begin{itemize}
+\item it softly lifts exact clean symmetry;
+\item it preserves periodic topology instead of replacing the clean branch with a defect background.
+\end{itemize}
+
+The result was decisive:
+\begin{itemize}
+\item on \(12 \rightarrow 16\), zero holonomy started at best affinity \(0.467\), while phase \(0.050\) resolved the pair at best affinity \(0.974\);
+\item on \(16 \rightarrow 20\), zero holonomy started at best affinity \(0.342\), while phase \(0.050\) resolved the pair at best affinity \(0.961\).
+\end{itemize}
+
+So by the end of \texttt{CB4}, the substantive existence question was already closed: the clean torus does carry the branch once exact degeneracy is softly split.
+
+\subsection{CB3}
+
+The final remaining task was not ``does the branch exist?'' but ``what is the clean resolved family?''.
+
+Release \texttt{51.2} answers that in bounded form by labeling the already-resolved holonomy window using:
+\begin{itemize}
+\item first-shell momentum support;
+\item coarse field-axis support;
+\item coarse curl-axis support.
+\end{itemize}
+
+This is intentionally weaker than a full point-group representation theory package, but it is exactly the right bounded question for the current repository:
+
+\begin{quote}
+is the same rescued clean family still visible as the same symmetry-labeled window across refinement?
+\end{quote}
+
+\section{The CB3 Label Read}
+
+The resolved holonomy window was evaluated at phase \(0.050\) on sizes \(n = 12, 16, 20\), using the now-established active window starting at restricted mode index \(2\) with window size \(4\).
+
+The bounded summary is:
+\begin{itemize}
+\item first-shell support stayed at least \(0.999964\);
+\item \(A_x\) field support stayed at least \(0.999981\);
+\item the window-level \(k_y\) fraction ranged from \(0.456913\) to \(0.508369\);
+\item the window-level \(k_z\) fraction ranged from \(0.491613\) to \(0.543052\);
+\item the family label set remained stable across all tested sizes;
+\item the raw ordered mode sequence did not remain fixed, and could still shuffle inside that stable family.
+\end{itemize}
+
+That last point is exactly why the clean-baseline problem persisted for so long under raw overlap language. The same family exists, but the exact clean basis is still free to rotate or reorder within it. Once the repository switches from rigid raw basis identity to a family-level label, the obstruction disappears.
+
+\section{What 51.2 Now Supports}
+
+The strongest honest clean-baseline statement supported by the repository is now:
+
+\begin{quote}
+the clean periodic baseline carries the same active coexact vector branch as a symmetry-degenerate first-shell family. Exact zero-clean symmetry can reshuffle raw basis vectors, but the branch itself is no longer open in the substantive sense.
+\end{quote}
+
+This is a real change in authority relative to \texttt{51.1}. The clean torus is no longer merely ``not yet closed''. It is now boundedly resolved as a family-level identity problem whose answer is positive.
+
+\section{What 51.2 Does Not Say}
+
+Release \texttt{51.2} still does not say:
+\begin{itemize}
+\item that exact zero-clean modes now come with a unique canonical one-to-one label;
+\item that the repository has already earned a full representation-theoretic classification;
+\item that the clean torus alone is enough to replace the already validated mild-disorder branch as the sole authority anchor;
+\item that no further exact-zero symmetry packaging could improve the story.
+\end{itemize}
+
+But those are refinements, not the original identity failure.
+
+\section{Practical Consequence}
+
+The vector branch's identity problem is no longer the main open frontier.
+
+The active branch now has:
+\begin{itemize}
+\item bounded validated closure on the mild-disorder family through \texttt{V1--V6b};
+\item bounded clean-baseline identity resolution through \texttt{CB2}, \texttt{CB4}, and \texttt{CB3}.
+\end{itemize}
+
+So the next steps, if pursued, would be packaging steps such as:
+\begin{itemize}
+\item cleaner exact-zero symmetry language;
+\item stronger representation labeling;
+\item larger-size confirmation of the already-resolved family.
+\end{itemize}
+
+Those no longer decide whether the branch exists.
+
+\section{Conclusion}
+
+Release \texttt{51.2} closes the book on the clean-baseline identity problem in the bounded sense currently earned by the repository.
+
+The clean torus does carry the active coexact branch. What exact clean symmetry had hidden was not the branch itself, but the right language for identifying it. Tiny holonomy resolves the family without changing topology, and bounded family-level labeling shows that the same first-shell \(A_x\)-polarized branch persists across refinement even when raw mode ordering does not.
+
+That is the right stopping point for this problem: not a perfect symmetry-theory package, but a clean bounded answer to the question that actually mattered.
+
+\end{document}

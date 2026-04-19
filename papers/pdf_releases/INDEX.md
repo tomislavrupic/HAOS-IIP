@@ -161,6 +161,18 @@ The intended public reading order is:
 
 1. `50.2` Foundations-Cleanup Synchronization Release for HAOS-IIP
 
+### 2.30 Part XXX. Post-foundations validation release
+
+1. `50.3` Post-Foundations Validation Release for HAOS-IIP
+
+### 2.31 Part XXXI. Active-branch validation closure synthesis
+
+1. `51.1` Validated Active-Branch Closure and the Open Clean-Baseline Identity Program for HAOS-IIP
+
+### 2.32 Part XXXII. Clean-baseline identity resolution synthesis
+
+1. `51.2` Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release for HAOS-IIP
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -220,6 +232,9 @@ The intended public reading order is:
 - `49.1` From Recoverable Coherence to Harmonic Operator Structure: A Bounded Derivation Program, Physical-Sector Restriction, and Continuum-Stability Roadmap for HAOS-IIP
 - `50.1` GitHub-State Comparison and Continuum-Foundations Synchronization Release for HAOS-IIP
 - `50.2` Foundations-Cleanup Synchronization Release for HAOS-IIP
+- `50.3` Post-Foundations Validation Release for HAOS-IIP
+- `51.1` Validated Active-Branch Closure and the Open Clean-Baseline Identity Program for HAOS-IIP
+- `51.2` Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release for HAOS-IIP
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

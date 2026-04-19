@@ -33,6 +33,9 @@
 - The old `stage23_10` to `stage24_5` simulation scripts remain readable as provenance anchors while the new phase folders become the active execution path.
 - The new phase bundles carry compact authority references instead of embedding full upstream JSON payloads.
 - Foundations cleanup release `50.2` closes the post-`50.1` note-level caveats `F2-F4` without changing numerical authority paths or promoting unfinished threshold work into frozen artifacts.
+- Post-foundations validation release `50.3` freezes the transition from theorem-ladder cleanup to validation order, but still does not promote unfinished threshold or active-branch closure work into frozen numerical authority.
+- Active-branch validation closure release `51.1` freezes the executed bounded `V1-V6b` tranche, including bounded universality and divergence-aware effective-law closure on the validated mild-disorder branch, while preserving the open clean-baseline identity boundary as an explicit next-program item rather than promoting it into a closed claim.
+- Clean-baseline identity resolution release `51.2` freezes the bounded `CB1-lite`, `CB2`, `CB4`, and `CB3` closure path, promoting the clean vector identity issue from an open branch-survival question to a resolved symmetry-degenerate first-shell family statement without claiming a full exact-zero irrep package.
 
 ## Archive Policy
 

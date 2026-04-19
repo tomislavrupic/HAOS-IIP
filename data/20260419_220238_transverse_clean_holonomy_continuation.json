@@ -1,0 +1,178 @@
+{
+  "config": {
+    "sizes": [
+      12,
+      16
+    ],
+    "holonomy_phases": [
+      0.0,
+      0.05,
+      0.1
+    ],
+    "restricted_modes": 8,
+    "window_size": 4,
+    "scan_depth": 8,
+    "probe_n_side": 6,
+    "penalty": 10.0
+  },
+  "thresholds": {
+    "min_best_projector_affinity": 0.8,
+    "min_best_mean_principal_cosine": 0.8,
+    "max_best_scaled_window_drift": 0.05,
+    "min_affinity_gain": 0.2
+  },
+  "summary_rows": [
+    {
+      "holonomy_phase": 0.0,
+      "resolved_pairs": 0,
+      "total_pairs": 1,
+      "all_pairs_resolved": false,
+      "all_pairs_stable_fixed": false,
+      "worst_fixed_affinity": 0.4669576858204103,
+      "worst_best_affinity": 0.4669576858204103,
+      "worst_best_mean_principal_cosine": 0.5936023431789564,
+      "worst_best_scaled_window_drift": 0.017472173396076835,
+      "largest_affinity_gain": 0.0
+    },
+    {
+      "holonomy_phase": 0.05,
+      "resolved_pairs": 1,
+      "total_pairs": 1,
+      "all_pairs_resolved": true,
+      "all_pairs_stable_fixed": false,
+      "worst_fixed_affinity": 0.7115763844390713,
+      "worst_best_affinity": 0.9744078884585501,
+      "worst_best_mean_principal_cosine": 0.9871108904308764,
+      "worst_best_scaled_window_drift": 0.017469897372250087,
+      "largest_affinity_gain": 0.26283150401947875
+    },
+    {
+      "holonomy_phase": 0.1,
+      "resolved_pairs": 1,
+      "total_pairs": 1,
+      "all_pairs_resolved": true,
+      "all_pairs_stable_fixed": false,
+      "worst_fixed_affinity": 0.7534213632237227,
+      "worst_best_affinity": 0.9744029629652239,
+      "worst_best_mean_principal_cosine": 0.9871083980453327,
+      "worst_best_scaled_window_drift": 0.01746302336585998,
+      "largest_affinity_gain": 0.22098159974150122
+    }
+  ],
+  "pair_rows": [
+    {
+      "holonomy_phase": 0.0,
+      "n_from": 12,
+      "n_to": 16,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.4669576858204103,
+        "mean_principal_cosine": 0.5936023431789564,
+        "min_principal_cosine": 0.04307363028048476,
+        "scaled_window_drift": 0.017472173396076835
+      },
+      "best_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.4669576858204103,
+        "mean_principal_cosine": 0.5936023431789564,
+        "min_principal_cosine": 0.04307363028048476,
+        "scaled_window_drift": 0.017472173396076835
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.0,
+        "status": "open",
+        "resolved": false
+      }
+    },
+    {
+      "holonomy_phase": 0.05,
+      "n_from": 12,
+      "n_to": 16,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.7115763844390713,
+        "mean_principal_cosine": 0.7952406618908132,
+        "min_principal_cosine": 0.31232509491948046,
+        "scaled_window_drift": 0.017469897372250822
+      },
+      "best_window": {
+        "start_from": 2,
+        "start_to": 2,
+        "projector_affinity": 0.9744078884585501,
+        "mean_principal_cosine": 0.9871108904308764,
+        "min_principal_cosine": 0.9826411643415375,
+        "scaled_window_drift": 0.017469897372250087
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": true,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.26283150401947875,
+        "status": "rescued_by_window",
+        "resolved": true
+      }
+    },
+    {
+      "holonomy_phase": 0.1,
+      "n_from": 12,
+      "n_to": 16,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.7534213632237227,
+        "mean_principal_cosine": 0.8570277747834532,
+        "min_principal_cosine": 0.6637056644961359,
+        "scaled_window_drift": 0.017463023365855673
+      },
+      "best_window": {
+        "start_from": 2,
+        "start_to": 2,
+        "projector_affinity": 0.9744029629652239,
+        "mean_principal_cosine": 0.9871083980453327,
+        "min_principal_cosine": 0.9826392288151412,
+        "scaled_window_drift": 0.01746302336585998
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": true,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.22098159974150122,
+        "status": "rescued_by_window",
+        "resolved": true
+      }
+    }
+  ],
+  "observation": "the clean-baseline identity question can be sharpened without changing topology by introducing a tiny cycle holonomy and measuring the same low-window active coexact subspace under refinement",
+  "conclusion": "the clean family resolves under cycle holonomy: the zero-holonomy case starts at worst best affinity 0.467, and all adjacent refinement pairs first resolve at holonomy phase 0.050; this supports the reading that exact clean symmetry is what obscures branch identity",
+  "plots": [
+    "plots/transverse_clean_holonomy_continuation_affinity.png",
+    "plots/transverse_clean_holonomy_continuation_resolution.png"
+  ]
+}

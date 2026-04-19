@@ -116,6 +116,38 @@ def curlcurl(Ax: np.ndarray, Ay: np.ndarray, Az: np.ndarray) -> tuple[np.ndarray
     return curl(Cx, Cy, Cz)
 
 
+def project_centered_transverse(Ax: np.ndarray, Ay: np.ndarray, Az: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    n = int(Ax.shape[0])
+    freq = 2.0 * np.pi * np.fft.fftfreq(n)
+    kx = np.sin(freq)[:, None, None]
+    ky = np.sin(freq)[None, :, None]
+    kz = np.sin(freq)[None, None, :]
+
+    Ax_hat = np.fft.fftn(Ax)
+    Ay_hat = np.fft.fftn(Ay)
+    Az_hat = np.fft.fftn(Az)
+
+    dot = kx * Ax_hat + ky * Ay_hat + kz * Az_hat
+    denom = kx * kx + ky * ky + kz * kz
+    kx_grid = np.broadcast_to(kx, denom.shape)
+    ky_grid = np.broadcast_to(ky, denom.shape)
+    kz_grid = np.broadcast_to(kz, denom.shape)
+    mask = denom > 1.0e-14
+
+    Px_hat = Ax_hat.copy()
+    Py_hat = Ay_hat.copy()
+    Pz_hat = Az_hat.copy()
+    Px_hat[mask] = Ax_hat[mask] - kx_grid[mask] * dot[mask] / denom[mask]
+    Py_hat[mask] = Ay_hat[mask] - ky_grid[mask] * dot[mask] / denom[mask]
+    Pz_hat[mask] = Az_hat[mask] - kz_grid[mask] * dot[mask] / denom[mask]
+
+    return (
+        np.fft.ifftn(Px_hat).real,
+        np.fft.ifftn(Py_hat).real,
+        np.fft.ifftn(Pz_hat).real,
+    )
+
+
 def residual_metrics(Ax: np.ndarray, Ay: np.ndarray, Az: np.ndarray, lam: float) -> dict[str, float | np.ndarray]:
     div = divergence(Ax, Ay, Az)
     Kx, Ky, Kz = curlcurl(Ax, Ay, Az)

@@ -1,6 +1,6 @@
 # HAOS-IIP
 
-Emergence diagnostics on a frozen branch-local cochain-Laplacian hierarchy.
+Frozen branch-local cochain-Laplacian hierarchy: bounded emergence diagnostics and HAOS-to-harmonic derivation program (`T1-T8` closed).
 
 Success criterion: running the public reproduction script should produce identical table values and an identical plot to the frozen baseline.
 
@@ -151,13 +151,17 @@ Short note:
 
 ## Program Status
 
-Current milestone:
+**Current milestone (50.2 Foundations Cleanup):**  
+The bounded HAOS-to-harmonic derivation program is fully executed.  
+`T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8` ladder plus `F2-F4` closures are now complete and frozen in the public repository.
 
-Emergent temporal ordering, causal closure, and proto-geometric distance-surrogate feasibility established within the frozen branch regime.
+The frozen branch-local cochain-Laplacian hierarchy now supports a reproducible ladder from recoverable coherence to harmonic operator structure, including Laplacian form, Hodge-type defect structure, sector decomposition, physical-sector restriction, and refinement-stability criteria under explicit HAOS-aligned constraints.
 
-Milestone anchor:
+Milestone anchors:
 
-- [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md)
+- [50.2 Foundations-Cleanup Synchronization Release](papers/pdf_releases/50.2%20Foundations-Cleanup%20Synchronization%20Release%20for%20HAOS-IIP.pdf)
+- [49.1 From Recoverable Coherence to Harmonic Operator Structure](papers/pdf_releases/49.1%20From%20Recoverable%20Coherence%20to%20Harmonic%20Operator%20Structure%3A%20A%20Bounded%20Derivation%20Program%2C%20Physical-Sector%20Restriction%2C%20and%20Continuum-Stability%20Roadmap%20for%20HAOS-IIP.pdf)
+- [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md) (original geometry-emergence baseline)
 
 ## Reproducibility Contract
 
@@ -177,6 +181,8 @@ Emergence diagnostics rely only on these frozen interfaces.
 
 ## Continuum-Sketch Layer
 
+The bounded continuum-facing tranche, including scalar convergence controls, harmonic/coexact sector separation, and active-sector transport machinery, is now frozen as part of the `50.1/50.2` synchronization releases.
+
 A minimal post-processing protocol for low-cost scaling inspection is provided in:
 
 - [continuum-sketch/](continuum-sketch/)
@@ -191,6 +197,12 @@ It does not introduce new dynamics.
 
 ## Papers
 
+Latest releases:
+
+- [50.2 Foundations-Cleanup Synchronization Release](papers/pdf_releases/50.2%20Foundations-Cleanup%20Synchronization%20Release%20for%20HAOS-IIP.pdf)
+- [50.1 GitHub-State Comparison and Continuum-Foundations Synchronization Release](papers/pdf_releases/50.1%20GitHub-State%20Comparison%20and%20Continuum-Foundations%20Synchronization%20Release%20for%20HAOS-IIP.pdf)
+- [49.1 From Recoverable Coherence to Harmonic Operator Structure](papers/pdf_releases/49.1%20From%20Recoverable%20Coherence%20to%20Harmonic%20Operator%20Structure%3A%20A%20Bounded%20Derivation%20Program%2C%20Physical-Sector%20Restriction%2C%20and%20Continuum-Stability%20Roadmap%20for%20HAOS-IIP.pdf)
+
 Numbered synthesis papers are released in:
 
 - [papers/pdf_releases/](papers/pdf_releases/)
@@ -201,7 +213,7 @@ Supporting repository visuals and media are indexed in:
 - [docs/media/MEDIA_INDEX.md](docs/media/MEDIA_INDEX.md)
 - [Images/README.md](Images/README.md)
 
-Example release:
+Earlier milestone example:
 
 - [43.1 Ordering, Causal Closure, and Proto-Geometric Distance-Surrogate Feasibility on a Frozen Branch-Local Cochain-Laplacian Hierarchy.pdf](papers/pdf_releases/43.1%20Ordering,%20Causal%20Closure,%20and%20Proto-Geometric%20Distance-Surrogate%20Feasibility%20on%20a%20Frozen%20Branch-Local%20Cochain-Laplacian%20Hierarchy.pdf)
 

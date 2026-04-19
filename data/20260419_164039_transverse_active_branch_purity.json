@@ -1,0 +1,201 @@
+{
+  "config": {
+    "epsilon": 0.2,
+    "sizes": [
+      12,
+      16,
+      20
+    ],
+    "variants": [
+      "baseline",
+      "line_defect",
+      "mild_disorder"
+    ],
+    "restricted_modes": 6,
+    "purity_modes": 4,
+    "harmonic_tol": 1e-08,
+    "eig_tol": 1e-08,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966,
+    "disorder_strength": 0.12
+  },
+  "thresholds": {
+    "max_exact_fraction": 1e-08,
+    "max_harmonic_fraction": 1e-08,
+    "min_coexact_fraction": 0.999999
+  },
+  "case_rows": [
+    {
+      "variant": "baseline",
+      "n_side": 12,
+      "evaluation": {
+        "worst_exact_fraction": 1.478151232317204e-32,
+        "worst_harmonic_fraction": 1.3756948901814126e-31,
+        "worst_coexact_fraction": 1.0,
+        "checks": {
+          "exact_fraction": true,
+          "harmonic_fraction": true,
+          "coexact_fraction": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "line_defect",
+      "n_side": 12,
+      "evaluation": {
+        "worst_exact_fraction": 1.4092390514945972e-32,
+        "worst_harmonic_fraction": 2.688913735955609e-31,
+        "worst_coexact_fraction": 1.0,
+        "checks": {
+          "exact_fraction": true,
+          "harmonic_fraction": true,
+          "coexact_fraction": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "mild_disorder",
+      "n_side": 12,
+      "evaluation": {
+        "worst_exact_fraction": 7.22223729145214e-33,
+        "worst_harmonic_fraction": 1.8009683121264638e-31,
+        "worst_coexact_fraction": 1.0,
+        "checks": {
+          "exact_fraction": true,
+          "harmonic_fraction": true,
+          "coexact_fraction": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "baseline",
+      "n_side": 16,
+      "evaluation": {
+        "worst_exact_fraction": 4.429638872090636e-33,
+        "worst_harmonic_fraction": 1.056059932834947e-31,
+        "worst_coexact_fraction": 1.0,
+        "checks": {
+          "exact_fraction": true,
+          "harmonic_fraction": true,
+          "coexact_fraction": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "line_defect",
+      "n_side": 16,
+      "evaluation": {
+        "worst_exact_fraction": 1.2277803395468623e-32,
+        "worst_harmonic_fraction": 8.718432636176737e-33,
+        "worst_coexact_fraction": 1.0,
+        "checks": {
+          "exact_fraction": true,
+          "harmonic_fraction": true,
+          "coexact_fraction": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "mild_disorder",
+      "n_side": 16,
+      "evaluation": {
+        "worst_exact_fraction": 4.7051159732058394e-33,
+        "worst_harmonic_fraction": 1.0372947713802946e-31,
+        "worst_coexact_fraction": 1.0,
+        "checks": {
+          "exact_fraction": true,
+          "harmonic_fraction": true,
+          "coexact_fraction": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "baseline",
+      "n_side": 20,
+      "evaluation": {
+        "worst_exact_fraction": 5.886123392533491e-33,
+        "worst_harmonic_fraction": 1.266678142388176e-31,
+        "worst_coexact_fraction": 1.0,
+        "checks": {
+          "exact_fraction": true,
+          "harmonic_fraction": true,
+          "coexact_fraction": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "line_defect",
+      "n_side": 20,
+      "evaluation": {
+        "worst_exact_fraction": 1.0857430061483083e-32,
+        "worst_harmonic_fraction": 5.365763064659229e-32,
+        "worst_coexact_fraction": 1.0,
+        "checks": {
+          "exact_fraction": true,
+          "harmonic_fraction": true,
+          "coexact_fraction": true
+        },
+        "passed": true
+      }
+    },
+    {
+      "variant": "mild_disorder",
+      "n_side": 20,
+      "evaluation": {
+        "worst_exact_fraction": 1.543432311090122e-32,
+        "worst_harmonic_fraction": 5.527254371182253e-32,
+        "worst_coexact_fraction": 1.0,
+        "checks": {
+          "exact_fraction": true,
+          "harmonic_fraction": true,
+          "coexact_fraction": true
+        },
+        "passed": true
+      }
+    }
+  ],
+  "variant_summary": [
+    {
+      "variant": "baseline",
+      "variant_label": "baseline periodic torus",
+      "passing_sizes": 3,
+      "total_sizes": 3,
+      "all_sizes_pass": true,
+      "worst_exact_fraction": 1.478151232317204e-32,
+      "worst_harmonic_fraction": 1.3756948901814126e-31,
+      "worst_coexact_fraction": 1.0
+    },
+    {
+      "variant": "line_defect",
+      "variant_label": "line defect",
+      "passing_sizes": 3,
+      "total_sizes": 3,
+      "all_sizes_pass": true,
+      "worst_exact_fraction": 1.4092390514945972e-32,
+      "worst_harmonic_fraction": 2.688913735955609e-31,
+      "worst_coexact_fraction": 1.0
+    },
+    {
+      "variant": "mild_disorder",
+      "variant_label": "smooth mild-disorder torus",
+      "passing_sizes": 3,
+      "total_sizes": 3,
+      "all_sizes_pass": true,
+      "worst_exact_fraction": 1.543432311090122e-32,
+      "worst_harmonic_fraction": 1.8009683121264638e-31,
+      "worst_coexact_fraction": 1.0
+    }
+  ],
+  "observation": "the restricted active branch now carries explicit exact / harmonic / coexact fractions, so harmonic recontamination can be tested directly on the low active window instead of being assumed away",
+  "conclusion": "all tested variants pass the first bounded V3 purity thresholds, and the worst harmonic leakage remains 2.689e-31; in this first bounded read, the low restricted active window remains physically coexact to leading order under refinement",
+  "plots": [
+    "plots/transverse_active_branch_purity.png"
+  ]
+}

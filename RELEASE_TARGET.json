@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/foundations_cleanup_synchronization_release_for_haos_iip.tex",
-  "title": "Foundations-Cleanup Synchronization Release for HAOS-IIP",
-  "commit_message": "Freeze foundations cleanup release 50.2",
+  "paper": "papers/clean_baseline_identity_resolution_and_holonomy_split_family_labeling_release_for_haos_iip.tex",
+  "title": "Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release for HAOS-IIP",
+  "commit_message": "Freeze clean-baseline identity resolution release 51.2",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",

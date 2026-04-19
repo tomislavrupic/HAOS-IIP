@@ -1,0 +1,207 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Validated Active-Branch Closure and the Open Clean-Baseline Identity Program for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{51.1} of HAOS-IIP as the first full validation-tranche synthesis after the post-foundations boundary set by \texttt{50.3}. The release records the executed \texttt{V1--V6b} line in one place. The active coexact branch now has a bounded validated closure on a nontrivial tested family: explicit identity diagnostics, bounded symmetry-breaking stabilization, bounded purity, bounded scaling closure, bounded universality across a mild-disorder and penalty family, and bounded effective-law / response closure after a divergence-aware coarse-graining repair. At the same time, the clean periodic baseline remains open at the branch-identity level. This paper therefore freezes two things together: what is now honestly validated, and the exact next program required to answer the clean-baseline identity question without weakening the current authority boundary.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{51.1} is a synthesis freeze of the executed validation line.
+
+It does not add:
+\begin{itemize}
+\item a new theorem ladder beyond \texttt{T1--T8} and \texttt{F1--F4};
+\item a full clean-baseline closure claim;
+\item a Maxwell-like continuum claim on the clean torus;
+\item a broader universality claim than the bounded family actually tested.
+\end{itemize}
+
+It does add:
+\begin{itemize}
+\item a frozen summary of the executed \texttt{V1--V6b} validation ladder;
+\item an explicit validated active-branch authority boundary;
+\item an explicit statement that the original \texttt{V6} failure was a coarse-graining artifact;
+\item a concrete program for the still-open clean-baseline identity question.
+\end{itemize}
+
+\section{Validation Ladder Status}
+
+Table \ref{tab:validation_status} records the compact state of the executed validation line.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}p{1.0cm}p{3.2cm}p{1.8cm}p{7.0cm}@{}}
+\toprule
+Step & Name & Status & Bounded read \\
+\midrule
+\texttt{V1} & Active-branch identity & open overall & Mild disorder passes, line-defect is partly stabilized, clean baseline remains mixing-prone. \\
+\texttt{V2} & Disorder-threshold validation & pass & Small disorder already stabilizes the transported branch, supporting a clean-background degeneracy interpretation rather than a transport failure. \\
+\texttt{V3} & Purity / recontamination & pass & The low restricted active window stays physically coexact to leading order under refinement. \\
+\texttt{V4} & Scaling closure & pass & The transported active window closes onto one bounded scaling family with \(\alpha = 2\) on the identity-stable subset. \\
+\texttt{V5} & Bounded universality & pass & The same active-branch contract survives the tested mild-disorder and penalty family without retuning the sector rule, purity rule, or scaling exponent. \\
+\texttt{V6} & Effective-law / response closure & open & The local-law residual and smooth response were already good, but raw coarse-grained divergence control failed. \\
+\texttt{V6b} & Divergence-aware effective closure repair & pass & A centered-difference transverse projection collapses the divergence defect while preserving the bounded local-law residual and smooth response family. \\
+\bottomrule
+\end{tabular}
+\caption{Executed validation-ladder status frozen by release \texttt{51.1}.}
+\label{tab:validation_status}
+\end{table}
+
+\section{What Is Now Actually Validated}
+
+The strongest honest statement supported by the current repository is now the following:
+
+\begin{quote}
+On the tested mild-disorder active branch, HAOS-IIP supports a bounded validated coexact physical sector with explicit refinement diagnostics, bounded threshold stabilization, bounded purity, bounded scaling closure, bounded universality on the tested mild-disorder / penalty family, and bounded effective-law plus response closure once the coarse-grained reconstruction is made divergence-aware.
+\end{quote}
+
+That statement is intentionally narrower than a clean-baseline continuum claim, but it is significantly stronger than the repository's state at \texttt{50.3}. It means the active branch is no longer only a derived formal sector or a numerically suggestive window. On the validated family, it now behaves like one bounded physical branch with one bounded low-energy law family.
+
+\section{The Exact Role of V6 and V6b}
+
+\subsection{What V6 showed}
+
+The original \texttt{V6} read was informative rather than negative in the strong sense.
+
+Across the full bounded \texttt{V5} family:
+\begin{itemize}
+\item the coarse-grained local-law residual was already bounded and modest;
+\item the scaled law parameter moved smoothly under bounded mild-disorder changes;
+\item the response-side jump remained small.
+\end{itemize}
+
+The only failing channel was the very strict divergence target on the raw coarse-grained field. So \texttt{V6} did not say:
+\begin{quote}
+the active branch has no effective local law.
+\end{quote}
+
+It said:
+\begin{quote}
+the present coarse-graining is not yet the right transverse reconstruction for judging that law.
+\end{quote}
+
+\subsection{What V6b changed}
+
+\texttt{V6b} kept the same validated branch, the same bounded family, and the same local-law target, but inserted a divergence-aware centered-difference transverse projection after coarse-graining.
+
+That repair produced the decisive bounded result:
+\begin{itemize}
+\item the raw divergence defect reached \(8.115 \times 10^{-3}\);
+\item the projected divergence defect dropped to \(1.333 \times 10^{-16}\);
+\item the worst projected local-law residual stayed bounded at \(0.055\);
+\item the largest adjacent scaled-response jump stayed bounded at \(0.006\).
+\end{itemize}
+
+So the repository can now say, in a bounded and precise sense, that the original \texttt{V6} obstruction was a reconstruction artifact rather than a breakdown of the active branch itself.
+
+\section{What Still Remains Open}
+
+The open question is now narrower and cleaner than before:
+
+\begin{quote}
+Does the clean periodic baseline carry the same active coexact family as the same physical object under refinement, or does it only carry a symmetry-degenerate subspace whose identity is not well captured by the current mode-level transport diagnostics?
+\end{quote}
+
+This matters because the current strongest positive branch is the bounded mild-disorder family, not the exact clean torus. The clean baseline is still the unique place where the active branch can look weak even while the symmetry-broken family looks stable and well behaved.
+
+\section{What We Can Do About the Clean-Baseline Identity Question}
+
+The correct next program is not to discard the validated branch and not to loosen the current validation thresholds. The correct move is to change how the clean baseline is identified.
+
+\subsection{CB1: symmetry-resolved subspace transport}
+
+The clean torus should first be treated as a degenerate subspace problem rather than a single-mode labeling problem. Instead of asking whether mode \(j\) maps to mode \(j\), the next diagnostic should transport the whole low coexact subspace and compare:
+\begin{itemize}
+\item subspace projector overlap;
+\item principal angles on degenerate windows;
+\item continuity of the transported projector under refinement.
+\end{itemize}
+
+Success would show that the clean baseline carries the same physical subspace even if the individual mode basis keeps rotating.
+
+\subsection{CB2: infinitesimal symmetry-pinning continuation}
+
+The next clean-baseline probe should introduce an explicitly tiny symmetry pinning parameter \(\delta\) and then study the continuation \(\delta \to 0\). Candidate pinning channels include:
+\begin{itemize}
+\item very weak disorder below the present \texttt{V2} threshold scale;
+\item tiny anisotropy;
+\item tiny flat torus-cycle holonomy / twist.
+\end{itemize}
+
+The operative question is:
+\begin{quote}
+does the stabilized branch converge back to one clean limiting subspace as the pinning is removed?
+\end{quote}
+
+If yes, the current clean-baseline instability is largely a basis-choice problem inside a degenerate family rather than a branch-survival failure.
+
+\subsection{CB3: momentum / irrep labeling}
+
+The clean branch should also be labeled by symmetry content rather than by overlap alone. The next step is to reconstruct coarse clean modes into a periodic vector-field basis and tag them by:
+\begin{itemize}
+\item dominant low lattice momenta;
+\item cubic point-group irreducible representation content;
+\item orientation / circulation family.
+\end{itemize}
+
+Then the transport question becomes:
+\begin{quote}
+does the same symmetry-labeled family persist?
+\end{quote}
+rather than
+\begin{quote}
+does the same raw basis vector persist?
+\end{quote}
+
+\subsection{CB4: clean holonomy continuation}
+
+The repository already has smooth holonomy-sensitive diagnostics on related validated branches. A natural clean-baseline identity probe is therefore to use tiny cycle holonomy as a controlled symmetry splitter, track the active family under refinement, and then remove the holonomy. This is especially attractive because it preserves periodic topology while softly lifting exact degeneracy.
+
+\subsection{CB5: larger-\(n\) clean subspace scan}
+
+Only after \texttt{CB1--CB4} should the clean branch be retested at larger sizes such as \(n = 24, 28, 32\). The important point is that larger size alone is not enough; it has to be paired with better clean-subspace identification.
+
+\subsection{CB6: bounded negative closure if needed}
+
+If the clean torus still fails after symmetry-resolved transport and pinning continuation, the repository should not force a clean-baseline continuum claim. Instead it should freeze the honest bounded statement:
+\begin{quote}
+the validated active branch is a bounded symmetry-broken family, while the exact clean torus retains unresolved degenerate identity at the current authority level.
+\end{quote}
+
+That would still be a meaningful and publishable boundary.
+
+\section{Current Shortest Honest Statement}
+
+Release \texttt{51.1} supports the following compact synthesis:
+
+\begin{enumerate}
+\item the foundations program is no longer the bottleneck;
+\item the scalar branch has the strongest bounded continuum-facing control;
+\item the active coexact branch is now validated on a bounded mild-disorder family through \texttt{V1--V6b};
+\item the original \texttt{V6} obstruction was a coarse-graining artifact repaired by \texttt{V6b};
+\item the main remaining vector-sector question is the identity of the clean periodic baseline, not the existence of the validated symmetry-broken branch.
+\end{enumerate}
+
+\section{Conclusion}
+
+Release \texttt{51.1} freezes the first full validation closure of the active-branch program in the bounded sense currently earned by the repository.
+
+The important result is not that every branch has now closed. It is that one nontrivial active branch has closed far enough to support a bounded law-and-response statement, while the one remaining open vector question has been reduced to a precise clean-baseline identity problem.
+
+That is a much better place to be than a vague ``vector branch still open'' statement. The open question is now focused, diagnosable, and paired with an explicit next program.
+
+\end{document}

@@ -1,0 +1,129 @@
+{
+  "config": {
+    "sizes": [
+      16,
+      20
+    ],
+    "holonomy_phases": [
+      0.0,
+      0.05
+    ],
+    "restricted_modes": 8,
+    "window_size": 4,
+    "scan_depth": 8,
+    "probe_n_side": 6,
+    "penalty": 10.0
+  },
+  "thresholds": {
+    "min_best_projector_affinity": 0.8,
+    "min_best_mean_principal_cosine": 0.8,
+    "max_best_scaled_window_drift": 0.05,
+    "min_affinity_gain": 0.2
+  },
+  "summary_rows": [
+    {
+      "holonomy_phase": 0.0,
+      "resolved_pairs": 0,
+      "total_pairs": 1,
+      "all_pairs_resolved": false,
+      "all_pairs_stable_fixed": false,
+      "worst_fixed_affinity": 0.3301494939741153,
+      "worst_best_affinity": 0.3416017655145692,
+      "worst_best_mean_principal_cosine": 0.5423143388170927,
+      "worst_best_scaled_window_drift": 0.008118646731764129,
+      "largest_affinity_gain": 0.011452271540453918
+    },
+    {
+      "holonomy_phase": 0.05,
+      "resolved_pairs": 1,
+      "total_pairs": 1,
+      "all_pairs_resolved": true,
+      "all_pairs_stable_fixed": false,
+      "worst_fixed_affinity": 0.7431891716686758,
+      "worst_best_affinity": 0.9607077418362115,
+      "worst_best_mean_principal_cosine": 0.9801507060170023,
+      "worst_best_scaled_window_drift": 0.008117535115962884,
+      "largest_affinity_gain": 0.21751857016753573
+    }
+  ],
+  "pair_rows": [
+    {
+      "holonomy_phase": 0.0,
+      "n_from": 16,
+      "n_to": 20,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.3301494939741153,
+        "mean_principal_cosine": 0.5078462583650578,
+        "min_principal_cosine": 0.1954517557731492,
+        "scaled_window_drift": 0.008118646731761624
+      },
+      "best_window": {
+        "start_from": 0,
+        "start_to": 2,
+        "projector_affinity": 0.3416017655145692,
+        "mean_principal_cosine": 0.5423143388170927,
+        "min_principal_cosine": 0.278691984061953,
+        "scaled_window_drift": 0.008118646731764129
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": false,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.011452271540453918,
+        "status": "open",
+        "resolved": false
+      }
+    },
+    {
+      "holonomy_phase": 0.05,
+      "n_from": 16,
+      "n_to": 20,
+      "fixed_window": {
+        "start_from": 0,
+        "start_to": 0,
+        "projector_affinity": 0.7431891716686758,
+        "mean_principal_cosine": 0.8217337775749524,
+        "min_principal_cosine": 0.37057940821042284,
+        "scaled_window_drift": 0.008117535115962884
+      },
+      "best_window": {
+        "start_from": 2,
+        "start_to": 2,
+        "projector_affinity": 0.9607077418362115,
+        "mean_principal_cosine": 0.9801507060170023,
+        "min_principal_cosine": 0.9766385370883061,
+        "scaled_window_drift": 0.008117535115962884
+      },
+      "evaluation": {
+        "fixed_checks": {
+          "projector_affinity": false,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "best_checks": {
+          "projector_affinity": true,
+          "mean_principal_cosine": true,
+          "scaled_window_drift": true
+        },
+        "affinity_gain": 0.21751857016753573,
+        "status": "rescued_by_window",
+        "resolved": true
+      }
+    }
+  ],
+  "observation": "the clean-baseline identity question can be sharpened without changing topology by introducing a tiny cycle holonomy and measuring the same low-window active coexact subspace under refinement",
+  "conclusion": "the clean family resolves under cycle holonomy: the zero-holonomy case starts at worst best affinity 0.342, and all adjacent refinement pairs first resolve at holonomy phase 0.050; this supports the reading that exact clean symmetry is what obscures branch identity",
+  "plots": [
+    "plots/transverse_clean_holonomy_continuation_affinity.png",
+    "plots/transverse_clean_holonomy_continuation_resolution.png"
+  ]
+}

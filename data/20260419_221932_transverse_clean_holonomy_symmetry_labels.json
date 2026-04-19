@@ -1,0 +1,417 @@
+{
+  "config": {
+    "sizes": [
+      12,
+      16,
+      20
+    ],
+    "holonomy_phase": 0.05,
+    "restricted_modes": 8,
+    "active_window_start": 2,
+    "window_size": 4,
+    "penalty": 10.0
+  },
+  "rows": [
+    {
+      "n_side": 12,
+      "mode_rows": [
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.2633029632425975,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 1.356400708947657e-33,
+          "divergence_norm": 1.7615689258996676e-16,
+          "curl_norm": 0.5131305518506938,
+          "dominant_momentum_vector": [
+            0,
+            0,
+            1
+          ],
+          "dominant_momentum_axis": "z",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.2570748938929092,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "y",
+          "family_label": "kz-Ax-curly"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.2633029632425977,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 5.49259582674649e-34,
+          "divergence_norm": 1.917743709045766e-16,
+          "curl_norm": 0.5131305518506937,
+          "dominant_momentum_vector": [
+            0,
+            0,
+            1
+          ],
+          "dominant_momentum_axis": "z",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.38310593460277326,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "y",
+          "family_label": "kz-Ax-curly"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.2633029632425973,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 1.7346221632114427e-34,
+          "divergence_norm": 1.7365062909748328e-16,
+          "curl_norm": 0.5131305518506936,
+          "dominant_momentum_vector": [
+            0,
+            1,
+            0
+          ],
+          "dominant_momentum_axis": "y",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.33409548651062154,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "z",
+          "family_label": "ky-Ax-curlz"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.2633029632425973,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 8.583793085989884e-34,
+          "divergence_norm": 1.660709060321228e-16,
+          "curl_norm": 0.5131305518506938,
+          "dominant_momentum_vector": [
+            0,
+            0,
+            1
+          ],
+          "dominant_momentum_axis": "z",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.2646455769088315,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "y",
+          "family_label": "kz-Ax-curly"
+        }
+      ],
+      "summary": {
+        "first_shell_fraction": 0.9999905393343846,
+        "k_axis_fractions": {
+          "x": 9.460665615588316e-06,
+          "y": 0.4647409784394307,
+          "z": 0.5352495608949539
+        },
+        "field_axis_fractions": {
+          "x": 0.9999950093555687,
+          "y": 3.4660930752530614e-06,
+          "z": 1.5245513560231925e-06
+        },
+        "curl_axis_fractions": {
+          "x": 4.9836147534999367e-20,
+          "y": 0.5352497931246288,
+          "z": 0.46475020687537105
+        },
+        "family_counts": {
+          "kz-Ax-curly": 3,
+          "ky-Ax-curlz": 1
+        },
+        "family_sequence": [
+          "kz-Ax-curly",
+          "kz-Ax-curly",
+          "ky-Ax-curlz",
+          "kz-Ax-curly"
+        ],
+        "scaled_eigenvalues": [
+          37.91562670693404,
+          37.91562670693407,
+          37.915626706934006,
+          37.915626706934006
+        ]
+      }
+    },
+    {
+      "n_side": 16,
+      "mode_rows": [
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.1507413527869022,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 6.4853824996819696e-34,
+          "divergence_norm": 1.603781873649391e-16,
+          "curl_norm": 0.3882542373070797,
+          "dominant_momentum_vector": [
+            0,
+            1,
+            0
+          ],
+          "dominant_momentum_axis": "y",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.3151999604994119,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "z",
+          "family_label": "ky-Ax-curlz"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.15074135278690204,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 7.158336481263369e-34,
+          "divergence_norm": 1.733833792883548e-16,
+          "curl_norm": 0.3882542373070794,
+          "dominant_momentum_vector": [
+            0,
+            0,
+            1
+          ],
+          "dominant_momentum_axis": "z",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.42562694717358873,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "y",
+          "family_label": "kz-Ax-curly"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.15074135278690182,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 9.396987660681903e-34,
+          "divergence_norm": 1.632365422315129e-16,
+          "curl_norm": 0.38825423730707953,
+          "dominant_momentum_vector": [
+            0,
+            1,
+            0
+          ],
+          "dominant_momentum_axis": "y",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.40238867171228554,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "z",
+          "family_label": "ky-Ax-curlz"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.15074135278690254,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 8.808371768624313e-34,
+          "divergence_norm": 1.7534351865976618e-16,
+          "curl_norm": 0.3882542373070797,
+          "dominant_momentum_vector": [
+            0,
+            0,
+            -1
+          ],
+          "dominant_momentum_axis": "z",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.33204977097400545,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "y",
+          "family_label": "kz-Ax-curly"
+        }
+      ],
+      "summary": {
+        "first_shell_fraction": 0.9999822524092103,
+        "k_axis_fractions": {
+          "x": 1.7747590789649604e-05,
+          "y": 0.5083689045087983,
+          "z": 0.4916133479004121
+        },
+        "field_axis_fractions": {
+          "x": 0.9999905440431044,
+          "y": 4.555407310933416e-06,
+          "z": 4.900549584580384e-06
+        },
+        "curl_axis_fractions": {
+          "x": 3.6617843545981766e-20,
+          "y": 0.4916231815187241,
+          "z": 0.5083768184812759
+        },
+        "family_counts": {
+          "ky-Ax-curlz": 2,
+          "kz-Ax-curly": 2
+        },
+        "family_sequence": [
+          "ky-Ax-curlz",
+          "kz-Ax-curly",
+          "ky-Ax-curlz",
+          "kz-Ax-curly"
+        ],
+        "scaled_eigenvalues": [
+          38.589786313446965,
+          38.58978631344692,
+          38.589786313446865,
+          38.58978631344705
+        ]
+      }
+    },
+    {
+      "n_side": 20,
+      "mode_rows": [
+        {
+          "mode_index": 2,
+          "eigenvalue": 0.09726400979867711,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 1.291395481430244e-34,
+          "divergence_norm": 1.5539085831933913e-16,
+          "curl_norm": 0.311871784229797,
+          "dominant_momentum_vector": [
+            0,
+            0,
+            1
+          ],
+          "dominant_momentum_axis": "z",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.45715887537248545,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "y",
+          "family_label": "kz-Ax-curly"
+        },
+        {
+          "mode_index": 3,
+          "eigenvalue": 0.09726400979867758,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 6.802610898524808e-34,
+          "divergence_norm": 1.755927260691501e-16,
+          "curl_norm": 0.3118717842297977,
+          "dominant_momentum_vector": [
+            0,
+            1,
+            0
+          ],
+          "dominant_momentum_axis": "y",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.33889459594390337,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "z",
+          "family_label": "ky-Ax-curlz"
+        },
+        {
+          "mode_index": 4,
+          "eigenvalue": 0.09726400979867722,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 5.601635572690193e-34,
+          "divergence_norm": 1.7091589913204117e-16,
+          "curl_norm": 0.3118717842297968,
+          "dominant_momentum_vector": [
+            0,
+            0,
+            1
+          ],
+          "dominant_momentum_axis": "z",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.31599481618265246,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "y",
+          "family_label": "kz-Ax-curly"
+        },
+        {
+          "mode_index": 5,
+          "eigenvalue": 0.09726400979867725,
+          "coexact_fraction": 1.0,
+          "harmonic_fraction": 5.417080517105489e-34,
+          "divergence_norm": 1.6493849083643683e-16,
+          "curl_norm": 0.3118717842297971,
+          "dominant_momentum_vector": [
+            0,
+            1,
+            0
+          ],
+          "dominant_momentum_axis": "y",
+          "dominant_shell": [
+            0,
+            0,
+            1
+          ],
+          "dominant_fraction": 0.4359166925727725,
+          "dominant_field_axis": "x",
+          "dominant_curl_axis": "z",
+          "family_label": "ky-Ax-curlz"
+        }
+      ],
+      "summary": {
+        "first_shell_fraction": 0.9999643854215857,
+        "k_axis_fractions": {
+          "x": 3.561457841437284e-05,
+          "y": 0.4569128484358711,
+          "z": 0.5430515369857145
+        },
+        "field_axis_fractions": {
+          "x": 0.9999809272703549,
+          "y": 1.085399936613701e-05,
+          "z": 8.218730278955485e-06
+        },
+        "curl_axis_fractions": {
+          "x": 1.825182695090898e-18,
+          "y": 0.543061268101935,
+          "z": 0.45693873189806494
+        },
+        "family_counts": {
+          "kz-Ax-curly": 2,
+          "ky-Ax-curlz": 2
+        },
+        "family_sequence": [
+          "kz-Ax-curly",
+          "ky-Ax-curlz",
+          "kz-Ax-curly",
+          "ky-Ax-curlz"
+        ],
+        "scaled_eigenvalues": [
+          38.90560391947084,
+          38.905603919471034,
+          38.90560391947089,
+          38.9056039194709
+        ]
+      }
+    }
+  ],
+  "observation": "the already-resolved holonomy window can be labeled at the family level by combining first-shell momentum support with coarse field-axis and curl-axis readout, rather than demanding a rigid per-mode identity at exact clean symmetry",
+  "conclusion": "the holonomy-resolved clean window carries the same bounded first-shell family across n=[12, 16, 20]: the first-shell support stays at least 1.000, the coarse field stays fully x-polarized at 1.000, and the window-level ky/kz split only ranges from 0.457-0.508 versus 0.492-0.543; the raw mode ordering still shuffles=True, but the family label set is stable=True, so the clean-baseline identity problem closes in the bounded sense as a symmetry-degenerate first-shell family rather than a missing branch",
+  "family_sets_stable": true,
+  "raw_sequences_shuffle": true,
+  "plots": [
+    "plots/transverse_clean_holonomy_symmetry_labels_fractions.png",
+    "plots/transverse_clean_holonomy_symmetry_labels_scaled_eigenvalues.png"
+  ]
+}
