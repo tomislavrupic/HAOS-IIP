@@ -27,6 +27,73 @@
     "low_modes": 6,
     "representative_fluxes": [0, 1, 4]
   },
+  "transverse_continuum_comparison": {
+    "sizes": [12, 16, 20],
+    "variants": ["baseline", "puncture", "line_defect", "flux_tube"],
+    "restricted_modes": 20,
+    "coexact_threshold": 0.8,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966
+  },
+  "transverse_sector_window_scan": {
+    "sizes": [12, 16, 20, 24, 28],
+    "variants": ["baseline", "puncture", "line_defect", "flux_tube"],
+    "restricted_modes": 20,
+    "full_mode_scan_count": 40,
+    "coexact_threshold": 0.8,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966
+  },
+  "transverse_sector_gap_scaling": {
+    "sizes": [20, 24, 28],
+    "variants": ["baseline", "puncture", "flux_tube"],
+    "restricted_modes": 20,
+    "full_mode_scan_count": 40,
+    "coexact_threshold": 0.8,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966
+  },
+  "transverse_active_sector_transport": {
+    "sizes": [12, 16, 20, 24, 28],
+    "variants": ["baseline", "puncture", "line_defect", "flux_tube", "mild_disorder"],
+    "restricted_modes": 6,
+    "transport_modes": 4,
+    "probe_n_side": 6,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966,
+    "disorder_strength": 0.12
+  },
+  "transverse_active_sector_disorder_sweep": {
+    "sizes": [12, 16, 20, 24, 28],
+    "disorder_strengths": [0.0, 0.015, 0.03, 0.06, 0.09, 0.12],
+    "restricted_modes": 6,
+    "transport_modes": 4,
+    "probe_n_side": 6,
+    "harmonic_tol": 1e-8,
+    "eig_tol": 1e-8,
+    "penalty": 10.0,
+    "flux_tube_phase": 1.5707963267948966
+  },
+  "kernel_operator_convergence": {
+    "n_sides": [9, 11, 13, 17, 21],
+    "epsilon_coeffs": [0.5, 1.0, 2.0],
+    "cutoff_factor": 2.5,
+    "point_set_n_sides": [11, 13, 15, 17],
+    "point_set_epsilon_coeffs": [0.5],
+    "point_set_jitter_fraction": 0.04,
+    "point_set_seed": 42,
+    "point_set_boundary_buffer_factor": 1.05,
+    "boundary_n_sides": [9, 11, 13, 17, 21],
+    "boundary_epsilon_coeffs": [0.5, 1.0, 2.0]
+  },
   "sweep": {
     "epsilon_values": [0.12, 0.2, 0.28],
     "node_values": [216, 343],

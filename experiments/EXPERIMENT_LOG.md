@@ -715,3 +715,75 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260315_075112_stage17_S17_phase_ordered_symmetric_triad__null_control__n12_sync_trace.png`, `plots/20260315_075112_stage17_S17_phase_ordered_symmetric_triad__null_control__n12_basin_trace.png`, `plots/20260315_075112_stage17_S17_phase_ordered_symmetric_triad__null_control__n12_envelope_snapshot.png`, `plots/20260315_075112_stage17_S17_phase_ordered_symmetric_triad__very_weak_phase_coupling__n12_sync_trace.png`, `plots/20260315_075112_stage17_S17_phase_ordered_symmetric_triad__very_weak_phase_coupling__n12_basin_trace.png`, `plots/20260315_075112_stage17_S17_phase_ordered_symmetric_triad__very_weak_phase_coupling__n12_envelope_snapshot.png`, `plots/20260315_075112_stage17_S17_phase_ordered_symmetric_triad__weak_phase_coupling__n12_sync_trace.png`, `plots/20260315_075112_stage17_S17_phase_ordered_symmetric_triad__weak_phase_coupling__n12_basin_trace.png`, `plots/20260315_075112_stage17_S17_phase_ordered_symmetric_triad__weak_phase_coupling__n12_envelope_snapshot.png`, `plots/20260315_075112_stage17_S17_counter_propagating_corridor__null_control__n12_sync_trace.png`, `plots/20260315_075112_stage17_S17_counter_propagating_corridor__null_control__n12_basin_trace.png`, `plots/20260315_075112_stage17_S17_counter_propagating_corridor__null_control__n12_envelope_snapshot.png`, `plots/20260315_075112_stage17_S17_counter_propagating_corridor__very_weak_phase_coupling__n12_sync_trace.png`, `plots/20260315_075112_stage17_S17_counter_propagating_corridor__very_weak_phase_coupling__n12_basin_trace.png`, `plots/20260315_075112_stage17_S17_counter_propagating_corridor__very_weak_phase_coupling__n12_envelope_snapshot.png`, `plots/20260315_075112_stage17_S17_counter_propagating_corridor__weak_phase_coupling__n12_sync_trace.png`, `plots/20260315_075112_stage17_S17_counter_propagating_corridor__weak_phase_coupling__n12_basin_trace.png`, `plots/20260315_075112_stage17_S17_counter_propagating_corridor__weak_phase_coupling__n12_envelope_snapshot.png`, `plots/20260315_075112_stage17_S17_clustered_composite_anchor__null_control__n12_sync_trace.png`, `plots/20260315_075112_stage17_S17_clustered_composite_anchor__null_control__n12_basin_trace.png`, `plots/20260315_075112_stage17_S17_clustered_composite_anchor__null_control__n12_envelope_snapshot.png`, `plots/20260315_075112_stage17_S17_clustered_composite_anchor__very_weak_phase_coupling__n12_sync_trace.png`, `plots/20260315_075112_stage17_S17_clustered_composite_anchor__very_weak_phase_coupling__n12_basin_trace.png`, `plots/20260315_075112_stage17_S17_clustered_composite_anchor__very_weak_phase_coupling__n12_envelope_snapshot.png`, `plots/20260315_075112_stage17_S17_clustered_composite_anchor__weak_phase_coupling__n12_sync_trace.png`, `plots/20260315_075112_stage17_S17_clustered_composite_anchor__weak_phase_coupling__n12_basin_trace.png`, `plots/20260315_075112_stage17_S17_clustered_composite_anchor__weak_phase_coupling__n12_envelope_snapshot.png`, `plots/20260315_075112_stage17_phase_sync_comparison.png`, `plots/20260315_075112_stage17_phase_sync_response_matrix.png`
 - Observation: sync_label_counts={'no synchronization effect': 9}
 - Conclusion: the Stage 17 pilot tests whether weak phase coupling can produce self-sustained collective timing structure on the frozen architecture
+
+## Kernel Laplacian convergence
+- Date: 2026-04-12T10:10:24
+- Config: baseline_n_sides=[9, 11, 13, 17, 21], baseline_eps=[0.5, 1.0, 2.0], point_set_n_sides=[7, 9, 11, 13], point_set_eps=[0.5, 1.0], jitter_fraction=0.08, boundary_n_sides=[9, 11, 13, 17, 21], boundary_eps=[0.5, 1.0, 2.0], cutoff_factor=2.5
+- Results: `data/20260412_101020_kernel_operator_convergence.json`
+- Plots: `plots/20260412_101020_operator_error_vs_h.png`, `plots/20260412_101020_operator_profiles.png`, `plots/20260412_101020_point_set_operator_error_vs_h.png`, `plots/20260412_101020_boundary_condition_error_vs_h.png`, `plots/20260412_101020_boundary_condition_profiles.png`
+- Observation: the scalar operator retains some continuum structure, but at least one CP1 control family is still unstable
+- Conclusion: CP1 is only partially closed: the cubic baseline remains informative, but point-set or boundary-control robustness still needs more work
+
+## Kernel Laplacian convergence
+- Date: 2026-04-12T10:13:30
+- Config: baseline_n_sides=[9, 11, 13, 17, 21], baseline_eps=[0.5, 1.0, 2.0], point_set_n_sides=[11, 13, 15, 17], point_set_eps=[0.5], jitter_fraction=0.04, boundary_n_sides=[9, 11, 13, 17, 21], boundary_eps=[0.5, 1.0, 2.0], cutoff_factor=2.5
+- Results: `data/20260412_101326_kernel_operator_convergence.json`
+- Plots: `plots/20260412_101326_operator_error_vs_h.png`, `plots/20260412_101326_operator_profiles.png`, `plots/20260412_101326_point_set_operator_error_vs_h.png`, `plots/20260412_101326_boundary_condition_error_vs_h.png`, `plots/20260412_101326_boundary_condition_profiles.png`
+- Observation: the scalar operator remains convergent on the cubic baseline, weakly perturbed point sets, and reflected Dirichlet or Neumann boundary controls
+- Conclusion: CP1 now extends beyond the clean interior cubic scan: the local-kernel scalar branch has bounded continuum control across mild geometric disorder and explicit boundary families, while broader kernels remain the finite-resolution weak point
+
+## transverse continuum comparison
+- Date: 2026-04-12T14:13:10
+- Config: epsilon=0.2, sizes=[12, 16, 20], variants=['baseline', 'puncture', 'line_defect', 'flux_tube'], restricted_modes=20, coexact_threshold=0.8
+- Results: `data/20260412_141310_transverse_continuum_comparison.json`
+- Plots: `plots/20260412_141310_transverse_continuum_comparison.png`, `plots/20260412_141310_transverse_mode_spacing.png`, `plots/20260412_141310_divergence_curl_phase_continuum.png`, `plots/20260412_141310_transverse_sector_split.png`
+- Observation: after n^2 rescaling, the low restricted transverse spectrum still follows the continuum ordering across the tested branches, but the full low L1 floor remains sector-split from that branch rather than coinciding with it
+- Conclusion: for the largest baseline case, the first-ten restricted spectrum error is 0.219, the lowest full mode carries harmonic fraction 1.000, and the first clearly coexact full mode appears at index 13; the restricted floor tracks that coexact branch with ratio 0.500, so CP2 now makes the harmonic/coexact split explicit without yet establishing a clean low continuum vector band
+
+## transverse continuum comparison
+- Date: 2026-04-12T14:15:30
+- Config: epsilon=0.2, sizes=[12, 16, 20], variants=['baseline', 'puncture', 'line_defect', 'flux_tube'], restricted_modes=20, coexact_threshold=0.8
+- Results: `data/20260412_141530_transverse_continuum_comparison.json`
+- Plots: `plots/20260412_141530_transverse_continuum_comparison.png`, `plots/20260412_141530_transverse_mode_spacing.png`, `plots/20260412_141530_divergence_curl_phase_continuum.png`, `plots/20260412_141530_transverse_sector_split.png`
+- Observation: after n^2 rescaling, the low restricted transverse spectrum still follows the continuum ordering across the tested branches, but the full low L1 floor remains sector-split from that branch rather than coinciding with it
+- Conclusion: for the largest baseline case, the first-ten restricted spectrum error is 0.219, the lowest full mode carries harmonic fraction 1.000, and none of the first 20 full modes reaches the coexact threshold 0.80, and the best low coexact candidate within that window sits at index 8; the restricted floor tracks that candidate with ratio 1.000, so CP2 now makes the harmonic/coexact split explicit without yet establishing a clean low continuum vector band
+
+## transverse sector window scan
+- Date: 2026-04-12T14:29:08
+- Config: epsilon=0.2, sizes=[12, 16, 20], variants=['baseline', 'puncture', 'line_defect', 'flux_tube'], restricted_modes=20, full_mode_scan_count=40, coexact_threshold=0.8
+- Results: `data/20260412_142908_transverse_sector_window_scan.json`
+- Plots: `plots/20260412_142908_transverse_sector_candidate_index.png`, `plots/20260412_142908_transverse_sector_localization.png`, `plots/20260412_142908_transverse_sector_candidate_metrics.png`
+- Observation: the true low full-spectrum floor remains harmonic across the scanned backgrounds, but defect branches can pull high-coexact candidates into a much shallower part of the window than the clean baseline
+- Conclusion: at the largest size, the clean baseline still has harmonic floor fraction 1.000 and only reaches a best low coexact candidate at j=11 with threshold flag True; by contrast, puncture reaches its coexact candidate at j=3, and flux_tube shows the strongest candidate defect localization with near-defect fraction 0.021, so CP2b says defects help isolate the coexact sector, but they still do not replace the harmonic low floor with a clean propagating vector band
+
+## transverse sector window scan
+- Date: 2026-04-12T14:41:23
+- Config: epsilon=0.2, sizes=[12, 16, 20, 24, 28], variants=['baseline', 'puncture', 'line_defect', 'flux_tube'], restricted_modes=20, full_mode_scan_count=40, coexact_threshold=0.8
+- Results: `data/20260412_144123_transverse_sector_window_scan.json`
+- Plots: `plots/20260412_144123_transverse_sector_candidate_index.png`, `plots/20260412_144123_transverse_sector_localization.png`, `plots/20260412_144123_transverse_sector_gap.png`, `plots/20260412_144123_transverse_sector_candidate_metrics.png`
+- Observation: the true low full-spectrum floor remains harmonic across the scanned backgrounds, but the direct harmonic-to-coexact gap stays finite and defect backgrounds can reduce that separation while pulling the coexact candidate deeper into the low window
+- Conclusion: at the largest size, the clean baseline still has harmonic floor fraction 1.000, reaches its first coexact candidate at j=19, and keeps a scaled harmonic-to-coexact gap of 78.376; by contrast, puncture reaches its coexact candidate at j=3, puncture gives the smallest scaled gap at 38.870, and flux_tube shows the strongest candidate defect localization with near-defect fraction 0.011, so CP2c says defects compress the harmonic-to-coexact separation but still do not collapse it into a clean propagating vector floor
+
+## transverse active-sector transport
+- Date: 2026-04-16T21:55:15
+- Config: epsilon=0.2, sizes=[12, 16, 20, 24], variants=['baseline', 'puncture', 'line_defect', 'flux_tube'], restricted_modes=6, transport_modes=4, probe_n_side=6
+- Results: `data/20260416_215515_transverse_active_sector_transport.json`
+- Plots: `plots/20260416_215515_transverse_active_sector_transport_overlap.png`, `plots/20260416_215515_transverse_active_sector_transport_stability.png`
+- Observation: explicit probe-space comparison maps now carry the restricted coexact branch across refinement, so active-sector identity can be measured directly by transported overlaps, principal-angle alignment, and scaled-eigenvalue drift rather than inferred only from separate spectra
+- Conclusion: within the tested low transported window, the strongest refinement pair is line_defect 20->24 with mean overlap 0.773, the weakest pair is baseline 16->20 with mean overlap 0.307, and the smallest max scaled-eigen drift is baseline 20->24 at 0.004; this gives `T8` a real `J_n` mechanism and an initial branch-identity test, but the continuum question still depends on whether these transported overlaps stay strong as the window and background family are enlarged
+
+## transverse active-sector transport
+- Date: 2026-04-16T22:18:49
+- Config: epsilon=0.2, sizes=[12, 16, 20, 24, 28], variants=['baseline', 'puncture', 'line_defect', 'flux_tube', 'mild_disorder'], restricted_modes=6, transport_modes=4, probe_n_side=6, disorder_strength=0.12
+- Results: `data/20260416_221849_transverse_active_sector_transport.json`
+- Plots: `plots/20260416_221849_transverse_active_sector_transport_overlap.png`, `plots/20260416_221849_transverse_active_sector_transport_stability.png`
+- Observation: explicit probe-space comparison maps now carry the restricted coexact branch across refinement, so active-sector identity can be measured directly by transported overlaps, principal-angle alignment, and scaled-eigenvalue drift rather than inferred only from separate spectra
+- Conclusion: within the tested low transported window, the strongest refinement pair is mild_disorder 24->28 with mean overlap 0.992, the weakest pair is baseline 24->28 with mean overlap 0.282, and the smallest max scaled-eigen drift is baseline 24->28 at 0.003; this gives `T8` a real `J_n` mechanism and an initial branch-identity test, but the continuum question still depends on whether these transported overlaps stay strong as the window and background family are enlarged
+
+## transverse active-sector transport
+- Date: 2026-04-16T23:25:31
+- Config: epsilon=0.2, sizes=[12, 16, 20, 24, 28], variants=['baseline', 'mild_disorder', 'line_defect'], restricted_modes=6, transport_modes=4, probe_n_side=6, disorder_strength=0.12
+- Results: `data/20260416_232531_transverse_active_sector_transport.json`
+- Plots: `plots/20260416_232531_transverse_active_sector_transport_overlap.png`, `plots/20260416_232531_transverse_active_sector_transport_stability.png`
+- Observation: explicit probe-space comparison maps now carry the restricted coexact branch across refinement, so active-sector identity can be measured directly by transported overlaps, principal-angle alignment, and scaled-eigenvalue drift rather than inferred only from separate spectra
+- Conclusion: within the tested low transported window, the strongest refinement pair is mild_disorder 24->28 with mean overlap 0.992, the weakest pair is baseline 20->24 with mean overlap 0.343, and the smallest max scaled-eigen drift is baseline 24->28 at 0.003; this gives `T8` a real `J_n` mechanism and an initial branch-identity test, but the continuum question still depends on whether these transported overlaps stay strong as the window and background family are enlarged

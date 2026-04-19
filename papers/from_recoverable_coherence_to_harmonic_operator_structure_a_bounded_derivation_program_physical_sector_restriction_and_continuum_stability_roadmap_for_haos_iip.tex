@@ -1,0 +1,602 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+\title{From Recoverable Coherence to Harmonic Operator Structure: A Bounded Derivation Program, Physical-Sector Restriction, and Continuum-Stability Roadmap for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes the current HAOS-to-harmonic derivation stack as one detailed synthesis release. The question is narrower than ``does HAOS explain physics'' and stronger than ``does HAOS-IIP use harmonic mathematics well.'' The real question is: under explicit HAOS-aligned assumptions, how far can one derive Laplacian, Hodge, sector-decomposition, physical-sector, and continuum-stability structure from recoverable coherence under interaction before the argument becomes assumption rather than theorem? The answer is now substantially sharper than it was before April 2026. The repository contains a bounded theorem ladder from an abstract quadratic recoverability defect through a relational Dirichlet law, graded incidence structure, a minimal Hodge-defect operator, exact / harmonic / coexact decomposition, a quotient-based physical-sector restriction, and a refinement-stability criterion for the active branch. The ladder is real, but conditional. Several steps are now proved cleanly in a finite-dimensional toy setting, while other steps still depend on explicit assumptions: strict pairwise locality, channel completeness, normalization of middle-grade compatibility, finite-dimensional orthogonal decomposition, and the rule that exact and harmonic sectors are not counted as active propagating content. The paper therefore makes two claims at once. First, HAOS-IIP no longer merely gestures toward harmonic operator language; it now contains a bounded derivation program with executed intermediate theorems. Second, that program is not finished. On the current evidence, the scalar branch already satisfies a bounded continuum-stability contract in the local kernel regime, while the vector branch remains open because the derived coexact physical sector has not yet been shown to survive refinement as the same low active branch. The paper closes with a numbered future plan from foundational cleanup to large-scale vector-sector refinement tests, universality probes, and effective-law closure.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+This paper is a synthesis release, not a new numerical phase contract. Its role is to compress the newly written HAOS-to-harmonic theorem notes, the April 2026 continuum-scaling status, and the earlier operator papers into one readable derivation document.
+
+It inherits without change:
+\begin{itemize}
+\item the kernel-induced scalar operator $L_0$ and edge operator $L_1$ already frozen in the operator papers;
+\item the exact / harmonic / coexact vocabulary already used in the operator architecture;
+\item the restricted coexact transverse operator
+\[
+T = d_1^* d_1 \big|_{\ker(d_0^*) \cap (\mathcal H^1)^\perp};
+\]
+\item the bounded scalar and vector continuum scans frozen in Paper 48.1.
+\end{itemize}
+
+What it adds is not new data. It adds a formal reading layer:
+\begin{enumerate}
+\item a theorem ladder from HAOS-aligned recoverability axioms to harmonic operator structure;
+\item a clean distinction between what is proved, what is assumed, and what is only numerically supported;
+\item a future plan for turning the bounded toy derivation into a stronger continuum-facing program.
+\end{enumerate}
+
+This paper does not claim that HAOS proves all of harmonic analysis. It does not claim continuum ontology, gauge-field ontology, spacetime emergence, or physical correspondence. It asks a narrower question:
+\begin{quote}
+can recoverable coherence under interaction force Laplacian / Hodge-type operator structure strongly enough that the existing HAOS-IIP architecture becomes a bounded consequence rather than only a successful modeling choice?
+\end{quote}
+
+\section{Why This Paper Exists}
+
+The repository already had two strong but distinct strands.
+
+The first strand was operational and numerical:
+\[
+\begin{aligned}
+\text{interaction fabric}
+&\to
+\text{weighted discrete geometry} \\
+&\to
+\text{operator hierarchy} \\
+&\to
+\text{sector-resolved continuum tests}.
+\end{aligned}
+\]
+
+That strand is real. The public operator papers already work concretely with:
+\begin{itemize}
+\item a scalar node operator;
+\item an edge / Hodge operator;
+\item exact, harmonic, and coexact sector language;
+\item a restricted coexact transverse branch.
+\end{itemize}
+
+The second strand was foundational and unfinished:
+\[
+\text{HAOS coherence language}
+\to
+?
+\to
+\text{harmonic operator math}.
+\]
+
+The gap was important. Without it, one could truthfully say that HAOS-IIP uses harmonic mathematics effectively, but not that HAOS derives it. The theorem notes written in April 2026 exist to close as much of that gap as possible without overstating the result. This paper collects that stack in one place.
+
+\section{Target Conclusion}
+
+The target is not:
+\begin{itemize}
+\item ``HAOS proves all of spectral mathematics'';
+\item ``harmonic math is the ontology of reality'';
+\item ``the current repo numerics automatically validate a full field theory.''
+\end{itemize}
+
+The real target is narrower:
+\begin{quote}
+if one formalizes HAOS as recoverable coherence under interaction, then the minimal stable generators of recoverability on a graded relational substrate become Laplacian / Hodge-type operators together with exact, harmonic, and coexact sector structure; after redundancy and harmonic neutrality are removed, the physically active branch is the restricted coexact branch; and only that restricted branch is the correct continuum-facing object under refinement.
+\end{quote}
+
+If this target fails, the language must shrink back to:
+\begin{quote}
+HAOS motivates harmonic operator math, but does not derive it.
+\end{quote}
+
+\section{Minimal Formal Objects}
+
+The derivation program begins before Laplacians, spectra, Hodge theory, or continuum fields are introduced.
+
+\subsection{Interaction substrate}
+
+Let $X$ be a finite or countable relational system carrying only:
+\begin{itemize}
+\item primitive elements;
+\item admissible interactions;
+\item composition or adjacency relations.
+\end{itemize}
+
+No metric, manifold, or differential operator is assumed at the start.
+
+\subsection{State spaces}
+
+State variables live on relational grades:
+\[
+V_0,\ V_1,\ V_2,\ \dots
+\]
+with the minimal interpretation
+\begin{itemize}
+\item $V_0$: node-like states;
+\item $V_1$: edge-like or relational states;
+\item $V_2$: face-like compatibility data.
+\end{itemize}
+
+The program becomes genuinely harmonic only once more than one grade is allowed.
+
+\subsection{Perturbation family and defect}
+
+There is a controlled perturbation family $P$ and a nonnegative recoverability-defect functional
+\[
+D : \mathcal V \to [0,\infty),
+\qquad
+\mathcal V = \bigoplus_k V_k,
+\]
+with the interpretation
+\begin{itemize}
+\item $D(u)=0$: fully recoverable coherence, up to allowed redundancy;
+\item larger $D(u)$: larger failure of coherence recovery.
+\end{itemize}
+
+This defect is the central HAOS object in the derivation program.
+
+\section{HAOS-Aligned Axiom Sketch}
+
+Table~\ref{tab:axioms} compresses the axiom sketch used throughout the theorem ladder.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{p{0.10\linewidth}p{0.25\linewidth}p{0.53\linewidth}}
+\toprule
+Label & Name & Role in the derivation program \\
+\midrule
+H1 & Relational invariance & Only interaction differences matter; absolute labels are not physical content. \\
+H2 & Recoverability principle & Coherence means bounded re-entry under admissible perturbation. \\
+H3 & Local failure assembly & Global defect is assembled from local mismatches rather than arbitrary nonlocal scoring rules. \\
+H4 & Weak compositionality & For weakly coupled subsystems, defect is additive to leading order. \\
+H5 & Smoothness near coherence & The defect admits a second-order expansion near a coherent state. \\
+H6 & Reciprocity / symmetry & Leading mismatch response is symmetric and bilinear rather than directed and arbitrary. \\
+H7 & Grade compatibility & Multi-grade states must cohere upward and downward across adjacent grades. \\
+H8 & Refinement stability & A legitimate coherence law must survive controlled refinement without changing qualitative meaning. \\
+\bottomrule
+\end{tabular}
+\caption{HAOS-aligned axioms used by the theorem ladder. These are not claimed as a final axiomatization of HAOS in all contexts. They are the minimal assumptions needed for the present derivation program.}
+\label{tab:axioms}
+\end{table}
+
+The strongest present claim is therefore conditional from the start:
+\begin{quote}
+if HAOS coherence can be made precise in this axiom class, then harmonic operator structure may be derived rather than imported.
+\end{quote}
+
+\section{The Derivation Ladder}
+
+The whole program can be written as one ladder:
+\[
+H1\text{--}H8
+\to
+T1
+\to
+T2
+\to
+T3
+\to
+T4
+\to
+T5
+\to
+T6
+\to
+T7
+\to
+T8.
+\]
+
+Table~\ref{tab:ladder} summarizes the current state of each theorem target.
+
+\begin{longtable}{p{0.08\linewidth}p{0.26\linewidth}p{0.18\linewidth}p{0.34\linewidth}}
+\caption{Current status of the HAOS-to-harmonic theorem ladder. ``Executed'' means the step now exists as a committed note or note-equivalent in the repository.}\\
+\toprule
+Step & Content & Current status & Main boundary \\
+\midrule
+\endfirsthead
+\toprule
+Step & Content & Current status & Main boundary \\
+\midrule
+\endhead
+T1 & Quadratic defect theorem & Executed & Operator identification is fully clean in Hilbert form; in Banach language the first object is a bilinear form. \\
+T2 & Relational Dirichlet theorem & Executed & Uses an explicit strict pairwise-locality assumption in the scalar sector. \\
+T3 & Recovery-flow theorem & Executed inside the larger toy scalar note & Requires choosing recovery dynamics as steepest descent of the defect. \\
+T4 & Incidence theorem & Executed & The exact no-skip operator condition is derived cleanly; the textbook chain identity $d_{k+1}d_k=0$ is recovered in normalized compatibility coordinates. \\
+T5 & Hodge-defect theorem & Executed & Uses channel-completeness and no-extra-bridge assumptions to identify the minimal graded defect. \\
+T6 & Sector decomposition theorem & Executed & Proved cleanly in a finite-dimensional inner-product setting. \\
+T7 & Physical-sector theorem & Executed & Requires the rule that exact redundancy is quotiented out and harmonic directions are neutral rather than active propagation. \\
+T8 & Continuum-stability theorem & Executed as a criterion and current-status note & Gives the correct refinement object and failure modes, but the vector branch is not yet numerically closed. \\
+\bottomrule
+\label{tab:ladder}
+\end{longtable}
+
+\section{T1 and T2: From Recoverability Defect to a Scalar Operator}
+
+\subsection{T1: Quadratic defect theorem}
+
+The first theorem in the stack is the abstract quadratic-defect theorem. Near a coherent state $u=0$, one obtains
+\[
+D(u) = \frac{1}{2}\langle u,Qu\rangle + o(\|u\|^2)
+\]
+for a positive semidefinite leading operator $Q$.
+
+The logical significance of $T1$ is easy to miss. It is the first point where ``coherence'' stops being only a verbal diagnostic and becomes a calculable law. Nothing genuinely harmonic occurs before this step, because no operator-valued second variation exists yet.
+
+The current repository now contains this step as a standalone note. Its cleanest bounded reading is:
+\begin{quote}
+if recoverability defect is smooth near coherent states and coherence is a nonnegative returnability law, then the first nontrivial law is quadratic.
+\end{quote}
+
+\subsection{T2: Relational Dirichlet theorem}
+
+Once the defect is quadratic, the next question is what relational invariance and locality force on node-like states. Under translation-like redundancy, local mismatch assembly, and reciprocity, the scalar sector reduces to
+\[
+D_0(f) \sim \frac{1}{2}\sum_{\{i,j\}\in E} w_{ij}(f_i-f_j)^2
+\]
+and hence to a Laplacian-type operator
+\[
+D_0(f) = \frac{1}{2}\langle f,L_0 f\rangle.
+\]
+
+This step matters because it is the first genuine bridge from HAOS recoverability language to a familiar operator object. The scalar Laplacian is no longer simply chosen because graphs have Laplacians. It is the minimal relational quadratic law compatible with:
+\begin{enumerate}
+\item difference-only dependence;
+\item pairwise local support;
+\item symmetric local response.
+\end{enumerate}
+
+The remaining boundary is explicit. The current note uses a strict pairwise-locality assumption in the scalar sector. That is a serious and honest simplification. It does not invalidate the step, but it means the repo has not yet derived pairwise locality directly from HAOS itself.
+
+\subsection{T3: Recovery-flow theorem}
+
+The recovery-flow theorem is conceptually straightforward once the scalar defect is available. If recovery is modeled as steepest descent of the defect, then
+\[
+\partial_t f = -L_0 f
+\]
+up to scaling and lower-order conventions.
+
+This step has not been frozen as its own separate note, but it is executed inside the larger scalar toy-model note. Its interpretation is operational rather than ornamental:
+\begin{itemize}
+\item low modes become slowly varying recoverability modes;
+\item null modes become perfect redundancies or neutral coherent sectors.
+\end{itemize}
+
+The boundary is also explicit: the flow is not derived from HAOS alone. It is derived from HAOS plus the variational choice that recovery is steepest descent of defect.
+
+\section{T4 and T5: From Grade Compatibility to Hodge-Type Operators}
+
+\subsection{T4: Incidence theorem}
+
+The decisive shift from scalar smoothing to graded harmonic structure occurs at $T4$. Multi-grade coherence forces adjacent-grade compatibility maps
+\[
+d_k : V_k \to V_{k+1}.
+\]
+
+The cleanest part of the theorem is the existence result: once adjacent-grade couplings are represented bilinearly, Riesz representation gives a unique linear incidence map for each adjacent pair. This is not yet Hodge theory. It is the minimal algebraic form of adjacent-grade compatibility.
+
+The subtle point is the chain identity. The current note proves the exact no-skip operator condition in the form
+\[
+d_{k+1}Q_{k+1}^+d_k = 0
+\]
+on the active compatibility channel after eliminating the middle grade. The textbook chain identity
+\[
+d_{k+1}d_k = 0
+\]
+then appears in normalized compatibility coordinates.
+
+That boundary matters. The repo now has a serious incidence theorem, but it does not pretend that the familiar chain identity dropped out in a fully unconditional form without any normalization choice.
+
+\subsection{T5: Hodge-defect theorem}
+
+Once the incidence maps are available, the next question is whether the minimal graded defect is forced to take the form
+\[
+D_k(\omega)
+=
+\frac{1}{2}\|d_{k-1}^*\omega\|^2
++
+\frac{1}{2}\|d_k\omega\|^2.
+\]
+
+The current note argues that this is exactly the minimal graded law if:
+\begin{enumerate}
+\item the only primitive failure channels at grade $k$ are the upward and downward compatibility channels already forced by $T4$;
+\item one refuses to add an extra bridge operator coupling those channels by hand.
+\end{enumerate}
+
+Under those conditions the Euler-Lagrange operator becomes
+\[
+\Delta_k = d_{k-1}d_{k-1}^* + d_k^*d_k.
+\]
+
+This is one of the most important logical transitions in the stack. The repo no longer needs to say ``we used the Hodge Laplacian.'' It can now say something stronger and more disciplined:
+\begin{quote}
+after incidence structure is forced, the minimal graded recoverability law produces a Hodge-type operator.
+\end{quote}
+
+Again the assumption boundary is visible. Channel completeness and the no-extra-bridge rule are not yet derived from first principles. They are the current minimality assumptions.
+
+\section{T6 and T7: Sector Structure and the Physical Branch}
+
+\subsection{T6: Exact / harmonic / coexact decomposition}
+
+The current finite-dimensional theorem stack proves that
+\[
+V_k
+=
+\operatorname{im} d_{k-1}
+\oplus
+\mathcal H^k
+\oplus
+\operatorname{im} d_k^*
+\]
+with
+\[
+\mathcal H^k = \ker d_k \cap \ker d_{k-1}^* = \ker \Delta_k.
+\]
+
+This matters for two reasons.
+
+First, it shows that exact, harmonic, and coexact language is no longer only imported vocabulary. In the finite-dimensional toy setting, the decomposition is a theorem of the derived operator stack.
+
+Second, it identifies the harmonic sector operationally:
+\begin{quote}
+harmonic states are exactly the zero-defect directions of the derived graded recoverability operator.
+\end{quote}
+
+That interpretation is strong enough to support later physical-sector decisions without yet claiming that every harmonic state is physically meaningless. It only says that such states are neutral under the present minimal recoverability law.
+
+\subsection{T7: Physical-sector theorem}
+
+The physical-sector theorem is where the restricted transverse operator stops looking ad hoc.
+
+The active physical object is the quotient
+\[
+\mathcal P_k
+=
+V_k / \bigl(\operatorname{im} d_{k-1}\oplus \mathcal H^k\bigr),
+\]
+meaning:
+\begin{itemize}
+\item quotient exact content because it is redundancy;
+\item quotient harmonic content because it is neutral rather than active propagation in the present interpretation.
+\end{itemize}
+
+In the finite-dimensional toy setting, this quotient has the canonical orthogonal representative
+\[
+P_k
+=
+\ker(d_{k-1}^*) \cap (\mathcal H^k)^\perp
+=
+\operatorname{im} d_k^*.
+\]
+
+On that representative space, the active operator reduces to
+\[
+T_k
+=
+d_k^*d_k\big|_{P_k}.
+\]
+
+For $1$-forms, this gives exactly
+\[
+T
+=
+d_1^* d_1 \big|_{\ker(d_0^*) \cap (\mathcal H^1)^\perp}.
+\]
+
+This is a major compression of the repo's logic. The coexact transverse restriction is no longer merely a practical projection used in the numerics. It becomes the canonical representative of the physical quotient under the stated HAOS reading of redundancy and neutrality.
+
+The boundary remains deliberate: this theorem excludes harmonic content from the active propagating sector under the current interpretation. It does not claim harmonic content is universally meaningless in every future reading of the system.
+
+\section{T8: Continuum Stability and the Correct Refinement Object}
+
+The continuum-stability theorem changes the refinement question completely. The question is not:
+\begin{quote}
+does the full raw discrete operator converge?
+\end{quote}
+
+The correct question is:
+\begin{quote}
+does the derived physical operator converge on the active sector under refinement?
+\end{quote}
+
+At refinement level $n$, the correct active operator is
+\[
+T_k^{(n)}
+=
+a_n\, d_k^{(n)\,*}d_k^{(n)}
+\big|_{\ker(d_{k-1}^{(n)\,*}) \cap (\mathcal H_k^{(n)})^\perp},
+\]
+with a scaling factor $a_n$ and comparison maps between active sectors across refinement.
+
+The current theorem note defines three necessary ingredients:
+\begin{enumerate}
+\item physical-sector compatibility across refinement;
+\item boundedness of the rescaled active operator on the tested window;
+\item survival of the same active spectral branch rather than branch identity drift.
+\end{enumerate}
+
+Under those conditions, the correct continuum-facing object is the limit of the restricted physical operator, not the limit of the raw full-space operator.
+
+This is the exact theorem-level bridge needed to interpret the repo's scalar and vector numerics honestly. It yields an asymmetric present reading:
+\begin{itemize}
+\item the scalar branch already passes a bounded continuum-stability contract in the local regime;
+\item the vector branch remains open because the derived coexact branch has not yet been shown to survive refinement as the same low physical branch.
+\end{itemize}
+
+\section{What Is Formally Built, What Is Assumed, and What Is Only Numerical}
+
+The present paper is useful only if it keeps those three categories distinct. Table~\ref{tab:boundary} is therefore one of the most important tables in the release.
+
+\begin{longtable}{p{0.18\linewidth}p{0.22\linewidth}p{0.44\linewidth}}
+\caption{Current authority boundary of the HAOS-to-harmonic program.}\\
+\toprule
+Layer & Status & Current strongest honest statement \\
+\midrule
+\endfirsthead
+\toprule
+Layer & Status & Current strongest honest statement \\
+\midrule
+\endhead
+Quadratic defect & Formally built & A nonnegative recoverability defect with second-order regularity yields a positive quadratic leading law. \\
+Scalar Dirichlet form & Formally built under scalar locality assumptions & Relational invariance, pairwise locality, and reciprocity force a weighted difference energy and hence a Laplacian-type scalar operator. \\
+Recovery flow & Built under a variational choice & If recovery is steepest descent of defect, the scalar recovery law is diffusive in the Laplacian sense. \\
+Incidence structure & Formally built in bounded form & Adjacent-grade compatibility forces incidence maps; the textbook chain identity is recovered in normalized compatibility coordinates. \\
+Hodge-defect operator & Formally built under minimality assumptions & The minimal graded defect yields a Hodge-type operator once upward and downward incompatibility channels are the only primitive failure channels. \\
+Sector decomposition & Formally built in finite dimension & Exact, harmonic, and coexact sectors are a theorem of the derived operator stack in the finite-dimensional toy setting. \\
+Physical-sector restriction & Formally built under a propagation reading & The coexact branch is the canonical representative of the quotient by exact redundancy and harmonic neutrality. \\
+Continuum stability criterion & Formally built as a refinement criterion & The correct continuum-facing object is the restricted physical operator, not the raw full operator. \\
+Scalar continuum branch & Numerically supported in a bounded regime & The local scalar branch is refinement-stable across cubic, weakly perturbed point-set, and reflected boundary controls. \\
+Vector continuum branch & Not yet closed & The coexact branch is a real derived candidate, but it is not yet established as the refinement-stable low active branch. \\
+\bottomrule
+\label{tab:boundary}
+\end{longtable}
+
+\section{Current Numerical Authority After the Formal Stack}
+
+\subsection{Scalar branch}
+
+The scalar side already had a strong foothold before the theorem notes, but the April 2026 scan made the continuum contract much harder to dismiss. In the strictly local kernel regime:
+\begin{itemize}
+\item the cubic interior convergence remains clean;
+\item mild three-dimensional point-set disorder still converges once the operator is recovered by local quadratic reproduction;
+\item reflected homogeneous Dirichlet and Neumann controls remain convergent.
+\end{itemize}
+
+The bounded scalar reading is therefore:
+\begin{quote}
+the local kernel-induced scalar operator already behaves like the correct continuum-facing active object under the tested refinement, perturbation, and boundary families.
+\end{quote}
+
+That is the strongest present numerical success in the derivation-to-continuum chain.
+
+\subsection{Vector branch}
+
+The vector side is both stronger and weaker than a casual reading suggests.
+
+It is stronger because the formal stack now explains why one should study the restricted coexact branch at all. The restricted operator is not arbitrary. It is the active-sector operator predicted by the theorem ladder.
+
+It is weaker because the numerical closure is still missing. The full low $L_1$ floor remains harmonic-dominated, and the harmonic-to-coexact separation does not collapse in the tested range. Defects compress that gap and help isolate the coexact branch earlier in the low window, but they do not yet make it the actual low propagating floor.
+
+So the correct present vector reading is:
+\begin{quote}
+the restricted coexact branch is now formally the right physical-sector candidate, but it is not yet numerically established as a refinement-stable continuum branch.
+\end{quote}
+
+\section{Why This Paper Does Not Overclaim}
+
+Several tempting but incorrect statements are now easier to avoid.
+
+\subsection{What the paper does not prove}
+
+This paper does not prove:
+\begin{itemize}
+\item that HAOS uniquely implies one geometric formalism;
+\item that all assumptions used in $T1$--$T8$ are themselves derived directly from deeper HAOS first principles;
+\item that the vector sector already closes into Maxwell dynamics;
+\item that continuum ontology or spacetime emergence follows from the current stack.
+\end{itemize}
+
+\subsection{What it does prove or freeze}
+
+It does freeze a stronger and more useful claim:
+\begin{quote}
+there is now a detailed bounded path from HAOS-aligned recoverability language to the actual harmonic operator architecture used by HAOS-IIP, and that path is explicit enough that one can see exactly where the argument is theorem, where it is assumption, and where it still needs numerical closure.
+\end{quote}
+
+\section{Failure Conditions}
+
+The program should be considered unsuccessful in a strong foundational sense if any of the following occurs:
+\begin{enumerate}
+\item no stable quadratic leading defect can be justified;
+\item relational invariance does not force a Dirichlet-form scalar law;
+\item multi-grade coherence does not require incidence structure;
+\item exact, harmonic, and coexact sectors cannot be distinguished structurally;
+\item the derived physical operator fails to survive refinement on the tested active branch.
+\end{enumerate}
+
+These are not minor caveats. They are the explicit points where the language must shrink if the derivation does not close.
+
+\section{Detailed Future Plan}
+
+The next program should not jump directly to grand continuum claims. It should close the weakest assumptions in order.
+
+\subsection{Foundational cleanup}
+
+\paragraph{F1. Derive strict scalar locality rather than assume it.}
+The scalar Dirichlet theorem currently uses a strict pairwise-locality assumption. The next foundational task is to show whether HAOS local-failure assembly itself forces pairwise local primitive terms in the scalar sector.
+
+\paragraph{F2. Remove the normalization caveat in the incidence theorem if possible.}
+The current $T4$ result derives the honest no-skip condition cleanly, but the familiar chain identity appears in normalized compatibility coordinates. The next task is to determine whether that normalization is merely convenient or can itself be justified canonically.
+
+\paragraph{F3. Derive channel completeness and the no-extra-bridge rule.}
+The $T5$ note currently excludes a direct bridge operator between upward and downward incompatibility channels by minimality. The next step is to show whether HAOS recoverability itself forces that exclusion.
+
+\paragraph{F4. Extend the finite-dimensional decomposition to a cleaner Hilbert-complex setting.}
+The current $T6$ proof is exact in finite dimension. A stronger version would state the decomposition in a more standard closed-range Hilbert-complex language while preserving the present bounded interpretation.
+
+\subsection{Numerical closure on the physical sector}
+
+\paragraph{N1. Build active-sector comparison maps across refinement.}
+The $T8$ criterion needs explicit comparison maps $J_n$ between coexact active sectors at different resolutions. Without those maps, vector-sector refinement remains only an intuitive statement rather than a direct active-sector convergence test.
+
+\paragraph{N2. Track coexact branch identity at larger $n$.}
+The immediate numerical target is larger-size sector transport:
+\begin{itemize}
+\item carry the active coexact sector across $n=24,28,\dots$;
+\item test whether the same low coexact family survives;
+\item measure recontamination by harmonic or mixed sectors under refinement.
+\end{itemize}
+
+\paragraph{N3. Expand defect and background families without changing the operator definition.}
+If the coexact branch is real, it should remain identifiable across a bounded family of puncture, line-defect, flux-tube, and mild disorder backgrounds after the same physical-sector restriction.
+
+\subsection{Continuum-program closure}
+
+\paragraph{C1. Universality probes.}
+The current scalar branch is strong but still local-regime specific. The next continuum task is to test whether the same qualitative contract survives bounded changes of kernel family and bounded changes of substrate family.
+
+\paragraph{C2. Effective-law closure on the active branch.}
+The repo still lacks a closed PDE- or action-like law for the same active regime in which the operator statements are made. The future program should ask whether branch observables close onto one stable law family without regime-specific retuning.
+
+\paragraph{C3. Geometry and response closure.}
+Only after active-sector stability and effective-law closure should the program ask whether Green response, conserved currents, metric-like structure, or curvature-like structure are recovered from the same operator family rather than imported afterward.
+
+\paragraph{C4. Final bounded continuum statement.}
+Only if the previous tasks succeed should the program allow a synthesis like:
+\begin{quote}
+on the tested substrate and perturbation class, HAOS-IIP supports a bounded effective continuum regime with a scalar branch and, if numerically closed, an active coexact transverse branch.
+\end{quote}
+
+\section{Release-Level Conclusion}
+
+The strongest honest conclusion of this paper is two-part.
+
+First:
+\begin{quote}
+HAOS-IIP no longer merely uses harmonic operator math. It now contains a bounded derivation program from recoverability defect through operator structure, sector decomposition, physical-sector restriction, and continuum-stability criteria.
+\end{quote}
+
+Second:
+\begin{quote}
+that derivation program is still conditional and incomplete. The scalar branch already has a bounded continuum-stable foothold. The vector branch does not yet.
+\end{quote}
+
+That asymmetry is not a weakness of the paper. It is its main discipline. The formal stack is now detailed enough to show exactly what has been earned, exactly what is still assumed, and exactly what future work must close before a stronger continuum-physics statement becomes honest.
+
+\end{document}
