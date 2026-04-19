@@ -10,6 +10,8 @@
 | none | `phase3-stability/diagnostics/check_phase3_bundle.py` | Independent bundle checker. |
 | none | `phase4-sector-freeze/diagnostics/check_phase4_bundle.py` | Independent bundle checker. |
 | none | `phase5-readout/diagnostics/check_phase5_bundle.py` | Independent bundle checker. |
+| `archive-pre-refactor/numerics/simulations/L1_transverse_band_test.py` | `numerics/simulations/L1_transverse_band_test.py` | Active transverse-band utility reimplemented locally so stage-3/4 numerics no longer rely on archive-only runtime imports. |
+| `archive-pre-refactor/numerics/simulations/L1_transverse_scaling_test.py` | `numerics/simulations/L1_transverse_scaling_test.py` | Active real-valued transverse scaling shim now wraps current stage-8 primitives so stage-2/3 numerics no longer depend on archive-only imports. |
 
 ## Core Extraction
 

@@ -15,15 +15,16 @@
     ],
     "cutoff_factor": 2.5,
     "point_set_n_sides": [
+      7,
+      9,
       11,
-      13,
-      15,
-      17
+      13
     ],
     "point_set_epsilon_coeffs": [
-      0.5
+      0.5,
+      1.0
     ],
-    "point_set_jitter_fraction": 0.04,
+    "point_set_jitter_fraction": 0.08,
     "point_set_seed": 42,
     "point_set_boundary_buffer_factor": 1.05,
     "boundary_n_sides": [
@@ -2027,36 +2028,106 @@
     },
     "cases": [
       {
+        "n_side": 7,
+        "nodes": 343,
+        "h": 0.16666666666666666,
+        "epsilon_coeff": 0.5,
+        "epsilon_k": 0.013888888888888888,
+        "jitter_fraction": 0.08,
+        "seed": 42,
+        "valid_nodes": 23,
+        "operator": {
+          "cutoff_radius": 0.2946278254943948,
+          "average_neighbor_count": 17.486880466472304,
+          "min_neighbor_count": 6,
+          "median_condition_number": 278.20027025715217,
+          "max_condition_number": 94005.13451980198,
+          "valid_stencil_fraction": 0.892128279883382
+        },
+        "functions": {
+          "f1_quadratic": {
+            "error_l2": 7.016317544503564e-09,
+            "valid_nodes": 23,
+            "total_nodes": 343
+          },
+          "f2_trigonometric": {
+            "error_l2": 0.4760200979589949,
+            "valid_nodes": 23,
+            "total_nodes": 343
+          },
+          "f3_gaussian": {
+            "error_l2": 0.006858964873190068,
+            "valid_nodes": 23,
+            "total_nodes": 343
+          }
+        }
+      },
+      {
+        "n_side": 9,
+        "nodes": 729,
+        "h": 0.125,
+        "epsilon_coeff": 0.5,
+        "epsilon_k": 0.0078125,
+        "jitter_fraction": 0.08,
+        "seed": 42,
+        "valid_nodes": 119,
+        "operator": {
+          "cutoff_radius": 0.2209708691207961,
+          "average_neighbor_count": 18.56241426611797,
+          "min_neighbor_count": 6,
+          "median_condition_number": 24.129227851856893,
+          "max_condition_number": 132026.27300422793,
+          "valid_stencil_fraction": 0.9204389574759945
+        },
+        "functions": {
+          "f1_quadratic": {
+            "error_l2": 1.8570874110868914e-08,
+            "valid_nodes": 119,
+            "total_nodes": 729
+          },
+          "f2_trigonometric": {
+            "error_l2": 0.3344891617780855,
+            "valid_nodes": 119,
+            "total_nodes": 729
+          },
+          "f3_gaussian": {
+            "error_l2": 0.009751959357156325,
+            "valid_nodes": 119,
+            "total_nodes": 729
+          }
+        }
+      },
+      {
         "n_side": 11,
         "nodes": 1331,
         "h": 0.1,
         "epsilon_coeff": 0.5,
         "epsilon_k": 0.005000000000000001,
-        "jitter_fraction": 0.04,
+        "jitter_fraction": 0.08,
         "seed": 42,
-        "valid_nodes": 343,
+        "valid_nodes": 331,
         "operator": {
           "cutoff_radius": 0.17677669529663692,
-          "average_neighbor_count": 20.054094665664913,
+          "average_neighbor_count": 19.23365890308039,
           "min_neighbor_count": 6,
-          "median_condition_number": 24.980838494629783,
-          "max_condition_number": 11584732.71135177,
-          "valid_stencil_fraction": 0.9759579263711495
+          "median_condition_number": 28.268768301625418,
+          "max_condition_number": 1307318.1638407875,
+          "valid_stencil_fraction": 0.9534184823441022
         },
         "functions": {
           "f1_quadratic": {
-            "error_l2": 1.5806282281761777e-14,
-            "valid_nodes": 343,
+            "error_l2": 3.4586664145634215e-08,
+            "valid_nodes": 331,
             "total_nodes": 1331
           },
           "f2_trigonometric": {
-            "error_l2": 0.23546415846266056,
-            "valid_nodes": 343,
+            "error_l2": 0.23879641038106297,
+            "valid_nodes": 331,
             "total_nodes": 1331
           },
           "f3_gaussian": {
-            "error_l2": 0.006258276330687366,
-            "valid_nodes": 343,
+            "error_l2": 0.008271033986168316,
+            "valid_nodes": 331,
             "total_nodes": 1331
           }
         }
@@ -2067,102 +2138,172 @@
         "h": 0.08333333333333333,
         "epsilon_coeff": 0.5,
         "epsilon_k": 0.003472222222222222,
-        "jitter_fraction": 0.04,
+        "jitter_fraction": 0.08,
         "seed": 42,
-        "valid_nodes": 729,
+        "valid_nodes": 717,
         "operator": {
           "cutoff_radius": 0.1473139127471974,
-          "average_neighbor_count": 20.550751024123805,
+          "average_neighbor_count": 19.807009558488847,
           "min_neighbor_count": 6,
-          "median_condition_number": 29.719865681136643,
-          "max_condition_number": 302085365.7673862,
-          "valid_stencil_fraction": 0.9754210286754665
+          "median_condition_number": 33.52758820268254,
+          "max_condition_number": 422434.59436988184,
+          "valid_stencil_fraction": 0.9635867091488394
         },
         "functions": {
           "f1_quadratic": {
-            "error_l2": 2.867987805261092e-14,
-            "valid_nodes": 729,
+            "error_l2": 5.553328245235377e-08,
+            "valid_nodes": 717,
             "total_nodes": 2197
           },
           "f2_trigonometric": {
-            "error_l2": 0.16873298221551683,
-            "valid_nodes": 729,
+            "error_l2": 0.1741766916859457,
+            "valid_nodes": 717,
             "total_nodes": 2197
           },
           "f3_gaussian": {
-            "error_l2": 0.005377314650476821,
-            "valid_nodes": 729,
+            "error_l2": 0.007385859895154861,
+            "valid_nodes": 717,
             "total_nodes": 2197
           }
         }
       },
       {
-        "n_side": 15,
-        "nodes": 3375,
-        "h": 0.07142857142857142,
-        "epsilon_coeff": 0.5,
-        "epsilon_k": 0.002551020408163265,
-        "jitter_fraction": 0.04,
+        "n_side": 7,
+        "nodes": 343,
+        "h": 0.16666666666666666,
+        "epsilon_coeff": 1.0,
+        "epsilon_k": 0.027777777777777776,
+        "jitter_fraction": 0.08,
         "seed": 42,
-        "valid_nodes": 1331,
+        "valid_nodes": 1,
         "operator": {
-          "cutoff_radius": 0.12626906806902632,
-          "average_neighbor_count": 20.997333333333334,
-          "min_neighbor_count": 6,
-          "median_condition_number": 34.621690174197745,
-          "max_condition_number": 361579.6387771927,
-          "valid_stencil_fraction": 0.9813333333333333
+          "cutoff_radius": 0.41666666666666663,
+          "average_neighbor_count": 47.352769679300295,
+          "min_neighbor_count": 16,
+          "median_condition_number": 40.37362207934463,
+          "max_condition_number": 46.87765023215014,
+          "valid_stencil_fraction": 1.0
         },
         "functions": {
           "f1_quadratic": {
-            "error_l2": 4.3250585633957825e-14,
-            "valid_nodes": 1331,
-            "total_nodes": 3375
+            "error_l2": 8.322660059956633e-10,
+            "valid_nodes": 1,
+            "total_nodes": 343
           },
           "f2_trigonometric": {
-            "error_l2": 0.12726261670200772,
-            "valid_nodes": 1331,
-            "total_nodes": 3375
+            "error_l2": 0.24451989237387442,
+            "valid_nodes": 1,
+            "total_nodes": 343
           },
           "f3_gaussian": {
-            "error_l2": 0.004343828399072273,
-            "valid_nodes": 1331,
-            "total_nodes": 3375
+            "error_l2": 0.0012740106678330047,
+            "valid_nodes": 1,
+            "total_nodes": 343
           }
         }
       },
       {
-        "n_side": 17,
-        "nodes": 4913,
-        "h": 0.0625,
-        "epsilon_coeff": 0.5,
-        "epsilon_k": 0.001953125,
-        "jitter_fraction": 0.04,
+        "n_side": 9,
+        "nodes": 729,
+        "h": 0.125,
+        "epsilon_coeff": 1.0,
+        "epsilon_k": 0.015625,
+        "jitter_fraction": 0.08,
         "seed": 42,
-        "valid_nodes": 2197,
+        "valid_nodes": 27,
         "operator": {
-          "cutoff_radius": 0.11048543456039805,
-          "average_neighbor_count": 21.309586810502747,
-          "min_neighbor_count": 6,
-          "median_condition_number": 39.44914329480579,
-          "max_condition_number": 1603806.0773120085,
-          "valid_stencil_fraction": 0.9851414614288622
+          "cutoff_radius": 0.3125,
+          "average_neighbor_count": 52.30727023319616,
+          "min_neighbor_count": 16,
+          "median_condition_number": 52.6221945357572,
+          "max_condition_number": 64.54971611312183,
+          "valid_stencil_fraction": 1.0
         },
         "functions": {
           "f1_quadratic": {
-            "error_l2": 5.962993130913783e-14,
-            "valid_nodes": 2197,
-            "total_nodes": 4913
+            "error_l2": 4.993503184353866e-09,
+            "valid_nodes": 27,
+            "total_nodes": 729
           },
           "f2_trigonometric": {
-            "error_l2": 0.1000455475920233,
-            "valid_nodes": 2197,
-            "total_nodes": 4913
+            "error_l2": 0.4055372790186529,
+            "valid_nodes": 27,
+            "total_nodes": 729
           },
           "f3_gaussian": {
-            "error_l2": 0.0038596091433654458,
-            "valid_nodes": 2197,
-            "total_nodes": 4913
+            "error_l2": 0.004381380285990484,
+            "valid_nodes": 27,
+            "total_nodes": 729
+          }
+        }
+      },
+      {
+        "n_side": 11,
+        "nodes": 1331,
+        "h": 0.1,
+        "epsilon_coeff": 1.0,
+        "epsilon_k": 0.010000000000000002,
+        "jitter_fraction": 0.08,
+        "seed": 42,
+        "valid_nodes": 125,
+        "operator": {
+          "cutoff_radius": 0.25,
+          "average_neighbor_count": 55.465063861758075,
+          "min_neighbor_count": 18,
+          "median_condition_number": 24.09966788922132,
+          "max_condition_number": 78.675581090751,
+          "valid_stencil_fraction": 1.0
+        },
+        "functions": {
+          "f1_quadratic": {
+            "error_l2": 1.1883438028950132e-08,
+            "valid_nodes": 125,
+            "total_nodes": 1331
+          },
+          "f2_trigonometric": {
+            "error_l2": 0.3576329792775114,
+            "valid_nodes": 125,
+            "total_nodes": 1331
+          },
+          "f3_gaussian": {
+            "error_l2": 0.005314085477244321,
+            "valid_nodes": 125,
+            "total_nodes": 1331
+          }
+        }
+      },
+      {
+        "n_side": 13,
+        "nodes": 2197,
+        "h": 0.08333333333333333,
+        "epsilon_coeff": 1.0,
+        "epsilon_k": 0.006944444444444444,
+        "jitter_fraction": 0.08,
+        "seed": 42,
+        "valid_nodes": 343,
+        "operator": {
+          "cutoff_radius": 0.20833333333333331,
+          "average_neighbor_count": 57.708693673190716,
+          "min_neighbor_count": 17,
+          "median_condition_number": 28.01210251991948,
+          "max_condition_number": 94.91786630263873,
+          "valid_stencil_fraction": 1.0
+        },
+        "functions": {
+          "f1_quadratic": {
+            "error_l2": 2.15035123759176e-08,
+            "valid_nodes": 343,
+            "total_nodes": 2197
+          },
+          "f2_trigonometric": {
+            "error_l2": 0.28384268660729656,
+            "valid_nodes": 343,
+            "total_nodes": 2197
+          },
+          "f3_gaussian": {
+            "error_l2": 0.005166300112405224,
+            "valid_nodes": 343,
+            "total_nodes": 2197
           }
         }
       }
@@ -2171,69 +2312,126 @@
       "f1_quadratic": {
         "0.5": {
           "h_values": [
-            0.0625,
-            0.07142857142857142,
             0.08333333333333333,
-            0.1
+            0.1,
+            0.125,
+            0.16666666666666666
           ],
           "errors": [
-            5.962993130913783e-14,
-            4.3250585633957825e-14,
-            2.867987805261092e-14,
-            1.5806282281761777e-14
+            5.553328245235377e-08,
+            3.4586664145634215e-08,
+            1.8570874110868914e-08,
+            7.016317544503564e-09
           ],
           "fit": {
-            "order_p": -2.8230935135389403,
-            "intercept": -38.244113417184195,
-            "r2": 0.9949397706865842
+            "order_p": -2.9844223361037745,
+            "intercept": -24.07599393514682,
+            "r2": 0.9960073972384865
+          }
+        },
+        "1.0": {
+          "h_values": [
+            0.08333333333333333,
+            0.1,
+            0.125,
+            0.16666666666666666
+          ],
+          "errors": [
+            2.15035123759176e-08,
+            1.1883438028950132e-08,
+            4.993503184353866e-09,
+            8.322660059956633e-10
+          ],
+          "fit": {
+            "order_p": -4.685739994357327,
+            "intercept": -29.12438744804024,
+            "r2": 0.9767191307689636
           }
         }
       },
       "f2_trigonometric": {
         "0.5": {
           "h_values": [
-            0.0625,
-            0.07142857142857142,
             0.08333333333333333,
-            0.1
+            0.1,
+            0.125,
+            0.16666666666666666
           ],
           "errors": [
-            0.1000455475920233,
-            0.12726261670200772,
-            0.16873298221551683,
-            0.23546415846266056
+            0.1741766916859457,
+            0.23879641038106297,
+            0.3344891617780855,
+            0.4760200979589949
           ],
           "fit": {
-            "order_p": 1.8223322696141189,
-            "intercept": 2.7492378385469056,
-            "r2": 0.9999895870575962
+            "order_p": 1.4446655293303834,
+            "intercept": 1.8729099977622803,
+            "r2": 0.9939286746050494
+          }
+        },
+        "1.0": {
+          "h_values": [
+            0.08333333333333333,
+            0.1,
+            0.125,
+            0.16666666666666666
+          ],
+          "errors": [
+            0.28384268660729656,
+            0.3576329792775114,
+            0.4055372790186529,
+            0.24451989237387442
+          ],
+          "fit": {
+            "order_p": -0.21302803921556646,
+            "intercept": -1.610782140086702,
+            "r2": 0.078529919059798
           }
         }
       },
       "f3_gaussian": {
         "0.5": {
           "h_values": [
-            0.0625,
-            0.07142857142857142,
             0.08333333333333333,
-            0.1
+            0.1,
+            0.125,
+            0.16666666666666666
           ],
           "errors": [
-            0.0038596091433654458,
-            0.004343828399072273,
-            0.005377314650476821,
-            0.006258276330687366
+            0.007385859895154861,
+            0.008271033986168316,
+            0.009751959357156325,
+            0.006858964873190068
           ],
           "fit": {
-            "order_p": 1.0611481708276067,
-            "intercept": -2.618202196868608,
-            "r2": 0.9896706498975295
+            "order_p": -0.07287933879633997,
+            "intercept": -4.986677319961247,
+            "r2": 0.020216535796055535
+          }
+        },
+        "1.0": {
+          "h_values": [
+            0.08333333333333333,
+            0.1,
+            0.125,
+            0.16666666666666666
+          ],
+          "errors": [
+            0.005166300112405224,
+            0.005314085477244321,
+            0.004381380285990484,
+            0.0012740106678330047
+          ],
+          "fit": {
+            "order_p": -2.015726464602323,
+            "intercept": -10.013131447501156,
+            "r2": 0.7788160236152071
           }
         }
       }
     },
-    "observation": "the kernel-weighted local operator remains convergent on weakly perturbed 3D point sets",
-    "conclusion": "scalar continuum control survives mild geometric disorder in the local-kernel regime once the operator is recovered from the same kernel weights by local quadratic reproduction"
+    "observation": "the weakly perturbed point-set scan only partially preserves scalar convergence",
+    "conclusion": "mild geometric disorder still distorts the current operator recovery enough that CP1 is not yet closed on point-set controls"
   },
   "boundary_controls": {
     "derivation": {
@@ -3634,13 +3832,13 @@
     "observation": "reflected boundary controls retain convergence on both Dirichlet and Neumann-compatible test families",
     "conclusion": "the same local kernel regime remains stable when the cubic scan is extended from interior-only error to explicit homogeneous boundary-control families"
   },
-  "observation": "the scalar operator remains convergent on the cubic baseline, weakly perturbed point sets, and reflected Dirichlet or Neumann boundary controls",
-  "conclusion": "CP1 now extends beyond the clean interior cubic scan: the local-kernel scalar branch has bounded continuum control across mild geometric disorder and explicit boundary families, while broader kernels remain the finite-resolution weak point",
+  "observation": "the scalar operator retains some continuum structure, but at least one CP1 control family is still unstable",
+  "conclusion": "CP1 is only partially closed: the cubic baseline remains informative, but point-set or boundary-control robustness still needs more work",
   "plots": [
-    "plots/20260412_101326_operator_error_vs_h.png",
-    "plots/20260412_101326_operator_profiles.png",
-    "plots/20260412_101326_point_set_operator_error_vs_h.png",
-    "plots/20260412_101326_boundary_condition_error_vs_h.png",
-    "plots/20260412_101326_boundary_condition_profiles.png"
+    "plots/20260412_101020_operator_error_vs_h.png",
+    "plots/20260412_101020_operator_profiles.png",
+    "plots/20260412_101020_point_set_operator_error_vs_h.png",
+    "plots/20260412_101020_boundary_condition_error_vs_h.png",
+    "plots/20260412_101020_boundary_condition_profiles.png"
   ]
 }

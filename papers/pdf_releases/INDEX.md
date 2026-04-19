@@ -145,6 +145,18 @@ The intended public reading order is:
 1. `47.2` Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs
 2. `47.1` same paper, initial release (superseded by `47.2`)
 
+### 2.26 Part XXVI. Continuum-contract scaling synthesis
+
+1. `48.1` Scalar Continuum Control, Harmonic-Coexact Sector Separation, and a Bounded Roadmap Toward Continuum Physics on HAOS-IIP
+
+### 2.27 Part XXVII. HAOS-to-harmonic derivation synthesis
+
+1. `49.1` From Recoverable Coherence to Harmonic Operator Structure: A Bounded Derivation Program, Physical-Sector Restriction, and Continuum-Stability Roadmap for HAOS-IIP
+
+### 2.28 Part XXVIII. GitHub synchronization release
+
+1. `50.1` GitHub-State Comparison and Continuum-Foundations Synchronization Release for HAOS-IIP
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -200,6 +212,9 @@ The intended public reading order is:
 - `46.1` HAOS-IIP Master Synthesis: Program-Level Compression of the Paper Spine
 - `47.2` Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs
 - `47.1` Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs (superseded)
+- `48.1` Scalar Continuum Control, Harmonic-Coexact Sector Separation, and a Bounded Roadmap Toward Continuum Physics on HAOS-IIP
+- `49.1` From Recoverable Coherence to Harmonic Operator Structure: A Bounded Derivation Program, Physical-Sector Restriction, and Continuum-Stability Roadmap for HAOS-IIP
+- `50.1` GitHub-State Comparison and Continuum-Foundations Synchronization Release for HAOS-IIP
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

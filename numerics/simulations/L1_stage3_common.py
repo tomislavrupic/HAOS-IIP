@@ -26,6 +26,7 @@ VARIANT_LABELS = {
     'puncture': 'single cubic puncture',
     'line_defect': 'line defect',
     'flux_tube': 'flux-tube defect',
+    'mild_disorder': 'smooth mild-disorder torus',
 }
 
 VARIANT_MARKERS = {
@@ -33,6 +34,7 @@ VARIANT_MARKERS = {
     'puncture': 's',
     'line_defect': '^',
     'flux_tube': 'D',
+    'mild_disorder': 'v',
 }
 
 
