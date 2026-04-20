@@ -1,0 +1,184 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Scalar-Carrier CP4 Geometry Robustness Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{51.3} of HAOS-IIP as the numbered robustness follow-up to the already-positive scalar-carrier \texttt{CP4} geometry bridge. The earlier scalar bridge had shown that one common local scalar kernel-graph family can organize Green response, heat behavior, shell-arrival structure, and first-shell low-mode organization under one common coarse Euclidean shell reconstruction. Release \texttt{51.3} asks the next honest question: does that bridge survive bounded stress on the same carrier? The answer is yes on the tested window. Across all tested mild point-set disorder cases and bounded kernel-family variants, the same scalar carrier remains compatible with the same 3D-like geometry read, while the extracted coordinate-response tensor stays close to isotropic. The result strengthens the repository's geometry authority boundary from a one-family bridge statement to a bounded robust-carrier statement, without promoting the result into broad universality, curvature, or ontology.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{51.3} is a narrow scalar-carrier synthesis freeze.
+
+It does not add:
+\begin{itemize}
+\item a new vector validation claim beyond the already frozen \texttt{51.1} and \texttt{51.2} line;
+\item a broader continuum or spacetime claim than the bounded scalar carrier actually supports;
+\item broad universality across arbitrary kernels, disorder classes, or irregular substrates;
+\item curvature extraction, conserved currents, or geometry-as-ontology language.
+\end{itemize}
+
+It does add:
+\begin{itemize}
+\item a numbered release for the first bounded robustness pass on the scalar-carrier \texttt{CP4} geometry bridge;
+\item one compact authority statement covering mild point-set disorder, bounded kernel-family variation, and coordinate-response extraction on the same carrier;
+\item a sharper boundary between what now counts as a robust scalar geometry read and what remains open.
+\end{itemize}
+
+\section{Where the Repository Stood Before 51.3}
+
+Before this release, the scalar kernel-graph line had already crossed one important threshold: the same common scalar carrier had been used to organize
+\begin{itemize}
+\item Green response;
+\item heat shell behavior;
+\item shell-arrival slopes;
+\item first-shell low-mode organization.
+\end{itemize}
+
+That resolved the earlier preflight mismatch in which Green response and late-phase distance-surrogate diagnostics had been living on different substrate families. But the resulting authority boundary was still narrow:
+
+\begin{quote}
+the scalar-carrier geometry bridge is positive on one tested local cubic family.
+\end{quote}
+
+Release \texttt{51.3} exists to test whether that statement survives the first bounded stress program on the same carrier rather than being left as a one-family coincidence.
+
+\section{The 51.3 Robustness Program}
+
+The same scalar carrier is kept fixed:
+\begin{itemize}
+\item scalar kernel graph on \(3D\) cubic point clouds;
+\item local regime \(c_\epsilon = 0.5\);
+\item same Green / heat / shell-arrival / first-shell low-mode observables;
+\item same Euclidean shell reconstruction centered at the source.
+\end{itemize}
+
+The bounded robustness program then adds three controlled extensions.
+
+\subsection{Mild point-set disorder}
+
+The first pass perturbs the point cloud itself while preserving the same shell reconstruction logic.
+
+\begin{itemize}
+\item sizes: \(n = 11, 13\);
+\item jitter fractions: \(0.00, 0.02, 0.04\);
+\item kernel family fixed to \texttt{gaussian\_local}.
+\end{itemize}
+
+For jittered cases, shell bins are assigned relative to the corresponding clean-grid shell at the same \(n\), so the coarse reconstruction is not silently changed at the same time as the point set.
+
+\subsection{Bounded kernel-family variation}
+
+The second pass changes the local kernel law while preserving the same operator role and the same scalar carrier.
+
+\begin{itemize}
+\item sizes: \(n = 11, 13\);
+\item families: \texttt{gaussian\_local}, \texttt{gaussian\_half}, \texttt{inverse\_quadratic}.
+\end{itemize}
+
+This is not a universality proof. It is only the first bounded family test.
+
+\subsection{Coordinate-response extraction}
+
+The third pass asks whether the same carrier still supports a metric-like response read after bounded variation. On every case the coordinate-response stiffness tensor is extracted on the orthonormalized coordinate basis:
+\[
+K_{\mathrm{coord}} = Q^{T} \left(-\widehat{L}_{h}\right) Q.
+\]
+
+If the same geometry read remains valid on the tested carrier, this tensor should stay close to a scalar multiple of the identity.
+
+\section{Frozen Quantitative Summary}
+
+Table \ref{tab:robustness_summary} records the compact bounded result frozen by \texttt{51.3}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}p{3.7cm}p{2.2cm}p{8.0cm}@{}}
+\toprule
+Channel & Status & Frozen read \\
+\midrule
+Mild disorder pass & pass & All \(6/6\) tested disorder cases pass the shared geometry thresholds. \\
+Kernel-family pass & pass & All \(6/6\) tested kernel-family cases pass the shared geometry thresholds. \\
+Metric anisotropy & bounded & Maximum anisotropy across all tested cases is \(6.77 \times 10^{-4}\). \\
+Metric off-diagonal ratio & bounded & Maximum off-diagonal ratio across all tested cases is \(1.42 \times 10^{-3}\). \\
+Weakest disorder case & pass & \texttt{disorder|n=11|jitter=0.000} with shell-arrival fit \(R^2 = 0.9797\). \\
+Weakest kernel case & pass & \texttt{kernel|n=13|family=gaussian\_half} with shell-arrival fit \(R^2 = 0.9732\). \\
+\bottomrule
+\end{tabular}
+\caption{Bounded scalar-carrier robustness summary frozen by release \texttt{51.3}.}
+\label{tab:robustness_summary}
+\end{table}
+
+The key point is not just that the best cases remain positive. The weakest passing cases still remain comfortably inside the bounded window.
+
+\section{What 51.3 Now Supports}
+
+The strongest honest scalar-geometry statement now supported by the repository is:
+
+\begin{quote}
+the scalar-carrier \texttt{CP4} geometry closure remains stable under the first bounded robustness window of mild point-set disorder, bounded kernel-family variation, and coordinate-response extraction on the tested carrier.
+\end{quote}
+
+That is stronger than the earlier bridge statement because it promotes the scalar carrier from a one-family positive example to a bounded robust carrier.
+
+This does not replace the original bridge. It makes that bridge harder to dismiss as an artifact of one exact clean cubic setup.
+
+\section{What 51.3 Still Does Not Say}
+
+Release \texttt{51.3} still does not justify the following stronger claims:
+\begin{itemize}
+\item broad universality across large kernel families;
+\item closure on strong disorder, irregular sampling, or arbitrary substrate classes;
+\item curvature extraction from the same carrier;
+\item conserved-current recovery;
+\item a repo-wide geometry closure claim across all lines of evidence;
+\item spacetime or ontology language.
+\end{itemize}
+
+Those remain later questions.
+
+\section{Practical Consequence}
+
+The scalar carrier is now the repository's strongest bounded geometry anchor.
+
+It already had:
+\begin{itemize}
+\item the strongest bounded scalar continuum-facing control;
+\item one common-family geometry bridge for Green response, heat behavior, shell-arrival structure, and low-mode organization.
+\end{itemize}
+
+Release \texttt{51.3} adds:
+\begin{itemize}
+\item bounded mild-disorder robustness;
+\item bounded kernel-family robustness;
+\item bounded coordinate-response / metric extraction robustness.
+\end{itemize}
+
+So the next honest scalar-geometry step is no longer ``does any geometry-like read survive at all?'' It is one of the following stronger programs:
+\begin{itemize}
+\item wider universality on the same scalar carrier;
+\item stronger response / metric extraction beyond the coordinate stiffness tensor;
+\item careful curvature-like or response-like closure on the same carrier.
+\end{itemize}
+
+\section{Conclusion}
+
+Release \texttt{51.3} freezes the bounded robustness follow-up to the scalar-carrier \texttt{CP4} geometry bridge.
+
+The result is positive on the tested window. Mild point-set disorder, bounded kernel-family variation, and coordinate-response extraction all remain compatible with the same 3D-like geometry read on the same scalar carrier. That upgrades the scalar geometry line from a one-family bridge result to a bounded robust-carrier statement.
+
+That is the right stopping point for this release: stronger than the initial bridge, but still disciplined about what the repository has not yet earned.
+
+\end{document}

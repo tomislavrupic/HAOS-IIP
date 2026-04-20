@@ -151,8 +151,8 @@ Short note:
 
 ## Program Status
 
-**Current milestone (51.2 validation spine + scalar-carrier CP4 robustness):**  
-The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now supports a bounded `CP4` geometry closure that survives a first mild robustness pass.
+**Current milestone (51.3 scalar-carrier CP4 robustness release):**  
+The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now has its own numbered `51.3` release for bounded `CP4` geometry closure plus first-pass robustness.
 
 The public repository now contains three stacked bounded results:
 
@@ -162,11 +162,13 @@ The public repository now contains three stacked bounded results:
 
 Milestone anchors:
 
+- [51.3 Scalar-Carrier CP4 Geometry Robustness Release](papers/pdf_releases/51.3%20Scalar-Carrier%20CP4%20Geometry%20Robustness%20Release%20for%20HAOS-IIP.pdf)
 - [51.2 Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release](papers/pdf_releases/51.2%20Clean-Baseline%20Identity%20Resolution%20and%20Holonomy-Split%20Family%20Labeling%20Release%20for%20HAOS-IIP.pdf)
 - [51.1 Validated Active-Branch Closure and the Open Clean-Baseline Identity Program](papers/pdf_releases/51.1%20Validated%20Active-Branch%20Closure%20and%20the%20Open%20Clean-Baseline%20Identity%20Program%20for%20HAOS-IIP.pdf)
 - [50.2 Foundations-Cleanup Synchronization Release](papers/pdf_releases/50.2%20Foundations-Cleanup%20Synchronization%20Release%20for%20HAOS-IIP.pdf)
 - [Bounded CP4 Geometry Closure on the Scalar Kernel-Graph](docs/notes/foundations/HAOS_IIP_Bounded_CP4_Geometry_Closure_on_Scalar_Kernel_Graph_v1.md)
 - [Scalar-Carrier CP4 Robustness Pass](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_CP4_Robustness_Pass_v1.md)
+- [Scalar-Carrier CP4 Geometry Robustness 51.3](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_CP4_Geometry_Robustness_51_3_v1.md)
 - [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md) (original geometry-emergence baseline)
 
 ## Reproducibility Contract
@@ -210,10 +212,10 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [51.3 Scalar-Carrier CP4 Geometry Robustness Release](papers/pdf_releases/51.3%20Scalar-Carrier%20CP4%20Geometry%20Robustness%20Release%20for%20HAOS-IIP.pdf)
 - [51.2 Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release](papers/pdf_releases/51.2%20Clean-Baseline%20Identity%20Resolution%20and%20Holonomy-Split%20Family%20Labeling%20Release%20for%20HAOS-IIP.pdf)
 - [51.1 Validated Active-Branch Closure and the Open Clean-Baseline Identity Program](papers/pdf_releases/51.1%20Validated%20Active-Branch%20Closure%20and%20the%20Open%20Clean-Baseline%20Identity%20Program%20for%20HAOS-IIP.pdf)
 - [50.3 Post-Foundations Validation Release](papers/pdf_releases/50.3%20Post-Foundations%20Validation%20Release%20for%20HAOS-IIP.pdf)
-- [50.2 Foundations-Cleanup Synchronization Release](papers/pdf_releases/50.2%20Foundations-Cleanup%20Synchronization%20Release%20for%20HAOS-IIP.pdf)
 
 Numbered synthesis papers are released in:
 

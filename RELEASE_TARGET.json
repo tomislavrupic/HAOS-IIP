@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/clean_baseline_identity_resolution_and_holonomy_split_family_labeling_release_for_haos_iip.tex",
-  "title": "Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release for HAOS-IIP",
-  "commit_message": "Freeze clean-baseline identity resolution release 51.2",
+  "paper": "papers/scalar_carrier_cp4_geometry_robustness_release_for_haos_iip.tex",
+  "title": "Scalar-Carrier CP4 Geometry Robustness Release for HAOS-IIP",
+  "commit_message": "Freeze scalar-carrier CP4 geometry robustness release 51.3",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",

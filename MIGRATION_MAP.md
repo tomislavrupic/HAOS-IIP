@@ -36,6 +36,7 @@
 - Post-foundations validation release `50.3` freezes the transition from theorem-ladder cleanup to validation order, but still does not promote unfinished threshold or active-branch closure work into frozen numerical authority.
 - Active-branch validation closure release `51.1` freezes the executed bounded `V1-V6b` tranche, including bounded universality and divergence-aware effective-law closure on the validated mild-disorder branch, while preserving the open clean-baseline identity boundary as an explicit next-program item rather than promoting it into a closed claim.
 - Clean-baseline identity resolution release `51.2` freezes the bounded `CB1-lite`, `CB2`, `CB4`, and `CB3` closure path, promoting the clean vector identity issue from an open branch-survival question to a resolved symmetry-degenerate first-shell family statement without claiming a full exact-zero irrep package.
+- Scalar-carrier CP4 geometry robustness release `51.3` freezes the first bounded robustness pass on the already-positive scalar kernel-graph geometry bridge, promoting that bridge from a one-family positive read to a bounded robust-carrier statement across mild point-set disorder, bounded kernel-family variation, and coordinate-response extraction without claiming broad universality or ontology.
 
 ## Archive Policy
 

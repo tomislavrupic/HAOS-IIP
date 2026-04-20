@@ -173,6 +173,10 @@ The intended public reading order is:
 
 1. `51.2` Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release for HAOS-IIP
 
+### 2.33 Part XXXIII. Scalar-carrier CP4 geometry robustness synthesis
+
+1. `51.3` Scalar-Carrier CP4 Geometry Robustness Release for HAOS-IIP
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -235,6 +239,7 @@ The intended public reading order is:
 - `50.3` Post-Foundations Validation Release for HAOS-IIP
 - `51.1` Validated Active-Branch Closure and the Open Clean-Baseline Identity Program for HAOS-IIP
 - `51.2` Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release for HAOS-IIP
+- `51.3` Scalar-Carrier CP4 Geometry Robustness Release for HAOS-IIP
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
