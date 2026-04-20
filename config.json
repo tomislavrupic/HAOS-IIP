@@ -275,6 +275,31 @@
     "arrival_scan_shells": 9,
     "low_mode_count": 8
   },
+  "scalar_kernel_graph_geometry_robustness": {
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "green_fit_r_max": 0.55,
+    "heat_time_max": 0.03,
+    "heat_time_steps": 61,
+    "msd_fit_window": [0.004, 0.02],
+    "arrival_threshold_fraction": 0.5,
+    "arrival_scan_shells": 9,
+    "low_mode_count": 8,
+    "disorder_n_sides": [11, 13],
+    "jitter_fractions": [0.0, 0.02, 0.04],
+    "jitter_seed": 42,
+    "kernel_n_sides": [11, 13],
+    "kernel_families": ["gaussian_local", "gaussian_half", "inverse_quadratic"],
+    "thresholds": {
+      "min_green_fit_r2": 0.97,
+      "max_green_dimension_deviation": 0.06,
+      "min_heat_fit_r2": 0.995,
+      "min_arrival_fit_r2": 0.97,
+      "min_low_mode_cosine": 0.99,
+      "max_metric_anisotropy": 0.02,
+      "max_metric_offdiag_ratio": 0.02
+    }
+  },
   "sweep": {
     "epsilon_values": [0.12, 0.2, 0.28],
     "node_values": [216, 343],

@@ -938,3 +938,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260419_234444_scalar_kernel_graph_geometry_bridge_summary.png`, `plots/20260419_234444_scalar_kernel_graph_geometry_bridge_detail.png`
 - Observation: the shared-family scalar kernel-graph carrier now gives one coherent 3D-like geometry read across all four channels: inverse-distance Green response, linear diffusion on shell second moments, shell-arrival times linear in radius squared, and a first low-mode triplet that matches the Euclidean coordinate subspace
 - Conclusion: the previous geometry-closure preflight mismatch is removed on the tested cubic scalar carrier: one bounded metric-like reconstruction now organizes Green response, heat behavior, shell-arrival structure, and low-mode organization on the same operator/substrate family. This is a carrier-level bridge, not yet a universality or full geometry-closure claim beyond the tested cubic local-kernel regime.
+
+## scalar kernel graph geometry robustness
+- Date: 2026-04-20T13:10:42
+- Config: disorder_n_sides=[11, 13], jitter_fractions=[0.0, 0.02, 0.04], kernel_n_sides=[11, 13], kernel_families=['gaussian_local', 'gaussian_half', 'inverse_quadratic']
+- Results: `data/20260420_131037_scalar_kernel_graph_geometry_robustness.json`
+- Plots: `plots/20260420_131037_scalar_kernel_graph_geometry_robustness_disorder.png`, `plots/20260420_131037_scalar_kernel_graph_geometry_robustness_kernels.png`, `plots/20260420_131037_scalar_kernel_graph_geometry_robustness_metric_tensor.png`
+- Observation: the scalar kernel-graph geometry bridge survives the first bounded robustness pass: mild point-set disorder, bounded kernel-family variation, and coordinate-response extraction all stay compatible with the same 3D-like metric read on the tested carrier
+- Conclusion: all 6 disorder cases and all 6 kernel-family cases pass the shared CP4 thresholds; the weakest disorder case is `disorder|n=11|jitter=0.000` with shell-arrival fit R^2 = 0.9797, and the weakest kernel case is `kernel|n=13|family=gaussian_half` with shell-arrival fit R^2 = 0.9732; this means the scalar-carrier geometry closure is now robust across the tested mild disorder and bounded kernel-family window, while remaining a bounded carrier-level statement rather than full universality

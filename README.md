@@ -1,6 +1,6 @@
 # HAOS-IIP
 
-Frozen branch-local cochain-Laplacian hierarchy: bounded emergence diagnostics and HAOS-to-harmonic derivation program (`T1-T8` closed).
+Frozen branch-local cochain-Laplacian hierarchy: bounded emergence diagnostics, closed HAOS-to-harmonic derivation ladder, and bounded scalar-carrier geometry closure.
 
 Success criterion: running the public reproduction script should produce identical table values and an identical plot to the frozen baseline.
 
@@ -19,9 +19,9 @@ The project focuses on:
 - frozen telemetry definitions
 - reproducible phase bundles
 
-This repository does not assert geometric structure, physical correspondence, or continuum validity. It provides a computational environment for testing whether such structures could stabilize under disciplined constraints.
+This repository does not assert broad physical correspondence, continuum ontology, or spacetime claims. It provides a computational environment for testing whether such structures could stabilize under disciplined constraints.
 
-Public-scope boundary: this reproduces a bounded mesoscopic-to-proto-geometric feasibility arc. It does not claim a continuum limit or physical ontology.
+Public-scope boundary: this reproduces a bounded mesoscopic-to-proto-geometric feasibility arc, now including a tested scalar-carrier geometry closure on one common kernel-graph family. It does not claim a general continuum limit or physical ontology.
 
 ## Visual Entry Points
 
@@ -151,16 +151,22 @@ Short note:
 
 ## Program Status
 
-**Current milestone (50.2 Foundations Cleanup):**  
-The bounded HAOS-to-harmonic derivation program is fully executed.  
-`T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8` ladder plus `F2-F4` closures are now complete and frozen in the public repository.
+**Current milestone (51.2 validation spine + scalar-carrier CP4 robustness):**  
+The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now supports a bounded `CP4` geometry closure that survives a first mild robustness pass.
 
-The frozen branch-local cochain-Laplacian hierarchy now supports a reproducible ladder from recoverable coherence to harmonic operator structure, including Laplacian form, Hodge-type defect structure, sector decomposition, physical-sector restriction, and refinement-stability criteria under explicit HAOS-aligned constraints.
+The public repository now contains three stacked bounded results:
+
+- closed derivation ladder: `T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8`, plus `F1-F4`
+- frozen vector validation spine through `V1-V6b` and clean-baseline identity resolution
+- scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass across mild point-set disorder, bounded kernel-family variation, and coordinate-response extraction
 
 Milestone anchors:
 
+- [51.2 Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release](papers/pdf_releases/51.2%20Clean-Baseline%20Identity%20Resolution%20and%20Holonomy-Split%20Family%20Labeling%20Release%20for%20HAOS-IIP.pdf)
+- [51.1 Validated Active-Branch Closure and the Open Clean-Baseline Identity Program](papers/pdf_releases/51.1%20Validated%20Active-Branch%20Closure%20and%20the%20Open%20Clean-Baseline%20Identity%20Program%20for%20HAOS-IIP.pdf)
 - [50.2 Foundations-Cleanup Synchronization Release](papers/pdf_releases/50.2%20Foundations-Cleanup%20Synchronization%20Release%20for%20HAOS-IIP.pdf)
-- [49.1 From Recoverable Coherence to Harmonic Operator Structure](papers/pdf_releases/49.1%20From%20Recoverable%20Coherence%20to%20Harmonic%20Operator%20Structure%3A%20A%20Bounded%20Derivation%20Program%2C%20Physical-Sector%20Restriction%2C%20and%20Continuum-Stability%20Roadmap%20for%20HAOS-IIP.pdf)
+- [Bounded CP4 Geometry Closure on the Scalar Kernel-Graph](docs/notes/foundations/HAOS_IIP_Bounded_CP4_Geometry_Closure_on_Scalar_Kernel_Graph_v1.md)
+- [Scalar-Carrier CP4 Robustness Pass](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_CP4_Robustness_Pass_v1.md)
 - [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md) (original geometry-emergence baseline)
 
 ## Reproducibility Contract
@@ -181,11 +187,16 @@ Emergence diagnostics rely only on these frozen interfaces.
 
 ## Continuum-Sketch Layer
 
-The bounded continuum-facing tranche, including scalar convergence controls, harmonic/coexact sector separation, and active-sector transport machinery, is now frozen as part of the `50.1/50.2` synchronization releases.
+The bounded continuum-facing tranche, including scalar convergence controls, harmonic/coexact sector separation, active-sector transport machinery, and the scalar-carrier `CP4` geometry bridge, is now frozen in the public repo.
 
 A minimal post-processing protocol for low-cost scaling inspection is provided in:
 
 - [continuum-sketch/](continuum-sketch/)
+
+Current scalar geometry-closure notes:
+
+- [Bounded CP4 Geometry Closure on the Scalar Kernel-Graph](docs/notes/foundations/HAOS_IIP_Bounded_CP4_Geometry_Closure_on_Scalar_Kernel_Graph_v1.md)
+- [Scalar-Carrier CP4 Robustness Pass](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_CP4_Robustness_Pass_v1.md)
 
 This stage performs:
 
@@ -199,9 +210,10 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [51.2 Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release](papers/pdf_releases/51.2%20Clean-Baseline%20Identity%20Resolution%20and%20Holonomy-Split%20Family%20Labeling%20Release%20for%20HAOS-IIP.pdf)
+- [51.1 Validated Active-Branch Closure and the Open Clean-Baseline Identity Program](papers/pdf_releases/51.1%20Validated%20Active-Branch%20Closure%20and%20the%20Open%20Clean-Baseline%20Identity%20Program%20for%20HAOS-IIP.pdf)
+- [50.3 Post-Foundations Validation Release](papers/pdf_releases/50.3%20Post-Foundations%20Validation%20Release%20for%20HAOS-IIP.pdf)
 - [50.2 Foundations-Cleanup Synchronization Release](papers/pdf_releases/50.2%20Foundations-Cleanup%20Synchronization%20Release%20for%20HAOS-IIP.pdf)
-- [50.1 GitHub-State Comparison and Continuum-Foundations Synchronization Release](papers/pdf_releases/50.1%20GitHub-State%20Comparison%20and%20Continuum-Foundations%20Synchronization%20Release%20for%20HAOS-IIP.pdf)
-- [49.1 From Recoverable Coherence to Harmonic Operator Structure](papers/pdf_releases/49.1%20From%20Recoverable%20Coherence%20to%20Harmonic%20Operator%20Structure%3A%20A%20Bounded%20Derivation%20Program%2C%20Physical-Sector%20Restriction%2C%20and%20Continuum-Stability%20Roadmap%20for%20HAOS-IIP.pdf)
 
 Numbered synthesis papers are released in:
 
@@ -221,12 +233,12 @@ Earlier milestone example:
 
 This repository intentionally avoids:
 
-- physical interpretation claims
-- geometric reconstruction claims
-- continuum field-theory derivations
+- broad physical interpretation claims
+- repo-wide or ontological geometry claims
+- continuum field-theory derivations beyond the tested bounded windows
 - cosmological or ontological assertions
 
-The program is strictly a numerical emergence feasibility study.
+The program remains a bounded numerical emergence and operator-closure study.
 
 ## Citation
 
