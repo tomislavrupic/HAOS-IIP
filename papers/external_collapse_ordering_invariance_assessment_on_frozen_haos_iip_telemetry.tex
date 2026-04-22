@@ -1,0 +1,208 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\title{External Collapse-Ordering Invariance Assessment on Frozen HAOS-IIP Telemetry}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{53.1} as a narrow post-foundations validation instrument layered above frozen HAOS-IIP telemetry. It is not a new phase, not a modification of HAOS-IIP core, and not a positive collapse-law claim. The instrument treats HAOS telemetry as a fixed black-box sensor, builds a score-ordered edge filtration on a graph-like artifact, perturbs that construction across locality, coupling, curvature, noise, and rewiring schedules, and asks only one bounded question: does the observed collapse ordering survive perturbation strongly enough to count as an invariant structural signal rather than an artifact of construction? On the current deterministic three-sector toy graph, a permissive toy control sensor yields \texttt{alpha $>$ beta $>$ gamma}, flip rate \(0.069\), persistent gap behavior, and an invariant-signal classification. The HAOS-IIP-backed adapter, which reuses only frozen telemetry, instead yields \texttt{alpha = beta $>$ gamma}, flip rate \(0.092\), vanishing gap behavior, and an artifact-of-construction classification. The bounded conclusion is therefore negative and useful: the external runner is now sufficient to separate protocol-level apparent signal from frozen-sensor structural support, but the present toy artifact does not yet earn a positive HAOS-IIP collapse-ordering claim.
+\end{abstract}
+
+\section{Scope}
+
+This release sits closer to \texttt{45.1} and \texttt{50.3} than to a new phase paper.
+
+\texttt{45.1} compressed frozen telemetry into a callable structural-stability oracle. \texttt{50.3} then defined the post-foundations discipline: validation should ask whether a candidate survives perturbation, purity checks, and scaling closure strongly enough to support bounded language. Release \texttt{53.1} applies that discipline to a new external question:
+\[
+\text{if a collapse ordering appears on a graph artifact, does it survive perturbation as structure?}
+\]
+
+This paper does not introduce:
+\begin{itemize}
+\item a new HAOS-IIP operator;
+\item a new frozen telemetry channel;
+\item a new sector claim;
+\item a continuum or ontology claim;
+\item a positive collapse-ordering law.
+\end{itemize}
+
+It does introduce:
+\begin{itemize}
+\item an external invariance-assessment protocol layered above frozen telemetry;
+\item a strict distinction between protocol output and structural support;
+\item a current negative result on the tested toy artifact under the HAOS-IIP-backed sensor.
+\end{itemize}
+
+\section{External-Layer Rule}
+
+The architecture is intentionally separated:
+\begin{itemize}
+\item HAOS-IIP core remains frozen;
+\item frozen telemetry remains the only authority sensor;
+\item the validation runner is external and swappable;
+\item the result is whatever survives perturbation under the frozen sensor.
+\end{itemize}
+
+The runner therefore treats HAOS metrics only as black-box observables. It does not reinterpret, extend, or reopen the frozen core.
+
+\section{Protocol}
+
+\subsection{Inputs}
+
+Each run consumes:
+\begin{itemize}
+\item a graph \(G = (V,E)\) with sector labels on nodes;
+\item edge attributes \(\mathrm{strength}(i,j)\) and distance \(d(i,j)\);
+\item locality parameter \(\lambda\);
+\item sector-coupling weights;
+\item a curvature-penalty schedule;
+\item a black-box HAOS sensor returning
+\[
+\{\Delta \mathrm{persistence},\; k_{\ast},\; \mathrm{safety\_margin},\; \mathrm{confidence}\}
+\]
+per inclusion step.
+\end{itemize}
+
+\subsection{Filtration}
+
+Edges are scored by
+\[
+\mathrm{score}(i,j)
+=
+\mathrm{strength}(i,j)\,
+\exp\!\left(-\frac{d(i,j)}{\lambda}\right)\,
+\mathrm{curvature\_penalty}(i,j).
+\]
+
+The runner sorts edges by descending score and incrementally includes them to form a filtration \(G_t\). After each inclusion step it calls the black-box sensor and records the resulting time series.
+
+\subsection{Sweeps and perturbations}
+
+The current deterministic schedule contains \(36\) runs across:
+\begin{itemize}
+\item locality schedules with coarse, baseline, and fine \(\lambda\) steps;
+\item sector-coupling rescalings;
+\item curvature-penalty rescalings;
+\item weight noise in the \(\pm 5\%\) to \(\pm 10\%\) range;
+\item bounded random reshuffling on roughly \(10\%\) of the edges.
+\end{itemize}
+
+\subsection{Strict outputs}
+
+The runner emits only:
+\begin{itemize}
+\item collapse ordering by sector;
+\item consistency across trials, reported as pairwise flip rate;
+\item gap behavior, reported as \texttt{persists}, \texttt{shrinks}, or \texttt{vanishes};
+\item one bounded assessment: invariant structural signal or artifact of construction.
+\end{itemize}
+
+No interpretation beyond invariance assessment is part of the output contract.
+
+\section{Current Deterministic Artifact}
+
+The tested artifact is a small three-sector graph with sectors \texttt{alpha}, \texttt{beta}, and \texttt{gamma}. Its role is deliberately modest:
+\begin{itemize}
+\item it is large enough to produce nontrivial filtration orderings;
+\item it is small enough for deterministic perturbation scans;
+\item it is not treated as a physical model.
+\end{itemize}
+
+Two sensor backends were applied to the same artifact:
+\begin{itemize}
+\item a toy control sensor, used only as a protocol sanity check;
+\item a HAOS-IIP-backed sensor adapter, built only from frozen telemetry.
+\end{itemize}
+
+The toy sensor is not authoritative. Its job is to show that the runner can register a robust ordering when the backend is permissive. The HAOS-IIP-backed adapter is the meaningful read because it uses the frozen telemetry layer already accepted by the repository.
+
+\section{Frozen Quantitative Summary}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{@{}p{2.5cm}p{2.7cm}p{2.0cm}p{1.5cm}p{1.8cm}p{3.4cm}@{}}
+\toprule
+backend & collapse ordering & \(k_{\ast}\) steps & flip rate & gap behavior & assessment \\
+\midrule
+toy control &
+\texttt{alpha $>$ beta $>$ gamma} &
+\texttt{11, 12, 15} &
+\(0.069\) &
+\texttt{persists} &
+\texttt{invariant structural signal} \\
+HAOS-IIP-backed &
+\texttt{alpha = beta $>$ gamma} &
+\texttt{10, 10, 12} &
+\(0.092\) &
+\texttt{vanishes} &
+\texttt{artifact of construction} \\
+\bottomrule
+\end{tabular}
+\caption{Current deterministic invariance-assessment read on the three-sector toy artifact.}
+\end{table}
+
+The important row is the second one. Under the frozen telemetry adapter, the apparent ordering does not survive as a clean ordered ladder. The first two sectors hit \(k_{\ast}\) simultaneously, and the adjacent gap does not survive perturbation strongly enough to support a structural-ordering claim.
+
+\section{What 53.1 Now Supports}
+
+The strongest honest statement supported by this release is:
+
+\begin{quote}
+frozen HAOS-IIP telemetry can now be used as a black-box invariance-assessment sensor inside an external validation runner, and on the present toy artifact that runner rejects a positive collapse-ordering claim.
+\end{quote}
+
+That is not a failure of the instrument. It is the first useful property the instrument should have. A validation runner is more valuable when it can kill an apparent signal honestly than when it can always recover one.
+
+\section{What 53.1 Refuses to Say}
+
+This release does not justify any of the following:
+\begin{itemize}
+\item that collapse ordering is already a validated HAOS-IIP observable;
+\item that \texttt{alpha $>$ beta $>$ gamma} is a structural law;
+\item that the current toy graph is more than a probe artifact;
+\item that the toy control sensor should be treated as evidence;
+\item that any geometry-like, force-like, or continuum-like interpretation is now earned.
+\end{itemize}
+
+The negative HAOS-IIP-backed outcome is therefore part of the result, not an obstacle to it.
+
+\section{Why This Matters}
+
+Without this runner, one could easily mistake a construction-dependent ordering for a structural signal. The present release closes that loophole in a bounded way:
+\begin{itemize}
+\item the core remains frozen;
+\item the probe layer is external;
+\item the backend can be swapped;
+\item only invariant survival under the frozen backend counts.
+\end{itemize}
+
+That is exactly the kind of discipline a post-foundations validation program should add before stronger language is allowed.
+
+\section{Right Next Move}
+
+The next practical step is not to upgrade the claim. It is to improve the artifact class:
+\begin{itemize}
+\item test graph families beyond the present toy artifact;
+\item introduce sector layouts whose ties are not built into the construction;
+\item keep the same runner and the same frozen sensor interface;
+\item accept a positive statement only if the HAOS-IIP-backed path, not the toy control path, preserves the gap.
+\end{itemize}
+
+In other words, the current runner should now be reused, not reinterpreted.
+
+\section{Conclusion}
+
+Release \texttt{53.1} freezes an external collapse-ordering invariance-assessment protocol on frozen HAOS-IIP telemetry. The protocol is intentionally narrow, black-box, and perturbation-first. On the current deterministic toy artifact, the permissive control backend produces an apparent ordered signal, but the HAOS-IIP-backed backend classifies the same artifact as construction-sensitive because the leading gap vanishes under perturbation and the first two sectors collapse together. The bounded conclusion is therefore methodological and negative: the validation runner is now useful, but no positive HAOS-IIP collapse-ordering structural signal is yet earned from the present artifact.
+
+\end{document}

@@ -1,0 +1,35 @@
+{
+  "name": "toy_sector_graph",
+  "description": "Deterministic three-sector toy graph used by the external HAOS validation runner.",
+  "nodes": [
+    {"id": "a1", "sector": "alpha"},
+    {"id": "a2", "sector": "alpha"},
+    {"id": "a3", "sector": "alpha"},
+    {"id": "b1", "sector": "beta"},
+    {"id": "b2", "sector": "beta"},
+    {"id": "b3", "sector": "beta"},
+    {"id": "g1", "sector": "gamma"},
+    {"id": "g2", "sector": "gamma"},
+    {"id": "g3", "sector": "gamma"}
+  ],
+  "edges": [
+    {"source": "a1", "target": "a2", "strength": 0.96, "distance": 0.18, "curvature_penalty": 0.99},
+    {"source": "a2", "target": "a3", "strength": 0.93, "distance": 0.22, "curvature_penalty": 0.99},
+    {"source": "a1", "target": "a3", "strength": 0.89, "distance": 0.27, "curvature_penalty": 0.97},
+    {"source": "b1", "target": "b2", "strength": 0.93, "distance": 0.18, "curvature_penalty": 0.98},
+    {"source": "b2", "target": "b3", "strength": 0.90, "distance": 0.23, "curvature_penalty": 0.97},
+    {"source": "b1", "target": "b3", "strength": 0.87, "distance": 0.28, "curvature_penalty": 0.96},
+    {"source": "g1", "target": "g2", "strength": 1.03, "distance": 0.17, "curvature_penalty": 0.99},
+    {"source": "g2", "target": "g3", "strength": 1.00, "distance": 0.21, "curvature_penalty": 0.98},
+    {"source": "g1", "target": "g3", "strength": 0.97, "distance": 0.26, "curvature_penalty": 0.97},
+    {"source": "a2", "target": "b2", "strength": 0.89, "distance": 0.52, "curvature_penalty": 0.88},
+    {"source": "a1", "target": "b1", "strength": 0.86, "distance": 0.57, "curvature_penalty": 0.86},
+    {"source": "a3", "target": "b2", "strength": 0.82, "distance": 0.62, "curvature_penalty": 0.84},
+    {"source": "b2", "target": "g2", "strength": 0.81, "distance": 0.60, "curvature_penalty": 0.86},
+    {"source": "b3", "target": "g2", "strength": 0.78, "distance": 0.66, "curvature_penalty": 0.84},
+    {"source": "b1", "target": "g1", "strength": 0.75, "distance": 0.70, "curvature_penalty": 0.82},
+    {"source": "a2", "target": "g2", "strength": 0.69, "distance": 0.80, "curvature_penalty": 0.79},
+    {"source": "a1", "target": "g1", "strength": 0.66, "distance": 0.85, "curvature_penalty": 0.77},
+    {"source": "a3", "target": "g3", "strength": 0.63, "distance": 0.90, "curvature_penalty": 0.75}
+  ]
+}

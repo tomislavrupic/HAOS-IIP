@@ -177,6 +177,10 @@ The intended public reading order is:
 
 1. `51.3` Scalar-Carrier CP4 Geometry Robustness Release for HAOS-IIP
 
+### 2.36 Part XXXVI. External collapse-ordering invariance assessment
+
+1. `53.1` External Collapse-Ordering Invariance Assessment on Frozen HAOS-IIP Telemetry
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -240,6 +244,7 @@ The intended public reading order is:
 - `51.1` Validated Active-Branch Closure and the Open Clean-Baseline Identity Program for HAOS-IIP
 - `51.2` Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release for HAOS-IIP
 - `51.3` Scalar-Carrier CP4 Geometry Robustness Release for HAOS-IIP
+- `53.1` External Collapse-Ordering Invariance Assessment on Frozen HAOS-IIP Telemetry
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
