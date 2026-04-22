@@ -300,6 +300,81 @@
       "max_metric_offdiag_ratio": 0.02
     }
   },
+  "scalar_kernel_graph_metric_field": {
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "disorder_n_sides": [11, 13],
+    "jitter_fractions": [0.0, 0.02, 0.04],
+    "jitter_seed": 42,
+    "kernel_n_sides": [11, 13],
+    "kernel_families": ["gaussian_local", "gaussian_half", "inverse_quadratic"],
+    "bulk_margin_layers": 2,
+    "coarse_radius_factor": 2.5,
+    "thresholds": {
+      "min_bulk_count": 100,
+      "min_min_eigenvalue": 0.8,
+      "max_mean_anisotropy": 0.02,
+      "max_mean_offdiag_ratio": 0.02,
+      "max_spatial_trace_cv": 0.05,
+      "max_normalized_mean_tensor_error": 0.02,
+      "max_refinement_drift": 0.03
+    }
+  },
+  "scalar_kernel_graph_recoverability_gradient": {
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "disorder_n_sides": [11, 13],
+    "jitter_fractions": [0.0, 0.02, 0.04],
+    "jitter_seed": 42,
+    "kernel_n_sides": [11, 13],
+    "kernel_families": ["gaussian_local", "gaussian_half", "inverse_quadratic"],
+    "bulk_margin_layers": 2,
+    "metric_radius_factor": 2.5,
+    "gradient_radius_factor": 2.5,
+    "fit_r_max": 0.55,
+    "thresholds": {
+      "min_radial_alignment": 0.94,
+      "max_power_deviation": 0.18,
+      "min_power_fit_r2": 0.95,
+      "max_flux_constancy_cv": 0.12,
+      "max_refinement_profile_drift": 0.08
+    }
+  },
+  "scalar_kernel_graph_recoverability_gradient_shell_native": {
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "disorder_n_sides": [11, 13],
+    "jitter_fractions": [0.0, 0.02, 0.04],
+    "jitter_seed": 42,
+    "kernel_n_sides": [11, 13],
+    "kernel_families": ["gaussian_local", "gaussian_half", "inverse_quadratic"],
+    "bulk_margin_layers": 2,
+    "metric_radius_factor": 2.5,
+    "fit_r_max": 0.55,
+    "thresholds": {
+      "min_green_fit_r2": 0.97,
+      "max_power_deviation": 0.02,
+      "min_power_fit_r2": 0.999,
+      "max_flux_constancy_cv": 0.01,
+      "max_refinement_profile_drift": 0.02
+    }
+  },
+  "scalar_kernel_graph_current_closure": {
+    "n_sides": [13, 15, 17],
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "heat_time_max": 0.03,
+    "heat_time_steps": 61,
+    "fit_window": [0.004, 0.02],
+    "bulk_margin_layers": 2,
+    "metric_radius_factor": 2.5,
+    "shell_r_max": 0.45,
+    "thresholds": {
+      "max_median_relative_error": 0.25,
+      "max_p90_relative_error": 0.45,
+      "max_refinement_profile_drift": 0.15
+    }
+  },
   "sweep": {
     "epsilon_values": [0.12, 0.2, 0.28],
     "node_values": [216, 343],

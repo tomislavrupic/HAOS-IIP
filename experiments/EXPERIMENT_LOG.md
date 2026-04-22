@@ -946,3 +946,52 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260420_131037_scalar_kernel_graph_geometry_robustness_disorder.png`, `plots/20260420_131037_scalar_kernel_graph_geometry_robustness_kernels.png`, `plots/20260420_131037_scalar_kernel_graph_geometry_robustness_metric_tensor.png`
 - Observation: the scalar kernel-graph geometry bridge survives the first bounded robustness pass: mild point-set disorder, bounded kernel-family variation, and coordinate-response extraction all stay compatible with the same 3D-like metric read on the tested carrier
 - Conclusion: all 6 disorder cases and all 6 kernel-family cases pass the shared CP4 thresholds; the weakest disorder case is `disorder|n=11|jitter=0.000` with shell-arrival fit R^2 = 0.9797, and the weakest kernel case is `kernel|n=13|family=gaussian_half` with shell-arrival fit R^2 = 0.9732; this means the scalar-carrier geometry closure is now robust across the tested mild disorder and bounded kernel-family window, while remaining a bounded carrier-level statement rather than full universality
+
+## scalar kernel graph metric field
+- Date: 2026-04-20T16:44:51
+- Config: disorder_n_sides=[11, 13], jitter_fractions=[0.0, 0.02, 0.04], kernel_n_sides=[11, 13], kernel_families=['gaussian_local', 'gaussian_half', 'inverse_quadratic'], bulk_margin_layers=2
+- Results: `data/20260420_164451_scalar_kernel_graph_metric_field.json`
+- Plots: `plots/20260420_164451_scalar_kernel_graph_metric_field_summary.png`, `plots/20260420_164451_scalar_kernel_graph_metric_field_tensors.png`
+- Observation: the scalar carrier supports a positive global geometry read, but the local metric-field extraction still exposes instability or drift beyond the bounded thresholds
+- Conclusion: open local metric-field cases remain: failing_cases=['disorder|n=11|jitter=0.020', 'disorder|n=11|jitter=0.040', 'disorder|n=13|jitter=0.020', 'disorder|n=13|jitter=0.040'], max_refinement_drift=0.0024; the correct boundary therefore stays at the global scalar-carrier geometry closure and robustness statement without yet promoting a positive local metric-field claim
+
+## scalar kernel graph metric field
+- Date: 2026-04-20T22:24:25
+- Config: disorder_n_sides=[11, 13], jitter_fractions=[0.0, 0.02, 0.04], kernel_n_sides=[11, 13], kernel_families=['gaussian_local', 'gaussian_half', 'inverse_quadratic'], bulk_margin_layers=2, coarse_radius_factor=2.5
+- Results: `data/20260420_222424_scalar_kernel_graph_metric_field.json`
+- Plots: `plots/20260420_222424_scalar_kernel_graph_metric_field_summary.png`, `plots/20260420_222424_scalar_kernel_graph_metric_field_tensors.png`
+- Observation: the same scalar carrier now supports a stable local metric-like tensor field: the operator-level row-local quadratic response stays positive, near-isotropic, and nearly constant across the tested bulk window under refinement, mild disorder, and bounded kernel-family variation
+- Conclusion: all 6 disorder cases and all 6 kernel-family cases pass the local metric-field thresholds, and the maximum normalized refinement drift is 0.0023; the weakest passing case is `disorder|n=11|jitter=0.040` with normalized mean-tensor error 0.0018, mean anisotropy 0.0139, and spatial trace CV 0.0052; this means the scalar-carrier geometry bridge now extends from one global coordinate-stiffness read to a bounded stable local metric-field statement on the tested window
+
+## scalar kernel graph recoverability gradient
+- Date: 2026-04-20T22:37:21
+- Config: disorder_n_sides=[11, 13], jitter_fractions=[0.0, 0.02, 0.04], kernel_n_sides=[11, 13], kernel_families=['gaussian_local', 'gaussian_half', 'inverse_quadratic'], metric_radius_factor=2.5, gradient_radius_factor=2.5
+- Results: `data/20260420_223721_scalar_kernel_graph_recoverability_gradient.json`
+- Plots: `plots/20260420_223721_scalar_kernel_graph_recoverability_gradient_summary.png`, `plots/20260420_223721_scalar_kernel_graph_recoverability_gradient_profiles.png`
+- Observation: the scalar Green potential supports a geometry carrier and a local metric field, but the recoverability-gradient response does not yet close as one stable inverse-square family across the tested window
+- Conclusion: open recoverability-gradient cases remain: failing_cases=['disorder|n=11|jitter=0.000', 'disorder|n=11|jitter=0.020', 'disorder|n=11|jitter=0.040', 'disorder|n=13|jitter=0.000', 'disorder|n=13|jitter=0.020', 'disorder|n=13|jitter=0.040', 'kernel|n=11|family=gaussian_local', 'kernel|n=11|family=gaussian_half', 'kernel|n=11|family=inverse_quadratic', 'kernel|n=13|family=gaussian_local', 'kernel|n=13|family=gaussian_half', 'kernel|n=13|family=inverse_quadratic'], max_profile_drift=0.5249; the correct boundary therefore stays at the scalar geometry carrier and local metric-field statement without yet promoting a positive force-like response claim
+
+## scalar kernel graph recoverability gradient shell-native
+- Date: 2026-04-21T12:34:13
+- Config: epsilon_coeff=0.5, cutoff_factor=2.5, disorder_n_sides=[11, 13], jitter_fractions=[0.0, 0.02, 0.04], kernel_n_sides=[11, 13], kernel_families=['gaussian_local', 'gaussian_half', 'inverse_quadratic'], metric_radius_factor=2.5, fit_r_max=0.55
+- Results: `data/20260421_123409_scalar_kernel_graph_recoverability_gradient_shell_native.json`
+- Plots: `plots/20260421_123409_scalar_kernel_graph_recoverability_gradient_shell_native_summary.png`, `plots/20260421_123409_scalar_kernel_graph_recoverability_gradient_shell_native_profiles.png`
+- Observation: even after switching to a shell-native law-aware reconstruction, the recoverability-gradient response does not yet close as one inverse-square family across the tested scalar-carrier window
+- Conclusion: open shell-native recoverability-gradient cases remain: failing_cases=[], max_profile_drift=0.4050; the correct boundary therefore stays at the scalar geometry carrier and local metric-field statements without promoting a positive inverse-square closure claim
+- Status: superseded by the corrected `20260421_123450` rerun after refinement drift was normalized by shell-profile shape rather than absolute amplitude
+
+## scalar kernel graph recoverability gradient shell-native
+- Date: 2026-04-21T12:34:54
+- Config: epsilon_coeff=0.5, cutoff_factor=2.5, disorder_n_sides=[11, 13], jitter_fractions=[0.0, 0.02, 0.04], kernel_n_sides=[11, 13], kernel_families=['gaussian_local', 'gaussian_half', 'inverse_quadratic'], metric_radius_factor=2.5, fit_r_max=0.55
+- Results: `data/20260421_123450_scalar_kernel_graph_recoverability_gradient_shell_native.json`
+- Plots: `plots/20260421_123450_scalar_kernel_graph_recoverability_gradient_shell_native_summary.png`, `plots/20260421_123450_scalar_kernel_graph_recoverability_gradient_shell_native_profiles.png`
+- Observation: on the same validated scalar carrier and the same 51.4 local metric field, a shell-native law-aware reconstruction now closes the recoverability-gradient response as one inverse-square family across the tested window
+- Conclusion: all 6 disorder cases and all 6 kernel-family cases pass, and the maximum refinement-profile drift is 0.0089; the weakest passing case is `disorder|n=13|jitter=0.040` with green fit R^2 0.9856, power slope -1.9966, power fit R^2 0.9998, and scaled-response CV 0.0067; this supports a bounded inverse-square-like recoverability-gradient closure on the scalar carrier when the response is reconstructed shell-natively from the validated Green law
+
+## scalar kernel graph current closure
+- Date: 2026-04-21T13:15:59
+- Config: n_sides=[13, 15, 17], epsilon_coeff=0.5, cutoff_factor=2.5, fit_window=[0.004, 0.02], metric_radius_factor=2.5
+- Results: `data/20260421_131559_scalar_kernel_graph_current_closure.json`
+- Plots: `plots/20260421_131559_scalar_kernel_graph_current_closure_summary.png`, `plots/20260421_131559_scalar_kernel_graph_current_closure_profiles.png`
+- Observation: the scalar carrier and local metric field now support a bounded inverse-square response law, but the stronger transient response/current closure remains open on the clean refinement scan
+- Conclusion: open current-closure cases remain: failing_cases=['clean|n=13', 'clean|n=15', 'clean|n=17'], max_profile_drift=0.2073; the weakest case is `clean|n=13` with median relative error 0.5925, p90 error 0.6671, and conductivity/diffusivity ratio 618.3748; the correct boundary therefore stays at the scalar carrier, local metric field, and shell-native inverse-square response law without yet promoting a positive transient current-closure claim
