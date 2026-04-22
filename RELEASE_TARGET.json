@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/scalar_carrier_cp4_geometry_robustness_release_for_haos_iip.tex",
-  "title": "Scalar-Carrier CP4 Geometry Robustness Release for HAOS-IIP",
-  "commit_message": "Freeze scalar-carrier CP4 geometry robustness release 51.3",
+  "paper": "papers/scalar_carrier_recoverability_gradient_probe_release_for_haos_iip.tex",
+  "title": "Scalar-Carrier Recoverability-Gradient Probe Release for HAOS-IIP",
+  "commit_message": "Freeze scalar-carrier recoverability-gradient probe release 52.1",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",

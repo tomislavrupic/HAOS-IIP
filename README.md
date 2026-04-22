@@ -1,5 +1,7 @@
 # HAOS-IIP
 
+HAOS-IIP = **Harmonic Address Operating System - Interaction Invariant Physics**.
+
 Frozen branch-local cochain-Laplacian hierarchy: bounded emergence diagnostics, closed HAOS-to-harmonic derivation ladder, and bounded scalar-carrier geometry closure.
 
 Success criterion: running the public reproduction script should produce identical table values and an identical plot to the frozen baseline.
@@ -151,24 +153,27 @@ Short note:
 
 ## Program Status
 
-**Current milestone (51.3 scalar-carrier CP4 robustness release):**  
-The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now has its own numbered `51.3` release for bounded `CP4` geometry closure plus first-pass robustness.
+**Current milestone (52.1 scalar-carrier response probe after 51.4 local metric closure):**  
+The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, the scalar kernel-graph line now closes through a bounded local metric-field release `51.4`, and the first response-style `52.1` probe is frozen with an explicit open force-law boundary.
 
 The public repository now contains three stacked bounded results:
 
 - closed derivation ladder: `T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8`, plus `F1-F4`
 - frozen vector validation spine through `V1-V6b` and clean-baseline identity resolution
-- scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass across mild point-set disorder, bounded kernel-family variation, and coordinate-response extraction
+- scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass, a bounded local metric-field closure, and a first open recoverability-gradient probe on the same carrier
 
 Milestone anchors:
 
+- [52.1 Scalar-Carrier Recoverability-Gradient Probe Release](papers/pdf_releases/52.1%20Scalar-Carrier%20Recoverability-Gradient%20Probe%20Release%20for%20HAOS-IIP.pdf)
+- [51.4 Scalar-Carrier Local Metric-Field Release](papers/pdf_releases/51.4%20Scalar-Carrier%20Local%20Metric-Field%20Release%20for%20HAOS-IIP.pdf)
 - [51.3 Scalar-Carrier CP4 Geometry Robustness Release](papers/pdf_releases/51.3%20Scalar-Carrier%20CP4%20Geometry%20Robustness%20Release%20for%20HAOS-IIP.pdf)
 - [51.2 Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release](papers/pdf_releases/51.2%20Clean-Baseline%20Identity%20Resolution%20and%20Holonomy-Split%20Family%20Labeling%20Release%20for%20HAOS-IIP.pdf)
 - [51.1 Validated Active-Branch Closure and the Open Clean-Baseline Identity Program](papers/pdf_releases/51.1%20Validated%20Active-Branch%20Closure%20and%20the%20Open%20Clean-Baseline%20Identity%20Program%20for%20HAOS-IIP.pdf)
-- [50.2 Foundations-Cleanup Synchronization Release](papers/pdf_releases/50.2%20Foundations-Cleanup%20Synchronization%20Release%20for%20HAOS-IIP.pdf)
 - [Bounded CP4 Geometry Closure on the Scalar Kernel-Graph](docs/notes/foundations/HAOS_IIP_Bounded_CP4_Geometry_Closure_on_Scalar_Kernel_Graph_v1.md)
 - [Scalar-Carrier CP4 Robustness Pass](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_CP4_Robustness_Pass_v1.md)
 - [Scalar-Carrier CP4 Geometry Robustness 51.3](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_CP4_Geometry_Robustness_51_3_v1.md)
+- [Scalar-Carrier Local Metric Field 51.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Local_Metric_Field_51_4_v1.md)
+- [Scalar-Carrier Recoverability Gradient 52.1](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Recoverability_Gradient_52_1_v1.md)
 - [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md) (original geometry-emergence baseline)
 
 ## Reproducibility Contract
@@ -199,6 +204,8 @@ Current scalar geometry-closure notes:
 
 - [Bounded CP4 Geometry Closure on the Scalar Kernel-Graph](docs/notes/foundations/HAOS_IIP_Bounded_CP4_Geometry_Closure_on_Scalar_Kernel_Graph_v1.md)
 - [Scalar-Carrier CP4 Robustness Pass](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_CP4_Robustness_Pass_v1.md)
+- [Scalar-Carrier Local Metric Field 51.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Local_Metric_Field_51_4_v1.md)
+- [Scalar-Carrier Recoverability Gradient 52.1](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Recoverability_Gradient_52_1_v1.md)
 
 This stage performs:
 
@@ -212,10 +219,11 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [52.1 Scalar-Carrier Recoverability-Gradient Probe Release](papers/pdf_releases/52.1%20Scalar-Carrier%20Recoverability-Gradient%20Probe%20Release%20for%20HAOS-IIP.pdf)
+- [51.4 Scalar-Carrier Local Metric-Field Release](papers/pdf_releases/51.4%20Scalar-Carrier%20Local%20Metric-Field%20Release%20for%20HAOS-IIP.pdf)
 - [51.3 Scalar-Carrier CP4 Geometry Robustness Release](papers/pdf_releases/51.3%20Scalar-Carrier%20CP4%20Geometry%20Robustness%20Release%20for%20HAOS-IIP.pdf)
 - [51.2 Clean-Baseline Identity Resolution and Holonomy-Split Family Labeling Release](papers/pdf_releases/51.2%20Clean-Baseline%20Identity%20Resolution%20and%20Holonomy-Split%20Family%20Labeling%20Release%20for%20HAOS-IIP.pdf)
 - [51.1 Validated Active-Branch Closure and the Open Clean-Baseline Identity Program](papers/pdf_releases/51.1%20Validated%20Active-Branch%20Closure%20and%20the%20Open%20Clean-Baseline%20Identity%20Program%20for%20HAOS-IIP.pdf)
-- [50.3 Post-Foundations Validation Release](papers/pdf_releases/50.3%20Post-Foundations%20Validation%20Release%20for%20HAOS-IIP.pdf)
 
 Numbered synthesis papers are released in:
 

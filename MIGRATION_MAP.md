@@ -37,6 +37,8 @@
 - Active-branch validation closure release `51.1` freezes the executed bounded `V1-V6b` tranche, including bounded universality and divergence-aware effective-law closure on the validated mild-disorder branch, while preserving the open clean-baseline identity boundary as an explicit next-program item rather than promoting it into a closed claim.
 - Clean-baseline identity resolution release `51.2` freezes the bounded `CB1-lite`, `CB2`, `CB4`, and `CB3` closure path, promoting the clean vector identity issue from an open branch-survival question to a resolved symmetry-degenerate first-shell family statement without claiming a full exact-zero irrep package.
 - Scalar-carrier CP4 geometry robustness release `51.3` freezes the first bounded robustness pass on the already-positive scalar kernel-graph geometry bridge, promoting that bridge from a one-family positive read to a bounded robust-carrier statement across mild point-set disorder, bounded kernel-family variation, and coordinate-response extraction without claiming broad universality or ontology.
+- Scalar-carrier local metric-field release `51.4` freezes the next bounded scalar geometry step, promoting the scalar carrier from a global coordinate-stiffness read to a bounded stable local bulk metric-like tensor field after explicit coarse local averaging on the same tested window.
+- Scalar-carrier recoverability-gradient probe release `52.1` freezes the first response-style test on that carrier: the response field is already strongly radial, but inverse-square shell-law closure remains open, so the correct boundary stays at carrier + local metric closure rather than a positive force-law claim.
 
 ## Archive Policy
 
