@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="980" viewBox="0 0 1400 980" role="img" aria-labelledby="title desc">
+  <title id="title">HAOS-IIP Purified Source Cube Scalar-Carrier Map</title>
+  <desc id="desc">A doc-only mnemonic diagram showing the scalar-carrier root as a core and surrounding harmonic axes for propagation, ordering, proto-geometry, transport, excitation, law recovery, and disorder-robust flux, with pruning windows and open boundaries marked separately.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5efe3"/>
+      <stop offset="100%" stop-color="#e5edf2"/>
+    </linearGradient>
+    <linearGradient id="cubeFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7e5" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#dfeef1" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="coreFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12343b"/>
+      <stop offset="100%" stop-color="#1c5a63"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#16343b" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .title { font: 700 34px 'Avenir Next', 'Segoe UI', sans-serif; fill: #17333a; }
+      .subtitle { font: 500 17px 'Avenir Next', 'Segoe UI', sans-serif; fill: #31535a; }
+      .section { font: 700 16px 'Avenir Next', 'Segoe UI', sans-serif; fill: #17333a; letter-spacing: 0.04em; }
+      .label { font: 700 20px 'Avenir Next', 'Segoe UI', sans-serif; fill: #17333a; }
+      .body { font: 500 15px 'Avenir Next', 'Segoe UI', sans-serif; fill: #27454c; }
+      .small { font: 500 13px 'Avenir Next', 'Segoe UI', sans-serif; fill: #45656d; }
+      .white { fill: #ffffff; }
+      .pass { fill: #326b47; }
+      .open { fill: #8a3d21; }
+      .card { fill: #fffdfa; stroke: #d2c5af; stroke-width: 2; rx: 20; }
+      .card2 { fill: #f9fbfc; stroke: #c6d7dc; stroke-width: 2; rx: 20; }
+      .chipPass { fill: #e1efe6; stroke: #72a086; stroke-width: 1.6; }
+      .chipOpen { fill: #f7e6df; stroke: #bc7a61; stroke-width: 1.6; }
+      .axisLine { stroke: #53717a; stroke-width: 2.5; stroke-linecap: round; }
+      .boundaryLine { stroke: #b36349; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 7 7; }
+      .cubeLine { stroke: #31535a; stroke-width: 3; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="980" fill="url(#bg)"/>
+  <rect x="36" y="34" width="1328" height="912" rx="28" fill="none" stroke="#d0d7d9" stroke-width="2"/>
+
+  <text x="82" y="92" class="title">HAOS-IIP Purified Source Cube</text>
+  <text x="82" y="124" class="subtitle">External mnemonic scaffold only. Frozen numerics unchanged through 53.4: PASS 12 / OPEN 3 / WATCH 0.</text>
+
+  <g filter="url(#shadow)">
+    <polygon points="520,250 760,250 760,490 520,490" fill="url(#cubeFill)" stroke="#31535a" stroke-width="3"/>
+    <polygon points="415,165 655,165 655,405 415,405" fill="#ffffff" fill-opacity="0.55" stroke="#31535a" stroke-width="3"/>
+    <line x1="415" y1="165" x2="520" y2="250" class="cubeLine"/>
+    <line x1="655" y1="165" x2="760" y2="250" class="cubeLine"/>
+    <line x1="655" y1="405" x2="760" y2="490" class="cubeLine"/>
+    <line x1="415" y1="405" x2="520" y2="490" class="cubeLine"/>
+
+    <rect x="555" y="300" width="170" height="138" rx="22" fill="url(#coreFill)" stroke="#f3e9cf" stroke-width="2.5"/>
+    <text x="640" y="342" text-anchor="middle" class="white" style="font:700 23px 'Avenir Next','Segoe UI',sans-serif;">Cube Core</text>
+    <text x="640" y="372" text-anchor="middle" class="white" style="font:600 16px 'Avenir Next','Segoe UI',sans-serif;">Root Carrier</text>
+    <text x="640" y="398" text-anchor="middle" class="white" style="font:500 14px 'Avenir Next','Segoe UI',sans-serif;">51.3 robustness</text>
+    <text x="640" y="420" text-anchor="middle" class="white" style="font:500 14px 'Avenir Next','Segoe UI',sans-serif;">51.4 metric field</text>
+  </g>
+
+  <g>
+    <line x1="600" y1="300" x2="455" y2="220" class="axisLine"/>
+    <rect x="148" y="120" width="284" height="108" rx="18" class="card"/>
+    <text x="172" y="156" class="label">Propagation Axis</text>
+    <text x="172" y="184" class="body">Branch transmission and spectral-band</text>
+    <text x="172" y="206" class="body">organization in the frozen derivation ladder.</text>
+  </g>
+
+  <g>
+    <line x1="640" y1="300" x2="640" y2="180" class="axisLine"/>
+    <rect x="505" y="86" width="274" height="108" rx="18" class="card2"/>
+    <text x="529" y="122" class="label">Ordering Axis</text>
+    <text x="529" y="150" class="body">Temporal ordering and causal closure</text>
+    <text x="529" y="172" class="body">as recoverable phase structure.</text>
+  </g>
+
+  <g>
+    <line x1="705" y1="300" x2="865" y2="218" class="axisLine"/>
+    <rect x="892" y="124" width="314" height="108" rx="18" class="card"/>
+    <text x="916" y="160" class="label">Distance Axis</text>
+    <text x="916" y="188" class="body">Proto-distance and geometric-integrity</text>
+    <text x="916" y="210" class="body">reads culminating in the bounded metric field.</text>
+  </g>
+
+  <g>
+    <line x1="760" y1="370" x2="955" y2="370" class="axisLine"/>
+    <rect x="984" y="316" width="286" height="112" rx="18" class="card2"/>
+    <text x="1008" y="352" class="label">Transport Axis</text>
+    <text x="1008" y="380" class="body">Clean current-closure and smooth</text>
+    <text x="1008" y="402" class="body">inhomogeneity tracking through 52.5.</text>
+  </g>
+
+  <g>
+    <line x1="720" y1="438" x2="875" y2="565" class="axisLine"/>
+    <rect x="892" y="560" width="332" height="126" rx="18" class="card"/>
+    <text x="916" y="596" class="label">Excitation Axis</text>
+    <text x="916" y="624" class="body">53.2 split: weak localized excitation PASS,</text>
+    <text x="916" y="646" class="body">strong localized bump remains OPEN.</text>
+    <rect x="1095" y="578" width="94" height="28" rx="14" class="chipPass"/>
+    <text x="1142" y="597" text-anchor="middle" class="small pass">weak PASS</text>
+    <rect x="1095" y="616" width="94" height="28" rx="14" class="chipOpen"/>
+    <text x="1142" y="635" text-anchor="middle" class="small open">strong OPEN</text>
+  </g>
+
+  <g>
+    <line x1="560" y1="490" x2="472" y2="625" class="axisLine"/>
+    <rect x="160" y="604" width="340" height="132" rx="18" class="card2"/>
+    <text x="184" y="640" class="label">Law-Recovery Axis</text>
+    <text x="184" y="668" class="body">53.3 shell-native filtering recovers the</text>
+    <text x="184" y="690" class="body">clean inverse-square / power-law partial.</text>
+    <rect x="366" y="622" width="104" height="28" rx="14" class="chipPass"/>
+    <text x="418" y="641" text-anchor="middle" class="small pass">shell PASS</text>
+    <rect x="366" y="660" width="104" height="28" rx="14" class="chipOpen"/>
+    <text x="418" y="679" text-anchor="middle" class="small open">raw OPEN</text>
+  </g>
+
+  <g>
+    <line x1="520" y1="408" x2="332" y2="408" class="axisLine"/>
+    <rect x="96" y="350" width="302" height="112" rx="18" class="card"/>
+    <text x="120" y="386" class="label">Disorder Axis</text>
+    <text x="120" y="414" class="body">53.4 seed-universal mild-disorder native</text>
+    <text x="120" y="436" class="body">flux closes at 3/3 under the tested window.</text>
+    <rect x="278" y="368" width="90" height="28" rx="14" class="chipPass"/>
+    <text x="323" y="387" text-anchor="middle" class="small pass">3/3 PASS</text>
+  </g>
+
+  <g>
+    <rect x="472" y="560" width="336" height="148" rx="22" fill="#f4f8f7" stroke="#b8cdd2" stroke-width="2"/>
+    <text x="500" y="596" class="section">TUNING AND PRUNING</text>
+    <text x="500" y="626" class="body">Delayed fit windows act as bounded transient pruning:</text>
+    <text x="500" y="652" class="body">53.2 weak localized excitation   [0.010, 0.026]</text>
+    <text x="500" y="676" class="body">53.4 seed-universal disorder flux   [0.006, 0.024]</text>
+    <text x="500" y="700" class="body">Shell-native reconstruction acts as harmonic filtering,</text>
+    <text x="500" y="724" class="body">not as a rewrite of thresholds or observables.</text>
+  </g>
+
+  <g>
+    <text x="84" y="804" class="section">CURRENT BOUNDARY MARKERS</text>
+    <line x1="82" y1="818" x2="1318" y2="818" class="boundaryLine"/>
+
+    <rect x="88" y="842" width="386" height="70" rx="16" fill="#fff7f2" stroke="#d8ab97" stroke-width="2"/>
+    <text x="112" y="874" class="label">Raw inverse-square residual</text>
+    <text x="112" y="898" class="body">OPEN boundary retained beside shell-native recovery.</text>
+
+    <rect x="506" y="842" width="386" height="70" rx="16" fill="#fff7f2" stroke="#d8ab97" stroke-width="2"/>
+    <text x="530" y="874" class="label">Raw local-gradient power law</text>
+    <text x="530" y="898" class="body">OPEN boundary retained beside shell-native PASS.</text>
+
+    <rect x="924" y="842" width="386" height="70" rx="16" fill="#fff7f2" stroke="#d8ab97" stroke-width="2"/>
+    <text x="948" y="874" class="label">Strong localized bump</text>
+    <text x="948" y="898" class="body">OPEN amplitude/coherence budget boundary.</text>
+  </g>
+</svg>

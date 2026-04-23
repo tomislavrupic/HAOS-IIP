@@ -14,6 +14,7 @@ This index tracks the small public-facing media surface promoted inside the repo
 - [Images/HAOS-IIP Phase V Diagnostic Data Readout.png](../../Images/HAOS-IIP%20Phase%20V%20Diagnostic%20Data%20Readout.png) - diagnostic-closure board for the first frozen authority step.
 - [Images/Morphological Stability Network Design.png](../../Images/Morphological%20Stability%20Network%20Design.png) - structural coherence and failure-mode map.
 - [Images/Proto-Particle Feasibility Study Diagram.png](../../Images/Proto-Particle%20Feasibility%20Study%20Diagram.png) - localized mode and control comparison graphic.
+- [docs/media/source_cube_scalar_carrier_map.svg](source_cube_scalar_carrier_map.svg) - doc-only Source Cube mnemonic map over the scalar-carrier ladder and bridge state through 53.4.
 
 ## Supporting PDFs
 
