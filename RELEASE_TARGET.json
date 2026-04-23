@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/power_law_scaling_boundary_release_for_haos_iip.tex",
-  "title": "Power-Law Scaling Boundary Release for HAOS-IIP",
-  "commit_message": "Freeze power-law scaling boundary release 53.3",
+  "paper": "papers/seed_universal_disorder_flux_release_for_haos_iip.tex",
+  "title": "Seed-Universal Disorder Flux Release for HAOS-IIP",
+  "commit_message": "Freeze seed-universal disorder flux release 53.4",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",

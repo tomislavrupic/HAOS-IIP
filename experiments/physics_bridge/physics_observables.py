@@ -365,7 +365,7 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
             f"{min_seed_pass}/{max_seed_count}",
             f"{max_seed_count}/{max_seed_count} for seed-universal closure",
             "PASS" if min_seed_pass == max_seed_count else "WATCH",
-            "Aggregates pass, but one tested case still has a marginal seed-level failure.",
+            "All tested disorder seeds now pass the same native-flux thresholds." if min_seed_pass == max_seed_count else "Aggregates pass, but one tested case still has a marginal seed-level failure.",
         )
     )
 

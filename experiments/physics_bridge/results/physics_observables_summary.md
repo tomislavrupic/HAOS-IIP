@@ -23,21 +23,20 @@ It is a post-processing bridge over frozen scalar-carrier artifacts. It does not
 | smooth_inhomogeneity_metric_transport_tracking | smooth weak-field co-deformation proxy | 0.146454 / 0.984018 | <= 0.150000 / >= 0.950000 | PASS |
 | weak_localized_bump_response | proto-particle weak localized-excitation proxy | 0.109546 / 0.094290 / 0.298438 / 0.124804 | <= 0.150000 / <= 0.100000 / <= 0.370000 / <= 0.140000 | PASS |
 | stress_localized_bump_boundary | strong localized-excitation boundary | 0.357828 / 0.278447 / 0.528693 / 0.340605 | <= 0.150000 / <= 0.100000 / <= 0.370000 / <= 0.140000 | OPEN |
-| disorder_native_aggregate_flux | disorder-robust transport-law proxy | 0.091117 / 0.300365 / 0.127842 | <= 0.100000 / <= 0.370000 / <= 0.150000 | PASS |
-| disorder_native_seed_margin | seed-universal disorder margin proxy | 2/3 | 3/3 for seed-universal closure | WATCH |
+| disorder_native_aggregate_flux | disorder-robust transport-law proxy | 0.082098 / 0.287579 / 0.124926 | <= 0.100000 / <= 0.370000 / <= 0.150000 | PASS |
+| disorder_native_seed_margin | seed-universal disorder margin proxy | 3/3 | 3/3 for seed-universal closure | PASS |
 
 ## Open Or Watched Boundaries
 
 - `recoverability_inverse_square_residual`: Keeps the 52.1 boundary explicit: radial carrier response is present, inverse-square closure is not.
 - `recoverability_power_fit_floor`: Raw local-gradient power scaling stays open; the shell-native split is tracked separately.
 - `stress_localized_bump_boundary`: Stronger localized bumps still exceed the same transport-stability thresholds.
-- `disorder_native_seed_margin`: Aggregates pass, but one tested case still has a marginal seed-level failure.
 
 ## Status Counts
 
-- `PASS`: 11
+- `PASS`: 12
 - `OPEN`: 3
-- `WATCH`: 1
+- `WATCH`: 0
 
 ## Authority
 

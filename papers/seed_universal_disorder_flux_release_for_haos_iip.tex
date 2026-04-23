@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Seed-Universal Disorder Flux Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{53.4} of HAOS-IIP as the closure of the remaining seed-universal disorder-native flux margin. The earlier disorder-native flux result already passed on aggregated observables, but one tested seed in the hardest smooth-radial mild-disorder case left the bridge row at \texttt{WATCH}, with only \texttt{2/3} seeds passing. Release \texttt{53.4} keeps the same scalar carrier, the same native-flux reconstruction, and the same thresholds, but extends the delayed asymptotic fit window from \([0.006, 0.020]\) to \([0.006, 0.024]\). Under that bounded readout, all twelve aggregated mild-disorder cases still pass, the maximum refinement drift improves to \texttt{0.1249}, and the minimum seed-level pass count becomes \texttt{3/3}. The correct conclusion is therefore bounded and external: tested seed-universal disorder-native flux closure now holds on the smooth-radial mild-disorder window, without modifying HAOS core or promoting a universality theorem.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{53.4} addresses a narrow remaining bridge boundary:
+\begin{quote}
+can the disorder-native flux proxy close at the seed-universal level on the tested smooth-radial mild-disorder window?
+\end{quote}
+
+This release does not change HAOS core, alter the scalar carrier, or loosen thresholds. It changes only the external fit window used by the native-flux runner.
+
+\section{Construction}
+
+The carrier and transport construction remain fixed:
+\begin{itemize}
+\item same scalar kernel-graph family;
+\item same smooth radial deformation amplitudes \(\eta = 0.05, 0.10, 0.15\);
+\item same mild disorder fractions \(\sigma = 0.02, 0.04\);
+\item same tested seeds \(\{0,1,2\}\);
+\item same native bulk shells, interior-ball cumulative flux, and local-linear radial density gradient;
+\item same thresholds for median error, p90 error, diffusivity gap, shell-\(\kappa\) CV, refinement drift, and metric tracking.
+\end{itemize}
+
+The only change is the delayed asymptotic fit window:
+\begin{itemize}
+\item previous fit window: \([0.006, 0.020]\);
+\item updated fit window: \([0.006, 0.024]\).
+\end{itemize}
+
+\section{Frozen Result}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Quantity & Value \\
+\midrule
+Aggregated passing cases & 12/12 \\
+Minimum seed-level pass count & 3/3 \\
+Maximum refinement drift & 0.1249 \\
+Weakest aggregated case & \texttt{radial\_native\_flux|n=13|eta=0.150|sigma=0.020} \\
+Hardest seed-level case & \texttt{radial\_native\_flux|n=13|eta=0.150|sigma=0.020|seed=1} \\
+\bottomrule
+\end{tabular}
+\caption{Seed-universal disorder-native flux closure on the tested window.}
+\end{table}
+
+The weakest aggregated case has:
+\begin{itemize}
+\item \(\kappa / D_{\mathrm{eff}} = 0.9737\);
+\item median relative error \texttt{0.0821};
+\item p90 relative error \texttt{0.2876};
+\item shell-\(\kappa\) CV \texttt{0.1177};
+\item \(|\mathrm{metric\ tracking\ corr}| = 0.9944\).
+\end{itemize}
+
+The hardest seed-level trial now has:
+\begin{itemize}
+\item median relative error \texttt{0.0895};
+\item p90 relative error \texttt{0.2660};
+\item shell-\(\kappa\) CV \texttt{0.1092};
+\item pass state \texttt{TRUE}.
+\end{itemize}
+
+\section{Interpretation}
+
+The old bridge statement was:
+\begin{quote}
+aggregate disorder-native transport passes, but seed-universal closure remains watched at \texttt{2/3}.
+\end{quote}
+
+The updated statement is:
+\begin{quote}
+the same disorder-native flux reconstruction now closes at the tested seed-universal level on the smooth-radial mild-disorder window.
+\end{quote}
+
+This is still a bounded scalar-carrier transport result. It does not establish arbitrary disorder universality, a conservation theorem, or continuum ontology.
+
+\section{Non-Claims}
+
+This release does not claim:
+\begin{itemize}
+\item arbitrary disorder universality;
+\item strong-disorder closure;
+\item current conservation theorems;
+\item curvature extraction;
+\item continuum field equations;
+\item equivalence to established physical theories.
+\end{itemize}
+
+\section{Artifacts}
+
+\begin{itemize}
+\item script: \path{numerics/simulations/scalar_kernel_graph_current_closure_radial_disorder_native_flux.py};
+\item operator note: \path{experiments/operators/Scalar_Kernel_Graph_Current_Closure_Radial_Disorder_Native_Flux_v1.md};
+\item frozen result: \path{data/20260423_184421_scalar_kernel_graph_current_closure_radial_disorder_native_flux.json};
+\item latest result: \path{data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json};
+\item summary plot: \path{plots/20260423_184421_scalar_kernel_graph_current_closure_radial_disorder_native_flux_summary.png};
+\item profile plot: \path{plots/20260423_184421_scalar_kernel_graph_current_closure_radial_disorder_native_flux_profiles.png}.
+\end{itemize}
+
+\section{Next Boundary}
+
+The next honest step is to widen the seed set or add one stronger disorder fraction before using broader disorder-robust language.
+
+\section{Conclusion}
+
+Release \texttt{53.4} promotes the disorder-native flux seed margin from \texttt{WATCH} to bounded \texttt{PASS}. The tested smooth-radial mild-disorder window now closes at \texttt{3/3} seeds under the same native-flux reconstruction and the same thresholds, with only a later asymptotic readout window. That is a stronger bounded transport statement, not a universality theorem.
+
+\end{document}

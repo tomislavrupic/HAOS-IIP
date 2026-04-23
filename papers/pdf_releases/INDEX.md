@@ -209,6 +209,10 @@ The intended public reading order is:
 
 1. `53.3` Power-Law Scaling Boundary Release for HAOS-IIP
 
+### 2.42 Part XLII. Seed-universal disorder flux
+
+1. `53.4` Seed-Universal Disorder Flux Release for HAOS-IIP
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -280,6 +284,7 @@ The intended public reading order is:
 - `53.1` External Collapse-Ordering Invariance Assessment on Frozen HAOS-IIP Telemetry
 - `53.2` Localized Bump Response Threshold Release for HAOS-IIP
 - `53.3` Power-Law Scaling Boundary Release for HAOS-IIP
+- `53.4` Seed-Universal Disorder Flux Release for HAOS-IIP
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

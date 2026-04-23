@@ -1059,3 +1059,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260423_183612_scalar_kernel_graph_power_law_scaling_summary.png`, `plots/20260423_183612_scalar_kernel_graph_power_law_scaling_profiles.png`
 - Observation: the broad power-law scaling row splits cleanly: the raw local-gradient read remains open, while the shell-native law-aware read passes the tested continuum-like scaling thresholds
 - Conclusion: raw local-gradient power scaling remains open with minimum R^2 0.3220, maximum |slope+2| 1.2651, and profile drift 0.5249; shell-native scaling passes with minimum power-fit R^2 0.9997, maximum |slope+2| 0.0034, scaled-response CV 0.0070, and profile drift 0.0089; this supports a bounded continuum-like power-law proxy only under the shell-native reconstruction
+
+## scalar kernel graph current closure radial disorder native flux
+- Date: 2026-04-23T18:44:28
+- Config: n_sides=[13, 15], eta_values=[0.05, 0.1, 0.15], disorder_fractions=[0.02, 0.04], seeds=[0, 1, 2], fit_window=[0.006, 0.024], gradient_mode=local_linear, epsilon_coeff=0.5, cutoff_factor=2.5, metric_radius_factor=2.5
+- Results: `data/20260423_184421_scalar_kernel_graph_current_closure_radial_disorder_native_flux.json`
+- Plots: `plots/20260423_184421_scalar_kernel_graph_current_closure_radial_disorder_native_flux_summary.png`, `plots/20260423_184421_scalar_kernel_graph_current_closure_radial_disorder_native_flux_profiles.png`
+- Observation: once the smooth-radial mild-disorder family is read with native bulk shells, interior-ball cumulative flux, and a delayed asymptotic fit window, the bounded constitutive closure returns on aggregated observables
+- Conclusion: all 12 aggregated mild-disorder cases pass, with maximum refinement drift 0.1249; the weakest aggregated case is `radial_native_flux|n=13|eta=0.150|sigma=0.020` with kappa/D_eff 0.9737, median relative error 0.0821, p90 error 0.2876, shell-kappa CV 0.1177, and |metric-tracking corr| 0.9944; the hardest seed-level trial is `radial_native_flux|n=13|eta=0.150|sigma=0.020|seed=1` with median relative error 0.0895, p90 error 0.2660, shell-kappa CV 0.1092, and pass state TRUE; this supports a bounded disorder-native transient closure on the smooth-radial branch, with the minimum seed-level pass count still only 3/3 in the hardest tested case

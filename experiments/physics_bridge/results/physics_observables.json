@@ -20,9 +20,9 @@
       "data/scalar_kernel_graph_localized_bump_response_latest.json"
     ],
     "status_counts": {
-      "PASS": 11,
+      "PASS": 12,
       "OPEN": 3,
-      "WATCH": 1
+      "WATCH": 0
     }
   },
   "observables": [
@@ -161,7 +161,7 @@
       "physics_analogue": "disorder-robust transport-law proxy",
       "haos_source": "data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json",
       "proxy_quantity": "max aggregated median error / max aggregated p90 error / max drift",
-      "value": "0.091117 / 0.300365 / 0.127842",
+      "value": "0.082098 / 0.287579 / 0.124926",
       "target": "<= 0.100000 / <= 0.370000 / <= 0.150000",
       "status": "PASS",
       "scope_note": "Aggregated mild-disorder transport closes after native flux reconstruction."
@@ -171,10 +171,10 @@
       "physics_analogue": "seed-universal disorder margin proxy",
       "haos_source": "data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json",
       "proxy_quantity": "minimum seed-level pass count",
-      "value": "2/3",
+      "value": "3/3",
       "target": "3/3 for seed-universal closure",
-      "status": "WATCH",
-      "scope_note": "Aggregates pass, but one tested case still has a marginal seed-level failure."
+      "status": "PASS",
+      "scope_note": "All tested disorder seeds now pass the same native-flux thresholds."
     }
   ]
 }

@@ -460,7 +460,7 @@
     "cutoff_factor": 2.5,
     "heat_time_max": 0.03,
     "heat_time_steps": 61,
-    "fit_window": [0.006, 0.02],
+    "fit_window": [0.006, 0.024],
     "bulk_margin_layers": 2,
     "metric_radius_factor": 2.5,
     "shell_r_max": 0.45,
