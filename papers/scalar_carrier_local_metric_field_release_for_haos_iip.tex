@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Scalar-Carrier Local Metric-Field Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{51.4} of HAOS-IIP as the bounded extension of the scalar-carrier geometry line from a single global coordinate-stiffness tensor to a stable local bulk metric-like tensor field. Release \texttt{51.3} had already shown that the scalar kernel-graph carrier survives the first bounded robustness pass on Green response, heat behavior, shell-arrival structure, low-mode organization, and one global coordinate-response tensor. Release \texttt{51.4} asks the next honest question: can the same carrier support a local metric-like field rather than only a global read? The answer is yes in bounded form. The raw node-level quadratic response is too jitter-sensitive to carry the physical statement alone, but after bounded bulk coarse-graining on the same carrier the local tensor field stays positive, near-isotropic, and nearly constant across the tested refinement, mild-disorder, and bounded kernel-family window. This upgrades the scalar geometry line from a global carrier bridge to a bounded local bulk metric-field statement.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{51.4} is a narrow scalar-carrier geometry release.
+
+It does not add:
+\begin{itemize}
+\item a new vector-branch claim beyond the already frozen \texttt{51.1} and \texttt{51.2} line;
+\item curvature extraction;
+\item conserved currents;
+\item broad universality beyond the tested mild scalar-carrier window;
+\item ontology or spacetime language.
+\end{itemize}
+
+It does add:
+\begin{itemize}
+\item a bounded local bulk metric-like tensor field on the same scalar carrier used by \texttt{51.3};
+\item an explicit distinction between raw node-level provenance and bounded coarse local readout;
+\item a sharper platform for the next response / current / curvature-style questions.
+\end{itemize}
+
+\section{Where 51.3 Left the Scalar Carrier}
+
+Release \texttt{51.3} had already established that the scalar carrier survives the first bounded robustness pass across:
+\begin{itemize}
+\item mild point-set disorder;
+\item bounded kernel-family variation;
+\item global coordinate-response extraction.
+\end{itemize}
+
+But the strongest honest scalar statement still remained global:
+
+\begin{quote}
+the scalar-carrier geometry closure survives one bounded robustness window.
+\end{quote}
+
+Release \texttt{51.4} exists to test whether that same carrier also supports a local tensor-field read.
+
+\section{The Local Metric-Field Estimator}
+
+The estimator stays native to the operator itself. For each node \(i\),
+\[
+G_{ab}(i) = \frac{1}{2} \sum_{j \neq i} \widehat{L}_{ij} (x_j^a - x_i^a)(x_j^b - x_i^b).
+\]
+
+This is the bounded row-local quadratic response of the scalar operator. It is therefore the right first local metric-like estimator on the present carrier.
+
+\section{Raw vs Coarse Local Readout}
+
+The executed numerics show a clean split:
+\begin{itemize}
+\item the raw node-level field is excellent on the clean cubic carrier;
+\item under mild point-set disorder the raw node-level anisotropy becomes too stencil-sensitive to carry the physical statement alone;
+\item after bounded bulk coarse-graining at radius \(2.5 h\), the same local field becomes stable again.
+\end{itemize}
+
+That is the correct bounded interpretation. The raw field remains provenance; the coarse local field is the physical read actually frozen by this release.
+
+\section{Frozen Quantitative Summary}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}p{3.9cm}p{2.0cm}p{7.8cm}@{}}
+\toprule
+Channel & Status & Frozen read \\
+\midrule
+Disorder pass & pass & All \(6/6\) tested disorder cases pass after coarse local averaging. \\
+Kernel-family pass & pass & All \(6/6\) tested kernel-family cases pass after coarse local averaging. \\
+Refinement drift & bounded & Maximum normalized refinement drift is \(0.0023\). \\
+Weakest passing case & pass & \texttt{disorder|n=11|jitter=0.040} with normalized mean-tensor error \(0.0018\), mean anisotropy \(0.0139\), and spatial trace CV \(0.0052\). \\
+\bottomrule
+\end{tabular}
+\caption{Bounded local metric-field summary frozen by release \texttt{51.4}.}
+\end{table}
+
+\section{What 51.4 Now Supports}
+
+The strongest honest scalar-geometry statement now supported by the repository is:
+
+\begin{quote}
+the scalar-carrier geometry bridge extends to a bounded stable local bulk metric-like tensor field on the tested window.
+\end{quote}
+
+This is stronger than \texttt{51.3}. The scalar carrier now supports:
+\begin{itemize}
+\item one bounded common-family geometry bridge;
+\item one bounded robustness pass;
+\item one bounded local bulk tensor-field read.
+\end{itemize}
+
+\section{What 51.4 Still Does Not Say}
+
+Release \texttt{51.4} still does not justify:
+\begin{itemize}
+\item curvature extraction;
+\item conserved currents;
+\item strong-disorder closure;
+\item broad universality;
+\item spacetime or ontology language.
+\end{itemize}
+
+\section{Practical Consequence}
+
+The next honest scalar step is no longer ``can we read any local metric at all?''.
+
+It is now one of the following:
+\begin{itemize}
+\item response-field extraction on the same local metric carrier;
+\item current-like closure;
+\item curvature-like closure.
+\end{itemize}
+
+\section{Conclusion}
+
+Release \texttt{51.4} freezes the local metric-field closure of the scalar geometry carrier in the bounded sense currently earned by the repository.
+
+The scalar carrier now supports not only one global geometry bridge, but one bounded stable local bulk tensor field on the same tested window. That is the right stopping point for this release: strong enough to support the next response-style questions, but still disciplined about what has not yet been earned.
+
+\end{document}

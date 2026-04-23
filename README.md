@@ -153,17 +153,19 @@ Short note:
 
 ## Program Status
 
-**Current milestone (52.1 scalar-carrier response probe after 51.4 local metric closure):**  
-The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, the scalar kernel-graph line now closes through a bounded local metric-field release `51.4`, and the first response-style `52.1` probe is frozen with an explicit open force-law boundary.
+**Current milestone (52.5 smooth-inhomogeneity current closure after 52.4 clean-line closure):**
+The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now closes through a bounded local metric field, a positive shell-native inverse-square response law, an open first transient baseline `52.3`, a corrected shell-native clean-line current closure `52.4`, and a bounded smooth-radial inhomogeneity closure `52.5` while localized bump inhomogeneity remains explicitly open.
 
 The public repository now contains three stacked bounded results:
 
 - closed derivation ladder: `T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8`, plus `F1-F4`
 - frozen vector validation spine through `V1-V6b` and clean-baseline identity resolution
-- scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass, a bounded local metric-field closure, and a first open recoverability-gradient probe on the same carrier
+- scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass, a bounded local metric-field closure, a shell-native inverse-square response closure, an honest open first transient baseline `52.3`, a bounded shell-native clean-line current closure `52.4`, and a bounded smooth-inhomogeneity transport closure `52.5` on the smooth radial branch
 
 Milestone anchors:
 
+- [52.5 Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release](papers/pdf_releases/52.5%20Scalar-Carrier%20Smooth-Inhomogeneity%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
+- [52.4 Scalar-Carrier Shell-Native Current-Closure Release](papers/pdf_releases/52.4%20Scalar-Carrier%20Shell-Native%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.1 Scalar-Carrier Recoverability-Gradient Probe Release](papers/pdf_releases/52.1%20Scalar-Carrier%20Recoverability-Gradient%20Probe%20Release%20for%20HAOS-IIP.pdf)
 - [51.4 Scalar-Carrier Local Metric-Field Release](papers/pdf_releases/51.4%20Scalar-Carrier%20Local%20Metric-Field%20Release%20for%20HAOS-IIP.pdf)
 - [51.3 Scalar-Carrier CP4 Geometry Robustness Release](papers/pdf_releases/51.3%20Scalar-Carrier%20CP4%20Geometry%20Robustness%20Release%20for%20HAOS-IIP.pdf)
@@ -174,6 +176,9 @@ Milestone anchors:
 - [Scalar-Carrier CP4 Geometry Robustness 51.3](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_CP4_Geometry_Robustness_51_3_v1.md)
 - [Scalar-Carrier Local Metric Field 51.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Local_Metric_Field_51_4_v1.md)
 - [Scalar-Carrier Recoverability Gradient 52.1](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Recoverability_Gradient_52_1_v1.md)
+- [Scalar-Carrier Current Closure 52.3](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_3_v1.md)
+- [Scalar-Carrier Current Closure 52.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_4_v1.md)
+- [Scalar-Carrier Smooth-Inhomogeneity Current Closure 52.5](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Smooth_Inhomogeneity_Current_Closure_52_5_v1.md)
 - [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md) (original geometry-emergence baseline)
 
 ## Reproducibility Contract
@@ -206,6 +211,9 @@ Current scalar geometry-closure notes:
 - [Scalar-Carrier CP4 Robustness Pass](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_CP4_Robustness_Pass_v1.md)
 - [Scalar-Carrier Local Metric Field 51.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Local_Metric_Field_51_4_v1.md)
 - [Scalar-Carrier Recoverability Gradient 52.1](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Recoverability_Gradient_52_1_v1.md)
+- [Scalar-Carrier Current Closure 52.3](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_3_v1.md)
+- [Scalar-Carrier Current Closure 52.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_4_v1.md)
+- [Scalar-Carrier Smooth-Inhomogeneity Current Closure 52.5](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Smooth_Inhomogeneity_Current_Closure_52_5_v1.md)
 
 This stage performs:
 
@@ -219,6 +227,8 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [52.5 Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release](papers/pdf_releases/52.5%20Scalar-Carrier%20Smooth-Inhomogeneity%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
+- [52.4 Scalar-Carrier Shell-Native Current-Closure Release](papers/pdf_releases/52.4%20Scalar-Carrier%20Shell-Native%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.1 Scalar-Carrier Recoverability-Gradient Probe Release](papers/pdf_releases/52.1%20Scalar-Carrier%20Recoverability-Gradient%20Probe%20Release%20for%20HAOS-IIP.pdf)
 - [51.4 Scalar-Carrier Local Metric-Field Release](papers/pdf_releases/51.4%20Scalar-Carrier%20Local%20Metric-Field%20Release%20for%20HAOS-IIP.pdf)
 - [51.3 Scalar-Carrier CP4 Geometry Robustness Release](papers/pdf_releases/51.3%20Scalar-Carrier%20CP4%20Geometry%20Robustness%20Release%20for%20HAOS-IIP.pdf)

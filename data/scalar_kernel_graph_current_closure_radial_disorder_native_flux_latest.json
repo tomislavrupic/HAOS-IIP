@@ -1,0 +1,2543 @@
+{
+  "experiment": "scalar_kernel_graph_current_closure_radial_disorder_native_flux",
+  "config": {
+    "n_sides": [
+      13,
+      15
+    ],
+    "eta_values": [
+      0.05,
+      0.1,
+      0.15
+    ],
+    "disorder_fractions": [
+      0.02,
+      0.04
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "heat_time_max": 0.03,
+    "heat_time_steps": 61,
+    "fit_window": [
+      0.006,
+      0.02
+    ],
+    "bulk_margin_layers": 2,
+    "metric_radius_factor": 2.5,
+    "shell_r_max": 0.45,
+    "gradient_mode": "local_linear",
+    "thresholds": {
+      "max_median_relative_error": 0.1,
+      "max_p90_relative_error": 0.37,
+      "max_diffusivity_match_gap": 0.15,
+      "max_shell_kappa_cv": 0.14,
+      "max_refinement_profile_drift": 0.15,
+      "min_metric_tracking_abs_corr": 0.95
+    }
+  },
+  "baseline_cases": {
+    "13": {
+      "n_side": 13,
+      "lattice_spacing": 0.08333333333333333,
+      "epsilon_k": 0.003472222222222222,
+      "shell_radii": [
+        0.18590025772492236,
+        0.2611799296178801,
+        0.33838164980444174,
+        0.41477648289575825
+      ],
+      "shell_metric_rr": [
+        1.119727717156356,
+        1.1197277171563562,
+        1.1197277171563573,
+        1.119727717156358
+      ],
+      "shell_counts": [
+        62.0,
+        98.0,
+        210.0,
+        224.0
+      ]
+    },
+    "15": {
+      "n_side": 15,
+      "lattice_spacing": 0.07142857142857142,
+      "epsilon_k": 0.002551020408163265,
+      "shell_radii": [
+        0.15934307804993342,
+        0.22386851110104003,
+        0.2900414141180928,
+        0.3641130807078963,
+        0.4333765801657749
+      ],
+      "shell_metric_rr": [
+        1.1025198456453318,
+        1.1025198456453318,
+        1.1025198456453316,
+        1.1025198456453316,
+        1.1025198456453311
+      ],
+      "shell_counts": [
+        62.0,
+        98.0,
+        210.0,
+        350.0,
+        324.0
+      ]
+    }
+  },
+  "cases": [
+    {
+      "label": "radial_native_flux|n=13|eta=0.050|sigma=0.020",
+      "n_side": 13,
+      "eta": 0.05,
+      "disorder_fraction": 0.02,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.051407843196341285,
+      "p90_relative_error_median": 0.23550568795675736,
+      "diffusivity_match_gap_median": 0.0858868401283378,
+      "shell_kappa_cv_median": 0.10303621833255934,
+      "metric_tracking_abs_corr_median": 0.9985225430545555,
+      "conductivity_over_diffusivity_median": 0.9141131598716622,
+      "normalized_shell_kappa_profile_mean": [
+        1.1155691712451021,
+        1.0334766648406428,
+        1.017319319209946,
+        0.8336348447043088
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=13|eta=0.050|sigma=0.020|seed=0",
+          "n_side": 13,
+          "eta": 0.05,
+          "disorder_fraction": 0.02,
+          "seed": 0,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9992030471833951,
+          "conductivity_fit": 0.9102779484734492,
+          "conductivity_over_diffusivity": 0.9110039756577879,
+          "diffusivity_match_gap": 0.0889960243422121,
+          "median_relative_error": 0.045631845982078194,
+          "mean_relative_error": 0.09845458640679138,
+          "p90_relative_error": 0.2429091941704836,
+          "shell_kappa_cv": 0.10303621833255934,
+          "metric_tracking_corr": -0.9993834064807954,
+          "metric_tracking_abs_corr": 0.9993834064807954,
+          "shell_radii": [
+            0.18524156644280665,
+            0.26043236229693495,
+            0.3309600817635715,
+            0.4062936207492315
+          ],
+          "shell_profile": [
+            0.04613935969868172,
+            0.09,
+            0.144880174291939,
+            0.21623093681917213
+          ],
+          "shell_metric_rr": [
+            1.0876175450969714,
+            1.0804712464296622,
+            1.0730806427827113,
+            1.0630500002862717
+          ],
+          "metric_shift_profile": [
+            -0.0321101720593846,
+            -0.039256470726694026,
+            -0.046647074373646014,
+            -0.05667771687008627
+          ],
+          "shell_kappa_profile": [
+            0.9986401720524133,
+            0.9216786231542097,
+            0.92050053308851,
+            0.7464584860492606
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1135353588274273,
+            1.0277192577265215,
+            1.0264056264699861,
+            0.832339756976065
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.050|sigma=0.020|seed=1",
+          "n_side": 13,
+          "eta": 0.05,
+          "disorder_fraction": 0.02,
+          "seed": 1,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9993758352196087,
+          "conductivity_fit": 0.9135426026319781,
+          "conductivity_over_diffusivity": 0.9141131598716622,
+          "diffusivity_match_gap": 0.0858868401283378,
+          "median_relative_error": 0.0657304124914449,
+          "mean_relative_error": 0.10475192847283242,
+          "p90_relative_error": 0.23272740780166584,
+          "shell_kappa_cv": 0.10987453419776201,
+          "metric_tracking_corr": -0.9979354269574107,
+          "metric_tracking_abs_corr": 0.9979354269574107,
+          "shell_radii": [
+            0.18489316743736592,
+            0.2592628789970842,
+            0.33111455438522897,
+            0.404113116583777
+          ],
+          "shell_profile": [
+            0.04597701149425287,
+            0.08922558922558924,
+            0.14486472287890725,
+            0.21464646464646467
+          ],
+          "shell_metric_rr": [
+            1.0889923956724687,
+            1.0810671780206615,
+            1.0723795361740431,
+            1.0628558308114593
+          ],
+          "metric_shift_profile": [
+            -0.030735321483887246,
+            -0.03866053913569467,
+            -0.04734818098231419,
+            -0.0568718863448987
+          ],
+          "shell_kappa_profile": [
+            1.0238913933079472,
+            0.9352855841942921,
+            0.9085174114616645,
+            0.748758650694636
+          ],
+          "normalized_shell_kappa_profile": [
+            1.13248133691195,
+            1.0344783398958228,
+            1.0048712387510448,
+            0.8281690844411823
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.050|sigma=0.020|seed=2",
+          "n_side": 13,
+          "eta": 0.05,
+          "disorder_fraction": 0.02,
+          "seed": 2,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9978912995906887,
+          "conductivity_fit": 0.9134698583320968,
+          "conductivity_over_diffusivity": 0.915400163030563,
+          "diffusivity_match_gap": 0.08459983696943696,
+          "median_relative_error": 0.051407843196341285,
+          "mean_relative_error": 0.09724262682350489,
+          "p90_relative_error": 0.23550568795675736,
+          "shell_kappa_cv": 0.09682664857193271,
+          "metric_tracking_corr": -0.9985225430545555,
+          "metric_tracking_abs_corr": 0.9985225430545555,
+          "shell_radii": [
+            0.1852037378425545,
+            0.25960597228674437,
+            0.33049691682515,
+            0.4060137666974189
+          ],
+          "shell_profile": [
+            0.04613935969868173,
+            0.08956916099773243,
+            0.14413126361655776,
+            0.2160493827160494
+          ],
+          "shell_metric_rr": [
+            1.0883443119146794,
+            1.0799412982241055,
+            1.070407811916274,
+            1.0594797414278172
+          ],
+          "metric_shift_profile": [
+            -0.0313834052416766,
+            -0.03978641893225077,
+            -0.049319905240083006,
+            -0.06024797572854079
+          ],
+          "shell_kappa_profile": [
+            0.9873277316133117,
+            0.9313020700806001,
+            0.915558421304384,
+            0.7538410963012974
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1006908179959292,
+            1.0382323968995841,
+            1.0206810924088066,
+            0.8403956926956795
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=15|eta=0.050|sigma=0.020",
+      "n_side": 15,
+      "eta": 0.05,
+      "disorder_fraction": 0.02,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.03680296628672389,
+      "p90_relative_error_median": 0.22848149994956568,
+      "diffusivity_match_gap_median": 0.04866708791139884,
+      "shell_kappa_cv_median": 0.08370217658528903,
+      "metric_tracking_abs_corr_median": 0.9946797013655159,
+      "conductivity_over_diffusivity_median": 0.9513329120886012,
+      "normalized_shell_kappa_profile_mean": [
+        1.0427448807221105,
+        1.0615618798138355,
+        1.046691563082491,
+        1.012823656748712,
+        0.8361780196328509
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=15|eta=0.050|sigma=0.020|seed=0",
+          "n_side": 15,
+          "eta": 0.05,
+          "disorder_fraction": 0.02,
+          "seed": 0,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.9841016496606759,
+          "conductivity_fit": 0.9362082881628871,
+          "conductivity_over_diffusivity": 0.9513329120886012,
+          "diffusivity_match_gap": 0.04866708791139884,
+          "median_relative_error": 0.040513409228393166,
+          "mean_relative_error": 0.07420860327099203,
+          "p90_relative_error": 0.22848149994956568,
+          "shell_kappa_cv": 0.08370217658528903,
+          "metric_tracking_corr": -0.9961465110308667,
+          "metric_tracking_abs_corr": 0.9961465110308667,
+          "shell_radii": [
+            0.15966883320748682,
+            0.2241679575524743,
+            0.28981108971405656,
+            0.35731802644978233,
+            0.4274889068643797
+          ],
+          "shell_profile": [
+            0.034233048057932855,
+            0.0667517006802721,
+            0.11139036895546393,
+            0.16797488226059656,
+            0.23809523809523808
+          ],
+          "shell_metric_rr": [
+            1.0772095604659693,
+            1.0656421091092554,
+            1.0547431359379063,
+            1.040352136622322,
+            1.0260478326238842
+          ],
+          "metric_shift_profile": [
+            -0.025310285179362513,
+            -0.0368777365360764,
+            -0.04777670970742531,
+            -0.0621677090230095,
+            -0.0764720130214469
+          ],
+          "shell_kappa_profile": [
+            0.9481509625640101,
+            0.9745189487523902,
+            0.9596923011336967,
+            0.9195889427855634,
+            0.7647478205299167
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0381141472162163,
+            1.0669840008329194,
+            1.0507505598973825,
+            1.006842084036643,
+            0.8373092080168386
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.050|sigma=0.020|seed=1",
+          "n_side": 15,
+          "eta": 0.05,
+          "disorder_fraction": 0.02,
+          "seed": 1,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.9850514211231248,
+          "conductivity_fit": 0.9395039103587,
+          "conductivity_over_diffusivity": 0.9537612861747937,
+          "diffusivity_match_gap": 0.04623871382520628,
+          "median_relative_error": 0.0355065492351945,
+          "mean_relative_error": 0.07526482510179763,
+          "p90_relative_error": 0.2346799603619537,
+          "shell_kappa_cv": 0.08914438069154339,
+          "metric_tracking_corr": -0.9946797013655159,
+          "metric_tracking_abs_corr": 0.9946797013655159,
+          "shell_radii": [
+            0.15971949958061468,
+            0.2241659425192437,
+            0.28910319061545753,
+            0.356465828176238,
+            0.42677647664392265
+          ],
+          "shell_profile": [
+            0.034233048057932855,
+            0.0667517006802721,
+            0.11076753933896788,
+            0.16709540959240837,
+            0.23775846972452347
+          ],
+          "shell_metric_rr": [
+            1.0760522826310817,
+            1.065431541763551,
+            1.0547872659549113,
+            1.042264349147437,
+            1.029546577491627
+          ],
+          "metric_shift_profile": [
+            -0.02646756301425013,
+            -0.03708830388178086,
+            -0.04773257969042022,
+            -0.06025549649789452,
+            -0.07297326815370409
+          ],
+          "shell_kappa_profile": [
+            0.9895136892443925,
+            0.9719001457701109,
+            0.9576453067786647,
+            0.9230107395552418,
+            0.7626711585306006
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0744509633384205,
+            1.0553255192344624,
+            1.0398470820454941,
+            1.00223957391043,
+            0.8281368614711935
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.050|sigma=0.020|seed=2",
+          "n_side": 15,
+          "eta": 0.05,
+          "disorder_fraction": 0.02,
+          "seed": 2,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.9843481884111805,
+          "conductivity_fit": 0.9330906090623104,
+          "conductivity_over_diffusivity": 0.9479273899700023,
+          "diffusivity_match_gap": 0.052072610029997746,
+          "median_relative_error": 0.03680296628672389,
+          "mean_relative_error": 0.07080428258616397,
+          "p90_relative_error": 0.22003506604967105,
+          "shell_kappa_cv": 0.08008670731617198,
+          "metric_tracking_corr": -0.9930275115940952,
+          "metric_tracking_abs_corr": 0.9930275115940952,
+          "shell_radii": [
+            0.15894873219741623,
+            0.22418311943861907,
+            0.29026903619463473,
+            0.3570606292427272,
+            0.4285298813968334
+          ],
+          "shell_profile": [
+            0.03412512546002008,
+            0.0667903525046382,
+            0.11168646563102852,
+            0.16781991766663745,
+            0.2396958783513405
+          ],
+          "shell_metric_rr": [
+            1.0788389280215935,
+            1.0668887823226394,
+            1.0557203811220157,
+            1.0425140773995272,
+            1.0293734569361106
+          ],
+          "metric_shift_profile": [
+            -0.02368091762373825,
+            -0.03563106332269239,
+            -0.04679946452331585,
+            -0.06000576824580439,
+            -0.07314638870922052
+          ],
+          "shell_kappa_profile": [
+            0.924413027500743,
+            0.9669230928850849,
+            0.9551829846189427,
+            0.9369001048493474,
+            0.7673376984182833
+          ],
+          "normalized_shell_kappa_profile": [
+            1.015669531611695,
+            1.062376119374125,
+            1.0494770473045965,
+            1.029389312299063,
+            0.8430879894105208
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=13|eta=0.100|sigma=0.020",
+      "n_side": 13,
+      "eta": 0.1,
+      "disorder_fraction": 0.02,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.05827110534066095,
+      "p90_relative_error_median": 0.26540851268056304,
+      "diffusivity_match_gap_median": 0.06401068360045903,
+      "shell_kappa_cv_median": 0.11005768820001119,
+      "metric_tracking_abs_corr_median": 0.9977014505916079,
+      "conductivity_over_diffusivity_median": 0.935989316399541,
+      "normalized_shell_kappa_profile_mean": [
+        1.1167364178456913,
+        1.054293950037103,
+        1.006248613865627,
+        0.8227210182515785
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=13|eta=0.100|sigma=0.020|seed=0",
+          "n_side": 13,
+          "eta": 0.1,
+          "disorder_fraction": 0.02,
+          "seed": 0,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9488246106527578,
+          "conductivity_fit": 0.8880896987079354,
+          "conductivity_over_diffusivity": 0.935989316399541,
+          "diffusivity_match_gap": 0.06401068360045903,
+          "median_relative_error": 0.05827110534066095,
+          "mean_relative_error": 0.11072254206910499,
+          "p90_relative_error": 0.27558304284327073,
+          "shell_kappa_cv": 0.117738395315843,
+          "metric_tracking_corr": -0.9980565972046145,
+          "metric_tracking_abs_corr": 0.9980565972046145,
+          "shell_radii": [
+            0.1856773298152206,
+            0.26064638266001094,
+            0.33183906607788205,
+            0.4089200516938354
+          ],
+          "shell_profile": [
+            0.04613935969868172,
+            0.08934707903780066,
+            0.14355281207133055,
+            0.21408529741863078
+          ],
+          "shell_metric_rr": [
+            1.0541078257720848,
+            1.0396425622692334,
+            1.0244049578002292,
+            1.0066439384080643
+          ],
+          "metric_shift_profile": [
+            -0.06561989138427116,
+            -0.08008515488712287,
+            -0.0953227593561281,
+            -0.11308377874829367
+          ],
+          "shell_kappa_profile": [
+            0.9919925325120968,
+            0.9062224104109696,
+            0.8797949980645624,
+            0.709171809913412
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1378730486368016,
+            1.039489737151571,
+            1.009175960314928,
+            0.8134612538966992
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.100|sigma=0.020|seed=1",
+          "n_side": 13,
+          "eta": 0.1,
+          "disorder_fraction": 0.02,
+          "seed": 1,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9494350553918225,
+          "conductivity_fit": 0.8786243011646722,
+          "conductivity_over_diffusivity": 0.9254180116638653,
+          "diffusivity_match_gap": 0.07458198833613472,
+          "median_relative_error": 0.07666805137166013,
+          "mean_relative_error": 0.11241731509000082,
+          "p90_relative_error": 0.25132304782513337,
+          "shell_kappa_cv": 0.10251295592446935,
+          "metric_tracking_corr": -0.9970130897838794,
+          "metric_tracking_abs_corr": 0.9970130897838794,
+          "shell_radii": [
+            0.1829971642940084,
+            0.25856777357300326,
+            0.33177949755005237,
+            0.4071965855725571
+          ],
+          "shell_profile": [
+            0.044973544973544964,
+            0.08800880088008803,
+            0.14334705075445817,
+            0.212962962962963
+          ],
+          "shell_metric_rr": [
+            1.0568883410203929,
+            1.0412235971363422,
+            1.024172201305541,
+            1.0063275436754053
+          ],
+          "metric_shift_profile": [
+            -0.06283937613596313,
+            -0.07850412002001406,
+            -0.09555551585081634,
+            -0.11340017348095266
+          ],
+          "shell_kappa_profile": [
+            0.9353519898971175,
+            0.9181754580052648,
+            0.8637524663435892,
+            0.7121801361435386
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0909612313937085,
+            1.070927136650541,
+            1.0074500984439063,
+            0.8306615335118434
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.100|sigma=0.020|seed=2",
+          "n_side": 13,
+          "eta": 0.1,
+          "disorder_fraction": 0.02,
+          "seed": 2,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9478094948500947,
+          "conductivity_fit": 0.8890448773455949,
+          "conductivity_over_diffusivity": 0.9379995475633065,
+          "diffusivity_match_gap": 0.0620004524366935,
+          "median_relative_error": 0.05735295976469987,
+          "mean_relative_error": 0.10947720541453852,
+          "p90_relative_error": 0.26540851268056304,
+          "shell_kappa_cv": 0.11005768820001119,
+          "metric_tracking_corr": -0.9977014505916079,
+          "metric_tracking_abs_corr": 0.9977014505916079,
+          "shell_radii": [
+            0.18524178501574584,
+            0.26024835114456657,
+            0.33244296012939345,
+            0.40872583839664717
+          ],
+          "shell_profile": [
+            0.045977011494252866,
+            0.08922558922558924,
+            0.14379491431730237,
+            0.21408529741863075
+          ],
+          "shell_metric_rr": [
+            1.0555175153501632,
+            1.0394892864591774,
+            1.021801090759536,
+            1.002574556241658
+          ],
+          "metric_shift_profile": [
+            -0.06421020180619275,
+            -0.08023843069717884,
+            -0.09792662639682126,
+            -0.11715316091470007
+          ],
+          "shell_kappa_profile": [
+            0.9734922794177701,
+            0.9136698722558142,
+            0.8699640126567709,
+            0.7153689507465881
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1213749735065641,
+            1.0524649763091969,
+            1.0021197828380466,
+            0.8240402673461927
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=15|eta=0.100|sigma=0.020",
+      "n_side": 15,
+      "eta": 0.1,
+      "disorder_fraction": 0.02,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.0515064404511266,
+      "p90_relative_error_median": 0.2558510751250581,
+      "diffusivity_match_gap_median": 0.026603808912228466,
+      "shell_kappa_cv_median": 0.09525890740030914,
+      "metric_tracking_abs_corr_median": 0.9939426554482945,
+      "conductivity_over_diffusivity_median": 0.9733961910877715,
+      "normalized_shell_kappa_profile_mean": [
+        1.0557443560757216,
+        1.0843971448682146,
+        1.0578498543344184,
+        0.9817325484927971,
+        0.8202760962288477
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=15|eta=0.100|sigma=0.020|seed=0",
+          "n_side": 15,
+          "eta": 0.1,
+          "disorder_fraction": 0.02,
+          "seed": 0,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.9325307137897433,
+          "conductivity_fit": 0.9099313828261268,
+          "conductivity_over_diffusivity": 0.9757655907420204,
+          "diffusivity_match_gap": 0.024234409257979594,
+          "median_relative_error": 0.0515064404511266,
+          "mean_relative_error": 0.09454402459316594,
+          "p90_relative_error": 0.25952540074736,
+          "shell_kappa_cv": 0.09962344797388915,
+          "metric_tracking_corr": -0.9949927742035234,
+          "metric_tracking_abs_corr": 0.9949927742035234,
+          "shell_radii": [
+            0.15963886747720762,
+            0.22417264644529533,
+            0.2890875643671859,
+            0.35533375164558967,
+            0.4208109590323383
+          ],
+          "shell_profile": [
+            0.03412512546002007,
+            0.06632653061224489,
+            0.10955586423050895,
+            0.1636830170664757,
+            0.22529011604641858
+          ],
+          "shell_metric_rr": [
+            1.0490537909843902,
+            1.0288556382178606,
+            1.008043521159144,
+            0.9842299729932039,
+            0.9625980336517466
+          ],
+          "metric_shift_profile": [
+            -0.053466054660941564,
+            -0.07366420742747115,
+            -0.09447632448618748,
+            -0.11828987265212765,
+            -0.13992181199358456
+          ],
+          "shell_kappa_profile": [
+            0.946636725921326,
+            0.9593437653481932,
+            0.937715889497038,
+            0.8638881651867883,
+            0.7224871859542709
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0684214423698486,
+            1.082763241098913,
+            1.0583529412663162,
+            0.9750272878931382,
+            0.815435087371783
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.100|sigma=0.020|seed=1",
+          "n_side": 15,
+          "eta": 0.1,
+          "disorder_fraction": 0.02,
+          "seed": 1,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.9329237145034299,
+          "conductivity_fit": 0.9081043902730943,
+          "conductivity_over_diffusivity": 0.9733961910877715,
+          "diffusivity_match_gap": 0.026603808912228466,
+          "median_relative_error": 0.056866189524146266,
+          "mean_relative_error": 0.09140949808979967,
+          "p90_relative_error": 0.24474538581479321,
+          "shell_kappa_cv": 0.09401219064691346,
+          "metric_tracking_corr": -0.9939426554482945,
+          "metric_tracking_abs_corr": 0.9939426554482945,
+          "shell_radii": [
+            0.1596931480998682,
+            0.2244387847634584,
+            0.28954578308463064,
+            0.35512622956436696,
+            0.41965448794326415
+          ],
+          "shell_profile": [
+            0.03412512546002007,
+            0.06648432568903849,
+            0.10984079495672613,
+            0.16335641399416906,
+            0.22448979591836732
+          ],
+          "shell_metric_rr": [
+            1.0478371029950329,
+            1.028194633735802,
+            1.0074707658302082,
+            0.9845023632424841,
+            0.9646901165426766
+          ],
+          "metric_shift_profile": [
+            -0.05468274265029893,
+            -0.07432521190952968,
+            -0.09504907981512334,
+            -0.11801748240284748,
+            -0.13782972910265456
+          ],
+          "shell_kappa_profile": [
+            0.9301248874232431,
+            0.9629513879698587,
+            0.9308244562133658,
+            0.8649170932609591,
+            0.7303655585028332
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0523719053200837,
+            1.089512817677494,
+            1.0531634189657444,
+            0.9785938014200894,
+            0.8263580566165879
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.100|sigma=0.020|seed=2",
+          "n_side": 15,
+          "eta": 0.1,
+          "disorder_fraction": 0.02,
+          "seed": 2,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.932501407614633,
+          "conductivity_fit": 0.9053515067830139,
+          "conductivity_over_diffusivity": 0.970884868794923,
+          "diffusivity_match_gap": 0.029115131205077027,
+          "median_relative_error": 0.0491845713165162,
+          "mean_relative_error": 0.09064124050562776,
+          "p90_relative_error": 0.2558510751250581,
+          "shell_kappa_cv": 0.09525890740030914,
+          "metric_tracking_corr": -0.9930802040405617,
+          "metric_tracking_abs_corr": 0.9930802040405617,
+          "shell_radii": [
+            0.1592258834298441,
+            0.2249348428707291,
+            0.28975901393520176,
+            0.35527388083675004,
+            0.4202712092882999
+          ],
+          "shell_profile": [
+            0.03412512546002008,
+            0.0667903525046382,
+            0.11000144738746562,
+            0.16368301706647567,
+            0.22529011604641858
+          ],
+          "shell_metric_rr": [
+            1.0505304657924446,
+            1.0294080391336262,
+            1.00847279944012,
+            0.9856221191247005,
+            0.9651133515772352
+          ],
+          "metric_shift_profile": [
+            -0.05198937985288721,
+            -0.07311180651170557,
+            -0.09404704620521165,
+            -0.11689772652063102,
+            -0.1374064940680959
+          ],
+          "shell_kappa_profile": [
+            0.92181448871619,
+            0.9521842825337615,
+            0.9355508727340148,
+            0.8734852263397327,
+            0.7214925507251646
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0464397205372324,
+            1.080915375828237,
+            1.0620332027711945,
+            0.991576556165164,
+            0.8190351446981722
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=13|eta=0.150|sigma=0.020",
+      "n_side": 13,
+      "eta": 0.15,
+      "disorder_fraction": 0.02,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.08007279127033656,
+      "p90_relative_error_median": 0.3003648442133221,
+      "diffusivity_match_gap_median": 0.04472223830356925,
+      "shell_kappa_cv_median": 0.12765408434269296,
+      "metric_tracking_abs_corr_median": 0.9943994350616815,
+      "conductivity_over_diffusivity_median": 0.9552777616964307,
+      "normalized_shell_kappa_profile_mean": [
+        1.1439265821400584,
+        1.066211428963346,
+        0.9859588829095104,
+        0.8039031059870853
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=13|eta=0.150|sigma=0.020|seed=0",
+          "n_side": 13,
+          "eta": 0.15,
+          "disorder_fraction": 0.02,
+          "seed": 0,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9016304013836369,
+          "conductivity_fit": 0.865047372230923,
+          "conductivity_over_diffusivity": 0.9594256925048514,
+          "diffusivity_match_gap": 0.040574307495148565,
+          "median_relative_error": 0.08083470226277045,
+          "mean_relative_error": 0.12806509428166685,
+          "p90_relative_error": 0.306554420170542,
+          "shell_kappa_cv": 0.13501694002571357,
+          "metric_tracking_corr": -0.9946722753378008,
+          "metric_tracking_abs_corr": 0.9946722753378008,
+          "shell_radii": [
+            0.18572929190964443,
+            0.26126495384830845,
+            0.33326085954973356,
+            0.4101329673912278
+          ],
+          "shell_profile": [
+            0.045977011494252866,
+            0.08900226757369616,
+            0.14281705948372617,
+            0.2109053497942387
+          ],
+          "shell_metric_rr": [
+            1.0235637381464147,
+            1.0012961097777389,
+            0.9790717738778203,
+            0.9569297874098418
+          ],
+          "metric_shift_profile": [
+            -0.09616397900994134,
+            -0.11843160737861735,
+            -0.14065594327853703,
+            -0.1627979297465162
+          ],
+          "shell_kappa_profile": [
+            0.9890042808982451,
+            0.8883794817710478,
+            0.8351100888555018,
+            0.6731547022647036
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1684665613520573,
+            1.0495826340589307,
+            0.9866471083311674,
+            0.7953036962578448
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.150|sigma=0.020|seed=1",
+          "n_side": 13,
+          "eta": 0.15,
+          "disorder_fraction": 0.02,
+          "seed": 1,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9021758255491507,
+          "conductivity_fit": 0.8560240328515712,
+          "conductivity_over_diffusivity": 0.9488439044911373,
+          "diffusivity_match_gap": 0.05115609550886269,
+          "median_relative_error": 0.08007279127033656,
+          "mean_relative_error": 0.124922963505886,
+          "p90_relative_error": 0.27634973384939976,
+          "shell_kappa_cv": 0.11714635206647607,
+          "metric_tracking_corr": -0.9943994350616815,
+          "metric_tracking_abs_corr": 0.9943994350616815,
+          "shell_radii": [
+            0.18296349954816876,
+            0.25920479323006673,
+            0.33252930868908054,
+            0.4070263831585403
+          ],
+          "shell_profile": [
+            0.04478114478114477,
+            0.0876906318082789,
+            0.14204708584553546,
+            0.20821462488129155
+          ],
+          "shell_metric_rr": [
+            1.0265709691609193,
+            1.0029742780479227,
+            0.97909419509768,
+            0.9565857218372406
+          ],
+          "metric_shift_profile": [
+            -0.09315674799543672,
+            -0.1167534391084335,
+            -0.1406335220586773,
+            -0.16314199531911744
+          ],
+          "shell_kappa_profile": [
+            0.933507954606958,
+            0.8958809166842927,
+            0.8199873941706638,
+            0.6787904192474081
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1219485597230408,
+            1.0767260195233133,
+            0.985512411908877,
+            0.8158130088447691
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.150|sigma=0.020|seed=2",
+          "n_side": 13,
+          "eta": 0.15,
+          "disorder_fraction": 0.02,
+          "seed": 2,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.900734286295338,
+          "conductivity_fit": 0.8604514328954426,
+          "conductivity_over_diffusivity": 0.9552777616964307,
+          "diffusivity_match_gap": 0.04472223830356925,
+          "median_relative_error": 0.07577470432872509,
+          "mean_relative_error": 0.12924435883054364,
+          "p90_relative_error": 0.3003648442133221,
+          "shell_kappa_cv": 0.12765408434269296,
+          "metric_tracking_corr": -0.9943110840773196,
+          "metric_tracking_abs_corr": 0.9943110840773196,
+          "shell_radii": [
+            0.1852714413198669,
+            0.25990951734590034,
+            0.3322707249977831,
+            0.4082544993262312
+          ],
+          "shell_profile": [
+            0.04580896686159843,
+            0.08820160366552118,
+            0.14183501683501684,
+            0.20906432748538012
+          ],
+          "shell_metric_rr": [
+            1.025105161282753,
+            1.0016532058817595,
+            0.9774675276288708,
+            0.9544537739697655
+          ],
+          "metric_shift_profile": [
+            -0.09462255587360291,
+            -0.11807451127459667,
+            -0.14226018952748654,
+            -0.1652739431865925
+          ],
+          "shell_kappa_profile": [
+            0.9545938447123092,
+            0.8968522646944361,
+            0.8244162142296241,
+            0.669585129402399
+          ],
+          "normalized_shell_kappa_profile": [
+            1.141364625345077,
+            1.0723256333077942,
+            0.9857171284884866,
+            0.8005926128586417
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=15|eta=0.150|sigma=0.020",
+      "n_side": 15,
+      "eta": 0.15,
+      "disorder_fraction": 0.02,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.06369354389528697,
+      "p90_relative_error_median": 0.2792269448837442,
+      "diffusivity_match_gap_median": 0.0024743209700931468,
+      "shell_kappa_cv_median": 0.10241834023596635,
+      "metric_tracking_abs_corr_median": 0.9902137029835151,
+      "conductivity_over_diffusivity_median": 1.0016957301237814,
+      "normalized_shell_kappa_profile_mean": [
+        1.0593562220333441,
+        1.1039927434536565,
+        1.0415805879213835,
+        0.986619802989788,
+        0.8084506436018278
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=15|eta=0.150|sigma=0.020|seed=0",
+          "n_side": 15,
+          "eta": 0.15,
+          "disorder_fraction": 0.02,
+          "seed": 0,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.8855573994031919,
+          "conductivity_fit": 0.8896054189099099,
+          "conductivity_over_diffusivity": 1.0045711542915752,
+          "diffusivity_match_gap": 0.004571154291575175,
+          "median_relative_error": 0.06369354389528697,
+          "mean_relative_error": 0.10231688939408348,
+          "p90_relative_error": 0.2797136742759676,
+          "shell_kappa_cv": 0.10561927709949287,
+          "metric_tracking_corr": -0.9914005366099189,
+          "metric_tracking_abs_corr": 0.9914005366099189,
+          "shell_radii": [
+            0.15960232489016676,
+            0.22444021464937783,
+            0.2903245963304349,
+            0.35274759805146516,
+            0.41892754579114705
+          ],
+          "shell_profile": [
+            0.034013605442176874,
+            0.06606353881758888,
+            0.10927545621423171,
+            0.15875260995487303,
+            0.21925693354264786
+          ],
+          "shell_metric_rr": [
+            1.0237742978737565,
+            0.9956656826960546,
+            0.965441624009957,
+            0.9358409481184765,
+            0.9099225079552905
+          ],
+          "metric_shift_profile": [
+            -0.07874554777157527,
+            -0.10685416294927719,
+            -0.13707822163537453,
+            -0.16667889752685505,
+            -0.19259733769004062
+          ],
+          "shell_kappa_profile": [
+            0.9311304024530869,
+            0.9514595588348133,
+            0.8947292459399471,
+            0.8469014043937857,
+            0.6959286081709953
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0776600009406412,
+            1.1011883044175084,
+            1.0355304879757081,
+            0.9801761019199677,
+            0.8054451047461743
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.150|sigma=0.020|seed=1",
+          "n_side": 15,
+          "eta": 0.15,
+          "disorder_fraction": 0.02,
+          "seed": 1,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.88587972371446,
+          "conductivity_fit": 0.883687772937093,
+          "conductivity_over_diffusivity": 0.9975256790299069,
+          "diffusivity_match_gap": 0.0024743209700931468,
+          "median_relative_error": 0.07187885042614557,
+          "mean_relative_error": 0.10363662386492126,
+          "p90_relative_error": 0.27467473109748186,
+          "shell_kappa_cv": 0.1018780341813141,
+          "metric_tracking_corr": -0.9902137029835151,
+          "metric_tracking_abs_corr": 0.9902137029835151,
+          "shell_radii": [
+            0.1596590499658561,
+            0.22417274952820287,
+            0.29020239687351,
+            0.3526685257701226,
+            0.4184949356451101
+          ],
+          "shell_profile": [
+            0.034013605442176874,
+            0.06590136054421768,
+            0.1091299677765843,
+            0.15856093681253589,
+            0.21908916238251025
+          ],
+          "shell_metric_rr": [
+            1.0234096694231176,
+            0.9954309235694011,
+            0.9649923378701224,
+            0.936307294635307,
+            0.9112949795198529
+          ],
+          "metric_shift_profile": [
+            -0.07911017622221417,
+            -0.10708892207593068,
+            -0.13752750777520917,
+            -0.16621255101002452,
+            -0.19122486612547818
+          ],
+          "shell_kappa_profile": [
+            0.8837051547101239,
+            0.9521254561894609,
+            0.8922571108724651,
+            0.8435959625704347,
+            0.6937241636799466
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0358976048677688,
+            1.116101308613307,
+            1.0459223861630744,
+            0.9888807736891453,
+            0.8131979266667051
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.150|sigma=0.020|seed=2",
+          "n_side": 15,
+          "eta": 0.15,
+          "disorder_fraction": 0.02,
+          "seed": 2,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.8852050642895902,
+          "conductivity_fit": 0.88670613318283,
+          "conductivity_over_diffusivity": 1.0016957301237814,
+          "diffusivity_match_gap": 0.001695730123781436,
+          "median_relative_error": 0.055243335485730814,
+          "mean_relative_error": 0.09832889280904118,
+          "p90_relative_error": 0.2792269448837442,
+          "shell_kappa_cv": 0.10241834023596635,
+          "metric_tracking_corr": -0.9891310745111329,
+          "metric_tracking_abs_corr": 0.9891310745111329,
+          "shell_radii": [
+            0.15950303475348718,
+            0.22542970152621333,
+            0.29063153256379953,
+            0.35277446592421147,
+            0.41861701214222685
+          ],
+          "shell_profile": [
+            0.03412512546002008,
+            0.06663890045814243,
+            0.10946529149294124,
+            0.15879685207416294,
+            0.21942730580604336
+          ],
+          "shell_metric_rr": [
+            1.0256822073765528,
+            0.9962818935990961,
+            0.9654188442378692,
+            0.9364712018987578,
+            0.9115478338333403
+          ],
+          "metric_shift_profile": [
+            -0.07683763826877898,
+            -0.10623795204623565,
+            -0.1371010014074624,
+            -0.1660486437465738,
+            -0.19097201181199086
+          ],
+          "shell_kappa_profile": [
+            0.9158703178029332,
+            0.9418340957159823,
+            0.8976114598937952,
+            0.8524539245839394,
+            0.6940658144582861
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0645110602916226,
+            1.0946886173301542,
+            1.0432888896253683,
+            0.9908025333602508,
+            0.806708899392604
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=13|eta=0.050|sigma=0.040",
+      "n_side": 13,
+      "eta": 0.05,
+      "disorder_fraction": 0.04,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.06773819312983599,
+      "p90_relative_error_median": 0.24936790628833563,
+      "diffusivity_match_gap_median": 0.08816890199669725,
+      "shell_kappa_cv_median": 0.11783944489207478,
+      "metric_tracking_abs_corr_median": 0.9925688152492839,
+      "conductivity_over_diffusivity_median": 0.9118310980033028,
+      "normalized_shell_kappa_profile_mean": [
+        1.138637768620925,
+        1.0441059443310508,
+        1.0031112274564487,
+        0.8141450595915761
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=13|eta=0.050|sigma=0.040|seed=0",
+          "n_side": 13,
+          "eta": 0.05,
+          "disorder_fraction": 0.04,
+          "seed": 0,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9948218379244259,
+          "conductivity_fit": 0.9064007115368254,
+          "conductivity_over_diffusivity": 0.9111186314807078,
+          "diffusivity_match_gap": 0.08888136851929218,
+          "median_relative_error": 0.06410935445324281,
+          "mean_relative_error": 0.11192621737866724,
+          "p90_relative_error": 0.24666834501640453,
+          "shell_kappa_cv": 0.11445767885954371,
+          "metric_tracking_corr": -0.9936134024464026,
+          "metric_tracking_abs_corr": 0.9936134024464026,
+          "shell_radii": [
+            0.18293177420477066,
+            0.25774358215428844,
+            0.3315991525838374,
+            0.40696340583562224
+          ],
+          "shell_profile": [
+            0.04526748971193416,
+            0.08823005698005698,
+            0.14570820820820823,
+            0.21823116219667946
+          ],
+          "shell_metric_rr": [
+            1.0840845209231897,
+            1.0765646776930733,
+            1.0703566755521885,
+            1.062572961186774
+          ],
+          "metric_shift_profile": [
+            -0.03564319623316625,
+            -0.043163039463282926,
+            -0.04937104160416883,
+            -0.05715475596958397
+          ],
+          "shell_kappa_profile": [
+            1.0114938723085043,
+            0.9304296531536695,
+            0.9079731035724953,
+            0.7306979787857748
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1299730721811194,
+            1.039413566809826,
+            1.014326616690283,
+            0.8162867443187717
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.050|sigma=0.040|seed=1",
+          "n_side": 13,
+          "eta": 0.05,
+          "disorder_fraction": 0.04,
+          "seed": 1,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9956343109602565,
+          "conductivity_fit": 0.9078503269726524,
+          "conductivity_over_diffusivity": 0.9118310980033028,
+          "diffusivity_match_gap": 0.08816890199669725,
+          "median_relative_error": 0.07440986461980728,
+          "mean_relative_error": 0.12014655730987292,
+          "p90_relative_error": 0.2514479417110902,
+          "shell_kappa_cv": 0.12207529391091844,
+          "metric_tracking_corr": -0.9917644509168319,
+          "metric_tracking_abs_corr": 0.9917644509168319,
+          "shell_radii": [
+            0.18197976249326248,
+            0.25784750817552055,
+            0.33200397920733826,
+            0.4043271451178544
+          ],
+          "shell_profile": [
+            0.04478114478114477,
+            0.08831908831908832,
+            0.14620870870870872,
+            0.21604938271604943
+          ],
+          "shell_metric_rr": [
+            1.0868917497255195,
+            1.077318491354625,
+            1.0687635961695399,
+            1.0601787390209636
+          ],
+          "metric_shift_profile": [
+            -0.0328359674308365,
+            -0.04240922580173123,
+            -0.05096412098681746,
+            -0.05954897813539439
+          ],
+          "shell_kappa_profile": [
+            1.0337355502487633,
+            0.9421152380846545,
+            0.896423106637199,
+            0.7306140473006102
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1476743843408086,
+            1.0459556369002738,
+            0.9952272965471164,
+            0.8111426822118014
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.050|sigma=0.040|seed=2",
+          "n_side": 13,
+          "eta": 0.05,
+          "disorder_fraction": 0.04,
+          "seed": 2,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9928937559764792,
+          "conductivity_fit": 0.9086897702625396,
+          "conductivity_over_diffusivity": 0.9151933575902814,
+          "diffusivity_match_gap": 0.08480664240971858,
+          "median_relative_error": 0.06773819312983599,
+          "mean_relative_error": 0.11507868765551331,
+          "p90_relative_error": 0.24936790628833563,
+          "shell_kappa_cv": 0.11783944489207478,
+          "metric_tracking_corr": -0.9925688152492839,
+          "metric_tracking_abs_corr": 0.9925688152492839,
+          "shell_radii": [
+            0.18417072509569166,
+            0.25853707503870477,
+            0.33146409019109124,
+            0.40505840349660704
+          ],
+          "shell_profile": [
+            0.04580896686159843,
+            0.08888888888888889,
+            0.14527027027027026,
+            0.21593291404612164
+          ],
+          "shell_metric_rr": [
+            1.0855526509742937,
+            1.0762745123511577,
+            1.067064025178416,
+            1.0583316914410015
+          ],
+          "metric_shift_profile": [
+            -0.03417506618206234,
+            -0.04345320480519854,
+            -0.052663691977941296,
+            -0.06139602571535652
+          ],
+          "shell_kappa_profile": [
+            1.020544805641645,
+            0.938671740004488,
+            0.8963811492403672,
+            0.7307167192114992
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1382658493408468,
+            1.046948629283052,
+            0.9997797691319462,
+            0.8150057522441553
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=15|eta=0.050|sigma=0.040",
+      "n_side": 15,
+      "eta": 0.05,
+      "disorder_fraction": 0.04,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.05202964207639101,
+      "p90_relative_error_median": 0.23535638444680893,
+      "diffusivity_match_gap_median": 0.05749209837261582,
+      "shell_kappa_cv_median": 0.08897506586784207,
+      "metric_tracking_abs_corr_median": 0.9932159992137778,
+      "conductivity_over_diffusivity_median": 0.9425079016273842,
+      "normalized_shell_kappa_profile_mean": [
+        1.0278147383840552,
+        1.0807750033591423,
+        1.0563065372790446,
+        1.0025702687412146,
+        0.832533452236543
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=15|eta=0.050|sigma=0.040|seed=0",
+          "n_side": 15,
+          "eta": 0.05,
+          "disorder_fraction": 0.04,
+          "seed": 0,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.9800574759994194,
+          "conductivity_fit": 0.9255972367876065,
+          "conductivity_over_diffusivity": 0.9444315863656091,
+          "diffusivity_match_gap": 0.05556841363439091,
+          "median_relative_error": 0.04874728523564523,
+          "mean_relative_error": 0.08610071575062694,
+          "p90_relative_error": 0.23780252003770233,
+          "shell_kappa_cv": 0.09318166168148888,
+          "metric_tracking_corr": -0.9944589518585303,
+          "metric_tracking_abs_corr": 0.9944589518585303,
+          "shell_radii": [
+            0.15705454826998136,
+            0.22263101150968845,
+            0.28981912551525857,
+            0.35745166362153435,
+            0.4238429148420243
+          ],
+          "shell_profile": [
+            0.03323296531727445,
+            0.06580591420241565,
+            0.11151839376527307,
+            0.16838163836963355,
+            0.23400156522786106
+          ],
+          "shell_metric_rr": [
+            1.0736046081606458,
+            1.062431757672901,
+            1.0520838196143218,
+            1.0390255029136026,
+            1.0273948287681247
+          ],
+          "metric_shift_profile": [
+            -0.02891523748468594,
+            -0.0400880879724308,
+            -0.05043602603100972,
+            -0.06349434273172894,
+            -0.07512501687720641
+          ],
+          "shell_kappa_profile": [
+            0.9628610024317376,
+            0.9778492613002007,
+            0.9541117997541269,
+            0.8946145146504446,
+            0.7481190582781134
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0609908501227192,
+            1.0775066353487779,
+            1.0513499736479528,
+            0.9857890308506824,
+            0.8243635100298672
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.050|sigma=0.040|seed=1",
+          "n_side": 15,
+          "eta": 0.05,
+          "disorder_fraction": 0.04,
+          "seed": 1,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.9821109876301758,
+          "conductivity_fit": 0.9256473661165149,
+          "conductivity_over_diffusivity": 0.9425079016273842,
+          "diffusivity_match_gap": 0.05749209837261582,
+          "median_relative_error": 0.05202964207639101,
+          "mean_relative_error": 0.08468440733308062,
+          "p90_relative_error": 0.23535638444680893,
+          "shell_kappa_cv": 0.08897506586784207,
+          "metric_tracking_corr": -0.9932159992137778,
+          "metric_tracking_abs_corr": 0.9932159992137778,
+          "shell_radii": [
+            0.15880135046571853,
+            0.22291909555176417,
+            0.28925325219291464,
+            0.3565681404420548,
+            0.42419041447424943
+          ],
+          "shell_profile": [
+            0.03389830508474576,
+            0.06596578025149451,
+            0.11089460909992135,
+            0.16742564794512846,
+            0.23522167487684728
+          ],
+          "shell_metric_rr": [
+            1.0720332699939275,
+            1.0624004926186448,
+            1.0524217087763776,
+            1.0419825749330882,
+            1.031261449253281
+          ],
+          "metric_shift_profile": [
+            -0.030486575651404335,
+            -0.04011935302668701,
+            -0.050098136868953924,
+            -0.06053727071224335,
+            -0.07125839639205012
+          ],
+          "shell_kappa_profile": [
+            0.9370814408414943,
+            0.9783848700337174,
+            0.9498526638936923,
+            0.901609969938941,
+            0.7504552934137485
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0371947474974466,
+            1.0829108378442331,
+            1.0513303870390462,
+            0.9979336740168976,
+            0.8306303536023768
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.050|sigma=0.040|seed=2",
+          "n_side": 15,
+          "eta": 0.05,
+          "disorder_fraction": 0.04,
+          "seed": 2,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.980244622919075,
+          "conductivity_fit": 0.917069608447531,
+          "conductivity_over_diffusivity": 0.9355517867739842,
+          "diffusivity_match_gap": 0.0644482132260158,
+          "median_relative_error": 0.052859554144467545,
+          "mean_relative_error": 0.08259410707088669,
+          "p90_relative_error": 0.2183882399238928,
+          "shell_kappa_cv": 0.08562935989079745,
+          "metric_tracking_corr": -0.9893180869629749,
+          "metric_tracking_abs_corr": 0.9893180869629749,
+          "shell_radii": [
+            0.15587678628063806,
+            0.22294364877045164,
+            0.29019147883441737,
+            0.35770815026462166,
+            0.4260817741794473
+          ],
+          "shell_profile": [
+            0.03310657596371882,
+            0.06602641056422569,
+            0.11175415439807761,
+            0.1686284472295142,
+            0.2374768089053803
+          ],
+          "shell_metric_rr": [
+            1.0765929066024633,
+            1.0649224858694903,
+            1.0539153230486111,
+            1.0420940901994247,
+            1.03145382335909
+          ],
+          "metric_shift_profile": [
+            -0.02592693904286847,
+            -0.037597359775841444,
+            -0.048604522596720434,
+            -0.06042575544590689,
+            -0.07106602228624115
+          ],
+          "shell_kappa_profile": [
+            0.8809223531535952,
+            0.9673364092711169,
+            0.9533273532798076,
+            0.9155504877566505,
+            0.7533767088721963
+          ],
+          "normalized_shell_kappa_profile": [
+            0.9852586175320003,
+            1.081907536884416,
+            1.0662392511501348,
+            1.0239881013560639,
+            0.8426064930773848
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=13|eta=0.100|sigma=0.040",
+      "n_side": 13,
+      "eta": 0.1,
+      "disorder_fraction": 0.04,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.07704430766825332,
+      "p90_relative_error_median": 0.27765649981927426,
+      "diffusivity_match_gap_median": 0.0665127926189597,
+      "shell_kappa_cv_median": 0.12855762387505684,
+      "metric_tracking_abs_corr_median": 0.996596442429476,
+      "conductivity_over_diffusivity_median": 0.9334872073810403,
+      "normalized_shell_kappa_profile_mean": [
+        1.1643028322481548,
+        1.0464624866418413,
+        0.9814411357058548,
+        0.807793545404149
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=13|eta=0.100|sigma=0.040|seed=0",
+          "n_side": 13,
+          "eta": 0.1,
+          "disorder_fraction": 0.04,
+          "seed": 0,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9460466975846925,
+          "conductivity_fit": 0.8797722084236608,
+          "conductivity_over_diffusivity": 0.9299458585604347,
+          "diffusivity_match_gap": 0.07005414143956534,
+          "median_relative_error": 0.07124183442907486,
+          "mean_relative_error": 0.1195440474107087,
+          "p90_relative_error": 0.2838335141514503,
+          "shell_kappa_cv": 0.1254247424928471,
+          "metric_tracking_corr": -0.996596442429476,
+          "metric_tracking_abs_corr": 0.996596442429476,
+          "shell_radii": [
+            0.18287366539817707,
+            0.2577462577139449,
+            0.3313013549540514,
+            0.407775135691041
+          ],
+          "shell_profile": [
+            0.045073375262054495,
+            0.08737864077669905,
+            0.1434504357298475,
+            0.21296296296296297
+          ],
+          "shell_metric_rr": [
+            1.0523244709083575,
+            1.0387414833976325,
+            1.0259880278775597,
+            1.01055744458915
+          ],
+          "metric_shift_profile": [
+            -0.06740324624799854,
+            -0.08098623375872371,
+            -0.09373968927879761,
+            -0.1091702725672079
+          ],
+          "shell_kappa_profile": [
+            0.9936737861193157,
+            0.9083174363448621,
+            0.8605696696968117,
+            0.6959182701412665
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1492609780049592,
+            1.050539724218213,
+            0.9953157203629862,
+            0.8048835774138416
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.100|sigma=0.040|seed=1",
+          "n_side": 13,
+          "eta": 0.1,
+          "disorder_fraction": 0.04,
+          "seed": 1,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9468936516388663,
+          "conductivity_fit": 0.8839131105552009,
+          "conductivity_over_diffusivity": 0.9334872073810403,
+          "diffusivity_match_gap": 0.0665127926189597,
+          "median_relative_error": 0.09129763058540422,
+          "mean_relative_error": 0.1266174095962939,
+          "p90_relative_error": 0.2563369696085318,
+          "shell_kappa_cv": 0.13336980928920222,
+          "metric_tracking_corr": -0.9958365694547717,
+          "metric_tracking_abs_corr": 0.9958365694547717,
+          "shell_radii": [
+            0.18191100298335086,
+            0.25818582302239584,
+            0.331240330133633,
+            0.4024991256785396
+          ],
+          "shell_profile": [
+            0.04458161865569272,
+            0.08769586894586895,
+            0.14317302377003868,
+            0.20787037037037037
+          ],
+          "shell_metric_rr": [
+            1.054914133131578,
+            1.0399127506499473,
+            1.0249504754299035,
+            1.010141436948905
+          ],
+          "metric_shift_profile": [
+            -0.0648135840247781,
+            -0.07981496650640896,
+            -0.09477724172645385,
+            -0.10958628020745298
+          ],
+          "shell_kappa_profile": [
+            1.0314015802022252,
+            0.9140476262596358,
+            0.8466005655542764,
+            0.7085645564734021
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1785378032743858,
+            1.0444425354952291,
+            0.9673737077109793,
+            0.809645953519406
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.100|sigma=0.040|seed=2",
+          "n_side": 13,
+          "eta": 0.1,
+          "disorder_fraction": 0.04,
+          "seed": 2,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9441961627963747,
+          "conductivity_fit": 0.8859408945273317,
+          "conductivity_over_diffusivity": 0.938301731605738,
+          "diffusivity_match_gap": 0.06169826839426196,
+          "median_relative_error": 0.07704430766825332,
+          "mean_relative_error": 0.1206688530310465,
+          "p90_relative_error": 0.27765649981927426,
+          "shell_kappa_cv": 0.12855762387505684,
+          "metric_tracking_corr": -0.9969525668392933,
+          "metric_tracking_abs_corr": 0.9969525668392933,
+          "shell_radii": [
+            0.18460160062021339,
+            0.2593599956814093,
+            0.331095011798835,
+            0.4058815434191305
+          ],
+          "shell_profile": [
+            0.04580896686159843,
+            0.08875794986906098,
+            0.14260662177328842,
+            0.2107699805068226
+          ],
+          "shell_metric_rr": [
+            1.0545430766296062,
+            1.038706363726061,
+            1.0222736276240545,
+            1.0046278571172624
+          ],
+          "metric_shift_profile": [
+            -0.06518464052674977,
+            -0.08102135343029526,
+            -0.09745408953230283,
+            -0.11509986003909556
+          ],
+          "shell_kappa_profile": [
+            1.015742730863465,
+            0.9105125260825134,
+            0.8557885711081477,
+            0.7051564497599647
+          ],
+          "normalized_shell_kappa_profile": [
+            1.165109715465119,
+            1.0444052002120818,
+            0.9816339790435991,
+            0.8088511052791993
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=15|eta=0.100|sigma=0.040",
+      "n_side": 15,
+      "eta": 0.1,
+      "disorder_fraction": 0.04,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.0675137314210479,
+      "p90_relative_error_median": 0.2492279775996,
+      "diffusivity_match_gap_median": 0.032673367891948635,
+      "shell_kappa_cv_median": 0.09466814475176567,
+      "metric_tracking_abs_corr_median": 0.9930760620043572,
+      "conductivity_over_diffusivity_median": 0.9673266321080514,
+      "normalized_shell_kappa_profile_mean": [
+        1.0246996650561238,
+        1.1053762310299924,
+        1.0576065909584589,
+        0.9869156505564894,
+        0.8254018623989355
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=15|eta=0.100|sigma=0.040|seed=0",
+          "n_side": 15,
+          "eta": 0.1,
+          "disorder_fraction": 0.04,
+          "seed": 0,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.9296516474186142,
+          "conductivity_fit": 0.899378621928331,
+          "conductivity_over_diffusivity": 0.967436162164244,
+          "diffusivity_match_gap": 0.032563837835756004,
+          "median_relative_error": 0.0675137314210479,
+          "mean_relative_error": 0.09614026047895342,
+          "p90_relative_error": 0.2540631038855602,
+          "shell_kappa_cv": 0.09883847114386833,
+          "metric_tracking_corr": -0.9954555482251256,
+          "metric_tracking_abs_corr": 0.9954555482251256,
+          "shell_radii": [
+            0.15621164607963572,
+            0.2220425921615444,
+            0.28952759147053614,
+            0.35546113567736526,
+            0.42141868239724695
+          ],
+          "shell_profile": [
+            0.03284072249589491,
+            0.06506364922206505,
+            0.11000070131145238,
+            0.16390306122448978,
+            0.22526724975704568
+          ],
+          "shell_metric_rr": [
+            1.04557294986081,
+            1.0262919750142507,
+            1.0066364722795933,
+            0.9846900670445328,
+            0.9638420085494264
+          ],
+          "metric_shift_profile": [
+            -0.056946895784521834,
+            -0.07622787063108105,
+            -0.09588337336573827,
+            -0.1178297786007988,
+            -0.13867783709590475
+          ],
+          "shell_kappa_profile": [
+            0.9076978601449077,
+            0.9697714886941861,
+            0.9243436719540779,
+            0.8604573458720164,
+            0.717560045260191
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0362248931755813,
+            1.107087943466598,
+            1.05522769721549,
+            0.98229527738011,
+            0.8191641887622204
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.100|sigma=0.040|seed=1",
+          "n_side": 15,
+          "eta": 0.1,
+          "disorder_fraction": 0.04,
+          "seed": 1,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.9310521935137008,
+          "conductivity_fit": 0.9006315826684219,
+          "conductivity_over_diffusivity": 0.9673266321080514,
+          "diffusivity_match_gap": 0.032673367891948635,
+          "median_relative_error": 0.07160392959220137,
+          "mean_relative_error": 0.09594075811332449,
+          "p90_relative_error": 0.24063944136674,
+          "shell_kappa_cv": 0.09423840938476481,
+          "metric_tracking_corr": -0.9930760620043572,
+          "metric_tracking_abs_corr": 0.9930760620043572,
+          "shell_radii": [
+            0.15838893089039704,
+            0.22248789322283447,
+            0.29000973467724933,
+            0.3556185226592391,
+            0.41997077758603846
+          ],
+          "shell_profile": [
+            0.03365556749015395,
+            0.06530612244897957,
+            0.11023184784117726,
+            0.16379097093382808,
+            0.2245527840765936
+          ],
+          "shell_metric_rr": [
+            1.0444401685290465,
+            1.0259334110878746,
+            1.0066505660064444,
+            0.9858626126712425,
+            0.968079335715029
+          ],
+          "metric_shift_profile": [
+            -0.058079677116285255,
+            -0.07658643455745717,
+            -0.09586927963888714,
+            -0.11665723297408903,
+            -0.1344405099303021
+          ],
+          "shell_kappa_profile": [
+            0.8967935564188845,
+            0.9700941347940205,
+            0.9174027297587385,
+            0.8527114582742441,
+            0.7265642718456509
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0275924844115785,
+            1.1115840819227105,
+            1.0512075421719593,
+            0.9770809342044006,
+            0.8325349572893517
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.100|sigma=0.040|seed=2",
+          "n_side": 15,
+          "eta": 0.1,
+          "disorder_fraction": 0.04,
+          "seed": 2,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.929439801444414,
+          "conductivity_fit": 0.8947493965933694,
+          "conductivity_over_diffusivity": 0.9626760067761965,
+          "diffusivity_match_gap": 0.03732399322380353,
+          "median_relative_error": 0.060089145120023224,
+          "mean_relative_error": 0.09210886629817182,
+          "p90_relative_error": 0.2492279775996,
+          "shell_kappa_cv": 0.09466814475176567,
+          "metric_tracking_corr": -0.992602591100783,
+          "metric_tracking_abs_corr": 0.992602591100783,
+          "shell_radii": [
+            0.15614291638941694,
+            0.2234205783438378,
+            0.29001697834481033,
+            0.35519188927254314,
+            0.41995024084140387
+          ],
+          "shell_profile": [
+            0.03310657596371882,
+            0.06587189331178014,
+            0.11029620181405893,
+            0.1637228882584424,
+            0.22475143903715333
+          ],
+          "shell_metric_rr": [
+            1.0487054864206287,
+            1.0277669870439055,
+            1.0080623654114984,
+            0.9870961533401176,
+            0.9675591536955597
+          ],
+          "metric_shift_profile": [
+            -0.05381435922470312,
+            -0.07475285860142633,
+            -0.09445748023383316,
+            -0.11542369230521399,
+            -0.13496069194977145
+          ],
+          "shell_kappa_profile": [
+            0.8782449801587952,
+            0.9540268699112843,
+            0.9270156431203866,
+            0.8704986911105683,
+            0.7167493008316439
+          ],
+          "normalized_shell_kappa_profile": [
+            1.010281617581211,
+            1.0974566677006694,
+            1.0663845334879274,
+            1.0013707400849579,
+            0.8245064411452344
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=13|eta=0.150|sigma=0.040",
+      "n_side": 13,
+      "eta": 0.15,
+      "disorder_fraction": 0.04,
+      "trial_count": 3,
+      "pass_count": 2,
+      "median_relative_error_median": 0.09111690847914829,
+      "p90_relative_error_median": 0.2949932898059118,
+      "diffusivity_match_gap_median": 0.042450461630576086,
+      "shell_kappa_cv_median": 0.13688231443341728,
+      "metric_tracking_abs_corr_median": 0.9952279082011811,
+      "conductivity_over_diffusivity_median": 0.9575495383694239,
+      "normalized_shell_kappa_profile_mean": [
+        1.1823616014363536,
+        1.0548095752780124,
+        0.9624798725502389,
+        0.8003489507353945
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=13|eta=0.150|sigma=0.040|seed=0",
+          "n_side": 13,
+          "eta": 0.15,
+          "disorder_fraction": 0.04,
+          "seed": 0,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.8992625702270431,
+          "conductivity_fit": 0.8540985133891225,
+          "conductivity_over_diffusivity": 0.9497765632272254,
+          "diffusivity_match_gap": 0.05022343677277463,
+          "median_relative_error": 0.0847484815534066,
+          "mean_relative_error": 0.13021757050921667,
+          "p90_relative_error": 0.2976583804366174,
+          "shell_kappa_cv": 0.13315456473515838,
+          "metric_tracking_corr": -0.9942759817347704,
+          "metric_tracking_abs_corr": 0.9942759817347704,
+          "shell_radii": [
+            0.1817200743976508,
+            0.258390670773361,
+            0.33174629269435885,
+            0.40703465567995084
+          ],
+          "shell_profile": [
+            0.044374563242487765,
+            0.08707264957264957,
+            0.14178240740740738,
+            0.20740740740740743
+          ],
+          "shell_metric_rr": [
+            1.0230823896226768,
+            1.0023457964113158,
+            0.9829948010707301,
+            0.9633723302452886
+          ],
+          "metric_shift_profile": [
+            -0.09664532753367916,
+            -0.11738192074504039,
+            -0.1367329160856272,
+            -0.15635538691106943
+          ],
+          "shell_kappa_profile": [
+            0.9762250721223066,
+            0.8833152907968006,
+            0.8156383159673722,
+            0.6707493247049576
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1670604640320419,
+            1.0559884012431489,
+            0.9750817293042601,
+            0.8018694054205491
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.150|sigma=0.040|seed=1",
+          "n_side": 13,
+          "eta": 0.15,
+          "disorder_fraction": 0.04,
+          "seed": 1,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.9001687186193138,
+          "conductivity_fit": 0.8619561409685198,
+          "conductivity_over_diffusivity": 0.9575495383694239,
+          "diffusivity_match_gap": 0.042450461630576086,
+          "median_relative_error": 0.1099803928550696,
+          "mean_relative_error": 0.14159074218438722,
+          "p90_relative_error": 0.2816874482389071,
+          "shell_kappa_cv": 0.1481557837307464,
+          "metric_tracking_corr": -0.9952279082011811,
+          "metric_tracking_abs_corr": 0.9952279082011811,
+          "shell_radii": [
+            0.18232555292806035,
+            0.2586670483522316,
+            0.33101504558218153,
+            0.4029369896365373
+          ],
+          "shell_profile": [
+            0.04458161865569272,
+            0.08723674655047206,
+            0.14091435185185186,
+            0.20414462081128748
+          ],
+          "shell_metric_rr": [
+            1.0252277689934095,
+            1.0035984583374873,
+            0.9820841575292697,
+            0.9615497850609261
+          ],
+          "metric_shift_profile": [
+            -0.09449994816294649,
+            -0.11612925881886893,
+            -0.13764355962708763,
+            -0.15817793209543185
+          ],
+          "shell_kappa_profile": [
+            1.0250631519425153,
+            0.8933806489854542,
+            0.8105656009330846,
+            0.6778910481542709
+          ],
+          "normalized_shell_kappa_profile": [
+            1.2035140644487035,
+            1.0489072540777475,
+            0.9516751226816016,
+            0.7959035587919472
+          ],
+          "pass": false
+        },
+        {
+          "label": "radial_native_flux|n=13|eta=0.150|sigma=0.040|seed=2",
+          "n_side": 13,
+          "eta": 0.15,
+          "disorder_fraction": 0.04,
+          "seed": 2,
+          "lattice_spacing": 0.08333333333333333,
+          "epsilon_k": 0.003472222222222222,
+          "heat_diffusivity": 0.897172200723937,
+          "conductivity_fit": 0.8599973976456154,
+          "conductivity_over_diffusivity": 0.9585644728533442,
+          "diffusivity_match_gap": 0.04143552714665577,
+          "median_relative_error": 0.09111690847914829,
+          "mean_relative_error": 0.13432991864171961,
+          "p90_relative_error": 0.2949932898059118,
+          "shell_kappa_cv": 0.13688231443341728,
+          "metric_tracking_corr": -0.9960972396192157,
+          "metric_tracking_abs_corr": 0.9960972396192157,
+          "shell_radii": [
+            0.18417632232720624,
+            0.2591613611913662,
+            0.33090515553053595,
+            0.4049582359420691
+          ],
+          "shell_profile": [
+            0.04545454545454545,
+            0.08787037037037038,
+            0.14065255731922405,
+            0.20521102497846688
+          ],
+          "shell_metric_rr": [
+            1.0246698270590064,
+            1.0020125314743844,
+            0.9797043100046475,
+            0.9565964580812746
+          ],
+          "metric_shift_profile": [
+            -0.09505789009734955,
+            -0.11771518568197181,
+            -0.1400234071517098,
+            -0.1631312590750834
+          ],
+          "shell_kappa_profile": [
+            0.9903123020923869,
+            0.8918482530585226,
+            0.8086422879530168,
+            0.6761454018492687
+          ],
+          "normalized_shell_kappa_profile": [
+            1.1765102758283157,
+            1.059533070513141,
+            0.9606827656648556,
+            0.8032738879936873
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "radial_native_flux|n=15|eta=0.150|sigma=0.040",
+      "n_side": 15,
+      "eta": 0.15,
+      "disorder_fraction": 0.04,
+      "trial_count": 3,
+      "pass_count": 3,
+      "median_relative_error_median": 0.07361210054833354,
+      "p90_relative_error_median": 0.2817882594652936,
+      "diffusivity_match_gap_median": 0.004054309172874748,
+      "shell_kappa_cv_median": 0.10636329583276546,
+      "metric_tracking_abs_corr_median": 0.9916412517717016,
+      "conductivity_over_diffusivity_median": 0.9959456908271253,
+      "normalized_shell_kappa_profile_mean": [
+        1.041643559524042,
+        1.1188224947256373,
+        1.0489633260663445,
+        0.9847284129299312,
+        0.8058422067540452
+      ],
+      "trials": [
+        {
+          "label": "radial_native_flux|n=15|eta=0.150|sigma=0.040|seed=0",
+          "n_side": 15,
+          "eta": 0.15,
+          "disorder_fraction": 0.04,
+          "seed": 0,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.883682339335217,
+          "conductivity_fit": 0.8800996179209428,
+          "conductivity_over_diffusivity": 0.9959456908271253,
+          "diffusivity_match_gap": 0.004054309172874748,
+          "median_relative_error": 0.07361210054833354,
+          "mean_relative_error": 0.10583205101616877,
+          "p90_relative_error": 0.27909755477273424,
+          "shell_kappa_cv": 0.10636329583276546,
+          "metric_tracking_corr": -0.9937191154885066,
+          "metric_tracking_abs_corr": 0.9937191154885066,
+          "shell_radii": [
+            0.15608290817851314,
+            0.22233590579052456,
+            0.2895983322917765,
+            0.3534060846361062,
+            0.42090448036566924
+          ],
+          "shell_profile": [
+            0.03270079961809285,
+            0.06482593037214884,
+            0.10891708034565174,
+            0.15940084954169456,
+            0.22050771528123442
+          ],
+          "shell_metric_rr": [
+            1.0221137999110488,
+            0.9946683867892971,
+            0.9666220867333234,
+            0.9377492606002751,
+            0.9101154173816003
+          ],
+          "metric_shift_profile": [
+            -0.080406045734283,
+            -0.10785145885603464,
+            -0.13589775891200817,
+            -0.16477058504505648,
+            -0.19240442826373083
+          ],
+          "shell_kappa_profile": [
+            0.8917890054433543,
+            0.9567205434231834,
+            0.8947581158986063,
+            0.838512723283776,
+            0.6885316937633168
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0441731053353092,
+            1.1201997946449502,
+            1.0476495613862589,
+            0.9817932591567496,
+            0.8061842794767327
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.150|sigma=0.040|seed=1",
+          "n_side": 15,
+          "eta": 0.15,
+          "disorder_fraction": 0.04,
+          "seed": 1,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.8848747067235853,
+          "conductivity_fit": 0.8813167658791203,
+          "conductivity_over_diffusivity": 0.9959791586114617,
+          "diffusivity_match_gap": 0.00402084138853831,
+          "median_relative_error": 0.07689856692546401,
+          "mean_relative_error": 0.10822272942242118,
+          "p90_relative_error": 0.28363017009346925,
+          "shell_kappa_cv": 0.10750665232513094,
+          "metric_tracking_corr": -0.9916412517717016,
+          "metric_tracking_abs_corr": 0.9916412517717016,
+          "shell_radii": [
+            0.15829979929055352,
+            0.22277665175969116,
+            0.2901290003788774,
+            0.35358140535835864,
+            0.4199166809653772
+          ],
+          "shell_profile": [
+            0.03352769679300291,
+            0.06506364922206505,
+            0.1091709411037142,
+            0.15929433974546753,
+            0.22013605442176867
+          ],
+          "shell_metric_rr": [
+            1.0210439702397507,
+            0.9946206533518328,
+            0.9663760093100182,
+            0.9386887859495531,
+            0.9139124762790578
+          ],
+          "metric_shift_profile": [
+            -0.0814758754055811,
+            -0.10789919229349898,
+            -0.13614383633531335,
+            -0.1638310596957785,
+            -0.18860736936627331
+          ],
+          "shell_kappa_profile": [
+            0.8934040512831743,
+            0.9587427771338881,
+            0.8884949840954451,
+            0.8353221036507614,
+            0.6868130448455232
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0479132024206927,
+            1.1245518894178788,
+            1.0421551399738043,
+            0.9797863121755744,
+            0.8055934560120498
+          ],
+          "pass": true
+        },
+        {
+          "label": "radial_native_flux|n=15|eta=0.150|sigma=0.040|seed=2",
+          "n_side": 15,
+          "eta": 0.15,
+          "disorder_fraction": 0.04,
+          "seed": 2,
+          "lattice_spacing": 0.07142857142857142,
+          "epsilon_k": 0.002551020408163265,
+          "heat_diffusivity": 0.8832394653354886,
+          "conductivity_fit": 0.8777728423199076,
+          "conductivity_over_diffusivity": 0.993810712462328,
+          "diffusivity_match_gap": 0.006189287537672006,
+          "median_relative_error": 0.06680674709347356,
+          "mean_relative_error": 0.10292581572885078,
+          "p90_relative_error": 0.2817882594652936,
+          "shell_kappa_cv": 0.10450461563181236,
+          "metric_tracking_corr": -0.9902400888806641,
+          "metric_tracking_abs_corr": 0.9902400888806641,
+          "shell_radii": [
+            0.15602832541320333,
+            0.22371392038867688,
+            0.29078488848282974,
+            0.35485153889714405,
+            0.4210269012652977
+          ],
+          "shell_profile": [
+            0.0329759022252969,
+            0.06562625050020006,
+            0.1096438575430172,
+            0.16084938648356534,
+            0.2214919866251585
+          ],
+          "shell_metric_rr": [
+            1.025233775188428,
+            0.9961676909261219,
+            0.9670969534333909,
+            0.939057119505012,
+            0.9139391853801327
+          ],
+          "metric_shift_profile": [
+            -0.07728607045690383,
+            -0.10635215471920989,
+            -0.1354228922119407,
+            -0.16346272614031954,
+            -0.18858066026519837
+          ],
+          "shell_kappa_profile": [
+            0.8783309774929698,
+            0.9454032504790771,
+            0.8989454468980138,
+            0.8441119793043751,
+            0.6852089487767007
+          ],
+          "normalized_shell_kappa_profile": [
+            1.0328443708161246,
+            1.1117158001140828,
+            1.0570852768389698,
+            0.9926056674574694,
+            0.805748884773353
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "refinement_drifts": [
+    {
+      "label": "sigma=0.020|eta=0.050",
+      "disorder_fraction": 0.02,
+      "eta": 0.05,
+      "drift": 0.09882246159434135
+    },
+    {
+      "label": "sigma=0.020|eta=0.100",
+      "disorder_fraction": 0.02,
+      "eta": 0.1,
+      "drift": 0.09024077335878124
+    },
+    {
+      "label": "sigma=0.020|eta=0.150",
+      "disorder_fraction": 0.02,
+      "eta": 0.15,
+      "drift": 0.10613521913719356
+    },
+    {
+      "label": "sigma=0.040|eta=0.050",
+      "disorder_fraction": 0.04,
+      "eta": 0.05,
+      "drift": 0.11397386142345839
+    },
+    {
+      "label": "sigma=0.040|eta=0.100",
+      "disorder_fraction": 0.04,
+      "eta": 0.1,
+      "drift": 0.12333468560782192
+    },
+    {
+      "label": "sigma=0.040|eta=0.150",
+      "disorder_fraction": 0.04,
+      "eta": 0.15,
+      "drift": 0.12784208519406096
+    }
+  ],
+  "max_refinement_profile_drift": 0.12784208519406096,
+  "observation": "once the smooth-radial mild-disorder family is read with native bulk shells, interior-ball cumulative flux, and a delayed asymptotic fit window, the bounded constitutive closure returns on aggregated observables",
+  "conclusion": "all 12 aggregated mild-disorder cases pass, with maximum refinement drift 0.1278; the weakest aggregated case is `radial_native_flux|n=13|eta=0.150|sigma=0.040` with kappa/D_eff 0.9575, median relative error 0.0911, p90 error 0.2950, shell-kappa CV 0.1369, and |metric-tracking corr| 0.9952; the hardest seed-level trial is `radial_native_flux|n=13|eta=0.150|sigma=0.040|seed=1` with median relative error 0.1100, p90 error 0.2817, shell-kappa CV 0.1482, and pass state FALSE; this supports a bounded disorder-native transient closure on the smooth-radial branch, with the minimum seed-level pass count still only 2/3 in the hardest tested case"
+}

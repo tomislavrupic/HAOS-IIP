@@ -185,7 +185,15 @@ The intended public reading order is:
 
 1. `52.1` Scalar-Carrier Recoverability-Gradient Probe Release for HAOS-IIP
 
-### 2.36 Part XXXVI. External collapse-ordering invariance assessment
+### 2.36 Part XXXVI. Scalar-carrier shell-native current closure
+
+1. `52.4` Scalar-Carrier Shell-Native Current-Closure Release for HAOS-IIP
+
+### 2.37 Part XXXVII. Scalar-carrier smooth-inhomogeneity current closure
+
+1. `52.5` Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release for HAOS-IIP
+
+### 2.38 Part XXXVIII. External collapse-ordering invariance assessment
 
 1. `53.1` External Collapse-Ordering Invariance Assessment on Frozen HAOS-IIP Telemetry
 
@@ -254,6 +262,8 @@ The intended public reading order is:
 - `51.3` Scalar-Carrier CP4 Geometry Robustness Release for HAOS-IIP
 - `51.4` Scalar-Carrier Local Metric-Field Release for HAOS-IIP
 - `52.1` Scalar-Carrier Recoverability-Gradient Probe Release for HAOS-IIP
+- `52.4` Scalar-Carrier Shell-Native Current-Closure Release for HAOS-IIP
+- `52.5` Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release for HAOS-IIP
 - `53.1` External Collapse-Ordering Invariance Assessment on Frozen HAOS-IIP Telemetry
 
 Rule for future papers:

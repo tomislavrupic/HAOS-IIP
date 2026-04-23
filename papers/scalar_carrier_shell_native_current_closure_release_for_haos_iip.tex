@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Scalar-Carrier Shell-Native Current-Closure Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{52.4} of HAOS-IIP as the bounded shell-native follow-on to the open transient current probe \texttt{52.3}. The carrier is unchanged: the same local scalar kernel graph, the same bounded local metric field from \texttt{51.4}, and the same clean refinement line. What changes is only the transient reconstruction. Release \texttt{52.3} compared cumulative shell-mass flow against a constitutive law that still mixed shell-center and shell-boundary viewpoints, and the fitted conductivity scaled incorrectly with refinement. Release \texttt{52.4} keeps the empirical cumulative shell current but rebuilds the constitutive side on exact bulk shells and shell density \(\rho = m_{\mathrm{shell}} / (N_{\mathrm{shell}} h^3)\). On this corrected shell-native read, all three clean refinement cases pass. The fitted conductivity stays close to the heat diffusivity, the relative residuals remain small, and the normalized shellwise constitutive profile stays stable under refinement. The correct bounded conclusion is therefore positive but narrow: on the clean scalar carrier, a shell-native transient current reconstruction closes onto one bounded constitutive family. This is a transport-law closure on the same scalar geometry carrier, not yet a disorder-universal current law, conserved-current theorem, curvature result, or spacetime claim.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{52.4} is a narrow scalar follow-on release.
+
+It does not add:
+\begin{itemize}
+\item disorder or kernel-family universality for the transient law;
+\item a conserved-current theorem;
+\item curvature extraction;
+\item spacetime or ontology language;
+\item any new carrier beyond the already validated scalar line.
+\end{itemize}
+
+It does add:
+\begin{itemize}
+\item a corrected shell-native transient current reconstruction on the same carrier;
+\item a bounded constitutive family whose fitted conductivity tracks the heat diffusivity on the clean refinement line;
+\item a clean separation between the open \texttt{52.3} baseline and the corrected \texttt{52.4} closure.
+\end{itemize}
+
+\section{Where 52.3 Left the Boundary}
+
+Release \texttt{52.3} asked the right stronger question after the positive static \texttt{52.2} inverse-square closure:
+
+\begin{quote}
+does the same scalar carrier also support a constitutive response/current closure?
+\end{quote}
+
+Its answer was boundedly open. The main symptoms were:
+\begin{itemize}
+\item median relative error around \(0.49\) to \(0.59\);
+\item \(p90\) relative error around \(0.60\) to \(0.67\);
+\item normalized current-profile drift above the bounded threshold;
+\item fitted conductivity scaling incorrectly with refinement.
+\end{itemize}
+
+The important point is what \emph{did not} fail:
+\begin{itemize}
+\item the scalar carrier;
+\item the \texttt{51.4} local metric field;
+\item the positive \texttt{52.2} shell-native inverse-square response law.
+\end{itemize}
+
+So the next honest step was not to abandon current closure, but to correct the transient reconstruction itself.
+
+\section{What 52.4 Changes}
+
+Release \texttt{52.4} keeps the carrier fixed:
+\begin{itemize}
+\item same local scalar kernel graph;
+\item same coarse local metric field;
+\item same clean Euclidean shell scaffold;
+\item same clean refinement line \(n = 13, 15, 17\).
+\end{itemize}
+
+The only change is the reconstruction:
+\begin{itemize}
+\item use exact bulk shells on the clean scaffold rather than a looser shell-profile surrogate;
+\item keep empirical current as cumulative shell-mass flow;
+\item read the constitutive law against shell density
+\[
+\rho(r,t) = \frac{m_{\mathrm{shell}}(r,t)}{N_{\mathrm{shell}}(r)\, h^3};
+\]
+\item compare both sides through
+\[
+I_{\mathrm{const}}(r,t)
+=
+- \kappa \, 4\pi r^2 g_{rr}(r)\, \partial_r \rho(r,t).
+\]
+\end{itemize}
+
+The closure diagnostic is therefore not the raw current profile alone. It is whether one bounded conductivity family:
+\begin{itemize}
+\item stays close to the heat diffusivity;
+\item keeps small relative residuals;
+\item remains stable across shell radius and refinement.
+\end{itemize}
+
+\section{Frozen Quantitative Summary}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}p{2.2cm}p{1.3cm}p{1.5cm}p{1.6cm}p{1.6cm}p{1.8cm}p{1.2cm}@{}}
+\toprule
+Case & \(D_{\mathrm{eff}}\) & \(\kappa_{\mathrm{fit}}\) & \(\kappa/D_{\mathrm{eff}}\) & median err. & \(p90\) err. & shell CV \\
+\midrule
+\texttt{n=13} & 1.0593 & 0.9397 & 0.8871 & 0.0705 & 0.2328 & 0.0967 \\
+\texttt{n=15} & 1.0466 & 0.9530 & 0.9106 & 0.0709 & 0.1984 & 0.0742 \\
+\texttt{n=17} & 1.0368 & 0.9604 & 0.9263 & 0.0739 & 0.2718 & 0.1176 \\
+\bottomrule
+\end{tabular}
+\caption{Bounded shell-native transient current-closure summary frozen by release \texttt{52.4}.}
+\end{table}
+
+The refinement-stability read is also positive:
+\begin{itemize}
+\item normalized shell-\(\kappa\) drift \(13 \to 15 = 0.0493\);
+\item normalized shell-\(\kappa\) drift \(15 \to 17 = 0.0966\).
+\end{itemize}
+
+\section{What 52.4 Now Supports}
+
+The strongest honest statement now supported by the repository is:
+
+\begin{quote}
+on the clean scalar carrier, a shell-native transient current reconstruction closes onto one bounded constitutive family whose fitted conductivity stays close to the heat diffusivity and whose shellwise profile remains refinement-stable.
+\end{quote}
+
+This matters because the scalar line now supports not only:
+\begin{itemize}
+\item one shared-family geometry bridge;
+\item one bounded local metric field;
+\item one shell-native inverse-square response law;
+\end{itemize}
+but also:
+\begin{itemize}
+\item one bounded transient transport-law closure on the same carrier.
+\end{itemize}
+
+That is the closest current scalar result to an effective physics-style constitutive law in the repository.
+
+\section{What 52.4 Still Does Not Say}
+
+Release \texttt{52.4} still does not justify:
+\begin{itemize}
+\item a disorder-robust or kernel-family-robust transient current law;
+\item a conserved-current theorem;
+\item curvature extraction;
+\item spacetime or ontology language;
+\item a universal transport law.
+\end{itemize}
+
+So \texttt{52.3} remains the honest open baseline for the first transient probe, while \texttt{52.4} is the corrected shell-native clean-line closure.
+
+\section{The Right Next Move}
+
+The next honest scalar step should remain narrow:
+\begin{itemize}
+\item test controlled inhomogeneity on the same carrier;
+\item then test mild disorder and bounded kernel-family variation for the transient law itself;
+\item only afterward ask for conserved-current or curvature-style closure.
+\end{itemize}
+
+\section{Conclusion}
+
+Release \texttt{52.4} freezes the corrected shell-native transient current closure on the clean scalar carrier.
+
+This is not a claim that all current-like questions are solved. It is a narrower and more useful statement: once the transient law is reconstructed on exact bulk shells and compared through shell density rather than raw node mass, the same scalar carrier supports one bounded constitutive family whose fitted conductivity remains close to the heat diffusivity and whose shellwise profile remains refinement-stable. That is the correct stopping point for \texttt{52.4}: stronger than the open \texttt{52.3} baseline, still disciplined about what has not yet been earned.
+
+\end{document}

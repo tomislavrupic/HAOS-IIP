@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Scalar-Carrier Recoverability-Gradient Probe Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{52.1} of HAOS-IIP as the first bounded recoverability-gradient probe on the validated scalar geometry carrier. The probe uses the same mean-zero scalar Green field as a deterministic recoverability potential and the same bounded local metric field established by \texttt{51.4}. The resulting response proxy is \(J_{\mathrm{rec}} = - G \nabla \phi\). The result is mixed and therefore boundedly open. Across the tested mild-disorder and bounded kernel-family window, the response field is already strongly radial, but its shell-law closure is not yet positive: the inferred power-law slopes do not stabilize near \(-2\), the shell-profile fit quality remains weak, and the scaled-flux profiles do not remain constant enough across refinement. The correct conclusion is therefore not a force-law claim, but a cleaner boundary: the scalar carrier and local metric field are now in place, while the first response-law reconstruction is not yet strong enough to support a positive inverse-square-like recoverability-gradient statement.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{52.1} is the first response-style probe on the scalar carrier.
+
+It does not add:
+\begin{itemize}
+\item a universal force law;
+\item a fundamental ontic force claim;
+\item closure on arbitrary substrates or strong disorder;
+\item current or curvature closure.
+\end{itemize}
+
+It does add:
+\begin{itemize}
+\item the first deterministic operator-native recoverability-gradient proxy on the scalar carrier;
+\item a precise answer about what already works and what still does not;
+\item a sharper next-step target for response reconstruction.
+\end{itemize}
+
+\section{Probe Definition}
+
+The probe stays entirely inside the existing scalar carrier:
+\begin{itemize}
+\item recoverability potential: the same mean-zero scalar Green field \(\phi\);
+\item local geometry: the bounded coarse local metric field \(G\) from \texttt{51.4};
+\item effective response proxy:
+\[
+J_{\mathrm{rec}} = - G \nabla \phi.
+\]
+\end{itemize}
+
+This is intentionally weaker than a force claim. It is only the first bounded response proxy on the same validated carrier.
+
+\section{What Was Tested}
+
+The bounded test asked whether the resulting response field is:
+\begin{itemize}
+\item strongly radial;
+\item close to inverse-square in shell profile;
+\item close to constant in \(r^2 F_r\);
+\item stable under the same mild-disorder and bounded kernel-family window.
+\end{itemize}
+
+\section{Frozen Quantitative Summary}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}p{3.7cm}p{2.0cm}p{7.9cm}@{}}
+\toprule
+Channel & Status & Frozen read \\
+\midrule
+Radial alignment & positive & All tested cases remain strongly radial with alignment around \(0.99+\). \\
+Power-law closure & open & Clean slopes range from about \(-0.90\) at \(n=11\) to about \(-1.28\) at \(n=13\), not a stable \(-2\) family. \\
+Fit quality & open & Shell-profile fit \(R^2\) remains too weak. \\
+Scaled-flux constancy & open & \(r^2 F_r\) remains too variable across shells and across refinement. \\
+Refinement profile drift & open & Maximum profile drift reaches \(0.5249\). \\
+\bottomrule
+\end{tabular}
+\caption{Bounded recoverability-gradient summary frozen by release \texttt{52.1}.}
+\end{table}
+
+\section{What 52.1 Now Supports}
+
+The strongest honest statement now supported by the repository is:
+
+\begin{quote}
+on the validated scalar carrier, the Green recoverability potential already supports a coherent radial response field, but the first inverse-square-like response-law closure is still open.
+\end{quote}
+
+That is not a null result in the empty sense. It cleanly separates:
+\begin{itemize}
+\item carrier closure and local metric closure, which are already positive;
+\item response-law closure, which is not yet positive.
+\end{itemize}
+
+\section{Why This Is Still Progress}
+
+The important point is what did \emph{not} fail:
+\begin{itemize}
+\item the scalar geometry carrier itself;
+\item the bounded local metric field;
+\item the directional coherence of the response field.
+\end{itemize}
+
+What failed is the first law reconstruction. That means the next step should improve the response estimator, not reopen the carrier.
+
+\section{The Right Next Move}
+
+The correct follow-up is \texttt{52.2}:
+\begin{itemize}
+\item improve the response reconstruction itself;
+\item test shell-native or law-aware gradient extraction;
+\item only then ask again whether one inverse-square family closes.
+\end{itemize}
+
+\section{Conclusion}
+
+Release \texttt{52.1} freezes the first bounded recoverability-gradient probe on the scalar geometry carrier.
+
+The correct read is disciplined: a force-like response statement is not yet earned. But the repository now has a sharper and more useful boundary than before. The carrier exists, the local metric field exists, the response direction is already coherent, and the first response-law closure is now isolated as its own concrete open problem.
+
+\end{document}

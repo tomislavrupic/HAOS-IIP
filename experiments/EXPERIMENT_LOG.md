@@ -995,3 +995,44 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260421_131559_scalar_kernel_graph_current_closure_summary.png`, `plots/20260421_131559_scalar_kernel_graph_current_closure_profiles.png`
 - Observation: the scalar carrier and local metric field now support a bounded inverse-square response law, but the stronger transient response/current closure remains open on the clean refinement scan
 - Conclusion: open current-closure cases remain: failing_cases=['clean|n=13', 'clean|n=15', 'clean|n=17'], max_profile_drift=0.2073; the weakest case is `clean|n=13` with median relative error 0.5925, p90 error 0.6671, and conductivity/diffusivity ratio 618.3748; the correct boundary therefore stays at the scalar carrier, local metric field, and shell-native inverse-square response law without yet promoting a positive transient current-closure claim
+
+## scalar kernel graph current closure shell-native
+- Date: 2026-04-22T20:45:39
+- Config: n_sides=[13, 15, 17], epsilon_coeff=0.5, cutoff_factor=2.5, fit_window=[0.004, 0.02], metric_radius_factor=2.5, shell_r_max=0.45
+- Results: `data/20260422_204538_scalar_kernel_graph_current_closure_shell_native.json`
+- Plots: `plots/20260422_204538_scalar_kernel_graph_current_closure_shell_native_summary.png`, `plots/20260422_204538_scalar_kernel_graph_current_closure_shell_native_profiles.png`
+- Observation: the shell-native transient current reconstruction improves the clean scalar-carrier read, but one bounded constitutive family is not yet stable enough under refinement
+- Conclusion: open shell-native current-closure cases remain: failing_cases=['clean|n=13', 'clean|n=15', 'clean|n=17'], max_profile_drift=1.1720; the weakest case is `clean|n=13` with kappa/D_eff -0.0739, median relative error 1.1443, p90 error 1.4269, and shell-kappa CV 1.0086; the correct boundary therefore stays short of a positive transient current-closure claim
+- Status: superseded by the corrected `20260422_204609` rerun after cumulative shell mass was rebuilt to include the inner core below the first fitted shell
+
+## scalar kernel graph current closure shell-native
+- Date: 2026-04-22T20:46:10
+- Config: n_sides=[13, 15, 17], epsilon_coeff=0.5, cutoff_factor=2.5, fit_window=[0.004, 0.02], metric_radius_factor=2.5, shell_r_max=0.45
+- Results: `data/20260422_204609_scalar_kernel_graph_current_closure_shell_native.json`
+- Plots: `plots/20260422_204609_scalar_kernel_graph_current_closure_shell_native_summary.png`, `plots/20260422_204609_scalar_kernel_graph_current_closure_shell_native_profiles.png`
+- Observation: on the clean scalar carrier, a shell-native transient current reconstruction now closes onto one bounded constitutive family: exact bulk shells plus density-normalized gradients recover a stable effective conductivity close to the heat diffusivity
+- Conclusion: all 3 clean refinement cases pass, the maximum normalized shell-kappa drift is 0.0966, and the weakest passing case is `clean|n=17` with kappa/D_eff 0.9263, median relative error 0.0739, p90 error 0.2718, and shell-kappa CV 0.1176; this supports a bounded shell-native transient current-closure read on the same scalar carrier
+
+## scalar kernel graph current closure inhomogeneity
+- Date: 2026-04-22T21:35:15
+- Config: n_sides=[13, 15], families=['radial', 'bump'], eta_values=[0.05, 0.1, 0.15], epsilon_coeff=0.5, cutoff_factor=2.5, fit_window=[0.004, 0.02], metric_radius_factor=2.5
+- Results: `data/20260422_213513_scalar_kernel_graph_current_closure_inhomogeneity.json`
+- Plots: `plots/20260422_213513_scalar_kernel_graph_current_closure_inhomogeneity_summary.png`, `plots/20260422_213513_scalar_kernel_graph_current_closure_inhomogeneity_profiles.png`
+- Observation: the extracted metric and the shell-native constitutive law track one another under smooth radial inhomogeneity on the same scalar carrier, while a more localized bump deformation remains too sharp for the same bounded transport closure
+- Conclusion: all 6 smooth radial cases pass, with maximum radial refinement drift 0.1465; the weakest radial passing case is `radial|n=13|eta=0.050` with kappa/D_eff 0.9019, median relative error 0.0704, p90 error 0.3240, and |metric-tracking corr| 0.9885; by contrast, the sharpest failing bump case is `bump|n=13|eta=0.150` with kappa/D_eff 0.5889, median relative error 0.4299, p90 error 0.7346, and shell-kappa CV 0.4963; this supports a bounded smooth-inhomogeneity closure on the scalar carrier, while keeping localized inhomogeneity explicitly open
+
+## scalar kernel graph current closure radial disorder
+- Date: 2026-04-22T21:46:26
+- Config: n_sides=[13, 15], eta_values=[0.05, 0.1, 0.15], disorder_fractions=[0.02, 0.04], seeds=[0, 1, 2], epsilon_coeff=0.5, cutoff_factor=2.5, fit_window=[0.004, 0.02], metric_radius_factor=2.5
+- Results: `data/20260422_214620_scalar_kernel_graph_current_closure_radial_disorder.json`
+- Plots: `plots/20260422_214620_scalar_kernel_graph_current_closure_radial_disorder_summary.png`, `plots/20260422_214620_scalar_kernel_graph_current_closure_radial_disorder_profiles.png`
+- Observation: the scaffold-shell metric-tracking signal survives mild disorder on the smooth radial branch, but the shell-native transient constitutive closure does not remain bounded under the same disorder window
+- Conclusion: all 12 aggregated smooth-radial disorder cases remain open; the weakest failure is `radial_disorder|n=15|eta=0.050|sigma=0.020` with median relative error 1.0221, p90 error 1.0610, diffusivity gap 1.0146, shell-kappa CV 0.7471, and |metric-tracking corr| 0.9854; maximum refinement drift is 0.9611; this keeps disorder-robust transient closure explicitly open and points to a disorder-native flux reconstruction as the next honest step
+
+## scalar kernel graph current closure radial disorder native flux
+- Date: 2026-04-22T21:59:22
+- Config: n_sides=[13, 15], eta_values=[0.05, 0.1, 0.15], disorder_fractions=[0.02, 0.04], seeds=[0, 1, 2], fit_window=[0.006, 0.02], gradient_mode=local_linear, epsilon_coeff=0.5, cutoff_factor=2.5, metric_radius_factor=2.5
+- Results: `data/20260422_215916_scalar_kernel_graph_current_closure_radial_disorder_native_flux.json`
+- Plots: `plots/20260422_215916_scalar_kernel_graph_current_closure_radial_disorder_native_flux_summary.png`, `plots/20260422_215916_scalar_kernel_graph_current_closure_radial_disorder_native_flux_profiles.png`
+- Observation: once the smooth-radial mild-disorder family is read with native bulk shells, interior-ball cumulative flux, and a delayed asymptotic fit window, the bounded constitutive closure returns on aggregated observables
+- Conclusion: all 12 aggregated mild-disorder cases pass, with maximum refinement drift 0.1278; the weakest aggregated case is `radial_native_flux|n=13|eta=0.150|sigma=0.040` with kappa/D_eff 0.9575, median relative error 0.0911, p90 error 0.2950, shell-kappa CV 0.1369, and |metric-tracking corr| 0.9952; the hardest seed-level trial is `radial_native_flux|n=13|eta=0.150|sigma=0.040|seed=1` with median relative error 0.1100, p90 error 0.2817, shell-kappa CV 0.1482, and pass state FALSE; this supports a bounded disorder-native transient closure on the smooth-radial branch, with the minimum seed-level pass count still only 2/3 in the hardest tested case

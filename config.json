@@ -375,6 +375,90 @@
       "max_refinement_profile_drift": 0.15
     }
   },
+  "scalar_kernel_graph_current_closure_shell_native": {
+    "n_sides": [13, 15, 17],
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "heat_time_max": 0.03,
+    "heat_time_steps": 61,
+    "fit_window": [0.004, 0.02],
+    "bulk_margin_layers": 2,
+    "metric_radius_factor": 2.5,
+    "shell_r_max": 0.45,
+    "thresholds": {
+      "max_median_relative_error": 0.10,
+      "max_p90_relative_error": 0.30,
+      "max_diffusivity_match_gap": 0.15,
+      "max_shell_kappa_cv": 0.13,
+      "max_refinement_profile_drift": 0.10
+    }
+  },
+  "scalar_kernel_graph_current_closure_inhomogeneity": {
+    "n_sides": [13, 15],
+    "families": ["radial", "bump"],
+    "eta_values": [0.05, 0.10, 0.15],
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "heat_time_max": 0.03,
+    "heat_time_steps": 61,
+    "fit_window": [0.004, 0.02],
+    "bulk_margin_layers": 2,
+    "metric_radius_factor": 2.5,
+    "shell_r_max": 0.45,
+    "thresholds": {
+      "max_median_relative_error": 0.10,
+      "max_p90_relative_error": 0.37,
+      "max_diffusivity_match_gap": 0.15,
+      "max_shell_kappa_cv": 0.14,
+      "max_refinement_profile_drift": 0.15,
+      "min_metric_tracking_abs_corr": 0.95
+    }
+  },
+  "scalar_kernel_graph_current_closure_radial_disorder": {
+    "n_sides": [13, 15],
+    "eta_values": [0.05, 0.10, 0.15],
+    "disorder_fractions": [0.02, 0.04],
+    "seeds": [0, 1, 2],
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "heat_time_max": 0.03,
+    "heat_time_steps": 61,
+    "fit_window": [0.004, 0.02],
+    "bulk_margin_layers": 2,
+    "metric_radius_factor": 2.5,
+    "shell_r_max": 0.45,
+    "thresholds": {
+      "max_median_relative_error": 0.10,
+      "max_p90_relative_error": 0.37,
+      "max_diffusivity_match_gap": 0.15,
+      "max_shell_kappa_cv": 0.14,
+      "max_refinement_profile_drift": 0.15,
+      "min_metric_tracking_abs_corr": 0.95
+    }
+  },
+  "scalar_kernel_graph_current_closure_radial_disorder_native_flux": {
+    "n_sides": [13, 15],
+    "eta_values": [0.05, 0.10, 0.15],
+    "disorder_fractions": [0.02, 0.04],
+    "seeds": [0, 1, 2],
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "heat_time_max": 0.03,
+    "heat_time_steps": 61,
+    "fit_window": [0.006, 0.02],
+    "bulk_margin_layers": 2,
+    "metric_radius_factor": 2.5,
+    "shell_r_max": 0.45,
+    "gradient_mode": "local_linear",
+    "thresholds": {
+      "max_median_relative_error": 0.10,
+      "max_p90_relative_error": 0.37,
+      "max_diffusivity_match_gap": 0.15,
+      "max_shell_kappa_cv": 0.14,
+      "max_refinement_profile_drift": 0.15,
+      "min_metric_tracking_abs_corr": 0.95
+    }
+  },
   "sweep": {
     "epsilon_values": [0.12, 0.2, 0.28],
     "node_values": [216, 343],

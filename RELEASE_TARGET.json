@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/scalar_carrier_recoverability_gradient_probe_release_for_haos_iip.tex",
-  "title": "Scalar-Carrier Recoverability-Gradient Probe Release for HAOS-IIP",
-  "commit_message": "Freeze scalar-carrier recoverability-gradient probe release 52.1",
+  "paper": "papers/scalar_carrier_smooth_inhomogeneity_current_closure_release_for_haos_iip.tex",
+  "title": "Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release for HAOS-IIP",
+  "commit_message": "Freeze scalar-carrier smooth-inhomogeneity current-closure release 52.5",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",

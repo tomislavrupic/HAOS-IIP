@@ -1,0 +1,200 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{52.5} of HAOS-IIP as the bounded follow-on to the clean-line shell-native current closure \texttt{52.4}. Release \texttt{52.4} showed that, on the undeformed scalar carrier, the shell-native transient reconstruction closes onto one bounded constitutive family. Release \texttt{52.5} asks the next stricter question without changing the carrier: if the point cloud is deformed in a controlled way, do the extracted local metric field and the shell-native current law co-deform together? The answer is mixed but positive on the smooth branch. All six smooth radial deformation cases pass across amplitudes \(\eta = 0.05, 0.10, 0.15\) and clean refinements \(n = 13, 15\), with fitted conductivity staying close to the heat diffusivity, bounded residuals, high metric-tracking correlation, and bounded refinement drift. By contrast, a localized bump deformation remains open at the same amplitudes. The correct conclusion is therefore narrow: on the same scalar carrier, the local metric read and the shell-native transient constitutive law co-deform together under smooth radial inhomogeneity, while more localized inhomogeneity remains outside the same bounded closure. This is a controlled smooth-inhomogeneity transport result, not yet disorder universality, conserved-current closure, curvature extraction, or spacetime physics.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{52.5} is a bounded continuation of the scalar transport line.
+
+It does not add:
+\begin{itemize}
+\item arbitrary inhomogeneity closure;
+\item disorder-universal transport;
+\item a conserved-current theorem;
+\item curvature extraction;
+\item spacetime or ontology language.
+\end{itemize}
+
+It does add:
+\begin{itemize}
+\item a controlled inhomogeneity test on the same scalar carrier;
+\item a bounded smooth radial co-deformation statement linking metric extraction and shell-native transport closure;
+\item an explicit boundary showing that localized bump inhomogeneity remains open.
+\end{itemize}
+
+\section{Where 52.4 Left the Boundary}
+
+Release \texttt{52.4} already closed the clean refinement line:
+\begin{itemize}
+\item same local scalar kernel graph;
+\item same coarse local metric field from \texttt{51.4};
+\item same shell-native transient constitutive law.
+\end{itemize}
+
+Its strongest bounded conclusion was:
+
+\begin{quote}
+on the clean scalar carrier, a shell-native transient current reconstruction closes onto one bounded constitutive family whose fitted conductivity stays close to the heat diffusivity and whose shellwise profile remains refinement-stable.
+\end{quote}
+
+The next honest question was therefore not whether the clean line closes, but whether that closure survives a controlled deformation of the same carrier.
+
+\section{Controlled Inhomogeneity Design}
+
+Release \texttt{52.5} keeps the carrier and reconstruction fixed and changes only the point cloud through deterministic deformation profiles.
+
+Two families are tested:
+\begin{itemize}
+\item smooth radial deformation;
+\item localized scalar bump.
+\end{itemize}
+
+The amplitudes are:
+\[
+\eta \in \{0.05,\; 0.10,\; 0.15\},
+\]
+and the clean refinements are:
+\[
+n \in \{13,\; 15\}.
+\]
+
+For each case, the repository:
+\begin{itemize}
+\item deforms the clean scalar carrier;
+\item rebuilds the scalar operator on the deformed point cloud;
+\item extracts the coarse shellwise metric field;
+\item fits the shell-native constitutive current law against transient shell flow;
+\item checks whether the metric shift and the constitutive profile track the imposed deformation in a bounded way.
+\end{itemize}
+
+\section{Frozen Quantitative Summary}
+
+\subsection{Smooth radial branch}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}p{2.4cm}p{1.4cm}p{1.5cm}p{1.5cm}p{1.4cm}p{1.4cm}p{1.2cm}@{}}
+\toprule
+Case & \(\kappa/D_{\mathrm{eff}}\) & median err. & \(p90\) err. & shell CV & \(|\mathrm{corr}|\) & status \\
+\midrule
+\texttt{n=13,\ \(\eta=0.05\)} & 0.9019 & 0.0704 & 0.3240 & 0.1193 & 0.9885 & PASS \\
+\texttt{n=13,\ \(\eta=0.10\)} & 0.9243 & 0.0665 & 0.3430 & 0.1265 & 0.9939 & PASS \\
+\texttt{n=13,\ \(\eta=0.15\)} & 0.9466 & 0.0568 & 0.3568 & 0.1310 & 0.9840 & PASS \\
+\texttt{n=15,\ \(\eta=0.05\)} & 0.9272 & 0.0539 & 0.2429 & 0.1072 & 0.9872 & PASS \\
+\texttt{n=15,\ \(\eta=0.10\)} & 0.9588 & 0.0496 & 0.2686 & 0.1178 & 0.9935 & PASS \\
+\texttt{n=15,\ \(\eta=0.15\)} & 0.9848 & 0.0562 & 0.2773 & 0.1215 & 0.9846 & PASS \\
+\bottomrule
+\end{tabular}
+\caption{All smooth radial inhomogeneity cases pass the bounded \texttt{52.5} criteria.}
+\end{table}
+
+The radial refinement-drift read also stays bounded:
+\begin{itemize}
+\item \(\eta = 0.05\): drift \(= 0.1202\);
+\item \(\eta = 0.10\): drift \(= 0.1384\);
+\item \(\eta = 0.15\): drift \(= 0.1465\).
+\end{itemize}
+
+\subsection{Localized bump branch}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}p{2.4cm}p{1.4cm}p{1.5cm}p{1.5cm}p{1.4cm}p{1.4cm}p{1.2cm}@{}}
+\toprule
+Case & \(\kappa/D_{\mathrm{eff}}\) & median err. & \(p90\) err. & shell CV & \(|\mathrm{corr}|\) & status \\
+\midrule
+\texttt{n=13,\ \(\eta=0.05\)} & 0.7857 & 0.2053 & 0.4658 & 0.2164 & 0.9752 & OPEN \\
+\texttt{n=13,\ \(\eta=0.10\)} & 0.6876 & 0.3113 & 0.6112 & 0.3331 & 0.9743 & OPEN \\
+\texttt{n=13,\ \(\eta=0.15\)} & 0.5889 & 0.4299 & 0.7346 & 0.4963 & 0.9628 & OPEN \\
+\texttt{n=15,\ \(\eta=0.05\)} & 0.7971 & 0.1569 & 0.3896 & 0.1944 & 0.9924 & OPEN \\
+\texttt{n=15,\ \(\eta=0.10\)} & 0.6929 & 0.2487 & 0.5368 & 0.3088 & 0.9909 & OPEN \\
+\texttt{n=15,\ \(\eta=0.15\)} & 0.5929 & 0.3565 & 0.6609 & 0.4453 & 0.9853 & OPEN \\
+\bottomrule
+\end{tabular}
+\caption{Localized bump inhomogeneity does not satisfy the same bounded closure criteria.}
+\end{table}
+
+The bump refinement drift is also outside the smooth branch window:
+\begin{itemize}
+\item \(\eta = 0.05\): drift \(= 0.1922\);
+\item \(\eta = 0.10\): drift \(= 0.3150\);
+\item \(\eta = 0.15\): drift \(= 0.5124\).
+\end{itemize}
+
+\section{What 52.5 Now Supports}
+
+The strongest honest statement now supported by the repository is:
+
+\begin{quote}
+on the same scalar carrier, the extracted local metric field and the shell-native transient constitutive law co-deform together under smooth radial inhomogeneity, while more localized inhomogeneity remains outside the same bounded closure.
+\end{quote}
+
+This extends the scalar line from:
+\begin{itemize}
+\item local metric closure;
+\item shell-native inverse-square response closure;
+\item clean-line shell-native transient current closure;
+\end{itemize}
+to:
+\begin{itemize}
+\item bounded smooth-inhomogeneity transport closure on the same carrier.
+\end{itemize}
+
+That is more physics-facing than \texttt{52.4} alone because the transport closure is no longer restricted to the undeformed clean line.
+
+\section{What 52.5 Still Does Not Say}
+
+Release \texttt{52.5} still does not justify:
+\begin{itemize}
+\item arbitrary or sharply localized inhomogeneity closure;
+\item disorder-universal current laws;
+\item a conserved-current theorem;
+\item curvature extraction;
+\item spacetime or ontology language.
+\end{itemize}
+
+So \texttt{52.4} remains the clean-line closure, and \texttt{52.5} is the bounded smooth-inhomogeneity follow-on.
+
+\section{Authority and Artifacts}
+
+The release is backed by:
+\begin{itemize}
+\item operator note: \path{experiments/operators/Scalar_Kernel_Graph_Current_Closure_Inhomogeneity_v1.md};
+\item script: \path{numerics/simulations/scalar_kernel_graph_current_closure_inhomogeneity.py};
+\item config key: \texttt{config.json -> scalar\_kernel\_graph\_current\_closure\_inhomogeneity};
+\item frozen result: \path{data/20260422_213513_scalar_kernel_graph_current_closure_inhomogeneity.json};
+\item latest result: \path{data/scalar_kernel_graph_current_closure_inhomogeneity_latest.json}.
+\end{itemize}
+
+\section{The Right Next Move}
+
+The next scalar step should stay narrow:
+\begin{itemize}
+\item test whether the smooth radial branch survives mild carrier disorder;
+\item measure the localization threshold where the bump branch stops behaving like the smooth branch;
+\item only afterward revisit conserved-current or curvature-style closure.
+\end{itemize}
+
+\section{Conclusion}
+
+Release \texttt{52.5} freezes the first controlled inhomogeneity result on the scalar transport line.
+
+It does not say that inhomogeneous transport is solved in general. It says something narrower and more useful: on the same scalar carrier, the local metric read and the shell-native transient constitutive law co-deform together under smooth radial inhomogeneity, while localized bump deformations remain explicitly open. That is the correct stopping point for \texttt{52.5}: stronger than a clean-line closure alone, still disciplined about the boundary that has not yet been crossed.
+
+\end{document}
