@@ -12,12 +12,13 @@
     "source_artifacts": [
       "data/scalar_kernel_graph_metric_field_latest.json",
       "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+      "data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json",
       "data/scalar_kernel_graph_current_closure_shell_native_latest.json",
       "data/scalar_kernel_graph_current_closure_inhomogeneity_latest.json",
       "data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json"
     ],
     "status_counts": {
-      "PASS": 8,
+      "PASS": 9,
       "OPEN": 3,
       "WATCH": 1
     }
@@ -65,7 +66,7 @@
     },
     {
       "observable_id": "recoverability_inverse_square_residual",
-      "physics_analogue": "inverse-square response-law proxy",
+      "physics_analogue": "raw inverse-square response-law proxy",
       "haos_source": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
       "proxy_quantity": "worst flux constancy CV / profile drift",
       "value": "0.313916 / 0.524900",
@@ -82,6 +83,16 @@
       "target": ">= 0.950000",
       "status": "OPEN",
       "scope_note": "A deliberately hard guardrail against reading noisy response curves as laws."
+    },
+    {
+      "observable_id": "shell_native_inverse_square_closure",
+      "physics_analogue": "shell-native Newtonian-like response proxy",
+      "haos_source": "data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json",
+      "proxy_quantity": "min Green R2 / max |slope+2| / max scaled-response CV / profile drift",
+      "value": "0.973633 / 0.003353 / 0.006976 / 0.008949",
+      "target": ">= 0.970000 / <= 0.020000 / <= 0.010000 / <= 0.020000",
+      "status": "PASS",
+      "scope_note": "Closes the inverse-square proxy only after shell-native law-aware reconstruction; this is not a Newtonian gravity claim."
     },
     {
       "observable_id": "clean_current_closure",

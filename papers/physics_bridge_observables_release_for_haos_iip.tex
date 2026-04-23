@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{longtable}
+
+\title{Physics Bridge Observables Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{53.0} of HAOS-IIP as an external physics-bridge layer over the scalar-carrier artifacts through \texttt{52.5}. The bridge does not modify HAOS core, add dynamics, claim continuum ontology, or identify the scalar carrier with physical spacetime. Instead, it post-processes frozen scalar observables into physics-facing proxy rows with explicit \texttt{PASS}, \texttt{OPEN}, and \texttt{WATCH} status. The resulting bridge read contains nine passing proxies, three open proxies, and one watched proxy. The central clarification is the inverse-square response: the raw recoverability-gradient read remains open, with flux constancy CV \texttt{0.313916} and refinement drift \texttt{0.524900}, but the shell-native law-aware reconstruction passes with minimum Green fit \(R^2 = 0.973633\), maximum \(|slope+2| = 0.003353\), maximum scaled-response CV \texttt{0.006976}, and refinement drift \texttt{0.008949}. This supports only a bounded shell-native inverse-square / Newtonian-like response proxy on the tested scalar carrier, not a Newtonian gravity claim.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{53.0} is a bridge release, not a core release.
+
+It introduces:
+\begin{itemize}
+\item a deterministic post-processing script for physics-facing proxy observables;
+\item generated CSV, JSON, and Markdown summaries;
+\item a cautious dictionary from scalar-carrier measurements to comparison variables.
+\end{itemize}
+
+It does not introduce:
+\begin{itemize}
+\item HAOS core changes;
+\item continuum ontology;
+\item Einstein-Hilbert recovery;
+\item a conserved stress-energy theorem;
+\item arbitrary localized inhomogeneity closure;
+\item a physical gravity claim.
+\end{itemize}
+
+\section{Bridge Construction}
+
+The bridge reads only frozen scalar artifacts:
+\begin{itemize}
+\item \path{data/scalar_kernel_graph_metric_field_latest.json};
+\item \path{data/scalar_kernel_graph_recoverability_gradient_latest.json};
+\item \path{data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json};
+\item \path{data/scalar_kernel_graph_current_closure_shell_native_latest.json};
+\item \path{data/scalar_kernel_graph_current_closure_inhomogeneity_latest.json};
+\item \path{data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json}.
+\end{itemize}
+
+The generator is:
+\begin{quote}
+\path{experiments/physics_bridge/physics_observables.py}
+\end{quote}
+
+It writes:
+\begin{itemize}
+\item \path{experiments/physics_bridge/results/physics_observables.csv};
+\item \path{experiments/physics_bridge/results/physics_observables.json};
+\item \path{experiments/physics_bridge/results/physics_observables_summary.md}.
+\end{itemize}
+
+\section{Frozen Observable Table}
+
+\begin{longtable}{@{}p{2.6cm}p{3.3cm}p{4.2cm}p{3.0cm}p{1.1cm}@{}}
+\toprule
+Observable & Physics-facing analogue & Value & Target & Status \\
+\midrule
+\endhead
+metric positive & effective metric positivity proxy & \texttt{1.076790} & \(\ge 0.800000\) & PASS \\
+metric anisotropy & local isotropy proxy & \texttt{0.013949} & \(\le 0.020000\) & PASS \\
+metric drift & continuum-limit sanity proxy & \texttt{0.002350} & \(\le 0.030000\) & PASS \\
+radial alignment & radial response-direction proxy & \texttt{0.990921} & \(\ge 0.940000\) & PASS \\
+raw inverse-square & raw inverse-square response-law proxy & \texttt{0.313916 / 0.524900} & \(\le 0.120000 / \le 0.080000\) & OPEN \\
+raw power fit & power-law scaling proxy & \texttt{0.321965} & \(\ge 0.950000\) & OPEN \\
+shell-native inverse-square & shell-native Newtonian-like response proxy & \texttt{0.973633 / 0.003353 / 0.006976 / 0.008949} & \(\ge 0.970000 / \le 0.020000 / \le 0.010000 / \le 0.020000\) & PASS \\
+clean current & conserved-current analogue proxy & \texttt{0.073898 / 0.112930 / 0.096598} & \(\le 0.100000 / \le 0.150000 / \le 0.100000\) & PASS \\
+current tail error & transport residual proxy & \texttt{0.271771 / 0.117611} & \(\le 0.300000 / \le 0.130000\) & PASS \\
+smooth co-deformation & smooth weak-field co-deformation proxy & \texttt{0.146454 / 0.984018} & \(\le 0.150000 / \ge 0.950000\) & PASS \\
+localized bump & localized matter-like excitation boundary & \texttt{0.512392 / 0.962771} & \(\le 0.150000 / \ge 0.950000\) & OPEN \\
+disorder aggregate & disorder-robust transport-law proxy & \texttt{0.091117 / 0.300365 / 0.127842} & \(\le 0.100000 / \le 0.370000 / \le 0.150000\) & PASS \\
+disorder seed margin & seed-universal disorder margin proxy & \texttt{2/3} & \texttt{3/3} & WATCH \\
+\bottomrule
+\end{longtable}
+
+\section{Inverse-Square Clarification}
+
+The most important \texttt{53.0} correction is not that inverse-square behavior is simply ``closed.'' It is more precise:
+\begin{quote}
+the raw recoverability-gradient reconstruction remains open, while the shell-native law-aware reconstruction closes on the tested scalar carrier.
+\end{quote}
+
+The raw read fails because:
+\begin{itemize}
+\item worst flux constancy CV is \texttt{0.313916}, above the threshold \texttt{0.120000};
+\item profile drift is \texttt{0.524900}, above the threshold \texttt{0.080000};
+\item minimum power-fit \(R^2\) is \texttt{0.321965}, below the threshold \texttt{0.950000}.
+\end{itemize}
+
+The shell-native read passes because:
+\begin{itemize}
+\item minimum Green fit \(R^2\) is \texttt{0.973633}, above \texttt{0.970000};
+\item maximum \(|slope+2|\) is \texttt{0.003353}, below \texttt{0.020000};
+\item maximum scaled-response CV is \texttt{0.006976}, below \texttt{0.010000};
+\item profile drift is \texttt{0.008949}, below \texttt{0.020000}.
+\end{itemize}
+
+This supports a bounded inverse-square-like shell response under the stated reconstruction. It does not yet support a general Newtonian force law, source dynamics, stress-energy coupling, or continuum gravity.
+
+\section{What Remains Open}
+
+The open and watched boundaries are:
+\begin{itemize}
+\item raw inverse-square closure remains open;
+\item raw power-law fit remains open;
+\item localized bump closure remains open;
+\item seed-universal disorder-native flux remains watched because one aggregate-passing case still has only \texttt{2/3} seed-level passes.
+\end{itemize}
+
+\section{Next Practical Moves}
+
+The next bridge steps should remain external:
+\begin{itemize}
+\item add refinement-scaling tables for the bridge proxies;
+\item generate bridge plots for radial response and metric spectra;
+\item locate the bump-width threshold where localized deformation begins to behave like smooth radial deformation;
+\item only afterward test curvature-like or stress-energy-like proxies.
+\end{itemize}
+
+\section{Conclusion}
+
+Release \texttt{53.0} turns the scalar-carrier stack into a more physics-facing test protocol without mixing it into HAOS core. The correct result is structured: metric-like, shell-native inverse-square-like, clean transport, smooth inhomogeneity, and aggregate mild-disorder proxies pass; raw inverse-square closure, localized bump closure, and seed-universal disorder closure do not fully pass. That separation is the value of the bridge.
+
+\end{document}

@@ -28,7 +28,8 @@ All mappings below are hypotheses about useful comparison variables.
 | HAOS-IIP observable | Physics-facing proxy | Status discipline |
 | --- | --- | --- |
 | local scalar-carrier metric field | effective metric positivity and isotropy proxy | usable only if positive, near-isotropic, and refinement-stable |
-| recoverability gradient | response-direction and shell-law proxy | radial alignment may pass while inverse-square closure remains open |
+| raw recoverability gradient | response-direction and shell-law proxy | radial alignment may pass while raw inverse-square closure remains open |
+| shell-native recoverability gradient | inverse-square / Newtonian-like response proxy | usable only under the stated shell-native reconstruction, not as a gravity claim |
 | shell-native current closure | conserved-current analogue proxy | residual closure only, not a conservation theorem |
 | smooth metric-transport co-deformation | weak-field-style smooth inhomogeneity proxy | scalar-carrier transport proxy, not weak-field GR |
 | localized bump response | localized excitation boundary | open until the same closure survives localized profiles |
@@ -38,7 +39,7 @@ All mappings below are hypotheses about useful comparison variables.
 
 The generated bridge summary is:
 
-- `PASS`: 8
+- `PASS`: 9
 - `OPEN`: 3
 - `WATCH`: 1
 
@@ -48,6 +49,7 @@ Positive bridge reads:
 - metric isotropy: maximum coarse mean anisotropy `0.013949` against threshold `<= 0.020000`;
 - metric refinement stability: maximum normalized drift `0.002350` against threshold `<= 0.030000`;
 - recoverability response direction: minimum radial alignment `0.990921` against threshold `>= 0.940000`;
+- shell-native inverse-square closure: minimum Green fit `R^2` / maximum `|slope + 2|` / maximum scaled-response CV / profile drift `0.973633 / 0.003353 / 0.006976 / 0.008949` inside thresholds;
 - clean current closure: maximum median error / diffusivity gap / drift `0.073898 / 0.112930 / 0.096598` inside thresholds;
 - clean tail residuals: maximum p90 error / shell-kappa CV `0.271771 / 0.117611` inside thresholds;
 - smooth inhomogeneity co-deformation: radial drift / minimum metric-tracking correlation `0.146454 / 0.984018` inside thresholds;
@@ -55,7 +57,7 @@ Positive bridge reads:
 
 Open or watched bridge reads:
 
-- inverse-square recoverability closure remains open: worst flux constancy CV / profile drift `0.313916 / 0.524900` exceeds thresholds `<= 0.120000 / <= 0.080000`;
+- raw inverse-square recoverability closure remains open: worst flux constancy CV / profile drift `0.313916 / 0.524900` exceeds thresholds `<= 0.120000 / <= 0.080000`;
 - power-law response scaling remains open: minimum power-fit `R^2 = 0.321965` against threshold `>= 0.950000`;
 - localized bump closure remains open: bump drift / minimum metric-tracking correlation `0.512392 / 0.962771`, with drift outside threshold;
 - seed-universal disorder-native flux remains watched: minimum seed-level pass count is `2/3`, not `3/3`.
@@ -65,14 +67,15 @@ Open or watched bridge reads:
 The scalar-carrier stack is now physics-facing in a limited sense:
 
 1. It has a stable local metric-like tensor read on the tested scalar carrier.
-2. It has a radial response direction, but not a closed inverse-square response law at the recoverability-gradient level.
-3. It has a bounded shell-native current closure on the clean carrier.
-4. It has bounded metric-transport co-deformation on smooth radial inhomogeneity.
-5. It has aggregate mild-disorder closure after native flux reconstruction.
+2. It has a radial response direction at the raw recoverability-gradient level, but that raw read does not close as a stable inverse-square law.
+3. It has a bounded shell-native inverse-square / Newtonian-like response proxy under the stated shell-native law-aware reconstruction.
+4. It has a bounded shell-native current closure on the clean carrier.
+5. It has bounded metric-transport co-deformation on smooth radial inhomogeneity.
+6. It has aggregate mild-disorder closure after native flux reconstruction.
 
 The strongest honest statement is:
 
-> HAOS-IIP now has an external physics-bridge readout showing which scalar-carrier quantities behave like metric, response, and transport proxies under the current frozen thresholds, while explicitly preserving the inverse-square, localized-bump, and seed-universal disorder boundaries as open or watched.
+> HAOS-IIP now has an external physics-bridge readout showing which scalar-carrier quantities behave like metric, shell-native inverse-square response, and transport proxies under the current frozen thresholds, while explicitly preserving the raw inverse-square residual, localized-bump, and seed-universal disorder boundaries as open or watched.
 
 ## Next experiments
 

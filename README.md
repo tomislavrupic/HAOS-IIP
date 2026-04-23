@@ -168,12 +168,13 @@ The public repository now contains four stacked bounded results:
 - closed derivation ladder: `T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8`, plus `F1-F4`
 - frozen vector validation spine through `V1-V6b` and clean-baseline identity resolution
 - scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass, a bounded local metric-field closure, a shell-native response read, an honest open first transient baseline `52.3`, a bounded shell-native clean-line current closure `52.4`, and a bounded smooth-inhomogeneity transport closure `52.5` on the smooth radial branch
-- external physics-bridge observables `53.0`, which keep the inverse-square recoverability residual, localized bump closure, and seed-universal disorder margin explicit as open or watched boundaries
+- external physics-bridge observables `53.0`, which separate shell-native inverse-square closure from the raw inverse-square residual and keep localized bump closure plus seed-universal disorder margin explicit as open or watched boundaries
 
 Milestone anchors:
 
 - [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
 - [Physics Bridge Observable Summary](experiments/physics_bridge/results/physics_observables_summary.md)
+- [53.0 Physics Bridge Observables Release](papers/pdf_releases/53.0%20Physics%20Bridge%20Observables%20Release%20for%20HAOS-IIP.pdf)
 - [52.5 Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release](papers/pdf_releases/52.5%20Scalar-Carrier%20Smooth-Inhomogeneity%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.4 Scalar-Carrier Shell-Native Current-Closure Release](papers/pdf_releases/52.4%20Scalar-Carrier%20Shell-Native%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.1 Scalar-Carrier Recoverability-Gradient Probe Release](papers/pdf_releases/52.1%20Scalar-Carrier%20Recoverability-Gradient%20Probe%20Release%20for%20HAOS-IIP.pdf)
@@ -239,6 +240,7 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [53.0 Physics Bridge Observables Release](papers/pdf_releases/53.0%20Physics%20Bridge%20Observables%20Release%20for%20HAOS-IIP.pdf)
 - [52.5 Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release](papers/pdf_releases/52.5%20Scalar-Carrier%20Smooth-Inhomogeneity%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.4 Scalar-Carrier Shell-Native Current-Closure Release](papers/pdf_releases/52.4%20Scalar-Carrier%20Shell-Native%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.1 Scalar-Carrier Recoverability-Gradient Probe Release](papers/pdf_releases/52.1%20Scalar-Carrier%20Recoverability-Gradient%20Probe%20Release%20for%20HAOS-IIP.pdf)

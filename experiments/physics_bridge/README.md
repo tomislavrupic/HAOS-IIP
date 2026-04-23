@@ -29,3 +29,8 @@ python3 examples/quick_reproduce.py --physics-observables-only
 - `WATCH` means the aggregate read passes, but a narrower margin remains unresolved.
 
 The bridge dictionary is a test protocol, not a theory feature.
+
+The inverse-square row is intentionally split:
+
+- raw recoverability-gradient inverse-square closure remains `OPEN`;
+- shell-native law-aware inverse-square closure is `PASS` under its stated reconstruction thresholds.

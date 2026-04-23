@@ -14,8 +14,9 @@ It is a post-processing bridge over frozen scalar-carrier artifacts. It does not
 | metric_anisotropy_bound | local isotropy proxy | 0.013949 | <= 0.020000 | PASS |
 | metric_refinement_stability | continuum-limit sanity proxy | 0.002350 | <= 0.030000 | PASS |
 | recoverability_radial_alignment | radial response-direction proxy | 0.990921 | >= 0.940000 | PASS |
-| recoverability_inverse_square_residual | inverse-square response-law proxy | 0.313916 / 0.524900 | <= 0.120000 / <= 0.080000 | OPEN |
+| recoverability_inverse_square_residual | raw inverse-square response-law proxy | 0.313916 / 0.524900 | <= 0.120000 / <= 0.080000 | OPEN |
 | recoverability_power_fit_floor | power-law scaling proxy | 0.321965 | >= 0.950000 | OPEN |
+| shell_native_inverse_square_closure | shell-native Newtonian-like response proxy | 0.973633 / 0.003353 / 0.006976 / 0.008949 | >= 0.970000 / <= 0.020000 / <= 0.010000 / <= 0.020000 | PASS |
 | clean_current_closure | conserved-current analogue proxy | 0.073898 / 0.112930 / 0.096598 | <= 0.100000 / <= 0.150000 / <= 0.100000 | PASS |
 | clean_current_tail_error | transport residual proxy | 0.271771 / 0.117611 | <= 0.300000 / <= 0.130000 | PASS |
 | smooth_inhomogeneity_metric_transport_tracking | smooth weak-field co-deformation proxy | 0.146454 / 0.984018 | <= 0.150000 / >= 0.950000 | PASS |
@@ -32,7 +33,7 @@ It is a post-processing bridge over frozen scalar-carrier artifacts. It does not
 
 ## Status Counts
 
-- `PASS`: 8
+- `PASS`: 9
 - `OPEN`: 3
 - `WATCH`: 1
 

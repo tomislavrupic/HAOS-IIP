@@ -13,6 +13,9 @@ RESULTS_DIR = Path(__file__).resolve().parent / "results"
 
 METRIC_FIELD = REPO_ROOT / "data" / "scalar_kernel_graph_metric_field_latest.json"
 RECOVERABILITY_GRADIENT = REPO_ROOT / "data" / "scalar_kernel_graph_recoverability_gradient_latest.json"
+RECOVERABILITY_GRADIENT_SHELL_NATIVE = (
+    REPO_ROOT / "data" / "scalar_kernel_graph_recoverability_gradient_shell_native_latest.json"
+)
 CURRENT_CLOSURE = REPO_ROOT / "data" / "scalar_kernel_graph_current_closure_shell_native_latest.json"
 INHOMOGENEITY_CLOSURE = REPO_ROOT / "data" / "scalar_kernel_graph_current_closure_inhomogeneity_latest.json"
 DISORDER_NATIVE_FLUX = REPO_ROOT / "data" / "scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json"
@@ -88,6 +91,7 @@ def geq_status(value: float, threshold: float) -> str:
 def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
     metric = load_json(METRIC_FIELD)
     gradient = load_json(RECOVERABILITY_GRADIENT)
+    shell_native_gradient = load_json(RECOVERABILITY_GRADIENT_SHELL_NATIVE)
     current = load_json(CURRENT_CLOSURE)
     inhomogeneity = load_json(INHOMOGENEITY_CLOSURE)
     disorder_flux = load_json(DISORDER_NATIVE_FLUX)
@@ -161,7 +165,7 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
     rows.append(
         row(
             "recoverability_inverse_square_residual",
-            "inverse-square response-law proxy",
+            "raw inverse-square response-law proxy",
             artifact(RECOVERABILITY_GRADIENT),
             "worst flux constancy CV / profile drift",
             f"{fmt(max_flux_cv)} / {fmt(gradient_drift)}",
@@ -183,6 +187,38 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
             f">= {fmt(float(gradient_thresholds['min_power_fit_r2']))}",
             geq_status(min_power_r2, float(gradient_thresholds["min_power_fit_r2"])),
             "A deliberately hard guardrail against reading noisy response curves as laws.",
+        )
+    )
+
+    shell_native_thresholds = shell_native_gradient["config"]["thresholds"]
+    shell_native_cases = all_scalar_cases(shell_native_gradient)
+    shell_native_min_green_r2 = min(float(case["green_fit_r2"]) for case in shell_native_cases)
+    shell_native_max_power_deviation = max(
+        abs(float(case["profile"]["power_slope"]) + 2.0) for case in shell_native_cases
+    )
+    shell_native_min_power_r2 = min(float(case["profile"]["power_fit_r2"]) for case in shell_native_cases)
+    shell_native_max_flux_cv = max(float(case["profile"]["flux_constancy_cv"]) for case in shell_native_cases)
+    shell_native_drift = float(shell_native_gradient["max_profile_drift"])
+    shell_native_pass = all(
+        [
+            all(bool(case["pass"]) for case in shell_native_cases),
+            shell_native_min_green_r2 >= float(shell_native_thresholds["min_green_fit_r2"]),
+            shell_native_max_power_deviation <= float(shell_native_thresholds["max_power_deviation"]),
+            shell_native_min_power_r2 >= float(shell_native_thresholds["min_power_fit_r2"]),
+            shell_native_max_flux_cv <= float(shell_native_thresholds["max_flux_constancy_cv"]),
+            shell_native_drift <= float(shell_native_thresholds["max_refinement_profile_drift"]),
+        ]
+    )
+    rows.append(
+        row(
+            "shell_native_inverse_square_closure",
+            "shell-native Newtonian-like response proxy",
+            artifact(RECOVERABILITY_GRADIENT_SHELL_NATIVE),
+            "min Green R2 / max |slope+2| / max scaled-response CV / profile drift",
+            f"{fmt(shell_native_min_green_r2)} / {fmt(shell_native_max_power_deviation)} / {fmt(shell_native_max_flux_cv)} / {fmt(shell_native_drift)}",
+            f">= {fmt(float(shell_native_thresholds['min_green_fit_r2']))} / <= {fmt(float(shell_native_thresholds['max_power_deviation']))} / <= {fmt(float(shell_native_thresholds['max_flux_constancy_cv']))} / <= {fmt(float(shell_native_thresholds['max_refinement_profile_drift']))}",
+            "PASS" if shell_native_pass else "OPEN",
+            "Closes the inverse-square proxy only after shell-native law-aware reconstruction; this is not a Newtonian gravity claim.",
         )
     )
 
@@ -312,6 +348,7 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
         "source_artifacts": [
             artifact(METRIC_FIELD),
             artifact(RECOVERABILITY_GRADIENT),
+            artifact(RECOVERABILITY_GRADIENT_SHELL_NATIVE),
             artifact(CURRENT_CLOSURE),
             artifact(INHOMOGENEITY_CLOSURE),
             artifact(DISORDER_NATIVE_FLUX),

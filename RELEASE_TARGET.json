@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/scalar_carrier_smooth_inhomogeneity_current_closure_release_for_haos_iip.tex",
-  "title": "Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release for HAOS-IIP",
-  "commit_message": "Freeze scalar-carrier smooth-inhomogeneity current-closure release 52.5",
+  "paper": "papers/physics_bridge_observables_release_for_haos_iip.tex",
+  "title": "Physics Bridge Observables Release for HAOS-IIP",
+  "commit_message": "Freeze physics bridge observables release 53.0",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",
