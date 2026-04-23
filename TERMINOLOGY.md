@@ -86,6 +86,56 @@ Do not use as a synonym for:
 - spinor
 - Dirac sector
 
+### Root-note guiding language
+
+Use only as an external interpretive layer over already-frozen scalar-carrier and bridge results.
+
+#### Root note
+
+Operational meaning:
+
+- the deepest persistent carrier read already supported by the bounded scalar-carrier window, especially `51.3`, `51.4`, and the perturbative persistence checks that remain positive under the later bridge splits
+
+Do not use as a synonym for:
+
+- ontic source
+- physical vacuum
+- continuum substrate
+
+#### Harmonic partial
+
+Operational meaning:
+
+- a later recoverable structure that remains trace-connected to the same carrier under the frozen perturbation and transport diagnostics
+
+Do not use as a synonym for:
+
+- new fundamental field
+- particle ontology
+- proof of emergent spacetime
+
+#### Root alignment
+
+Operational meaning:
+
+- post-processing agreement between a candidate observable and the already-frozen carrier through persistence, drift, constitutive, or metric-tracking compatibility
+
+Do not use as a synonym for:
+
+- metaphysical destiny
+- hidden positive evidence after a failed threshold
+
+#### Pruned partial
+
+Operational meaning:
+
+- a candidate structure that loses recoverable coherence with the carrier and therefore stays at `OPEN` or `WATCH`
+
+Do not use as a synonym for:
+
+- mystical exclusion
+- proof that an untested regime is impossible
+
 ## Symbol conflicts found in legacy material
 
 ### Conflict 1: `epsilon`

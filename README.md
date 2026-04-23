@@ -197,6 +197,7 @@ Milestone anchors:
 - [Scalar-Carrier Current Closure 52.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_4_v1.md)
 - [Scalar-Carrier Smooth-Inhomogeneity Current Closure 52.5](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Smooth_Inhomogeneity_Current_Closure_52_5_v1.md)
 - [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
+- [Root-Note Guiding Principle v1](docs/notes/foundations/HAOS_IIP_Root_Note_Guiding_Principle_v1.md) (external interpretive layer only; frozen stack unchanged)
 - [Seed-Universal Disorder Flux 53.4](docs/notes/foundations/HAOS_IIP_Seed_Universal_Disorder_Flux_53_4_v1.md)
 - [Power-Law Scaling 53.3](docs/notes/foundations/HAOS_IIP_Power_Law_Scaling_53_3_v1.md)
 - [Localized Bump Response 53.2](docs/notes/foundations/HAOS_IIP_Localized_Bump_Response_53_2_v1.md)
