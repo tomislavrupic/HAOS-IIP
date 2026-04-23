@@ -136,6 +136,40 @@ Do not use as a synonym for:
 - mystical exclusion
 - proof that an untested regime is impossible
 
+#### Source Cube
+
+Operational meaning:
+
+- a compact external mnemonic that organizes the root carrier and later recoverable harmonics into addressable layers or axes without changing operators, telemetry, or bridge rows
+
+Do not use as a synonym for:
+
+- physical object
+- hidden geometry
+- replacement for the derivation ladder
+
+#### Cube core
+
+Operational meaning:
+
+- the root-note carrier read already evidenced by the bounded scalar-carrier baseline, especially `51.3`, `51.4`, and the perturbative persistence checks carried into the bridge
+
+Do not use as a synonym for:
+
+- metaphysical source
+- literal origin event
+
+#### Cube tuning
+
+Operational meaning:
+
+- external selection of reconstruction windows, shell-native filters, or transient-pruning rules used to read later harmonics without touching frozen scalar artifacts
+
+Do not use as a synonym for:
+
+- arbitrary post-hoc curve fitting
+- permission to loosen thresholds
+
 ## Symbol conflicts found in legacy material
 
 ### Conflict 1: `epsilon`
