@@ -26,8 +26,74 @@ Key faces or axes:
   Maps to clean current-closure and smooth inhomogeneity tracking through `52.4` and `52.5`.
 - `Excitation axis: localized partials`
   Maps to `53.2`, where weak localized excitations pass after delayed fit-window pruning while stronger amplitudes remain open.
-- `Law-recovery axis: harmonic filtering under disorder`
-  Maps to shell-native inverse-square / power-law recovery and seed-universal disorder-native flux closure through `53.3` and `53.4`.
+- `Law-recovery axis: harmonic filtering`
+  Maps to shell-native inverse-square / power-law recovery through `53.3`.
+- `Disorder-robustness axis: bounded seed stability`
+  Maps to seed-universal disorder-native flux closure through `53.4`.
+
+### Expanded Axes Mappings
+
+This expanded mapping uses the purified Source Cube as a guiding interpretive mnemonic and unification scaffold only. It does not alter the frozen scalar-carrier ladder, bridge thresholds, or bridge statuses through `53.4`.
+
+- `Core: invariant carrier / root note`
+  Maps to the scalar-carrier baseline already supported by `51.3`, `51.4`, and `52.1`.
+  Harmonic meaning: minimal persistent carrier, near-isotropic and low-drift, from which later recoverable content is read.
+- `Axis 1: propagation`
+  Maps to branch transmission, early propagation bands, and low-mode transport organization in the frozen derivation ladder.
+  Harmonic meaning: first coherent spread of the carrier into bounded wavefront structure.
+- `Axis 2: ordering`
+  Maps to temporal ordering, causal recovery, and the `T1-T8` / `F1-F4` derivation ladder.
+  Harmonic meaning: recoverable phase-locking that turns raw interaction into ordered partials.
+- `Axis 3: distance`
+  Maps to proto-distance surrogates, geometric integrity, and the bounded local metric-field read.
+  Harmonic meaning: stabilized distance-like structure emerging from bounded harmonic interference.
+- `Axis 4: transport`
+  Maps to clean-line current closure `52.4` and smooth-inhomogeneity tracking `52.5`.
+  Harmonic meaning: constitutive flow and transport closure as higher-order carrier organization.
+- `Axis 5: excitation`
+  Maps to `53.2`, where weak localized excitations pass and stronger localized bumps remain open.
+  Harmonic meaning: low-amplitude recoverable partials versus amplitude regimes that exceed the current coherence budget.
+- `Axis 6: law-recovery`
+  Maps to `53.3`, where shell-native power-law and inverse-square recovery pass while raw local-gradient scaling remains open.
+  Harmonic meaning: shell-native harmonic filtering that isolates a clean partial from raw residual structure.
+- `Axis 7: disorder-robustness`
+  Maps to `53.4`, where seed-universal disorder-native flux closes at `3/3` on the tested mild-disorder window.
+  Harmonic meaning: higher-order meta-stability in which the recovered partial remains phase-locked to the carrier under bounded disorder.
+
+Operational pruning and tuning remain external:
+
+- delayed fit windows act as bounded pruning operations, not threshold changes, in `53.2` (`[0.010, 0.026]`) and `53.4` (`[0.006, 0.024]`);
+- shell-native reconstruction acts as law-aware harmonic filtering in `53.3`;
+- the remaining `OPEN` rows are natural boundary markers of the current coherence budget, not hidden positive evidence.
+
+### Pruning Mechanisms
+
+This pruning account uses the purified Source Cube as a guiding interpretive mnemonic and unification scaffold only. It does not introduce new operators, alter telemetry, or modify the frozen bridge state through `53.4`.
+
+Operational definition:
+
+- pruning is the selective damping or exclusion of non-recoverable harmonic content so the hierarchy remains phase-locked to the invariant carrier;
+- pruning is external post-processing only, not arbitrary deletion and not threshold relaxation;
+- all canonical `PASS` / `OPEN` results remain defined by the frozen scalar-carrier thresholds and bridge rows.
+
+Primary mechanisms:
+
+- `Transient exclusion via delayed fit windows`
+  Used in `53.2` and `53.4` to exclude source-core or late asymptotic contamination while leaving thresholds fixed. In Source Cube terms this prunes unstable content on the excitation and disorder-robustness axes.
+- `Shell-native / law-aware reconstruction`
+  Used in `53.3` to recover a clean shell-level power-law / inverse-square partial while the raw local-gradient read remains open. In Source Cube terms this is harmonic filtering on the law-recovery axis.
+- `Persistence thresholding`
+  Structures that fail structural retention, refinement stability, or safety-margin checks are not promoted. In Source Cube terms this preserves only content that remains trace-connected to the cube core across the ordering and distance axes.
+- `Amplitude / coherence budget thresholding`
+  The weak versus stress split in `53.2` is treated as a bounded amplitude budget. In Source Cube terms, low-amplitude localized partials remain recoverable while stronger excitations are pruned or left at the boundary.
+- `Seed-universal stability checks`
+  The `3/3` closure in `53.4` is treated as a robustness filter across bounded seed variation. In Source Cube terms, a recovered partial counts as stable only if it remains coherent across the tested disorder seeds after transient pruning.
+
+Interpretive boundary:
+
+- in signal-processing terms, pruning behaves like time-windowed or reconstruction-selective filtering;
+- in discrete geometric or cochain language, pruning behaves like restricting readout to sub-intervals or reconstruction layers that preserve recoverable structure relative to the carrier;
+- in all cases, pruning stays external to `haos_core`, frozen operators, and canonical telemetry.
 
 ## 3. Updated Layered Architecture
 
@@ -77,7 +143,7 @@ This roadmap treats the purified Source Cube as a guiding interpretive mnemonic 
 Suggested visual:
 
 - `docs/media/source_cube_scalar_carrier_map.svg`
-  A simple diagram with a center core node for the invariant carrier, six outer faces or axes for propagation, ordering, proto-geometry, transport, excitation, and law-recovery, plus red boundary markers on the three current `OPEN` bridge rows.
+  A simple diagram with a center core node for the invariant carrier, seven outer faces or axes for propagation, ordering, proto-geometry, transport, excitation, law-recovery, and disorder-robustness, plus red boundary markers on the three current `OPEN` bridge rows.
 
 Suggested external metric:
 

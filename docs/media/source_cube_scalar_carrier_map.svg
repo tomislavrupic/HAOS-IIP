@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="980" viewBox="0 0 1400 980" role="img" aria-labelledby="title desc">
   <title id="title">HAOS-IIP Purified Source Cube Scalar-Carrier Map</title>
-  <desc id="desc">A doc-only mnemonic diagram showing the scalar-carrier root as a core and surrounding harmonic axes for propagation, ordering, proto-geometry, transport, excitation, law recovery, and disorder-robust flux, with pruning windows and open boundaries marked separately.</desc>
+  <desc id="desc">A doc-only mnemonic diagram showing the scalar-carrier root as a core and surrounding harmonic axes for propagation, ordering, proto-geometry, transport, excitation, law recovery, and disorder-robustness, with explicit pruning windows, shell-native filtering, and open boundary markers kept separate from the passing bridge rows.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#f5efe3"/>
@@ -116,10 +116,10 @@
 
   <g>
     <line x1="520" y1="408" x2="332" y2="408" class="axisLine"/>
-    <rect x="96" y="350" width="302" height="112" rx="18" class="card"/>
-    <text x="120" y="386" class="label">Disorder Axis</text>
-    <text x="120" y="414" class="body">53.4 seed-universal mild-disorder native</text>
-    <text x="120" y="436" class="body">flux closes at 3/3 under the tested window.</text>
+    <rect x="84" y="350" width="326" height="112" rx="18" class="card"/>
+    <text x="108" y="386" class="label">Disorder-Robustness Axis</text>
+    <text x="108" y="414" class="body">53.4 seed-universal mild-disorder native</text>
+    <text x="108" y="436" class="body">flux closes at 3/3 under the tested window.</text>
     <rect x="278" y="368" width="90" height="28" rx="14" class="chipPass"/>
     <text x="323" y="387" text-anchor="middle" class="small pass">3/3 PASS</text>
   </g>
