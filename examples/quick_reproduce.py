@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import shutil
@@ -198,7 +199,7 @@ def compare_exact(path: Path, expected_path: Path) -> bool:
     return path.read_text(encoding="utf-8") == expected_path.read_text(encoding="utf-8")
 
 
-def main() -> None:
+def run_public_reproduction() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     run_phase_checks()
@@ -230,6 +231,33 @@ def main() -> None:
         "reproduces from stored artifacts, and the artifact-only continuum sketch stays "
         "bounded and branch-distinct. No new dynamics or continuum ontology are introduced."
     )
+
+
+def run_physics_observables() -> None:
+    output = run_python(["experiments/physics_bridge/physics_observables.py"])
+    print(output)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Validate the frozen HAOS-IIP public reproduction spine."
+    )
+    parser.add_argument(
+        "--physics-observables",
+        action="store_true",
+        help="also regenerate the external 53.0 physics-bridge observable summary",
+    )
+    parser.add_argument(
+        "--physics-observables-only",
+        action="store_true",
+        help="regenerate only the external 53.0 physics-bridge observable summary",
+    )
+    args = parser.parse_args()
+
+    if not args.physics_observables_only:
+        run_public_reproduction()
+    if args.physics_observables or args.physics_observables_only:
+        run_physics_observables()
 
 
 if __name__ == "__main__":

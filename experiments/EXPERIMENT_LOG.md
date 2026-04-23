@@ -1036,3 +1036,10 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260422_215916_scalar_kernel_graph_current_closure_radial_disorder_native_flux_summary.png`, `plots/20260422_215916_scalar_kernel_graph_current_closure_radial_disorder_native_flux_profiles.png`
 - Observation: once the smooth-radial mild-disorder family is read with native bulk shells, interior-ball cumulative flux, and a delayed asymptotic fit window, the bounded constitutive closure returns on aggregated observables
 - Conclusion: all 12 aggregated mild-disorder cases pass, with maximum refinement drift 0.1278; the weakest aggregated case is `radial_native_flux|n=13|eta=0.150|sigma=0.040` with kappa/D_eff 0.9575, median relative error 0.0911, p90 error 0.2950, shell-kappa CV 0.1369, and |metric-tracking corr| 0.9952; the hardest seed-level trial is `radial_native_flux|n=13|eta=0.150|sigma=0.040|seed=1` with median relative error 0.1100, p90 error 0.2817, shell-kappa CV 0.1482, and pass state FALSE; this supports a bounded disorder-native transient closure on the smooth-radial branch, with the minimum seed-level pass count still only 2/3 in the hardest tested case
+
+## physics bridge observables
+- Date: 2026-04-23T18:07:13
+- Config: artifact-only post-processing over scalar-carrier latest JSON; no HAOS core changes, no simulation reruns, no new dynamics
+- Results: `experiments/physics_bridge/results/physics_observables.csv`, `experiments/physics_bridge/results/physics_observables.json`, `experiments/physics_bridge/results/physics_observables_summary.md`
+- Observation: the external bridge dictionary separates physics-facing metric, response, and transport proxies from still-open physics claims
+- Conclusion: the bridge read gives 8 PASS, 3 OPEN, and 1 WATCH rows; metric positivity/isotropy/refinement, clean current closure, smooth inhomogeneity co-deformation, and aggregated disorder-native flux pass their existing scalar thresholds, while recoverability inverse-square residuals, power-law response fit, localized bump closure, and seed-universal disorder closure remain explicitly open or watched

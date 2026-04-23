@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "program": "HAOS-IIP physics bridge 53.0",
+    "claim_type": "post-processing proxy dictionary over frozen scalar artifacts",
+    "non_claims": [
+      "no modification of HAOS core",
+      "no continuum ontology",
+      "no Einstein-Hilbert recovery claim",
+      "no conserved stress-energy theorem",
+      "no arbitrary localized inhomogeneity closure"
+    ],
+    "source_artifacts": [
+      "data/scalar_kernel_graph_metric_field_latest.json",
+      "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+      "data/scalar_kernel_graph_current_closure_shell_native_latest.json",
+      "data/scalar_kernel_graph_current_closure_inhomogeneity_latest.json",
+      "data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json"
+    ],
+    "status_counts": {
+      "PASS": 8,
+      "OPEN": 3,
+      "WATCH": 1
+    }
+  },
+  "observables": [
+    {
+      "observable_id": "metric_positive_bulk",
+      "physics_analogue": "effective metric positivity proxy",
+      "haos_source": "data/scalar_kernel_graph_metric_field_latest.json",
+      "proxy_quantity": "minimum coarse bulk metric eigenvalue",
+      "value": "1.076790",
+      "target": ">= 0.800000",
+      "status": "PASS",
+      "scope_note": "Supports a bounded local metric-like tensor read, not a spacetime metric."
+    },
+    {
+      "observable_id": "metric_anisotropy_bound",
+      "physics_analogue": "local isotropy proxy",
+      "haos_source": "data/scalar_kernel_graph_metric_field_latest.json",
+      "proxy_quantity": "maximum coarse mean anisotropy",
+      "value": "0.013949",
+      "target": "<= 0.020000",
+      "status": "PASS",
+      "scope_note": "Checks whether the tensor read stays close to the scalar-carrier isotropic baseline."
+    },
+    {
+      "observable_id": "metric_refinement_stability",
+      "physics_analogue": "continuum-limit sanity proxy",
+      "haos_source": "data/scalar_kernel_graph_metric_field_latest.json",
+      "proxy_quantity": "maximum normalized metric refinement drift",
+      "value": "0.002350",
+      "target": "<= 0.030000",
+      "status": "PASS",
+      "scope_note": "A scaling sanity check only; it does not establish a continuum limit."
+    },
+    {
+      "observable_id": "recoverability_radial_alignment",
+      "physics_analogue": "radial response-direction proxy",
+      "haos_source": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+      "proxy_quantity": "minimum radial alignment",
+      "value": "0.990921",
+      "target": ">= 0.940000",
+      "status": "PASS",
+      "scope_note": "Directionality is strong, but direction alone is not a force law."
+    },
+    {
+      "observable_id": "recoverability_inverse_square_residual",
+      "physics_analogue": "inverse-square response-law proxy",
+      "haos_source": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+      "proxy_quantity": "worst flux constancy CV / profile drift",
+      "value": "0.313916 / 0.524900",
+      "target": "<= 0.120000 / <= 0.080000",
+      "status": "OPEN",
+      "scope_note": "Keeps the 52.1 boundary explicit: radial carrier response is present, inverse-square closure is not."
+    },
+    {
+      "observable_id": "recoverability_power_fit_floor",
+      "physics_analogue": "power-law scaling proxy",
+      "haos_source": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+      "proxy_quantity": "minimum power-fit R^2",
+      "value": "0.321965",
+      "target": ">= 0.950000",
+      "status": "OPEN",
+      "scope_note": "A deliberately hard guardrail against reading noisy response curves as laws."
+    },
+    {
+      "observable_id": "clean_current_closure",
+      "physics_analogue": "conserved-current analogue proxy",
+      "haos_source": "data/scalar_kernel_graph_current_closure_shell_native_latest.json",
+      "proxy_quantity": "max median error / max diffusivity gap / max profile drift",
+      "value": "0.073898 / 0.112930 / 0.096598",
+      "target": "<= 0.100000 / <= 0.150000 / <= 0.100000",
+      "status": "PASS",
+      "scope_note": "Supports bounded clean-line constitutive closure, not a conservation theorem."
+    },
+    {
+      "observable_id": "clean_current_tail_error",
+      "physics_analogue": "transport residual proxy",
+      "haos_source": "data/scalar_kernel_graph_current_closure_shell_native_latest.json",
+      "proxy_quantity": "maximum p90 relative current error / shell-kappa CV",
+      "value": "0.271771 / 0.117611",
+      "target": "<= 0.300000 / <= 0.130000",
+      "status": "PASS",
+      "scope_note": "Retains residual accounting rather than converting closure into exact equality."
+    },
+    {
+      "observable_id": "smooth_inhomogeneity_metric_transport_tracking",
+      "physics_analogue": "smooth weak-field co-deformation proxy",
+      "haos_source": "data/scalar_kernel_graph_current_closure_inhomogeneity_latest.json",
+      "proxy_quantity": "radial max drift / minimum metric-tracking |corr|",
+      "value": "0.146454 / 0.984018",
+      "target": "<= 0.150000 / >= 0.950000",
+      "status": "PASS",
+      "scope_note": "The smooth branch co-deforms; this is still a scalar-carrier transport proxy, not a weak-field GR claim."
+    },
+    {
+      "observable_id": "localized_bump_boundary",
+      "physics_analogue": "localized matter-like excitation boundary",
+      "haos_source": "data/scalar_kernel_graph_current_closure_inhomogeneity_latest.json",
+      "proxy_quantity": "bump max drift / minimum metric-tracking |corr|",
+      "value": "0.512392 / 0.962771",
+      "target": "<= 0.150000 / >= 0.950000",
+      "status": "OPEN",
+      "scope_note": "This is the useful failure boundary: localized bump closure is not yet earned."
+    },
+    {
+      "observable_id": "disorder_native_aggregate_flux",
+      "physics_analogue": "disorder-robust transport-law proxy",
+      "haos_source": "data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json",
+      "proxy_quantity": "max aggregated median error / max aggregated p90 error / max drift",
+      "value": "0.091117 / 0.300365 / 0.127842",
+      "target": "<= 0.100000 / <= 0.370000 / <= 0.150000",
+      "status": "PASS",
+      "scope_note": "Aggregated mild-disorder transport closes after native flux reconstruction."
+    },
+    {
+      "observable_id": "disorder_native_seed_margin",
+      "physics_analogue": "seed-universal disorder margin proxy",
+      "haos_source": "data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json",
+      "proxy_quantity": "minimum seed-level pass count",
+      "value": "2/3",
+      "target": "3/3 for seed-universal closure",
+      "status": "WATCH",
+      "scope_note": "Aggregates pass, but one tested case still has a marginal seed-level failure."
+    }
+  ]
+}

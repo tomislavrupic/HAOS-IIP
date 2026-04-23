@@ -2,7 +2,7 @@
 
 HAOS-IIP = **Harmonic Address Operating System - Interaction Invariant Physics**.
 
-Frozen branch-local cochain-Laplacian hierarchy: bounded emergence diagnostics, closed HAOS-to-harmonic derivation ladder, and bounded scalar-carrier geometry closure.
+Frozen branch-local cochain-Laplacian hierarchy: bounded emergence diagnostics, closed HAOS-to-harmonic derivation ladder, bounded scalar-carrier geometry closure, and an external physics-bridge proxy layer.
 
 Success criterion: running the public reproduction script should produce identical table values and an identical plot to the frozen baseline.
 
@@ -63,6 +63,7 @@ All conclusions are framed as feasibility statements, not ontological claims.
 ```text
 phase3-stability/ ... phase18-distance-surrogate/  frozen phase bundles and diagnostics
 continuum-sketch/                                  low-cost post-processing scaling test
+experiments/physics_bridge/                        external physics-facing proxy readout
 examples/                                          one-command public reproduction spine
 telemetry/                                         frozen emergence metrics
 haos_core/                                         shared core primitives
@@ -110,6 +111,12 @@ python3 run_phase.py 10 --check
 
 No new simulations are required to validate frozen results.
 
+To regenerate the external physics-bridge proxy table without changing the default reproduction contract:
+
+```bash
+python3 examples/quick_reproduce.py --physics-observables-only
+```
+
 ## Telemetry Demo
 
 HAOS-IIP also exposes a small telemetry-based structural-stability diagnostic. This demo illustrates how HAOS-IIP telemetry can be used as a structural-stability diagnostic for evolving graph-like systems. It is not a claim about physical spacetime emergence.
@@ -153,17 +160,20 @@ Short note:
 
 ## Program Status
 
-**Current milestone (52.5 smooth-inhomogeneity current closure after 52.4 clean-line closure):**
-The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now closes through a bounded local metric field, a positive shell-native inverse-square response law, an open first transient baseline `52.3`, a corrected shell-native clean-line current closure `52.4`, and a bounded smooth-radial inhomogeneity closure `52.5` while localized bump inhomogeneity remains explicitly open.
+**Current milestone (53.0 external physics bridge after 52.5 smooth-inhomogeneity current closure):**
+The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now closes through a bounded local metric field, a shell-native response read, an open first transient baseline `52.3`, a corrected shell-native clean-line current closure `52.4`, and a bounded smooth-radial inhomogeneity closure `52.5` while localized bump inhomogeneity remains explicitly open. The `53.0` bridge adds only an external post-processing dictionary over those frozen artifacts, separating metric, response, and transport proxies from still-open physics claims.
 
-The public repository now contains three stacked bounded results:
+The public repository now contains four stacked bounded results:
 
 - closed derivation ladder: `T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8`, plus `F1-F4`
 - frozen vector validation spine through `V1-V6b` and clean-baseline identity resolution
-- scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass, a bounded local metric-field closure, a shell-native inverse-square response closure, an honest open first transient baseline `52.3`, a bounded shell-native clean-line current closure `52.4`, and a bounded smooth-inhomogeneity transport closure `52.5` on the smooth radial branch
+- scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass, a bounded local metric-field closure, a shell-native response read, an honest open first transient baseline `52.3`, a bounded shell-native clean-line current closure `52.4`, and a bounded smooth-inhomogeneity transport closure `52.5` on the smooth radial branch
+- external physics-bridge observables `53.0`, which keep the inverse-square recoverability residual, localized bump closure, and seed-universal disorder margin explicit as open or watched boundaries
 
 Milestone anchors:
 
+- [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
+- [Physics Bridge Observable Summary](experiments/physics_bridge/results/physics_observables_summary.md)
 - [52.5 Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release](papers/pdf_releases/52.5%20Scalar-Carrier%20Smooth-Inhomogeneity%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.4 Scalar-Carrier Shell-Native Current-Closure Release](papers/pdf_releases/52.4%20Scalar-Carrier%20Shell-Native%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.1 Scalar-Carrier Recoverability-Gradient Probe Release](papers/pdf_releases/52.1%20Scalar-Carrier%20Recoverability-Gradient%20Probe%20Release%20for%20HAOS-IIP.pdf)
@@ -179,6 +189,7 @@ Milestone anchors:
 - [Scalar-Carrier Current Closure 52.3](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_3_v1.md)
 - [Scalar-Carrier Current Closure 52.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_4_v1.md)
 - [Scalar-Carrier Smooth-Inhomogeneity Current Closure 52.5](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Smooth_Inhomogeneity_Current_Closure_52_5_v1.md)
+- [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
 - [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md) (original geometry-emergence baseline)
 
 ## Reproducibility Contract
@@ -214,6 +225,7 @@ Current scalar geometry-closure notes:
 - [Scalar-Carrier Current Closure 52.3](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_3_v1.md)
 - [Scalar-Carrier Current Closure 52.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_4_v1.md)
 - [Scalar-Carrier Smooth-Inhomogeneity Current Closure 52.5](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Smooth_Inhomogeneity_Current_Closure_52_5_v1.md)
+- [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
 
 This stage performs:
 
