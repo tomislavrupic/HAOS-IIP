@@ -34,3 +34,8 @@ The inverse-square row is intentionally split:
 
 - raw recoverability-gradient inverse-square closure remains `OPEN`;
 - shell-native law-aware inverse-square closure is `PASS` under its stated reconstruction thresholds.
+
+The localized-bump row is also intentionally split:
+
+- weak localized bump response is `PASS` after excluding the earliest source-core transient layer;
+- stronger localized bump response remains `OPEN` under the same transport thresholds.

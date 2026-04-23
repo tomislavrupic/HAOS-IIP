@@ -160,20 +160,22 @@ Short note:
 
 ## Program Status
 
-**Current milestone (53.0 external physics bridge after 52.5 smooth-inhomogeneity current closure):**
-The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now closes through a bounded local metric field, a shell-native response read, an open first transient baseline `52.3`, a corrected shell-native clean-line current closure `52.4`, and a bounded smooth-radial inhomogeneity closure `52.5` while localized bump inhomogeneity remains explicitly open. The `53.0` bridge adds only an external post-processing dictionary over those frozen artifacts, separating metric, response, and transport proxies from still-open physics claims.
+**Current milestone (53.2 localized bump response threshold after 53.0 physics bridge):**
+The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now closes through a bounded local metric field, a shell-native response read, an open first transient baseline `52.3`, a corrected shell-native clean-line current closure `52.4`, and a bounded smooth-radial inhomogeneity closure `52.5`. The `53.0` bridge adds an external post-processing dictionary over those frozen artifacts, and `53.2` resolves the localized bump row into a weak localized-excitation PASS plus a stronger localized-bump OPEN boundary.
 
 The public repository now contains four stacked bounded results:
 
 - closed derivation ladder: `T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8`, plus `F1-F4`
 - frozen vector validation spine through `V1-V6b` and clean-baseline identity resolution
 - scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass, a bounded local metric-field closure, a shell-native response read, an honest open first transient baseline `52.3`, a bounded shell-native clean-line current closure `52.4`, and a bounded smooth-inhomogeneity transport closure `52.5` on the smooth radial branch
-- external physics-bridge observables `53.0`, which separate shell-native inverse-square closure from the raw inverse-square residual and keep localized bump closure plus seed-universal disorder margin explicit as open or watched boundaries
+- external physics-bridge observables `53.0`, which separate shell-native inverse-square closure from the raw inverse-square residual and now split localized bump response into weak PASS and stress OPEN boundaries
 
 Milestone anchors:
 
 - [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
+- [Localized Bump Response 53.2](docs/notes/foundations/HAOS_IIP_Localized_Bump_Response_53_2_v1.md)
 - [Physics Bridge Observable Summary](experiments/physics_bridge/results/physics_observables_summary.md)
+- [53.2 Localized Bump Response Threshold Release](papers/pdf_releases/53.2%20Localized%20Bump%20Response%20Threshold%20Release%20for%20HAOS-IIP.pdf)
 - [53.0 Physics Bridge Observables Release](papers/pdf_releases/53.0%20Physics%20Bridge%20Observables%20Release%20for%20HAOS-IIP.pdf)
 - [52.5 Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release](papers/pdf_releases/52.5%20Scalar-Carrier%20Smooth-Inhomogeneity%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.4 Scalar-Carrier Shell-Native Current-Closure Release](papers/pdf_releases/52.4%20Scalar-Carrier%20Shell-Native%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
@@ -191,6 +193,7 @@ Milestone anchors:
 - [Scalar-Carrier Current Closure 52.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_4_v1.md)
 - [Scalar-Carrier Smooth-Inhomogeneity Current Closure 52.5](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Smooth_Inhomogeneity_Current_Closure_52_5_v1.md)
 - [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
+- [Localized Bump Response 53.2](docs/notes/foundations/HAOS_IIP_Localized_Bump_Response_53_2_v1.md)
 - [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md) (original geometry-emergence baseline)
 
 ## Reproducibility Contract
@@ -227,6 +230,7 @@ Current scalar geometry-closure notes:
 - [Scalar-Carrier Current Closure 52.4](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Current_Closure_52_4_v1.md)
 - [Scalar-Carrier Smooth-Inhomogeneity Current Closure 52.5](docs/notes/foundations/HAOS_IIP_Scalar_Carrier_Smooth_Inhomogeneity_Current_Closure_52_5_v1.md)
 - [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
+- [Localized Bump Response 53.2](docs/notes/foundations/HAOS_IIP_Localized_Bump_Response_53_2_v1.md)
 
 This stage performs:
 
@@ -240,6 +244,7 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [53.2 Localized Bump Response Threshold Release](papers/pdf_releases/53.2%20Localized%20Bump%20Response%20Threshold%20Release%20for%20HAOS-IIP.pdf)
 - [53.0 Physics Bridge Observables Release](papers/pdf_releases/53.0%20Physics%20Bridge%20Observables%20Release%20for%20HAOS-IIP.pdf)
 - [52.5 Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release](papers/pdf_releases/52.5%20Scalar-Carrier%20Smooth-Inhomogeneity%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)
 - [52.4 Scalar-Carrier Shell-Native Current-Closure Release](papers/pdf_releases/52.4%20Scalar-Carrier%20Shell-Native%20Current-Closure%20Release%20for%20HAOS-IIP.pdf)

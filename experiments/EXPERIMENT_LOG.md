@@ -1043,3 +1043,11 @@ This file records orchestrated experiment runs.
 - Results: `experiments/physics_bridge/results/physics_observables.csv`, `experiments/physics_bridge/results/physics_observables.json`, `experiments/physics_bridge/results/physics_observables_summary.md`
 - Observation: the external bridge dictionary separates physics-facing metric, response, and transport proxies from still-open physics claims
 - Conclusion: the bridge read gives 9 PASS, 3 OPEN, and 1 WATCH rows; metric positivity/isotropy/refinement, shell-native inverse-square closure, clean current closure, smooth inhomogeneity co-deformation, and aggregated disorder-native flux pass their existing scalar thresholds, while the raw recoverability inverse-square residual, raw power-law response fit, localized bump closure, and seed-universal disorder closure remain explicitly open or watched
+
+## scalar kernel graph localized bump response
+- Date: 2026-04-23T18:25:42
+- Config: n_sides=[13, 15], weak_eta_values=[0.01, 0.02, 0.03, 0.04, 0.05], stress_eta_values=[0.075, 0.1, 0.15], fit_window=[0.01, 0.026], bump_sigma=0.18
+- Results: `data/20260423_182539_scalar_kernel_graph_localized_bump_response.json`
+- Plots: `plots/20260423_182539_scalar_kernel_graph_localized_bump_response_summary.png`, `plots/20260423_182539_scalar_kernel_graph_localized_bump_response_profiles.png`
+- Observation: after excluding the earliest source-core transient layer, weak localized bump excitations close as a bounded metric-tracking transport response, while stronger localized bumps remain outside the same closure
+- Conclusion: all 10 weak localized bump cases pass for eta values [0.01, 0.02, 0.03, 0.04, 0.05], with maximum refinement drift 0.1095; the weakest weak case is `weak_bump|n=13|eta=0.050` with kappa/D_eff 0.9699, median relative error 0.0943, p90 error 0.2984, shell-kappa CV 0.1248, and |metric-tracking corr| 0.9752; the stress window remains open with maximum drift 0.3578, and the hardest stress case is `stress_bump|n=13|eta=0.150` with median relative error 0.2784, p90 error 0.5287, and shell-kappa CV 0.3406

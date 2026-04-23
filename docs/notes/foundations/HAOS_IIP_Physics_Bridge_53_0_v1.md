@@ -32,14 +32,14 @@ All mappings below are hypotheses about useful comparison variables.
 | shell-native recoverability gradient | inverse-square / Newtonian-like response proxy | usable only under the stated shell-native reconstruction, not as a gravity claim |
 | shell-native current closure | conserved-current analogue proxy | residual closure only, not a conservation theorem |
 | smooth metric-transport co-deformation | weak-field-style smooth inhomogeneity proxy | scalar-carrier transport proxy, not weak-field GR |
-| localized bump response | localized excitation boundary | open until the same closure survives localized profiles |
+| localized bump response | proto-particle / localized excitation proxy | weak localized bumps may pass while stronger localized bumps remain a boundary |
 | disorder-native flux | mild-disorder transport-law proxy | aggregate closure must be separated from seed-universal closure |
 
 ## Frozen 53.0 observable read
 
 The generated bridge summary is:
 
-- `PASS`: 9
+- `PASS`: 10
 - `OPEN`: 3
 - `WATCH`: 1
 
@@ -53,13 +53,14 @@ Positive bridge reads:
 - clean current closure: maximum median error / diffusivity gap / drift `0.073898 / 0.112930 / 0.096598` inside thresholds;
 - clean tail residuals: maximum p90 error / shell-kappa CV `0.271771 / 0.117611` inside thresholds;
 - smooth inhomogeneity co-deformation: radial drift / minimum metric-tracking correlation `0.146454 / 0.984018` inside thresholds;
+- weak localized bump response: maximum drift / median error / p90 error / shell-kappa CV `0.109546 / 0.094290 / 0.298438 / 0.124804` inside thresholds;
 - disorder-native aggregate flux: maximum aggregated median error / p90 error / drift `0.091117 / 0.300365 / 0.127842` inside thresholds.
 
 Open or watched bridge reads:
 
 - raw inverse-square recoverability closure remains open: worst flux constancy CV / profile drift `0.313916 / 0.524900` exceeds thresholds `<= 0.120000 / <= 0.080000`;
 - power-law response scaling remains open: minimum power-fit `R^2 = 0.321965` against threshold `>= 0.950000`;
-- localized bump closure remains open: bump drift / minimum metric-tracking correlation `0.512392 / 0.962771`, with drift outside threshold;
+- strong localized bump closure remains open: stress-window drift / median error / p90 error / shell-kappa CV `0.357828 / 0.278447 / 0.528693 / 0.340605` exceeds thresholds;
 - seed-universal disorder-native flux remains watched: minimum seed-level pass count is `2/3`, not `3/3`.
 
 ## Correct 53.0 interpretation
@@ -71,18 +72,19 @@ The scalar-carrier stack is now physics-facing in a limited sense:
 3. It has a bounded shell-native inverse-square / Newtonian-like response proxy under the stated shell-native law-aware reconstruction.
 4. It has a bounded shell-native current closure on the clean carrier.
 5. It has bounded metric-transport co-deformation on smooth radial inhomogeneity.
-6. It has aggregate mild-disorder closure after native flux reconstruction.
+6. It has a weak localized bump response closure after excluding the earliest source-core transient layer.
+7. It has aggregate mild-disorder closure after native flux reconstruction.
 
 The strongest honest statement is:
 
-> HAOS-IIP now has an external physics-bridge readout showing which scalar-carrier quantities behave like metric, shell-native inverse-square response, and transport proxies under the current frozen thresholds, while explicitly preserving the raw inverse-square residual, localized-bump, and seed-universal disorder boundaries as open or watched.
+> HAOS-IIP now has an external physics-bridge readout showing which scalar-carrier quantities behave like metric, shell-native inverse-square response, weak localized-excitation, and transport proxies under the current frozen thresholds, while explicitly preserving the raw inverse-square residual, strong localized-bump, and seed-universal disorder boundaries as open or watched.
 
 ## Next experiments
 
 The next bridge steps should remain external:
 
 1. Add a refinement-scaling table for the bridge proxies across larger `n` where runtime allows.
-2. Find the localization width threshold where bump-like inhomogeneity begins to behave like the smooth radial branch.
+2. Refine the strong localized bump threshold between `eta = 0.05` and `eta = 0.075`.
 3. Test one additional kernel-graph family before using stronger universality language.
 4. Only after those pass, revisit curvature-style or stress-energy-style proxies.
 
@@ -93,6 +95,7 @@ The next bridge steps should remain external:
 - CSV summary: `experiments/physics_bridge/results/physics_observables.csv`
 - JSON summary: `experiments/physics_bridge/results/physics_observables.json`
 - Markdown summary: `experiments/physics_bridge/results/physics_observables_summary.md`
+- localized bump response: `data/scalar_kernel_graph_localized_bump_response_latest.json`
 - optional reproduction hook: `python3 examples/quick_reproduce.py --physics-observables-only`
 
 ## Boundary

@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/physics_bridge_observables_release_for_haos_iip.tex",
-  "title": "Physics Bridge Observables Release for HAOS-IIP",
-  "commit_message": "Freeze physics bridge observables release 53.0",
+  "paper": "papers/localized_bump_response_threshold_release_for_haos_iip.tex",
+  "title": "Localized Bump Response Threshold Release for HAOS-IIP",
+  "commit_message": "Freeze localized bump response threshold release 53.2",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",

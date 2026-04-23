@@ -459,6 +459,28 @@
       "min_metric_tracking_abs_corr": 0.95
     }
   },
+  "scalar_kernel_graph_localized_bump_response": {
+    "n_sides": [13, 15],
+    "weak_eta_values": [0.01, 0.02, 0.03, 0.04, 0.05],
+    "stress_eta_values": [0.075, 0.10, 0.15],
+    "epsilon_coeff": 0.5,
+    "cutoff_factor": 2.5,
+    "heat_time_max": 0.03,
+    "heat_time_steps": 61,
+    "fit_window": [0.010, 0.026],
+    "bulk_margin_layers": 2,
+    "metric_radius_factor": 2.5,
+    "shell_r_max": 0.45,
+    "bump_sigma": 0.18,
+    "thresholds": {
+      "max_median_relative_error": 0.10,
+      "max_p90_relative_error": 0.37,
+      "max_diffusivity_match_gap": 0.15,
+      "max_shell_kappa_cv": 0.14,
+      "max_refinement_profile_drift": 0.15,
+      "min_metric_tracking_abs_corr": 0.95
+    }
+  },
   "sweep": {
     "epsilon_values": [0.12, 0.2, 0.28],
     "node_values": [216, 343],

@@ -201,6 +201,10 @@ The intended public reading order is:
 
 1. `53.1` External Collapse-Ordering Invariance Assessment on Frozen HAOS-IIP Telemetry
 
+### 2.40 Part XL. Localized bump response threshold
+
+1. `53.2` Localized Bump Response Threshold Release for HAOS-IIP
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -270,6 +274,7 @@ The intended public reading order is:
 - `52.5` Scalar-Carrier Smooth-Inhomogeneity Current-Closure Release for HAOS-IIP
 - `53.0` Physics Bridge Observables Release for HAOS-IIP
 - `53.1` External Collapse-Ordering Invariance Assessment on Frozen HAOS-IIP Telemetry
+- `53.2` Localized Bump Response Threshold Release for HAOS-IIP
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

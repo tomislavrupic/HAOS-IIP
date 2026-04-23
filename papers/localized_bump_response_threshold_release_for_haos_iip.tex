@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Localized Bump Response Threshold Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{53.2} of HAOS-IIP as a localized-bump response threshold result on the scalar carrier. The previous \texttt{52.5} smooth-inhomogeneity release left localized bump response open, with maximum refinement drift \texttt{0.5124}. Release \texttt{53.2} keeps the same scalar carrier and same localized bump profile, but excludes the earliest source-core transient layer using fit window \([0.010, 0.026]\). Under that bounded readout, all ten weak localized bump cases pass for amplitudes \(\eta = 0.01, 0.02, 0.03, 0.04, 0.05\), with maximum refinement drift \texttt{0.1095}, maximum median relative error \texttt{0.0943}, maximum p90 error \texttt{0.2984}, and maximum shell-\(\kappa\) CV \texttt{0.1248}. Stronger localized bumps remain open: the stress window \(\eta = 0.075, 0.10, 0.15\) reaches maximum drift \texttt{0.3578}. The correct conclusion is therefore thresholded: weak localized bump excitations close as a bounded metric-tracking transport response, while stronger localized excitations remain outside the same closure.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{53.2} is a narrow follow-on to the physics bridge and scalar-carrier transport stack.
+
+It does not modify HAOS core, add new dynamics, claim particle ontology, or introduce stress-energy coupling.
+
+It only asks:
+\begin{quote}
+does the localized bump response recover if the source-core transient layer is excluded from the constitutive fit?
+\end{quote}
+
+\section{Construction}
+
+The test uses:
+\begin{itemize}
+\item the same scalar kernel-graph carrier;
+\item the same localized bump shape with \(\sigma = 0.18\);
+\item refinements \(n = 13, 15\);
+\item delayed fit window \([0.010, 0.026]\);
+\item the same current-closure thresholds used by the \texttt{52.5} inhomogeneity release.
+\end{itemize}
+
+Two amplitude regimes are separated:
+\begin{itemize}
+\item weak: \(\eta = 0.01, 0.02, 0.03, 0.04, 0.05\);
+\item stress: \(\eta = 0.075, 0.10, 0.15\).
+\end{itemize}
+
+\section{Frozen Result}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Regime & Cases pass & Max drift & Max median err. & Max p90 err. & Max shell CV \\
+\midrule
+weak & 10/10 & 0.1095 & 0.0943 & 0.2984 & 0.1248 \\
+stress & 0/6 & 0.3578 & 0.2784 & 0.5287 & 0.3406 \\
+\bottomrule
+\end{tabular}
+\caption{Weak localized bump response passes; stronger localized bumps remain open.}
+\end{table}
+
+The weakest passing weak case is:
+\begin{itemize}
+\item \texttt{weak\_bump|n=13|eta=0.050};
+\item \(\kappa/D_{\mathrm{eff}} = 0.9699\);
+\item median relative error \texttt{0.0943};
+\item p90 relative error \texttt{0.2984};
+\item shell-\(\kappa\) CV \texttt{0.1248};
+\item \(|\mathrm{metric\ tracking\ corr}| = 0.9752\).
+\end{itemize}
+
+The hardest stress case is:
+\begin{itemize}
+\item \texttt{stress\_bump|n=13|eta=0.150};
+\item median relative error \texttt{0.2784};
+\item p90 relative error \texttt{0.5287};
+\item shell-\(\kappa\) CV \texttt{0.3406}.
+\end{itemize}
+
+\section{Interpretation}
+
+The old broad statement was:
+\begin{quote}
+localized bump response remains open.
+\end{quote}
+
+The updated statement is:
+\begin{quote}
+weak localized bump excitations close as a bounded metric-tracking transport response after the earliest source-core transient layer is excluded, while stronger localized bumps remain outside the same closure.
+\end{quote}
+
+This is closer to a proto-particle diagnostic than the previous result, but it is not a particle model. The result only establishes a weak localized-excitation proxy and an amplitude boundary on the scalar carrier.
+
+\section{Artifacts}
+
+\begin{itemize}
+\item script: \path{numerics/simulations/scalar_kernel_graph_localized_bump_response.py};
+\item operator note: \path{experiments/operators/Scalar_Kernel_Graph_Localized_Bump_Response_v1.md};
+\item frozen result: \path{data/20260423_182539_scalar_kernel_graph_localized_bump_response.json};
+\item latest result: \path{data/scalar_kernel_graph_localized_bump_response_latest.json};
+\item summary plot: \path{plots/20260423_182539_scalar_kernel_graph_localized_bump_response_summary.png};
+\item profile plot: \path{plots/20260423_182539_scalar_kernel_graph_localized_bump_response_profiles.png}.
+\end{itemize}
+
+\section{Next Boundary}
+
+The next honest step is to refine the transition between \(\eta = 0.05\) and \(\eta = 0.075\), then test whether the weak localized response survives mild carrier disorder.
+
+\section{Conclusion}
+
+Release \texttt{53.2} turns the localized bump row from an undifferentiated failure into a thresholded result. Weak localized excitations now pass the scalar-carrier transport proxy; stronger localized excitations remain open. That is the correct stopping point: a recovered weak localized response, not a general localized-particle theory.
+
+\end{document}

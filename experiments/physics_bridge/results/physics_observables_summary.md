@@ -20,7 +20,8 @@ It is a post-processing bridge over frozen scalar-carrier artifacts. It does not
 | clean_current_closure | conserved-current analogue proxy | 0.073898 / 0.112930 / 0.096598 | <= 0.100000 / <= 0.150000 / <= 0.100000 | PASS |
 | clean_current_tail_error | transport residual proxy | 0.271771 / 0.117611 | <= 0.300000 / <= 0.130000 | PASS |
 | smooth_inhomogeneity_metric_transport_tracking | smooth weak-field co-deformation proxy | 0.146454 / 0.984018 | <= 0.150000 / >= 0.950000 | PASS |
-| localized_bump_boundary | localized matter-like excitation boundary | 0.512392 / 0.962771 | <= 0.150000 / >= 0.950000 | OPEN |
+| weak_localized_bump_response | proto-particle weak localized-excitation proxy | 0.109546 / 0.094290 / 0.298438 / 0.124804 | <= 0.150000 / <= 0.100000 / <= 0.370000 / <= 0.140000 | PASS |
+| stress_localized_bump_boundary | strong localized-excitation boundary | 0.357828 / 0.278447 / 0.528693 / 0.340605 | <= 0.150000 / <= 0.100000 / <= 0.370000 / <= 0.140000 | OPEN |
 | disorder_native_aggregate_flux | disorder-robust transport-law proxy | 0.091117 / 0.300365 / 0.127842 | <= 0.100000 / <= 0.370000 / <= 0.150000 | PASS |
 | disorder_native_seed_margin | seed-universal disorder margin proxy | 2/3 | 3/3 for seed-universal closure | WATCH |
 
@@ -28,12 +29,12 @@ It is a post-processing bridge over frozen scalar-carrier artifacts. It does not
 
 - `recoverability_inverse_square_residual`: Keeps the 52.1 boundary explicit: radial carrier response is present, inverse-square closure is not.
 - `recoverability_power_fit_floor`: A deliberately hard guardrail against reading noisy response curves as laws.
-- `localized_bump_boundary`: This is the useful failure boundary: localized bump closure is not yet earned.
+- `stress_localized_bump_boundary`: Stronger localized bumps still exceed the same transport-stability thresholds.
 - `disorder_native_seed_margin`: Aggregates pass, but one tested case still has a marginal seed-level failure.
 
 ## Status Counts
 
-- `PASS`: 9
+- `PASS`: 10
 - `OPEN`: 3
 - `WATCH`: 1
 

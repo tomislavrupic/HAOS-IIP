@@ -15,10 +15,11 @@
       "data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json",
       "data/scalar_kernel_graph_current_closure_shell_native_latest.json",
       "data/scalar_kernel_graph_current_closure_inhomogeneity_latest.json",
-      "data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json"
+      "data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json",
+      "data/scalar_kernel_graph_localized_bump_response_latest.json"
     ],
     "status_counts": {
-      "PASS": 9,
+      "PASS": 10,
       "OPEN": 3,
       "WATCH": 1
     }
@@ -125,14 +126,24 @@
       "scope_note": "The smooth branch co-deforms; this is still a scalar-carrier transport proxy, not a weak-field GR claim."
     },
     {
-      "observable_id": "localized_bump_boundary",
-      "physics_analogue": "localized matter-like excitation boundary",
-      "haos_source": "data/scalar_kernel_graph_current_closure_inhomogeneity_latest.json",
-      "proxy_quantity": "bump max drift / minimum metric-tracking |corr|",
-      "value": "0.512392 / 0.962771",
-      "target": "<= 0.150000 / >= 0.950000",
+      "observable_id": "weak_localized_bump_response",
+      "physics_analogue": "proto-particle weak localized-excitation proxy",
+      "haos_source": "data/scalar_kernel_graph_localized_bump_response_latest.json",
+      "proxy_quantity": "weak max drift / max median error / max p90 error / max shell-kappa CV",
+      "value": "0.109546 / 0.094290 / 0.298438 / 0.124804",
+      "target": "<= 0.150000 / <= 0.100000 / <= 0.370000 / <= 0.140000",
+      "status": "PASS",
+      "scope_note": "Weak localized bump excitations close after excluding the earliest source-core transient layer."
+    },
+    {
+      "observable_id": "stress_localized_bump_boundary",
+      "physics_analogue": "strong localized-excitation boundary",
+      "haos_source": "data/scalar_kernel_graph_localized_bump_response_latest.json",
+      "proxy_quantity": "stress max drift / max median error / max p90 error / max shell-kappa CV",
+      "value": "0.357828 / 0.278447 / 0.528693 / 0.340605",
+      "target": "<= 0.150000 / <= 0.100000 / <= 0.370000 / <= 0.140000",
       "status": "OPEN",
-      "scope_note": "This is the useful failure boundary: localized bump closure is not yet earned."
+      "scope_note": "Stronger localized bumps still exceed the same transport-stability thresholds."
     },
     {
       "observable_id": "disorder_native_aggregate_flux",

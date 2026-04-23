@@ -19,6 +19,7 @@ RECOVERABILITY_GRADIENT_SHELL_NATIVE = (
 CURRENT_CLOSURE = REPO_ROOT / "data" / "scalar_kernel_graph_current_closure_shell_native_latest.json"
 INHOMOGENEITY_CLOSURE = REPO_ROOT / "data" / "scalar_kernel_graph_current_closure_inhomogeneity_latest.json"
 DISORDER_NATIVE_FLUX = REPO_ROOT / "data" / "scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json"
+LOCALIZED_BUMP_RESPONSE = REPO_ROOT / "data" / "scalar_kernel_graph_localized_bump_response_latest.json"
 
 CSV_PATH = RESULTS_DIR / "physics_observables.csv"
 JSON_PATH = RESULTS_DIR / "physics_observables.json"
@@ -95,6 +96,7 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
     current = load_json(CURRENT_CLOSURE)
     inhomogeneity = load_json(INHOMOGENEITY_CLOSURE)
     disorder_flux = load_json(DISORDER_NATIVE_FLUX)
+    localized_bump = load_json(LOCALIZED_BUMP_RESPONSE)
 
     rows: list[dict[str, str]] = []
 
@@ -269,11 +271,8 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
     inhomogeneity_thresholds = inhomogeneity["config"]["thresholds"]
     family_summaries = {item["family"]: item for item in inhomogeneity["family_summaries"]}
     radial_summary = family_summaries["radial"]
-    bump_summary = family_summaries["bump"]
     radial_cases = [case for case in inhomogeneity["cases"] if case["family"] == "radial"]
-    bump_cases = [case for case in inhomogeneity["cases"] if case["family"] == "bump"]
     radial_min_metric_corr = min(float(case["metric_tracking_abs_corr"]) for case in radial_cases)
-    bump_min_metric_corr = min(float(case["metric_tracking_abs_corr"]) for case in bump_cases)
     rows.append(
         row(
             "smooth_inhomogeneity_metric_transport_tracking",
@@ -286,16 +285,33 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
             "The smooth branch co-deforms; this is still a scalar-carrier transport proxy, not a weak-field GR claim.",
         )
     )
+
+    localized_thresholds = localized_bump["config"]["thresholds"]
+    bump_summaries = {item["regime"]: item for item in localized_bump["regime_summaries"]}
+    weak_bump = bump_summaries["weak"]
+    stress_bump = bump_summaries["stress"]
     rows.append(
         row(
-            "localized_bump_boundary",
-            "localized matter-like excitation boundary",
-            artifact(INHOMOGENEITY_CLOSURE),
-            "bump max drift / minimum metric-tracking |corr|",
-            f"{fmt(float(bump_summary['max_refinement_profile_drift']))} / {fmt(bump_min_metric_corr)}",
-            f"<= {fmt(float(inhomogeneity_thresholds['max_refinement_profile_drift']))} / >= {fmt(float(inhomogeneity_thresholds['min_metric_tracking_abs_corr']))}",
-            "PASS" if bump_summary["all_cases_pass"] and bump_summary["drift_pass"] else "OPEN",
-            "This is the useful failure boundary: localized bump closure is not yet earned.",
+            "weak_localized_bump_response",
+            "proto-particle weak localized-excitation proxy",
+            artifact(LOCALIZED_BUMP_RESPONSE),
+            "weak max drift / max median error / max p90 error / max shell-kappa CV",
+            f"{fmt(float(weak_bump['max_refinement_profile_drift']))} / {fmt(float(weak_bump['max_median_relative_error']))} / {fmt(float(weak_bump['max_p90_relative_error']))} / {fmt(float(weak_bump['max_shell_kappa_cv']))}",
+            f"<= {fmt(float(localized_thresholds['max_refinement_profile_drift']))} / <= {fmt(float(localized_thresholds['max_median_relative_error']))} / <= {fmt(float(localized_thresholds['max_p90_relative_error']))} / <= {fmt(float(localized_thresholds['max_shell_kappa_cv']))}",
+            "PASS" if weak_bump["all_cases_pass"] and weak_bump["drift_pass"] else "OPEN",
+            "Weak localized bump excitations close after excluding the earliest source-core transient layer.",
+        )
+    )
+    rows.append(
+        row(
+            "stress_localized_bump_boundary",
+            "strong localized-excitation boundary",
+            artifact(LOCALIZED_BUMP_RESPONSE),
+            "stress max drift / max median error / max p90 error / max shell-kappa CV",
+            f"{fmt(float(stress_bump['max_refinement_profile_drift']))} / {fmt(float(stress_bump['max_median_relative_error']))} / {fmt(float(stress_bump['max_p90_relative_error']))} / {fmt(float(stress_bump['max_shell_kappa_cv']))}",
+            f"<= {fmt(float(localized_thresholds['max_refinement_profile_drift']))} / <= {fmt(float(localized_thresholds['max_median_relative_error']))} / <= {fmt(float(localized_thresholds['max_p90_relative_error']))} / <= {fmt(float(localized_thresholds['max_shell_kappa_cv']))}",
+            "PASS" if stress_bump["all_cases_pass"] and stress_bump["drift_pass"] else "OPEN",
+            "Stronger localized bumps still exceed the same transport-stability thresholds.",
         )
     )
 
@@ -352,6 +368,7 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
             artifact(CURRENT_CLOSURE),
             artifact(INHOMOGENEITY_CLOSURE),
             artifact(DISORDER_NATIVE_FLUX),
+            artifact(LOCALIZED_BUMP_RESPONSE),
         ],
         "status_counts": {
             "PASS": sum(1 for item in rows if item["status"] == "PASS"),
