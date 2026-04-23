@@ -1,7 +1,9 @@
 {
   "metadata": {
     "program": "HAOS-IIP physics bridge 53.0",
+    "bridge_state": "updated through frozen follow-on releases 53.2, 53.3, and 53.4",
     "claim_type": "post-processing proxy dictionary over frozen scalar artifacts",
+    "synchronization_note": "This generated bridge summary reflects the frozen 53.4 state: weak localized bump response passes on delayed fit window [0.010, 0.026], shell-native power-law scaling passes while raw local-gradient scaling remains open, and the seed-universal disorder margin now passes at 3/3 after extending the delayed asymptotic fit window to [0.006, 0.024].",
     "non_claims": [
       "no modification of HAOS core",
       "no continuum ontology",
@@ -174,7 +176,7 @@
       "value": "3/3",
       "target": "3/3 for seed-universal closure",
       "status": "PASS",
-      "scope_note": "All tested disorder seeds now pass the same native-flux thresholds."
+      "scope_note": "All tested disorder seeds now pass the same native-flux thresholds after extending the delayed asymptotic fit window to [0.006, 0.024]."
     }
   ]
 }

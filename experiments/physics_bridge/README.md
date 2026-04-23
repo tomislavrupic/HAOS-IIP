@@ -30,6 +30,8 @@ python3 examples/quick_reproduce.py --physics-observables-only
 
 The bridge dictionary is a test protocol, not a theory feature.
 
+Any root-note or harmonic-partial reading must remain external to this directory and cannot change the bridge rows.
+
 The inverse-square row is intentionally split:
 
 - raw recoverability-gradient inverse-square closure remains `OPEN`;
@@ -44,3 +46,8 @@ The localized-bump row is also intentionally split:
 
 - weak localized bump response is `PASS` after excluding the earliest source-core transient layer;
 - stronger localized bump response remains `OPEN` under the same transport thresholds.
+
+The disorder-native row is also intentionally split:
+
+- aggregated mild-disorder closure is `PASS`;
+- seed-universal disorder closure is separately tracked and is currently `PASS` on the tested delayed fit window `[0.006, 0.024]`.
