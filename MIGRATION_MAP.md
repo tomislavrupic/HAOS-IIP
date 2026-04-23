@@ -43,6 +43,7 @@
 - Scalar-carrier smooth-inhomogeneity current-closure release `52.5` freezes the next controlled-deformation step after `52.4`, promoting the scalar line from a clean-line current closure to a bounded smooth-radial co-deformation statement between local metric extraction and shell-native transport while keeping localized bump inhomogeneity, disorder universality, conserved-current closure, and curvature explicitly open.
 - Physics bridge note `53.0` adds an external post-processing dictionary over the frozen scalar-carrier artifacts, translating metric, response, and transport measurements into explicit proxy observables while keeping inverse-square recoverability closure, localized bump closure, seed-universal disorder closure, conserved-current theorems, curvature extraction, and continuum ontology unpromoted.
 - Localized bump response note `53.2` resolves the prior undifferentiated bump boundary into a thresholded statement: weak localized bump excitations pass after the source-core transient is excluded, while stronger localized bumps remain open.
+- Power-law scaling note `53.3` resolves the prior undifferentiated power-law boundary into a reconstruction split: raw local-gradient scaling remains open, while shell-native law-aware scaling passes as a bounded continuum-like proxy on the tested scalar-carrier window.
 
 ## Archive Policy
 

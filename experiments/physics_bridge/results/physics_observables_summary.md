@@ -16,6 +16,7 @@ It is a post-processing bridge over frozen scalar-carrier artifacts. It does not
 | recoverability_radial_alignment | radial response-direction proxy | 0.990921 | >= 0.940000 | PASS |
 | recoverability_inverse_square_residual | raw inverse-square response-law proxy | 0.313916 / 0.524900 | <= 0.120000 / <= 0.080000 | OPEN |
 | recoverability_power_fit_floor | power-law scaling proxy | 0.321965 | >= 0.950000 | OPEN |
+| shell_native_power_law_scaling | continuum-like shell-native power-law scaling proxy | 0.999743 / 0.003353 / 0.006976 / 0.008949 | >= 0.999000 / <= 0.020000 / <= 0.010000 / <= 0.020000 | PASS |
 | shell_native_inverse_square_closure | shell-native Newtonian-like response proxy | 0.973633 / 0.003353 / 0.006976 / 0.008949 | >= 0.970000 / <= 0.020000 / <= 0.010000 / <= 0.020000 | PASS |
 | clean_current_closure | conserved-current analogue proxy | 0.073898 / 0.112930 / 0.096598 | <= 0.100000 / <= 0.150000 / <= 0.100000 | PASS |
 | clean_current_tail_error | transport residual proxy | 0.271771 / 0.117611 | <= 0.300000 / <= 0.130000 | PASS |
@@ -28,13 +29,13 @@ It is a post-processing bridge over frozen scalar-carrier artifacts. It does not
 ## Open Or Watched Boundaries
 
 - `recoverability_inverse_square_residual`: Keeps the 52.1 boundary explicit: radial carrier response is present, inverse-square closure is not.
-- `recoverability_power_fit_floor`: A deliberately hard guardrail against reading noisy response curves as laws.
+- `recoverability_power_fit_floor`: Raw local-gradient power scaling stays open; the shell-native split is tracked separately.
 - `stress_localized_bump_boundary`: Stronger localized bumps still exceed the same transport-stability thresholds.
 - `disorder_native_seed_margin`: Aggregates pass, but one tested case still has a marginal seed-level failure.
 
 ## Status Counts
 
-- `PASS`: 10
+- `PASS`: 11
 - `OPEN`: 3
 - `WATCH`: 1
 

@@ -16,6 +16,7 @@ RECOVERABILITY_GRADIENT = REPO_ROOT / "data" / "scalar_kernel_graph_recoverabili
 RECOVERABILITY_GRADIENT_SHELL_NATIVE = (
     REPO_ROOT / "data" / "scalar_kernel_graph_recoverability_gradient_shell_native_latest.json"
 )
+POWER_LAW_SCALING = REPO_ROOT / "data" / "scalar_kernel_graph_power_law_scaling_latest.json"
 CURRENT_CLOSURE = REPO_ROOT / "data" / "scalar_kernel_graph_current_closure_shell_native_latest.json"
 INHOMOGENEITY_CLOSURE = REPO_ROOT / "data" / "scalar_kernel_graph_current_closure_inhomogeneity_latest.json"
 DISORDER_NATIVE_FLUX = REPO_ROOT / "data" / "scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json"
@@ -93,6 +94,7 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
     metric = load_json(METRIC_FIELD)
     gradient = load_json(RECOVERABILITY_GRADIENT)
     shell_native_gradient = load_json(RECOVERABILITY_GRADIENT_SHELL_NATIVE)
+    power_law_scaling = load_json(POWER_LAW_SCALING)
     current = load_json(CURRENT_CLOSURE)
     inhomogeneity = load_json(INHOMOGENEITY_CLOSURE)
     disorder_flux = load_json(DISORDER_NATIVE_FLUX)
@@ -188,7 +190,23 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
             fmt(min_power_r2),
             f">= {fmt(float(gradient_thresholds['min_power_fit_r2']))}",
             geq_status(min_power_r2, float(gradient_thresholds["min_power_fit_r2"])),
-            "A deliberately hard guardrail against reading noisy response curves as laws.",
+            "Raw local-gradient power scaling stays open; the shell-native split is tracked separately.",
+        )
+    )
+
+    power_summaries = power_law_scaling["summaries"]
+    power_thresholds = power_law_scaling["config"]["thresholds"]
+    shell_power = power_summaries["shell_native"]
+    rows.append(
+        row(
+            "shell_native_power_law_scaling",
+            "continuum-like shell-native power-law scaling proxy",
+            artifact(POWER_LAW_SCALING),
+            "min power-fit R^2 / max |slope+2| / max scaled-response CV / profile drift",
+            f"{fmt(float(shell_power['min_power_fit_r2']))} / {fmt(float(shell_power['max_power_deviation']))} / {fmt(float(shell_power['max_flux_constancy_cv']))} / {fmt(float(shell_power['max_refinement_profile_drift']))}",
+            f">= {fmt(float(power_thresholds['shell_native_min_power_fit_r2']))} / <= {fmt(float(power_thresholds['shell_native_max_power_deviation']))} / <= {fmt(float(power_thresholds['shell_native_max_flux_constancy_cv']))} / <= {fmt(float(power_thresholds['shell_native_max_refinement_profile_drift']))}",
+            "PASS" if shell_power["pass"] else "OPEN",
+            "Closes the power-law scaling proxy only for the shell-native law-aware reconstruction; raw local-gradient scaling remains open.",
         )
     )
 
@@ -365,6 +383,7 @@ def build_rows() -> tuple[list[dict[str, str]], dict[str, Any]]:
             artifact(METRIC_FIELD),
             artifact(RECOVERABILITY_GRADIENT),
             artifact(RECOVERABILITY_GRADIENT_SHELL_NATIVE),
+            artifact(POWER_LAW_SCALING),
             artifact(CURRENT_CLOSURE),
             artifact(INHOMOGENEITY_CLOSURE),
             artifact(DISORDER_NATIVE_FLUX),

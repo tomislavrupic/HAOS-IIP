@@ -359,6 +359,21 @@
       "max_refinement_profile_drift": 0.02
     }
   },
+  "scalar_kernel_graph_power_law_scaling": {
+    "raw_artifact": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+    "shell_native_artifact": "data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json",
+    "thresholds": {
+      "raw_min_power_fit_r2": 0.95,
+      "raw_max_power_deviation": 0.18,
+      "raw_max_flux_constancy_cv": 0.12,
+      "raw_max_refinement_profile_drift": 0.08,
+      "shell_native_min_green_fit_r2": 0.97,
+      "shell_native_min_power_fit_r2": 0.999,
+      "shell_native_max_power_deviation": 0.02,
+      "shell_native_max_flux_constancy_cv": 0.01,
+      "shell_native_max_refinement_profile_drift": 0.02
+    }
+  },
   "scalar_kernel_graph_current_closure": {
     "n_sides": [13, 15, 17],
     "epsilon_coeff": 0.5,

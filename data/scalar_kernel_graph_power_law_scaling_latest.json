@@ -1,0 +1,73 @@
+{
+  "experiment": "scalar_kernel_graph_power_law_scaling",
+  "config": {
+    "raw_artifact": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+    "shell_native_artifact": "data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json",
+    "thresholds": {
+      "raw_min_power_fit_r2": 0.95,
+      "raw_max_power_deviation": 0.18,
+      "raw_max_flux_constancy_cv": 0.12,
+      "raw_max_refinement_profile_drift": 0.08,
+      "shell_native_min_green_fit_r2": 0.97,
+      "shell_native_min_power_fit_r2": 0.999,
+      "shell_native_max_power_deviation": 0.02,
+      "shell_native_max_flux_constancy_cv": 0.01,
+      "shell_native_max_refinement_profile_drift": 0.02
+    }
+  },
+  "source_artifacts": {
+    "raw_local_gradient": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+    "shell_native": "data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json"
+  },
+  "summaries": {
+    "raw_local_gradient": {
+      "readout": "raw_local_gradient",
+      "case_count": 12,
+      "pass": false,
+      "failing_cases": [
+        "disorder|n=11|jitter=0.000",
+        "disorder|n=11|jitter=0.020",
+        "disorder|n=11|jitter=0.040",
+        "disorder|n=13|jitter=0.000",
+        "disorder|n=13|jitter=0.020",
+        "disorder|n=13|jitter=0.040",
+        "kernel|n=11|family=gaussian_local",
+        "kernel|n=11|family=gaussian_half",
+        "kernel|n=11|family=inverse_quadratic",
+        "kernel|n=13|family=gaussian_local",
+        "kernel|n=13|family=gaussian_half",
+        "kernel|n=13|family=inverse_quadratic"
+      ],
+      "min_power_fit_r2": 0.32196460203159327,
+      "max_power_deviation": 1.2651306522865418,
+      "max_flux_constancy_cv": 0.31391621251051605,
+      "max_refinement_profile_drift": 0.5249004827210241,
+      "weakest_case": {
+        "label": "disorder|n=11|jitter=0.020",
+        "power_slope": -0.7348693477134582,
+        "power_fit_r2": 0.32196460203159327,
+        "flux_constancy_cv": 0.2879717109868479
+      }
+    },
+    "shell_native": {
+      "readout": "shell_native",
+      "case_count": 12,
+      "pass": true,
+      "failing_cases": [],
+      "min_green_fit_r2": 0.9736329034924877,
+      "min_power_fit_r2": 0.9997431917309632,
+      "max_power_deviation": 0.0033530860684234387,
+      "max_flux_constancy_cv": 0.0069756725500481395,
+      "max_refinement_profile_drift": 0.00894854350561764,
+      "weakest_case": {
+        "label": "disorder|n=13|jitter=0.040",
+        "green_fit_r2": 0.9855933469221241,
+        "power_slope": -1.9966469139315766,
+        "power_fit_r2": 0.9998378080861124,
+        "flux_constancy_cv": 0.006743115491653469
+      }
+    }
+  },
+  "observation": "the broad power-law scaling row splits cleanly: the raw local-gradient read remains open, while the shell-native law-aware read passes the tested continuum-like scaling thresholds",
+  "conclusion": "raw local-gradient power scaling remains open with minimum R^2 0.3220, maximum |slope+2| 1.2651, and profile drift 0.5249; shell-native scaling passes with minimum power-fit R^2 0.9997, maximum |slope+2| 0.0034, scaled-response CV 0.0070, and profile drift 0.0089; this supports a bounded continuum-like power-law proxy only under the shell-native reconstruction"
+}

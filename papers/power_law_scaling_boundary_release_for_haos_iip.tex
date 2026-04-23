@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Power-Law Scaling Boundary Release for HAOS-IIP}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper freezes release \texttt{53.3} of HAOS-IIP as a power-law scaling boundary result in the external physics-bridge layer. The previous bridge table contained a broad power-law scaling \texttt{OPEN} row because the raw local-gradient read had minimum power-fit \(R^2 = 0.321965\), far below the threshold \(R^2 \geq 0.95\). Release \texttt{53.3} keeps that raw failure explicit, but separates it from the already-frozen shell-native, law-aware reconstruction. The raw local-gradient read remains open with minimum \(R^2 = 0.3220\), maximum \(|slope+2| = 1.2651\), scaled-flux CV \(0.3139\), and profile drift \(0.5249\). The shell-native read passes as a bounded continuum-like power-law proxy with minimum power-fit \(R^2 = 0.9997\), maximum \(|slope+2| = 0.0034\), scaled-response CV \(0.0070\), and profile drift \(0.0089\). The correct conclusion is therefore a reconstruction split: raw local-gradient power scaling remains open, while shell-native power-law scaling closes on the tested scalar-carrier window.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}
+
+Release \texttt{53.3} is an external audit over frozen scalar-carrier artifacts.
+
+It does not modify HAOS core, alter the scalar operator, introduce new dynamics, or claim a continuum limit. It only asks:
+\begin{quote}
+does the power-law scaling proxy fail everywhere, or only in the raw local-gradient readout?
+\end{quote}
+
+\section{Source Artifacts}
+
+The audit uses:
+\begin{itemize}
+\item raw local-gradient recoverability artifact: \path{data/scalar_kernel_graph_recoverability_gradient_latest.json};
+\item shell-native recoverability artifact: \path{data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json};
+\item audit runner: \path{numerics/simulations/scalar_kernel_graph_power_law_scaling.py}.
+\end{itemize}
+
+No scalar simulation is redefined by this release. The audit compares existing frozen measurements.
+
+\section{Measured Quantities}
+
+For each readout the release records:
+\begin{itemize}
+\item minimum power-fit \(R^2\);
+\item maximum \(|slope + 2|\);
+\item maximum scaled-response coefficient of variation;
+\item maximum refinement-profile drift.
+\end{itemize}
+
+The shell-native read also inherits the validated Green-law fit guardrail from the \texttt{52.2} reconstruction.
+
+\section{Frozen Result}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Readout & Status & Min \(R^2\) & Max \(|slope+2|\) & Max CV & Max drift \\
+\midrule
+raw local gradient & OPEN & 0.3220 & 1.2651 & 0.3139 & 0.5249 \\
+shell native & PASS & 0.9997 & 0.0034 & 0.0070 & 0.0089 \\
+\bottomrule
+\end{tabular}
+\caption{Power-law scaling split across raw and shell-native readouts.}
+\end{table}
+
+The weakest raw case is:
+\begin{itemize}
+\item \texttt{disorder|n=11|jitter=0.020};
+\item slope \(-0.7349\);
+\item power-fit \(R^2 = 0.3220\);
+\item scaled-flux CV \(0.2880\).
+\end{itemize}
+
+The weakest shell-native case is:
+\begin{itemize}
+\item \texttt{disorder|n=13|jitter=0.040};
+\item Green fit \(R^2 = 0.9856\);
+\item slope \(-1.9966\);
+\item power-fit \(R^2 = 0.9998\);
+\item scaled-response CV \(0.0067\).
+\end{itemize}
+
+\section{Interpretation}
+
+The old broad bridge statement was:
+\begin{quote}
+power-law scaling remains open because raw power-fit \(R^2\) is too low.
+\end{quote}
+
+The updated statement is:
+\begin{quote}
+raw local-gradient power scaling remains open, but shell-native law-aware power scaling closes as a bounded continuum-like proxy on the tested scalar-carrier window.
+\end{quote}
+
+This matters because the failure mode is now localized. The carrier does not support a raw local derivative force-law readout, but it does support the shell-native reconstruction aligned with the validated Green structure.
+
+\section{Non-Claims}
+
+This release does not claim:
+\begin{itemize}
+\item a general continuum limit;
+\item continuum field equations;
+\item exact force-law ontology;
+\item raw local vector-force closure;
+\item broad substrate universality;
+\item equivalence to GR, QFT, or quantum gravity.
+\end{itemize}
+
+\section{Artifacts}
+
+\begin{itemize}
+\item script: \path{numerics/simulations/scalar_kernel_graph_power_law_scaling.py};
+\item operator note: \path{experiments/operators/Scalar_Kernel_Graph_Power_Law_Scaling_v1.md};
+\item frozen result: \path{data/20260423_183612_scalar_kernel_graph_power_law_scaling.json};
+\item latest result: \path{data/scalar_kernel_graph_power_law_scaling_latest.json};
+\item summary plot: \path{plots/20260423_183612_scalar_kernel_graph_power_law_scaling_summary.png};
+\item profile plot: \path{plots/20260423_183612_scalar_kernel_graph_power_law_scaling_profiles.png}.
+\end{itemize}
+
+\section{Next Boundary}
+
+The next honest step is to add a larger refinement point where runtime permits, then test whether the shell-native power-law scaling result survives one additional kernel-graph family before using stronger universality language.
+
+\section{Conclusion}
+
+Release \texttt{53.3} turns the power-law scaling item from an undifferentiated open row into a precise reconstruction boundary. Raw local-gradient scaling remains open. Shell-native scaling passes. That is the correct stopping point: a bounded continuum-like proxy under a stated reconstruction, not a continuum-limit proof.
+
+\end{document}

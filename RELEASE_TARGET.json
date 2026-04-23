@@ -1,8 +1,8 @@
 {
   "phase_dir": ".",
-  "paper": "papers/localized_bump_response_threshold_release_for_haos_iip.tex",
-  "title": "Localized Bump Response Threshold Release for HAOS-IIP",
-  "commit_message": "Freeze localized bump response threshold release 53.2",
+  "paper": "papers/power_law_scaling_boundary_release_for_haos_iip.tex",
+  "title": "Power-Law Scaling Boundary Release for HAOS-IIP",
+  "commit_message": "Freeze power-law scaling boundary release 53.3",
   "extra": [
     "Makefile",
     "scripts/release_phase.py",

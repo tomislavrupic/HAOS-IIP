@@ -35,6 +35,11 @@ The inverse-square row is intentionally split:
 - raw recoverability-gradient inverse-square closure remains `OPEN`;
 - shell-native law-aware inverse-square closure is `PASS` under its stated reconstruction thresholds.
 
+The power-law scaling row is intentionally split:
+
+- raw local-gradient power scaling remains `OPEN`;
+- shell-native law-aware power scaling is `PASS` as a bounded continuum-like proxy.
+
 The localized-bump row is also intentionally split:
 
 - weak localized bump response is `PASS` after excluding the earliest source-core transient layer;

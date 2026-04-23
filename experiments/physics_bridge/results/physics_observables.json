@@ -13,13 +13,14 @@
       "data/scalar_kernel_graph_metric_field_latest.json",
       "data/scalar_kernel_graph_recoverability_gradient_latest.json",
       "data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json",
+      "data/scalar_kernel_graph_power_law_scaling_latest.json",
       "data/scalar_kernel_graph_current_closure_shell_native_latest.json",
       "data/scalar_kernel_graph_current_closure_inhomogeneity_latest.json",
       "data/scalar_kernel_graph_current_closure_radial_disorder_native_flux_latest.json",
       "data/scalar_kernel_graph_localized_bump_response_latest.json"
     ],
     "status_counts": {
-      "PASS": 10,
+      "PASS": 11,
       "OPEN": 3,
       "WATCH": 1
     }
@@ -83,7 +84,17 @@
       "value": "0.321965",
       "target": ">= 0.950000",
       "status": "OPEN",
-      "scope_note": "A deliberately hard guardrail against reading noisy response curves as laws."
+      "scope_note": "Raw local-gradient power scaling stays open; the shell-native split is tracked separately."
+    },
+    {
+      "observable_id": "shell_native_power_law_scaling",
+      "physics_analogue": "continuum-like shell-native power-law scaling proxy",
+      "haos_source": "data/scalar_kernel_graph_power_law_scaling_latest.json",
+      "proxy_quantity": "min power-fit R^2 / max |slope+2| / max scaled-response CV / profile drift",
+      "value": "0.999743 / 0.003353 / 0.006976 / 0.008949",
+      "target": ">= 0.999000 / <= 0.020000 / <= 0.010000 / <= 0.020000",
+      "status": "PASS",
+      "scope_note": "Closes the power-law scaling proxy only for the shell-native law-aware reconstruction; raw local-gradient scaling remains open."
     },
     {
       "observable_id": "shell_native_inverse_square_closure",

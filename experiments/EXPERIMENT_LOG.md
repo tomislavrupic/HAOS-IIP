@@ -1051,3 +1051,11 @@ This file records orchestrated experiment runs.
 - Plots: `plots/20260423_182539_scalar_kernel_graph_localized_bump_response_summary.png`, `plots/20260423_182539_scalar_kernel_graph_localized_bump_response_profiles.png`
 - Observation: after excluding the earliest source-core transient layer, weak localized bump excitations close as a bounded metric-tracking transport response, while stronger localized bumps remain outside the same closure
 - Conclusion: all 10 weak localized bump cases pass for eta values [0.01, 0.02, 0.03, 0.04, 0.05], with maximum refinement drift 0.1095; the weakest weak case is `weak_bump|n=13|eta=0.050` with kappa/D_eff 0.9699, median relative error 0.0943, p90 error 0.2984, shell-kappa CV 0.1248, and |metric-tracking corr| 0.9752; the stress window remains open with maximum drift 0.3578, and the hardest stress case is `stress_bump|n=13|eta=0.150` with median relative error 0.2784, p90 error 0.5287, and shell-kappa CV 0.3406
+
+## scalar kernel graph power-law scaling audit
+- Date: 2026-04-23T18:36:13
+- Source artifacts: `data/scalar_kernel_graph_recoverability_gradient_latest.json`, `data/scalar_kernel_graph_recoverability_gradient_shell_native_latest.json`
+- Results: `data/20260423_183612_scalar_kernel_graph_power_law_scaling.json`
+- Plots: `plots/20260423_183612_scalar_kernel_graph_power_law_scaling_summary.png`, `plots/20260423_183612_scalar_kernel_graph_power_law_scaling_profiles.png`
+- Observation: the broad power-law scaling row splits cleanly: the raw local-gradient read remains open, while the shell-native law-aware read passes the tested continuum-like scaling thresholds
+- Conclusion: raw local-gradient power scaling remains open with minimum R^2 0.3220, maximum |slope+2| 1.2651, and profile drift 0.5249; shell-native scaling passes with minimum power-fit R^2 0.9997, maximum |slope+2| 0.0034, scaled-response CV 0.0070, and profile drift 0.0089; this supports a bounded continuum-like power-law proxy only under the shell-native reconstruction
