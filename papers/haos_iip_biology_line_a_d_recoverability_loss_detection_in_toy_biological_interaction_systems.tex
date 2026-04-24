@@ -1,0 +1,435 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+
+\title{HAOS-IIP Biology Line A--D:\\Recoverability-Loss Detection in Toy Biological Interaction Systems}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This numbered paper records the first HAOS-IIP Biology Line ladder: four toy biological interaction demonstrations built as experimental application layers on top of frozen HAOS-IIP. The sequence moves from an abstract synthetic gene regulatory network, to a microtubule-inspired cylindrical lattice, to a 3D multicellular tissue-like lattice, and finally to a 4D morphogenesis-style model defined as a 3D tissue state evolving through developmental time. In all four lines, lightweight HAOS-style proxy diagnostics detect recoverability loss before the configured visible-failure criterion becomes true. The results are: Line A \(\texttt{k\_star}=0.7000\) before visible regulatory failure at \(0.9333\); Line B \(\texttt{k\_star}=0.8333\) before visible lattice failure at \(0.8667\); Line C \(\texttt{k\_star}=0.8000\) before visible tissue failure at \(1.0000\); and Line D \(\texttt{k\_star}=0.8667\) before visible developmental failure at \(0.9667\). Each line is deterministic and includes a small robustness variation that preserves early detection. The claim is intentionally narrow: HAOS-IIP now has four toy biology-line proof-of-instrument artifacts showing early recoverability-loss detection across increasingly structured biological interaction systems. This is not real biological validation, not a tissue or morphogenesis theory, not a consciousness model, not quantum biology, and not a claim that HAOS-IIP explains biology.
+\end{abstract}
+
+\tableofcontents
+
+\section{Status and Scope}
+
+This paper is a numbered release note for the HAOS-IIP Biology Line A--D ladder. It summarizes repository artifacts, not a new biological theory. The four demos are:
+
+\begin{enumerate}
+\item Biology Line A: synthetic gene regulatory network.
+\item Biology Line B: microtubule-inspired cylindrical lattice.
+\item Biology Line C: 3D multicellular tissue-like lattice.
+\item Biology Line D: 4D morphogenesis-style development, meaning 3D tissue state through developmental time.
+\end{enumerate}
+
+The common instrument question is:
+
+\begin{quote}
+At what perturbation level does a biological interaction structure stop being recoverable under perturbation?
+\end{quote}
+
+The common result is that a lightweight HAOS-style diagnostic threshold, \(\texttt{k\_star}\), appears before the configured visible-failure threshold in all four demos.
+
+\subsection{Strict Boundaries}
+
+The following are excluded:
+
+\begin{itemize}
+\item no claim that HAOS-IIP explains biology;
+\item no claim of real biological validation;
+\item no molecular simulation claim;
+\item no developmental biology proof;
+\item no consciousness model;
+\item no quantum biology claim;
+\item no modification of frozen HAOS-IIP core, theory, telemetry, phase artifacts, or canonical notes.
+\end{itemize}
+
+The demos are application-layer experiments under \texttt{experiments/biology/}. Their metrics are lightweight external proxies aligned with HAOS-IIP recoverability logic. They are not frozen HAOS core metrics.
+
+\section{Release Map}
+
+\begin{longtable}{p{0.10\linewidth}p{0.24\linewidth}p{0.28\linewidth}p{0.22\linewidth}}
+\toprule
+Line & Artifact & Tag & Commit \\
+\midrule
+A & \texttt{experiments/biology/gene\_network\_demo/} & \texttt{biology-line-a-v0.1} & \texttt{09e0065}, lock \texttt{626996d} \\
+B & \texttt{experiments/biology/microtubule\_lattice\_demo/} & \texttt{biology-line-b-v0.1} & \texttt{77edf09} \\
+C & \texttt{experiments/biology/tissue\_3d\_demo/} & \texttt{biology-line-c-v0.1} & \texttt{325e1d3} \\
+D & \texttt{experiments/biology/morphogenesis\_4d\_demo/} & \texttt{biology-line-d-v0.1} & \texttt{c3c0602} \\
+\bottomrule
+\end{longtable}
+
+\section{Shared Diagnostic Form}
+
+Each line sweeps a perturbation parameter \(p \in [0,1]\), where \(p=0\) is the baseline and \(p=1\) is maximum perturbation. For each sampled perturbation level, a recoverability proxy is computed. The exact components differ by model, but every line follows the same diagnostic form.
+
+\subsection{Recoverability}
+
+Recoverability is a scalar in \([0,1]\). It is a weighted proxy for whether the perturbed system remains close to the baseline or expected target organization. Depending on the line, it combines final-state match, component support, weighted-degree retention, signal propagation retention, spatial continuity, or trajectory coherence.
+
+\subsection{Delta Persistence}
+
+\[
+\Delta P_k = R_k - R_{k-1}.
+\]
+
+Here \(R_k\) is recoverability at perturbation index \(k\).
+
+\subsection{\texttt{k\_star}}
+
+\(\texttt{k\_star}\) is the first perturbation index where recoverability remains below a collapse threshold for the current sample plus a small sustained window. Lines B--D use:
+
+\[
+\texttt{collapse\_threshold}=0.70,\qquad \texttt{sustain\_steps}=2.
+\]
+
+Line A uses \(\texttt{collapse\_threshold}=0.65\) with the same sustain setting.
+
+\subsection{Safety Margin and Confidence}
+
+Safety margin is the distance from the current perturbation level to \(p\) at \(\texttt{k\_star}\). At and beyond \(\texttt{k\_star}\), safety margin is zero or negative. Confidence is the magnitude of the strongest negative \(\Delta P\) seen so far.
+
+\subsection{Visible Failure}
+
+Visible failure is intentionally stricter than recoverability collapse. It is a boolean criterion meant to represent obvious loss of functional or morphological organization. The central pass condition is:
+
+\[
+p(\texttt{k\_star}) < p(\texttt{first visible failure}).
+\]
+
+\section{Line A: Gene Network Demo}
+
+\subsection{Artifact}
+
+\begin{itemize}
+\item Path: \texttt{experiments/biology/gene\_network\_demo/}
+\item Runner: \texttt{run\_gene\_network\_demo.py}
+\item Validation: \texttt{gene\_network\_validation.md}
+\item Results: \texttt{outputs/results.csv}
+\end{itemize}
+
+\subsection{System}
+
+Line A uses a deterministic toy gene regulatory network with 12 genes, \(\texttt{G0}\) through \(\texttt{G11}\). Each gene state is continuous in \([0,1]\). Directed weighted edges represent regulatory influence: positive weights activate and negative weights inhibit. The network includes:
+
+\begin{itemize}
+\item one hub regulator, \(\texttt{G0}\);
+\item a negative feedback loop involving \(\texttt{G1}\), \(\texttt{G2}\), and \(\texttt{G0}\);
+\item a positive feedback motif between \(\texttt{G3}\) and \(\texttt{G4}\);
+\item a fragile downstream branch \(\texttt{G8--G11}\).
+\end{itemize}
+
+The deterministic dynamics are:
+
+\[
+\text{input}_i(t)=b_i+\sum_j W_{j,i}x_j(t),
+\]
+\[
+x_i(t+1)=(1-d)x_i(t)+d\,\sigma(\text{input}_i(t)),
+\]
+
+with clipping to \([0,1]\).
+
+\subsection{Perturbation}
+
+The primary perturbation gradually weakens support edges feeding the fragile branch. Hub knockdown is implemented but is not the primary validation path.
+
+\subsection{Metric}
+
+Recoverability is:
+
+\[
+R=1-\text{normalized\_distance}(\text{perturbed final state},\text{baseline final state}),
+\]
+
+clipped to \([0,1]\). The final state is the mean over the final trajectory window.
+
+\subsection{Result}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Quantity & Value \\
+\midrule
+Pass status & PASS \\
+Baseline stable & True \\
+\(\texttt{k\_star}\) level & 0.7000 \\
+First visible failure level & 0.9333 \\
+Early detection & True \\
+Fragile branch \(\texttt{k\_star}\) level & 0.4000 \\
+Minimum whole-network recoverability & 0.602222 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The robustness variation scales fragile-branch support edges by \(1.03\). It preserves early detection with \(\texttt{k\_star}=0.7000\) and first visible failure at \(0.8667\).
+
+\section{Line B: Microtubule-Inspired Lattice Demo}
+
+\subsection{Artifact}
+
+\begin{itemize}
+\item Path: \texttt{experiments/biology/microtubule\_lattice\_demo/}
+\item Runner: \texttt{run\_microtubule\_lattice\_demo.py}
+\item Validation: \texttt{microtubule\_lattice\_validation.md}
+\item Results: \texttt{outputs/results.csv}
+\end{itemize}
+
+\subsection{System}
+
+Line B uses a coarse-grained deterministic cylindrical lattice inspired by a common microtubule geometry: 13 protofilaments and 24 dimers per protofilament, for 312 nodes. Each node represents one tubulin dimer position. This is not a molecularly realistic simulation.
+
+Edge classes are:
+
+\begin{itemize}
+\item \texttt{longitudinal}: strongest support along a protofilament;
+\item \texttt{lateral}: medium circumferential support between protofilaments;
+\item \texttt{seam\_or\_diagonal}: weak deterministic offset support;
+\item \texttt{weak\_support}: very weak longer-range support.
+\end{itemize}
+
+\subsection{Perturbation}
+
+The primary perturbation is lateral weakening. Lateral edge strengths are multiplied by \(1-p\). A deterministic defect patch mode is implemented but is not the primary sweep.
+
+\subsection{Metric}
+
+Recoverability is:
+
+\[
+R=0.05C+0.90D+0.05S,
+\]
+
+where \(C\) is largest connected component fraction, \(D\) is weighted-degree retention, and \(S\) is propagation retention.
+
+\subsection{Result}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Quantity & Value \\
+\midrule
+Pass status & PASS \\
+Baseline stable & True \\
+\(\texttt{k\_star}\) level & 0.8333 \\
+First visible failure level & 0.8667 \\
+Early detection & True \\
+Robustness variation & \texttt{longitudinal\_strength\_x\_1\_02} \\
+Robustness early detection & True \\
+Minimum recoverability & 0.578094 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Line C: 3D Tissue Demo}
+
+\subsection{Artifact}
+
+\begin{itemize}
+\item Path: \texttt{experiments/biology/tissue\_3d\_demo/}
+\item Runner: \texttt{run\_tissue\_3d\_demo.py}
+\item Validation: \texttt{tissue\_3d\_validation.md}
+\item Results: \texttt{outputs/results.csv}
+\end{itemize}
+
+\subsection{System}
+
+Line C uses a deterministic 3D multicellular tissue-like lattice with grid size \(8\times 8\times 8\), for 512 cells. Each node is a cell with a scalar state in \([0,1]\). Edge classes are:
+
+\begin{itemize}
+\item \texttt{local\_neighbor}: 6-connected nearest-neighbor support;
+\item \texttt{diagonal\_neighbor}: weak local support;
+\item \texttt{long\_range\_signal}: sparse deterministic coordination links.
+\end{itemize}
+
+\subsection{Perturbation}
+
+The primary perturbation is a local lesion centered at \((3.5,3.5,3.5)\) with radius \(4.1\). Perturbation level \(p\) weakens edge support inside that spherical region. A secondary long-range signaling weakening mode is implemented but is not the primary sweep.
+
+\subsection{Metric}
+
+Recoverability is:
+
+\[
+R=0.15C+0.45D+0.25Q+0.15S,
+\]
+
+where \(C\) is largest component fraction, \(D\) is weighted-degree retention, \(Q\) is spatial-coherence retention, and \(S\) is propagation retention.
+
+\subsection{Result}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Quantity & Value \\
+\midrule
+Pass status & PASS \\
+Baseline stable & True \\
+\(\texttt{k\_star}\) level & 0.8000 \\
+First visible failure level & 1.0000 \\
+Early detection & True \\
+Robustness variation & \texttt{local\_neighbor\_strength\_x\_1\_02} \\
+Robustness early detection & True \\
+Minimum recoverability & 0.563310 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Line D: 4D Morphogenesis Demo}
+
+\subsection{Artifact}
+
+\begin{itemize}
+\item Path: \texttt{experiments/biology/morphogenesis\_4d\_demo/}
+\item Runner: \texttt{run\_morphogenesis\_4d\_demo.py}
+\item Validation: \texttt{morphogenesis\_4d\_validation.md}
+\item Results: \texttt{outputs/results.csv}
+\end{itemize}
+
+\subsection{System}
+
+Line D adds developmental time to the 3D tissue idea. It uses an \(8\times 8\times 8\) cell lattice with 24 developmental time steps. The target morphology is deterministic:
+
+\begin{itemize}
+\item early development: compact central form;
+\item mid development: axis polarity gradient;
+\item late development: core-shell/anterior-posterior pattern.
+\end{itemize}
+
+Edge classes are:
+
+\begin{itemize}
+\item \texttt{local\_neighbor};
+\item \texttt{diagonal\_neighbor};
+\item \texttt{developmental\_signal}.
+\end{itemize}
+
+\subsection{Perturbation}
+
+The primary perturbation is developmental drift. It delays and weakens target pull in a deterministic region during mid-to-late development and weakens developmental-signal links in that affected region. A local developmental lesion mode is implemented but is not the primary validation sweep.
+
+\subsection{Metric}
+
+Recoverability is:
+
+\[
+R=0.35F+0.32T+0.25I+0.08Q,
+\]
+
+where \(F\) is final morphology match, \(T\) is trajectory coherence, \(I\) is interaction-support retention, and \(Q\) is spatial-continuity retention.
+
+\subsection{Result}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Quantity & Value \\
+\midrule
+Pass status & PASS \\
+Baseline stable & True \\
+\(\texttt{k\_star}\) level & 0.8667 \\
+First visible failure level & 0.9667 \\
+Early detection & True \\
+Robustness variation & \texttt{target\_weight\_x\_1\_02} \\
+Robustness early detection & True \\
+Minimum recoverability & 0.654913 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Cross-Line Comparison}
+
+\begin{longtable}{p{0.08\linewidth}p{0.22\linewidth}p{0.14\linewidth}p{0.16\linewidth}p{0.14\linewidth}p{0.14\linewidth}}
+\toprule
+Line & Structure & \(\texttt{k\_star}\) & Visible failure & Gap & Robustness \\
+\midrule
+A & Gene network & 0.7000 & 0.9333 & 0.2333 & PASS \\
+B & Cylindrical lattice & 0.8333 & 0.8667 & 0.0333 & PASS \\
+C & 3D tissue & 0.8000 & 1.0000 & 0.2000 & PASS \\
+D & 3D tissue through time & 0.8667 & 0.9667 & 0.1000 & PASS \\
+\bottomrule
+\end{longtable}
+
+The ladder is deliberately incremental. Line A tests an abstract regulatory system. Line B tests a cylindrical biological scaffold. Line C tests spatial multicellular stability. Line D tests developmental trajectory coherence. The success condition remains the same: recoverability collapse appears before visible failure.
+
+\section{Recoverability Plots}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{experiments/biology/gene_network_demo/outputs/recoverability_vs_perturbation.png}
+\caption*{Line A: gene network}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{experiments/biology/microtubule_lattice_demo/outputs/recoverability_vs_perturbation.png}
+\caption*{Line B: microtubule-inspired lattice}
+\end{minipage}
+
+\vspace{0.3in}
+
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{experiments/biology/tissue_3d_demo/outputs/recoverability_vs_perturbation.png}
+\caption*{Line C: 3D tissue}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{experiments/biology/morphogenesis_4d_demo/outputs/recoverability_vs_perturbation.png}
+\caption*{Line D: 4D morphogenesis}
+\end{minipage}
+\caption{Recoverability curves for Biology Lines A--D. Each curve is generated by the line-specific runner in \texttt{experiments/biology/}.}
+\end{figure}
+
+\section{Reproduction Commands}
+
+All commands are run from the repository root.
+
+\begin{verbatim}
+python experiments/biology/gene_network_demo/run_gene_network_demo.py
+python experiments/biology/microtubule_lattice_demo/run_microtubule_lattice_demo.py
+python experiments/biology/tissue_3d_demo/run_tissue_3d_demo.py
+python experiments/biology/morphogenesis_4d_demo/run_morphogenesis_4d_demo.py
+\end{verbatim}
+
+In the local Codex environment used for this release, the demos were verified with:
+
+\begin{verbatim}
+uv run --with numpy --with matplotlib python <runner>
+\end{verbatim}
+
+\section{Conclusion}
+
+HAOS-IIP Biology Line A--D establishes a clean first biology ladder of toy recoverability diagnostics. Across four increasingly structured systems, HAOS-style proxy observables detect recoverability loss before visible failure:
+
+\begin{enumerate}
+\item regulatory interaction failure in a synthetic gene network;
+\item lattice-support failure in a microtubule-inspired cylinder;
+\item spatial-coherence failure in a 3D tissue-like structure;
+\item developmental-coherence failure in a 3D structure evolving through time.
+\end{enumerate}
+
+The safe public statement is:
+
+\begin{quote}
+HAOS-IIP Biology Line A--D v0.1 demonstrates early recoverability-loss detection in four toy biological interaction systems: a synthetic gene regulatory network, a microtubule-inspired lattice, a toy 3D multicellular tissue structure, and a toy 4D morphogenesis system.
+\end{quote}
+
+Nothing stronger is asserted.
+
+\end{document}
