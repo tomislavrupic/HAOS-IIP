@@ -1,0 +1,84 @@
+{
+  "bridge_status": "PROBE_FAIL_NO_EARLY_DETECTION",
+  "contrast_pass": false,
+  "control_early_detection_count": 0,
+  "controls": [
+    {
+      "baseline_stable": true,
+      "early_detection": false,
+      "feature_count": 2000,
+      "first_visible_failure_index": 1,
+      "first_visible_failure_time": 15.0,
+      "k_star_index": 1,
+      "k_star_time": 15.0,
+      "label": "time_shuffle_control",
+      "max_fraction_abs_change_ge_1_0": 0.837,
+      "sample_count": 5,
+      "scope_note": "External expression-pattern proxy only; not biological failure validation.",
+      "source_name": "GDS112.soft.gz__time_shuffle_control"
+    },
+    {
+      "baseline_stable": true,
+      "early_detection": false,
+      "feature_count": 2000,
+      "first_visible_failure_index": 1,
+      "first_visible_failure_time": 5.0,
+      "k_star_index": 1,
+      "k_star_time": 5.0,
+      "label": "feature_shuffle_control",
+      "max_fraction_abs_change_ge_1_0": 0.562,
+      "sample_count": 5,
+      "scope_note": "External expression-pattern proxy only; not biological failure validation.",
+      "source_name": "GDS112.soft.gz__feature_shuffle_control"
+    },
+    {
+      "baseline_stable": true,
+      "early_detection": false,
+      "feature_count": 2000,
+      "first_visible_failure_index": 1,
+      "first_visible_failure_time": 5.0,
+      "k_star_index": 1,
+      "k_star_time": 5.0,
+      "label": "row_permutation_control",
+      "max_fraction_abs_change_ge_1_0": 0.545,
+      "sample_count": 5,
+      "scope_note": "External expression-pattern proxy only; not biological failure validation.",
+      "source_name": "GDS112.soft.gz__row_permutation_control"
+    }
+  ],
+  "failure_analysis": {
+    "dominant_failure_note": "Current recoverability is strongly tied to expression distance from baseline when correlation magnitude is high.",
+    "failure_mode": "NO_PRE_VISIBLE_POST_BASELINE_SAMPLE",
+    "first_identity_failure_index": null,
+    "first_identity_failure_time": null,
+    "first_standard_large_change_index": 2,
+    "first_standard_large_change_time": 15.0,
+    "first_visible_index": 1,
+    "first_visible_time": 5.0,
+    "interpretation": "The visible-failure proxy fires at the first post-baseline sample, so this dataset has no measured pre-visible window for early detection.",
+    "k_star_index": 1,
+    "k_star_time": 5.0,
+    "recoverability_expression_match_correlation": 0.991822696285575,
+    "recoverability_identity_retention_correlation": 0.47658784854954606,
+    "recoverability_step_coherence_correlation": 0.9015959662118307
+  },
+  "failure_rule": "The bridge fails if controls produce the same early-detection signature as observed data or observed data lacks early detection.",
+  "gene_set_evaluation": {
+    "failure_rule": "A biology-specific ranking claim is not evaluated until a curated known-gene-set file is supplied.",
+    "gene_set_status": "OPEN_GENE_SET_NOT_SUPPLIED"
+  },
+  "observed": {
+    "baseline_stable": true,
+    "early_detection": false,
+    "feature_count": 2000,
+    "first_visible_failure_index": 1,
+    "first_visible_failure_time": 5.0,
+    "k_star_index": 1,
+    "k_star_time": 5.0,
+    "label": "observed",
+    "max_fraction_abs_change_ge_1_0": 0.837,
+    "sample_count": 5,
+    "scope_note": "External expression-pattern proxy only; not biological failure validation.",
+    "source_name": "GDS112.soft.gz"
+  }
+}

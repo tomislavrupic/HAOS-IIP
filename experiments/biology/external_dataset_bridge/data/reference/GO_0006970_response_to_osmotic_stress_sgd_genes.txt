@@ -1,0 +1,32 @@
+# Source: current GO Consortium SGD GAF
+# Download used locally: https://current.geneontology.org/annotations/sgd.gaf.gz
+# Term: GO:0006970 response to osmotic stress
+# Filter: direct GO:0006970 annotations, excluding NOT qualifiers
+# Generated: 2026-04-24
+# Gene count: 24
+# Evidence summary is documented in GO_0006970_response_to_osmotic_stress_sgd_genes_metadata.md
+CBC2
+CMR2
+CPX-1657
+DCS1
+DCS2
+GID10
+GPP1
+GPP2
+GRX5
+HSP12
+HSP82
+LTV1
+MID2
+MSB2
+MYO3
+MYO5
+NHA1
+RGD1
+RRD2
+RVS161
+SLG1
+STO1
+TIM18
+YAR1
+

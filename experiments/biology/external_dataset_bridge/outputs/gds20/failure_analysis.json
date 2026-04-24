@@ -1,0 +1,16 @@
+{
+  "dominant_failure_note": "Current recoverability is strongly tied to expression distance from baseline when correlation magnitude is high.",
+  "failure_mode": "OBSERVED_EARLY_DETECTION_WINDOW",
+  "first_identity_failure_index": null,
+  "first_identity_failure_time": null,
+  "first_standard_large_change_index": null,
+  "first_standard_large_change_time": null,
+  "first_visible_index": 2,
+  "first_visible_time": 15.0,
+  "interpretation": "Observed data have k_star before the visible-failure proxy; controls decide whether this is a probe pass.",
+  "k_star_index": 1,
+  "k_star_time": 5.0,
+  "recoverability_expression_match_correlation": 0.9966996164074223,
+  "recoverability_identity_retention_correlation": 0.036375125973513056,
+  "recoverability_step_coherence_correlation": 0.9572068202876155
+}

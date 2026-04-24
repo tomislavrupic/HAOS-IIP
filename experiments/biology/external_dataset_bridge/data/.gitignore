@@ -1,0 +1,6 @@
+raw/
+*.soft
+*.soft.gz
+*.csv
+*.tsv
+

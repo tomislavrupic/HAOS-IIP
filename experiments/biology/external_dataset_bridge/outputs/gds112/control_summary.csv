@@ -1,0 +1,5 @@
+label,source_name,feature_count,sample_count,baseline_stable,k_star_index,k_star_time,first_visible_failure_index,first_visible_failure_time,early_detection,max_fraction_abs_change_ge_1_0
+observed,GDS112.soft.gz,2000,5,True,1,5.0,1,5.0,False,0.837
+time_shuffle_control,GDS112.soft.gz__time_shuffle_control,2000,5,True,1,15.0,1,15.0,False,0.837
+feature_shuffle_control,GDS112.soft.gz__feature_shuffle_control,2000,5,True,1,5.0,1,5.0,False,0.562
+row_permutation_control,GDS112.soft.gz__row_permutation_control,2000,5,True,1,5.0,1,5.0,False,0.545

@@ -1,0 +1,5 @@
+label,source_name,feature_count,sample_count,baseline_stable,k_star_index,k_star_time,first_visible_failure_index,first_visible_failure_time,early_detection,max_fraction_abs_change_ge_1_0
+observed,GDS20.soft.gz,2000,7,True,1,5.0,2,15.0,True,0.4615
+time_shuffle_control,GDS20.soft.gz__time_shuffle_control,2000,7,True,2,15.0,1,60.0,False,0.4615
+feature_shuffle_control,GDS20.soft.gz__feature_shuffle_control,2000,7,True,1,5.0,1,5.0,False,0.4615
+row_permutation_control,GDS20.soft.gz__row_permutation_control,2000,7,True,1,5.0,1,5.0,False,0.194

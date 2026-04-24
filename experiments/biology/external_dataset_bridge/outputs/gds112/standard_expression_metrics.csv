@@ -1,0 +1,6 @@
+sample_index,sample_label,time_value,mean_abs_change,median_abs_change,fraction_abs_change_ge_0_5,fraction_abs_change_ge_1_0
+0,0 minute,0.0,0.0,0.0,0.0,0.0
+1,5 minute,5.0,1.0782622121301688,0.9590000000000001,0.791,0.4735
+2,15 minute,15.0,2.036542581306147,1.905,0.9175,0.837
+3,30 minute,30.0,1.5848596535295023,1.525,0.8835,0.725
+4,60 minute,60.0,0.8188897190801019,0.6890000000000001,0.6355,0.305
