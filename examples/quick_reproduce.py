@@ -238,6 +238,11 @@ def run_physics_observables() -> None:
     print(output)
 
 
+def run_raw_gradient_audit() -> None:
+    output = run_python(["experiments/physics_bridge/raw_gradient_shape_audit.py"])
+    print(output)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Validate the frozen HAOS-IIP public reproduction spine."
@@ -252,12 +257,24 @@ def main() -> None:
         action="store_true",
         help="regenerate only the external 53.0 physics-bridge observable summary",
     )
+    parser.add_argument(
+        "--raw-gradient-audit",
+        action="store_true",
+        help="also regenerate the external raw local-gradient shape audit",
+    )
+    parser.add_argument(
+        "--raw-gradient-audit-only",
+        action="store_true",
+        help="regenerate only the external raw local-gradient shape audit",
+    )
     args = parser.parse_args()
 
-    if not args.physics_observables_only:
+    if not args.physics_observables_only and not args.raw_gradient_audit_only:
         run_public_reproduction()
     if args.physics_observables or args.physics_observables_only:
         run_physics_observables()
+    if args.raw_gradient_audit or args.raw_gradient_audit_only:
+        run_raw_gradient_audit()
 
 
 if __name__ == "__main__":

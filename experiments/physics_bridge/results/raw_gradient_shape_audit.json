@@ -1,0 +1,129 @@
+{
+  "experiment": "raw_gradient_shape_audit",
+  "config": {
+    "raw_artifact": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+    "thresholds": {
+      "min_radial_alignment": 0.94,
+      "max_power_deviation": 0.18,
+      "min_power_fit_r2": 0.95,
+      "max_flux_constancy_cv": 0.12,
+      "max_refinement_profile_drift": 0.08
+    },
+    "windowed_shape_readout": {
+      "min_radius": 0.28,
+      "smoothing_window": 5,
+      "normalize_scaled_flux": false
+    },
+    "shape_normalized_readout": {
+      "min_radius": 0.28,
+      "smoothing_window": 5,
+      "normalize_scaled_flux": true
+    },
+    "drift_samples": 16
+  },
+  "source_artifacts": {
+    "raw_local_gradient": "data/scalar_kernel_graph_recoverability_gradient_latest.json"
+  },
+  "summaries": {
+    "canonical_raw_local_gradient": {
+      "readout": "canonical_raw_local_gradient",
+      "scope": "full observable",
+      "transform": "stored raw local-gradient profile from 53.3",
+      "pass": false,
+      "case_count": 12,
+      "min_power_fit_r2": 0.32196460203159327,
+      "max_power_deviation": 1.2651306522865418,
+      "max_flux_constancy_cv": 0.31391621251051605,
+      "max_refinement_profile_drift": 0.5249004827210241,
+      "weakest_case": {
+        "label": "disorder|n=11|jitter=0.020",
+        "power_slope": -0.7348693477134582,
+        "power_fit_r2": 0.32196460203159327,
+        "flux_constancy_cv": 0.2879717109868479
+      },
+      "scope_note": "Keeps the canonical 53.3 raw boundary intact: full raw local-gradient power scaling remains open."
+    },
+    "windowed_raw_local_gradient": {
+      "readout": "windowed_raw_local_gradient",
+      "scope": "full observable",
+      "transform": "source-core exclusion + local smoothing",
+      "pass": false,
+      "case_count": 12,
+      "min_power_fit_r2": 0.9751074054779953,
+      "max_power_deviation": 0.0952543111511206,
+      "max_flux_constancy_cv": 0.04361526705652597,
+      "max_refinement_profile_drift": 0.5012255321106948,
+      "weakest_case": {
+        "label": "disorder|n=11|jitter=0.040",
+        "power_slope": -1.9213197574011451,
+        "power_fit_r2": 0.9751074054779953,
+        "flux_constancy_cv": 0.04361526705652597
+      },
+      "scope_note": "Improves raw power-law shape metrics after source-core exclusion, but full-observable refinement drift remains open.",
+      "transform_config": {
+        "min_radius": 0.28,
+        "smoothing_window": 5,
+        "normalize_scaled_flux": false,
+        "drift_samples": 16
+      }
+    },
+    "shape_normalized_windowed_raw_local_gradient": {
+      "readout": "shape_normalized_windowed_raw_local_gradient",
+      "scope": "shape-only observable",
+      "transform": "source-core exclusion + local smoothing + per-case scaled-flux normalization",
+      "pass": true,
+      "case_count": 12,
+      "min_power_fit_r2": 0.9751074054779953,
+      "max_power_deviation": 0.0952543111511206,
+      "max_flux_constancy_cv": 0.04361526705652598,
+      "max_refinement_profile_drift": 0.05822989021862586,
+      "weakest_case": {
+        "label": "disorder|n=11|jitter=0.040",
+        "power_slope": -1.9213197574011451,
+        "power_fit_r2": 0.9751074054779953,
+        "flux_constancy_cv": 0.04361526705652598
+      },
+      "scope_note": "Closes a shape-only raw local-gradient proxy after source-core exclusion and per-case amplitude normalization; this does not replace the canonical raw bridge row.",
+      "transform_config": {
+        "min_radius": 0.28,
+        "smoothing_window": 5,
+        "normalize_scaled_flux": true,
+        "drift_samples": 16
+      }
+    }
+  },
+  "rows": [
+    {
+      "readout_id": "canonical_raw_local_gradient",
+      "scope": "full observable",
+      "source_artifact": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+      "transform": "stored raw local-gradient profile from 53.3",
+      "value": "0.321965 / 1.265131 / 0.313916 / 0.524900",
+      "target": ">= 0.950000 / <= 0.180000 / <= 0.120000 / <= 0.080000",
+      "status": "OPEN",
+      "scope_note": "Keeps the canonical 53.3 raw boundary intact: full raw local-gradient power scaling remains open."
+    },
+    {
+      "readout_id": "windowed_raw_local_gradient",
+      "scope": "full observable",
+      "source_artifact": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+      "transform": "source-core exclusion + local smoothing",
+      "value": "0.975107 / 0.095254 / 0.043615 / 0.501226",
+      "target": ">= 0.950000 / <= 0.180000 / <= 0.120000 / <= 0.080000",
+      "status": "OPEN",
+      "scope_note": "Improves raw power-law shape metrics after source-core exclusion, but full-observable refinement drift remains open."
+    },
+    {
+      "readout_id": "shape_normalized_windowed_raw_local_gradient",
+      "scope": "shape-only observable",
+      "source_artifact": "data/scalar_kernel_graph_recoverability_gradient_latest.json",
+      "transform": "source-core exclusion + local smoothing + per-case scaled-flux normalization",
+      "value": "0.975107 / 0.095254 / 0.043615 / 0.058230",
+      "target": ">= 0.950000 / <= 0.180000 / <= 0.120000 / <= 0.080000",
+      "status": "PASS",
+      "scope_note": "Closes a shape-only raw local-gradient proxy after source-core exclusion and per-case amplitude normalization; this does not replace the canonical raw bridge row."
+    }
+  ],
+  "observation": "the raw local-gradient boundary splits into three readable layers: canonical raw remains open, source-core exclusion alone improves shape but not refinement drift, and a shape-normalized windowed raw read passes the existing raw thresholds as a shape-only proxy",
+  "conclusion": "canonical raw local-gradient stays open with minimum R^2 0.3220 and drift 0.5249; source-core exclusion plus smoothing improves the raw fit to minimum R^2 0.9751 but leaves drift open at 0.5012; after the same windowing with per-case scaled-flux normalization, the shape-only read passes with minimum R^2 0.9751, maximum |slope+2| 0.0953, maximum CV 0.0436, and drift 0.0582; this supports a bounded shape-only raw-gradient proxy, not full raw inverse-square closure"
+}

@@ -51,3 +51,19 @@ The disorder-native row is also intentionally split:
 
 - aggregated mild-disorder closure is `PASS`;
 - seed-universal disorder closure is separately tracked and is currently `PASS` on the tested delayed fit window `[0.006, 0.024]`.
+
+## Optional Sidecar Audit
+
+An additional external sidecar audit is available for the raw local-gradient boundary:
+
+```bash
+python3 experiments/physics_bridge/raw_gradient_shape_audit.py
+```
+
+or through the public reproduction entry point:
+
+```bash
+python3 examples/quick_reproduce.py --raw-gradient-audit-only
+```
+
+This sidecar audit does not change the canonical bridge rows. Its strongest bounded result is narrower: the full raw local-gradient observable remains `OPEN`, while a source-core-excluded, amplitude-normalized shape-only read can pass the same raw thresholds as a sidecar proxy.
