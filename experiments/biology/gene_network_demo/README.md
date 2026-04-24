@@ -2,6 +2,8 @@
 
 This is the first HAOS-IIP biology-line experiment.
 
+Status: Biology Line A v0.1. Synthetic gene regulatory network demo. Early recoverability collapse detected before visible failure.
+
 It is an experimental application layer only. It does not modify frozen HAOS-IIP core code, theory, telemetry, phase artifacts, authority bundles, canonical documents, paper files, or already frozen experiment outputs.
 
 The demo tests whether lightweight HAOS-style stability diagnostics can detect early degradation in a synthetic gene regulatory network under controlled perturbation. It does not claim to explain biology, validate a biological theory, or prove HAOS-IIP core behavior.

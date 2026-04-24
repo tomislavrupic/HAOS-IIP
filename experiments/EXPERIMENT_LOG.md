@@ -2,6 +2,16 @@
 
 This file records orchestrated experiment runs.
 
+## Biology Line A v0.1: synthetic gene regulatory network demo
+- Date: 2026-04-24
+- Location: `experiments/biology/gene_network_demo/`
+- Config: 12-gene deterministic toy regulatory network, primary edge-weakening sweep, fragile branch `G8-G11`
+- Results: `experiments/biology/gene_network_demo/outputs/results.csv`
+- Plots: `experiments/biology/gene_network_demo/outputs/recoverability_vs_perturbation.png`, `experiments/biology/gene_network_demo/outputs/delta_persistence_vs_perturbation.png`, `experiments/biology/gene_network_demo/outputs/safety_margin_vs_perturbation.png`
+- Observation: early recoverability collapse detected before visible failure (`k_star_level=0.7`, `first_visible_failure_level=0.9333333333333333`, `early_detection=True`)
+- Robustness: support-edge scale `1.03` retained early detection (`k_star_level=0.7`, `first_visible_failure_level=0.8666666666666667`)
+- Conclusion: first biology-line proof-of-instrument for recoverable-coherence diagnostics on a synthetic interaction network; no biological theory claim.
+
 ## Laplacian geometry test
 - Date: 2026-03-09T22:31:38
 - Config: substrate=random_geometric, nodes=500, epsilon=0.2, seed=42

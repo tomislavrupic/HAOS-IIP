@@ -1,0 +1,2 @@
+variation,support_scale,baseline_stable,k_star_level,first_visible_failure_level,early_detection,min_recoverability
+support_edges_plus_3_percent,1.03,True,0.7,0.8666666666666667,True,0.594886
