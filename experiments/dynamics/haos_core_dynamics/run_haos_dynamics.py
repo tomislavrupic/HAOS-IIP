@@ -24,6 +24,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--rd-dv", type=float, default=0.08, help="Gray-Scott V diffusion.")
     parser.add_argument("--rd-feed", type=float, default=0.060, help="Gray-Scott feed rate.")
     parser.add_argument("--rd-kill", type=float, default=0.062, help="Gray-Scott kill rate.")
+    parser.add_argument("--pattern-permutation-trials", type=int, default=64, help="RD pattern specificity permutation trials.")
     parser.add_argument("--perturbation-step", type=int, default=24, help="Step where perturbation is applied.")
     parser.add_argument("--perturbation-scale", type=float, default=0.75, help="Perturbation amplitude.")
     parser.add_argument("--damage-fraction", type=float, default=0.0, help="Fraction of edges to remove before dynamics.")
@@ -45,6 +46,7 @@ def main() -> None:
         rd_dv=args.rd_dv,
         rd_feed=args.rd_feed,
         rd_kill=args.rd_kill,
+        pattern_permutation_trials=args.pattern_permutation_trials,
         perturbation_step=args.perturbation_step,
         perturbation_scale=args.perturbation_scale,
         damage_fraction=args.damage_fraction,
@@ -57,6 +59,9 @@ def main() -> None:
     print(f"edges: {outcome.edge_count}")
     print(f"recoverability_score: {outcome.summary.get('recoverability_score')}")
     print(f"control_contrast: {outcome.summary.get('control_contrast')}")
+    if outcome.summary.get("mode") == "rd":
+        print(f"pattern_specificity_z: {outcome.summary.get('pattern_specificity_z')}")
+        print(f"pattern_control_pass_count: {outcome.summary.get('pattern_control_pass_count')}")
     print(f"outputs: {outcome.output_dir}")
 
 

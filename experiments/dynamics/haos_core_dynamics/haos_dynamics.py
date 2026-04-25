@@ -7,7 +7,7 @@ recoverability, invariant drift, causal spread, and deterministic controls.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 import csv
 import json
 import math
@@ -40,6 +40,7 @@ class DynamicsConfig:
     rd_dv: float = 0.08
     rd_feed: float = 0.060
     rd_kill: float = 0.062
+    pattern_permutation_trials: int = 64
     perturbation_step: int = 24
     perturbation_scale: float = 0.75
     damage_fraction: float = 0.0
@@ -118,7 +119,51 @@ def run_dynamics_probe(config: DynamicsConfig) -> DynamicsOutcome:
     outcome_summary["control_contrast"] = status["control_contrast"]
     outcome_summary["failure_mode"] = status["failure_mode"]
     outcome_summary["best_control_recoverability_score"] = status["best_control_recoverability_score"]
+    outcome_summary["pattern_control_pass_count"] = status.get("pattern_control_pass_count")
+    outcome_summary["pattern_control_contrast"] = status.get("pattern_control_contrast")
     return DynamicsOutcome(status["bridge_status"], graph.source_label, graph.node_count, graph.edge_count, outcome_summary, config.output_dir)
+
+
+def run_rd_feed_kill_sweep(
+    config: DynamicsConfig,
+    feed_values: list[float],
+    kill_values: list[float],
+) -> list[dict[str, Any]]:
+    """Run a small RD feed/kill sweep scored by pattern specificity."""
+
+    sweep_dir = config.output_dir
+    sweep_dir.mkdir(parents=True, exist_ok=True)
+    rows: list[dict[str, Any]] = []
+    for feed in feed_values:
+        for kill in kill_values:
+            label = f"feed_{feed:.4f}_kill_{kill:.4f}".replace(".", "p")
+            run_config = replace(
+                config,
+                mode="rd",
+                rd_feed=float(feed),
+                rd_kill=float(kill),
+                output_dir=sweep_dir / label,
+            )
+            outcome = run_dynamics_probe(run_config)
+            row = {
+                "feed": float(feed),
+                "kill": float(kill),
+                "bridge_status": outcome.status,
+                "failure_mode": outcome.summary.get("failure_mode"),
+                "recoverability_score": outcome.summary.get("recoverability_score"),
+                "final_recoverability": outcome.summary.get("final_recoverability"),
+                "max_invariant_drift": outcome.summary.get("max_invariant_drift"),
+                "control_contrast": outcome.summary.get("control_contrast"),
+                "pattern_graph_specificity": outcome.summary.get("pattern_graph_specificity"),
+                "pattern_specificity_p": outcome.summary.get("pattern_specificity_p"),
+                "pattern_specificity_z": outcome.summary.get("pattern_specificity_z"),
+                "pattern_specificity_pass": outcome.summary.get("pattern_specificity_pass"),
+                "pattern_control_pass_count": outcome.summary.get("pattern_control_pass_count"),
+                "pattern_control_contrast": outcome.summary.get("pattern_control_contrast"),
+            }
+            rows.append(row)
+    write_sweep_outputs(sweep_dir, rows, feed_values, kill_values)
+    return rows
 
 
 def load_geometry_graph(config: DynamicsConfig, rng: np.random.Generator) -> GraphBundle:
@@ -194,6 +239,7 @@ def run_single_dynamics(
 
     metrics = compute_metrics(label, states, reference, adjacency, perturbation_nodes, config)
     summary = summarize_metrics(label, metrics, config.perturbation_step)
+    summary["mode"] = config.mode
     return DynamicsRun(label, states, metrics, summary)
 
 
@@ -230,7 +276,16 @@ def run_single_rd(
 
     metrics = compute_metrics(label, states, reference, adjacency, perturbation_nodes, config)
     summary = summarize_metrics(label, metrics, config.perturbation_step)
-    summary["pattern_contrast"] = float(np.std(states[-1]))
+    summary["mode"] = config.mode
+    summary["pattern_contrast"] = float(np.ptp(states[-1]))
+    summary.update(
+        run_pattern_specificity_test(
+            states[-1],
+            adjacency,
+            n_trials=config.pattern_permutation_trials,
+            seed=config.seed + stable_label_offset(label),
+        )
+    )
     summary["rd_u_mean"] = float(np.mean(u))
     summary["rd_v_mean"] = float(np.mean(v))
     return DynamicsRun(label, states, metrics, summary)
@@ -333,10 +388,20 @@ def classify_status(graph: GraphBundle, observed: DynamicsRun, controls: list[Dy
     control_contrast = observed_score >= best_control + CONTROL_MARGIN
     observed_recovered = bool(observed.summary["recovered"])
     observed_bounded = bool(observed.summary["invariants_bounded"])
+    is_rd = observed.summary.get("mode") == "rd"
+    observed_pattern_specificity = bool(observed.summary.get("pattern_specificity_pass", not is_rd))
+    pattern_control_count = sum(1 for run in controls if bool(run.summary.get("pattern_specificity_pass", False)))
+    pattern_control_contrast = pattern_control_count == 0
 
     if graph.source_kind == "OPEN_NO_DATA_SYNTHETIC":
         bridge_status = "OPEN_NO_DATA_SYNTHETIC"
         failure_mode = "NO_HAOS_GRAPH_ARTIFACT_FOUND"
+    elif is_rd and observed_recovered and observed_bounded and observed_pattern_specificity and control_contrast and pattern_control_contrast:
+        bridge_status = "PASS"
+        failure_mode = "RD_RECOVERY_WITH_PATTERN_SPECIFICITY_AND_CONTROL_CONTRAST"
+    elif is_rd and not observed_pattern_specificity:
+        bridge_status = "FAIL"
+        failure_mode = "RD_PATTERN_WITHOUT_GRAPH_SPECIFICITY"
     elif observed_recovered and observed_bounded and control_contrast:
         bridge_status = "PASS"
         failure_mode = "RECOVERY_WITH_INVARIANT_CONTROL_CONTRAST"
@@ -360,6 +425,8 @@ def classify_status(graph: GraphBundle, observed: DynamicsRun, controls: list[Dy
         "observed_recoverability_score": observed_score,
         "best_control_recoverability_score": best_control,
         "control_contrast": control_contrast,
+        "pattern_control_pass_count": pattern_control_count,
+        "pattern_control_contrast": pattern_control_contrast,
         "recoverability_floor": RECOVERABILITY_FLOOR,
         "invariant_drift_ceiling": INVARIANT_DRIFT_CEILING,
         "observed_summary": observed.summary,
@@ -372,6 +439,87 @@ def write_outputs(output_dir: Path, graph: GraphBundle, observed: DynamicsRun, c
     write_timeseries(output_dir / "dynamics_timeseries.csv", [observed, *controls])
     write_report(output_dir / "dynamics_report.md", status, observed, controls)
     write_plots(output_dir, observed, controls)
+
+
+def write_sweep_outputs(
+    output_dir: Path,
+    rows: list[dict[str, Any]],
+    feed_values: list[float],
+    kill_values: list[float],
+) -> None:
+    fields = [
+        "feed",
+        "kill",
+        "bridge_status",
+        "failure_mode",
+        "recoverability_score",
+        "final_recoverability",
+        "max_invariant_drift",
+        "control_contrast",
+        "pattern_graph_specificity",
+        "pattern_specificity_p",
+        "pattern_specificity_z",
+        "pattern_specificity_pass",
+        "pattern_control_pass_count",
+        "pattern_control_contrast",
+    ]
+    with (output_dir / "rd_feed_kill_sweep.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(rows)
+
+    best = max(rows, key=lambda row: float(row.get("pattern_specificity_z") or -1.0e9))
+    lines = [
+        "# RD Feed/Kill Sweep",
+        "",
+        "Scored by final-pattern graph specificity, not visual appeal.",
+        "",
+        f"- best_feed: {best['feed']}",
+        f"- best_kill: {best['kill']}",
+        f"- best_status: {best['bridge_status']}",
+        f"- best_pattern_specificity_z: {best['pattern_specificity_z']}",
+        f"- best_pattern_specificity_p: {best['pattern_specificity_p']}",
+        "",
+        "| feed | kill | status | recoverability | drift | specificity_z | specificity_p | specificity_pass | control_specificity_passes |",
+        "| ---: | ---: | --- | ---: | ---: | ---: | ---: | --- | ---: |",
+    ]
+    for row in rows:
+        lines.append(
+            "| {feed:.6f} | {kill:.6f} | {status} | {recoverability:.6f} | {drift:.6f} | {z:.6f} | {p:.6g} | {passed} | {control_passes} |".format(
+                feed=float(row["feed"]),
+                kill=float(row["kill"]),
+                status=row["bridge_status"],
+                recoverability=float(row["recoverability_score"]),
+                drift=float(row["max_invariant_drift"]),
+                z=float(row["pattern_specificity_z"]),
+                p=float(row["pattern_specificity_p"]),
+                passed=row["pattern_specificity_pass"],
+                control_passes=row["pattern_control_pass_count"],
+            )
+        )
+    (output_dir / "rd_feed_kill_sweep.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    write_sweep_heatmap(output_dir, rows, feed_values, kill_values)
+
+
+def write_sweep_heatmap(output_dir: Path, rows: list[dict[str, Any]], feed_values: list[float], kill_values: list[float]) -> None:
+    import matplotlib.pyplot as plt
+
+    matrix = np.zeros((len(feed_values), len(kill_values)), dtype=float)
+    for row in rows:
+        i = feed_values.index(float(row["feed"]))
+        j = kill_values.index(float(row["kill"]))
+        matrix[i, j] = float(row["pattern_specificity_z"])
+    plt.figure(figsize=(6, 4))
+    plt.imshow(matrix, aspect="auto", origin="lower", cmap="viridis")
+    plt.xticks(range(len(kill_values)), [f"{value:.3f}" for value in kill_values])
+    plt.yticks(range(len(feed_values)), [f"{value:.3f}" for value in feed_values])
+    plt.xlabel("kill")
+    plt.ylabel("feed")
+    plt.title("RD pattern specificity z-score")
+    plt.colorbar(label="specificity z")
+    plt.tight_layout()
+    plt.savefig(output_dir / "rd_feed_kill_specificity_heatmap.png", dpi=160)
+    plt.close()
 
 
 def write_report(path: Path, status: dict[str, Any], observed: DynamicsRun, controls: list[DynamicsRun]) -> None:
@@ -413,6 +561,27 @@ def write_report(path: Path, status: dict[str, Any], observed: DynamicsRun, cont
             "A PASS requires observed recovery, bounded invariant drift, and control contrast.",
         ]
     )
+    if observed.summary.get("mode") == "rd":
+        lines.extend(
+            [
+                "",
+                "## RD Pattern Specificity",
+                "",
+                "| run | pattern_graph_specificity | pattern_specificity_p | pattern_specificity_z | specificity_pass |",
+                "| --- | ---: | ---: | ---: | --- |",
+            ]
+        )
+        for run in [observed, *controls]:
+            summary = run.summary
+            lines.append(
+                "| {run} | {score:.6f} | {p:.6g} | {z:.6f} | {passed} |".format(
+                    run=run.label,
+                    score=float(summary.get("pattern_graph_specificity", 0.0)),
+                    p=float(summary.get("pattern_specificity_p", 1.0)),
+                    z=float(summary.get("pattern_specificity_z", 0.0)),
+                    passed=summary.get("pattern_specificity_pass", False),
+                )
+            )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -503,6 +672,67 @@ def normalize_field(field: np.ndarray, reference: np.ndarray) -> np.ndarray:
 def dirichlet_energy(field: np.ndarray, adjacency: np.ndarray) -> float:
     diff = field[:, None] - field[None, :]
     return float(0.5 * np.sum(adjacency * diff * diff))
+
+
+def graph_pattern_specificity(field: np.ndarray, adjacency: np.ndarray) -> float:
+    """Weighted graph autocorrelation of a final pattern."""
+
+    centered = np.asarray(field, dtype=float) - float(np.mean(field))
+    variance = float(np.mean(centered * centered))
+    if variance <= EPS:
+        return 0.0
+    edge_i, edge_j = np.triu_indices(adjacency.shape[0], k=1)
+    weights = adjacency[edge_i, edge_j]
+    mask = weights > 0.0
+    if int(np.sum(mask)) < 5:
+        return 0.0
+    edge_i = edge_i[mask]
+    edge_j = edge_j[mask]
+    weights = weights[mask]
+    weighted_product = float(np.sum(weights * centered[edge_i] * centered[edge_j]) / max(float(np.sum(weights)), EPS))
+    return float(weighted_product / variance)
+
+
+def run_pattern_specificity_test(
+    field: np.ndarray,
+    adjacency: np.ndarray,
+    n_trials: int = 64,
+    seed: int = 42,
+) -> dict[str, float | bool]:
+    """Permutation test for whether a final pattern respects graph adjacency."""
+
+    observed = graph_pattern_specificity(field, adjacency)
+    if n_trials <= 0:
+        return {
+            "pattern_graph_specificity": observed,
+            "pattern_null_mean": 0.0,
+            "pattern_null_std": 0.0,
+            "pattern_specificity_p": 1.0,
+            "pattern_specificity_z": 0.0,
+            "pattern_specificity_pass": False,
+        }
+
+    rng = np.random.default_rng(seed)
+    nulls = np.zeros(int(n_trials), dtype=float)
+    for idx in range(int(n_trials)):
+        nulls[idx] = graph_pattern_specificity(rng.permutation(field), adjacency)
+    mean_null = float(np.mean(nulls))
+    std_null = float(np.std(nulls))
+    effective_std = std_null if std_null > 1.0e-8 else 1.0
+    z_score = float((observed - mean_null) / effective_std)
+    p_value = float((np.count_nonzero(nulls >= observed) + 1) / (int(n_trials) + 1))
+    return {
+        "pattern_graph_specificity": observed,
+        "pattern_null_mean": mean_null,
+        "pattern_null_std": std_null,
+        "pattern_specificity_p": p_value,
+        "pattern_specificity_z": z_score,
+        "pattern_specificity_pass": bool(p_value < 0.05 and z_score > 1.5),
+    }
+
+
+def stable_label_offset(label: str) -> int:
+    return sum((idx + 1) * ord(char) for idx, char in enumerate(label))
 
 
 def graph_distances_from_sources(adjacency: np.ndarray, sources: np.ndarray) -> np.ndarray:

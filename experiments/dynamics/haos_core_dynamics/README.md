@@ -27,6 +27,7 @@ Useful options:
 - `--recovery-gain`: attraction back toward the frozen reference field.
 - `--rd-du`, `--rd-dv`, `--rd-feed`, `--rd-kill`: Gray-Scott-style graph
   reaction-diffusion parameters.
+- `--pattern-permutation-trials`: final-pattern graph specificity null trials.
 - `--perturbation-scale`: controlled local perturbation size.
 - `--damage-fraction`: optional edge damage applied after the baseline graph is
   built.
@@ -53,6 +54,12 @@ uv run --with numpy --with matplotlib python experiments/dynamics/haos_core_dyna
   --dt 0.4
 ```
 
+Small feed/kill sweep scored by graph pattern specificity:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/dynamics/haos_core_dynamics/run_rd_sweep.py
+```
+
 ## Status Semantics
 
 - `PASS`: observed recoverability is high, invariant drift is bounded, and all
@@ -65,3 +72,7 @@ uv run --with numpy --with matplotlib python experiments/dynamics/haos_core_dyna
   plumbing check only.
 
 These are dynamics diagnostics, not physics claims.
+
+For RD mode, the final-pattern specificity test measures whether the final
+pattern has stronger weighted graph autocorrelation than node-label-permuted
+nulls. RD PASS requires this specificity to survive controls.
