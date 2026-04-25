@@ -1,0 +1,421 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+
+\title{HAOS-IIP Biology Line A--E:\\Toy Recoverability Ladder and External Dataset Bridge}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This numbered update extends the HAOS-IIP Biology Line paper from Lines A--D to Lines A--E. Lines A--D are deterministic toy biological interaction systems: a synthetic gene regulatory network, a microtubule-inspired cylindrical lattice, a 3D multicellular tissue-like lattice, and a 4D morphogenesis-style model defined as 3D tissue state through developmental time. Each toy line produced early recoverability-loss detection before its configured visible-failure criterion. Line E is different: it is an external dataset bridge, not another toy pass. It adapts public yeast stress-response expression datasets into a bounded, auditable probe with deterministic negative controls, standard expression-change comparators, an optional known-gene-set ranking comparator, and a one-command reproduction audit. The primary GDS112 heat-shock probe remains an honest negative: \(\texttt{k\_star}=5.0\) minutes and visible proxy failure also occurs at \(5.0\) minutes, so there is no measured pre-visible window. The exploratory GDS20 hyper-osmotic shock probe passes the ordering test with controls: \(\texttt{k\_star}=5.0\) minutes before visible proxy failure at \(15.0\) minutes, with zero control early-detection matches. A sourced direct SGD/GO \(\texttt{GO:0006970}\) response-to-osmotic-stress comparator on GDS20 evaluates 24 genes, matches 10 features, and gives HAOS-weighted average precision \(0.14409\) versus simple fold-change average precision \(0.04290\). This is a narrow bridge result, not a claim that HAOS-IIP explains biology. The safe claim is that HAOS-IIP Biology Line A--E now contains four toy recoverability proof-of-instrument artifacts and one public-data bridge with a reproduced negative, a controlled pass, and a quick falsification path.
+\end{abstract}
+
+\tableofcontents
+
+\section{Status and Scope}
+
+This paper is release \(54.2\) in the HAOS-IIP numbered paper sequence. It updates the prior Biology Line A--D paper by adding Biology Line E, the external dataset bridge.
+
+The biology line is an application layer on top of frozen HAOS-IIP. It does not modify frozen HAOS-IIP core, theory, telemetry, phase artifacts, authority bundles, or canonical notes. Its metrics are lightweight external proxies aligned with recoverability logic. They are not claimed to be frozen HAOS core metrics.
+
+\subsection{Strict Boundaries}
+
+The following claims are excluded:
+
+\begin{itemize}
+\item no claim that HAOS-IIP explains biology;
+\item no claim of real biological validation from the toy lines;
+\item no claim that gene expression stress response is literal collapse;
+\item no consciousness claim;
+\item no Orch-OR claim;
+\item no quantum biology claim;
+\item no molecular dynamics claim for the microtubule-inspired line;
+\item no tissue simulation or developmental biology proof for the 3D/4D lines.
+\end{itemize}
+
+The purpose is narrower: test whether recoverability-style diagnostics can be made concrete, deterministic, auditable, and falsifiable across progressively harder biological interaction settings.
+
+\section{Biology Line Roadmap}
+
+\begin{longtable}{p{0.08\linewidth}p{0.24\linewidth}p{0.38\linewidth}p{0.18\linewidth}}
+\toprule
+Line & Artifact & Role & Status \\
+\midrule
+A & \texttt{gene\_network\_demo} & Synthetic regulatory network; abstract interaction dynamics & PASS \\
+B & \texttt{microtubule\_lattice\_demo} & Cylindrical microtubule-inspired interaction lattice & PASS \\
+C & \texttt{tissue\_3d\_demo} & 3D multicellular tissue-like lattice & PASS \\
+D & \texttt{morphogenesis\_4d\_demo} & 3D tissue state evolving through developmental time & PASS \\
+E & \texttt{external\_dataset\_bridge} & Public yeast stress-response dataset bridge with controls & MIXED: one negative, one controlled pass \\
+\bottomrule
+\end{longtable}
+
+Lines A--D ask a controlled synthetic question:
+
+\begin{quote}
+At what perturbation level does a biological interaction structure stop being recoverable under perturbation?
+\end{quote}
+
+Line E asks a harder external-data question:
+
+\begin{quote}
+Can the same recoverability-style diagnostic ordering survive contact with public biological data, standard expression-change comparators, deterministic controls, and quick reproduction?
+\end{quote}
+
+\section{Shared Diagnostic Form}
+
+For Lines A--D, a perturbation parameter \(p\in[0,1]\) is swept from baseline to maximum perturbation. For Line E, ordered external time samples replace the synthetic perturbation sweep.
+
+\subsection{Recoverability}
+
+Recoverability \(R\in[0,1]\) is a bounded proxy for whether the system remains close to its baseline, expected target, or recoverable interaction structure. Each line defines its components explicitly:
+
+\begin{itemize}
+\item Line A uses final-state distance from the baseline gene expression attractor.
+\item Line B combines component support, weighted-degree retention, and propagation retention.
+\item Line C combines component support, weighted-degree retention, spatial coherence, and propagation retention.
+\item Line D combines final morphology match, trajectory coherence, interaction-support retention, and spatial-continuity retention.
+\item Line E combines expression match, step coherence, and support retention, then compares against standard expression-change summaries and controls.
+\end{itemize}
+
+\subsection{Delta Persistence}
+
+\[
+\Delta P_k = R_k - R_{k-1}.
+\]
+
+\(\Delta P\) measures change in recoverability between consecutive perturbation levels or time samples.
+
+\subsection{\texttt{k\_star}}
+
+\(\texttt{k\_star}\) is the first index where recoverability crosses a collapse threshold and remains below that threshold for the configured sustained window. For Lines B--E the default collapse threshold is \(0.70\). Line A uses \(0.65\).
+
+\subsection{Visible Failure}
+
+Visible failure is deliberately stricter than recoverability collapse. In the toy lines, it is a configured functional or morphology-failure proxy. In Line E, it is an expression-pattern or trajectory-identity proxy, not a biological death or phenotype label.
+
+The positive ordering condition is:
+
+\[
+\texttt{k\_star index} < \texttt{first visible failure index}.
+\]
+
+\section{Toy Ladder Summary: Lines A--D}
+
+\begin{longtable}{p{0.07\linewidth}p{0.31\linewidth}p{0.15\linewidth}p{0.17\linewidth}p{0.12\linewidth}p{0.10\linewidth}}
+\toprule
+Line & System & \(\texttt{k\_star}\) & Visible failure & Gap & Robustness \\
+\midrule
+A & 12-gene synthetic regulatory network & 0.7000 & 0.9333 & 0.2333 & PASS \\
+B & 13-by-24 microtubule-inspired cylindrical lattice & 0.8333 & 0.8667 & 0.0333 & PASS \\
+C & \(8\times8\times8\) tissue-like 3D cell lattice & 0.8000 & 1.0000 & 0.2000 & PASS \\
+D & \(8\times8\times8\) tissue-like lattice over 24 developmental steps & 0.8667 & 0.9667 & 0.1000 & PASS \\
+\bottomrule
+\end{longtable}
+
+\subsection{Line A: Gene Network}
+
+Path: \texttt{experiments/biology/gene\_network\_demo/}.
+
+Line A uses a deterministic toy gene regulatory network with 12 genes, \(\texttt{G0}\) through \(\texttt{G11}\). Directed weighted edges represent activation and inhibition. The network includes one hub regulator, a negative feedback loop, a positive feedback motif, and a fragile downstream branch. The primary perturbation weakens edges feeding the fragile branch. The result is \(\texttt{k\_star}=0.7000\) before visible regulatory failure at \(0.9333\). The fragile branch degrades earlier than the whole network.
+
+\subsection{Line B: Microtubule-Inspired Lattice}
+
+Path: \texttt{experiments/biology/microtubule\_lattice\_demo/}.
+
+Line B uses a deterministic cylindrical interaction graph inspired by the fact that common eukaryotic microtubules contain 13 protofilaments. The model has 13 protofilaments, 24 dimer positions per protofilament, and edge classes for longitudinal, lateral, diagonal/seam, and weak-support interactions. It is not molecular dynamics. The primary perturbation weakens lateral edges. The result is \(\texttt{k\_star}=0.8333\) before visible lattice failure at \(0.8667\).
+
+\subsection{Line C: 3D Tissue}
+
+Path: \texttt{experiments/biology/tissue\_3d\_demo/}.
+
+Line C uses a deterministic \(8\times8\times8\) multicellular lattice. Nodes are cells; edges are local adhesion/signaling, diagonal support, and sparse long-range coordination. The primary perturbation is a local spherical lesion. The result is \(\texttt{k\_star}=0.8000\) before visible tissue failure at \(1.0000\).
+
+\subsection{Line D: 4D Morphogenesis}
+
+Path: \texttt{experiments/biology/morphogenesis\_4d\_demo/}.
+
+Line D adds developmental time to the 3D tissue model. A deterministic target morphology changes across 24 developmental steps from compact form to polarity gradient to core-shell/anterior-posterior pattern. The primary perturbation is developmental drift in a region and time window. The result is \(\texttt{k\_star}=0.8667\) before visible developmental failure at \(0.9667\).
+
+\section{Line E: External Dataset Bridge}
+
+\subsection{Purpose}
+
+Path: \texttt{experiments/biology/external\_dataset\_bridge/}.
+
+Line E is not another synthetic toy pass. It is a bridge from the internal biology ladder to public biological data. The design goals are:
+
+\begin{itemize}
+\item digitize public inputs in a manifest;
+\item define bounded biological metrics and failure criteria;
+\item support deterministic negative controls;
+\item compare against plain expression-change summaries;
+\item support a known-gene-set ranking comparator;
+\item provide one-command reproduction and \(\texttt{--check}\) audit;
+\item preserve negative results without tuning them into passes.
+\end{itemize}
+
+\subsection{Public Inputs}
+
+The bridge uses public no-credential GEO SOFT files and one committed reference gene set.
+
+\begin{longtable}{p{0.16\linewidth}p{0.32\linewidth}p{0.36\linewidth}}
+\toprule
+Input & Role & Source \\
+\midrule
+\texttt{GDS112} & Yeast heat shock from 30 C to 37 C; samples at 0, 5, 15, 30, 60 minutes & \url{https://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS112} \\
+\texttt{GSE18} & Reference series for the Gasch stress-response program & \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18} \\
+\texttt{GDS20} & Yeast hyper-osmotic shock time course; samples at 5, 15, 30, 45, 60, 90 minutes & \url{https://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS20} \\
+\texttt{GO:0006970} & Direct SGD/GO response-to-osmotic-stress gene set & \url{https://current.geneontology.org/annotations/sgd.gaf.gz} \\
+\bottomrule
+\end{longtable}
+
+The raw GEO files are not committed. They are downloaded into ignored \texttt{data/raw/} during full reproduction. Input definitions live in \texttt{input\_manifest.json}. Downloaded raw-file digests are written to \texttt{outputs/input\_digests.json} when full reproduction is run.
+
+\subsection{Line E Metrics}
+
+Line E loads a feature-by-sample expression matrix. For GEO log-ratio datasets that start after time 0, it can prepend an inferred zero baseline. GDS20 uses this path because its SOFT table begins at 5 minutes.
+
+For each ordered sample, the bridge computes:
+
+\begin{itemize}
+\item \(\texttt{expression\_match}\): normalized closeness to baseline expression pattern;
+\item \(\texttt{step\_coherence}\): normalized smoothness relative to adjacent sample movement;
+\item \(\texttt{support\_retention}\): retained structural support placeholder, currently constant for expression-only data;
+\item \(\texttt{recoverability}\): weighted proxy combining the above;
+\item \(\texttt{delta\_persistence}\): recoverability difference between samples;
+\item \(\texttt{k\_star}\): first sustained crossing below \(0.70\);
+\item \(\texttt{trajectory\_identity\_retention}\): standard time-series comparator used to catch identity-breaking controls;
+\item \(\texttt{visible\_failure}\): expression-pattern or trajectory-identity proxy, not a biological phenotype label.
+\end{itemize}
+
+The bridge also writes standard non-HAOS comparators:
+
+\begin{itemize}
+\item mean absolute expression change from baseline;
+\item median absolute expression change from baseline;
+\item fraction of features with absolute change at least \(0.5\);
+\item fraction of features with absolute change at least \(1.0\).
+\end{itemize}
+
+\subsection{Negative Controls}
+
+Every supplied-data run uses three deterministic controls:
+
+\begin{itemize}
+\item \(\texttt{time\_shuffle\_control}\): keeps baseline first and scrambles later sample order;
+\item \(\texttt{feature\_shuffle\_control}\): preserves each sample distribution while breaking feature identity;
+\item \(\texttt{row\_permutation\_control}\): preserves feature value ranges while breaking each trajectory.
+\end{itemize}
+
+A probe pass requires observed early detection and zero matching early-detection hits in these controls.
+
+\section{Line E Results}
+
+\subsection{GDS112 Heat Shock: Honest Negative}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Quantity & Value \\
+\midrule
+Bridge status & \texttt{PROBE\_FAIL\_NO\_EARLY\_DETECTION} \\
+Baseline stable & True \\
+\(\texttt{k\_star}\) time & 5.0 minutes \\
+First visible proxy failure & 5.0 minutes \\
+Early detection & False \\
+Control early-detection count & 0 \\
+Failure mode & \texttt{NO\_PRE\_VISIBLE\_POST\_BASELINE\_SAMPLE} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This is a real negative result. Under the current proxy, the visible-failure criterion fires at the first post-baseline sample. Therefore the dataset provides no measured pre-visible post-baseline window for the bridge to detect.
+
+This does not mean the bridge failed mechanically. It means GDS112 heat shock is too abrupt under the current sample spacing and visible-proxy rule to support an early-warning claim. At 5 minutes, the top-variable feature slice already shows a large expression-pattern shift. The bridge records that instead of tuning it into a pass.
+
+\subsection{GDS20 Hyper-Osmotic Shock: Controlled External Pass}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Quantity & Value \\
+\midrule
+Bridge status & \texttt{PROBE\_PASS\_WITH\_CONTROLS} \\
+Baseline stable & True \\
+\(\texttt{k\_star}\) time & 5.0 minutes \\
+First visible proxy failure & 15.0 minutes \\
+Early detection & True \\
+Control early-detection count & 0 \\
+Failure mode & \texttt{OBSERVED\_EARLY\_DETECTION\_WINDOW} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+GDS20 gives a slower measured response window under the current proxy. Recoverability crosses the collapse threshold at 5 minutes, while the visible expression-pattern proxy does not fire until 15 minutes. The deterministic controls do not reproduce the early-detection signature.
+
+\subsection{GDS20 with Direct \texttt{GO:0006970} Comparator}
+
+A sourced direct SGD/GO \(\texttt{GO:0006970}\) response-to-osmotic-stress gene set was extracted from the current GO Consortium SGD GAF with direct \(\texttt{GO:0006970}\) annotations only and \(\texttt{NOT}\) qualifiers excluded.
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Quantity & Value \\
+\midrule
+Gene-set status & \texttt{GENE\_SET\_EVALUATED} \\
+Known gene-set size & 24 \\
+Matched feature count & 10 \\
+HAOS-weighted average precision & 0.14409276508511915 \\
+Simple fold-change average precision & 0.04289856779600831 \\
+Average precision margin & 0.10119419728911083 \\
+HAOS beats fold-change & True \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This supports only a narrow biology-specific ranking statement: on the matched direct \(\texttt{GO:0006970}\) subset, the HAOS-weighted feature ranking beats simple maximum fold-change by the declared margin. It does not validate the full environmental stress response, HOG pathway dynamics, all osmotic-response biology, or any general biological theory.
+
+\section{Quick Reproduction Contract}
+
+Line E adds a lab-facing reproduction wrapper:
+
+\begin{verbatim}
+python3 experiments/biology/external_dataset_bridge/quick_reproduce.py --check
+\end{verbatim}
+
+The \(\texttt{--check}\) mode audits existing outputs without network access, credentials, numpy, or matplotlib. A full run without \(\texttt{--check}\) downloads public GEO SOFT files into ignored \(\texttt{data/raw/}\), records input digests, reruns bounded probes, refreshes comparison outputs, and audits the result.
+
+Current audit:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Quantity & Value \\
+\midrule
+Check status & PASS \\
+Runs checked & 3 \\
+Checks passed & 41 / 41 \\
+Output & \texttt{experiments/biology/external\_dataset\_bridge/outputs/} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The important point is that this audit can pass while GDS112 remains a failed probe. The check is not a victory label; it verifies that the bounded expected outcomes reproduce:
+
+\begin{itemize}
+\item GDS112 reproduces the declared negative result.
+\item GDS20 reproduces the controlled external pass.
+\item GDS20 plus direct \(\texttt{GO:0006970}\) reproduces the narrow gene-set comparator pass.
+\end{itemize}
+
+\section{Bridge Figures}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{experiments/biology/external_dataset_bridge/outputs/gds112/recoverability_vs_time.png}
+\caption*{GDS112 heat shock: recoverability and collapse threshold.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{experiments/biology/external_dataset_bridge/outputs/gds20/recoverability_vs_time.png}
+\caption*{GDS20 hyper-osmotic shock: recoverability and collapse threshold.}
+\end{minipage}
+\caption{External dataset bridge recoverability curves. GDS112 remains an honest negative because \(\texttt{k\_star}\) and visible proxy failure coincide at the first post-baseline sample. GDS20 shows an early-detection window under the current proxy.}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{experiments/biology/external_dataset_bridge/outputs/gds112/observed_vs_controls.png}
+\caption*{GDS112 observed run and controls.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{experiments/biology/external_dataset_bridge/outputs/gds20_go_0006970/observed_vs_controls.png}
+\caption*{GDS20 plus GO comparator run and controls.}
+\end{minipage}
+\caption{Observed bridge runs compared with deterministic negative controls. A pass requires observed early detection and zero control early-detection matches.}
+\end{figure}
+
+\section{Failure Conditions}
+
+The biology line stays useful only if failure is allowed to remain failure. The explicit Line E failure conditions are:
+
+\begin{itemize}
+\item observed data do not show \(\texttt{k\_star}\) before visible proxy failure;
+\item deterministic controls reproduce the same early-detection signature;
+\item HAOS-weighted ranking fails to beat simple fold-change against a supplied curated gene set by the declared margin;
+\item a report treats an expression-pattern proxy as a real biological phenotype label;
+\item external data cannot be reproduced from public sources or audited from committed outputs.
+\end{itemize}
+
+GDS112 currently satisfies the first failure condition. It is therefore retained as an honest negative, not treated as a success.
+
+\section{Reproduction Commands}
+
+Toy biology line commands:
+
+\begin{verbatim}
+python experiments/biology/gene_network_demo/run_gene_network_demo.py
+python experiments/biology/microtubule_lattice_demo/run_microtubule_lattice_demo.py
+python experiments/biology/tissue_3d_demo/run_tissue_3d_demo.py
+python experiments/biology/morphogenesis_4d_demo/run_morphogenesis_4d_demo.py
+\end{verbatim}
+
+External bridge audit:
+
+\begin{verbatim}
+python3 experiments/biology/external_dataset_bridge/quick_reproduce.py --check
+\end{verbatim}
+
+External bridge full public-data reproduction:
+
+\begin{verbatim}
+python3 experiments/biology/external_dataset_bridge/quick_reproduce.py
+\end{verbatim}
+
+In the local Codex environment used for bridge development, full external runs used:
+
+\begin{verbatim}
+uv run --with numpy --with matplotlib python \
+  experiments/biology/external_dataset_bridge/run_external_dataset_bridge.py \
+  --soft <path-to-GEO-SOFT.gz>
+\end{verbatim}
+
+\section{Conclusion}
+
+HAOS-IIP Biology Line A--E is now a cleaner ladder:
+
+\begin{enumerate}
+\item Line A demonstrates early recoverability-loss detection in a toy gene network.
+\item Line B demonstrates early recoverability-loss detection in a microtubule-inspired cylindrical lattice.
+\item Line C demonstrates early recoverability-loss detection in a toy 3D multicellular interaction structure.
+\item Line D demonstrates early recoverability-loss detection in a toy 4D developmental trajectory.
+\item Line E bridges to public stress-response expression datasets and records both an honest negative and a controlled external pass.
+\end{enumerate}
+
+The public-safe statement is:
+
+\begin{quote}
+HAOS-IIP Biology Line A--E contains four deterministic toy biological interaction demos and one public-data external bridge. The toy demos show early recoverability-loss detection before configured visible failure. The external bridge reproduces a negative result on GDS112 heat shock, a controlled early-detection pass on GDS20 hyper-osmotic shock, and a narrow direct \(\texttt{GO:0006970}\) gene-set ranking comparator on GDS20. No claim is made that HAOS-IIP explains biology.
+\end{quote}
+
+Nothing stronger is asserted.
+
+\end{document}

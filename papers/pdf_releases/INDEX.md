@@ -213,6 +213,11 @@ The intended public reading order is:
 
 1. `53.4` Seed-Universal Disorder Flux Release for HAOS-IIP
 
+### 2.43 Part XLIII. Biology line ladder and external bridge
+
+1. `54.2` HAOS-IIP Biology Line A-E: Toy Recoverability Ladder and External Dataset Bridge
+2. `54.1` HAOS-IIP Biology Line A-D: Recoverability-Loss Detection in Toy Biological Interaction Systems
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -285,6 +290,8 @@ The intended public reading order is:
 - `53.2` Localized Bump Response Threshold Release for HAOS-IIP
 - `53.3` Power-Law Scaling Boundary Release for HAOS-IIP
 - `53.4` Seed-Universal Disorder Flux Release for HAOS-IIP
+- `54.2` HAOS-IIP Biology Line A-E: Toy Recoverability Ladder and External Dataset Bridge
+- `54.1` HAOS-IIP Biology Line A-D: Recoverability-Loss Detection in Toy Biological Interaction Systems
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
