@@ -21,9 +21,12 @@ uv run --with numpy --with matplotlib python experiments/dynamics/haos_core_dyna
 Useful options:
 
 - `--steps`: number of discrete dynamics steps.
+- `--mode scalar|rd`: scalar recovery dynamics or graph reaction-diffusion.
 - `--dt`: time-step size.
 - `--diffusion`: Laplacian-flow strength.
 - `--recovery-gain`: attraction back toward the frozen reference field.
+- `--rd-du`, `--rd-dv`, `--rd-feed`, `--rd-kill`: Gray-Scott-style graph
+  reaction-diffusion parameters.
 - `--perturbation-scale`: controlled local perturbation size.
 - `--damage-fraction`: optional edge damage applied after the baseline graph is
   built.
@@ -39,6 +42,16 @@ Generated outputs are ignored:
 - `recoverability_timeseries.png`
 - `invariant_drift.png`
 - `control_comparison.png`
+- `observed_final_pattern.png`
+
+Reaction-diffusion run:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/dynamics/haos_core_dynamics/run_haos_dynamics.py \
+  --mode rd \
+  --steps 300 \
+  --dt 0.4
+```
 
 ## Status Semantics
 

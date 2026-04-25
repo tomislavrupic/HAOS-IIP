@@ -32,9 +32,14 @@ class DynamicsConfig:
     output_dir: Path = ROOT / "outputs"
     seed: int = 20260425
     steps: int = 160
+    mode: str = "scalar"
     dt: float = 0.08
     diffusion: float = 0.55
     recovery_gain: float = 0.18
+    rd_du: float = 0.16
+    rd_dv: float = 0.08
+    rd_feed: float = 0.060
+    rd_kill: float = 0.062
     perturbation_step: int = 24
     perturbation_scale: float = 0.75
     damage_fraction: float = 0.0
@@ -85,20 +90,28 @@ def run_dynamics_probe(config: DynamicsConfig) -> DynamicsOutcome:
     reference = build_reference_field(graph.positions)
     perturbation_nodes = choose_perturbation_nodes(graph.positions, rng)
 
-    observed = run_single_dynamics("observed", graph.adjacency, reference, perturbation_nodes, config, rng)
-    controls = [
-        run_single_dynamics(
-            "state_shuffle_control",
-            graph.adjacency,
-            reference,
-            perturbation_nodes,
-            config,
-            rng,
-            initial_override=rng.permutation(reference),
-        ),
-        run_single_dynamics("edge_shuffle_control", edge_shuffle(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
-        run_single_dynamics("topology_randomization_control", topology_randomize(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
-    ]
+    if config.mode == "rd":
+        observed = run_single_rd("observed", graph.adjacency, reference, perturbation_nodes, config, rng)
+        controls = [
+            run_single_rd("state_shuffle_control", graph.adjacency, reference, perturbation_nodes, config, rng, seed_v_override=rng.permutation(reference)),
+            run_single_rd("edge_shuffle_control", edge_shuffle(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
+            run_single_rd("topology_randomization_control", topology_randomize(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
+        ]
+    else:
+        observed = run_single_dynamics("observed", graph.adjacency, reference, perturbation_nodes, config, rng)
+        controls = [
+            run_single_dynamics(
+                "state_shuffle_control",
+                graph.adjacency,
+                reference,
+                perturbation_nodes,
+                config,
+                rng,
+                initial_override=rng.permutation(reference),
+            ),
+            run_single_dynamics("edge_shuffle_control", edge_shuffle(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
+            run_single_dynamics("topology_randomization_control", topology_randomize(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
+        ]
     status = classify_status(graph, observed, controls)
     write_outputs(config.output_dir, graph, observed, controls, status)
     outcome_summary = dict(observed.summary)
@@ -184,11 +197,59 @@ def run_single_dynamics(
     return DynamicsRun(label, states, metrics, summary)
 
 
+def run_single_rd(
+    label: str,
+    adjacency: np.ndarray,
+    reference: np.ndarray,
+    perturbation_nodes: np.ndarray,
+    config: DynamicsConfig,
+    rng: np.random.Generator,
+    seed_v_override: np.ndarray | None = None,
+) -> DynamicsRun:
+    """Evolve a graph Gray-Scott reaction-diffusion trajectory."""
+
+    transition = build_transition(adjacency)
+    laplacian = np.eye(adjacency.shape[0], dtype=float) - transition
+    u = np.ones(reference.size, dtype=float)
+    seed_v = rescale_to_unit_interval(reference) if seed_v_override is None else rescale_to_unit_interval(seed_v_override)
+    v = 0.08 * seed_v
+    v[perturbation_nodes] += 0.22
+    v = np.clip(v, 0.0, 1.0)
+    states = np.zeros((config.steps + 1, reference.size), dtype=float)
+    states[0] = normalize_field(v, reference)
+
+    for step in range(1, config.steps + 1):
+        if step == config.perturbation_step:
+            v[perturbation_nodes] = np.clip(v[perturbation_nodes] + config.perturbation_scale * 0.20, 0.0, 1.0)
+        uvv = u * v * v
+        u_next = u - config.dt * config.rd_du * (laplacian @ u) - config.dt * uvv + config.dt * config.rd_feed * (1.0 - u)
+        v_next = v - config.dt * config.rd_dv * (laplacian @ v) + config.dt * uvv - config.dt * (config.rd_feed + config.rd_kill) * v
+        u = np.clip(u_next, 0.0, 1.5)
+        v = np.clip(v_next, 0.0, 1.5)
+        states[step] = normalize_field(v, reference)
+
+    metrics = compute_metrics(label, states, reference, adjacency, perturbation_nodes, config)
+    summary = summarize_metrics(label, metrics, config.perturbation_step)
+    summary["pattern_contrast"] = float(np.std(states[-1]))
+    summary["rd_u_mean"] = float(np.mean(u))
+    summary["rd_v_mean"] = float(np.mean(v))
+    return DynamicsRun(label, states, metrics, summary)
+
+
 def build_reference_field(positions: np.ndarray) -> np.ndarray:
     x = positions[:, 0]
     y = positions[:, 1] if positions.shape[1] > 1 else np.zeros_like(x)
     field = np.sin(2.0 * math.pi * x) + 0.55 * np.cos(2.0 * math.pi * y)
     return normalize_field(field, field)
+
+
+def rescale_to_unit_interval(values: np.ndarray) -> np.ndarray:
+    array = np.asarray(values, dtype=float)
+    low = float(np.min(array))
+    high = float(np.max(array))
+    if high <= low + EPS:
+        return np.zeros_like(array)
+    return (array - low) / (high - low)
 
 
 def choose_perturbation_nodes(positions: np.ndarray, rng: np.random.Generator) -> np.ndarray:
@@ -258,6 +319,7 @@ def summarize_metrics(
         "final_recoverability": float(recoverability[-1]),
         "min_recoverability": float(np.min(recoverability)),
         "max_invariant_drift": float(np.max(drift)),
+        "pattern_contrast": float(np.std(recoverability)),
         "min_delta_persistence": float(np.min(deltas)),
         "k_star_time": None if k_star is None else float(rows[k_star]["time"]),
         "recovered": bool(float(recoverability[-1]) >= RECOVERABILITY_FLOOR),
@@ -324,18 +386,19 @@ def write_report(path: Path, status: dict[str, Any], observed: DynamicsRun, cont
         f"- edges: {status['edges']}",
         f"- control_contrast: {status['control_contrast']}",
         "",
-        "| run | recoverability_score | final_recoverability | min_recoverability | max_invariant_drift | k_star_time | recovered | invariants_bounded |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | --- | --- |",
+        "| run | recoverability_score | final_recoverability | min_recoverability | max_invariant_drift | pattern_contrast | k_star_time | recovered | invariants_bounded |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |",
     ]
     for run in [observed, *controls]:
         summary = run.summary
         lines.append(
-            "| {run} | {score:.6f} | {final:.6f} | {minimum:.6f} | {drift:.6f} | {k_star} | {recovered} | {bounded} |".format(
+            "| {run} | {score:.6f} | {final:.6f} | {minimum:.6f} | {drift:.6f} | {pattern:.6f} | {k_star} | {recovered} | {bounded} |".format(
                 run=run.label,
                 score=float(summary["recoverability_score"]),
                 final=float(summary["final_recoverability"]),
                 minimum=float(summary["min_recoverability"]),
                 drift=float(summary["max_invariant_drift"]),
+                pattern=float(summary.get("pattern_contrast", 0.0)),
                 k_star=format_optional(summary["k_star_time"]),
                 recovered=summary["recovered"],
                 bounded=summary["invariants_bounded"],
@@ -398,6 +461,16 @@ def write_plots(output_dir: Path, observed: DynamicsRun, controls: list[Dynamics
     plt.title("Observed dynamics vs controls")
     plt.tight_layout()
     plt.savefig(output_dir / "control_comparison.png", dpi=160)
+    plt.close()
+
+    plt.figure(figsize=(8, 4))
+    final_state = observed.states[-1]
+    plt.scatter(range(final_state.size), final_state, s=18)
+    plt.xlabel("node index")
+    plt.ylabel("final field")
+    plt.title("Observed final pattern")
+    plt.tight_layout()
+    plt.savefig(output_dir / "observed_final_pattern.png", dpi=160)
     plt.close()
 
 
