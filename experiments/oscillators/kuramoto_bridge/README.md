@@ -31,9 +31,21 @@ Useful options:
 - `--steps`, `--dt`: integration horizon.
 - `--frequency-mode gaussian|custom`: natural-frequency source.
 - `--frequency-file`: newline or CSV numeric frequencies for custom mode.
+- `--proxy-mode generic|line_e_like`: choose the original global proxy
+  baseline or a graph-local Line E-style proxy.
 - `--higher-order`: enable deterministic triangle coupling.
 - `--max-nodes`: cap large HAOS artifacts for fast bridge runs.
 - `--output-dir`: write outputs somewhere else.
+
+Stronger local-coherence probe:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/oscillators/kuramoto_bridge/run_kuramoto_bridge.py \
+  --proxy-mode line_e_like \
+  --k-max 8 \
+  --k-count 25 \
+  --higher-order
+```
 
 ## Outputs
 
@@ -63,9 +75,29 @@ deterministic ring and reports `OPEN_NO_DATA_SYNTHETIC`.
 - `PASS`: observed HAOS proxies detect coherence earlier than standard `R`, and
   deterministic controls do not reproduce the same early-detection signature.
 - `MARGINAL`: observed signal is coherent but early detection or control
-  contrast is incomplete.
+  contrast is incomplete. In `line_e_like` mode, this can also mean graph-local
+  coherence precedes global `R` with control contrast, but recoverability itself
+  does not yet cross early enough for a full pass.
 - `FAIL`: proxies underperform or controls match the observed result.
 - `OPEN_NO_DATA_SYNTHETIC`: no HAOS graph source was available; synthetic output
   is a plumbing check only.
 
 These are bridge diagnostics, not physics claims.
+
+## Proxy Modes
+
+`generic` preserves the original baseline blend:
+
+- standard Kuramoto `R`
+- trajectory identity retention
+- global phase-coherence retention
+
+`line_e_like` shifts the sensor toward local recoverable structure:
+
+- weighted edge-local phase coherence
+- retention of the initial graph-edge phase signature
+- local-before-global timing against classic `R`
+
+This is still a proxy, not the exact Biology Line E function. The purpose is to
+make the failure more informative until the exact Line E recoverability function
+is ported in.

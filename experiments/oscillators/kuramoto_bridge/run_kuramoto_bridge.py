@@ -31,6 +31,12 @@ def parse_args() -> argparse.Namespace:
         help="Natural-frequency source.",
     )
     parser.add_argument("--frequency-file", type=Path, help="Numeric frequency file for custom mode.")
+    parser.add_argument(
+        "--proxy-mode",
+        choices=("generic", "line_e_like"),
+        default="generic",
+        help="HAOS proxy family used for recoverability diagnostics.",
+    )
     parser.add_argument("--higher-order", action="store_true", help="Enable deterministic triangle coupling.")
     parser.add_argument("--higher-order-strength", type=float, default=0.15, help="Triangle coupling strength.")
     return parser.parse_args()
@@ -52,6 +58,7 @@ def main() -> None:
         omega_std=args.omega_std,
         frequency_mode=args.frequency_mode,
         frequency_file=args.frequency_file,
+        proxy_mode=args.proxy_mode,
         higher_order=args.higher_order,
         higher_order_strength=args.higher_order_strength,
     )
@@ -60,6 +67,7 @@ def main() -> None:
     print(f"graph_source: {outcome.graph.source_label}")
     print(f"nodes: {outcome.graph.node_count}")
     print(f"edges: {outcome.graph.edge_count}")
+    print(f"proxy_mode: {outcome.primary_summary.get('proxy_mode')}")
     print(f"k_star_time: {outcome.primary_summary.get('k_star_time')}")
     print(f"early_detection: {outcome.primary_summary.get('early_detection')}")
     print(f"outputs: {outcome.output_dir}")

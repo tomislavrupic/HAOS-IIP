@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parent
 REPO_ROOT = ROOT.parent.parent.parent
 STRONG_SYNC_THRESHOLD = 0.82
 RECOVERABILITY_THRESHOLD = 0.72
+LOCAL_COHERENCE_THRESHOLD = 0.78
 SUSTAIN_STEPS = 2
 EPS = 1.0e-12
 
@@ -42,6 +43,7 @@ class KuramotoConfig:
     omega_std: float = 1.0
     frequency_mode: str = "gaussian"
     frequency_file: Path | None = None
+    proxy_mode: str = "generic"
     higher_order: bool = False
     higher_order_strength: float = 0.15
 
@@ -74,14 +76,17 @@ class SimulationResult:
 
     label: str
     k_value: float
+    proxy_mode: str
     times: np.ndarray
     phases: np.ndarray
     order_parameter: np.ndarray
+    local_coherence: np.ndarray
     recoverability: np.ndarray
     delta_persistence: np.ndarray
     trajectory_identity_retention: np.ndarray
     k_star_time: float | None
     r_star_time: float | None
+    local_star_time: float | None
     early_detection: bool
 
 
@@ -432,32 +437,61 @@ def simulate_kuramoto(
         phases[step] = wrap_phase(theta + config.dt * (omega + coupling))
         order[step] = kuramoto_order(phases[step])
 
-    recoverability, delta, identity = compute_haos_proxies(phases, order)
+    local_coherence, recoverability, delta, identity = compute_haos_proxies(phases, order, adjacency, config.proxy_mode)
     k_star = first_sustained_crossing(recoverability, RECOVERABILITY_THRESHOLD, mode="ge", sustain=SUSTAIN_STEPS)
     r_star = first_sustained_crossing(order, STRONG_SYNC_THRESHOLD, mode="ge", sustain=SUSTAIN_STEPS)
+    local_star = first_sustained_crossing(local_coherence, LOCAL_COHERENCE_THRESHOLD, mode="ge", sustain=SUSTAIN_STEPS)
     k_star_time = float(k_star * config.dt) if k_star is not None else None
     r_star_time = float(r_star * config.dt) if r_star is not None else None
+    local_star_time = float(local_star * config.dt) if local_star is not None else None
     early = k_star_time is not None and (r_star_time is None or k_star_time < r_star_time)
     return SimulationResult(
         label=label,
         k_value=k_value,
+        proxy_mode=config.proxy_mode,
         times=np.arange(config.steps + 1, dtype=float) * config.dt,
         phases=phases,
         order_parameter=order,
+        local_coherence=local_coherence,
         recoverability=recoverability,
         delta_persistence=delta,
         trajectory_identity_retention=identity,
         k_star_time=k_star_time,
         r_star_time=r_star_time,
+        local_star_time=local_star_time,
         early_detection=early,
     )
 
 
-def compute_haos_proxies(phases: np.ndarray, order: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    """Compute bounded HAOS-style proxies from phase trajectories."""
+def compute_haos_proxies(
+    phases: np.ndarray,
+    order: np.ndarray,
+    adjacency: np.ndarray,
+    proxy_mode: str,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """Compute bounded HAOS-style proxies from phase trajectories.
+
+    `generic` preserves the original global blend. `line_e_like` shifts the
+    sensor toward graph-local coherence and edge-signature retention, which is
+    closer to the Biology Line E posture: detect recoverable local structure
+    before requiring global visible synchronization.
+    """
+
+    if proxy_mode == "line_e_like":
+        return compute_line_e_like_proxies(phases, order, adjacency)
+    return compute_generic_proxies(phases, order, adjacency)
+
+
+def compute_generic_proxies(
+    phases: np.ndarray,
+    order: np.ndarray,
+    adjacency: np.ndarray,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """Original global recoverability blend, kept for baseline continuity."""
 
     node_count = phases.shape[1]
     initial_offsets = centered_phase_offsets(phases[0])
+    edge_coherence = edge_local_coherence_series(phases, adjacency)
     recoverability = np.zeros(phases.shape[0], dtype=float)
     identity = np.zeros(phases.shape[0], dtype=float)
 
@@ -465,12 +499,78 @@ def compute_haos_proxies(phases: np.ndarray, order: np.ndarray) -> tuple[np.ndar
         offsets = centered_phase_offsets(theta)
         retention = 1.0 - circular_rmse(offsets, initial_offsets) / math.pi
         identity[idx] = float(np.clip(retention, 0.0, 1.0))
-        local_coherence = float(np.mean(np.cos(offsets))) if node_count else 0.0
-        recoverability[idx] = float(np.clip(0.55 * order[idx] + 0.30 * identity[idx] + 0.15 * max(local_coherence, 0.0), 0.0, 1.0))
+        global_local_coherence = float(np.mean(np.cos(offsets))) if node_count else 0.0
+        recoverability[idx] = float(
+            np.clip(0.55 * order[idx] + 0.30 * identity[idx] + 0.15 * max(global_local_coherence, 0.0), 0.0, 1.0)
+        )
 
     delta = np.zeros_like(recoverability)
     delta[1:] = recoverability[1:] - recoverability[:-1]
-    return recoverability, delta, identity
+    return edge_coherence, recoverability, delta, identity
+
+
+def compute_line_e_like_proxies(
+    phases: np.ndarray,
+    order: np.ndarray,
+    adjacency: np.ndarray,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """Graph-local HAOS proxy family for local-before-global coherence tests."""
+
+    edge_i, edge_j, weights = weighted_edge_index(adjacency)
+    if len(edge_i) == 0:
+        return compute_generic_proxies(phases, order, adjacency)
+
+    initial_signature = np.cos(phases[0, edge_j] - phases[0, edge_i])
+    local_coherence = np.zeros(phases.shape[0], dtype=float)
+    identity = np.zeros(phases.shape[0], dtype=float)
+    recoverability = np.zeros(phases.shape[0], dtype=float)
+
+    for idx, theta in enumerate(phases):
+        edge_signature = np.cos(theta[edge_j] - theta[edge_i])
+        weighted_local = weighted_mean(edge_signature, weights)
+        local_coherence[idx] = float(np.clip(0.5 + 0.5 * weighted_local, 0.0, 1.0))
+        signature_distance = math.sqrt(weighted_mean((edge_signature - initial_signature) ** 2, weights))
+        identity[idx] = float(np.clip(1.0 - signature_distance / 2.0, 0.0, 1.0))
+        local_advantage = float(np.clip(local_coherence[idx] - order[idx], 0.0, 1.0))
+        recoverability[idx] = float(
+            np.clip(
+                0.50 * local_coherence[idx]
+                + 0.30 * identity[idx]
+                + 0.15 * order[idx]
+                + 0.05 * local_advantage,
+                0.0,
+                1.0,
+            )
+        )
+
+    delta = np.zeros_like(recoverability)
+    delta[1:] = recoverability[1:] - recoverability[:-1]
+    return local_coherence, recoverability, delta, identity
+
+
+def edge_local_coherence_series(phases: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
+    edge_i, edge_j, weights = weighted_edge_index(adjacency)
+    if len(edge_i) == 0:
+        return np.zeros(phases.shape[0], dtype=float)
+    values = np.zeros(phases.shape[0], dtype=float)
+    for idx, theta in enumerate(phases):
+        edge_signature = np.cos(theta[edge_j] - theta[edge_i])
+        values[idx] = float(np.clip(0.5 + 0.5 * weighted_mean(edge_signature, weights), 0.0, 1.0))
+    return values
+
+
+def weighted_edge_index(adjacency: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    edge_i, edge_j = np.triu_indices(adjacency.shape[0], k=1)
+    weights = adjacency[edge_i, edge_j]
+    mask = weights > 0.0
+    return edge_i[mask], edge_j[mask], weights[mask]
+
+
+def weighted_mean(values: np.ndarray, weights: np.ndarray) -> float:
+    total = float(np.sum(weights))
+    if total <= EPS:
+        return float(np.mean(values)) if values.size else 0.0
+    return float(np.sum(values * weights) / total)
 
 
 def centered_phase_offsets(theta: np.ndarray) -> np.ndarray:
@@ -505,18 +605,30 @@ def summarize_scan(simulations: list[SimulationResult]) -> dict[str, Any]:
     best = max(simulations, key=lambda item: float(item.order_parameter[-1]))
     earliest_proxy = min((sim for sim in simulations if sim.k_star_time is not None), key=lambda item: item.k_star_time, default=None)
     earliest_r = min((sim for sim in simulations if sim.r_star_time is not None), key=lambda item: item.r_star_time, default=None)
+    earliest_local = min((sim for sim in simulations if sim.local_star_time is not None), key=lambda item: item.local_star_time, default=None)
     early_count = sum(1 for sim in simulations if sim.early_detection)
+    local_before_global_count = sum(
+        1
+        for sim in simulations
+        if sim.local_star_time is not None and (sim.r_star_time is None or sim.local_star_time < sim.r_star_time)
+    )
     return {
+        "proxy_mode": simulations[0].proxy_mode,
         "best_k": best.k_value,
         "best_final_R": float(best.order_parameter[-1]),
+        "best_final_local_coherence": float(best.local_coherence[-1]),
         "best_final_recoverability": float(best.recoverability[-1]),
         "k_star_time": earliest_proxy.k_star_time if earliest_proxy else None,
         "r_star_time": earliest_r.r_star_time if earliest_r else None,
+        "local_star_time": earliest_local.local_star_time if earliest_local else None,
         "k_star_K": earliest_proxy.k_value if earliest_proxy else None,
         "r_star_K": earliest_r.k_value if earliest_r else None,
+        "local_star_K": earliest_local.k_value if earliest_local else None,
         "early_detection": bool(early_count > 0 and earliest_proxy is not None and (earliest_r is None or earliest_proxy.k_star_time < earliest_r.r_star_time)),
         "early_detection_count": early_count,
+        "local_before_global_count": local_before_global_count,
         "mean_final_R": float(np.mean([sim.order_parameter[-1] for sim in simulations])),
+        "mean_final_local_coherence": float(np.mean([sim.local_coherence[-1] for sim in simulations])),
         "mean_final_recoverability": float(np.mean([sim.recoverability[-1] for sim in simulations])),
         "min_delta_persistence": float(min(np.min(sim.delta_persistence) for sim in simulations)),
         "max_identity_retention": float(max(np.max(sim.trajectory_identity_retention) for sim in simulations)),
@@ -580,7 +692,10 @@ def classify_status(graph: GraphData, observed: ScanRun, controls: list[ScanRun]
     control_early_count = sum(1 for run in controls if bool(run.summary["early_detection"]))
     observed_early = bool(observed.summary["early_detection"])
     observed_sync = float(observed.summary["best_final_R"]) >= STRONG_SYNC_THRESHOLD
+    observed_local_before_global = int(observed.summary["local_before_global_count"]) > 0
     control_contrast = control_early_count == 0
+    local_control_count = sum(1 for run in controls if int(run.summary["local_before_global_count"]) > 0)
+    local_control_contrast = local_control_count == 0
 
     if graph.source_kind == "OPEN_NO_DATA_SYNTHETIC":
         bridge_status = "OPEN_NO_DATA_SYNTHETIC"
@@ -588,6 +703,9 @@ def classify_status(graph: GraphData, observed: ScanRun, controls: list[ScanRun]
     elif observed_early and control_contrast:
         bridge_status = "PASS"
         failure_mode = "OBSERVED_EARLY_DETECTION_WITH_CONTROL_CONTRAST"
+    elif observed_local_before_global and local_control_contrast:
+        bridge_status = "MARGINAL"
+        failure_mode = "LOCAL_COHERENCE_PRECEDES_GLOBAL_R_WITH_CONTROL_CONTRAST"
     elif observed_sync and control_contrast:
         bridge_status = "MARGINAL"
         failure_mode = "SYNC_WITHOUT_HAOS_EARLY_DETECTION"
@@ -608,9 +726,13 @@ def classify_status(graph: GraphData, observed: ScanRun, controls: list[ScanRun]
         "edges": graph.edge_count,
         "mean_degree": graph.mean_degree,
         "observed_early_detection": observed_early,
+        "observed_local_before_global": observed_local_before_global,
         "control_early_detection_count": control_early_count,
+        "local_control_before_global_count": local_control_count,
         "control_contrast": control_contrast,
+        "local_control_contrast": local_control_contrast,
         "strong_sync_threshold": STRONG_SYNC_THRESHOLD,
+        "local_coherence_threshold": LOCAL_COHERENCE_THRESHOLD,
         "recoverability_threshold": RECOVERABILITY_THRESHOLD,
     }
 
@@ -633,18 +755,21 @@ def write_probe_comparison(path: Path, status: dict[str, Any], observed: ScanRun
         f"- failure_mode: {status['failure_mode']}",
         f"- graph_source: {status['graph_source']}",
         f"- graph_source_kind: {status['graph_source_kind']}",
+        f"- proxy_mode: {observed.summary['proxy_mode']}",
         "",
-        "| run | best_K | best_final_R | best_final_recoverability | k_star_time | r_star_time | early_detection |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| run | best_K | best_final_R | best_final_local_coherence | best_final_recoverability | local_star_time | k_star_time | r_star_time | early_detection |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for run in runs:
         summary = run.summary
         lines.append(
-            "| {label} | {best_k:.6g} | {best_r:.6f} | {best_rec:.6f} | {kst} | {rst} | {early} |".format(
+            "| {label} | {best_k:.6g} | {best_r:.6f} | {best_local:.6f} | {best_rec:.6f} | {lst} | {kst} | {rst} | {early} |".format(
                 label=run.label,
                 best_k=float(summary["best_k"]),
                 best_r=float(summary["best_final_R"]),
+                best_local=float(summary["best_final_local_coherence"]),
                 best_rec=float(summary["best_final_recoverability"]),
+                lst=format_optional(summary["local_star_time"]),
                 kst=format_optional(summary["k_star_time"]),
                 rst=format_optional(summary["r_star_time"]),
                 early=summary["early_detection"],
@@ -656,9 +781,11 @@ def write_probe_comparison(path: Path, status: dict[str, Any], observed: ScanRun
             "## Metric Notes",
             "",
             "- `R` is the standard Kuramoto order parameter.",
-            "- `recoverability_score` combines order, trajectory identity retention, and local phase coherence.",
+            "- `local_coherence` is weighted edge-local phase coherence on the loaded graph.",
+            "- `recoverability_score` combines order, trajectory identity retention, and local phase coherence; in `line_e_like` mode the local terms dominate.",
             "- `delta_persistence` is the time derivative of recoverability.",
             "- `k_star_time` is the first sustained recoverability crossing.",
+            "- `local_star_time` is the first sustained graph-local coherence crossing.",
             "- `early_detection` means `k_star_time` occurs before the standard `R` crossing.",
             "",
             "## Boundary",
@@ -670,7 +797,19 @@ def write_probe_comparison(path: Path, status: dict[str, Any], observed: ScanRun
 
 
 def write_probe_csv(path: Path, observed: ScanRun, controls: list[ScanRun]) -> None:
-    fields = ["run", "best_K", "best_final_R", "best_final_recoverability", "k_star_time", "r_star_time", "early_detection"]
+    fields = [
+        "run",
+        "proxy_mode",
+        "best_K",
+        "best_final_R",
+        "best_final_local_coherence",
+        "best_final_recoverability",
+        "local_star_time",
+        "k_star_time",
+        "r_star_time",
+        "early_detection",
+        "local_before_global_count",
+    ]
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
@@ -679,12 +818,16 @@ def write_probe_csv(path: Path, observed: ScanRun, controls: list[ScanRun]) -> N
             writer.writerow(
                 {
                     "run": run.label,
+                    "proxy_mode": summary["proxy_mode"],
                     "best_K": summary["best_k"],
                     "best_final_R": summary["best_final_R"],
+                    "best_final_local_coherence": summary["best_final_local_coherence"],
                     "best_final_recoverability": summary["best_final_recoverability"],
+                    "local_star_time": summary["local_star_time"],
                     "k_star_time": summary["k_star_time"],
                     "r_star_time": summary["r_star_time"],
                     "early_detection": summary["early_detection"],
+                    "local_before_global_count": summary["local_before_global_count"],
                 }
             )
 
@@ -695,14 +838,17 @@ def write_failure_analysis(path: Path, status: dict[str, Any], observed: ScanRun
         "",
         f"- bridge_status: {status['bridge_status']}",
         f"- failure_mode: {status['failure_mode']}",
+        f"- proxy_mode: {observed.summary['proxy_mode']}",
         f"- observed_early_detection: {observed.summary['early_detection']}",
+        f"- observed_local_before_global: {status['observed_local_before_global']}",
         f"- control_early_detection_count: {status['control_early_detection_count']}",
+        f"- local_control_before_global_count: {status['local_control_before_global_count']}",
         "",
     ]
     if status["bridge_status"] == "PASS":
         lines.append("The observed run shows HAOS-proxy early detection and the controls do not reproduce it.")
     elif status["bridge_status"] == "MARGINAL":
-        lines.append("The oscillator field synchronizes, but the HAOS proxies do not clearly beat the classic order parameter.")
+        lines.append("A bounded partial signal appeared, but it is not yet strong enough for a PASS.")
     elif status["bridge_status"] == "OPEN_NO_DATA_SYNTHETIC":
         lines.append("No HAOS graph artifact was available. The run is a deterministic plumbing check, not a bridge result.")
     elif status["failure_mode"] == "CONTROL_MATCHED_EARLY_DETECTION":
@@ -741,6 +887,7 @@ def write_plots(output_dir: Path, observed: ScanRun, controls: list[ScanRun]) ->
 
     plt.figure(figsize=(8, 4))
     plt.plot(best.times, best.order_parameter, label="R")
+    plt.plot(best.times, best.local_coherence, label="local_coherence")
     plt.plot(best.times, best.recoverability, label="recoverability_score")
     plt.plot(best.times, best.trajectory_identity_retention, label="trajectory_identity_retention")
     plt.plot(best.times, best.delta_persistence, label="delta_persistence")
