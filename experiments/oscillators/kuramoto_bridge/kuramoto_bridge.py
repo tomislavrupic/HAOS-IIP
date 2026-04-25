@@ -46,6 +46,7 @@ class KuramotoConfig:
     proxy_mode: str = "generic"
     higher_order: bool = False
     higher_order_strength: float = 0.15
+    permutation_trials: int = 32
 
 
 @dataclass(frozen=True)
@@ -87,6 +88,7 @@ class SimulationResult:
     k_star_time: float | None
     r_star_time: float | None
     local_star_time: float | None
+    edge_signature_specificity: dict[str, float | bool]
     early_detection: bool
 
 
@@ -444,6 +446,12 @@ def simulate_kuramoto(
     k_star_time = float(k_star * config.dt) if k_star is not None else None
     r_star_time = float(r_star * config.dt) if r_star is not None else None
     local_star_time = float(local_star * config.dt) if local_star is not None else None
+    specificity_test = run_permutation_specificity_test(
+        phases,
+        adjacency,
+        n_trials=config.permutation_trials,
+        seed=config.seed + int(round(1000.0 * k_value)) + stable_label_offset(label),
+    )
     early = k_star_time is not None and (r_star_time is None or k_star_time < r_star_time)
     return SimulationResult(
         label=label,
@@ -459,6 +467,7 @@ def simulate_kuramoto(
         k_star_time=k_star_time,
         r_star_time=r_star_time,
         local_star_time=local_star_time,
+        edge_signature_specificity=specificity_test,
         early_detection=early,
     )
 
@@ -573,6 +582,69 @@ def weighted_mean(values: np.ndarray, weights: np.ndarray) -> float:
     return float(np.sum(values * weights) / total)
 
 
+def compute_edge_signature_retention(phases: np.ndarray, adjacency: np.ndarray, t_idx: int = -1) -> float:
+    """Measure retention of the initial edge phase-signature at a trajectory index."""
+
+    edge_i, edge_j, weights = weighted_edge_index(adjacency)
+    if len(edge_i) < 5:
+        return 0.0
+    initial_signature = np.sin(phases[0, edge_j] - phases[0, edge_i])
+    current_signature = np.sin(phases[t_idx, edge_j] - phases[t_idx, edge_i])
+    signature_distance = math.sqrt(weighted_mean((current_signature - initial_signature) ** 2, weights))
+    return float(np.clip(1.0 - signature_distance / 2.0, 0.0, 1.0))
+
+
+def run_permutation_specificity_test(
+    phases: np.ndarray,
+    adjacency: np.ndarray,
+    n_trials: int = 32,
+    t_idx: int = -1,
+    seed: int = 42,
+) -> dict[str, float | bool]:
+    """Test whether edge-signature retention beats shuffled edge identities."""
+
+    edge_i, edge_j, weights = weighted_edge_index(adjacency)
+    if len(edge_i) < 5 or n_trials <= 0:
+        observed = compute_edge_signature_retention(phases, adjacency, t_idx)
+        return {
+            "observed_retention": float(observed),
+            "null_mean": 0.0,
+            "null_std": 0.0,
+            "z_score": 0.0,
+            "p_value": 1.0,
+            "specificity_pass": False,
+        }
+
+    rng = np.random.default_rng(seed)
+    initial_signature = np.sin(phases[0, edge_j] - phases[0, edge_i])
+    current_signature = np.sin(phases[t_idx, edge_j] - phases[t_idx, edge_i])
+    observed = compute_edge_signature_retention(phases, adjacency, t_idx)
+
+    nulls = np.zeros(n_trials, dtype=float)
+    for idx in range(n_trials):
+        shuffled_initial = rng.permutation(initial_signature)
+        signature_distance = math.sqrt(weighted_mean((current_signature - shuffled_initial) ** 2, weights))
+        nulls[idx] = float(np.clip(1.0 - signature_distance / 2.0, 0.0, 1.0))
+
+    mean_null = float(np.mean(nulls))
+    std_null = float(np.std(nulls))
+    effective_std = std_null if std_null > 1.0e-8 else 1.0
+    z_score = float((observed - mean_null) / effective_std)
+    p_value = float((np.count_nonzero(nulls >= observed) + 1) / (n_trials + 1))
+    return {
+        "observed_retention": float(observed),
+        "null_mean": mean_null,
+        "null_std": std_null,
+        "z_score": z_score,
+        "p_value": p_value,
+        "specificity_pass": bool(p_value < 0.05 and z_score > 1.5),
+    }
+
+
+def stable_label_offset(label: str) -> int:
+    return sum((idx + 1) * ord(char) for idx, char in enumerate(label))
+
+
 def centered_phase_offsets(theta: np.ndarray) -> np.ndarray:
     mean_angle = math.atan2(float(np.mean(np.sin(theta))), float(np.mean(np.cos(theta))))
     return wrap_phase(theta - mean_angle)
@@ -607,6 +679,8 @@ def summarize_scan(simulations: list[SimulationResult]) -> dict[str, Any]:
     earliest_r = min((sim for sim in simulations if sim.r_star_time is not None), key=lambda item: item.r_star_time, default=None)
     earliest_local = min((sim for sim in simulations if sim.local_star_time is not None), key=lambda item: item.local_star_time, default=None)
     early_count = sum(1 for sim in simulations if sim.early_detection)
+    specificity_pass_count = sum(1 for sim in simulations if bool(sim.edge_signature_specificity["specificity_pass"]))
+    best_specificity = max(simulations, key=lambda item: float(item.edge_signature_specificity["z_score"]))
     local_before_global_count = sum(
         1
         for sim in simulations
@@ -626,6 +700,13 @@ def summarize_scan(simulations: list[SimulationResult]) -> dict[str, Any]:
         "local_star_K": earliest_local.k_value if earliest_local else None,
         "early_detection": bool(early_count > 0 and earliest_proxy is not None and (earliest_r is None or earliest_proxy.k_star_time < earliest_r.r_star_time)),
         "early_detection_count": early_count,
+        "edge_signature_retention": best_specificity.edge_signature_specificity["observed_retention"],
+        "edge_signature_specificity_p": best_specificity.edge_signature_specificity["p_value"],
+        "edge_signature_specificity_z": best_specificity.edge_signature_specificity["z_score"],
+        "edge_signature_null_mean": best_specificity.edge_signature_specificity["null_mean"],
+        "specificity_pass": bool(specificity_pass_count > 0),
+        "specificity_pass_count": specificity_pass_count,
+        "specificity_best_K": best_specificity.k_value,
         "local_before_global_count": local_before_global_count,
         "mean_final_R": float(np.mean([sim.order_parameter[-1] for sim in simulations])),
         "mean_final_local_coherence": float(np.mean([sim.local_coherence[-1] for sim in simulations])),
@@ -693,19 +774,25 @@ def classify_status(graph: GraphData, observed: ScanRun, controls: list[ScanRun]
     observed_early = bool(observed.summary["early_detection"])
     observed_sync = float(observed.summary["best_final_R"]) >= STRONG_SYNC_THRESHOLD
     observed_local_before_global = int(observed.summary["local_before_global_count"]) > 0
+    observed_specificity = bool(observed.summary["specificity_pass"])
     control_contrast = control_early_count == 0
+    specificity_control_count = sum(1 for run in controls if bool(run.summary["specificity_pass"]))
+    specificity_control_contrast = specificity_control_count == 0
     local_control_count = sum(1 for run in controls if int(run.summary["local_before_global_count"]) > 0)
     local_control_contrast = local_control_count == 0
 
     if graph.source_kind == "OPEN_NO_DATA_SYNTHETIC":
         bridge_status = "OPEN_NO_DATA_SYNTHETIC"
         failure_mode = "NO_HAOS_GRAPH_ARTIFACT_FOUND"
-    elif observed_early and control_contrast:
+    elif observed_early and observed_specificity and control_contrast and specificity_control_contrast:
         bridge_status = "PASS"
-        failure_mode = "OBSERVED_EARLY_DETECTION_WITH_CONTROL_CONTRAST"
-    elif observed_local_before_global and local_control_contrast:
+        failure_mode = "OBSERVED_EARLY_DETECTION_WITH_SPECIFICITY_AND_CONTROL_CONTRAST"
+    elif observed_early and not observed_specificity:
+        bridge_status = "FAIL"
+        failure_mode = "EARLY_DETECTION_WITHOUT_EDGE_SIGNATURE_SPECIFICITY"
+    elif observed_local_before_global and observed_specificity and local_control_contrast and specificity_control_contrast:
         bridge_status = "MARGINAL"
-        failure_mode = "LOCAL_COHERENCE_PRECEDES_GLOBAL_R_WITH_CONTROL_CONTRAST"
+        failure_mode = "SPECIFIC_LOCAL_COHERENCE_PRECEDES_GLOBAL_R"
     elif observed_sync and control_contrast:
         bridge_status = "MARGINAL"
         failure_mode = "SYNC_WITHOUT_HAOS_EARLY_DETECTION"
@@ -727,9 +814,12 @@ def classify_status(graph: GraphData, observed: ScanRun, controls: list[ScanRun]
         "mean_degree": graph.mean_degree,
         "observed_early_detection": observed_early,
         "observed_local_before_global": observed_local_before_global,
+        "observed_specificity_pass": observed_specificity,
         "control_early_detection_count": control_early_count,
+        "specificity_control_pass_count": specificity_control_count,
         "local_control_before_global_count": local_control_count,
         "control_contrast": control_contrast,
+        "specificity_control_contrast": specificity_control_contrast,
         "local_control_contrast": local_control_contrast,
         "strong_sync_threshold": STRONG_SYNC_THRESHOLD,
         "local_coherence_threshold": LOCAL_COHERENCE_THRESHOLD,
@@ -757,13 +847,13 @@ def write_probe_comparison(path: Path, status: dict[str, Any], observed: ScanRun
         f"- graph_source_kind: {status['graph_source_kind']}",
         f"- proxy_mode: {observed.summary['proxy_mode']}",
         "",
-        "| run | best_K | best_final_R | best_final_local_coherence | best_final_recoverability | local_star_time | k_star_time | r_star_time | early_detection |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| run | best_K | best_final_R | best_final_local_coherence | best_final_recoverability | local_star_time | k_star_time | r_star_time | early_detection | specificity_p | specificity_z | specificity_pass |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |",
     ]
     for run in runs:
         summary = run.summary
         lines.append(
-            "| {label} | {best_k:.6g} | {best_r:.6f} | {best_local:.6f} | {best_rec:.6f} | {lst} | {kst} | {rst} | {early} |".format(
+            "| {label} | {best_k:.6g} | {best_r:.6f} | {best_local:.6f} | {best_rec:.6f} | {lst} | {kst} | {rst} | {early} | {spec_p:.6g} | {spec_z:.6f} | {spec_pass} |".format(
                 label=run.label,
                 best_k=float(summary["best_k"]),
                 best_r=float(summary["best_final_R"]),
@@ -773,6 +863,9 @@ def write_probe_comparison(path: Path, status: dict[str, Any], observed: ScanRun
                 kst=format_optional(summary["k_star_time"]),
                 rst=format_optional(summary["r_star_time"]),
                 early=summary["early_detection"],
+                spec_p=float(summary["edge_signature_specificity_p"]),
+                spec_z=float(summary["edge_signature_specificity_z"]),
+                spec_pass=summary["specificity_pass"],
             )
         )
     lines.extend(
@@ -786,6 +879,7 @@ def write_probe_comparison(path: Path, status: dict[str, Any], observed: ScanRun
             "- `delta_persistence` is the time derivative of recoverability.",
             "- `k_star_time` is the first sustained recoverability crossing.",
             "- `local_star_time` is the first sustained graph-local coherence crossing.",
+            "- `edge_signature_specificity_p/z` compare observed edge-signature retention against shuffled edge-identity nulls.",
             "- `early_detection` means `k_star_time` occurs before the standard `R` crossing.",
             "",
             "## Boundary",
@@ -809,6 +903,11 @@ def write_probe_csv(path: Path, observed: ScanRun, controls: list[ScanRun]) -> N
         "r_star_time",
         "early_detection",
         "local_before_global_count",
+        "edge_signature_retention",
+        "edge_signature_specificity_p",
+        "edge_signature_specificity_z",
+        "specificity_pass",
+        "specificity_pass_count",
     ]
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
@@ -828,6 +927,11 @@ def write_probe_csv(path: Path, observed: ScanRun, controls: list[ScanRun]) -> N
                     "r_star_time": summary["r_star_time"],
                     "early_detection": summary["early_detection"],
                     "local_before_global_count": summary["local_before_global_count"],
+                    "edge_signature_retention": summary["edge_signature_retention"],
+                    "edge_signature_specificity_p": summary["edge_signature_specificity_p"],
+                    "edge_signature_specificity_z": summary["edge_signature_specificity_z"],
+                    "specificity_pass": summary["specificity_pass"],
+                    "specificity_pass_count": summary["specificity_pass_count"],
                 }
             )
 
@@ -841,8 +945,12 @@ def write_failure_analysis(path: Path, status: dict[str, Any], observed: ScanRun
         f"- proxy_mode: {observed.summary['proxy_mode']}",
         f"- observed_early_detection: {observed.summary['early_detection']}",
         f"- observed_local_before_global: {status['observed_local_before_global']}",
+        f"- observed_specificity_pass: {status['observed_specificity_pass']}",
         f"- control_early_detection_count: {status['control_early_detection_count']}",
+        f"- specificity_control_pass_count: {status['specificity_control_pass_count']}",
         f"- local_control_before_global_count: {status['local_control_before_global_count']}",
+        f"- edge_signature_specificity_p: {observed.summary['edge_signature_specificity_p']}",
+        f"- edge_signature_specificity_z: {observed.summary['edge_signature_specificity_z']}",
         "",
     ]
     if status["bridge_status"] == "PASS":

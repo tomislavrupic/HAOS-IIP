@@ -33,6 +33,8 @@ Useful options:
 - `--frequency-file`: newline or CSV numeric frequencies for custom mode.
 - `--proxy-mode generic|line_e_like`: choose the original global proxy
   baseline or a graph-local Line E-style proxy.
+- `--permutation-trials`: edge-signature permutation trials for specificity
+  testing.
 - `--higher-order`: enable deterministic triangle coupling.
 - `--max-nodes`: cap large HAOS artifacts for fast bridge runs.
 - `--output-dir`: write outputs somewhere else.
@@ -44,7 +46,8 @@ uv run --with numpy --with matplotlib python experiments/oscillators/kuramoto_br
   --proxy-mode line_e_like \
   --k-max 8 \
   --k-count 25 \
-  --higher-order
+  --higher-order \
+  --permutation-trials 64
 ```
 
 ## Outputs
@@ -97,7 +100,24 @@ These are bridge diagnostics, not physics claims.
 - weighted edge-local phase coherence
 - retention of the initial graph-edge phase signature
 - local-before-global timing against classic `R`
+- permutation specificity against shuffled edge-signature identities
 
 This is still a proxy, not the exact Biology Line E function. The purpose is to
 make the failure more informative until the exact Line E recoverability function
 is ported in.
+
+## Specificity Test
+
+The edge-signature permutation test asks whether the observed trajectory
+preserves the graph's initial edge phase-signature better than shuffled
+edge-identity nulls.
+
+Reported fields:
+
+- `edge_signature_retention`
+- `edge_signature_specificity_p`
+- `edge_signature_specificity_z`
+- `specificity_pass`
+
+A `line_e_like` PASS requires early detection, observed specificity, and control
+contrast. Sensitivity without specificity remains a FAIL.

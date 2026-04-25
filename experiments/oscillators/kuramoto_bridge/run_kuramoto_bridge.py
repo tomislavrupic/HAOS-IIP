@@ -39,6 +39,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--higher-order", action="store_true", help="Enable deterministic triangle coupling.")
     parser.add_argument("--higher-order-strength", type=float, default=0.15, help="Triangle coupling strength.")
+    parser.add_argument(
+        "--permutation-trials",
+        type=int,
+        default=32,
+        help="Number of edge-signature permutation trials for specificity test.",
+    )
     return parser.parse_args()
 
 
@@ -61,6 +67,7 @@ def main() -> None:
         proxy_mode=args.proxy_mode,
         higher_order=args.higher_order,
         higher_order_strength=args.higher_order_strength,
+        permutation_trials=args.permutation_trials,
     )
     outcome = run_bridge(config)
     print(f"bridge_status: {outcome.status}")
@@ -68,6 +75,7 @@ def main() -> None:
     print(f"nodes: {outcome.graph.node_count}")
     print(f"edges: {outcome.graph.edge_count}")
     print(f"proxy_mode: {outcome.primary_summary.get('proxy_mode')}")
+    print(f"specificity_pass: {outcome.primary_summary.get('specificity_pass')}")
     print(f"k_star_time: {outcome.primary_summary.get('k_star_time')}")
     print(f"early_detection: {outcome.primary_summary.get('early_detection')}")
     print(f"outputs: {outcome.output_dir}")
