@@ -1,0 +1,253 @@
+{
+  "check_status": "PASS",
+  "checks": [
+    {
+      "detail": "expected PROBE_FAIL_NO_EARLY_DETECTION, got PROBE_FAIL_NO_EARLY_DETECTION",
+      "metric": "bridge_status",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "expected True, got True",
+      "metric": "baseline_stable",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "expected False, got False",
+      "metric": "early_detection",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "expected control count 0, got 0",
+      "metric": "control_contrast",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "expected NO_PRE_VISIBLE_POST_BASELINE_SAMPLE, got NO_PRE_VISIBLE_POST_BASELINE_SAMPLE",
+      "metric": "failure_mode",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds112/bridge_status.json",
+      "metric": "artifact:bridge_status.json",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds112/results.csv",
+      "metric": "artifact:results.csv",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds112/standard_expression_metrics.csv",
+      "metric": "artifact:standard_expression_metrics.csv",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds112/metric_decomposition.csv",
+      "metric": "artifact:metric_decomposition.csv",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds112/control_summary.csv",
+      "metric": "artifact:control_summary.csv",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds112/failure_analysis.md",
+      "metric": "artifact:failure_analysis.md",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds112/external_dataset_bridge_validation.md",
+      "metric": "artifact:external_dataset_bridge_validation.md",
+      "passed": true,
+      "run_id": "gds112"
+    },
+    {
+      "detail": "expected PROBE_PASS_WITH_CONTROLS, got PROBE_PASS_WITH_CONTROLS",
+      "metric": "bridge_status",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "expected True, got True",
+      "metric": "baseline_stable",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "expected True, got True",
+      "metric": "early_detection",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "expected control count 0, got 0",
+      "metric": "control_contrast",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "expected OBSERVED_EARLY_DETECTION_WINDOW, got OBSERVED_EARLY_DETECTION_WINDOW",
+      "metric": "failure_mode",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "k_star_index=1, first_visible_failure_index=2",
+      "metric": "k_star_before_visible",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20/bridge_status.json",
+      "metric": "artifact:bridge_status.json",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20/results.csv",
+      "metric": "artifact:results.csv",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20/standard_expression_metrics.csv",
+      "metric": "artifact:standard_expression_metrics.csv",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20/metric_decomposition.csv",
+      "metric": "artifact:metric_decomposition.csv",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20/control_summary.csv",
+      "metric": "artifact:control_summary.csv",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20/failure_analysis.md",
+      "metric": "artifact:failure_analysis.md",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20/external_dataset_bridge_validation.md",
+      "metric": "artifact:external_dataset_bridge_validation.md",
+      "passed": true,
+      "run_id": "gds20"
+    },
+    {
+      "detail": "expected PROBE_PASS_WITH_CONTROLS, got PROBE_PASS_WITH_CONTROLS",
+      "metric": "bridge_status",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "expected True, got True",
+      "metric": "baseline_stable",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "expected True, got True",
+      "metric": "early_detection",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "expected control count 0, got 0",
+      "metric": "control_contrast",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "expected OBSERVED_EARLY_DETECTION_WINDOW, got OBSERVED_EARLY_DETECTION_WINDOW",
+      "metric": "failure_mode",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "k_star_index=1, first_visible_failure_index=2",
+      "metric": "k_star_before_visible",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "expected GENE_SET_EVALUATED, got GENE_SET_EVALUATED",
+      "metric": "gene_set_status",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "expected at least 5, got 10",
+      "metric": "matched_gene_count",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "haos_beats_fold_change=True, margin=0.10119419728911083, minimum=0.02",
+      "metric": "gene_set_comparator",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20_go_0006970/bridge_status.json",
+      "metric": "artifact:bridge_status.json",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20_go_0006970/results.csv",
+      "metric": "artifact:results.csv",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20_go_0006970/standard_expression_metrics.csv",
+      "metric": "artifact:standard_expression_metrics.csv",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20_go_0006970/metric_decomposition.csv",
+      "metric": "artifact:metric_decomposition.csv",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20_go_0006970/control_summary.csv",
+      "metric": "artifact:control_summary.csv",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20_go_0006970/failure_analysis.md",
+      "metric": "artifact:failure_analysis.md",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    },
+    {
+      "detail": "experiments/biology/external_dataset_bridge/outputs/gds20_go_0006970/external_dataset_bridge_validation.md",
+      "metric": "artifact:external_dataset_bridge_validation.md",
+      "passed": true,
+      "run_id": "gds20_go_0006970"
+    }
+  ],
+  "checks_passed": 41,
+  "checks_total": 41
+}

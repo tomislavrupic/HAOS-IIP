@@ -1,4 +1,4 @@
-dataset,source,bridge_status,baseline_stable,k_star_time,first_visible_failure_time,early_detection,contrast_pass,control_early_detection_count,gene_set_status,failure_mode,interpretation
-GDS112,Heat shock from 30 C to 37 C,PROBE_FAIL_NO_EARLY_DETECTION,True,5.0,5.0,False,False,0,OPEN_GENE_SET_NOT_SUPPLIED,NO_PRE_VISIBLE_POST_BASELINE_SAMPLE,Visible expression-pattern proxy fires at first post-baseline sample; no measured pre-visible window.
-GDS20,Hyper-osmotic shock time course,PROBE_PASS_WITH_CONTROLS,True,5.0,15.0,True,True,0,OPEN_GENE_SET_NOT_SUPPLIED,OBSERVED_EARLY_DETECTION_WINDOW,Observed k_star occurs before visible proxy and deterministic controls do not match.
-GDS20_GO_0006970,Hyper-osmotic shock with sourced GO:0006970 comparator,PROBE_PASS_WITH_CONTROLS,True,5.0,15.0,True,True,0,GENE_SET_EVALUATED,OBSERVED_EARLY_DETECTION_WINDOW,HAOS feature ranking beats simple fold-change average precision on matched direct GO:0006970 genes.
+dataset,bridge_status,k_star_time,first_visible_failure_time,early_detection,contrast_pass,control_early_detection_count,gene_set_status,haos_average_precision,fold_change_average_precision,average_precision_margin
+gds112,PROBE_FAIL_NO_EARLY_DETECTION,5.0,5.0,False,False,0,OPEN_GENE_SET_NOT_SUPPLIED,,,
+gds20,PROBE_PASS_WITH_CONTROLS,5.0,15.0,True,True,0,OPEN_GENE_SET_NOT_SUPPLIED,,,
+gds20_go_0006970,PROBE_PASS_WITH_CONTROLS,5.0,15.0,True,True,0,GENE_SET_EVALUATED,0.14409276508511915,0.04289856779600831,0.10119419728911083

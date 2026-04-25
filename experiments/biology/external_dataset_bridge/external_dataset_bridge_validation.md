@@ -42,8 +42,8 @@ A probe pass requires observed early detection and zero matching early-detection
 ## Failure Analysis
 - failure_mode: NO_PRE_VISIBLE_POST_BASELINE_SAMPLE
 - interpretation: The visible-failure proxy fires at the first post-baseline sample, so this dataset has no measured pre-visible window for early detection.
-- recoverability_expression_match_correlation: 0.9930193053326482
-- first_standard_large_change_time: 5.0
+- recoverability_expression_match_correlation: 0.991822696285575
+- first_standard_large_change_time: 15.0
 
 ## Post-Mortem
 The GDS112 probe failed because recoverability collapse and the visible expression-pattern proxy both occur at 5 minutes. The bridge therefore did not provide an earlier warning than direct expression-pattern movement.
@@ -68,6 +68,21 @@ Exploratory GDS20 hyper-osmotic shock result:
 - gene_set_status: OPEN_GENE_SET_NOT_SUPPLIED
 
 This repaired pass does not erase the GDS112 failure. It shows that the bridge can pass on a different external stress-response time course when a measured pre-visible window exists and controls do not match.
+
+## Quick Reproduction
+The lab-facing reproduction command is:
+
+```bash
+python3 experiments/biology/external_dataset_bridge/quick_reproduce.py --check
+```
+
+Current audit result:
+
+- quick_reproduce_check: PASS
+- runs_checked: 3
+- checks_passed: 41/41
+
+This audit passing does not turn GDS112 into a positive probe. It confirms that the expected bounded outcomes reproduce: GDS112 remains an honest negative, GDS20 remains the external control-checked pass, and GDS20 plus direct `GO:0006970` remains the narrow gene-set comparator pass.
 
 ## GO:0006970 Comparator
 A sourced direct SGD/GO gene set was added for `GO:0006970` response to osmotic stress.

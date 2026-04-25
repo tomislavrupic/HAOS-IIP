@@ -43,6 +43,24 @@ Failure conditions:
 - HAOS feature ranking fails to beat simple fold-change against a supplied curated gene set
 - the report implies biological failure where only an expression proxy exists
 
+## Lab Reproduction Contract
+
+Biology Line E now ships a bounded one-command reproducer:
+
+```bash
+python3 experiments/biology/external_dataset_bridge/quick_reproduce.py --check
+```
+
+`--check` audits existing outputs without network access, credentials, numpy, or matplotlib. A full run without `--check` downloads public GEO SOFT files into ignored `data/raw/`, records input digests, reruns the bounded probes, and audits the refreshed outputs.
+
+Digitized inputs and expected bounded outcomes are declared in `input_manifest.json`.
+
+The audit is allowed to pass while GDS112 remains a failed probe because the expected result is an honest negative:
+
+- GDS112 must reproduce `PROBE_FAIL_NO_EARLY_DETECTION`.
+- GDS20 must reproduce `PROBE_PASS_WITH_CONTROLS`.
+- GDS20 plus direct `GO:0006970` must reproduce the narrow gene-set comparator pass.
+
 ## Current v0.1 Probe Status
 
 The first GDS112 run is a negative/open external result:

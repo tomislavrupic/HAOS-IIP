@@ -1,0 +1,101 @@
+{
+  "manifest_id": "biology-line-e-external-dataset-bridge-v0.1",
+  "purpose": "Digitized public inputs and bounded reproduction expectations for Biology Line E.",
+  "no_credentials_required": true,
+  "raw_inputs": [
+    {
+      "id": "gds112",
+      "title": "GDS112 yeast heat shock time course",
+      "kind": "geo_soft_gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/datasets/GDSnnn/GDS112/soft/GDS112.soft.gz",
+      "local_path": "data/raw/GDS112.soft.gz",
+      "geo_page": "https://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS112",
+      "series_page": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18",
+      "expected_value_type": "log ratio",
+      "expected_samples": ["0 minute", "5 minute", "15 minute", "30 minute", "60 minute"],
+      "sha256": null,
+      "sha256_note": "Raw GEO input is downloaded from public GEO FTP at reproduction time and digested into outputs/input_digests.json."
+    },
+    {
+      "id": "gds20",
+      "title": "GDS20 yeast hyper-osmotic shock time course",
+      "kind": "geo_soft_gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/datasets/GDSnnn/GDS20/soft/GDS20.soft.gz",
+      "local_path": "data/raw/GDS20.soft.gz",
+      "geo_page": "https://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS20",
+      "expected_value_type": "log ratio",
+      "expected_samples": ["5 minute", "15 minute", "30 minute", "45 minute", "60 minute", "90 minute"],
+      "sha256": null,
+      "sha256_note": "Raw GEO input is downloaded from public GEO FTP at reproduction time and digested into outputs/input_digests.json."
+    }
+  ],
+  "reference_inputs": [
+    {
+      "id": "go_0006970_osmotic_stress",
+      "title": "Direct SGD/GO response to osmotic stress genes",
+      "kind": "newline_gene_set",
+      "local_path": "data/reference/GO_0006970_response_to_osmotic_stress_sgd_genes.txt",
+      "source_url": "https://current.geneontology.org/annotations/sgd.gaf.gz",
+      "source_term": "GO:0006970",
+      "extraction_rule": "Direct GO:0006970 annotations only; NOT qualifiers excluded.",
+      "expected_gene_count": 24,
+      "sha256": "de9030b5deace35b1f68a628a51edd6dc3b4779c45007c6731826d5ac5b38ba9"
+    }
+  ],
+  "bounded_runs": [
+    {
+      "id": "gds112",
+      "input_id": "gds112",
+      "output_dir": "outputs/gds112",
+      "validation_path": "outputs/gds112/external_dataset_bridge_validation.md",
+      "expected": {
+        "bridge_status": "PROBE_FAIL_NO_EARLY_DETECTION",
+        "baseline_stable": true,
+        "early_detection": false,
+        "control_early_detection_count": 0,
+        "failure_mode": "NO_PRE_VISIBLE_POST_BASELINE_SAMPLE",
+        "interpretation": "Expected honest negative: heat-shock visible proxy fires at the first post-baseline sample."
+      }
+    },
+    {
+      "id": "gds20",
+      "input_id": "gds20",
+      "output_dir": "outputs/gds20",
+      "validation_path": "outputs/gds20/external_dataset_bridge_validation.md",
+      "expected": {
+        "bridge_status": "PROBE_PASS_WITH_CONTROLS",
+        "baseline_stable": true,
+        "early_detection": true,
+        "k_star_before_visible": true,
+        "control_early_detection_count": 0,
+        "failure_mode": "OBSERVED_EARLY_DETECTION_WINDOW"
+      }
+    },
+    {
+      "id": "gds20_go_0006970",
+      "input_id": "gds20",
+      "known_gene_set_id": "go_0006970_osmotic_stress",
+      "output_dir": "outputs/gds20_go_0006970",
+      "validation_path": "outputs/gds20_go_0006970/external_dataset_bridge_validation.md",
+      "expected": {
+        "bridge_status": "PROBE_PASS_WITH_CONTROLS",
+        "baseline_stable": true,
+        "early_detection": true,
+        "k_star_before_visible": true,
+        "control_early_detection_count": 0,
+        "failure_mode": "OBSERVED_EARLY_DETECTION_WINDOW",
+        "gene_set_status": "GENE_SET_EVALUATED",
+        "minimum_matched_gene_count": 5,
+        "haos_beats_fold_change": true,
+        "minimum_average_precision_margin": 0.02
+      }
+    }
+  ],
+  "bounded_bio_metrics": {
+    "baseline_stable": "Observed baseline recoverability must be high.",
+    "early_detection": "Observed k_star index must precede visible-failure proxy index for pass runs.",
+    "control_contrast": "Deterministic negative controls must not reproduce observed early detection.",
+    "honest_negative": "A primary dataset may be retained as a negative if the declared failure mode is reproduced.",
+    "gene_set_comparator": "When a curated gene set is supplied, HAOS-weighted ranking must beat simple fold-change by the declared margin."
+  }
+}

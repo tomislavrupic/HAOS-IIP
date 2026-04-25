@@ -34,6 +34,41 @@ Primary target for v0.1:
 
 The raw external data are not committed by default. Place downloaded data under `data/raw/` or pass a local path at runtime.
 
+## Quick Lab Reproduction
+
+Use the lab-facing reproducer when the goal is fast auditability rather than interactive exploration.
+
+Audit the committed/generated outputs without downloading data:
+
+```bash
+python3 experiments/biology/external_dataset_bridge/quick_reproduce.py --check
+```
+
+Expected audit summary:
+
+```text
+quick_reproduce_check: PASS
+runs_checked: 3
+checks_passed: 41/41
+outputs_written: experiments/biology/external_dataset_bridge/outputs/
+```
+
+Run the full public-data reproduction:
+
+```bash
+python3 experiments/biology/external_dataset_bridge/quick_reproduce.py
+```
+
+The full run downloads only public no-credential GEO SOFT files into ignored `data/raw/`, records input digests, runs the bounded GDS112/GDS20 probes, refreshes `outputs/probe_comparison.*`, and writes `outputs/quick_reproduce_check.*`.
+
+Useful bounded options:
+
+- `--check`: audit existing outputs only; no network and no numpy/matplotlib required.
+- `--only gds112`: audit or rerun one bounded target.
+- `--no-download`: require raw files to already exist under `data/raw/`.
+
+Digitized input definitions live in `input_manifest.json`.
+
 ## Run Without Data
 
 ```bash
@@ -174,6 +209,16 @@ The bridge also writes ordinary expression movement summaries:
 - fraction of features with absolute change >= 1.0
 
 These are not HAOS metrics. They are included so the HAOS-style signal can be compared against plain expression-change behavior.
+
+## Bounded Bio-Metrics
+
+The lab bridge keeps the biological claims bounded to auditable quantities:
+
+- `baseline_stable`: observed baseline recoverability is high.
+- `early_detection`: observed `k_star_index` precedes the visible-failure proxy index for pass runs.
+- `control_contrast`: deterministic negative controls do not reproduce the observed early-detection signature.
+- `honest_negative`: a primary dataset can remain useful as a reproduced negative result.
+- `gene_set_comparator`: with a curated gene set, HAOS-weighted feature ranking must beat simple fold-change by the declared margin.
 
 ## Known Gene-Set Comparator
 
