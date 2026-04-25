@@ -60,6 +60,7 @@ def run_minimal_probe(config: MinimalConfig) -> dict[str, Any]:
     controls = [
         run_single("node_shuffle_control", graph.adjacency, reference, perturbation_nodes, config, rng, initial_override=rng.permutation(reference)),
         run_single("edge_shuffle_control", edge_shuffle(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
+        run_single("degree_preserving_rewire_control", degree_preserving_rewire(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
         run_single("topology_randomization_control", topology_randomize(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
     ]
     status = classify(graph, observed, controls)
@@ -385,6 +386,58 @@ def topology_randomize(adjacency: np.ndarray, rng: np.random.Generator) -> np.nd
     out = np.zeros_like(adjacency)
     for pair_idx, weight in zip(selected, sampled):
         i, j = pairs[int(pair_idx)]
+        out[i, j] = float(weight)
+        out[j, i] = float(weight)
+    return normalize_adjacency(out)
+
+
+def degree_preserving_rewire(adjacency: np.ndarray, rng: np.random.Generator, swap_factor: int = 8) -> np.ndarray:
+    """Randomize topology with double-edge swaps while preserving unweighted degrees."""
+
+    binary = np.asarray(adjacency > 0.0, dtype=bool)
+    n = binary.shape[0]
+    edge_i, edge_j = np.triu_indices(n, k=1)
+    edges = [(int(i), int(j)) for i, j in zip(edge_i, edge_j) if binary[i, j]]
+    edge_set = set(edges)
+    if len(edges) < 2:
+        return adjacency.copy()
+
+    attempts = max(len(edges) * swap_factor * 4, 1)
+    target_swaps = len(edges) * swap_factor
+    swaps = 0
+    for _ in range(attempts):
+        if swaps >= target_swaps:
+            break
+        idx_a, idx_b = rng.choice(len(edges), size=2, replace=False)
+        a, b = edges[int(idx_a)]
+        c, d = edges[int(idx_b)]
+        if len({a, b, c, d}) < 4:
+            continue
+        if rng.random() < 0.5:
+            new_a = tuple(sorted((a, d)))
+            new_b = tuple(sorted((c, b)))
+        else:
+            new_a = tuple(sorted((a, c)))
+            new_b = tuple(sorted((b, d)))
+        if new_a[0] == new_a[1] or new_b[0] == new_b[1] or new_a == new_b:
+            continue
+        if new_a in edge_set or new_b in edge_set:
+            continue
+        old_a = edges[int(idx_a)]
+        old_b = edges[int(idx_b)]
+        edge_set.remove(old_a)
+        edge_set.remove(old_b)
+        edge_set.add(new_a)
+        edge_set.add(new_b)
+        edges[int(idx_a)] = new_a
+        edges[int(idx_b)] = new_b
+        swaps += 1
+
+    weights = adjacency[np.triu_indices(n, k=1)]
+    weights = weights[weights > 0.0]
+    shuffled_weights = rng.permutation(weights)
+    out = np.zeros_like(adjacency, dtype=float)
+    for (i, j), weight in zip(edges, shuffled_weights):
         out[i, j] = float(weight)
         out[j, i] = float(weight)
     return normalize_adjacency(out)

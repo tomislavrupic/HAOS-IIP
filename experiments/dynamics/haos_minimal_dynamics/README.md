@@ -18,6 +18,13 @@ x[t+1] = x[t] - diffusion * L x[t] + address_gain * address_restoration
 `address_restoration` tries to recover each node's weighted neighbor-difference
 signature from the frozen reference field.
 
+Controls:
+
+- node label shuffle
+- edge weight shuffle
+- degree-preserving rewiring
+- topology randomization
+
 ## Run
 
 ```bash
