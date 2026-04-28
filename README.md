@@ -1,10 +1,63 @@
 # HAOS-IIP
 
-HAOS-IIP = **Harmonic Address Operating System - Interaction Invariant Physics**.
+**Harmonic Address Operating System - Interaction Invariant Physics**
 
-Frozen branch-local cochain-Laplacian hierarchy: bounded emergence diagnostics, closed HAOS-to-harmonic derivation ladder, bounded scalar-carrier geometry closure, and an external physics-bridge proxy layer.
+A large-scale, disciplined numerical research program exploring reproducible emergence of stability, temporal ordering, causal closure, and proto-geometric structures inside **frozen branch-local cochain-Laplacian hierarchies**.
 
-Success criterion: running the public reproduction script should produce identical table values and an identical plot to the frozen baseline.
+**200+ commits | 18+ phased bundles | strict reproducibility | frozen baselines + telemetry**
+
+### One-Sentence Summary
+
+This repository demonstrates that a coherent, multi-hundred-page-equivalent computational research arc (stability -> scalar-carrier geometry -> cautious physics-bridge observables) can be built and kept verifiable using structured workflows and current tools.
+
+### Success Criterion
+
+```bash
+python3 examples/quick_reproduce.py
+```
+
+This command must reproduce identical public tables and plots against the frozen baselines. No new simulations are required for validation.
+
+### Why This Exists
+
+Most emergence / discrete-physics projects stay small and informal. HAOS-IIP deliberately goes the other way:
+
+- uniform phase contracts
+- frozen manifests + telemetry
+- one-command public reproduction
+- explicit separation between computational results and ontological interpretation
+
+It does not claim to derive real physics, spacetime, or a Theory of Everything. It asks a narrower, testable question:
+
+> Can a bounded emergence ladder stabilize and remain reproducible under strict discrete constraints?
+
+So far, inside the tested families, the answer is yes: multiple milestones close under frozen reproduction and explicit controls. Open boundaries remain labeled as open.
+
+### Quick Start For New Readers
+
+```bash
+git clone https://github.com/tomislavrupic/HAOS-IIP.git
+cd HAOS-IIP
+python3 examples/quick_reproduce.py
+```
+
+This gives you:
+
+- verified Phase XV-XVIII results
+- continuum-sketch post-processing
+- output in `examples/output/`
+
+For a single phase integrity check:
+
+```bash
+python3 run_phase.py 18 --check
+```
+
+### Visual Orientation
+
+- [Deterministic validation hierarchy, Phases V-X](Images/HAOS-IIP.png)
+- [Emergent feasibility hierarchy, Phases X-XVIII](Images/Hierarchy%20of%20Emergent%20Feasibility%20Phases.png)
+- [Full media index](docs/media/MEDIA_INDEX.md)
 
 <p align="center">
   <img src="Images/HAOS-IIP%20Continuum-Bridge%20Feasibility%20Path.png" alt="HAOS-IIP continuum-bridge feasibility path" width="100%" />
