@@ -27,6 +27,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--perturbation-scale", type=float, default=0.85, help="Perturbation amplitude.")
     parser.add_argument("--permutation-trials", type=int, default=64, help="Address specificity permutation trials.")
     parser.add_argument("--identity-bins", type=int, default=4, help="Degree/shell bins for branch-identity specificity.")
+    parser.add_argument("--null-level", type=int, choices=(1, 2, 3), default=2, help="Specificity null strictness: 1 degree/shell, 2 spectral-aware, 3 spectral+autocorrelation.")
+    parser.add_argument("--spectral-null-candidates", type=int, default=8, help="Candidate shuffles sampled per spectral-aware null draw.")
     parser.add_argument("--focus-address", action="store_true", help="Only run address-focused ablations.")
     parser.add_argument("--max-nodes", type=int, default=96, help="Maximum graph nodes.")
     return parser.parse_args()
@@ -49,6 +51,8 @@ def main() -> None:
         perturbation_scale=args.perturbation_scale,
         permutation_trials=args.permutation_trials,
         identity_bins=args.identity_bins,
+        null_level=args.null_level,
+        spectral_null_candidates=args.spectral_null_candidates,
         focus_address=args.focus_address,
         max_nodes=args.max_nodes,
     )
@@ -59,8 +63,12 @@ def main() -> None:
     print(f"address_specificity_z: {outcome['observed_summary']['address_specificity_z']}")
     print(f"invariant_specificity_z: {outcome['observed_summary']['invariant_specificity_z']}")
     print(f"branch_identity_z: {outcome['observed_summary']['branch_identity_z']}")
+    print(f"spectral_aware_z: {outcome['observed_summary']['spectral_aware_z']}")
+    print(f"autocorr_aware_z: {outcome['observed_summary']['autocorr_aware_z']}")
     print(f"control_combined_specificity_pass_count: {outcome['control_combined_specificity_pass_count']}")
     print(f"control_strict_specificity_pass_count: {outcome['control_strict_specificity_pass_count']}")
+    print(f"control_spectral_aware_pass_count: {outcome['control_spectral_aware_pass_count']}")
+    print(f"control_autocorr_aware_pass_count: {outcome['control_autocorr_aware_pass_count']}")
     print(f"ablation_report: {config.output_dir / 'ablation_report.md'}")
     print(f"outputs: {config.output_dir}")
 

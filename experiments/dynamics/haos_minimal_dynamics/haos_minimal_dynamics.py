@@ -35,6 +35,8 @@ class MinimalConfig:
     perturbation_scale: float = 0.85
     permutation_trials: int = 64
     identity_bins: int = 4
+    null_level: int = 2
+    spectral_null_candidates: int = 8
     focus_address: bool = False
     max_nodes: int = 96
 
@@ -88,6 +90,8 @@ def run_minimal_probe(config: MinimalConfig) -> dict[str, Any]:
     status["address_mode"] = config.address_mode
     status["spectral_modes"] = int(config.spectral_modes)
     status["hybrid_spectral_weight"] = float(config.hybrid_spectral_weight)
+    status["null_level"] = int(config.null_level)
+    status["spectral_null_candidates"] = int(config.spectral_null_candidates)
     status["ablation_summaries"] = {run.label: run.summary for run in ablations}
     status["ablation_drops"] = summarize_ablation_drops(ablations)
     write_outputs(config.output_dir, status, observed, controls, ablations)
@@ -461,10 +465,82 @@ def branch_identity_specificity_test(
     }
 
 
+def spectral_aware_specificity_test(
+    field: np.ndarray,
+    reference: np.ndarray,
+    adjacency: np.ndarray,
+    trials: int,
+    seed: int,
+    bins: int,
+    modes: int,
+    candidate_pool: int,
+    include_autocorrelation: bool = False,
+) -> dict[str, float | bool | int]:
+    """Branch specificity against a spectral-aware stratified null.
+
+    Each null draw still shuffles only within degree/shell buckets, but it now
+    keeps the candidate whose low-mode spectral-energy signature is closest to
+    the observed final field. At null level 3 the selector also matches one-hop
+    local autocorrelation. This directly pressures spectral address smoothing:
+    the null is allowed to keep the cheap spectral shape while breaking node
+    identity.
+    """
+
+    observed = branch_identity_score(field, reference, adjacency)
+    observed_signature = spectral_field_signature(field, adjacency, modes)
+    observed_autocorr = local_autocorrelation(field, adjacency)
+    rng = np.random.default_rng(seed)
+    nulls = np.zeros(trials, dtype=float)
+    pool = max(1, int(candidate_pool))
+    for idx in range(trials):
+        best_distance = math.inf
+        best_candidate = field
+        for _ in range(pool):
+            candidate = degree_shell_stratified_permutation(field, reference, adjacency, rng, bins)
+            distance = float(np.linalg.norm(spectral_field_signature(candidate, adjacency, modes) - observed_signature))
+            if include_autocorrelation:
+                distance += abs(local_autocorrelation(candidate, adjacency) - observed_autocorr)
+            if distance < best_distance:
+                best_distance = distance
+                best_candidate = candidate
+        nulls[idx] = branch_identity_score(best_candidate, reference, adjacency)
+    mean_null = float(np.mean(nulls))
+    std_null = float(np.std(nulls))
+    z_score = float((observed - mean_null) / (std_null if std_null > 1.0e-8 else 1.0))
+    p_value = float((np.count_nonzero(nulls >= observed) + 1) / (trials + 1))
+    prefix = "autocorr_aware" if include_autocorrelation else "spectral_aware"
+    return {
+        f"{prefix}_specificity": observed,
+        f"{prefix}_null_mean": mean_null,
+        f"{prefix}_p": p_value,
+        f"{prefix}_z": z_score,
+        f"{prefix}_candidate_pool": int(pool),
+        f"{prefix}_pass": bool(p_value < 0.05 and z_score > 1.5),
+    }
+
+
 def branch_identity_score(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
     """Combined address + invariant score used by the stricter identity null."""
 
     return float(0.5 * (address_error_score(field, reference, adjacency) + invariant_error_score(field, reference, adjacency)))
+
+
+def spectral_field_signature(field: np.ndarray, adjacency: np.ndarray, modes: int) -> np.ndarray:
+    basis = spectral_address_basis(adjacency, modes)
+    coeffs = basis.T @ field
+    energy = coeffs * coeffs
+    total = max(float(np.sum(energy)), EPS)
+    return energy / total
+
+
+def local_autocorrelation(field: np.ndarray, adjacency: np.ndarray) -> float:
+    weights = adjacency[adjacency > 0.0]
+    if weights.size == 0:
+        return 0.0
+    centered = field - float(np.mean(field))
+    numerator = float(np.sum(adjacency * centered[:, None] * centered[None, :]))
+    denominator = float(np.sum(adjacency) * max(np.var(centered), EPS))
+    return numerator / max(denominator, EPS)
 
 
 def degree_shell_stratified_permutation(
@@ -563,8 +639,35 @@ def summarize_run(
         specificity_seed(config, label, 20_000),
         config.identity_bins,
     )
+    spectral_aware_specificity = spectral_aware_specificity_test(
+        final_state,
+        reference,
+        adjacency,
+        config.permutation_trials,
+        specificity_seed(config, label, 30_000),
+        config.identity_bins,
+        config.spectral_modes,
+        config.spectral_null_candidates,
+        include_autocorrelation=False,
+    )
+    autocorr_aware_specificity = spectral_aware_specificity_test(
+        final_state,
+        reference,
+        adjacency,
+        config.permutation_trials,
+        specificity_seed(config, label, 40_000),
+        config.identity_bins,
+        config.spectral_modes,
+        config.spectral_null_candidates,
+        include_autocorrelation=True,
+    )
     combined_specificity_pass = bool(specificity["address_specificity_pass"] and invariant_specificity["invariant_specificity_pass"])
+    null_level = int(np.clip(config.null_level, 1, 3))
     strict_specificity_pass = bool(combined_specificity_pass and branch_identity_specificity["branch_identity_pass"])
+    if null_level >= 2:
+        strict_specificity_pass = bool(strict_specificity_pass and spectral_aware_specificity["spectral_aware_pass"])
+    if null_level >= 3:
+        strict_specificity_pass = bool(strict_specificity_pass and autocorr_aware_specificity["autocorr_aware_pass"])
     return {
         "run": label,
         "recoverability_score": float(np.mean(recovery_window)),
@@ -578,7 +681,10 @@ def summarize_run(
         **specificity,
         **invariant_specificity,
         **branch_identity_specificity,
+        **spectral_aware_specificity,
+        **autocorr_aware_specificity,
         "combined_specificity_pass": combined_specificity_pass,
+        "null_level": null_level,
         "strict_specificity_pass": strict_specificity_pass,
     }
 
@@ -588,18 +694,21 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
     control_contrast = float(observed.summary["recoverability_score"]) >= best_control + CONTROL_MARGIN
     control_specificity_passes = sum(1 for run in controls if bool(run.summary["combined_specificity_pass"]))
     control_strict_specificity_passes = sum(1 for run in controls if bool(run.summary["strict_specificity_pass"]))
+    control_spectral_passes = sum(1 for run in controls if bool(run.summary["spectral_aware_pass"]))
+    control_autocorr_passes = sum(1 for run in controls if bool(run.summary["autocorr_aware_pass"]))
     observed_specific = bool(observed.summary["strict_specificity_pass"])
     observed_recovered = bool(observed.summary["recovered"])
+    null_level = int(observed.summary.get("null_level", 1))
 
     if graph.source_kind == "OPEN_NO_DATA_SYNTHETIC":
         status = "OPEN_NO_DATA_SYNTHETIC"
         failure = "NO_HAOS_GRAPH_ARTIFACT_FOUND"
     elif observed_recovered and observed_specific and control_contrast and control_strict_specificity_passes == 0:
         status = "PASS"
-        failure = "RECOVERY_WITH_STRICT_BRANCH_IDENTITY_SPECIFICITY"
+        failure = "RECOVERY_WITH_SPECTRAL_AWARE_SPECIFICITY"
     elif observed_recovered and observed_specific and control_strict_specificity_passes > 0:
         status = "MARGINAL"
-        failure = "STRICT_SPECIFICITY_CONTROL_MATCH"
+        failure = "AUTOCORR_AWARE_CONTROL_MATCH" if null_level >= 3 else "SPECTRAL_AWARE_CONTROL_MATCH"
     elif observed_recovered and observed_specific:
         status = "MARGINAL"
         failure = "STRICT_SIGNAL_WITHOUT_CONTROL_CONTRAST"
@@ -620,6 +729,8 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
         "control_contrast": control_contrast,
         "control_combined_specificity_pass_count": control_specificity_passes,
         "control_strict_specificity_pass_count": control_strict_specificity_passes,
+        "control_spectral_aware_pass_count": control_spectral_passes,
+        "control_autocorr_aware_pass_count": control_autocorr_passes,
         "best_control_recoverability_score": best_control,
         "observed_summary": observed.summary,
         "control_summaries": {run.label: run.summary for run in controls},
@@ -649,25 +760,30 @@ def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, contr
         f"- graph_source: {status['graph_source']}",
         f"- address_mode: {status.get('address_mode', 'unknown')}",
         f"- spectral_modes: {status.get('spectral_modes', 'unknown')}",
+        f"- null_level: {status.get('null_level', 'unknown')}",
         f"- control_contrast: {status['control_contrast']}",
         f"- control_combined_specificity_pass_count: {status['control_combined_specificity_pass_count']}",
         f"- control_strict_specificity_pass_count: {status['control_strict_specificity_pass_count']}",
+        f"- control_spectral_aware_pass_count: {status['control_spectral_aware_pass_count']}",
+        f"- control_autocorr_aware_pass_count: {status['control_autocorr_aware_pass_count']}",
         "",
-        "| run | recoverability_score | final_recoverability | address_retention | invariant_retention | address_z | invariant_z | branch_z | strict_pass |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+        "## Spectral Smoothing Diagnosis",
+        "",
+        "The strict gate now includes a spectral-aware null. Null candidates preserve degree/shell buckets and are selected to match low-mode spectral energy before branch identity is scored.",
+        "",
+        "| run | recoverability_score | final_recoverability | branch_z | spectral_z | autocorr_z | strict_pass |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for run in [observed, *controls]:
         summary = run.summary
         lines.append(
-            "| {run} | {score:.6f} | {final:.6f} | {address:.6f} | {invariant:.6f} | {address_z:.6f} | {invariant_z:.6f} | {branch_z:.6f} | {passed} |".format(
+            "| {run} | {score:.6f} | {final:.6f} | {branch_z:.6f} | {spectral_z:.6f} | {autocorr_z:.6f} | {passed} |".format(
                 run=run.label,
                 score=float(summary["recoverability_score"]),
                 final=float(summary["final_recoverability"]),
-                address=float(summary["final_address_retention"]),
-                invariant=float(summary["final_invariant_retention"]),
-                address_z=float(summary["address_specificity_z"]),
-                invariant_z=float(summary["invariant_specificity_z"]),
                 branch_z=float(summary["branch_identity_z"]),
+                spectral_z=float(summary["spectral_aware_z"]),
+                autocorr_z=float(summary["autocorr_aware_z"]),
                 passed=summary["strict_specificity_pass"],
             )
         )
@@ -761,6 +877,22 @@ def write_plots(output_dir: Path, observed: MinimalRun, controls: list[MinimalRu
     plt.xticks(rotation=25, ha="right")
     plt.tight_layout()
     plt.savefig(output_dir / "ablation_branch_identity.png", dpi=160)
+    plt.close()
+
+    runs = [observed, *controls]
+    labels = [run.label for run in runs]
+    x = np.arange(len(runs), dtype=float)
+    width = 0.26
+    plt.figure(figsize=(9, 4))
+    plt.bar(x - width, [float(run.summary["branch_identity_z"]) for run in runs], width, label="degree/shell")
+    plt.bar(x, [float(run.summary["spectral_aware_z"]) for run in runs], width, label="spectral-aware")
+    plt.bar(x + width, [float(run.summary["autocorr_aware_z"]) for run in runs], width, label="spectral+autocorr")
+    plt.ylabel("specificity z")
+    plt.title("Null erosion")
+    plt.xticks(x, labels, rotation=25, ha="right")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output_dir / "null_erosion_spectral_vs_local.png", dpi=160)
     plt.close()
 
 

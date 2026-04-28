@@ -41,6 +41,11 @@ final field values are shuffled only inside matched weighted-degree and frozen
 shell-variance buckets. This breaks branch identity while preserving the cheap
 local statistics that made earlier controls too competitive.
 
+By default, `--null-level 2` adds a spectral-aware null on top of that gate:
+candidate shuffles preserve degree/shell buckets and are selected to match the
+final field's low-mode spectral energy before branch identity is scored.
+`--null-level 3` also matches one-hop local autocorrelation.
+
 The run also writes a targeted ablation report. Ablations reuse the same initial
 noise and perturbation noise, then remove one dynamics component at a time:
 
@@ -74,6 +79,13 @@ To run only the address-focused ablation family:
 uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py --focus-address
 ```
 
+To compare null strictness:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py --null-level 1
+uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py --null-level 3
+```
+
 ## Outputs
 
 Generated outputs are ignored:
@@ -83,6 +95,7 @@ Generated outputs are ignored:
 - `minimal_dynamics_report.md`
 - `minimal_timeseries.csv`
 - `ablation_branch_identity.png`
+- `null_erosion_spectral_vs_local.png`
 - `recoverability.png`
 - `address_specificity.png`
 - `invariant_retention.png`
