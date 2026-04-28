@@ -23,6 +23,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--perturbation-step", type=int, default=20, help="Perturbation step.")
     parser.add_argument("--perturbation-scale", type=float, default=0.85, help="Perturbation amplitude.")
     parser.add_argument("--permutation-trials", type=int, default=64, help="Address specificity permutation trials.")
+    parser.add_argument("--identity-bins", type=int, default=4, help="Degree/shell bins for branch-identity specificity.")
     parser.add_argument("--max-nodes", type=int, default=96, help="Maximum graph nodes.")
     return parser.parse_args()
 
@@ -40,6 +41,7 @@ def main() -> None:
         perturbation_step=args.perturbation_step,
         perturbation_scale=args.perturbation_scale,
         permutation_trials=args.permutation_trials,
+        identity_bins=args.identity_bins,
         max_nodes=args.max_nodes,
     )
     outcome = run_minimal_probe(config)
@@ -48,7 +50,9 @@ def main() -> None:
     print(f"recoverability_score: {outcome['observed_summary']['recoverability_score']}")
     print(f"address_specificity_z: {outcome['observed_summary']['address_specificity_z']}")
     print(f"invariant_specificity_z: {outcome['observed_summary']['invariant_specificity_z']}")
+    print(f"branch_identity_z: {outcome['observed_summary']['branch_identity_z']}")
     print(f"control_combined_specificity_pass_count: {outcome['control_combined_specificity_pass_count']}")
+    print(f"control_strict_specificity_pass_count: {outcome['control_strict_specificity_pass_count']}")
     print(f"outputs: {config.output_dir}")
 
 

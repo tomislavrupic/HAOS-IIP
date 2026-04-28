@@ -31,6 +31,7 @@ class MinimalConfig:
     perturbation_step: int = 20
     perturbation_scale: float = 0.85
     permutation_trials: int = 64
+    identity_bins: int = 4
     max_nodes: int = 96
 
 
@@ -215,6 +216,87 @@ def invariant_specificity_test(
     }
 
 
+def branch_identity_specificity_test(
+    field: np.ndarray,
+    reference: np.ndarray,
+    adjacency: np.ndarray,
+    trials: int,
+    seed: int,
+    bins: int,
+) -> dict[str, float | bool | int]:
+    """Specificity test with degree/shell-stat preserving node shuffles.
+
+    The global permutation tests ask whether the final field keeps any relational
+    structure. This stricter null asks whether the signal survives after
+    preserving two cheap local summaries: weighted degree and frozen shell
+    variance. Only values inside matched degree/shell buckets are permuted, so
+    an observed win is harder to explain as generic density or contrast effects.
+    """
+
+    observed = branch_identity_score(field, reference, adjacency)
+    rng = np.random.default_rng(seed)
+    nulls = np.zeros(trials, dtype=float)
+    for idx in range(trials):
+        shuffled = degree_shell_stratified_permutation(field, reference, adjacency, rng, bins)
+        nulls[idx] = branch_identity_score(shuffled, reference, adjacency)
+    mean_null = float(np.mean(nulls))
+    std_null = float(np.std(nulls))
+    z_score = float((observed - mean_null) / (std_null if std_null > 1.0e-8 else 1.0))
+    p_value = float((np.count_nonzero(nulls >= observed) + 1) / (trials + 1))
+    return {
+        "branch_identity_specificity": observed,
+        "branch_identity_null_mean": mean_null,
+        "branch_identity_p": p_value,
+        "branch_identity_z": z_score,
+        "branch_identity_bins": int(bins),
+        "branch_identity_pass": bool(p_value < 0.05 and z_score > 1.5),
+    }
+
+
+def branch_identity_score(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
+    """Combined address + invariant score used by the stricter identity null."""
+
+    return float(0.5 * (address_error_score(field, reference, adjacency) + invariant_error_score(field, reference, adjacency)))
+
+
+def degree_shell_stratified_permutation(
+    field: np.ndarray,
+    reference: np.ndarray,
+    adjacency: np.ndarray,
+    rng: np.random.Generator,
+    bins: int,
+) -> np.ndarray:
+    """Shuffle field values within matched weighted-degree/shell-variance buckets."""
+
+    labels = degree_shell_strata(reference, adjacency, bins)
+    out = np.asarray(field, dtype=float).copy()
+    moved = False
+    for label in np.unique(labels):
+        idx = np.flatnonzero(labels == label)
+        if idx.size < 2:
+            continue
+        permuted_idx = rng.permutation(idx)
+        if np.array_equal(permuted_idx, idx):
+            permuted_idx = np.roll(idx, 1)
+        out[idx] = field[permuted_idx]
+        moved = True
+    return out if moved else rng.permutation(field)
+
+
+def degree_shell_strata(reference: np.ndarray, adjacency: np.ndarray, bins: int) -> np.ndarray:
+    safe_bins = max(2, int(bins))
+    degree = adjacency.sum(axis=1)
+    shell = local_shell_variance(reference, adjacency)
+    return quantile_bins(degree, safe_bins) * safe_bins + quantile_bins(shell, safe_bins)
+
+
+def quantile_bins(values: np.ndarray, bins: int) -> np.ndarray:
+    if values.size == 0:
+        return np.zeros(0, dtype=int)
+    edges = np.quantile(values, np.linspace(0.0, 1.0, bins + 1)[1:-1])
+    return np.digitize(values, edges, right=True).astype(int)
+
+
 def compute_rows(
     label: str,
     states: np.ndarray,
@@ -265,6 +347,16 @@ def summarize_run(
         config.permutation_trials,
         config.seed + stable_label_offset(label) + 10_000,
     )
+    branch_identity_specificity = branch_identity_specificity_test(
+        final_state,
+        reference,
+        adjacency,
+        config.permutation_trials,
+        config.seed + stable_label_offset(label) + 20_000,
+        config.identity_bins,
+    )
+    combined_specificity_pass = bool(specificity["address_specificity_pass"] and invariant_specificity["invariant_specificity_pass"])
+    strict_specificity_pass = bool(combined_specificity_pass and branch_identity_specificity["branch_identity_pass"])
     return {
         "run": label,
         "recoverability_score": float(np.mean(recovery_window)),
@@ -277,7 +369,9 @@ def summarize_run(
         "recovered": bool(float(recoverability[-1]) >= RECOVERABILITY_FLOOR),
         **specificity,
         **invariant_specificity,
-        "combined_specificity_pass": bool(specificity["address_specificity_pass"] and invariant_specificity["invariant_specificity_pass"]),
+        **branch_identity_specificity,
+        "combined_specificity_pass": combined_specificity_pass,
+        "strict_specificity_pass": strict_specificity_pass,
     }
 
 
@@ -285,27 +379,28 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
     best_control = max(float(run.summary["recoverability_score"]) for run in controls)
     control_contrast = float(observed.summary["recoverability_score"]) >= best_control + CONTROL_MARGIN
     control_specificity_passes = sum(1 for run in controls if bool(run.summary["combined_specificity_pass"]))
-    observed_specific = bool(observed.summary["combined_specificity_pass"])
+    control_strict_specificity_passes = sum(1 for run in controls if bool(run.summary["strict_specificity_pass"]))
+    observed_specific = bool(observed.summary["strict_specificity_pass"])
     observed_recovered = bool(observed.summary["recovered"])
 
     if graph.source_kind == "OPEN_NO_DATA_SYNTHETIC":
         status = "OPEN_NO_DATA_SYNTHETIC"
         failure = "NO_HAOS_GRAPH_ARTIFACT_FOUND"
-    elif observed_recovered and observed_specific and control_contrast and control_specificity_passes == 0:
+    elif observed_recovered and observed_specific and control_contrast and control_strict_specificity_passes == 0:
         status = "PASS"
-        failure = "RECOVERY_WITH_ADDRESS_AND_INVARIANT_SPECIFICITY"
-    elif observed_recovered and observed_specific and control_specificity_passes > 0:
+        failure = "RECOVERY_WITH_STRICT_BRANCH_IDENTITY_SPECIFICITY"
+    elif observed_recovered and observed_specific and control_strict_specificity_passes > 0:
         status = "MARGINAL"
-        failure = "COMBINED_SPECIFICITY_CONTROL_MATCH"
+        failure = "STRICT_SPECIFICITY_CONTROL_MATCH"
     elif observed_recovered and observed_specific:
         status = "MARGINAL"
-        failure = "COMBINED_SIGNAL_WITHOUT_CONTROL_CONTRAST"
+        failure = "STRICT_SIGNAL_WITHOUT_CONTROL_CONTRAST"
     elif not observed_recovered:
         status = "FAIL"
         failure = "RECOVERABILITY_COLLAPSE"
     else:
         status = "FAIL"
-        failure = "COMBINED_SPECIFICITY_FAILED"
+        failure = "STRICT_BRANCH_IDENTITY_SPECIFICITY_FAILED"
 
     return {
         "bridge_status": status,
@@ -316,6 +411,7 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
         "edges": int(np.count_nonzero(np.triu(graph.adjacency, k=1))),
         "control_contrast": control_contrast,
         "control_combined_specificity_pass_count": control_specificity_passes,
+        "control_strict_specificity_pass_count": control_strict_specificity_passes,
         "best_control_recoverability_score": best_control,
         "observed_summary": observed.summary,
         "control_summaries": {run.label: run.summary for run in controls},
@@ -338,14 +434,15 @@ def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, contr
         f"- graph_source: {status['graph_source']}",
         f"- control_contrast: {status['control_contrast']}",
         f"- control_combined_specificity_pass_count: {status['control_combined_specificity_pass_count']}",
+        f"- control_strict_specificity_pass_count: {status['control_strict_specificity_pass_count']}",
         "",
-        "| run | recoverability_score | final_recoverability | address_retention | invariant_retention | address_z | invariant_z | combined_pass |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| run | recoverability_score | final_recoverability | address_retention | invariant_retention | address_z | invariant_z | branch_z | strict_pass |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for run in [observed, *controls]:
         summary = run.summary
         lines.append(
-            "| {run} | {score:.6f} | {final:.6f} | {address:.6f} | {invariant:.6f} | {address_z:.6f} | {invariant_z:.6f} | {passed} |".format(
+            "| {run} | {score:.6f} | {final:.6f} | {address:.6f} | {invariant:.6f} | {address_z:.6f} | {invariant_z:.6f} | {branch_z:.6f} | {passed} |".format(
                 run=run.label,
                 score=float(summary["recoverability_score"]),
                 final=float(summary["final_recoverability"]),
@@ -353,7 +450,8 @@ def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, contr
                 invariant=float(summary["final_invariant_retention"]),
                 address_z=float(summary["address_specificity_z"]),
                 invariant_z=float(summary["invariant_specificity_z"]),
-                passed=summary["combined_specificity_pass"],
+                branch_z=float(summary["branch_identity_z"]),
+                passed=summary["strict_specificity_pass"],
             )
         )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

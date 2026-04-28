@@ -33,6 +33,11 @@ Controls:
 - degree-preserving rewiring
 - topology randomization
 
+The strict specificity gate also includes a degree/shell-stat preserving null:
+final field values are shuffled only inside matched weighted-degree and frozen
+shell-variance buckets. This breaks branch identity while preserving the cheap
+local statistics that made earlier controls too competitive.
+
 ## Run
 
 ```bash
@@ -52,7 +57,7 @@ Generated outputs are ignored:
 
 ## Status Semantics
 
-- `PASS`: observed recovers, address + invariant specificity pass, and controls do not.
+- `PASS`: observed recovers, strict branch-identity specificity passes, and controls do not.
 - `MARGINAL`: observed recovers or is specific, but controls are too close.
 - `FAIL`: recoverability or specificity does not survive.
 
