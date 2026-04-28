@@ -44,9 +44,10 @@ local statistics that made earlier controls too competitive.
 `--null-level 2` adds a spectral-aware null on top of that gate:
 candidate shuffles preserve degree/shell buckets and are selected to match the
 final field's low-mode spectral energy before branch identity is scored.
-By default, `--null-level 3` also matches one-hop local autocorrelation.
-`--null-level 4` adds higher-order matching with 2-hop and triangle-supported
-correlation proxies.
+`--null-level 3` also matches one-hop local autocorrelation.
+By default, `--null-level 4` adds higher-order matching with 2-hop and
+triangle-supported correlation proxies. `--null-level 5` adds a
+dynamics-preserving trajectory null based on compact time-series signatures.
 
 The run also writes a targeted ablation report. Ablations reuse the same initial
 noise and perturbation noise, then remove one dynamics component at a time:
@@ -85,7 +86,7 @@ To compare null strictness:
 
 ```bash
 uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py --null-level 1
-uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py --null-level 4
+uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py --null-level 5
 ```
 
 ## Outputs
