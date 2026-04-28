@@ -27,6 +27,7 @@ class MinimalConfig:
     dt: float = 0.08
     diffusion: float = 0.15
     address_gain: float = 0.05
+    invariant_gain: float = 0.025
     perturbation_step: int = 20
     perturbation_scale: float = 0.85
     permutation_trials: int = 64
@@ -80,6 +81,7 @@ def run_single(
     transition = build_transition(adjacency)
     laplacian = np.eye(adjacency.shape[0]) - transition
     target_address = local_address(reference, adjacency)
+    target_shell_variance = local_shell_variance(reference, adjacency)
     initial = reference + 0.04 * rng.normal(size=reference.shape) if initial_override is None else initial_override
     states = np.zeros((config.steps + 1, reference.size), dtype=float)
     states[0] = normalize_field(initial, reference)
@@ -91,8 +93,10 @@ def run_single(
             prior = normalize_field(prior, reference)
         current_address = local_address(prior, adjacency)
         address_error = target_address - current_address
+        invariant_pull = shell_variance_restoration(prior, adjacency, target_shell_variance)
         update = prior - config.dt * config.diffusion * (laplacian @ prior)
         update += config.dt * config.address_gain * address_error / np.maximum(adjacency.sum(axis=1), 1.0)
+        update += config.dt * config.invariant_gain * invariant_pull
         states[step] = normalize_field(update, reference)
 
     rows = compute_rows(label, states, reference, adjacency, config)
@@ -107,6 +111,34 @@ def local_address(field: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
     return (adjacency @ field) / degree - field
 
 
+def local_shell_variance(field: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
+    """Frozen branch-local contrast energy around each node.
+
+    This is deliberately small-scope: for each node, measure the weighted
+    variance of neighbor offsets relative to that node. It gives the dynamics a
+    local invariant target that is not just "return to the reference value".
+    """
+
+    degree = np.maximum(adjacency.sum(axis=1), EPS)
+    offsets = field[None, :] - field[:, None]
+    return np.sum(adjacency * offsets * offsets, axis=1) / degree
+
+
+def shell_variance_restoration(
+    field: np.ndarray,
+    adjacency: np.ndarray,
+    target_shell_variance: np.ndarray,
+) -> np.ndarray:
+    """Return a bounded local pull toward the frozen shell-variance invariant."""
+
+    neighbor_mean = field + local_address(field, adjacency)
+    current = local_shell_variance(field, adjacency)
+    error = target_shell_variance - current
+    scale = np.maximum(np.abs(target_shell_variance) + np.abs(current), 1.0)
+    direction = field - neighbor_mean
+    return np.clip(error / scale, -1.0, 1.0) * direction
+
+
 def address_retention(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
     score = address_error_score(field, reference, adjacency)
     return float(np.clip(1.0 + score, 0.0, 1.0))
@@ -115,6 +147,18 @@ def address_retention(field: np.ndarray, reference: np.ndarray, adjacency: np.nd
 def address_error_score(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
     ref = local_address(reference, adjacency)
     cur = local_address(field, adjacency)
+    distance = float(np.linalg.norm(cur - ref) / max(np.linalg.norm(ref), EPS))
+    return float(-distance)
+
+
+def invariant_retention(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
+    score = invariant_error_score(field, reference, adjacency)
+    return float(np.clip(1.0 + score, 0.0, 1.0))
+
+
+def invariant_error_score(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
+    ref = local_shell_variance(reference, adjacency)
+    cur = local_shell_variance(field, adjacency)
     distance = float(np.linalg.norm(cur - ref) / max(np.linalg.norm(ref), EPS))
     return float(-distance)
 
@@ -145,6 +189,32 @@ def address_specificity_test(
     }
 
 
+def invariant_specificity_test(
+    field: np.ndarray,
+    reference: np.ndarray,
+    adjacency: np.ndarray,
+    trials: int,
+    seed: int,
+) -> dict[str, float | bool]:
+    observed = invariant_error_score(field, reference, adjacency)
+    rng = np.random.default_rng(seed)
+    nulls = np.zeros(trials, dtype=float)
+    for idx in range(trials):
+        nulls[idx] = invariant_error_score(rng.permutation(field), reference, adjacency)
+    mean_null = float(np.mean(nulls))
+    std_null = float(np.std(nulls))
+    z_score = float((observed - mean_null) / (std_null if std_null > 1.0e-8 else 1.0))
+    p_value = float((np.count_nonzero(nulls >= observed) + 1) / (trials + 1))
+    return {
+        "invariant_specificity": observed,
+        "invariant_retention": invariant_retention(field, reference, adjacency),
+        "invariant_specificity_null_mean": mean_null,
+        "invariant_specificity_p": p_value,
+        "invariant_specificity_z": z_score,
+        "invariant_specificity_pass": bool(p_value < 0.05 and z_score > 1.5),
+    }
+
+
 def compute_rows(
     label: str,
     states: np.ndarray,
@@ -156,7 +226,8 @@ def compute_rows(
     prev = None
     for step, state in enumerate(states):
         recoverability = state_recoverability(state, reference)
-        specificity = address_retention(state, reference, adjacency)
+        address_score = address_retention(state, reference, adjacency)
+        invariant_score = invariant_retention(state, reference, adjacency)
         delta = 0.0 if prev is None else recoverability - prev
         prev = recoverability
         rows.append(
@@ -166,7 +237,8 @@ def compute_rows(
                 "time": float(step * config.dt),
                 "recoverability": recoverability,
                 "delta_persistence": float(delta),
-                "address_retention": specificity,
+                "address_retention": address_score,
+                "invariant_retention": invariant_score,
             }
         )
     return rows
@@ -182,9 +254,17 @@ def summarize_run(
 ) -> dict[str, Any]:
     recoverability = np.array([float(row["recoverability"]) for row in rows])
     address_values = np.array([float(row["address_retention"]) for row in rows])
+    invariant_values = np.array([float(row["invariant_retention"]) for row in rows])
     start = min(config.perturbation_step, len(rows) - 1)
     recovery_window = recoverability[max(start, len(rows) // 2) :]
     specificity = address_specificity_test(final_state, reference, adjacency, config.permutation_trials, config.seed + stable_label_offset(label))
+    invariant_specificity = invariant_specificity_test(
+        final_state,
+        reference,
+        adjacency,
+        config.permutation_trials,
+        config.seed + stable_label_offset(label) + 10_000,
+    )
     return {
         "run": label,
         "recoverability_score": float(np.mean(recovery_window)),
@@ -192,16 +272,20 @@ def summarize_run(
         "min_recoverability": float(np.min(recoverability)),
         "final_address_retention": float(address_values[-1]),
         "min_address_retention": float(np.min(address_values)),
+        "final_invariant_retention": float(invariant_values[-1]),
+        "min_invariant_retention": float(np.min(invariant_values)),
         "recovered": bool(float(recoverability[-1]) >= RECOVERABILITY_FLOOR),
         **specificity,
+        **invariant_specificity,
+        "combined_specificity_pass": bool(specificity["address_specificity_pass"] and invariant_specificity["invariant_specificity_pass"]),
     }
 
 
 def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun]) -> dict[str, Any]:
     best_control = max(float(run.summary["recoverability_score"]) for run in controls)
     control_contrast = float(observed.summary["recoverability_score"]) >= best_control + CONTROL_MARGIN
-    control_specificity_passes = sum(1 for run in controls if bool(run.summary["address_specificity_pass"]))
-    observed_specific = bool(observed.summary["address_specificity_pass"])
+    control_specificity_passes = sum(1 for run in controls if bool(run.summary["combined_specificity_pass"]))
+    observed_specific = bool(observed.summary["combined_specificity_pass"])
     observed_recovered = bool(observed.summary["recovered"])
 
     if graph.source_kind == "OPEN_NO_DATA_SYNTHETIC":
@@ -209,19 +293,19 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
         failure = "NO_HAOS_GRAPH_ARTIFACT_FOUND"
     elif observed_recovered and observed_specific and control_contrast and control_specificity_passes == 0:
         status = "PASS"
-        failure = "RECOVERY_WITH_ADDRESS_SPECIFICITY_AND_CONTROL_CONTRAST"
+        failure = "RECOVERY_WITH_ADDRESS_AND_INVARIANT_SPECIFICITY"
     elif observed_recovered and observed_specific and control_specificity_passes > 0:
         status = "MARGINAL"
-        failure = "ADDRESS_SPECIFICITY_CONTROL_MATCH"
+        failure = "COMBINED_SPECIFICITY_CONTROL_MATCH"
     elif observed_recovered and observed_specific:
         status = "MARGINAL"
-        failure = "ADDRESS_SIGNAL_WITHOUT_CONTROL_CONTRAST"
+        failure = "COMBINED_SIGNAL_WITHOUT_CONTROL_CONTRAST"
     elif not observed_recovered:
         status = "FAIL"
         failure = "RECOVERABILITY_COLLAPSE"
     else:
         status = "FAIL"
-        failure = "ADDRESS_SPECIFICITY_FAILED"
+        failure = "COMBINED_SPECIFICITY_FAILED"
 
     return {
         "bridge_status": status,
@@ -231,7 +315,7 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
         "nodes": int(graph.adjacency.shape[0]),
         "edges": int(np.count_nonzero(np.triu(graph.adjacency, k=1))),
         "control_contrast": control_contrast,
-        "control_specificity_pass_count": control_specificity_passes,
+        "control_combined_specificity_pass_count": control_specificity_passes,
         "best_control_recoverability_score": best_control,
         "observed_summary": observed.summary,
         "control_summaries": {run.label: run.summary for run in controls},
@@ -253,29 +337,30 @@ def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, contr
         f"- failure_mode: {status['failure_mode']}",
         f"- graph_source: {status['graph_source']}",
         f"- control_contrast: {status['control_contrast']}",
-        f"- control_specificity_pass_count: {status['control_specificity_pass_count']}",
+        f"- control_combined_specificity_pass_count: {status['control_combined_specificity_pass_count']}",
         "",
-        "| run | recoverability_score | final_recoverability | final_address_retention | specificity_z | specificity_p | specificity_pass |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| run | recoverability_score | final_recoverability | address_retention | invariant_retention | address_z | invariant_z | combined_pass |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for run in [observed, *controls]:
         summary = run.summary
         lines.append(
-            "| {run} | {score:.6f} | {final:.6f} | {address:.6f} | {z:.6f} | {p:.6g} | {passed} |".format(
+            "| {run} | {score:.6f} | {final:.6f} | {address:.6f} | {invariant:.6f} | {address_z:.6f} | {invariant_z:.6f} | {passed} |".format(
                 run=run.label,
                 score=float(summary["recoverability_score"]),
                 final=float(summary["final_recoverability"]),
                 address=float(summary["final_address_retention"]),
-                z=float(summary["address_specificity_z"]),
-                p=float(summary["address_specificity_p"]),
-                passed=summary["address_specificity_pass"],
+                invariant=float(summary["final_invariant_retention"]),
+                address_z=float(summary["address_specificity_z"]),
+                invariant_z=float(summary["invariant_specificity_z"]),
+                passed=summary["combined_specificity_pass"],
             )
         )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def write_csv(path: Path, runs: list[MinimalRun]) -> None:
-    fields = ["run", "step", "time", "recoverability", "delta_persistence", "address_retention"]
+    fields = ["run", "step", "time", "recoverability", "delta_persistence", "address_retention", "invariant_retention"]
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
@@ -289,6 +374,7 @@ def write_plots(output_dir: Path, observed: MinimalRun, controls: list[MinimalRu
     for key, filename, ylabel in (
         ("recoverability", "recoverability.png", "recoverability"),
         ("address_retention", "address_specificity.png", "address retention"),
+        ("invariant_retention", "invariant_retention.png", "invariant retention"),
     ):
         plt.figure(figsize=(8, 4))
         for run in [observed, *controls]:

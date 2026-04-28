@@ -19,6 +19,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dt", type=float, default=0.08, help="Time step.")
     parser.add_argument("--diffusion", type=float, default=0.15, help="Diffusion strength.")
     parser.add_argument("--address-gain", type=float, default=0.05, help="Relational address restoration strength.")
+    parser.add_argument("--invariant-gain", type=float, default=0.025, help="Branch-local shell invariant restoration strength.")
     parser.add_argument("--perturbation-step", type=int, default=20, help="Perturbation step.")
     parser.add_argument("--perturbation-scale", type=float, default=0.85, help="Perturbation amplitude.")
     parser.add_argument("--permutation-trials", type=int, default=64, help="Address specificity permutation trials.")
@@ -35,6 +36,7 @@ def main() -> None:
         dt=args.dt,
         diffusion=args.diffusion,
         address_gain=args.address_gain,
+        invariant_gain=args.invariant_gain,
         perturbation_step=args.perturbation_step,
         perturbation_scale=args.perturbation_scale,
         permutation_trials=args.permutation_trials,
@@ -45,7 +47,8 @@ def main() -> None:
     print(f"failure_mode: {outcome['failure_mode']}")
     print(f"recoverability_score: {outcome['observed_summary']['recoverability_score']}")
     print(f"address_specificity_z: {outcome['observed_summary']['address_specificity_z']}")
-    print(f"control_specificity_pass_count: {outcome['control_specificity_pass_count']}")
+    print(f"invariant_specificity_z: {outcome['observed_summary']['invariant_specificity_z']}")
+    print(f"control_combined_specificity_pass_count: {outcome['control_combined_specificity_pass_count']}")
     print(f"outputs: {config.output_dir}")
 
 
