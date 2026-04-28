@@ -24,6 +24,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--perturbation-scale", type=float, default=0.85, help="Perturbation amplitude.")
     parser.add_argument("--permutation-trials", type=int, default=64, help="Address specificity permutation trials.")
     parser.add_argument("--identity-bins", type=int, default=4, help="Degree/shell bins for branch-identity specificity.")
+    parser.add_argument("--focus-address", action="store_true", help="Only run address-focused ablations.")
     parser.add_argument("--max-nodes", type=int, default=96, help="Maximum graph nodes.")
     return parser.parse_args()
 
@@ -42,6 +43,7 @@ def main() -> None:
         perturbation_scale=args.perturbation_scale,
         permutation_trials=args.permutation_trials,
         identity_bins=args.identity_bins,
+        focus_address=args.focus_address,
         max_nodes=args.max_nodes,
     )
     outcome = run_minimal_probe(config)

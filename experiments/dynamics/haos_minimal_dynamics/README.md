@@ -45,11 +45,22 @@ noise and perturbation noise, then remove one dynamics component at a time:
 - no shell-invariant restoration
 - diffusion only
 - randomized branch targets
+- address only
+- spectral address projection
+- scalar phase address pull
+- multi-scale shell-weighted address pull
+- address weight sweep
 
 ## Run
 
 ```bash
 uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py
+```
+
+To run only the address-focused ablation family:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py --focus-address
 ```
 
 ## Outputs

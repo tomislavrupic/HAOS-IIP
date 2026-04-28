@@ -32,6 +32,7 @@ class MinimalConfig:
     perturbation_scale: float = 0.85
     permutation_trials: int = 64
     identity_bins: int = 4
+    focus_address: bool = False
     max_nodes: int = 96
 
 
@@ -55,8 +56,13 @@ class MinimalRun:
 class RuleComponents:
     target_address: np.ndarray
     target_shell_variance: np.ndarray
+    diffusion_gain: float
     address_gain: float
     invariant_gain: float
+    address_mode: str
+    spectral_basis: np.ndarray | None = None
+    spectral_target: np.ndarray | None = None
+    shell_weights: np.ndarray | None = None
 
 
 def run_minimal_probe(config: MinimalConfig) -> dict[str, Any]:
@@ -103,11 +109,10 @@ def run_single(
         if step == config.perturbation_step:
             prior[perturbation_nodes] += config.perturbation_scale * rng.normal(size=perturbation_nodes.size)
             prior = normalize_field(prior, reference)
-        current_address = local_address(prior, adjacency)
-        address_error = components.target_address - current_address
+        address_pull = address_restoration_pull(prior, reference, adjacency, components)
         invariant_pull = shell_variance_restoration(prior, adjacency, components.target_shell_variance)
-        update = prior - config.dt * config.diffusion * (laplacian @ prior)
-        update += config.dt * components.address_gain * address_error / np.maximum(adjacency.sum(axis=1), 1.0)
+        update = prior - config.dt * components.diffusion_gain * (laplacian @ prior)
+        update += config.dt * components.address_gain * address_pull
         update += config.dt * components.invariant_gain * invariant_pull
         states[step] = normalize_field(update, reference)
 
@@ -124,8 +129,13 @@ def build_rule_components(
 ) -> RuleComponents:
     target_address = local_address(reference, adjacency)
     target_shell_variance = local_shell_variance(reference, adjacency)
+    diffusion_gain = config.diffusion
     address_gain = config.address_gain
     invariant_gain = config.invariant_gain
+    address_mode = "local"
+    spectral_basis: np.ndarray | None = None
+    spectral_target: np.ndarray | None = None
+    shell_weights: np.ndarray | None = None
 
     if rule_variant == "no_address":
         address_gain = 0.0
@@ -134,6 +144,24 @@ def build_rule_components(
     elif rule_variant == "diffusion_only":
         address_gain = 0.0
         invariant_gain = 0.0
+    elif rule_variant == "address_only":
+        diffusion_gain = 0.0
+        invariant_gain = 0.0
+    elif rule_variant == "address_spectral":
+        address_mode = "spectral"
+        spectral_basis = spectral_address_basis(adjacency)
+        spectral_target = spectral_basis.T @ reference
+    elif rule_variant == "address_phase":
+        address_mode = "phase"
+    elif rule_variant == "address_multi_scale":
+        address_mode = "multi_scale"
+        shell_weights = shell_address_weights(reference, adjacency, config.identity_bins)
+    elif rule_variant.startswith("address_weight_"):
+        try:
+            multiplier = float(rule_variant.removeprefix("address_weight_"))
+        except ValueError as exc:
+            raise ValueError(f"Invalid address weight variant: {rule_variant}") from exc
+        address_gain = config.address_gain * multiplier
     elif rule_variant == "randomized_targets":
         rng = np.random.default_rng(config.seed + 50_000)
         target_address = rng.permutation(target_address)
@@ -141,7 +169,17 @@ def build_rule_components(
     elif rule_variant != "full":
         raise ValueError(f"Unknown rule_variant: {rule_variant}")
 
-    return RuleComponents(target_address, target_shell_variance, address_gain, invariant_gain)
+    return RuleComponents(
+        target_address=target_address,
+        target_shell_variance=target_shell_variance,
+        diffusion_gain=diffusion_gain,
+        address_gain=address_gain,
+        invariant_gain=invariant_gain,
+        address_mode=address_mode,
+        spectral_basis=spectral_basis,
+        spectral_target=spectral_target,
+        shell_weights=shell_weights,
+    )
 
 
 def run_rule_ablations(
@@ -156,7 +194,22 @@ def run_rule_ablations(
         ("ablation_no_invariant", "no_invariant"),
         ("ablation_diffusion_only", "diffusion_only"),
         ("ablation_randomized_targets", "randomized_targets"),
+        ("ablation_address_only", "address_only"),
+        ("ablation_address_spectral", "address_spectral"),
+        ("ablation_address_phase", "address_phase"),
+        ("ablation_address_multi_scale", "address_multi_scale"),
+        ("ablation_address_weight_0_0", "address_weight_0.0"),
+        ("ablation_address_weight_0_5", "address_weight_0.5"),
+        ("ablation_address_weight_1_0", "address_weight_1.0"),
+        ("ablation_address_weight_2_0", "address_weight_2.0"),
+        ("ablation_address_weight_3_0", "address_weight_3.0"),
     ]
+    if config.focus_address:
+        variants = [
+            item
+            for item in variants
+            if item[0] in {"ablation_full", "ablation_no_address", "ablation_randomized_targets"} or item[0].startswith("ablation_address_")
+        ]
     runs: list[MinimalRun] = []
     for label, variant in variants:
         # Identical initial noise and perturbation noise across ablations: only
@@ -188,6 +241,50 @@ def local_address(field: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
 
     degree = np.maximum(adjacency.sum(axis=1), EPS)
     return (adjacency @ field) / degree - field
+
+
+def address_restoration_pull(
+    field: np.ndarray,
+    reference: np.ndarray,
+    adjacency: np.ndarray,
+    components: RuleComponents,
+) -> np.ndarray:
+    """Compute the active harmonic-address pull for a rule variant."""
+
+    degree = np.maximum(adjacency.sum(axis=1), 1.0)
+    if components.address_mode == "local":
+        return (components.target_address - local_address(field, adjacency)) / degree
+    if components.address_mode == "spectral":
+        if components.spectral_basis is None or components.spectral_target is None:
+            raise ValueError("Spectral address mode requires basis and target coefficients.")
+        return components.spectral_basis @ (components.spectral_target - components.spectral_basis.T @ field)
+    if components.address_mode == "phase":
+        target_phase = np.angle(np.exp(1j * reference))
+        current_phase = np.angle(np.exp(1j * field))
+        return np.sin(target_phase - current_phase)
+    if components.address_mode == "multi_scale":
+        weights = components.shell_weights if components.shell_weights is not None else np.ones_like(field)
+        return weights * (components.target_address - local_address(field, adjacency)) / degree
+    raise ValueError(f"Unknown address mode: {components.address_mode}")
+
+
+def spectral_address_basis(adjacency: np.ndarray, modes: int = 8) -> np.ndarray:
+    """Low-frequency harmonic basis of the frozen normalized Laplacian."""
+
+    transition = build_transition(adjacency)
+    normalized_laplacian = np.eye(adjacency.shape[0]) - 0.5 * (transition + transition.T)
+    eigenvalues, eigenvectors = np.linalg.eigh(normalized_laplacian)
+    order = np.argsort(eigenvalues)
+    stop = min(max(2, modes + 1), eigenvectors.shape[1])
+    return eigenvectors[:, order[1:stop]]
+
+
+def shell_address_weights(reference: np.ndarray, adjacency: np.ndarray, bins: int) -> np.ndarray:
+    """Moderate local-address gain by frozen shell-variance strata."""
+
+    labels = quantile_bins(local_shell_variance(reference, adjacency), max(2, bins))
+    scale = labels.astype(float) / max(float(np.max(labels)), 1.0)
+    return 0.75 + 0.5 * scale
 
 
 def local_shell_variance(field: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
@@ -543,10 +640,19 @@ def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, contr
 
 
 def write_ablation_report(path: Path, ablations: list[MinimalRun], drops: dict[str, dict[str, float]]) -> None:
+    best_address = best_address_variant(ablations)
+    full = next((run for run in ablations if run.label == "ablation_full"), None)
     lines = [
         "# HAOS Minimal Dynamics Ablation Report",
         "",
         "Ablations reuse the same initial noise and perturbation noise. Only the dynamics rule component changes.",
+        "",
+        "## Address Term Diagnosis",
+        "",
+        f"- best_address_variant: {best_address.label if best_address else 'none'}",
+        f"- best_address_branch_z: {float(best_address.summary['branch_identity_z']):.6f}" if best_address else "- best_address_branch_z: n/a",
+        f"- full_branch_z: {float(full.summary['branch_identity_z']):.6f}" if full else "- full_branch_z: n/a",
+        f"- address_beats_full: {bool(best_address and full and float(best_address.summary['branch_identity_z']) > float(full.summary['branch_identity_z']))}",
         "",
         "| run | recoverability_score | address_z | invariant_z | branch_z | branch_z_drop | strict_pass |",
         "| --- | ---: | ---: | ---: | ---: | ---: | --- |",
@@ -566,6 +672,13 @@ def write_ablation_report(path: Path, ablations: list[MinimalRun], drops: dict[s
             )
         )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def best_address_variant(ablations: list[MinimalRun]) -> MinimalRun | None:
+    candidates = [run for run in ablations if run.label.startswith("ablation_address_")]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda run: float(run.summary["branch_identity_z"]))
 
 
 def write_csv(path: Path, runs: list[MinimalRun]) -> None:
