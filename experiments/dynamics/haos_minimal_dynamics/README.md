@@ -38,6 +38,14 @@ final field values are shuffled only inside matched weighted-degree and frozen
 shell-variance buckets. This breaks branch identity while preserving the cheap
 local statistics that made earlier controls too competitive.
 
+The run also writes a targeted ablation report. Ablations reuse the same initial
+noise and perturbation noise, then remove one dynamics component at a time:
+
+- no address restoration
+- no shell-invariant restoration
+- diffusion only
+- randomized branch targets
+
 ## Run
 
 ```bash
@@ -49,8 +57,10 @@ uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_d
 Generated outputs are ignored:
 
 - `bridge_status.json`
+- `ablation_report.md`
 - `minimal_dynamics_report.md`
 - `minimal_timeseries.csv`
+- `ablation_branch_identity.png`
 - `recoverability.png`
 - `address_specificity.png`
 - `invariant_retention.png`

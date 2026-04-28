@@ -51,6 +51,14 @@ class MinimalRun:
     summary: dict[str, Any]
 
 
+@dataclass(frozen=True)
+class RuleComponents:
+    target_address: np.ndarray
+    target_shell_variance: np.ndarray
+    address_gain: float
+    invariant_gain: float
+
+
 def run_minimal_probe(config: MinimalConfig) -> dict[str, Any]:
     config.output_dir.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(config.seed)
@@ -65,8 +73,11 @@ def run_minimal_probe(config: MinimalConfig) -> dict[str, Any]:
         run_single("degree_preserving_rewire_control", degree_preserving_rewire(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
         run_single("topology_randomization_control", topology_randomize(graph.adjacency, rng), reference, perturbation_nodes, config, rng),
     ]
+    ablations = run_rule_ablations(graph.adjacency, reference, perturbation_nodes, config)
     status = classify(graph, observed, controls)
-    write_outputs(config.output_dir, status, observed, controls)
+    status["ablation_summaries"] = {run.label: run.summary for run in ablations}
+    status["ablation_drops"] = summarize_ablation_drops(ablations)
+    write_outputs(config.output_dir, status, observed, controls, ablations)
     return status
 
 
@@ -78,11 +89,11 @@ def run_single(
     config: MinimalConfig,
     rng: np.random.Generator,
     initial_override: np.ndarray | None = None,
+    rule_variant: str = "full",
 ) -> MinimalRun:
     transition = build_transition(adjacency)
     laplacian = np.eye(adjacency.shape[0]) - transition
-    target_address = local_address(reference, adjacency)
-    target_shell_variance = local_shell_variance(reference, adjacency)
+    components = build_rule_components(reference, adjacency, config, rule_variant)
     initial = reference + 0.04 * rng.normal(size=reference.shape) if initial_override is None else initial_override
     states = np.zeros((config.steps + 1, reference.size), dtype=float)
     states[0] = normalize_field(initial, reference)
@@ -93,16 +104,83 @@ def run_single(
             prior[perturbation_nodes] += config.perturbation_scale * rng.normal(size=perturbation_nodes.size)
             prior = normalize_field(prior, reference)
         current_address = local_address(prior, adjacency)
-        address_error = target_address - current_address
-        invariant_pull = shell_variance_restoration(prior, adjacency, target_shell_variance)
+        address_error = components.target_address - current_address
+        invariant_pull = shell_variance_restoration(prior, adjacency, components.target_shell_variance)
         update = prior - config.dt * config.diffusion * (laplacian @ prior)
-        update += config.dt * config.address_gain * address_error / np.maximum(adjacency.sum(axis=1), 1.0)
-        update += config.dt * config.invariant_gain * invariant_pull
+        update += config.dt * components.address_gain * address_error / np.maximum(adjacency.sum(axis=1), 1.0)
+        update += config.dt * components.invariant_gain * invariant_pull
         states[step] = normalize_field(update, reference)
 
     rows = compute_rows(label, states, reference, adjacency, config)
     summary = summarize_run(label, rows, states[-1], reference, adjacency, config)
     return MinimalRun(label, states, rows, summary)
+
+
+def build_rule_components(
+    reference: np.ndarray,
+    adjacency: np.ndarray,
+    config: MinimalConfig,
+    rule_variant: str,
+) -> RuleComponents:
+    target_address = local_address(reference, adjacency)
+    target_shell_variance = local_shell_variance(reference, adjacency)
+    address_gain = config.address_gain
+    invariant_gain = config.invariant_gain
+
+    if rule_variant == "no_address":
+        address_gain = 0.0
+    elif rule_variant == "no_invariant":
+        invariant_gain = 0.0
+    elif rule_variant == "diffusion_only":
+        address_gain = 0.0
+        invariant_gain = 0.0
+    elif rule_variant == "randomized_targets":
+        rng = np.random.default_rng(config.seed + 50_000)
+        target_address = rng.permutation(target_address)
+        target_shell_variance = rng.permutation(target_shell_variance)
+    elif rule_variant != "full":
+        raise ValueError(f"Unknown rule_variant: {rule_variant}")
+
+    return RuleComponents(target_address, target_shell_variance, address_gain, invariant_gain)
+
+
+def run_rule_ablations(
+    adjacency: np.ndarray,
+    reference: np.ndarray,
+    perturbation_nodes: np.ndarray,
+    config: MinimalConfig,
+) -> list[MinimalRun]:
+    variants = [
+        ("ablation_full", "full"),
+        ("ablation_no_address", "no_address"),
+        ("ablation_no_invariant", "no_invariant"),
+        ("ablation_diffusion_only", "diffusion_only"),
+        ("ablation_randomized_targets", "randomized_targets"),
+    ]
+    runs: list[MinimalRun] = []
+    for label, variant in variants:
+        # Identical initial noise and perturbation noise across ablations: only
+        # the rule component changes.
+        rng = np.random.default_rng(config.seed + 60_000)
+        runs.append(run_single(label, adjacency, reference, perturbation_nodes, config, rng, rule_variant=variant))
+    return runs
+
+
+def summarize_ablation_drops(ablations: list[MinimalRun]) -> dict[str, dict[str, float]]:
+    baseline = next((run for run in ablations if run.label == "ablation_full"), None)
+    if baseline is None:
+        return {}
+    base = baseline.summary
+    drops: dict[str, dict[str, float]] = {}
+    for run in ablations:
+        summary = run.summary
+        drops[run.label] = {
+            "recoverability_score_drop": float(base["recoverability_score"]) - float(summary["recoverability_score"]),
+            "address_z_drop": float(base["address_specificity_z"]) - float(summary["address_specificity_z"]),
+            "invariant_z_drop": float(base["invariant_specificity_z"]) - float(summary["invariant_specificity_z"]),
+            "branch_identity_z_drop": float(base["branch_identity_z"]) - float(summary["branch_identity_z"]),
+        }
+    return drops
 
 
 def local_address(field: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
@@ -418,11 +496,18 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
     }
 
 
-def write_outputs(output_dir: Path, status: dict[str, Any], observed: MinimalRun, controls: list[MinimalRun]) -> None:
+def write_outputs(
+    output_dir: Path,
+    status: dict[str, Any],
+    observed: MinimalRun,
+    controls: list[MinimalRun],
+    ablations: list[MinimalRun],
+) -> None:
     write_json(output_dir / "bridge_status.json", status)
     write_csv(output_dir / "minimal_timeseries.csv", [observed, *controls])
     write_report(output_dir / "minimal_dynamics_report.md", status, observed, controls)
-    write_plots(output_dir, observed, controls)
+    write_ablation_report(output_dir / "ablation_report.md", ablations, status["ablation_drops"])
+    write_plots(output_dir, observed, controls, ablations)
 
 
 def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, controls: list[MinimalRun]) -> None:
@@ -457,6 +542,32 @@ def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, contr
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_ablation_report(path: Path, ablations: list[MinimalRun], drops: dict[str, dict[str, float]]) -> None:
+    lines = [
+        "# HAOS Minimal Dynamics Ablation Report",
+        "",
+        "Ablations reuse the same initial noise and perturbation noise. Only the dynamics rule component changes.",
+        "",
+        "| run | recoverability_score | address_z | invariant_z | branch_z | branch_z_drop | strict_pass |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | --- |",
+    ]
+    for run in ablations:
+        summary = run.summary
+        run_drops = drops.get(run.label, {})
+        lines.append(
+            "| {run} | {score:.6f} | {address_z:.6f} | {invariant_z:.6f} | {branch_z:.6f} | {branch_drop:.6f} | {passed} |".format(
+                run=run.label,
+                score=float(summary["recoverability_score"]),
+                address_z=float(summary["address_specificity_z"]),
+                invariant_z=float(summary["invariant_specificity_z"]),
+                branch_z=float(summary["branch_identity_z"]),
+                branch_drop=float(run_drops.get("branch_identity_z_drop", 0.0)),
+                passed=summary["strict_specificity_pass"],
+            )
+        )
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def write_csv(path: Path, runs: list[MinimalRun]) -> None:
     fields = ["run", "step", "time", "recoverability", "delta_persistence", "address_retention", "invariant_retention"]
     with path.open("w", encoding="utf-8", newline="") as handle:
@@ -466,7 +577,7 @@ def write_csv(path: Path, runs: list[MinimalRun]) -> None:
             writer.writerows(run.rows)
 
 
-def write_plots(output_dir: Path, observed: MinimalRun, controls: list[MinimalRun]) -> None:
+def write_plots(output_dir: Path, observed: MinimalRun, controls: list[MinimalRun], ablations: list[MinimalRun]) -> None:
     import matplotlib.pyplot as plt
 
     for key, filename, ylabel in (
@@ -484,6 +595,17 @@ def write_plots(output_dir: Path, observed: MinimalRun, controls: list[MinimalRu
         plt.tight_layout()
         plt.savefig(output_dir / filename, dpi=160)
         plt.close()
+
+    labels = [run.label.replace("ablation_", "") for run in ablations]
+    branch_z = [float(run.summary["branch_identity_z"]) for run in ablations]
+    plt.figure(figsize=(8, 4))
+    plt.bar(labels, branch_z)
+    plt.ylabel("branch identity z")
+    plt.title("Dynamics rule ablation")
+    plt.xticks(rotation=25, ha="right")
+    plt.tight_layout()
+    plt.savefig(output_dir / "ablation_branch_identity.png", dpi=160)
+    plt.close()
 
 
 def load_geometry_graph(config: MinimalConfig) -> GraphData:

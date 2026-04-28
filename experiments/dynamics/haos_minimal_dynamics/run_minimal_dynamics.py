@@ -53,6 +53,7 @@ def main() -> None:
     print(f"branch_identity_z: {outcome['observed_summary']['branch_identity_z']}")
     print(f"control_combined_specificity_pass_count: {outcome['control_combined_specificity_pass_count']}")
     print(f"control_strict_specificity_pass_count: {outcome['control_strict_specificity_pass_count']}")
+    print(f"ablation_report: {config.output_dir / 'ablation_report.md'}")
     print(f"outputs: {config.output_dir}")
 
 
