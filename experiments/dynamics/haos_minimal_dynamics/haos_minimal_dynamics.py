@@ -35,7 +35,7 @@ class MinimalConfig:
     perturbation_scale: float = 0.85
     permutation_trials: int = 64
     identity_bins: int = 4
-    null_level: int = 2
+    null_level: int = 3
     spectral_null_candidates: int = 8
     focus_address: bool = False
     max_nodes: int = 96
@@ -519,6 +519,47 @@ def spectral_aware_specificity_test(
     }
 
 
+def higher_order_specificity_test(
+    field: np.ndarray,
+    reference: np.ndarray,
+    adjacency: np.ndarray,
+    trials: int,
+    seed: int,
+    bins: int,
+    modes: int,
+    candidate_pool: int,
+) -> dict[str, float | bool | int]:
+    """Specificity against a 2-hop/triangle-aware stratified null."""
+
+    observed = branch_identity_score(field, reference, adjacency)
+    observed_signature = higher_order_signature(field, adjacency, modes)
+    rng = np.random.default_rng(seed)
+    nulls = np.zeros(trials, dtype=float)
+    pool = max(1, int(candidate_pool))
+    for idx in range(trials):
+        best_distance = math.inf
+        best_candidate = field
+        for _ in range(pool):
+            candidate = degree_shell_stratified_permutation(field, reference, adjacency, rng, bins)
+            distance = float(np.linalg.norm(higher_order_signature(candidate, adjacency, modes) - observed_signature))
+            if distance < best_distance:
+                best_distance = distance
+                best_candidate = candidate
+        nulls[idx] = branch_identity_score(best_candidate, reference, adjacency)
+    mean_null = float(np.mean(nulls))
+    std_null = float(np.std(nulls))
+    z_score = float((observed - mean_null) / (std_null if std_null > 1.0e-8 else 1.0))
+    p_value = float((np.count_nonzero(nulls >= observed) + 1) / (trials + 1))
+    return {
+        "higher_order_specificity": observed,
+        "higher_order_null_mean": mean_null,
+        "higher_order_p": p_value,
+        "higher_order_z": z_score,
+        "higher_order_candidate_pool": int(pool),
+        "higher_order_pass": bool(p_value < 0.05 and z_score > 1.5),
+    }
+
+
 def branch_identity_score(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
     """Combined address + invariant score used by the stricter identity null."""
 
@@ -541,6 +582,40 @@ def local_autocorrelation(field: np.ndarray, adjacency: np.ndarray) -> float:
     numerator = float(np.sum(adjacency * centered[:, None] * centered[None, :]))
     denominator = float(np.sum(adjacency) * max(np.var(centered), EPS))
     return numerator / max(denominator, EPS)
+
+
+def higher_order_signature(field: np.ndarray, adjacency: np.ndarray, modes: int) -> np.ndarray:
+    two_hop = two_hop_adjacency(adjacency)
+    triangle = triangle_supported_adjacency(adjacency)
+    return np.concatenate(
+        [
+            spectral_field_signature(field, adjacency, modes),
+            np.array(
+                [
+                    local_autocorrelation(field, adjacency),
+                    local_autocorrelation(field, two_hop),
+                    local_autocorrelation(field, triangle),
+                ],
+                dtype=float,
+            ),
+        ]
+    )
+
+
+def two_hop_adjacency(adjacency: np.ndarray) -> np.ndarray:
+    binary = (adjacency > 0.0).astype(float)
+    two_hop = binary @ binary
+    two_hop[binary > 0.0] = 0.0
+    np.fill_diagonal(two_hop, 0.0)
+    return normalize_adjacency(two_hop)
+
+
+def triangle_supported_adjacency(adjacency: np.ndarray) -> np.ndarray:
+    binary = (adjacency > 0.0).astype(float)
+    common = binary @ binary
+    supported = adjacency * common
+    np.fill_diagonal(supported, 0.0)
+    return normalize_adjacency(supported)
 
 
 def degree_shell_stratified_permutation(
@@ -661,13 +736,25 @@ def summarize_run(
         config.spectral_null_candidates,
         include_autocorrelation=True,
     )
+    higher_order_specificity = higher_order_specificity_test(
+        final_state,
+        reference,
+        adjacency,
+        config.permutation_trials,
+        specificity_seed(config, label, 50_000),
+        config.identity_bins,
+        config.spectral_modes,
+        config.spectral_null_candidates,
+    )
     combined_specificity_pass = bool(specificity["address_specificity_pass"] and invariant_specificity["invariant_specificity_pass"])
-    null_level = int(np.clip(config.null_level, 1, 3))
+    null_level = int(np.clip(config.null_level, 1, 4))
     strict_specificity_pass = bool(combined_specificity_pass and branch_identity_specificity["branch_identity_pass"])
     if null_level >= 2:
         strict_specificity_pass = bool(strict_specificity_pass and spectral_aware_specificity["spectral_aware_pass"])
     if null_level >= 3:
         strict_specificity_pass = bool(strict_specificity_pass and autocorr_aware_specificity["autocorr_aware_pass"])
+    if null_level >= 4:
+        strict_specificity_pass = bool(strict_specificity_pass and higher_order_specificity["higher_order_pass"])
     return {
         "run": label,
         "recoverability_score": float(np.mean(recovery_window)),
@@ -683,6 +770,7 @@ def summarize_run(
         **branch_identity_specificity,
         **spectral_aware_specificity,
         **autocorr_aware_specificity,
+        **higher_order_specificity,
         "combined_specificity_pass": combined_specificity_pass,
         "null_level": null_level,
         "strict_specificity_pass": strict_specificity_pass,
@@ -696,6 +784,7 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
     control_strict_specificity_passes = sum(1 for run in controls if bool(run.summary["strict_specificity_pass"]))
     control_spectral_passes = sum(1 for run in controls if bool(run.summary["spectral_aware_pass"]))
     control_autocorr_passes = sum(1 for run in controls if bool(run.summary["autocorr_aware_pass"]))
+    control_higher_order_passes = sum(1 for run in controls if bool(run.summary["higher_order_pass"]))
     observed_specific = bool(observed.summary["strict_specificity_pass"])
     observed_recovered = bool(observed.summary["recovered"])
     null_level = int(observed.summary.get("null_level", 1))
@@ -708,7 +797,12 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
         failure = "RECOVERY_WITH_SPECTRAL_AWARE_SPECIFICITY"
     elif observed_recovered and observed_specific and control_strict_specificity_passes > 0:
         status = "MARGINAL"
-        failure = "AUTOCORR_AWARE_CONTROL_MATCH" if null_level >= 3 else "SPECTRAL_AWARE_CONTROL_MATCH"
+        if null_level >= 4:
+            failure = "HIGHER_ORDER_CONTROL_MATCH"
+        elif null_level >= 3:
+            failure = "AUTOCORR_AWARE_CONTROL_MATCH"
+        else:
+            failure = "SPECTRAL_AWARE_CONTROL_MATCH"
     elif observed_recovered and observed_specific:
         status = "MARGINAL"
         failure = "STRICT_SIGNAL_WITHOUT_CONTROL_CONTRAST"
@@ -731,6 +825,8 @@ def classify(graph: GraphData, observed: MinimalRun, controls: list[MinimalRun])
         "control_strict_specificity_pass_count": control_strict_specificity_passes,
         "control_spectral_aware_pass_count": control_spectral_passes,
         "control_autocorr_aware_pass_count": control_autocorr_passes,
+        "control_higher_order_pass_count": control_higher_order_passes,
+        "leakage_controls": [run.label for run in controls if bool(run.summary["strict_specificity_pass"])],
         "best_control_recoverability_score": best_control,
         "observed_summary": observed.summary,
         "control_summaries": {run.label: run.summary for run in controls},
@@ -766,24 +862,30 @@ def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, contr
         f"- control_strict_specificity_pass_count: {status['control_strict_specificity_pass_count']}",
         f"- control_spectral_aware_pass_count: {status['control_spectral_aware_pass_count']}",
         f"- control_autocorr_aware_pass_count: {status['control_autocorr_aware_pass_count']}",
+        f"- control_higher_order_pass_count: {status['control_higher_order_pass_count']}",
         "",
         "## Spectral Smoothing Diagnosis",
         "",
         "The strict gate now includes a spectral-aware null. Null candidates preserve degree/shell buckets and are selected to match low-mode spectral energy before branch identity is scored.",
         "",
-        "| run | recoverability_score | final_recoverability | branch_z | spectral_z | autocorr_z | strict_pass |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | --- |",
+        "## Leakage Analysis",
+        "",
+        f"- leakage_controls: {', '.join(status.get('leakage_controls', [])) or 'none'}",
+        "",
+        "| run | recoverability_score | final_recoverability | branch_z | spectral_z | autocorr_z | higher_z | strict_pass |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for run in [observed, *controls]:
         summary = run.summary
         lines.append(
-            "| {run} | {score:.6f} | {final:.6f} | {branch_z:.6f} | {spectral_z:.6f} | {autocorr_z:.6f} | {passed} |".format(
+            "| {run} | {score:.6f} | {final:.6f} | {branch_z:.6f} | {spectral_z:.6f} | {autocorr_z:.6f} | {higher_z:.6f} | {passed} |".format(
                 run=run.label,
                 score=float(summary["recoverability_score"]),
                 final=float(summary["final_recoverability"]),
                 branch_z=float(summary["branch_identity_z"]),
                 spectral_z=float(summary["spectral_aware_z"]),
                 autocorr_z=float(summary["autocorr_aware_z"]),
+                higher_z=float(summary["higher_order_z"]),
                 passed=summary["strict_specificity_pass"],
             )
         )
@@ -886,7 +988,7 @@ def write_plots(output_dir: Path, observed: MinimalRun, controls: list[MinimalRu
     plt.figure(figsize=(9, 4))
     plt.bar(x - width, [float(run.summary["branch_identity_z"]) for run in runs], width, label="degree/shell")
     plt.bar(x, [float(run.summary["spectral_aware_z"]) for run in runs], width, label="spectral-aware")
-    plt.bar(x + width, [float(run.summary["autocorr_aware_z"]) for run in runs], width, label="spectral+autocorr")
+    plt.bar(x + width, [float(run.summary["higher_order_z"]) for run in runs], width, label="higher-order")
     plt.ylabel("specificity z")
     plt.title("Null erosion")
     plt.xticks(x, labels, rotation=25, ha="right")
