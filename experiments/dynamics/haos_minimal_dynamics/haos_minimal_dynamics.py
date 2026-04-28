@@ -26,7 +26,10 @@ class MinimalConfig:
     steps: int = 120
     dt: float = 0.08
     diffusion: float = 0.15
-    address_gain: float = 0.05
+    address_gain: float = 0.45
+    address_mode: str = "spectral"
+    spectral_modes: int = 8
+    hybrid_spectral_weight: float = 0.7
     invariant_gain: float = 0.025
     perturbation_step: int = 20
     perturbation_scale: float = 0.85
@@ -63,6 +66,7 @@ class RuleComponents:
     spectral_basis: np.ndarray | None = None
     spectral_target: np.ndarray | None = None
     shell_weights: np.ndarray | None = None
+    hybrid_spectral_weight: float = 0.7
 
 
 def run_minimal_probe(config: MinimalConfig) -> dict[str, Any]:
@@ -81,6 +85,9 @@ def run_minimal_probe(config: MinimalConfig) -> dict[str, Any]:
     ]
     ablations = run_rule_ablations(graph.adjacency, reference, perturbation_nodes, config)
     status = classify(graph, observed, controls)
+    status["address_mode"] = config.address_mode
+    status["spectral_modes"] = int(config.spectral_modes)
+    status["hybrid_spectral_weight"] = float(config.hybrid_spectral_weight)
     status["ablation_summaries"] = {run.label: run.summary for run in ablations}
     status["ablation_drops"] = summarize_ablation_drops(ablations)
     write_outputs(config.output_dir, status, observed, controls, ablations)
@@ -132,10 +139,11 @@ def build_rule_components(
     diffusion_gain = config.diffusion
     address_gain = config.address_gain
     invariant_gain = config.invariant_gain
-    address_mode = "local"
+    address_mode = config.address_mode
     spectral_basis: np.ndarray | None = None
     spectral_target: np.ndarray | None = None
     shell_weights: np.ndarray | None = None
+    hybrid_spectral_weight = config.hybrid_spectral_weight
 
     if rule_variant == "no_address":
         address_gain = 0.0
@@ -147,10 +155,12 @@ def build_rule_components(
     elif rule_variant == "address_only":
         diffusion_gain = 0.0
         invariant_gain = 0.0
+    elif rule_variant == "address_local":
+        address_mode = "local"
     elif rule_variant == "address_spectral":
         address_mode = "spectral"
-        spectral_basis = spectral_address_basis(adjacency)
-        spectral_target = spectral_basis.T @ reference
+    elif rule_variant == "address_hybrid":
+        address_mode = "hybrid"
     elif rule_variant == "address_phase":
         address_mode = "phase"
     elif rule_variant == "address_multi_scale":
@@ -162,12 +172,23 @@ def build_rule_components(
         except ValueError as exc:
             raise ValueError(f"Invalid address weight variant: {rule_variant}") from exc
         address_gain = config.address_gain * multiplier
+    elif rule_variant.startswith("address_gain_"):
+        try:
+            address_gain = float(rule_variant.removeprefix("address_gain_"))
+        except ValueError as exc:
+            raise ValueError(f"Invalid address gain variant: {rule_variant}") from exc
     elif rule_variant == "randomized_targets":
         rng = np.random.default_rng(config.seed + 50_000)
         target_address = rng.permutation(target_address)
         target_shell_variance = rng.permutation(target_shell_variance)
     elif rule_variant != "full":
         raise ValueError(f"Unknown rule_variant: {rule_variant}")
+
+    if address_mode not in {"local", "spectral", "hybrid", "phase", "multi_scale"}:
+        raise ValueError(f"Unknown address_mode: {address_mode}")
+    if address_mode in {"spectral", "hybrid"}:
+        spectral_basis = spectral_address_basis(adjacency, config.spectral_modes)
+        spectral_target = spectral_basis.T @ reference
 
     return RuleComponents(
         target_address=target_address,
@@ -179,6 +200,7 @@ def build_rule_components(
         spectral_basis=spectral_basis,
         spectral_target=spectral_target,
         shell_weights=shell_weights,
+        hybrid_spectral_weight=hybrid_spectral_weight,
     )
 
 
@@ -195,14 +217,16 @@ def run_rule_ablations(
         ("ablation_diffusion_only", "diffusion_only"),
         ("ablation_randomized_targets", "randomized_targets"),
         ("ablation_address_only", "address_only"),
+        ("ablation_address_local", "address_local"),
         ("ablation_address_spectral", "address_spectral"),
+        ("ablation_address_hybrid_spectral_local", "address_hybrid"),
         ("ablation_address_phase", "address_phase"),
         ("ablation_address_multi_scale", "address_multi_scale"),
-        ("ablation_address_weight_0_0", "address_weight_0.0"),
-        ("ablation_address_weight_0_5", "address_weight_0.5"),
-        ("ablation_address_weight_1_0", "address_weight_1.0"),
-        ("ablation_address_weight_2_0", "address_weight_2.0"),
-        ("ablation_address_weight_3_0", "address_weight_3.0"),
+        ("ablation_address_gain_0_000", "address_gain_0.0"),
+        ("ablation_address_gain_0_075", "address_gain_0.075"),
+        ("ablation_address_gain_0_150", "address_gain_0.15"),
+        ("ablation_address_gain_0_300", "address_gain_0.30"),
+        ("ablation_address_gain_0_450", "address_gain_0.45"),
     ]
     if config.focus_address:
         variants = [
@@ -252,20 +276,29 @@ def address_restoration_pull(
     """Compute the active harmonic-address pull for a rule variant."""
 
     degree = np.maximum(adjacency.sum(axis=1), 1.0)
+    local_pull = (components.target_address - local_address(field, adjacency)) / degree
     if components.address_mode == "local":
-        return (components.target_address - local_address(field, adjacency)) / degree
+        return local_pull
     if components.address_mode == "spectral":
-        if components.spectral_basis is None or components.spectral_target is None:
-            raise ValueError("Spectral address mode requires basis and target coefficients.")
-        return components.spectral_basis @ (components.spectral_target - components.spectral_basis.T @ field)
+        return spectral_address_pull(field, components)
+    if components.address_mode == "hybrid":
+        spectral_pull = spectral_address_pull(field, components)
+        weight = float(np.clip(components.hybrid_spectral_weight, 0.0, 1.0))
+        return weight * spectral_pull + (1.0 - weight) * local_pull
     if components.address_mode == "phase":
         target_phase = np.angle(np.exp(1j * reference))
         current_phase = np.angle(np.exp(1j * field))
         return np.sin(target_phase - current_phase)
     if components.address_mode == "multi_scale":
         weights = components.shell_weights if components.shell_weights is not None else np.ones_like(field)
-        return weights * (components.target_address - local_address(field, adjacency)) / degree
+        return weights * local_pull
     raise ValueError(f"Unknown address mode: {components.address_mode}")
+
+
+def spectral_address_pull(field: np.ndarray, components: RuleComponents) -> np.ndarray:
+    if components.spectral_basis is None or components.spectral_target is None:
+        raise ValueError("Spectral address mode requires basis and target coefficients.")
+    return components.spectral_basis @ (components.spectral_target - components.spectral_basis.T @ field)
 
 
 def spectral_address_basis(adjacency: np.ndarray, modes: int = 8) -> np.ndarray:
@@ -514,20 +547,20 @@ def summarize_run(
     invariant_values = np.array([float(row["invariant_retention"]) for row in rows])
     start = min(config.perturbation_step, len(rows) - 1)
     recovery_window = recoverability[max(start, len(rows) // 2) :]
-    specificity = address_specificity_test(final_state, reference, adjacency, config.permutation_trials, config.seed + stable_label_offset(label))
+    specificity = address_specificity_test(final_state, reference, adjacency, config.permutation_trials, specificity_seed(config, label, 0))
     invariant_specificity = invariant_specificity_test(
         final_state,
         reference,
         adjacency,
         config.permutation_trials,
-        config.seed + stable_label_offset(label) + 10_000,
+        specificity_seed(config, label, 10_000),
     )
     branch_identity_specificity = branch_identity_specificity_test(
         final_state,
         reference,
         adjacency,
         config.permutation_trials,
-        config.seed + stable_label_offset(label) + 20_000,
+        specificity_seed(config, label, 20_000),
         config.identity_bins,
     )
     combined_specificity_pass = bool(specificity["address_specificity_pass"] and invariant_specificity["invariant_specificity_pass"])
@@ -614,6 +647,8 @@ def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, contr
         f"- bridge_status: {status['bridge_status']}",
         f"- failure_mode: {status['failure_mode']}",
         f"- graph_source: {status['graph_source']}",
+        f"- address_mode: {status.get('address_mode', 'unknown')}",
+        f"- spectral_modes: {status.get('spectral_modes', 'unknown')}",
         f"- control_contrast: {status['control_contrast']}",
         f"- control_combined_specificity_pass_count: {status['control_combined_specificity_pass_count']}",
         f"- control_strict_specificity_pass_count: {status['control_strict_specificity_pass_count']}",
@@ -642,6 +677,12 @@ def write_report(path: Path, status: dict[str, Any], observed: MinimalRun, contr
 def write_ablation_report(path: Path, ablations: list[MinimalRun], drops: dict[str, dict[str, float]]) -> None:
     best_address = best_address_variant(ablations)
     full = next((run for run in ablations if run.label == "ablation_full"), None)
+    old_local = next((run for run in ablations if run.label == "ablation_address_local"), None)
+    spectral_delta = (
+        float(full.summary["branch_identity_z"]) - float(old_local.summary["branch_identity_z"])
+        if full is not None and old_local is not None
+        else None
+    )
     lines = [
         "# HAOS Minimal Dynamics Ablation Report",
         "",
@@ -652,6 +693,8 @@ def write_ablation_report(path: Path, ablations: list[MinimalRun], drops: dict[s
         f"- best_address_variant: {best_address.label if best_address else 'none'}",
         f"- best_address_branch_z: {float(best_address.summary['branch_identity_z']):.6f}" if best_address else "- best_address_branch_z: n/a",
         f"- full_branch_z: {float(full.summary['branch_identity_z']):.6f}" if full else "- full_branch_z: n/a",
+        f"- old_local_branch_z: {float(old_local.summary['branch_identity_z']):.6f}" if old_local else "- old_local_branch_z: n/a",
+        f"- spectral_default_delta_vs_local: {spectral_delta:.6f}" if spectral_delta is not None else "- spectral_default_delta_vs_local: n/a",
         f"- address_beats_full: {bool(best_address and full and float(best_address.summary['branch_identity_z']) > float(full.summary['branch_identity_z']))}",
         "",
         "| run | recoverability_score | address_z | invariant_z | branch_z | branch_z_drop | strict_pass |",
@@ -879,6 +922,11 @@ def pairwise_distances(points: np.ndarray) -> np.ndarray:
 
 def stable_label_offset(label: str) -> int:
     return sum((idx + 1) * ord(char) for idx, char in enumerate(label))
+
+
+def specificity_seed(config: MinimalConfig, label: str, offset: int) -> int:
+    seed_label = "ablation_common" if label.startswith("ablation_") else label
+    return int(config.seed + offset + stable_label_offset(seed_label))
 
 
 def write_json(path: Path, data: dict[str, Any]) -> None:

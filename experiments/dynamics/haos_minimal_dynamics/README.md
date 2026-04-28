@@ -18,8 +18,11 @@ x[t+1] = x[t]
        + invariant_gain * shell_variance_restoration
 ```
 
-`address_restoration` tries to recover each node's weighted neighbor-difference
-signature from the frozen reference field.
+`address_restoration` now defaults to harmonic spectral projection: the field is
+pulled toward the frozen low-frequency eigenmode coefficients of the branch
+operator. Local neighbor-difference restoration remains available as
+`--address-mode local`; `--address-mode hybrid` blends spectral and local pulls.
+The default address gain is `0.45`, promoted from the fixed address-gain sweep.
 
 `shell_variance_restoration` tries to preserve each node's frozen branch-local
 contrast energy: the weighted variance of its neighbor offsets. This adds one
@@ -46,15 +49,23 @@ noise and perturbation noise, then remove one dynamics component at a time:
 - diffusion only
 - randomized branch targets
 - address only
+- old local address restoration
 - spectral address projection
+- hybrid spectral/local address projection
 - scalar phase address pull
 - multi-scale shell-weighted address pull
-- address weight sweep
+- fixed address-gain sweep
 
 ## Run
 
 ```bash
 uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py
+```
+
+Compare old local addressing:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/dynamics/haos_minimal_dynamics/run_minimal_dynamics.py --address-mode local
 ```
 
 To run only the address-focused ablation family:

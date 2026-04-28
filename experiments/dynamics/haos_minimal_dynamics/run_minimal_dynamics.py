@@ -18,7 +18,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--steps", type=int, default=120, help="Dynamics steps.")
     parser.add_argument("--dt", type=float, default=0.08, help="Time step.")
     parser.add_argument("--diffusion", type=float, default=0.15, help="Diffusion strength.")
-    parser.add_argument("--address-gain", type=float, default=0.05, help="Relational address restoration strength.")
+    parser.add_argument("--address-gain", type=float, default=0.45, help="Relational address restoration strength.")
+    parser.add_argument("--address-mode", choices=("spectral", "local", "hybrid", "phase", "multi_scale"), default="spectral", help="Address restoration mode.")
+    parser.add_argument("--spectral-modes", type=int, default=8, help="Low-frequency Laplacian modes for spectral address.")
+    parser.add_argument("--hybrid-spectral-weight", type=float, default=0.7, help="Spectral weight for hybrid address mode.")
     parser.add_argument("--invariant-gain", type=float, default=0.025, help="Branch-local shell invariant restoration strength.")
     parser.add_argument("--perturbation-step", type=int, default=20, help="Perturbation step.")
     parser.add_argument("--perturbation-scale", type=float, default=0.85, help="Perturbation amplitude.")
@@ -38,6 +41,9 @@ def main() -> None:
         dt=args.dt,
         diffusion=args.diffusion,
         address_gain=args.address_gain,
+        address_mode=args.address_mode,
+        spectral_modes=args.spectral_modes,
+        hybrid_spectral_weight=args.hybrid_spectral_weight,
         invariant_gain=args.invariant_gain,
         perturbation_step=args.perturbation_step,
         perturbation_scale=args.perturbation_scale,
