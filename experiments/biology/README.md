@@ -46,6 +46,7 @@ Run toy lines from the repository root:
 ```bash
 python experiments/biology/gene_network_demo/run_gene_network_demo.py
 python experiments/biology/microtubule_lattice_demo/run_microtubule_lattice_demo.py
+python experiments/biology/microtubule_lattice_demo/run_microtubule_spectral_telemetry.py
 python experiments/biology/tissue_3d_demo/run_tissue_3d_demo.py
 python experiments/biology/morphogenesis_4d_demo/run_morphogenesis_4d_demo.py
 ```
