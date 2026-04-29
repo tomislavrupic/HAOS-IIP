@@ -49,6 +49,16 @@ This adds explicit signed-flux restoration along the declared FMO pathway edges.
 The tracked summary is `fmo_pathway_flux_56_3.md`, with a compact figure at
 `figures/fmo_pathway_flux_summary_56_3.png`.
 
+For the Phase 56.4 intrinsic pathway dynamics sweep:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/biology/fmo_photosynthesis_telemetry/run_fmo_emergent_sweep.py
+```
+
+This uses weak directed/temporal pathway bias plus a level-6 directed trajectory
+null. The tracked summary is `fmo_intrinsic_pathway_56_4.md`, with a compact
+figure at `figures/fmo_intrinsic_pathway_summary_56_4.png`.
+
 ## Initial Result
 
 The first 50-run robustness pass is intentionally kept as an honest falsifier:
@@ -106,6 +116,27 @@ Interpretation: explicit flux restoration can preserve the declared transfer
 pathway, but the controls can also exploit that engineered pathway term. The FMO
 bottleneck has therefore moved from pathway retention to branch-specific
 control discrimination. This remains a diagnostic result, not a validation pass.
+
+## Phase 56.4 Result
+
+The intrinsic pathway dynamics plus level-6 directed trajectory null reduce the
+control leak somewhat, but they do not preserve enough pathway identity:
+
+- specs: `6`
+- total runs: `300`
+- best spec: `modes5_directed`
+- best pass_rate: `0.160000`
+- best pathway_identity_mean: `0.671540`
+- best temporal_pathway_mean: `0.694755`
+- best recoverability_mean: `0.848259`
+- best active_null_z_mean: `2.612894`
+- best control_pass_mean: `1.320000`
+
+Interpretation: compared with explicit flux restoration, intrinsic directed
+dynamics are less over-engineered and improve the pass rate slightly, but the
+pathway-retention target is not met. The FMO sidecar remains a useful diagnostic
+failure: it separates site identity, pathway retention, and strict specificity
+instead of collapsing them into one optimistic score.
 
 PASS requires:
 

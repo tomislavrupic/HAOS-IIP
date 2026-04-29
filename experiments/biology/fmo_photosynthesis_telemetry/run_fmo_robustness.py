@@ -41,15 +41,21 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed-count", type=int, default=20)
     parser.add_argument("--thermal-noise", default="0.00,0.04,0.08,0.12,0.16")
     parser.add_argument("--variant", default="spectral", help="Named label for this robustness run.")
-    parser.add_argument("--address-mode", choices=("spectral", "local", "hybrid", "sink", "pathway_flux", "environment_assisted"), default="spectral")
+    parser.add_argument(
+        "--address-mode",
+        choices=("spectral", "local", "hybrid", "sink", "pathway_flux", "intrinsic_pathway", "environment_assisted"),
+        default="spectral",
+    )
     parser.add_argument("--address-gain", type=float, default=0.48)
     parser.add_argument("--local-address-gain", type=float, default=0.18)
     parser.add_argument("--sink-gain", type=float, default=0.0)
     parser.add_argument("--flux-gain", type=float, default=0.0)
+    parser.add_argument("--directed-bias-gain", type=float, default=0.0)
+    parser.add_argument("--temporal-flux-gain", type=float, default=0.0)
     parser.add_argument("--environment-assist-gain", type=float, default=0.0)
     parser.add_argument("--disorder-scale", type=float, default=0.18)
     parser.add_argument("--damage-scale", type=float, default=0.42)
-    parser.add_argument("--null-level", type=int, choices=(1, 2, 4, 5), default=5)
+    parser.add_argument("--null-level", type=int, choices=(1, 2, 4, 5, 6), default=5)
     parser.add_argument("--permutation-trials", type=int, default=32)
     parser.add_argument("--null-candidates", type=int, default=4)
     return parser.parse_args()
@@ -72,6 +78,8 @@ def main() -> None:
                 local_address_gain=args.local_address_gain,
                 sink_gain=args.sink_gain,
                 flux_gain=args.flux_gain,
+                directed_bias_gain=args.directed_bias_gain,
+                temporal_flux_gain=args.temporal_flux_gain,
                 environment_assist_gain=args.environment_assist_gain,
                 thermal_noise=noise,
                 disorder_scale=args.disorder_scale,
@@ -179,6 +187,8 @@ def write_report(path: Path, rows: list[FMORobustnessRow], summary: dict[str, An
         f"- local_address_gain: {args.local_address_gain}",
         f"- sink_gain: {args.sink_gain}",
         f"- flux_gain: {args.flux_gain}",
+        f"- directed_bias_gain: {args.directed_bias_gain}",
+        f"- temporal_flux_gain: {args.temporal_flux_gain}",
         f"- environment_assist_gain: {args.environment_assist_gain}",
         f"- thermal_noise: {args.thermal_noise}",
         f"- disorder_scale: {args.disorder_scale}",

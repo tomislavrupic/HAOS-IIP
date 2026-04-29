@@ -24,6 +24,8 @@ class FMOTelemetryConfig:
     local_address_gain: float = 0.18
     sink_gain: float = 0.0
     flux_gain: float = 0.0
+    directed_bias_gain: float = 0.0
+    temporal_flux_gain: float = 0.0
     environment_assist_gain: float = 0.0
     invariant_gain: float = 0.035
     spectral_modes: int = 4
@@ -141,9 +143,13 @@ def run_single(
         local_pull = local_address_restoration(prior, target, adjacency)
         sink_pull = sink_profile * (target - prior)
         flux_pull = pathway_flux_restoration(prior, target_flux, adjacency)
+        directed_pull = directed_pathway_bias(prior, target, adjacency)
+        temporal_pull = np.zeros_like(prior, dtype=float)
+        if step > 1:
+            temporal_pull = temporal_flux_bias(prior, states[step - 2], target, adjacency)
         invariant_pull = shell_variance_restoration(prior, adjacency, target_shell)
         update = prior - config.dt * config.diffusion * (laplacian @ prior)
-        update += config.dt * address_pull(prior, spectral_pull, local_pull, sink_pull, flux_pull, config)
+        update += config.dt * address_pull(prior, spectral_pull, local_pull, sink_pull, flux_pull, directed_pull, temporal_pull, config)
         update += config.dt * config.invariant_gain * invariant_pull
         states[step] = normalize_field(update, reference)
 
@@ -161,14 +167,18 @@ def summarize_run(
     recoverability = state_recoverability(final, reference)
     site_identity = site_identity_retention(final, reference)
     pathway_identity = pathway_identity_retention(final, reference, adjacency)
+    temporal_identity = temporal_pathway_identity_retention(states, reference, adjacency)
     persistence = float(recoverability - state_recoverability(states[config.perturbation_step], reference))
     nulls = null_ladder(final, states, reference, adjacency, config, config.seed + stable_label_offset(label))
     strict = bool(recoverability >= 0.74 and site_identity >= 0.70 and pathway_identity >= 0.68 and nulls["active_null_pass"])
+    if config.null_level >= 6:
+        strict = bool(strict and temporal_identity >= 0.70)
     return {
         "run": label,
         "recoverability_score": recoverability,
         "site_identity_retention": site_identity,
         "pathway_identity_retention": pathway_identity,
+        "temporal_pathway_identity_retention": temporal_identity,
         "delta_persistence": persistence,
         "safety_margin": float(recoverability - run_null_mean(final, reference, adjacency, config)),
         **nulls,
@@ -182,20 +192,25 @@ def address_pull(
     local_pull: np.ndarray,
     sink_pull: np.ndarray,
     flux_pull: np.ndarray,
+    directed_pull: np.ndarray,
+    temporal_pull: np.ndarray,
     config: FMOTelemetryConfig,
 ) -> np.ndarray:
+    directed = config.directed_bias_gain * directed_pull + config.temporal_flux_gain * temporal_pull
     if config.address_mode == "spectral":
-        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
+        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull + directed
     if config.address_mode == "local":
-        return config.local_address_gain * local_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
+        return config.local_address_gain * local_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull + directed
     if config.address_mode == "hybrid":
-        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
+        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull + directed
     if config.address_mode == "sink":
-        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
+        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull + directed
     if config.address_mode == "pathway_flux":
-        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
+        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull + directed
+    if config.address_mode == "intrinsic_pathway":
+        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + directed
     if config.address_mode == "environment_assisted":
-        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
+        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull + directed
     raise ValueError(f"unknown address_mode: {config.address_mode}")
 
 
@@ -234,6 +249,35 @@ def pathway_flux_restoration(field: np.ndarray, target_flux: np.ndarray, adjacen
     return np.clip(pull / norm, -1.0, 1.0)
 
 
+def directed_pathway_bias(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
+    pull = np.zeros_like(field, dtype=float)
+    desired = np.sign(pathway_flux(reference, adjacency))
+    current = pathway_flux(field, adjacency)
+    for (i, j), sign, flux in zip(pathway_edges(), desired, current):
+        if sign == 0.0:
+            continue
+        deficit = max(0.0, 0.08 - sign * flux)
+        correction = 0.5 * sign * deficit / max(adjacency[i, j], EPS)
+        pull[i] += correction
+        pull[j] -= correction
+    norm = max(float(np.linalg.norm(pull)), 1.0)
+    return np.clip(pull / norm, -1.0, 1.0)
+
+
+def temporal_flux_bias(current: np.ndarray, previous: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
+    pull = np.zeros_like(current, dtype=float)
+    desired = np.sign(pathway_flux(reference, adjacency))
+    delta_flux = pathway_flux(current, adjacency) - pathway_flux(previous, adjacency)
+    for (i, j), sign, delta in zip(pathway_edges(), desired, delta_flux):
+        if sign == 0.0 or sign * delta >= 0.0:
+            continue
+        correction = 0.25 * sign * abs(float(delta)) / max(adjacency[i, j], EPS)
+        pull[i] += correction
+        pull[j] -= correction
+    norm = max(float(np.linalg.norm(pull)), 1.0)
+    return np.clip(pull / norm, -1.0, 1.0)
+
+
 def null_ladder(
     final: np.ndarray,
     states: np.ndarray,
@@ -244,11 +288,12 @@ def null_ladder(
 ) -> dict[str, float | bool]:
     rng = np.random.default_rng(seed)
     observed = fmo_identity_score(final, reference, adjacency)
-    scores = {"branch": [], "spectral": [], "higher": [], "trajectory": []}
+    scores = {"branch": [], "spectral": [], "higher": [], "trajectory": [], "directed": []}
     signatures = {
         "spectral": spectral_field_signature(final, adjacency, config.spectral_modes),
         "higher": higher_order_signature(final, adjacency, config.spectral_modes),
         "trajectory": trajectory_signature(states, adjacency, config.spectral_modes),
+        "directed": directed_trajectory_signature(states, reference, adjacency, config.spectral_modes),
     }
     for _ in range(config.permutation_trials):
         # FMO has only seven sites. Degree/shell buckets often become singleton
@@ -257,10 +302,10 @@ def null_ladder(
         # choose candidates that best preserve spectral/trajectory signatures.
         candidates = [rng.permutation(final.size) for _ in range(max(1, config.null_candidates))]
         scores["branch"].append(fmo_identity_score(final[candidates[0]], reference, adjacency))
-        for key in ("spectral", "higher", "trajectory"):
+        for key in ("spectral", "higher", "trajectory", "directed"):
             best = min(
                 candidates,
-                key=lambda idx: float(np.linalg.norm(signature_for(key, states[:, idx], final[idx], adjacency, config) - signatures[key])),
+                key=lambda idx: float(np.linalg.norm(signature_for(key, states[:, idx], final[idx], reference, adjacency, config) - signatures[key])),
             )
             scores[key].append(fmo_identity_score(final[best], reference, adjacency))
 
@@ -271,6 +316,8 @@ def null_ladder(
         active = "higher"
     if config.null_level >= 5:
         active = "trajectory"
+    if config.null_level >= 6:
+        active = "directed"
 
     out: dict[str, float | bool] = {}
     for key, values in scores.items():
@@ -288,13 +335,15 @@ def null_ladder(
     return out
 
 
-def signature_for(key: str, states: np.ndarray, final: np.ndarray, adjacency: np.ndarray, config: FMOTelemetryConfig) -> np.ndarray:
+def signature_for(key: str, states: np.ndarray, final: np.ndarray, reference: np.ndarray, adjacency: np.ndarray, config: FMOTelemetryConfig) -> np.ndarray:
     if key == "spectral":
         return spectral_field_signature(final, adjacency, config.spectral_modes)
     if key == "higher":
         return higher_order_signature(final, adjacency, config.spectral_modes)
     if key == "trajectory":
         return trajectory_signature(states, adjacency, config.spectral_modes)
+    if key == "directed":
+        return directed_trajectory_signature(states, reference, adjacency, config.spectral_modes)
     raise ValueError(key)
 
 
@@ -344,6 +393,14 @@ def site_identity_retention(final: np.ndarray, reference: np.ndarray) -> float:
 
 def pathway_identity_retention(final: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
     return float(np.clip(1.0 - pathway_distance(final, reference, adjacency), 0.0, 1.0))
+
+
+def temporal_pathway_identity_retention(states: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
+    late = states[max(1, states.shape[0] // 2) :]
+    mean_flux = np.mean([pathway_flux(state, adjacency) for state in late], axis=0)
+    ref_flux = pathway_flux(reference, adjacency)
+    distance = float(np.linalg.norm(mean_flux - ref_flux) / max(np.linalg.norm(ref_flux), EPS))
+    return float(np.clip(1.0 - distance, 0.0, 1.0))
 
 
 def pathway_distance(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
@@ -438,6 +495,32 @@ def trajectory_signature(states: np.ndarray, adjacency: np.ndarray, modes: int) 
                     float(np.std(energy)),
                     float(np.mean(lag)),
                     float(np.std(lag)),
+                ],
+                dtype=float,
+            ),
+        ]
+    )
+
+
+def directed_trajectory_signature(states: np.ndarray, reference: np.ndarray, adjacency: np.ndarray, modes: int) -> np.ndarray:
+    fluxes = np.asarray([pathway_flux(state, adjacency) for state in states], dtype=float)
+    ref_flux = pathway_flux(reference, adjacency)
+    ref_norm = max(float(np.linalg.norm(ref_flux)), EPS)
+    late = fluxes[max(1, fluxes.shape[0] // 2) :]
+    mean_flux = np.mean(late, axis=0) / ref_norm
+    std_flux = np.std(late, axis=0) / ref_norm
+    direction = np.sign(ref_flux)
+    consistency = np.mean((late * direction[None, :]) > 0.0, axis=0)
+    return np.concatenate(
+        [
+            trajectory_signature(states, adjacency, modes),
+            mean_flux,
+            std_flux,
+            consistency,
+            np.asarray(
+                [
+                    temporal_pathway_identity_retention(states, reference, adjacency),
+                    float(np.mean(np.abs(np.diff(fluxes, axis=0))) / ref_norm),
                 ],
                 dtype=float,
             ),
@@ -561,17 +644,18 @@ def write_report(path: Path, status: dict[str, Any], observed: FMORun, controls:
         f"- control_contrast: {status['control_contrast']}",
         f"- control_strict_pass_count: {status['control_strict_pass_count']}",
         "",
-        "| run | recoverability | site_identity | pathway_identity | delta_persistence | safety_margin | active_null_z | strict_pass |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| run | recoverability | site_identity | pathway_identity | temporal_pathway | delta_persistence | safety_margin | active_null_z | strict_pass |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for run in [observed, *controls]:
         summary = run.summary
         lines.append(
-            "| {run} | {rec:.6f} | {site:.6f} | {path:.6f} | {delta:.6f} | {margin:.6f} | {z:.6f} | {passed} |".format(
+            "| {run} | {rec:.6f} | {site:.6f} | {path:.6f} | {temporal:.6f} | {delta:.6f} | {margin:.6f} | {z:.6f} | {passed} |".format(
                 run=run.label,
                 rec=float(summary["recoverability_score"]),
                 site=float(summary["site_identity_retention"]),
                 path=float(summary["pathway_identity_retention"]),
+                temporal=float(summary["temporal_pathway_identity_retention"]),
                 delta=float(summary["delta_persistence"]),
                 margin=float(summary["safety_margin"]),
                 z=float(summary["active_null_z"]),
@@ -587,6 +671,7 @@ def write_csv(path: Path, runs: list[FMORun]) -> None:
         "recoverability_score",
         "site_identity_retention",
         "pathway_identity_retention",
+        "temporal_pathway_identity_retention",
         "delta_persistence",
         "safety_margin",
         "active_null_z",
