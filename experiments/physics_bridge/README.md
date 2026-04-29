@@ -91,3 +91,22 @@ The audit treats celestial holography as a high-standard boundary check for
 HAOS-IIP physics-facing language. Its expected status is `OPEN`: it is not a
 core change and not a claim of BMS, Virasoro, S-matrix, soft-theorem,
 collinear-limit, or gravitational-memory recovery.
+
+## Spherical Harmonic Control Probe
+
+The Phase 58 spherical-harmonic control probe is available as a known-target
+boundary-geometry sanity check:
+
+```bash
+python3 experiments/physics_bridge/spherical_harmonic_control_probe/run_spherical_harmonic_probe.py
+```
+
+If NumPy/Matplotlib are not installed in the default Python runtime:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/physics_bridge/spherical_harmonic_control_probe/run_spherical_harmonic_probe.py
+```
+
+This probe asks whether HAOS-style spectral telemetry can distinguish low-order
+S2 mode organization from generic graph smoothness under controls. It is not a
+claim of celestial holography.

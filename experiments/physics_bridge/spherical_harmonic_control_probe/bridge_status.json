@@ -1,0 +1,43 @@
+{
+  "phase": "58",
+  "bridge_name": "spherical_harmonic_control_probe",
+  "bridge_status": "MARGINAL",
+  "failure_mode": "CONTROL_SEPARATION_INCOMPLETE",
+  "success_definition": "PASS requires the known sphere graph to recover low-l spherical harmonic subspaces and beat controls that preserve smoothness or graph statistics.",
+  "config": {
+    "resolutions": [
+      72,
+      144,
+      288
+    ],
+    "l_max": 3,
+    "k_neighbors": 10,
+    "seed": 5801,
+    "rewire_swaps_per_edge": 6,
+    "pass_min_real_score": 0.72,
+    "pass_max_real_leakage": 0.28,
+    "pass_min_margin": 0.08,
+    "pass_min_separation_z": 1.5,
+    "pass_max_control_false_positive_rate": 0.25
+  },
+  "latest_resolution": 288,
+  "latest_real_score": 0.9760256725838697,
+  "latest_real_mean_overlap": 0.9870583555311048,
+  "latest_real_mean_leakage": 0.01294164446889523,
+  "latest_real_mean_degeneracy_split": 0.1259723039731412,
+  "control_mean_score": 0.4679576857190255,
+  "control_max_score": 0.9462123874241178,
+  "control_false_positive_rate": 0.25,
+  "separation_z": 1.9028317925453795,
+  "score_margin_over_best_control": 0.0298132851597519,
+  "refinement_drift": 0.00299387234513826,
+  "core_modified": false,
+  "safe_to_continue": true,
+  "next_phase": "59_soft_theorem_proxy_test",
+  "non_claims": [
+    "no celestial holography recovery claim",
+    "no BMS or Virasoro recovery claim",
+    "no S-matrix or soft-theorem claim",
+    "spherical-harmonic recovery is only a boundary-geometry sanity check"
+  ]
+}
