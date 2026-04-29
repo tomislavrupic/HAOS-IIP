@@ -40,3 +40,14 @@ uv run --with numpy --with matplotlib python experiments/biology/microtubule_lat
 
 The sweep writes `spectral_noise_sweep.csv`, `spectral_noise_sweep.md`, and
 `spectral_noise_sweep.png` under `spectral_outputs/`.
+
+For the Phase 55.2 robustness pass, use the fuller seed/noise runner:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/biology/microtubule_lattice_demo/run_microtubule_robustness.py
+```
+
+It writes raw runs, grouped summaries, distribution plots, and a one-page visual
+summary under `spectral_outputs/robustness_55_2/`. The default uses the level-5
+trajectory-aware null ladder and is intended as the communication-polish dataset
+for the 55.2 paper/report update.

@@ -218,6 +218,11 @@ The intended public reading order is:
 1. `54.2` HAOS-IIP Biology Line A-E: Toy Recoverability Ladder and External Dataset Bridge
 2. `54.1` HAOS-IIP Biology Line A-D: Recoverability-Loss Detection in Toy Biological Interaction Systems
 
+### 2.44 Part XLIV. Spectral dynamics and microtubule telemetry
+
+1. `55.2` Spectral Dynamics Robustness and Microtubule Telemetry for HAOS-IIP
+2. `55.1` Spectral Dynamics, Null-Ladder Specificity, and Microtubule Telemetry for HAOS-IIP
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -292,6 +297,7 @@ The intended public reading order is:
 - `53.4` Seed-Universal Disorder Flux Release for HAOS-IIP
 - `54.2` HAOS-IIP Biology Line A-E: Toy Recoverability Ladder and External Dataset Bridge
 - `54.1` HAOS-IIP Biology Line A-D: Recoverability-Loss Detection in Toy Biological Interaction Systems
+- `55.2` Spectral Dynamics Robustness and Microtubule Telemetry for HAOS-IIP
 - `55.1` Spectral Dynamics, Null-Ladder Specificity, and Microtubule Telemetry for HAOS-IIP
 
 Rule for future papers:
