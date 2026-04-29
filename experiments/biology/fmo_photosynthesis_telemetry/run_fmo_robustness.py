@@ -16,6 +16,7 @@ from fmo_spectral_telemetry import FMOTelemetryConfig, ROOT, run_fmo_spectral_te
 
 @dataclass(frozen=True)
 class FMORobustnessRow:
+    variant: str
     thermal_noise: float
     seed: int
     bridge_status: str
@@ -39,6 +40,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--base-seed", type=int, default=20260429)
     parser.add_argument("--seed-count", type=int, default=20)
     parser.add_argument("--thermal-noise", default="0.00,0.04,0.08,0.12,0.16")
+    parser.add_argument("--variant", default="spectral", help="Named label for this robustness run.")
+    parser.add_argument("--address-mode", choices=("spectral", "local", "hybrid", "sink", "environment_assisted"), default="spectral")
+    parser.add_argument("--address-gain", type=float, default=0.48)
+    parser.add_argument("--local-address-gain", type=float, default=0.18)
+    parser.add_argument("--sink-gain", type=float, default=0.0)
+    parser.add_argument("--environment-assist-gain", type=float, default=0.0)
     parser.add_argument("--disorder-scale", type=float, default=0.18)
     parser.add_argument("--damage-scale", type=float, default=0.42)
     parser.add_argument("--null-level", type=int, choices=(1, 2, 4, 5), default=5)
@@ -59,6 +66,11 @@ def main() -> None:
             config = FMOTelemetryConfig(
                 output_dir=run_dir,
                 seed=seed,
+                address_mode=args.address_mode,
+                address_gain=args.address_gain,
+                local_address_gain=args.local_address_gain,
+                sink_gain=args.sink_gain,
+                environment_assist_gain=args.environment_assist_gain,
                 thermal_noise=noise,
                 disorder_scale=args.disorder_scale,
                 damage_scale=args.damage_scale,
@@ -66,13 +78,14 @@ def main() -> None:
                 permutation_trials=args.permutation_trials,
                 null_candidates=args.null_candidates,
             )
-            rows.append(row_from_outcome(noise, seed, run_fmo_spectral_telemetry(config)))
+            rows.append(row_from_outcome(args.variant, noise, seed, run_fmo_spectral_telemetry(config)))
     summary = summarize(rows)
     write_csv(args.output_dir / "fmo_robustness_runs.csv", rows)
     write_json(args.output_dir / "fmo_robustness_summary.json", summary)
     write_report(args.output_dir / "fmo_robustness_report.md", rows, summary, args)
     write_plot(args.output_dir / "fmo_robustness_summary.png", rows, summary)
     print(f"runs: {len(rows)}")
+    print(f"variant: {args.variant}")
     print(f"noise_levels: {','.join(str(level) for level in noise_levels)}")
     print(f"pass_rate: {summary['overall']['pass_rate']:.6f}")
     print(f"recoverability_mean: {summary['overall']['recoverability_score_mean']:.6f}")
@@ -82,9 +95,10 @@ def main() -> None:
     print(f"outputs: {args.output_dir}")
 
 
-def row_from_outcome(noise: float, seed: int, outcome: dict[str, Any]) -> FMORobustnessRow:
+def row_from_outcome(variant: str, noise: float, seed: int, outcome: dict[str, Any]) -> FMORobustnessRow:
     observed = outcome["observed_summary"]
     return FMORobustnessRow(
+        variant=variant,
         thermal_noise=noise,
         seed=seed,
         bridge_status=str(outcome["bridge_status"]),
@@ -157,6 +171,12 @@ def write_report(path: Path, rows: list[FMORobustnessRow], summary: dict[str, An
         "## Configuration",
         "",
         f"- seed_count: {args.seed_count}",
+        f"- variant: {args.variant}",
+        f"- address_mode: {args.address_mode}",
+        f"- address_gain: {args.address_gain}",
+        f"- local_address_gain: {args.local_address_gain}",
+        f"- sink_gain: {args.sink_gain}",
+        f"- environment_assist_gain: {args.environment_assist_gain}",
         f"- thermal_noise: {args.thermal_noise}",
         f"- disorder_scale: {args.disorder_scale}",
         f"- damage_scale: {args.damage_scale}",

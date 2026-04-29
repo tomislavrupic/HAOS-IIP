@@ -21,8 +21,12 @@ class FMOTelemetryConfig:
     dt: float = 0.06
     diffusion: float = 0.10
     address_gain: float = 0.48
+    local_address_gain: float = 0.18
+    sink_gain: float = 0.0
+    environment_assist_gain: float = 0.0
     invariant_gain: float = 0.035
     spectral_modes: int = 4
+    address_mode: str = "spectral"
     perturbation_step: int = 24
     thermal_noise: float = 0.08
     disorder_scale: float = 0.18
@@ -113,6 +117,7 @@ def run_single(
     basis = spectral_basis(adjacency, config.spectral_modes)
     target_coeffs = basis.T @ target
     target_shell = local_shell_variance(target, adjacency)
+    sink_profile = reaction_center_sink_profile(reference)
     transition = build_transition(adjacency)
     laplacian = np.eye(adjacency.shape[0]) - transition
     initial = target + 0.035 * rng.normal(size=reference.shape) if initial_override is None else initial_override
@@ -124,13 +129,18 @@ def run_single(
         if step == config.perturbation_step:
             prior[damage_nodes] += config.damage_scale * rng.normal(size=damage_nodes.size)
         if config.thermal_noise > 0.0:
-            prior += config.thermal_noise * 0.02 * rng.normal(size=prior.shape)
+            noise = rng.normal(size=prior.shape)
+            prior += config.thermal_noise * 0.02 * noise
+            if config.environment_assist_gain > 0.0:
+                prior += config.thermal_noise * config.environment_assist_gain * sink_profile * np.tanh(target - prior)
         if config.disorder_scale > 0.0:
             prior += config.disorder_scale * 0.002 * np.sign(reference) * rng.normal(size=prior.shape)
         spectral_pull = basis @ (target_coeffs - basis.T @ prior)
+        local_pull = local_address_restoration(prior, target, adjacency)
+        sink_pull = sink_profile * (target - prior)
         invariant_pull = shell_variance_restoration(prior, adjacency, target_shell)
         update = prior - config.dt * config.diffusion * (laplacian @ prior)
-        update += config.dt * config.address_gain * spectral_pull
+        update += config.dt * address_pull(prior, spectral_pull, local_pull, sink_pull, config)
         update += config.dt * config.invariant_gain * invariant_pull
         states[step] = normalize_field(update, reference)
 
@@ -161,6 +171,39 @@ def summarize_run(
         **nulls,
         "strict_pass": strict,
     }
+
+
+def address_pull(
+    prior: np.ndarray,
+    spectral_pull: np.ndarray,
+    local_pull: np.ndarray,
+    sink_pull: np.ndarray,
+    config: FMOTelemetryConfig,
+) -> np.ndarray:
+    if config.address_mode == "spectral":
+        return config.address_gain * spectral_pull + config.sink_gain * sink_pull
+    if config.address_mode == "local":
+        return config.local_address_gain * local_pull + config.sink_gain * sink_pull
+    if config.address_mode == "hybrid":
+        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull
+    if config.address_mode == "sink":
+        return config.address_gain * spectral_pull + config.sink_gain * sink_pull
+    if config.address_mode == "environment_assisted":
+        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull
+    raise ValueError(f"unknown address_mode: {config.address_mode}")
+
+
+def local_address_restoration(field: np.ndarray, target: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
+    current = local_address(field, adjacency)
+    desired = local_address(target, adjacency)
+    neighbor_mean = field + current
+    return (desired - current) + 0.25 * (target - neighbor_mean)
+
+
+def reaction_center_sink_profile(reference: np.ndarray) -> np.ndarray:
+    profile = np.zeros_like(reference, dtype=float)
+    profile[[2, 3, 4, 6]] = np.asarray([0.35, 1.0, 0.60, 0.80], dtype=float)
+    return profile / max(float(np.linalg.norm(profile)), EPS)
 
 
 def null_ladder(

@@ -12,6 +12,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs")
     parser.add_argument("--seed", type=int, default=20260429)
     parser.add_argument("--steps", type=int, default=128)
+    parser.add_argument("--address-mode", choices=("spectral", "local", "hybrid", "sink", "environment_assisted"), default="spectral")
+    parser.add_argument("--address-gain", type=float, default=0.48)
+    parser.add_argument("--local-address-gain", type=float, default=0.18)
+    parser.add_argument("--sink-gain", type=float, default=0.0)
+    parser.add_argument("--environment-assist-gain", type=float, default=0.0)
     parser.add_argument("--thermal-noise", type=float, default=0.08)
     parser.add_argument("--disorder-scale", type=float, default=0.18)
     parser.add_argument("--damage-scale", type=float, default=0.42)
@@ -27,6 +32,11 @@ def main() -> None:
         output_dir=args.output_dir,
         seed=args.seed,
         steps=args.steps,
+        address_mode=args.address_mode,
+        address_gain=args.address_gain,
+        local_address_gain=args.local_address_gain,
+        sink_gain=args.sink_gain,
+        environment_assist_gain=args.environment_assist_gain,
         thermal_noise=args.thermal_noise,
         disorder_scale=args.disorder_scale,
         damage_scale=args.damage_scale,
