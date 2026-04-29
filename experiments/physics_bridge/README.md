@@ -131,3 +131,22 @@ This probe asks whether soft-specific telemetry can detect known toy
 pole/residue/factorization breakage better than generic smoothness metrics. It
 is not a claim of gravitational soft-theorem recovery, celestial amplitudes, or
 S-matrix reconstruction.
+
+## Claim-Gated Physics Bridge Update
+
+The Phase 60 claim-gated bridge update consolidates the celestial-facing sidecars:
+
+```bash
+python3 experiments/physics_bridge/claim_gated_bridge_update/run_claim_gated_bridge_update.py
+```
+
+Generated outputs:
+
+- `experiments/physics_bridge/claim_gated_bridge_update/claim_gate_table.csv`
+- `experiments/physics_bridge/claim_gated_bridge_update/bridge_status.json`
+- `experiments/physics_bridge/claim_gated_bridge_update/claim_gated_physics_bridge.md`
+
+This update locks the language boundary: the spherical and toy-soft sidecars may
+be cited as bounded proxy PASS rows, while celestial holography, BMS charge
+recovery, Virasoro/CCFT recovery, S-matrix reconstruction, real soft-theorem
+recovery, and gravitational-memory observables remain `OPEN`.

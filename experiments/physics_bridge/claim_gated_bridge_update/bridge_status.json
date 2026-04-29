@@ -1,0 +1,36 @@
+{
+  "phase": "60",
+  "bridge_name": "claim_gated_physics_bridge_update",
+  "bridge_status": "PASS",
+  "failure_mode": "NONE",
+  "success_definition": "PASS means bounded sidecar claims are separated from established physics claims. It does not mean celestial holography, BMS, Virasoro, S-matrix, real soft theorem, or gravitational memory recovery has been closed.",
+  "status_counts": {
+    "PASS": 3,
+    "OPEN": 6,
+    "WATCH": 0,
+    "MARGINAL": 0
+  },
+  "open_established_physics_claims": [
+    "celestial_holography_recovery",
+    "bms_charge_recovery",
+    "virasoro_ccft_recovery",
+    "s_matrix_reconstruction",
+    "real_soft_theorem_recovery",
+    "gravitational_memory_observable"
+  ],
+  "bounded_proxy_passes": [
+    "spherical_harmonic_boundary_geometry",
+    "toy_soft_structure_proxy"
+  ],
+  "core_modified": false,
+  "safe_to_continue": true,
+  "next_phase": "61_gravitational_memory_toy_probe",
+  "non_claims": [
+    "no celestial holography recovery claim",
+    "no BMS charge recovery claim",
+    "no Virasoro or celestial CFT recovery claim",
+    "no S-matrix reconstruction claim",
+    "no real soft theorem recovery claim",
+    "no gravitational memory observable claim"
+  ]
+}
