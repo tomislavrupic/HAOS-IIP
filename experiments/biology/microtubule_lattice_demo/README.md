@@ -31,3 +31,12 @@ retention, delta persistence, safety margin, and control comparison. Outputs are
 ignored under `spectral_outputs/`.
 
 This is still a toy telemetry probe, not biological validation.
+
+For a compact robustness check across seeds and thermal-noise levels:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/biology/microtubule_lattice_demo/run_microtubule_spectral_sweep.py
+```
+
+The sweep writes `spectral_noise_sweep.csv`, `spectral_noise_sweep.md`, and
+`spectral_noise_sweep.png` under `spectral_outputs/`.
