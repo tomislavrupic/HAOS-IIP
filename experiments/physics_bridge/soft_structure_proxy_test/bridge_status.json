@@ -1,0 +1,40 @@
+{
+  "phase": "59",
+  "bridge_name": "soft_structure_proxy_test",
+  "bridge_status": "PASS",
+  "failure_mode": "NONE",
+  "success_definition": "PASS requires a known toy soft target to recover residues, pole location, and factorization while controls preserving smoothness or spectra fail.",
+  "config": {
+    "seed": 5901,
+    "omega_min": 0.002,
+    "omega_max": 0.35,
+    "omega_count": 80,
+    "soft_fit_max_omega": 0.055,
+    "pass_min_soft_score": 0.86,
+    "pass_min_residue_recoverability": 0.92,
+    "pass_min_pole_score": 0.88,
+    "pass_min_factorization_score": 0.9,
+    "pass_min_margin": 0.18,
+    "pass_max_control_false_positive_rate": 0.0
+  },
+  "target_soft_specificity_score": 0.9732470082165489,
+  "target_residue_recoverability": 0.9396185381501437,
+  "target_pole_location_score": 0.9987585350713846,
+  "target_factorization_score": 0.9999443195433088,
+  "target_generic_smoothness_score": 0.9907287353489497,
+  "control_max_score": 0.7229063629691252,
+  "control_max_sample": "pole_location_drift_control",
+  "control_false_positive_threshold": 0.7932470082165488,
+  "control_false_positive_rate": 0.0,
+  "score_margin_over_best_control": 0.2503406452474236,
+  "separation_z": 3.0642677375368748,
+  "core_modified": false,
+  "safe_to_continue": true,
+  "next_phase": "60_claim_gated_physics_bridge_update",
+  "non_claims": [
+    "no real gravitational soft theorem recovery claim",
+    "no celestial amplitude or CFT correlator claim",
+    "no S-matrix reconstruction claim",
+    "toy pole/residue/factorization data only"
+  ]
+}

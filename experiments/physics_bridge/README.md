@@ -111,3 +111,23 @@ This probe asks whether HAOS-style spectral telemetry can distinguish low-order
 S2 mode organization from generic graph smoothness under controls. The 58.1
 runner hardens the score with geodesic edge-weight signatures and l(l+1)-like
 band-spacing checks. It is not a claim of celestial holography.
+
+## Soft-Structure Proxy Test
+
+The Phase 59 soft-structure proxy test is available as a toy amplitude-like
+sidecar:
+
+```bash
+python3 experiments/physics_bridge/soft_structure_proxy_test/run_soft_structure_proxy_test.py
+```
+
+If NumPy/Matplotlib are not installed in the default Python runtime:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/physics_bridge/soft_structure_proxy_test/run_soft_structure_proxy_test.py
+```
+
+This probe asks whether soft-specific telemetry can detect known toy
+pole/residue/factorization breakage better than generic smoothness metrics. It
+is not a claim of gravitational soft-theorem recovery, celestial amplitudes, or
+S-matrix reconstruction.
