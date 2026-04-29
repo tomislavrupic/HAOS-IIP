@@ -223,6 +223,10 @@ The intended public reading order is:
 1. `55.2` Spectral Dynamics Robustness and Microtubule Telemetry for HAOS-IIP
 2. `55.1` Spectral Dynamics, Null-Ladder Specificity, and Microtubule Telemetry for HAOS-IIP
 
+### 2.45 Part XLV. FMO topology contrast and biology telemetry lessons
+
+1. `56.5` FMO Topology Contrast and Lessons for HAOS-IIP Biology Telemetry
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -299,6 +303,7 @@ The intended public reading order is:
 - `54.1` HAOS-IIP Biology Line A-D: Recoverability-Loss Detection in Toy Biological Interaction Systems
 - `55.2` Spectral Dynamics Robustness and Microtubule Telemetry for HAOS-IIP
 - `55.1` Spectral Dynamics, Null-Ladder Specificity, and Microtubule Telemetry for HAOS-IIP
+- `56.5` FMO Topology Contrast and Lessons for HAOS-IIP Biology Telemetry
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

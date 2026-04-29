@@ -59,6 +59,17 @@ This uses weak directed/temporal pathway bias plus a level-6 directed trajectory
 null. The tracked summary is `fmo_intrinsic_pathway_56_4.md`, with a compact
 figure at `figures/fmo_intrinsic_pathway_summary_56_4.png`.
 
+For the Phase 56.5 topology-contrast closure:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/biology/fmo_photosynthesis_telemetry/run_topology_contrast_summary.py
+```
+
+This writes `fmo_topology_contrast_56_5.md` and
+`figures/topology_contrast_56_5.png`. Phase 56.5 closes the initial FMO arc as a
+productive falsifier and compares it directly against the robust microtubule
+55.2 result.
+
 ## Initial Result
 
 The first 50-run robustness pass is intentionally kept as an honest falsifier:
@@ -137,6 +148,20 @@ dynamics are less over-engineered and improve the pass rate slightly, but the
 pathway-retention target is not met. The FMO sidecar remains a useful diagnostic
 failure: it separates site identity, pathway retention, and strict specificity
 instead of collapsing them into one optimistic score.
+
+## Phase 56.5 Closure
+
+The initial FMO arc is closed as a topology-sensitivity diagnostic:
+
+- microtubule 55.2: robust PASS on structured cylindrical lattice topology;
+- FMO 56.1-56.4: productive falsifier on compact delocalized transfer topology;
+- explicit FMO flux restoration can preserve the declared pathway, but controls
+  can exploit the engineered term;
+- intrinsic FMO pathway dynamics improve pass rate slightly, but do not preserve
+  enough pathway identity.
+
+Do not force a PASS on FMO by further gain tuning. Future FMO work should require
+a new transfer-state model or a branch-specific control-discrimination metric.
 
 PASS requires:
 

@@ -15,7 +15,7 @@ It does not claim that HAOS-IIP explains biology. It tests whether bounded HAOS-
 | C | `tissue_3d_demo/` | Does a 3D multicellular interaction structure lose recoverable coherence before visible tissue failure? | PASS |
 | D | `morphogenesis_4d_demo/` | Does a 3D tissue-like structure evolving through developmental time lose recoverable coherence before visible developmental failure? | PASS |
 | E | `external_dataset_bridge/` | Can public stress-response expression datasets be audited with bounded recoverability diagnostics, controls, and standard comparators? | MIXED |
-| F / Phase 56 | `fmo_photosynthesis_telemetry/` | Can spectral telemetry preserve site/pathway identity on a compact FMO-like transfer graph under strict nulls? | INITIAL MARGINAL/FAIL |
+| F / Phase 56 | `fmo_photosynthesis_telemetry/` | Can spectral telemetry preserve site/pathway identity on a compact FMO-like transfer graph under strict nulls? | CLOSED DIAGNOSTIC |
 
 ## One-Command External Audit
 
@@ -73,7 +73,7 @@ It supersedes the earlier A-D-only biology paper for the full biology-line overv
 
 - Toy lines A-D are proof-of-instrument demos, not biological validation.
 - Line E uses expression-pattern proxies, controls, and comparators; it is not a phenotype or wet-lab validation.
-- Phase 56 FMO telemetry currently preserves site identity strongly but does not yet preserve pathway identity specifically enough under strict controls.
+- Phase 56 FMO telemetry is closed as a topology-sensitivity diagnostic: site identity is strong, pathway retention can be engineered, but strict branch-specific control discrimination remains unresolved.
 - Visible failure in Line E is a proxy, not cell death, organismal failure, or biological dysfunction.
 - No consciousness, Orch-OR, quantum biology, or QATC claims are made here.
 - If a bridge dataset fails, the failure should remain visible and documented.
