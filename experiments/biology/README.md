@@ -15,6 +15,7 @@ It does not claim that HAOS-IIP explains biology. It tests whether bounded HAOS-
 | C | `tissue_3d_demo/` | Does a 3D multicellular interaction structure lose recoverable coherence before visible tissue failure? | PASS |
 | D | `morphogenesis_4d_demo/` | Does a 3D tissue-like structure evolving through developmental time lose recoverable coherence before visible developmental failure? | PASS |
 | E | `external_dataset_bridge/` | Can public stress-response expression datasets be audited with bounded recoverability diagnostics, controls, and standard comparators? | MIXED |
+| F / Phase 56 | `fmo_photosynthesis_telemetry/` | Can spectral telemetry preserve site/pathway identity on a compact FMO-like transfer graph under strict nulls? | INITIAL MARGINAL/FAIL |
 
 ## One-Command External Audit
 
@@ -48,6 +49,8 @@ python experiments/biology/gene_network_demo/run_gene_network_demo.py
 python experiments/biology/microtubule_lattice_demo/run_microtubule_lattice_demo.py
 python experiments/biology/microtubule_lattice_demo/run_microtubule_spectral_telemetry.py
 python experiments/biology/microtubule_lattice_demo/run_microtubule_spectral_sweep.py
+python experiments/biology/fmo_photosynthesis_telemetry/run_fmo_spectral_telemetry.py
+python experiments/biology/fmo_photosynthesis_telemetry/run_fmo_robustness.py
 python experiments/biology/tissue_3d_demo/run_tissue_3d_demo.py
 python experiments/biology/morphogenesis_4d_demo/run_morphogenesis_4d_demo.py
 ```
@@ -70,6 +73,7 @@ It supersedes the earlier A-D-only biology paper for the full biology-line overv
 
 - Toy lines A-D are proof-of-instrument demos, not biological validation.
 - Line E uses expression-pattern proxies, controls, and comparators; it is not a phenotype or wet-lab validation.
+- Phase 56 FMO telemetry currently preserves site identity strongly but does not yet preserve pathway identity specifically enough under strict controls.
 - Visible failure in Line E is a proxy, not cell death, organismal failure, or biological dysfunction.
 - No consciousness, Orch-OR, quantum biology, or QATC claims are made here.
 - If a bridge dataset fails, the failure should remain visible and documented.
