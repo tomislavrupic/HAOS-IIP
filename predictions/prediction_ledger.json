@@ -1,0 +1,285 @@
+{
+  "schema_version": "1.0",
+  "scope": "Bounded HAOS-IIP recoverability predictions. These are diagnostic records, not proofs of new physics or biology.",
+  "prediction_levels": {
+    "P0_toy_internal": "Supported only by toy or in-repo demonstrations.",
+    "P1_cross_system": "Supported across more than one toy or internal system.",
+    "P2_external_dataset": "Ready for external data or third-party benchmark tests.",
+    "P3_field_facing": "A field-facing diagnostic prediction with clear controls.",
+    "P4_physics_candidate": "A candidate physics-facing prediction requiring external replication."
+  },
+  "records": [
+    {
+      "id": "HAOS-PRED-001",
+      "title": "Recoverability loss precedes visible failure under controlled perturbation",
+      "prediction_level": "P1_cross_system",
+      "status": "toy_supported_not_external",
+      "domain": "cross-domain interacting systems",
+      "claim_type": "recoverability_precursor",
+      "prediction_statement": "In bounded interacting systems, a sustained recoverability collapse index should appear before visible or conventional failure under controlled monotone perturbation.",
+      "novelty_boundary": "This is a field-facing diagnostic candidate: it predicts an ordering between recoverability loss and visible failure, not a new substrate or new physical law.",
+      "system_scope": [
+        "synthetic gene regulatory networks",
+        "microtubule-inspired interaction lattices",
+        "toy 3D multicellular interaction structures",
+        "toy 4D developmental tissue trajectories"
+      ],
+      "perturbation": "A deterministic monotone perturbation sweep from intact baseline to maximum stress.",
+      "observables": [
+        "recoverability",
+        "delta_persistence",
+        "k_star",
+        "safety_margin",
+        "visible_failure"
+      ],
+      "pass_criteria": [
+        "baseline recoverability is high",
+        "recoverability declines under perturbation",
+        "k_star is defined before first visible_failure",
+        "result is deterministic across repeated runs"
+      ],
+      "fail_criteria": [
+        "visible_failure appears before k_star",
+        "recoverability is flat or non-informative under perturbation",
+        "the result changes across deterministic reruns"
+      ],
+      "falsifiers": [
+        "If matched systems repeatedly show visible failure before recoverability collapse under the stated perturbation protocol, this prediction fails for that system class."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/biology/gene_network_demo/",
+          "result": "k_star_level=0.7000; first_visible_failure_level=0.9333; early_detection=True"
+        },
+        {
+          "source": "experiments/biology/microtubule_lattice_demo/",
+          "result": "k_star_level=0.8333; first_visible_failure_level=0.8667; early_detection=True"
+        },
+        {
+          "source": "experiments/biology/tissue_3d_demo/",
+          "result": "k_star_level=0.8000; first_visible_failure_level=1.0000; early_detection=True"
+        },
+        {
+          "source": "experiments/biology/morphogenesis_4d_demo/",
+          "result": "k_star_level=0.8667; first_visible_failure_level=0.9667; early_detection=True"
+        }
+      ],
+      "next_external_test": "Apply the same ordering test to an external time-series network dataset with known failure or degradation labels.",
+      "limitations": [
+        "Current support is from deterministic toy systems.",
+        "External systems may require different visible failure markers."
+      ],
+      "non_claims": [
+        "Does not claim HAOS-IIP proves biology.",
+        "Does not claim new physics.",
+        "Does not replace domain-specific models."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-002",
+      "title": "Collapse-origin localization precedes global failure",
+      "prediction_level": "P0_toy_internal",
+      "status": "candidate_unvalidated",
+      "domain": "networked and lattice systems",
+      "claim_type": "failure_origin_prediction",
+      "prediction_statement": "The earliest localized recoverability break should identify the sector, branch, or patch where later visible failure concentrates.",
+      "novelty_boundary": "This predicts a diagnostic localization rule, not a new mechanism of failure.",
+      "system_scope": [
+        "weighted regulatory networks",
+        "interaction lattices",
+        "spatial tissue-like graphs",
+        "engineered sensor or infrastructure networks"
+      ],
+      "perturbation": "Localized or structured perturbation applied to a known branch, patch, or sector.",
+      "observables": [
+        "local_recoverability",
+        "k_origin",
+        "sector_delta_persistence",
+        "later_visible_failure_location"
+      ],
+      "pass_criteria": [
+        "the earliest local recoverability collapse occurs before global visible failure",
+        "the same local sector overlaps the later visible failure region",
+        "matched controls do not show the same localization by chance"
+      ],
+      "fail_criteria": [
+        "local recoverability collapse is spatially uncorrelated with later visible failure",
+        "global failure occurs without any prior local recoverability signal",
+        "the localization signal disappears under deterministic robustness variations"
+      ],
+      "falsifiers": [
+        "If local k_origin repeatedly fails to overlap later failure regions better than matched controls, this prediction fails for that system class."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/biology/gene_network_demo/",
+          "result": "fragile branch was designed to degrade earlier than whole-network failure"
+        }
+      ],
+      "next_external_test": "Add local-sector readouts to Lines B-D, then test on external degradation maps where failure regions are labeled.",
+      "limitations": [
+        "Current evidence is design-level and internal.",
+        "Requires spatial or sector labels to test fairly."
+      ],
+      "non_claims": [
+        "Does not claim universal localization.",
+        "Does not claim causal proof from correlation.",
+        "Does not replace mechanistic failure analysis."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-003",
+      "title": "Safety margin decays before conventional threshold failure",
+      "prediction_level": "P1_cross_system",
+      "status": "toy_supported_not_external",
+      "domain": "stressed interacting systems",
+      "claim_type": "margin_forecast",
+      "prediction_statement": "A safety_margin derived from recoverability collapse should approach zero before conventional visible failure thresholds are crossed.",
+      "novelty_boundary": "This predicts a pre-failure margin observable. It does not claim that safety_margin is a conserved physical quantity.",
+      "system_scope": [
+        "toy biological interaction systems",
+        "kernel graph response systems",
+        "general weighted interaction graphs under monotone stress"
+      ],
+      "perturbation": "Controlled perturbation sweep with a defined collapse threshold and visible failure threshold.",
+      "observables": [
+        "safety_margin",
+        "recoverability",
+        "delta_persistence",
+        "visible_failure"
+      ],
+      "pass_criteria": [
+        "safety_margin is positive before k_star",
+        "safety_margin reaches zero at k_star",
+        "visible_failure occurs after safety_margin reaches zero"
+      ],
+      "fail_criteria": [
+        "visible_failure occurs while safety_margin is still positive",
+        "safety_margin oscillates without useful warning",
+        "k_star cannot be stably identified"
+      ],
+      "falsifiers": [
+        "If visible failure consistently occurs before safety_margin reaches zero under the defined protocol, this prediction fails for that system class."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/biology/",
+          "result": "Lines A-D all record k_star before first visible failure."
+        }
+      ],
+      "next_external_test": "Fit safety_margin on one perturbation family and test whether it forecasts visible failure on a held-out perturbation family.",
+      "limitations": [
+        "Threshold choice affects k_star and safety_margin.",
+        "External calibration is required before operational use."
+      ],
+      "non_claims": [
+        "Does not claim risk can be predicted without controls.",
+        "Does not claim a universal numerical threshold.",
+        "Does not replace existing safety analysis."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-004",
+      "title": "Recoverability gradients expose hidden fragile branches",
+      "prediction_level": "P0_toy_internal",
+      "status": "candidate_unvalidated",
+      "domain": "coupled networks with heterogeneous support",
+      "claim_type": "hidden_fragility_detection",
+      "prediction_statement": "In coupled systems with a weak downstream branch, recoverability gradients should reveal branch degradation before whole-system function appears visibly impaired.",
+      "novelty_boundary": "This is a diagnostic hypothesis about hidden fragility, not a claim that HAOS-IIP discovers biological or physical mechanisms by itself.",
+      "system_scope": [
+        "regulatory networks",
+        "supply or transport networks",
+        "interaction graphs with hub and branch motifs"
+      ],
+      "perturbation": "Progressive weakening of edges feeding a known fragile branch or weakly supported sector.",
+      "observables": [
+        "branch_recoverability",
+        "whole_system_recoverability",
+        "recoverability_gradient",
+        "visible_failure"
+      ],
+      "pass_criteria": [
+        "branch_recoverability declines before whole-system visible failure",
+        "recoverability_gradient identifies the fragile branch before global collapse",
+        "matched non-fragile branches remain more stable under the same perturbation"
+      ],
+      "fail_criteria": [
+        "branch and whole-system recoverability decline at the same time",
+        "recoverability_gradient does not distinguish fragile from non-fragile branches",
+        "visible failure appears with no prior branch-level warning"
+      ],
+      "falsifiers": [
+        "If branch recoverability gives no earlier signal than whole-system readouts across matched fragile-branch systems, this prediction fails."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/biology/gene_network_demo/",
+          "result": "fragile downstream branch shows earlier degradation than the whole network in the Line A validation logic"
+        }
+      ],
+      "next_external_test": "Use a real or benchmark directed network with known vulnerable branches and compare branch recoverability against standard centrality or degree metrics.",
+      "limitations": [
+        "Requires branch definitions or sector extraction.",
+        "Toy evidence is not field validation."
+      ],
+      "non_claims": [
+        "Does not claim hidden branches exist in every system.",
+        "Does not claim causal mechanism without intervention.",
+        "Does not replace domain-specific fragility metrics."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-005",
+      "title": "Shell-native observables can close while raw local gradients remain open",
+      "prediction_level": "P2_external_dataset",
+      "status": "external_test_ready",
+      "domain": "physics-adjacent graph observables",
+      "claim_type": "observable_frame_prediction",
+      "prediction_statement": "For some kernel-graph systems, shell-native recoverability observables should show stable closure under perturbation while raw local-gradient observables remain residual or open.",
+      "novelty_boundary": "This is a physics-adjacent observable-frame prediction. It does not assert that the graph is physical spacetime or that closure proves a continuum law.",
+      "system_scope": [
+        "kernel graph families",
+        "discrete interaction graphs with shell or radial organization",
+        "external graph datasets where shell-like grouping can be independently defined"
+      ],
+      "perturbation": "Matched disorder, localized bump, or smooth inhomogeneity perturbations applied to graph observables.",
+      "observables": [
+        "shell_native_closure",
+        "raw_local_gradient_residual",
+        "recoverability_gradient",
+        "control_branch_response"
+      ],
+      "pass_criteria": [
+        "shell-native closure remains stable under defined perturbation",
+        "raw local-gradient readout remains open or residual under the same protocol",
+        "matched controls do not erase the split"
+      ],
+      "fail_criteria": [
+        "raw local-gradient and shell-native observables behave identically under controls",
+        "shell-native closure disappears under deterministic robustness checks",
+        "the split depends on post-hoc threshold tuning"
+      ],
+      "falsifiers": [
+        "If independently grouped shell-native observables fail to separate from raw local-gradient residuals under matched controls, this prediction fails for that graph class."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/physics_bridge/results/physics_observables_summary.md",
+          "result": "internal bridge separates shell-native closures from raw local-gradient open boundaries"
+        }
+      ],
+      "next_external_test": "Apply the same shell-native versus raw-gradient split to an independently generated graph family with pre-registered grouping rules.",
+      "limitations": [
+        "Current evidence is internal to HAOS-IIP graph families.",
+        "Shell grouping must be pre-registered to avoid post-hoc closure."
+      ],
+      "non_claims": [
+        "Does not claim a continuum limit.",
+        "Does not claim physical spacetime emergence.",
+        "Does not claim new physics without external replication."
+      ]
+    }
+  ]
+}
+

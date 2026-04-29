@@ -1,0 +1,54 @@
+{
+  "by_level": {
+    "P0_toy_internal": 2,
+    "P1_cross_system": 2,
+    "P2_external_dataset": 1
+  },
+  "by_status": {
+    "candidate_unvalidated": 2,
+    "external_test_ready": 1,
+    "toy_supported_not_external": 2
+  },
+  "error_count": 0,
+  "errors": [],
+  "prediction_records": 5,
+  "records": [
+    {
+      "claim_type": "recoverability_precursor",
+      "id": "HAOS-PRED-001",
+      "prediction_level": "P1_cross_system",
+      "status": "toy_supported_not_external",
+      "title": "Recoverability loss precedes visible failure under controlled perturbation"
+    },
+    {
+      "claim_type": "failure_origin_prediction",
+      "id": "HAOS-PRED-002",
+      "prediction_level": "P0_toy_internal",
+      "status": "candidate_unvalidated",
+      "title": "Collapse-origin localization precedes global failure"
+    },
+    {
+      "claim_type": "margin_forecast",
+      "id": "HAOS-PRED-003",
+      "prediction_level": "P1_cross_system",
+      "status": "toy_supported_not_external",
+      "title": "Safety margin decays before conventional threshold failure"
+    },
+    {
+      "claim_type": "hidden_fragility_detection",
+      "id": "HAOS-PRED-004",
+      "prediction_level": "P0_toy_internal",
+      "status": "candidate_unvalidated",
+      "title": "Recoverability gradients expose hidden fragile branches"
+    },
+    {
+      "claim_type": "observable_frame_prediction",
+      "id": "HAOS-PRED-005",
+      "prediction_level": "P2_external_dataset",
+      "status": "external_test_ready",
+      "title": "Shell-native observables can close while raw local gradients remain open"
+    }
+  ],
+  "schema_version": "1.0",
+  "validation_passed": true
+}
