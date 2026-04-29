@@ -39,6 +39,16 @@ This compares spectral, local, hybrid, sink-aware, and environment-assisted
 address variants. The tracked summary is `fmo_pathway_strengthening_56_2.md`,
 with a compact figure at `figures/fmo_variant_summary_56_2.png`.
 
+For the Phase 56.3 pathway/flux modeling sweep:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/biology/fmo_photosynthesis_telemetry/run_fmo_pathway_sweep.py
+```
+
+This adds explicit signed-flux restoration along the declared FMO pathway edges.
+The tracked summary is `fmo_pathway_flux_56_3.md`, with a compact figure at
+`figures/fmo_pathway_flux_summary_56_3.png`.
+
 ## Initial Result
 
 The first 50-run robustness pass is intentionally kept as an honest falsifier:
@@ -77,6 +87,25 @@ the spectral baseline (`0.622` vs `0.547`) but does not produce a robust PASS.
 Local and hybrid address terms degrade the compact FMO transfer graph. The next
 real improvement likely needs a better pathway/flux model, not more address
 smoothing.
+
+## Phase 56.3 Result
+
+The explicit pathway/flux model solves the pathway-retention metric but still
+does not solve strict control specificity:
+
+- specs: `6`
+- total runs: `300`
+- best pathway spec: `flux_strong`
+- best pathway_identity_mean: `0.906155`
+- best recoverability_mean: `0.930908`
+- best active_null_z_mean: `3.227554`
+- best pass_rate: `0.060000` (`flux_light`)
+- control_pass_max: `2`
+
+Interpretation: explicit flux restoration can preserve the declared transfer
+pathway, but the controls can also exploit that engineered pathway term. The FMO
+bottleneck has therefore moved from pathway retention to branch-specific
+control discrimination. This remains a diagnostic result, not a validation pass.
 
 PASS requires:
 

@@ -23,6 +23,7 @@ class FMOTelemetryConfig:
     address_gain: float = 0.48
     local_address_gain: float = 0.18
     sink_gain: float = 0.0
+    flux_gain: float = 0.0
     environment_assist_gain: float = 0.0
     invariant_gain: float = 0.035
     spectral_modes: int = 4
@@ -118,6 +119,7 @@ def run_single(
     target_coeffs = basis.T @ target
     target_shell = local_shell_variance(target, adjacency)
     sink_profile = reaction_center_sink_profile(reference)
+    target_flux = pathway_flux(target, adjacency)
     transition = build_transition(adjacency)
     laplacian = np.eye(adjacency.shape[0]) - transition
     initial = target + 0.035 * rng.normal(size=reference.shape) if initial_override is None else initial_override
@@ -138,9 +140,10 @@ def run_single(
         spectral_pull = basis @ (target_coeffs - basis.T @ prior)
         local_pull = local_address_restoration(prior, target, adjacency)
         sink_pull = sink_profile * (target - prior)
+        flux_pull = pathway_flux_restoration(prior, target_flux, adjacency)
         invariant_pull = shell_variance_restoration(prior, adjacency, target_shell)
         update = prior - config.dt * config.diffusion * (laplacian @ prior)
-        update += config.dt * address_pull(prior, spectral_pull, local_pull, sink_pull, config)
+        update += config.dt * address_pull(prior, spectral_pull, local_pull, sink_pull, flux_pull, config)
         update += config.dt * config.invariant_gain * invariant_pull
         states[step] = normalize_field(update, reference)
 
@@ -178,18 +181,21 @@ def address_pull(
     spectral_pull: np.ndarray,
     local_pull: np.ndarray,
     sink_pull: np.ndarray,
+    flux_pull: np.ndarray,
     config: FMOTelemetryConfig,
 ) -> np.ndarray:
     if config.address_mode == "spectral":
-        return config.address_gain * spectral_pull + config.sink_gain * sink_pull
+        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
     if config.address_mode == "local":
-        return config.local_address_gain * local_pull + config.sink_gain * sink_pull
+        return config.local_address_gain * local_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
     if config.address_mode == "hybrid":
-        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull
+        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
     if config.address_mode == "sink":
-        return config.address_gain * spectral_pull + config.sink_gain * sink_pull
+        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
+    if config.address_mode == "pathway_flux":
+        return config.address_gain * spectral_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
     if config.address_mode == "environment_assisted":
-        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull
+        return config.address_gain * spectral_pull + config.local_address_gain * local_pull + config.sink_gain * sink_pull + config.flux_gain * flux_pull
     raise ValueError(f"unknown address_mode: {config.address_mode}")
 
 
@@ -204,6 +210,28 @@ def reaction_center_sink_profile(reference: np.ndarray) -> np.ndarray:
     profile = np.zeros_like(reference, dtype=float)
     profile[[2, 3, 4, 6]] = np.asarray([0.35, 1.0, 0.60, 0.80], dtype=float)
     return profile / max(float(np.linalg.norm(profile)), EPS)
+
+
+def pathway_edges() -> np.ndarray:
+    return np.asarray([(0, 1), (1, 2), (2, 3), (5, 4), (4, 3), (3, 6)], dtype=int)
+
+
+def pathway_flux(field: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
+    return np.asarray([adjacency[i, j] * (field[i] - field[j]) for i, j in pathway_edges()], dtype=float)
+
+
+def pathway_flux_restoration(field: np.ndarray, target_flux: np.ndarray, adjacency: np.ndarray) -> np.ndarray:
+    pull = np.zeros_like(field, dtype=float)
+    current_flux = pathway_flux(field, adjacency)
+    for (i, j), delta in zip(pathway_edges(), target_flux - current_flux):
+        weight = adjacency[i, j]
+        if weight <= EPS:
+            continue
+        correction = float(delta) / max(2.0 * weight, EPS)
+        pull[i] += correction
+        pull[j] -= correction
+    norm = max(float(np.linalg.norm(pull)), 1.0)
+    return np.clip(pull / norm, -1.0, 1.0)
 
 
 def null_ladder(
@@ -319,9 +347,8 @@ def pathway_identity_retention(final: np.ndarray, reference: np.ndarray, adjacen
 
 
 def pathway_distance(field: np.ndarray, reference: np.ndarray, adjacency: np.ndarray) -> float:
-    paths = np.asarray([(0, 1), (1, 2), (2, 3), (5, 4), (4, 3), (3, 6)], dtype=int)
-    field_flux = np.asarray([adjacency[i, j] * (field[i] - field[j]) for i, j in paths], dtype=float)
-    ref_flux = np.asarray([adjacency[i, j] * (reference[i] - reference[j]) for i, j in paths], dtype=float)
+    field_flux = pathway_flux(field, adjacency)
+    ref_flux = pathway_flux(reference, adjacency)
     return float(np.linalg.norm(field_flux - ref_flux) / max(np.linalg.norm(ref_flux), EPS))
 
 
