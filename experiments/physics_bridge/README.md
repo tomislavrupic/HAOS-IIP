@@ -94,7 +94,7 @@ collinear-limit, or gravitational-memory recovery.
 
 ## Spherical Harmonic Control Probe
 
-The Phase 58 spherical-harmonic control probe is available as a known-target
+The Phase 58/58.1 spherical-harmonic control probe is available as a known-target
 boundary-geometry sanity check:
 
 ```bash
@@ -108,5 +108,6 @@ uv run --with numpy --with matplotlib python experiments/physics_bridge/spherica
 ```
 
 This probe asks whether HAOS-style spectral telemetry can distinguish low-order
-S2 mode organization from generic graph smoothness under controls. It is not a
-claim of celestial holography.
+S2 mode organization from generic graph smoothness under controls. The 58.1
+runner hardens the score with geodesic edge-weight signatures and l(l+1)-like
+band-spacing checks. It is not a claim of celestial holography.
