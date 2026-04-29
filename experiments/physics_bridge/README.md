@@ -68,12 +68,26 @@ python3 examples/quick_reproduce.py --raw-gradient-audit-only
 
 This sidecar audit does not change the canonical bridge rows. Its strongest bounded result is narrower: the full raw local-gradient observable remains `OPEN`, while a source-core-excluded, amplitude-normalized shape-only read can pass the same raw thresholds as a sidecar proxy.
 
-## Future Celestial Boundary Audit
+## Celestial Boundary Audit
 
-A queued post-Phase-56 roadmap is saved at:
+The Phase 57 celestial-holography boundary audit is available as an external
+sidecar:
+
+```bash
+python3 experiments/physics_bridge/celestial_boundary_audit/run_celestial_boundary_audit.py
+```
+
+Generated outputs:
+
+- `experiments/physics_bridge/celestial_boundary_audit/haos_vs_celestial_requirements.csv`
+- `experiments/physics_bridge/celestial_boundary_audit/bridge_status.json`
+- `experiments/physics_bridge/celestial_boundary_audit/celestial_boundary_audit.md`
+
+The saved roadmap remains at:
 
 `docs/notes/foundations/HAOS_IIP_Celestial_Holography_Audit_Roadmap_v1.md`
 
-That roadmap treats celestial holography as a high-standard boundary audit for
-HAOS-IIP physics-facing language. It is not a core change and not a claim of
-BMS, Virasoro, S-matrix, soft-theorem, or gravitational-memory recovery.
+The audit treats celestial holography as a high-standard boundary check for
+HAOS-IIP physics-facing language. Its expected status is `OPEN`: it is not a
+core change and not a claim of BMS, Virasoro, S-matrix, soft-theorem,
+collinear-limit, or gravitational-memory recovery.
