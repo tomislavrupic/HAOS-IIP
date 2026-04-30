@@ -4,7 +4,12 @@ This sidecar consolidates the celestial-facing physics bridge after:
 
 - Phase 57: celestial boundary audit (`OPEN`);
 - Phase 58.1: spherical harmonic boundary-geometry sanity check (`PASS`);
-- Phase 59: toy soft-structure proxy (`PASS`).
+- Phase 59: toy soft-structure proxy (`PASS`);
+- Phase 61: toy gravitational-memory proxy (`PASS`);
+- Phase 62: toy multi-pole supertranslation proxy (`PASS`);
+- Phase 63: toy supertranslation-memory composition proxy (`PASS`);
+- Phase 64: GW memory entry-gate proxy (`PASS` on the default surrogate);
+- Phase 65: GW event-window hardening proxy (`MARGINAL`).
 
 It does not promote bounded sidecar PASS results into established physics
 claims.

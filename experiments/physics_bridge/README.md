@@ -215,3 +215,51 @@ temporal order, and the fixed toy response relation better than controls that
 preserve only pieces of the construction. It remains inside the Phase 60 claim
 gate and is not a claim of real BMS supertranslation recovery, gravitational
 memory, celestial holography, or S-matrix reconstruction.
+
+## GW Memory Entry Gate
+
+The Phase 64 GW memory entry gate moves from pure toy boundary fields toward
+strain-like time-series data:
+
+```bash
+python3 experiments/physics_bridge/gw_memory_entry_gate/run_gw_memory_proxy.py
+```
+
+If NumPy/Matplotlib are not installed in the default Python runtime:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/physics_bridge/gw_memory_entry_gate/run_gw_memory_proxy.py
+```
+
+The default run uses a deterministic GW150914-like surrogate so the probe is
+offline and reproducible. Optional local GWOSC-style HDF5, CSV/TXT, or NPY
+strain files can be supplied with `--input-file`.
+
+This probe asks whether HAOS-style memory/composition telemetry can distinguish
+a structured strain-derived proxy event from time-shuffle, phase-scramble,
+amplitude-preserving, event-window, off-event, and noise controls. It remains
+inside the claim gate: it is not a claim of real gravitational-memory detection,
+BMS charge recovery, soft theorem recovery, celestial holography, or S-matrix
+reconstruction.
+
+## GW Event-Window Hardening
+
+The Phase 65 event-window hardening runner attacks the main Phase 64 leakage
+path with stricter event-window controls and multiple deterministic surrogate
+events:
+
+```bash
+python3 experiments/physics_bridge/gw_memory_entry_gate/run_gw_event_window_hardening.py
+```
+
+If NumPy/Matplotlib are not installed in the default Python runtime:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/physics_bridge/gw_memory_entry_gate/run_gw_event_window_hardening.py
+```
+
+This runner adds sliding-window, partial-overlap, chirp-reversal,
+envelope-locked phase, timing-randomization, and micro-chunk controls. The
+current status is `MARGINAL`: the target remains stable across replicates, but
+event-window controls still compete strongly enough that the leak is not closed.
+This is a hardening diagnostic, not a gravitational-memory claim.

@@ -1,0 +1,18 @@
+{
+  "source_label": "gw150914_like_surrogate",
+  "source_kind": "synthetic_surrogate",
+  "detector": "SYNTH",
+  "sample_rate": 1024.0,
+  "sample_count": 2048,
+  "duration": 1.9990234375,
+  "event_time": 1.15,
+  "metadata": {
+    "duration": 2.0,
+    "seed": 6401,
+    "signal_to_noise": 14.0,
+    "claim_label": "strain-derived proxy input; synthetic surrogate",
+    "analysis_duration": 1.9990234375,
+    "analysis_sample_rate": 1024.0,
+    "analysis_event_time": 1.15
+  }
+}

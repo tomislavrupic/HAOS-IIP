@@ -21,6 +21,11 @@ ROOT = Path(__file__).resolve().parent
 SPHERICAL_STATUS = REPO_ROOT / "experiments/physics_bridge/spherical_harmonic_control_probe/bridge_status.json"
 SOFT_STATUS = REPO_ROOT / "experiments/physics_bridge/soft_structure_proxy_test/bridge_status.json"
 CELESTIAL_STATUS = REPO_ROOT / "experiments/physics_bridge/celestial_boundary_audit/bridge_status.json"
+MEMORY_TOY_STATUS = REPO_ROOT / "experiments/physics_bridge/gravitational_memory_toy_probe/bridge_status.json"
+MULTIPOLE_STATUS = REPO_ROOT / "experiments/physics_bridge/multipole_supertranslation_probe/bridge_status.json"
+COMPOSITION_STATUS = REPO_ROOT / "experiments/physics_bridge/supertranslation_memory_composition_probe/bridge_status.json"
+GW_ENTRY_STATUS = REPO_ROOT / "experiments/physics_bridge/gw_memory_entry_gate/bridge_status.json"
+GW_HARDENING_STATUS = REPO_ROOT / "experiments/physics_bridge/gw_memory_entry_gate/event_window_hardening_status.json"
 
 CSV_PATH = ROOT / "claim_gate_table.csv"
 STATUS_PATH = ROOT / "bridge_status.json"
@@ -75,6 +80,11 @@ def build_rows() -> list[ClaimGateRow]:
     spherical = load_status(SPHERICAL_STATUS)
     soft = load_status(SOFT_STATUS)
     celestial = load_status(CELESTIAL_STATUS)
+    memory_toy = load_status(MEMORY_TOY_STATUS)
+    multipole = load_status(MULTIPOLE_STATUS)
+    composition = load_status(COMPOSITION_STATUS)
+    gw_entry = load_status(GW_ENTRY_STATUS)
+    gw_hardening = load_status(GW_HARDENING_STATUS)
     return [
         ClaimGateRow(
             claim_id="spherical_harmonic_boundary_geometry",
@@ -110,6 +120,103 @@ def build_rows() -> list[ClaimGateRow]:
                 f"target_soft_score={soft['target_soft_specificity_score']:.6f}; "
                 f"control_max={soft['control_max_score']:.6f}; "
                 f"best_control={soft['control_max_sample']}"
+            ),
+        ),
+        ClaimGateRow(
+            claim_id="toy_gravitational_memory_proxy",
+            claim_or_probe="Toy gravitational-memory proxy",
+            status=str(memory_toy["bridge_status"]),
+            scope=(
+                "Synthetic permanent-displacement benchmark on sampled S2 with known target "
+                "mode, permanent step, temporal profile, and controls."
+            ),
+            supporting_artifact=artifact(MEMORY_TOY_STATUS),
+            promotion_gate="Already closed only as a synthetic displacement-memory toy benchmark.",
+            allowed_language="toy memory-like displacement proxy; synthetic memory benchmark",
+            disallowed_language="real gravitational memory detected; memory observable recovered; BMS soft hair recovered",
+            notes=(
+                f"target_memory_score={memory_toy['target_memory_specificity_score']:.6f}; "
+                f"control_max={memory_toy['control_max_score']:.6f}; "
+                f"best_control={memory_toy['control_max_sample']}"
+            ),
+        ),
+        ClaimGateRow(
+            claim_id="toy_multipole_supertranslation_proxy",
+            claim_or_probe="Toy multi-pole supertranslation proxy",
+            status=str(multipole["bridge_status"]),
+            scope=(
+                "Synthetic ordered l=2,3,4 permanent mode-shift sequence on sampled S2; "
+                "tests ordered address-binding, field identity, event order, and permanence."
+            ),
+            supporting_artifact=artifact(MULTIPOLE_STATUS),
+            promotion_gate="Already closed only as an ordered synthetic S2 mode-shift benchmark.",
+            allowed_language="toy multi-pole supertranslation-like proxy; ordered S2 mode-shift benchmark",
+            disallowed_language="real BMS supertranslation recovered; BMS charge recovered; soft hair proven",
+            notes=(
+                f"target_supertranslation_score={multipole['target_supertranslation_specificity_score']:.6f}; "
+                f"control_max={multipole['control_max_score']:.6f}; "
+                f"best_control={multipole['control_max_sample']}"
+            ),
+        ),
+        ClaimGateRow(
+            claim_id="toy_supertranslation_memory_composition_proxy",
+            claim_or_probe="Toy supertranslation + memory composition proxy",
+            status=str(composition["bridge_status"]),
+            scope=(
+                "Synthetic two-stage benchmark that composes a supertranslation-like shift "
+                "with a later induced memory-like response through a fixed toy response map."
+            ),
+            supporting_artifact=artifact(COMPOSITION_STATUS),
+            promotion_gate="Already closed only for the synthetic response-map composition benchmark.",
+            allowed_language="toy supertranslation-memory composition proxy; synthetic response relation",
+            disallowed_language="real BMS-memory composition recovered; gravitational memory relation proven",
+            notes=(
+                f"target_composition_score={composition['target_composition_specificity_score']:.6f}; "
+                f"control_max={composition['control_max_score']:.6f}; "
+                f"best_control={composition['control_max_sample']}"
+            ),
+        ),
+        ClaimGateRow(
+            claim_id="gw_memory_entry_gate_proxy",
+            claim_or_probe="GW memory entry-gate proxy",
+            status=str(gw_entry["bridge_status"]),
+            scope=(
+                "Strain-derived proxy telemetry on a deterministic GW150914-like surrogate "
+                "or optional local strain file with time-shuffle, phase-scramble, amplitude-preserving, "
+                "event-window, off-event, and noise controls."
+            ),
+            supporting_artifact=artifact(GW_ENTRY_STATUS),
+            promotion_gate=(
+                "Closed only as a strain-derived entry gate. Promotion requires external "
+                "gravitational-memory observable benchmarks and real-data replication."
+            ),
+            allowed_language="strain-derived proxy entry gate; structured strain-like event separated from controls",
+            disallowed_language="real gravitational memory detected; BMS charge recovered; GW memory observed",
+            notes=(
+                f"target_strain_proxy_score={gw_entry['target_strain_proxy_score']:.6f}; "
+                f"control_max={gw_entry['control_max_score']:.6f}; "
+                f"best_control={gw_entry['control_max_sample']}"
+            ),
+        ),
+        ClaimGateRow(
+            claim_id="gw_event_window_hardening_proxy",
+            claim_or_probe="GW event-window hardening proxy",
+            status=str(gw_hardening["bridge_status"]),
+            scope=(
+                "Multi-event strain-derived proxy hardening against sliding-window, partial-overlap, "
+                "chirp-reversal, envelope-locked phase, timing-randomization, and micro-chunk controls."
+            ),
+            supporting_artifact=artifact(GW_HARDENING_STATUS),
+            promotion_gate=(
+                "Requires mean margin >= 0.25 and zero event-window control leakage before being "
+                "promoted from MARGINAL to bounded PASS."
+            ),
+            allowed_language="event-window hardening diagnostic; remaining strain-proxy leakage characterized",
+            disallowed_language="real gravitational memory detected; event-window leak closed; GW memory observed",
+            notes=(
+                f"mean_margin={gw_hardening['mean_margin_over_best_control']:.6f}; "
+                f"min_margin={gw_hardening['min_margin_over_best_control']:.6f}; "
+                f"highest_control={gw_hardening['highest_control_sample']}"
             ),
         ),
         ClaimGateRow(
@@ -172,11 +279,11 @@ def build_rows() -> list[ClaimGateRow]:
             claim_or_probe="Gravitational memory observable",
             status="OPEN",
             scope="No displacement memory, spin memory, detector observable, or memory/soft-charge equivalence test is closed.",
-            supporting_artifact=artifact(CELESTIAL_STATUS),
+            supporting_artifact=artifact(GW_ENTRY_STATUS),
             promotion_gate="Requires an explicit memory observable benchmark and comparison to controls.",
-            allowed_language="future toy memory probe",
+            allowed_language="toy memory and strain-derived proxy rows exist; real observable remains open",
             disallowed_language="gravitational memory predicted; memory effect recovered",
-            notes="Candidate next phase: bounded gravitational-memory toy probe.",
+            notes="Phases 61, 64, and 65 are proxy gates only; they do not close this row.",
         ),
         ClaimGateRow(
             claim_id="claim_boundary_enforcement",
@@ -223,7 +330,7 @@ def build_status(rows: list[ClaimGateRow]) -> dict[str, Any]:
         ],
         "core_modified": False,
         "safe_to_continue": True,
-        "next_phase": "61_gravitational_memory_toy_probe",
+        "next_phase": "66_event_window_specificity_or_real_gwosc_replicates",
         "non_claims": [
             "no celestial holography recovery claim",
             "no BMS charge recovery claim",
@@ -265,7 +372,7 @@ def write_report(path: Path, rows: list[ClaimGateRow], status: dict[str, Any]) -
 
 This file is generated by `experiments/physics_bridge/claim_gated_bridge_update/run_claim_gated_bridge_update.py`.
 
-Phase 60 consolidates the celestial-facing bridge after Phase 57 (`OPEN` boundary audit), Phase 58.1 (`PASS` known-target S2 mode probe), and Phase 59 (`PASS` toy soft-structure proxy).
+Phase 60 consolidates the celestial-facing bridge after Phase 57 (`OPEN` boundary audit), Phase 58.1 (`PASS` known-target S2 mode probe), Phase 59 (`PASS` toy soft-structure proxy), Phase 61 (`PASS` toy memory proxy), Phase 62 (`PASS` toy multi-pole supertranslation proxy), Phase 63 (`PASS` toy composition proxy), Phase 64 (`PASS` strain-derived entry gate on the default surrogate), and Phase 65 (`MARGINAL` event-window hardening).
 
 The purpose is claim control. It does not modify HAOS core and does not promote toy or known-target sidecar results into established physics claims.
 
@@ -299,12 +406,18 @@ Use the PASS rows as bounded instrumentation results only:
 
 - `spherical_harmonic_boundary_geometry`: known-target S2 boundary-geometry sanity check.
 - `toy_soft_structure_proxy`: synthetic pole/residue/factorization sanity check.
+- `toy_gravitational_memory_proxy`: synthetic permanent-displacement sanity check.
+- `toy_multipole_supertranslation_proxy`: synthetic ordered S2 mode-shift benchmark.
+- `toy_supertranslation_memory_composition_proxy`: synthetic response-map composition benchmark.
+- `gw_memory_entry_gate_proxy`: strain-derived entry gate on a deterministic surrogate or optional local strain file.
 
-Do not use those rows as evidence that HAOS-IIP has recovered celestial holography, BMS charges, Virasoro/CCFT structure, a real S-matrix, real soft theorems, or gravitational memory.
+The Phase 65 event-window hardening row is deliberately `MARGINAL`: the target remains strong, but envelope-locked and sliding/micro-window controls still compete under the stricter ladder.
+
+Do not use any of these rows as evidence that HAOS-IIP has recovered celestial holography, BMS charges, Virasoro/CCFT structure, a real S-matrix, real soft theorems, or gravitational memory.
 
 ## Next
 
-Phase 61 may add a gravitational-memory toy probe. It should inherit this same claim gate: a toy memory result can pass as a toy benchmark while the real gravitational-memory observable row remains `OPEN`.
+Phase 66 should either tighten event-window specificity directly or replicate the Phase 64/65 entry gate on curated local GWOSC strain files. In both cases, real gravitational-memory observable and BMS/soft-theorem rows remain `OPEN` until directly tested.
 
 ## Authority
 

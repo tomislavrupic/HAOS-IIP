@@ -5,10 +5,10 @@
   "failure_mode": "NONE",
   "success_definition": "PASS means bounded sidecar claims are separated from established physics claims. It does not mean celestial holography, BMS, Virasoro, S-matrix, real soft theorem, or gravitational memory recovery has been closed.",
   "status_counts": {
-    "PASS": 3,
+    "PASS": 7,
     "OPEN": 6,
     "WATCH": 0,
-    "MARGINAL": 0
+    "MARGINAL": 1
   },
   "open_established_physics_claims": [
     "celestial_holography_recovery",
@@ -20,11 +20,15 @@
   ],
   "bounded_proxy_passes": [
     "spherical_harmonic_boundary_geometry",
-    "toy_soft_structure_proxy"
+    "toy_soft_structure_proxy",
+    "toy_gravitational_memory_proxy",
+    "toy_multipole_supertranslation_proxy",
+    "toy_supertranslation_memory_composition_proxy",
+    "gw_memory_entry_gate_proxy"
   ],
   "core_modified": false,
   "safe_to_continue": true,
-  "next_phase": "61_gravitational_memory_toy_probe",
+  "next_phase": "66_event_window_specificity_or_real_gwosc_replicates",
   "non_claims": [
     "no celestial holography recovery claim",
     "no BMS charge recovery claim",
