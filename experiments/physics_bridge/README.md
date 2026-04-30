@@ -171,3 +171,25 @@ memory-like step deformation better than controls that preserve smoothness,
 low-mode structure, or time-series scale. It remains inside the Phase 60 claim
 gate: it is not a claim of real gravitational-memory recovery, BMS soft hair,
 celestial holography, or S-matrix reconstruction.
+
+## Multi-Pole Supertranslation Toy Probe
+
+The Phase 62 multi-pole supertranslation toy probe extends the Phase 61 memory
+benchmark from one permanent deformation to an ordered synthetic `l=2,3,4`
+mode-shift sequence:
+
+```bash
+python3 experiments/physics_bridge/multipole_supertranslation_probe/run_multipole_supertranslation_probe.py
+```
+
+If NumPy/Matplotlib are not installed in the default Python runtime:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/physics_bridge/multipole_supertranslation_probe/run_multipole_supertranslation_probe.py
+```
+
+This probe asks whether HAOS-style spectral telemetry can recover cumulative
+field identity, multi-pole harmonic address, event ordering, and permanence
+better than smooth or partial-statistic controls. It remains a toy benchmark:
+it is not a claim of BMS supertranslation recovery, BMS charge recovery, real
+gravitational memory, celestial holography, or S-matrix reconstruction.

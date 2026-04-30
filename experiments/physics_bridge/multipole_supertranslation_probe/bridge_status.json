@@ -1,0 +1,53 @@
+{
+  "phase": "62",
+  "bridge_name": "multipole_supertranslation_probe",
+  "bridge_status": "PASS",
+  "failure_mode": "NONE",
+  "success_definition": "PASS requires a synthetic ordered l=2,3,4 permanent memory target to recover the cumulative field, multipole address, event order, and permanence while smoothness-preserving and partial-statistic controls fail.",
+  "config": {
+    "resolution": 192,
+    "time_count": 120,
+    "l_max": 4,
+    "k_neighbors": 10,
+    "seed": 6201,
+    "event_times": [
+      0.26,
+      0.48,
+      0.7
+    ],
+    "event_width": 0.028,
+    "noise_scale": 0.01,
+    "pass_min_specificity_score": 0.86,
+    "pass_min_recoverability": 0.9,
+    "pass_min_address": 0.88,
+    "pass_min_event_order": 0.82,
+    "pass_min_permanence": 0.82,
+    "pass_min_margin": 0.18,
+    "pass_min_separation_z": 1.5,
+    "pass_max_control_false_positive_rate": 0.0
+  },
+  "target_supertranslation_specificity_score": 0.9800253198136276,
+  "target_final_recoverability": 0.9998947108728253,
+  "target_multipole_address_score": 0.9999043266423836,
+  "target_event_order_score": 0.9878518745118678,
+  "target_permanence_score": 0.9956975861656876,
+  "target_leakage_control_score": 0.9999593867624249,
+  "target_generic_smoothness_score": 0.23822228357651853,
+  "control_max_score": 0.7510410971358147,
+  "control_max_sample": "event_order_shuffle_control",
+  "control_false_positive_threshold": 0.8000253198136276,
+  "control_false_positive_rate": 0.0,
+  "score_margin_over_best_control": 0.22898422267781293,
+  "separation_z": 3.5597986052729746,
+  "core_modified": false,
+  "safe_to_continue": true,
+  "next_phase": "63_claim_gated_celestial_toy_summary_or_bms_audit",
+  "non_claims": [
+    "no real BMS supertranslation recovery claim",
+    "no real gravitational-memory observable claim",
+    "no BMS charge or soft-hair recovery claim",
+    "no celestial holography recovery claim",
+    "no soft theorem or S-matrix reconstruction claim",
+    "synthetic ordered multi-pole S2 toy data only"
+  ]
+}
