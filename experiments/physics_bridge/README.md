@@ -193,3 +193,25 @@ field identity, multi-pole harmonic address, event ordering, and permanence
 better than smooth or partial-statistic controls. It remains a toy benchmark:
 it is not a claim of BMS supertranslation recovery, BMS charge recovery, real
 gravitational memory, celestial holography, or S-matrix reconstruction.
+
+## Supertranslation + Memory Composition Toy Probe
+
+The Phase 63 composition probe combines the Phase 61 memory toy and Phase 62
+multi-pole supertranslation toy into a two-stage synthetic benchmark:
+
+```bash
+python3 experiments/physics_bridge/supertranslation_memory_composition_probe/run_supertranslation_memory_composition_probe.py
+```
+
+If NumPy/Matplotlib are not installed in the default Python runtime:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/physics_bridge/supertranslation_memory_composition_probe/run_supertranslation_memory_composition_probe.py
+```
+
+This probe asks whether HAOS-style spectral telemetry can recover a synthetic
+supertranslation-like shift, a later induced memory-like response, their
+temporal order, and the fixed toy response relation better than controls that
+preserve only pieces of the construction. It remains inside the Phase 60 claim
+gate and is not a claim of real BMS supertranslation recovery, gravitational
+memory, celestial holography, or S-matrix reconstruction.
