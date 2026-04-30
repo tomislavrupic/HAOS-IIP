@@ -150,3 +150,24 @@ This update locks the language boundary: the spherical and toy-soft sidecars may
 be cited as bounded proxy PASS rows, while celestial holography, BMS charge
 recovery, Virasoro/CCFT recovery, S-matrix reconstruction, real soft-theorem
 recovery, and gravitational-memory observables remain `OPEN`.
+
+## Gravitational Memory Toy Probe
+
+The Phase 61 gravitational-memory toy probe is available as a synthetic
+permanent-displacement benchmark on a sampled `S2` boundary:
+
+```bash
+python3 experiments/physics_bridge/gravitational_memory_toy_probe/run_gravitational_memory_toy_probe.py
+```
+
+If NumPy/Matplotlib are not installed in the default Python runtime:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/physics_bridge/gravitational_memory_toy_probe/run_gravitational_memory_toy_probe.py
+```
+
+This probe asks whether HAOS-style spectral telemetry can detect a known
+memory-like step deformation better than controls that preserve smoothness,
+low-mode structure, or time-series scale. It remains inside the Phase 60 claim
+gate: it is not a claim of real gravitational-memory recovery, BMS soft hair,
+celestial holography, or S-matrix reconstruction.
