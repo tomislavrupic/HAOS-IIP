@@ -263,3 +263,22 @@ envelope-locked phase, timing-randomization, and micro-chunk controls. The
 current status is `MARGINAL`: the target remains stable across replicates, but
 event-window controls still compete strongly enough that the leak is not closed.
 This is a hardening diagnostic, not a gravitational-memory claim.
+
+## GW Event-Window Specificity
+
+The Phase 66 event-window specificity runner adds event-internal ridge-coherence
+and analytic-phase continuity metrics:
+
+```bash
+python3 experiments/physics_bridge/gw_memory_entry_gate/run_gw_event_window_specificity.py
+```
+
+If NumPy/Matplotlib are not installed in the default Python runtime:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/physics_bridge/gw_memory_entry_gate/run_gw_event_window_specificity.py
+```
+
+The current status is `MARGINAL`: the new metrics improve separation over Phase
+65, but partial-overlap, micro-window, and sliding-window controls still prevent
+a bounded PASS. This remains a strain-derived proxy diagnostic only.

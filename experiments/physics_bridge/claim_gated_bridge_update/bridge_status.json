@@ -8,7 +8,7 @@
     "PASS": 7,
     "OPEN": 6,
     "WATCH": 0,
-    "MARGINAL": 1
+    "MARGINAL": 2
   },
   "open_established_physics_claims": [
     "celestial_holography_recovery",
@@ -28,7 +28,7 @@
   ],
   "core_modified": false,
   "safe_to_continue": true,
-  "next_phase": "66_event_window_specificity_or_real_gwosc_replicates",
+  "next_phase": "67_real_gwosc_replication_or_event_window_metric_ablation",
   "non_claims": [
     "no celestial holography recovery claim",
     "no BMS charge recovery claim",

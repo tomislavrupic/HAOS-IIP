@@ -104,3 +104,32 @@ Additional outputs:
 
 The current Phase 65 status is `MARGINAL`: target scores remain high across
 replicates, but envelope-locked and sliding/micro-window controls still compete.
+
+## Phase 66 Event-Window Specificity
+
+Phase 66 adds event-internal ridge-coherence and analytic-phase continuity
+metrics:
+
+```bash
+python3 experiments/physics_bridge/gw_memory_entry_gate/run_gw_event_window_specificity.py
+```
+
+If NumPy/Matplotlib are not installed in the default Python runtime:
+
+```bash
+uv run --with numpy --with matplotlib python experiments/physics_bridge/gw_memory_entry_gate/run_gw_event_window_specificity.py
+```
+
+Additional outputs:
+
+- `event_window_specificity_diagnostics.csv`
+- `event_window_specificity_summary.csv`
+- `event_window_specificity_status.json`
+- `gw_event_window_specificity_report.md`
+- `figures/phase66_specificity_scores.png`
+- `figures/phase66_specificity_margins.png`
+- `figures/phase66_metric_plane.png`
+
+The current Phase 66 status is `MARGINAL`: separation improves, but
+partial-overlap, micro-window, and sliding-window controls still prevent a
+bounded PASS.
