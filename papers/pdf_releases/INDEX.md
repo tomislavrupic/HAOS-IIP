@@ -227,6 +227,10 @@ The intended public reading order is:
 
 1. `56.5` FMO Topology Contrast and Lessons for HAOS-IIP Biology Telemetry
 
+### 2.46 Part XLVI. Claim-gated celestial toy bridge
+
+1. `63.1` Celestial Boundary Toy Probes and Claim-Gated Physics Bridge for HAOS-IIP
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -304,6 +308,7 @@ The intended public reading order is:
 - `55.2` Spectral Dynamics Robustness and Microtubule Telemetry for HAOS-IIP
 - `55.1` Spectral Dynamics, Null-Ladder Specificity, and Microtubule Telemetry for HAOS-IIP
 - `56.5` FMO Topology Contrast and Lessons for HAOS-IIP Biology Telemetry
+- `63.1` Celestial Boundary Toy Probes and Claim-Gated Physics Bridge for HAOS-IIP
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
