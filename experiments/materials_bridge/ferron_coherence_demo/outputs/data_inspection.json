@@ -1,0 +1,44 @@
+{
+  "extraction_events": [],
+  "files": [
+    {
+      "extension": ".xlsx",
+      "file_name": "Source data Fig.1.xlsx",
+      "parse_status": "candidate",
+      "relative_path": "outputs/raw/Source data Fig.1.xlsx",
+      "role": "raw",
+      "sha256": "05a38cc576816479f851c0f4dfbe6370bed3ca163043e2c386c546980b9e82f3",
+      "size_bytes": 129205
+    },
+    {
+      "extension": ".xlsx",
+      "file_name": "Source data Fig.2.xlsx",
+      "parse_status": "candidate",
+      "relative_path": "outputs/raw/Source data Fig.2.xlsx",
+      "role": "raw",
+      "sha256": "8cba21ae3cba830a63a71a997532d892669139e3ecc7ba73833b53227a81dc25",
+      "size_bytes": 420687
+    },
+    {
+      "extension": ".xlsx",
+      "file_name": "Source data Fig.4.xlsx",
+      "parse_status": "candidate",
+      "relative_path": "outputs/raw/Source data Fig.4.xlsx",
+      "role": "raw",
+      "sha256": "42ea381f87d9046fbacce64246324d7b33599e5289fb25430bbad2c74f7fa93e",
+      "size_bytes": 5194876
+    }
+  ],
+  "inspected_at_utc": "2026-05-06T14:44:53+00:00",
+  "source_doi": "10.6084/m9.figshare.31895293",
+  "supported_extensions": [
+    ".csv",
+    ".dat",
+    ".json",
+    ".npy",
+    ".npz",
+    ".tsv",
+    ".txt",
+    ".xlsx"
+  ]
+}

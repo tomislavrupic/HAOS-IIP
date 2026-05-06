@@ -1,0 +1,68 @@
+{
+  "baseline_recoverability": 1.0,
+  "claim_boundary": [
+    "external-data probe only",
+    "no proof of HAOS-IIP",
+    "no claim that ferrons embody HAOS-IIP",
+    "no new materials theory",
+    "no consciousness claim"
+  ],
+  "confidence_summary": {
+    "max": 0.9999926836070802,
+    "mean": 0.9798696276083381,
+    "min": 0.8654037886340976
+  },
+  "data_status": "REAL_DATA_LOADED",
+  "early_detection": false,
+  "experiment": "Materials Bridge Line A - Ferron Coherence Recoverability Probe",
+  "files_loaded": [
+    {
+      "download_timestamp_utc": "2026-05-06T14:34:08+00:00",
+      "figshare_file_id": 63310870,
+      "figshare_reported_md5": "27d4ec113e6ead0d8d33df71c65bad26",
+      "figshare_reported_size_bytes": 129205,
+      "file_name": "Source data Fig.1.xlsx",
+      "relative_path": "outputs/raw/Source data Fig.1.xlsx",
+      "sha256": "05a38cc576816479f851c0f4dfbe6370bed3ca163043e2c386c546980b9e82f3",
+      "size_bytes": 129205,
+      "source_doi": "10.6084/m9.figshare.31895293",
+      "source_url": "https://ndownloader.figshare.com/files/63310870"
+    },
+    {
+      "download_timestamp_utc": "2026-05-06T14:34:08+00:00",
+      "figshare_file_id": 63310873,
+      "figshare_reported_md5": "5cffe57c7ad7e194e41687324a622f4f",
+      "figshare_reported_size_bytes": 420687,
+      "file_name": "Source data Fig.2.xlsx",
+      "relative_path": "outputs/raw/Source data Fig.2.xlsx",
+      "sha256": "8cba21ae3cba830a63a71a997532d892669139e3ecc7ba73833b53227a81dc25",
+      "size_bytes": 420687,
+      "source_doi": "10.6084/m9.figshare.31895293",
+      "source_url": "https://ndownloader.figshare.com/files/63310873"
+    },
+    {
+      "download_timestamp_utc": "2026-05-06T14:34:08+00:00",
+      "figshare_file_id": 63310876,
+      "figshare_reported_md5": "8d923a531b8994f98d09b90136962012",
+      "figshare_reported_size_bytes": 5194876,
+      "file_name": "Source data Fig.4.xlsx",
+      "relative_path": "outputs/raw/Source data Fig.4.xlsx",
+      "sha256": "42ea381f87d9046fbacce64246324d7b33599e5289fb25430bbad2c74f7fa93e",
+      "size_bytes": 5194876,
+      "source_doi": "10.6084/m9.figshare.31895293",
+      "source_url": "https://ndownloader.figshare.com/files/63310876"
+    }
+  ],
+  "first_visible_failure_level": null,
+  "k_star_level": null,
+  "outputs_written": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs",
+  "parsed_signals": {
+    "frequency_spectra_or_peak_records": 6,
+    "stft_amplitudes": 0,
+    "time_traces": 9
+  },
+  "primary_paper_doi": "10.1038/s41563-026-02597-4",
+  "source_doi": "10.6084/m9.figshare.31895293",
+  "source_url": "https://doi.org/10.6084/m9.figshare.31895293",
+  "validation_status": "PASS"
+}
