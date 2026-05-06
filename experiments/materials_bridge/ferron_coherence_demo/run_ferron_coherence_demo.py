@@ -30,6 +30,7 @@ from ferron_data_loader import (
 )
 from ferron_recoverability_model import run_ferron_sweep
 from spectral_feature_audit import run_spectral_feature_audit
+from stft_feature_audit import run_stft_feature_audit
 
 
 ROOT = Path(__file__).resolve().parent
@@ -167,8 +168,10 @@ def main() -> int:
         stft_count=len(stft_amplitudes),
     )
     summary["spectral_feature_audit"] = spectral_summary
+    stft_summary = run_stft_feature_audit(root=ROOT, output_dir=OUTPUTS_DIR)
+    summary["stft_time_frequency_audit"] = stft_summary
     SUMMARY_PATH.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    _write_validation_markdown(summary, rows, manifest, inspection, spectral_summary)
+    _write_validation_markdown(summary, rows, manifest, inspection, spectral_summary, stft_summary)
     _print_console_summary(summary)
     return 0
 
@@ -330,6 +333,7 @@ def _write_validation_markdown(
     manifest: dict[str, Any] | None,
     inspection: dict[str, Any],
     spectral_summary: dict[str, Any],
+    stft_summary: dict[str, Any],
 ) -> None:
     provenance_lines = []
     if summary["data_status"] == "REAL_DATA_LOADED" and manifest:
@@ -369,6 +373,7 @@ def _write_validation_markdown(
             if file_info.get("parse_status") != "candidate":
                 parsed_lines.append(f"  - {file_info.get('relative_path')} ({file_info.get('extension')})")
     spectral_lines = _spectral_markdown_lines(spectral_summary)
+    stft_lines = _stft_markdown_lines(stft_summary)
 
     content = f"""# Ferron Coherence Validation
 
@@ -398,6 +403,9 @@ def _write_validation_markdown(
 ## Spectral Feature Audit
 {chr(10).join(spectral_lines)}
 
+## STFT / Time-Frequency Audit
+{chr(10).join(stft_lines)}
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP
@@ -412,6 +420,7 @@ def _write_validation_markdown(
 
 def _print_console_summary(summary: dict[str, Any]) -> None:
     spectral = summary.get("spectral_feature_audit") or {}
+    stft = summary.get("stft_time_frequency_audit") or {}
     print(f"data_status: {summary['data_status']}")
     print(f"source_doi: {_format_optional(summary['source_doi'])}")
     print(f"files_loaded: {len(summary['files_loaded'])}")
@@ -427,6 +436,13 @@ def _print_console_summary(summary: dict[str, Any]) -> None:
     print(f"mean_spectral_recoverability: {_format_optional(spectral.get('mean_spectral_recoverability'))}")
     print(f"k_star_detected: {bool(spectral.get('k_star_detected'))}")
     print(f"bounded_interpretation: {_format_optional(spectral.get('bounded_interpretation'))}")
+    print(f"stft_audit_status: {_format_optional(stft.get('status'))}")
+    print(f"stft_maps_found: {_format_optional(stft.get('stft_maps_found', 0))}")
+    print(f"stft_time_points_audited: {_format_optional(stft.get('time_points_audited', 0))}")
+    print(f"stft_target_peak_records_found: {_format_optional(stft.get('target_peak_records_found', 0))}")
+    print(f"mean_stft_recoverability: {_format_optional(stft.get('mean_stft_recoverability'))}")
+    print(f"stft_k_star_detected: {bool(stft.get('k_star_detected'))}")
+    print(f"stft_bounded_interpretation: {_format_optional(stft.get('bounded_interpretation'))}")
     print("outputs_written: experiments/materials_bridge/ferron_coherence_demo/outputs/")
 
 
@@ -527,6 +543,58 @@ def _spectral_markdown_lines(spectral_summary: dict[str, Any]) -> list[str]:
         for note in missing[:8]:
             lines.append(f"  - {note}")
     interpretation = spectral_summary.get("bounded_interpretation")
+    if interpretation:
+        lines.append(f"- bounded interpretation: {interpretation}")
+    return lines
+
+
+def _stft_markdown_lines(stft_summary: dict[str, Any]) -> list[str]:
+    if not stft_summary:
+        return ["- STFT audit was not run."]
+    lines = [
+        f"- status: {_format_optional(stft_summary.get('status'))}",
+        f"- raw files inspected: {_format_optional(stft_summary.get('raw_files_inspected'))}",
+        f"- candidate sheets inspected: {_format_optional(stft_summary.get('candidate_sheets_inspected'))}",
+        f"- usable STFT maps found: {_format_optional(stft_summary.get('stft_maps_found', 0))}",
+        f"- target frequency search window: 3.13 THz +/- {_format_optional(stft_summary.get('search_window_THz', 0.2))} THz",
+    ]
+    accepted = stft_summary.get("accepted_maps") or []
+    if accepted:
+        lines.append("- accepted STFT maps:")
+        for item in accepted:
+            lines.append(
+                "  - "
+                f"{item.get('source_file')}#{item.get('sheet_name')} | "
+                f"time_points={item.get('time_points')} | "
+                f"frequency_points={item.get('frequency_points')}"
+            )
+        lines.extend(
+            [
+                f"- STFT time points audited: {_format_optional(stft_summary.get('time_points_audited'))}",
+                f"- target peak records found: {_format_optional(stft_summary.get('target_peak_records_found'))}",
+                f"- mean peak frequency: {_format_optional(stft_summary.get('mean_peak_frequency_THz'))} THz",
+                f"- mean STFT recoverability: {_format_optional(stft_summary.get('mean_stft_recoverability'))}",
+                f"- STFT k_star detected: {bool(stft_summary.get('k_star_detected'))}",
+                f"- visible failure detected: {bool(stft_summary.get('visible_failure_detected'))}",
+            ]
+        )
+    else:
+        lines.append("- usable STFT data found: False")
+        lines.append(
+            "- No usable raw STFT/time-frequency map was found in the downloaded XLSX files. "
+            "No STFT recoverability claim is made."
+        )
+    rejected = stft_summary.get("rejected_candidate_sheets") or []
+    if rejected:
+        lines.append("- rejected candidate sheets:")
+        for item in rejected[:12]:
+            lines.append(f"  - {item.get('source_file')}#{item.get('sheet_name')}: {item.get('reason')}")
+    missing = stft_summary.get("missing_data_notes") or []
+    if missing:
+        lines.append("- missing data notes:")
+        for note in missing[:12]:
+            lines.append(f"  - {note}")
+    interpretation = stft_summary.get("bounded_interpretation")
     if interpretation:
         lines.append(f"- bounded interpretation: {interpretation}")
     return lines

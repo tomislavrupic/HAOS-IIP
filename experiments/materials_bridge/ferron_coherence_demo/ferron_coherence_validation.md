@@ -52,6 +52,20 @@ PASS
   - Peak-to-background unavailable for Source data Fig.4_Fig. 4c Im_r_pp_: no_background_points_outside_target_window
 - bounded interpretation: Standout spectral feature: a target-window peak near 3.13 THz is detected in the parsed spectral records. Peak frequency remains stable under the available conditions, and no sustained k-star collapse is detected under the current proxy thresholds.
 
+## STFT / Time-Frequency Audit
+- status: NO_STFT_DATA_FOUND
+- raw files inspected: 3
+- candidate sheets inspected: 1
+- usable STFT maps found: 0
+- target frequency search window: 3.13 THz +/- 0.2 THz
+- usable STFT data found: False
+- No usable raw STFT/time-frequency map was found in the downloaded XLSX files. No STFT recoverability claim is made.
+- rejected candidate sheets:
+  - Source data Fig.2.xlsx#Fig.2d: long_form_frequency_column_missing; matrix_axes_not_numeric_enough
+- missing data notes:
+  - Source data Fig.2.xlsx#Fig.2d rejected: long_form_frequency_column_missing; matrix_axes_not_numeric_enough
+- bounded interpretation: No raw STFT/time-frequency map was parsed. Existing spectral audit result remains unchanged.
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP

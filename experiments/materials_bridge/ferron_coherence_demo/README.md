@@ -28,7 +28,7 @@ Secondary reference if primary public data is unavailable:
 ## Run
 
 ```bash
-uv run --with numpy --with matplotlib python experiments/materials_bridge/ferron_coherence_demo/run_ferron_coherence_demo.py
+uv run --with numpy --with matplotlib --with openpyxl python experiments/materials_bridge/ferron_coherence_demo/run_ferron_coherence_demo.py
 ```
 
 The runner first attempts to fetch the Figshare source-data record. If public
@@ -39,7 +39,7 @@ validation and must not be cited as external evidence.
 To run only the software smoke test:
 
 ```bash
-uv run --with numpy --with matplotlib python experiments/materials_bridge/ferron_coherence_demo/run_ferron_coherence_demo.py --force-smoke-test
+uv run --with numpy --with matplotlib --with openpyxl python experiments/materials_bridge/ferron_coherence_demo/run_ferron_coherence_demo.py --force-smoke-test
 ```
 
 ## Outputs
@@ -53,6 +53,9 @@ uv run --with numpy --with matplotlib python experiments/materials_bridge/ferron
 - `outputs/spectral_feature_summary.csv`
 - `outputs/spectral_feature_summary.json`
 - `outputs/peak_stability_by_condition.csv`
+- `outputs/stft_feature_summary.json`
+- `outputs/stft_feature_summary.csv` when usable raw STFT/time-frequency data parses
+- `outputs/stft_recoverability_by_time.csv` when usable raw STFT/time-frequency data parses
 - plot PNGs under `outputs/`
 - `ferron_coherence_validation.md`
 
@@ -77,6 +80,19 @@ audits parsed spectra directly and may derive FFT spectra from parsed time
 traces when distance metadata is present. It does not force collapse, does not
 invent missing STFT maps or metadata, and does not reinterpret ferrons as proof
 of HAOS-IIP.
+
+## STFT / Time-Frequency Audit
+
+The STFT audit checks whether the raw downloaded files contain usable
+time-frequency maps with both time and frequency axes. If present, it tests
+whether the target feature near `3.13 THz` remains recoverable over time using
+bounded target-band amplitude, frequency-stability, peak-to-background, and
+delta-persistence proxies.
+
+If no usable raw STFT/time-frequency grid exists, the code writes
+`outputs/stft_feature_summary.json` with `NO_STFT_DATA_FOUND` and does not
+fabricate maps, infer missing axes, or change the previous spectral audit
+result.
 
 ## HAOS Mapping
 

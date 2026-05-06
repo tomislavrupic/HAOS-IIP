@@ -121,5 +121,102 @@
     "time_trace_derived_spectral_records": 9,
     "visible_failure_detected": false
   },
+  "stft_time_frequency_audit": {
+    "accepted_maps": [],
+    "bounded_interpretation": "No raw STFT/time-frequency map was parsed. Existing spectral audit result remains unchanged.",
+    "candidate_sheet_reports": [
+      {
+        "candidate": true,
+        "columns": 16,
+        "preview_headers": [
+          "dt_p (ps)",
+          "STFT Int 0 96",
+          "dt_p (ps)",
+          "STFT Int 2 96",
+          "dt_p (ps)",
+          "STFT Int 4 96",
+          "dt_p (ps)",
+          "STFT Int 6 96",
+          "dt_p (ps)",
+          "STFT Int 0 224",
+          "dt_p (ps)",
+          "STFT Int 2 224",
+          "dt_p (ps)",
+          "STFT Int 4 224",
+          "dt_p (ps)",
+          "STFT Int 6 224"
+        ],
+        "reason": "candidate_stft_keyword_present",
+        "relative_path": "outputs/raw/Source data Fig.2.xlsx",
+        "rows": 28,
+        "sheet_name": "Fig.2d",
+        "signals": {
+          "has_amplitude_header": true,
+          "has_frequency_header": false,
+          "has_stft_keyword": true,
+          "has_time_header": true,
+          "matrix_like_numeric_axes": false
+        },
+        "source_file": "Source data Fig.2.xlsx"
+      }
+    ],
+    "candidate_sheets_inspected": 1,
+    "missing_data_notes": [
+      "Source data Fig.2.xlsx#Fig.2d rejected: long_form_frequency_column_missing; matrix_axes_not_numeric_enough"
+    ],
+    "raw_file_records": [
+      {
+        "file_name": "Source data Fig.1.xlsx",
+        "relative_path": "outputs/raw/Source data Fig.1.xlsx",
+        "size_bytes": 129205
+      },
+      {
+        "file_name": "Source data Fig.2.xlsx",
+        "relative_path": "outputs/raw/Source data Fig.2.xlsx",
+        "size_bytes": 420687
+      },
+      {
+        "file_name": "Source data Fig.4.xlsx",
+        "relative_path": "outputs/raw/Source data Fig.4.xlsx",
+        "size_bytes": 5194876
+      }
+    ],
+    "raw_files_inspected": 3,
+    "reason": "No sheet contained a validated time-frequency amplitude grid or long-form time/frequency/amplitude table.",
+    "rejected_candidate_sheets": [
+      {
+        "preview_headers": [
+          "dt_p (ps)",
+          "STFT Int 0 96",
+          "dt_p (ps)",
+          "STFT Int 2 96",
+          "dt_p (ps)",
+          "STFT Int 4 96",
+          "dt_p (ps)",
+          "STFT Int 6 96",
+          "dt_p (ps)",
+          "STFT Int 0 224",
+          "dt_p (ps)",
+          "STFT Int 2 224",
+          "dt_p (ps)",
+          "STFT Int 4 224",
+          "dt_p (ps)",
+          "STFT Int 6 224"
+        ],
+        "reason": "long_form_frequency_column_missing; matrix_axes_not_numeric_enough",
+        "relative_path": "outputs/raw/Source data Fig.2.xlsx",
+        "sheet_name": "Fig.2d",
+        "signals": {
+          "has_amplitude_header": true,
+          "has_frequency_header": false,
+          "has_stft_keyword": true,
+          "has_time_header": true,
+          "matrix_like_numeric_axes": false
+        },
+        "source_file": "Source data Fig.2.xlsx"
+      }
+    ],
+    "status": "NO_STFT_DATA_FOUND"
+  },
   "validation_status": "PASS"
 }
