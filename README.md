@@ -117,6 +117,7 @@ All conclusions are framed as feasibility statements, not ontological claims.
 phase3-stability/ ... phase18-distance-surrogate/  frozen phase bundles and diagnostics
 continuum-sketch/                                  low-cost post-processing scaling test
 experiments/physics_bridge/                        external physics-facing proxy readout
+experiments/materials_bridge/                      external materials-data sidecar probes
 examples/                                          one-command public reproduction spine
 telemetry/                                         frozen emergence metrics
 haos_core/                                         shared core primitives
@@ -169,6 +170,17 @@ To regenerate the external physics-bridge proxy table without changing the defau
 ```bash
 python3 examples/quick_reproduce.py --physics-observables-only
 ```
+
+To rerun the external ferron / NbOI2 materials bridge sidecar:
+
+```bash
+uv run --with numpy --with matplotlib --with openpyxl python experiments/materials_bridge/ferron_coherence_demo/run_ferron_coherence_demo.py
+```
+
+This sidecar is outside the frozen phase contract. It downloads public Figshare
+source data for a ferron / NbOI2 paper, records raw-file provenance, parses
+available time traces and spectra, and reports bounded recoverability metrics.
+It does not claim that ferrons prove HAOS-IIP.
 
 ## Telemetry Demo
 
@@ -257,6 +269,12 @@ Milestone anchors:
 - [Localized Bump Response 53.2](docs/notes/foundations/HAOS_IIP_Localized_Bump_Response_53_2_v1.md)
 - [PROGRAM_STATE_MILESTONE_18.md](PROGRAM_STATE_MILESTONE_18.md) (original geometry-emergence baseline)
 
+External-data sidecar update:
+
+- [Materials Bridge Line A ferron sidecar](experiments/materials_bridge/ferron_coherence_demo/) loads real published Figshare data for Choe et al., parses `9` time traces and `6` spectra or peak records, audits `15` target-window spectral records near `3.13 THz`, and reports mean peak frequency `3.13893 THz`, mean spectral recoverability `0.928455`, and no detected `k_star` under the current proxy thresholds.
+- The STFT/time-frequency audit inspected the raw XLSX files and found no validated raw time-frequency grid; therefore no STFT recoverability claim is made.
+- This is an external-data bridge validation and spectral audit only. It does not modify the frozen core, does not modify frozen phases, and does not prove HAOS-IIP.
+
 ## Reproducibility Contract
 
 Core experimental layers are frozen and defined in:
@@ -308,6 +326,7 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe for HAOS-IIP](papers/pdf_releases/64.1%20Materials%20Bridge%20Line%20A%20-%20Ferron%20Coherence%20Recoverability%20Probe%20for%20HAOS-IIP.pdf)
 - [53.4 Seed-Universal Disorder Flux Release](papers/pdf_releases/53.4%20Seed-Universal%20Disorder%20Flux%20Release%20for%20HAOS-IIP.pdf)
 - [53.3 Power-Law Scaling Boundary Release](papers/pdf_releases/53.3%20Power-Law%20Scaling%20Boundary%20Release%20for%20HAOS-IIP.pdf)
 - [53.2 Localized Bump Response Threshold Release](papers/pdf_releases/53.2%20Localized%20Bump%20Response%20Threshold%20Release%20for%20HAOS-IIP.pdf)

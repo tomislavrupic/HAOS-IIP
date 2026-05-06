@@ -42,6 +42,28 @@ The release logic is:
 2. the repository carries the mechanics
 3. the Zenodo DOI freezes the archive state
 
+## 2.1 External-data sidecar releases
+
+The numbered release spine now also includes bounded external-data sidecar
+papers. These are not frozen-core theory papers and are not proof claims. They
+record whether HAOS-style recoverability telemetry can be applied to external
+public datasets without fabricating missing structure.
+
+Current external-data release:
+
+1. `64.1` Materials Bridge Line A: Ferron Coherence Recoverability Probe for
+   HAOS-IIP
+2. Primary PDF:
+   `pdf_releases/64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe for HAOS-IIP.pdf`
+3. Source:
+   `materials_bridge_line_a_ferron_coherence_recoverability_probe_for_haos_iip.tex`
+
+Bounded result: real Figshare ferron / NbOI2 data loads, `15/15`
+target-window spectral records are detected near `3.13 THz`, mean spectral
+recoverability is `0.928455`, no `k_star` collapse is detected under the
+current proxy thresholds, and no raw STFT/time-frequency recoverability claim
+is made because no validated STFT grid was found in the downloaded XLSX files.
+
 ## 3. Compression map for Phase I
 
 The release stack already exists as `00.1` through `18.1`. For public delivery, compress it into four numbered blocks:

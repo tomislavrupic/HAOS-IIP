@@ -231,6 +231,10 @@ The intended public reading order is:
 
 1. `63.1` Celestial Boundary Toy Probes and Claim-Gated Physics Bridge for HAOS-IIP
 
+### 2.47 Part XLVII. External materials-data bridge
+
+1. `64.1` Materials Bridge Line A: Ferron Coherence Recoverability Probe for HAOS-IIP
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -309,6 +313,7 @@ The intended public reading order is:
 - `55.1` Spectral Dynamics, Null-Ladder Specificity, and Microtubule Telemetry for HAOS-IIP
 - `56.5` FMO Topology Contrast and Lessons for HAOS-IIP Biology Telemetry
 - `63.1` Celestial Boundary Toy Probes and Claim-Gated Physics Bridge for HAOS-IIP
+- `64.1` Materials Bridge Line A: Ferron Coherence Recoverability Probe for HAOS-IIP
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
