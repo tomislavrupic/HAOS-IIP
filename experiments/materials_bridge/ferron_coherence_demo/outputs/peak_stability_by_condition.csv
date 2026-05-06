@@ -1,0 +1,16 @@
+group_key,n_records,mean_peak_frequency_THz,std_peak_frequency_THz,mean_peak_amplitude,mean_linewidth_proxy_THz,mean_peak_to_background,mean_spectral_recoverability,min_spectral_recoverability,max_spectral_recoverability
+Source data Fig.1_Fig.1b|outputs/raw/Source data Fig.1.xlsx|Fig.1b|b-axis,1,3.135833119,0,186.1551575,0.005827720814,13.3781301,0.9927086012,0.9927086012,0.9927086012
+Source data Fig.1_Fig.1c|outputs/raw/Source data Fig.1.xlsx|Fig.1c|b-axis,1,3.13333312,0,280.2249247,0.009055250627,234.8757008,0.9958336,0.9958336,0.9958336
+Source data Fig.1_Fig.1d|outputs/raw/Source data Fig.1.xlsx|Fig.1d|THz Signal,1,3.135738832,0,11.18509231,0.09317344772,33.37437186,0.9928264605,0.9928264605,0.9928264605
+Source data Fig.1_Fig.1e|outputs/raw/Source data Fig.1.xlsx|Fig.1e|FT Amplitude,1,3.13574,0,0.01003,0.09955796958,7.42962963,0.992825,0.992825,0.992825
+Source data Fig.2_Fig.2a|outputs/raw/Source data Fig.2.xlsx|Fig.2a|distance_um=0.0|distance_um=0.0,1,3.132363132,0,122.3386368,0.0138612677,359.320231,0.9970460845,0.9970460845,0.9970460845
+Source data Fig.2_Fig.2a|outputs/raw/Source data Fig.2.xlsx|Fig.2a|distance_um=2.0|distance_um=2.0,1,3.132363132,0,270.616406,0.01492788589,308.2300565,0.9526111914,0.9526111914,0.9526111914
+Source data Fig.2_Fig.2a|outputs/raw/Source data Fig.2.xlsx|Fig.2a|distance_um=4.0|distance_um=4.0,1,3.139293139,0,394.2956289,0.01660462996,255.2403416,0.8931077864,0.8931077864,0.8931077864
+Source data Fig.2_Fig.2a|outputs/raw/Source data Fig.2.xlsx|Fig.2a|distance_um=6.0|distance_um=6.0,1,3.139293139,0,460.6977089,0.0171682098,162.3516708,0.8237832325,0.8237832325,0.8237832325
+Source data Fig.2_Fig.2b|outputs/raw/Source data Fig.2.xlsx|Fig.2b|distance_um=0.0|distance_um=0.0,1,3.132363132,0,155.4840732,0.01394173006,233.2657259,0.9970460845,0.9970460845,0.9970460845
+Source data Fig.2_Fig.2b|outputs/raw/Source data Fig.2.xlsx|Fig.2b|distance_um=2.0|distance_um=2.0,1,3.132363132,0,308.9876313,0.01590541317,145.4830416,0.8866019231,0.8866019231,0.8866019231
+Source data Fig.2_Fig.2b|outputs/raw/Source data Fig.2.xlsx|Fig.2b|distance_um=4.0|distance_um=4.0,1,3.139293139,0,333.779516,0.0179189368,107.6157664,0.8205762114,0.8205762114,0.8205762114
+Source data Fig.2_Fig.2b|outputs/raw/Source data Fig.2.xlsx|Fig.2b|distance_um=6.0|distance_um=6.0,1,3.139293139,0,221.1162361,0.01913217267,44.64292406,0.7429754548,0.7429754548,0.7429754548
+Source data Fig.2_Fig.2c|outputs/raw/Source data Fig.2.xlsx|Fig.2c|thickness_nm=224.0|thickness_nm=224.0,1,3.13236,0,1,0.008699772252,62230.07704,0.9968376706,0.9968376706,0.9968376706
+Source data Fig.2_Fig.2c|outputs/raw/Source data Fig.2.xlsx|Fig.2c|thickness_nm=96.0|thickness_nm=96.0,1,3.13236,0,1,0.008674292726,50594.4852,0.99705,0.99705,0.99705
+Source data Fig.4_Fig. 4c|outputs/raw/Source data Fig.4.xlsx|Fig. 4c|Im_r_pp_,1,3.192,0,2.10109,,,0.845,0.845,0.845

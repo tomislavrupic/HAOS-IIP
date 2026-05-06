@@ -29,6 +29,29 @@ PASS
 - early_detection: False
 - confidence summary: {"max": 0.9999926836070802, "mean": 0.9798696276083381, "min": 0.8654037886340976}
 
+## Spectral Feature Audit
+- status: PARTIAL
+- spectral records audited: 15
+- target peak search window: 3.13 THz +/- 0.2 THz
+- target peak records found: 15
+- strongest / most stable peak frequency summary: mean 3.13893 THz
+- mean spectral recoverability: 0.928455
+- k_star remains absent: True
+- visible failure detected: False
+- Target-window peak detected in 15/15 audited spectral records near 3.13 THz.
+- Detected peak-frequency range is 3.13236-3.192 THz (mean 3.13893 THz).
+- Absolute drift from the 3.13 THz target ranges from 0.00236 to 0.062 THz.
+- FWHM-like linewidth proxy is available for 14 records, with mean 0.0253178 THz.
+- Peak-to-background ratio is available for 14 records, with mean 8194.98.
+- Distance-series target peaks remain detectable; amplitude retention at maximum parsed distance is 1-1, while monotonic decay consistency is 0-0.333333.
+- Spectral recoverability ranges from 0.742975 to 0.99705 across audited records.
+- missing data notes:
+  - 9 audited spectra are FFT-derived from parsed time traces.
+  - Linewidth proxy unavailable for Source data Fig.4_Fig. 4c Im_r_pp_: invalid_linewidth_width
+  - No STFT maps parsed in the current data load.
+  - Peak-to-background unavailable for Source data Fig.4_Fig. 4c Im_r_pp_: no_background_points_outside_target_window
+- bounded interpretation: Standout spectral feature: a target-window peak near 3.13 THz is detected in the parsed spectral records. Peak frequency remains stable under the available conditions, and no sustained k-star collapse is detected under the current proxy thresholds.
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP

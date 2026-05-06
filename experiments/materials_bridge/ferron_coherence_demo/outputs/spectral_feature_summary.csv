@@ -1,0 +1,16 @@
+source_file,sheet_name,sample_id,condition_label,distance_um,temperature_K,thickness_nm,fluence_mJ_cm2,target_frequency_THz,peak_found,peak_frequency_THz,peak_amplitude,linewidth_proxy_THz,peak_to_background,frequency_drift_from_target_THz,amplitude_retention,frequency_stability,linewidth_stability,spectral_recoverability
+outputs/raw/Source data Fig.1.xlsx,Fig.1b,Source data Fig.1_Fig.1b,b-axis,,,,,3.13,True,3.135833119,186.1551575,0.005827720814,13.3781301,0.005833119,1,0.970834405,1,0.9927086012
+outputs/raw/Source data Fig.1.xlsx,Fig.1c,Source data Fig.1_Fig.1c,b-axis,,,,,3.13,True,3.13333312,280.2249247,0.009055250627,234.8757008,0.00333312,1,0.9833344,1,0.9958336
+outputs/raw/Source data Fig.1.xlsx,Fig.1e,Source data Fig.1_Fig.1e,FT Amplitude,,,,,3.13,True,3.13574,0.01003,0.09955796958,7.42962963,0.00574,1,0.9713,1,0.992825
+outputs/raw/Source data Fig.2.xlsx,Fig.2c,Source data Fig.2_Fig.2c,thickness_nm=96.0,,,96,,3.13,True,3.13236,1,0.008674292726,50594.4852,0.00236,1,0.9882,1,0.99705
+outputs/raw/Source data Fig.2.xlsx,Fig.2c,Source data Fig.2_Fig.2c,thickness_nm=224.0,,,224,,3.13,True,3.13236,1,0.008699772252,62230.07704,0.00236,1,0.9882,0.9991506825,0.9968376706
+outputs/raw/Source data Fig.4.xlsx,Fig. 4c,Source data Fig.4_Fig. 4c,Im_r_pp_,,,,,3.13,True,3.192,2.10109,,,0.062,1,0.69,,0.845
+outputs/raw/Source data Fig.1.xlsx,Fig.1d,Source data Fig.1_Fig.1d,THz Signal,,,,,3.13,True,3.135738832,11.18509231,0.09317344772,33.37437186,0.005738831615,1,0.9713058419,1,0.9928264605
+outputs/raw/Source data Fig.2.xlsx,Fig.2a,Source data Fig.2_Fig.2a,distance_um=0.0,0,,,,3.13,True,3.132363132,122.3386368,0.0138612677,359.320231,0.002363132363,1,0.9881843382,1,0.9970460845
+outputs/raw/Source data Fig.2.xlsx,Fig.2a,Source data Fig.2_Fig.2a,distance_um=2.0,2,,,,3.13,True,3.132363132,270.616406,0.01492788589,308.2300565,0.002363132363,1,0.9881843382,0.9644460602,0.9526111914
+outputs/raw/Source data Fig.2.xlsx,Fig.2a,Source data Fig.2_Fig.2a,distance_um=4.0,4,,,,3.13,True,3.139293139,394.2956289,0.01660462996,255.2403416,0.009293139293,1,0.9535343035,0.9085545913,0.8931077864
+outputs/raw/Source data Fig.2.xlsx,Fig.2a,Source data Fig.2_Fig.2a,distance_um=6.0,6,,,,3.13,True,3.139293139,460.6977089,0.0171682098,162.3516708,0.009293139293,1,0.9535343035,0.8897685966,0.8237832325
+outputs/raw/Source data Fig.2.xlsx,Fig.2b,Source data Fig.2_Fig.2b,distance_um=0.0,0,,,,3.13,True,3.132363132,155.4840732,0.01394173006,233.2657259,0.002363132363,1,0.9881843382,1,0.9970460845
+outputs/raw/Source data Fig.2.xlsx,Fig.2b,Source data Fig.2_Fig.2b,distance_um=2.0,2,,,,3.13,True,3.132363132,308.9876313,0.01590541317,145.4830416,0.002363132363,1,0.9881843382,0.9345438962,0.8866019231
+outputs/raw/Source data Fig.2.xlsx,Fig.2b,Source data Fig.2_Fig.2b,distance_um=4.0,4,,,,3.13,True,3.139293139,333.779516,0.0179189368,107.6157664,0.009293139293,1,0.9535343035,0.8674264419,0.8205762114
+outputs/raw/Source data Fig.2.xlsx,Fig.2b,Source data Fig.2_Fig.2b,distance_um=6.0,6,,,,3.13,True,3.139293139,221.1162361,0.01913217267,44.64292406,0.009293139293,1,0.9535343035,0.8269852462,0.7429754548

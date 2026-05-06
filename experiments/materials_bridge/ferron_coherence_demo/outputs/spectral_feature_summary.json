@@ -1,0 +1,57 @@
+{
+  "bounded_interpretation": "Standout spectral feature: a target-window peak near 3.13 THz is detected in the parsed spectral records. Peak frequency remains stable under the available conditions, and no sustained k-star collapse is detected under the current proxy thresholds.",
+  "distance_decay": [
+    {
+      "amplitude_retention_at_max_distance": 1.0,
+      "distance_max_um": 6.0,
+      "distance_min_um": 0.0,
+      "group_key": "Source data Fig.2_Fig.2a|outputs/raw/Source data Fig.2.xlsx|Fig.2a|distance_um",
+      "monotonic_decay_consistency": 0.0,
+      "n_distance_records": 4,
+      "raw_amplitude_ratio_at_max_distance": 3.7657580700084594
+    },
+    {
+      "amplitude_retention_at_max_distance": 1.0,
+      "distance_max_um": 6.0,
+      "distance_min_um": 0.0,
+      "group_key": "Source data Fig.2_Fig.2b|outputs/raw/Source data Fig.2.xlsx|Fig.2b|distance_um",
+      "monotonic_decay_consistency": 0.3333333333333333,
+      "n_distance_records": 4,
+      "raw_amplitude_ratio_at_max_distance": 1.4221150218218837
+    }
+  ],
+  "k_star_detected": false,
+  "k_star_level": null,
+  "mean_peak_frequency_THz": 3.138932677149442,
+  "mean_spectral_recoverability": 0.928455286742872,
+  "missing_data_notes": [
+    "9 audited spectra are FFT-derived from parsed time traces.",
+    "Linewidth proxy unavailable for Source data Fig.4_Fig. 4c Im_r_pp_: invalid_linewidth_width",
+    "No STFT maps parsed in the current data load.",
+    "Peak-to-background unavailable for Source data Fig.4_Fig. 4c Im_r_pp_: no_background_points_outside_target_window"
+  ],
+  "parsed_spectral_records": 6,
+  "peaks_found": 15,
+  "plots": {
+    "linewidth_proxy_by_condition": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/linewidth_proxy_by_condition.png",
+    "peak_amplitude_retention": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/peak_amplitude_retention.png",
+    "peak_frequency_stability": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/peak_frequency_stability.png",
+    "spectral_peak_map": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/spectral_peak_map.png",
+    "spectral_recoverability_audit": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/spectral_recoverability_audit.png"
+  },
+  "records_audited": 15,
+  "search_window_THz": 0.2,
+  "standout_features": [
+    "Target-window peak detected in 15/15 audited spectral records near 3.13 THz.",
+    "Detected peak-frequency range is 3.13236-3.192 THz (mean 3.13893 THz).",
+    "Absolute drift from the 3.13 THz target ranges from 0.00236 to 0.062 THz.",
+    "FWHM-like linewidth proxy is available for 14 records, with mean 0.0253178 THz.",
+    "Peak-to-background ratio is available for 14 records, with mean 8194.98.",
+    "Distance-series target peaks remain detectable; amplitude retention at maximum parsed distance is 1-1, while monotonic decay consistency is 0-0.333333.",
+    "Spectral recoverability ranges from 0.742975 to 0.99705 across audited records."
+  ],
+  "status": "PARTIAL",
+  "target_frequency_THz": 3.13,
+  "time_trace_derived_spectral_records": 9,
+  "visible_failure_detected": false
+}

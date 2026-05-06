@@ -29,6 +29,7 @@ from ferron_data_loader import (
     load_time_traces,
 )
 from ferron_recoverability_model import run_ferron_sweep
+from spectral_feature_audit import run_spectral_feature_audit
 
 
 ROOT = Path(__file__).resolve().parent
@@ -159,8 +160,15 @@ def main() -> int:
         frequency_spectra=frequency_spectra,
         smoke_test=data_status == "DATA_UNAVAILABLE_SMOKE_TEST_ONLY",
     )
+    spectral_summary = run_spectral_feature_audit(
+        frequency_spectra if data_status == "REAL_DATA_LOADED" else [],
+        time_traces=time_traces if data_status == "REAL_DATA_LOADED" else [],
+        output_dir=OUTPUTS_DIR,
+        stft_count=len(stft_amplitudes),
+    )
+    summary["spectral_feature_audit"] = spectral_summary
     SUMMARY_PATH.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    _write_validation_markdown(summary, rows, manifest, inspection)
+    _write_validation_markdown(summary, rows, manifest, inspection, spectral_summary)
     _print_console_summary(summary)
     return 0
 
@@ -321,6 +329,7 @@ def _write_validation_markdown(
     rows: list[dict[str, Any]],
     manifest: dict[str, Any] | None,
     inspection: dict[str, Any],
+    spectral_summary: dict[str, Any],
 ) -> None:
     provenance_lines = []
     if summary["data_status"] == "REAL_DATA_LOADED" and manifest:
@@ -359,6 +368,7 @@ def _write_validation_markdown(
         for file_info in inspection.get("files", []):
             if file_info.get("parse_status") != "candidate":
                 parsed_lines.append(f"  - {file_info.get('relative_path')} ({file_info.get('extension')})")
+    spectral_lines = _spectral_markdown_lines(spectral_summary)
 
     content = f"""# Ferron Coherence Validation
 
@@ -385,6 +395,9 @@ def _write_validation_markdown(
 - early_detection: {summary["early_detection"]}
 - confidence summary: {json.dumps(summary["confidence_summary"], sort_keys=True)}
 
+## Spectral Feature Audit
+{chr(10).join(spectral_lines)}
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP
@@ -398,6 +411,7 @@ def _write_validation_markdown(
 
 
 def _print_console_summary(summary: dict[str, Any]) -> None:
+    spectral = summary.get("spectral_feature_audit") or {}
     print(f"data_status: {summary['data_status']}")
     print(f"source_doi: {_format_optional(summary['source_doi'])}")
     print(f"files_loaded: {len(summary['files_loaded'])}")
@@ -406,6 +420,13 @@ def _print_console_summary(summary: dict[str, Any]) -> None:
     print(f"first_visible_failure_level: {_format_optional(summary['first_visible_failure_level'])}")
     print(f"early_detection: {summary['early_detection']}")
     print(f"validation_status: {summary['validation_status']}")
+    print(f"spectral_audit_status: {_format_optional(spectral.get('status'))}")
+    print(f"spectral_records_audited: {_format_optional(spectral.get('records_audited'))}")
+    print(f"target_peak_records_found: {_format_optional(spectral.get('peaks_found'))}")
+    print(f"mean_peak_frequency_THz: {_format_optional(spectral.get('mean_peak_frequency_THz'))}")
+    print(f"mean_spectral_recoverability: {_format_optional(spectral.get('mean_spectral_recoverability'))}")
+    print(f"k_star_detected: {bool(spectral.get('k_star_detected'))}")
+    print(f"bounded_interpretation: {_format_optional(spectral.get('bounded_interpretation'))}")
     print("outputs_written: experiments/materials_bridge/ferron_coherence_demo/outputs/")
 
 
@@ -481,6 +502,34 @@ def _confidence_summary(rows: list[dict[str, Any]]) -> dict[str, float | None]:
         "mean": sum(values) / len(values),
         "max": max(values),
     }
+
+
+def _spectral_markdown_lines(spectral_summary: dict[str, Any]) -> list[str]:
+    if not spectral_summary:
+        return ["- Spectral audit was not run."]
+    window = _format_optional(spectral_summary.get("search_window_THz"))
+    lines = [
+        f"- status: {_format_optional(spectral_summary.get('status'))}",
+        f"- spectral records audited: {_format_optional(spectral_summary.get('records_audited'))}",
+        f"- target peak search window: 3.13 THz +/- {window} THz",
+        f"- target peak records found: {_format_optional(spectral_summary.get('peaks_found'))}",
+        f"- strongest / most stable peak frequency summary: mean {_format_optional(spectral_summary.get('mean_peak_frequency_THz'))} THz",
+        f"- mean spectral recoverability: {_format_optional(spectral_summary.get('mean_spectral_recoverability'))}",
+        f"- k_star remains absent: {not bool(spectral_summary.get('k_star_detected'))}",
+        f"- visible failure detected: {bool(spectral_summary.get('visible_failure_detected'))}",
+    ]
+    features = spectral_summary.get("standout_features") or []
+    for feature in features:
+        lines.append(f"- {feature}")
+    missing = spectral_summary.get("missing_data_notes") or []
+    if missing:
+        lines.append("- missing data notes:")
+        for note in missing[:8]:
+            lines.append(f"  - {note}")
+    interpretation = spectral_summary.get("bounded_interpretation")
+    if interpretation:
+        lines.append(f"- bounded interpretation: {interpretation}")
+    return lines
 
 
 def _csv_value(value: Any) -> Any:

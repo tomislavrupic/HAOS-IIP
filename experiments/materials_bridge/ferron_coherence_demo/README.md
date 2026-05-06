@@ -50,6 +50,9 @@ uv run --with numpy --with matplotlib python experiments/materials_bridge/ferron
 - `outputs/summary.json`
 - `outputs/real_data_metrics.csv` when real data parses
 - `outputs/smoke_test_metrics.csv` when only smoke-test data is available
+- `outputs/spectral_feature_summary.csv`
+- `outputs/spectral_feature_summary.json`
+- `outputs/peak_stability_by_condition.csv`
 - plot PNGs under `outputs/`
 - `ferron_coherence_validation.md`
 
@@ -64,6 +67,16 @@ Archives are extracted only into derived storage for parsing:
 ```text
 outputs/derived_extracted/
 ```
+
+## Spectral Feature Audit
+
+The second-pass audit inspects the ferron spectral peak near `3.13 THz`. It
+measures target peak detection, peak frequency stability, amplitude retention,
+a deterministic FWHM-like linewidth proxy, and peak-to-background clarity. It
+audits parsed spectra directly and may derive FFT spectra from parsed time
+traces when distance metadata is present. It does not force collapse, does not
+invent missing STFT maps or metadata, and does not reinterpret ferrons as proof
+of HAOS-IIP.
 
 ## HAOS Mapping
 
