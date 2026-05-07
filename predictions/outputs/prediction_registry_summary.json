@@ -2,16 +2,17 @@
   "by_level": {
     "P0_toy_internal": 2,
     "P1_cross_system": 2,
-    "P2_external_dataset": 1
+    "P2_external_dataset": 2,
+    "P3_field_facing": 3
   },
   "by_status": {
     "candidate_unvalidated": 2,
-    "external_test_ready": 1,
+    "external_test_ready": 5,
     "toy_supported_not_external": 2
   },
   "error_count": 0,
   "errors": [],
-  "prediction_records": 5,
+  "prediction_records": 9,
   "records": [
     {
       "claim_type": "recoverability_precursor",
@@ -47,6 +48,34 @@
       "prediction_level": "P2_external_dataset",
       "status": "external_test_ready",
       "title": "Shell-native observables can close while raw local gradients remain open"
+    },
+    {
+      "claim_type": "material_address_selection",
+      "id": "HAOS-PRED-006",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "title": "Polar-mode address selection in layered ferroelectrics"
+    },
+    {
+      "claim_type": "propagation_boundary_prediction",
+      "id": "HAOS-PRED-007",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "title": "Thickness and boundary dependence of target-band propagation"
+    },
+    {
+      "claim_type": "readdressing_recoverability_prediction",
+      "id": "HAOS-PRED-008",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "title": "Target-window re-addressing after secondary perturbation"
+    },
+    {
+      "claim_type": "cross_dataset_control_discrimination",
+      "id": "HAOS-PRED-009",
+      "prediction_level": "P2_external_dataset",
+      "status": "external_test_ready",
+      "title": "Target-window recoverability separates coherent propagation records from broadband controls"
     }
   ],
   "schema_version": "1.0",

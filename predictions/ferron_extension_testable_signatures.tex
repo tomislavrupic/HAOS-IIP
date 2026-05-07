@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{HAOS-IIP Ferron Extension: Testable Signatures}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Scope}
+
+This note converts Materials Bridge Line A into forward-facing, falsifiable
+prediction records. It is not a new theory, not a proof of HAOS-IIP, and not a
+claim that ferrons embody HAOS-IIP.
+
+\section*{Calibration Source}
+
+Release \texttt{64.1} provides the bounded calibration point: real Figshare
+ferron / NbOI$_2$ data loads; \texttt{15/15} target-window spectral records are
+found near \texttt{3.13 THz}; mean peak frequency is \texttt{3.13893 THz}; mean
+spectral recoverability is \texttt{0.928455}; published Fig. 2d target-band
+traces contain \texttt{8} traces and \texttt{216} time points; the published
+group-velocity proxies are \texttt{58.8 km/s} at \texttt{96 nm} and
+\texttt{100 km/s} at \texttt{224 nm}; the computed-from-time-trace STFT
+diagnostic gives mean envelope correlation \texttt{0.995318}; and the unified
+persistence proxy is \texttt{0.957192}.
+
+The raw-grid boundary remains active:
+\texttt{raw\_stft\_time\_frequency\_grid\_status=NO\_STFT\_DATA\_FOUND}.
+Published target-band traces and computed STFT diagnostics are not raw
+time-frequency maps.
+
+\section*{Field-Facing Predictions}
+
+\begin{center}
+\begin{tabular}{p{0.25\linewidth}p{0.35\linewidth}p{0.30\linewidth}}
+\toprule
+Prediction & Testable readout & Falsifier \\
+\midrule
+Polar-mode address selection &
+Layered polar ferroelectrics or related polar oxyhalides should show a
+narrowband coherent readout in a pre-registered target window around an
+independently measured polar mode. &
+If matched polar materials show only broadband emission, or if non-polar
+controls show the same target-window recoverability, the prediction fails for
+that material class. \\
+\addlinespace
+Thickness / boundary propagation dependence &
+Target-band packet arrival time should increase with pump-probe separation, and
+group velocity should vary with thickness or confinement under matched
+excitation. &
+If controlled thickness series show no distance-ordered peak delay and no
+thickness dependence beyond uncertainty, the prediction fails for that material
+class. \\
+\addlinespace
+Re-addressing after secondary perturbation &
+After a secondary pulse, mild defect scattering, or boundary perturbation below
+damage threshold, the readout should preferentially return to the original
+target frequency window. &
+If secondary perturbation repeatedly produces broadband thermalization or a new
+dominant frequency with no preferential recovery of the original target window,
+the prediction fails for that perturbation regime. \\
+\addlinespace
+Cross-dataset narrowband control discrimination &
+Pre-registered target-window recoverability should separate coherent
+directional propagation records from broadband or non-propagating controls
+better than amplitude-only ranking. &
+If target-window recoverability does not distinguish coherent propagation
+records from controls better than amplitude-only baselines, the prediction
+fails for the selected dataset class. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Provisional Thresholds}
+
+Suggested first-pass thresholds are intentionally conservative and revisable:
+target peak in at least \texttt{80\%} of controlled records, linewidth proxy
+below \texttt{0.1 THz} where estimable, mean spectral recoverability at or above
+\texttt{0.85}, frequency stability at or above \texttt{0.95}, and target-band
+recoverability remaining above \texttt{0.70} before visible propagation failure.
+
+\section*{Boundary}
+
+These are field-facing diagnostic candidates. They do not claim new physics, a
+materials ontology, a universal harmonic grid, or proof of HAOS-IIP. The
+numbers above are provisional thresholds seeded by the ferron audit, not
+universal constants.
+
+\end{document}

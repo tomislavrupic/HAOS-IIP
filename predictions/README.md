@@ -28,6 +28,9 @@ The workbench can reference prior artifacts as evidence, but it does not rewrite
 
 - `PREDICTION_PROTOCOL.md` defines admission rules and evidence levels.
 - `prediction_ledger.json` stores machine-readable prediction records.
+- `ferron_extension_testable_signatures.md` states the ferron-derived
+  field-facing predictions in short-note form.
+- `ferron_extension_testable_signatures.pdf` is the compiled short note.
 - `validate_predictions.py` checks the ledger and writes compact summaries.
 - `templates/prediction_record_template.md` provides the manual record shape.
 - `outputs/` contains generated validation summaries.
@@ -41,14 +44,27 @@ python3 predictions/validate_predictions.py
 Expected result:
 
 ```text
-prediction_records: 5
+prediction_records: 9
 validation_passed: True
 outputs_written: predictions/outputs/
 ```
+
+## Ferron Extension
+
+The ferron extension records four bounded, falsifiable signatures seeded by
+Materials Bridge Line A:
+
+- polar-mode address selection in layered ferroelectrics
+- thickness / boundary dependence of target-band propagation
+- target-window re-addressing after secondary perturbation
+- cross-dataset narrowband control discrimination
+
+These are field-facing diagnostic candidates, not proof claims. The raw
+STFT/time-frequency grid boundary from the ferron sidecar remains active:
+`NO_STFT_DATA_FOUND`.
 
 ## Safe Claim
 
 HAOS-IIP may propose testable recoverability predictions that are not standard observables in current physics, biology, or network fields.
 
 It does not claim those predictions are true until they survive external perturbation tests, independent controls, and failure attempts.
-

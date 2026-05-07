@@ -282,6 +282,7 @@ External-data sidecar update:
 - The unified persistence summary reports `ferron_persistence_proxy=0.957192`.
 - The raw STFT/time-frequency audit inspected the raw XLSX files and found no validated raw time-frequency grid; therefore no raw STFT-grid recoverability claim is made.
 - This is an external-data bridge validation and bounded persistence summary only. It does not modify the frozen core, does not modify frozen phases, and does not prove HAOS-IIP.
+- [Ferron extension testable signatures](predictions/ferron_extension_testable_signatures.md) turns the sidecar into four falsifiable prediction records: polar-mode address selection, thickness / boundary propagation dependence, re-addressing after secondary perturbation, and cross-dataset narrowband control discrimination.
 
 ## Reproducibility Contract
 

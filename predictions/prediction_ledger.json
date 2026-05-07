@@ -279,7 +279,236 @@
         "Does not claim physical spacetime emergence.",
         "Does not claim new physics without external replication."
       ]
+    },
+    {
+      "id": "HAOS-PRED-006",
+      "title": "Polar-mode address selection in layered ferroelectrics",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "domain": "ultrafast polar materials",
+      "claim_type": "material_address_selection",
+      "prediction_statement": "In layered polar ferroelectrics or closely related polar oxyhalides, pulsed excitation should produce a narrowband coherent readout concentrated in a pre-registered target window around an independently measured polar transverse optical mode, while non-polar or mode-mismatched controls should not show the same target-window recoverability.",
+      "novelty_boundary": "This is a field-facing diagnostic prediction seeded by the ferron sidecar. It predicts a recoverability signature around independently measured polar modes, not a universal harmonic grid or a new materials theory.",
+      "system_scope": [
+        "NbOI2-like layered polar ferroelectrics",
+        "WO2Br2-like polar oxyhalides",
+        "matched non-polar or mode-mismatched control materials"
+      ],
+      "perturbation": "Pulsed optical excitation with pre-registered target-frequency windows derived from independent polar phonon measurements.",
+      "observables": [
+        "target_window_peak_presence",
+        "peak_frequency_THz",
+        "linewidth_proxy_THz",
+        "peak_to_background",
+        "spectral_recoverability",
+        "control_material_recoverability"
+      ],
+      "pass_criteria": [
+        "target-window peak is found in at least 80 percent of controlled polar-material records",
+        "linewidth proxy is below 0.1 THz when spectra support linewidth estimation",
+        "mean spectral recoverability is at least 0.85",
+        "non-polar or mode-mismatched controls fail at least one target-window recoverability criterion"
+      ],
+      "fail_criteria": [
+        "matched polar materials repeatedly show only broadband emission under the stated excitation protocol",
+        "the dominant peak misses the pre-registered polar-mode target window",
+        "non-polar or mode-mismatched controls show the same target-window recoverability as the polar material"
+      ],
+      "falsifiers": [
+        "If matched polar materials repeatedly show only broadband emission, or if non-polar controls show the same target-window recoverability under matched excitation, this prediction fails for that material class."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/materials_bridge/ferron_coherence_demo/outputs/spectral_feature_summary.json",
+          "result": "15/15 target-window peaks near 3.13 THz; mean_peak_frequency_THz=3.13893; mean_spectral_recoverability=0.928455"
+        },
+        {
+          "source": "papers/pdf_releases/64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe for HAOS-IIP.pdf",
+          "result": "External-data bridge status PASS; raw STFT-grid boundary preserved"
+        }
+      ],
+      "next_external_test": "Run a pre-registered pump-probe or THz emission scan on a matched polar versus non-polar material set using independently measured polar-mode target windows.",
+      "limitations": [
+        "Thresholds are provisional and seeded by one ferron sidecar.",
+        "Independent polar phonon measurements are required before target-window selection.",
+        "Control-material matching must be specified before data inspection."
+      ],
+      "non_claims": [
+        "Does not claim ferrons prove HAOS-IIP.",
+        "Does not claim a universal harmonic grid.",
+        "Does not replace material-specific lattice dynamics."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-007",
+      "title": "Thickness and boundary dependence of target-band propagation",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "domain": "ultrafast polar materials",
+      "claim_type": "propagation_boundary_prediction",
+      "prediction_statement": "In NbOI2-like or WO2Br2-like flakes, target-band packet arrival time should increase with pump-probe separation, and the group-velocity proxy should change with thickness or confinement under matched excitation.",
+      "novelty_boundary": "This is a propagation-readout prediction for bounded target-band envelopes. It does not claim that the published target-band traces are raw STFT maps.",
+      "system_scope": [
+        "NbOI2-like polar flakes with controlled thickness",
+        "WO2Br2-like polar flakes with controlled thickness",
+        "matched geometry controls without polar propagation"
+      ],
+      "perturbation": "Controlled pump-probe separation and thickness or confinement sweep under matched excitation conditions.",
+      "observables": [
+        "target_band_peak_time_ps",
+        "distance_um",
+        "slope_ps_per_um",
+        "group_velocity_m_s",
+        "monotonic_peak_delay",
+        "target_band_recoverability"
+      ],
+      "pass_criteria": [
+        "peak time versus distance fit has positive slope",
+        "monotonic peak-delay fraction is at least 0.75",
+        "group velocity differs between at least two controlled thickness groups by more than experimental uncertainty",
+        "target-band recoverability remains above 0.70 before visible propagation failure"
+      ],
+      "fail_criteria": [
+        "distance-ordered peak delay is absent while the target-band signal remains measurable",
+        "group velocity does not vary with thickness or confinement beyond experimental uncertainty",
+        "matched geometry controls reproduce the same propagation-readout pattern"
+      ],
+      "falsifiers": [
+        "If controlled thickness series show no distance-ordered peak delay and no thickness dependence beyond uncertainty while the target-band signal remains measurable, this prediction fails for that material class."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/materials_bridge/ferron_coherence_demo/outputs/published_stft_trace_summary.json",
+          "result": "8 published target-band traces; 216 time points; group velocity proxies 58.8 km/s at 96 nm and 100 km/s at 224 nm; monotonic_peak_delay=1.0 in both groups"
+        },
+        {
+          "source": "experiments/materials_bridge/ferron_coherence_demo/outputs/computed_stft_diagnostic/computed_stft_summary.json",
+          "result": "computed-from-time-trace diagnostic mean_group_velocity_m_s=101754; mean_envelope_correlation_vs_published=0.995318"
+        }
+      ],
+      "next_external_test": "Acquire a controlled-thickness distance series and pre-register the slope, monotonicity, and velocity-consistency criteria before target-band envelope extraction.",
+      "limitations": [
+        "Published Fig. 2d traces are post-processed target-band envelopes, not raw time-frequency grids.",
+        "Thickness labels in raw Fig. 2a/Fig. 2b traces require assignment against published trace ordering.",
+        "Velocity thresholds must account for sample preparation and measurement uncertainty."
+      ],
+      "non_claims": [
+        "Does not claim universal velocity values.",
+        "Does not claim raw STFT-grid validation.",
+        "Does not replace material-specific propagation modeling."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-008",
+      "title": "Target-window re-addressing after secondary perturbation",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "domain": "ultrafast polar materials",
+      "claim_type": "readdressing_recoverability_prediction",
+      "prediction_statement": "After a secondary pulse, controlled defect scattering, or mild boundary perturbation below damage threshold, the coherent readout should preferentially return to the original target frequency window before the full amplitude envelope necessarily recovers.",
+      "novelty_boundary": "This predicts a recoverability ordering for a pre-registered target frequency. It does not claim that the material has memory in a cognitive or ontological sense.",
+      "system_scope": [
+        "NbOI2-like polar flakes under multi-pulse excitation",
+        "WO2Br2-like polar flakes under multi-pulse excitation",
+        "polar materials with controlled defect or boundary scattering below damage threshold"
+      ],
+      "perturbation": "A secondary pulse, mild defect scattering, or boundary perturbation applied below irreversible damage threshold after the initial coherent target-band response is established.",
+      "observables": [
+        "post_perturbation_peak_frequency_THz",
+        "frequency_stability",
+        "target_window_spectral_recoverability",
+        "amplitude_retention",
+        "broadband_background_fraction"
+      ],
+      "pass_criteria": [
+        "post-perturbation peak frequency returns to the pre-registered target window",
+        "frequency stability is at least 0.95",
+        "mean target-window spectral recoverability is at least 0.85",
+        "broadband background does not dominate the recovered target-window signal"
+      ],
+      "fail_criteria": [
+        "secondary perturbation repeatedly produces broadband thermalization with no target-window recovery",
+        "a different dominant frequency replaces the original target window under matched non-damaging perturbation",
+        "target-window recoverability cannot be distinguished from broadband background"
+      ],
+      "falsifiers": [
+        "If secondary perturbation repeatedly produces broadband thermalization or a different dominant frequency with no preferential recovery of the original target window, this prediction fails for that perturbation regime."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_summary.json",
+          "result": "combined_persistence_proxy=0.957192; raw_stft_grid_boundary_preserved=True"
+        },
+        {
+          "source": "experiments/materials_bridge/ferron_coherence_demo/outputs/spectral_feature_summary.json",
+          "result": "mean spectral recoverability 0.928455 and no sustained k_star under current thresholds"
+        }
+      ],
+      "next_external_test": "Run multi-pulse target-band recovery experiments with pre-registered delay windows and damage controls.",
+      "limitations": [
+        "No secondary-pulse external dataset has been tested in this repo yet.",
+        "Damage threshold and heating controls must be specified before interpreting non-recovery.",
+        "Amplitude recovery and frequency recovery may decouple."
+      ],
+      "non_claims": [
+        "Does not claim a universal echo effect.",
+        "Does not claim quantum consciousness or memory.",
+        "Does not claim recovery outside non-damaging perturbation regimes."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-009",
+      "title": "Target-window recoverability separates coherent propagation records from broadband controls",
+      "prediction_level": "P2_external_dataset",
+      "status": "external_test_ready",
+      "domain": "external narrowband collective-mode datasets",
+      "claim_type": "cross_dataset_control_discrimination",
+      "prediction_statement": "Across external datasets with pre-registered narrowband collective modes, HAOS-style target-window recoverability should separate coherent directional propagation records from broadband or non-propagating controls better than amplitude-only ranking.",
+      "novelty_boundary": "This is a cross-dataset diagnostic prediction. It does not assert that unrelated material systems share a literal HAOS-IIP substrate.",
+      "system_scope": [
+        "published narrowband collective-mode datasets with time or distance readouts",
+        "directional propagation records with pre-registered target windows",
+        "matched broadband or non-propagating controls"
+      ],
+      "perturbation": "Dataset-level comparison across pre-registered coherent propagation records and matched broadband or non-propagating controls.",
+      "observables": [
+        "target_window_recoverability",
+        "frequency_stability",
+        "linewidth_stability",
+        "peak_to_background",
+        "amplitude_only_rank",
+        "control_class_label"
+      ],
+      "pass_criteria": [
+        "target-window recoverability separates coherent propagation records from controls in a held-out dataset",
+        "the separation survives fixed thresholds chosen before inspection",
+        "amplitude-only ranking performs worse or is less stable under matched controls"
+      ],
+      "fail_criteria": [
+        "target-window recoverability does not outperform amplitude-only ranking",
+        "fixed thresholds fail to distinguish coherent propagation records from controls",
+        "the separation disappears when target windows are pre-registered rather than chosen post hoc"
+      ],
+      "falsifiers": [
+        "If pre-registered target-window recoverability does not distinguish coherent propagation records from broadband or non-propagating controls better than amplitude-only baselines, this prediction fails for the selected dataset class."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_summary.json",
+          "result": "ferron_persistence_proxy=0.957192 from spectral, published propagation, and computed diagnostic components"
+        }
+      ],
+      "next_external_test": "Pre-register a small literature or public-data benchmark with narrowband propagation records and matched broadband controls, then compare target-window recoverability against amplitude-only ranking.",
+      "limitations": [
+        "This record is broader than the ferron dataset and therefore remains P2 until a cross-dataset benchmark is run.",
+        "Target windows must be chosen from independent measurements or paper-declared modes before scoring.",
+        "Dataset curation can bias separation if controls are not matched."
+      ],
+      "non_claims": [
+        "Does not claim cross-material universality.",
+        "Does not claim a literal shared substrate.",
+        "Does not replace field-specific coherence metrics."
+      ]
     }
   ]
 }
-
