@@ -62,6 +62,59 @@
     "time_traces": 9
   },
   "primary_paper_doi": "10.1038/s41563-026-02597-4",
+  "published_stft_target_band_intensity_audit": {
+    "bounded_interpretation": "Published target-band STFT intensity traces were parsed as post-processed 3.13 THz-band envelope data. Peak arrival time increases with distance in the parsed thickness groups, supporting a bounded propagation-readout audit. This does not alter the raw STFT-grid result: no raw time-frequency grid is claimed.",
+    "group_velocity_rows": [
+      {
+        "group_velocity_m_s": 58823.529411764706,
+        "intercept_ps": -1.0000000000000036,
+        "monotonic_peak_delay": 1.0,
+        "n_distances": 4,
+        "r_squared": 0.9553719008264463,
+        "sheet_name": "Fig.2d",
+        "slope_ps_per_um": 17.0,
+        "source_file": "outputs/raw/Source data Fig.2.xlsx",
+        "thickness_nm": 96.0,
+        "velocity_consistency_with_1e5": 0.5882352941176471
+      },
+      {
+        "group_velocity_m_s": 100000.0,
+        "intercept_ps": 2.4999999999999964,
+        "monotonic_peak_delay": 1.0,
+        "n_distances": 4,
+        "r_squared": 0.9876543209876543,
+        "sheet_name": "Fig.2d",
+        "slope_ps_per_um": 10.0,
+        "source_file": "outputs/raw/Source data Fig.2.xlsx",
+        "thickness_nm": 224.0,
+        "velocity_consistency_with_1e5": 1.0
+      }
+    ],
+    "mean_envelope_recoverability": 0.625,
+    "mean_group_velocity_m_s": 79411.76470588235,
+    "mean_velocity_consistency_with_1e5": 0.7941176470588236,
+    "missing_data_notes": [],
+    "mode": "published_stft_target_band_intensity_trace",
+    "peak_records": 8,
+    "peak_time_range_ps": [
+      5.0,
+      110.0
+    ],
+    "plots": {
+      "published_stft_envelope_width": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/published_stft_envelope_width.png",
+      "published_stft_group_velocity": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/published_stft_group_velocity.png",
+      "published_stft_intensity_traces": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/published_stft_intensity_traces.png",
+      "published_stft_peak_time_vs_distance": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/published_stft_peak_time_vs_distance.png"
+    },
+    "raw_stft_time_frequency_grid_status": "NO_STFT_DATA_FOUND",
+    "source_sheet": "Source data Fig.2.xlsx#Fig.2d",
+    "status": "PASS",
+    "thickness_groups": 2,
+    "time_points_audited": 216,
+    "traces_found": 8,
+    "velocity_groups": 2,
+    "velocity_reference_m_s": 100000.0
+  },
   "source_doi": "10.6084/m9.figshare.31895293",
   "source_url": "https://doi.org/10.6084/m9.figshare.31895293",
   "spectral_feature_audit": {

@@ -1,0 +1,3 @@
+source_file,sheet_name,thickness_nm,n_distances,slope_ps_per_um,intercept_ps,group_velocity_m_s,r_squared,velocity_consistency_with_1e5,monotonic_peak_delay
+outputs/raw/Source data Fig.2.xlsx,Fig.2d,96,4,17,-1,58823.52941,0.9553719008,0.5882352941,1
+outputs/raw/Source data Fig.2.xlsx,Fig.2d,224,4,10,2.5,100000,0.987654321,1,1

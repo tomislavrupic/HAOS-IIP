@@ -80,6 +80,46 @@ STALE_STFT_OUTPUTS = [
     "stft_safety_margin.png",
 ]
 
+PUBLISHED_TRACE_FIELDNAMES = [
+    "source_file",
+    "sheet_name",
+    "trace_id",
+    "distance_um",
+    "thickness_nm",
+    "time_ps",
+    "stft_intensity",
+    "normalized_intensity",
+]
+
+PUBLISHED_PEAK_FIELDNAMES = [
+    "source_file",
+    "sheet_name",
+    "trace_id",
+    "distance_um",
+    "thickness_nm",
+    "n_time_points",
+    "peak_time_ps",
+    "peak_intensity",
+    "fwhm_width_ps",
+    "arrival_delay_from_zero_um_ps",
+    "peak_retention",
+    "envelope_recoverability",
+    "width_note",
+]
+
+PUBLISHED_VELOCITY_FIELDNAMES = [
+    "source_file",
+    "sheet_name",
+    "thickness_nm",
+    "n_distances",
+    "slope_ps_per_um",
+    "intercept_ps",
+    "group_velocity_m_s",
+    "r_squared",
+    "velocity_consistency_with_1e5",
+    "monotonic_peak_delay",
+]
+
 TIME_ALIASES = {
     "time",
     "timeps",
@@ -87,6 +127,7 @@ TIME_ALIASES = {
     "delayps",
     "dt",
     "dtp",
+    "dtpps",
     "dtps",
     "pumpprobedelay",
     "pumpprobedelayps",
@@ -743,6 +784,482 @@ def run_stft_feature_audit(
     return summary
 
 
+def run_published_stft_trace_audit(
+    *,
+    root: Path = ROOT,
+    output_dir: Path = OUTPUTS_DIR,
+    velocity_reference_m_s: float = 100000.0,
+) -> dict[str, Any]:
+    """Audit exported target-band STFT intensity traces.
+
+    These traces are not raw time-frequency grids. They are a published,
+    post-processed target-band intensity readout, so the audit reports peak-time
+    propagation and envelope proxies without making a raw STFT-grid claim.
+    """
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    trace_records, parse_notes = _parse_published_stft_intensity_traces(root)
+    if not trace_records:
+        summary = {
+            "status": "NO_PUBLISHED_STFT_TRACE_DATA",
+            "mode": "published_stft_target_band_intensity_trace",
+            "raw_stft_time_frequency_grid_status": "NO_STFT_DATA_FOUND",
+            "traces_found": 0,
+            "time_points_audited": 0,
+            "peak_records": 0,
+            "velocity_groups": 0,
+            "bounded_interpretation": (
+                "No exported published target-band STFT intensity traces were parsed. "
+                "Existing spectral audit result remains unchanged."
+            ),
+            "missing_data_notes": parse_notes,
+        }
+        _write_json(output_dir / "published_stft_trace_summary.json", summary)
+        _write_csv(output_dir / "published_stft_trace_records.csv", [], PUBLISHED_TRACE_FIELDNAMES)
+        _write_csv(output_dir / "published_stft_peak_times.csv", [], PUBLISHED_PEAK_FIELDNAMES)
+        _write_csv(output_dir / "published_stft_group_velocity.csv", [], PUBLISHED_VELOCITY_FIELDNAMES)
+        return summary
+
+    peak_rows = _summarize_published_trace_peaks(trace_records)
+    velocity_rows = _estimate_group_velocity_from_peaks(
+        peak_rows,
+        velocity_reference_m_s=velocity_reference_m_s,
+    )
+    _apply_published_trace_recoverability(peak_rows)
+    plot_notes = _write_published_stft_plots(trace_records, peak_rows, velocity_rows, output_dir)
+
+    _write_csv(output_dir / "published_stft_trace_records.csv", trace_records, PUBLISHED_TRACE_FIELDNAMES)
+    _write_csv(output_dir / "published_stft_peak_times.csv", peak_rows, PUBLISHED_PEAK_FIELDNAMES)
+    _write_csv(output_dir / "published_stft_group_velocity.csv", velocity_rows, PUBLISHED_VELOCITY_FIELDNAMES)
+
+    peak_times = _finite_values(row.get("peak_time_ps") for row in peak_rows)
+    velocities = _finite_values(row.get("group_velocity_m_s") for row in velocity_rows)
+    consistency = _finite_values(row.get("velocity_consistency_with_1e5") for row in velocity_rows)
+    recoverability = _finite_values(row.get("envelope_recoverability") for row in peak_rows)
+    thicknesses = sorted(set(_float_or_none(row.get("thickness_nm")) for row in peak_rows))
+    thicknesses = [value for value in thicknesses if value is not None]
+    interpretation = (
+        "Published target-band STFT intensity traces were parsed as post-processed "
+        "3.13 THz-band envelope data. Peak arrival time increases with distance in the "
+        "parsed thickness groups, supporting a bounded propagation-readout audit. This "
+        "does not alter the raw STFT-grid result: no raw time-frequency grid is claimed."
+    )
+    summary = {
+        "status": "PASS",
+        "mode": "published_stft_target_band_intensity_trace",
+        "raw_stft_time_frequency_grid_status": "NO_STFT_DATA_FOUND",
+        "source_sheet": "Source data Fig.2.xlsx#Fig.2d",
+        "traces_found": len({row["trace_id"] for row in trace_records}),
+        "time_points_audited": len(trace_records),
+        "peak_records": len(peak_rows),
+        "thickness_groups": len(thicknesses),
+        "velocity_groups": len(velocity_rows),
+        "peak_time_range_ps": [min(peak_times), max(peak_times)] if peak_times else [None, None],
+        "mean_group_velocity_m_s": _mean_or_none(velocities),
+        "velocity_reference_m_s": velocity_reference_m_s,
+        "mean_velocity_consistency_with_1e5": _mean_or_none(consistency),
+        "mean_envelope_recoverability": _mean_or_none(recoverability),
+        "group_velocity_rows": velocity_rows,
+        "bounded_interpretation": interpretation,
+        "missing_data_notes": sorted(set(parse_notes + plot_notes)),
+        "plots": {
+            "published_stft_intensity_traces": str(output_dir / "published_stft_intensity_traces.png")
+            if (output_dir / "published_stft_intensity_traces.png").exists()
+            else None,
+            "published_stft_peak_time_vs_distance": str(output_dir / "published_stft_peak_time_vs_distance.png")
+            if (output_dir / "published_stft_peak_time_vs_distance.png").exists()
+            else None,
+            "published_stft_group_velocity": str(output_dir / "published_stft_group_velocity.png")
+            if (output_dir / "published_stft_group_velocity.png").exists()
+            else None,
+            "published_stft_envelope_width": str(output_dir / "published_stft_envelope_width.png")
+            if (output_dir / "published_stft_envelope_width.png").exists()
+            else None,
+        },
+    }
+    _write_json(output_dir / "published_stft_trace_summary.json", summary)
+    return summary
+
+
+def _parse_published_stft_intensity_traces(root: Path) -> tuple[list[dict[str, Any]], list[str]]:
+    raw_dir = root / "outputs" / "raw"
+    notes: list[str] = []
+    records: list[dict[str, Any]] = []
+    try:
+        import openpyxl  # type: ignore[import-not-found]
+    except ImportError as exc:
+        return [], [f"openpyxl unavailable for published STFT trace parsing: {exc}"]
+
+    for path in sorted(raw_dir.glob("*.xlsx")):
+        workbook = openpyxl.load_workbook(path, read_only=True, data_only=True)
+        try:
+            for sheet in workbook.worksheets:
+                raw_rows = list(sheet.iter_rows(values_only=True))
+                if not raw_rows:
+                    continue
+                headers = list(raw_rows[0])
+                for time_index, intensity_index in _published_stft_column_pairs(headers):
+                    intensity_header = _text(_cell(headers, intensity_index))
+                    metadata = _metadata_from_published_stft_label(intensity_header)
+                    if metadata is None:
+                        notes.append(
+                            f"{path.name}#{sheet.title}:{intensity_header} skipped: missing distance/thickness metadata"
+                        )
+                        continue
+                    trace_values: list[tuple[float, float]] = []
+                    for raw_row in raw_rows[1:]:
+                        time_value = _float_or_none(_cell(raw_row, time_index))
+                        intensity_value = _float_or_none(_cell(raw_row, intensity_index))
+                        if time_value is None or intensity_value is None:
+                            continue
+                        trace_values.append((time_value, abs(intensity_value)))
+                    if len(trace_values) < 3:
+                        notes.append(f"{path.name}#{sheet.title}:{intensity_header} skipped: too few numeric rows")
+                        continue
+                    max_intensity = max(value for _, value in trace_values)
+                    if max_intensity <= 1.0e-12:
+                        notes.append(f"{path.name}#{sheet.title}:{intensity_header} skipped: zero intensity trace")
+                        continue
+                    trace_id = _safe_id(f"{path.stem}_{sheet.title}_{intensity_header}")
+                    for time_value, intensity_value in trace_values:
+                        records.append(
+                            {
+                                "source_file": _relative_to_root(path, root),
+                                "sheet_name": sheet.title,
+                                "trace_id": trace_id,
+                                "distance_um": metadata["distance_um"],
+                                "thickness_nm": metadata["thickness_nm"],
+                                "time_ps": time_value,
+                                "stft_intensity": intensity_value,
+                                "normalized_intensity": intensity_value / max_intensity,
+                            }
+                        )
+        finally:
+            workbook.close()
+    return records, notes
+
+
+def _published_stft_column_pairs(headers: list[Any]) -> list[tuple[int, int]]:
+    pairs: list[tuple[int, int]] = []
+    for index in range(len(headers) - 1):
+        left = _clean_key(headers[index])
+        right = _clean_key(headers[index + 1])
+        if left in TIME_ALIASES and right.startswith("stftint"):
+            pairs.append((index, index + 1))
+    return pairs
+
+
+def _metadata_from_published_stft_label(label: str) -> dict[str, float] | None:
+    match = re.search(
+        r"stft\s*int\s*([0-9]+(?:\.[0-9]+)?)\s+([0-9]+(?:\.[0-9]+)?)",
+        label,
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        return None
+    return {
+        "distance_um": float(match.group(1)),
+        "thickness_nm": float(match.group(2)),
+    }
+
+
+def _summarize_published_trace_peaks(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for record in records:
+        grouped.setdefault(str(record.get("trace_id")), []).append(record)
+
+    rows: list[dict[str, Any]] = []
+    for trace_id, trace_records in sorted(grouped.items()):
+        ordered = sorted(trace_records, key=lambda row: _float_or_none(row.get("time_ps")) or 0.0)
+        times = np.asarray([_float_or_none(row.get("time_ps")) for row in ordered], dtype=float)
+        values = np.asarray([_float_or_none(row.get("normalized_intensity")) for row in ordered], dtype=float)
+        finite = np.isfinite(times) & np.isfinite(values)
+        times = times[finite]
+        values = values[finite]
+        if times.size == 0:
+            continue
+        peak_index = int(np.nanargmax(values))
+        width, width_note = _fwhm_width_from_trace(times, values, peak_index)
+        first = ordered[0]
+        rows.append(
+            {
+                "source_file": first.get("source_file"),
+                "sheet_name": first.get("sheet_name"),
+                "trace_id": trace_id,
+                "distance_um": _float_or_none(first.get("distance_um")),
+                "thickness_nm": _float_or_none(first.get("thickness_nm")),
+                "n_time_points": int(times.size),
+                "peak_time_ps": float(times[peak_index]),
+                "peak_intensity": float(values[peak_index]),
+                "fwhm_width_ps": width,
+                "arrival_delay_from_zero_um_ps": None,
+                "peak_retention": None,
+                "envelope_recoverability": None,
+                "width_note": width_note,
+            }
+        )
+    return rows
+
+
+def _estimate_group_velocity_from_peaks(
+    peak_rows: list[dict[str, Any]],
+    *,
+    velocity_reference_m_s: float,
+) -> list[dict[str, Any]]:
+    grouped: dict[tuple[str, str, float], list[dict[str, Any]]] = {}
+    for row in peak_rows:
+        thickness = _float_or_none(row.get("thickness_nm"))
+        if thickness is None:
+            continue
+        key = (str(row.get("source_file")), str(row.get("sheet_name")), thickness)
+        grouped.setdefault(key, []).append(row)
+
+    velocity_rows: list[dict[str, Any]] = []
+    for (source_file, sheet_name, thickness), rows in sorted(grouped.items()):
+        valid = [
+            (distance, peak_time, row)
+            for row in rows
+            if (distance := _float_or_none(row.get("distance_um"))) is not None
+            and (peak_time := _float_or_none(row.get("peak_time_ps"))) is not None
+        ]
+        valid.sort(key=lambda item: item[0])
+        if len(valid) < 2:
+            continue
+        baseline_time = valid[0][1]
+        for _, peak_time, row in valid:
+            row["arrival_delay_from_zero_um_ps"] = peak_time - baseline_time
+
+        distances = np.asarray([item[0] for item in valid], dtype=float)
+        peak_times = np.asarray([item[1] for item in valid], dtype=float)
+        slope, intercept = np.polyfit(distances, peak_times, 1)
+        predicted = intercept + slope * distances
+        residual = float(np.sum((peak_times - predicted) ** 2))
+        total = float(np.sum((peak_times - float(np.mean(peak_times))) ** 2))
+        r_squared = 1.0 - residual / total if total > 1.0e-12 else None
+        velocity = 1.0e6 / float(slope) if slope > 1.0e-12 else None
+        consistency = None
+        if velocity is not None and velocity_reference_m_s > 1.0e-12:
+            consistency = _clip01(1.0 - abs(velocity - velocity_reference_m_s) / velocity_reference_m_s)
+        monotonic = _monotonic_increase_fraction([item[1] for item in valid])
+        velocity_rows.append(
+            {
+                "source_file": source_file,
+                "sheet_name": sheet_name,
+                "thickness_nm": thickness,
+                "n_distances": len(valid),
+                "slope_ps_per_um": float(slope),
+                "intercept_ps": float(intercept),
+                "group_velocity_m_s": velocity,
+                "r_squared": r_squared,
+                "velocity_consistency_with_1e5": consistency,
+                "monotonic_peak_delay": monotonic,
+            }
+        )
+    return velocity_rows
+
+
+def _apply_published_trace_recoverability(peak_rows: list[dict[str, Any]]) -> None:
+    grouped: dict[tuple[str, str, float], list[dict[str, Any]]] = {}
+    for row in peak_rows:
+        thickness = _float_or_none(row.get("thickness_nm"))
+        if thickness is None:
+            continue
+        key = (str(row.get("source_file")), str(row.get("sheet_name")), thickness)
+        grouped.setdefault(key, []).append(row)
+
+    for rows in grouped.values():
+        ordered = sorted(rows, key=lambda row: _float_or_none(row.get("distance_um")) or 0.0)
+        baseline_peak = _float_or_none(ordered[0].get("peak_intensity"))
+        baseline_width = _float_or_none(ordered[0].get("fwhm_width_ps"))
+        width_floor = max(baseline_width or 0.0, 10.0)
+        for row in ordered:
+            peak = _float_or_none(row.get("peak_intensity"))
+            width = _float_or_none(row.get("fwhm_width_ps"))
+            peak_retention = None
+            if baseline_peak is not None and baseline_peak > 1.0e-12 and peak is not None:
+                peak_retention = _clip01(peak / baseline_peak)
+            width_stability = None
+            if baseline_width is not None and width is not None:
+                width_stability = _clip01(1.0 - max(width - baseline_width, 0.0) / width_floor)
+            usable = [value for value in (peak_retention, width_stability) if value is not None]
+            row["peak_retention"] = peak_retention
+            row["envelope_recoverability"] = float(sum(usable) / len(usable)) if usable else None
+
+
+def _write_published_stft_plots(
+    trace_records: list[dict[str, Any]],
+    peak_rows: list[dict[str, Any]],
+    velocity_rows: list[dict[str, Any]],
+    output_dir: Path,
+) -> list[str]:
+    notes: list[str] = []
+    for note in (
+        _plot_published_intensity_traces(trace_records, output_dir / "published_stft_intensity_traces.png"),
+        _plot_published_peak_time_vs_distance(peak_rows, output_dir / "published_stft_peak_time_vs_distance.png"),
+        _plot_published_group_velocity(velocity_rows, output_dir / "published_stft_group_velocity.png"),
+        _plot_published_envelope_width(peak_rows, output_dir / "published_stft_envelope_width.png"),
+    ):
+        if note:
+            notes.append(note)
+    return notes
+
+
+def _plot_published_intensity_traces(records: list[dict[str, Any]], path: Path) -> str | None:
+    if not records:
+        return f"{path.name} skipped: no published STFT trace records"
+    grouped: dict[str, list[tuple[float, float, str]]] = {}
+    for row in records:
+        time = _float_or_none(row.get("time_ps"))
+        intensity = _float_or_none(row.get("normalized_intensity"))
+        if time is None or intensity is None:
+            continue
+        label = f"{_format_number(row.get('thickness_nm'))} nm, {_format_number(row.get('distance_um'))} um"
+        grouped.setdefault(str(row.get("trace_id")), []).append((time, intensity, label))
+    if not grouped:
+        return f"{path.name} skipped: no plottable traces"
+    plt.figure(figsize=(7.6, 4.6))
+    for _, points in sorted(grouped.items()):
+        ordered = sorted(points)
+        label = ordered[0][2]
+        plt.plot([x for x, _, _ in ordered], [y for _, y, _ in ordered], linewidth=1.3, label=label)
+    plt.xlabel("published STFT time ps")
+    plt.ylabel("normalized target-band intensity")
+    plt.ylim(0.0, 1.05)
+    if len(grouped) <= 10:
+        plt.legend(frameon=False, fontsize=7, ncol=2)
+    plt.tight_layout()
+    plt.savefig(path, dpi=160)
+    plt.close()
+    return None
+
+
+def _plot_published_peak_time_vs_distance(rows: list[dict[str, Any]], path: Path) -> str | None:
+    series = _series_by_thickness(rows, "peak_time_ps")
+    if not series:
+        return f"{path.name} skipped: no peak time rows"
+    plt.figure(figsize=(7.2, 4.4))
+    for label, points in sorted(series.items()):
+        ordered = sorted(points)
+        plt.plot([x for x, _ in ordered], [y for _, y in ordered], marker="o", linewidth=1.4, label=label)
+    plt.xlabel("distance um")
+    plt.ylabel("published STFT peak time ps")
+    plt.legend(frameon=False, fontsize=8)
+    plt.tight_layout()
+    plt.savefig(path, dpi=160)
+    plt.close()
+    return None
+
+
+def _plot_published_group_velocity(rows: list[dict[str, Any]], path: Path) -> str | None:
+    points = []
+    for row in rows:
+        thickness = _float_or_none(row.get("thickness_nm"))
+        velocity = _float_or_none(row.get("group_velocity_m_s"))
+        if thickness is not None and velocity is not None:
+            points.append((thickness, velocity))
+    if not points:
+        return f"{path.name} skipped: no group velocity values"
+    ordered = sorted(points)
+    plt.figure(figsize=(6.6, 4.2))
+    plt.bar([str(_format_number(x)) for x, _ in ordered], [y for _, y in ordered])
+    plt.axhline(100000.0, color="black", linestyle="--", linewidth=1.0, label="1e5 m/s reference")
+    plt.xlabel("thickness nm")
+    plt.ylabel("group velocity m/s")
+    plt.legend(frameon=False, fontsize=8)
+    plt.tight_layout()
+    plt.savefig(path, dpi=160)
+    plt.close()
+    return None
+
+
+def _plot_published_envelope_width(rows: list[dict[str, Any]], path: Path) -> str | None:
+    series = _series_by_thickness(rows, "fwhm_width_ps")
+    if not series:
+        return f"{path.name} skipped: no envelope width values"
+    plt.figure(figsize=(7.2, 4.4))
+    for label, points in sorted(series.items()):
+        ordered = sorted(points)
+        plt.plot([x for x, _ in ordered], [y for _, y in ordered], marker="o", linewidth=1.4, label=label)
+    plt.xlabel("distance um")
+    plt.ylabel("FWHM-like envelope width ps")
+    plt.legend(frameon=False, fontsize=8)
+    plt.tight_layout()
+    plt.savefig(path, dpi=160)
+    plt.close()
+    return None
+
+
+def _series_by_thickness(rows: list[dict[str, Any]], metric: str) -> dict[str, list[tuple[float, float]]]:
+    series: dict[str, list[tuple[float, float]]] = {}
+    for row in rows:
+        distance = _float_or_none(row.get("distance_um"))
+        value = _float_or_none(row.get(metric))
+        thickness = _float_or_none(row.get("thickness_nm"))
+        if distance is None or value is None or thickness is None:
+            continue
+        label = f"{_format_number(thickness)} nm"
+        series.setdefault(label, []).append((distance, value))
+    return series
+
+
+def _fwhm_width_from_trace(times: np.ndarray, values: np.ndarray, peak_index: int) -> tuple[float | None, str | None]:
+    if times.size < 2 or values.size != times.size:
+        return None, "trace_too_short_for_width"
+    peak_value = float(values[peak_index])
+    baseline = float(np.nanmin(values))
+    height = peak_value - baseline
+    if height <= 1.0e-12:
+        return None, "peak_height_not_above_trace_baseline"
+    half = baseline + 0.5 * height
+    left = _trace_half_crossing(times, values, peak_index, half, direction=-1)
+    right = _trace_half_crossing(times, values, peak_index, half, direction=1)
+    notes: list[str] = []
+    if left is None:
+        left = float(times[0])
+        notes.append("left_boundary_limited")
+    if right is None:
+        right = float(times[-1])
+        notes.append("right_boundary_limited")
+    width = float(right - left)
+    if width < 0.0:
+        return None, "invalid_negative_width"
+    return width, ";".join(notes) if notes else None
+
+
+def _trace_half_crossing(
+    times: np.ndarray,
+    values: np.ndarray,
+    peak_index: int,
+    half: float,
+    *,
+    direction: int,
+) -> float | None:
+    index = peak_index
+    while 0 <= index + direction < values.size:
+        next_index = index + direction
+        if values[next_index] <= half:
+            x0 = float(times[index])
+            x1 = float(times[next_index])
+            y0 = float(values[index])
+            y1 = float(values[next_index])
+            if abs(y1 - y0) <= 1.0e-12:
+                return x1
+            fraction = (half - y0) / (y1 - y0)
+            return x0 + fraction * (x1 - x0)
+        index = next_index
+    return None
+
+
+def _monotonic_increase_fraction(values: list[float]) -> float | None:
+    if len(values) < 2:
+        return None
+    increasing = 0
+    for left, right in zip(values, values[1:]):
+        if right >= left:
+            increasing += 1
+    return increasing / (len(values) - 1)
+
+
 def _inspect_sheet_preview(
     path: Path,
     sheet_name: str,
@@ -1159,3 +1676,12 @@ def _csv_value(value: Any) -> Any:
             return ""
         return f"{value:.10g}"
     return value
+
+
+def _format_number(value: Any) -> str:
+    numeric = _float_or_none(value)
+    if numeric is None:
+        return "unknown"
+    if abs(numeric - round(numeric)) <= 1.0e-9:
+        return str(int(round(numeric)))
+    return f"{numeric:.6g}"

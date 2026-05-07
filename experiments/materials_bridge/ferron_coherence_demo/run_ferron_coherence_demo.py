@@ -30,7 +30,7 @@ from ferron_data_loader import (
 )
 from ferron_recoverability_model import run_ferron_sweep
 from spectral_feature_audit import run_spectral_feature_audit
-from stft_feature_audit import run_stft_feature_audit
+from stft_feature_audit import run_published_stft_trace_audit, run_stft_feature_audit
 
 
 ROOT = Path(__file__).resolve().parent
@@ -170,8 +170,18 @@ def main() -> int:
     summary["spectral_feature_audit"] = spectral_summary
     stft_summary = run_stft_feature_audit(root=ROOT, output_dir=OUTPUTS_DIR)
     summary["stft_time_frequency_audit"] = stft_summary
+    published_stft_summary = run_published_stft_trace_audit(root=ROOT, output_dir=OUTPUTS_DIR)
+    summary["published_stft_target_band_intensity_audit"] = published_stft_summary
     SUMMARY_PATH.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    _write_validation_markdown(summary, rows, manifest, inspection, spectral_summary, stft_summary)
+    _write_validation_markdown(
+        summary,
+        rows,
+        manifest,
+        inspection,
+        spectral_summary,
+        stft_summary,
+        published_stft_summary,
+    )
     _print_console_summary(summary)
     return 0
 
@@ -334,6 +344,7 @@ def _write_validation_markdown(
     inspection: dict[str, Any],
     spectral_summary: dict[str, Any],
     stft_summary: dict[str, Any],
+    published_stft_summary: dict[str, Any],
 ) -> None:
     provenance_lines = []
     if summary["data_status"] == "REAL_DATA_LOADED" and manifest:
@@ -374,6 +385,7 @@ def _write_validation_markdown(
                 parsed_lines.append(f"  - {file_info.get('relative_path')} ({file_info.get('extension')})")
     spectral_lines = _spectral_markdown_lines(spectral_summary)
     stft_lines = _stft_markdown_lines(stft_summary)
+    published_stft_lines = _published_stft_markdown_lines(published_stft_summary)
 
     content = f"""# Ferron Coherence Validation
 
@@ -406,6 +418,9 @@ def _write_validation_markdown(
 ## STFT / Time-Frequency Audit
 {chr(10).join(stft_lines)}
 
+## Published STFT Target-Band Intensity Trace Audit
+{chr(10).join(published_stft_lines)}
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP
@@ -421,6 +436,7 @@ def _write_validation_markdown(
 def _print_console_summary(summary: dict[str, Any]) -> None:
     spectral = summary.get("spectral_feature_audit") or {}
     stft = summary.get("stft_time_frequency_audit") or {}
+    published_stft = summary.get("published_stft_target_band_intensity_audit") or {}
     print(f"data_status: {summary['data_status']}")
     print(f"source_doi: {_format_optional(summary['source_doi'])}")
     print(f"files_loaded: {len(summary['files_loaded'])}")
@@ -443,6 +459,18 @@ def _print_console_summary(summary: dict[str, Any]) -> None:
     print(f"mean_stft_recoverability: {_format_optional(stft.get('mean_stft_recoverability'))}")
     print(f"stft_k_star_detected: {bool(stft.get('k_star_detected'))}")
     print(f"stft_bounded_interpretation: {_format_optional(stft.get('bounded_interpretation'))}")
+    print(f"published_stft_trace_status: {_format_optional(published_stft.get('status'))}")
+    print(f"published_stft_traces_found: {_format_optional(published_stft.get('traces_found'))}")
+    print(f"published_stft_peak_records: {_format_optional(published_stft.get('peak_records'))}")
+    print(f"published_stft_mean_group_velocity_m_s: {_format_optional(published_stft.get('mean_group_velocity_m_s'))}")
+    print(
+        "published_stft_mean_velocity_consistency_with_1e5: "
+        f"{_format_optional(published_stft.get('mean_velocity_consistency_with_1e5'))}"
+    )
+    print(
+        "published_stft_bounded_interpretation: "
+        f"{_format_optional(published_stft.get('bounded_interpretation'))}"
+    )
     print("outputs_written: experiments/materials_bridge/ferron_coherence_demo/outputs/")
 
 
@@ -595,6 +623,45 @@ def _stft_markdown_lines(stft_summary: dict[str, Any]) -> list[str]:
         for note in missing[:12]:
             lines.append(f"  - {note}")
     interpretation = stft_summary.get("bounded_interpretation")
+    if interpretation:
+        lines.append(f"- bounded interpretation: {interpretation}")
+    return lines
+
+
+def _published_stft_markdown_lines(published_stft_summary: dict[str, Any]) -> list[str]:
+    if not published_stft_summary:
+        return ["- Published STFT target-band trace audit was not run."]
+    lines = [
+        f"- status: {_format_optional(published_stft_summary.get('status'))}",
+        f"- mode: {_format_optional(published_stft_summary.get('mode'))}",
+        "- raw STFT/time-frequency grid status remains: "
+        f"{_format_optional(published_stft_summary.get('raw_stft_time_frequency_grid_status'))}",
+        f"- traces found: {_format_optional(published_stft_summary.get('traces_found'))}",
+        f"- time points audited: {_format_optional(published_stft_summary.get('time_points_audited'))}",
+        f"- peak records: {_format_optional(published_stft_summary.get('peak_records'))}",
+        f"- thickness groups: {_format_optional(published_stft_summary.get('thickness_groups'))}",
+        f"- mean group velocity m/s: {_format_optional(published_stft_summary.get('mean_group_velocity_m_s'))}",
+        "- mean velocity consistency with 1e5 m/s: "
+        f"{_format_optional(published_stft_summary.get('mean_velocity_consistency_with_1e5'))}",
+        f"- mean envelope recoverability: {_format_optional(published_stft_summary.get('mean_envelope_recoverability'))}",
+    ]
+    group_rows = published_stft_summary.get("group_velocity_rows") or []
+    if group_rows:
+        lines.append("- group velocity rows:")
+        for row in group_rows:
+            lines.append(
+                "  - "
+                f"thickness={_format_optional(row.get('thickness_nm'))} nm | "
+                f"slope={_format_optional(row.get('slope_ps_per_um'))} ps/um | "
+                f"velocity={_format_optional(row.get('group_velocity_m_s'))} m/s | "
+                f"r_squared={_format_optional(row.get('r_squared'))}"
+            )
+    missing = published_stft_summary.get("missing_data_notes") or []
+    if missing:
+        lines.append("- missing data notes:")
+        for note in missing[:8]:
+            lines.append(f"  - {note}")
+    interpretation = published_stft_summary.get("bounded_interpretation")
     if interpretation:
         lines.append(f"- bounded interpretation: {interpretation}")
     return lines

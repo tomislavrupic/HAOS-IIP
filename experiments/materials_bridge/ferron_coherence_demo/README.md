@@ -56,6 +56,10 @@ uv run --with numpy --with matplotlib --with openpyxl python experiments/materia
 - `outputs/stft_feature_summary.json`
 - `outputs/stft_feature_summary.csv` when usable raw STFT/time-frequency data parses
 - `outputs/stft_recoverability_by_time.csv` when usable raw STFT/time-frequency data parses
+- `outputs/published_stft_trace_summary.json`
+- `outputs/published_stft_trace_records.csv`
+- `outputs/published_stft_peak_times.csv`
+- `outputs/published_stft_group_velocity.csv`
 - plot PNGs under `outputs/`
 - `ferron_coherence_validation.md`
 
@@ -93,6 +97,20 @@ If no usable raw STFT/time-frequency grid exists, the code writes
 `outputs/stft_feature_summary.json` with `NO_STFT_DATA_FOUND` and does not
 fabricate maps, infer missing axes, or change the previous spectral audit
 result.
+
+## Published STFT Target-Band Intensity Trace Audit
+
+The raw Figshare workbook also includes exported `STFT Int` traces for Fig. 2d.
+These are not raw time-frequency maps because the frequency axis is not present;
+they are published, post-processed target-band intensity traces over time. The
+sidecar parses them separately as `published_stft_target_band_intensity_trace`,
+extracts peak arrival times versus distance, estimates a simple group-velocity
+proxy for each thickness group, and records envelope-width / recoverability
+proxies.
+
+This audit preserves the raw-grid boundary: `NO_STFT_DATA_FOUND` remains true
+for raw time-frequency maps, while the published target-band intensity traces
+are treated as their own bounded readout.
 
 ## HAOS Mapping
 

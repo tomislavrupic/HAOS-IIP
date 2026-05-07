@@ -66,6 +66,22 @@ PASS
   - Source data Fig.2.xlsx#Fig.2d rejected: long_form_frequency_column_missing; matrix_axes_not_numeric_enough
 - bounded interpretation: No raw STFT/time-frequency map was parsed. Existing spectral audit result remains unchanged.
 
+## Published STFT Target-Band Intensity Trace Audit
+- status: PASS
+- mode: published_stft_target_band_intensity_trace
+- raw STFT/time-frequency grid status remains: NO_STFT_DATA_FOUND
+- traces found: 8
+- time points audited: 216
+- peak records: 8
+- thickness groups: 2
+- mean group velocity m/s: 79411.8
+- mean velocity consistency with 1e5 m/s: 0.794118
+- mean envelope recoverability: 0.625
+- group velocity rows:
+  - thickness=96 nm | slope=17 ps/um | velocity=58823.5 m/s | r_squared=0.955372
+  - thickness=224 nm | slope=10 ps/um | velocity=100000 m/s | r_squared=0.987654
+- bounded interpretation: Published target-band STFT intensity traces were parsed as post-processed 3.13 THz-band envelope data. Peak arrival time increases with distance in the parsed thickness groups, supporting a bounded propagation-readout audit. This does not alter the raw STFT-grid result: no raw time-frequency grid is claimed.
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP
