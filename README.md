@@ -295,6 +295,7 @@ Phase 66 translation and hostile-audit rule:
 - [Canonical entry paper skeleton](docs/notes/foundations/HAOS_IIP_Canonical_Entry_Paper_Skeleton_v1.md) is the first Phase 66 artifact and defines the entry-door structure for an outside technical reader.
 - [Core translation table](docs/notes/foundations/HAOS_IIP_Core_Translation_Table_v1.md) maps HAOS-IIP terms into operational standard-language meanings, numerical tests, non-claims, nearby concepts, and failure conditions.
 - [Falsification engine](docs/notes/foundations/HAOS_IIP_Falsification_Engine_v1.md) defines public failure gates, claim classes, downgrade conditions, and mandatory claim boxes for future releases.
+- [Framework comparison matrix](docs/notes/foundations/HAOS_IIP_Framework_Comparison_Matrix_v1.md) states overlap, difference, forbidden assumptions, rediscovery risk, possible contribution, and required tests against nearby frameworks.
 - Core rule: no expansion before translation.
 - The purpose is to translate HAOS-IIP into standard mathematical and computational language, define failure gates, compare against nearby frameworks, and make the program easier to reproduce, inspect, attack, and improve.
 - Corrected public posture: HAOS-IIP is a reproducible computational exploration of emergence, recoverability, and operator-derived structure in discrete interaction systems. It does not yet derive known physics; its current value is methodological, diagnostic, and exploratory.

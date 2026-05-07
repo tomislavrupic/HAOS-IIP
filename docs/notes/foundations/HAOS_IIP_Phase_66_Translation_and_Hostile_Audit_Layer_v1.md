@@ -147,6 +147,10 @@ derivations.
 
 ## 7. Comparison Table Requirements
 
+Full artifact:
+
+- [HAOS_IIP_Framework_Comparison_Matrix_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Framework_Comparison_Matrix_v1.md)
+
 HAOS-IIP must be compared side-by-side with nearby established frameworks.
 
 | Framework | Shared mechanisms | HAOS-IIP differences | What HAOS-IIP forbids | Rediscovery risk |
@@ -231,7 +235,7 @@ Required before stronger public physical bridge claims:
 - [ ] canonical entry paper drafted
 - [x] core translation table linked from the root README
 - [ ] claim-gating template adopted in new papers and releases
-- [ ] comparison tables added for nearby frameworks
+- [x] comparison tables added for nearby frameworks
 - [x] falsification gates made explicit in public-facing docs
 - [ ] public language rule applied to landing-page summaries
 - [ ] major phase folders audited for README / reproduction / limitation coverage

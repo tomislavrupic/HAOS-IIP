@@ -244,6 +244,10 @@ Goal:
 
 Make overlaps and rediscovery risks explicit.
 
+Full artifact:
+
+- [HAOS_IIP_Framework_Comparison_Matrix_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Framework_Comparison_Matrix_v1.md)
+
 | Framework | Shared mechanisms | HAOS-IIP difference | Main caution |
 | --- | --- | --- | --- |
 | graph Laplacians | weighted graphs, spectra, diffusion-like response | recoverability-first phase contracts and branch telemetry | ordinary Laplacian behavior may be misread as new structure |

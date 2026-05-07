@@ -219,3 +219,4 @@ It does not mean:
 - apply the checklist to the next canonical entry paper draft
 - backfill claim boxes into the most visible public-facing releases
 - build a dashboard table summarizing claim class, bridge status, and current downgrade level
+- use the framework comparison matrix to add framework-specific null models
