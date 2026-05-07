@@ -256,18 +256,21 @@ claim is made without a future local raw-data audit.
 
 ### 2.49 Part XLIX. Phase 66 translation and hostile-audit entry release
 
-1. `66.3` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
-2. `66.2` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
-3. `66.1` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+1. `66.4` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+2. `66.3` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+3. `66.2` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+4. `66.1` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
 
-Bounded status: release `66.3` is a public entry paper, not a new mechanism and
+Bounded status: release `66.4` is a public entry paper, not a new mechanism and
 not a new physical claim. It freezes the Phase 66 translation and hostile-audit
 layer in numbered PDF form: standard-language explanation first, minimal
 assumptions, frozen-regime setup, operator overview, recoverability diagnostics,
 translation table, framework comparison, falsification gates, claim-gating
-rules, reproduction path, footer/page-number polish, title-page subtitle, and
-explicit claim boundaries. Release `66.1` remains the first frozen entry-paper
-snapshot; `66.2` remains the first polished public entry release.
+rules, reproduction path, footer/page-number polish, title-page subtitle,
+copy-clean ASCII-hyphen list labels, and explicit claim boundaries. Release
+`66.1` remains the first frozen entry-paper snapshot; `66.2` remains the first
+polished public entry release; `66.3` remains the title-page subtitle polish
+snapshot.
 
 ## 3. Full release list
 
@@ -352,6 +355,7 @@ snapshot; `66.2` remains the first polished public entry release.
 - `66.1` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
 - `66.2` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
 - `66.3` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+- `66.4` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen
