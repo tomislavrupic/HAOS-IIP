@@ -292,6 +292,7 @@ External-data sidecar update:
 Phase 66 translation and hostile-audit rule:
 
 - [Phase 66 - Translation and Hostile-Audit Layer](docs/notes/foundations/HAOS_IIP_Phase_66_Translation_and_Hostile_Audit_Layer_v1.md) is the corrective public-facing layer for the next phase of the program.
+- [Canonical entry paper skeleton](docs/notes/foundations/HAOS_IIP_Canonical_Entry_Paper_Skeleton_v1.md) is the first Phase 66 artifact and defines the entry-door structure for an outside technical reader.
 - Core rule: no expansion before translation.
 - The purpose is to translate HAOS-IIP into standard mathematical and computational language, define failure gates, compare against nearby frameworks, and make the program easier to reproduce, inspect, attack, and improve.
 - Corrected public posture: HAOS-IIP is a reproducible computational exploration of emergence, recoverability, and operator-derived structure in discrete interaction systems. It does not yet derive known physics; its current value is methodological, diagnostic, and exploratory.

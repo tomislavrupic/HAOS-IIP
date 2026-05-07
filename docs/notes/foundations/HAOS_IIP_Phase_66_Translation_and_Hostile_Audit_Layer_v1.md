@@ -91,6 +91,10 @@ Required sections:
 - claim boundaries
 - reproduction instructions
 
+Skeleton artifact:
+
+- [HAOS_IIP_Canonical_Entry_Paper_Skeleton_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Canonical_Entry_Paper_Skeleton_v1.md)
+
 ## 5. Core Translation Table
 
 | HAOS-IIP term | Standard-language description |
@@ -215,6 +219,7 @@ personal explanation from the author.
 
 Required before stronger public physical bridge claims:
 
+- [x] canonical entry paper skeleton created
 - [ ] canonical entry paper drafted
 - [ ] core translation table linked from the root README
 - [ ] claim-gating template adopted in new papers and releases
