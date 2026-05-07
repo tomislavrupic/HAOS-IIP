@@ -167,6 +167,10 @@ simply rediscover known behavior.
 
 ## 8. Falsification Engine
 
+Full artifact:
+
+- [HAOS_IIP_Falsification_Engine_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Falsification_Engine_v1.md)
+
 A serious program must state not only what would support it, but what would
 break it.
 
@@ -228,7 +232,7 @@ Required before stronger public physical bridge claims:
 - [x] core translation table linked from the root README
 - [ ] claim-gating template adopted in new papers and releases
 - [ ] comparison tables added for nearby frameworks
-- [ ] falsification gates made explicit in public-facing docs
+- [x] falsification gates made explicit in public-facing docs
 - [ ] public language rule applied to landing-page summaries
 - [ ] major phase folders audited for README / reproduction / limitation coverage
 - [ ] next external bridge claims checked against null-model distinguishability

@@ -96,5 +96,5 @@ Translation makes a claim easier to inspect. It does not make the claim true.
 
 - turn this table into a compact public appendix for the canonical entry paper
 - add term-specific links to the most relevant experiment, note, or paper
-- build the Phase 66 falsification engine as a checklist/dashboard template
+- use the Phase 66 falsification engine to attach failure gates to translated terms
 - add a release-review rule that blocks new terms without translation rows

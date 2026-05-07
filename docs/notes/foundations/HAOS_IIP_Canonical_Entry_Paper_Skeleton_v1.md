@@ -264,6 +264,10 @@ rediscover known behavior.
 
 ## 11. Falsification Gates
 
+Full artifact:
+
+- [HAOS_IIP_Falsification_Engine_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Falsification_Engine_v1.md)
+
 Public failure gates:
 
 - recoverability index fails under refinement
