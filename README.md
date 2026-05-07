@@ -289,6 +289,13 @@ External-data sidecar update:
 - [Materials Bridge Line B magnon sidecar](experiments/materials_bridge/magnon_alpha_fe2o3_audit/) records the alpha-Fe2O3 spin-sector bridge artifact with persistence proxy `0.902`, reported velocity range `17.31-24.43 km/s`, and raw-data boundaries `NO_RAW_PUBLIC_DATA_LOADED` and `NO_PUBLIC_STFT_GRID_FOUND`.
 - [Magnon address stability testable signatures](predictions/magnon_address_stability_testable_signatures.md) adds four spin-sector prediction records seeded by the ferron bridge and the alpha-Fe2O3 Line B audit anchor; local raw-data reproduction remains pending.
 
+Phase 66 translation and hostile-audit rule:
+
+- [Phase 66 - Translation and Hostile-Audit Layer](docs/notes/foundations/HAOS_IIP_Phase_66_Translation_and_Hostile_Audit_Layer_v1.md) is the corrective public-facing layer for the next phase of the program.
+- Core rule: no expansion before translation.
+- The purpose is to translate HAOS-IIP into standard mathematical and computational language, define failure gates, compare against nearby frameworks, and make the program easier to reproduce, inspect, attack, and improve.
+- Corrected public posture: HAOS-IIP is a reproducible computational exploration of emergence, recoverability, and operator-derived structure in discrete interaction systems. It does not yet derive known physics; its current value is methodological, diagnostic, and exploratory.
+
 ## Reproducibility Contract
 
 Core experimental layers are frozen and defined in:
