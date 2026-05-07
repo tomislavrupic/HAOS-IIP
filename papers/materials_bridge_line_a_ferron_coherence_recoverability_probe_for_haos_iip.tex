@@ -19,7 +19,7 @@
 \maketitle
 
 \begin{abstract}
-This numbered update records release \texttt{64.1}: Materials Bridge Line A for HAOS-IIP. The bridge is an external-data sidecar experiment over published ferron / NbOI$_2$ source data, not a frozen-core modification and not a proof of HAOS-IIP. The runner downloads the Figshare source-data record for Choe et al., ``Observation of coherent ferron emission and propagation,'' parses three public XLSX files, extracts time traces and spectra, and applies bounded HAOS-style recoverability proxies to coherent polarization-wave readouts. The validation status is \texttt{PASS} as an external-data bridge: \texttt{data\_status=REAL\_DATA\_LOADED}, three raw source files are hashed and preserved, nine time traces and six spectra or peak records are parsed, and the recoverability sweep runs deterministically. A second-pass spectral audit finds the target-window feature in \texttt{15/15} audited spectral records near \(3.13\,\mathrm{THz}\), with mean peak frequency \texttt{3.13893 THz}, mean spectral recoverability \texttt{0.928455}, and no detected \(k_\star\) collapse under the current proxy thresholds. A raw STFT/time-frequency audit inspects the XLSX files and returns \texttt{NO\_STFT\_DATA\_FOUND}: one STFT-like sheet is present, but it lacks a usable frequency axis or validated time-frequency grid, so no STFT recoverability claim is made. The safe claim is that HAOS-IIP now has one external materials-data bridge pipeline that touches real published material-coherence data, records provenance, runs bounded telemetry, and can say both yes and no without overclaiming.
+This numbered update records release \texttt{64.1}: Materials Bridge Line A for HAOS-IIP. The bridge is an external-data sidecar experiment over published ferron / NbOI$_2$ source data, not a frozen-core modification and not a proof of HAOS-IIP. The runner downloads the Figshare source-data record for Choe et al., ``Observation of coherent ferron emission and propagation,'' parses three public XLSX files, extracts time traces and spectra, and applies bounded HAOS-style recoverability proxies to coherent polarization-wave readouts. The validation status is \texttt{PASS} as an external-data bridge: \texttt{data\_status=REAL\_DATA\_LOADED}, three raw source files are hashed and preserved, nine time traces and six spectra or peak records are parsed, and the recoverability sweep runs deterministically. A second-pass spectral audit finds the target-window feature in \texttt{15/15} audited spectral records near \(3.13\,\mathrm{THz}\), with mean peak frequency \texttt{3.13893 THz}, mean spectral recoverability \texttt{0.928455}, and no detected \(k_\star\) collapse under the current proxy thresholds. A raw STFT/time-frequency audit inspects the XLSX files and returns \texttt{NO\_STFT\_DATA\_FOUND}: one STFT-like sheet is present, but it lacks a usable frequency axis or validated time-frequency grid, so no raw STFT recoverability claim is made. The same Fig. 2d sheet is parsed separately as published post-processed target-band STFT intensity traces: eight traces and 216 time points support a bounded propagation audit with group-velocity proxies of \(58.8\,\mathrm{km/s}\) for \(96\,\mathrm{nm}\) and \(100\,\mathrm{km/s}\) for \(224\,\mathrm{nm}\). A derived, computed-from-time-trace STFT diagnostic over the raw Fig. 2a/2b traces gives mean envelope correlation \texttt{0.995318} against the published target-band traces and mean computed group velocity \texttt{101754 m/s}. A final unified persistence ledger reports \texttt{ferron\_persistence\_proxy=0.957192} while preserving \texttt{raw\_stft\_time\_frequency\_grid\_status=NO\_STFT\_DATA\_FOUND}. The safe claim is that HAOS-IIP now has one external materials-data bridge pipeline that touches real published material-coherence data, records provenance, runs bounded telemetry, and can say both yes and no without overclaiming.
 \end{abstract}
 
 \tableofcontents
@@ -37,6 +37,9 @@ It records:
 \item bounded recoverability telemetry over ferron / NbOI$_2$ coherent readouts;
 \item a second-pass spectral feature audit near \(3.13\,\mathrm{THz}\);
 \item a raw STFT/time-frequency audit that records absence of usable STFT grids without fabricating data;
+\item a bounded published target-band STFT intensity trace audit over Fig. 2d;
+\item a derived computed-from-time-trace STFT diagnostic over raw Fig. 2a/2b traces;
+\item a unified ferron harmonic-address persistence summary that preserves the raw-grid boundary;
 \item a validation result that preserves the absence of collapse.
 \end{itemize}
 
@@ -178,6 +181,9 @@ First visible failure level & \texttt{None} \\
 Early detection & \texttt{False} \\
 Spectral audit status & \texttt{PARTIAL} \\
 STFT audit status & \texttt{NO\_STFT\_DATA\_FOUND} \\
+Published target-band trace status & \texttt{PASS} \\
+Computed STFT diagnostic status & \texttt{PASS} \\
+Unified persistence summary status & \texttt{PASS} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -294,6 +300,159 @@ It is rejected because it contains time plus \texttt{STFT Int} columns but no us
 
 Therefore, this release makes no STFT recoverability claim. The absence of a parsed raw STFT grid is not treated as negative evidence against the material system; it is only a data-format boundary for this sidecar.
 
+\section{Published STFT Target-Band Intensity Trace Audit}
+
+The rejected raw-STFT candidate is still scientifically useful in a narrower
+form. The sheet \path{Source data Fig.2.xlsx#Fig.2d} exports published,
+post-processed \texttt{STFT Int} traces in the target band. These traces are
+not raw time-frequency maps because no frequency axis is present, so the sidecar
+parses them separately as:
+
+\begin{quote}
+\texttt{published\_stft\_target\_band\_intensity\_trace}
+\end{quote}
+
+This preserves the raw-grid boundary while allowing a bounded propagation-readout
+audit over the published target-band envelope.
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Field & Value \\
+\midrule
+Published trace audit status & \texttt{PASS} \\
+Mode & \texttt{published\_stft\_target\_band\_intensity\_trace} \\
+Source sheet & \texttt{Source data Fig.2.xlsx\#Fig.2d} \\
+Traces found & \texttt{8} \\
+Time points audited & \texttt{216} \\
+Peak records & \texttt{8} \\
+Thickness groups & \texttt{2} \\
+Mean group velocity & \texttt{79411.8 m/s} \\
+Mean velocity consistency with \(10^5\,\mathrm{m/s}\) & \texttt{0.794118} \\
+Mean envelope recoverability & \texttt{0.625} \\
+Raw STFT grid status & \texttt{NO\_STFT\_DATA\_FOUND} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{longtable}{p{0.16\linewidth}p{0.18\linewidth}p{0.18\linewidth}p{0.16\linewidth}p{0.16\linewidth}}
+\toprule
+Thickness & Slope & Group velocity & \(R^2\) & Monotonic delay \\
+\midrule
+\endhead
+\(96\,\mathrm{nm}\) & \texttt{17 ps/um} & \texttt{58823.5 m/s} & \texttt{0.955372} & \texttt{1.0} \\
+\(224\,\mathrm{nm}\) & \texttt{10 ps/um} & \texttt{100000 m/s} & \texttt{0.987654} & \texttt{1.0} \\
+\bottomrule
+\end{longtable}
+
+The bounded read is that peak arrival time increases with distance in the
+parsed thickness groups. This supports a propagation-readout audit of the
+published target-band envelope only. It does not convert the sheet into a raw
+STFT grid and it does not create an STFT recoverability claim over a missing
+time-frequency amplitude map.
+
+\section{Computed From Time-Trace STFT Diagnostic}
+
+The sidecar also computes a derived diagnostic from the raw Fig. 2a and Fig. 2b
+transient-reflectance traces. This diagnostic applies a \(10\,\mathrm{ps}\)
+window and \(5\,\mathrm{ps}\) step, extracts intensity near
+\(3.13\,\mathrm{THz}\) with a \(\pm 0.05\,\mathrm{THz}\) target band, and compares
+the derived envelopes to the published Fig. 2d target-band traces.
+
+This diagnostic is explicitly labeled:
+
+\begin{quote}
+\texttt{computed\_from\_time\_trace\_stft\_diagnostic}
+\end{quote}
+
+It is not raw published STFT data and it is not used to erase the
+\texttt{NO\_STFT\_DATA\_FOUND} boundary.
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Field & Value \\
+\midrule
+Computed diagnostic status & \texttt{PASS} \\
+Source sheets & \texttt{Fig.2a, Fig.2b} \\
+Window / step & \texttt{10 ps / 5 ps} \\
+Target band & \texttt{3.13 THz +/- 0.05 THz} \\
+Traces computed & \texttt{8} \\
+Time points computed & \texttt{216} \\
+Peak records & \texttt{8} \\
+Mean group velocity & \texttt{101754 m/s} \\
+Mean envelope correlation vs. published & \texttt{0.995318} \\
+Mean absolute peak-time delta vs. published & \texttt{5.84163 ps} \\
+Raw STFT grid status & \texttt{NO\_STFT\_DATA\_FOUND} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{longtable}{p{0.16\linewidth}p{0.18\linewidth}p{0.18\linewidth}p{0.16\linewidth}p{0.16\linewidth}}
+\toprule
+Thickness & Slope & Group velocity & \(R^2\) & Monotonic delay \\
+\midrule
+\endhead
+\(224\,\mathrm{nm}\) & \texttt{7.5 ps/um} & \texttt{133333 m/s} & \texttt{1.0} & \texttt{1.0} \\
+\(96\,\mathrm{nm}\) & \texttt{14.25 ps/um} & \texttt{70175.4 m/s} & \texttt{0.998157} & \texttt{1.0} \\
+\bottomrule
+\end{longtable}
+
+The raw Fig. 2a/Fig. 2b headers do not include thickness labels. The sheet
+assignment follows the published Fig. 2d propagation peak-time ordering and is
+therefore recorded as an assignment rule, not as independent metadata discovery.
+
+\section{Unified Harmonic-Address Persistence Summary}
+
+The final sidecar layer gathers the spectral, published-trace, computed-STFT,
+and raw-grid-boundary outputs into one component ledger. This is a summary of
+already bounded outputs, not a new materials theory.
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Field & Value \\
+\midrule
+Persistence summary status & \texttt{PASS} \\
+Mode & \texttt{ferron\_harmonic\_address\_persistence\_summary} \\
+Target frequency & \texttt{3.13 THz} \\
+Combined persistence proxy & \texttt{0.957192} \\
+Raw STFT grid status & \texttt{NO\_STFT\_DATA\_FOUND} \\
+Raw grid boundary preserved & \texttt{True} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{longtable}{p{0.32\linewidth}p{0.15\linewidth}p{0.18\linewidth}p{0.24\linewidth}}
+\toprule
+Component & Value & Included & Source \\
+\midrule
+\endhead
+\texttt{target\_peak\_presence} & \texttt{1.0} & yes & spectral audit \\
+\texttt{spectral\_recoverability} & \texttt{0.928455} & yes & spectral audit \\
+\texttt{no\_sustained\_k\_star} & \texttt{1.0} & yes & spectral audit \\
+\texttt{published\_propagation\_monotonicity} & \texttt{1.0} & yes & published trace audit \\
+\texttt{published\_velocity\_consistency} & \texttt{0.794118} & yes & published trace audit \\
+\texttt{computed\_envelope\_match} & \texttt{0.995318} & yes & computed STFT diagnostic \\
+\texttt{computed\_velocity\_consistency} & \texttt{0.982456} & yes & computed STFT diagnostic \\
+\texttt{raw\_stft\_grid\_boundary} & \texttt{None} & no & raw STFT audit \\
+\bottomrule
+\end{longtable}
+
+The raw-grid boundary is excluded from the numeric proxy. It is a
+data-availability boundary, not a persistence penalty. The bounded
+interpretation is:
+
+\begin{quote}
+The ferron sidecar shows a stable target-window spectral feature near
+\(3.13\,\mathrm{THz}\), published target-band STFT intensity traces with
+monotonic propagation delay, and computed-from-time-trace STFT envelopes that
+closely match the published traces. The raw STFT time-frequency grid remains
+unavailable in the downloaded XLSX files; that boundary is preserved. This is
+a bounded external-data persistence summary, not a proof or materials-theory
+claim.
+\end{quote}
+
 \section{Figures}
 
 \begin{figure}[ht]
@@ -320,12 +479,43 @@ Therefore, this release makes no STFT recoverability claim. The absence of a par
 \caption{Spectral recoverability audit across parsed conditions. No sustained \(k_\star\) collapse is detected under the current proxy thresholds.}
 \end{figure}
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.88\linewidth]{../experiments/materials_bridge/ferron_coherence_demo/outputs/published_stft_peak_time_vs_distance.png}
+\caption{Published Fig. 2d target-band STFT intensity traces: peak time versus distance. These are post-processed target-band traces, not raw time-frequency grids.}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.88\linewidth]{../experiments/materials_bridge/ferron_coherence_demo/outputs/computed_stft_diagnostic/computed_vs_published_stft_comparison.png}
+\caption{Derived computed-from-time-trace STFT target-band envelopes compared with the published Fig. 2d target-band traces.}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.88\linewidth]{../experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_components.png}
+\caption{Unified persistence summary components. The raw STFT grid boundary is recorded separately and is not included as a numeric persistence penalty.}
+\end{figure}
+
 \section{Interpretation}
 
 The correct interpretation is narrow:
 
 \begin{quote}
 HAOS-IIP Materials Bridge Line A is now running on real ferron / NbOI$_2$ data. The pipeline downloads published Figshare XLSX source data, records provenance, parses time traces and spectra, runs bounded recoverability metrics, and returns \texttt{PASS} as an external-data bridge. The second-pass spectral audit finds the target-window peak in \texttt{15/15} records with mean peak frequency \texttt{3.13893 THz} and mean spectral recoverability \texttt{0.928455}. Under the current proxy thresholds, no \(k_\star\) collapse is detected. The raw STFT audit finds no validated time-frequency grid, so no STFT recoverability claim is made.
+\end{quote}
+
+The additional trace and persistence layers refine this without changing the
+boundary:
+
+\begin{quote}
+The published Fig. 2d target-band traces provide a bounded propagation readout,
+and the computed-from-time-trace diagnostic reproduces the target-band envelope
+closely enough to serve as a derived reproducibility check. The unified
+persistence proxy \texttt{0.957192} is therefore a compact sidecar summary of
+peak presence, spectral recoverability, monotonic propagation delay, velocity
+consistency, and computed envelope match. It is not a proof of HAOS-IIP, not a
+claim that ferrons embody HAOS-IIP, and not a raw STFT-grid claim.
 \end{quote}
 
 This matters because the result is not tuned into a dramatic claim. External data comes first. Interpretation comes second.
@@ -341,18 +531,23 @@ Loader & \path{experiments/materials_bridge/ferron_coherence_demo/ferron_data_lo
 Metric model & \path{experiments/materials_bridge/ferron_coherence_demo/ferron_recoverability_model.py} \\
 Spectral audit & \path{experiments/materials_bridge/ferron_coherence_demo/spectral_feature_audit.py} \\
 STFT audit & \path{experiments/materials_bridge/ferron_coherence_demo/stft_feature_audit.py} \\
+Computed STFT diagnostic & \path{experiments/materials_bridge/ferron_coherence_demo/ferron_computed_stft_diagnostic.py} \\
+Persistence summary & \path{experiments/materials_bridge/ferron_coherence_demo/ferron_harmonic_address_persistence_summary.py} \\
 Runner & \path{experiments/materials_bridge/ferron_coherence_demo/run_ferron_coherence_demo.py} \\
 Manifest & \path{experiments/materials_bridge/ferron_coherence_demo/data_manifest.json} \\
 Validation report & \path{experiments/materials_bridge/ferron_coherence_demo/ferron_coherence_validation.md} \\
 Results CSV & \path{experiments/materials_bridge/ferron_coherence_demo/outputs/results.csv} \\
 Spectral summary & \path{experiments/materials_bridge/ferron_coherence_demo/outputs/spectral_feature_summary.json} \\
 STFT summary & \path{experiments/materials_bridge/ferron_coherence_demo/outputs/stft_feature_summary.json} \\
+Published target-band trace summary & \path{experiments/materials_bridge/ferron_coherence_demo/outputs/published_stft_trace_summary.json} \\
+Computed STFT summary & \path{experiments/materials_bridge/ferron_coherence_demo/outputs/computed_stft_diagnostic/computed_stft_summary.json} \\
+Persistence summary JSON & \path{experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_summary.json} \\
 Summary JSON & \path{experiments/materials_bridge/ferron_coherence_demo/outputs/summary.json} \\
 \bottomrule
 \end{longtable}
 
 \section{Conclusion}
 
-Release \texttt{64.1} adds a real external materials-data bridge to HAOS-IIP. It is a bounded operational milestone, not a theory escalation. The ferron / NbOI$_2$ source data loads, parses, hashes, plots, and produces recoverability telemetry. The measured spectral result is stable under the current proxy thresholds: no \(k_\star\), no visible failure, and no early-detection claim. The raw STFT audit also says no cleanly: no validated raw STFT/time-frequency grid is present in the downloaded XLSX files, so no STFT recoverability claim is made. That non-hyped outcome is the point of the bridge.
+Release \texttt{64.1} adds a real external materials-data bridge to HAOS-IIP. It is a bounded operational milestone, not a theory escalation. The ferron / NbOI$_2$ source data loads, parses, hashes, plots, and produces recoverability telemetry. The measured spectral result is stable under the current proxy thresholds: no \(k_\star\), no visible failure, and no early-detection claim. The published target-band STFT intensity traces add a bounded propagation readout, and the computed-from-time-trace diagnostic provides a derived reproducibility check against those traces. The unified persistence proxy is \texttt{0.957192}. The raw STFT audit also says no cleanly: no validated raw STFT/time-frequency grid is present in the downloaded XLSX files, so no raw STFT-grid recoverability claim is made. That non-hyped outcome is the point of the bridge.
 
 \end{document}

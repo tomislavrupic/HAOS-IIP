@@ -8,7 +8,7 @@ A large-scale, disciplined numerical research program exploring reproducible eme
 
 ### One-Sentence Summary
 
-This repository demonstrates that a coherent, multi-hundred-page-equivalent computational research arc (stability -> scalar-carrier geometry -> cautious physics-bridge observables) can be built and kept verifiable using structured workflows and current tools.
+This repository demonstrates that a coherent, multi-hundred-page-equivalent computational research arc (stability -> scalar-carrier geometry -> cautious physics-bridge observables -> bounded external-data sidecars) can be built and kept verifiable using structured workflows and current tools.
 
 ### Success Criterion
 
@@ -179,8 +179,10 @@ uv run --with numpy --with matplotlib --with openpyxl python experiments/materia
 
 This sidecar is outside the frozen phase contract. It downloads public Figshare
 source data for a ferron / NbOI2 paper, records raw-file provenance, parses
-available time traces and spectra, and reports bounded recoverability metrics.
-It does not claim that ferrons prove HAOS-IIP.
+available time traces and spectra, audits published target-band STFT intensity
+traces, runs a derived computed-from-time-trace STFT diagnostic, and reports a
+bounded unified persistence proxy. It does not claim that ferrons prove
+HAOS-IIP, and it preserves `NO_STFT_DATA_FOUND` for raw time-frequency grids.
 
 ## Telemetry Demo
 
@@ -225,18 +227,21 @@ Short note:
 
 ## Program Status
 
-**Current milestone (53.4 seed-universal disorder flux after 53.0 physics bridge):**
-The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line now closes through a bounded local metric field, a shell-native response read, an open first transient baseline `52.3`, a corrected shell-native clean-line current closure `52.4`, and a bounded smooth-radial inhomogeneity closure `52.5`. The `53.0` bridge adds an external post-processing dictionary over those frozen artifacts, `53.2` resolves the localized bump row into a weak localized-excitation PASS plus a stronger localized-bump OPEN boundary, `53.3` resolves the power-law scaling row into raw local-gradient OPEN plus shell-native continuum-like PASS, and `53.4` promotes the disorder-native flux seed margin from `WATCH` to bounded `PASS`.
+**Current public milestone (64.1 materials bridge sidecar after 53.x physics bridge):**
+The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line closes through the `52.x` scalar-carrier releases and the `53.x` physics-bridge observable stack. Release `64.1` adds the first real external materials-data sidecar: a ferron / NbOI2 bridge over public Figshare data from Choe et al. It is outside the frozen phase contract and does not modify frozen core, frozen phases, or telemetry definitions.
 
-The public repository now contains four stacked bounded results:
+The public repository now contains five stacked bounded results:
 
 - closed derivation ladder: `T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8`, plus `F1-F4`
 - frozen vector validation spine through `V1-V6b` and clean-baseline identity resolution
 - scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass, a bounded local metric-field closure, a shell-native response read, an honest open first transient baseline `52.3`, a bounded shell-native clean-line current closure `52.4`, and a bounded smooth-inhomogeneity transport closure `52.5` on the smooth radial branch
 - external physics-bridge observables `53.0`, which separate shell-native inverse-square and power-law closure from raw local-gradient residuals, split localized bump response into weak PASS and stress OPEN boundaries, and now close the tested disorder-native seed margin
+- external materials bridge `64.1`, which loads real published ferron / NbOI2 source data, audits `15/15` target-window spectral records near `3.13 THz`, reports mean spectral recoverability `0.928455`, parses published target-band STFT intensity traces as post-processed envelope data, computes a derived time-trace STFT diagnostic with mean envelope correlation `0.995318`, and records a unified persistence proxy `0.957192` while preserving `NO_STFT_DATA_FOUND` for raw time-frequency grids
 
 Milestone anchors:
 
+- [64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe](papers/pdf_releases/64.1%20Materials%20Bridge%20Line%20A%20-%20Ferron%20Coherence%20Recoverability%20Probe%20for%20HAOS-IIP.pdf)
+- [Materials Bridge Line A ferron sidecar](experiments/materials_bridge/ferron_coherence_demo/)
 - [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
 - [Seed-Universal Disorder Flux 53.4](docs/notes/foundations/HAOS_IIP_Seed_Universal_Disorder_Flux_53_4_v1.md)
 - [Power-Law Scaling 53.3](docs/notes/foundations/HAOS_IIP_Power_Law_Scaling_53_3_v1.md)
@@ -272,8 +277,11 @@ Milestone anchors:
 External-data sidecar update:
 
 - [Materials Bridge Line A ferron sidecar](experiments/materials_bridge/ferron_coherence_demo/) loads real published Figshare data for Choe et al., parses `9` time traces and `6` spectra or peak records, audits `15` target-window spectral records near `3.13 THz`, and reports mean peak frequency `3.13893 THz`, mean spectral recoverability `0.928455`, and no detected `k_star` under the current proxy thresholds.
-- The STFT/time-frequency audit inspected the raw XLSX files and found no validated raw time-frequency grid; therefore no STFT recoverability claim is made.
-- This is an external-data bridge validation and spectral audit only. It does not modify the frozen core, does not modify frozen phases, and does not prove HAOS-IIP.
+- The published Fig. 2d target-band STFT intensity traces are parsed as post-processed envelope data: `8` traces, `216` time points, group-velocity proxies of `58.8 km/s` for `96 nm` and `100 km/s` for `224 nm`, and monotonic peak delay in both thickness groups.
+- A derived computed-from-time-trace STFT diagnostic over raw Fig. 2a/2b traces reports mean envelope correlation `0.995318` against the published target-band traces and mean computed group velocity `101754 m/s`.
+- The unified persistence summary reports `ferron_persistence_proxy=0.957192`.
+- The raw STFT/time-frequency audit inspected the raw XLSX files and found no validated raw time-frequency grid; therefore no raw STFT-grid recoverability claim is made.
+- This is an external-data bridge validation and bounded persistence summary only. It does not modify the frozen core, does not modify frozen phases, and does not prove HAOS-IIP.
 
 ## Reproducibility Contract
 

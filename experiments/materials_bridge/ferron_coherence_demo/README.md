@@ -81,6 +81,26 @@ Archives are extracted only into derived storage for parsing:
 outputs/derived_extracted/
 ```
 
+## Current Bounded Result
+
+- `data_status`: `REAL_DATA_LOADED`
+- `validation_status`: `PASS`
+- spectral audit status: `PARTIAL`
+- target-window spectral peaks found: `15/15`
+- mean peak frequency: `3.13893 THz`
+- mean spectral recoverability: `0.928455`
+- `k_star_detected`: `False`
+- raw STFT/time-frequency grid status: `NO_STFT_DATA_FOUND`
+- published Fig. 2d target-band traces: `8` traces, `216` time points
+- published target-band group velocities: `58.8 km/s` at `96 nm`, `100 km/s`
+  at `224 nm`
+- computed-from-time-trace STFT envelope correlation vs. published:
+  `0.995318`
+- unified persistence proxy: `0.957192`
+
+These are sidecar metrics over the available public files. They are not proof
+of HAOS-IIP and do not turn missing raw STFT grids into evidence.
+
 ## Spectral Feature Audit
 
 The second-pass audit inspects the ferron spectral peak near `3.13 THz`. It

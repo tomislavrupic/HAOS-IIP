@@ -235,6 +235,14 @@ The intended public reading order is:
 
 1. `64.1` Materials Bridge Line A: Ferron Coherence Recoverability Probe for HAOS-IIP
 
+Bounded status: real Figshare ferron / NbOI2 data loads; `15/15`
+target-window spectral records are detected near `3.13 THz`; mean spectral
+recoverability is `0.928455`; published Fig. 2d target-band STFT intensity
+traces parse as post-processed envelope data; the derived computed STFT
+diagnostic reports mean envelope correlation `0.995318`; the unified persistence
+proxy is `0.957192`; and the raw STFT/time-frequency grid remains
+`NO_STFT_DATA_FOUND`.
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results

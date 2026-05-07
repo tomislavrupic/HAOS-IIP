@@ -61,8 +61,13 @@ Current external-data release:
 Bounded result: real Figshare ferron / NbOI2 data loads, `15/15`
 target-window spectral records are detected near `3.13 THz`, mean spectral
 recoverability is `0.928455`, no `k_star` collapse is detected under the
-current proxy thresholds, and no raw STFT/time-frequency recoverability claim
-is made because no validated STFT grid was found in the downloaded XLSX files.
+current proxy thresholds, published Fig. 2d target-band STFT intensity traces
+parse as post-processed envelope data, and a derived computed-from-time-trace
+STFT diagnostic reports mean envelope correlation `0.995318` against those
+published traces. The unified persistence summary reports
+`ferron_persistence_proxy=0.957192`. No raw STFT/time-frequency recoverability
+claim is made because no validated STFT grid was found in the downloaded XLSX
+files.
 
 ## 3. Compression map for Phase I
 
