@@ -195,6 +195,8 @@ Full artifact:
 | --- | --- |
 | harmonic address | stable spectral / operator identity class on a graph or operator family |
 | recoverable coherence | persistence of diagnostic structure under bounded perturbation |
+| recoverability metric | bounded score comparing baseline and perturbed diagnostic structure |
+| k_star / collapse index | first declared perturbation level where recoverability shows sustained collapse |
 | scalar carrier | scalar-valued field-like carrier on an interaction graph |
 | local metric field | metric surrogate derived from operator response, Green structure, or eigenstructure |
 | collapse detection | loss of recoverability before visible fragmentation |

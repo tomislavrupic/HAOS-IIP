@@ -13,6 +13,10 @@ Purpose:
 Translate HAOS-IIP into standard mathematical and computational language for a
 skeptical technical reader who has not read the prior paper sequence.
 
+Numbered PDF release:
+
+- [66.2 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/papers/pdf_releases/66.2%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
+
 Core rule:
 
 ```text
@@ -213,6 +217,8 @@ Short version:
 | --- | --- |
 | harmonic address | stable spectral / operator identity class |
 | recoverable coherence | persistence of diagnostic structure under bounded perturbation |
+| recoverability metric | bounded score comparing baseline and perturbed diagnostic structure |
+| k_star / collapse index | first declared perturbation level where recoverability shows sustained collapse |
 | scalar carrier | scalar-valued field-like carrier on an interaction graph |
 | local metric field | metric surrogate derived from operator response, Green structure, or eigenstructure |
 | collapse detection | loss of recoverability before visible fragmentation |
