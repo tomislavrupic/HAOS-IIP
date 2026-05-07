@@ -119,6 +119,10 @@ HAOS-IIP vocabulary may appear second, after the ordinary meaning is clear.
 
 ## 6. Claim-Gating Template
 
+Full artifact:
+
+- [HAOS_IIP_Claim_Gating_Template_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Claim_Gating_Template_v1.md)
+
 Every new HAOS-IIP paper, dashboard, and archive release should include a clear
 claim box.
 
@@ -234,6 +238,7 @@ Required before stronger public physical bridge claims:
 - [x] canonical entry paper skeleton created
 - [ ] canonical entry paper drafted
 - [x] core translation table linked from the root README
+- [x] claim-gating template artifact created
 - [ ] claim-gating template adopted in new papers and releases
 - [x] comparison tables added for nearby frameworks
 - [x] falsification gates made explicit in public-facing docs

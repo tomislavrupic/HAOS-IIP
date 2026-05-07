@@ -320,6 +320,10 @@ This section should eventually include a minimal command set for:
 
 ## 13. Claim Boundary
 
+Full artifact:
+
+- [HAOS_IIP_Claim_Gating_Template_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Claim_Gating_Template_v1.md)
+
 Every release should contain:
 
 ```text

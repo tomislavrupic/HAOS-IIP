@@ -104,6 +104,10 @@ Downgrading a claim is not a failure of discipline. It is the discipline working
 
 ## 6. Mandatory Claim Box
 
+Full claim-gating artifact:
+
+- [HAOS_IIP_Claim_Gating_Template_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Claim_Gating_Template_v1.md)
+
 Every new release should include:
 
 ```text
