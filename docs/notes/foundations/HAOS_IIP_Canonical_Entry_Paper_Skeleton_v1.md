@@ -183,6 +183,10 @@ declared metric, not a mystical or final event.
 
 Use the Phase 66 table as the public-language baseline.
 
+Full artifact:
+
+- [HAOS_IIP_Core_Translation_Table_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Core_Translation_Table_v1.md)
+
 | HAOS-IIP term | Standard-language description |
 | --- | --- |
 | harmonic address | stable spectral / operator identity class on a graph or operator family |

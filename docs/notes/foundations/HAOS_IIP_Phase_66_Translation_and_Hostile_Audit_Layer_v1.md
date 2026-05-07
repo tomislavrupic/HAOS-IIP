@@ -97,6 +97,10 @@ Skeleton artifact:
 
 ## 5. Core Translation Table
 
+Full artifact:
+
+- [HAOS_IIP_Core_Translation_Table_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Core_Translation_Table_v1.md)
+
 | HAOS-IIP term | Standard-language description |
 | --- | --- |
 | harmonic address | stable spectral / operator identity class on a graph or operator family |
@@ -221,7 +225,7 @@ Required before stronger public physical bridge claims:
 
 - [x] canonical entry paper skeleton created
 - [ ] canonical entry paper drafted
-- [ ] core translation table linked from the root README
+- [x] core translation table linked from the root README
 - [ ] claim-gating template adopted in new papers and releases
 - [ ] comparison tables added for nearby frameworks
 - [ ] falsification gates made explicit in public-facing docs
