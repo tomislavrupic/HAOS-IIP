@@ -8,6 +8,10 @@ Status:
 - no stronger physical claim
 - purpose: give a skeptical outside reader a clean door into the program
 
+Final entry document:
+
+- [HAOS_IIP_Canonical_Entry_Paper_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Canonical_Entry_Paper_v1.md)
+
 ## Reader Contract
 
 This paper must be readable by a competent physicist, mathematician,

@@ -95,6 +95,10 @@ Skeleton artifact:
 
 - [HAOS_IIP_Canonical_Entry_Paper_Skeleton_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Canonical_Entry_Paper_Skeleton_v1.md)
 
+Entry document:
+
+- [HAOS_IIP_Canonical_Entry_Paper_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Canonical_Entry_Paper_v1.md)
+
 ## 5. Core Translation Table
 
 Full artifact:
@@ -236,7 +240,7 @@ personal explanation from the author.
 Required before stronger public physical bridge claims:
 
 - [x] canonical entry paper skeleton created
-- [ ] canonical entry paper drafted
+- [x] canonical entry paper drafted
 - [x] core translation table linked from the root README
 - [x] claim-gating template artifact created
 - [ ] claim-gating template adopted in new papers and releases
