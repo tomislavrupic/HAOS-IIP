@@ -1,0 +1,139 @@
+{
+  "bounded_interpretation": "The ferron sidecar shows a stable target-window spectral feature near 3.13 THz, published target-band STFT intensity traces with monotonic propagation delay, and computed-from-time-trace STFT envelopes that closely match the published traces. The raw STFT time-frequency grid remains unavailable in the downloaded XLSX files; that boundary is preserved. This is a bounded external-data persistence summary, not a proof or materials-theory claim.",
+  "claim_boundary": [
+    "external-data sidecar summary only",
+    "not a proof of HAOS-IIP",
+    "not a claim that ferrons embody HAOS-IIP",
+    "not a new materials theory",
+    "not a raw STFT-grid claim",
+    "computed STFT outputs are derived diagnostics, not published raw STFT maps"
+  ],
+  "combined_persistence_proxy": 0.9571924260892054,
+  "components": [
+    {
+      "component": "target_peak_presence",
+      "included_in_proxy": true,
+      "note": "15/15 target-window peak detection when value is 1.",
+      "source": "spectral_feature_summary.json",
+      "value": 1.0,
+      "weight": 1.0
+    },
+    {
+      "component": "spectral_recoverability",
+      "included_in_proxy": true,
+      "note": "Mean second-pass spectral recoverability proxy.",
+      "source": "spectral_feature_summary.json",
+      "value": 0.928455286742872,
+      "weight": 1.0
+    },
+    {
+      "component": "no_sustained_k_star",
+      "included_in_proxy": true,
+      "note": "Absence of sustained k-star collapse under current thresholds.",
+      "source": "spectral_feature_summary.json",
+      "value": 1.0,
+      "weight": 1.0
+    },
+    {
+      "component": "published_propagation_monotonicity",
+      "included_in_proxy": true,
+      "note": "Mean monotonic peak-delay fraction across published target-band STFT trace velocity groups.",
+      "source": "published_stft_trace_summary.json",
+      "value": 1.0,
+      "weight": 1.0
+    },
+    {
+      "component": "published_velocity_consistency",
+      "included_in_proxy": true,
+      "note": "Consistency of published target-band peak-delay fit with 1e5 m/s reference.",
+      "source": "published_stft_trace_summary.json",
+      "value": 0.7941176470588236,
+      "weight": 1.0
+    },
+    {
+      "component": "computed_envelope_match",
+      "included_in_proxy": true,
+      "note": "Mean envelope correlation between computed target-band STFT and published STFT intensity traces.",
+      "source": "computed_stft_summary.json",
+      "value": 0.9953179084718645,
+      "weight": 1.0
+    },
+    {
+      "component": "computed_velocity_consistency",
+      "included_in_proxy": true,
+      "note": "Consistency of computed target-band peak-delay fit with 1e5 m/s reference.",
+      "source": "computed_stft_summary.json",
+      "value": 0.9824561403508774,
+      "weight": 1.0
+    },
+    {
+      "component": "raw_stft_grid_boundary",
+      "included_in_proxy": false,
+      "note": "Raw STFT/time-frequency grid status: NO_STFT_DATA_FOUND. This is a data-availability boundary, not a persistence penalty.",
+      "source": "stft_feature_summary.json",
+      "value": null,
+      "weight": 0.0
+    }
+  ],
+  "computed_stft_component": {
+    "mean_abs_peak_time_delta_vs_published_ps": 5.841629999999998,
+    "mean_envelope_correlation_vs_published": 0.9953179084718645,
+    "mean_group_velocity_m_s": 101754.38596491226,
+    "sheet_thickness_assignment_note": "Fig.2a/Fig.2b headers do not include thickness labels; assignment follows the published Fig.2d propagation peak-time ordering.",
+    "status": "PASS",
+    "traces_computed": 8
+  },
+  "mode": "ferron_harmonic_address_persistence_summary",
+  "outputs": {
+    "component_plot": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_components.png",
+    "metrics_csv": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_metrics.csv",
+    "summary_json": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_summary.json",
+    "summary_md": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_summary.md"
+  },
+  "primary_paper_doi": "10.1038/s41563-026-02597-4",
+  "published_propagation_component": {
+    "group_velocity_rows": [
+      {
+        "group_velocity_m_s": 58823.529411764706,
+        "intercept_ps": -1.0000000000000036,
+        "monotonic_peak_delay": 1.0,
+        "n_distances": 4,
+        "r_squared": 0.9553719008264463,
+        "sheet_name": "Fig.2d",
+        "slope_ps_per_um": 17.0,
+        "source_file": "outputs/raw/Source data Fig.2.xlsx",
+        "thickness_nm": 96.0,
+        "velocity_consistency_with_1e5": 0.5882352941176471
+      },
+      {
+        "group_velocity_m_s": 100000.0,
+        "intercept_ps": 2.4999999999999964,
+        "monotonic_peak_delay": 1.0,
+        "n_distances": 4,
+        "r_squared": 0.9876543209876543,
+        "sheet_name": "Fig.2d",
+        "slope_ps_per_um": 10.0,
+        "source_file": "outputs/raw/Source data Fig.2.xlsx",
+        "thickness_nm": 224.0,
+        "velocity_consistency_with_1e5": 1.0
+      }
+    ],
+    "mean_group_velocity_m_s": 79411.76470588235,
+    "mean_velocity_consistency_with_1e5": 0.7941176470588236,
+    "status": "PASS",
+    "traces_found": 8
+  },
+  "raw_stft_grid_boundary_preserved": true,
+  "raw_stft_time_frequency_grid_status": "NO_STFT_DATA_FOUND",
+  "source_doi": "10.6084/m9.figshare.31895293",
+  "spectral_component": {
+    "k_star_detected": false,
+    "mean_peak_frequency_THz": 3.138932677149442,
+    "mean_spectral_recoverability": 0.928455286742872,
+    "peaks_found": 15,
+    "records_audited": 15,
+    "status": "PARTIAL"
+  },
+  "status": "PASS",
+  "target_frequency_THz": 3.13
+}

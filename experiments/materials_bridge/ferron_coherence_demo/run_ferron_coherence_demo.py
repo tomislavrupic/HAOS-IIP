@@ -29,6 +29,7 @@ from ferron_data_loader import (
     load_time_traces,
 )
 from ferron_computed_stft_diagnostic import run_computed_stft_diagnostic
+from ferron_harmonic_address_persistence_summary import run_harmonic_address_persistence_summary
 from ferron_recoverability_model import run_ferron_sweep
 from spectral_feature_audit import run_spectral_feature_audit
 from stft_feature_audit import run_published_stft_trace_audit, run_stft_feature_audit
@@ -175,6 +176,8 @@ def main() -> int:
     summary["published_stft_target_band_intensity_audit"] = published_stft_summary
     computed_stft_summary = run_computed_stft_diagnostic(root=ROOT, output_dir=OUTPUTS_DIR)
     summary["computed_from_time_trace_stft_diagnostic"] = computed_stft_summary
+    persistence_summary = run_harmonic_address_persistence_summary(output_dir=OUTPUTS_DIR)
+    summary["ferron_harmonic_address_persistence_summary"] = persistence_summary
     SUMMARY_PATH.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     _write_validation_markdown(
         summary,
@@ -185,6 +188,7 @@ def main() -> int:
         stft_summary,
         published_stft_summary,
         computed_stft_summary,
+        persistence_summary,
     )
     _print_console_summary(summary)
     return 0
@@ -350,6 +354,7 @@ def _write_validation_markdown(
     stft_summary: dict[str, Any],
     published_stft_summary: dict[str, Any],
     computed_stft_summary: dict[str, Any],
+    persistence_summary: dict[str, Any],
 ) -> None:
     provenance_lines = []
     if summary["data_status"] == "REAL_DATA_LOADED" and manifest:
@@ -392,6 +397,7 @@ def _write_validation_markdown(
     stft_lines = _stft_markdown_lines(stft_summary)
     published_stft_lines = _published_stft_markdown_lines(published_stft_summary)
     computed_stft_lines = _computed_stft_markdown_lines(computed_stft_summary)
+    persistence_lines = _persistence_markdown_lines(persistence_summary)
 
     content = f"""# Ferron Coherence Validation
 
@@ -430,6 +436,9 @@ def _write_validation_markdown(
 ## Computed From Time-Trace STFT Diagnostic
 {chr(10).join(computed_stft_lines)}
 
+## Ferron Harmonic-Address Persistence Summary
+{chr(10).join(persistence_lines)}
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP
@@ -447,6 +456,7 @@ def _print_console_summary(summary: dict[str, Any]) -> None:
     stft = summary.get("stft_time_frequency_audit") or {}
     published_stft = summary.get("published_stft_target_band_intensity_audit") or {}
     computed_stft = summary.get("computed_from_time_trace_stft_diagnostic") or {}
+    persistence = summary.get("ferron_harmonic_address_persistence_summary") or {}
     print(f"data_status: {summary['data_status']}")
     print(f"source_doi: {_format_optional(summary['source_doi'])}")
     print(f"files_loaded: {len(summary['files_loaded'])}")
@@ -491,6 +501,16 @@ def _print_console_summary(summary: dict[str, Any]) -> None:
     print(
         "computed_stft_bounded_interpretation: "
         f"{_format_optional(computed_stft.get('bounded_interpretation'))}"
+    )
+    print(f"ferron_persistence_status: {_format_optional(persistence.get('status'))}")
+    print(f"ferron_persistence_proxy: {_format_optional(persistence.get('combined_persistence_proxy'))}")
+    print(
+        "ferron_raw_stft_grid_boundary_preserved: "
+        f"{bool(persistence.get('raw_stft_grid_boundary_preserved'))}"
+    )
+    print(
+        "ferron_persistence_bounded_interpretation: "
+        f"{_format_optional(persistence.get('bounded_interpretation'))}"
     )
     print("outputs_written: experiments/materials_bridge/ferron_coherence_demo/outputs/")
 
@@ -728,6 +748,35 @@ def _computed_stft_markdown_lines(computed_stft_summary: dict[str, Any]) -> list
         for note in missing[:8]:
             lines.append(f"  - {note}")
     interpretation = computed_stft_summary.get("bounded_interpretation")
+    if interpretation:
+        lines.append(f"- bounded interpretation: {interpretation}")
+    return lines
+
+
+def _persistence_markdown_lines(persistence_summary: dict[str, Any]) -> list[str]:
+    if not persistence_summary:
+        return ["- Ferron harmonic-address persistence summary was not run."]
+    lines = [
+        f"- status: {_format_optional(persistence_summary.get('status'))}",
+        f"- mode: {_format_optional(persistence_summary.get('mode'))}",
+        f"- target frequency: {_format_optional(persistence_summary.get('target_frequency_THz'))} THz",
+        f"- combined persistence proxy: {_format_optional(persistence_summary.get('combined_persistence_proxy'))}",
+        "- raw STFT/time-frequency grid status remains: "
+        f"{_format_optional(persistence_summary.get('raw_stft_time_frequency_grid_status'))}",
+        "- raw STFT grid boundary preserved: "
+        f"{bool(persistence_summary.get('raw_stft_grid_boundary_preserved'))}",
+    ]
+    components = persistence_summary.get("components") or []
+    if components:
+        lines.append("- components:")
+        for row in components:
+            included = "included" if row.get("included_in_proxy") else "not included"
+            lines.append(
+                "  - "
+                f"{row.get('component')}: {_format_optional(row.get('value'))} "
+                f"({included}; source={row.get('source')})"
+            )
+    interpretation = persistence_summary.get("bounded_interpretation")
     if interpretation:
         lines.append(f"- bounded interpretation: {interpretation}")
     return lines

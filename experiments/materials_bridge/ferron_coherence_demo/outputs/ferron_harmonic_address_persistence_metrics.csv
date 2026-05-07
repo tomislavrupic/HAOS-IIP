@@ -1,0 +1,9 @@
+component,value,weight,source,included_in_proxy,note
+target_peak_presence,1,1,spectral_feature_summary.json,True,15/15 target-window peak detection when value is 1.
+spectral_recoverability,0.9284552867,1,spectral_feature_summary.json,True,Mean second-pass spectral recoverability proxy.
+no_sustained_k_star,1,1,spectral_feature_summary.json,True,Absence of sustained k-star collapse under current thresholds.
+published_propagation_monotonicity,1,1,published_stft_trace_summary.json,True,Mean monotonic peak-delay fraction across published target-band STFT trace velocity groups.
+published_velocity_consistency,0.7941176471,1,published_stft_trace_summary.json,True,Consistency of published target-band peak-delay fit with 1e5 m/s reference.
+computed_envelope_match,0.9953179085,1,computed_stft_summary.json,True,Mean envelope correlation between computed target-band STFT and published STFT intensity traces.
+computed_velocity_consistency,0.9824561404,1,computed_stft_summary.json,True,Consistency of computed target-band peak-delay fit with 1e5 m/s reference.
+raw_stft_grid_boundary,,0,stft_feature_summary.json,False,"Raw STFT/time-frequency grid status: NO_STFT_DATA_FOUND. This is a data-availability boundary, not a persistence penalty."

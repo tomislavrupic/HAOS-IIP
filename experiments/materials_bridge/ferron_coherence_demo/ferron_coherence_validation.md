@@ -100,6 +100,24 @@ PASS
   - thickness=96 nm | slope=14.25 ps/um | velocity=70175.4 m/s | r_squared=0.998157
 - bounded interpretation: Computed STFT target-band envelopes were derived from the raw Fig. 2 time traces using a 10 ps window and 5 ps step. This is a derived diagnostic, not raw published STFT-grid parsing. It can be compared to the published Fig. 2d target-band STFT intensity traces as a bounded reproducibility check.
 
+## Ferron Harmonic-Address Persistence Summary
+- status: PASS
+- mode: ferron_harmonic_address_persistence_summary
+- target frequency: 3.13 THz
+- combined persistence proxy: 0.957192
+- raw STFT/time-frequency grid status remains: NO_STFT_DATA_FOUND
+- raw STFT grid boundary preserved: True
+- components:
+  - target_peak_presence: 1 (included; source=spectral_feature_summary.json)
+  - spectral_recoverability: 0.928455 (included; source=spectral_feature_summary.json)
+  - no_sustained_k_star: 1 (included; source=spectral_feature_summary.json)
+  - published_propagation_monotonicity: 1 (included; source=published_stft_trace_summary.json)
+  - published_velocity_consistency: 0.794118 (included; source=published_stft_trace_summary.json)
+  - computed_envelope_match: 0.995318 (included; source=computed_stft_summary.json)
+  - computed_velocity_consistency: 0.982456 (included; source=computed_stft_summary.json)
+  - raw_stft_grid_boundary: None (not included; source=stft_feature_summary.json)
+- bounded interpretation: The ferron sidecar shows a stable target-window spectral feature near 3.13 THz, published target-band STFT intensity traces with monotonic propagation delay, and computed-from-time-trace STFT envelopes that closely match the published traces. The raw STFT time-frequency grid remains unavailable in the downloaded XLSX files; that boundary is preserved. This is a bounded external-data persistence summary, not a proof or materials-theory claim.
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP

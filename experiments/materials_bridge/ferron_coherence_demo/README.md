@@ -63,6 +63,9 @@ uv run --with numpy --with matplotlib --with openpyxl python experiments/materia
 - `outputs/computed_stft_diagnostic/computed_stft_summary.json`
 - `outputs/computed_stft_diagnostic/computed_stft_trace_records.csv`
 - `outputs/computed_stft_diagnostic/computed_vs_published_stft_comparison.csv`
+- `outputs/ferron_harmonic_address_persistence_summary.json`
+- `outputs/ferron_harmonic_address_persistence_summary.md`
+- `outputs/ferron_harmonic_address_persistence_metrics.csv`
 - plot PNGs under `outputs/`
 - `ferron_coherence_validation.md`
 
@@ -124,6 +127,19 @@ It is explicitly labeled `computed_from_time_trace_stft_diagnostic`.
 This diagnostic is not raw published STFT data. It is a derived reproducibility
 check that can be compared with the published Fig. 2d target-band STFT intensity
 traces.
+
+## Ferron Harmonic-Address Persistence Summary
+
+The unified summary combines the bounded outputs already produced by the
+sidecar: spectral peak recoverability near `3.13 THz`, published Fig. 2d
+target-band propagation traces, computed-from-time-trace STFT diagnostics, and
+the explicit raw-grid boundary. It writes a component ledger and a single
+combined persistence proxy for this sidecar run.
+
+The summary does not create a new evidence layer. The raw STFT/time-frequency
+grid remains `NO_STFT_DATA_FOUND` unless a real file with time, frequency, and
+amplitude axes is present. Computed STFT outputs remain derived diagnostics,
+not published raw STFT maps.
 
 ## HAOS Mapping
 
