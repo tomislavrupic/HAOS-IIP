@@ -60,6 +60,9 @@ uv run --with numpy --with matplotlib --with openpyxl python experiments/materia
 - `outputs/published_stft_trace_records.csv`
 - `outputs/published_stft_peak_times.csv`
 - `outputs/published_stft_group_velocity.csv`
+- `outputs/computed_stft_diagnostic/computed_stft_summary.json`
+- `outputs/computed_stft_diagnostic/computed_stft_trace_records.csv`
+- `outputs/computed_stft_diagnostic/computed_vs_published_stft_comparison.csv`
 - plot PNGs under `outputs/`
 - `ferron_coherence_validation.md`
 
@@ -111,6 +114,16 @@ proxies.
 This audit preserves the raw-grid boundary: `NO_STFT_DATA_FOUND` remains true
 for raw time-frequency maps, while the published target-band intensity traces
 are treated as their own bounded readout.
+
+## Computed From Time-Trace STFT Diagnostic
+
+The computed STFT diagnostic derives target-band envelopes from the raw Fig. 2a
+and Fig. 2b transient-reflectance traces using a `10 ps` window and `5 ps` step.
+It is explicitly labeled `computed_from_time_trace_stft_diagnostic`.
+
+This diagnostic is not raw published STFT data. It is a derived reproducibility
+check that can be compared with the published Fig. 2d target-band STFT intensity
+traces.
 
 ## HAOS Mapping
 

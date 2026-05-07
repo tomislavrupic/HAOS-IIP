@@ -1,0 +1,9 @@
+source_file,sheet_name,trace_id,distance_um,thickness_nm,n_time_points,peak_time_ps,peak_intensity,fwhm_width_ps,arrival_delay_from_zero_um_ps
+outputs/raw/Source data Fig.2.xlsx,Fig.2a,Source_data_Fig.2_Fig.2a_dR_R_0um,0,224,27,4.71116,1,5.301388559,0
+outputs/raw/Source data Fig.2.xlsx,Fig.2a,Source_data_Fig.2_Fig.2a_dR_R_2um,2,224,27,19.71116,1,26.78791122,15
+outputs/raw/Source data Fig.2.xlsx,Fig.2a,Source_data_Fig.2_Fig.2a_dR_R_4um,4,224,27,34.71116,1,52.9584519,30
+outputs/raw/Source data Fig.2.xlsx,Fig.2a,Source_data_Fig.2_Fig.2a_dR_R_6um,6,224,27,49.71116,1,80.30430184,45
+outputs/raw/Source data Fig.2.xlsx,Fig.2b,Source_data_Fig.2_Fig.2b_dR_R_0um,0,96,27,4.71116,1,12.3564972,0
+outputs/raw/Source data Fig.2.xlsx,Fig.2b,Source_data_Fig.2_Fig.2b_dR_R_2um,2,96,27,29.71116,1,33.77152776,25
+outputs/raw/Source data Fig.2.xlsx,Fig.2b,Source_data_Fig.2_Fig.2b_dR_R_4um,4,96,27,59.71116,1,53.3728917,55
+outputs/raw/Source data Fig.2.xlsx,Fig.2b,Source_data_Fig.2_Fig.2b_dR_R_6um,6,96,27,89.71116,1,60.35631603,85

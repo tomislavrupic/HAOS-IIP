@@ -82,6 +82,24 @@ PASS
   - thickness=224 nm | slope=10 ps/um | velocity=100000 m/s | r_squared=0.987654
 - bounded interpretation: Published target-band STFT intensity traces were parsed as post-processed 3.13 THz-band envelope data. Peak arrival time increases with distance in the parsed thickness groups, supporting a bounded propagation-readout audit. This does not alter the raw STFT-grid result: no raw time-frequency grid is claimed.
 
+## Computed From Time-Trace STFT Diagnostic
+- status: PASS
+- mode: computed_from_time_trace_stft_diagnostic
+- raw STFT/time-frequency grid status remains: NO_STFT_DATA_FOUND
+- target frequency: 3.13 THz
+- frequency tolerance: +/- 0.05 THz
+- window / step: 10 ps / 5 ps
+- traces computed: 8
+- time points computed: 216
+- mean computed group velocity m/s: 101754
+- mean envelope correlation vs published: 0.995318
+- mean absolute peak-time delta vs published ps: 5.84163
+- sheet thickness assignment note: Fig.2a/Fig.2b headers do not include thickness labels; assignment follows the published Fig.2d propagation peak-time ordering.
+- computed group velocity rows:
+  - thickness=224 nm | slope=7.5 ps/um | velocity=133333 m/s | r_squared=1
+  - thickness=96 nm | slope=14.25 ps/um | velocity=70175.4 m/s | r_squared=0.998157
+- bounded interpretation: Computed STFT target-band envelopes were derived from the raw Fig. 2 time traces using a 10 ps window and 5 ps step. This is a derived diagnostic, not raw published STFT-grid parsing. It can be compared to the published Fig. 2d target-band STFT intensity traces as a bounded reproducibility check.
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP

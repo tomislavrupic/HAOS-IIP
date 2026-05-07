@@ -1,0 +1,53 @@
+{
+  "bounded_interpretation": "Computed STFT target-band envelopes were derived from the raw Fig. 2 time traces using a 10 ps window and 5 ps step. This is a derived diagnostic, not raw published STFT-grid parsing. It can be compared to the published Fig. 2d target-band STFT intensity traces as a bounded reproducibility check.",
+  "comparison_records": 8,
+  "frequency_tolerance_THz": 0.05,
+  "group_velocity_rows": [
+    {
+      "group_velocity_m_s": 133333.3333333333,
+      "intercept_ps": 4.711160000000003,
+      "monotonic_peak_delay": 1.0,
+      "n_distances": 4,
+      "r_squared": 1.0,
+      "sheet_name": "Fig.2a",
+      "slope_ps_per_um": 7.500000000000001,
+      "source_file": "outputs/raw/Source data Fig.2.xlsx",
+      "thickness_nm": 224.0
+    },
+    {
+      "group_velocity_m_s": 70175.4385964912,
+      "intercept_ps": 3.2111600000000067,
+      "monotonic_peak_delay": 1.0,
+      "n_distances": 4,
+      "r_squared": 0.9981566820276497,
+      "sheet_name": "Fig.2b",
+      "slope_ps_per_um": 14.250000000000005,
+      "source_file": "outputs/raw/Source data Fig.2.xlsx",
+      "thickness_nm": 96.0
+    }
+  ],
+  "mean_abs_peak_time_delta_vs_published_ps": 5.841629999999998,
+  "mean_envelope_correlation_vs_published": 0.9953179084718645,
+  "mean_group_velocity_m_s": 101754.38596491226,
+  "missing_data_notes": [],
+  "mode": "computed_from_time_trace_stft_diagnostic",
+  "outputs_dir": "/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/materials_bridge/ferron_coherence_demo/outputs/computed_stft_diagnostic",
+  "peak_records": 8,
+  "raw_stft_time_frequency_grid_status": "NO_STFT_DATA_FOUND",
+  "sheet_thickness_assignment_nm": {
+    "Fig.2a": 224.0,
+    "Fig.2b": 96.0
+  },
+  "sheet_thickness_assignment_note": "Fig.2a/Fig.2b headers do not include thickness labels; assignment follows the published Fig.2d propagation peak-time ordering.",
+  "source_sheets": [
+    "Fig.2a",
+    "Fig.2b"
+  ],
+  "status": "PASS",
+  "step_ps": 5.0,
+  "target_frequency_THz": 3.13,
+  "time_points_computed": 216,
+  "traces_computed": 8,
+  "velocity_groups": 2,
+  "window_ps": 10.0
+}

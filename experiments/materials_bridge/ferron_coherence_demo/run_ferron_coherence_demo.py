@@ -28,6 +28,7 @@ from ferron_data_loader import (
     load_stft_amplitudes,
     load_time_traces,
 )
+from ferron_computed_stft_diagnostic import run_computed_stft_diagnostic
 from ferron_recoverability_model import run_ferron_sweep
 from spectral_feature_audit import run_spectral_feature_audit
 from stft_feature_audit import run_published_stft_trace_audit, run_stft_feature_audit
@@ -172,6 +173,8 @@ def main() -> int:
     summary["stft_time_frequency_audit"] = stft_summary
     published_stft_summary = run_published_stft_trace_audit(root=ROOT, output_dir=OUTPUTS_DIR)
     summary["published_stft_target_band_intensity_audit"] = published_stft_summary
+    computed_stft_summary = run_computed_stft_diagnostic(root=ROOT, output_dir=OUTPUTS_DIR)
+    summary["computed_from_time_trace_stft_diagnostic"] = computed_stft_summary
     SUMMARY_PATH.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     _write_validation_markdown(
         summary,
@@ -181,6 +184,7 @@ def main() -> int:
         spectral_summary,
         stft_summary,
         published_stft_summary,
+        computed_stft_summary,
     )
     _print_console_summary(summary)
     return 0
@@ -345,6 +349,7 @@ def _write_validation_markdown(
     spectral_summary: dict[str, Any],
     stft_summary: dict[str, Any],
     published_stft_summary: dict[str, Any],
+    computed_stft_summary: dict[str, Any],
 ) -> None:
     provenance_lines = []
     if summary["data_status"] == "REAL_DATA_LOADED" and manifest:
@@ -386,6 +391,7 @@ def _write_validation_markdown(
     spectral_lines = _spectral_markdown_lines(spectral_summary)
     stft_lines = _stft_markdown_lines(stft_summary)
     published_stft_lines = _published_stft_markdown_lines(published_stft_summary)
+    computed_stft_lines = _computed_stft_markdown_lines(computed_stft_summary)
 
     content = f"""# Ferron Coherence Validation
 
@@ -421,6 +427,9 @@ def _write_validation_markdown(
 ## Published STFT Target-Band Intensity Trace Audit
 {chr(10).join(published_stft_lines)}
 
+## Computed From Time-Trace STFT Diagnostic
+{chr(10).join(computed_stft_lines)}
+
 ## Limitations
 - external-data probe only
 - no proof of HAOS-IIP
@@ -437,6 +446,7 @@ def _print_console_summary(summary: dict[str, Any]) -> None:
     spectral = summary.get("spectral_feature_audit") or {}
     stft = summary.get("stft_time_frequency_audit") or {}
     published_stft = summary.get("published_stft_target_band_intensity_audit") or {}
+    computed_stft = summary.get("computed_from_time_trace_stft_diagnostic") or {}
     print(f"data_status: {summary['data_status']}")
     print(f"source_doi: {_format_optional(summary['source_doi'])}")
     print(f"files_loaded: {len(summary['files_loaded'])}")
@@ -470,6 +480,17 @@ def _print_console_summary(summary: dict[str, Any]) -> None:
     print(
         "published_stft_bounded_interpretation: "
         f"{_format_optional(published_stft.get('bounded_interpretation'))}"
+    )
+    print(f"computed_stft_status: {_format_optional(computed_stft.get('status'))}")
+    print(f"computed_stft_traces_computed: {_format_optional(computed_stft.get('traces_computed'))}")
+    print(f"computed_stft_mean_group_velocity_m_s: {_format_optional(computed_stft.get('mean_group_velocity_m_s'))}")
+    print(
+        "computed_stft_mean_envelope_correlation_vs_published: "
+        f"{_format_optional(computed_stft.get('mean_envelope_correlation_vs_published'))}"
+    )
+    print(
+        "computed_stft_bounded_interpretation: "
+        f"{_format_optional(computed_stft.get('bounded_interpretation'))}"
     )
     print("outputs_written: experiments/materials_bridge/ferron_coherence_demo/outputs/")
 
@@ -662,6 +683,51 @@ def _published_stft_markdown_lines(published_stft_summary: dict[str, Any]) -> li
         for note in missing[:8]:
             lines.append(f"  - {note}")
     interpretation = published_stft_summary.get("bounded_interpretation")
+    if interpretation:
+        lines.append(f"- bounded interpretation: {interpretation}")
+    return lines
+
+
+def _computed_stft_markdown_lines(computed_stft_summary: dict[str, Any]) -> list[str]:
+    if not computed_stft_summary:
+        return ["- Computed STFT diagnostic was not run."]
+    lines = [
+        f"- status: {_format_optional(computed_stft_summary.get('status'))}",
+        f"- mode: {_format_optional(computed_stft_summary.get('mode'))}",
+        "- raw STFT/time-frequency grid status remains: "
+        f"{_format_optional(computed_stft_summary.get('raw_stft_time_frequency_grid_status'))}",
+        f"- target frequency: {_format_optional(computed_stft_summary.get('target_frequency_THz'))} THz",
+        f"- frequency tolerance: +/- {_format_optional(computed_stft_summary.get('frequency_tolerance_THz'))} THz",
+        f"- window / step: {_format_optional(computed_stft_summary.get('window_ps'))} ps / "
+        f"{_format_optional(computed_stft_summary.get('step_ps'))} ps",
+        f"- traces computed: {_format_optional(computed_stft_summary.get('traces_computed'))}",
+        f"- time points computed: {_format_optional(computed_stft_summary.get('time_points_computed'))}",
+        f"- mean computed group velocity m/s: {_format_optional(computed_stft_summary.get('mean_group_velocity_m_s'))}",
+        "- mean envelope correlation vs published: "
+        f"{_format_optional(computed_stft_summary.get('mean_envelope_correlation_vs_published'))}",
+        "- mean absolute peak-time delta vs published ps: "
+        f"{_format_optional(computed_stft_summary.get('mean_abs_peak_time_delta_vs_published_ps'))}",
+    ]
+    assignment_note = computed_stft_summary.get("sheet_thickness_assignment_note")
+    if assignment_note:
+        lines.append(f"- sheet thickness assignment note: {assignment_note}")
+    group_rows = computed_stft_summary.get("group_velocity_rows") or []
+    if group_rows:
+        lines.append("- computed group velocity rows:")
+        for row in group_rows:
+            lines.append(
+                "  - "
+                f"thickness={_format_optional(row.get('thickness_nm'))} nm | "
+                f"slope={_format_optional(row.get('slope_ps_per_um'))} ps/um | "
+                f"velocity={_format_optional(row.get('group_velocity_m_s'))} m/s | "
+                f"r_squared={_format_optional(row.get('r_squared'))}"
+            )
+    missing = computed_stft_summary.get("missing_data_notes") or []
+    if missing:
+        lines.append("- missing data notes:")
+        for note in missing[:8]:
+            lines.append(f"  - {note}")
+    interpretation = computed_stft_summary.get("bounded_interpretation")
     if interpretation:
         lines.append(f"- bounded interpretation: {interpretation}")
     return lines

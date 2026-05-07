@@ -1,0 +1,9 @@
+computed_trace_id,published_trace_id,distance_um,thickness_nm,n_overlap_points,computed_peak_time_ps,published_peak_time_ps,peak_time_delta_ps,envelope_correlation,mean_abs_envelope_error
+Source_data_Fig.2_Fig.2b_dR_R_0um,Source_data_Fig.2_Fig.2d_STFT_Int_0_96,0,96,26,4.71116,5,-0.28884,0.9994730754,0.007716260743
+Source_data_Fig.2_Fig.2a_dR_R_0um,Source_data_Fig.2_Fig.2d_STFT_Int_0_224,0,224,26,4.71116,5,-0.28884,0.9985996131,0.006417181307
+Source_data_Fig.2_Fig.2b_dR_R_2um,Source_data_Fig.2_Fig.2d_STFT_Int_2_96,2,96,26,29.71116,30,-0.28884,0.99857417,0.01548144166
+Source_data_Fig.2_Fig.2a_dR_R_2um,Source_data_Fig.2_Fig.2d_STFT_Int_2_224,2,224,26,19.71116,20,-0.28884,0.9969360003,0.02961587961
+Source_data_Fig.2_Fig.2b_dR_R_4um,Source_data_Fig.2_Fig.2d_STFT_Int_4_96,4,96,26,59.71116,55,4.71116,0.9968024339,0.02156033542
+Source_data_Fig.2_Fig.2a_dR_R_4um,Source_data_Fig.2_Fig.2d_STFT_Int_4_224,4,224,26,34.71116,40,-5.28884,0.9932400976,0.03662476846
+Source_data_Fig.2_Fig.2b_dR_R_6um,Source_data_Fig.2_Fig.2d_STFT_Int_6_96,6,96,26,89.71116,110,-20.28884,0.9893325575,0.05081818169
+Source_data_Fig.2_Fig.2a_dR_R_6um,Source_data_Fig.2_Fig.2d_STFT_Int_6_224,6,224,26,49.71116,65,-15.28884,0.98958532,0.04047625588
