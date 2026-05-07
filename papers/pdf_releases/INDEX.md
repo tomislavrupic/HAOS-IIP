@@ -243,6 +243,17 @@ diagnostic reports mean envelope correlation `0.995318`; the unified persistence
 proxy is `0.957192`; and the raw STFT/time-frequency grid remains
 `NO_STFT_DATA_FOUND`.
 
+### 2.48 Part XLVIII. External spin-sector materials bridge
+
+1. `65.1` Materials Bridge Line B: Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP
+
+Bounded status: the alpha-Fe2O3 magnon prediction layer is now represented by a
+first-class sidecar artifact and numbered release. The release records
+`persistence_proxy=0.902`, the reported group velocity range `17.31-24.43 km/s`,
+and the boundary `NO_PUBLIC_STFT_GRID_FOUND`. Its evidence class is
+literature/user-audit seeded, not `REAL_DATA_LOADED`; no raw-data or `k_star`
+claim is made without a future local raw-data audit.
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -322,6 +333,7 @@ proxy is `0.957192`; and the raw STFT/time-frequency grid remains
 - `56.5` FMO Topology Contrast and Lessons for HAOS-IIP Biology Telemetry
 - `63.1` Celestial Boundary Toy Probes and Claim-Gated Physics Bridge for HAOS-IIP
 - `64.1` Materials Bridge Line A: Ferron Coherence Recoverability Probe for HAOS-IIP
+- `65.1` Materials Bridge Line B: Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

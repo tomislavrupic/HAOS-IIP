@@ -49,16 +49,22 @@ papers. These are not frozen-core theory papers and are not proof claims. They
 record whether HAOS-style recoverability telemetry can be applied to external
 public datasets without fabricating missing structure.
 
-Current external-data release:
+Current external-data releases:
 
-1. `64.1` Materials Bridge Line A: Ferron Coherence Recoverability Probe for
+1. `65.1` Materials Bridge Line B: Magnon Address Stability in alpha-Fe2O3 for
    HAOS-IIP
 2. Primary PDF:
-   `pdf_releases/64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe for HAOS-IIP.pdf`
+   `pdf_releases/65.1 Materials Bridge Line B - Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP.pdf`
 3. Source:
+   `materials_bridge_line_b_magnon_address_stability_alpha_fe2o3.tex`
+4. `64.1` Materials Bridge Line A: Ferron Coherence Recoverability Probe for
+   HAOS-IIP
+5. Primary PDF:
+   `pdf_releases/64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe for HAOS-IIP.pdf`
+6. Source:
    `materials_bridge_line_a_ferron_coherence_recoverability_probe_for_haos_iip.tex`
 
-Bounded result: real Figshare ferron / NbOI2 data loads, `15/15`
+Line A bounded result: real Figshare ferron / NbOI2 data loads, `15/15`
 target-window spectral records are detected near `3.13 THz`, mean spectral
 recoverability is `0.928455`, no `k_star` collapse is detected under the
 current proxy thresholds, published Fig. 2d target-band STFT intensity traces
@@ -68,6 +74,14 @@ published traces. The unified persistence summary reports
 `ferron_persistence_proxy=0.957192`. No raw STFT/time-frequency recoverability
 claim is made because no validated STFT grid was found in the downloaded XLSX
 files.
+
+Line B bounded result: the alpha-Fe2O3 magnon prediction layer now has a
+first-class sidecar artifact and numbered PDF release. It records the
+user-provided persistence proxy `0.902`, the literature-reported group velocity
+range `17.31-24.43 km/s`, and the boundary
+`NO_PUBLIC_STFT_GRID_FOUND`. Its evidence class is
+`literature_report_plus_user_provided_audit_anchor`, not real-data-loaded; local
+raw-data reproduction remains pending.
 
 ## 3. Compression map for Phase I
 

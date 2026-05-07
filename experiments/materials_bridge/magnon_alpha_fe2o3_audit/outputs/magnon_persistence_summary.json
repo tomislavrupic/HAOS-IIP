@@ -1,0 +1,54 @@
+{
+  "bridge_line": "Materials Bridge Line B",
+  "title": "Magnon Address Stability in alpha-Fe2O3",
+  "status": "PASS_LITERATURE_USER_AUDIT_SEEDED",
+  "data_status": "NO_RAW_PUBLIC_DATA_LOADED",
+  "evidence_class": "literature_report_plus_user_provided_audit_anchor",
+  "raw_stft_time_frequency_grid_status": "NO_PUBLIC_STFT_GRID_FOUND",
+  "local_reproduction_status": "PENDING_RAW_DATA_ARTIFACT",
+  "release_date": "2026-05-07",
+  "primary_material": "alpha-Fe2O3",
+  "carrier": "antiferromagnetic / altermagnetic spin order",
+  "recoverable_structure": "coherent sub-THz exchange magnon packet",
+  "observable_readout": "time-resolved magneto-optical magnon traces, spectra, and propagation delay",
+  "perturbation_axis": "crystal orientation, wavevector direction, thickness/boundary condition, magnetic field, pump delay",
+  "visible_failure": "broadband thermalized response, amplitude collapse, loss of directional propagation, or no recoverable narrowband magnon feature",
+  "persistence_proxy": 0.902,
+  "persistence_proxy_status": "USER_PROVIDED_PENDING_LOCAL_REPRODUCTION",
+  "group_velocity_min_km_s": 17.31,
+  "group_velocity_max_km_s": 24.43,
+  "group_velocity_span_km_s": 7.12,
+  "propagation_status": "micrometer_scale_directional_literature_reported",
+  "spectral_status": "narrowband_sub_thz_exchange_magnons_literature_reported",
+  "k_star_status": "NOT_CLAIMED_WITHOUT_RAW_SWEEP",
+  "first_visible_failure_status": "NOT_CLAIMED_WITHOUT_RAW_SWEEP",
+  "prediction_records": [
+    "HAOS-PRED-010",
+    "HAOS-PRED-011",
+    "HAOS-PRED-012",
+    "HAOS-PRED-013"
+  ],
+  "public_sources": [
+    {
+      "label": "Li et al., Anisotropic Coherent Propagation of Sub-Terahertz Magnons in Altermagnetic alpha-Fe2O3",
+      "doi": "10.1002/adom.202503604",
+      "url": "https://doi.org/10.1002/adom.202503604",
+      "role": "primary literature anchor for group velocity and anisotropic coherent propagation"
+    },
+    {
+      "label": "Yang et al., Spin-orbit torque manipulation of sub-terahertz magnons in antiferromagnetic alpha-Fe2O3",
+      "doi": "10.1038/s41467-024-48431-w",
+      "url": "https://doi.org/10.1038/s41467-024-48431-w",
+      "role": "secondary alpha-Fe2O3 magnon control context"
+    }
+  ],
+  "bounded_interpretation": "Line B records a first-class magnon bridge artifact for alpha-Fe2O3, but its current metrics are literature/user-audit seeded. It supports a bounded spin-sector persistence note and prediction package, while leaving raw-data recoverability validation pending until open time-domain or time-frequency tables are committed and parsed locally.",
+  "non_claims": [
+    "not a proof of HAOS-IIP",
+    "not a new magnon theory",
+    "not a raw-data external bridge pass",
+    "not a claim that alpha-Fe2O3 embodies HAOS-IIP",
+    "no k_star claim without raw sweep data",
+    "no raw STFT/time-frequency claim without a public validated grid"
+  ]
+}

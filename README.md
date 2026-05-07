@@ -227,19 +227,22 @@ Short note:
 
 ## Program Status
 
-**Current public milestone (64.1 materials bridge sidecar after 53.x physics bridge):**
-The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line closes through the `52.x` scalar-carrier releases and the `53.x` physics-bridge observable stack. Release `64.1` adds the first real external materials-data sidecar: a ferron / NbOI2 bridge over public Figshare data from Choe et al. It is outside the frozen phase contract and does not modify frozen core, frozen phases, or telemetry definitions.
+**Current public milestone (65.1 materials bridge sidecar after 53.x physics bridge):**
+The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line closes through the `52.x` scalar-carrier releases and the `53.x` physics-bridge observable stack. Release `64.1` adds the first real external materials-data sidecar: a ferron / NbOI2 bridge over public Figshare data from Choe et al. Release `65.1` adds the parallel spin-sector Line B magnon sidecar for alpha-Fe2O3 with a first-class artifact and explicit raw-data boundary. Both are outside the frozen phase contract and do not modify frozen core, frozen phases, or telemetry definitions.
 
-The public repository now contains five stacked bounded results:
+The public repository now contains six stacked bounded results:
 
 - closed derivation ladder: `T1 -> T2 -> T4 -> T5 -> T6 -> T7 -> T8`, plus `F1-F4`
 - frozen vector validation spine through `V1-V6b` and clean-baseline identity resolution
 - scalar-carrier geometry closure on one common `3D` kernel-graph family, followed by a positive robustness pass, a bounded local metric-field closure, a shell-native response read, an honest open first transient baseline `52.3`, a bounded shell-native clean-line current closure `52.4`, and a bounded smooth-inhomogeneity transport closure `52.5` on the smooth radial branch
 - external physics-bridge observables `53.0`, which separate shell-native inverse-square and power-law closure from raw local-gradient residuals, split localized bump response into weak PASS and stress OPEN boundaries, and now close the tested disorder-native seed margin
 - external materials bridge `64.1`, which loads real published ferron / NbOI2 source data, audits `15/15` target-window spectral records near `3.13 THz`, reports mean spectral recoverability `0.928455`, parses published target-band STFT intensity traces as post-processed envelope data, computes a derived time-trace STFT diagnostic with mean envelope correlation `0.995318`, and records a unified persistence proxy `0.957192` while preserving `NO_STFT_DATA_FOUND` for raw time-frequency grids
+- external spin-sector materials bridge `65.1`, which records the alpha-Fe2O3 magnon address-stability artifact with seeded persistence proxy `0.902`, literature-reported group velocity range `17.31-24.43 km/s`, and `NO_PUBLIC_STFT_GRID_FOUND` / `NO_RAW_PUBLIC_DATA_LOADED` boundaries until a local raw-data audit is committed
 
 Milestone anchors:
 
+- [65.1 Materials Bridge Line B - Magnon Address Stability in alpha-Fe2O3](papers/pdf_releases/65.1%20Materials%20Bridge%20Line%20B%20-%20Magnon%20Address%20Stability%20in%20alpha-Fe2O3%20for%20HAOS-IIP.pdf)
+- [Materials Bridge Line B magnon sidecar](experiments/materials_bridge/magnon_alpha_fe2o3_audit/)
 - [64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe](papers/pdf_releases/64.1%20Materials%20Bridge%20Line%20A%20-%20Ferron%20Coherence%20Recoverability%20Probe%20for%20HAOS-IIP.pdf)
 - [Materials Bridge Line A ferron sidecar](experiments/materials_bridge/ferron_coherence_demo/)
 - [Physics Bridge 53.0](docs/notes/foundations/HAOS_IIP_Physics_Bridge_53_0_v1.md)
@@ -283,7 +286,8 @@ External-data sidecar update:
 - The raw STFT/time-frequency audit inspected the raw XLSX files and found no validated raw time-frequency grid; therefore no raw STFT-grid recoverability claim is made.
 - This is an external-data bridge validation and bounded persistence summary only. It does not modify the frozen core, does not modify frozen phases, and does not prove HAOS-IIP.
 - [Ferron extension testable signatures](predictions/ferron_extension_testable_signatures.md) turns the sidecar into four falsifiable prediction records: polar-mode address selection, thickness / boundary propagation dependence, re-addressing after secondary perturbation, and cross-dataset narrowband control discrimination.
-- [Magnon address stability testable signatures](predictions/magnon_address_stability_testable_signatures.md) adds four spin-sector prediction records seeded by the ferron bridge and a user-provided alpha-Fe2O3 audit anchor; local magnon audit provenance remains a boundary until the audit artifact is committed.
+- [Materials Bridge Line B magnon sidecar](experiments/materials_bridge/magnon_alpha_fe2o3_audit/) records the alpha-Fe2O3 spin-sector bridge artifact with persistence proxy `0.902`, reported velocity range `17.31-24.43 km/s`, and raw-data boundaries `NO_RAW_PUBLIC_DATA_LOADED` and `NO_PUBLIC_STFT_GRID_FOUND`.
+- [Magnon address stability testable signatures](predictions/magnon_address_stability_testable_signatures.md) adds four spin-sector prediction records seeded by the ferron bridge and the alpha-Fe2O3 Line B audit anchor; local raw-data reproduction remains pending.
 
 ## Reproducibility Contract
 
@@ -336,6 +340,7 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [65.1 Materials Bridge Line B - Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP](papers/pdf_releases/65.1%20Materials%20Bridge%20Line%20B%20-%20Magnon%20Address%20Stability%20in%20alpha-Fe2O3%20for%20HAOS-IIP.pdf)
 - [64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe for HAOS-IIP](papers/pdf_releases/64.1%20Materials%20Bridge%20Line%20A%20-%20Ferron%20Coherence%20Recoverability%20Probe%20for%20HAOS-IIP.pdf)
 - [53.4 Seed-Universal Disorder Flux Release](papers/pdf_releases/53.4%20Seed-Universal%20Disorder%20Flux%20Release%20for%20HAOS-IIP.pdf)
 - [53.3 Power-Law Scaling Boundary Release](papers/pdf_releases/53.3%20Power-Law%20Scaling%20Boundary%20Release%20for%20HAOS-IIP.pdf)

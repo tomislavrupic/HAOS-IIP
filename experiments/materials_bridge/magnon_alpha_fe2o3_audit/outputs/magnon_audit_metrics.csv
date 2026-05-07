@@ -1,0 +1,6 @@
+metric,value,unit,evidence_kind,source,included_in_line_b_summary,boundary_note
+persistence_proxy,0.902,unitless,user_provided_audit_anchor,"local conversation record, pending committed raw-data reproduction",True,Treat as seeded anchor until raw alpha-Fe2O3 audit tables are committed.
+group_velocity_min,17.31,km/s,literature_report,"Li et al. 2026, DOI 10.1002/adom.202503604",True,Reported velocity range; no local trace refit is claimed here.
+group_velocity_max,24.43,km/s,literature_report,"Li et al. 2026, DOI 10.1002/adom.202503604",True,Reported velocity range; no local trace refit is claimed here.
+raw_stft_time_frequency_grid_found,0.0,boolean_0_or_1,boundary_status,current repo audit state,True,NO_PUBLIC_STFT_GRID_FOUND; no raw STFT recoverability claim is made.
+local_raw_data_loaded,0.0,boolean_0_or_1,boundary_status,current repo audit state,True,No alpha-Fe2O3 raw data files are committed in this sidecar yet.
