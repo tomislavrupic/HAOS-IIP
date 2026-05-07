@@ -42,7 +42,24 @@ The release logic is:
 2. the repository carries the mechanics
 3. the Zenodo DOI freezes the archive state
 
-## 2.1 External-data sidecar releases
+## 2.1 Phase 66 public entry release
+
+Current public entry release:
+
+1. `66.1` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+2. Primary PDF:
+   `pdf_releases/66.1 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer.pdf`
+3. Source:
+   `haos_iip_canonical_entry_paper_phase_66_translation_and_hostile_audit_layer.tex`
+
+Bounded result: this is not a new technical phase and does not introduce new
+physical claims. It freezes the Phase 66 public entry document in numbered PDF
+form: standard-language explanation first, minimal assumptions, frozen-regime
+setup, operator overview, recoverability diagnostics, translation table,
+framework comparison, falsification gates, claim-gating rules, reproduction
+path, and explicit claim boundaries.
+
+## 2.2 External-data sidecar releases
 
 The numbered release spine now also includes bounded external-data sidecar
 papers. These are not frozen-core theory papers and are not proof claims. They

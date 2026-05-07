@@ -254,6 +254,17 @@ and the boundary `NO_PUBLIC_STFT_GRID_FOUND`. Its evidence class is
 literature/user-audit seeded, not `REAL_DATA_LOADED`; no raw-data or `k_star`
 claim is made without a future local raw-data audit.
 
+### 2.49 Part XLIX. Phase 66 translation and hostile-audit entry release
+
+1. `66.1` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+
+Bounded status: release `66.1` is a public entry paper, not a new mechanism and
+not a new physical claim. It freezes the Phase 66 translation and hostile-audit
+layer in numbered PDF form: standard-language explanation first, minimal
+assumptions, frozen-regime setup, operator overview, recoverability diagnostics,
+translation table, framework comparison, falsification gates, claim-gating
+rules, reproduction path, and explicit claim boundaries.
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results
@@ -334,6 +345,7 @@ claim is made without a future local raw-data audit.
 - `63.1` Celestial Boundary Toy Probes and Claim-Gated Physics Bridge for HAOS-IIP
 - `64.1` Materials Bridge Line A: Ferron Coherence Recoverability Probe for HAOS-IIP
 - `65.1` Materials Bridge Line B: Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP
+- `66.1` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

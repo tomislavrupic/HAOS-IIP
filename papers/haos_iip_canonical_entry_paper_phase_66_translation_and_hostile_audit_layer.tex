@@ -1,0 +1,374 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+\setlength{\emergencystretch}{3em}
+
+\title{HAOS-IIP: A Reproducible Computational Framework for Testing Recoverable Structure in Interaction-Native Operator Systems}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+HAOS-IIP is a reproducible computational research program for testing whether stable, recoverable structure can emerge from interaction-native operator systems before assuming spacetime, fields, particles, or standard physical primitives. The program uses frozen graph/operator regimes, cochain-Laplacian hierarchies, perturbation suites, matched controls, and recoverability diagnostics to study whether identity-like, metric-like, current-like, and ordering-like structures remain stable under controlled variation.
+
+This paper is not a new technical phase and does not introduce new physical claims. It serves as release \texttt{66.1}, the canonical entry document for HAOS-IIP. Its purpose is to translate the program into standard mathematical and computational language, define its minimal assumptions, separate internal numerical results from external bridge hypotheses, compare the framework with nearby established approaches, and state explicit falsification gates.
+
+The current scientific value of HAOS-IIP is methodological and exploratory. It does not yet derive known physics. It provides a reproducible sandbox for studying operator-derived emergence, recoverable coherence, structural stability, and claim-gated bridge observables in discrete interaction systems.
+\end{abstract}
+
+\tableofcontents
+
+\section{Status and Reader Contract}
+
+This release is a public entry paper, not a new mechanism and not a new physical claim. It summarizes the present HAOS-IIP program in standard language for a technically competent reader who has not read the prior numbered sequence.
+
+The governing Phase 66 rules are:
+
+\begin{quote}
+No expansion before translation.
+\end{quote}
+
+\begin{quote}
+A HAOS-IIP term is not allowed to function as an explanation until it has been translated into operational language.
+\end{quote}
+
+\begin{quote}
+A HAOS-IIP claim is not mature until it states how it can fail.
+\end{quote}
+
+\begin{quote}
+Rediscovery is not failure. Unmarked rediscovery is failure.
+\end{quote}
+
+\begin{quote}
+Internal PASS is not external proof.
+\end{quote}
+
+The intended reading outcome is modest. A skeptical reader may still disagree with the interpretation, but should understand what is being tested, how it is tested, what would count as failure, and what is not claimed.
+
+\section{Why HAOS-IIP Exists}
+
+Many foundational programs begin by choosing a physical primitive: spacetime, fields, particles, quantum states, causal order, geometric labels, or an optimization principle. HAOS-IIP begins with a narrower computational question:
+
+\begin{quote}
+What stable structure can be recovered before those physical primitives are assumed?
+\end{quote}
+
+The program treats recoverability as an audit discipline. A proposed structure matters only if it can be re-entered, perturbed, compared with controls, and reproduced. A mode, branch, metric surrogate, current-like residual, or bridge observable is not accepted because it sounds physically meaningful. It is accepted only inside the regime where the code, metrics, controls, and thresholds say it survives.
+
+This makes HAOS-IIP less like a finished physical theory and more like a reproducible test bench. The test bench asks whether operator-derived structure is stable enough to deserve further interpretation. When the answer is positive, the result can be promoted only to the next bounded evidence class. When the answer is negative, the failure is part of the result.
+
+The strongest current feature of the program is methodological: frozen baselines, phase contracts, reproducible telemetry, matched controls, public failure gates, and explicit separation between internal diagnostics and external bridge claims.
+
+\section{Minimal Assumptions}
+
+HAOS-IIP assumes as little physical interpretation as possible at the start. The minimal assumptions are computational:
+
+\begin{itemize}
+\item a finite interaction substrate can be represented as a graph, finite complex, or related discrete structure;
+\item weighted adjacency, incidence, Laplacian, or Hodge-like operators can be constructed on that substrate;
+\item a computational regime can be frozen so later tests do not silently change the rules;
+\item diagnostic quantities can be measured before physical interpretation is added;
+\item persistence under bounded perturbation is informative;
+\item matched controls and null models are required for claim discipline;
+\item failure under declared controls must be recorded rather than hidden.
+\end{itemize}
+
+The explicit non-assumptions are just as important:
+
+\begin{itemize}
+\item spacetime is not assumed;
+\item particles are not assumed;
+\item continuum fields are not assumed;
+\item quantum gravity is not assumed;
+\item consciousness is not assumed;
+\item physical validity is not inferred from internal numerical success.
+\end{itemize}
+
+HAOS-IIP can study metric-like, current-like, identity-like, and ordering-like behavior, but the suffix ``-like'' matters. It marks the difference between an internal operator diagnostic and an established physical object.
+
+\section{Frozen-Regime Setup}
+
+A frozen regime is a fixed computational contract. It specifies the substrate class, operator construction, telemetry, control families, pass/fail thresholds, reproduction command, and allowed claim language.
+
+The reason for freezing a regime is simple: without a fixed contract, a positive result can be manufactured by moving the target after the output is known. Freezing the regime makes negative results meaningful. It also lets an outsider ask whether the result can be reproduced from the same inputs, metrics, and thresholds.
+
+An internal PASS means the declared frozen-regime test passed. It does not mean that a physical law has been derived. It means the computation survived the test it said it was taking.
+
+\section{Operator Setup in Standard Language}
+
+The basic object is a finite interaction substrate equipped with operators. In standard mathematical language, the construction overlaps with spectral graph theory, graph Laplacians, discrete exterior calculus, Hodge theory on finite cochain complexes, spectral geometry, stability analysis, and resilience diagnostics.
+
+Typical ingredients include:
+
+\begin{itemize}
+\item a graph or finite complex;
+\item weighted adjacency or kernel data;
+\item incidence maps between grades;
+\item scalar graph Laplacians;
+\item Hodge-like Laplacians on cochains;
+\item exact, coexact, and harmonic sector decompositions when available;
+\item selected spectral or operator branches tracked across perturbation or refinement.
+\end{itemize}
+
+HAOS-IIP does not invent graph operators. Those are established tools. HAOS-IIP adds an audit layer around them: branch identity checks, recoverability diagnostics, collapse-order testing, control comparison, and claim-gated physical interpretation.
+
+A stable spectral or operator identity class is called a ``harmonic address'' in internal shorthand. Publicly, the standard-language description comes first: stable spectral or operator identity class. The internal term can follow only after the operational meaning is clear.
+
+\section{Recoverability Diagnostics}
+
+Recoverability means measurable persistence under declared stress. A recoverability test requires:
+
+\begin{itemize}
+\item a baseline diagnostic state;
+\item a bounded perturbation or refinement;
+\item a metric comparing baseline and perturbed states;
+\item a threshold for survival, degradation, or collapse;
+\item a matched control or null model when the claim requires it;
+\item a reproduction path.
+\end{itemize}
+
+For example, a selected spectral branch may be tested across refinement. A metric-like surrogate may be tested under perturbation. A current-like residual may be tested against shell or region controls. A materials bridge may test whether a target spectral feature remains stable across distance, delay, or sample conditions.
+
+A collapse signal means loss of recoverability under the declared metric. It is not a mystical event, not a final ontological statement, and not a physical collapse claim by itself. It is a diagnostic status.
+
+The important question is not whether a structure looks impressive in one run. The question is whether it remains recoverable when the interaction system is perturbed, refined, randomized, or compared with controls that are close enough to be dangerous.
+
+\section{Translation Table}
+
+The full Phase 66 translation artifact is:
+
+\begin{quote}
+\path{docs/notes/foundations/HAOS_IIP_Core_Translation_Table_v1.md}
+\end{quote}
+
+The public-language baseline is:
+
+\begin{longtable}{p{0.30\linewidth}p{0.58\linewidth}}
+\toprule
+Internal term & Standard-language meaning \\
+\midrule
+\endhead
+harmonic address & stable spectral / operator identity class \\
+recoverable coherence & persistence of diagnostic structure under bounded perturbation \\
+scalar carrier & scalar-valued field-like carrier on an interaction graph \\
+local metric field & metric surrogate derived from operator response, Green structure, or eigenstructure \\
+collapse detection & loss of recoverability before visible fragmentation \\
+collapse-ordering invariance & order-independent detection of recoverability loss \\
+disorder flux & propagation of controlled disorder through the operator system \\
+current closure & consistency of flux-like structure under selected operator constraints \\
+active branch identity & persistence of a selected spectral / coexact subspace across refinement or perturbation \\
+bridge observable & externally measurable proxy tested outside the internal regime \\
+\bottomrule
+\end{longtable}
+
+This table is not decorative. It controls language. If a term cannot be translated into a measured construction, it cannot carry a public claim.
+
+\section{What Internal PASS Means}
+
+An internal PASS means:
+
+\begin{itemize}
+\item the declared frozen-regime runner executed;
+\item the stated metric crossed the stated threshold;
+\item the output was reproducible under the declared command;
+\item required controls failed or remained below threshold;
+\item the result is valid inside the declared computational regime.
+\end{itemize}
+
+An internal PASS may support a numerical method result, a structural diagnostic result, a stronger follow-up test, a bridge hypothesis, or a candidate external prediction. It is a reason to test harder.
+
+\section{What Internal PASS Does Not Mean}
+
+An internal PASS does not mean:
+
+\begin{itemize}
+\item known physics has been derived;
+\item spacetime has emerged physically;
+\item a particle, field, charge, or metric has been recovered in the real world;
+\item an analogy is a validation;
+\item a toy bridge is an established physical bridge;
+\item an external prediction has already succeeded;
+\item a single dataset establishes universality.
+\end{itemize}
+
+Every future public statement should be reducible to:
+
+\begin{quote}
+We tested X under Y conditions. It passed or failed Z diagnostic. This means A internally. It does not yet mean B externally.
+\end{quote}
+
+\section{Comparison With Nearby Frameworks}
+
+HAOS-IIP overlaps with known frameworks. That overlap must be stated before claiming any addition. The full comparison artifact is:
+
+\begin{quote}
+\path{docs/notes/foundations/HAOS_IIP_Framework_Comparison_Matrix_v1.md}
+\end{quote}
+
+\begin{longtable}{p{0.20\linewidth}p{0.23\linewidth}p{0.27\linewidth}p{0.20\linewidth}}
+\toprule
+Framework & Shared mechanisms & HAOS-IIP operational addition & Main caution \\
+\midrule
+\endhead
+Spectral graph theory & graph spectra, eigenvectors, spectral clusters & recoverability and branch-identity gates & low-mode structure may be ordinary spectral behavior \\
+Graph Laplacians & weighted graphs, diffusion-like response & frozen-regime perturbation and control telemetry & Laplacian response alone is not metric emergence \\
+Discrete exterior calculus & cochains, incidence, Hodge-like operators & claim-gated diagnostics across phases & DEC identities should not be renamed as discoveries \\
+Hodge theory & exact / coexact / harmonic decomposition & active-branch recovery tests & decomposition itself is not physical recovery \\
+Regge calculus & discrete metric-like structure & pre-metric operator-response tests & metric surrogates are not spacetime geometry \\
+Causal sets & relational pre-geometry motivation & operator recoverability instead of causal order as primitive & causal structure needs its own recovery benchmark \\
+Spin networks & graph-native structural language & no spin-network labels or quantum geometry assumed & graph similarity is not equivalence \\
+Tensor networks & network-native organization, emergent-geometry analogies & perturbation/recovery gates rather than entanglement ansatz first & tensor-network baselines may already explain a result \\
+Early-warning indicators & collapse precursors and stability loss & frozen-regime collapse telemetry & early-warning behavior may be known dynamics \\
+Complex-systems resilience & robustness and recovery metrics & operator-branch and bridge-observable claim gates & resilience language is not physical derivation \\
+\bottomrule
+\end{longtable}
+
+The boundary is:
+
+\begin{quote}
+Rediscovery is not failure. Unmarked rediscovery is failure.
+\end{quote}
+
+If a result is mostly a known graph-Laplacian, Hodge-theoretic, DEC, resilience, or early-warning result, it should be marked that way. That placement does not make the work useless. It makes the intellectual neighborhood clear.
+
+\section{Falsification Gates}
+
+The full falsification artifact is:
+
+\begin{quote}
+\path{docs/notes/foundations/HAOS_IIP_Falsification_Engine_v1.md}
+\end{quote}
+
+General failure gates include:
+
+\begin{itemize}
+\item failure under seed variation;
+\item failure under bounded perturbation;
+\item failure under refinement;
+\item failure against matched controls;
+\item inability to beat a declared null model;
+\item irreproducibility from committed commands and artifacts;
+\item dependence on hand-picked parameters;
+\item loss of positivity, isotropy, or closure under the claimed regime;
+\item bridge observables indistinguishable from generic graph behavior;
+\item external-data results disappearing under standard analysis or null models;
+\item public claim language exceeding the evidence class.
+\end{itemize}
+
+These gates are not hostile to the project. They are what make the project harder to dismiss lazily.
+
+\section{Claim-Gating Template}
+
+The full claim-gating artifact is:
+
+\begin{quote}
+\path{docs/notes/foundations/HAOS_IIP_Claim_Gating_Template_v1.md}
+\end{quote}
+
+Every release should state:
+
+\begin{itemize}
+\item claim class;
+\item bridge status;
+\item what is numerically shown;
+\item operational meaning;
+\item standard-language translation;
+\item analogy to known physics or mathematics;
+\item bridge hypothesis, if any;
+\item required null model;
+\item failure and downgrade condition;
+\item what is not claimed;
+\item reproduction path.
+\end{itemize}
+
+This is the anti-overclaim guardrail. Its core rule is:
+
+\begin{quote}
+Internal PASS is not external proof.
+\end{quote}
+
+\section{Reproduction Path}
+
+A reader should be able to inspect the program without private context. The minimal route is:
+
+\begin{enumerate}
+\item Clone the repository.
+\item Read the root \path{README.md}.
+\item Read the Phase 66 translation and hostile-audit note in \path{docs/notes/foundations/}.
+\item Use the translation table before interpreting internal terms.
+\item Use the framework comparison matrix before treating a result as novel.
+\item Use the falsification engine before treating a claim as mature.
+\item Use the claim-gating template before writing public summaries.
+\item Open the target experiment or sidecar README.
+\item Run the listed reproduction command.
+\item Compare generated outputs to committed summaries.
+\item Check what is shown, what is only analogous, what is a bridge hypothesis, and what is not claimed.
+\end{enumerate}
+
+Representative current public paths include:
+
+\begin{itemize}
+\item \path{experiments/physics_bridge/};
+\item \path{experiments/materials_bridge/ferron_coherence_demo/};
+\item \path{experiments/materials_bridge/magnon_alpha_fe2o3_audit/};
+\item \path{predictions/}.
+\end{itemize}
+
+The exact commands vary by phase. Phase 66 does not replace local READMEs; it defines what each README must make clear.
+
+\section{Current Evidence Classes}
+
+\begin{longtable}{p{0.28\linewidth}p{0.60\linewidth}}
+\toprule
+Evidence class & Meaning \\
+\midrule
+\endhead
+internal diagnostic & result passes inside a declared HAOS-IIP frozen regime \\
+toy benchmark & synthetic target with known construction \\
+proxy bridge & physics-, biology-, or materials-adjacent diagnostic that is not direct validation \\
+real-data-loaded bridge & public external data are loaded, parsed, and audited \\
+prediction record & falsifiable statement prepared for external test \\
+externally supported claim & external data or experiment supports a prediction against declared nulls \\
+\bottomrule
+\end{longtable}
+
+The ferron materials Line A sidecar is currently the cleanest real-data-loaded materials bridge. It touches public source data, parses it, and reports bounded recoverability metrics without forcing a collapse result.
+
+The magnon Line B artifact is weaker by design: it records a literature / user-audit-seeded spin-sector bridge with a raw-data boundary still open. That boundary is not a defect. It is the claim gate doing its job.
+
+\section{Claim Boundary}
+
+The canonical boundary is:
+
+\begin{quote}
+HAOS-IIP is a reproducible computational exploration of emergence, recoverability, and operator-derived structure in discrete interaction systems. It does not yet derive known physics. Its current value is methodological, diagnostic, and exploratory.
+\end{quote}
+
+Stronger public claims require standard-language translation, framework comparison, null-model comparison, explicit failure gates, claim-gating labels, a reproduction path, and external evidence when the claim leaves the internal regime.
+
+\section{Next Work}
+
+The next Phase 66 work is cleanup and application:
+
+\begin{itemize}
+\item apply the claim-gating template to future numbered papers;
+\item backfill public-facing summaries with standard-language descriptions first;
+\item add comparison boxes to visible external bridge releases;
+\item create machine-readable claim-box validation;
+\item audit major phase folders for README, reproduction, expected outputs, limitations, and failure conditions;
+\item define stronger null models before new external bridge claims.
+\end{itemize}
+
+The purpose of this document is to let critique enter cleanly. A skeptical reader should not need private vocabulary or author explanation to understand what HAOS-IIP is trying to test.
+
+\end{document}
