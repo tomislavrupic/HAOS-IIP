@@ -2,17 +2,17 @@
   "by_level": {
     "P0_toy_internal": 2,
     "P1_cross_system": 2,
-    "P2_external_dataset": 2,
-    "P3_field_facing": 3
+    "P2_external_dataset": 3,
+    "P3_field_facing": 6
   },
   "by_status": {
     "candidate_unvalidated": 2,
-    "external_test_ready": 5,
+    "external_test_ready": 9,
     "toy_supported_not_external": 2
   },
   "error_count": 0,
   "errors": [],
-  "prediction_records": 9,
+  "prediction_records": 13,
   "records": [
     {
       "claim_type": "recoverability_precursor",
@@ -76,6 +76,34 @@
       "prediction_level": "P2_external_dataset",
       "status": "external_test_ready",
       "title": "Target-window recoverability separates coherent propagation records from broadband controls"
+    },
+    {
+      "claim_type": "spin_address_selection",
+      "id": "HAOS-PRED-010",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "title": "Crystal-orientation-dependent narrowband magnon address"
+    },
+    {
+      "claim_type": "spin_propagation_boundary_prediction",
+      "id": "HAOS-PRED-011",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "title": "Thickness and boundary dependent magnon group velocity"
+    },
+    {
+      "claim_type": "spin_readdressing_recoverability_prediction",
+      "id": "HAOS-PRED-012",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "title": "Magnon target-address recovery after perturbation"
+    },
+    {
+      "claim_type": "hybrid_cross_sector_locking_prediction",
+      "id": "HAOS-PRED-013",
+      "prediction_level": "P2_external_dataset",
+      "status": "external_test_ready",
+      "title": "Hybrid magnon-phonon cross-sector locking improves recoverability"
     }
   ],
   "schema_version": "1.0",

@@ -509,6 +509,245 @@
         "Does not claim a literal shared substrate.",
         "Does not replace field-specific coherence metrics."
       ]
+    },
+    {
+      "id": "HAOS-PRED-010",
+      "title": "Crystal-orientation-dependent narrowband magnon address",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "domain": "altermagnetic and antiferromagnetic spin-wave systems",
+      "claim_type": "spin_address_selection",
+      "prediction_statement": "In altermagnetic or antiferromagnetic substrates with independently assigned magnon modes, sub-THz exchange magnons should show highest coherence and narrowest linewidth only for specific wavevector and crystal-axis alignments.",
+      "novelty_boundary": "This is a field-facing spin-sector prediction calibrated by the ferron bridge and a user-reported alpha-Fe2O3 audit anchor. It does not claim a universal harmonic grid or a replacement for spin-wave theory.",
+      "system_scope": [
+        "alpha-Fe2O3 altermagnetic or antiferromagnetic samples",
+        "CoTiO3-like honeycomb antiferromagnets",
+        "matched nonmagnetic or mode-mismatched controls"
+      ],
+      "perturbation": "Controlled crystal-axis orientation, wavevector direction, optical or THz pulse excitation, magnetic field, or spin-orbit torque under pre-registered target windows.",
+      "observables": [
+        "target_window_peak_presence",
+        "peak_frequency_THz",
+        "linewidth_proxy_THz",
+        "frequency_stability",
+        "spectral_recoverability",
+        "orientation_label"
+      ],
+      "pass_criteria": [
+        "target-window magnon peak is found in at least 80 percent of controlled aligned records",
+        "linewidth proxy is below 0.1 THz where instrumental resolution permits",
+        "frequency stability is at least 0.95",
+        "target-window recoverability is at least 0.85",
+        "pre-registered aligned records outperform misaligned or mode-mismatched controls"
+      ],
+      "fail_criteria": [
+        "orientation scans show isotropic broadband response",
+        "pre-registered aligned records do not improve recoverability over misaligned controls",
+        "target-window recoverability is no better than nonmagnetic or mode-mismatched controls"
+      ],
+      "falsifiers": [
+        "If matched orientation scans show isotropic broadband response, or if pre-registered crystal-axis alignment does not improve recoverability over misaligned controls, this prediction fails for that material class."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_summary.json",
+          "result": "ferron_persistence_proxy=0.957192; spin-sector transfer remains provisional"
+        },
+        {
+          "source": "user-provided alpha-Fe2O3 audit summary",
+          "result": "persistence_proxy=0.902; raw boundary NO_PUBLIC_STFT_GRID_FOUND; local audit artifact not found in repo at note creation time"
+        },
+        {
+          "source": "Li et al. 2026, Advanced Optical Materials, DOI 10.1002/adom.202503604",
+          "result": "candidate external anchor for anisotropic coherent propagation of sub-terahertz magnons in alpha-Fe2O3"
+        }
+      ],
+      "next_external_test": "Commit or recreate the alpha-Fe2O3 audit artifact, then score orientation-resolved target-window recoverability against misaligned controls.",
+      "limitations": [
+        "The alpha-Fe2O3 persistence proxy is user-provided until the audit artifact is committed.",
+        "Thresholds are provisional and may require instrument-specific calibration.",
+        "Orientation and target windows must be pre-registered before scoring."
+      ],
+      "non_claims": [
+        "Does not claim new spin-wave theory.",
+        "Does not claim ferrons and magnons share a literal substrate.",
+        "Does not replace material-specific magnetic modeling."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-011",
+      "title": "Thickness and boundary dependent magnon group velocity",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "domain": "altermagnetic and antiferromagnetic spin-wave systems",
+      "claim_type": "spin_propagation_boundary_prediction",
+      "prediction_statement": "In controlled antiferromagnetic or altermagnetic samples, magnon packet velocity should scale with thickness, confinement, or boundary condition while target-window recoverability remains bounded before visible propagation failure.",
+      "novelty_boundary": "This transfers the recoverability-and-propagation measurement pattern from ferrons to magnons as a diagnostic candidate, not as a claim of shared mechanism.",
+      "system_scope": [
+        "controlled-thickness alpha-Fe2O3 samples",
+        "magnetic heterostructures with boundary control",
+        "matched orientation or thickness controls"
+      ],
+      "perturbation": "Controlled thickness, boundary, confinement, field, or strain sweep under matched magnon excitation and fixed target-window scoring.",
+      "observables": [
+        "target_band_peak_time_ps",
+        "distance_um",
+        "group_velocity_m_s",
+        "phase_delay",
+        "target_window_recoverability",
+        "visible_propagation_failure"
+      ],
+      "pass_criteria": [
+        "group-velocity proxy changes systematically across controlled thickness or boundary groups",
+        "peak arrival time or phase delay varies monotonically with propagation distance along at least one crystal direction",
+        "target-window recoverability remains above 0.70 before visible propagation failure"
+      ],
+      "fail_criteria": [
+        "controlled-thickness or boundary series show no systematic velocity scaling beyond uncertainty",
+        "target-window signals remain measurable but show no distance-ordered delay",
+        "recoverability does not change under matched boundary perturbations"
+      ],
+      "falsifiers": [
+        "If controlled-thickness or boundary series show no systematic velocity scaling, no distance-ordered delay, and no recoverability change beyond uncertainty while the target-window signal remains measurable, this prediction fails for that material class."
+      ],
+      "current_evidence": [
+        {
+          "source": "experiments/materials_bridge/ferron_coherence_demo/outputs/published_stft_trace_summary.json",
+          "result": "ferron target-band trace audit gives thickness-dependent propagation proxies; magnon transfer remains candidate"
+        },
+        {
+          "source": "user-provided alpha-Fe2O3 audit summary",
+          "result": "reported alpha-Fe2O3 persistence_proxy=0.902; local artifact not found in repo at note creation time"
+        }
+      ],
+      "next_external_test": "Run or ingest a controlled-thickness alpha-Fe2O3 or magnetic-heterostructure propagation dataset and score velocity scaling before inspecting results.",
+      "limitations": [
+        "Ferron thickness dependence does not imply the same magnon mechanism.",
+        "Velocity estimates depend on imaging geometry and target-band envelope extraction.",
+        "The alpha-Fe2O3 audit artifact must be linked before claiming local validation."
+      ],
+      "non_claims": [
+        "Does not claim universal magnon velocity ranges.",
+        "Does not claim shared ferron-magnon substrate.",
+        "Does not replace spin-transport modeling."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-012",
+      "title": "Magnon target-address recovery after perturbation",
+      "prediction_level": "P3_field_facing",
+      "status": "external_test_ready",
+      "domain": "altermagnetic and antiferromagnetic spin-wave systems",
+      "claim_type": "spin_readdressing_recoverability_prediction",
+      "prediction_statement": "After a secondary pulse, field quench, strain perturbation, or spin-orbit torque below irreversible damage threshold, a coherent magnon readout should preferentially recover the original narrowband target address before full amplitude recovery is required.",
+      "novelty_boundary": "This predicts a target-window recovery ordering. It does not claim memory, consciousness, or a universal echo effect.",
+      "system_scope": [
+        "alpha-Fe2O3 under multi-pulse or spin-orbit torque perturbation",
+        "CoTiO3-like antiferromagnets under field perturbation",
+        "magnetic heterostructures below damage threshold"
+      ],
+      "perturbation": "Secondary optical or THz pulse, spin-orbit torque, magnetic field quench, strain perturbation, or controlled defect scattering below irreversible damage threshold.",
+      "observables": [
+        "post_perturbation_peak_frequency_THz",
+        "frequency_stability",
+        "target_window_recoverability",
+        "amplitude_retention",
+        "broadband_background_fraction"
+      ],
+      "pass_criteria": [
+        "post-perturbation peak frequency returns to the pre-registered target window",
+        "frequency stability is at least 0.95",
+        "target-window spectral recoverability is at least 0.85",
+        "magnetic-field tuning may shift the packet within the registered family without broadband thermalization"
+      ],
+      "fail_criteria": [
+        "secondary perturbation repeatedly causes complete thermalization",
+        "a different dominant mode replaces the original target address under non-damaging controls",
+        "target-window recovery cannot be distinguished from broadband background"
+      ],
+      "falsifiers": [
+        "If secondary perturbation repeatedly causes complete thermalization, a different dominant mode, or no preferential return to the original target window under non-damaging controls, this prediction fails for that perturbation regime."
+      ],
+      "current_evidence": [
+        {
+          "source": "Yang et al. 2024, Nature Communications, DOI 10.1038/s41467-024-48431-w",
+          "result": "candidate external anchor for spin-orbit torque manipulation of sub-terahertz magnons in alpha-Fe2O3"
+        },
+        {
+          "source": "experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_summary.json",
+          "result": "ferron target-address persistence proxy 0.957192; spin-sector transfer remains a prediction"
+        }
+      ],
+      "next_external_test": "Run multi-pulse or spin-orbit torque recovery experiments with pre-registered target windows and damage / heating controls.",
+      "limitations": [
+        "No local magnon perturbation audit is committed yet.",
+        "Damage threshold and heating controls must be specified before interpreting non-recovery.",
+        "Frequency recovery and amplitude recovery may decouple."
+      ],
+      "non_claims": [
+        "Does not claim quantum consciousness or memory.",
+        "Does not claim recovery outside non-damaging perturbation regimes.",
+        "Does not claim field tuning is always recoverability-preserving."
+      ]
+    },
+    {
+      "id": "HAOS-PRED-013",
+      "title": "Hybrid magnon-phonon cross-sector locking improves recoverability",
+      "prediction_level": "P2_external_dataset",
+      "status": "external_test_ready",
+      "domain": "hybrid magnon-phonon and van der Waals magnetic systems",
+      "claim_type": "hybrid_cross_sector_locking_prediction",
+      "prediction_statement": "In van der Waals magnetic hybrids or strongly coupled magnetic heterostructures, compatible magnon and phonon or polar modes should produce enhanced lifetime, cleaner linewidth, or more directional propagation than uncoupled controls.",
+      "novelty_boundary": "This is a cross-sector diagnostic candidate. It does not assert a universal ferron-magnon operator or a topological protection claim without independent field evidence.",
+      "system_scope": [
+        "CrSBr-like van der Waals magnetic systems",
+        "MnBi2Te4-like magnetic topological materials",
+        "FePSe2-like magnetic materials",
+        "engineered magnon-phonon cavities or heterostructures"
+      ],
+      "perturbation": "Controlled hybridization strength, cavity coupling, strain, temperature, or magnetic field sweep with uncoupled magnon-only and phonon-only controls.",
+      "observables": [
+        "hybrid_target_window_recoverability",
+        "magnon_only_recoverability",
+        "phonon_only_recoverability",
+        "linewidth_proxy",
+        "lifetime_proxy",
+        "directional_propagation_proxy"
+      ],
+      "pass_criteria": [
+        "hybrid mode has higher recoverability than magnon-only and phonon-only controls",
+        "hybrid linewidth or lifetime improves under matched coupling conditions",
+        "target-window peak remains stable under a perturbation where uncoupled controls broaden or collapse"
+      ],
+      "fail_criteria": [
+        "hybridization gives no lifetime, linewidth, directionality, or recoverability benefit beyond uncoupled controls",
+        "hybrid target-window stability disappears under pre-registered control thresholds",
+        "post-hoc target-window selection is required to make the hybrid look stable"
+      ],
+      "falsifiers": [
+        "If controlled hybridization produces no lifetime, linewidth, directionality, or recoverability benefit beyond uncoupled controls, this prediction fails for that hybrid class."
+      ],
+      "current_evidence": [
+        {
+          "source": "predictions/ferron_extension_testable_signatures.md",
+          "result": "ferron-to-materials prediction layer exists; hybrid magnon-phonon extension remains candidate"
+        },
+        {
+          "source": "candidate literature targets",
+          "result": "vdW magnetic and magnon-phonon systems require a dedicated external bridge before evidence status can be raised"
+        }
+      ],
+      "next_external_test": "Build a small benchmark with a hybrid magnon-phonon dataset and matched uncoupled controls, then compare recoverability under pre-registered thresholds.",
+      "limitations": [
+        "No hybrid magnon-phonon dataset has been audited in this repo yet.",
+        "Hybrid mode assignment must be independent of HAOS scoring.",
+        "This remains P2 until a real external benchmark is loaded."
+      ],
+      "non_claims": [
+        "Does not claim a universal ferron-magnon operator.",
+        "Does not claim topological protection without field evidence.",
+        "Does not replace magnon-phonon coupling theory."
+      ]
     }
   ]
 }

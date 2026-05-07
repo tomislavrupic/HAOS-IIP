@@ -1,6 +1,6 @@
 # Prediction Registry Summary
 
-- prediction_records: 9
+- prediction_records: 13
 - validation_passed: True
 - error_count: 0
 
@@ -17,3 +17,7 @@
 | HAOS-PRED-007 | P3_field_facing | external_test_ready | propagation_boundary_prediction | Thickness and boundary dependence of target-band propagation |
 | HAOS-PRED-008 | P3_field_facing | external_test_ready | readdressing_recoverability_prediction | Target-window re-addressing after secondary perturbation |
 | HAOS-PRED-009 | P2_external_dataset | external_test_ready | cross_dataset_control_discrimination | Target-window recoverability separates coherent propagation records from broadband controls |
+| HAOS-PRED-010 | P3_field_facing | external_test_ready | spin_address_selection | Crystal-orientation-dependent narrowband magnon address |
+| HAOS-PRED-011 | P3_field_facing | external_test_ready | spin_propagation_boundary_prediction | Thickness and boundary dependent magnon group velocity |
+| HAOS-PRED-012 | P3_field_facing | external_test_ready | spin_readdressing_recoverability_prediction | Magnon target-address recovery after perturbation |
+| HAOS-PRED-013 | P2_external_dataset | external_test_ready | hybrid_cross_sector_locking_prediction | Hybrid magnon-phonon cross-sector locking improves recoverability |
