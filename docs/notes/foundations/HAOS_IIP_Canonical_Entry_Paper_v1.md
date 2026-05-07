@@ -15,7 +15,7 @@ skeptical technical reader who has not read the prior paper sequence.
 
 Numbered PDF release:
 
-- [66.2 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/papers/pdf_releases/66.2%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
+- [66.3 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/papers/pdf_releases/66.3%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 
 Core rule:
 

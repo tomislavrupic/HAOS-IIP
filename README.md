@@ -20,10 +20,12 @@ This command must reproduce identical public tables and plots against the frozen
 
 ## Recommended Starting Point (New Readers)
 
-**66.2 Canonical Entry Paper** - a clean overview in standard language:
-[PDF](papers/pdf_releases/66.2%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
+**66.3 Canonical Entry Paper** - a clean overview in standard language:
+[PDF](papers/pdf_releases/66.3%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 /
 [Markdown](docs/notes/foundations/HAOS_IIP_Canonical_Entry_Paper_v1.md)
+
+Start here for a clean, standard-language overview with translation tables and falsification gates.
 
 ### Why This Exists
 
@@ -234,8 +236,8 @@ Short note:
 
 ## Program Status
 
-**Current public milestone (66.2 canonical entry paper after Phase 66 audit layer):**
-The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line closes through the `52.x` scalar-carrier releases and the `53.x` physics-bridge observable stack. Release `64.1` adds the first real external materials-data sidecar: a ferron / NbOI2 bridge over public Figshare data from Choe et al. Release `65.1` adds the parallel spin-sector Line B magnon sidecar for alpha-Fe2O3 with a first-class artifact and explicit raw-data boundary. Release `66.2` freezes the polished Phase 66 canonical entry paper: a public translation and hostile-audit entry document, not a new mechanism or stronger physical claim.
+**Current public milestone (66.3 canonical entry paper after Phase 66 audit layer):**
+The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line closes through the `52.x` scalar-carrier releases and the `53.x` physics-bridge observable stack. Release `64.1` adds the first real external materials-data sidecar: a ferron / NbOI2 bridge over public Figshare data from Choe et al. Release `65.1` adds the parallel spin-sector Line B magnon sidecar for alpha-Fe2O3 with a first-class artifact and explicit raw-data boundary. Release `66.3` freezes the polished Phase 66 canonical entry paper: a public translation and hostile-audit entry document, not a new mechanism or stronger physical claim.
 
 The public repository now contains seven stacked bounded results:
 
@@ -245,10 +247,11 @@ The public repository now contains seven stacked bounded results:
 - external physics-bridge observables `53.0`, which separate shell-native inverse-square and power-law closure from raw local-gradient residuals, split localized bump response into weak PASS and stress OPEN boundaries, and now close the tested disorder-native seed margin
 - external materials bridge `64.1`, which loads real published ferron / NbOI2 source data, audits `15/15` target-window spectral records near `3.13 THz`, reports mean spectral recoverability `0.928455`, parses published target-band STFT intensity traces as post-processed envelope data, computes a derived time-trace STFT diagnostic with mean envelope correlation `0.995318`, and records a unified persistence proxy `0.957192` while preserving `NO_STFT_DATA_FOUND` for raw time-frequency grids
 - external spin-sector materials bridge `65.1`, which records the alpha-Fe2O3 magnon address-stability artifact with seeded persistence proxy `0.902`, literature-reported group velocity range `17.31-24.43 km/s`, and `NO_PUBLIC_STFT_GRID_FOUND` / `NO_RAW_PUBLIC_DATA_LOADED` boundaries until a local raw-data audit is committed
-- Phase 66 translation and hostile-audit entry layer `66.2`, which gives skeptical readers the public entry path: standard-language terms first, minimal assumptions, frozen-regime setup, recoverability diagnostics, framework comparison, falsification gates, claim-gating, reproduction path, footer/page-number polish, and explicit non-claims
+- Phase 66 translation and hostile-audit entry layer `66.3`, which gives skeptical readers the public entry path: standard-language terms first, minimal assumptions, frozen-regime setup, recoverability diagnostics, framework comparison, falsification gates, claim-gating, reproduction path, footer/page-number polish, title-page subtitle, and explicit non-claims
 
 Milestone anchors:
 
+- [66.3 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.3%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 - [66.2 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.2%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 - [66.1 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.1%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 - [Phase 66 canonical entry Markdown](docs/notes/foundations/HAOS_IIP_Canonical_Entry_Paper_v1.md)
@@ -364,6 +367,7 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [66.3 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.3%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 - [66.2 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.2%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 - [66.1 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.1%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 - [65.1 Materials Bridge Line B - Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP](papers/pdf_releases/65.1%20Materials%20Bridge%20Line%20B%20-%20Magnon%20Address%20Stability%20in%20alpha-Fe2O3%20for%20HAOS-IIP.pdf)
