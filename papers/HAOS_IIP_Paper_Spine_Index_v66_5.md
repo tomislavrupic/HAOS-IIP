@@ -31,6 +31,12 @@ Release `66.5` is the current milestone because it records the scale-bridge legi
 
 Release `66.4` remains the recommended canonical entry paper because it is the cleanest standard-language public introduction.
 
+Next roadmap artifact:
+
+- `docs/notes/foundations/HAOS_IIP_Next_Roadmap_Post_66_5_v1.md`
+
+Next hard gate: same-surrogate coarse-graining recovery. Phase 67 remains parked.
+
 ## Non-Claims
 
 This index does not claim:

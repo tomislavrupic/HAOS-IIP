@@ -350,6 +350,20 @@ Scale-bridge evidence is useful.
 
 Scale-bridge evidence is not continuum proof.
 
+## 16. Post-66.5 next roadmap
+
+The next roadmap is frozen as:
+
+- [HAOS_IIP_Next_Roadmap_Post_66_5_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Next_Roadmap_Post_66_5_v1.md)
+
+Next hard gate:
+
+```text
+same-surrogate coarse-graining recovery
+```
+
+Phase 67 remains parked until that scale-bridge gate is cleaner.
+
 The correct posture is not pessimism. It is recoverable coherence under stronger interaction with controls, refinement, and compression.
 
 ## 13. Focused legitimacy lift cycle
