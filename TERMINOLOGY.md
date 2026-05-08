@@ -49,6 +49,26 @@ Canonical inequality:
 exp(-lambda_1 T) delta < epsilon_c
 ```
 
+### Spectral address
+
+Operational meaning:
+
+- a coordinate that identifies a stable, recoverable resonance pattern or eigenmode-like structure inside a discrete interaction-invariant system
+- a persistent spectral signature in the frozen branch-local cochain-Laplacian hierarchy, not a static data label
+- a structure that can be reconstructed under perturbation when the relevant interaction invariants and recoverable cochain structures survive
+
+Preferred use:
+
+- use `spectral address` for public technical claims about eigenmodes, bands, spectral subspaces, peak windows, or cochain-Laplacian branch identity
+- treat `harmonic address` as legacy/internal shorthand unless a document is explicitly preserving historical phrasing
+
+Do not use as a synonym for:
+
+- physical particle, field, or hidden essence
+- universal frequency
+- static memory cell
+- proof of ontology
+
 ### Geometry-like sector
 
 Use when:

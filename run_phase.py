@@ -27,6 +27,7 @@ PHASE_COMMANDS = {
     "16": [ROOT / "phase16-temporal-ordering" / "build_temporal_ordering.py"],
     "17": [ROOT / "phase17-causal-closure" / "build_causal_closure.py"],
     "18": [ROOT / "phase18-distance-surrogate" / "build_distance_surrogate.py"],
+    "19": [ROOT / "phase19-spectral-address" / "build_spectral_address.py"],
 }
 
 PHASE_CHECKERS = {
@@ -39,6 +40,7 @@ PHASE_CHECKERS = {
     "16": ROOT / "phase16-temporal-ordering" / "diagnostics" / "check_phase16_bundle.py",
     "17": ROOT / "phase17-causal-closure" / "diagnostics" / "check_phase17_bundle.py",
     "18": ROOT / "phase18-distance-surrogate" / "diagnostics" / "check_phase18_bundle.py",
+    "19": ROOT / "phase19-spectral-address" / "diagnostics" / "check_phase19_bundle.py",
     "x": ROOT / "phaseX-proto-particle" / "diagnostics" / "check_phaseX_bundle.py",
 }
 
@@ -52,7 +54,7 @@ def normalize_phase_id(value: str) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run or check one frozen HAOS-IIP phase builder.")
-    parser.add_argument("phase", help="Phase id, for example: 10, 16, 18, or X")
+    parser.add_argument("phase", help="Phase id, for example: 10, 16, 19, or X")
     parser.add_argument("--check", action="store_true", help="Run the phase checker instead of the builder")
     args = parser.parse_args()
 

@@ -4,7 +4,7 @@
 
 A large-scale, disciplined numerical research program exploring reproducible emergence of stability, temporal ordering, causal closure, and proto-geometric structures inside **frozen branch-local cochain-Laplacian hierarchies**.
 
-**200+ commits | 18+ phased bundles | strict reproducibility | frozen baselines + telemetry**
+**200+ commits | 19+ phased bundles | strict reproducibility | frozen baselines + telemetry**
 
 ### One-Sentence Summary
 
@@ -60,6 +60,12 @@ For a single phase integrity check:
 
 ```bash
 python3 run_phase.py 18 --check
+```
+
+For the terminology translation layer:
+
+```bash
+python3 run_phase.py 19 --check
 ```
 
 ### Visual Orientation
@@ -123,7 +129,7 @@ All conclusions are framed as feasibility statements, not ontological claims.
 ## Repository Structure
 
 ```text
-phase3-stability/ ... phase18-distance-surrogate/  frozen phase bundles and diagnostics
+phase3-stability/ ... phase19-spectral-address/    frozen phase bundles and diagnostics
 continuum-sketch/                                  low-cost post-processing scaling test
 experiments/physics_bridge/                        external physics-facing proxy readout
 experiments/materials_bridge/                      external materials-data sidecar probes
@@ -164,6 +170,12 @@ If you only want to validate a single frozen bundle, run an integrity check:
 
 ```bash
 python3 run_phase.py 18 --check
+```
+
+The Phase XIX terminology bundle is also checkable:
+
+```bash
+python3 run_phase.py 19 --check
 ```
 
 Example:

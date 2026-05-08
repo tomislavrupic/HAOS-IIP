@@ -165,10 +165,13 @@ tools. HAOS-IIP adds an audit layer around them: branch identity checks,
 recoverability diagnostics, collapse-order testing, control comparison, and
 claim-gated physical interpretation.
 
-A stable spectral or operator identity class is called a "harmonic address" in
-internal shorthand. Publicly, the standard-language description comes first:
-stable spectral or operator identity class. The internal term can follow only
-after the operational meaning is clear.
+A recoverable spectral or cochain identity coordinate is now called a "spectral
+address" in public technical language. Formerly, this was framed internally as a
+"harmonic address." A spectral address identifies a stable, recoverable
+resonance pattern or eigenmode-like structure inside the frozen branch-local
+cochain-Laplacian hierarchy. It is not static data; it is a persistent spectral
+signature reconstructable under bounded perturbation from interaction invariants
+and recoverable cochain structure.
 
 ## 5. Recoverability Diagnostics
 
@@ -215,7 +218,8 @@ Short version:
 
 | Internal term | Standard-language meaning |
 | --- | --- |
-| harmonic address | stable spectral / operator identity class |
+| spectral address | recoverable spectral / cochain identity coordinate |
+| harmonic address | legacy/internal shorthand for spectral-address framing |
 | recoverable coherence | persistence of diagnostic structure under bounded perturbation |
 | recoverability metric | bounded score comparing baseline and perturbed diagnostic structure |
 | k_star / collapse index | first declared perturbation level where recoverability shows sustained collapse |

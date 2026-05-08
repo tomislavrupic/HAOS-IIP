@@ -1,0 +1,18 @@
+{
+  "phase": 19,
+  "phase_name": "spectral-address",
+  "timestamp": "2026-05-08T08:06:07.062052+00:00",
+  "mode": "terminology_translation",
+  "edits": [
+    "define spectral address as the public technical term",
+    "retain harmonic address as legacy/internal shorthand",
+    "tie information storage to interaction invariants and recoverable cochain structures",
+    "foreground Laplacian eigenmodes, spectral graph theory, and cochain complexes"
+  ],
+  "non_claims": [
+    "no new dynamics",
+    "no physical ontology",
+    "no static-memory claim",
+    "no consciousness claim"
+  ]
+}

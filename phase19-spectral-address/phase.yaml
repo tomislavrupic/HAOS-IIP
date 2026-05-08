@@ -1,0 +1,22 @@
+phase: 19
+name: spectral-address
+purpose: define spectral addresses as recoverable spectral/cochain signatures over the frozen branch-local cochain-Laplacian hierarchy
+mode: terminology_translation
+inputs:
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/TERMINOLOGY.md
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Core_Translation_Table_v1.md
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Canonical_Entry_Paper_v1.md
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase7-spectral/phase7_spectral_manifest.json
+  - /Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/phase18-distance-surrogate/phase18_manifest.json
+outputs:
+  - spectral_address_definition.md
+  - slide_alignment.md
+  - phase19_summary.md
+  - phase19_manifest.json
+  - runs/phase19_runs.json
+constraints:
+  - terminology-only
+  - no new dynamics
+  - no frozen-manifest edits
+  - no ontology promotion
+  - harmonic address remains legacy/internal shorthand

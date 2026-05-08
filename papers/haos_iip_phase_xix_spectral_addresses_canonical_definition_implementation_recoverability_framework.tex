@@ -1,0 +1,453 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{HAOS-IIP Phase XIX: Spectral Addresses -- Canonical Definition, Implementation, and Recoverability Framework}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Abstract}
+\addcontentsline{toc}{section}{1. Abstract}
+
+Phase XIX of HAOS-IIP introduces \emph{spectral address} as the canonical public term for a recoverable spectral or cochain identity coordinate in a frozen branch-local cochain-Laplacian hierarchy. The earlier phrase \emph{harmonic address} is retained only as legacy or internal shorthand. This paper gives the canonical definition, implementation status, and recoverability framework for spectral addresses as computational objects rather than ontological primitives. A spectral address is defined as a coordinate that identifies a stable, recoverable resonance pattern, or eigenmode-like structure, inside a discrete interaction-invariant system. It is not a static datum. It is a persistent spectral signature reconstructable under bounded perturbation when the relevant interaction invariants and cochain structures remain recoverable. The formal setting is a finite graph or cochain complex equipped with fixed incidence maps, weights, Laplacian or Hodge-Laplacian operators, branch-local spectral windows, matched controls, and declared pass/fail gates. The central claim is methodological: spectral addresses provide a disciplined vocabulary for testing whether mode identity, band identity, or cochain-subspace identity can be reidentified after perturbation, refinement, delay, distance, or control comparison. No claim is made that spectral addresses are physical particles, spacetime points, fundamental fields, memory cells, or evidence for ontology. Phase XIX is therefore a consolidation phase: it translates an internal resonance-language intuition into a standard spectral-graph and cochain-complex framework with reproducible bundle artifacts, explicit diagnostics, and falsification conditions.
+
+\tableofcontents
+
+\setcounter{section}{1}
+
+\section{Introduction}
+
+HAOS-IIP is a computational research program testing whether stable, recoverable structures can emerge inside frozen branch-local cochain-Laplacian hierarchies on discrete graphs and finite complexes. The program does not begin by assuming continuum spacetime, particles, fields, or physical ontology. It begins with interaction-native operator systems, fixed numerical contracts, matched controls, and recoverability tests. A candidate structure matters only when it can be re-entered, perturbed, compared, reduced, and reproduced without silently changing the underlying rules.
+
+Phase XIX is a terminology and implementation consolidation phase. Its purpose is not to add new dynamics or claim a new physical result. Its purpose is to define the spectral-address layer precisely enough that later phases, papers, slide decks, and public summaries can use one disciplined term for structures previously discussed under the broader phrase \emph{harmonic address}. The update is deliberately narrow. It tightens language around stable mode identity, spectral windows, cochain subspaces, and recoverability under perturbation.
+
+\subsection{Motivation for Phase XIX}
+
+The earlier HAOS-IIP phase spine established several useful computational facts inside bounded regimes: stable operator diagnostics, spectral feasibility, trace behavior, localized candidate modes, protection tests, collective dynamics, propagation structure, temporal ordering, causal closure, and proto-geometric distance surrogates. These results created repeated situations in which the program needed to refer to the same kind of object: a mode, branch, band, peak, subspace, or diagnostic label that could be reidentified after a controlled change.
+
+The informal term \emph{harmonic address} served that role in internal language. It pointed to the idea that stable resonance-like structures could be addressed, not by external labels, but by their recoverable position within an interaction system. However, the phrase was too broad for public technical use. It risked suggesting metaphor before measurement. It also blended several mathematical notions that should remain separate: eigenmodes, spectral bands, normal modes, cochain sectors, branch-local identity, and dynamical attractor language.
+
+Phase XIX therefore introduces \emph{spectral address} as the public technical term. The motivation is reduction, not expansion. The term should make claims easier to audit, not harder. It forces the address to be specified by operator data, spectral coordinates, cochain structure, and recovery tests rather than by resonance language alone.
+
+\subsection{Transition from Harmonic to Spectral Address Terminology}
+
+The transition is simple:
+\[
+\text{harmonic address}
+\quad \longrightarrow \quad
+\text{spectral address}
+\]
+when the claim depends on measured spectra, Laplacian eigenmodes, spectral bands, peak windows, branch-local spectral signatures, Hodge/cochain subspaces, or perturbation-recovery telemetry. The old term remains useful only as historical shorthand for the broader intuition that some structures can be addressed by stable resonance-like identity. It is not allowed to carry a public claim unless translated into the spectral-address framework.
+
+This update also clarifies the relation between address language and standard mathematics. A spectral address is not a new mathematical object invented by HAOS-IIP. The underlying tools are familiar: spectral graph theory, graph Laplacians, discrete exterior calculus, Hodge theory on finite cochain complexes, spectral clustering, stability analysis, and perturbation diagnostics. HAOS-IIP adds a recoverability audit layer around those tools. It asks whether a candidate spectral coordinate survives the declared tests.
+
+\subsection{Non-Claims and Methodological Stance}
+
+The non-claims are part of the definition. A spectral address is not a particle, a physical point, a continuum location, a hidden essence, a proof of spacetime, a proof of consciousness, or a memory cell. It is not a universal frequency and not a metaphysical coordinate. It is a computational surrogate for recoverable spectral/cochain identity inside a declared frozen regime.
+
+The methodological stance is therefore cautious. Phase XIX asks whether a structure remains identifiable after perturbation and controls. It does not assert why reality must contain such a structure. It does not infer external physics from internal numerical success. It creates a clean vocabulary and an auditable bundle so later claims can be made, failed, or reduced without relying on impressionistic language.
+
+\section{Foundational Concepts}
+
+\subsection{Interaction Invariants}
+
+An interaction invariant is any fixed relation, operator ingredient, or diagnostic constraint that remains part of the declared regime while a candidate structure is perturbed, refined, or compared with controls. Examples include node-edge incidence, edge-face incidence, weighted adjacency, kernel width, boundary convention, operator normalization, branch selection rule, and telemetry threshold. In HAOS-IIP, these invariants matter because a recoverability claim is meaningless if the rules change during the test.
+
+Let \(K\) denote a finite graph or cochain complex with cochain spaces \(C^q(K)\). Let
+\[
+d_q:C^q(K)\rightarrow C^{q+1}(K)
+\]
+be a discrete coboundary map, and let \(W_q\) denote a fixed positive weight structure on grade \(q\). An interaction-invariant regime fixes the tuple
+\[
+\mathcal{I}
+=
+\left(K,\{C^q\},\{d_q\},\{W_q\},\mathcal{B},\mathcal{C},\Theta\right),
+\]
+where \(\mathcal{B}\) is the branch-selection policy, \(\mathcal{C}\) is the matched-control policy, and \(\Theta\) is the declared telemetry and threshold policy. If any component of \(\mathcal{I}\) changes silently, the address claim is no longer evaluated inside the same regime.
+
+Interaction invariants do not guarantee success. They guarantee auditability. A spectral address may fail under fixed invariants. That failure is meaningful because the candidate is not being rescued by changing definitions after the result is known.
+
+\subsection{Frozen Branch-Local Cochain-Laplacian Hierarchy}
+
+A frozen branch-local cochain-Laplacian hierarchy is a deterministic family of finite operators used across refinement or controlled variation. In the current HAOS-IIP language, the hierarchy is branch-local because claims are restricted to selected spectral or operator branches rather than to all possible modes of the system. It is cochain-Laplacian because the central operators are built from graph or cochain incidence structure.
+
+For grade \(q\), a standard weighted Hodge/cochain Laplacian has the schematic form
+\[
+\Delta_q
+=
+d_{q-1}d_{q-1}^{\ast}
++
+d_q^{\ast}d_q,
+\]
+with adjoints defined by the chosen weights. A branch-local hierarchy is a family
+\[
+\mathfrak{H}
+=
+\left\{
+(K_h,\Delta_{q,h},\mathcal{B}_h,\mathcal{C}_h,\Theta_h)
+\right\}_{h\in\mathcal{R}},
+\]
+where \(h\) denotes a refinement or level parameter and \(\mathcal{R}\) is the declared finite refinement set. Frozen means that \(\Delta_{q,h}\), branch selection, controls, and thresholds are not retuned to make the address survive.
+
+The hierarchy supplies the environment in which addresses can be tested. A spectral address is not merely an eigenvector of one operator at one level. It is a recoverable coordinate or signature tracked through the hierarchy under declared perturbations and controls.
+
+\subsection{Spectral Address -- Full Formal Definition}
+
+The core definition is as follows.
+
+\begin{quote}
+A \emph{spectral address} is a coordinate that identifies a stable, recoverable resonance pattern, or eigenmode-like structure, inside a discrete interaction-invariant system. It lives in the frozen branch-local cochain-Laplacian hierarchy, not as static data, but as a persistent spectral signature that the system can reconstruct under bounded perturbation when the relevant interaction invariants and recoverable cochain structures survive.
+\end{quote}
+
+For technical use, a spectral address may be represented by a tuple
+\[
+\mathsf{A}
+=
+\left(
+q,\Omega,\Pi_{\Omega},\sigma_0,\mathcal{R},\mathcal{P},\mathcal{N},\epsilon_c
+\right).
+\]
+Here \(q\) is the cochain grade; \(\Omega\) is a spectral window, eigenvalue band, peak window, or branch-local subspace; \(\Pi_{\Omega}\) is the associated spectral projection; \(\sigma_0\) is the baseline signature; \(\mathcal{R}\) is a reconstruction or reidentification rule; \(\mathcal{P}\) is the perturbation family; \(\mathcal{N}\) is the matched null/control family; and \(\epsilon_c\) is the declared coherence threshold.
+
+The baseline signature can be as simple as a projection vector
+\[
+\sigma_0=\Pi_{\Omega}x_0,
+\]
+or as structured as a multi-component telemetry record containing eigenvalue drift, subspace angle, mode overlap, support localization, branch purity, peak width, and control separation. The address survives only if the perturbed signature remains recoverable by the declared metric:
+\[
+\rho(\mathsf{A};p)
+=
+1-
+\frac{
+\left\|
+\mathcal{R}_{\mathsf{A}}\!\left(x_p,\Delta_p,\mathcal{I}\right)
+-\sigma_0
+\right\|
+}{
+\left\|\sigma_0\right\|+\eta
+}
+\geq \epsilon_c,
+\]
+for perturbations \(p\in\mathcal{P}\), with \(\eta>0\) used only to prevent division by zero. In addition, the recovered signature must separate from the matched controls:
+\[
+\rho(\mathsf{A};p)-\max_{n\in\mathcal{N}}\rho_n(\mathsf{A};p)
+\geq m_c,
+\]
+where \(m_c\) is the declared control margin. Without this separation, the candidate may be stable but not address-specific.
+
+The definition is intentionally operational. It requires a location rule, perturbation rule, reconstruction rule, control rule, and failure rule. A spectral address is not accepted because the baseline shape looks coherent. It is accepted only if it remains reconstructable when the test is made harder.
+
+\section{Spectral Address -- Detailed Definition and Properties}
+
+\subsection{Mathematical Definition}
+
+Let \(\Delta_q\) be a self-adjoint positive semidefinite cochain Laplacian on \(C^q(K)\), with eigenpairs
+\[
+\Delta_q\phi_i=\lambda_i\phi_i,
+\qquad
+0\leq \lambda_0\leq \lambda_1\leq \cdots .
+\]
+Let \(\Omega\subset\mathbb{R}_{\geq 0}\) be a declared spectral window, and let
+\[
+\Pi_{\Omega}
+=
+\sum_{\lambda_i\in\Omega}\phi_i\phi_i^{\ast}
+\]
+be the projection onto the selected eigenspace or approximate spectral subspace. A minimal spectral address is the recoverability class of the projected diagnostic
+\[
+\sigma(x;\Omega)=\Pi_{\Omega}x,
+\]
+under the frozen regime \(\mathcal{I}\).
+
+More generally, the address is not identical to a single eigenvector. Single eigenvectors may rotate in degenerate subspaces, change sign, or become unstable under harmless basis choices. The more robust object is the spectral subspace, projection, or branch-local signature. Thus the preferred object is often \(\Pi_{\Omega}\), a subspace angle, a cluster of eigenvalues, or an invariant feature vector derived from the subspace, not a raw eigenvector label.
+
+A spectral address is therefore an equivalence class:
+\[
+\mathsf{A}
+=
+[\sigma]_{\mathcal{I},\mathcal{P},\mathcal{N},\epsilon_c},
+\]
+where two signatures are equivalent when they remain mutually reidentifiable under the declared interaction invariants, perturbation family, null family, and coherence threshold. This definition prevents arbitrary labels from becoming addresses. The label is only a handle; the address is the recoverable relation.
+
+\subsection{Spectral Signature and Eigenmode Persistence}
+
+The spectral signature is the part of the system that can be read back through the operator. For a scalar graph signal it may be a low-mode projection. For a cochain field it may be an exact, coexact, or harmonic-sector component. For a materials or biology sidecar it may be a peak window or spectral feature extracted from external data. In each case, the same question is asked: can the feature be reidentified under stress?
+
+Eigenmode persistence is measured by a declared comparison. Common choices include normalized overlap,
+\[
+O(\phi,\psi)=
+\frac{|\langle \phi,\psi\rangle|}
+{\|\phi\|\,\|\psi\|},
+\]
+projection retention,
+\[
+P_{\Omega}(x)
+=
+\frac{\|\Pi_{\Omega}x\|^2}{\|x\|^2},
+\]
+or a subspace distance such as the largest principal-angle sine between the baseline subspace and perturbed subspace. None of these metrics is universal. The phase must declare the metric before evaluation.
+
+The important point is that persistence is not amplitude alone. A mode can retain amplitude while losing address identity, for example by drifting into a control branch or becoming broadband. Conversely, amplitude can degrade while the address remains identifiable if the projected structure, ordering, or peak window remains coherent by the declared threshold. This is why Phase XIX defines spectral addresses through recoverability, not through static storage.
+
+\subsection{Recoverability Under Perturbation}
+
+Perturbation is the central test. A candidate address should be exposed to bounded changes that preserve the declared regime while stressing the signature. Perturbations may include coefficient variation, localized disturbance, refinement, delay, distance, node or edge removal, external noise, or matched control substitution. The perturbation family must be stated explicitly.
+
+A compact recoverability procedure is:
+
+\begin{verbatim}
+Input: frozen regime I, candidate address A, perturbation family P,
+       matched controls N, coherence threshold eps_c, margin m_c
+1. Construct baseline signature sigma_0 from A inside I.
+2. For each perturbation p in P:
+     a. apply p without changing the frozen contract;
+     b. reconstruct sigma_p using the declared address rule;
+     c. compute recovery rho_p against sigma_0;
+     d. compute matched-control recovery rho_n for n in N;
+     e. record residue r_p and control margin mu_p.
+3. Assign PASS, OPEN, or FAIL from declared gates.
+Output: address status, residues, margins, and failure mode.
+\end{verbatim}
+
+This procedure is intentionally modest. It does not ask whether the candidate is metaphysically real. It asks whether the candidate is recoverable under declared interaction. The phrase ``recoverable under perturbation'' means that the signature can be re-entered by the same frozen rules after stress, not that the system returns perfectly to its original state.
+
+\subsection{Distinction from Classical Data, Attractors, and Memory States}
+
+A spectral address differs from classical stored data because it is not a symbol placed at a location. A file path or memory address points to data by convention. A spectral address points to a recoverable spectral/cochain relation by operator structure. The system does not store the address as a tag. It stores, or fails to store, the interaction conditions from which the signature can be reconstructed.
+
+It also differs from an attractor in the usual dynamical-systems sense. An attractor is a set toward which trajectories evolve under a specified dynamics. A spectral address may participate in attractor-like behavior, but it is not defined by convergence alone. It is defined by spectral or cochain identity under a frozen operator hierarchy and by recovery against controls. Attractor language may be useful as analogy, especially when discussing basin behavior, but it is subordinate to the spectral/cochain formulation.
+
+Finally, a spectral address differs from a memory state. A memory state often implies stored information about a past event. A spectral address is weaker and more structural. It says only that a signature remains reconstructable from the current interaction system under declared perturbation. If historical language is used, it must be translated into recoverability language: what persists, by what metric, under what perturbation, and against which controls?
+
+\subsection{Relation to Cochain Complexes and Laplacian Eigenstructures}
+
+The cochain-complex setting is important because HAOS-IIP is not restricted to node signals. The operator family may include node-level scalar sectors, edge or transport sectors, face or curl sectors, and block cochain operators. The address must specify which grade or block it inhabits. A scalar node address, an edge coexact address, and a mixed block address are not interchangeable.
+
+In a cochain complex, incidence maps determine how information can compose across grades. The Laplacian eigenstructure then supplies mode windows and subspaces that can be tracked. A spectral address therefore depends on both topology-like incidence structure and weighted spectral structure. It is not reducible to eigenvalues alone.
+
+This distinction matters for false positives. A spectral peak may persist because of a trivial degree distribution, a boundary artifact, or a control-matched topology. A genuine address claim requires enough cochain and control information to show that the signature is specific to the declared branch. In HAOS-IIP language, the address must be recoverable and branch/control separated.
+
+\section{Implementation in Phase XIX}
+
+\subsection{Bundle Structure (phase19-spectral-address)}
+
+The implementation lives in the repository under
+\[
+\texttt{phase19-spectral-address/}.
+\]
+The phase is a terminology and translation bundle, not a simulation runner. Its core artifacts are:
+
+\begin{itemize}[leftmargin=1.5em]
+\item \texttt{spectral\_address\_definition.md}, the canonical definition and formal interpretation;
+\item \texttt{slide\_alignment.md}, slide-ready wording for the opener, information-storage slide, and mathematical-interpretation slide;
+\item \texttt{phase19\_summary.md}, the compact phase summary;
+\item \texttt{phase19\_manifest.json}, the machine-readable manifest and gate record;
+\item \texttt{runs/phase19\_runs.json}, the run-level terminology record;
+\item \texttt{diagnostics/check\_phase19\_bundle.py}, the checker for required files, required phrases, input existence, and manifest gates.
+\end{itemize}
+
+The bundle deliberately mirrors earlier phase structure while remaining text-first. This is important because terminology can drift just like code can drift. A terminology phase should therefore have its own reproducibility path.
+
+\subsection{Integration into run\_phase.py and PROGRAM\_STATE\_MILESTONE\_19}
+
+Phase XIX is integrated into \texttt{run\_phase.py} as phase \texttt{19}. The builder target is
+\[
+\texttt{phase19-spectral-address/build\_spectral\_address.py},
+\]
+and the checker target is
+\[
+\texttt{phase19-spectral-address/diagnostics/check\_phase19\_bundle.py}.
+\]
+This lets the phase be rebuilt and checked through the same command pattern as other frozen bundles:
+
+\begin{verbatim}
+python3 run_phase.py 19
+python3 run_phase.py 19 --check
+\end{verbatim}
+
+The program-state anchor is updated through \texttt{PROGRAM\_STATE\_MILESTONE\_19.md}. That file records that the last verified regime chain remains the Phase XVI--XVIII ordering, causal-closure, and distance-surrogate chain, while Phase XIX is the current terminology anchor. This distinction matters. Phase XIX does not replace Phase XVIII as a numerical result. It sits above it as a language and interpretation layer.
+
+\subsection{Canonical Terminology Updates (TERMINOLOGY.md, Translation Table, etc.)}
+
+The canonical vocabulary updates are intentionally small. \texttt{TERMINOLOGY.md} now defines spectral address as a recoverable resonance-pattern coordinate in a discrete interaction-invariant system and states that harmonic address is legacy/internal shorthand. The Phase 66 translation table now places \emph{spectral address} first, with \emph{harmonic address} retained as a historical row. The canonical entry paper source is also updated so that public-facing readers encounter spectral address before the older phrase.
+
+These updates enforce a rule:
+\[
+\text{standard spectral/cochain meaning first, HAOS shorthand second.}
+\]
+The term is not allowed to explain itself. It must be linked to an operational construction, a numerical test, a non-claim boundary, and a failure condition.
+
+\subsection{Diagnostics and Verification Protocol}
+
+The Phase XIX checker verifies four levels of consistency. First, it checks that the expected bundle files exist. Second, it checks that the manifest-declared input files exist. Third, it checks that required phrases appear in the Markdown artifacts, including stable recoverable resonance pattern, frozen branch-local cochain-Laplacian hierarchy, persistent spectral signature, interaction invariants, recoverable cochain structures, Laplacian eigenmodes, spectral graph theory, cochain complexes, Kuramoto, and attractor. Fourth, it verifies that all manifest gates are true.
+
+The checker does not validate external physics. It validates the terminology contract. That is the correct gate for this phase.
+
+\section{The HAOS Test for Spectral Addresses}
+
+\subsection{Procedure (Input to Perturb to Coherence Check to Reduce to Residue Evaluation)}
+
+The HAOS test for a spectral address can be summarized as:
+\[
+\text{Input}
+\rightarrow
+\text{Perturb}
+\rightarrow
+\text{Coherence Check}
+\rightarrow
+\text{Reduce}
+\rightarrow
+\text{Residue Evaluation}.
+\]
+
+Input means the frozen regime, candidate address, baseline signature, perturbation family, controls, metrics, and thresholds are declared. Perturb means the candidate is stressed without altering the frozen contract. Coherence check means the candidate signature is reconstructed and compared with the baseline. Reduce means the result is compressed into a bounded status and minimal residue record rather than expanded into interpretation. Residue evaluation means the leftover mismatch, drift, aliasing, or control similarity is treated as evidence, not noise to hide.
+
+In pseudocode:
+
+\begin{verbatim}
+HAOS_SPECTRAL_ADDRESS_TEST(I, A):
+    sigma_0 = baseline_signature(I, A)
+    for p in declared_perturbations(I):
+        I_p = apply_without_contract_drift(I, p)
+        sigma_p = reconstruct_signature(I_p, A)
+        rho_p = recovery_score(sigma_0, sigma_p)
+        mu_p = rho_p - best_matched_control_score(I_p, A)
+        residue_p = residue_record(sigma_0, sigma_p, rho_p, mu_p)
+    return classify(residue_records, declared_thresholds(I))
+\end{verbatim}
+
+\subsection{PASS / OPEN / FAIL Criteria}
+
+A \textsc{PASS} means the address is recoverable under the declared perturbation family, separated from matched controls by the declared margin, and reproducible through the phase checker or equivalent reproduction path. A \textsc{PASS} is internal to the frozen regime. It does not imply physical truth.
+
+An \textsc{OPEN} status means the candidate remains suggestive but lacks one or more authority conditions. For example, it may recover under perturbation but lack strong controls, or it may pass in one refinement range but not enough levels to support a stable hierarchy statement. \textsc{OPEN} is not failure. It is a boundary state.
+
+A \textsc{FAIL} means the address cannot be reidentified, cannot be reconstructed, drifts into controls, aliases into arbitrary labels, broadens beyond the declared window, or depends on changing the rules after the output is known. Failure is not embarrassing in HAOS-IIP. It is part of the audit layer.
+
+\section{Theoretical Implications}
+
+\subsection{Role in Proto-Geometric Surrogates}
+
+Proto-geometric surrogate phases require stable identity before any metric-like or distance-like statement can be meaningful. If a branch cannot be reidentified across perturbation or refinement, then a distance surrogate built on that branch has no stable referent. Spectral addresses help state this dependency cleanly. They name the recoverable coordinate whose persistence makes later surrogate construction possible.
+
+This does not mean spectral addresses are points of space. It means that some operator-derived structures may be stable enough to support computational surrogates for ordering, distance, or locality. The difference is essential. A proto-geometric surrogate is a numerical probe inside a frozen hierarchy, not a claim that geometry has been derived in the physical sense.
+
+\subsection{Connection to Stability Oracle and Emergence Telemetry}
+
+The stability-oracle layer of HAOS-IIP compresses telemetry into callable status judgments such as stable, marginal, or unstable. Spectral addresses provide a more precise target for such telemetry. Instead of asking whether a system as a whole is stable, one can ask whether a declared address remains recoverable under stress.
+
+This allows a finer diagnostic vocabulary:
+\[
+\text{system stability}
+\neq
+\text{address recoverability}
+\neq
+\text{control specificity}.
+\]
+A system may remain globally stable while a candidate address fails. A candidate address may remain recoverable but fail control separation. A control-specific address may still lack external physical interpretation. These distinctions keep emergence telemetry from becoming overconfident.
+
+\subsection{Bridges to Materials, Biology, and Operator Architecture}
+
+External bridge work in materials and biology often deals with peak windows, coherent modes, network signatures, or recoverability under perturbation. Spectral-address language is useful there because it forces each bridge claim to declare what is being addressed: a frequency window, a band, a transport branch, a cochain-like network signature, or a model-derived subspace.
+
+However, the term does not lower the evidence threshold. A materials spectral address must still be tied to data provenance, peak detection, drift, linewidth proxy, null windows, and raw-data boundaries. A biology telemetry address must still beat biological nulls and avoid claiming mechanism from toy structure alone. An operator-architecture address must still be traceable to the frozen incidence and Laplacian construction.
+
+\section{Discussion}
+
+\subsection{Open Questions and Next Phases}
+
+The main open question is whether the spectral-address translation layer can be attached to later measurement phases without changing frozen operators or claim gates. A useful next phase would not merely repeat the terminology. It would test one or more declared spectral addresses across a new perturbation or bridge setting using the full PASS/OPEN/FAIL protocol.
+
+Several technical questions remain. What is the best default distance between spectral subspaces in the presence of degeneracy? How should branch identity be tracked when eigenvalue crossings occur? When should peak-window language be separated from Laplacian-subspace language? What null ladders are strong enough for external materials and biology data? How should address recoverability be reported when amplitude and identity diverge?
+
+These questions are not defects in the framework. They are the reason Phase XIX is useful. It turns ambiguous vocabulary into explicit work items.
+
+\subsection{Why Spectral Addresses Represent a Consolidation Milestone}
+
+Phase XIX is a consolidation milestone because it reduces terminology debt at the point where the program needs public readability. Earlier phases generated enough spectral, branch, propagation, and surrogate language that the address concept could no longer remain poetic or internal. It needed a formal, cautious, reproducible definition.
+
+The milestone is therefore not a new positive numerical result. It is the freezing of a language gate. From this point forward, an address claim must say which operator or cochain structure is involved, which spectral coordinate is being tracked, which perturbations are applied, which controls are matched, which metric defines recoverability, and which failure modes are admitted. That is a meaningful maturation step for a computational pre-spacetime program.
+
+\section{Conclusion}
+
+Phase XIX defines spectral addresses as the canonical public language for recoverable spectral/cochain identity coordinates in HAOS-IIP. The term replaces the older internal phrase harmonic address for technical use while preserving the intuition that some structures can be addressed by stable resonance-like identity. The formal object is not static data, not an attractor by itself, and not a memory state. It is a reconstructable spectral signature inside a discrete interaction-invariant system, evaluated through perturbation, controls, and explicit thresholds.
+
+The resulting framework is intentionally cautious. It supports future tests of recoverable structure without promoting internal numerical success into external physical proof. It gives later phases a cleaner target: not whether a pattern looks meaningful, but whether a declared spectral address survives the HAOS test. If it does, it earns a bounded internal status. If it does not, the failure is recorded as part of the recoverability map.
+
+\section*{10. References}
+\addcontentsline{toc}{section}{10. References}
+
+\begin{thebibliography}{99}
+
+\bibitem{haos-github}
+T. Rupi\'c,
+\emph{HAOS-IIP: Harmonic Address Operating System -- Interaction Invariant Physics},
+GitHub repository,
+\url{https://github.com/tomislavrupic/HAOS-IIP}.
+
+\bibitem{haos-zenodo}
+T. Rupi\'c,
+\emph{HAOS-IIP archived release},
+Zenodo DOI:
+\url{https://doi.org/10.5281/zenodo.18938323}.
+
+\bibitem{phase19}
+T. Rupi\'c,
+\emph{Phase XIX Spectral Address Bundle},
+\texttt{phase19-spectral-address/},
+HAOS-IIP repository artifact, 2026.
+
+\bibitem{terminology}
+T. Rupi\'c,
+\emph{TERMINOLOGY.md},
+HAOS-IIP canonical terminology file, 2026.
+
+\bibitem{translation}
+T. Rupi\'c,
+\emph{HAOS-IIP Core Translation Table v1},
+\texttt{docs/notes/foundations/HAOS\_IIP\_Core\_Translation\_Table\_v1.md},
+2026.
+
+\bibitem{canonical-entry}
+T. Rupi\'c,
+\emph{HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer},
+\texttt{docs/notes/foundations/HAOS\_IIP\_Canonical\_Entry\_Paper\_v1.md},
+2026.
+
+\bibitem{phase7}
+T. Rupi\'c,
+\emph{Phase VII Spectral Feasibility},
+\texttt{phase7-spectral/phase7\_spectral\_manifest.json},
+HAOS-IIP repository artifact, 2026.
+
+\bibitem{phase18}
+T. Rupi\'c,
+\emph{Phase XVIII Distance-Surrogate Feasibility},
+\texttt{phase18-distance-surrogate/phase18\_manifest.json},
+HAOS-IIP repository artifact, 2026.
+
+\bibitem{api-contract}
+T. Rupi\'c,
+\emph{API Contract},
+\texttt{API\_CONTRACT.md},
+HAOS-IIP repository artifact, 2026.
+
+\bibitem{program-state-19}
+T. Rupi\'c,
+\emph{Program State Milestone 19},
+\texttt{PROGRAM\_STATE\_MILESTONE\_19.md},
+HAOS-IIP repository artifact, 2026.
+
+\end{thebibliography}
+
+\end{document}
