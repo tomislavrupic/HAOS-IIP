@@ -1,0 +1,10 @@
+[project]
+name = "haos-iip"
+version = "0.0.0"
+description = "HAOS-IIP reproducibility helpers and phase diagnostics."
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.8",
+    "numpy>=2.0",
+    "scipy>=1.12",
+]
