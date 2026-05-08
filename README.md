@@ -6,6 +6,29 @@ A large-scale, disciplined numerical research program exploring reproducible eme
 
 **200+ commits | 19+ phased bundles | strict reproducibility | frozen baselines + telemetry**
 
+**Current focus**: strengthening numerical scale-bridge diagnostics (Release 66.5).
+
+### Current Status - Release 66.5 (May 2026)
+
+**Scale-Bridge Legitimacy Audit is active**
+
+- dedicated **66.5 HAOS-IIP Scale-Bridge Legitimacy Audit** PDF released
+- CP1-CP6 Continuum Physics ladder formalized in the foundations layer
+- initial convergence diagnostic extract populated from Phase X and Phase XVIII frozen ledgers, matched-control separation, and projection-recovery bookkeeping
+- Phase XIX Spectral Address bundle frozen as the canonical terminology layer
+- environment reproducible via `uv` with `pyproject.toml` and `uv.lock`
+
+**Key recent artifacts**:
+
+- [HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md](docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md) with populated convergence extract
+- [66.5 HAOS-IIP Scale-Bridge Legitimacy Audit.pdf](papers/pdf_releases/66.5%20HAOS-IIP%20Scale-Bridge%20Legitimacy%20Audit.pdf)
+- [Phase XIX Spectral Address bundle](phase19-spectral-address/README.md)
+- Python dependency lockfile for consistent `uv run` execution
+
+**Next hard gate**: same-surrogate coarse-graining recovery and round-trip identity preservation before any stronger scale-bridge statement. All work remains in the roadmap/foundations layer; no claim boundaries are altered.
+
+**Philosophy reminder**: structure is what survives perturbation. This repository provides diagnostic scaffolding and numerical feasibility tests. It does not claim a continuum limit, physical correspondence, or ontology.
+
 ### One-Sentence Summary
 
 This repository demonstrates that a coherent, multi-hundred-page-equivalent computational research arc (stability -> scalar-carrier geometry -> cautious physics-bridge observables -> bounded external-data sidecars) can be built and kept verifiable using structured workflows and current tools.
@@ -13,7 +36,7 @@ This repository demonstrates that a coherent, multi-hundred-page-equivalent comp
 ### Success Criterion
 
 ```bash
-python3 examples/quick_reproduce.py
+uv run python examples/quick_reproduce.py
 ```
 
 This command must reproduce identical public tables and plots against the frozen baselines. No new simulations are required for validation.
@@ -47,7 +70,10 @@ So far, inside the tested families, the answer is yes: multiple milestones close
 ```bash
 git clone https://github.com/tomislavrupic/HAOS-IIP.git
 cd HAOS-IIP
-python3 examples/quick_reproduce.py
+uv sync
+uv run python examples/quick_reproduce.py
+uv run python run_phase.py 10 --check
+uv run python run_phase.py 18 --check
 ```
 
 This gives you:
@@ -59,13 +85,13 @@ This gives you:
 For a single phase integrity check:
 
 ```bash
-python3 run_phase.py 18 --check
+uv run python run_phase.py 18 --check
 ```
 
 For the terminology translation layer:
 
 ```bash
-python3 run_phase.py 19 --check
+uv run python run_phase.py 19 --check
 ```
 
 ### Visual Orientation
@@ -156,7 +182,7 @@ diagnostics/
 For a cold external read, start with the narrow public reproduction path:
 
 ```bash
-python3 examples/quick_reproduce.py
+uv run python examples/quick_reproduce.py
 ```
 
 This one command:
@@ -169,19 +195,19 @@ This one command:
 If you only want to validate a single frozen bundle, run an integrity check:
 
 ```bash
-python3 run_phase.py 18 --check
+uv run python run_phase.py 18 --check
 ```
 
 The Phase XIX terminology bundle is also checkable:
 
 ```bash
-python3 run_phase.py 19 --check
+uv run python run_phase.py 19 --check
 ```
 
 Example:
 
 ```bash
-python3 run_phase.py 10 --check
+uv run python run_phase.py 10 --check
 ```
 
 No new simulations are required to validate frozen results.
@@ -189,7 +215,7 @@ No new simulations are required to validate frozen results.
 To regenerate the external physics-bridge proxy table without changing the default reproduction contract:
 
 ```bash
-python3 examples/quick_reproduce.py --physics-observables-only
+uv run python examples/quick_reproduce.py --physics-observables-only
 ```
 
 To rerun the external ferron / NbOI2 materials bridge sidecar:
@@ -387,6 +413,7 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [66.5 HAOS-IIP Scale-Bridge Legitimacy Audit - Convergence Diagnostics, CP Ladder, and Refinement-Ledger Extracts](papers/pdf_releases/66.5%20HAOS-IIP%20Scale-Bridge%20Legitimacy%20Audit.pdf)
 - [66.4 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.4%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 - [66.3 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.3%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 - [66.2 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.2%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
