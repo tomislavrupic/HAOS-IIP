@@ -351,3 +351,262 @@ Scale-bridge evidence is useful.
 Scale-bridge evidence is not continuum proof.
 
 The correct posture is not pessimism. It is recoverable coherence under stronger interaction with controls, refinement, and compression.
+
+## 13. Focused legitimacy lift cycle
+
+This section defines the next bounded work cycle for raising scale-bridge legitimacy without changing the public claim boundary.
+
+Planning target:
+
+```text
+cautious but thin -> cautious but solid
+```
+
+This is an internal maturity target, not a scientific score and not a claim of continuum proof.
+
+### 13.1 Refinement -> scaling analysis
+
+This is the highest-leverage upgrade.
+
+Native home:
+
+- CP1 scalar continuum contract
+- CP4 geometry closure contract
+- CP5 universality contract
+- Phase V-X frozen admissible operator hierarchy
+
+Required additions:
+
+- explicit convergence metrics across deterministic refinement levels
+- eigenvalue spectra, trace coefficients, and dimensionless ratios tracked as `N` increases
+- quantifiable error trends or stability bands, not only visual trend statements
+- side-by-side tables and plots comparing HAOS admissible hierarchy rows against matched controls under identical refinement
+- coarse-graining recovery tests showing whether refined structure projects back to coarser levels while preserving recoverability
+
+Minimum outputs:
+
+- `refinement_scaling_ledger.csv`
+- `matched_control_scaling_comparison.csv`
+- `coarse_grain_recovery_ledger.csv`
+- plots for branch vs. control scaling trends
+- a Scale-Bridge Status Box
+
+Core question:
+
+```text
+Do selected HAOS-IIP scaling patterns survive refinement and compression better than matched controls?
+```
+
+Allowed upgrade if successful:
+
+```text
+bounded, reproducible scaling patterns become documented refinement-ordered scaling diagnostics toward continuum feasibility
+```
+
+Forbidden upgrade:
+
+```text
+continuum limit proven
+```
+
+### 13.2 Proto-geometry surrogate formalization
+
+Native home:
+
+- CP4 geometry closure contract
+- Phase XVIII distance-surrogate artifacts
+- scalar-carrier geometry closure notes
+
+Required additions:
+
+- define proto-distance and proto-curvature proxies strictly inside the code or ledger schema
+- allow definitions from spectral address separation, subspace overlap decay, cochain inner-product distance, Green-response distance, heat-kernel behavior, shell-arrival slope, or operator-response distance
+- test limited metric-like properties only inside admissible branches and only after sufficient refinement
+- report bounded triangle-inequality behavior, non-negativity, identity behavior, symmetry where applicable, perturbation stability, and matched-control separation
+
+Minimum outputs:
+
+- `proto_geometry_surrogate_definitions.md`
+- `metric_surrogate_test_ledger.csv`
+- `proto_to_continuum_feasibility_checklist.md`
+
+Core question:
+
+```text
+Which metric-like surrogate behaviors stabilize under refinement inside the tested operator regime?
+```
+
+Allowed upgrade if successful:
+
+```text
+metric-like surrogate behavior stabilizes under refinement inside the tested operator regime
+```
+
+Forbidden upgrade:
+
+```text
+proto-geometry emerges as physical spacetime
+```
+
+### 13.3 One bounded predictive bridge experiment
+
+Native home:
+
+- bridge observable candidate layer
+- materials or biology sidecar layer
+- Phase 66 claim-gated external bridge posture
+
+Candidate sources:
+
+- ferron coherence sidecar
+- alpha-Fe2O3 magnon stability sidecar
+
+Required additions:
+
+- choose one external dataset or sidecar line already present in the repo
+- declare a prospective spectral feature, target window, recoverability threshold, or failure threshold before the full audit pass
+- run the frozen ladder or declared bridge telemetry without post-hoc threshold rescue
+- compare prediction against the held-out or later-audited feature
+- document successes and failures in the same artifact
+
+Minimum outputs:
+
+- `predictive_bridge_protocol.md`
+- `predictive_bridge_result_ledger.csv`
+- explicit PASS / OPEN / FAIL record
+- raw-data boundary statement
+
+Core question:
+
+```text
+Can HAOS-IIP telemetry make a bounded predictive diagnostic statement before full post-hoc audit?
+```
+
+Allowed upgrade if successful:
+
+```text
+bridge observable candidate shows bounded prospective diagnostic value in the tested dataset
+```
+
+Forbidden upgrade:
+
+```text
+external data proves HAOS-IIP or physical correspondence
+```
+
+### 13.4 Language and documentation tightening
+
+Native home:
+
+- Phase 66 public language rule
+- this scale-bridge audit
+- README and future continuum-facing papers
+
+Required replacements:
+
+| Replace | Use instead |
+| --- | --- |
+| continuum bridge | refinement-ordered scaling diagnostics toward continuum feasibility |
+| proto-geometry emerges | metric-like surrogate behavior stabilizes under refinement inside the tested operator regime |
+| physical observable | bridge observable candidate |
+| derived metric field | operator-derived metric surrogate |
+
+Every new continuum-facing output should include a section titled:
+
+```text
+Scale-Bridge Status and Limits
+```
+
+Minimum content:
+
+- what is refined
+- what stabilizes
+- what fails
+- what matched controls were used
+- what continuum-feasibility evidence exists
+- what is not claimed
+
+### 13.5 Expected legitimacy impact
+
+This is a planning estimate only.
+
+| Work completed | Expected legitimacy change |
+| --- | --- |
+| refinement scaling ledger plus matched controls | largest single increase; scaling becomes structured evidence rather than loose trend |
+| proto-geometry surrogate formalization | metric-like language becomes testable and failure-gated |
+| one bounded predictive bridge experiment | moves bridge work from proxy description toward prospective diagnostic use |
+| language tightening | reduces ontology creep and improves external auditability |
+
+The correct interpretation of a successful lift cycle is:
+
+```text
+The scale bridge is better audited, better controlled, and more predictive inside bounded regimes.
+```
+
+The incorrect interpretation is:
+
+```text
+The continuum has been derived.
+```
+
+## 14. v1.1 active lift-cycle templates
+
+Status:
+
+- focused lift cycle active
+- initial convergence diagnostics in progress
+- no new numerical result recorded in this audit yet
+- target: complete the first minimal convergence and matched-control diagnostic before Phase XIX freeze
+
+These templates are placeholders for executable results. They must not be filled with illustrative or aspirational values.
+
+### 14.1 Minimal convergence table template
+
+Use this table for the first small refinement-ordered scaling diagnostic.
+
+| `N` / level | Operator family | Observable | HAOS value | Matched-control value | Dimensionless ratio | Error / drift | Coarse-grain recovery % | Status | Claim boundary |
+| ---: | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| TBD | TBD | spectral gap / trace ratio / eigenvalue band | TBD | TBD | TBD | TBD | TBD | `OPEN` | refinement evidence only; no continuum proof |
+
+Minimum acceptance rule:
+
+- at least three deterministic refinement levels
+- one matched control evaluated with the same observable and normalization
+- one coarse-graining recovery score
+- explicit `PASS`, `OPEN`, or `FAIL`
+- explicit claim boundary in every row
+
+### 14.2 Matched-control failure example template
+
+Use this table when a control fails to preserve the branch scaling behavior.
+
+| Control family | What was matched | What failed | Branch result | Control result | Interpretation | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| TBD | degree / weights / seed / kernel / operator size | scaling trend / branch identity / surrogate ordering / recovery | TBD | TBD | control does not reproduce the claimed refinement-ordered structure | `OPEN` |
+
+The control failure must be specific. It is not enough to say that the control was worse. The artifact must state what was held fixed, what diverged, and whether the difference survives normalization.
+
+### 14.3 Scale-Bridge Status and Limits paragraph template
+
+Every lift-cycle result should include this paragraph or a filled version of it:
+
+```text
+Scale-Bridge Status and Limits:
+
+This artifact tests refinement-ordered scaling diagnostics toward continuum feasibility inside the declared HAOS-IIP operator regime. What is refined is [operator/substrate/level]. What stabilizes is [observable/signature/surrogate]. What fails or remains open is [failure/open boundary]. The matched control is [control family]. The continuum-feasibility evidence is [bounded evidence]. This does not claim a proven continuum limit, derivation of spacetime, derivation of known physics, physical correspondence, uniqueness of the limit, or replacement of established models.
+```
+
+### 14.4 Bounded predictive bridge result template
+
+Use this only for a prospective or held-out bridge test.
+
+| Bridge line | Predeclared target | Threshold | Data boundary | Observed result | PASS / OPEN / FAIL | Failure note |
+| --- | --- | ---: | --- | --- | --- | --- |
+| ferron / magnon / biology | spectral feature / recovery threshold / target window | TBD | raw-data status | TBD | `OPEN` | no post-hoc threshold rescue |
+
+Minimum acceptance rule:
+
+- target declared before full audit
+- raw-data boundary stated
+- failures recorded next to successes
+- no language stronger than `bridge observable candidate`

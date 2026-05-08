@@ -254,12 +254,13 @@ and the boundary `NO_PUBLIC_STFT_GRID_FOUND`. Its evidence class is
 literature/user-audit seeded, not `REAL_DATA_LOADED`; no raw-data or `k_star`
 claim is made without a future local raw-data audit.
 
-### 2.49 Part XLIX. Phase 66 translation and hostile-audit entry release
+### 2.49 Part XLIX. Phase 66 translation and hostile-audit releases
 
-1. `66.4` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
-2. `66.3` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
-3. `66.2` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
-4. `66.1` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+1. `66.5` HAOS-IIP Scale-Bridge Legitimacy Audit
+2. `66.4` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+3. `66.3` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+4. `66.2` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+5. `66.1` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
 
 Bounded status: release `66.4` is a public entry paper, not a new mechanism and
 not a new physical claim. It freezes the Phase 66 translation and hostile-audit
@@ -271,6 +272,14 @@ copy-clean ASCII-hyphen list labels, and explicit claim boundaries. Release
 `66.1` remains the first frozen entry-paper snapshot; `66.2` remains the first
 polished public entry release; `66.3` remains the title-page subtitle polish
 snapshot.
+
+Release `66.5` is a Phase 66-compatible scale-bridge hostile-audit companion,
+not Phase 67 and not a new mechanism. It freezes the scale-bridge legitimacy
+audit in numbered PDF form: refinement-ordered scaling diagnostics toward
+continuum feasibility, matched-control scaling comparison, proto-geometry
+surrogate language rules, limited metric-like tests, coarse-graining recovery,
+failure gates, and v1.1 active lift-cycle templates. Its core boundary is that
+refinement evidence is not continuum proof.
 
 ## 3. Full release list
 
@@ -356,6 +365,7 @@ snapshot.
 - `66.2` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
 - `66.3` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
 - `66.4` HAOS-IIP Canonical Entry Paper: Translation and Hostile-Audit Layer
+- `66.5` HAOS-IIP Scale-Bridge Legitimacy Audit
 
 Rule for future papers:
 - add the compiled PDF here when a paper snapshot is frozen

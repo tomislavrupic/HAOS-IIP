@@ -333,6 +333,20 @@ If scalar convergence does not generalize, the ladder shrinks.
 If `L1` never separates into a true coexact band, the gauge language shrinks.
 If no stable coarse law closes on XV-XVIII, "continuum physics" shrinks back to "bounded continuum-style kinematics."
 
+For the specific goal of raising scale-bridge legitimacy without expanding claims, the immediate work cycle is defined in [HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md):
+
+```text
+refinement scaling ledger + matched controls
+    ->
+proto-geometry surrogate formalization
+    ->
+one bounded predictive bridge experiment
+    ->
+Scale-Bridge Status and Limits language cleanup
+```
+
+This cycle targets better refinement-ordered scaling diagnostics toward continuum feasibility, not a continuum proof.
+
 ## 7. Bottom line
 
 `[E]` HAOS-IIP is already beyond a pure discrete-toy stage.

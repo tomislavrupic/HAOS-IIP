@@ -42,7 +42,7 @@ The release logic is:
 2. the repository carries the mechanics
 3. the Zenodo DOI freezes the archive state
 
-## 2.1 Phase 66 public entry release
+## 2.1 Phase 66 public entry and audit releases
 
 Current public entry release:
 
@@ -63,6 +63,23 @@ boundaries. Release `66.1` remains the first frozen entry-paper snapshot;
 `66.2` remains the first polished public entry release; `66.3` remains the
 title-page subtitle polish snapshot; `66.4` is the current recommended public
 entry release.
+
+Current scale-bridge hostile-audit companion:
+
+1. `66.5` HAOS-IIP Scale-Bridge Legitimacy Audit
+2. Primary PDF:
+   `pdf_releases/66.5 HAOS-IIP Scale-Bridge Legitimacy Audit.pdf`
+3. Source:
+   `haos_iip_scale_bridge_legitimacy_audit_phase_66_companion.tex`
+
+Bounded result: this is not Phase 67, not a new mechanism, and not a physical
+correspondence claim. It freezes the scale-bridge legitimacy audit as a
+Phase 66-compatible companion to the Continuum Physics Scaling Roadmap:
+refinement-ordered scaling diagnostics toward continuum feasibility, matched
+control requirements, proto-geometry surrogate language rules, limited
+metric-like tests, coarse-graining recovery checks, failure gates, and v1.1
+lift-cycle templates. It explicitly states that refinement evidence is not
+continuum proof.
 
 ## 2.2 External-data sidecar releases
 
