@@ -8,6 +8,8 @@ A large-scale, disciplined numerical research program exploring reproducible eme
 
 **Current focus**: strengthening numerical scale-bridge diagnostics (Release 66.5).
 
+**Current milestone**: `66.5` is the current scale-bridge milestone; `66.4` remains the recommended canonical entry paper.
+
 ### Current Status - Release 66.5 (May 2026)
 
 **Scale-Bridge Legitimacy Audit is active**
@@ -20,6 +22,7 @@ A large-scale, disciplined numerical research program exploring reproducible eme
 
 **Key recent artifacts**:
 
+- [HAOS-IIP Paper Spine Index v66.5](papers/HAOS_IIP_Paper_Spine_Index_v66_5.md)
 - [HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md](docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md) with populated convergence extract
 - [66.5 HAOS-IIP Scale-Bridge Legitimacy Audit.pdf](papers/pdf_releases/66.5%20HAOS-IIP%20Scale-Bridge%20Legitimacy%20Audit.pdf)
 - [Phase XIX Spectral Address bundle](phase19-spectral-address/README.md)
@@ -413,6 +416,7 @@ It does not introduce new dynamics.
 
 Latest releases:
 
+- [HAOS-IIP Paper Spine Index v66.5](papers/pdf_releases/HAOS-IIP_Paper_Spine_Index_v66.5.pdf)
 - [66.5 HAOS-IIP Scale-Bridge Legitimacy Audit - Convergence Diagnostics, CP Ladder, and Refinement-Ledger Extracts](papers/pdf_releases/66.5%20HAOS-IIP%20Scale-Bridge%20Legitimacy%20Audit.pdf)
 - [66.4 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.4%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)
 - [66.3 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer](papers/pdf_releases/66.3%20HAOS-IIP%20Canonical%20Entry%20Paper%20-%20Translation%20and%20Hostile-Audit%20Layer.pdf)

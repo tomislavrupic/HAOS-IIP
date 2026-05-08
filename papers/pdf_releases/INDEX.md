@@ -5,6 +5,10 @@ Naming convention:
 - `PP` = paper number in the research sequence
 - `V` = release version for that paper
 
+Current navigation artifact:
+
+1. `HAOS-IIP_Paper_Spine_Index_v66.5.pdf` - one-page entry map for the numbered release spine. It keeps `66.4` as the recommended canonical entry paper and identifies `66.5` as the current scale-bridge milestone.
+
 ## 1. Phase I release structure
 
 This folder contains the full frozen-program release stack.

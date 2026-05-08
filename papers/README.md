@@ -2,6 +2,14 @@
 
 This folder is the publication front door for the frozen-architecture program.
 
+## Current paper spine index
+
+1. `HAOS-IIP_Paper_Spine_Index_v66.5.pdf`
+2. Source: `HAOS_IIP_Paper_Spine_Index_v66_5.tex`
+3. Markdown: `HAOS_IIP_Paper_Spine_Index_v66_5.md`
+
+This one-page index is the fastest route through the current public paper spine. It keeps `66.4` as the recommended canonical entry paper and marks `66.5` as the current scale-bridge milestone.
+
 ## 0. Master synthesis
 
 For a single program-level read across the archive, start with:
