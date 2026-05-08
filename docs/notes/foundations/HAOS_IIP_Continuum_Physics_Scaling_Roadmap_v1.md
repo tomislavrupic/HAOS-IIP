@@ -4,6 +4,7 @@ Status:
 
 - synthesis note, not a frozen phase contract
 - purpose: state where the repository stands now and define the narrowest credible path from HAOS-IIP to a bounded continuum-physics program
+- companion hostile-audit layer: [HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md)
 
 Status labels:
 
@@ -171,6 +172,8 @@ The repo has proto-geometric distance-surrogate evidence and geometry-facing not
 ## 5. The clean scaling ladder
 
 `[P]` The most disciplined route is a six-step ladder.
+
+Scale-bridge legitimacy for this ladder is audited in [HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md). The audit adds ledger requirements, matched-control scaling comparison, proto-geometry surrogate language rules, limited metric-like tests, coarse-graining recovery checks, and mandatory failure gates. Its core rule is: refinement evidence is not continuum proof.
 
 ### CP1. Scalar continuum contract
 

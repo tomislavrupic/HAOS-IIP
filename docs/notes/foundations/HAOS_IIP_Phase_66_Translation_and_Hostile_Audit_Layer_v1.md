@@ -182,6 +182,7 @@ simply rediscover known behavior.
 Full artifact:
 
 - [HAOS_IIP_Falsification_Engine_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Falsification_Engine_v1.md)
+- [HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md) extends the Phase 66 hostile-audit posture to continuum-facing scale claims.
 
 A serious program must state not only what would support it, but what would
 break it.
@@ -192,6 +193,8 @@ Public failure gates:
 - branch identity is not stable under bounded perturbation
 - local metric surrogate fails to converge
 - metric-like behavior violates positivity or isotropy under the claimed regime
+- scale-bridge evidence is no better than matched scaling controls
+- coarse-graining destroys the claimed refinement structure
 - current-closure signal disappears under matched controls
 - collapse-ordering signal depends on evaluation order
 - bridge observables are indistinguishable from generic graph or null-model behavior
