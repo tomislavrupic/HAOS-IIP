@@ -326,7 +326,7 @@ Phase 66 translation and hostile-audit rule:
 - [Framework comparison matrix](docs/notes/foundations/HAOS_IIP_Framework_Comparison_Matrix_v1.md) states overlap, difference, forbidden assumptions, rediscovery risk, possible contribution, and required tests against nearby frameworks.
 - [Claim-gating template](docs/notes/foundations/HAOS_IIP_Claim_Gating_Template_v1.md) provides mandatory claim-boundary boilerplate for papers, dashboards, Zenodo releases, README updates, and public summaries.
 - [Scale-bridge legitimacy audit](docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md) applies the Phase 66 hostile-audit posture to refinement-ordered scaling diagnostics toward continuum feasibility.
-- Scale-Bridge Legitimacy Audit v1.1: focused lift cycle active; initial convergence diagnostics in progress, with no continuum-proof claim.
+- Scale-Bridge Legitimacy Audit v1.2: focused lift cycle active; initial convergence diagnostic extract recorded from frozen ledgers, with no continuum-proof claim.
 - Core rule: no expansion before translation.
 - The purpose is to translate HAOS-IIP into standard mathematical and computational language, define failure gates, compare against nearby frameworks, and make the program easier to reproduce, inspect, attack, and improve.
 - Corrected public posture: HAOS-IIP is a reproducible computational exploration of emergence, recoverability, and operator-derived structure in discrete interaction systems. It does not yet derive known physics; its current value is methodological, diagnostic, and exploratory.

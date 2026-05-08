@@ -554,9 +554,8 @@ The continuum has been derived.
 Status:
 
 - focused lift cycle active
-- initial convergence diagnostics in progress
-- no new numerical result recorded in this audit yet
-- target: complete the first minimal convergence and matched-control diagnostic before Phase XIX freeze
+- initial convergence diagnostic extract recorded in Section 15
+- next target: same-surrogate coarse-graining recovery before any stronger scale-bridge statement
 
 These templates are placeholders for executable results. They must not be filled with illustrative or aspirational values.
 
@@ -610,3 +609,82 @@ Minimum acceptance rule:
 - raw-data boundary stated
 - failures recorded next to successes
 - no language stronger than `bridge observable candidate`
+
+## 15. v1.2 initial convergence diagnostic extract
+
+Status:
+
+- populated from frozen HAOS-IIP ledgers only
+- no new dynamics or new thresholds introduced
+- not a CP1 proof, not a continuum limit, and not a physical correspondence claim
+- records one CP4-facing metric-surrogate refinement diagnostic and one Phase X projection-recovery diagnostic
+- same-surrogate coarse-graining recovery remains `OPEN`
+
+Source artifacts:
+
+- `phase18-distance-surrogate/runs/phase18_refinement_scaling.csv`
+- `phase18-distance-surrogate/phase18_summary.md`
+- `phase10-bridge/runs/phase10_coarse_grain_summary.csv`
+- `continuum-sketch/continuum_sketch_summary.md`
+
+### 15.1 Metric-surrogate refinement table
+
+Observable:
+
+`mean_arrival_vs_depth_slope`, the Phase XVIII distance-surrogate shell slope reconstructed from frozen Phase XV-XVII ledgers on the `bias_onset`, ensemble-7 slice.
+
+Matched control:
+
+`periodic_diagonal_augmented_control`, evaluated with the same observable, seeds, disturbance family, and refinement levels.
+
+| `N` / level | Operator family | Observable | HAOS value | Matched-control value | Dimensionless ratio | Error / drift | Coarse-grain recovery % | Status | Claim boundary |
+| ---: | --- | --- | ---: | ---: | ---: | ---: | --- | --- | --- |
+| 60 | frozen branch-local cochain-Laplacian hierarchy | arrival-vs-depth shell slope | 1.004762 | 0.682051 | 1.473147 | baseline | `OPEN` | `PASS` for baseline row; `OPEN` for coarse-grain recovery | metric-like surrogate behavior only; no continuum proof |
+| 72 | frozen branch-local cochain-Laplacian hierarchy | arrival-vs-depth shell slope | 1.004762 | 1.266667 | 0.793233 | 0.000000 branch drift; 0.584615 control drift | `OPEN` | `PASS` for refinement stability; `OPEN` for coarse-grain recovery | metric-like surrogate behavior only; no continuum proof |
+| 84 | frozen branch-local cochain-Laplacian hierarchy | arrival-vs-depth shell slope | 1.009524 | 1.028571 | 0.981481 | 0.004762 branch drift; 0.238095 control drift | `OPEN` | `PASS` for refinement stability; `OPEN` for coarse-grain recovery | metric-like surrogate behavior only; no continuum proof |
+
+Interpretation:
+
+The branch shell-slope band remains compact across `N = 60, 72, 84`, with maximum adjacent drift `0.004762`. The matched control has maximum adjacent slope drift `0.584615`. The branch also keeps causal-depth drift at `0.000000`, while the matched control reaches `0.714286`. This is scale-bridge evidence for stabilized metric-like surrogate behavior inside the tested operator regime. It is not continuum proof.
+
+Remaining limitation:
+
+This table does not yet show that the same Phase XVIII surrogate survives an explicit coarse-graining and projection-back recovery test. That requirement remains `OPEN`.
+
+### 15.2 Projection-recovery compression table
+
+Observable:
+
+Phase X low-mode spectral projection under cutoff `lambda <= 7.5`, including retained mode fraction, trace-window error, ratio drift, and preservation of low modes and ratio ordering.
+
+Matched control:
+
+`generic_open_grid_scalar_block_control`.
+
+| Level | `N` | Branch retained modes % | Control retained modes % | Branch trace-window error | Control trace-window error | Branch ratio drift | Control ratio drift | Low modes preserved | Ratio ordering preserved | Status |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
+| R1 | 12 | 96.528 | 97.917 | 0.032208 | 0.019219 | 0.059971 | 0.042405 | True / True | True / True | `PASS` projection recovery; `OPEN` for control specificity |
+| R2 | 24 | 96.354 | 97.049 | 0.033787 | 0.027282 | 0.062845 | 0.054982 | True / True | True / True | `PASS` projection recovery; `OPEN` for control specificity |
+| R3 | 36 | 96.219 | 96.528 | 0.035043 | 0.032131 | 0.064903 | 0.062750 | True / True | True / True | `PASS` projection recovery; `OPEN` for control specificity |
+| R4 | 48 | 95.790 | 96.398 | 0.039037 | 0.033349 | 0.072025 | 0.064233 | True / True | True / True | `PASS` projection recovery; `OPEN` for control specificity |
+| R5 | 60 | 95.972 | 96.306 | 0.037338 | 0.034210 | 0.068999 | 0.065338 | True / True | True / True | `PASS` projection recovery; `OPEN` for control specificity |
+
+Interpretation:
+
+The Phase X projection ledger gives compression evidence: low modes and ratio ordering survive projection across R1-R5. It does not by itself establish branch-specific scale-bridge separation, because the matched control also preserves the listed projection properties. Its role in this audit is therefore bounded: it supports compression/recovery bookkeeping, while control-specific continuum-feasibility remains `OPEN`.
+
+### 15.3 Matched-control failure example
+
+| Control family | What was matched | What failed | Branch result | Control result | Interpretation | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| `periodic_diagonal_augmented_control` | disturbance family, seeds, ensemble size, arrival/depth observable, and refinement levels | distance-surrogate slope stability and causal-depth stability | max adjacent shell-slope drift `0.004762`; causal-depth drift `0.000000` | max adjacent shell-slope drift `0.584615`; causal-depth drift `0.714286` | the control does not reproduce the branch's stabilized metric-surrogate behavior under the same refinement diagnostic | `PASS` for matched-control separation inside this tested slice |
+
+### 15.4 Filled Scale-Bridge Status and Limits paragraph
+
+Scale-Bridge Status and Limits:
+
+This artifact tests refinement-ordered scaling diagnostics toward continuum feasibility inside the declared HAOS-IIP operator regime. What is refined is the frozen branch-local cochain-Laplacian hierarchy on the Phase XVIII `N = 60, 72, 84` distance-surrogate slice and the Phase X R1-R5 spectral-projection slice. What stabilizes is the branch arrival-vs-depth shell slope, causal-depth identity, and low-mode projection bookkeeping. What fails or remains open is same-surrogate coarse-graining recovery, CP1 scalar convergence beyond the existing bounded contract, and CP5 universality across broader substrate/kernel families. The matched controls are `periodic_diagonal_augmented_control` and `generic_open_grid_scalar_block_control`. The continuum-feasibility evidence is bounded evidence for metric-like surrogate stabilization and compression bookkeeping inside tested regimes. This does not claim a proven continuum limit, derivation of spacetime, derivation of known physics, physical correspondence, uniqueness of the limit, or replacement of established models.
+
+Scale-bridge evidence is useful.
+
+Scale-bridge evidence is not continuum proof.

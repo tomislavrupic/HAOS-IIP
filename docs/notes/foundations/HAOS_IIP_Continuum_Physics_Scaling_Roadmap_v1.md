@@ -347,6 +347,8 @@ Scale-Bridge Status and Limits language cleanup
 
 This cycle targets better refinement-ordered scaling diagnostics toward continuum feasibility, not a continuum proof.
 
+The first v1.2 diagnostic extract is now recorded in the scale-bridge audit from frozen Phase XVIII and Phase X ledgers. It records metric-surrogate refinement/control separation and projection-recovery bookkeeping while leaving same-surrogate coarse-graining recovery and universality as explicit open gates.
+
 ## 7. Bottom line
 
 `[E]` HAOS-IIP is already beyond a pure discrete-toy stage.
