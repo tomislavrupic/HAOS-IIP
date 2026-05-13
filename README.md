@@ -24,11 +24,12 @@ A large-scale, disciplined numerical research program exploring reproducible eme
 
 - [HAOS-IIP Paper Spine Index v66.5](papers/HAOS_IIP_Paper_Spine_Index_v66_5.md)
 - [HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md](docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md) with populated convergence extract
+- [HAOS_IIP_Post_66_5_Roadmap_Run_v1.md](docs/notes/foundations/HAOS_IIP_Post_66_5_Roadmap_Run_v1.md) with CP2, CP3, comparative, and CP5 gate results
 - [66.5 HAOS-IIP Scale-Bridge Legitimacy Audit.pdf](papers/pdf_releases/66.5%20HAOS-IIP%20Scale-Bridge%20Legitimacy%20Audit.pdf)
 - [Phase XIX Spectral Address bundle](phase19-spectral-address/README.md)
 - Python dependency lockfile for consistent `uv run` execution
 
-**Next hard gate**: same-surrogate coarse-graining recovery and round-trip identity preservation before any stronger scale-bridge statement. All work remains in the roadmap/foundations layer; no claim boundaries are altered.
+**Current hard-gate status**: CP2 same-surrogate recovery, CP3 effective-equation closure, narrow comparative diagnostics, and CP5 universality screening have been executed once and remain `OPEN`. Branch-side diagnostics are encouraging in several rows, but controls and universality coverage are not yet strong enough for scale-bridge closure. All work remains in the roadmap/foundations layer; no claim boundaries are altered.
 
 **Philosophy reminder**: structure is what survives perturbation. This repository provides diagnostic scaffolding and numerical feasibility tests. It does not claim a continuum limit, physical correspondence, or ontology.
 

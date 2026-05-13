@@ -4,6 +4,8 @@ Status: future roadmap artifact.
 
 Layer: Continuum Physics Scaling Roadmap / CP ladder / scale-bridge legitimacy layer.
 
+Run status as of 2026-05-13: first roadmap cycle executed; gates remain `OPEN`.
+
 This is not Phase 67.
 
 Phase 67 remains parked.
@@ -53,6 +55,7 @@ Current status: first CP2 run executed; gate remains `OPEN`.
 Artifact:
 
 - `docs/notes/foundations/HAOS_IIP_Same_Surrogate_Coarse_Graining_Recovery_v1.md`
+- `docs/notes/foundations/HAOS_IIP_Post_66_5_Roadmap_Run_v1.md`
 
 Execute and document round-trip recovery for spectral addresses and metric surrogates:
 
@@ -87,6 +90,20 @@ Scale-Bridge Legitimacy 8.9 -> 9.x, if generated data passes cleanly.
 
 Priority: medium.
 
+Current status: first CP3 run executed; gate remains `OPEN`.
+
+Generated output:
+
+- `continuum-sketch/post_66_5_cp3_effective_equation_contract.csv`
+
+Result summary:
+
+- coefficient-flow closure: `PASS`
+- rescaled-invariant flow: `OPEN`
+- metric-surrogate shell-slope closure: `PASS`
+- propagation-speed band closure: `PASS`
+- overall CP3: `OPEN`
+
 Test whether bounded effective laws close under coarse-graining inside admissible hierarchies.
 
 Candidate forms:
@@ -111,6 +128,8 @@ This may show bounded effective-law behavior inside the tested regime. It does n
 
 Priority: repo accessibility.
 
+Current status: navigation polish executed for the paper spine index and `papers/README.md`.
+
 Tasks:
 
 - clean `HAOS_IIP_Paper_Spine_Index_v66_5.md`
@@ -129,6 +148,19 @@ make the work easier to inspect without personal explanation
 ## 5. Narrow Benchmark / Comparative Diagnostic
 
 Priority: credibility.
+
+Current status: narrow comparative diagnostic executed; gate remains `OPEN`.
+
+Generated output:
+
+- `continuum-sketch/post_66_5_narrow_comparative_diagnostic.csv`
+
+Sidecar result:
+
+```text
+Kuramoto line_e_like bridge_status = FAIL
+failure_mode = EARLY_DETECTION_WITHOUT_EDGE_SIGNATURE_SPECIFICITY
+```
 
 Run HAOS recoverability diagnostics against one or two standard comparison systems:
 
@@ -150,6 +182,20 @@ Comparative diagnostic only. No superiority claim unless measured.
 ## 6. CP5 - Universality Contract
 
 Priority: stretch goal.
+
+Current status: first CP5 screen executed; gate remains `OPEN`.
+
+Generated output:
+
+- `continuum-sketch/post_66_5_cp5_universality_screen.csv`
+
+Reason:
+
+- seed variation exists but is too variable
+- refinement coverage exists only for the tested slice
+- kernel-width variation is not present
+- multiple admissible substrate families are not present
+- same-surrogate CP2 controls recover too strongly
 
 Repeat CP1-CP2 tests across multiple substrate / kernel / seed families.
 

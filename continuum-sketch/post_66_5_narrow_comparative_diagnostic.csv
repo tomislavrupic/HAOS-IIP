@@ -1,0 +1,9 @@
+diagnostic,comparison_system,observed_result,control_result,contrast,status,claim_boundary
+CP3 coefficient-flow closure,phase10_effective_scaling_ledger,0.000319,0.010111,31.666657,PASS,comparative diagnostic only
+CP3 rescaled-invariant flow,phase10_effective_scaling_ledger,0.007030,0.007026,0.999390,OPEN,comparative diagnostic only
+CP3 metric-surrogate shell-slope closure,phase18_refinement_scaling,0.004762,0.584615,122.769536,PASS,comparative diagnostic only
+CP3 propagation-speed band closure,phase15_effective_speed_ledger,0.076033,0.136723,1.798205,PASS,comparative diagnostic only
+CP2 Phase XVIII distance surrogate,same-surrogate matched control,100.000000,50.000000,2.000000,OPEN,same-surrogate recovery bookkeeping only
+CP2 Phase X low-mode spectral projection,same-surrogate matched control,100.000000,100.000000,1.000000,OPEN,same-surrogate recovery bookkeeping only
+Kuramoto line_e_like oscillator bridge,standard Kuramoto order parameter plus controls,early_detection=True; specificity_pass=False; k_star_time=1.440000,control_contrast=False; specificity_control_contrast=True,EARLY_DETECTION_WITHOUT_EDGE_SIGNATURE_SPECIFICITY,FAIL,oscillator sidecar diagnostic only; no HAOS superiority claim
+external-validation toy-vs-HAOS ordering screen,external_validation/runners/run_validation.py,artifact of construction,invariant structural signal,HAOS summary flags artifact-of-construction; toy summary flags invariant structural signal,OPEN,validation harness comparison only; no physical claim

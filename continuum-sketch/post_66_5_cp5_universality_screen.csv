@@ -1,0 +1,6 @@
+variation_axis,source,available_count,required_minimum,branch_metric,control_metric,status,notes
+seed variation,phase15_effective_speed_ledger,3,3,max_relspread=0.872671; mean_relspread=0.850190,max_relspread=0.917760; mean_relspread=0.794356,OPEN,available but too variable for a CP5 universality pass
+refinement levels,phase18_refinement_scaling,3,3,"levels=60,72,84",matched periodic diagonal augmented control,PASS,refinement coverage exists for the tested slice only
+kernel width variation,post-66.5 scale-bridge ledgers,0,2,not_available,not_available,OPEN,no same-surrogate CP1-CP2 kernel-width sweep is present in this roadmap run
+substrate family variation,post-66.5 scale-bridge ledgers,1,2,frozen branch-local hierarchy,matched controls only,OPEN,"matched controls are present, but not multiple admissible substrate families"
+same-surrogate CP2 control separation,same_surrogate_coarse_graining_recovery,2,2,Phase XVIII distance surrogate=100.000000%; Phase X low-mode spectral projection=100.000000%,Phase XVIII distance surrogate=50.000000%; Phase X low-mode spectral projection=100.000000%,OPEN,controls recover too strongly for CP5 universality language

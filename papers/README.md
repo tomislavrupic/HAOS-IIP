@@ -8,7 +8,17 @@ This folder is the publication front door for the frozen-architecture program.
 2. Source: `HAOS_IIP_Paper_Spine_Index_v66_5.tex`
 3. Markdown: `HAOS_IIP_Paper_Spine_Index_v66_5.md`
 
-This one-page index is the fastest route through the current public paper spine. It keeps `66.4` as the recommended canonical entry paper and marks `66.5` as the current scale-bridge milestone.
+This compact index is the fastest route through the current public paper spine. It keeps `66.4` as the recommended canonical entry paper and marks `66.5` as the current scale-bridge milestone.
+
+Post-66.5 roadmap run status:
+
+1. Roadmap artifact: `docs/notes/foundations/HAOS_IIP_Post_66_5_Roadmap_Run_v1.md`
+2. CP2 same-surrogate recovery: `OPEN`
+3. CP3 effective-equation contract: `OPEN`
+4. Narrow comparative diagnostic: `OPEN`
+5. CP5 universality screen: `OPEN`
+
+This status records audit execution only. It is not a new numbered release and does not change the claim boundary.
 
 ## 0. Master synthesis
 

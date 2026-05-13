@@ -739,3 +739,90 @@ Reason:
 - no public score upgrade is made
 
 This is useful scale-bridge evidence, but it is not scale-bridge closure.
+
+## 18. Post-66.5 roadmap run
+
+The full post-66.5 roadmap run artifact is:
+
+- [HAOS_IIP_Post_66_5_Roadmap_Run_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Post_66_5_Roadmap_Run_v1.md)
+
+Executable extractor:
+
+- `continuum-sketch/build_post_66_5_roadmap_audit.py`
+
+Generated outputs:
+
+- `continuum-sketch/post_66_5_cp3_effective_equation_contract.csv`
+- `continuum-sketch/post_66_5_narrow_comparative_diagnostic.csv`
+- `continuum-sketch/post_66_5_cp5_universality_screen.csv`
+- `continuum-sketch/post_66_5_roadmap_run_summary.md`
+
+### 18.1 CP3 effective-equation contract
+
+CP3 status:
+
+```text
+OPEN
+```
+
+Result:
+
+| Contract | Branch metric | Control metric | Contrast | Status | Claim boundary |
+| --- | ---: | ---: | ---: | --- | --- |
+| CP3 coefficient-flow closure | 0.000319 | 0.010111 | 31.666657 | `PASS` | bounded coefficient-flow closure only; no physical field equation |
+| CP3 rescaled-invariant flow | 0.007030 | 0.007026 | 0.999390 | `OPEN` | bounded invariant-flow bookkeeping only; no continuum proof |
+| CP3 metric-surrogate shell-slope closure | 0.004762 | 0.584615 | 122.769536 | `PASS` | metric-like surrogate stabilization only; no metric field |
+| CP3 propagation-speed band closure | 0.076033 | 0.136723 | 1.798205 | `PASS` | bounded propagation descriptor only; no transport equation derivation |
+
+Three rows separate from matched controls in the tested slices. The rescaled-invariant row does not separate, so CP3 remains `OPEN` overall.
+
+### 18.2 Narrow comparative diagnostic
+
+Comparative diagnostic status:
+
+```text
+OPEN
+```
+
+The Kuramoto oscillator sidecar was rerun with `line_e_like`, higher-order coupling, and 64 permutation trials. It returns:
+
+```text
+bridge_status = FAIL
+failure_mode = EARLY_DETECTION_WITHOUT_EDGE_SIGNATURE_SPECIFICITY
+k_star_time = 1.440000
+```
+
+This is a useful negative benchmark. The diagnostic sees early detection, but it does not pass edge-signature specificity and does not support any superiority claim.
+
+The external validation harness was also rerun. It keeps the HAOS-IIP ordering screen bounded as an artifact-of-construction result against a toy screen that reports an invariant structural signal.
+
+### 18.3 CP5 universality screen
+
+CP5 status:
+
+```text
+OPEN
+```
+
+Result:
+
+| Variation axis | Available | Required | Status | Notes |
+| --- | ---: | ---: | --- | --- |
+| seed variation | 3 | 3 | `OPEN` | available but too variable for a CP5 universality pass |
+| refinement levels | 3 | 3 | `PASS` | refinement coverage exists for the tested slice only |
+| kernel width variation | 0 | 2 | `OPEN` | no same-surrogate CP1-CP2 kernel-width sweep is present in this roadmap run |
+| substrate family variation | 1 | 2 | `OPEN` | matched controls are present, but not multiple admissible substrate families |
+| same-surrogate CP2 control separation | 2 | 2 | `OPEN` | controls recover too strongly for CP5 universality language |
+
+This is the correct scale-bridge posture after the full roadmap run:
+
+- CP2 remains `OPEN`
+- CP3 remains `OPEN`
+- CP5 remains `OPEN`
+- the paper spine is cleaner
+- Phase 67 remains parked
+- no public score upgrade is made
+
+Scale-bridge evidence is useful.
+
+Scale-bridge evidence is not continuum proof.

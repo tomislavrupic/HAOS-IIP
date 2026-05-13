@@ -2,7 +2,17 @@
 
 Status: entry-map artifact, not a new phase and not a new mechanism.
 
+Last updated: 2026-05-13.
+
 Purpose: give external readers a compact route through the numbered paper spine while preserving claim boundaries.
+
+## Navigation
+
+- [Current Entry Route](#current-entry-route)
+- [Numbered Spine Map](#numbered-spine-map)
+- [Current Milestone](#current-milestone)
+- [Post-66.5 Roadmap Status](#post-665-roadmap-status)
+- [Non-Claims](#non-claims)
 
 ## Current Entry Route
 
@@ -36,6 +46,23 @@ Next roadmap artifact:
 - `docs/notes/foundations/HAOS_IIP_Next_Roadmap_Post_66_5_v1.md`
 
 Next hard gate: same-surrogate coarse-graining recovery. Phase 67 remains parked.
+
+## Post-66.5 Roadmap Status
+
+The first post-66.5 roadmap run is now recorded as:
+
+- `docs/notes/foundations/HAOS_IIP_Post_66_5_Roadmap_Run_v1.md`
+
+Current gate status:
+
+| Gate | Status | Boundary |
+| --- | --- | --- |
+| CP2 same-surrogate coarse-graining recovery | `OPEN` | controls recover too strongly for closure |
+| CP3 effective-equation contract | `OPEN` | three rows pass, rescaled-invariant flow does not separate |
+| Narrow comparative diagnostic | `OPEN` | Kuramoto sidecar fails specificity; no superiority claim |
+| CP5 universality screen | `OPEN` | insufficient kernel-width and substrate-family coverage |
+
+This roadmap run improves audit clarity, but it is not a new numbered release and not a score upgrade.
 
 ## Non-Claims
 
