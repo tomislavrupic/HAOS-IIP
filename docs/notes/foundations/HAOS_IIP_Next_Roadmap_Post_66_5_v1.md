@@ -48,6 +48,12 @@ This does not mean the repo is weak. It means the last hard bridge gates are not
 
 Priority: highest leverage.
 
+Current status: first CP2 run executed; gate remains `OPEN`.
+
+Artifact:
+
+- `docs/notes/foundations/HAOS_IIP_Same_Surrogate_Coarse_Graining_Recovery_v1.md`
+
 Execute and document round-trip recovery for spectral addresses and metric surrogates:
 
 ```text

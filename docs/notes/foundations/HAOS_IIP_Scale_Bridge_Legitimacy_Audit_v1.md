@@ -350,20 +350,6 @@ Scale-bridge evidence is useful.
 
 Scale-bridge evidence is not continuum proof.
 
-## 16. Post-66.5 next roadmap
-
-The next roadmap is frozen as:
-
-- [HAOS_IIP_Next_Roadmap_Post_66_5_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Next_Roadmap_Post_66_5_v1.md)
-
-Next hard gate:
-
-```text
-same-surrogate coarse-graining recovery
-```
-
-Phase 67 remains parked until that scale-bridge gate is cleaner.
-
 The correct posture is not pessimism. It is recoverable coherence under stronger interaction with controls, refinement, and compression.
 
 ## 13. Focused legitimacy lift cycle
@@ -702,3 +688,54 @@ This artifact tests refinement-ordered scaling diagnostics toward continuum feas
 Scale-bridge evidence is useful.
 
 Scale-bridge evidence is not continuum proof.
+
+## 16. Post-66.5 next roadmap
+
+The next roadmap is frozen as:
+
+- [HAOS_IIP_Next_Roadmap_Post_66_5_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Next_Roadmap_Post_66_5_v1.md)
+
+Next hard gate:
+
+```text
+same-surrogate coarse-graining recovery
+```
+
+Phase 67 remains parked until that scale-bridge gate is cleaner.
+
+## 17. CP2 same-surrogate coarse-graining recovery run
+
+The first CP2 same-surrogate recovery artifact is:
+
+- [HAOS_IIP_Same_Surrogate_Coarse_Graining_Recovery_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Same_Surrogate_Coarse_Graining_Recovery_v1.md)
+
+Executable extractor:
+
+- `continuum-sketch/build_same_surrogate_coarse_graining_recovery.py`
+
+Generated outputs:
+
+- `continuum-sketch/same_surrogate_coarse_graining_recovery.csv`
+- `continuum-sketch/same_surrogate_coarse_graining_recovery_summary.md`
+
+Result:
+
+| Surrogate type | Refinement round trip | Recovery % admissible | Recovery % matched control | Round-trip error admissible | Round-trip error control | Status | Claim boundary |
+| --- | --- | ---: | ---: | ---: | ---: | --- | --- |
+| Phase XVIII distance surrogate | `84 -> 72 -> 84` | 100.000000 | 50.000000 | 0.004717 | 0.231481 | `OPEN` | metric-like surrogate recovery only; no continuum proof |
+| Phase X low-mode spectral projection | `R5 -> projected low-mode subspace -> R5 readout` | 100.000000 | 100.000000 | 0.037338 | 0.034210 | `OPEN` | projection bookkeeping only; no branch-specific scale-bridge proof |
+
+CP2 status:
+
+```text
+OPEN
+```
+
+Reason:
+
+- admissible branch recovery passes
+- same-surrogate bookkeeping is now executable
+- matched controls do not fail strongly enough under the predeclared threshold
+- no public score upgrade is made
+
+This is useful scale-bridge evidence, but it is not scale-bridge closure.
