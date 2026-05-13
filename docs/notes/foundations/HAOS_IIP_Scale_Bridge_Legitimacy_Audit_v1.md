@@ -350,6 +350,41 @@ Scale-bridge evidence is useful.
 
 Scale-bridge evidence is not continuum proof.
 
+## 19. Control hardening and specificity next cycle
+
+The next-cycle control-hardening roadmap is:
+
+- [HAOS_IIP_Post_66_5_Control_Hardening_Specificity_Roadmap_v1.md](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/docs/notes/foundations/HAOS_IIP_Post_66_5_Control_Hardening_Specificity_Roadmap_v1.md)
+
+Status:
+
+```text
+planned next cycle
+```
+
+Core target:
+
+```text
+control hardening + specificity
+```
+
+This is not Phase 67. It is a continuation of the existing CP ladder and Phase 66 audit discipline.
+
+Next priorities:
+
+- CP2b: control-hardened same-surrogate recovery
+- CP3b: effective-law specificity audit
+- comparative diagnostic specificity
+- CP5b: minimal universality grid
+
+Cycle rule:
+
+```text
+No score upgrade until at least one OPEN gate becomes PASS under hardened controls.
+```
+
+The next cycle is not expansion. The next cycle is specificity.
+
 The correct posture is not pessimism. It is recoverable coherence under stronger interaction with controls, refinement, and compression.
 
 ## 13. Focused legitimacy lift cycle

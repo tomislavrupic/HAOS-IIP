@@ -6,6 +6,10 @@ Layer: Continuum Physics Scaling Roadmap / CP ladder / scale-bridge legitimacy l
 
 Run status as of 2026-05-13: first roadmap cycle executed; gates remain `OPEN`.
 
+Next action map:
+
+- `docs/notes/foundations/HAOS_IIP_Post_66_5_Control_Hardening_Specificity_Roadmap_v1.md`
+
 This is not Phase 67.
 
 Phase 67 remains parked.

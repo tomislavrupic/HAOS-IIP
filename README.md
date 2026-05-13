@@ -31,6 +31,8 @@ A large-scale, disciplined numerical research program exploring reproducible eme
 
 **Current hard-gate status**: CP2 same-surrogate recovery, CP3 effective-equation closure, narrow comparative diagnostics, and CP5 universality screening have been executed once and remain `OPEN`. Branch-side diagnostics are encouraging in several rows, but controls and universality coverage are not yet strong enough for scale-bridge closure. All work remains in the roadmap/foundations layer; no claim boundaries are altered.
 
+**Next cycle**: control hardening and specificity inside the existing CP ladder. No Phase 67 activation, no score upgrade, and no stronger continuum language until at least one `OPEN` gate becomes `PASS` under hardened controls.
+
 **Philosophy reminder**: structure is what survives perturbation. This repository provides diagnostic scaffolding and numerical feasibility tests. It does not claim a continuum limit, physical correspondence, or ontology.
 
 ### One-Sentence Summary
