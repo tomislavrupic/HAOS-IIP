@@ -1,0 +1,156 @@
+{
+  "contract_hash": "hydrogen_contract_0e819a40338ce3a973c0a765",
+  "control_parameters": {
+    "scaled_rydberg_factor": 0.92
+  },
+  "controls": {
+    "arithmetic_spacing_control": {
+      "destroy": [
+        "inverse-square transition spacing"
+      ],
+      "expected_response": "inverse_square_law_score decreases; absolute_line_score decreases for interior lines",
+      "preserve": [
+        "series labels",
+        "line count",
+        "first and last wavenumber per series",
+        "monotonic order"
+      ]
+    },
+    "forbidden_selection_rule_control": {
+      "destroy": [
+        "dipole delta_l selection rule"
+      ],
+      "expected_response": "selection_rule_score decreases while spectral-line scores remain high",
+      "preserve": [
+        "gross wavelengths",
+        "transition n labels",
+        "inverse-square law"
+      ]
+    },
+    "reversed_transition_identity_control": {
+      "destroy": [
+        "transition-to-line identity",
+        "line ordering"
+      ],
+      "expected_response": "line_order_score and absolute_line_score decrease",
+      "preserve": [
+        "exact wavenumber set within each series",
+        "series labels",
+        "selection labels"
+      ]
+    },
+    "scaled_rydberg_control": {
+      "destroy": [
+        "absolute Rydberg scale"
+      ],
+      "expected_response": "rydberg_scale_score and absolute_line_score decrease while inverse_square_law_score remains high",
+      "preserve": [
+        "inverse-square law",
+        "line ordering",
+        "selection labels"
+      ]
+    },
+    "wrong_exponent_control": {
+      "destroy": [
+        "1/n^2 energy law"
+      ],
+      "expected_response": "inverse_square_law_score and absolute_line_score decrease",
+      "preserve": [
+        "transition labels",
+        "monotonic line families",
+        "rough spectral scale"
+      ]
+    }
+  },
+  "future_candidate_rejection_conditions": [
+    "candidate imports the Rydberg formula or declared R_H by construction",
+    "candidate fits or tunes R_H after seeing the reference lines",
+    "candidate passes gross wavelengths while failing declared selection-rule checks",
+    "candidate passes only by using transition labels unavailable to controls",
+    "candidate claims fine structure, Lamb shift, hyperfine structure, QED, or apparatus recovery from this gross-spectrum probe"
+  ],
+  "name": "Hydrogen spectra computational reference probe",
+  "non_claims": [
+    "not a laboratory hydrogen spectrum",
+    "not a fine-structure calculation",
+    "not a Lamb-shift or hyperfine calculation",
+    "not a QED derivation",
+    "not a CST derivation of hydrogen spectra",
+    "not evidence that HAOS-IIP recovers hydrogen spectra"
+  ],
+  "reference_constant": {
+    "name": "declared hydrogen Rydberg constant",
+    "note": "This sidecar uses a declared calibration constant; it does not estimate it from HAOS-IIP.",
+    "symbol": "R_H",
+    "value_m_inv": 10967758.34028
+  },
+  "scope": {
+    "design_choice": "Use declared R_H and the gross line relation sigma = R_H*(1/n_lower^2 - 1/n_upper^2).",
+    "heuristic": "Scores decompose absolute line match, fitted Rydberg scale, inverse-square law residual, line order, and delta_l selection-rule checks.",
+    "implemented_fact": "Run a deterministic gross Rydberg-series reference and component controls.",
+    "unverified_hypothesis": "No CST or HAOS hydrogen-spectra recovery hypothesis is tested here."
+  },
+  "series_catalog": [
+    {
+      "n_lower": 1,
+      "n_upper_values": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "series": "lyman"
+    },
+    {
+      "n_lower": 2,
+      "n_upper_values": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "series": "balmer"
+    },
+    {
+      "n_lower": 3,
+      "n_upper_values": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "series": "paschen"
+    }
+  ],
+  "status": "claim_gated_sidecar",
+  "thresholds": {
+    "control_false_positive_score_gate": 0.95,
+    "law_score_error_scale": 0.01,
+    "line_score_error_scale": 0.02,
+    "pass_max_fit_rydberg_relative_error": 1e-12,
+    "pass_max_reference_relative_error": 1e-12,
+    "pass_max_series_law_rms_relative_error": 1e-12,
+    "pass_min_line_order_score": 1.0,
+    "pass_min_reference_score": 0.999999,
+    "pass_min_selection_rule_score": 1.0,
+    "rydberg_score_error_scale": 0.02
+  },
+  "verdict_logic": {
+    "always_report": [
+      "CST_HYDROGEN_STATUS_OPEN",
+      "HAOS_DERIVATION_NOT_TESTED",
+      "FINE_STRUCTURE_OPEN_NOT_MODELED"
+    ],
+    "reference_pass": [
+      "reference line max relative error <= pass_max_reference_relative_error",
+      "fitted R_H relative error <= pass_max_fit_rydberg_relative_error",
+      "series law RMS relative error <= pass_max_series_law_rms_relative_error",
+      "line_order_score >= pass_min_line_order_score",
+      "selection_rule_score >= pass_min_selection_rule_score",
+      "all controls score < control_false_positive_score_gate"
+    ]
+  }
+}

@@ -1,0 +1,650 @@
+[
+  {
+    "conduction_energy_ev": 1.56,
+    "k_index": 0,
+    "k_reduced": -1.0,
+    "reference_conduction_energy_ev": 1.56,
+    "reference_valence_energy_ev": -1.3199999999999998,
+    "valence_energy_ev": -1.3199999999999998
+  },
+  {
+    "conduction_energy_ev": 1.5585203201919016,
+    "k_index": 1,
+    "k_reduced": -0.975,
+    "reference_conduction_energy_ev": 1.5585203201919016,
+    "reference_valence_energy_ev": -1.3188902401439262,
+    "valence_energy_ev": -1.3188902401439262
+  },
+  {
+    "conduction_energy_ev": 1.5540904034856662,
+    "k_index": 2,
+    "k_reduced": -0.95,
+    "reference_conduction_energy_ev": 1.5540904034856662,
+    "reference_valence_energy_ev": -1.3155678026142494,
+    "valence_energy_ev": -1.3155678026142494
+  },
+  {
+    "conduction_energy_ev": 1.5467375617908847,
+    "k_index": 3,
+    "k_reduced": -0.925,
+    "reference_conduction_energy_ev": 1.5467375617908847,
+    "reference_valence_energy_ev": -1.3100531713431636,
+    "valence_energy_ev": -1.3100531713431636
+  },
+  {
+    "conduction_energy_ev": 1.5365071278216735,
+    "k_index": 4,
+    "k_reduced": -0.9,
+    "reference_conduction_energy_ev": 1.5365071278216735,
+    "reference_valence_energy_ev": -1.3023803458662553,
+    "valence_energy_ev": -1.3023803458662553
+  },
+  {
+    "conduction_energy_ev": 1.5234621756054176,
+    "k_index": 5,
+    "k_reduced": -0.875,
+    "reference_conduction_energy_ev": 1.5234621756054176,
+    "reference_valence_energy_ev": -1.2925966317040631,
+    "valence_energy_ev": -1.2925966317040631
+  },
+  {
+    "conduction_energy_ev": 1.5076831316104164,
+    "k_index": 6,
+    "k_reduced": -0.85,
+    "reference_conduction_energy_ev": 1.5076831316104164,
+    "reference_valence_energy_ev": -1.2807623487078124,
+    "valence_energy_ev": -1.2807623487078124
+  },
+  {
+    "conduction_energy_ev": 1.4892672788899644,
+    "k_index": 7,
+    "k_reduced": -0.825,
+    "reference_conduction_energy_ev": 1.4892672788899644,
+    "reference_valence_energy_ev": -1.2669504591674732,
+    "valence_energy_ev": -1.2669504591674732
+  },
+  {
+    "conduction_energy_ev": 1.4683281572999747,
+    "k_index": 8,
+    "k_reduced": -0.8,
+    "reference_conduction_energy_ev": 1.4683281572999747,
+    "reference_valence_energy_ev": -1.251246117974981,
+    "valence_energy_ev": -1.251246117974981
+  },
+  {
+    "conduction_energy_ev": 1.4449948634880148,
+    "k_index": 9,
+    "k_reduced": -0.775,
+    "reference_conduction_energy_ev": 1.4449948634880148,
+    "reference_valence_energy_ev": -1.233746147616011,
+    "valence_energy_ev": -1.233746147616011
+  },
+  {
+    "conduction_energy_ev": 1.4194112549695426,
+    "k_index": 10,
+    "k_reduced": -0.75,
+    "reference_conduction_energy_ev": 1.4194112549695426,
+    "reference_valence_energy_ev": -1.214558441227157,
+    "valence_energy_ev": -1.214558441227157
+  },
+  {
+    "conduction_energy_ev": 1.391735063198488,
+    "k_index": 11,
+    "k_reduced": -0.725,
+    "reference_conduction_energy_ev": 1.391735063198488,
+    "reference_valence_energy_ev": -1.193801297398866,
+    "valence_energy_ev": -1.193801297398866
+  },
+  {
+    "conduction_energy_ev": 1.362136921100387,
+    "k_index": 12,
+    "k_reduced": -0.7,
+    "reference_conduction_energy_ev": 1.362136921100387,
+    "reference_valence_energy_ev": -1.1716026908252903,
+    "valence_energy_ev": -1.1716026908252903
+  },
+  {
+    "conduction_energy_ev": 1.3307993110636553,
+    "k_index": 13,
+    "k_reduced": -0.675,
+    "reference_conduction_energy_ev": 1.3307993110636553,
+    "reference_valence_energy_ev": -1.1480994832977416,
+    "valence_energy_ev": -1.1480994832977416
+  },
+  {
+    "conduction_energy_ev": 1.2979154398749824,
+    "k_index": 14,
+    "k_reduced": -0.65,
+    "reference_conduction_energy_ev": 1.2979154398749824,
+    "reference_valence_energy_ev": -1.1234365799062367,
+    "valence_energy_ev": -1.1234365799062367
+  },
+  {
+    "conduction_energy_ev": 1.263688047535243,
+    "k_index": 15,
+    "k_reduced": -0.625,
+    "reference_conduction_energy_ev": 1.263688047535243,
+    "reference_valence_energy_ev": -1.0977660356514323,
+    "valence_energy_ev": -1.0977660356514323
+  },
+  {
+    "conduction_energy_ev": 1.2283281572999747,
+    "k_index": 16,
+    "k_reduced": -0.6,
+    "reference_conduction_energy_ev": 1.2283281572999747,
+    "reference_valence_energy_ev": -1.071246117974981,
+    "valence_energy_ev": -1.071246117974981
+  },
+  {
+    "conduction_energy_ev": 1.1920537746508344,
+    "k_index": 17,
+    "k_reduced": -0.575,
+    "reference_conduction_energy_ev": 1.1920537746508344,
+    "reference_valence_energy_ev": -1.0440403309881259,
+    "valence_energy_ev": -1.0440403309881259
+  },
+  {
+    "conduction_energy_ev": 1.1550885432193108,
+    "k_index": 18,
+    "k_reduced": -0.55,
+    "reference_conduction_energy_ev": 1.1550885432193108,
+    "reference_valence_energy_ev": -1.016316407414483,
+    "valence_energy_ev": -1.016316407414483
+  },
+  {
+    "conduction_energy_ev": 1.1176603659493654,
+    "k_index": 19,
+    "k_reduced": -0.525,
+    "reference_conduction_energy_ev": 1.1176603659493654,
+    "reference_valence_energy_ev": -0.988245274462024,
+    "valence_energy_ev": -0.988245274462024
+  },
+  {
+    "conduction_energy_ev": 1.0799999999999998,
+    "k_index": 20,
+    "k_reduced": -0.5,
+    "reference_conduction_energy_ev": 1.0799999999999998,
+    "reference_valence_energy_ev": -0.96,
+    "valence_energy_ev": -0.96
+  },
+  {
+    "conduction_energy_ev": 1.0423396340506343,
+    "k_index": 21,
+    "k_reduced": -0.475,
+    "reference_conduction_energy_ev": 1.0423396340506343,
+    "reference_valence_energy_ev": -0.9317547255379757,
+    "valence_energy_ev": -0.9317547255379757
+  },
+  {
+    "conduction_energy_ev": 1.0049114567806892,
+    "k_index": 22,
+    "k_reduced": -0.45,
+    "reference_conduction_energy_ev": 1.0049114567806892,
+    "reference_valence_energy_ev": -0.9036835925855169,
+    "valence_energy_ev": -0.9036835925855169
+  },
+  {
+    "conduction_energy_ev": 0.9679462253491653,
+    "k_index": 23,
+    "k_reduced": -0.425,
+    "reference_conduction_energy_ev": 0.9679462253491653,
+    "reference_valence_energy_ev": -0.875959669011874,
+    "valence_energy_ev": -0.875959669011874
+  },
+  {
+    "conduction_energy_ev": 0.9316718427000252,
+    "k_index": 24,
+    "k_reduced": -0.4,
+    "reference_conduction_energy_ev": 0.9316718427000252,
+    "reference_valence_energy_ev": -0.8487538820250189,
+    "valence_energy_ev": -0.8487538820250189
+  },
+  {
+    "conduction_energy_ev": 0.8963119524647569,
+    "k_index": 25,
+    "k_reduced": -0.375,
+    "reference_conduction_energy_ev": 0.8963119524647569,
+    "reference_valence_energy_ev": -0.8222339643485677,
+    "valence_energy_ev": -0.8222339643485677
+  },
+  {
+    "conduction_energy_ev": 0.8620845601250176,
+    "k_index": 26,
+    "k_reduced": -0.35,
+    "reference_conduction_energy_ev": 0.8620845601250176,
+    "reference_valence_energy_ev": -0.7965634200937631,
+    "valence_energy_ev": -0.7965634200937631
+  },
+  {
+    "conduction_energy_ev": 0.8292006889363445,
+    "k_index": 27,
+    "k_reduced": -0.325,
+    "reference_conduction_energy_ev": 0.8292006889363445,
+    "reference_valence_energy_ev": -0.7719005167022583,
+    "valence_energy_ev": -0.7719005167022583
+  },
+  {
+    "conduction_energy_ev": 0.7978630788996128,
+    "k_index": 28,
+    "k_reduced": -0.3,
+    "reference_conduction_energy_ev": 0.7978630788996128,
+    "reference_valence_energy_ev": -0.7483973091747096,
+    "valence_energy_ev": -0.7483973091747096
+  },
+  {
+    "conduction_energy_ev": 0.7682649368015119,
+    "k_index": 29,
+    "k_reduced": -0.275,
+    "reference_conduction_energy_ev": 0.7682649368015119,
+    "reference_valence_energy_ev": -0.7261987026011338,
+    "valence_energy_ev": -0.7261987026011338
+  },
+  {
+    "conduction_energy_ev": 0.7405887450304571,
+    "k_index": 30,
+    "k_reduced": -0.25,
+    "reference_conduction_energy_ev": 0.7405887450304571,
+    "reference_valence_energy_ev": -0.7054415587728429,
+    "valence_energy_ev": -0.7054415587728429
+  },
+  {
+    "conduction_energy_ev": 0.7150051365119852,
+    "k_index": 31,
+    "k_reduced": -0.225,
+    "reference_conduction_energy_ev": 0.7150051365119852,
+    "reference_valence_energy_ev": -0.6862538523839888,
+    "valence_energy_ev": -0.6862538523839888
+  },
+  {
+    "conduction_energy_ev": 0.6916718427000252,
+    "k_index": 32,
+    "k_reduced": -0.2,
+    "reference_conduction_energy_ev": 0.6916718427000252,
+    "reference_valence_energy_ev": -0.668753882025019,
+    "valence_energy_ev": -0.668753882025019
+  },
+  {
+    "conduction_energy_ev": 0.6707327211100357,
+    "k_index": 33,
+    "k_reduced": -0.175,
+    "reference_conduction_energy_ev": 0.6707327211100357,
+    "reference_valence_energy_ev": -0.6530495408325268,
+    "valence_energy_ev": -0.6530495408325268
+  },
+  {
+    "conduction_energy_ev": 0.6523168683895834,
+    "k_index": 34,
+    "k_reduced": -0.15,
+    "reference_conduction_energy_ev": 0.6523168683895834,
+    "reference_valence_energy_ev": -0.6392376512921876,
+    "valence_energy_ev": -0.6392376512921876
+  },
+  {
+    "conduction_energy_ev": 0.6365378243945823,
+    "k_index": 35,
+    "k_reduced": -0.125,
+    "reference_conduction_energy_ev": 0.6365378243945823,
+    "reference_valence_energy_ev": -0.6274033682959368,
+    "valence_energy_ev": -0.6274033682959368
+  },
+  {
+    "conduction_energy_ev": 0.6234928721783263,
+    "k_index": 36,
+    "k_reduced": -0.1,
+    "reference_conduction_energy_ev": 0.6234928721783263,
+    "reference_valence_energy_ev": -0.6176196541337448,
+    "valence_energy_ev": -0.6176196541337448
+  },
+  {
+    "conduction_energy_ev": 0.6132624382091152,
+    "k_index": 37,
+    "k_reduced": -0.075,
+    "reference_conduction_energy_ev": 0.6132624382091152,
+    "reference_valence_energy_ev": -0.6099468286568365,
+    "valence_energy_ev": -0.6099468286568365
+  },
+  {
+    "conduction_energy_ev": 0.6059095965143338,
+    "k_index": 38,
+    "k_reduced": -0.05,
+    "reference_conduction_energy_ev": 0.6059095965143338,
+    "reference_valence_energy_ev": -0.6044321973857504,
+    "valence_energy_ev": -0.6044321973857504
+  },
+  {
+    "conduction_energy_ev": 0.6014796798080986,
+    "k_index": 39,
+    "k_reduced": -0.025,
+    "reference_conduction_energy_ev": 0.6014796798080986,
+    "reference_valence_energy_ev": -0.601109759856074,
+    "valence_energy_ev": -0.601109759856074
+  },
+  {
+    "conduction_energy_ev": 0.6,
+    "k_index": 40,
+    "k_reduced": 0.0,
+    "reference_conduction_energy_ev": 0.6,
+    "reference_valence_energy_ev": -0.6,
+    "valence_energy_ev": -0.6
+  },
+  {
+    "conduction_energy_ev": 0.6014796798080986,
+    "k_index": 41,
+    "k_reduced": 0.025,
+    "reference_conduction_energy_ev": 0.6014796798080986,
+    "reference_valence_energy_ev": -0.601109759856074,
+    "valence_energy_ev": -0.601109759856074
+  },
+  {
+    "conduction_energy_ev": 0.6059095965143338,
+    "k_index": 42,
+    "k_reduced": 0.05,
+    "reference_conduction_energy_ev": 0.6059095965143338,
+    "reference_valence_energy_ev": -0.6044321973857504,
+    "valence_energy_ev": -0.6044321973857504
+  },
+  {
+    "conduction_energy_ev": 0.6132624382091152,
+    "k_index": 43,
+    "k_reduced": 0.075,
+    "reference_conduction_energy_ev": 0.6132624382091152,
+    "reference_valence_energy_ev": -0.6099468286568365,
+    "valence_energy_ev": -0.6099468286568365
+  },
+  {
+    "conduction_energy_ev": 0.6234928721783263,
+    "k_index": 44,
+    "k_reduced": 0.1,
+    "reference_conduction_energy_ev": 0.6234928721783263,
+    "reference_valence_energy_ev": -0.6176196541337448,
+    "valence_energy_ev": -0.6176196541337448
+  },
+  {
+    "conduction_energy_ev": 0.6365378243945823,
+    "k_index": 45,
+    "k_reduced": 0.125,
+    "reference_conduction_energy_ev": 0.6365378243945823,
+    "reference_valence_energy_ev": -0.6274033682959368,
+    "valence_energy_ev": -0.6274033682959368
+  },
+  {
+    "conduction_energy_ev": 0.6523168683895834,
+    "k_index": 46,
+    "k_reduced": 0.15,
+    "reference_conduction_energy_ev": 0.6523168683895834,
+    "reference_valence_energy_ev": -0.6392376512921876,
+    "valence_energy_ev": -0.6392376512921876
+  },
+  {
+    "conduction_energy_ev": 0.6707327211100357,
+    "k_index": 47,
+    "k_reduced": 0.175,
+    "reference_conduction_energy_ev": 0.6707327211100357,
+    "reference_valence_energy_ev": -0.6530495408325268,
+    "valence_energy_ev": -0.6530495408325268
+  },
+  {
+    "conduction_energy_ev": 0.6916718427000252,
+    "k_index": 48,
+    "k_reduced": 0.2,
+    "reference_conduction_energy_ev": 0.6916718427000252,
+    "reference_valence_energy_ev": -0.668753882025019,
+    "valence_energy_ev": -0.668753882025019
+  },
+  {
+    "conduction_energy_ev": 0.7150051365119852,
+    "k_index": 49,
+    "k_reduced": 0.225,
+    "reference_conduction_energy_ev": 0.7150051365119852,
+    "reference_valence_energy_ev": -0.6862538523839888,
+    "valence_energy_ev": -0.6862538523839888
+  },
+  {
+    "conduction_energy_ev": 0.7405887450304571,
+    "k_index": 50,
+    "k_reduced": 0.25,
+    "reference_conduction_energy_ev": 0.7405887450304571,
+    "reference_valence_energy_ev": -0.7054415587728429,
+    "valence_energy_ev": -0.7054415587728429
+  },
+  {
+    "conduction_energy_ev": 0.7682649368015119,
+    "k_index": 51,
+    "k_reduced": 0.275,
+    "reference_conduction_energy_ev": 0.7682649368015119,
+    "reference_valence_energy_ev": -0.7261987026011338,
+    "valence_energy_ev": -0.7261987026011338
+  },
+  {
+    "conduction_energy_ev": 0.7978630788996128,
+    "k_index": 52,
+    "k_reduced": 0.3,
+    "reference_conduction_energy_ev": 0.7978630788996128,
+    "reference_valence_energy_ev": -0.7483973091747096,
+    "valence_energy_ev": -0.7483973091747096
+  },
+  {
+    "conduction_energy_ev": 0.8292006889363445,
+    "k_index": 53,
+    "k_reduced": 0.325,
+    "reference_conduction_energy_ev": 0.8292006889363445,
+    "reference_valence_energy_ev": -0.7719005167022583,
+    "valence_energy_ev": -0.7719005167022583
+  },
+  {
+    "conduction_energy_ev": 0.8620845601250176,
+    "k_index": 54,
+    "k_reduced": 0.35,
+    "reference_conduction_energy_ev": 0.8620845601250176,
+    "reference_valence_energy_ev": -0.7965634200937631,
+    "valence_energy_ev": -0.7965634200937631
+  },
+  {
+    "conduction_energy_ev": 0.8963119524647569,
+    "k_index": 55,
+    "k_reduced": 0.375,
+    "reference_conduction_energy_ev": 0.8963119524647569,
+    "reference_valence_energy_ev": -0.8222339643485677,
+    "valence_energy_ev": -0.8222339643485677
+  },
+  {
+    "conduction_energy_ev": 0.9316718427000252,
+    "k_index": 56,
+    "k_reduced": 0.4,
+    "reference_conduction_energy_ev": 0.9316718427000252,
+    "reference_valence_energy_ev": -0.8487538820250189,
+    "valence_energy_ev": -0.8487538820250189
+  },
+  {
+    "conduction_energy_ev": 0.9679462253491653,
+    "k_index": 57,
+    "k_reduced": 0.425,
+    "reference_conduction_energy_ev": 0.9679462253491653,
+    "reference_valence_energy_ev": -0.875959669011874,
+    "valence_energy_ev": -0.875959669011874
+  },
+  {
+    "conduction_energy_ev": 1.0049114567806892,
+    "k_index": 58,
+    "k_reduced": 0.45,
+    "reference_conduction_energy_ev": 1.0049114567806892,
+    "reference_valence_energy_ev": -0.9036835925855169,
+    "valence_energy_ev": -0.9036835925855169
+  },
+  {
+    "conduction_energy_ev": 1.0423396340506343,
+    "k_index": 59,
+    "k_reduced": 0.475,
+    "reference_conduction_energy_ev": 1.0423396340506343,
+    "reference_valence_energy_ev": -0.9317547255379757,
+    "valence_energy_ev": -0.9317547255379757
+  },
+  {
+    "conduction_energy_ev": 1.0799999999999998,
+    "k_index": 60,
+    "k_reduced": 0.5,
+    "reference_conduction_energy_ev": 1.0799999999999998,
+    "reference_valence_energy_ev": -0.96,
+    "valence_energy_ev": -0.96
+  },
+  {
+    "conduction_energy_ev": 1.1176603659493654,
+    "k_index": 61,
+    "k_reduced": 0.525,
+    "reference_conduction_energy_ev": 1.1176603659493654,
+    "reference_valence_energy_ev": -0.988245274462024,
+    "valence_energy_ev": -0.988245274462024
+  },
+  {
+    "conduction_energy_ev": 1.1550885432193108,
+    "k_index": 62,
+    "k_reduced": 0.55,
+    "reference_conduction_energy_ev": 1.1550885432193108,
+    "reference_valence_energy_ev": -1.016316407414483,
+    "valence_energy_ev": -1.016316407414483
+  },
+  {
+    "conduction_energy_ev": 1.1920537746508344,
+    "k_index": 63,
+    "k_reduced": 0.575,
+    "reference_conduction_energy_ev": 1.1920537746508344,
+    "reference_valence_energy_ev": -1.0440403309881259,
+    "valence_energy_ev": -1.0440403309881259
+  },
+  {
+    "conduction_energy_ev": 1.2283281572999747,
+    "k_index": 64,
+    "k_reduced": 0.6,
+    "reference_conduction_energy_ev": 1.2283281572999747,
+    "reference_valence_energy_ev": -1.071246117974981,
+    "valence_energy_ev": -1.071246117974981
+  },
+  {
+    "conduction_energy_ev": 1.263688047535243,
+    "k_index": 65,
+    "k_reduced": 0.625,
+    "reference_conduction_energy_ev": 1.263688047535243,
+    "reference_valence_energy_ev": -1.0977660356514323,
+    "valence_energy_ev": -1.0977660356514323
+  },
+  {
+    "conduction_energy_ev": 1.2979154398749824,
+    "k_index": 66,
+    "k_reduced": 0.65,
+    "reference_conduction_energy_ev": 1.2979154398749824,
+    "reference_valence_energy_ev": -1.1234365799062367,
+    "valence_energy_ev": -1.1234365799062367
+  },
+  {
+    "conduction_energy_ev": 1.3307993110636553,
+    "k_index": 67,
+    "k_reduced": 0.675,
+    "reference_conduction_energy_ev": 1.3307993110636553,
+    "reference_valence_energy_ev": -1.1480994832977416,
+    "valence_energy_ev": -1.1480994832977416
+  },
+  {
+    "conduction_energy_ev": 1.362136921100387,
+    "k_index": 68,
+    "k_reduced": 0.7,
+    "reference_conduction_energy_ev": 1.362136921100387,
+    "reference_valence_energy_ev": -1.1716026908252903,
+    "valence_energy_ev": -1.1716026908252903
+  },
+  {
+    "conduction_energy_ev": 1.391735063198488,
+    "k_index": 69,
+    "k_reduced": 0.725,
+    "reference_conduction_energy_ev": 1.391735063198488,
+    "reference_valence_energy_ev": -1.193801297398866,
+    "valence_energy_ev": -1.193801297398866
+  },
+  {
+    "conduction_energy_ev": 1.4194112549695426,
+    "k_index": 70,
+    "k_reduced": 0.75,
+    "reference_conduction_energy_ev": 1.4194112549695426,
+    "reference_valence_energy_ev": -1.214558441227157,
+    "valence_energy_ev": -1.214558441227157
+  },
+  {
+    "conduction_energy_ev": 1.4449948634880148,
+    "k_index": 71,
+    "k_reduced": 0.775,
+    "reference_conduction_energy_ev": 1.4449948634880148,
+    "reference_valence_energy_ev": -1.233746147616011,
+    "valence_energy_ev": -1.233746147616011
+  },
+  {
+    "conduction_energy_ev": 1.4683281572999747,
+    "k_index": 72,
+    "k_reduced": 0.8,
+    "reference_conduction_energy_ev": 1.4683281572999747,
+    "reference_valence_energy_ev": -1.251246117974981,
+    "valence_energy_ev": -1.251246117974981
+  },
+  {
+    "conduction_energy_ev": 1.4892672788899644,
+    "k_index": 73,
+    "k_reduced": 0.825,
+    "reference_conduction_energy_ev": 1.4892672788899644,
+    "reference_valence_energy_ev": -1.2669504591674732,
+    "valence_energy_ev": -1.2669504591674732
+  },
+  {
+    "conduction_energy_ev": 1.5076831316104164,
+    "k_index": 74,
+    "k_reduced": 0.85,
+    "reference_conduction_energy_ev": 1.5076831316104164,
+    "reference_valence_energy_ev": -1.2807623487078124,
+    "valence_energy_ev": -1.2807623487078124
+  },
+  {
+    "conduction_energy_ev": 1.5234621756054176,
+    "k_index": 75,
+    "k_reduced": 0.875,
+    "reference_conduction_energy_ev": 1.5234621756054176,
+    "reference_valence_energy_ev": -1.2925966317040631,
+    "valence_energy_ev": -1.2925966317040631
+  },
+  {
+    "conduction_energy_ev": 1.5365071278216735,
+    "k_index": 76,
+    "k_reduced": 0.9,
+    "reference_conduction_energy_ev": 1.5365071278216735,
+    "reference_valence_energy_ev": -1.3023803458662553,
+    "valence_energy_ev": -1.3023803458662553
+  },
+  {
+    "conduction_energy_ev": 1.5467375617908847,
+    "k_index": 77,
+    "k_reduced": 0.925,
+    "reference_conduction_energy_ev": 1.5467375617908847,
+    "reference_valence_energy_ev": -1.3100531713431636,
+    "valence_energy_ev": -1.3100531713431636
+  },
+  {
+    "conduction_energy_ev": 1.5540904034856662,
+    "k_index": 78,
+    "k_reduced": 0.95,
+    "reference_conduction_energy_ev": 1.5540904034856662,
+    "reference_valence_energy_ev": -1.3155678026142494,
+    "valence_energy_ev": -1.3155678026142494
+  },
+  {
+    "conduction_energy_ev": 1.5585203201919016,
+    "k_index": 79,
+    "k_reduced": 0.975,
+    "reference_conduction_energy_ev": 1.5585203201919016,
+    "reference_valence_energy_ev": -1.3188902401439262,
+    "valence_energy_ev": -1.3188902401439262
+  },
+  {
+    "conduction_energy_ev": 1.56,
+    "k_index": 80,
+    "k_reduced": 1.0,
+    "reference_conduction_energy_ev": 1.56,
+    "reference_valence_energy_ev": -1.3199999999999998,
+    "valence_energy_ev": -1.3199999999999998
+  }
+]

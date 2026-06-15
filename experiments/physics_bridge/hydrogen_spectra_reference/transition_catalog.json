@@ -1,0 +1,167 @@
+[
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 1,
+    "n_upper": 2,
+    "reference_wavelength_nm": 121.5684456172376,
+    "reference_wavenumber_m_inv": 8225818.75521,
+    "series": "lyman",
+    "wavelength_nm": 121.5684456172376,
+    "wavenumber_m_inv": 8225818.75521
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 1,
+    "n_upper": 3,
+    "reference_wavelength_nm": 102.57337598954423,
+    "reference_wavenumber_m_inv": 9749118.524693333,
+    "series": "lyman",
+    "wavelength_nm": 102.57337598954423,
+    "wavenumber_m_inv": 9749118.524693333
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 1,
+    "n_upper": 4,
+    "reference_wavelength_nm": 97.25475649379008,
+    "reference_wavenumber_m_inv": 10282273.4440125,
+    "series": "lyman",
+    "wavelength_nm": 97.25475649379008,
+    "wavenumber_m_inv": 10282273.4440125
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 1,
+    "n_upper": 5,
+    "reference_wavelength_nm": 94.97534813846687,
+    "reference_wavenumber_m_inv": 10529048.0066688,
+    "series": "lyman",
+    "wavelength_nm": 94.97534813846687,
+    "wavenumber_m_inv": 10529048.0066688
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 1,
+    "n_upper": 6,
+    "reference_wavelength_nm": 93.78137233329757,
+    "reference_wavenumber_m_inv": 10663098.386383334,
+    "series": "lyman",
+    "wavelength_nm": 93.78137233329757,
+    "wavenumber_m_inv": 10663098.386383334
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 2,
+    "n_upper": 3,
+    "reference_wavelength_nm": 656.469606333083,
+    "reference_wavenumber_m_inv": 1523299.7694833335,
+    "series": "balmer",
+    "wavelength_nm": 656.469606333083,
+    "wavenumber_m_inv": 1523299.7694833335
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 2,
+    "n_upper": 4,
+    "reference_wavelength_nm": 486.2737824689504,
+    "reference_wavenumber_m_inv": 2056454.6888025,
+    "series": "balmer",
+    "wavelength_nm": 486.2737824689504,
+    "wavenumber_m_inv": 2056454.6888025
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 2,
+    "n_upper": 5,
+    "reference_wavelength_nm": 434.1730200615629,
+    "reference_wavenumber_m_inv": 2303229.2514588,
+    "series": "balmer",
+    "wavelength_nm": 434.1730200615629,
+    "wavenumber_m_inv": 2303229.2514588
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 2,
+    "n_upper": 6,
+    "reference_wavelength_nm": 410.2935039581769,
+    "reference_wavenumber_m_inv": 2437279.631173333,
+    "series": "balmer",
+    "wavelength_nm": 410.2935039581769,
+    "wavenumber_m_inv": 2437279.631173333
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 2,
+    "n_upper": 7,
+    "reference_wavelength_nm": 397.1235890163095,
+    "reference_wavenumber_m_inv": 2518107.782207143,
+    "series": "balmer",
+    "wavelength_nm": 397.1235890163095,
+    "wavenumber_m_inv": 2518107.782207143
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 3,
+    "n_upper": 4,
+    "reference_wavelength_nm": 1875.627446665952,
+    "reference_wavenumber_m_inv": 533154.9193191666,
+    "series": "paschen",
+    "wavelength_nm": 1875.627446665952,
+    "wavenumber_m_inv": 533154.9193191666
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 3,
+    "n_upper": 5,
+    "reference_wavelength_nm": 1282.1671998693032,
+    "reference_wavenumber_m_inv": 779929.4819754665,
+    "series": "paschen",
+    "wavelength_nm": 1282.1671998693032,
+    "wavenumber_m_inv": 779929.4819754665
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 3,
+    "n_upper": 6,
+    "reference_wavelength_nm": 1094.1160105551385,
+    "reference_wavenumber_m_inv": 913979.8616899999,
+    "series": "paschen",
+    "wavelength_nm": 1094.1160105551385,
+    "wavenumber_m_inv": 913979.8616899999
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 3,
+    "n_upper": 7,
+    "reference_wavelength_nm": 1005.2190846975334,
+    "reference_wavenumber_m_inv": 994808.0127238096,
+    "series": "paschen",
+    "wavelength_nm": 1005.2190846975334,
+    "wavenumber_m_inv": 994808.0127238096
+  },
+  {
+    "l_lower": 0,
+    "l_upper": 1,
+    "n_lower": 3,
+    "n_upper": 8,
+    "reference_wavelength_nm": 954.8648819390299,
+    "reference_wavenumber_m_inv": 1047268.5915197916,
+    "series": "paschen",
+    "wavelength_nm": 954.8648819390299,
+    "wavenumber_m_inv": 1047268.5915197916
+  }
+]
