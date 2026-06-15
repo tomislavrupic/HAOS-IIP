@@ -1,0 +1,165 @@
+{
+  "aggregates": [
+    {
+      "chsh_ci_high": null,
+      "chsh_ci_low": null,
+      "chsh_s": 2.0,
+      "data_kind": "exhaustive_enumeration",
+      "expectations": {},
+      "local_bound_margin": 0.0,
+      "max_abs_left_marginal": 0.0,
+      "max_abs_right_marginal": 0.0,
+      "model_family": "deterministic_local_bound",
+      "sample": "deterministic_local_response_enumeration",
+      "sample_role": "classical_bound",
+      "standard_errors": {},
+      "status": "CLASSICAL_BOUND_REPRODUCED",
+      "trials_per_setting": 16
+    },
+    {
+      "chsh_ci_high": null,
+      "chsh_ci_low": null,
+      "chsh_s": 2.8284271247461903,
+      "data_kind": "analytic",
+      "expectations": {
+        "a_b": -0.7071067811865476,
+        "a_b_prime": -0.7071067811865476,
+        "a_prime_b": -0.7071067811865476,
+        "a_prime_b_prime": 0.7071067811865475
+      },
+      "local_bound_margin": 0.8284271247461903,
+      "max_abs_left_marginal": 0.0,
+      "max_abs_right_marginal": 0.0,
+      "model_family": "quantum_singlet_reference",
+      "sample": "quantum_singlet_reference_analytic",
+      "sample_role": "reference",
+      "standard_errors": {
+        "a_b": 0.0,
+        "a_b_prime": 0.0,
+        "a_prime_b": 0.0,
+        "a_prime_b_prime": 0.0
+      },
+      "status": "REFERENCE_ANALYTIC_VIOLATION_REPRODUCED",
+      "trials_per_setting": 0
+    },
+    {
+      "chsh_ci_high": 2.8327516539225894,
+      "chsh_ci_low": 2.807888346077411,
+      "chsh_s": 2.82032,
+      "data_kind": "seeded_finite_sample",
+      "expectations": {
+        "a_b": -0.70324,
+        "a_b_prime": -0.70728,
+        "a_prime_b": -0.70556,
+        "a_prime_b_prime": 0.70424
+      },
+      "local_bound_margin": 0.8203200000000002,
+      "max_abs_left_marginal": 0.00664,
+      "max_abs_right_marginal": 0.00708,
+      "model_family": "quantum_singlet_reference",
+      "sample": "quantum_singlet_reference_sampled",
+      "sample_role": "reference",
+      "standard_errors": {
+        "a_b": 0.0031795081747724237,
+        "a_b_prime": 0.0031615344277737606,
+        "a_prime_b": 0.003169211669493239,
+        "a_prime_b_prime": 0.003175078277844723
+      },
+      "status": "REFERENCE_VIOLATION_REPRODUCED",
+      "trials_per_setting": 50000
+    },
+    {
+      "chsh_ci_high": 2.0257152652923205,
+      "chsh_ci_low": 1.9954047347076793,
+      "chsh_s": 2.01056,
+      "data_kind": "seeded_finite_sample",
+      "expectations": {
+        "a_b": -0.49732,
+        "a_b_prime": -0.50052,
+        "a_prime_b": -0.50476,
+        "a_prime_b_prime": 0.50796
+      },
+      "local_bound_margin": 0.010559999999999903,
+      "max_abs_left_marginal": 0.0042,
+      "max_abs_right_marginal": 0.00488,
+      "model_family": "local_hidden_variable_reference",
+      "sample": "local_hidden_angle_control_sampled",
+      "sample_role": "negative_control",
+      "standard_errors": {
+        "a_b": 0.003879917193336547,
+        "a_b_prime": 0.003871678497743297,
+        "a_prime_b": 0.0038606534344458867,
+        "a_prime_b_prime": 0.003852249935374299
+      },
+      "status": "CLASSICAL_CONTROL_WITHIN_WARNING_MARGIN",
+      "trials_per_setting": 50000
+    },
+    {
+      "chsh_ci_high": 0.025410880805257385,
+      "chsh_ci_low": 0.0,
+      "chsh_s": 0.00788,
+      "data_kind": "seeded_finite_sample",
+      "expectations": {
+        "a_b": 0.001,
+        "a_b_prime": -0.0016,
+        "a_prime_b": -0.00304,
+        "a_prime_b_prime": 0.00424
+      },
+      "local_bound_margin": -1.99212,
+      "max_abs_left_marginal": 0.00724,
+      "max_abs_right_marginal": 0.01168,
+      "model_family": "uncorrelated_control",
+      "sample": "uncorrelated_outcome_control_sampled",
+      "sample_role": "negative_control",
+      "standard_errors": {
+        "a_b": 0.004472178440939063,
+        "a_b_prime": 0.004472174952635031,
+        "a_prime_b": 0.004472160011929744,
+        "a_prime_b_prime": 0.004472140477311617
+      },
+      "status": "CONTROL_NEAR_ZERO",
+      "trials_per_setting": 50000
+    }
+  ],
+  "chsh_convention": "abs(E(a,b)+E(a,b_prime)+E(a_prime,b)-E(a_prime,b_prime))",
+  "config": {
+    "ci_z": 1.96,
+    "deterministic_bound_epsilon": 1e-12,
+    "local_bound": 2.0,
+    "pass_max_uncorrelated_abs_s": 0.12,
+    "pass_min_quantum_analytic_s": 2.8,
+    "pass_min_quantum_sample_ci_low": 2.02,
+    "sample_local_warning_margin": 0.04,
+    "seed": 6701,
+    "trials_per_setting": 50000
+  },
+  "contract_hash": "bell_contract_5989e3d65dc077ccabc072be",
+  "deterministic_local_max_s": 2.0,
+  "labels": [
+    "BELL_REFERENCE_SANITY_PASS",
+    "CST_BELL_STATUS_OPEN",
+    "HAOS_DERIVATION_NOT_TESTED",
+    "NO_PHYSICAL_EXPERIMENT"
+  ],
+  "limitations": [
+    "not a laboratory Bell experiment",
+    "not a loophole-free Bell test",
+    "not a CST derivation of Bell correlations",
+    "not evidence that HAOS-IIP replaces quantum mechanics",
+    "not evidence for a Born-rule derivation"
+  ],
+  "outputs": {
+    "bell_chsh_diagnostics": "experiments/physics_bridge/bell_chsh_reference/bell_chsh_diagnostics.csv",
+    "bell_chsh_reference_report": "experiments/physics_bridge/bell_chsh_reference/bell_chsh_reference_report.md",
+    "bridge_status": "experiments/physics_bridge/bell_chsh_reference/bridge_status.json",
+    "precommitment_contract": "experiments/physics_bridge/bell_chsh_reference/precommitment_contract.json"
+  },
+  "quantum_analytic_s": 2.8284271247461903,
+  "result_hash": "bell_chsh_result_0639c6444f710c890c8df5fa",
+  "settings": {
+    "a": 0.0,
+    "a_prime": 1.5707963267948966,
+    "b": 0.7853981633974483,
+    "b_prime": -0.7853981633974483
+  }
+}

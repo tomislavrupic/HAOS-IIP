@@ -1,0 +1,165 @@
+{
+  "calibration_pass": true,
+  "chsh_score": null,
+  "chsh_scoring_computed": false,
+  "condition_results": {
+    "ambiguous_partial_preservation": {
+      "expected_status": "OPEN",
+      "observed_status": "OPEN",
+      "refinement": {
+        "aligned_matrix_distance": 0.06697419856099829,
+        "cross_refinement_variance": 0.0005300464395806482,
+        "eigenspace_alignment": 0.9981330485873889,
+        "pair_order_stability": 0.9863552094920283,
+        "refinement_pass": true,
+        "sign_topology_preservation": 1.0
+      },
+      "semantic": {
+        "ambiguous_open": true,
+        "graph_reconstruction_f1": 0.6666666666666666,
+        "holdout_relation_accuracy": 0.6666666666666666,
+        "nearest_neighbor_recovery": 1.0,
+        "ordinal_relation_accuracy": 0.7101449275362319,
+        "rank_correlation": 0.4464446576276235,
+        "scale_aligned_distance": 0.6938606305607707,
+        "semantic_composite": 0.7105098740240298,
+        "semantic_pass": false,
+        "signed_rank_correlation": 0.77313632564699
+      }
+    },
+    "known_positive": {
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "refinement": {
+        "aligned_matrix_distance": 0.029631751724832314,
+        "cross_refinement_variance": 0.00011374316656721095,
+        "eigenspace_alignment": 0.9981618012916252,
+        "pair_order_stability": 0.8812013348164629,
+        "refinement_pass": true,
+        "sign_topology_preservation": 0.8888888888888888
+      },
+      "semantic": {
+        "ambiguous_open": false,
+        "graph_reconstruction_f1": 1.0,
+        "holdout_relation_accuracy": 1.0,
+        "nearest_neighbor_recovery": 1.0,
+        "ordinal_relation_accuracy": 1.0,
+        "rank_correlation": 0.9142324078276749,
+        "scale_aligned_distance": 0.005988048528424817,
+        "semantic_composite": 0.9756702519281352,
+        "semantic_pass": true,
+        "signed_rank_correlation": 0.939789103741136
+      }
+    },
+    "refinement_broken_control": {
+      "expected_status": "FAIL_REFINEMENT",
+      "observed_status": "FAIL_BOTH",
+      "refinement": {
+        "aligned_matrix_distance": 0.9049797614733303,
+        "cross_refinement_variance": 0.28644529816391134,
+        "eigenspace_alignment": 0.36985098480535844,
+        "pair_order_stability": -0.0328513162773452,
+        "refinement_pass": false,
+        "sign_topology_preservation": 0.4938271604938272
+      },
+      "semantic": {
+        "ambiguous_open": false,
+        "graph_reconstruction_f1": 0.4166666666666667,
+        "holdout_relation_accuracy": 0.0,
+        "nearest_neighbor_recovery": 0.16666666666666666,
+        "ordinal_relation_accuracy": 0.43478260869565216,
+        "rank_correlation": -0.169553319675343,
+        "scale_aligned_distance": 0.9985721173618777,
+        "semantic_composite": 0.16968599033816426,
+        "semantic_pass": false,
+        "signed_rank_correlation": -0.08237949826244718
+      }
+    },
+    "semantic_permutation_control": {
+      "expected_status": "FAIL_SEMANTIC",
+      "observed_status": "FAIL_SEMANTIC",
+      "refinement": {
+        "aligned_matrix_distance": 0.030316273352115872,
+        "cross_refinement_variance": 0.00010635824623454408,
+        "eigenspace_alignment": 0.9966077813479534,
+        "pair_order_stability": 0.8766036336670376,
+        "refinement_pass": true,
+        "sign_topology_preservation": 0.9320987654320988
+      },
+      "semantic": {
+        "ambiguous_open": false,
+        "graph_reconstruction_f1": 0.16666666666666666,
+        "holdout_relation_accuracy": 0.3333333333333333,
+        "nearest_neighbor_recovery": 0.0,
+        "ordinal_relation_accuracy": 0.2463768115942029,
+        "rank_correlation": -0.520527177233954,
+        "scale_aligned_distance": 0.989843444744212,
+        "semantic_composite": 0.12439613526570048,
+        "semantic_pass": false,
+        "signed_rank_correlation": -0.1372991637707453
+      }
+    },
+    "topology_destroyed_control": {
+      "expected_status": "FAIL_SEMANTIC",
+      "observed_status": "FAIL_BOTH",
+      "refinement": {
+        "aligned_matrix_distance": 0.9813529176880592,
+        "cross_refinement_variance": 0.0062531785349558685,
+        "eigenspace_alignment": 0.17065169388614998,
+        "pair_order_stability": -0.04649610678531703,
+        "refinement_pass": false,
+        "sign_topology_preservation": 0.5
+      },
+      "semantic": {
+        "ambiguous_open": true,
+        "graph_reconstruction_f1": 0.5833333333333334,
+        "holdout_relation_accuracy": 0.0,
+        "nearest_neighbor_recovery": 0.6666666666666666,
+        "ordinal_relation_accuracy": 0.5797101449275363,
+        "rank_correlation": 0.15789514932631485,
+        "scale_aligned_distance": 0.9929629139413783,
+        "semantic_composite": 0.3536772976117865,
+        "semantic_pass": false,
+        "signed_rank_correlation": 0.1344584914168678
+      }
+    }
+  },
+  "config": {
+    "ambiguous_lower_bound": 0.35,
+    "ambiguous_upper_bound": 0.75,
+    "graph_f1_min": 0.8,
+    "holdout_accuracy_min": 0.8,
+    "nearest_neighbor_min": 0.8,
+    "ordinal_accuracy_min": 0.75,
+    "refinement_aligned_distance_max": 0.25,
+    "refinement_eigenspace_min": 0.7,
+    "refinement_pair_order_min": 0.85,
+    "refinement_sign_topology_min": 0.8,
+    "refinement_variance_max": 0.025,
+    "scale_aligned_distance_max": 0.35,
+    "semantic_rank_correlation_min": 0.75,
+    "version": "synthetic-relational-geometry-calibration-v0.1"
+  },
+  "contract_hash": "synthetic_calibration_contract_0c4d641abdaf614d790dbfd9",
+  "labels": [
+    "KNOWN_POSITIVE_PASS",
+    "SEMANTIC_CONTROL_REJECTED",
+    "TOPOLOGY_CONTROL_REJECTED",
+    "REFINEMENT_CONTROL_REJECTED",
+    "AMBIGUOUS_CASE_OPEN",
+    "CALIBRATION_PASS",
+    "NO_PHYSICAL_EXPERIMENT",
+    "HAOS_BELL_DERIVATION_NOT_ESTABLISHED"
+  ],
+  "outputs": {
+    "control_results": "experiments/physics_bridge/synthetic_relational_geometry_calibration/calibration_control_results.csv",
+    "geometry_matrix": "experiments/physics_bridge/synthetic_relational_geometry_calibration/calibration_geometry_matrix.csv",
+    "precommitment_contract": "experiments/physics_bridge/synthetic_relational_geometry_calibration/precommitment_contract.json",
+    "refinement_persistence": "experiments/physics_bridge/synthetic_relational_geometry_calibration/calibration_refinement_persistence.csv",
+    "report": "experiments/physics_bridge/synthetic_relational_geometry_calibration/synthetic_calibration_report.md",
+    "result": "experiments/physics_bridge/synthetic_relational_geometry_calibration/synthetic_calibration_result.json",
+    "semantic_relation_matrix": "experiments/physics_bridge/synthetic_relational_geometry_calibration/semantic_relation_matrix.csv",
+    "source_manifest": "experiments/physics_bridge/synthetic_relational_geometry_calibration/synthetic_source_manifest.json"
+  },
+  "result_hash": "synthetic_calibration_result_07335b3bb9e27cde45633991"
+}

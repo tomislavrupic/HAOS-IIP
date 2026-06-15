@@ -1,0 +1,43 @@
+{
+  "S1_semantic_ordering_passed": false,
+  "S2_refinement_persistence_passed": false,
+  "chsh_score": null,
+  "chsh_scoring_authorized": false,
+  "chsh_scoring_computed": false,
+  "config": {
+    "refinement_aligned_distance_max": 0.2,
+    "refinement_degradation_points_required": 4,
+    "refinement_eigenspace_alignment_min": 0.5,
+    "refinement_holdout_stability_min": 0.8,
+    "refinement_pair_order_min": 0.85,
+    "refinement_sign_topology_min": 0.8,
+    "refinement_variance_max": 0.003,
+    "semantic_composite_margin_vs_label_permutation": 0.2,
+    "semantic_graph_f1_min": 0.5,
+    "semantic_holdout_correlation_min": 0.25,
+    "semantic_nearest_neighbor_min": 0.5,
+    "semantic_ordinal_accuracy_min": 0.6,
+    "semantic_rank_correlation_min": 0.3,
+    "sign_tolerance": 0.02,
+    "source_limit": 99,
+    "version": "b3-2-2-semantic-refinement-audit-v0.1"
+  },
+  "contract_hash": "b3_2_2_contract_a5bf1667ef83cd8cbbcf1129",
+  "labels": [
+    "SETTING_SEMANTICS_NOT_ESTABLISHED",
+    "REFINEMENT_SPECIFICITY_NOT_ESTABLISHED",
+    "GENERIC_RELATIONAL_GEOMETRY",
+    "CHSH_SCORING_NOT_AUTHORIZED",
+    "HAOS_BELL_DERIVATION_NOT_ESTABLISHED"
+  ],
+  "outputs": {
+    "precommitment_contract": "experiments/physics_bridge/bell_haos_candidate/b3_2_2_precommitment_contract.json",
+    "refinement_metrics": "experiments/physics_bridge/bell_haos_candidate/b3_2_2_refinement_persistence.csv",
+    "refinement_pairs": "experiments/physics_bridge/bell_haos_candidate/b3_2_2_refinement_pairs.csv",
+    "report": "experiments/physics_bridge/bell_haos_candidate/b3_2_2_report.md",
+    "result": "experiments/physics_bridge/bell_haos_candidate/b3_2_2_result.json",
+    "semantic_edges": "experiments/physics_bridge/bell_haos_candidate/b3_2_2_semantic_edges.csv",
+    "semantic_metrics": "experiments/physics_bridge/bell_haos_candidate/b3_2_2_semantic_ordering.csv"
+  },
+  "result_hash": "b3_2_2_result_5133b138953f4c053071a49a"
+}

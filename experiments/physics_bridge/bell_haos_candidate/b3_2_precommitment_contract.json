@@ -1,0 +1,208 @@
+{
+  "closure_vectors": {
+    "definition": "u_s(lambda) is a signed two-token contrast vector weighted by token rank in the frozen chain_signature.",
+    "normalization": "G divides by ||u_a|| ||u_b||.",
+    "sign_convention": "plus token contributes positively; minus token contributes negatively."
+  },
+  "contract_hash": "b3_2_contract_7e3f4ef61f54c8a3d43416a0",
+  "covariance_transformations": {
+    "expected": "G is invariant when u_a, u_b, and J_lambda are transformed together.",
+    "joint_token_permutation": [
+      2,
+      4,
+      6,
+      1,
+      3,
+      5,
+      0
+    ]
+  },
+  "gate_logic": [
+    "G1_RELATIONAL_SENSITIVITY must pass before promotion.",
+    "G2_SIGN_STRUCTURE must pass before promotion.",
+    "G3_COVARIANCE must pass before promotion.",
+    "G4_HOLDOUT_TRANSFER must pass before promotion.",
+    "G5_NULL_REJECTION must pass before promotion.",
+    "G6_CHSH_SCOREBOARD is authorization only; CHSH is not computed here."
+  ],
+  "hard_prohibitions": [
+    "do not tune beta against CHSH output",
+    "do not tune J_lambda against CHSH output",
+    "do not tune setting mappings against CHSH output",
+    "do not tune u_a/u_b extraction against CHSH output",
+    "do not tune sign convention against CHSH output",
+    "do not tune normalization against CHSH output",
+    "do not use proxy objectives correlated with a frozen quantum table"
+  ],
+  "name": "B3.2_PRECOMMITMENT_CONTRACT",
+  "non_claims": [
+    "not a physical Bell experiment",
+    "not a loophole-free Bell test",
+    "not a quantum mechanics derivation",
+    "not evidence that HAOS-IIP derives Bell correlations"
+  ],
+  "null_operator_contracts": {
+    "closure_vector_permutation": {
+      "destroys": "u_a/u_b token alignment with J_lambda",
+      "expected_metric_response": "geometry_score lower than target by predeclared ratio",
+      "invalidation_condition": "permuted vectors preserve target geometry score",
+      "preserves": "source rows, J_lambda, vector norms",
+      "purpose": "break closure-vector token alignment"
+    },
+    "identity_pairing": {
+      "destroys": "skew orientation transport J_lambda",
+      "expected_metric_response": "geometry_score lower than target by predeclared ratio",
+      "invalidation_condition": "identity pairing preserves target geometry score",
+      "preserves": "setting vectors, source rows, token basis",
+      "purpose": "remove oriented chain transport while preserving vector dimensionality"
+    },
+    "label_permuted_settings": {
+      "destroys": "setting-label correspondence",
+      "expected_metric_response": "geometry_score lower than target by predeclared ratio",
+      "invalidation_condition": "label permutation preserves target geometry score",
+      "preserves": "source rows and J_lambda",
+      "purpose": "test whether geometry depends on declared setting semantics"
+    },
+    "random_orthogonal_pairing": {
+      "destroys": "semantic token orientation",
+      "expected_metric_response": "geometry_score lower than target by predeclared ratio",
+      "invalidation_condition": "random orthogonal pairing preserves target geometry score",
+      "preserves": "operator norm and antisymmetry",
+      "purpose": "preserve orthogonal norm while randomizing orientation basis"
+    },
+    "refinement_broken_control": {
+      "destroys": "target hierarchy identity",
+      "expected_metric_response": "geometry_score lower than target by predeclared ratio",
+      "invalidation_condition": "matched control hierarchy preserves target geometry score",
+      "preserves": "artifact schema, n_side/seed style, chain-signature format",
+      "purpose": "replace frozen target rows with a frozen matched control hierarchy"
+    },
+    "shuffled_pairing": {
+      "destroys": "token adjacency alignment",
+      "expected_metric_response": "geometry_score lower than target by predeclared ratio",
+      "invalidation_condition": "shuffled pairing preserves target geometry score",
+      "preserves": "operator sparsity and source closure strength",
+      "purpose": "preserve skew matrix norm but break chain-aligned topology"
+    },
+    "topology_destroyed_pairing": {
+      "destroys": "all pairwise orientation edges",
+      "expected_metric_response": "G collapses near zero",
+      "invalidation_condition": "nonzero geometry survives zero-topology operator",
+      "preserves": "source row availability and setting labels",
+      "purpose": "destroy chain topology entirely"
+    }
+  },
+  "pairing_operator": {
+    "definition": "J_lambda is a skew-symmetric nearest-neighbor transport matrix along the frozen chain_signature.",
+    "edge_weight": "source_closure_strength(lambda)/(edge_index+1)",
+    "name": "chain_orientation_operator",
+    "semantic_justification": "orientation is taken from observed chain order, not from Bell target signs."
+  },
+  "purpose": "Test whether frozen HAOS-IIP structure yields a relational, sign-changing invariant G(a,b,lambda) before CHSH is computed.",
+  "relational_invariant": "G(a,b,lambda)=<u_a,J_lambda u_b>/(||u_a||||u_b||)",
+  "seeds": [
+    7201,
+    7202,
+    7203
+  ],
+  "setting_representation": {
+    "held_back_chsh_pairs": [
+      [
+        "a0",
+        "b0"
+      ],
+      [
+        "a0",
+        "b1"
+      ],
+      [
+        "a1",
+        "b0"
+      ],
+      [
+        "a1",
+        "b1"
+      ]
+    ],
+    "holdout_pairs": [
+      [
+        "h0",
+        "h1"
+      ],
+      [
+        "h0",
+        "h2"
+      ],
+      [
+        "h3",
+        "h1"
+      ],
+      [
+        "h3",
+        "h2"
+      ]
+    ],
+    "setting_definitions": {
+      "a0": [
+        "radius_half",
+        "spectral_half"
+      ],
+      "a1": [
+        "width_half",
+        "front_near"
+      ],
+      "b0": [
+        "dispersion_half",
+        "spectral_half"
+      ],
+      "b1": [
+        "low_k_half",
+        "front_far"
+      ],
+      "h0": [
+        "radius_half",
+        "front_near"
+      ],
+      "h1": [
+        "dispersion_half",
+        "width_half"
+      ],
+      "h2": [
+        "spectral_half",
+        "front_far"
+      ],
+      "h3": [
+        "low_k_half",
+        "radius_half"
+      ]
+    },
+    "tokens": [
+      "low_k_half",
+      "dispersion_half",
+      "radius_half",
+      "spectral_half",
+      "width_half",
+      "front_near",
+      "front_far"
+    ]
+  },
+  "source_artifacts": {
+    "phase18_shell_ordering_metrics": "phase18-distance-surrogate/runs/phase18_shell_ordering_metrics.csv",
+    "refinement_control_label": "periodic_diagonal_augmented_control",
+    "source_hash": "155f7b3354c733ce7836613560b0d8e6c13a303c1fa5b2532e286256c9f437e3",
+    "source_limit": 6,
+    "target_hierarchy_label": "frozen_branch"
+  },
+  "status": "GEOMETRY_AUDIT_PRECOMMITMENT",
+  "target_leakage_guard": {
+    "detected": false,
+    "hits": []
+  },
+  "tolerances": {
+    "covariance_tolerance": 1e-12,
+    "holdout_range_tolerance": 0.05,
+    "null_degradation_ratio": 0.7,
+    "relational_range_tolerance": 0.05,
+    "sign_tolerance": 0.02
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "chsh_policy": {
+    "authorized": false,
+    "computed": false,
+    "reason": "B3.2 null rejection failed; this script performs failure localization only."
+  },
+  "contract_hash": "b3_2_1_contract_be906b241a031509930eda77",
+  "frozen_inputs": {
+    "analysis_pairs": [
+      [
+        "chsh_held_back",
+        "a0",
+        "b0"
+      ],
+      [
+        "chsh_held_back",
+        "a0",
+        "b1"
+      ],
+      [
+        "chsh_held_back",
+        "a1",
+        "b0"
+      ],
+      [
+        "chsh_held_back",
+        "a1",
+        "b1"
+      ],
+      [
+        "holdout",
+        "h0",
+        "h1"
+      ],
+      [
+        "holdout",
+        "h0",
+        "h2"
+      ],
+      [
+        "holdout",
+        "h3",
+        "h1"
+      ],
+      [
+        "holdout",
+        "h3",
+        "h2"
+      ]
+    ],
+    "invariant": "G(a,b,lambda)=<u_a,J_lambda u_b>/(||u_a||||u_b||)",
+    "left_matrix_settings": [
+      "a0",
+      "a1",
+      "h0",
+      "h3"
+    ],
+    "prohibited_changes": [
+      "do not alter J_lambda",
+      "do not alter closure vectors",
+      "do not alter setting mappings",
+      "do not alter sign convention",
+      "do not alter B3.2 thresholds",
+      "do not compute CHSH"
+    ],
+    "right_matrix_settings": [
+      "b0",
+      "b1",
+      "h1",
+      "h2"
+    ],
+    "settings": {
+      "a0": [
+        "radius_half",
+        "spectral_half"
+      ],
+      "a1": [
+        "width_half",
+        "front_near"
+      ],
+      "b0": [
+        "dispersion_half",
+        "spectral_half"
+      ],
+      "b1": [
+        "low_k_half",
+        "front_far"
+      ],
+      "h0": [
+        "radius_half",
+        "front_near"
+      ],
+      "h1": [
+        "dispersion_half",
+        "width_half"
+      ],
+      "h2": [
+        "spectral_half",
+        "front_far"
+      ],
+      "h3": [
+        "low_k_half",
+        "radius_half"
+      ]
+    },
+    "source_artifact": "phase18-distance-surrogate/runs/phase18_shell_ordering_metrics.csv",
+    "source_hash": "155f7b3354c733ce7836613560b0d8e6c13a303c1fa5b2532e286256c9f437e3"
+  },
+  "matrix_metrics": [
+    "singular values",
+    "rank",
+    "symmetric norm",
+    "antisymmetric norm",
+    "scale-aligned distance",
+    "pair-order Spearman correlation"
+  ],
+  "name": "B3.2.1_NULL_FAILURE_LOCALIZATION_PRECOMMITMENT",
+  "operator_variants": {
+    "degree_matched_J": {
+      "destroys": "actual chain adjacency and orientation order",
+      "preserves": "approximate weighted node degree and antisymmetry"
+    },
+    "locality_preserving_randomized_J": {
+      "destroys": "edge-weight order and alternating orientations",
+      "preserves": "chain-local adjacency and antisymmetry"
+    },
+    "orientation_reversed_J": {
+      "destroys": "orientation sign convention",
+      "preserves": "chain adjacency, spectrum magnitude, locality, antisymmetry"
+    },
+    "spectrum_matched_J": {
+      "destroys": "semantic token orientation alignment",
+      "preserves": "skew spectrum under signed permutation, norm, antisymmetry"
+    },
+    "target_J": {
+      "destroys": "nothing; reference operator",
+      "preserves": "frozen chain-order adjacency, orientation, antisymmetry, closure-strength weighting"
+    }
+  },
+  "purpose": "Localize why B3.2 nulls preserve sign-changing relational geometry.",
+  "required_analyses": [
+    "target/null G distributions",
+    "null invariant ledger",
+    "topology dependence",
+    "operator dependence",
+    "relation-matrix geometry",
+    "pair-order stability",
+    "holdout behavior"
+  ],
+  "thresholds_for_localization_only": {
+    "matrix_similarity_distance_threshold": 0.75,
+    "rank_similarity_threshold": 0.6,
+    "sign_tolerance": 0.02,
+    "source_limit": 6,
+    "topology_correlation_attention_threshold": 0.2,
+    "version": "b3-2-1-null-failure-localization-v0.1"
+  }
+}

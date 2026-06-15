@@ -1,0 +1,92 @@
+{
+  "conditions": [
+    "known_positive",
+    "semantic_permutation_control",
+    "topology_destroyed_control",
+    "refinement_broken_control",
+    "ambiguous_partial_preservation"
+  ],
+  "holdout_directed_edges": [
+    [
+      "alpha",
+      "beta"
+    ],
+    [
+      "gamma",
+      "delta"
+    ],
+    [
+      "epsilon",
+      "zeta"
+    ]
+  ],
+  "refinement_levels": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "seeds": [
+    3101,
+    3102,
+    3103
+  ],
+  "semantic_operator": [
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.45,
+      0.0,
+      -1.0
+    ],
+    [
+      -1.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0,
+      1.0,
+      0.0,
+      -0.35
+    ],
+    [
+      -0.45,
+      0.0,
+      -1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      -1.0,
+      0.0,
+      1.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.35,
+      0.0,
+      -1.0,
+      0.0
+    ]
+  ],
+  "settings": [
+    "alpha",
+    "beta",
+    "gamma",
+    "delta",
+    "epsilon",
+    "zeta"
+  ]
+}

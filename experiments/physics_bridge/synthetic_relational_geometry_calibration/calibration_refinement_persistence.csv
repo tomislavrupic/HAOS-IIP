@@ -1,0 +1,6 @@
+condition,sample_role,pair_order_stability,sign_topology_preservation,aligned_matrix_distance,eigenspace_alignment,cross_refinement_variance,status
+known_positive,target,0.881201334816,0.888888888889,0.0296317517248,0.998161801292,0.000113743166567,REFINEMENT_PASS
+semantic_permutation_control,control,0.876603633667,0.932098765432,0.0303162733521,0.996607781348,0.000106358246235,REFINEMENT_PASS
+topology_destroyed_control,control,-0.0464961067853,0.5,0.981352917688,0.170651693886,0.00625317853496,REFINEMENT_FAIL
+refinement_broken_control,control,-0.0328513162773,0.493827160494,0.904979761473,0.369850984805,0.286445298164,REFINEMENT_FAIL
+ambiguous_partial_preservation,control,0.986355209492,1,0.066974198561,0.998133048587,0.000530046439581,REFINEMENT_PASS

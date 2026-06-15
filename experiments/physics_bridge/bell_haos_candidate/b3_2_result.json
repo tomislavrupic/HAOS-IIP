@@ -1,0 +1,128 @@
+{
+  "chsh_score": null,
+  "chsh_scoring_computed": false,
+  "config": {
+    "covariance_tolerance": 1e-12,
+    "holdout_range_tolerance": 0.05,
+    "null_degradation_ratio": 0.7,
+    "refinement_control_label": "periodic_diagonal_augmented_control",
+    "relational_range_tolerance": 0.05,
+    "seeds": [
+      7201,
+      7202,
+      7203
+    ],
+    "sign_tolerance": 0.02,
+    "source_artifact": "phase18-distance-surrogate/runs/phase18_shell_ordering_metrics.csv",
+    "source_limit": 6,
+    "target_hierarchy_label": "frozen_branch",
+    "version": "b3-2-geometry-audit-v0.1"
+  },
+  "contract_hash": "b3_2_contract_7e3f4ef61f54c8a3d43416a0",
+  "gate_results": {
+    "chsh_scoring_authorized": false,
+    "chsh_scoring_computed": false,
+    "gates": {
+      "G1_RELATIONAL_SENSITIVITY": {
+        "label": "RELATIONAL_STRUCTURE_DETECTED",
+        "passed": true,
+        "stats": {
+          "count": 48,
+          "geometry_score": 0.41124122575031247,
+          "max_G": 0.883195659053,
+          "mean_G": 0.04683163772755208,
+          "min_G": -0.432776263348,
+          "negative_count": 15,
+          "positive_count": 19,
+          "range_G": 1.315971922401,
+          "variance_G": 0.06311021359714178
+        },
+        "tolerance": 0.05
+      },
+      "G2_SIGN_STRUCTURE": {
+        "label": "SIGN_CHANGING_GEOMETRY_DETECTED",
+        "passed": true,
+        "sign_tolerance": 0.02,
+        "stats": {
+          "count": 48,
+          "geometry_score": 0.41124122575031247,
+          "max_G": 0.883195659053,
+          "mean_G": 0.04683163772755208,
+          "min_G": -0.432776263348,
+          "negative_count": 15,
+          "positive_count": 19,
+          "range_G": 1.315971922401,
+          "variance_G": 0.06311021359714178
+        }
+      },
+      "G3_COVARIANCE": {
+        "label": "COVARIANCE_PASS",
+        "max_error": 0.0,
+        "passed": true,
+        "tolerance": 1e-12
+      },
+      "G4_HOLDOUT_TRANSFER": {
+        "label": "HOLDOUT_TRANSFER_PASS",
+        "passed": true,
+        "stats": {
+          "count": 24,
+          "geometry_score": 0.48108164565637496,
+          "max_G": 0.883195659053,
+          "mean_G": 0.10318722965827916,
+          "min_G": -0.399688729364,
+          "negative_count": 10,
+          "positive_count": 9,
+          "range_G": 1.282884388417,
+          "variance_G": 0.09841611186909871
+        },
+        "tolerance": 0.05
+      },
+      "G5_NULL_REJECTION": {
+        "degradation_ratio": 0.7,
+        "label": "NULL_REJECTION_FAIL",
+        "passed": false
+      },
+      "G6_CHSH_SCOREBOARD": {
+        "computed": false,
+        "label": "CHSH_SCORING_NOT_AUTHORIZED",
+        "passed": false,
+        "reason": "This harness authorizes a later scoreboard run only; it does not compute CHSH."
+      }
+    },
+    "labels": [
+      "RELATIONAL_STRUCTURE_DETECTED",
+      "SIGN_CHANGING_GEOMETRY_DETECTED",
+      "COVARIANCE_PASS",
+      "HOLDOUT_TRANSFER_PASS",
+      "NULL_REJECTION_FAIL",
+      "CHSH_SCORING_NOT_AUTHORIZED",
+      "HAOS_BELL_DERIVATION_NOT_ESTABLISHED",
+      "MIXED / OPEN"
+    ]
+  },
+  "outputs": {
+    "control_results": "experiments/physics_bridge/bell_haos_candidate/b3_2_control_results.csv",
+    "covariance_diagnostics": "experiments/physics_bridge/bell_haos_candidate/b3_2_covariance_diagnostics.csv",
+    "geometry_matrix": "experiments/physics_bridge/bell_haos_candidate/b3_2_geometry_matrix.csv",
+    "geometry_report": "experiments/physics_bridge/bell_haos_candidate/b3_2_geometry_report.md",
+    "precommitment_contract": "experiments/physics_bridge/bell_haos_candidate/b3_2_precommitment_contract.json",
+    "result": "experiments/physics_bridge/bell_haos_candidate/b3_2_result.json"
+  },
+  "result_hash": "b3_2_result_51eb4d7b1e6c0d28437d7dfa",
+  "source_hash": "155f7b3354c733ce7836613560b0d8e6c13a303c1fa5b2532e286256c9f437e3",
+  "target_geometry_stats": {
+    "count": 48,
+    "geometry_score": 0.41124122575031247,
+    "max_G": 0.883195659053,
+    "mean_G": 0.04683163772755208,
+    "min_G": -0.432776263348,
+    "negative_count": 15,
+    "positive_count": 19,
+    "range_G": 1.315971922401,
+    "variance_G": 0.06311021359714178
+  },
+  "target_leakage_guard": {
+    "detected": false,
+    "hits": []
+  }
+}

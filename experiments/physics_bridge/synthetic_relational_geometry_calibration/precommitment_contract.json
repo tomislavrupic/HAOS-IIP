@@ -1,0 +1,92 @@
+{
+  "chsh_policy": {
+    "authorized": false,
+    "computed": false
+  },
+  "conditions": {
+    "ambiguous_partial_preservation": "partial semantic preservation expected to remain OPEN",
+    "known_positive": "same semantic graph under small permitted perturbations",
+    "refinement_broken_control": "preserves local semantic ingredients but destroys cross-refinement continuity",
+    "semantic_permutation_control": "preserves vector dimension and refinement stability but destroys label semantics",
+    "topology_destroyed_control": "preserves dimensions but destroys semantic topology"
+  },
+  "contract_hash": "synthetic_calibration_contract_0c4d641abdaf614d790dbfd9",
+  "known_structure": {
+    "holdout_directed_edges": [
+      [
+        "alpha",
+        "beta"
+      ],
+      [
+        "gamma",
+        "delta"
+      ],
+      [
+        "epsilon",
+        "zeta"
+      ]
+    ],
+    "refinement_levels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "seeds": [
+      3101,
+      3102,
+      3103
+    ],
+    "semantic_operator": "directed cycle plus two signed cross-links",
+    "settings": [
+      "alpha",
+      "beta",
+      "gamma",
+      "delta",
+      "epsilon",
+      "zeta"
+    ]
+  },
+  "metrics": {
+    "refinement": [
+      "pair-order stability",
+      "sign-topology preservation",
+      "aligned matrix distance",
+      "eigenspace alignment",
+      "cross-refinement variance"
+    ],
+    "semantic": [
+      "rank correlation",
+      "nearest-neighbor recovery",
+      "ordinal relation accuracy",
+      "graph reconstruction F1",
+      "holdout relation accuracy",
+      "scale-aligned distance"
+    ]
+  },
+  "name": "Synthetic Relational Geometry Calibration v0.1",
+  "non_claims": [
+    "not a physical Bell experiment",
+    "not a quantum mechanics derivation",
+    "not a HAOS-IIP Bell bridge",
+    "not evidence that CST recovers Bell correlations"
+  ],
+  "purpose": "Test whether semantic/refinement instruments recover known relational geometry and reject destructive controls.",
+  "status": "PRECOMMITTED_CALIBRATION_SUITE",
+  "thresholds": {
+    "ambiguous_lower_bound": 0.35,
+    "ambiguous_upper_bound": 0.75,
+    "graph_f1_min": 0.8,
+    "holdout_accuracy_min": 0.8,
+    "nearest_neighbor_min": 0.8,
+    "ordinal_accuracy_min": 0.75,
+    "refinement_aligned_distance_max": 0.25,
+    "refinement_eigenspace_min": 0.7,
+    "refinement_pair_order_min": 0.85,
+    "refinement_sign_topology_min": 0.8,
+    "refinement_variance_max": 0.025,
+    "scale_aligned_distance_max": 0.35,
+    "semantic_rank_correlation_min": 0.75,
+    "version": "synthetic-relational-geometry-calibration-v0.1"
+  }
+}

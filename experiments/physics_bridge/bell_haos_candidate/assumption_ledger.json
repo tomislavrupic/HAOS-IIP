@@ -1,0 +1,172 @@
+{
+  "B3": {
+    "contract_hash": "b3_precommitment_contract_74db225269ebe1705396f518",
+    "invoice": [
+      "FACTORIZATION_RELAXED",
+      "OUTCOME_INDEPENDENCE_RELAXED"
+    ],
+    "status": "EXECUTED_UNDER_PRECOMMITMENT"
+  },
+  "ledgers": [
+    {
+      "assumption_violations": [],
+      "candidate_id": "local_sanity_candidate",
+      "factorization": "factorized_local_response",
+      "forward_only_causality": "forward_only_by_construction",
+      "joint_setting_access_declared": false,
+      "outcome_independence": "deterministic_given_source_and_local_setting",
+      "parameter_independence": "NO_SIGNALLING_PASS",
+      "post_selection_detected": false,
+      "remote_setting_access": false,
+      "run_id": "local_sanity_candidate_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_PASS",
+      "stage": "B1",
+      "target_leakage_detected": false
+    },
+    {
+      "assumption_violations": [],
+      "candidate_id": "haos_local_recoverability_candidate",
+      "factorization": "factorized_local_response",
+      "forward_only_causality": "forward_only_by_construction",
+      "joint_setting_access_declared": false,
+      "outcome_independence": "deterministic_given_source_and_local_setting",
+      "parameter_independence": "NO_SIGNALLING_PASS",
+      "post_selection_detected": false,
+      "remote_setting_access": false,
+      "run_id": "haos_local_recoverability_candidate_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_PASS",
+      "stage": "B2",
+      "target_leakage_detected": false
+    },
+    {
+      "assumption_violations": [],
+      "candidate_id": "haos_joint_closure_candidate",
+      "factorization": "FACTORIZATION_RELAXED_BY_EXPLICIT_JOINT_CLOSURE_COST",
+      "forward_only_causality": "COMPUTATIONAL_BATCH_MODEL_AFTER_SETTINGS_ASSIGNED_NO_SPACETIME_CAUSAL_CLAIM",
+      "joint_setting_access_declared": true,
+      "outcome_independence": "OUTCOME_INDEPENDENCE_RELAXED_BY_PRODUCT_LEVEL_JOINT_DISTRIBUTION",
+      "parameter_independence": "NO_SIGNALLING_PASS",
+      "post_selection_detected": false,
+      "remote_setting_access": false,
+      "run_id": "haos_joint_closure_candidate_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_PASS",
+      "stage": "B3",
+      "target_leakage_detected": false
+    },
+    {
+      "assumption_violations": [],
+      "candidate_id": "independent_random_control",
+      "factorization": "factorized_local_response",
+      "forward_only_causality": "forward_only_by_construction",
+      "joint_setting_access_declared": false,
+      "outcome_independence": "deterministic_given_source_and_local_setting",
+      "parameter_independence": "NO_SIGNALLING_PASS",
+      "post_selection_detected": false,
+      "remote_setting_access": false,
+      "run_id": "independent_random_control_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_PASS",
+      "stage": "control",
+      "target_leakage_detected": false
+    },
+    {
+      "assumption_violations": [],
+      "candidate_id": "deterministic_lhv_control",
+      "factorization": "factorized_local_response",
+      "forward_only_causality": "forward_only_by_construction",
+      "joint_setting_access_declared": false,
+      "outcome_independence": "deterministic_given_source_and_local_setting",
+      "parameter_independence": "NO_SIGNALLING_PASS",
+      "post_selection_detected": false,
+      "remote_setting_access": false,
+      "run_id": "deterministic_lhv_control_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_PASS",
+      "stage": "control",
+      "target_leakage_detected": false
+    },
+    {
+      "assumption_violations": [],
+      "candidate_id": "shared_randomness_local_control",
+      "factorization": "factorized_local_response",
+      "forward_only_causality": "forward_only_by_construction",
+      "joint_setting_access_declared": false,
+      "outcome_independence": "deterministic_given_source_and_local_setting",
+      "parameter_independence": "NO_SIGNALLING_PASS",
+      "post_selection_detected": false,
+      "remote_setting_access": false,
+      "run_id": "shared_randomness_local_control_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_PASS",
+      "stage": "control",
+      "target_leakage_detected": false
+    },
+    {
+      "assumption_violations": [
+        "MEASUREMENT_INDEPENDENCE_VIOLATED"
+      ],
+      "candidate_id": "source_setting_leakage_positive_control",
+      "factorization": "factorized_local_response",
+      "forward_only_causality": "forward_only_by_construction",
+      "joint_setting_access_declared": false,
+      "outcome_independence": "deterministic_given_source_and_local_setting",
+      "parameter_independence": "NO_SIGNALLING_PASS",
+      "post_selection_detected": false,
+      "remote_setting_access": false,
+      "run_id": "source_setting_leakage_positive_control_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_FAIL",
+      "stage": "invalid_control",
+      "target_leakage_detected": false
+    },
+    {
+      "assumption_violations": [
+        "MEASUREMENT_INDEPENDENCE_VIOLATED",
+        "POST_SELECTION_DETECTED"
+      ],
+      "candidate_id": "post_selection_positive_control",
+      "factorization": "factorized_local_response",
+      "forward_only_causality": "forward_only_by_construction",
+      "joint_setting_access_declared": false,
+      "outcome_independence": "deterministic_given_source_and_local_setting",
+      "parameter_independence": "NO_SIGNALLING_PASS",
+      "post_selection_detected": true,
+      "remote_setting_access": false,
+      "run_id": "post_selection_positive_control_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_FAIL",
+      "stage": "invalid_control",
+      "target_leakage_detected": false
+    },
+    {
+      "assumption_violations": [
+        "NO_SIGNALLING_FAIL"
+      ],
+      "candidate_id": "label_permutation_control",
+      "factorization": "factorized_local_response",
+      "forward_only_causality": "forward_only_by_construction",
+      "joint_setting_access_declared": false,
+      "outcome_independence": "deterministic_given_source_and_local_setting",
+      "parameter_independence": "NO_SIGNALLING_FAIL",
+      "post_selection_detected": false,
+      "remote_setting_access": false,
+      "run_id": "label_permutation_control_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_PASS",
+      "stage": "control",
+      "target_leakage_detected": false
+    },
+    {
+      "assumption_violations": [
+        "MEASUREMENT_INDEPENDENCE_VIOLATED",
+        "NO_SIGNALLING_FAIL"
+      ],
+      "candidate_id": "setting_permutation_control",
+      "factorization": "factorized_local_response",
+      "forward_only_causality": "forward_only_by_construction",
+      "joint_setting_access_declared": false,
+      "outcome_independence": "deterministic_given_source_and_local_setting",
+      "parameter_independence": "NO_SIGNALLING_FAIL",
+      "post_selection_detected": false,
+      "remote_setting_access": false,
+      "run_id": "setting_permutation_control_seed_7201",
+      "setting_independence": "SETTING_INDEPENDENCE_FAIL",
+      "stage": "control",
+      "target_leakage_detected": false
+    }
+  ]
+}

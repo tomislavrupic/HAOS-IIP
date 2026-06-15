@@ -1,0 +1,130 @@
+{
+  "authorization_status": "IMPLEMENTATION_AUTHORIZED_WITH_EXPLICIT_INVOICE",
+  "bell_assumption_invoice": {
+    "factorization": "RELAXED_BY_EXPLICIT_JOINT_OUTCOME_PRODUCT_DISTRIBUTION",
+    "forward_only_causality": "NO_SPACETIME_CAUSAL_CLAIM; COMPUTATIONAL_BATCH_CANDIDATE_AFTER_SETTINGS_ASSIGNED",
+    "measurement_independence": "PRESERVED_AND_TESTED_BY_SOURCE_SETTING_MI",
+    "outcome_independence": "RELAXED_BY_PRODUCT_LEVEL_JOINT_DISTRIBUTION",
+    "parameter_independence": "NOT_RELAXED; TESTED_BY_NO_SIGNALLING_MARGINALS",
+    "selected_invoice": [
+      "FACTORIZATION_RELAXED",
+      "OUTCOME_INDEPENDENCE_RELAXED"
+    ]
+  },
+  "contract_hash": "b3_precommitment_contract_74db225269ebe1705396f518",
+  "created_after": {
+    "B0_adapter": "PASS",
+    "B1_local_sanity": "PASS",
+    "B2_haos_local_recoverability": "BELL_LOCAL",
+    "prior_B3_gate": "NONE_IDENTIFIED_IMPLEMENTATION_NOT_AUTHORIZED"
+  },
+  "falsification_conditions": [
+    "NO_SIGNALLING_FAIL invalidates a standard Bell-nonlocal interpretation",
+    "SETTING_INDEPENDENCE_FAIL means measurement independence is not preserved",
+    "POST_SELECTION_DETECTED disqualifies the run",
+    "TARGET_LEAKAGE_DETECTED disqualifies the run",
+    "S<=2 or CI overlapping 2 means CHSH violation is not detected",
+    "matched local controls exceeding the bound robustly indicates implementation leakage or scoreboard failure"
+  ],
+  "implementation_authorized": true,
+  "joint_probability_model": {
+    "binary_outcomes": [
+      -1,
+      1
+    ],
+    "construction": {
+      "base_instability": "clamp((1-shell_order_score)+max_shell_overlap_fraction+phase17_mismatch_rate+(1-arrival_gap),0,3)",
+      "beta": 1.35,
+      "closure_strength": "clamp(shell_order_score*(1-max_shell_overlap_fraction)*(1-phase17_mismatch_rate)+0.25*arrival_gap,strength_floor,strength_ceiling)",
+      "cost": "C(q,a,b,lambda) = base_instability(lambda) + 0.5*(1 - q*preferred_product(a,b,lambda)*closure_strength(lambda))",
+      "local_registration": "P(A=x,B=y | a,b,lambda) = 0.5 * P(Q=x*y | a,b,lambda)",
+      "preferred_product": "sign of chain-order displacement between setting token pairs",
+      "product_distribution": "P(Q=q | a,b,lambda) = exp(-beta*C(q,a,b,lambda)) / sum_{r in {-1,+1}} exp(-beta*C(r,a,b,lambda))",
+      "strength_ceiling": 0.95,
+      "strength_floor": 0.05
+    },
+    "provided": true,
+    "required_form": "P(A,B | a,b,lambda)",
+    "required_setting_pairs": [
+      [
+        "a0",
+        "b0"
+      ],
+      [
+        "a0",
+        "b1"
+      ],
+      [
+        "a1",
+        "b0"
+      ],
+      [
+        "a1",
+        "b1"
+      ]
+    ]
+  },
+  "name": "B3_PRECOMMITMENT_CONTRACT",
+  "non_factorizability_statement": {
+    "factorization_failure_mechanism": "outcome-product coupling under joint closure cost",
+    "not_claimed": [
+      "not quantum mechanics",
+      "not a Born-rule derivation",
+      "not a loophole-free Bell experiment",
+      "not evidence of physical nonlocality"
+    ],
+    "provided": true,
+    "statement": "For nonzero closure_strength, P(A,B | a,b,lambda) generally differs from P(A | a,lambda)P(B | b,lambda) because the product Q=A*B is sampled from one joint distribution."
+  },
+  "observable_consequences_predeclared": {
+    "control_separation": "invalid leakage and post-selection controls must still be detected",
+    "marginal_behavior": "Alice and Bob marginals expected near zero by symmetric local registration",
+    "no_signalling_behavior": "expected to pass finite-sample tolerance if implementation has no parameter leakage",
+    "predicted_chsh_range": "unknown before execution; candidate can return S<=2",
+    "seed_stability": "reported across predeclared seeds; no seed retuning"
+  },
+  "prohibited_shortcuts": [
+    "no quantum target curve import",
+    "no target constant import",
+    "no frozen quantum reference correlations",
+    "no reference outcomes",
+    "no post-selection",
+    "no setting-source leakage",
+    "no adaptive tuning against S",
+    "no hidden remote-setting access in B1/B2 local paths"
+  ],
+  "provenance": {
+    "code_hash": "95013f41a64a76b320197c48afdf5f823e5e6d99f03539f93dd95b5d14415c00",
+    "code_path": "experiments/physics_bridge/bell_haos_candidate/run_bell_haos_candidate.py",
+    "config_hash": "bell_candidate_config_faa981b0fe12b83d9261931b",
+    "reference_sidecar_hashes": {
+      "experiments/physics_bridge/bell_chsh_reference/bridge_status.json": "d48f55c3288518cbfac7d7e3c7cc80617bffb154aa8a461feb561d62830e13f9",
+      "experiments/physics_bridge/bell_chsh_reference/precommitment_contract.json": "d0c24b6974fd3b92105d0f31171d34a519d83f711cc61aba80dedfac5740792d",
+      "experiments/physics_bridge/bell_chsh_reference/run_bell_chsh_reference.py": "4feb7e44ff9552f0e6cdfea7ab6002c831c5cfd9fe284d736d89916678fe2fe1"
+    },
+    "reference_sidecar_path": "experiments/physics_bridge/bell_chsh_reference",
+    "source_artifact": "phase18-distance-surrogate/runs/phase18_shell_ordering_metrics.csv",
+    "source_artifact_hash": "155f7b3354c733ce7836613560b0d8e6c13a303c1fa5b2532e286256c9f437e3"
+  },
+  "scope": {
+    "design_choice": "Use frozen Phase 18 source rows and setting-token chain-order displacements to define a joint outcome-product cost.",
+    "heuristic": "The cost is a HAOS-native engineering candidate, not a physical law and not a derivation of quantum mechanics.",
+    "implemented_fact": "This contract authorizes one explicit B3 joint-closure-cost candidate before execution.",
+    "unverified_hypothesis": "The candidate may or may not produce Bell-nonlocal correlations; no positive result is assumed."
+  },
+  "source_artifacts": {
+    "B3": "phase18-distance-surrogate/runs/phase18_shell_ordering_metrics.csv",
+    "source_artifact_hash": "155f7b3354c733ce7836613560b0d8e6c13a303c1fa5b2532e286256c9f437e3"
+  },
+  "status": "AUTHORIZED_PRECOMMITMENT",
+  "trial_policy": {
+    "all_valid_trials_retained": true,
+    "scoreboard_blinding": "B3 outcomes are generated before CHSH classification and without reading the frozen quantum reference table.",
+    "seeds": [
+      7201,
+      7202,
+      7203
+    ],
+    "trials_per_setting_pair": 384
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Bell Bridge v0.3 Freeze",
+  "status": "TERMINAL_FAIL_OPEN",
+  "frozen_on": "2026-06-14",
+  "scope": {
+    "implemented_fact": "The Bell/CHSH reference sidecar, B1/B2 local candidates, B3.1 joint-closure candidate, B3.2 geometry audit, B3.2.1 null failure localization, and B3.2.2 semantic/refinement provenance audit exist as reproducible artifacts.",
+    "design_choice": "Freeze the current HAOS-IIP-to-Bell candidate branch as a negative result rather than continuing diagnostics around the same object.",
+    "heuristic": "The current G / J_lambda construction produces genuine relational structure but does not establish HAOS-specific provenance.",
+    "unverified_hypothesis": "No HAOS-IIP Bell derivation is established."
+  },
+  "frozen_components": {
+    "bell_reference_scoreboard": "SIGNAL_STABLE",
+    "B1_local_sanity": "LOCAL_BOUND_RECOVERED",
+    "B2_haos_local_recoverability": "BELL_LOCAL",
+    "B3_1_joint_closure": "CHSH_VIOLATION_NOT_DETECTED",
+    "B3_2_geometry": "RELATIONAL_GEOMETRY_DETECTED_NULL_REJECTION_FAIL",
+    "B3_2_1_null_failure_localization": "TARGET_SPECIFIC_GEOMETRY_NOT_ESTABLISHED",
+    "B3_2_2_semantic_refinement": "GENERIC_RELATIONAL_GEOMETRY"
+  },
+  "terminal_result": {
+    "relational_geometry": "DETECTED",
+    "sign_changing_structure": "DETECTED",
+    "setting_semantics": "NOT_ESTABLISHED",
+    "refinement_specificity": "NOT_ESTABLISHED",
+    "haos_specific_provenance": "NOT_ESTABLISHED",
+    "chsh_scoring": "NOT_AUTHORIZED",
+    "bell_derivation": "NOT_ESTABLISHED"
+  },
+  "source_result_hashes": {
+    "b3_2_2_result": "b3_2_2_result_5133b138953f4c053071a49a"
+  },
+  "prohibited_continuations": [
+    "do not continue to B3.3 using the same G construction",
+    "do not continue to B3.3 using the same J_lambda construction",
+    "do not retune setting mappings, thresholds, beta, signs, or normalization for the current branch",
+    "do not compute CHSH from the terminal B3.2.2 branch",
+    "do not claim HAOS-IIP derives Bell correlations from these artifacts"
+  ],
+  "allowed_future_work": [
+    "start a new Bell branch only with a new precommitment",
+    "supply a new mechanism with independent provenance",
+    "create a fresh assumption ledger before any Bell scoring",
+    "calibrate the instrument on a synthetic relational-geometry suite before returning to physics bridges"
+  ],
+  "durable_statement": "The current G / J_lambda construction produces genuine relational structure, but not structure specific enough to support a HAOS-IIP Bell bridge."
+}

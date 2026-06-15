@@ -1,0 +1,757 @@
+{
+  "candidate_results": [
+    {
+      "assumption_ledger": {
+        "assumption_violations": [],
+        "candidate_id": "local_sanity_candidate",
+        "factorization": "factorized_local_response",
+        "forward_only_causality": "forward_only_by_construction",
+        "joint_setting_access_declared": false,
+        "outcome_independence": "deterministic_given_source_and_local_setting",
+        "parameter_independence": "NO_SIGNALLING_PASS",
+        "post_selection_detected": false,
+        "remote_setting_access": false,
+        "run_id": "local_sanity_candidate_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_PASS",
+        "stage": "B1",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "local_sanity_candidate",
+      "correlation_table": {
+        "S": 0.020833333333333332,
+        "alice_marginals_by_pair": {
+          "E00": -0.03298611111111111,
+          "E01": -0.03298611111111111,
+          "E10": 0.008680555555555556,
+          "E11": 0.008680555555555556
+        },
+        "bob_marginals_by_pair": {
+          "E00": 0.024305555555555556,
+          "E01": -0.03125,
+          "E10": 0.024305555555555556,
+          "E11": -0.03125
+        },
+        "candidate_id": "local_sanity_candidate",
+        "ci_high": 0.13631438611356803,
+        "ci_low": 0.0,
+        "correlations": {
+          "E00": 0.001736111111111111,
+          "E01": 0.012152777777777778,
+          "E10": 0.022569444444444444,
+          "E11": 0.015625
+        },
+        "rejected_trials": 0,
+        "retained_trials": 4608,
+        "retention_rate": 1.0,
+        "run_id": "local_sanity_candidate_seed_7201",
+        "sample_role": "candidate",
+        "stage": "B1",
+        "standard_errors": {
+          "E00": 0.029462738147787836,
+          "E01": 0.02946060678981099,
+          "E10": 0.02945527772014244,
+          "E11": 0.029459185798824915
+        },
+        "trials_by_pair": {
+          "E00": 1152,
+          "E01": 1152,
+          "E10": 1152,
+          "E11": 1152
+        }
+      },
+      "no_signalling_max_deviation": 0.0,
+      "run_id": "local_sanity_candidate_seed_7201",
+      "sample_role": "candidate",
+      "setting_source_mutual_information_bits": 0.0,
+      "stage": "B1",
+      "verdict_labels": [
+        "LOCAL_CANDIDATE_SANITY_PASS",
+        "LOCAL_BOUND_RECOVERED",
+        "CHSH_VIOLATION_NOT_DETECTED",
+        "NO_SIGNALLING_PASS",
+        "SETTING_INDEPENDENCE_PASS",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "assumption_ledger": {
+        "assumption_violations": [],
+        "candidate_id": "haos_local_recoverability_candidate",
+        "factorization": "factorized_local_response",
+        "forward_only_causality": "forward_only_by_construction",
+        "joint_setting_access_declared": false,
+        "outcome_independence": "deterministic_given_source_and_local_setting",
+        "parameter_independence": "NO_SIGNALLING_PASS",
+        "post_selection_detected": false,
+        "remote_setting_access": false,
+        "run_id": "haos_local_recoverability_candidate_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_PASS",
+        "stage": "B2",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "haos_local_recoverability_candidate",
+      "correlation_table": {
+        "S": 2.0,
+        "alice_marginals_by_pair": {
+          "E00": -0.3333333333333333,
+          "E01": -0.3333333333333333,
+          "E10": -0.6666666666666666,
+          "E11": -0.6666666666666666
+        },
+        "bob_marginals_by_pair": {
+          "E00": -0.3333333333333333,
+          "E01": -0.3333333333333333,
+          "E10": -0.3333333333333333,
+          "E11": -0.3333333333333333
+        },
+        "candidate_id": "haos_local_recoverability_candidate",
+        "ci_high": 2.0608707393874943,
+        "ci_low": 1.9391292606125057,
+        "correlations": {
+          "E00": 1.0,
+          "E01": 1.0,
+          "E10": 0.6666666666666666,
+          "E11": 0.6666666666666666
+        },
+        "rejected_trials": 0,
+        "retained_trials": 4608,
+        "retention_rate": 1.0,
+        "run_id": "haos_local_recoverability_candidate_seed_7201",
+        "sample_role": "candidate",
+        "stage": "B2",
+        "standard_errors": {
+          "E00": 0.0,
+          "E01": 0.0,
+          "E10": 0.02196026152894708,
+          "E11": 0.02196026152894708
+        },
+        "trials_by_pair": {
+          "E00": 1152,
+          "E01": 1152,
+          "E10": 1152,
+          "E11": 1152
+        }
+      },
+      "no_signalling_max_deviation": 0.0,
+      "run_id": "haos_local_recoverability_candidate_seed_7201",
+      "sample_role": "candidate",
+      "setting_source_mutual_information_bits": 0.0,
+      "stage": "B2",
+      "verdict_labels": [
+        "LOCAL_BOUND_RECOVERED",
+        "CHSH_VIOLATION_NOT_DETECTED",
+        "NO_SIGNALLING_PASS",
+        "SETTING_INDEPENDENCE_PASS",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT",
+        "MIXED / OPEN"
+      ]
+    },
+    {
+      "assumption_ledger": {
+        "assumption_violations": [],
+        "candidate_id": "haos_joint_closure_candidate",
+        "factorization": "FACTORIZATION_RELAXED_BY_EXPLICIT_JOINT_CLOSURE_COST",
+        "forward_only_causality": "COMPUTATIONAL_BATCH_MODEL_AFTER_SETTINGS_ASSIGNED_NO_SPACETIME_CAUSAL_CLAIM",
+        "joint_setting_access_declared": true,
+        "outcome_independence": "OUTCOME_INDEPENDENCE_RELAXED_BY_PRODUCT_LEVEL_JOINT_DISTRIBUTION",
+        "parameter_independence": "NO_SIGNALLING_PASS",
+        "post_selection_detected": false,
+        "remote_setting_access": false,
+        "run_id": "haos_joint_closure_candidate_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_PASS",
+        "stage": "B3",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "haos_joint_closure_candidate",
+      "correlation_table": {
+        "S": 0.6840277777777778,
+        "alice_marginals_by_pair": {
+          "E00": 0.0,
+          "E01": 0.0,
+          "E10": 0.0,
+          "E11": 0.0
+        },
+        "bob_marginals_by_pair": {
+          "E00": 0.0,
+          "E01": 0.0,
+          "E10": 0.0,
+          "E11": 0.0
+        },
+        "candidate_id": "haos_joint_closure_candidate",
+        "ci_high": 0.7906830224252096,
+        "ci_low": 0.577372533130346,
+        "correlations": {
+          "E00": 0.3576388888888889,
+          "E01": 0.3645833333333333,
+          "E10": 0.3854166666666667,
+          "E11": 0.4236111111111111
+        },
+        "rejected_trials": 0,
+        "retained_trials": 4608,
+        "retention_rate": 1.0,
+        "run_id": "haos_joint_closure_candidate_seed_7201",
+        "sample_role": "candidate",
+        "stage": "B3",
+        "standard_errors": {
+          "E00": 0.02751411293725889,
+          "E01": 0.027434881757124305,
+          "E10": 0.027186565965046715,
+          "E11": 0.02668868925504008
+        },
+        "trials_by_pair": {
+          "E00": 1152,
+          "E01": 1152,
+          "E10": 1152,
+          "E11": 1152
+        }
+      },
+      "no_signalling_max_deviation": 0.0,
+      "run_id": "haos_joint_closure_candidate_seed_7201",
+      "sample_role": "candidate",
+      "setting_source_mutual_information_bits": 0.0,
+      "stage": "B3",
+      "verdict_labels": [
+        "LOCAL_BOUND_RECOVERED",
+        "CHSH_VIOLATION_NOT_DETECTED",
+        "NO_SIGNALLING_PASS",
+        "SETTING_INDEPENDENCE_PASS",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "assumption_ledger": {
+        "assumption_violations": [],
+        "candidate_id": "independent_random_control",
+        "factorization": "factorized_local_response",
+        "forward_only_causality": "forward_only_by_construction",
+        "joint_setting_access_declared": false,
+        "outcome_independence": "deterministic_given_source_and_local_setting",
+        "parameter_independence": "NO_SIGNALLING_PASS",
+        "post_selection_detected": false,
+        "remote_setting_access": false,
+        "run_id": "independent_random_control_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_PASS",
+        "stage": "control",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "independent_random_control",
+      "correlation_table": {
+        "S": 0.04513888888888889,
+        "alice_marginals_by_pair": {
+          "E00": 0.001736111111111111,
+          "E01": 0.001736111111111111,
+          "E10": -0.001736111111111111,
+          "E11": -0.001736111111111111
+        },
+        "bob_marginals_by_pair": {
+          "E00": -0.029513888888888888,
+          "E01": -0.03819444444444445,
+          "E10": -0.029513888888888888,
+          "E11": -0.03819444444444445
+        },
+        "candidate_id": "independent_random_control",
+        "ci_high": 0.16061411004222112,
+        "ci_low": 0.0,
+        "correlations": {
+          "E00": 0.03125,
+          "E01": -0.005208333333333333,
+          "E10": 0.017361111111111112,
+          "E11": -0.001736111111111111
+        },
+        "rejected_trials": 0,
+        "retained_trials": 4608,
+        "retention_rate": 1.0,
+        "run_id": "independent_random_control_seed_7201",
+        "sample_role": "control",
+        "stage": "control",
+        "standard_errors": {
+          "E00": 0.02944839291119438,
+          "E01": 0.029462382932165725,
+          "E10": 0.029458342052995343,
+          "E11": 0.029462738147787836
+        },
+        "trials_by_pair": {
+          "E00": 1152,
+          "E01": 1152,
+          "E10": 1152,
+          "E11": 1152
+        }
+      },
+      "no_signalling_max_deviation": 0.0,
+      "run_id": "independent_random_control_seed_7201",
+      "sample_role": "control",
+      "setting_source_mutual_information_bits": 0.0,
+      "stage": "control",
+      "verdict_labels": [
+        "LOCAL_BOUND_RECOVERED",
+        "CHSH_VIOLATION_NOT_DETECTED",
+        "NO_SIGNALLING_PASS",
+        "SETTING_INDEPENDENCE_PASS",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "assumption_ledger": {
+        "assumption_violations": [],
+        "candidate_id": "deterministic_lhv_control",
+        "factorization": "factorized_local_response",
+        "forward_only_causality": "forward_only_by_construction",
+        "joint_setting_access_declared": false,
+        "outcome_independence": "deterministic_given_source_and_local_setting",
+        "parameter_independence": "NO_SIGNALLING_PASS",
+        "post_selection_detected": false,
+        "remote_setting_access": false,
+        "run_id": "deterministic_lhv_control_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_PASS",
+        "stage": "control",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "deterministic_lhv_control",
+      "correlation_table": {
+        "S": 0.024305555555555552,
+        "alice_marginals_by_pair": {
+          "E00": 0.006944444444444444,
+          "E01": 0.006944444444444444,
+          "E10": 0.019097222222222224,
+          "E11": 0.019097222222222224
+        },
+        "bob_marginals_by_pair": {
+          "E00": 0.006944444444444444,
+          "E01": -0.003472222222222222,
+          "E10": 0.006944444444444444,
+          "E11": -0.003472222222222222
+        },
+        "candidate_id": "deterministic_lhv_control",
+        "ci_high": 0.13976998307018343,
+        "ci_low": 0.0,
+        "correlations": {
+          "E00": -0.003472222222222222,
+          "E01": -0.003472222222222222,
+          "E10": -0.012152777777777778,
+          "E11": -0.043402777777777776
+        },
+        "rejected_trials": 0,
+        "retained_trials": 4608,
+        "retention_rate": 1.0,
+        "run_id": "deterministic_lhv_control_seed_7201",
+        "sample_role": "control",
+        "stage": "control",
+        "standard_errors": {
+          "E00": 0.029462604942431418,
+          "E01": 0.029462604942431418,
+          "E10": 0.02946060678981099,
+          "E11": 0.029435018456403183
+        },
+        "trials_by_pair": {
+          "E00": 1152,
+          "E01": 1152,
+          "E10": 1152,
+          "E11": 1152
+        }
+      },
+      "no_signalling_max_deviation": 0.0,
+      "run_id": "deterministic_lhv_control_seed_7201",
+      "sample_role": "control",
+      "setting_source_mutual_information_bits": 0.0,
+      "stage": "control",
+      "verdict_labels": [
+        "LOCAL_BOUND_RECOVERED",
+        "CHSH_VIOLATION_NOT_DETECTED",
+        "NO_SIGNALLING_PASS",
+        "SETTING_INDEPENDENCE_PASS",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "assumption_ledger": {
+        "assumption_violations": [],
+        "candidate_id": "shared_randomness_local_control",
+        "factorization": "factorized_local_response",
+        "forward_only_causality": "forward_only_by_construction",
+        "joint_setting_access_declared": false,
+        "outcome_independence": "deterministic_given_source_and_local_setting",
+        "parameter_independence": "NO_SIGNALLING_PASS",
+        "post_selection_detected": false,
+        "remote_setting_access": false,
+        "run_id": "shared_randomness_local_control_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_PASS",
+        "stage": "control",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "shared_randomness_local_control",
+      "correlation_table": {
+        "S": 2.0,
+        "alice_marginals_by_pair": {
+          "E00": -0.020833333333333332,
+          "E01": -0.020833333333333332,
+          "E10": 0.020833333333333332,
+          "E11": 0.020833333333333332
+        },
+        "bob_marginals_by_pair": {
+          "E00": 0.020833333333333332,
+          "E01": 0.020833333333333332,
+          "E10": 0.020833333333333332,
+          "E11": 0.020833333333333332
+        },
+        "candidate_id": "shared_randomness_local_control",
+        "ci_high": 2.0,
+        "ci_low": 2.0,
+        "correlations": {
+          "E00": -1.0,
+          "E01": -1.0,
+          "E10": 1.0,
+          "E11": 1.0
+        },
+        "rejected_trials": 0,
+        "retained_trials": 4608,
+        "retention_rate": 1.0,
+        "run_id": "shared_randomness_local_control_seed_7201",
+        "sample_role": "control",
+        "stage": "control",
+        "standard_errors": {
+          "E00": 0.0,
+          "E01": 0.0,
+          "E10": 0.0,
+          "E11": 0.0
+        },
+        "trials_by_pair": {
+          "E00": 1152,
+          "E01": 1152,
+          "E10": 1152,
+          "E11": 1152
+        }
+      },
+      "no_signalling_max_deviation": 0.0,
+      "run_id": "shared_randomness_local_control_seed_7201",
+      "sample_role": "control",
+      "setting_source_mutual_information_bits": 0.0,
+      "stage": "control",
+      "verdict_labels": [
+        "LOCAL_BOUND_RECOVERED",
+        "CHSH_VIOLATION_NOT_DETECTED",
+        "NO_SIGNALLING_PASS",
+        "SETTING_INDEPENDENCE_PASS",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "assumption_ledger": {
+        "assumption_violations": [
+          "MEASUREMENT_INDEPENDENCE_VIOLATED"
+        ],
+        "candidate_id": "source_setting_leakage_positive_control",
+        "factorization": "factorized_local_response",
+        "forward_only_causality": "forward_only_by_construction",
+        "joint_setting_access_declared": false,
+        "outcome_independence": "deterministic_given_source_and_local_setting",
+        "parameter_independence": "NO_SIGNALLING_PASS",
+        "post_selection_detected": false,
+        "remote_setting_access": false,
+        "run_id": "source_setting_leakage_positive_control_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_FAIL",
+        "stage": "invalid_control",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "source_setting_leakage_positive_control",
+      "correlation_table": {
+        "S": 2.0,
+        "alice_marginals_by_pair": {
+          "E00": -0.3333333333333333,
+          "E01": -0.3333333333333333,
+          "E10": -0.6666666666666666,
+          "E11": -0.6666666666666666
+        },
+        "bob_marginals_by_pair": {
+          "E00": -0.3333333333333333,
+          "E01": -0.3333333333333333,
+          "E10": -0.3333333333333333,
+          "E11": -0.3333333333333333
+        },
+        "candidate_id": "source_setting_leakage_positive_control",
+        "ci_high": 2.0608707393874943,
+        "ci_low": 1.9391292606125057,
+        "correlations": {
+          "E00": 1.0,
+          "E01": 1.0,
+          "E10": 0.6666666666666666,
+          "E11": 0.6666666666666666
+        },
+        "rejected_trials": 0,
+        "retained_trials": 4608,
+        "retention_rate": 1.0,
+        "run_id": "source_setting_leakage_positive_control_seed_7201",
+        "sample_role": "invalid_positive_control",
+        "stage": "invalid_control",
+        "standard_errors": {
+          "E00": 0.0,
+          "E01": 0.0,
+          "E10": 0.02196026152894708,
+          "E11": 0.02196026152894708
+        },
+        "trials_by_pair": {
+          "E00": 1152,
+          "E01": 1152,
+          "E10": 1152,
+          "E11": 1152
+        }
+      },
+      "no_signalling_max_deviation": 0.0,
+      "run_id": "source_setting_leakage_positive_control_seed_7201",
+      "sample_role": "invalid_positive_control",
+      "setting_source_mutual_information_bits": 2.0,
+      "stage": "invalid_control",
+      "verdict_labels": [
+        "LOCAL_BOUND_RECOVERED",
+        "CHSH_VIOLATION_NOT_DETECTED",
+        "NO_SIGNALLING_PASS",
+        "SETTING_INDEPENDENCE_FAIL",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "assumption_ledger": {
+        "assumption_violations": [
+          "MEASUREMENT_INDEPENDENCE_VIOLATED",
+          "POST_SELECTION_DETECTED"
+        ],
+        "candidate_id": "post_selection_positive_control",
+        "factorization": "factorized_local_response",
+        "forward_only_causality": "forward_only_by_construction",
+        "joint_setting_access_declared": false,
+        "outcome_independence": "deterministic_given_source_and_local_setting",
+        "parameter_independence": "NO_SIGNALLING_PASS",
+        "post_selection_detected": true,
+        "remote_setting_access": false,
+        "run_id": "post_selection_positive_control_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_FAIL",
+        "stage": "invalid_control",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "post_selection_positive_control",
+      "correlation_table": {
+        "S": 4.0,
+        "alice_marginals_by_pair": {
+          "E00": 0.013937282229965157,
+          "E01": 0.003484320557491289,
+          "E10": 0.026362038664323375,
+          "E11": 0.021630615640599003
+        },
+        "bob_marginals_by_pair": {
+          "E00": 0.013937282229965157,
+          "E01": 0.003484320557491289,
+          "E10": 0.026362038664323375,
+          "E11": -0.021630615640599003
+        },
+        "candidate_id": "post_selection_positive_control",
+        "ci_high": 4.0,
+        "ci_low": 4.0,
+        "correlations": {
+          "E00": 1.0,
+          "E01": 1.0,
+          "E10": 1.0,
+          "E11": -1.0
+        },
+        "rejected_trials": 2290,
+        "retained_trials": 2318,
+        "retention_rate": 0.5030381944444444,
+        "run_id": "post_selection_positive_control_seed_7201",
+        "sample_role": "invalid_positive_control",
+        "stage": "invalid_control",
+        "standard_errors": {
+          "E00": 0.0,
+          "E01": 0.0,
+          "E10": 0.0,
+          "E11": 0.0
+        },
+        "trials_by_pair": {
+          "E00": 574,
+          "E01": 574,
+          "E10": 569,
+          "E11": 601
+        }
+      },
+      "no_signalling_max_deviation": 0.012557468099045122,
+      "run_id": "post_selection_positive_control_seed_7201",
+      "sample_role": "invalid_positive_control",
+      "setting_source_mutual_information_bits": 0.006070057225352108,
+      "stage": "invalid_control",
+      "verdict_labels": [
+        "CHSH_VIOLATION_DETECTED",
+        "NO_SIGNALLING_PASS",
+        "SETTING_INDEPENDENCE_FAIL",
+        "POST_SELECTION_DETECTED",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "assumption_ledger": {
+        "assumption_violations": [
+          "NO_SIGNALLING_FAIL"
+        ],
+        "candidate_id": "label_permutation_control",
+        "factorization": "factorized_local_response",
+        "forward_only_causality": "forward_only_by_construction",
+        "joint_setting_access_declared": false,
+        "outcome_independence": "deterministic_given_source_and_local_setting",
+        "parameter_independence": "NO_SIGNALLING_FAIL",
+        "post_selection_detected": false,
+        "remote_setting_access": false,
+        "run_id": "label_permutation_control_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_PASS",
+        "stage": "control",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "label_permutation_control",
+      "correlation_table": {
+        "S": 2.0,
+        "alice_marginals_by_pair": {
+          "E00": -0.6666666666666666,
+          "E01": -0.3333333333333333,
+          "E10": -0.3333333333333333,
+          "E11": -0.6666666666666666
+        },
+        "bob_marginals_by_pair": {
+          "E00": -0.3333333333333333,
+          "E01": -0.3333333333333333,
+          "E10": -0.3333333333333333,
+          "E11": -0.3333333333333333
+        },
+        "candidate_id": "label_permutation_control",
+        "ci_high": 2.0608707393874943,
+        "ci_low": 1.9391292606125057,
+        "correlations": {
+          "E00": 0.6666666666666666,
+          "E01": 1.0,
+          "E10": 1.0,
+          "E11": 0.6666666666666666
+        },
+        "rejected_trials": 0,
+        "retained_trials": 4608,
+        "retention_rate": 1.0,
+        "run_id": "label_permutation_control_seed_7201",
+        "sample_role": "control",
+        "stage": "control",
+        "standard_errors": {
+          "E00": 0.02196026152894708,
+          "E01": 0.0,
+          "E10": 0.0,
+          "E11": 0.02196026152894708
+        },
+        "trials_by_pair": {
+          "E00": 1152,
+          "E01": 1152,
+          "E10": 1152,
+          "E11": 1152
+        }
+      },
+      "no_signalling_max_deviation": 0.16666666666666666,
+      "run_id": "label_permutation_control_seed_7201",
+      "sample_role": "control",
+      "setting_source_mutual_information_bits": 0.0,
+      "stage": "control",
+      "verdict_labels": [
+        "LOCAL_BOUND_RECOVERED",
+        "CHSH_VIOLATION_NOT_DETECTED",
+        "NO_SIGNALLING_FAIL",
+        "SETTING_INDEPENDENCE_PASS",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "assumption_ledger": {
+        "assumption_violations": [
+          "MEASUREMENT_INDEPENDENCE_VIOLATED",
+          "NO_SIGNALLING_FAIL"
+        ],
+        "candidate_id": "setting_permutation_control",
+        "factorization": "factorized_local_response",
+        "forward_only_causality": "forward_only_by_construction",
+        "joint_setting_access_declared": false,
+        "outcome_independence": "deterministic_given_source_and_local_setting",
+        "parameter_independence": "NO_SIGNALLING_FAIL",
+        "post_selection_detected": false,
+        "remote_setting_access": false,
+        "run_id": "setting_permutation_control_seed_7201",
+        "setting_independence": "SETTING_INDEPENDENCE_FAIL",
+        "stage": "control",
+        "target_leakage_detected": false
+      },
+      "candidate_id": "setting_permutation_control",
+      "correlation_table": {
+        "S": 1.7777777777777777,
+        "alice_marginals_by_pair": {
+          "E00": -0.6666666666666666,
+          "E01": -0.3333333333333333,
+          "E10": -0.6666666666666666,
+          "E11": -0.3333333333333333
+        },
+        "bob_marginals_by_pair": {
+          "E00": -0.5555555555555556,
+          "E01": -0.1111111111111111,
+          "E10": -0.5555555555555556,
+          "E11": -0.1111111111111111
+        },
+        "candidate_id": "setting_permutation_control",
+        "ci_high": 1.8412962962962962,
+        "ci_low": 1.7142592592592591,
+        "correlations": {
+          "E00": 0.8888888888888888,
+          "E01": 0.7777777777777778,
+          "E10": 0.8888888888888888,
+          "E11": 0.7777777777777778
+        },
+        "rejected_trials": 0,
+        "retained_trials": 4608,
+        "retention_rate": 1.0,
+        "run_id": "setting_permutation_control_seed_7201",
+        "sample_role": "control",
+        "stage": "control",
+        "standard_errors": {
+          "E00": 0.01349757383066042,
+          "E01": 0.018518518518518517,
+          "E10": 0.01349757383066042,
+          "E11": 0.018518518518518517
+        },
+        "trials_by_pair": {
+          "E00": 1152,
+          "E01": 1152,
+          "E10": 1152,
+          "E11": 1152
+        }
+      },
+      "no_signalling_max_deviation": 0.16666666666666666,
+      "run_id": "setting_permutation_control_seed_7201",
+      "sample_role": "control",
+      "setting_source_mutual_information_bits": 0.027234721981836785,
+      "stage": "control",
+      "verdict_labels": [
+        "LOCAL_BOUND_RECOVERED",
+        "CHSH_VIOLATION_NOT_DETECTED",
+        "NO_SIGNALLING_FAIL",
+        "SETTING_INDEPENDENCE_FAIL",
+        "CST_BELL_STATUS_OPEN",
+        "HAOS_DERIVATION_NOT_ESTABLISHED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    }
+  ],
+  "scoreboard_convention": "S = |E00 + E01 + E10 - E11|"
+}

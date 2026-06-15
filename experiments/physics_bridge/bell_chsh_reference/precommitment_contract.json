@@ -1,0 +1,90 @@
+{
+  "ci_z": 1.96,
+  "contract_hash": "bell_contract_5989e3d65dc077ccabc072be",
+  "models": {
+    "deterministic_local_bound": {
+      "expected_response": "maximum CHSH S must be <= 2.",
+      "purpose": "Enumerate all deterministic local two-setting response functions."
+    },
+    "local_hidden_variable_reference": {
+      "expected_response": "sampled CHSH should not materially exceed the local bound.",
+      "purpose": "Seeded classical control with shared hidden angle and local sign responses."
+    },
+    "quantum_singlet_reference": {
+      "expected_response": "analytic S should be near 2*sqrt(2).",
+      "purpose": "Standard analytic reference E(theta_left, theta_right) = -cos(delta theta)."
+    },
+    "uncorrelated_control": {
+      "expected_response": "sampled CHSH should remain near zero.",
+      "purpose": "Independent random outcomes with zero expected correlations."
+    }
+  },
+  "name": "Bell CHSH computational reference probe",
+  "non_claims": [
+    "not a laboratory Bell experiment",
+    "not a loophole-free Bell test",
+    "not a CST derivation of Bell correlations",
+    "not evidence that HAOS-IIP replaces quantum mechanics",
+    "not evidence for a Born-rule derivation"
+  ],
+  "scope": {
+    "design_choice": "Use the standard CHSH expression |E(a,b)+E(a,b')+E(a',b)-E(a',b')|.",
+    "heuristic": "Finite-sample rows are seeded telemetry around analytic reference expectations.",
+    "implemented_fact": "Run a deterministic computational CHSH reference and classical controls.",
+    "unverified_hypothesis": "No CST or HAOS Bell-recovery hypothesis is tested here."
+  },
+  "seed": 6701,
+  "settings": {
+    "angles_radians": {
+      "a": 0.0,
+      "a_prime": 1.5707963267948966,
+      "b": 0.7853981633974483,
+      "b_prime": -0.7853981633974483
+    },
+    "setting_pairs": [
+      {
+        "coefficient": 1.0,
+        "left": "a",
+        "right": "b"
+      },
+      {
+        "coefficient": 1.0,
+        "left": "a",
+        "right": "b_prime"
+      },
+      {
+        "coefficient": 1.0,
+        "left": "a_prime",
+        "right": "b"
+      },
+      {
+        "coefficient": -1.0,
+        "left": "a_prime",
+        "right": "b_prime"
+      }
+    ]
+  },
+  "status": "claim_gated_sidecar",
+  "thresholds": {
+    "deterministic_bound_epsilon": 1e-12,
+    "local_bound": 2.0,
+    "pass_max_uncorrelated_abs_s": 0.12,
+    "pass_min_quantum_analytic_s": 2.8,
+    "pass_min_quantum_sample_ci_low": 2.02,
+    "sample_local_warning_margin": 0.04
+  },
+  "trials_per_setting": 50000,
+  "verdict_logic": {
+    "always_report": [
+      "CST_BELL_STATUS_OPEN",
+      "HAOS_DERIVATION_NOT_TESTED"
+    ],
+    "reference_pass": [
+      "deterministic local maximum <= local_bound + epsilon",
+      "quantum analytic S >= pass_min_quantum_analytic_s",
+      "quantum sampled lower CI >= pass_min_quantum_sample_ci_low",
+      "local hidden-angle sampled S <= local_bound + sample_local_warning_margin",
+      "abs(uncorrelated sampled S) <= pass_max_uncorrelated_abs_s"
+    ]
+  }
+}

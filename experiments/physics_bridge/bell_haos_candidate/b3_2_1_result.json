@@ -1,0 +1,48 @@
+{
+  "b3_2_frozen_status": {
+    "B3_2": "FROZEN",
+    "chsh_scoring": "NOT_AUTHORIZED",
+    "haos_specificity": "NOT_ESTABLISHED",
+    "null_rejection": "FAIL",
+    "relational_geometry": "DETECTED"
+  },
+  "chsh_score": null,
+  "chsh_scoring_authorized": false,
+  "chsh_scoring_computed": false,
+  "config": {
+    "matrix_similarity_distance_threshold": 0.75,
+    "rank_similarity_threshold": 0.6,
+    "sign_tolerance": 0.02,
+    "source_limit": 6,
+    "topology_correlation_attention_threshold": 0.2,
+    "version": "b3-2-1-null-failure-localization-v0.1"
+  },
+  "contract_hash": "b3_2_1_contract_be906b241a031509930eda77",
+  "failing_nulls": [
+    "label_permuted_settings",
+    "refinement_broken_control"
+  ],
+  "labels": [
+    "NULL_FAILURE_LOCALIZED",
+    "GENERIC_BILINEAR_GEOMETRY_SUSPECTED",
+    "TARGET_SPECIFIC_GEOMETRY_NOT_ESTABLISHED",
+    "CHSH_SCORING_NOT_AUTHORIZED",
+    "HAOS_BELL_DERIVATION_NOT_ESTABLISHED",
+    "MIXED / OPEN",
+    "TOPOLOGY_ZERO_CONTROL_REJECTED",
+    "REFINEMENT_SPECIFICITY_NOT_ESTABLISHED",
+    "SETTING_SEMANTICS_NOT_ESTABLISHED"
+  ],
+  "outputs": {
+    "distribution_comparison": "experiments/physics_bridge/bell_haos_candidate/b3_2_1_distribution_comparison.csv",
+    "matrix_comparison": "experiments/physics_bridge/bell_haos_candidate/b3_2_1_matrix_comparison.csv",
+    "null_invariant_ledger": "experiments/physics_bridge/bell_haos_candidate/b3_2_1_null_invariant_ledger.json",
+    "operator_dependence": "experiments/physics_bridge/bell_haos_candidate/b3_2_1_operator_dependence.csv",
+    "pair_ordering": "experiments/physics_bridge/bell_haos_candidate/b3_2_1_pair_ordering.csv",
+    "precommitment_contract": "experiments/physics_bridge/bell_haos_candidate/b3_2_1_precommitment_contract.json",
+    "report": "experiments/physics_bridge/bell_haos_candidate/b3_2_1_report.md",
+    "result": "experiments/physics_bridge/bell_haos_candidate/b3_2_1_result.json",
+    "topology_dependence": "experiments/physics_bridge/bell_haos_candidate/b3_2_1_topology_dependence.csv"
+  },
+  "result_hash": "b3_2_1_result_ccd22329ba5dbb5c23ff4ead"
+}

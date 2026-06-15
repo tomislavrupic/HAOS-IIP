@@ -1,0 +1,77 @@
+{
+  "controls": {
+    "closure_vector_permutation": {
+      "antisymmetry": "preserved",
+      "chain_adjacency": "preserved",
+      "dimension": "preserved",
+      "locality": "preserved",
+      "norm": "preserved",
+      "orientation": "preserved",
+      "refinement_continuity": "preserved",
+      "vector_token_alignment": "destroyed"
+    },
+    "identity_pairing": {
+      "antisymmetry": "destroyed",
+      "chain_adjacency": "destroyed",
+      "dimension": "preserved",
+      "locality": "destroyed",
+      "norm": "partially preserved",
+      "orientation": "destroyed",
+      "refinement_continuity": "preserved"
+    },
+    "label_permuted_settings": {
+      "antisymmetry": "preserved",
+      "chain_adjacency": "preserved",
+      "dimension": "preserved",
+      "locality": "preserved",
+      "norm": "preserved",
+      "orientation": "preserved",
+      "refinement_continuity": "preserved",
+      "setting_semantics": "destroyed"
+    },
+    "random_orthogonal_pairing": {
+      "antisymmetry": "preserved",
+      "chain_adjacency": "destroyed",
+      "dimension": "preserved",
+      "locality": "destroyed",
+      "norm": "preserved",
+      "orientation": "randomized",
+      "refinement_continuity": "preserved"
+    },
+    "refinement_broken_control": {
+      "antisymmetry": "preserved",
+      "chain_adjacency": "preserved",
+      "dimension": "preserved",
+      "locality": "preserved",
+      "norm": "partially preserved",
+      "orientation": "preserved_if_chain_signature_survives",
+      "refinement_continuity": "destroyed"
+    },
+    "shuffled_pairing": {
+      "antisymmetry": "preserved",
+      "chain_adjacency": "destroyed",
+      "dimension": "preserved",
+      "locality": "destroyed",
+      "norm": "preserved",
+      "orientation": "partially preserved",
+      "refinement_continuity": "preserved"
+    },
+    "topology_destroyed_pairing": {
+      "antisymmetry": "trivial_zero",
+      "chain_adjacency": "destroyed",
+      "dimension": "preserved",
+      "locality": "destroyed",
+      "norm": "destroyed",
+      "orientation": "destroyed",
+      "refinement_continuity": "preserved"
+    }
+  },
+  "frozen_status": {
+    "B3_2": "FROZEN",
+    "chsh_scoring": "NOT_AUTHORIZED",
+    "haos_specificity": "NOT_ESTABLISHED",
+    "null_rejection": "FAIL",
+    "relational_geometry": "DETECTED"
+  },
+  "interpretation": "Nulls preserving orientation algebra, antisymmetry, or setting-vector diversity can reproduce much of the observed geometry. Current evidence localizes the failure to target-specific provenance, not to sign-change detection."
+}

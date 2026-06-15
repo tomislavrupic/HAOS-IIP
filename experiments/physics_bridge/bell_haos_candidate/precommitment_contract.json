@@ -1,0 +1,166 @@
+{
+  "audit_thresholds": {
+    "ci_z": 1.96,
+    "finite_sample_tolerance": 0.04,
+    "local_bound": 2.0,
+    "no_signalling_tolerance": 0.08,
+    "setting_independence_mi_tolerance_bits": 0.002
+  },
+  "candidate_stages": {
+    "B0": "neutral adapter records and diagnostics",
+    "B1": "local sanity candidate A=f(lambda,a), B=g(lambda,b)",
+    "B2": "HAOS-IIP-local recoverability candidate A=f(lambda,a), B=g(lambda,b)",
+    "B3": "joint closure candidate P(A,B|a,b,lambda) from an explicit Phase 18 chain-order closure cost"
+  },
+  "contract_hash": "bell_haos_contract_4e1353c06d52f96944f52868",
+  "forbidden_candidate_access": [
+    "2sqrt2 target constants",
+    "cosine quantum correlation curves",
+    "frozen quantum reference correlations",
+    "target S values",
+    "reference outcomes",
+    "adaptive optimization against CHSH score",
+    "outcome-dependent trial post-selection"
+  ],
+  "frozen_reference_policy": {
+    "candidate_imports_reference_runner": false,
+    "candidate_reads_quantum_reference_table": false,
+    "reference_hashes": {
+      "experiments/physics_bridge/bell_chsh_reference/bridge_status.json": "d48f55c3288518cbfac7d7e3c7cc80617bffb154aa8a461feb561d62830e13f9",
+      "experiments/physics_bridge/bell_chsh_reference/precommitment_contract.json": "d0c24b6974fd3b92105d0f31171d34a519d83f711cc61aba80dedfac5740792d",
+      "experiments/physics_bridge/bell_chsh_reference/run_bell_chsh_reference.py": "4feb7e44ff9552f0e6cdfea7ab6002c831c5cfd9fe284d736d89916678fe2fe1"
+    },
+    "reference_sidecar_path": "experiments/physics_bridge/bell_chsh_reference",
+    "used_as": "post_generation_scoreboard_convention_only"
+  },
+  "name": "Bell HAOS-IIP candidate bridge",
+  "non_claims": [
+    "not a physical Bell experiment",
+    "not a loophole-free Bell test",
+    "not evidence that HAOS-IIP derives quantum mechanics",
+    "not evidence that CST recovers Bell correlations",
+    "not a Born-rule derivation",
+    "not a license to import quantum correlations by construction"
+  ],
+  "precommitted_B2_mapping": {
+    "binary_rule": "outcome is +1 when local recoverability proxy exceeds the party/setting threshold; otherwise -1",
+    "lambda": "shared frozen Phase 18 source signature row",
+    "local_setting": "party-local perturbation label a0/a1 or b0/b1",
+    "recoverability_proxy": "shell_order_score - 0.55*max_shell_overlap_fraction - 0.75*phase17_mismatch_rate + 0.10*arrival_gap plus local fixed perturbation bias",
+    "thresholds": {
+      "a0": 0.7,
+      "a1": 0.76,
+      "b0": 0.68,
+      "b1": 0.74
+    },
+    "tie_behavior": "stable hash sign from source_id, party, and setting"
+  },
+  "precommitted_B3_mapping": {
+    "beta": 1.35,
+    "closure_strength": "clamped shell_order_score*(1-max_shell_overlap_fraction)*(1-phase17_mismatch_rate) + 0.25*arrival_gap",
+    "cost_definition": "C(q,a,b,lambda) = base_instability(lambda) + 0.5 * (1 - q * preferred_product(a,b,lambda) * closure_strength(lambda))",
+    "invoice": [
+      "FACTORIZATION_RELAXED",
+      "OUTCOME_INDEPENDENCE_RELAXED"
+    ],
+    "joint_cost": "P(product=q | a,b,lambda) proportional to exp(-beta * C(q,a,b,lambda))",
+    "joint_probability_model": "P(A,B | a,b,lambda) = 0.5 * P(product=A*B | a,b,lambda)",
+    "lambda": "shared frozen Phase 18 source signature row",
+    "local_registration": "after product sampling, Alice is assigned symmetric +/- registrations and Bob receives product*Alice",
+    "preferred_product": "sign of Phase 18 chain-order displacement between the declared Alice and Bob setting token pairs",
+    "strength_ceiling": 0.95,
+    "strength_floor": 0.05,
+    "tie_behavior": "zero orientation prefers +1 by predeclared convention"
+  },
+  "provenance": {
+    "code_hash": "95013f41a64a76b320197c48afdf5f823e5e6d99f03539f93dd95b5d14415c00",
+    "code_path": "experiments/physics_bridge/bell_haos_candidate/run_bell_haos_candidate.py",
+    "config_hash": "bell_candidate_config_faa981b0fe12b83d9261931b",
+    "reference_sidecar_hashes": {
+      "experiments/physics_bridge/bell_chsh_reference/bridge_status.json": "d48f55c3288518cbfac7d7e3c7cc80617bffb154aa8a461feb561d62830e13f9",
+      "experiments/physics_bridge/bell_chsh_reference/precommitment_contract.json": "d0c24b6974fd3b92105d0f31171d34a519d83f711cc61aba80dedfac5740792d",
+      "experiments/physics_bridge/bell_chsh_reference/run_bell_chsh_reference.py": "4feb7e44ff9552f0e6cdfea7ab6002c831c5cfd9fe284d736d89916678fe2fe1"
+    },
+    "reference_sidecar_path": "experiments/physics_bridge/bell_chsh_reference",
+    "source_artifact": "phase18-distance-surrogate/runs/phase18_shell_ordering_metrics.csv",
+    "source_artifact_hash": "155f7b3354c733ce7836613560b0d8e6c13a303c1fa5b2532e286256c9f437e3"
+  },
+  "scope": {
+    "design_choice": "Use the frozen Bell/CHSH scoreboard convention only after candidate correlations are generated.",
+    "heuristic": "B2 maps frozen Phase 18 source signatures through local perturbation-specific recoverability proxies.",
+    "implemented_fact": "Build B0 adapter, B1 local sanity candidate, B2 HAOS-IIP-local recoverability candidate, and B3 explicit joint-closure-cost candidate.",
+    "unverified_hypothesis": "B3 tests one non-factorizable operational candidate; it does not establish a HAOS-IIP Bell derivation."
+  },
+  "settings": {
+    "generation_method": "balanced_complete_setting_grid_per_seed_independent_of_source_state",
+    "labels": {
+      "alice": [
+        "a0",
+        "a1"
+      ],
+      "bob": [
+        "b0",
+        "b1"
+      ]
+    },
+    "setting_pairs": [
+      [
+        "a0",
+        "b0"
+      ],
+      [
+        "a0",
+        "b1"
+      ],
+      [
+        "a1",
+        "b0"
+      ],
+      [
+        "a1",
+        "b1"
+      ]
+    ]
+  },
+  "source_artifacts": {
+    "B1": "synthetic balanced local lambda; no HAOS claim",
+    "B2": "phase18-distance-surrogate/runs/phase18_shell_ordering_metrics.csv",
+    "B2_filter": {
+      "hierarchy_label": "frozen_branch",
+      "source_limit": 6
+    },
+    "source_artifact_hash": "155f7b3354c733ce7836613560b0d8e6c13a303c1fa5b2532e286256c9f437e3"
+  },
+  "status": "isolated_candidate_bundle",
+  "trial_policy": {
+    "all_valid_trials_retained": true,
+    "post_selection_policy": "detected and invalidated; positive control intentionally violates this",
+    "seeds": [
+      7201,
+      7202,
+      7203
+    ],
+    "trials_per_setting_pair": 384
+  },
+  "verdict_logic": {
+    "B1_expected": [
+      "LOCAL_CANDIDATE_SANITY_PASS",
+      "LOCAL_BOUND_RECOVERED",
+      "CHSH_VIOLATION_NOT_DETECTED"
+    ],
+    "B2_expected": [
+      "LOCAL_BOUND_RECOVERED",
+      "CHSH_VIOLATION_NOT_DETECTED",
+      "CST_BELL_STATUS_OPEN"
+    ],
+    "structural_interest_requires": [
+      "CI lower bound excludes 2",
+      "NO_SIGNALLING_PASS",
+      "SETTING_INDEPENDENCE_PASS or declared relaxation",
+      "no target leakage",
+      "no post-selection",
+      "reproducibility across predeclared seeds",
+      "matched local controls remain at or below the local bound"
+    ]
+  }
+}

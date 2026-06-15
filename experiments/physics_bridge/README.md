@@ -151,6 +151,126 @@ be cited as bounded proxy PASS rows, while celestial holography, BMS charge
 recovery, Virasoro/CCFT recovery, S-matrix reconstruction, real soft-theorem
 recovery, and gravitational-memory observables remain `OPEN`.
 
+## Bell/CHSH Computational Reference Probe
+
+The Bell/CHSH reference probe is available as a bounded computational sidecar:
+
+```bash
+uv run python experiments/physics_bridge/bell_chsh_reference/run_bell_chsh_reference.py
+```
+
+Generated outputs:
+
+- `experiments/physics_bridge/bell_chsh_reference/precommitment_contract.json`
+- `experiments/physics_bridge/bell_chsh_reference/bell_chsh_diagnostics.csv`
+- `experiments/physics_bridge/bell_chsh_reference/bridge_status.json`
+- `experiments/physics_bridge/bell_chsh_reference/bell_chsh_reference_report.md`
+
+This probe only checks a standard CHSH reference harness against classical
+controls. It is not a laboratory Bell experiment, not a loophole-free Bell test,
+and not a CST or HAOS-IIP derivation of Bell correlations.
+
+## Bell HAOS-IIP Candidate Bridge
+
+The first isolated HAOS-IIP-to-Bell candidate bridge is available as a bounded
+candidate bundle:
+
+```bash
+uv run python experiments/physics_bridge/bell_haos_candidate/run_bell_haos_candidate.py
+```
+
+Generated outputs:
+
+- `experiments/physics_bridge/bell_haos_candidate/precommitment_contract.json`
+- `experiments/physics_bridge/bell_haos_candidate/assumption_ledger.json`
+- `experiments/physics_bridge/bell_haos_candidate/candidate_trials.csv`
+- `experiments/physics_bridge/bell_haos_candidate/candidate_correlations.json`
+- `experiments/physics_bridge/bell_haos_candidate/no_signalling_diagnostics.csv`
+- `experiments/physics_bridge/bell_haos_candidate/setting_independence_diagnostics.csv`
+- `experiments/physics_bridge/bell_haos_candidate/control_results.csv`
+- `experiments/physics_bridge/bell_haos_candidate/bell_candidate_report.md`
+- `experiments/physics_bridge/bell_haos_candidate/bell_candidate_result.json`
+
+This bridge implements B0/B1/B2 only. The frozen Bell reference sidecar remains
+a scoreboard convention; this bundle does not import the quantum reference
+curve, does not implement B3 joint closure, and does not establish HAOS-IIP or
+CST Bell recovery.
+
+The candidate branch has since been frozen as Bell Bridge v0.3. B3.1, B3.2,
+B3.2.1, and B3.2.2 are retained as negative/provenance artifacts. The terminal
+classification is `GENERIC_RELATIONAL_GEOMETRY`: the current `G / J_lambda`
+construction produces genuine relational structure, but not HAOS-specific
+structure sufficient to support a Bell bridge. CHSH scoring from this branch is
+not authorized.
+
+## Synthetic Relational Geometry Calibration
+
+The synthetic relational-geometry calibration suite is available as an
+instrument-only proving ground:
+
+```bash
+uv run python experiments/physics_bridge/synthetic_relational_geometry_calibration/run_synthetic_calibration.py
+```
+
+Generated outputs:
+
+- `experiments/physics_bridge/synthetic_relational_geometry_calibration/precommitment_contract.json`
+- `experiments/physics_bridge/synthetic_relational_geometry_calibration/synthetic_source_manifest.json`
+- `experiments/physics_bridge/synthetic_relational_geometry_calibration/semantic_relation_matrix.csv`
+- `experiments/physics_bridge/synthetic_relational_geometry_calibration/calibration_geometry_matrix.csv`
+- `experiments/physics_bridge/synthetic_relational_geometry_calibration/calibration_control_results.csv`
+- `experiments/physics_bridge/synthetic_relational_geometry_calibration/calibration_refinement_persistence.csv`
+- `experiments/physics_bridge/synthetic_relational_geometry_calibration/synthetic_calibration_report.md`
+- `experiments/physics_bridge/synthetic_relational_geometry_calibration/synthetic_calibration_result.json`
+
+This suite tests whether the semantic/refinement instrument can recover known
+synthetic relational structure, reject destructive controls, and leave ambiguous
+partial-preservation cases open. It is not a physics bridge and does not
+authorize Bell scoring.
+
+## Hydrogen Spectra Computational Reference Probe
+
+The hydrogen spectra reference probe is available as a bounded gross-spectrum
+sidecar:
+
+```bash
+uv run python experiments/physics_bridge/hydrogen_spectra_reference/run_hydrogen_spectra_reference.py
+```
+
+Generated outputs:
+
+- `experiments/physics_bridge/hydrogen_spectra_reference/precommitment_contract.json`
+- `experiments/physics_bridge/hydrogen_spectra_reference/transition_catalog.json`
+- `experiments/physics_bridge/hydrogen_spectra_reference/hydrogen_spectra_diagnostics.csv`
+- `experiments/physics_bridge/hydrogen_spectra_reference/bridge_status.json`
+- `experiments/physics_bridge/hydrogen_spectra_reference/hydrogen_spectra_reference_report.md`
+
+This probe only checks a declared Rydberg-series reference harness and component
+controls. It is not a laboratory hydrogen spectrum, not a fine-structure
+calculation, and not a CST or HAOS-IIP derivation of hydrogen spectra.
+
+## Semiconductor Band-Structure Computational Reference Probe
+
+The semiconductor band-structure reference probe is available as a bounded toy
+band sidecar:
+
+```bash
+uv run python experiments/physics_bridge/semiconductor_band_reference/run_semiconductor_band_reference.py
+```
+
+Generated outputs:
+
+- `experiments/physics_bridge/semiconductor_band_reference/precommitment_contract.json`
+- `experiments/physics_bridge/semiconductor_band_reference/band_catalog.json`
+- `experiments/physics_bridge/semiconductor_band_reference/semiconductor_band_diagnostics.csv`
+- `experiments/physics_bridge/semiconductor_band_reference/bridge_status.json`
+- `experiments/physics_bridge/semiconductor_band_reference/semiconductor_band_reference_report.md`
+
+This probe only checks a declared toy direct-gap band reference and component
+controls. It is not a physical semiconductor calculation, not an ab-initio
+band-structure calculation, and not a CST or HAOS-IIP derivation of
+semiconductor physics.
+
 ## Gravitational Memory Toy Probe
 
 The Phase 61 gravitational-memory toy probe is available as a synthetic

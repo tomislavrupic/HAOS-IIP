@@ -1,0 +1,3 @@
+hierarchy_label,sample_role,pair_order_stability,sign_topology_preservation,aligned_matrix_distance,eigenspace_alignment,holdout_prediction_stability,cross_refinement_variance,absolute_thresholds_passed,degradation_points_vs_control,status
+frozen_branch,target,0.920665237672,0.828125,0.122381269858,0.69259408089,1,0.00212890150733,True,3,REFINEMENT_SPECIFICITY_NOT_ESTABLISHED
+periodic_diagonal_augmented_control,refinement_broken_control,0.807153656064,0.84375,0.303344837494,0.677981049737,1,0.00403343284078,False,-3,REFINEMENT_CONTROL_NOT_DEGRADED

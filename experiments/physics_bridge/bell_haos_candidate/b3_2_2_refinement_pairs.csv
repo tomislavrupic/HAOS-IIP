@@ -1,0 +1,9 @@
+hierarchy_label,seed,n_side_left,n_side_right,pair_order_spearman,sign_topology_preservation,aligned_matrix_distance,eigenspace_alignment,holdout_prediction_spearman
+frozen_branch,1303,60,72,0.841330475343,0.6875,0.244762539716,0.38518816178,1
+frozen_branch,1303,72,84,0.841330475343,0.6875,0.244762539716,0.38518816178,1
+frozen_branch,1302,60,72,1,0.9375,1.87600735446e-16,1,1
+frozen_branch,1302,72,84,1,1,1.44780305411e-16,1,1
+periodic_diagonal_augmented_control,1303,60,72,0.867898806143,0.8125,0.310495007287,0.124147565678,1
+periodic_diagonal_augmented_control,1303,72,84,0.949704142012,0.8125,0.146203941473,0.960915587512,1
+periodic_diagonal_augmented_control,1302,60,72,0.411011676102,0.75,0.756680401216,0.626861045756,1
+periodic_diagonal_augmented_control,1302,72,84,1,1,1.25137282376e-16,1,1
