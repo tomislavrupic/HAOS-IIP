@@ -1,0 +1,19 @@
+{
+  "calibration_case_count": 144,
+  "development_case_count": 96,
+  "holdout_case_count": 144,
+  "holdout_families": [
+    "erdos_renyi",
+    "grid",
+    "modular"
+  ],
+  "holdout_inspection_policy": "configuration and mappings are frozen in precommitment before holdout scoring",
+  "holdout_seeds": [
+    301,
+    302,
+    303,
+    304,
+    305,
+    306
+  ]
+}

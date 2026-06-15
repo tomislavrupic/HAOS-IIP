@@ -1,0 +1,10 @@
+control,metric,value,expected,status
+shuffled_target_labels,spearman_against_shuffled_target,0.16479047018246656,abs(value) <= 0.25,PASS
+intentional_leakage_positive_control,spearman,0.9999999999999999,value >= 0.98,TARGET_LEAKAGE_DETECTED
+seed_repeat,deterministic_case_count,144.0,same on rerun,PASS
+topology_destroyed_graph,mean_recovery_quality_shift,-0.002329435011497405,abs(value) >= 0.02,CONTROL_INVALID
+degree_preserving_rewire,mean_recovery_quality_shift,-0.0022679081241732124,abs(value) >= 0.02,CONTROL_INVALID
+weight_shuffled_graph,mean_recovery_quality_shift,-0.004689705944564082,abs(value) >= 0.02,CONTROL_INVALID
+parameter_matched_null,mean_recovery_quality_shift,-0.01288328025137353,abs(value) >= 0.02,CONTROL_INVALID
+perturbation_free_baseline,mean_recovery_quality,1.0,value > holdout mean,PASS
+haos_holdout_target,spearman,0.912028422274154,reported for comparison only,REPORTING_ONLY

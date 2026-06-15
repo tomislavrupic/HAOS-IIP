@@ -1,0 +1,31 @@
+{
+  "bridge_count": 10,
+  "contracts_hash": "hbp_contracts_0625c442f2fc5f40cf4d910e",
+  "counts_by_effective_classification": {
+    "FORMAL_CORRESPONDENCE": 9,
+    "PREDICTIVE_BRIDGE": 1
+  },
+  "non_claims": [
+    "no empirical physical validation",
+    "no physical mechanism claim",
+    "no Bell, hydrogen, or semiconductor derivation",
+    "synthetic PB-01 calibration is not external reality correspondence"
+  ],
+  "outputs": {
+    "hbp_report": "experiments/hbp/results/hbp_report.md",
+    "hbp_result": "experiments/hbp/results/hbp_result.json",
+    "registry_csv": "experiments/hbp/results/hbp_bridge_registry.csv",
+    "registry_json": "experiments/hbp/results/hbp_bridge_registry.json"
+  },
+  "pb01_labels": [
+    "CONTROL_INVALID",
+    "HOLDOUT_TRANSFER_PASS",
+    "MIXED_OPEN",
+    "PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+    "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
+  ],
+  "pb01_status": "PREDICTION_NOT_DISTINCT_FROM_BASELINES",
+  "registry_hash": "hbp_registry_406b295438a7e189c218ee9c",
+  "result_hash": "hbp_result_3b8373c5982a4a64917261e9",
+  "status": "REGISTRY_VALID"
+}

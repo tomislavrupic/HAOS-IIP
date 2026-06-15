@@ -1,0 +1,367 @@
+{
+  "assessments": [
+    {
+      "bridge_id": "BELL-CHSH-REFERENCE",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "CHSH reference score": "UNAVAILABLE"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "no derived or independently frozen calibrated mapping is available",
+        "no frozen unseen holdout prediction is declared",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_877370e637288e6aaa8ad0a8",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "HYDROGEN-REFERENCE",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "Rydberg catalog score": "UNAVAILABLE"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "no derived or independently frozen calibrated mapping is available",
+        "no frozen unseen holdout prediction is declared",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_ed8e0bf53fa144820a175902",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "SEMICONDUCTOR-REFERENCE",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "toy band score": "UNAVAILABLE"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "no derived or independently frozen calibrated mapping is available",
+        "no frozen unseen holdout prediction is declared",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_274a9d53e8ae6f4a2962e65b",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "CST-V0-2-2",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "closure stability diagnostic": "HEURISTIC"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "heuristic or analogical mapping cannot support a higher bridge classification",
+        "no derived or independently frozen calibrated mapping is available",
+        "no frozen unseen holdout prediction is declared",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_d3f9337627cd33f83f6c604f",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "BELL-BRIDGE-V0-3-TERMINAL",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "Bell bridge provenance": "ANALOGICAL"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "heuristic or analogical mapping cannot support a higher bridge classification",
+        "no derived or independently frozen calibrated mapping is available",
+        "no frozen unseen holdout prediction is declared",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_3b92650070434568c56fa52c",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "SYNTHETIC-RELATIONAL-CALIBRATION",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "semantic/refinement instrument behavior": "HEURISTIC"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "heuristic or analogical mapping cannot support a higher bridge classification",
+        "no derived or independently frozen calibrated mapping is available",
+        "no frozen unseen holdout prediction is declared",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_17f18fc3f87e6400418a477c",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "PHYSICS-BRIDGE-53-PROXY",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "physics-facing proxy rows": "HEURISTIC"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "heuristic or analogical mapping cannot support a higher bridge classification",
+        "no derived or independently frozen calibrated mapping is available",
+        "no frozen unseen holdout prediction is declared",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_1038a589680fae77f1d9d1e6",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "FERRON-LINE-A",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "ferron spectral recoverability": "CALIBRATED"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "no frozen unseen holdout prediction is declared",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_ee65ef1449d5fadc32f52358",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "MAGNON-LINE-B",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "spin-sector persistence proxy": "HEURISTIC"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "heuristic or analogical mapping cannot support a higher bridge classification",
+        "no derived or independently frozen calibrated mapping is available",
+        "no frozen unseen holdout prediction is declared",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_2cc30c6d20b7601506e66c76",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "PB-01-NETWORK-RECOVERY",
+      "ceiling_applied": "PREDICTIVE_BRIDGE",
+      "effective_classification": "PREDICTIVE_BRIDGE",
+      "labels": [
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "post-perturbation recovery ranking": "CALIBRATED"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support"
+      ],
+      "requested_classification": "PREDICTIVE_BRIDGE",
+      "result_hash": "hbp_assessment_8cc7f2327c1c9bcb9e170b76",
+      "verdict_authorized": true
+    }
+  ],
+  "contracts_hash": "hbp_contracts_0625c442f2fc5f40cf4d910e",
+  "counts_by_effective_classification": {
+    "FORMAL_CORRESPONDENCE": 9,
+    "PREDICTIVE_BRIDGE": 1
+  },
+  "labels": [
+    "REGISTRY_VALID",
+    "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+  ],
+  "pb01_result_hash": "pb01_result_1d0d56a0bc56f4e94002dbf7",
+  "registry_hash": "hbp_registry_406b295438a7e189c218ee9c",
+  "registry_rows": [
+    {
+      "assessment_hash": "hbp_assessment_877370e637288e6aaa8ad0a8",
+      "bridge_id": "BELL-CHSH-REFERENCE",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "Bell/CHSH computational reference harness",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_ed8e0bf53fa144820a175902",
+      "bridge_id": "HYDROGEN-REFERENCE",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "Hydrogen gross-spectrum computational reference",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_274a9d53e8ae6f4a2962e65b",
+      "bridge_id": "SEMICONDUCTOR-REFERENCE",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "Toy semiconductor band reference",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_d3f9337627cd33f83f6c604f",
+      "bridge_id": "CST-V0-2-2",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "internal closure stability instrument",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_3b92650070434568c56fa52c",
+      "bridge_id": "BELL-BRIDGE-V0-3-TERMINAL",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "terminal HAOS-to-Bell candidate archive",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_17f18fc3f87e6400418a477c",
+      "bridge_id": "SYNTHETIC-RELATIONAL-CALIBRATION",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "synthetic relational geometry instrument calibration",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_1038a589680fae77f1d9d1e6",
+      "bridge_id": "PHYSICS-BRIDGE-53-PROXY",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "scalar-carrier physics-facing proxy readout",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_ee65ef1449d5fadc32f52358",
+      "bridge_id": "FERRON-LINE-A",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "external ferron / NbOI2 coherent mode sidecar",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "FORMAL_CORRESPONDENCE_ONLY;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_2cc30c6d20b7601506e66c76",
+      "bridge_id": "MAGNON-LINE-B",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "alpha-Fe2O3 magnon address stability note",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_8cc7f2327c1c9bcb9e170b76",
+      "bridge_id": "PB-01-NETWORK-RECOVERY",
+      "ceiling_applied": "PREDICTIVE_BRIDGE",
+      "domain": "synthetic weighted network recovery",
+      "effective_classification": "PREDICTIVE_BRIDGE",
+      "labels": "PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "PREDICTIVE_BRIDGE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": true
+    }
+  ],
+  "schema_version": "hbp-bridge-contracts-v0.1",
+  "scope": "Physical Bridge Program registry contracts. These rows classify bridge evidence and do not upgrade frozen HAOS-IIP claims."
+}

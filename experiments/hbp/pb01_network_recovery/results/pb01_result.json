@@ -1,0 +1,44 @@
+{
+  "bridge_id": "PB-01",
+  "case_counts": {
+    "calibration": 144,
+    "development": 96,
+    "holdout": 144
+  },
+  "classification_boundary": "synthetic predictive calibration, not empirical bridge validation",
+  "contract_hash": "pb01_contract_566fa0b4e76ec552b62faf73",
+  "mapping_status": {
+    "calibrated_haos_score": "CALIBRATED",
+    "feature_extractors": "HEURISTIC"
+  },
+  "outputs": {
+    "baseline_metrics": "experiments/hbp/pb01_network_recovery/results/pb01_baseline_metrics.csv",
+    "cases": "experiments/hbp/pb01_network_recovery/results/pb01_cases.csv",
+    "control_results": "experiments/hbp/pb01_network_recovery/results/pb01_control_results.csv",
+    "precommitment_contract": "experiments/hbp/pb01_network_recovery/results/precommitment_contract.json",
+    "predictions": "experiments/hbp/pb01_network_recovery/results/pb01_predictions.csv",
+    "report": "experiments/hbp/pb01_network_recovery/results/pb01_report.md",
+    "result": "experiments/hbp/pb01_network_recovery/results/pb01_result.json",
+    "split_manifest": "experiments/hbp/pb01_network_recovery/results/split_manifest.json"
+  },
+  "result_hash": "pb01_result_1d0d56a0bc56f4e94002dbf7",
+  "verdict": {
+    "best_baseline_holdout_spearman": 0.8008118318463144,
+    "best_baseline_model": "supervised_graph_spectral_model",
+    "haos_holdout_spearman": 0.912028422274154,
+    "holdout_degradation": -0.021879764860330497,
+    "labels": [
+      "CONTROL_INVALID",
+      "HOLDOUT_TRANSFER_PASS",
+      "MIXED_OPEN",
+      "PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
+    ],
+    "reasons": [
+      "4 controls failed validation",
+      "HAOS holdout Spearman 0.912028; best baseline supervised_graph_spectral_model=0.800812; margin 0.111217"
+    ],
+    "spearman_margin": 0.1112165904278396,
+    "status": "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
+  }
+}

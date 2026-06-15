@@ -1,0 +1,142 @@
+{
+  "baselines": [
+    "mean_predictor",
+    "random_predictor",
+    "graph_size_density",
+    "degree_centrality",
+    "betweenness_centrality",
+    "closeness_centrality",
+    "pagerank_centrality",
+    "eigenvector_centrality",
+    "shortest_path_to_perturbation",
+    "algebraic_connectivity",
+    "domain_diffusion_early_probe",
+    "supervised_graph_spectral_model",
+    "haos_ablated_score"
+  ],
+  "bridge_id": "PB-01",
+  "claim_boundary": [
+    "synthetic calibration only",
+    "not empirical physical validation",
+    "not a universal recoverability law",
+    "not a physical mechanism claim"
+  ],
+  "contract_hash": "pb01_contract_566fa0b4e76ec552b62faf73",
+  "controls": [
+    "shuffled_target_labels",
+    "topology_destroyed_graph",
+    "degree_preserving_rewire",
+    "weight_shuffled_graph",
+    "parameter_matched_null",
+    "perturbation_free_baseline",
+    "seed_repeat",
+    "intentional_leakage_positive_control"
+  ],
+  "domain_state": {
+    "graph": "weighted undirected graph G=(V,E,W)",
+    "node_state": "dimensionless nonnegative vector x_t with sum(x_t)=1",
+    "time": "discrete normalized time step",
+    "weights": "dimensionless edge weights in [0, 1]"
+  },
+  "dynamics": {
+    "alpha": 0.38,
+    "early_probe_steps": 3,
+    "recovery_threshold": 0.22,
+    "steps": 42,
+    "update_law": "x_(t+1) = normalize((1-alpha) x_t + alpha W_norm^T x_t)"
+  },
+  "falsification": [
+    "PREDICTION_NOT_DISTINCT_FROM_BASELINES if HAOS does not exceed the best non-HAOS baseline by the frozen margin.",
+    "HOLDOUT_TRANSFER_FAIL if calibration-to-holdout degradation exceeds the frozen bound.",
+    "CONTROL_INVALID if declared controls do not move as expected.",
+    "TARGET_LEAKAGE_DETECTED if a non-leakage predictor uses holdout targets or the positive leakage control is not detected."
+  ],
+  "graph_families": {
+    "calibration": [
+      "erdos_renyi",
+      "ring_lattice",
+      "modular"
+    ],
+    "development": [
+      "erdos_renyi",
+      "ring_lattice"
+    ],
+    "holdout": [
+      "modular",
+      "grid",
+      "erdos_renyi"
+    ]
+  },
+  "haos_feature_policy": {
+    "calibrated_linear_score": "CALIBRATED on development+calibration before holdout scoring",
+    "causal_depth_proxy": "HEURISTIC graph distance from perturbation to mass support",
+    "distance_surrogate_proxy": "HEURISTIC shortest-path distance surrogate",
+    "invariant_overlap": "HEURISTIC immediate pre/post perturbation state overlap",
+    "persistence_proxy": "HEURISTIC spectral-gap and component-retention proxy",
+    "recovery_score_proxy": "HEURISTIC early-probe residual score",
+    "temporal_order_stability": "HEURISTIC early residual monotonicity proxy"
+  },
+  "metrics": [
+    "spearman_correlation",
+    "mae",
+    "rmse",
+    "roc_auc",
+    "pr_auc",
+    "brier_score",
+    "top_k_precision",
+    "confidence_interval",
+    "seed_variance",
+    "holdout_degradation"
+  ],
+  "perturbations": [
+    "node_removal",
+    "edge_removal",
+    "weight_degradation",
+    "localized_state_shock"
+  ],
+  "prediction_target": "recovery_quality plus recovered_label on frozen holdout cases",
+  "purpose": "Test whether frozen, predeclared HAOS-style network recovery features predict post-perturbation recovery ranking better than graph, spectral, and domain diffusion baselines on untouched synthetic holdout cases.",
+  "seeds": {
+    "calibration": [
+      201,
+      202,
+      203,
+      204,
+      205,
+      206
+    ],
+    "development": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106
+    ],
+    "holdout": [
+      301,
+      302,
+      303,
+      304,
+      305,
+      306
+    ]
+  },
+  "severities": [
+    0.16,
+    0.28
+  ],
+  "uncertainty": {
+    "bootstrap_replicates": 120,
+    "bootstrap_seed": 9107,
+    "ci": "percentile 95 percent interval"
+  },
+  "verdict_logic": {
+    "leakage_positive_control_min_spearman": 0.98,
+    "max_holdout_degradation": 0.18,
+    "min_holdout_cases": 80,
+    "min_spearman_margin_over_best_baseline": 0.05,
+    "shuffled_target_abs_spearman_max": 0.25
+  },
+  "version": "hbp-pb01-network-recovery-v0.1"
+}

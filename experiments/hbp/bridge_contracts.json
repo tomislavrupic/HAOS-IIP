@@ -1,0 +1,693 @@
+{
+  "schema_version": "hbp-bridge-contracts-v0.1",
+  "scope": "Physical Bridge Program registry contracts. These rows classify bridge evidence and do not upgrade frozen HAOS-IIP claims.",
+  "contracts": [
+    {
+      "bridge_id": "BELL-CHSH-REFERENCE",
+      "domain": "Bell/CHSH computational reference harness",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["setting_pair", "binary_outcome"],
+        "state_space": "four setting-pair correlation table",
+        "units": {"setting_pair": "label", "binary_outcome": "+/-1"},
+        "valid_ranges": {"setting_pair": "{00,01,10,11}", "binary_outcome": "{-1,+1}"},
+        "missing_data_policy": "fail if any setting pair is absent"
+      },
+      "units": {"CHSH_S": "dimensionless"},
+      "dynamics": {
+        "update_law": "none; reference scoring only",
+        "parameters": {},
+        "perturbations": [],
+        "time_axis": "not applicable",
+        "boundary_conditions": "reference table only"
+      },
+      "boundary_conditions": "no HAOS candidate generation inside the reference scorer",
+      "symmetries": ["setting-pair relabeling audited only through declared convention"],
+      "haos_mapping": [
+        {
+          "haos_source": "none",
+          "domain_target": "CHSH reference score",
+          "mapping_function": "score completed correlation table",
+          "units_before": "dimensionless correlation",
+          "units_after": "dimensionless CHSH S",
+          "semantic_justification": "Reference scoreboard only.",
+          "mapping_status": "UNAVAILABLE",
+          "uncertainty": "analytic or finite-sample CI as declared by sidecar",
+          "failure_conditions": ["candidate mechanism slot is empty"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "CHSH_S",
+          "measurement_rule": "abs(E00 + E01 + E10 - E11)",
+          "units": "dimensionless",
+          "valid_range": "[0,4]",
+          "target_role": "reference scoreboard"
+        }
+      ],
+      "prediction_target": "none",
+      "calibration_split": "not_applicable",
+      "holdout_split": "not_applicable",
+      "controls": [],
+      "baselines": [],
+      "uncertainty": "reference sidecar owned",
+      "falsification": {
+        "fail_conditions": ["reference scorer fails local bound or declared quantum reference sanity checks"],
+        "invalidation_conditions": ["used as HAOS derivation evidence"],
+        "underpowered_policy": "not applicable for analytic rows",
+        "leakage_policy": "candidate code must not import reference table"
+      },
+      "verdict_logic": "Reference reproduction is not a bridge prediction and has no replication claim.",
+      "provenance": {
+        "source_artifacts": ["experiments/physics_bridge/bell_chsh_reference/bridge_status.json"],
+        "code_artifacts": ["experiments/physics_bridge/bell_chsh_reference/run_bell_chsh_reference.py"],
+        "precommitment_artifact": "experiments/physics_bridge/bell_chsh_reference/precommitment_contract.json",
+        "external_data_status": "no_external_raw_data",
+        "level_history": [],
+        "notes": ["CST Bell status remains open."]
+      }
+    },
+    {
+      "bridge_id": "HYDROGEN-REFERENCE",
+      "domain": "Hydrogen gross-spectrum computational reference",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["n_initial", "n_final", "wavenumber"],
+        "state_space": "declared Rydberg transition catalog",
+        "units": {"n_initial": "integer", "n_final": "integer", "wavenumber": "m^-1"},
+        "valid_ranges": {"n_initial": "integer > 1", "n_final": "integer >= 1", "wavenumber": "positive"},
+        "missing_data_policy": "fail malformed transition rows"
+      },
+      "units": {"wavenumber": "m^-1"},
+      "dynamics": {
+        "update_law": "none; declared Rydberg relation is scored",
+        "parameters": {"R_H": "declared by reference sidecar"},
+        "perturbations": [],
+        "time_axis": "not applicable",
+        "boundary_conditions": "gross spectrum only"
+      },
+      "boundary_conditions": "fine structure, Lamb shift, hyperfine, and QED out of scope",
+      "symmetries": ["transition identity and ordering only"],
+      "haos_mapping": [
+        {
+          "haos_source": "none",
+          "domain_target": "Rydberg catalog score",
+          "mapping_function": "compare declared transition catalog to declared formula",
+          "units_before": "m^-1",
+          "units_after": "dimensionless score",
+          "semantic_justification": "Reference harness calibration only.",
+          "mapping_status": "UNAVAILABLE",
+          "uncertainty": "not a derivation",
+          "failure_conditions": ["candidate imports 1/n^2 or R_H by construction"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "transition_wavenumber",
+          "measurement_rule": "declared Rydberg gross-series formula",
+          "units": "m^-1",
+          "valid_range": "positive",
+          "target_role": "reference scoreboard"
+        }
+      ],
+      "prediction_target": "none",
+      "calibration_split": "not_applicable",
+      "holdout_split": "not_applicable",
+      "controls": [],
+      "baselines": [],
+      "uncertainty": "reference residual only",
+      "falsification": {
+        "fail_conditions": ["reference controls not rejected"],
+        "invalidation_conditions": ["used as HAOS hydrogen derivation evidence"],
+        "underpowered_policy": "not applicable",
+        "leakage_policy": "formula import disqualifies candidates"
+      },
+      "verdict_logic": "Reference reproduction has no replication claim.",
+      "provenance": {
+        "source_artifacts": ["experiments/physics_bridge/hydrogen_spectra_reference/bridge_status.json"],
+        "code_artifacts": ["experiments/physics_bridge/hydrogen_spectra_reference/run_hydrogen_spectra_reference.py"],
+        "precommitment_artifact": "experiments/physics_bridge/hydrogen_spectra_reference/precommitment_contract.json",
+        "external_data_status": "no_external_raw_data",
+        "level_history": [],
+        "notes": ["HAOS hydrogen recovery remains open."]
+      }
+    },
+    {
+      "bridge_id": "SEMICONDUCTOR-REFERENCE",
+      "domain": "Toy semiconductor band reference",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["k", "band_energy"],
+        "state_space": "declared toy two-band catalog",
+        "units": {"k": "reduced unitless", "band_energy": "eV"},
+        "valid_ranges": {"k": "[-1,1]", "band_energy": "finite"},
+        "missing_data_policy": "fail missing band rows"
+      },
+      "units": {"band_energy": "eV"},
+      "dynamics": {
+        "update_law": "none; declared two-band formula is scored",
+        "parameters": {},
+        "perturbations": [],
+        "time_axis": "not applicable",
+        "boundary_conditions": "toy direct-gap model only"
+      },
+      "boundary_conditions": "not ab-initio, not a materials prediction",
+      "symmetries": ["k-reflection symmetry in declared catalog"],
+      "haos_mapping": [
+        {
+          "haos_source": "none",
+          "domain_target": "toy band score",
+          "mapping_function": "compare declared band catalog to declared model",
+          "units_before": "eV",
+          "units_after": "dimensionless score",
+          "semantic_justification": "Reference harness calibration only.",
+          "mapping_status": "UNAVAILABLE",
+          "uncertainty": "not a derivation",
+          "failure_conditions": ["candidate imports toy model by construction"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "band_gap",
+          "measurement_rule": "minimum conduction minus maximum valence in toy catalog",
+          "units": "eV",
+          "valid_range": "finite",
+          "target_role": "reference scoreboard"
+        }
+      ],
+      "prediction_target": "none",
+      "calibration_split": "not_applicable",
+      "holdout_split": "not_applicable",
+      "controls": [],
+      "baselines": [],
+      "uncertainty": "reference residual only",
+      "falsification": {
+        "fail_conditions": ["reference controls not rejected"],
+        "invalidation_conditions": ["used as HAOS semiconductor derivation evidence"],
+        "underpowered_policy": "not applicable",
+        "leakage_policy": "toy formula import disqualifies candidates"
+      },
+      "verdict_logic": "Reference reproduction has no replication claim.",
+      "provenance": {
+        "source_artifacts": ["experiments/physics_bridge/semiconductor_band_reference/bridge_status.json"],
+        "code_artifacts": ["experiments/physics_bridge/semiconductor_band_reference/run_semiconductor_band_reference.py"],
+        "precommitment_artifact": "experiments/physics_bridge/semiconductor_band_reference/precommitment_contract.json",
+        "external_data_status": "no_external_raw_data",
+        "level_history": [],
+        "notes": ["Real material status remains open."]
+      }
+    },
+    {
+      "bridge_id": "CST-V0-2-2",
+      "domain": "internal closure stability instrument",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["closure_signature", "component_distance", "recoverability_vector"],
+        "state_space": "frozen HAOS-IIP phase-ledger signatures",
+        "units": {"closure_signature": "JSON record", "component_distance": "dimensionless", "recoverability_vector": "dimensionless"},
+        "valid_ranges": {"closure_signature": "available components required", "component_distance": "[0,1]", "recoverability_vector": "[0,1] components"},
+        "missing_data_policy": "strict mode fails unavailable required components"
+      },
+      "units": {"component_distance": "dimensionless"},
+      "dynamics": {
+        "update_law": "none; artifact reuse over Phase 15-18 ledgers",
+        "parameters": {},
+        "perturbations": ["bias_onset", "derived controls"],
+        "time_axis": "frozen phase tau grid where available",
+        "boundary_conditions": "no physics claim"
+      },
+      "boundary_conditions": "target remains not distinct and underpowered",
+      "symmetries": ["same execution path for target and controls"],
+      "haos_mapping": [
+        {
+          "haos_source": "Phase 15-18 frozen ledgers",
+          "domain_target": "closure stability diagnostic",
+          "mapping_function": "component closure-distance vector",
+          "units_before": "mixed frozen telemetry",
+          "units_after": "dimensionless component distances",
+          "semantic_justification": "Measurement instrument over HAOS artifacts.",
+          "mapping_status": "HEURISTIC",
+          "uncertainty": "underpowered with two seeds",
+          "failure_conditions": ["control preservation or target non-distinctness"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "target_distinctiveness",
+          "measurement_rule": "strict equivalence and component-control validation",
+          "units": "dimensionless",
+          "valid_range": "[0,1]",
+          "target_role": "instrument diagnostic"
+        }
+      ],
+      "prediction_target": "none",
+      "calibration_split": "not_applicable",
+      "holdout_split": "not_applicable",
+      "controls": [],
+      "baselines": [],
+      "uncertainty": "power gate reports UNDERPOWERED",
+      "falsification": {
+        "fail_conditions": ["target not distinct from controls"],
+        "invalidation_conditions": ["used as physics evidence"],
+        "underpowered_policy": "report UNDERPOWERED",
+        "leakage_policy": "signature/provenance separation required"
+      },
+      "verdict_logic": "Instrument has no replication claim.",
+      "provenance": {
+        "source_artifacts": ["experiments/cst/runs/phase_2_2/phase_2_2_result.json"],
+        "code_artifacts": ["experiments/cst/diagnostics/discriminative_instrument_repair.py"],
+        "precommitment_artifact": "experiments/cst/runs/phase_2_2/precommitment_contract.json",
+        "external_data_status": "no_external_raw_data",
+        "level_history": ["FORMAL_CORRESPONDENCE"],
+        "notes": ["CST target distinctiveness not detected."]
+      }
+    },
+    {
+      "bridge_id": "BELL-BRIDGE-V0-3-TERMINAL",
+      "domain": "terminal HAOS-to-Bell candidate archive",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["G_matrix", "setting_relation", "refinement_relation"],
+        "state_space": "archived relational-geometry diagnostics",
+        "units": {"G_matrix": "dimensionless", "setting_relation": "label", "refinement_relation": "label"},
+        "valid_ranges": {"G_matrix": "finite", "setting_relation": "declared labels", "refinement_relation": "declared refinements"},
+        "missing_data_policy": "terminal archive only"
+      },
+      "units": {"G_matrix": "dimensionless"},
+      "dynamics": {
+        "update_law": "none; terminal candidate archive",
+        "parameters": {},
+        "perturbations": ["semantic permutation", "refinement break"],
+        "time_axis": "not applicable",
+        "boundary_conditions": "CHSH scoring not authorized"
+      },
+      "boundary_conditions": "no continuation with same G/J_lambda object",
+      "symmetries": ["semantic/refinement tests failed frozen thresholds"],
+      "haos_mapping": [
+        {
+          "haos_source": "B3.2.2 archived diagnostics",
+          "domain_target": "Bell bridge provenance",
+          "mapping_function": "relational matrix audit",
+          "units_before": "dimensionless",
+          "units_after": "dimensionless",
+          "semantic_justification": "Terminal failure archive.",
+          "mapping_status": "ANALOGICAL",
+          "uncertainty": "HAOS specificity not established",
+          "failure_conditions": ["setting semantics fail", "refinement specificity fail"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "semantic_refinement_specificity",
+          "measurement_rule": "B3.2.2 frozen thresholds",
+          "units": "dimensionless",
+          "valid_range": "[0,1]",
+          "target_role": "failure localization"
+        }
+      ],
+      "prediction_target": "none",
+      "calibration_split": "not_applicable",
+      "holdout_split": "not_applicable",
+      "controls": [],
+      "baselines": [],
+      "uncertainty": "terminal negative archive",
+      "falsification": {
+        "fail_conditions": ["same object used for B3.3 or CHSH scoring"],
+        "invalidation_conditions": ["terminal branch reopened without new precommitment"],
+        "underpowered_policy": "not applicable",
+        "leakage_policy": "do not inspect CHSH from terminal branch"
+      },
+      "verdict_logic": "No replication claim.",
+      "provenance": {
+        "source_artifacts": ["experiments/physics_bridge/bell_haos_candidate/bell_bridge_v0_3_freeze.json"],
+        "code_artifacts": ["experiments/physics_bridge/bell_haos_candidate/run_b3_semantic_refinement_audit.py"],
+        "precommitment_artifact": "experiments/physics_bridge/bell_haos_candidate/b3_2_2_precommitment_contract.json",
+        "external_data_status": "no_external_raw_data",
+        "level_history": [],
+        "notes": ["GENERIC_RELATIONAL_GEOMETRY terminal result."]
+      }
+    },
+    {
+      "bridge_id": "SYNTHETIC-RELATIONAL-CALIBRATION",
+      "domain": "synthetic relational geometry instrument calibration",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["synthetic_relation_matrix", "refinement_matrix"],
+        "state_space": "constructed synthetic relation graph",
+        "units": {"synthetic_relation_matrix": "dimensionless", "refinement_matrix": "dimensionless"},
+        "valid_ranges": {"synthetic_relation_matrix": "finite", "refinement_matrix": "finite"},
+        "missing_data_policy": "fail missing known-positive or control rows"
+      },
+      "units": {"score": "dimensionless"},
+      "dynamics": {
+        "update_law": "none; constructed calibration source",
+        "parameters": {},
+        "perturbations": ["semantic permutation", "topology destruction", "refinement break"],
+        "time_axis": "synthetic refinement index",
+        "boundary_conditions": "not physics bridge"
+      },
+      "boundary_conditions": "instrument calibration only",
+      "symmetries": ["known synthetic ordering"],
+      "haos_mapping": [
+        {
+          "haos_source": "synthetic calibration runner",
+          "domain_target": "semantic/refinement instrument behavior",
+          "mapping_function": "known synthetic relation scoring",
+          "units_before": "dimensionless",
+          "units_after": "dimensionless",
+          "semantic_justification": "Validates the instrument on constructed positives/negatives.",
+          "mapping_status": "HEURISTIC",
+          "uncertainty": "synthetic only",
+          "failure_conditions": ["used as empirical validation"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "calibration_pass",
+          "measurement_rule": "known positive passes; destructive controls fail; ambiguous remains open",
+          "units": "boolean",
+          "valid_range": "{true,false}",
+          "target_role": "instrument calibration"
+        }
+      ],
+      "prediction_target": "none",
+      "calibration_split": "synthetic",
+      "holdout_split": "not_applicable",
+      "controls": [],
+      "baselines": [],
+      "uncertainty": "deterministic synthetic",
+      "falsification": {
+        "fail_conditions": ["known positive fails or destructive controls pass"],
+        "invalidation_conditions": ["treated as external validation"],
+        "underpowered_policy": "not applicable",
+        "leakage_policy": "synthetic target relation declared"
+      },
+      "verdict_logic": "Synthetic calibration has no replication claim.",
+      "provenance": {
+        "source_artifacts": ["experiments/physics_bridge/synthetic_relational_geometry_calibration/synthetic_calibration_result.json"],
+        "code_artifacts": ["experiments/physics_bridge/synthetic_relational_geometry_calibration/run_synthetic_calibration.py"],
+        "precommitment_artifact": "experiments/physics_bridge/synthetic_relational_geometry_calibration/precommitment_contract.json",
+        "external_data_status": "no_external_raw_data",
+        "level_history": ["FORMAL_CORRESPONDENCE"],
+        "notes": ["No Bell or empirical authorization."]
+      }
+    },
+    {
+      "bridge_id": "PHYSICS-BRIDGE-53-PROXY",
+      "domain": "scalar-carrier physics-facing proxy readout",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["scalar_carrier_metric", "recoverability_gradient", "current_closure"],
+        "state_space": "frozen scalar-kernel graph artifacts",
+        "units": {"scalar_carrier_metric": "dimensionless", "recoverability_gradient": "dimensionless", "current_closure": "dimensionless"},
+        "valid_ranges": {"scalar_carrier_metric": "finite", "recoverability_gradient": "finite", "current_closure": "finite"},
+        "missing_data_policy": "fail missing frozen scalar artifact"
+      },
+      "units": {"proxy_score": "dimensionless"},
+      "dynamics": {
+        "update_law": "external post-processing over frozen scalar artifacts",
+        "parameters": {},
+        "perturbations": ["disorder", "localized bump", "inhomogeneity"],
+        "time_axis": "frozen scalar artifact windows",
+        "boundary_conditions": "no continuum or physical ontology claim"
+      },
+      "boundary_conditions": "proxy dictionary only",
+      "symmetries": ["matched branch/control thresholds"],
+      "haos_mapping": [
+        {
+          "haos_source": "frozen scalar bridge artifacts",
+          "domain_target": "physics-facing proxy rows",
+          "mapping_function": "thresholded post-processing dictionary",
+          "units_before": "dimensionless frozen telemetry",
+          "units_after": "dimensionless proxy score",
+          "semantic_justification": "Operational proxy mapping.",
+          "mapping_status": "HEURISTIC",
+          "uncertainty": "internal artifacts only",
+          "failure_conditions": ["proxy row used as physical claim"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "proxy_status",
+          "measurement_rule": "PASS/OPEN/WATCH thresholds in physics_observables.py",
+          "units": "label",
+          "valid_range": "{PASS,OPEN,WATCH}",
+          "target_role": "claim gate"
+        }
+      ],
+      "prediction_target": "none",
+      "calibration_split": "not_applicable",
+      "holdout_split": "not_applicable",
+      "controls": [],
+      "baselines": [],
+      "uncertainty": "not external",
+      "falsification": {
+        "fail_conditions": ["proxy controls reproduce claimed structure"],
+        "invalidation_conditions": ["used as continuum proof"],
+        "underpowered_policy": "stay OPEN",
+        "leakage_policy": "frozen thresholds only"
+      },
+      "verdict_logic": "No replication claim.",
+      "provenance": {
+        "source_artifacts": ["experiments/physics_bridge/results/physics_observables.json"],
+        "code_artifacts": ["experiments/physics_bridge/physics_observables.py"],
+        "precommitment_artifact": null,
+        "external_data_status": "no_external_raw_data",
+        "level_history": ["FORMAL_CORRESPONDENCE"],
+        "notes": ["Operational proxy only."]
+      }
+    },
+    {
+      "bridge_id": "FERRON-LINE-A",
+      "domain": "external ferron / NbOI2 coherent mode sidecar",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["frequency_THz", "time_ps", "distance_um", "intensity"],
+        "state_space": "published source-data tables and derived target-band traces",
+        "units": {"frequency_THz": "THz", "time_ps": "ps", "distance_um": "um", "intensity": "arb."},
+        "valid_ranges": {"frequency_THz": "positive", "time_ps": "finite", "distance_um": "nonnegative", "intensity": "finite"},
+        "missing_data_policy": "preserve NO_STFT_DATA_FOUND boundary when raw grids are absent"
+      },
+      "units": {"frequency": "THz", "time": "ps", "distance": "um"},
+      "dynamics": {
+        "update_law": "published/derived target-band propagation trace audit",
+        "parameters": {"target_frequency_THz": "paper-declared ferron target window"},
+        "perturbations": ["distance", "thickness", "available spectral conditions"],
+        "time_axis": "ps from source traces",
+        "boundary_conditions": "raw STFT grid absence preserved"
+      },
+      "boundary_conditions": "external sidecar only, no HAOS proof",
+      "symmetries": ["target-window consistency"],
+      "haos_mapping": [
+        {
+          "haos_source": "target-window recoverability sidecar metrics",
+          "domain_target": "ferron spectral recoverability",
+          "mapping_function": "predeclared target-window peak and propagation scoring",
+          "units_before": "THz, ps, um",
+          "units_after": "dimensionless recoverability proxy",
+          "semantic_justification": "Operational map from recoverability-style scoring to external coherent-mode readouts.",
+          "mapping_status": "CALIBRATED",
+          "uncertainty": "single external sidecar, no independent replication",
+          "failure_conditions": ["raw-grid absence hidden", "control-material matching missing"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "spectral_recoverability",
+          "measurement_rule": "target-window peak stability and peak-to-background score",
+          "units": "dimensionless",
+          "valid_range": "[0,1]",
+          "target_role": "external sidecar diagnostic"
+        }
+      ],
+      "prediction_target": "target-window recoverability on future matched material/control data",
+      "calibration_split": "current public ferron source data",
+      "holdout_split": "unavailable",
+      "controls": [],
+      "baselines": [],
+      "uncertainty": "single-data-source sidecar uncertainty only",
+      "falsification": {
+        "fail_conditions": ["matched controls recover the same target-window behavior"],
+        "invalidation_conditions": ["raw missing data is inferred or fabricated"],
+        "underpowered_policy": "remain operational mapping",
+        "leakage_policy": "target windows must be independent"
+      },
+      "verdict_logic": "No replication claim until independent holdout and replication data exist.",
+      "provenance": {
+        "source_artifacts": ["experiments/materials_bridge/ferron_coherence_demo/outputs/ferron_harmonic_address_persistence_summary.json"],
+        "code_artifacts": ["experiments/materials_bridge/ferron_coherence_demo/run_ferron_coherence_demo.py"],
+        "precommitment_artifact": null,
+        "external_data_status": "external_raw_data_single_source",
+        "level_history": ["FORMAL_CORRESPONDENCE"],
+        "notes": ["Closest existing external-data-adjacent bridge, still not empirical support."]
+      }
+    },
+    {
+      "bridge_id": "MAGNON-LINE-B",
+      "domain": "alpha-Fe2O3 magnon address stability note",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["frequency_THz", "velocity_km_s", "persistence_proxy"],
+        "state_space": "literature and user-audit seeded summary",
+        "units": {"frequency_THz": "THz", "velocity_km_s": "km/s", "persistence_proxy": "dimensionless"},
+        "valid_ranges": {"frequency_THz": "positive", "velocity_km_s": "positive", "persistence_proxy": "[0,1]"},
+        "missing_data_policy": "raw-data validation pending"
+      },
+      "units": {"velocity": "km/s", "persistence_proxy": "dimensionless"},
+      "dynamics": {
+        "update_law": "none locally reproduced; literature summary only",
+        "parameters": {},
+        "perturbations": ["orientation", "wavevector", "field", "boundary"],
+        "time_axis": "not locally reproduced",
+        "boundary_conditions": "NO_RAW_PUBLIC_DATA_LOADED"
+      },
+      "boundary_conditions": "user/literature seeded, not raw-data bridge pass",
+      "symmetries": ["orientation dependence is literature-reported only"],
+      "haos_mapping": [
+        {
+          "haos_source": "magnon persistence summary",
+          "domain_target": "spin-sector persistence proxy",
+          "mapping_function": "literature/user-audit summary record",
+          "units_before": "km/s and dimensionless proxy",
+          "units_after": "dimensionless bridge note",
+          "semantic_justification": "Bookkeeping map only until raw data are committed.",
+          "mapping_status": "HEURISTIC",
+          "uncertainty": "raw data pending",
+          "failure_conditions": ["treated as raw-data validation"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "persistence_proxy",
+          "measurement_rule": "user-provided audit anchor",
+          "units": "dimensionless",
+          "valid_range": "[0,1]",
+          "target_role": "pending local reproduction"
+        }
+      ],
+      "prediction_target": "future raw-data magnon recovery",
+      "calibration_split": "not_applicable",
+      "holdout_split": "unavailable",
+      "controls": [],
+      "baselines": [],
+      "uncertainty": "pending raw data",
+      "falsification": {
+        "fail_conditions": ["raw-data benchmark fails recoverability/control gates"],
+        "invalidation_conditions": ["user-seeded proxy treated as external validation"],
+        "underpowered_policy": "remain operational mapping",
+        "leakage_policy": "target windows must be pre-registered"
+      },
+      "verdict_logic": "No replication claim.",
+      "provenance": {
+        "source_artifacts": ["experiments/materials_bridge/magnon_alpha_fe2o3_audit/outputs/magnon_persistence_summary.json"],
+        "code_artifacts": ["experiments/materials_bridge/magnon_alpha_fe2o3_audit/build_magnon_alpha_fe2o3_summary.py"],
+        "precommitment_artifact": null,
+        "external_data_status": "literature_user_audit_seeded_no_raw_data",
+        "level_history": ["FORMAL_CORRESPONDENCE"],
+        "notes": ["Raw-data reproduction pending."]
+      }
+    },
+    {
+      "bridge_id": "PB-01-NETWORK-RECOVERY",
+      "domain": "synthetic weighted network recovery",
+      "classification": "PREDICTIVE_BRIDGE",
+      "state_schema": {
+        "variables": ["W", "x_t", "time_step"],
+        "state_space": "weighted graph G=(V,E,W) with normalized nonnegative node state",
+        "units": {"W": "dimensionless", "x_t": "dimensionless probability mass", "time_step": "integer"},
+        "valid_ranges": {"W": "[0,1]", "x_t": "[0,1] and sum=1", "time_step": "integer >= 0"},
+        "missing_data_policy": "fail missing graph, state, perturbation, or split assignment"
+      },
+      "units": {"W": "dimensionless", "x_t": "dimensionless", "time_step": "integer"},
+      "dynamics": {
+        "update_law": "x_(t+1) = normalize((1-alpha)x_t + alpha W_norm^T x_t)",
+        "parameters": {"alpha": 0.38, "steps": 42, "early_probe_steps": 3},
+        "perturbations": ["node_removal", "edge_removal", "weight_degradation", "localized_state_shock"],
+        "time_axis": "discrete normalized time",
+        "boundary_conditions": "closed finite graph with isolated nodes self-retaining"
+      },
+      "boundary_conditions": "synthetic calibration only; no empirical bridge claim",
+      "symmetries": ["node relabeling should not change graph-invariant features", "weights are symmetric"],
+      "haos_mapping": [
+        {
+          "haos_source": "PB-01 precommitted HAOS-style feature vector calibrated before holdout",
+          "domain_target": "post-perturbation recovery ranking",
+          "mapping_function": "linear calibrated score over invariant overlap, early recovery score, persistence, causal-depth, temporal-order, and distance-surrogate proxies",
+          "units_before": "dimensionless features",
+          "units_after": "dimensionless recovery score",
+          "semantic_justification": "Synthetic calibration tests whether HAOS-style features add predictive value beyond conventional graph/spectral baselines.",
+          "mapping_status": "CALIBRATED",
+          "uncertainty": "bootstrap CI and seed variance on frozen synthetic holdout",
+          "failure_conditions": ["HAOS score not distinct from baselines", "holdout transfer fails", "controls invalid"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "recovery_quality",
+          "measurement_rule": "1 - final residual error scaled by frozen recovery threshold",
+          "units": "dimensionless",
+          "valid_range": "[0,1]",
+          "target_role": "primary ranking target"
+        },
+        {
+          "observable": "recovered_label",
+          "measurement_rule": "recovery time exists or final residual below threshold",
+          "units": "boolean",
+          "valid_range": "{0,1}",
+          "target_role": "binary target"
+        }
+      ],
+      "prediction_target": "post-perturbation recovery ranking on frozen synthetic holdout",
+      "calibration_split": "development and calibration graph seeds in PB-01 precommitment",
+      "holdout_split": "holdout graph seeds in PB-01 precommitment",
+      "controls": [
+        {
+          "name": "shuffled_target_labels",
+          "purpose": "Detect target-label leakage.",
+          "preserves": ["predictions"],
+          "destroys": ["target alignment"],
+          "invalid_if": "abs Spearman remains high"
+        },
+        {
+          "name": "intentional_leakage_positive_control",
+          "purpose": "Verify leakage detector can identify a target-copy predictor.",
+          "preserves": ["targets"],
+          "destroys": ["valid prediction path"],
+          "invalid_if": "not detected as leakage"
+        }
+      ],
+      "baselines": [
+        {
+          "name": "supervised_graph_spectral_model",
+          "family": "conventional",
+          "prediction_rule": "linear model over graph, centrality, spectral, and early diffusion features",
+          "training_scope": "development plus calibration only",
+          "leakage_risk": "must not use holdout targets"
+        },
+        {
+          "name": "domain_diffusion_early_probe",
+          "family": "domain-standard",
+          "prediction_rule": "early diffusion residual score",
+          "training_scope": "calibration only",
+          "leakage_risk": "uses only predeclared early probe"
+        }
+      ],
+      "uncertainty": "bootstrap CI, seed variance, holdout degradation",
+      "falsification": {
+        "fail_conditions": ["HAOS holdout score does not beat best baseline by frozen margin"],
+        "invalidation_conditions": ["holdout inspected before freeze", "target leakage", "control invalid"],
+        "underpowered_policy": "return UNDERPOWERED when holdout n is below frozen minimum",
+        "leakage_policy": "positive leakage control must be detected; non-leakage models must not copy targets"
+      },
+      "verdict_logic": "Prediction is synthetic only. No external raw data or replication claim. No intervention-backed unique generative mechanism.",
+      "provenance": {
+        "source_artifacts": ["experiments/hbp/pb01_network_recovery/results/pb01_result.json"],
+        "code_artifacts": ["experiments/hbp/pb01_network_recovery/run_pb01_network_recovery.py"],
+        "precommitment_artifact": "experiments/hbp/pb01_network_recovery/results/precommitment_contract.json",
+        "external_data_status": "no_external_raw_data_synthetic_holdout",
+        "level_history": ["FORMAL_CORRESPONDENCE", "ANALOGY_BRIDGE", "OPERATIONAL_MAPPING"],
+        "notes": ["Empirical bridge claim denied.", "Physical mechanism claim denied."]
+      }
+    }
+  ]
+}
