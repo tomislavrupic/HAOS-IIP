@@ -1,0 +1,440 @@
+{
+  "actual_focus_target_control_pair_counts": {
+    "periodic_diagonal_augmented_control": 6,
+    "randomized_edge_control": 6,
+    "shuffled_structure_control": 6
+  },
+  "actual_target_target_pair_count": 3,
+  "alpha_two_sided": 0.05,
+  "available_frozen_seeds_by_hierarchy_n_side": {
+    "frozen_branch": {
+      "60": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      },
+      "72": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      },
+      "84": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      }
+    },
+    "periodic_diagonal_augmented_control": {
+      "60": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      },
+      "72": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      },
+      "84": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      }
+    }
+  },
+  "component_power": {
+    "d_addr": {
+      "periodic_diagonal_augmented_control": {
+        "approx_pair_observations_per_group_needed": 3.924439867174544,
+        "approx_seeds_per_grid_needed": 3,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            1.0,
+            3.162277660168379
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "target_closer",
+        "observed_effect_size_cohen_d": 2.0,
+        "observed_effect_size_is_infinite": false
+      },
+      "randomized_edge_control": {
+        "approx_pair_observations_per_group_needed": null,
+        "approx_seeds_per_grid_needed": null,
+        "bootstrap_effect_ci95": {
+          "ci95": null,
+          "iterations": 1000
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "target_closer",
+        "observed_effect_size_cohen_d": "Infinity",
+        "observed_effect_size_is_infinite": true
+      },
+      "shuffled_structure_control": {
+        "approx_pair_observations_per_group_needed": null,
+        "approx_seeds_per_grid_needed": null,
+        "bootstrap_effect_ci95": {
+          "ci95": null,
+          "iterations": 1000
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "target_closer",
+        "observed_effect_size_cohen_d": "Infinity",
+        "observed_effect_size_is_infinite": true
+      }
+    },
+    "d_causal": {
+      "periodic_diagonal_augmented_control": {
+        "approx_pair_observations_per_group_needed": 1.9873711486189474,
+        "approx_seeds_per_grid_needed": 2,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            1.784426807529677,
+            13.8501948427916
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "target_closer",
+        "observed_effect_size_cohen_d": 2.81047252987032,
+        "observed_effect_size_is_infinite": false
+      },
+      "randomized_edge_control": {
+        "approx_pair_observations_per_group_needed": null,
+        "approx_seeds_per_grid_needed": null,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": 0.0,
+        "observed_effect_size_is_infinite": false
+      },
+      "shuffled_structure_control": {
+        "approx_pair_observations_per_group_needed": null,
+        "approx_seeds_per_grid_needed": null,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": 0.0,
+        "observed_effect_size_is_infinite": false
+      }
+    },
+    "d_inv": {
+      "periodic_diagonal_augmented_control": {
+        "approx_pair_observations_per_group_needed": 11.67643195297049,
+        "approx_seeds_per_grid_needed": 4,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -4.842508202527889,
+            0.09672321536514727
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": -1.159481326687757,
+        "observed_effect_size_is_infinite": false
+      },
+      "randomized_edge_control": {
+        "approx_pair_observations_per_group_needed": 0.44594328438281994,
+        "approx_seeds_per_grid_needed": 2,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -14.002559809204604,
+            -4.914556083252526
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": -5.933063835645317,
+        "observed_effect_size_is_infinite": false
+      },
+      "shuffled_structure_control": {
+        "approx_pair_observations_per_group_needed": 0.44594328438281994,
+        "approx_seeds_per_grid_needed": 2,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -14.002559809204604,
+            -4.914556083252526
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": -5.933063835645317,
+        "observed_effect_size_is_infinite": false
+      }
+    },
+    "d_spec": {
+      "periodic_diagonal_augmented_control": {
+        "approx_pair_observations_per_group_needed": 52.36421089593394,
+        "approx_seeds_per_grid_needed": 18,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -6.3896428416379125,
+            0.6431451676211982
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": -0.5475219737908669,
+        "observed_effect_size_is_infinite": false
+      },
+      "randomized_edge_control": {
+        "approx_pair_observations_per_group_needed": 0.047825155040076894,
+        "approx_seeds_per_grid_needed": 2,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -33.42752806649395,
+            -15.258647925641512
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": -18.11718177803829,
+        "observed_effect_size_is_infinite": false
+      },
+      "shuffled_structure_control": {
+        "approx_pair_observations_per_group_needed": 0.047825155040076894,
+        "approx_seeds_per_grid_needed": 2,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -33.42752806649395,
+            -15.258647925641512
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": -18.11718177803829,
+        "observed_effect_size_is_infinite": false
+      }
+    },
+    "d_struct": {
+      "periodic_diagonal_augmented_control": {
+        "approx_pair_observations_per_group_needed": 17.18901585361277,
+        "approx_seeds_per_grid_needed": 6,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -3.368369516387329,
+            0.33482939931194605
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": -0.9556378203261015,
+        "observed_effect_size_is_infinite": false
+      },
+      "randomized_edge_control": {
+        "approx_pair_observations_per_group_needed": 7.857047143021671,
+        "approx_seeds_per_grid_needed": 3,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -1.0000000000000009,
+            7.800284895082012
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "target_closer",
+        "observed_effect_size_cohen_d": 1.4134783330214147,
+        "observed_effect_size_is_infinite": false
+      },
+      "shuffled_structure_control": {
+        "approx_pair_observations_per_group_needed": 7.857047143021671,
+        "approx_seeds_per_grid_needed": 3,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -1.0000000000000009,
+            7.800284895082012
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "target_closer",
+        "observed_effect_size_cohen_d": 1.4134783330214147,
+        "observed_effect_size_is_infinite": false
+      }
+    },
+    "d_time": {
+      "periodic_diagonal_augmented_control": {
+        "approx_pair_observations_per_group_needed": 1.8638220615001475,
+        "approx_seeds_per_grid_needed": 2,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            -20.36910363093305,
+            -1.269640259127984
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "control_closer_or_equal",
+        "observed_effect_size_cohen_d": -2.9021283192767457,
+        "observed_effect_size_is_infinite": false
+      },
+      "randomized_edge_control": {
+        "approx_pair_observations_per_group_needed": 8.084221863194546,
+        "approx_seeds_per_grid_needed": 3,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            0.23677857346237072,
+            3.5012310148641266
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "target_closer",
+        "observed_effect_size_cohen_d": 1.3934767380778814,
+        "observed_effect_size_is_infinite": false
+      },
+      "shuffled_structure_control": {
+        "approx_pair_observations_per_group_needed": 0.6474621304304701,
+        "approx_seeds_per_grid_needed": 2,
+        "bootstrap_effect_ci95": {
+          "ci95": [
+            3.235875541353895,
+            301.01203048122505
+          ],
+          "iterations": 1000,
+          "note": "bootstrap estimates uncertainty only; it is not synthetic evidence",
+          "seed": 1303
+        },
+        "current_target_control_pair_count": 6,
+        "current_target_pair_count": 3,
+        "effect_direction": "target_closer",
+        "observed_effect_size_cohen_d": 4.923927493319892,
+        "observed_effect_size_is_infinite": false
+      }
+    }
+  },
+  "configured_seed_count": 2,
+  "configured_seeds": [
+    1303,
+    1302
+  ],
+  "method": "normal approximation on observed component effect size; bootstrap used only for uncertainty",
+  "predeclared_power_target": 0.8
+}

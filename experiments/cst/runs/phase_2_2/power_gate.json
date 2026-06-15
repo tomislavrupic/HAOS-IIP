@@ -1,0 +1,113 @@
+{
+  "actual_independent_seed_count": 2,
+  "actual_target_target_pair_count": 3,
+  "alpha_two_sided": 0.05,
+  "available_frozen_seeds_by_hierarchy_n_side": {
+    "frozen_branch": {
+      "60": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      },
+      "72": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      },
+      "84": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      }
+    },
+    "periodic_diagonal_augmented_control": {
+      "60": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      },
+      "72": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      },
+      "84": {
+        "intersection_usable_for_cst": [
+          1302,
+          1303
+        ],
+        "phase15_transport_descriptor_seeds": [
+          1301,
+          1302,
+          1303
+        ],
+        "phase18_shell_ordering_seeds": [
+          1302,
+          1303
+        ]
+      }
+    }
+  },
+  "bootstrap_policy": "uncertainty_only_not_independent_evidence",
+  "minimum_independent_seed_count": 4,
+  "minimum_target_target_pair_count": 6,
+  "power_gate_pass": false,
+  "power_target": 0.8,
+  "seed_count_pass": false,
+  "status": "UNDERPOWERED",
+  "target_pair_count_pass": false,
+  "valid_independent_seed_intersection": [
+    1302,
+    1303
+  ]
+}

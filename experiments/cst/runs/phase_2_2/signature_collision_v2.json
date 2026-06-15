@@ -1,0 +1,229 @@
+{
+  "allowed_fine_duplicate_groups": [
+    {
+      "control_groups": [
+        "seed_repeat_control",
+        "target"
+      ],
+      "fine_signature_record_id": "fine_0959122ab3c20ff1c3973a7c",
+      "member_count": 2,
+      "observation_ids": [
+        "obs_0fcedd9b2f9a3aa20b670c73",
+        "obs_51e42fc425ae78b1ee7af39b"
+      ],
+      "reason": "known positive replay may duplicate the fine structure"
+    },
+    {
+      "control_groups": [
+        "seed_repeat_control",
+        "target"
+      ],
+      "fine_signature_record_id": "fine_364423d2381a73cff1ec327d",
+      "member_count": 2,
+      "observation_ids": [
+        "obs_1a5fe18454a72c010723b68e",
+        "obs_c98395e710971fedc66d00d0"
+      ],
+      "reason": "known positive replay may duplicate the fine structure"
+    },
+    {
+      "control_groups": [
+        "seed_repeat_control",
+        "target"
+      ],
+      "fine_signature_record_id": "fine_4b0ca74bc2c1ddd1a54eb78d",
+      "member_count": 2,
+      "observation_ids": [
+        "obs_8e2a3670273441ac539de39a",
+        "obs_5ec62844266841696ce178fd"
+      ],
+      "reason": "known positive replay may duplicate the fine structure"
+    },
+    {
+      "control_groups": [
+        "seed_repeat_control",
+        "target"
+      ],
+      "fine_signature_record_id": "fine_8920dfa0b64d3898f63ca565",
+      "member_count": 2,
+      "observation_ids": [
+        "obs_423d19db444cd1e59704599b",
+        "obs_0671155ca4337bbcd909bca9"
+      ],
+      "reason": "known positive replay may duplicate the fine structure"
+    },
+    {
+      "control_groups": [
+        "seed_repeat_control",
+        "target"
+      ],
+      "fine_signature_record_id": "fine_ec3419252d4d2ddae46b3575",
+      "member_count": 2,
+      "observation_ids": [
+        "obs_4b796329fed4f21f3f9c32db",
+        "obs_7687d4f371adaea32ce9d90f"
+      ],
+      "reason": "known positive replay may duplicate the fine structure"
+    },
+    {
+      "control_groups": [
+        "seed_repeat_control",
+        "target"
+      ],
+      "fine_signature_record_id": "fine_f3e90a8d37b673355482ed97",
+      "member_count": 2,
+      "observation_ids": [
+        "obs_15dfea45916d6869fc8b2e34",
+        "obs_cf418539cfddbfa109a08130"
+      ],
+      "reason": "known positive replay may duplicate the fine structure"
+    }
+  ],
+  "coarse_collision_count": 17,
+  "coarse_collisions": [
+    {
+      "coarse_signature_id": "bsig_1095c101d561009a130e1133",
+      "control_groups": [
+        "degraded_signal_control"
+      ],
+      "member_count": 3,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_1364358a857deba241e04538",
+      "control_groups": [
+        "periodic_diagonal_augmented_control"
+      ],
+      "member_count": 2,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_3b1c1a5f56bb03b20611587b",
+      "control_groups": [
+        "randomized_edge_control"
+      ],
+      "member_count": 6,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_3ef2735f024010fb9e76a723",
+      "control_groups": [
+        "phase_2_2_address_control"
+      ],
+      "member_count": 3,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_522fd88b55abb4ed503d17eb",
+      "control_groups": [
+        "phase_2_2_temporal_control"
+      ],
+      "member_count": 3,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_53d374d66c9dffe0861a6d49",
+      "control_groups": [
+        "periodic_diagonal_augmented_control",
+        "phase_2_2_invariant_control",
+        "phase_2_2_spectral_control",
+        "seed_repeat_control",
+        "target"
+      ],
+      "member_count": 26,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_76bb4748c9a9fee8501a12df",
+      "control_groups": [
+        "phase_2_2_structural_control"
+      ],
+      "member_count": 3,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_76bf594f447cab7bedd3f8eb",
+      "control_groups": [
+        "phase_2_2_structural_control"
+      ],
+      "member_count": 3,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_793bb0a29a9abfe233b6d670",
+      "control_groups": [
+        "generic_graph_operator_control"
+      ],
+      "member_count": 6,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_8527b27b7d47cca4b9594df9",
+      "control_groups": [
+        "degraded_signal_control"
+      ],
+      "member_count": 2,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_8e7a52f1a727043c61e5d5c2",
+      "control_groups": [
+        "label_permutation_control"
+      ],
+      "member_count": 6,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_97c89745f8cd4ab24e3bceb2",
+      "control_groups": [
+        "phase_2_2_temporal_control"
+      ],
+      "member_count": 2,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_bb01a7c1d0ca9b191d52310d",
+      "control_groups": [
+        "shuffled_structure_control"
+      ],
+      "member_count": 6,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_bbd32550e814a76fb18bf146",
+      "control_groups": [
+        "phase_2_2_address_control"
+      ],
+      "member_count": 2,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_c70af5951ff4d9712678a20b",
+      "control_groups": [
+        "periodic_diagonal_augmented_control"
+      ],
+      "member_count": 2,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_cae8d6c13802d7def2706346",
+      "control_groups": [
+        "phase_2_2_causal_control"
+      ],
+      "member_count": 6,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    },
+    {
+      "coarse_signature_id": "bsig_f61a89a0172a79f5d96cd71c",
+      "control_groups": [
+        "parameter_matched_null_control"
+      ],
+      "member_count": 6,
+      "policy": "coarse hash is grouping only; not an equivalence decision"
+    }
+  ],
+  "fine_duplicate_count": 6,
+  "hash_policy": "fine_signature_record_id names the inspectable record; equivalence remains distance-based",
+  "unexplained_fine_collision_count": 0,
+  "unexplained_fine_collisions": []
+}

@@ -1,0 +1,10 @@
+control_label,availability,role,count,mean_distance,std_distance,min_distance,max_distance,reason
+degraded_signal_control,available,negative,6,0.3119099156429053,2.2505594933674193e-05,0.31188212365230833,0.3119372450535912,
+generic_graph_operator_control,available,negative,6,0.3510241301907968,0.0007936103043620025,0.3504629629629629,0.3521464646464646,
+label_permutation_control,available,negative,6,0.21688034188034186,0.0,0.21688034188034186,0.21688034188034186,
+parameter_matched_null_control,available,negative,6,0.6057334374508564,1.3361679562082343e-05,0.6057168692129606,0.6057495906130023,
+periodic_diagonal_augmented_control,available,negative,6,0.18106246902493803,0.0673693050076225,0.09232935876881923,0.2797172465318439,
+randomized_edge_control,available,negative,6,0.17457912457912458,0.004637556228441768,0.17182539682539683,0.18488455988455987,
+shuffled_structure_control,available,negative,6,0.16333573833573833,0.004067459206501924,0.15793650793650793,0.16702741702741702,
+seed_repeat_control,available,invariance,6,0.0,0.0,0.0,0.0,
+perturbation_free_control,unavailable,unavailable,0,,,,,not present in frozen Phase 15-18 artifact slice

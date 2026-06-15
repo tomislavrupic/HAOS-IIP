@@ -1,0 +1,149 @@
+{
+  "benchmark_label": "cst_toy_bias_onset_phase18_native",
+  "candidate_label": "dominant_closure_domain",
+  "config_version": "cst-toy-v0.1",
+  "controls": [
+    {
+      "label": "periodic_diagonal_augmented_control",
+      "role": "negative",
+      "source": "frozen_artifact"
+    },
+    {
+      "label": "shuffled_structure_control",
+      "role": "negative",
+      "source": "derived_signature_transform"
+    },
+    {
+      "label": "randomized_edge_control",
+      "role": "negative",
+      "source": "derived_signature_transform"
+    },
+    {
+      "label": "degraded_signal_control",
+      "role": "negative",
+      "source": "derived_signature_transform"
+    },
+    {
+      "label": "label_permutation_control",
+      "role": "negative",
+      "source": "derived_signature_transform"
+    },
+    {
+      "label": "generic_graph_operator_control",
+      "role": "negative",
+      "source": "derived_signature_transform"
+    },
+    {
+      "label": "perturbation_free_control",
+      "role": "unavailable",
+      "source": "not_present_in_frozen_slice"
+    },
+    {
+      "label": "seed_repeat_control",
+      "role": "invariance",
+      "source": "derived_signature_transform"
+    },
+    {
+      "label": "parameter_matched_null_control",
+      "role": "negative",
+      "source": "derived_signature_transform"
+    }
+  ],
+  "distance": {
+    "enabled_components": [
+      "d_inv",
+      "d_struct",
+      "d_spec",
+      "d_causal",
+      "d_time",
+      "d_addr"
+    ],
+    "scalar_enabled": true,
+    "weights": {
+      "d_addr": 1.0,
+      "d_causal": 1.0,
+      "d_inv": 1.0,
+      "d_spec": 1.0,
+      "d_struct": 1.0,
+      "d_time": 1.0
+    },
+    "weight_families": {
+      "causal_heavy": {
+        "d_addr": 1.0,
+        "d_causal": 3.0,
+        "d_inv": 1.0,
+        "d_spec": 1.0,
+        "d_struct": 1.0,
+        "d_time": 1.0
+      },
+      "equal": {
+        "d_addr": 1.0,
+        "d_causal": 1.0,
+        "d_inv": 1.0,
+        "d_spec": 1.0,
+        "d_struct": 1.0,
+        "d_time": 1.0
+      },
+      "invariant_heavy": {
+        "d_addr": 1.0,
+        "d_causal": 1.0,
+        "d_inv": 3.0,
+        "d_spec": 1.0,
+        "d_struct": 1.0,
+        "d_time": 1.0
+      },
+      "spectral_heavy": {
+        "d_addr": 1.0,
+        "d_causal": 1.0,
+        "d_inv": 1.0,
+        "d_spec": 3.0,
+        "d_struct": 1.0,
+        "d_time": 1.0
+      }
+    }
+  },
+  "ensemble_size": 7,
+  "hierarchies": {
+    "control": "periodic_diagonal_augmented_control",
+    "target": "frozen_branch"
+  },
+  "n_sides": [
+    60,
+    72,
+    84
+  ],
+  "probe": "bias_onset",
+  "scalar_compression": {
+    "enabled": true,
+    "mode": "optional"
+  },
+  "seeds": [
+    1303,
+    1302
+  ],
+  "selectivity": {
+    "default_epsilon": 1e-06,
+    "enabled": true,
+    "epsilon_sensitivity": [
+      1e-09,
+      1e-06,
+      0.001
+    ]
+  },
+  "signature": {
+    "dominant_prefix_length": 2,
+    "float_precision": 6,
+    "low_mode_quantum": 0.1,
+    "order_compatibility_quantum": 0.05,
+    "signature_version": "cst-closure-signature-v0.1"
+  },
+  "thresholds": {
+    "ablation_balance_min": 1.0,
+    "branch_identity_persistence_min": 1.0,
+    "closure_distance_max": 0.35,
+    "control_margin_min": 0.05,
+    "max_component_dominance": 0.65,
+    "min_seed_count_for_pass": 3,
+    "target_distance_std_max": 0.08
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "perturbation_free_baseline": {
+    "control_class": "perturbation_free_baseline",
+    "control_purpose": "Use a matched unperturbed frozen run if available.",
+    "destroyed_target_structure": [],
+    "expected_affected_metrics": [],
+    "expected_unaffected_metrics": [
+      "all"
+    ],
+    "implementation_provenance": "not generated from synthetic transform",
+    "invalidation_condition": "Unavailable unless a valid frozen matched unperturbed artifact exists.",
+    "preserved_confounds": [
+      "all matched metadata"
+    ]
+  },
+  "phase_2_2_address_control": {
+    "control_class": "address",
+    "control_purpose": "Preserve coarse spectral summaries while destroying stable address correspondence.",
+    "destroyed_target_structure": [
+      "dominant address prefix",
+      "address-depth correspondence"
+    ],
+    "expected_affected_metrics": [
+      "d_addr"
+    ],
+    "expected_unaffected_metrics": [
+      "d_inv",
+      "d_spec",
+      "d_causal",
+      "d_time"
+    ],
+    "implementation_provenance": "deterministic address-summary prefix rotation; source artifacts unchanged",
+    "invalidation_condition": "Invalid if d_addr does not increase or spectral/invariant/temporal summaries shift substantially.",
+    "preserved_confounds": [
+      "spectral summaries",
+      "invariant summaries",
+      "graph size"
+    ]
+  },
+  "phase_2_2_causal_control": {
+    "control_class": "causal",
+    "control_purpose": "Preserve event counts and label frequencies while destroying influence ordering and causal dependencies.",
+    "destroyed_target_structure": [
+      "causal depth profile",
+      "acyclicity",
+      "order compatibility",
+      "mismatch relationship"
+    ],
+    "expected_affected_metrics": [
+      "d_causal",
+      "d_addr"
+    ],
+    "expected_unaffected_metrics": [
+      "d_inv",
+      "d_spec",
+      "d_time"
+    ],
+    "implementation_provenance": "deterministic causal-depth and compatibility perturbation inside causal_summary",
+    "invalidation_condition": "Invalid if d_causal does not increase or non-causal metrics shift substantially.",
+    "preserved_confounds": [
+      "event labels",
+      "event count",
+      "event-time marginals",
+      "invariant summaries",
+      "spectral summaries"
+    ]
+  },
+  "phase_2_2_invariant_control": {
+    "control_class": "invariant",
+    "control_purpose": "Preserve labels and marginal descriptor values while destroying invariant field relationships.",
+    "destroyed_target_structure": [
+      "invariant field-to-role relationships"
+    ],
+    "expected_affected_metrics": [
+      "d_inv"
+    ],
+    "expected_unaffected_metrics": [
+      "d_struct",
+      "d_time",
+      "d_addr"
+    ],
+    "implementation_provenance": "deterministic field rotation within invariant_summary; no source artifacts modified",
+    "invalidation_condition": "Invalid if d_inv does not increase by the predeclared minimum or expected unaffected metrics shift beyond tolerance.",
+    "preserved_confounds": [
+      "event labels",
+      "event-chain length",
+      "event-time values",
+      "structural edge counts"
+    ]
+  },
+  "phase_2_2_spectral_control": {
+    "control_class": "spectral",
+    "control_purpose": "Preserve graph size and density while destroying low-mode alignment.",
+    "destroyed_target_structure": [
+      "low-mode descriptor alignment"
+    ],
+    "expected_affected_metrics": [
+      "d_spec"
+    ],
+    "expected_unaffected_metrics": [
+      "d_struct",
+      "d_causal",
+      "d_time",
+      "d_addr"
+    ],
+    "implementation_provenance": "deterministic low-mode complement transform inside spectral_low_mode_summary only",
+    "invalidation_condition": "Invalid if d_spec does not increase or non-spectral components shift substantially.",
+    "preserved_confounds": [
+      "event labels",
+      "event-chain length",
+      "edge count",
+      "causal summaries"
+    ]
+  },
+  "phase_2_2_structural_control": {
+    "control_class": "structural",
+    "control_purpose": "Preserve node and edge counts while destroying recovered transition topology.",
+    "destroyed_target_structure": [
+      "transition topology",
+      "branch organization"
+    ],
+    "expected_affected_metrics": [
+      "d_struct",
+      "d_time"
+    ],
+    "expected_unaffected_metrics": [
+      "d_inv",
+      "d_spec",
+      "d_causal"
+    ],
+    "implementation_provenance": "deterministic chain rotation preserving event multiset and count",
+    "invalidation_condition": "Invalid if d_struct does not increase or invariant/spectral/causal metrics shift substantially.",
+    "preserved_confounds": [
+      "event labels",
+      "event count",
+      "edge count",
+      "degree-sequence proxy",
+      "invariant summaries"
+    ]
+  },
+  "phase_2_2_temporal_control": {
+    "control_class": "temporal",
+    "control_purpose": "Preserve event-time marginals and counts while destroying sequence and transition structure.",
+    "destroyed_target_structure": [
+      "event ordering",
+      "transition dependencies",
+      "causal sequence"
+    ],
+    "expected_affected_metrics": [
+      "d_time",
+      "d_struct",
+      "d_addr"
+    ],
+    "expected_unaffected_metrics": [
+      "d_inv",
+      "d_spec"
+    ],
+    "implementation_provenance": "deterministic sequence reversal with original event-time multiset retained",
+    "invalidation_condition": "Invalid if temporal ordering survives or invariant/spectral summaries shift substantially.",
+    "preserved_confounds": [
+      "event count",
+      "event-time marginal distribution",
+      "label frequencies",
+      "invariant summaries",
+      "spectral summaries"
+    ]
+  }
+}

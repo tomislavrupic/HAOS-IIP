@@ -1,0 +1,55 @@
+{
+  "benchmark_label": "cst_toy_bias_onset_phase18_native",
+  "config_hash": "cfg_ae60137b969b5b8415087924",
+  "n_sides": [
+    60,
+    72,
+    84
+  ],
+  "seeds": [
+    1303,
+    1302
+  ],
+  "source_artifact_hashes": {
+    "phase15_effective_speed": "f30290444cd6bea1eb18fb49b9e4667c083e72b1217e9cfad0d61bb9092941f9",
+    "phase15_influence_range": "1f50005be086c7428096880b36c3cca93129522b90b967dbeeca165f27236def",
+    "phase15_propagation": "2c5e18464ea770695043a81b5f827bdfc8d5c85f52d789446ada7f8d168add32",
+    "phase15_transport_descriptor": "c0477b68eebdfb3699b1c67e1fa496887a7df543f65c1af389345955d30e23cd",
+    "phase16_event_ordering": "50d552dba2487dc256d3c6856d5671d26abcfae3b8ad69651c9dbcf131a5e67b",
+    "phase16_front_arrival_ordering": "bdb76ab1ea790c15758b0929b34e07fb60e163fdd4239877dbcdbd3287338dfb",
+    "phase16_ordering_robustness": "79e793214dced8c15a3131f6c16865ba65030171de562ec3a060a9357b9733b2",
+    "phase17_causal_distance_metrics": "8c7ba0a76e8f1e7cb960cd212c0bcba2c02a135365388d01050a7631c8e8ca2a",
+    "phase17_dag_statistics": "5d732bee499a9d47d291fbd64c59e05488decb4d2a2ea020caafa50f4e1aad12",
+    "phase17_influence_graph": "ab4bc04fbac1605898e1a08385dbc5621d7c923320fb9a0c841a623808c7d9b1",
+    "phase17_propagation_order_compatibility": "be2602584a2394b5e8bf354c8f5a12bfb41d3aceb8340cac55e0d05108a36c85",
+    "phase18_distance_surrogate": "dc81981ef3db4f11ea4035c9b58482df01a2ed671026d3186229d915b83fac32",
+    "phase18_refinement_scaling": "ce99e85e365bd8d526b06914db469e0d85237e1a3e66d752c47823f84206e252",
+    "phase18_shell_ordering_metrics": "155f7b3354c733ce7836613560b0d8e6c13a303c1fa5b2532e286256c9f437e3",
+    "phase18_triangle_violation_rate": "8de02b1f5dc0c2832a6e18187a1613c599573ee6e0490a98c22abeb9c81f7d30"
+  },
+  "source_artifacts": {
+    "phase15_effective_speed": "phase15-propagation/runs/phase15_effective_speed_ledger.csv",
+    "phase15_influence_range": "phase15-propagation/runs/phase15_influence_range_ledger.csv",
+    "phase15_propagation": "phase15-propagation/runs/phase15_propagation_ledger.csv",
+    "phase15_transport_descriptor": "phase15-propagation/runs/phase15_transport_descriptor_ledger.csv",
+    "phase16_event_ordering": "phase16-temporal-ordering/runs/phase16_event_ordering_ledger.csv",
+    "phase16_front_arrival_ordering": "phase16-temporal-ordering/runs/phase16_front_arrival_ordering.csv",
+    "phase16_ordering_robustness": "phase16-temporal-ordering/runs/phase16_ordering_robustness.csv",
+    "phase17_causal_distance_metrics": "phase17-causal-closure/runs/phase17_causal_distance_metrics.csv",
+    "phase17_dag_statistics": "phase17-causal-closure/runs/phase17_dag_statistics.csv",
+    "phase17_influence_graph": "phase17-causal-closure/runs/phase17_influence_graph_ledger.csv",
+    "phase17_propagation_order_compatibility": "phase17-causal-closure/runs/phase17_propagation_order_compatibility.csv",
+    "phase18_distance_surrogate": "phase18-distance-surrogate/runs/phase18_distance_surrogate_ledger.csv",
+    "phase18_refinement_scaling": "phase18-distance-surrogate/runs/phase18_refinement_scaling.csv",
+    "phase18_shell_ordering_metrics": "phase18-distance-surrogate/runs/phase18_shell_ordering_metrics.csv",
+    "phase18_triangle_violation_rate": "phase18-distance-surrogate/runs/phase18_triangle_violation_rate.csv"
+  },
+  "target_run_instance_ids": {
+    "n60_seed1302": "run_641409fc9cc72b2f94bc1a52",
+    "n60_seed1303": "run_5bdd83334523d25cdd6e027b",
+    "n72_seed1302": "run_cadc80040e9f3d91e4538a52",
+    "n72_seed1303": "run_1181a7f8a1fe03b90853f766",
+    "n84_seed1302": "run_f6e5bb4faec2c74565ba520f",
+    "n84_seed1303": "run_0c991e7d0a1cca9fe725b1e5"
+  }
+}

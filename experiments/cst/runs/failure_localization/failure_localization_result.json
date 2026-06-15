@@ -1,0 +1,265 @@
+{
+  "benchmark_result_hash": "cst_result_7ff2cde2ba1264027997629a",
+  "benchmark_verdict": "FAIL",
+  "control_integrity_summary": {
+    "degraded_signal_control": {
+      "label_specific_leakage": "high",
+      "mean_label_jaccard": 1.0,
+      "pair_count": 6,
+      "preservation_rates": {
+        "causal_depth": 1.0,
+        "degree_distribution": 1.0,
+        "event_chain_length": 1.0,
+        "invariant_marginals": 0.0,
+        "shell_ordering": 0.0,
+        "spectral_density_proxy": 0.0
+      },
+      "validity_note": "component-specific validity only; preserves some tested signal"
+    },
+    "generic_graph_operator_control": {
+      "label_specific_leakage": "low",
+      "mean_label_jaccard": 0.0,
+      "pair_count": 6,
+      "preservation_rates": {
+        "causal_depth": 0.0,
+        "degree_distribution": 0.0,
+        "event_chain_length": 0.0,
+        "invariant_marginals": 1.0,
+        "shell_ordering": 1.0,
+        "spectral_density_proxy": 1.0
+      },
+      "validity_note": "component-specific validity only; preserves some tested signal"
+    },
+    "label_permutation_control": {
+      "label_specific_leakage": "low",
+      "mean_label_jaccard": 0.0,
+      "pair_count": 6,
+      "preservation_rates": {
+        "causal_depth": 1.0,
+        "degree_distribution": 1.0,
+        "event_chain_length": 1.0,
+        "invariant_marginals": 1.0,
+        "shell_ordering": 1.0,
+        "spectral_density_proxy": 1.0
+      },
+      "validity_note": "component-specific validity only; preserves some tested signal"
+    },
+    "parameter_matched_null_control": {
+      "label_specific_leakage": "low",
+      "mean_label_jaccard": 0.0,
+      "pair_count": 6,
+      "preservation_rates": {
+        "causal_depth": 0.0,
+        "degree_distribution": 0.0,
+        "event_chain_length": 0.0,
+        "invariant_marginals": 0.0,
+        "shell_ordering": 1.0,
+        "spectral_density_proxy": 0.0
+      },
+      "validity_note": "component-specific validity only; preserves some tested signal"
+    },
+    "periodic_diagonal_augmented_control": {
+      "label_specific_leakage": "high",
+      "mean_label_jaccard": 1.0,
+      "pair_count": 6,
+      "preservation_rates": {
+        "causal_depth": 0.3333333333333333,
+        "degree_distribution": 1.0,
+        "event_chain_length": 1.0,
+        "invariant_marginals": 0.0,
+        "shell_ordering": 0.0,
+        "spectral_density_proxy": 0.0
+      },
+      "validity_note": "strongest frozen matched control; still shares benchmark probe, seed grid, and address fields"
+    },
+    "randomized_edge_control": {
+      "label_specific_leakage": "high",
+      "mean_label_jaccard": 1.0,
+      "pair_count": 6,
+      "preservation_rates": {
+        "causal_depth": 1.0,
+        "degree_distribution": 1.0,
+        "event_chain_length": 1.0,
+        "invariant_marginals": 1.0,
+        "shell_ordering": 1.0,
+        "spectral_density_proxy": 1.0
+      },
+      "validity_note": "invalid as a negative control for invariant, spectral, causal-depth, shell-ordering, and label-set-sensitive tests"
+    },
+    "shuffled_structure_control": {
+      "label_specific_leakage": "high",
+      "mean_label_jaccard": 1.0,
+      "pair_count": 6,
+      "preservation_rates": {
+        "causal_depth": 1.0,
+        "degree_distribution": 1.0,
+        "event_chain_length": 1.0,
+        "invariant_marginals": 1.0,
+        "shell_ordering": 1.0,
+        "spectral_density_proxy": 1.0
+      },
+      "validity_note": "invalid as a negative control for invariant, spectral, causal-depth, shell-ordering, and label-set-sensitive tests"
+    }
+  },
+  "labels": [
+    "TARGET NOT DISTINCT",
+    "METRIC INSUFFICIENT",
+    "CONTROL INVALID",
+    "UNDERPOWERED",
+    "MIXED / OPEN"
+  ],
+  "null_expectation": {
+    "H0": "The target branch is no more recoverable than matched controls under the current signature and perturbation suite.",
+    "decision": "fails_to_reject_H0",
+    "focus_control_component_failures": [
+      {
+        "component": "d_inv",
+        "control_family": "periodic_diagonal_augmented_control",
+        "target_control_mean": 0.16693897648966008,
+        "target_mean": 0.2857688283663579
+      },
+      {
+        "component": "d_inv",
+        "control_family": "randomized_edge_control",
+        "target_control_mean": 0.0,
+        "target_mean": 0.2857688283663579
+      },
+      {
+        "component": "d_inv",
+        "control_family": "shuffled_structure_control",
+        "target_control_mean": 0.0,
+        "target_mean": 0.2857688283663579
+      },
+      {
+        "component": "d_struct",
+        "control_family": "periodic_diagonal_augmented_control",
+        "target_control_mean": 0.23459595959595958,
+        "target_mean": 0.37373737373737376
+      },
+      {
+        "component": "d_spec",
+        "control_family": "periodic_diagonal_augmented_control",
+        "target_control_mean": 0.35123753516850637,
+        "target_mean": 0.4345174733573122
+      },
+      {
+        "component": "d_spec",
+        "control_family": "randomized_edge_control",
+        "target_control_mean": 0.0,
+        "target_mean": 0.4345174733573122
+      },
+      {
+        "component": "d_spec",
+        "control_family": "shuffled_structure_control",
+        "target_control_mean": 0.0,
+        "target_mean": 0.4345174733573122
+      },
+      {
+        "component": "d_causal",
+        "control_family": "randomized_edge_control",
+        "target_control_mean": 0.0,
+        "target_mean": 0.0
+      },
+      {
+        "component": "d_causal",
+        "control_family": "shuffled_structure_control",
+        "target_control_mean": 0.0,
+        "target_mean": 0.0
+      },
+      {
+        "component": "d_time",
+        "control_family": "periodic_diagonal_augmented_control",
+        "target_control_mean": 0.046768707482993194,
+        "target_mean": 0.16439910430839003
+      }
+    ],
+    "reason": "Several focus control/component distributions are as close or closer than target-target; configured sample size is small. This is not proof of equivalence.",
+    "underpowered": true
+  },
+  "outputs": {
+    "ablation_matrix": "experiments/cst/runs/failure_localization/ablation_matrix.csv",
+    "component_separation": "experiments/cst/runs/failure_localization/component_separation.csv",
+    "control_integrity_report": "experiments/cst/runs/failure_localization/control_integrity_report.md",
+    "failure_localization_report": "experiments/cst/runs/failure_localization/failure_localization_report.md",
+    "failure_localization_result": "experiments/cst/runs/failure_localization/failure_localization_result.json",
+    "normalization_audit": "experiments/cst/runs/failure_localization/normalization_audit.csv",
+    "seed_power_analysis": "experiments/cst/runs/failure_localization/seed_power_analysis.json",
+    "signature_collision_report": "experiments/cst/runs/failure_localization/signature_collision_report.json",
+    "timing_ablation": "experiments/cst/runs/failure_localization/timing_ablation.csv"
+  },
+  "seed_power_summary": {
+    "actual_focus_target_control_pair_counts": {
+      "periodic_diagonal_augmented_control": 6,
+      "randomized_edge_control": 6,
+      "shuffled_structure_control": 6
+    },
+    "actual_target_target_pair_count": 3,
+    "configured_seed_count": 2
+  },
+  "signature_collision_summary": {
+    "collision_count": 10,
+    "equivalent_target_runs_match_across_seeds": true,
+    "low_mode_band_in_address_summary": false
+  },
+  "timing_summary": {
+    "direct_observed_timing_only": {
+      "enabled_components": [
+        "d_inv",
+        "d_struct",
+        "d_spec",
+        "d_causal",
+        "d_time",
+        "d_addr"
+      ],
+      "focus_control_mean": 0.17263551071588729,
+      "reasons": [
+        "pooled controls equal or beat target",
+        "periodic_diagonal_augmented_control equals or beats target",
+        "randomized_edge_control equals or beats target",
+        "shuffled_structure_control equals or beats target",
+        "seed count below configured PASS minimum"
+      ],
+      "target_mean": 0.21959477924350726,
+      "verdict": "FAIL"
+    },
+    "interpolated_non_front_times": {
+      "enabled_components": [
+        "d_inv",
+        "d_struct",
+        "d_spec",
+        "d_causal",
+        "d_time",
+        "d_addr"
+      ],
+      "focus_control_mean": 0.17299244397993363,
+      "reasons": [
+        "pooled controls equal or beat target",
+        "periodic_diagonal_augmented_control equals or beats target",
+        "randomized_edge_control equals or beats target",
+        "shuffled_structure_control equals or beats target",
+        "seed count below configured PASS minimum"
+      ],
+      "target_mean": 0.20973712996157232,
+      "verdict": "FAIL"
+    },
+    "temporal_component_disabled": {
+      "enabled_components": [
+        "d_inv",
+        "d_struct",
+        "d_spec",
+        "d_causal",
+        "d_addr"
+      ],
+      "focus_control_mean": 0.17748889195959386,
+      "reasons": [
+        "pooled controls equal or beat target",
+        "periodic_diagonal_augmented_control equals or beats target",
+        "randomized_edge_control equals or beats target",
+        "shuffled_structure_control equals or beats target",
+        "seed count below configured PASS minimum"
+      ],
+      "target_mean": 0.2188047350922088,
+      "verdict": "FAIL"
+    }
+  }
+}

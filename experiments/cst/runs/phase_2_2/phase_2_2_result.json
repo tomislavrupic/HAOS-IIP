@@ -1,0 +1,181 @@
+{
+  "benchmark_result_hash": "cst_result_aec013206043e8e96600f709",
+  "component_control_invalid_count": 0,
+  "component_separation_summary": {
+    "d_addr": {
+      "periodic_diagonal_augmented_control": {
+        "cohen_d_control_minus_target": 2.0,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.16666666666666666,
+        "target_mean": 0.0,
+        "target_outperforms": true
+      },
+      "randomized_edge_control": {
+        "cohen_d_control_minus_target": "Infinity",
+        "cohen_d_is_infinite": true,
+        "target_control_mean": 0.4166666666666667,
+        "target_mean": 0.0,
+        "target_outperforms": true
+      },
+      "shuffled_structure_control": {
+        "cohen_d_control_minus_target": "Infinity",
+        "cohen_d_is_infinite": true,
+        "target_control_mean": 0.3333333333333333,
+        "target_mean": 0.0,
+        "target_outperforms": true
+      }
+    },
+    "d_causal": {
+      "periodic_diagonal_augmented_control": {
+        "cohen_d_control_minus_target": 2.81047252987032,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.12016696874584237,
+        "target_mean": 0.0,
+        "target_outperforms": true
+      },
+      "randomized_edge_control": {
+        "cohen_d_control_minus_target": 0.0,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.0,
+        "target_mean": 0.0,
+        "target_outperforms": false
+      },
+      "shuffled_structure_control": {
+        "cohen_d_control_minus_target": 0.0,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.0,
+        "target_mean": 0.0,
+        "target_outperforms": false
+      }
+    },
+    "d_inv": {
+      "periodic_diagonal_augmented_control": {
+        "cohen_d_control_minus_target": -1.159481326687757,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.16693897648966008,
+        "target_mean": 0.2857688283663579,
+        "target_outperforms": false
+      },
+      "randomized_edge_control": {
+        "cohen_d_control_minus_target": -5.933063835645317,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.0,
+        "target_mean": 0.2857688283663579,
+        "target_outperforms": false
+      },
+      "shuffled_structure_control": {
+        "cohen_d_control_minus_target": -5.933063835645317,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.0,
+        "target_mean": 0.2857688283663579,
+        "target_outperforms": false
+      }
+    },
+    "d_spec": {
+      "periodic_diagonal_augmented_control": {
+        "cohen_d_control_minus_target": -0.5475219737908669,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.35123753516850637,
+        "target_mean": 0.4345174733573122,
+        "target_outperforms": false
+      },
+      "randomized_edge_control": {
+        "cohen_d_control_minus_target": -18.11718177803829,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.0,
+        "target_mean": 0.4345174733573122,
+        "target_outperforms": false
+      },
+      "shuffled_structure_control": {
+        "cohen_d_control_minus_target": -18.11718177803829,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.0,
+        "target_mean": 0.4345174733573122,
+        "target_outperforms": false
+      }
+    },
+    "d_struct": {
+      "periodic_diagonal_augmented_control": {
+        "cohen_d_control_minus_target": -0.9556378203261015,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.23459595959595958,
+        "target_mean": 0.37373737373737376,
+        "target_outperforms": false
+      },
+      "randomized_edge_control": {
+        "cohen_d_control_minus_target": 1.4134783330214147,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.43636363636363634,
+        "target_mean": 0.37373737373737376,
+        "target_outperforms": true
+      },
+      "shuffled_structure_control": {
+        "cohen_d_control_minus_target": 1.4134783330214147,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.43636363636363634,
+        "target_mean": 0.37373737373737376,
+        "target_outperforms": true
+      }
+    },
+    "d_time": {
+      "periodic_diagonal_augmented_control": {
+        "cohen_d_control_minus_target": -2.9021283192767457,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.046768707482993194,
+        "target_mean": 0.16439910430839003,
+        "target_outperforms": false
+      },
+      "randomized_edge_control": {
+        "cohen_d_control_minus_target": 1.3934767380778814,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.19444444444444442,
+        "target_mean": 0.16439910430839003,
+        "target_outperforms": true
+      },
+      "shuffled_structure_control": {
+        "cohen_d_control_minus_target": 4.923927493319892,
+        "cohen_d_is_infinite": false,
+        "target_control_mean": 0.21031746031746032,
+        "target_mean": 0.16439910430839003,
+        "target_outperforms": true
+      }
+    }
+  },
+  "contract_hash": "contract_993c8df30a26ee0ee8414439",
+  "labels": [
+    "INSTRUMENT PARTIALLY DISCRIMINATIVE",
+    "UNDERPOWERED",
+    "TARGET NOT DISTINCT",
+    "MIXED / OPEN"
+  ],
+  "official_mode": "strict",
+  "official_scalar_enabled": false,
+  "outputs": {
+    "component_control_validation": "experiments/cst/runs/phase_2_2/component_control_validation.csv",
+    "control_contracts": "experiments/cst/runs/phase_2_2/control_contracts.json",
+    "discriminative_validity_report": "experiments/cst/runs/phase_2_2/discriminative_validity_report.md",
+    "equivalence_results": "experiments/cst/runs/phase_2_2/equivalence_results.csv",
+    "equivalence_tolerances": "experiments/cst/runs/phase_2_2/equivalence_tolerances.json",
+    "fine_signatures": "experiments/cst/runs/phase_2_2/fine_signatures.json",
+    "phase_2_2_result": "experiments/cst/runs/phase_2_2/phase_2_2_result.json",
+    "power_gate": "experiments/cst/runs/phase_2_2/power_gate.json",
+    "precommitment_contract": "experiments/cst/runs/phase_2_2/precommitment_contract.json",
+    "signature_collision_v2": "experiments/cst/runs/phase_2_2/signature_collision_v2.json",
+    "signature_schema": "experiments/cst/runs/phase_2_2/signature_schema.json"
+  },
+  "power_gate_status": "UNDERPOWERED",
+  "result_hash": "phase_2_2_d6170243c7ff71b585e5129d",
+  "signature_collision_v2": {
+    "coarse_collision_count": 17,
+    "unexplained_fine_collision_count": 0
+  },
+  "target_equivalence": {
+    "strict_focus_controls_all_non_equivalent": false,
+    "strict_target_target_all_equivalent": true
+  },
+  "threshold_boundary_sensitivity": {
+    "boundary_sensitive_pair_count": 31,
+    "epsilon": 0.02,
+    "official_strict_boundary_sensitive_pair_count": 13
+  }
+}

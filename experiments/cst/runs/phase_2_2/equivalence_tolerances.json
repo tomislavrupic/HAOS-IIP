@@ -1,0 +1,34 @@
+{
+  "exploratory": {
+    "minimum_required_available_components": 5,
+    "mode": "exploratory",
+    "partial_signature_policy": "warn_if_minimum_available",
+    "tolerances": {
+      "d_addr": 0.25,
+      "d_causal": 0.2,
+      "d_inv": 0.45,
+      "d_spec": 0.55,
+      "d_struct": 0.55,
+      "d_time": 0.3
+    },
+    "unavailable_component_policy": "warn_and_exclude"
+  },
+  "strict": {
+    "minimum_required_available_components": 6,
+    "mode": "strict",
+    "partial_signature_policy": "fail",
+    "tolerances": {
+      "d_addr": 0.05,
+      "d_causal": 0.1,
+      "d_inv": 0.4,
+      "d_spec": 0.5,
+      "d_struct": 0.5,
+      "d_time": 0.25
+    },
+    "unavailable_component_policy": "fail"
+  },
+  "threshold_boundary_sensitivity": {
+    "epsilon": 0.02,
+    "unstable_if_any_required_component_within_epsilon_of_tolerance": true
+  }
+}

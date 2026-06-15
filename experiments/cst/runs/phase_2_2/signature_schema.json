@@ -1,0 +1,129 @@
+{
+  "causal_summary": {
+    "availability": "required_when_phase17_rows_exist",
+    "contributes_to_equivalence": true,
+    "extraction_method": "copy causal depth, acyclicity, cycle, order-compatibility, and mismatch summaries.",
+    "fields": [
+      "front_depth_profile",
+      "acyclicity_score",
+      "cycle_count",
+      "cycle_edge_count",
+      "mean_causal_depth",
+      "reachable_node_count",
+      "order_compatibility_score",
+      "mismatch_rate"
+    ],
+    "normalization": "front-depth fixed scale plus bounded relative causal-field distances",
+    "semantic_justification": "Closure stability should preserve influence ordering, causal depth, and mismatch structure.",
+    "source_artifact": "phase17_causal_distance_metrics.csv, phase17_dag_statistics.csv, phase17_propagation_order_compatibility.csv"
+  },
+  "invariant_summary": {
+    "availability": "required_when_source_rows_exist",
+    "contributes_to_equivalence": true,
+    "extraction_method": "copy normalized Phase 15 transport descriptors and Phase 18 shell-order score.",
+    "fields": [
+      "terminal_low_k_fraction",
+      "terminal_low_k_power",
+      "transport_character_index",
+      "shell_latency_span",
+      "shell_order_score"
+    ],
+    "normalization": "bounded relative component distances at comparison time",
+    "semantic_justification": "Closure recovery should preserve coarse invariant descriptors under matched perturbation.",
+    "source_artifact": "phase15_transport_descriptor_ledger.csv and phase18_shell_ordering_metrics.csv"
+  },
+  "provenance_metadata": {
+    "availability": "required",
+    "contributes_to_equivalence": false,
+    "extraction_method": "copy observation provenance fields.",
+    "fields": [
+      "observation_id",
+      "run_instance_id",
+      "n_side",
+      "seed",
+      "hierarchy_label",
+      "control_group_label",
+      "source_artifact_hashes"
+    ],
+    "normalization": "not applicable",
+    "semantic_justification": "Provenance must remain inspectable but cannot define closure identity.",
+    "source_artifact": "CST observation metadata and source artifact hashes"
+  },
+  "shell_distance_surrogate_summary": {
+    "availability": "required_when_phase18_rows_exist",
+    "contributes_to_equivalence": false,
+    "extraction_method": "copy shell-ordering metrics and per-shell distance-surrogate rows.",
+    "fields": [
+      "monotonic_shell_ordering",
+      "max_shell_overlap_fraction",
+      "shell_order_score",
+      "near_mean_arrival",
+      "far_mean_arrival",
+      "phase17_mismatch_rate",
+      "per_shell_distance_rows"
+    ],
+    "normalization": "reported raw; selected fields contribute through component distances",
+    "semantic_justification": "Shell-order and distance-surrogate fields are the repository-native closure-distance observables.",
+    "source_artifact": "phase18_shell_ordering_metrics.csv and phase18_distance_surrogate_ledger.csv"
+  },
+  "spectral_summary": {
+    "availability": "required_when_transport_descriptor_exists",
+    "contributes_to_equivalence": true,
+    "extraction_method": "copy low-mode fraction, low-mode power, and terminal fluctuation slope.",
+    "fields": [
+      "terminal_low_k_fraction",
+      "terminal_low_k_power",
+      "terminal_fluctuation_slope",
+      "low_mode_band"
+    ],
+    "normalization": "bounded relative component distances at comparison time",
+    "semantic_justification": "Low-mode descriptors are part of the current closure observable surface.",
+    "source_artifact": "phase15_transport_descriptor_ledger.csv"
+  },
+  "stable_address_summary": {
+    "availability": "required_when_chain_and_causal_rows_exist",
+    "contributes_to_equivalence": true,
+    "extraction_method": "copy dominant prefix, front depth profile, shell monotonicity, and compatibility band.",
+    "fields": [
+      "dominant_chain_prefix",
+      "front_depth_profile",
+      "monotonic_shell_ordering",
+      "order_compatibility_band"
+    ],
+    "normalization": "address prefix/depth distance with explicit floor audit",
+    "semantic_justification": "Address fields provide a compact recovery address but do not alone define identity.",
+    "source_artifact": "derived from closure signature fields"
+  },
+  "structural_graph_summary": {
+    "availability": "required_when_chain_signature_exists",
+    "contributes_to_equivalence": true,
+    "extraction_method": "derive transition edges from chain_signature and copy frozen edge-count summaries.",
+    "fields": [
+      "transition_edges",
+      "degree_sequence",
+      "edge_count",
+      "stable_edge_count",
+      "mean_edge_reproducibility",
+      "chain_length"
+    ],
+    "normalization": "edge-set Jaccard plus bounded count drift",
+    "semantic_justification": "Closure domains are represented by recovered event-transition and influence-edge organization.",
+    "source_artifact": "phase17_influence_graph_ledger.csv and phase18_shell_ordering_metrics.csv"
+  },
+  "temporal_sequence_summary": {
+    "availability": "partial_when_non_front_times_are_interpolated",
+    "contributes_to_equivalence": true,
+    "extraction_method": "record chain_signature, transitions, available event times, and timing-source quality.",
+    "fields": [
+      "chain_signature",
+      "transition_pairs",
+      "event_times",
+      "direct_time_keys",
+      "interpolated_time_keys",
+      "timing_source_quality"
+    ],
+    "normalization": "rank distance plus tau-grid event-time distance; directly observed timing mode is separately auditable",
+    "semantic_justification": "Closure recoverability includes event ordering and recovered timing relations.",
+    "source_artifact": "phase18_shell_ordering_metrics.csv and phase18_distance_surrogate_ledger.csv"
+  }
+}

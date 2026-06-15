@@ -1,0 +1,412 @@
+{
+  "contract_version": "cst-phase-2.2-discriminative-instrument-repair-v0.1",
+  "status": "precommitted_repair_contract",
+  "authorization": "GO_REPAIR_ONLY",
+  "frozen_before_repaired_benchmark_execution": true,
+  "non_goals": [
+    "Do not change frozen phases.",
+    "Do not modify haos_core public APIs.",
+    "Do not tune thresholds after seeing outcomes.",
+    "Do not add fields merely because they separate the target.",
+    "Do not promote CST to an authoritative phase.",
+    "Do not add physics, consciousness, or ontology claims."
+  ],
+  "identity_model": {
+    "run_instance_id": {
+      "purpose": "provenance_only",
+      "may_define_equivalence": false
+    },
+    "coarse_signature_id": {
+      "purpose": "grouping_and_indexing_only",
+      "source": "stable hash of compact address summary",
+      "may_define_equivalence": false
+    },
+    "fine_signature": {
+      "purpose": "inspectable_structural_record",
+      "hidden_authoritative_hash": false,
+      "may_define_equivalence": false
+    },
+    "equivalence": {
+      "purpose": "strict distance-based identity test",
+      "rule": "equivalent(A,B) iff all required available component distances satisfy strict tolerances",
+      "hash_equality_implies_equivalence": false
+    }
+  },
+  "metric_policy": {
+    "authoritative": "component_vector",
+    "scalar_summaries_enabled_by_default": false,
+    "weight_families": "exploratory_only",
+    "official_verdict_may_use_weight_family": false,
+    "non_discriminative_components": "visible_but_not_silently_promoted"
+  },
+  "fine_signature_schema": {
+    "invariant_summary": {
+      "semantic_justification": "Closure recovery should preserve coarse invariant descriptors under matched perturbation.",
+      "source_artifact": "phase15_transport_descriptor_ledger.csv and phase18_shell_ordering_metrics.csv",
+      "extraction_method": "copy normalized Phase 15 transport descriptors and Phase 18 shell-order score.",
+      "normalization": "bounded relative component distances at comparison time",
+      "availability": "required_when_source_rows_exist",
+      "contributes_to_equivalence": true,
+      "fields": [
+        "terminal_low_k_fraction",
+        "terminal_low_k_power",
+        "transport_character_index",
+        "shell_latency_span",
+        "shell_order_score"
+      ]
+    },
+    "structural_graph_summary": {
+      "semantic_justification": "Closure domains are represented by recovered event-transition and influence-edge organization.",
+      "source_artifact": "phase17_influence_graph_ledger.csv and phase18_shell_ordering_metrics.csv",
+      "extraction_method": "derive transition edges from chain_signature and copy frozen edge-count summaries.",
+      "normalization": "edge-set Jaccard plus bounded count drift",
+      "availability": "required_when_chain_signature_exists",
+      "contributes_to_equivalence": true,
+      "fields": [
+        "transition_edges",
+        "degree_sequence",
+        "edge_count",
+        "stable_edge_count",
+        "mean_edge_reproducibility",
+        "chain_length"
+      ]
+    },
+    "spectral_summary": {
+      "semantic_justification": "Low-mode descriptors are part of the current closure observable surface.",
+      "source_artifact": "phase15_transport_descriptor_ledger.csv",
+      "extraction_method": "copy low-mode fraction, low-mode power, and terminal fluctuation slope.",
+      "normalization": "bounded relative component distances at comparison time",
+      "availability": "required_when_transport_descriptor_exists",
+      "contributes_to_equivalence": true,
+      "fields": [
+        "terminal_low_k_fraction",
+        "terminal_low_k_power",
+        "terminal_fluctuation_slope",
+        "low_mode_band"
+      ]
+    },
+    "causal_summary": {
+      "semantic_justification": "Closure stability should preserve influence ordering, causal depth, and mismatch structure.",
+      "source_artifact": "phase17_causal_distance_metrics.csv, phase17_dag_statistics.csv, phase17_propagation_order_compatibility.csv",
+      "extraction_method": "copy causal depth, acyclicity, cycle, order-compatibility, and mismatch summaries.",
+      "normalization": "front-depth fixed scale plus bounded relative causal-field distances",
+      "availability": "required_when_phase17_rows_exist",
+      "contributes_to_equivalence": true,
+      "fields": [
+        "front_depth_profile",
+        "acyclicity_score",
+        "cycle_count",
+        "cycle_edge_count",
+        "mean_causal_depth",
+        "reachable_node_count",
+        "order_compatibility_score",
+        "mismatch_rate"
+      ]
+    },
+    "temporal_sequence_summary": {
+      "semantic_justification": "Closure recoverability includes event ordering and recovered timing relations.",
+      "source_artifact": "phase18_shell_ordering_metrics.csv and phase18_distance_surrogate_ledger.csv",
+      "extraction_method": "record chain_signature, transitions, available event times, and timing-source quality.",
+      "normalization": "rank distance plus tau-grid event-time distance; directly observed timing mode is separately auditable",
+      "availability": "partial_when_non_front_times_are_interpolated",
+      "contributes_to_equivalence": true,
+      "fields": [
+        "chain_signature",
+        "transition_pairs",
+        "event_times",
+        "direct_time_keys",
+        "interpolated_time_keys",
+        "timing_source_quality"
+      ]
+    },
+    "shell_distance_surrogate_summary": {
+      "semantic_justification": "Shell-order and distance-surrogate fields are the repository-native closure-distance observables.",
+      "source_artifact": "phase18_shell_ordering_metrics.csv and phase18_distance_surrogate_ledger.csv",
+      "extraction_method": "copy shell-ordering metrics and per-shell distance-surrogate rows.",
+      "normalization": "reported raw; selected fields contribute through component distances",
+      "availability": "required_when_phase18_rows_exist",
+      "contributes_to_equivalence": false,
+      "fields": [
+        "monotonic_shell_ordering",
+        "max_shell_overlap_fraction",
+        "shell_order_score",
+        "near_mean_arrival",
+        "far_mean_arrival",
+        "phase17_mismatch_rate",
+        "per_shell_distance_rows"
+      ]
+    },
+    "stable_address_summary": {
+      "semantic_justification": "Address fields provide a compact recovery address but do not alone define identity.",
+      "source_artifact": "derived from closure signature fields",
+      "extraction_method": "copy dominant prefix, front depth profile, shell monotonicity, and compatibility band.",
+      "normalization": "address prefix/depth distance with explicit floor audit",
+      "availability": "required_when_chain_and_causal_rows_exist",
+      "contributes_to_equivalence": true,
+      "fields": [
+        "dominant_chain_prefix",
+        "front_depth_profile",
+        "monotonic_shell_ordering",
+        "order_compatibility_band"
+      ]
+    },
+    "provenance_metadata": {
+      "semantic_justification": "Provenance must remain inspectable but cannot define closure identity.",
+      "source_artifact": "CST observation metadata and source artifact hashes",
+      "extraction_method": "copy observation provenance fields.",
+      "normalization": "not applicable",
+      "availability": "required",
+      "contributes_to_equivalence": false,
+      "fields": [
+        "observation_id",
+        "run_instance_id",
+        "n_side",
+        "seed",
+        "hierarchy_label",
+        "control_group_label",
+        "source_artifact_hashes"
+      ]
+    }
+  },
+  "equivalence": {
+    "strict": {
+      "mode": "strict",
+      "minimum_required_available_components": 6,
+      "unavailable_component_policy": "fail",
+      "partial_signature_policy": "fail",
+      "tolerances": {
+        "d_inv": 0.4,
+        "d_struct": 0.5,
+        "d_spec": 0.5,
+        "d_causal": 0.1,
+        "d_time": 0.25,
+        "d_addr": 0.05
+      }
+    },
+    "exploratory": {
+      "mode": "exploratory",
+      "minimum_required_available_components": 5,
+      "unavailable_component_policy": "warn_and_exclude",
+      "partial_signature_policy": "warn_if_minimum_available",
+      "tolerances": {
+        "d_inv": 0.45,
+        "d_struct": 0.55,
+        "d_spec": 0.55,
+        "d_causal": 0.2,
+        "d_time": 0.3,
+        "d_addr": 0.25
+      }
+    },
+    "threshold_boundary_sensitivity": {
+      "epsilon": 0.02,
+      "unstable_if_any_required_component_within_epsilon_of_tolerance": true
+    }
+  },
+  "component_control_validation": {
+    "intended_metric_min_shift_over_target_mean": 0.05,
+    "unaffected_metric_max_shift_over_target_mean": 0.12,
+    "known_positive_control": "seed_repeat_control",
+    "known_negative_controls": [
+      "phase_2_2_invariant_control",
+      "phase_2_2_structural_control",
+      "phase_2_2_spectral_control",
+      "phase_2_2_causal_control",
+      "phase_2_2_temporal_control",
+      "phase_2_2_address_control"
+    ]
+  },
+  "component_control_contracts": {
+    "phase_2_2_invariant_control": {
+      "control_class": "invariant",
+      "control_purpose": "Preserve labels and marginal descriptor values while destroying invariant field relationships.",
+      "preserved_confounds": [
+        "event labels",
+        "event-chain length",
+        "event-time values",
+        "structural edge counts"
+      ],
+      "destroyed_target_structure": [
+        "invariant field-to-role relationships"
+      ],
+      "expected_affected_metrics": [
+        "d_inv"
+      ],
+      "expected_unaffected_metrics": [
+        "d_struct",
+        "d_time",
+        "d_addr"
+      ],
+      "invalidation_condition": "Invalid if d_inv does not increase by the predeclared minimum or expected unaffected metrics shift beyond tolerance.",
+      "implementation_provenance": "deterministic field rotation within invariant_summary; no source artifacts modified"
+    },
+    "phase_2_2_structural_control": {
+      "control_class": "structural",
+      "control_purpose": "Preserve node and edge counts while destroying recovered transition topology.",
+      "preserved_confounds": [
+        "event labels",
+        "event count",
+        "edge count",
+        "degree-sequence proxy",
+        "invariant summaries"
+      ],
+      "destroyed_target_structure": [
+        "transition topology",
+        "branch organization"
+      ],
+      "expected_affected_metrics": [
+        "d_struct",
+        "d_time"
+      ],
+      "expected_unaffected_metrics": [
+        "d_inv",
+        "d_spec",
+        "d_causal"
+      ],
+      "invalidation_condition": "Invalid if d_struct does not increase or invariant/spectral/causal metrics shift substantially.",
+      "implementation_provenance": "deterministic chain rotation preserving event multiset and count"
+    },
+    "phase_2_2_spectral_control": {
+      "control_class": "spectral",
+      "control_purpose": "Preserve graph size and density while destroying low-mode alignment.",
+      "preserved_confounds": [
+        "event labels",
+        "event-chain length",
+        "edge count",
+        "causal summaries"
+      ],
+      "destroyed_target_structure": [
+        "low-mode descriptor alignment"
+      ],
+      "expected_affected_metrics": [
+        "d_spec"
+      ],
+      "expected_unaffected_metrics": [
+        "d_struct",
+        "d_causal",
+        "d_time",
+        "d_addr"
+      ],
+      "invalidation_condition": "Invalid if d_spec does not increase or non-spectral components shift substantially.",
+      "implementation_provenance": "deterministic low-mode complement transform inside spectral_low_mode_summary only"
+    },
+    "phase_2_2_causal_control": {
+      "control_class": "causal",
+      "control_purpose": "Preserve event counts and label frequencies while destroying influence ordering and causal dependencies.",
+      "preserved_confounds": [
+        "event labels",
+        "event count",
+        "event-time marginals",
+        "invariant summaries",
+        "spectral summaries"
+      ],
+      "destroyed_target_structure": [
+        "causal depth profile",
+        "acyclicity",
+        "order compatibility",
+        "mismatch relationship"
+      ],
+      "expected_affected_metrics": [
+        "d_causal",
+        "d_addr"
+      ],
+      "expected_unaffected_metrics": [
+        "d_inv",
+        "d_spec",
+        "d_time"
+      ],
+      "invalidation_condition": "Invalid if d_causal does not increase or non-causal metrics shift substantially.",
+      "implementation_provenance": "deterministic causal-depth and compatibility perturbation inside causal_summary"
+    },
+    "phase_2_2_temporal_control": {
+      "control_class": "temporal",
+      "control_purpose": "Preserve event-time marginals and counts while destroying sequence and transition structure.",
+      "preserved_confounds": [
+        "event count",
+        "event-time marginal distribution",
+        "label frequencies",
+        "invariant summaries",
+        "spectral summaries"
+      ],
+      "destroyed_target_structure": [
+        "event ordering",
+        "transition dependencies",
+        "causal sequence"
+      ],
+      "expected_affected_metrics": [
+        "d_time",
+        "d_struct",
+        "d_addr"
+      ],
+      "expected_unaffected_metrics": [
+        "d_inv",
+        "d_spec"
+      ],
+      "invalidation_condition": "Invalid if temporal ordering survives or invariant/spectral summaries shift substantially.",
+      "implementation_provenance": "deterministic sequence reversal with original event-time multiset retained"
+    },
+    "phase_2_2_address_control": {
+      "control_class": "address",
+      "control_purpose": "Preserve coarse spectral summaries while destroying stable address correspondence.",
+      "preserved_confounds": [
+        "spectral summaries",
+        "invariant summaries",
+        "graph size"
+      ],
+      "destroyed_target_structure": [
+        "dominant address prefix",
+        "address-depth correspondence"
+      ],
+      "expected_affected_metrics": [
+        "d_addr"
+      ],
+      "expected_unaffected_metrics": [
+        "d_inv",
+        "d_spec",
+        "d_causal",
+        "d_time"
+      ],
+      "invalidation_condition": "Invalid if d_addr does not increase or spectral/invariant/temporal summaries shift substantially.",
+      "implementation_provenance": "deterministic address-summary prefix rotation; source artifacts unchanged"
+    },
+    "perturbation_free_baseline": {
+      "control_class": "perturbation_free_baseline",
+      "control_purpose": "Use a matched unperturbed frozen run if available.",
+      "preserved_confounds": [
+        "all matched metadata"
+      ],
+      "destroyed_target_structure": [],
+      "expected_affected_metrics": [],
+      "expected_unaffected_metrics": [
+        "all"
+      ],
+      "invalidation_condition": "Unavailable unless a valid frozen matched unperturbed artifact exists.",
+      "implementation_provenance": "not generated from synthetic transform"
+    }
+  },
+  "power_gate": {
+    "minimum_independent_seed_count": 4,
+    "minimum_target_target_pair_count": 6,
+    "alpha_two_sided": 0.05,
+    "power_target": 0.8,
+    "bootstrap_policy": "uncertainty_only_not_independent_evidence",
+    "underpowered_verdict_required_when_unmet": true
+  },
+  "verdict_logic": {
+    "official_mode": "strict",
+    "instrument_discriminative_requires": [
+      "known positive seed-repeat equivalence passes",
+      "required destructive controls move intended metrics",
+      "expected unaffected metrics remain within tolerance",
+      "fine signatures have no unexplained structural collisions",
+      "power gate passes"
+    ],
+    "target_distinct_requires": [
+      "power gate passes",
+      "target-target strict equivalence passes",
+      "target-focus-control strict equivalence fails for all focus controls",
+      "component separation rejects H0 under predeclared controls"
+    ],
+    "ambiguous_cases": "MIXED / OPEN",
+    "strict_hash_policy": "No hash equality may imply equivalence."
+  }
+}
