@@ -285,6 +285,17 @@ surrogate language rules, limited metric-like tests, coarse-graining recovery,
 failure gates, and v1.1 active lift-cycle templates. Its core boundary is that
 refinement evidence is not continuum proof.
 
+### 2.50 Part L. HBP recovery-benchmark release
+
+1. `67.1` HAOS-IIP HBP Recovery Benchmarks: Temporal Recovery and Cross-Domain Transfer
+
+Bounded status: release `67.1` is a claim-gated HBP companion paper, not a
+new physical bridge claim and not Phase 67 activation. It records the hardened
+PB-03 temporal recovery and PB-04 cross-domain transfer benchmarks, both of
+which remain deterministically negative under the current frozen results. Its
+core boundary is that the benchmark is getting harder before any future win is
+allowed to matter.
+
 ## 3. Full release list
 
 - `00.1` HAOS-IIP Operator Architecture and Low-Spectrum Results

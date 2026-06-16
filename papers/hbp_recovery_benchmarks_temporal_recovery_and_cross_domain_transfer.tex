@@ -1,0 +1,176 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\setlength{\emergencystretch}{3em}
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{\footnotesize HAOS-IIP Release 67.1 -- HBP Recovery Benchmarks}
+\rfoot{\footnotesize \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\labelitemi}{-}
+\renewcommand{\labelitemii}{-}
+
+\title{HAOS-IIP HBP Recovery Benchmarks:\\Harder Temporal Recovery and Cross-Domain Transfer Under Frozen Negative Results}
+\author{Tomislav Rupi\'c \\ Independent Researcher}
+\date{June 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This release records the current HBP recovery-benchmark branch as a numbered paper companion. It is not a new phase, not a new mechanism, and not a physical bridge claim. Its function is to make the benchmark harder to win in places where ordinary graph methods already dominate, while preserving a frozen negative result whenever the evidence does not support a stronger claim.
+
+The main benchmarks are PB-03, Temporal Recovery Under Damage, and PB-04, Cross-Domain Structure Transfer. PB-03 asks whether HAOS-style recovery descriptors can predict future recoverability of a damaged system better than topology-only methods on untouched holdout. PB-04 asks whether the same recoverability structure can transfer across domains without learning domain-specific shortcuts. Both benchmarks are frozen, deterministic, and still negative: after hardening the feature layer and the holdout split discipline, PB-03 remains \texttt{PREDICTION\_NOT\_DISTINCT\_FROM\_BASELINES} with result hash \texttt{pb03\_result\_c989483149438ed29eabc86d}; PB-04 remains \texttt{PREDICTION\_NOT\_DISTINCT\_FROM\_BASELINES} with result hash \texttt{pb04\_result\_7b13bc9285cc288cbfbe46b8}. That outcome is the intended one for this paper: the benchmarks are getting stricter, not prettier.
+\end{abstract}
+
+\section{Status}
+
+This paper is release \texttt{67.1} in the HAOS-IIP numbered paper spine. It is a release companion for the HBP registry and the PB-01 through PB-04 benchmark arc.
+
+It records:
+\begin{itemize}
+\item the frozen HBP bridge registry;
+\item the PB-01 network recovery benchmark and its negative control discipline;
+\item the harder PB-03 temporal recovery benchmark;
+\item the harder PB-04 cross-domain transfer benchmark;
+\item the current negative results and their deterministic hashes;
+\item the explicit boundary that a negative result is not a failure of the instrument.
+\end{itemize}
+
+It is not:
+\begin{itemize}
+\item a new phase activation;
+\item a new physical claim;
+\item a claim that HAOS-IIP predicts recovery better than graph baselines;
+\item a claim that cross-domain transfer has succeeded;
+\item a claim that the current benchmarks are final.
+\end{itemize}
+
+\section{Why This Release Exists}
+
+The HBP program exists to ask a narrower question than the larger physics-facing branches:
+
+\begin{quote}
+Can HAOS-IIP produce a recovery benchmark where a future win would mean something rather than merely matching what topology already gives away?
+\end{quote}
+
+The answer needs to be auditable in both directions. If HAOS wins too easily, the benchmark is too weak. If HAOS loses honestly, the benchmark is doing its job. The present release therefore emphasizes hardening over celebration.
+
+\section{Registry Snapshot}
+
+The HBP registry now contains the bridge program scaffolding, benchmark contracts, tests, and frozen result artifacts. The key constraint is that claim strength is bounded by the evidence already observed.
+
+\begin{longtable}{p{0.18\linewidth}p{0.38\linewidth}p{0.30\linewidth}}
+\toprule
+Bridge & Role & Current status \\
+\midrule
+PB-01 & Network recovery bridge & frozen negative \\
+PB-02 & External network recovery holdout & frozen negative \\
+PB-03 & Temporal recovery under damage & harder negative \\
+PB-04 & Cross-domain structure transfer & harder negative \\
+\bottomrule
+\end{longtable}
+
+\section{PB-03: Temporal Recovery Under Damage}
+
+PB-03 asks whether HAOS can predict future recoverability of a damaged system better than topology-only methods.
+
+The benchmark is intentionally harder than a static graph regression:
+\begin{itemize}
+\item observe a network at \(t_0\);
+\item introduce damage at \(t_1\);
+\item predict recovery potential at \(t_2\);
+\item compare against degree, betweenness, shortest-path, spectral, and supervised graph baselines;
+\item preserve a frozen development/calibration/holdout split;
+\item keep the verdict on untouched holdout.
+\end{itemize}
+
+The current implementation hardens the descriptor layer around recovery-oriented temporal signatures rather than raw ordering alone. The split is also frozen by case identity hash rather than by array order, reducing accidental leakage from source-file layout.
+
+The current result remains negative:
+\[
+\texttt{PREDICTION\_NOT\_DISTINCT\_FROM\_BASELINES}
+\]
+with result hash
+\[
+\texttt{pb03\_result\_c989483149438ed29eabc86d}.
+\]
+
+That is a bounded outcome, not a disappointment. It means the benchmark still resists a cosmetic win.
+
+\section{PB-04: Cross-Domain Structure Transfer}
+
+PB-04 asks whether a recoverability signature can transfer across domains without learning domain-specific shortcuts.
+
+The target discipline is stricter than ordinary graph transfer:
+\begin{itemize}
+\item the source and target domains are frozen;
+\item the transfer protocol is frozen;
+\item the evaluation is frozen;
+\item the source features are reduced to a shared recoverability vocabulary;
+\item the target features are built from the same kind of descriptor family rather than a domain-specific topology cheat;
+\item the verdict is determined on the frozen target bundle.
+\end{itemize}
+
+The current run stays negative:
+\[
+\texttt{PREDICTION\_NOT\_DISTINCT\_FROM\_BASELINES}
+\]
+with result hash
+\[
+\texttt{pb04\_result\_7b13bc9285cc288cbfbe46b8}.
+\]
+
+This is the useful outcome because it says the instrument still has not discovered a transfer shortcut by accident. The benchmark remains open for a genuinely stronger future result.
+
+\section{What Changed in the Benchmark}
+
+Two small but meaningful hardening steps were applied before this release:
+\begin{itemize}
+\item PB-03 now splits by case identity hash rather than raw selected order.
+\item PB-04 now uses a stricter shared recoverability descriptor vocabulary instead of leaning on easy graph-like summary cues.
+\end{itemize}
+
+These are benchmark changes, not mechanism changes. They reduce the chance that a generic graph regressor wins for the wrong reason.
+
+\section{What This Release Does Not Claim}
+
+This paper does not claim:
+\begin{itemize}
+\item that HAOS-IIP explains network recovery;
+\item that HAOS-IIP currently beats graph baselines on holdout;
+\item that recoverability transfer is established;
+\item that any negative result should be turned into a positive by tuning;
+\item that the benchmarks are already maximal or final.
+\end{itemize}
+
+The paper exists because a good negative result is not a dead end. It is a better measurement boundary.
+
+\section{Public Release Data}
+
+\begin{longtable}{p{0.22\linewidth}p{0.25\linewidth}p{0.35\linewidth}}
+\toprule
+Artifact & Value & Meaning \\
+\midrule
+PB-03 result hash & \texttt{pb03\_result\_c989483149438ed29eabc86d} & deterministic negative holdout result \\
+PB-04 result hash & \texttt{pb04\_result\_7b13bc9285cc288cbfbe46b8} & deterministic negative transfer result \\
+HBP suite & 28 tests & frozen bundle still passes \\
+Current verdict & negative & benchmarks remain hard enough to refuse a superficial win \\
+\bottomrule
+\end{longtable}
+
+\section{Conclusion}
+
+The HBP recovery program is where the architecture now has to earn any future positive claim. PB-03 asks whether future recoverability can be predicted. PB-04 asks whether recoverability transfers across domains. Both are now harder, more isolated from easy graph shortcuts, and still negative.
+
+That is a good state to publish.
+
+\end{document}

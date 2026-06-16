@@ -99,6 +99,20 @@ metric-like tests, coarse-graining recovery checks, failure gates, and v1.1
 lift-cycle templates. It explicitly states that refinement evidence is not
 continuum proof.
 
+Current HBP companion release:
+
+1. `67.1` HAOS-IIP HBP Recovery Benchmarks: Temporal Recovery and Cross-Domain Transfer
+2. Primary PDF:
+   `pdf_releases/67.1 HAOS-IIP HBP Recovery Benchmarks - Temporal Recovery and Cross-Domain Transfer.pdf`
+3. Source:
+   `hbp_recovery_benchmarks_temporal_recovery_and_cross_domain_transfer.tex`
+
+Bounded result: this is a claim-gated HBP companion paper, not a new physical
+bridge claim and not Phase 67 activation. It hardens the PB-03 temporal
+recovery benchmark and the PB-04 cross-domain transfer benchmark so that any
+future positive result would need to survive a stricter and more isolated
+evaluation path. Both current frozen results remain negative.
+
 ## 2.2 External-data sidecar releases
 
 The numbered release spine now also includes bounded external-data sidecar
