@@ -1,0 +1,67 @@
+{
+  "bridge_id": "GEO-05",
+  "status": "OPEN",
+  "chain": [
+    {
+      "name": "geometry",
+      "status": "PARTIAL",
+      "signal": "holdout signal exists but does not beat best baseline",
+      "evidence": {
+        "holdout_haos_spearman": 0.6873230373230373,
+        "best_baseline_spearman": 0.8298584298584298,
+        "holdout_top_k_precision": 0.6481481481481481,
+        "best_baseline_topk": 0.8148148148148148
+      }
+    },
+    {
+      "name": "transformation_semantics",
+      "status": "OPEN",
+      "signal": "control summaries exist but the artifact remains a calibration layer",
+      "evidence": {
+        "control_summary_keys": [
+          "gauge_equivalent_null",
+          "label_permutation_control",
+          "leakage_positive_control",
+          "random_phase_control",
+          "seed_repeat_control",
+          "topology_destroyed_control"
+        ]
+      }
+    },
+    {
+      "name": "probability_rule",
+      "status": "PARTIAL",
+      "signal": "beats null on accuracy and brier, but not closed",
+      "evidence": {
+        "accuracy": 0.5,
+        "null_accuracy": 0.4166666666666667,
+        "brier_score": 0.1871772918779361,
+        "null_brier": 0.25,
+        "log_loss": 0.5580877913629587,
+        "null_log_loss": 0.6931471805599453
+      }
+    },
+    {
+      "name": "observable_prediction",
+      "status": "PARTIAL",
+      "signal": "pairwise ordering beats null while coarse class target remains weak",
+      "evidence": {
+        "accuracy": 0.25,
+        "null_accuracy": 0.25,
+        "pairwise_accuracy": 1.0,
+        "pairwise_null_accuracy": 0.5,
+        "observable_rmse": 0.1300004062105068
+      }
+    },
+    {
+      "name": "bell_causality_from_missing_geometry",
+      "status": "NOT_ESTABLISHED",
+      "signal": "not proven",
+      "evidence": {
+        "boundary": "synthetic calibration only"
+      }
+    }
+  ],
+  "conclusion": "The chain shows a plausible geometry layer and partial downstream transfer, but the transfer is not closed and Bell causality remains unproven.",
+  "boundary": "Synthetic calibration only; no Bell scoring; no physical mechanism claim."
+}

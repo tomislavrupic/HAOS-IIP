@@ -1,0 +1,34 @@
+{
+  "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+  "selection_status": "frozen",
+  "source_family": "PowerGraph cascades",
+  "source_root": "DATA/Powergraph/dataset_cascades",
+  "selected_cases": [
+    "ieee24",
+    "ieee39",
+    "ieee118",
+    "uk"
+  ],
+  "selection_justification": [
+    "temporal recovery structure is explicit",
+    "disturbance and cascade behavior are present",
+    "benchmark can remain isolated from PB-02 power-grid holdout",
+    "candidate is harder than a static topology-only graph"
+  ],
+  "freeze_constraints": {
+    "dataset_frozen": true,
+    "split_frozen": false,
+    "metrics_frozen": false,
+    "baselines_frozen": false
+  },
+  "non_claims": [
+    "not yet a benchmark runner",
+    "not empirical validation",
+    "not a physical mechanism claim"
+  ],
+  "notes": [
+    "This manifest pins the first source family only.",
+    "A separate implementation pass will freeze split, metrics, and baselines."
+  ]
+}
+

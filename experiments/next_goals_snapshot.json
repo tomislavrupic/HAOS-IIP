@@ -1,0 +1,88 @@
+{
+  "archive_status": "frozen_archive",
+  "branch": "review/phase18-cst-physicsbridge-hbp",
+  "commit": "a7152b0",
+  "current_readout": {
+    "bell_derivation": "NOT_ESTABLISHED",
+    "external_semantics": "OPEN",
+    "geometry_synthetic_stack": "PARTIALLY_CLOSED",
+    "pb01_control_state": "CONTROL_INVALID",
+    "pb01_predictive_state": "PREDICTION_NOT_DISTINCT_FROM_BASELINES",
+    "spiral_specific_increment": "NOT_RECOVERED"
+  },
+  "claims_ceiling": [
+    "synthetic calibration only",
+    "no Bell scoring",
+    "no physical mechanism claim",
+    "no empirical bridge claim",
+    "no external-reality validation from the synthetic stack"
+  ],
+  "authoritative_artifacts": [
+    "experiments/geometry_bridge/spiral_feature_specificity_result.json",
+    "experiments/geometry_bridge/spiral_feature_specificity_report.md",
+    "experiments/geometry_bridge/geometry_chain_audit_result.json",
+    "experiments/geometry_bridge/geometry_chain_audit_report.md",
+    "experiments/hbp/pb01_network_recovery/results/pb01_result.json",
+    "experiments/hbp/pb01_network_recovery/results/pb01_report.md",
+    "experiments/hbp/pb01_network_recovery/results/pb01_control_results.csv",
+    "experiments/hbp/pb01_network_recovery/run_pb01_network_recovery.py",
+    "experiments/hbp/pb01_network_recovery/control_failure_localization.md",
+    "experiments/hbp/pb01_network_recovery/repair_hypotheses.md",
+    "experiments/hbp/README.md",
+    "experiments/hbp/bridge_contracts.json",
+    "experiments/hbp/pb02_external_network_recovery/README.md",
+    "experiments/hbp/pb02_external_network_recovery/observation_map.md",
+    "experiments/hbp/pb02_external_network_recovery/precommitment_contract.json",
+    "experiments/hbp/pb02_external_network_recovery/dataset_manifest.json",
+    "experiments/hbp/pb02_external_network_recovery/execution_contract.json",
+    "experiments/hbp/pb02_external_network_recovery/development_split.json",
+    "experiments/hbp/pb02_external_network_recovery/calibration_split.json",
+    "experiments/hbp/pb02_external_network_recovery/holdout_split.json",
+    "experiments/hbp/pb02_external_network_recovery/data_acquisition.md",
+    "experiments/hbp/pb02_external_network_recovery/run_pb02_external_network_recovery.py",
+    "experiments/hbp/results/hbp_result.json",
+    "experiments/hbp/results/hbp_report.md"
+  ],
+  "hashes": {
+    "experiments/geometry_bridge/geometry_chain_audit_report.md": "0f6006bfb578e00349e2d02cc63491493c46bfa8ef4112d1e1e49a858b950e63",
+    "experiments/geometry_bridge/geometry_chain_audit_result.json": "0b226a07103c646c1d403bd66db308c99fbec6f4514db4ecb19289ac913e3935",
+    "experiments/geometry_bridge/spiral_feature_specificity_report.md": "a6c84d9411f9106e669388ab7b5994919cbcf94fcffa89fc48714f4e3fadacb5",
+    "experiments/geometry_bridge/spiral_feature_specificity_result.json": "08d5c44558a04cb05f6e31a7d98af66f1e4e932f93265fae711c701c8b9b869e",
+    "experiments/hbp/README.md": "f185007ef052758a370c4ba447e4d398d274a40ae75bfe94f2c0c91e6dba2a70",
+    "experiments/hbp/pb01_network_recovery/control_failure_localization.md": "0ea319200f2de5cea4be3f28d43c561ef15241ef008142af80d5c67557aa83f6",
+    "experiments/hbp/pb01_network_recovery/repair_hypotheses.md": "ea98144d259c127ddb0abc81f04e108c84b929d01310bcba9d874acf7e3d9e0f",
+    "experiments/hbp/pb01_network_recovery/control_repair_contract.md": "e581ef8e87391418428efff9244abfd48609246a637b68f5a59f6793f3ce512e",
+    "experiments/hbp/pb01_network_recovery/results/pb01_report.md": "ca7089b7bf248012a22d4c35176d3337ad45b9c9c6da0a28a17731ae98bae10f",
+    "experiments/hbp/pb01_network_recovery/results/pb01_result.json": "c5447729d04ed85d5ae6f3e4e48afe83e5ba6e7759f0704c9bbb3e3d2ba7181b",
+    "experiments/hbp/pb01_network_recovery/results/pb01_control_results.csv": "f5da98e0ebef37bf626d970700d832e1b4e63be0390b28993bbf975e6d1d09b4",
+    "experiments/hbp/pb01_network_recovery/run_pb01_network_recovery.py": "21200f68acc2fc0e74e6f0226c4f2e5818e7fa7ddd4ad9a944346dd957223295",
+    "experiments/hbp/pb02_external_network_recovery/README.md": "feaebacbb5efe49198a71f4e54e0a0a9584c996928cb5ce4b5e165fc0c26f1e5",
+    "experiments/hbp/pb02_external_network_recovery/observation_map.md": "139e29d6e3724a626f295f1ffe75636f0ed936422186fedeca90e6afcc82226e",
+    "experiments/hbp/pb02_external_network_recovery/precommitment_contract.json": "43afc3898dfe588a6c93a0aa592b9e325614445b0db21b60f389cfb77f431cc3",
+    "experiments/hbp/pb02_external_network_recovery/dataset_manifest.json": "1d53294b4c7a8a6a3dcfe45de29f6086f94c7c4aaf9b073ab6eb3b191f6a5e5a",
+    "experiments/hbp/pb02_external_network_recovery/execution_contract.json": "04011b6e43269824a21964664c41721097806fa54f28ab51e3c5a115dd2fc773",
+    "experiments/hbp/pb02_external_network_recovery/development_split.json": "06f2061d80b18fe1f909e6d485369ca8aeedff2859f40c1e520d89572e49232f",
+    "experiments/hbp/pb02_external_network_recovery/calibration_split.json": "bd57cff56fc479b3f21e9b230380d22f2190c250278687b0ec8854d3dbd5f652",
+    "experiments/hbp/pb02_external_network_recovery/holdout_split.json": "0dfb630461e9b5177d5525bc5c6fd987724e82d92a3f299976c9e1fbd8e96258",
+    "experiments/hbp/pb02_external_network_recovery/data_acquisition.md": "a89f4524064d35731cfc2a8243eb7b5219e11a8eb7188bd71bd73a901e20530b",
+    "experiments/hbp/pb02_external_network_recovery/run_pb02_external_network_recovery.py": "50a8abea028d3c2d371618d93bb0736914690acd4d8289e9350eadc27be9ffb3",
+    "experiments/hbp/results/hbp_report.md": "9ef9e3902f61cc9add072c39ae71b2e307ad0908a9f68e89ede69e5661be67d1",
+    "experiments/hbp/results/hbp_result.json": "6168eefe66ce7000d17d212a8962044f168b4fd5d0af1eda9483b94cb1a72127"
+  },
+  "verified_commands": [
+    "UV_CACHE_DIR=/tmp/uv-cache uv run python -m unittest discover experiments/geometry_bridge/tests",
+    "UV_CACHE_DIR=/tmp/uv-cache uv run python -m unittest discover experiments/hbp/tests",
+    "UV_CACHE_DIR=/tmp/uv-cache uv run python -m unittest discover experiments/biology/external_dataset_bridge -p 'test*.py'"
+  ],
+  "recommendation": {
+    "domain": "PB-02 External Network Recovery",
+    "comparison": "best conventional baseline vs best conventional baseline + frozen HAOS features",
+    "freeze_rule": "no new features after holdout inspection"
+  },
+  "operational_interpretation": [
+    "spiral feature-specificity branch is terminal and frozen",
+    "PB-01 still needs control repair",
+    "HBP is a registry and ceiling tracker, not external validation",
+    "next substantive benchmark should be external network recovery"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "baselines": [
+    {
+      "description": "mean transform distance",
+      "name": "mean_predictor"
+    },
+    {
+      "description": "frozen random response",
+      "name": "random_predictor"
+    },
+    {
+      "description": "graph only, no phases",
+      "name": "phase_agnostic_graph"
+    },
+    {
+      "description": "identity rephasing baseline",
+      "name": "covariance_null"
+    }
+  ],
+  "boundary_conditions": "frozen synthetic families and holdout split",
+  "bridge_id": "GEO-02",
+  "claim_boundary": [
+    "synthetic calibration only",
+    "not a Bell experiment",
+    "not a physical gauge derivation",
+    "not empirical validation of a physical field theory"
+  ],
+  "controls": [
+    {
+      "destroys": "label semantics",
+      "expected_response": "degraded transformation recovery",
+      "name": "label_permutation_control",
+      "preserves": "graph weights"
+    },
+    {
+      "destroys": "adjacency topology",
+      "expected_response": "sharp degradation",
+      "name": "topology_destroyed_control",
+      "preserves": "node count"
+    },
+    {
+      "destroys": "frozen phase semantics",
+      "expected_response": "covariance no longer informative",
+      "name": "random_phase_control",
+      "preserves": "graph weights"
+    },
+    {
+      "destroys": "none",
+      "expected_response": "should collapse to identity-like response",
+      "name": "gauge_equivalent_null",
+      "preserves": "gauge-triviality"
+    },
+    {
+      "destroys": "none",
+      "expected_response": "deterministic repeatability",
+      "name": "seed_repeat_control",
+      "preserves": "all choices"
+    },
+    {
+      "destroys": "blindness",
+      "expected_response": "flagged as leakage",
+      "name": "leakage_positive_control",
+      "preserves": "hidden transformation label"
+    }
+  ],
+  "dynamics": {
+    "graph_construction": "Gaussian latent graph with cutoff sparsification",
+    "phase_generation": "identity, pure gauge, nontrivial flux, or orientation reversal"
+  },
+  "falsification": [
+    "controls fail to degrade",
+    "pure gauge is not gauge-equivalent",
+    "nontrivial flux is indistinguishable from identity",
+    "seed repeat changes outcome"
+  ],
+  "observation_map": {
+    "covariance_residual": "residual after local gauge rephasing",
+    "current_asymmetry": "antisymmetry in link phase profile",
+    "holonomy": "loop phase around a frozen four-node cycle",
+    "spectrum_shift": "spectral response to phase dressing"
+  },
+  "provenance": {
+    "code_artifacts": [
+      "experiments/geometry_bridge/synthetic_transformation_semantics_recovery/run_synthetic_transformation_semantics.py"
+    ],
+    "external_data_status": "synthetic_only",
+    "source_artifacts": [
+      "experiments/geometry_bridge/synthetic_transformation_semantics_recovery/precommitment_contract.json",
+      "experiments/geometry_bridge/synthetic_transformation_semantics_recovery/semantics_source_manifest.json"
+    ]
+  },
+  "purpose": "Test whether frozen transport/holonomy observables distinguish genuine transformations from gauge-equivalent or destroyed controls on synthetic latent substrates.",
+  "state_schema": {
+    "units": {
+      "current_asymmetry": "dimensionless",
+      "graph_weights": "dimensionless",
+      "holonomy": "dimensionless",
+      "latent_coords": "dimensionless",
+      "link_phases": "dimensionless"
+    },
+    "valid_ranges": {
+      "current_asymmetry": "finite",
+      "graph_weights": "finite",
+      "holonomy": "finite",
+      "latent_coords": "finite",
+      "link_phases": "finite"
+    },
+    "variables": [
+      "latent_coords",
+      "graph_weights",
+      "link_phases",
+      "holonomy",
+      "current_asymmetry"
+    ]
+  },
+  "symmetries": [
+    "gauge-equivalent pure phases should leave covariance residual near zero"
+  ],
+  "transformation_contracts": [
+    {
+      "destroys": "none",
+      "expected_response": "low holonomy and low current asymmetry",
+      "invalidation_condition": "identity looks transformed",
+      "name": "identity",
+      "preserves": "graph weights and phases at zero"
+    },
+    {
+      "destroys": "no physical holonomy",
+      "expected_response": "covariance residual near zero and near-zero holonomy",
+      "invalidation_condition": "pure gauge appears distinct",
+      "name": "pure_gauge",
+      "preserves": "local rephasing equivalence"
+    },
+    {
+      "destroys": "gauge triviality",
+      "expected_response": "nonzero holonomy and nonzero covariance signal",
+      "invalidation_condition": "flux is gauge-equivalent to identity",
+      "name": "nontrivial_flux",
+      "preserves": "graph topology"
+    },
+    {
+      "destroys": "orientation semantics",
+      "expected_response": "current asymmetry changes sign/size",
+      "invalidation_condition": "orientation reversal has no observable effect",
+      "name": "orientation_reversal",
+      "preserves": "graph weights"
+    }
+  ],
+  "uncertainty": {
+    "method": "bootstrap percentile",
+    "replicates": 200,
+    "seed": 9181
+  },
+  "verdict_logic": {
+    "official_verdict": "TRANSFORMATION_SEMANTICS_NOT_DEMONSTRATED if holdout or control criteria fail"
+  },
+  "version": "synthetic-transformation-semantics-recovery-v0.1"
+}

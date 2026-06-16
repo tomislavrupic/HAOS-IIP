@@ -1,0 +1,38 @@
+{
+  "bridge_id": "GEO-05",
+  "objective": "HAOS-IIP current state: PREGEOMETRIC / PROTO-GEOMETRIC",
+  "requirements": [
+    {
+      "item": "Geometry requirement is likely necessary",
+      "status": "OPEN",
+      "evidence": "The chain audit documents geometry as the first missing layer and keeps Bell scoring off limits."
+    },
+    {
+      "item": "Geometry alone is not sufficient for Bell",
+      "status": "OPEN",
+      "evidence": "The synthetic chain stops at observable prediction and the audit boundary explicitly excludes Bell interpretation."
+    },
+    {
+      "item": "Primary missing chain: geometry -> transformation semantics -> probability rule -> observable prediction",
+      "status": "PARTIAL",
+      "evidence": "The synthetic chain exists and is frozen, but GEO-01 remains open, GEO-03 and GEO-04 remain only partial."
+    },
+    {
+      "item": "Bell failures explained by missing geometry",
+      "status": "PARTIAL",
+      "evidence": "The audit shows geometry is a plausible missing intermediate layer, but not a proven Bell cause."
+    },
+    {
+      "item": "Bell failures proved to be caused by missing geometry",
+      "status": "NOT_ESTABLISHED",
+      "evidence": "The audit boundary explicitly refuses that claim; there is no Bell-level causal proof."
+    }
+  ],
+  "boundary": "Synthetic calibration only; no Bell scoring; no physical mechanism claim.",
+  "source_artifacts": [
+    "experiments/geometry_bridge/README.md",
+    "experiments/geometry_bridge/chain_audit_note.md",
+    "experiments/geometry_bridge/geometry_chain_audit_result.json",
+    "experiments/geometry_bridge/geometry_chain_audit_report.md"
+  ]
+}

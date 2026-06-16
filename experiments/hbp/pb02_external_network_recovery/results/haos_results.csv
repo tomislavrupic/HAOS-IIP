@@ -1,0 +1,5 @@
+model,bundle,train_n,holdout_n,calibration_spearman,holdout_spearman,holdout_mae,holdout_rmse,holdout_top_k_precision,weights_hash,scaler_hash
+haos_only,haos,17179,4321,0.664673,0.679913,0.004816,0.023241,0.730000,pb02_weights_haos_only_4b3bc966295ecd3d1320dfd9,pb02_scale_haos_only_fb50ac06b28b7f61fb09a8a6
+haos_ablated_score,haos,17179,4321,0.651524,0.676304,0.011996,0.042614,0.620000,pb02_weights_haos_ablated_score_c2473f1b3e4781d90dc70118,pb02_scale_haos_ablated_score_14410a2276ab2b92276772cb
+baseline_plus_haos,combined,17179,4321,0.664673,0.679913,0.004816,0.023241,0.730000,pb02_weights_baseline_plus_haos_231b4d0a2df54026d2fee1ce,pb02_scale_baseline_plus_haos_616781915ba355b4decb30f1
+matched_null,haos,17179,4321,0.015675,0.003079,0.021572,0.051619,0.040000,pb02_weights_matched_null_3efd610eb2c964eac34cd732,pb02_scale_matched_null_e23d96ec17b2721dddd36c5a

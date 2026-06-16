@@ -1,0 +1,219 @@
+{
+  "baselines": [
+    {
+      "description": "constant mean target distance",
+      "name": "mean_predictor"
+    },
+    {
+      "description": "frozen deterministic random draw",
+      "name": "random_predictor"
+    },
+    {
+      "description": "pure topological shortest-path distance",
+      "name": "graph_shortest_path"
+    },
+    {
+      "description": "Laplacian eigenvector distance",
+      "name": "spectral_embedding"
+    },
+    {
+      "description": "degree-distance proxy",
+      "name": "degree_only"
+    },
+    {
+      "description": "label permutation baseline",
+      "name": "shuffled_labels"
+    }
+  ],
+  "boundary_conditions": "frozen synthetic family definitions and untouched holdout family",
+  "bridge_id": "GEO-01",
+  "calibration_split": "development + calibration families frozen before holdout inspection",
+  "claim_boundary": [
+    "synthetic calibration only",
+    "not a Bell experiment",
+    "not a physical mechanism claim",
+    "not empirical validation of HAOS as ontology"
+  ],
+  "classification": "OPERATIONAL_MAPPING_PARTIAL",
+  "controls": [
+    {
+      "destroys": "semantic correspondence between labels and latent neighborhood order",
+      "expected_response": "geometry scores drop materially",
+      "implementation_provenance": "synthetic label permutation with frozen seeds",
+      "invalidation_condition": "scores stay near the target",
+      "name": "label_permutation_control",
+      "preserves": "graph weights and transport magnitudes"
+    },
+    {
+      "destroys": "adjacency topology and transport geometry",
+      "expected_response": "all geometry scores degrade sharply",
+      "implementation_provenance": "zeroed graph null with same dimensions",
+      "invalidation_condition": "topology destruction does not reduce recovery",
+      "name": "topology_destroyed_control",
+      "preserves": "node count and weight scale"
+    },
+    {
+      "destroys": "latent adjacency and neighborhood order",
+      "expected_response": "spectral and HAOS scores weaken relative to target",
+      "implementation_provenance": "frozen stub rewiring under deterministic seeds",
+      "invalidation_condition": "rewire behaves like the target",
+      "name": "degree_preserving_rewire_control",
+      "preserves": "degree histogram and node count"
+    },
+    {
+      "destroys": "geometry-specific transport structure",
+      "expected_response": "baseline metrics remain lower than target",
+      "implementation_provenance": "constant-weight null graph",
+      "invalidation_condition": "null outperforms or matches target systematically",
+      "name": "parameter_matched_null_control",
+      "preserves": "weight scale and node count"
+    },
+    {
+      "destroys": "none",
+      "expected_response": "deterministic repeatability",
+      "implementation_provenance": "repeat-run frozen seed pair",
+      "invalidation_condition": "same seed changes the result",
+      "name": "seed_repeat_control",
+      "preserves": "all construction choices"
+    },
+    {
+      "destroys": "blindness",
+      "expected_response": "should be detected as leakage, not accepted as a valid candidate",
+      "implementation_provenance": "intentional target leakage check",
+      "invalidation_condition": "positive control is not flagged",
+      "name": "leakage_positive_control",
+      "preserves": "explicit access to hidden coordinates"
+    }
+  ],
+  "dynamics": {
+    "graph_construction": "weights = exp(-d^2/(2 sigma^2)) with cutoff sparsification",
+    "observation_map": "diffusion signatures, Laplacian spectrum, and transport summaries",
+    "perturbations": [
+      "edge_removal",
+      "weight_degradation",
+      "localized_state_shock"
+    ],
+    "transport_steps": 4
+  },
+  "falsification": {
+    "fail_conditions": [
+      "holdout recovery does not outperform baselines by the frozen margin",
+      "controls do not degrade as declared",
+      "leakage positive control is not detected",
+      "deterministic repeats do not match",
+      "frozen holdout is inspected before scoring"
+    ]
+  },
+  "haos_mapping": [
+    {
+      "domain_target": "local geometry coherence",
+      "failure_conditions": "label permutation or topology destruction leaves overlap unchanged",
+      "haos_source": "invariant overlap",
+      "mapping_function": "cosine overlap between node diffusion signatures",
+      "mapping_status": "HEURISTIC",
+      "semantic_justification": "stable transport neighborhoods should preserve local similarity",
+      "uncertainty": "medium",
+      "units_after": "dimensionless",
+      "units_before": "dimensionless"
+    },
+    {
+      "domain_target": "topological stability under perturbation",
+      "failure_conditions": "destroyed topology does not lower persistence",
+      "haos_source": "persistence score",
+      "mapping_function": "inverse spectral-gap proxy",
+      "mapping_status": "HEURISTIC",
+      "semantic_justification": "geometry should degrade when persistent structure is destroyed",
+      "uncertainty": "medium",
+      "units_after": "dimensionless",
+      "units_before": "dimensionless"
+    },
+    {
+      "domain_target": "intrinsic separation from perturbation",
+      "failure_conditions": "holdout geometry does not transfer after calibration freeze",
+      "haos_source": "causal depth",
+      "mapping_function": "1 - normalized shortest-path distance",
+      "mapping_status": "CALIBRATED",
+      "semantic_justification": "geometry should rank neighborhoods by transport reachability",
+      "uncertainty": "medium",
+      "units_after": "dimensionless",
+      "units_before": "dimensionless"
+    },
+    {
+      "domain_target": "consistency of diffusion order under steps",
+      "failure_conditions": "order stability survives topology destruction",
+      "haos_source": "temporal order stability",
+      "mapping_function": "monotone response summary over diffusion powers",
+      "mapping_status": "HEURISTIC",
+      "semantic_justification": "intrinsic geometry should preserve step ordering better than nulls",
+      "uncertainty": "medium",
+      "units_after": "dimensionless",
+      "units_before": "dimensionless"
+    }
+  ],
+  "holdout_split": "spiral",
+  "observation_map": [
+    {
+      "feature_path": "Euclidean distance between HAOS transport signatures",
+      "observable": "pairwise intrinsic distance",
+      "source": "latent coordinates (hidden during scoring)",
+      "units": "dimensionless",
+      "valid_range": "0..1"
+    },
+    {
+      "feature_path": "top-k nearest-neighbor recovery from HAOS signatures",
+      "observable": "topological neighborhood",
+      "source": "latent coordinates (hidden during scoring)",
+      "units": "dimensionless",
+      "valid_range": "0..1"
+    }
+  ],
+  "prediction_target": "recover intrinsic pairwise geometry and neighborhood order on untouched holdout family",
+  "provenance": {
+    "code_artifacts": [
+      "experiments/geometry_bridge/synthetic_intrinsic_geometry_recovery/run_synthetic_geometry_recovery.py"
+    ],
+    "external_data_status": "synthetic_only",
+    "notes": [
+      "This contract freezes the geometry question before any Bell-like probability layer.",
+      "No coordinates are exposed to the scorer before holdout execution."
+    ],
+    "source_artifacts": [
+      "experiments/geometry_bridge/synthetic_intrinsic_geometry_recovery/precommitment_contract.json",
+      "experiments/geometry_bridge/synthetic_intrinsic_geometry_recovery/geometry_source_manifest.json"
+    ]
+  },
+  "purpose": "Test whether frozen operator/transport observations recover intrinsic geometry on synthetic latent spaces better than conventional graph and spectral baselines, using blind development/calibration/hodout splits.",
+  "state_schema": {
+    "hidden_coordinates": "point set on ring, grid, or spiral manifold",
+    "latent_space": "two-dimensional synthetic latent geometry",
+    "observations": "operator-only graph transport summaries",
+    "targets": "pairwise intrinsic distance and neighborhood order",
+    "units": {
+      "hidden_coordinates": "dimensionless",
+      "latent_space": "dimensionless",
+      "observations": "dimensionless",
+      "targets": "dimensionless normalized distance"
+    },
+    "valid_ranges": {
+      "hidden_coordinates": "bounded coordinates",
+      "latent_space": "2D finite latent set",
+      "observations": "finite nonnegative weights",
+      "targets": "0..1"
+    }
+  },
+  "symmetries": [
+    "label permutation should not preserve semantic reconstruction",
+    "topology destruction should degrade geometry recovery",
+    "seed repeat should remain deterministic"
+  ],
+  "uncertainty": {
+    "bootstrap_replicates": 200,
+    "bootstrap_seed": 9137,
+    "method": "percentile 95 percent interval on paired pairwise scores"
+  },
+  "verdict_logic": {
+    "official_verdict": "GEOMETRY_NOT_YET_DEMONSTRATED if holdout transfer fails or controls are invalid",
+    "promotion_gate": "HAOS geometry can only be promoted after blind holdout separation and control degradation are frozen and reproducible"
+  },
+  "version": "synthetic-intrinsic-geometry-recovery-v0.1"
+}

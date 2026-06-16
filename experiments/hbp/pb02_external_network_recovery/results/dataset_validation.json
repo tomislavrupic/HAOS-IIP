@@ -1,0 +1,262 @@
+{
+  "cascades_root": "DATA/Powergraph/dataset_cascades/ieee24/ieee24/raw",
+  "data_root": "DATA/Powergraph",
+  "dataset": "PowerGraph",
+  "family": "ieee24",
+  "files_hash": "pb02_dataset_validation_e49fce0968836133f7148809",
+  "pf_root": "DATA/Powergraph/dataset_pf_opf/ieee24/ieee24/raw",
+  "required_files": {
+    "dataset_cascades/ieee24/ieee24/raw/Bf.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "B_f_tot",
+      "sample_count": 21500,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        3,
+        24
+      ],
+      "shape": [
+        1,
+        21500
+      ]
+    },
+    "dataset_cascades/ieee24/ieee24/raw/Ef.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "E_f_post",
+      "sample_count": 21500,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        4,
+        38
+      ],
+      "shape": [
+        1,
+        21500
+      ]
+    },
+    "dataset_cascades/ieee24/ieee24/raw/Ef_nc.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "E_f_kenza",
+      "sample_count": 21500,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        4,
+        38
+      ],
+      "shape": [
+        1,
+        21500
+      ]
+    },
+    "dataset_cascades/ieee24/ieee24/raw/blist.mat": {
+      "dtype": "float64",
+      "is_object": false,
+      "root_key": "bList",
+      "sample_nan_count": 0,
+      "shape": [
+        2,
+        38
+      ]
+    },
+    "dataset_cascades/ieee24/ieee24/raw/exp.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "explainations",
+      "sample_count": 21500,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        2
+      ],
+      "shape": [
+        1,
+        21500
+      ]
+    },
+    "dataset_cascades/ieee24/ieee24/raw/of_bi.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "output_features",
+      "sample_count": 21500,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        1,
+        1
+      ],
+      "shape": [
+        1,
+        21500
+      ]
+    },
+    "dataset_cascades/ieee24/ieee24/raw/of_mc.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "category",
+      "sample_count": 21500,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        4,
+        1
+      ],
+      "shape": [
+        1,
+        21500
+      ]
+    },
+    "dataset_cascades/ieee24/ieee24/raw/of_reg.mat": {
+      "dtype": "float64",
+      "is_object": false,
+      "root_key": "dns_MW",
+      "sample_nan_count": 0,
+      "shape": [
+        1,
+        21500
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/X.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "Xpf",
+      "sample_count": 34834,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        4,
+        24
+      ],
+      "shape": [
+        34834,
+        1
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/Xopf.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "X",
+      "sample_count": 34834,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        4,
+        24
+      ],
+      "shape": [
+        34834,
+        1
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/Y_polar.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "Y_polarpf",
+      "sample_count": 34834,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        4,
+        24
+      ],
+      "shape": [
+        34834,
+        1
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/Y_polar_opf.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "Y_polar",
+      "sample_count": 34834,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        4,
+        24
+      ],
+      "shape": [
+        34834,
+        1
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/Y_rect.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "Y_rectpf",
+      "sample_count": 8678,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        2,
+        24
+      ],
+      "shape": [
+        8678,
+        1
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/Y_rect_opf.mat": {
+      "dtype": "object",
+      "is_object": true,
+      "root_key": "Y_rect",
+      "sample_count": 8678,
+      "sample_dtype": "float64",
+      "sample_nan_count": 0,
+      "sample_shape": [
+        2,
+        24
+      ],
+      "shape": [
+        8678,
+        1
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/edge_attr.mat": {
+      "dtype": "float64",
+      "is_object": false,
+      "root_key": "edge_attr",
+      "sample_nan_count": 0,
+      "shape": [
+        92,
+        2
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/edge_attr_opf.mat": {
+      "dtype": "float64",
+      "is_object": false,
+      "root_key": "edge_attr",
+      "sample_nan_count": 0,
+      "shape": [
+        92,
+        2
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/edge_index.mat": {
+      "dtype": "uint8",
+      "is_object": false,
+      "root_key": "edge_index",
+      "sample_nan_count": 0,
+      "shape": [
+        92,
+        2
+      ]
+    },
+    "dataset_pf_opf/ieee24/ieee24/raw/edge_index_opf.mat": {
+      "dtype": "uint8",
+      "is_object": false,
+      "root_key": "edge_index",
+      "sample_nan_count": 0,
+      "shape": [
+        92,
+        2
+      ]
+    }
+  },
+  "sample_count": 21500
+}

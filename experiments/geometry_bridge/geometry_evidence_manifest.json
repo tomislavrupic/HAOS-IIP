@@ -1,0 +1,54 @@
+{
+  "bridge_id": "GEO-05",
+  "status": "OPEN",
+  "boundary": "Synthetic calibration only; no Bell scoring; no physical mechanism claim.",
+  "artifacts": [
+    {
+      "path": "experiments/geometry_bridge/geometry_transfer_summary.json",
+      "type": "summary",
+      "status": "OPEN"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_transfer_consistency.json",
+      "type": "consistency",
+      "status": "OPEN"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_transfer_ledger.json",
+      "type": "ledger",
+      "status": "OPEN"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_gap_map.json",
+      "type": "gap_map",
+      "status": "OPEN"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_chain_requirements.json",
+      "type": "requirements",
+      "status": "PARTIAL"
+    },
+    {
+      "path": "experiments/geometry_bridge/goal_completion_audit.json",
+      "type": "objective_audit",
+      "status": "INCOMPLETE"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_chain_audit_result.json",
+      "type": "chain_audit_result",
+      "status": "OPEN"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_current_state_snapshot.json",
+      "type": "current_state_snapshot",
+      "status": "OPEN"
+    }
+  ],
+  "readout": {
+    "geometry": "PARTIAL",
+    "transformation_semantics": "OPEN",
+    "probability_rule": "PARTIAL",
+    "observable_prediction": "PARTIAL",
+    "bell_causality_from_missing_geometry": "NOT_ESTABLISHED"
+  }
+}

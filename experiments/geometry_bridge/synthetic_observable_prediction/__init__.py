@@ -1,0 +1,2 @@
+"""Synthetic observable-prediction bridge."""
+

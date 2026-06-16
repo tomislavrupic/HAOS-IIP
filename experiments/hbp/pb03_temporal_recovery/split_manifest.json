@@ -1,0 +1,21 @@
+{
+  "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+  "development_case_count": 48,
+  "calibration_case_count": 24,
+  "holdout_case_count": 24,
+  "holdout_families": [
+    "powergrid_cascade"
+  ],
+  "holdout_inspection_policy": "split assignment, metrics, and baselines are frozen before holdout scoring",
+  "holdout_seeds": [
+    701,
+    702,
+    703,
+    704
+  ],
+  "notes": [
+    "This manifest freezes the first implementation split shape for the PB-03 temporal recovery candidate.",
+    "Actual runner code is not yet present."
+  ]
+}
+

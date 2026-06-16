@@ -1,0 +1,11 @@
+{
+  "bridge_id": "PB-02",
+  "split": "development",
+  "status": "frozen_placeholder",
+  "purpose": "Tune baselines and frozen HAOS feature usage only.",
+  "rules": [
+    "no holdout inspection",
+    "no post hoc feature addition",
+    "no threshold movement after calibration"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+  "selection_status": "frozen",
+  "source_domain_candidate": {
+    "path": "experiments/biology/gene_network_demo",
+    "status": "proxy",
+    "why": [
+      "it is the clearest in-repo biology-line source artifact",
+      "it is deterministic and already validated",
+      "it can serve as a source-domain proxy without claiming real tissue"
+    ]
+  },
+  "target_domain_candidate": {
+    "path": "DATA/Powergraph/dataset_pf_opf",
+    "status": "candidate target",
+    "why": [
+      "it is real infrastructure data already present in the workspace",
+      "it is meaningfully different from the biology-line proxy",
+      "it allows a cross-domain test without reopening PB-02"
+    ]
+  },
+  "freeze_constraints": {
+    "source_domain_frozen": true,
+    "target_domain_frozen": true,
+    "transfer_protocol_frozen": false,
+    "evaluation_frozen": false
+  },
+  "non_claims": [
+    "not biological tissue",
+    "not empirical transfer success",
+    "not a physical mechanism claim"
+  ],
+  "notes": [
+    "This is a proxy source-domain choice, intentionally labeled as such.",
+    "A later implementation pass must freeze the transfer protocol and evaluation."
+  ]
+}
+

@@ -1,0 +1,33 @@
+{
+  "bridge_id": "GEO-04",
+  "claim_boundary": [
+    "synthetic calibration only",
+    "not a Bell experiment",
+    "not a physical prediction claim",
+    "not empirical validation of a physical mechanism"
+  ],
+  "observable": {
+    "classes": [
+      "identity",
+      "pure_gauge",
+      "nontrivial_flux",
+      "orientation_reversal"
+    ],
+    "definition": "which frozen transformation generated the observable response",
+    "name": "transformation_class",
+    "threshold_policy": "class centroids fit on development+calibration only"
+  },
+  "prediction_rule": "nearest centroid over frozen observable values",
+  "provenance": {
+    "code_artifacts": [
+      "experiments/geometry_bridge/synthetic_observable_prediction/run_synthetic_observable_prediction.py"
+    ],
+    "external_data_status": "synthetic_only",
+    "source_artifacts": [
+      "experiments/geometry_bridge/synthetic_observable_prediction/precommitment_contract.json",
+      "experiments/geometry_bridge/synthetic_observable_prediction/observable_source_manifest.json"
+    ]
+  },
+  "purpose": "Test whether a frozen probability rule can predict a synthetic held-out observable derived from transport/holonomy structure.",
+  "version": "synthetic-observable-prediction-v0.1"
+}

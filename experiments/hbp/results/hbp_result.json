@@ -1,8 +1,9 @@
 {
-  "bridge_count": 10,
-  "contracts_hash": "hbp_contracts_0625c442f2fc5f40cf4d910e",
+  "bridge_count": 13,
+  "contracts_hash": "hbp_contracts_2879873d9766949625c0efba",
   "counts_by_effective_classification": {
-    "FORMAL_CORRESPONDENCE": 9,
+    "FORMAL_CORRESPONDENCE": 11,
+    "OPERATIONAL_MAPPING": 1,
     "PREDICTIVE_BRIDGE": 1
   },
   "non_claims": [
@@ -25,7 +26,7 @@
     "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
   ],
   "pb01_status": "PREDICTION_NOT_DISTINCT_FROM_BASELINES",
-  "registry_hash": "hbp_registry_406b295438a7e189c218ee9c",
-  "result_hash": "hbp_result_3b8373c5982a4a64917261e9",
+  "registry_hash": "hbp_registry_478d736e1df65a0fd12d24a7",
+  "result_hash": "hbp_result_1fdc653880468c32a182cc95",
   "status": "REGISTRY_VALID"
 }

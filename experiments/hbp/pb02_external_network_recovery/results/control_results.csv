@@ -1,0 +1,9 @@
+control,status,holdout_spearman,note
+shuffled_target_labels,FAIL,1.000000,frozen control path
+topology_destroyed_graph,FAIL,0.991454,frozen control path
+degree_preserving_rewire,FAIL,0.991454,frozen control path
+weight_shuffled_graph,FAIL,0.991454,frozen control path
+parameter_matched_null,PASS,-0.006747,frozen control path
+perturbation_free_baseline,FAIL,0.991454,frozen control path
+seed_repeat,PASS,0.679913,repeat of frozen prediction path
+intentional_leakage_positive_control,TARGET_LEAKAGE_DETECTED,1.000000,positive leakage control

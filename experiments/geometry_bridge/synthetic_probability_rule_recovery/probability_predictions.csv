@@ -1,0 +1,13 @@
+split,family,seed,transformation,predicted_probability,predicted_label,calibrated_probability,null_probability
+holdout,grid,6101,identity,0.497805809231,0,0.497805809231,0.5
+holdout,grid,6101,pure_gauge,0.500338883956,1,0.500338883956,0.5
+holdout,grid,6101,nontrivial_flux,0.54211546767,1,0.54211546767,0.5
+holdout,grid,6101,orientation_reversal,0.694296544189,1,0.694296544189,0.5
+holdout,grid,6102,identity,0.510104895109,1,0.510104895109,0.5
+holdout,grid,6102,pure_gauge,0.51369476362,1,0.51369476362,0.5
+holdout,grid,6102,nontrivial_flux,0.657811363279,1,0.657811363279,0.5
+holdout,grid,6102,orientation_reversal,0.703262360108,1,0.703262360108,0.5
+holdout,grid,6103,identity,0.505515091955,1,0.505515091955,0.5
+holdout,grid,6103,pure_gauge,0.50909633243,1,0.50909633243,0.5
+holdout,grid,6103,nontrivial_flux,0.799910735583,1,0.799910735583,0.5
+holdout,grid,6103,orientation_reversal,0.723163956441,1,0.723163956441,0.5

@@ -1,0 +1,92 @@
+{
+  "bridge_id": "GEO-T1-01",
+  "control_summary": {
+    "label_permutation_control": {
+      "composition_accuracy": 1.0,
+      "equivalence_accuracy": 0.375,
+      "identity_accuracy": 0.125,
+      "inverse_accuracy": 0.0,
+      "orbit_accuracy": 0.25,
+      "refinement_accuracy": 0.0,
+      "relation_accuracy": 0.0,
+      "stabilizer_accuracy": 0.25
+    },
+    "leakage_positive_control": {
+      "composition_accuracy": 1.0,
+      "equivalence_accuracy": 1.0,
+      "identity_accuracy": 0.125,
+      "inverse_accuracy": 1.0,
+      "orbit_accuracy": 1.0,
+      "refinement_accuracy": 1.0,
+      "relation_accuracy": 1.0,
+      "stabilizer_accuracy": 1.0
+    },
+    "parameter_matched_null_control": {
+      "composition_accuracy": 1.0,
+      "equivalence_accuracy": 0.375,
+      "identity_accuracy": 0.125,
+      "inverse_accuracy": 0.25,
+      "orbit_accuracy": 0.375,
+      "refinement_accuracy": 0.25,
+      "relation_accuracy": 0.625,
+      "stabilizer_accuracy": 0.375
+    },
+    "seed_repeat_control": {
+      "composition_accuracy": 1.0,
+      "equivalence_accuracy": 1.0,
+      "identity_accuracy": 0.125,
+      "inverse_accuracy": 1.0,
+      "orbit_accuracy": 1.0,
+      "refinement_accuracy": 1.0,
+      "relation_accuracy": 1.0,
+      "stabilizer_accuracy": 1.0
+    },
+    "signature_shuffle_control": {
+      "composition_accuracy": 1.0,
+      "equivalence_accuracy": 0.125,
+      "identity_accuracy": 0.125,
+      "inverse_accuracy": 0.0,
+      "orbit_accuracy": 0.25,
+      "refinement_accuracy": 0.0,
+      "relation_accuracy": 0.0,
+      "stabilizer_accuracy": 0.25
+    },
+    "topology_destroyed_control": {
+      "composition_accuracy": 1.0,
+      "equivalence_accuracy": 0.25,
+      "identity_accuracy": 1.0,
+      "inverse_accuracy": 0.125,
+      "orbit_accuracy": 0.25,
+      "refinement_accuracy": 0.125,
+      "relation_accuracy": 0.5,
+      "stabilizer_accuracy": 0.25
+    }
+  },
+  "holdout_metrics": {
+    "composition_accuracy": 1.0,
+    "composition_pass": true,
+    "equivalence_accuracy": 1.0,
+    "equivalence_pass": true,
+    "identity_accuracy": 1.0,
+    "identity_pass": true,
+    "inverse_accuracy": 1.0,
+    "inverse_pass": true,
+    "orbit_accuracy": 1.0,
+    "orbit_pass": true,
+    "refinement_accuracy": 1.0,
+    "refinement_pass": true,
+    "relation_accuracy": 1.0,
+    "relation_pass": true,
+    "stabilizer_accuracy": 1.0,
+    "stabilizer_pass": true
+  },
+  "holdout_pass": true,
+  "labels": [
+    "BENCHMARK_VALID"
+  ],
+  "observations": "hidden_transformation_observations.csv",
+  "predictions": "hidden_transformation_predictions.csv",
+  "result_hash": "hidden_transformation_result__fddfb62b7b55275b1fb71800",
+  "source_manifest": "hidden_transformation_source_manifest.json",
+  "version": "synthetic-hidden-transformation-recovery-v0.1"
+}

@@ -1,0 +1,61 @@
+{
+  "bridge_id": "GEO-HIDDEN-01",
+  "control_summary": {
+    "label_permutation_control": {
+      "distance_spearman": 0.05617760617760618,
+      "orientation_accuracy": 1.0,
+      "relation_accuracy": 0.3333333333333333,
+      "transform_accuracy": 0.0
+    },
+    "leakage_positive_control": {
+      "distance_spearman": 0.4388674388674389,
+      "orientation_accuracy": 1.0,
+      "relation_accuracy": 0.3333333333333333,
+      "transform_accuracy": 1.0
+    },
+    "orientation_destroyed_control": {
+      "distance_spearman": 0.41106097397922764,
+      "orientation_accuracy": 1.0,
+      "relation_accuracy": 0.3333333333333333,
+      "transform_accuracy": 0.0
+    },
+    "parameter_matched_null_control": {
+      "distance_spearman": 0.4554381044342937,
+      "orientation_accuracy": 1.0,
+      "relation_accuracy": 0.3333333333333333,
+      "transform_accuracy": 0.0
+    },
+    "seed_repeat_control": {
+      "distance_spearman": 0.4388674388674389,
+      "orientation_accuracy": 1.0,
+      "relation_accuracy": 0.3333333333333333,
+      "transform_accuracy": 0.0
+    },
+    "topology_destroyed_control": {
+      "distance_spearman": -0.12443566303208352,
+      "orientation_accuracy": 1.0,
+      "relation_accuracy": 0.3333333333333333,
+      "transform_accuracy": 0.0
+    }
+  },
+  "holdout_metrics": {
+    "distance_pass": true,
+    "distance_spearman": 0.9728915662650602,
+    "orientation_accuracy": 1.0,
+    "orientation_pass": true,
+    "relation_accuracy": 1.0,
+    "relation_pass": true,
+    "transform_accuracy": 0.375,
+    "transform_pass": false
+  },
+  "holdout_pass": false,
+  "labels": [
+    "BENCHMARK_OPEN",
+    "MIXED_OPEN"
+  ],
+  "observations": "hidden_geometry_observations.csv",
+  "predictions": "hidden_geometry_predictions.csv",
+  "result_hash": "hidden_geometry_result__8379812fb485dd346ba68e9d",
+  "source_manifest": "hidden_geometry_source_manifest.json",
+  "version": "synthetic-hidden-geometry-recovery-v0.1"
+}

@@ -1,0 +1,45 @@
+{
+  "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+  "selection_status": "frozen",
+  "controls": [
+    {
+      "name": "label_permutation",
+      "purpose": "destroy alignment between recovery labels and features",
+      "preserves": ["feature marginals"],
+      "destroys": ["label-target association"],
+      "invalid_if": "permuted labels retain the same ranking"
+    },
+    {
+      "name": "topology_destroyed",
+      "purpose": "remove meaningful recovery structure",
+      "preserves": ["sample count"],
+      "destroys": ["recovery geometry"],
+      "invalid_if": "destroyed topology still produces the same metric ordering"
+    },
+    {
+      "name": "parameter_matched_null",
+      "purpose": "match scale without target structure",
+      "preserves": ["sample size", "basic density"],
+      "destroys": ["recovery signal"],
+      "invalid_if": "null beats frozen baselines"
+    },
+    {
+      "name": "seed_repeat",
+      "purpose": "check deterministic reproducibility",
+      "preserves": ["contract", "split", "metric set"],
+      "destroys": ["none"],
+      "invalid_if": "same seed changes the verdict"
+    }
+  ],
+  "control_policy": [
+    "controls must use the same execution path as the target",
+    "controls must be frozen before runner implementation",
+    "controls must fail honestly if they destroy the intended structure",
+    "controls must not be redefined after holdout inspection"
+  ],
+  "non_claims": [
+    "no result claim yet",
+    "no physical mechanism claim"
+  ]
+}
+

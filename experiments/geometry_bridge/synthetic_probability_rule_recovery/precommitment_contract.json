@@ -1,0 +1,117 @@
+{
+  "baselines": [
+    {
+      "description": "constant marginal probability",
+      "name": "mean_predictor"
+    },
+    {
+      "description": "frozen random Bernoulli",
+      "name": "random_predictor"
+    },
+    {
+      "description": "feature-agnostic null",
+      "name": "feature_null"
+    }
+  ],
+  "bridge_id": "GEO-03",
+  "claim_boundary": [
+    "synthetic calibration only",
+    "not a Bell experiment",
+    "not a derivation of quantum probabilities",
+    "not empirical validation of a physical mechanism"
+  ],
+  "controls": [
+    {
+      "destroys": "label semantics",
+      "name": "label_permutation_control",
+      "preserves": "graph weights"
+    },
+    {
+      "destroys": "adjacency topology",
+      "name": "topology_destroyed_control",
+      "preserves": "node count"
+    },
+    {
+      "destroys": "joint structure",
+      "name": "feature_shuffle_control",
+      "preserves": "marginal feature values"
+    },
+    {
+      "destroys": "probability structure",
+      "name": "parameter_matched_null_control",
+      "preserves": "weight scale"
+    },
+    {
+      "destroys": "none",
+      "name": "seed_repeat_control",
+      "preserves": "all choices"
+    },
+    {
+      "destroys": "blindness",
+      "name": "leakage_positive_control",
+      "preserves": "hidden label access"
+    }
+  ],
+  "falsification": [
+    "holdout accuracy below frozen threshold",
+    "controls do not degrade",
+    "leakage positive control not detected",
+    "deterministic repeat mismatch"
+  ],
+  "probability_rule": {
+    "calibration": "fit on development+calibration only before holdout scoring",
+    "features": [
+      "holonomy",
+      "current_asymmetry",
+      "covariance_residual",
+      "spectrum_shift"
+    ],
+    "form": "logistic rule from frozen holonomy/current/covariance/spectrum features",
+    "output": "Bernoulli probability for transformation detection"
+  },
+  "provenance": {
+    "code_artifacts": [
+      "experiments/geometry_bridge/synthetic_probability_rule_recovery/run_synthetic_probability_rule_recovery.py"
+    ],
+    "external_data_status": "synthetic_only",
+    "source_artifacts": [
+      "experiments/geometry_bridge/synthetic_probability_rule_recovery/precommitment_contract.json",
+      "experiments/geometry_bridge/synthetic_probability_rule_recovery/probability_source_manifest.json"
+    ]
+  },
+  "purpose": "Test whether a frozen probability rule built from transport/holonomy observables predicts held-out transformation classes better than a null baseline.",
+  "splits": {
+    "calibration": [
+      "ring",
+      "grid"
+    ],
+    "development": [
+      "ring"
+    ],
+    "holdout": [
+      "grid"
+    ]
+  },
+  "state_schema": {
+    "units": {
+      "binary_target": "dimensionless",
+      "covariance_residual": "dimensionless",
+      "current_asymmetry": "dimensionless",
+      "holonomy": "dimensionless",
+      "spectrum_shift": "dimensionless",
+      "target_probability": "dimensionless"
+    },
+    "variables": [
+      "holonomy",
+      "current_asymmetry",
+      "covariance_residual",
+      "spectrum_shift",
+      "target_probability",
+      "binary_target"
+    ]
+  },
+  "verdict_logic": {
+    "official_verdict": "PROBABILITY_RULE_NOT_DEMONSTRATED if holdout transfer or control criteria fail"
+  },
+  "version": "synthetic-probability-rule-recovery-v0.1"
+}

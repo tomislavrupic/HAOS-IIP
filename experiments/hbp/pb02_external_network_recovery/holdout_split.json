@@ -1,0 +1,12 @@
+{
+  "bridge_id": "PB-02",
+  "split": "holdout",
+  "status": "frozen_placeholder",
+  "purpose": "Untouched scoring split; no feature changes after inspection.",
+  "rules": [
+    "no feature changes after holdout inspection",
+    "no threshold movement after holdout inspection",
+    "same split path for baseline and HAOS conditions",
+    "score once"
+  ]
+}

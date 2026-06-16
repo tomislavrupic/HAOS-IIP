@@ -1,0 +1,56 @@
+{
+  "bridge_id": "GEO-05",
+  "status": "OPEN",
+  "generated_from": [
+    "experiments/geometry_bridge/geometry_transfer_summary.json",
+    "experiments/geometry_bridge/geometry_transfer_consistency.json",
+    "experiments/geometry_bridge/geometry_transfer_ledger.json",
+    "experiments/geometry_bridge/geometry_gap_map.json",
+    "experiments/geometry_bridge/geometry_evidence_manifest.json",
+    "experiments/geometry_bridge/goal_completion_audit.json",
+    "experiments/geometry_bridge/geometry_chain_requirements.json",
+    "experiments/geometry_bridge/geometry_chain_audit_result.json"
+  ],
+  "artifacts": [
+    {
+      "path": "experiments/geometry_bridge/geometry_transfer_summary.json",
+      "sha256": "91d7f87591fb5bc9b21326640a29ba332899be90d946f687bab130512ce8d48c"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_transfer_consistency.json",
+      "sha256": "be9bc7d80ea32092334b3481a4928aa65331f17b91165547acab1d5dd72e5494"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_transfer_ledger.json",
+      "sha256": "3fb3aee088eec054136d53110769860c5026f08447cf5608f53a32d290aebd7e"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_gap_map.json",
+      "sha256": "334aeaa4c48b7857a51100f38b5f948673cbfb7cfe9a10e06ad875786214fc87"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_evidence_manifest.json",
+      "sha256": "d0beca707b55346b48d461f449bccfbd6dd9e4d0cb975cfe5d0a80c1763d08d6"
+    },
+    {
+      "path": "experiments/geometry_bridge/goal_completion_audit.json",
+      "sha256": "d9b2a9094644e214bf2219aed73a967a31f35425becc4969f1a5cd427e00457a"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_chain_requirements.json",
+      "sha256": "8cd6cfd759d39f2eeea87a7065d8dc1c0536efedaca617a025d847613d822e78"
+    },
+    {
+      "path": "experiments/geometry_bridge/geometry_chain_audit_result.json",
+      "sha256": "a996f772932fac92ddd23ad74cc34e9c99ecb0b7f7ff5d0a19b975f2f734370e"
+    }
+  ],
+  "readout": {
+    "geometry": "PARTIAL",
+    "transformation_semantics": "OPEN",
+    "probability_rule": "PARTIAL",
+    "observable_prediction": "PARTIAL",
+    "bell_causality_from_missing_geometry": "NOT_ESTABLISHED"
+  },
+  "boundary": "Synthetic calibration only; no Bell scoring; no physical mechanism claim."
+}

@@ -1,0 +1,18 @@
+{
+  "bridge_id": "GEO-04",
+  "families": [
+    "ring",
+    "grid"
+  ],
+  "seeds": [
+    7101,
+    7102,
+    7103
+  ],
+  "transformations": [
+    "identity",
+    "pure_gauge",
+    "nontrivial_flux",
+    "orientation_reversal"
+  ]
+}

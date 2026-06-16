@@ -142,6 +142,59 @@
       "verdict_authorized": false
     },
     {
+      "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+      "ceiling_applied": "FORMAL_CORRESPONDENCE",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "DIMENSIONAL_ANALYSIS_FAIL",
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "future recovery ranking": "HEURISTIC"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "heuristic or analogical mapping cannot support a higher bridge classification",
+        "no derived or independently frozen calibrated mapping is available",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared",
+        "missing valid range for t0_state",
+        "missing valid range for t1_damage",
+        "missing valid range for t2_recovery"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_bfd731be642c59d428f26dad",
+      "verdict_authorized": false
+    },
+    {
+      "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+      "ceiling_applied": "FORMAL_CORRESPONDENCE",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": [
+        "DIMENSIONAL_ANALYSIS_FAIL",
+        "FORMAL_CORRESPONDENCE_ONLY",
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "cross-domain recoverability ranking": "HEURISTIC"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "heuristic or analogical mapping cannot support a higher bridge classification",
+        "no derived or independently frozen calibrated mapping is available",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared",
+        "missing valid range for source_domain",
+        "missing valid range for target_domain"
+      ],
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "result_hash": "hbp_assessment_418d433c2f7624869845f6e1",
+      "verdict_authorized": false
+    },
+    {
       "bridge_id": "PHYSICS-BRIDGE-53-PROXY",
       "ceiling_applied": "OPERATIONAL_MAPPING",
       "effective_classification": "FORMAL_CORRESPONDENCE",
@@ -227,11 +280,35 @@
       "requested_classification": "PREDICTIVE_BRIDGE",
       "result_hash": "hbp_assessment_8cc7f2327c1c9bcb9e170b76",
       "verdict_authorized": true
+    },
+    {
+      "bridge_id": "PB-02-EXTERNAL-NETWORK-RECOVERY",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "effective_classification": "OPERATIONAL_MAPPING",
+      "labels": [
+        "OPERATIONAL_MAPPING_PARTIAL",
+        "OPERATIONAL_MAPPING_VALID",
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ],
+      "mapping_statuses": {
+        "post-perturbation recovery ranking": "HEURISTIC"
+      },
+      "missing_required_fields": [],
+      "reasons": [
+        "heuristic or analogical mapping cannot support a higher bridge classification",
+        "no derived or independently frozen calibrated mapping is available",
+        "external raw data, controls, uncertainty, or replication are insufficient for empirical support",
+        "no intervention-backed unique generative mechanism is declared"
+      ],
+      "requested_classification": "OPERATIONAL_MAPPING",
+      "result_hash": "hbp_assessment_39b50fd73e6a09b8ea2e9342",
+      "verdict_authorized": false
     }
   ],
-  "contracts_hash": "hbp_contracts_0625c442f2fc5f40cf4d910e",
+  "contracts_hash": "hbp_contracts_2879873d9766949625c0efba",
   "counts_by_effective_classification": {
-    "FORMAL_CORRESPONDENCE": 9,
+    "FORMAL_CORRESPONDENCE": 11,
+    "OPERATIONAL_MAPPING": 1,
     "PREDICTIVE_BRIDGE": 1
   },
   "labels": [
@@ -239,7 +316,7 @@
     "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
   ],
   "pb01_result_hash": "pb01_result_1d0d56a0bc56f4e94002dbf7",
-  "registry_hash": "hbp_registry_406b295438a7e189c218ee9c",
+  "registry_hash": "hbp_registry_478d736e1df65a0fd12d24a7",
   "registry_rows": [
     {
       "assessment_hash": "hbp_assessment_877370e637288e6aaa8ad0a8",
@@ -314,6 +391,30 @@
       "verdict_authorized": false
     },
     {
+      "assessment_hash": "hbp_assessment_bfd731be642c59d428f26dad",
+      "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+      "ceiling_applied": "FORMAL_CORRESPONDENCE",
+      "domain": "Temporal recovery under damage",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "DIMENSIONAL_ANALYSIS_FAIL;FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
+      "assessment_hash": "hbp_assessment_418d433c2f7624869845f6e1",
+      "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+      "ceiling_applied": "FORMAL_CORRESPONDENCE",
+      "domain": "Cross-domain recoverability transfer",
+      "effective_classification": "FORMAL_CORRESPONDENCE",
+      "labels": "DIMENSIONAL_ANALYSIS_FAIL;FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "FORMAL_CORRESPONDENCE",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
+    },
+    {
       "assessment_hash": "hbp_assessment_1038a589680fae77f1d9d1e6",
       "bridge_id": "PHYSICS-BRIDGE-53-PROXY",
       "ceiling_applied": "OPERATIONAL_MAPPING",
@@ -360,6 +461,18 @@
       "requested_classification": "PREDICTIVE_BRIDGE",
       "source_artifacts_exist": true,
       "verdict_authorized": true
+    },
+    {
+      "assessment_hash": "hbp_assessment_39b50fd73e6a09b8ea2e9342",
+      "bridge_id": "PB-02-EXTERNAL-NETWORK-RECOVERY",
+      "ceiling_applied": "OPERATIONAL_MAPPING",
+      "domain": "external power-grid network recovery",
+      "effective_classification": "OPERATIONAL_MAPPING",
+      "labels": "OPERATIONAL_MAPPING_PARTIAL;OPERATIONAL_MAPPING_VALID;PHYSICAL_MECHANISM_NOT_ESTABLISHED",
+      "missing_required_fields": "",
+      "requested_classification": "OPERATIONAL_MAPPING",
+      "source_artifacts_exist": true,
+      "verdict_authorized": false
     }
   ],
   "schema_version": "hbp-bridge-contracts-v0.1",

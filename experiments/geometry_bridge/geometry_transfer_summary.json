@@ -1,0 +1,13 @@
+{
+  "bridge_id": "GEO-01",
+  "status": "OPEN",
+  "reading": "geometry is plausible and nontrivial, but not sufficient and not causal proof for Bell",
+  "numbers": {
+    "holdout_haos_spearman": 0.6873230373230373,
+    "best_baseline_spearman": 0.8298584298584298,
+    "holdout_top_k_precision": 0.6481481481481481,
+    "best_baseline_topk": 0.8148148148148148
+  },
+  "conclusion": "likely necessary, not sufficient, not proven causal",
+  "boundary": "Synthetic calibration only; no Bell scoring; no physical mechanism claim."
+}

@@ -1,0 +1,32 @@
+{
+  "bridge_id": "GEO-01",
+  "calibration_families": [
+    "ring",
+    "grid"
+  ],
+  "development_families": [
+    "ring"
+  ],
+  "frozen_families": [
+    "ring",
+    "grid",
+    "spiral"
+  ],
+  "holdout_families": [
+    "spiral"
+  ],
+  "n_nodes": 9,
+  "perturbations": [
+    "edge_removal",
+    "weight_degradation",
+    "localized_state_shock"
+  ],
+  "seeds": [
+    4101,
+    4102,
+    4103,
+    4104
+  ],
+  "source_hash": "geometry_source__1634fb64213d793e165e3213",
+  "transport_steps": 4
+}

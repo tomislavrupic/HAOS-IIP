@@ -393,6 +393,218 @@
       }
     },
     {
+      "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+      "domain": "Temporal recovery under damage",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["t0_state", "t1_damage", "t2_recovery", "recovery_rank", "recovery_label"],
+        "state_space": "frozen temporal-network recovery ledger",
+        "units": {"t0_state": "domain-specific", "t1_damage": "domain-specific", "t2_recovery": "domain-specific", "recovery_rank": "ordinal", "recovery_label": "boolean"},
+        "valid_ranges": {"recovery_rank": "finite ordered set", "recovery_label": "{true,false}"},
+        "missing_data_policy": "fail if holdout events, damage windows, or recovery labels are absent"
+      },
+      "units": {"recovery_rank": "ordinal", "recovery_label": "boolean"},
+      "dynamics": {
+        "update_law": "observe t0, apply frozen damage at t1, score recovery potential at t2",
+        "parameters": {"dataset_family": "frozen before execution", "damage_family": "frozen before execution"},
+        "perturbations": ["node removal", "edge removal", "weight degradation", "localized state shock"],
+        "time_axis": "frozen temporal index",
+        "boundary_conditions": "no holdout adaptation"
+      },
+      "boundary_conditions": "topology-only baselines and HAOS features must use the same frozen split and scoring path",
+      "symmetries": ["time-slice order frozen before holdout", "same execution path for target and controls"],
+      "haos_mapping": [
+        {
+          "haos_source": "frozen HAOS recovery and closure descriptors",
+          "domain_target": "future recovery ranking",
+          "mapping_function": "score recovery potential from t0/t1 artifacts only",
+          "units_before": "dimensionless frozen telemetry",
+          "units_after": "ordinal or scalar recovery score",
+          "semantic_justification": "tests whether HAOS structure adds predictive value beyond topology",
+          "mapping_status": "HEURISTIC",
+          "uncertainty": "must be estimated on untouched holdout",
+          "failure_conditions": ["holdout inspection before freeze", "control leakage", "no improvement over topology baselines"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "recovery_rank",
+          "measurement_rule": "rank future recovery potential at t2",
+          "units": "ordinal",
+          "valid_range": "finite ordered set",
+          "target_role": "holdout prediction"
+        },
+        {
+          "observable": "recovery_label",
+          "measurement_rule": "recovered versus failed label",
+          "units": "boolean",
+          "valid_range": "{true,false}",
+          "target_role": "classification check"
+        }
+      ],
+      "prediction_target": "predict future recoverability better than topology-only methods",
+      "calibration_split": "development and calibration frozen before holdout",
+      "holdout_split": "untouched temporal holdout",
+      "controls": [
+        {
+          "name": "label_permutation",
+          "purpose": "destroy target alignment while preserving marginal label structure",
+          "preserves": ["feature marginals"],
+          "destroys": ["target-label association"],
+          "invalid_if": "permuted labels retain predictive alignment"
+        },
+        {
+          "name": "topology_destroyed",
+          "purpose": "destroy recovery topology",
+          "preserves": ["sample counts"],
+          "destroys": ["meaningful structure"],
+          "invalid_if": "topology destruction retains recovery signal"
+        },
+        {
+          "name": "parameter_matched_null",
+          "purpose": "match scale without target structure",
+          "preserves": ["sample size", "basic density"],
+          "destroys": ["recovery geometry"],
+          "invalid_if": "null beats frozen baselines"
+        },
+        {
+          "name": "seed_repeat",
+          "purpose": "check deterministic reproducibility",
+          "preserves": ["contract", "split", "feature extraction"],
+          "destroys": ["none"],
+          "invalid_if": "same seed produces materially different scores"
+        }
+      ],
+      "baselines": [
+        {"name": "degree_centrality", "family": "topology-only", "prediction_rule": "rank by degree summary", "training_scope": "no training", "leakage_risk": "low"},
+        {"name": "betweenness_centrality", "family": "topology-only", "prediction_rule": "rank by betweenness summary", "training_scope": "no training", "leakage_risk": "low"},
+        {"name": "shortest_path_distance", "family": "topology-only", "prediction_rule": "rank by path distance to damage", "training_scope": "no training", "leakage_risk": "low"},
+        {"name": "spectral_metrics", "family": "spectral", "prediction_rule": "rank by frozen spectral summaries", "training_scope": "no training", "leakage_risk": "low"},
+        {"name": "graph_neural_network_baseline", "family": "learned", "prediction_rule": "train on development; evaluate on untouched holdout", "training_scope": "development only", "leakage_risk": "medium"}
+      ],
+      "uncertainty": "report confidence intervals, seed variance, and holdout degradation",
+      "falsification": {
+        "fail_conditions": ["no statistically significant improvement on untouched holdout", "control leakage", "holdout adaptation", "seed instability"],
+        "invalidation_conditions": ["benchmark is tuned after holdout inspection"],
+        "underpowered_policy": "report UNDERPOWERED when sample-size gate is not met",
+        "leakage_policy": "no target leakage into features, split, or thresholding"
+      },
+      "verdict_logic": "Most likely negative; only an untouched holdout improvement over all topology baselines is a candidate success.",
+      "provenance": {
+        "source_artifacts": ["experiments/hbp/pb03_temporal_recovery/README.md", "experiments/hbp/pb03_temporal_recovery/precommitment_contract.json"],
+        "code_artifacts": [],
+        "precommitment_artifact": "experiments/hbp/pb03_temporal_recovery/precommitment_contract.json",
+        "external_data_status": "none yet",
+        "level_history": [],
+        "notes": ["PB-03 is a contract-first branch; no dataset or runner exists yet."]
+      }
+    },
+    {
+      "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+      "domain": "Cross-domain recoverability transfer",
+      "classification": "FORMAL_CORRESPONDENCE",
+      "state_schema": {
+        "variables": ["source_domain", "target_domain", "transfer_score", "recovery_rank", "transfer_label"],
+        "state_space": "frozen source-to-target transfer ledger",
+        "units": {"source_domain": "label", "target_domain": "label", "transfer_score": "dimensionless", "recovery_rank": "ordinal", "transfer_label": "boolean"},
+        "valid_ranges": {"transfer_score": "finite", "recovery_rank": "finite ordered set", "transfer_label": "{true,false}"},
+        "missing_data_policy": "fail if source domain, target domain, or transfer split is absent"
+      },
+      "units": {"transfer_score": "dimensionless", "recovery_rank": "ordinal"},
+      "dynamics": {
+        "update_law": "train on frozen source domain, score untouched target domain",
+        "parameters": {"source_domain": "frozen before execution", "target_domain": "frozen before execution", "transfer_protocol": "frozen before execution"},
+        "perturbations": ["domain swap", "label permutation", "topology destruction", "parameter-matched null"],
+        "time_axis": "not applicable; cross-domain transfer protocol only",
+        "boundary_conditions": "no target-domain adaptation after freeze"
+      },
+      "boundary_conditions": "only HAOS structural descriptors are allowed into the transfer model",
+      "symmetries": ["source and target splits frozen before evaluation", "same scoring path for target and controls"],
+      "haos_mapping": [
+        {
+          "haos_source": "frozen HAOS structural descriptors",
+          "domain_target": "cross-domain recoverability ranking",
+          "mapping_function": "transfer structural descriptors without domain-specific tuning",
+          "units_before": "dimensionless frozen telemetry",
+          "units_after": "dimensionless or ordinal transfer score",
+          "semantic_justification": "tests whether recoverability is transferable across domains",
+          "mapping_status": "HEURISTIC",
+          "uncertainty": "must be measured on untouched target domain",
+          "failure_conditions": ["domain-specific features leak into the transfer model", "target-domain evaluation is not frozen", "no improvement over frozen baselines"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "transfer_score",
+          "measurement_rule": "rank recoverability on the target domain from frozen source-domain descriptors",
+          "units": "dimensionless",
+          "valid_range": "finite",
+          "target_role": "cross-domain transfer assessment"
+        },
+        {
+          "observable": "recovery_rank",
+          "measurement_rule": "target-domain recovery ranking under frozen transfer protocol",
+          "units": "ordinal",
+          "valid_range": "finite ordered set",
+          "target_role": "holdout transfer evaluation"
+        }
+      ],
+      "prediction_target": "is recoverability a transferable structural property across domains?",
+      "calibration_split": "source-domain development and calibration frozen before target evaluation",
+      "holdout_split": "untouched target domain",
+      "controls": [
+        {
+          "name": "label_permutation",
+          "purpose": "destroy source-target semantic alignment",
+          "preserves": ["sample sizes", "descriptor marginals"],
+          "destroys": ["true source-target mapping"],
+          "invalid_if": "permuted labels preserve the same transfer gain"
+        },
+        {
+          "name": "domain_swap_null",
+          "purpose": "ensure transfer is not a domain shortcut",
+          "preserves": ["frozen protocol"],
+          "destroys": ["meaningful source-target pairing"],
+          "invalid_if": "null transfer matches the intended transfer score"
+        },
+        {
+          "name": "topology_destroyed",
+          "purpose": "remove transferable structure from the source descriptors",
+          "preserves": ["counts", "basic scale"],
+          "destroys": ["recovery geometry"],
+          "invalid_if": "destroyed topology still transfers"
+        },
+        {
+          "name": "seed_repeat",
+          "purpose": "check deterministic reproducibility",
+          "preserves": ["protocol", "split", "descriptor extraction"],
+          "destroys": ["none"],
+          "invalid_if": "same seed changes the transfer verdict"
+        }
+      ],
+      "baselines": [
+        {"name": "mean_predictor", "family": "null", "prediction_rule": "predict mean target recovery", "training_scope": "development only", "leakage_risk": "low"},
+        {"name": "graph_metrics_transfer", "family": "topology-only", "prediction_rule": "transfer degree / distance / spectral summaries", "training_scope": "source domain only", "leakage_risk": "medium"},
+        {"name": "supervised_transfer_baseline", "family": "learned", "prediction_rule": "train on source domain, evaluate untouched target domain", "training_scope": "source domain only", "leakage_risk": "medium"}
+      ],
+      "uncertainty": "report confidence intervals, seed variance, and holdout degradation",
+      "falsification": {
+        "fail_conditions": ["no statistically significant transfer improvement", "domain leakage", "target adaptation before scoring", "seed instability"],
+        "invalidation_conditions": ["source or target domain changes after freeze"],
+        "underpowered_policy": "report UNDERPOWERED when sample-size gate is not met",
+        "leakage_policy": "no target-domain leakage into feature design or thresholding"
+      },
+      "verdict_logic": "Most likely negative; only a frozen transfer improvement on untouched target domains is a candidate success.",
+      "provenance": {
+        "source_artifacts": ["experiments/hbp/pb04_cross_domain_transfer/README.md", "experiments/hbp/pb04_cross_domain_transfer/precommitment_contract.json"],
+        "code_artifacts": [],
+        "precommitment_artifact": "experiments/hbp/pb04_cross_domain_transfer/precommitment_contract.json",
+        "external_data_status": "none yet",
+        "level_history": [],
+        "notes": ["PB-04 is a contract-first branch; no dataset or runner exists yet."]
+      }
+    },
+    {
       "bridge_id": "PHYSICS-BRIDGE-53-PROXY",
       "domain": "scalar-carrier physics-facing proxy readout",
       "classification": "FORMAL_CORRESPONDENCE",
@@ -687,6 +899,114 @@
         "external_data_status": "no_external_raw_data_synthetic_holdout",
         "level_history": ["FORMAL_CORRESPONDENCE", "ANALOGY_BRIDGE", "OPERATIONAL_MAPPING"],
         "notes": ["Empirical bridge claim denied.", "Physical mechanism claim denied."]
+      }
+    },
+    {
+      "bridge_id": "PB-02-EXTERNAL-NETWORK-RECOVERY",
+      "domain": "external power-grid network recovery",
+      "classification": "OPERATIONAL_MAPPING",
+      "state_schema": {
+        "variables": ["graph_state", "perturbation", "recovery_rank"],
+        "state_space": "public power-grid recovery benchmark cases",
+        "units": {"graph_state": "dimensionless", "perturbation": "categorical", "recovery_rank": "ordinal"},
+        "valid_ranges": {"graph_state": "finite", "perturbation": "declared controls", "recovery_rank": "frozen holdout only"},
+        "missing_data_policy": "fail if holdout or external data are missing"
+      },
+      "units": {"recovery_rank": "ordinal"},
+      "dynamics": {
+        "update_law": "benchmark execution only; no target prediction yet",
+        "parameters": {"dataset": "PowerGraph", "task_family": "cascading failure analysis"},
+        "perturbations": ["node_removal", "edge_removal", "weight_degradation", "localized_state_shock"],
+        "time_axis": "benchmark split order",
+        "boundary_conditions": "holdout frozen before scoring"
+      },
+      "boundary_conditions": "precommitment draft only; no empirical result yet",
+      "symmetries": ["same split and control path for baseline and HAOS features"],
+      "haos_mapping": [
+        {
+          "haos_source": "PB-02 frozen HAOS feature bundle",
+          "domain_target": "post-perturbation recovery ranking",
+          "mapping_function": "baseline-plus-HAOS comparison over frozen splits",
+          "units_before": "dimensionless features",
+          "units_after": "ordinal recovery rank",
+          "semantic_justification": "Tests whether HAOS features add predictive value on an independently defined real-world system.",
+          "mapping_status": "HEURISTIC",
+          "uncertainty": "no external score yet",
+          "failure_conditions": ["holdout inspected before freeze", "feature selection after holdout", "control leak carried into benchmark"]
+        }
+      ],
+      "observation_map": [
+        {
+          "observable": "recovery_rank",
+          "measurement_rule": "best conventional baseline vs best conventional baseline + frozen HAOS features on untouched holdout",
+          "units": "ordinal",
+          "valid_range": "frozen holdout only",
+          "target_role": "external benchmark target"
+        }
+      ],
+      "prediction_target": "post-perturbation recovery ranking",
+      "calibration_split": "development and calibration splits frozen before holdout",
+      "holdout_split": "untouched holdout split",
+      "controls": [
+        {
+          "name": "shuffled_target_labels",
+          "purpose": "baseline leakage sanity check",
+          "preserves": ["prediction path"],
+          "destroys": ["target alignment"],
+          "invalid_if": "score remains high"
+        },
+        {
+          "name": "topology_destroyed_graph",
+          "purpose": "destroy adjacency structure",
+          "preserves": ["case count", "rough size"],
+          "destroys": ["topology-specific recovery signal"],
+          "invalid_if": "ranking remains unchanged"
+        },
+        {
+          "name": "intentional_leakage_positive_control",
+          "purpose": "verify leak detector",
+          "preserves": ["targets"],
+          "destroys": ["blind scoring"],
+          "invalid_if": "not detected as leakage"
+        }
+      ],
+      "baselines": [
+        {
+          "name": "best_conventional_baseline",
+          "family": "graph and spectral",
+          "prediction_rule": "best baseline selected on calibration only",
+          "training_scope": "development plus calibration",
+          "leakage_risk": "must not inspect holdout"
+        },
+        {
+          "name": "baseline_plus_frozen_haos",
+          "family": "incremental value",
+          "prediction_rule": "best conventional baseline with frozen HAOS features added",
+          "training_scope": "development plus calibration",
+          "leakage_risk": "must not inspect holdout or add features after freeze"
+        }
+      ],
+      "uncertainty": "to be estimated only after execution",
+      "falsification": {
+        "fail_conditions": ["no stable holdout improvement", "control invalidation", "target leakage"],
+        "invalidation_conditions": ["holdout inspection before freeze", "feature selection after holdout"],
+        "underpowered_policy": "report UNDERPOWERED if minimum sample size is not met",
+        "leakage_policy": "same execution path for target and controls"
+      },
+      "verdict_logic": "Frozen precommitment draft only; no empirical bridge claim until holdout results exist.",
+      "provenance": {
+        "source_artifacts": [
+          "experiments/hbp/pb02_external_network_recovery/README.md",
+          "experiments/hbp/pb02_external_network_recovery/observation_map.md",
+          "experiments/hbp/pb02_external_network_recovery/precommitment_contract.json"
+        ],
+        "code_artifacts": [
+          "experiments/hbp/pb02_external_network_recovery/run_pb02_external_network_recovery.py"
+        ],
+        "precommitment_artifact": "experiments/hbp/pb02_external_network_recovery/precommitment_contract.json",
+        "external_data_status": "external_raw_data_planned_powergraph",
+        "level_history": ["FORMAL_CORRESPONDENCE", "ANALOGY_BRIDGE"],
+        "notes": ["PB-02 is frozen as a draft and not yet executed."]
       }
     }
   ]

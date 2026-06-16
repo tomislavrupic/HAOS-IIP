@@ -1,0 +1,65 @@
+{
+  "status": "FROZEN_RESULT",
+  "study_id": "GEO-01-SPIRAL-SPEC",
+  "residual": "SPIRAL_HOLDOUT_BASELINE_SUPERIOR",
+  "failure_class": "FEATURE_BUNDLE_SPECIFICITY_INSUFFICIENT",
+  "freeze_rule": {
+    "train_split": ["ring", "grid"],
+    "holdout_split": ["spiral"],
+    "score_tuning": "denied",
+    "post_hoc_feature_selection": "denied"
+  },
+  "best_baseline": {
+    "name": "shortest_path_distance",
+    "mean_holdout_spearman": 0.82985842985843,
+    "mean_holdout_mae": 0.1741554879978892
+  },
+  "augmented_candidates": [
+    {
+      "name": "shortest_path_distance + haos_distance",
+      "mean_holdout_spearman": 0.7075933075933076,
+      "mean_holdout_mae": 0.1404876681818889,
+      "delta_spearman_vs_baseline": -0.12226512226512244
+    },
+    {
+      "name": "shortest_path_distance + spectral_distance",
+      "mean_holdout_spearman": 0.7068211068211068,
+      "mean_holdout_mae": 0.13844024019034784,
+      "delta_spearman_vs_baseline": -0.12303732303732323
+    },
+    {
+      "name": "shortest_path_distance + invariant_overlap",
+      "mean_holdout_spearman": 0.6763191763191764,
+      "mean_holdout_mae": 0.14527719532820488,
+      "delta_spearman_vs_baseline": -0.15353925353925356
+    },
+    {
+      "name": "shortest_path_distance + persistence_score",
+      "mean_holdout_spearman": 0.82985842985843,
+      "mean_holdout_mae": 0.18143016604306306,
+      "delta_spearman_vs_baseline": 0.0
+    },
+    {
+      "name": "shortest_path_distance + causal_depth",
+      "mean_holdout_spearman": 0.14343629343629344,
+      "mean_holdout_mae": 0.19807631582295826,
+      "delta_spearman_vs_baseline": -0.6864221364221366
+    },
+    {
+      "name": "shortest_path_distance + temporal_order_stability",
+      "mean_holdout_spearman": 0.44736164736164735,
+      "mean_holdout_mae": 0.15751737446339387,
+      "delta_spearman_vs_baseline": -0.38249678249678264
+    }
+  ],
+  "verdict": [
+    "SPIRAL_SPECIFIC_STRUCTURE_NOT_RECOVERED",
+    "FEATURE_BUNDLE_SPECIFICITY_INSUFFICIENT",
+    "SPIRAL_HOLDOUT_BASELINE_SUPERIOR"
+  ],
+  "notes": [
+    "The best augmented proxy tied the baseline on Spearman but did not establish a stable increment.",
+    "No proxy invariant improved spiral holdout ranking above the best baseline.",
+    "This is a synthetic calibration result only."
+  ]
+}

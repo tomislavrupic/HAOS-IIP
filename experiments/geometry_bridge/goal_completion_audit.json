@@ -1,0 +1,49 @@
+{
+  "objective": "HAOS-IIP current state: PREGEOMETRIC / PROTO-GEOMETRIC",
+  "status": "INCOMPLETE",
+  "requirements": [
+    {
+      "requirement": "HAOS-IIP current state is pregeometric / proto-geometric",
+      "status": "SUPPORTED",
+      "evidence": "The geometry bridge chain exists, but Bell-level interpretation is still explicitly excluded."
+    },
+    {
+      "requirement": "Geometry requirement is likely necessary",
+      "status": "SUPPORTED",
+      "evidence": "The synthetic chain audit identifies geometry as the first missing intermediate layer."
+    },
+    {
+      "requirement": "Geometry alone sufficient for Bell is NO",
+      "status": "SUPPORTED",
+      "evidence": "The chain reaches observable prediction only in synthetic calibration and the Bell boundary remains closed."
+    },
+    {
+      "requirement": "Primary missing chain: geometry -> transformation semantics -> probability rule -> observable prediction",
+      "status": "PARTIAL",
+      "evidence": "GEO-01 remains open; GEO-03 and GEO-04 are only partial; GEO-05 freezes the dependency chain explicitly."
+    },
+    {
+      "requirement": "Bell failures explained by missing geometry",
+      "status": "PARTIAL",
+      "evidence": "Geometry is a plausible missing intermediate layer, but the evidence does not prove Bell causality."
+    },
+    {
+      "requirement": "Bell failures proved to be caused by missing geometry",
+      "status": "NOT_ESTABLISHED",
+      "evidence": "No Bell-level causal proof exists and the audit boundary explicitly refuses that claim."
+    }
+  ],
+  "boundary": "Synthetic calibration only; no Bell scoring; no physical mechanism claim.",
+  "supporting_artifacts": [
+    "experiments/geometry_bridge/README.md",
+    "experiments/geometry_bridge/pregeometry_mechanism_contract.json",
+    "experiments/geometry_bridge/geometry_transfer_summary.json",
+    "experiments/geometry_bridge/geometry_transfer_consistency.json",
+    "experiments/geometry_bridge/geometry_transfer_ledger.json",
+    "experiments/geometry_bridge/geometry_gap_map.json",
+    "experiments/geometry_bridge/geometry_evidence_manifest.json",
+    "experiments/geometry_bridge/geometry_chain_requirements.json",
+    "experiments/geometry_bridge/geometry_chain_audit_result.json",
+    "experiments/geometry_bridge/geometry_current_state_snapshot.json"
+  ]
+}

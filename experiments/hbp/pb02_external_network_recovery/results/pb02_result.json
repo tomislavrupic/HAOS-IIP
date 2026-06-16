@@ -1,0 +1,108 @@
+{
+  "baseline_plus_haos_holdout_spearman": 0.679913,
+  "best_baseline_holdout_spearman": 0.991454,
+  "best_baseline_model": "closeness_centrality",
+  "bridge_id": "PB-02",
+  "case_counts": {
+    "calibration": 4241,
+    "development": 12938,
+    "holdout": 4321
+  },
+  "controls": [
+    {
+      "control": "shuffled_target_labels",
+      "holdout_spearman": "1.000000",
+      "note": "frozen control path",
+      "status": "FAIL"
+    },
+    {
+      "control": "topology_destroyed_graph",
+      "holdout_spearman": "0.991454",
+      "note": "frozen control path",
+      "status": "FAIL"
+    },
+    {
+      "control": "degree_preserving_rewire",
+      "holdout_spearman": "0.991454",
+      "note": "frozen control path",
+      "status": "FAIL"
+    },
+    {
+      "control": "weight_shuffled_graph",
+      "holdout_spearman": "0.991454",
+      "note": "frozen control path",
+      "status": "FAIL"
+    },
+    {
+      "control": "parameter_matched_null",
+      "holdout_spearman": "-0.006747",
+      "note": "frozen control path",
+      "status": "PASS"
+    },
+    {
+      "control": "perturbation_free_baseline",
+      "holdout_spearman": "0.991454",
+      "note": "frozen control path",
+      "status": "FAIL"
+    },
+    {
+      "control": "seed_repeat",
+      "holdout_spearman": "0.679913",
+      "note": "repeat of frozen prediction path",
+      "status": "PASS"
+    },
+    {
+      "control": "intentional_leakage_positive_control",
+      "holdout_spearman": "1.000000",
+      "note": "positive leakage control",
+      "status": "TARGET_LEAKAGE_DETECTED"
+    }
+  ],
+  "dataset": "PowerGraph",
+  "dataset_validation_hash": "pb02_dataset_validation_e49fce0968836133f7148809",
+  "family": "ieee24",
+  "holdout_prediction_hash": "pb02_holdout_predictions_a665fc211ca73b245a81dcde",
+  "incremental_value": {
+    "baseline_plus_haos_holdout_spearman": "0.679913",
+    "baseline_plus_haos_model": "baseline_plus_haos",
+    "best_baseline_holdout_spearman": "0.990555",
+    "best_baseline_model": "closeness_centrality",
+    "incremental_prediction_ci_high": "0.001704",
+    "incremental_prediction_ci_low": "-0.000355",
+    "incremental_prediction_mean": "0.000668",
+    "incremental_spearman": "-0.310643"
+  },
+  "labels": [
+    "CONTROL_INVALID",
+    "PREDICTION_NOT_DISTINCT_FROM_BASELINES",
+    "MIXED_OPEN"
+  ],
+  "non_claims": [
+    "operational mapping only until holdout transfer is demonstrated",
+    "no physical mechanism claim",
+    "no empirical bridge claim",
+    "no universal recoverability claim",
+    "no claim that HAOS explains power-grid physics"
+  ],
+  "outputs": {
+    "baseline_results": "experiments/hbp/pb02_external_network_recovery/results/baseline_results.csv",
+    "control_results": "experiments/hbp/pb02_external_network_recovery/results/control_results.csv",
+    "dataset_validation": "experiments/hbp/pb02_external_network_recovery/results/dataset_validation.json",
+    "haos_results": "experiments/hbp/pb02_external_network_recovery/results/haos_results.csv",
+    "holdout_predictions": "experiments/hbp/pb02_external_network_recovery/results/holdout_predictions.csv",
+    "incremental_value": "experiments/hbp/pb02_external_network_recovery/results/incremental_value.csv",
+    "report": "experiments/hbp/pb02_external_network_recovery/results/pb02_report.md",
+    "result": "experiments/hbp/pb02_external_network_recovery/results/pb02_result.json",
+    "split_manifest": "experiments/hbp/pb02_external_network_recovery/results/split_manifest.json",
+    "uncertainty_report": "experiments/hbp/pb02_external_network_recovery/results/uncertainty_report.json"
+  },
+  "result_basis": {
+    "best_baseline": "closeness_centrality",
+    "best_baseline_spearman": "0.991454",
+    "combined_model": "baseline_plus_haos",
+    "combined_model_spearman": "0.679913"
+  },
+  "result_hash": "pb02_result_c84f151554dc98485a16bee4",
+  "split_manifest_hash": "pb02_hold_split_4b795660f5168f2d091b980f",
+  "status": "CONTROL_INVALID"
+}

@@ -1,0 +1,182 @@
+{
+  "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+  "domain": "Temporal recovery under damage",
+  "classification": "FORMAL_CORRESPONDENCE",
+  "state_schema": {
+    "variables": [
+      "t0_state",
+      "t1_damage",
+      "t2_recovery",
+      "recovery_rank",
+      "recovery_label"
+    ],
+    "state_space": "frozen temporal-network recovery ledger",
+    "units": {
+      "t0_state": "domain-specific",
+      "t1_damage": "domain-specific",
+      "t2_recovery": "domain-specific",
+      "recovery_rank": "ordinal",
+      "recovery_label": "boolean"
+    },
+    "valid_ranges": {
+      "recovery_rank": "finite ordered set",
+      "recovery_label": "{true,false}"
+    },
+    "missing_data_policy": "fail if holdout events, damage windows, or recovery labels are absent"
+  },
+  "units": {
+    "recovery_rank": "ordinal",
+    "recovery_label": "boolean"
+  },
+  "dynamics": {
+    "update_law": "observe t0, apply frozen damage at t1, score recovery potential at t2",
+    "parameters": {
+      "dataset_family": "frozen before execution",
+      "damage_family": "frozen before execution"
+    },
+    "perturbations": [
+      "node removal",
+      "edge removal",
+      "weight degradation",
+      "localized state shock"
+    ],
+    "time_axis": "frozen temporal index",
+    "boundary_conditions": "no holdout adaptation"
+  },
+  "boundary_conditions": "topology-only baselines and HAOS features must use the same frozen split and scoring path",
+  "symmetries": [
+    "time-slice order frozen before holdout",
+    "same execution path for target and controls"
+  ],
+  "haos_mapping": [
+    {
+      "haos_source": "frozen HAOS recovery and closure descriptors",
+      "domain_target": "future recovery ranking",
+      "mapping_function": "score recovery potential from t0/t1 artifacts only",
+      "units_before": "dimensionless frozen telemetry",
+      "units_after": "ordinal or scalar recovery score",
+      "semantic_justification": "tests whether HAOS structure adds predictive value beyond topology",
+      "mapping_status": "HEURISTIC",
+      "uncertainty": "must be estimated on untouched holdout",
+      "failure_conditions": [
+        "holdout inspection before freeze",
+        "control leakage",
+        "no improvement over topology baselines"
+      ]
+    }
+  ],
+  "observation_map": [
+    {
+      "observable": "recovery_rank",
+      "measurement_rule": "rank future recovery potential at t2",
+      "units": "ordinal",
+      "valid_range": "finite ordered set",
+      "target_role": "holdout prediction"
+    },
+    {
+      "observable": "recovery_label",
+      "measurement_rule": "recovered versus failed label",
+      "units": "boolean",
+      "valid_range": "{true,false}",
+      "target_role": "classification check"
+    }
+  ],
+  "prediction_target": "predict future recoverability better than topology-only methods",
+  "calibration_split": "development and calibration frozen before holdout",
+  "holdout_split": "untouched temporal holdout",
+  "controls": [
+    {
+      "name": "label_permutation",
+      "purpose": "destroy target alignment while preserving marginal label structure",
+      "preserves": ["feature marginals"],
+      "destroys": ["target-label association"],
+      "invalid_if": "permuted labels retain predictive alignment"
+    },
+    {
+      "name": "topology_destroyed",
+      "purpose": "destroy recovery topology",
+      "preserves": ["sample counts"],
+      "destroys": ["meaningful structure"],
+      "invalid_if": "topology destruction retains recovery signal"
+    },
+    {
+      "name": "parameter_matched_null",
+      "purpose": "match scale without target structure",
+      "preserves": ["sample size", "basic density"],
+      "destroys": ["recovery geometry"],
+      "invalid_if": "null beats frozen baselines"
+    },
+    {
+      "name": "seed_repeat",
+      "purpose": "check deterministic reproducibility",
+      "preserves": ["contract", "split", "feature extraction"],
+      "destroys": ["none"],
+      "invalid_if": "same seed produces materially different scores"
+    }
+  ],
+  "baselines": [
+    {
+      "name": "degree_centrality",
+      "family": "topology-only",
+      "prediction_rule": "rank by degree summary",
+      "training_scope": "no training",
+      "leakage_risk": "low"
+    },
+    {
+      "name": "betweenness_centrality",
+      "family": "topology-only",
+      "prediction_rule": "rank by betweenness summary",
+      "training_scope": "no training",
+      "leakage_risk": "low"
+    },
+    {
+      "name": "shortest_path_distance",
+      "family": "topology-only",
+      "prediction_rule": "rank by path distance to damage",
+      "training_scope": "no training",
+      "leakage_risk": "low"
+    },
+    {
+      "name": "spectral_metrics",
+      "family": "spectral",
+      "prediction_rule": "rank by frozen spectral summaries",
+      "training_scope": "no training",
+      "leakage_risk": "low"
+    },
+    {
+      "name": "graph_neural_network_baseline",
+      "family": "learned",
+      "prediction_rule": "train on development; evaluate on untouched holdout",
+      "training_scope": "development only",
+      "leakage_risk": "medium"
+    }
+  ],
+  "uncertainty": "report confidence intervals, seed variance, and holdout degradation",
+  "falsification": {
+    "fail_conditions": [
+      "no statistically significant improvement on untouched holdout",
+      "control leakage",
+      "holdout adaptation",
+      "seed instability"
+    ],
+    "invalidation_conditions": [
+      "benchmark is tuned after holdout inspection"
+    ],
+    "underpowered_policy": "report UNDERPOWERED when sample-size gate is not met",
+    "leakage_policy": "no target leakage into features, split, or thresholding"
+  },
+  "verdict_logic": "Most likely negative; only an untouched holdout improvement over all topology baselines is a candidate success.",
+  "provenance": {
+    "source_artifacts": [
+      "experiments/hbp/pb03_temporal_recovery/README.md"
+    ],
+    "code_artifacts": [],
+    "precommitment_artifact": "experiments/hbp/pb03_temporal_recovery/precommitment_contract.json",
+    "external_data_status": "none yet",
+    "level_history": [],
+    "notes": [
+      "PB-03 is a contract-first branch; no dataset or runner exists yet."
+    ]
+  }
+}
+

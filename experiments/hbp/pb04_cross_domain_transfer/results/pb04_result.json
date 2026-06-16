@@ -1,0 +1,43 @@
+{
+  "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+  "combined_holdout_spearman": 0.5388684944805201,
+  "controls": [
+    {
+      "control": "label_permutation",
+      "status": "PASS",
+      "target_spearman": "0.008260"
+    },
+    {
+      "control": "domain_swap_null",
+      "status": "PASS",
+      "target_spearman": "0.000000"
+    },
+    {
+      "control": "topology_destroyed",
+      "status": "PASS",
+      "target_spearman": "-0.031780"
+    },
+    {
+      "control": "seed_repeat",
+      "status": "PASS",
+      "target_spearman": "0.361273"
+    }
+  ],
+  "labels": [
+    "CAUSAL_CLAIM_NOT_AUTHORIZED",
+    "HAOS_BELL_STATUS_OPEN",
+    "MIXED_OPEN",
+    "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
+  ],
+  "outputs": {
+    "report": "results/pb04_report.md",
+    "result": "results/pb04_result.json"
+  },
+  "result_hash": "pb04_result_7b13bc9285cc288cbfbe46b8",
+  "source_case_count": 31,
+  "source_holdout_spearman": 1.0,
+  "source_model": "source_domain_only",
+  "status": "PREDICTION_NOT_DISTINCT_FROM_BASELINES",
+  "target_case_count": 21500,
+  "target_holdout_spearman": 0.36127250824240364
+}

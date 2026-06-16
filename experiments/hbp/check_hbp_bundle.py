@@ -23,6 +23,15 @@ REQUIRED_OUTPUTS = [
     Path("experiments/hbp/pb01_network_recovery/results/pb01_predictions.csv"),
     Path("experiments/hbp/pb01_network_recovery/results/pb01_baseline_metrics.csv"),
     Path("experiments/hbp/pb01_network_recovery/results/pb01_control_results.csv"),
+    Path("experiments/hbp/pb02_external_network_recovery/README.md"),
+    Path("experiments/hbp/pb02_external_network_recovery/observation_map.md"),
+    Path("experiments/hbp/pb02_external_network_recovery/precommitment_contract.json"),
+    Path("experiments/hbp/pb02_external_network_recovery/dataset_manifest.json"),
+    Path("experiments/hbp/pb02_external_network_recovery/run_pb02_external_network_recovery.py"),
+    Path("experiments/hbp/pb03_temporal_recovery/README.md"),
+    Path("experiments/hbp/pb03_temporal_recovery/precommitment_contract.json"),
+    Path("experiments/hbp/pb04_cross_domain_transfer/README.md"),
+    Path("experiments/hbp/pb04_cross_domain_transfer/precommitment_contract.json"),
 ]
 
 

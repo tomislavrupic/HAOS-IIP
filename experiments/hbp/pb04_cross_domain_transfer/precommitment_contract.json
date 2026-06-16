@@ -1,0 +1,170 @@
+{
+  "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+  "domain": "Cross-domain recoverability transfer",
+  "classification": "FORMAL_CORRESPONDENCE",
+  "state_schema": {
+    "variables": [
+      "source_domain",
+      "target_domain",
+      "transfer_score",
+      "recovery_rank",
+      "transfer_label"
+    ],
+    "state_space": "frozen source-to-target transfer ledger",
+    "units": {
+      "source_domain": "label",
+      "target_domain": "label",
+      "transfer_score": "dimensionless",
+      "recovery_rank": "ordinal",
+      "transfer_label": "boolean"
+    },
+    "valid_ranges": {
+      "transfer_score": "finite",
+      "recovery_rank": "finite ordered set",
+      "transfer_label": "{true,false}"
+    },
+    "missing_data_policy": "fail if source domain, target domain, or transfer split is absent"
+  },
+  "units": {
+    "transfer_score": "dimensionless",
+    "recovery_rank": "ordinal"
+  },
+  "dynamics": {
+    "update_law": "train on frozen source domain, score untouched target domain",
+    "parameters": {
+      "source_domain": "frozen before execution",
+      "target_domain": "frozen before execution",
+      "transfer_protocol": "frozen before execution"
+    },
+    "perturbations": [
+      "domain swap",
+      "label permutation",
+      "topology destruction",
+      "parameter-matched null"
+    ],
+    "time_axis": "not applicable; cross-domain transfer protocol only",
+    "boundary_conditions": "no target-domain adaptation after freeze"
+  },
+  "boundary_conditions": "only HAOS structural descriptors are allowed into the transfer model",
+  "symmetries": [
+    "source and target splits frozen before evaluation",
+    "same scoring path for target and controls"
+  ],
+  "haos_mapping": [
+    {
+      "haos_source": "frozen HAOS structural descriptors",
+      "domain_target": "cross-domain recoverability ranking",
+      "mapping_function": "transfer structural descriptors without domain-specific tuning",
+      "units_before": "dimensionless frozen telemetry",
+      "units_after": "dimensionless or ordinal transfer score",
+      "semantic_justification": "tests whether recoverability is transferable across domains",
+      "mapping_status": "HEURISTIC",
+      "uncertainty": "must be measured on untouched target domain",
+      "failure_conditions": [
+        "domain-specific features leak into the transfer model",
+        "target-domain evaluation is not frozen",
+        "no improvement over frozen baselines"
+      ]
+    }
+  ],
+  "observation_map": [
+    {
+      "observable": "transfer_score",
+      "measurement_rule": "rank recoverability on the target domain from frozen source-domain descriptors",
+      "units": "dimensionless",
+      "valid_range": "finite",
+      "target_role": "cross-domain transfer assessment"
+    },
+    {
+      "observable": "recovery_rank",
+      "measurement_rule": "target-domain recovery ranking under frozen transfer protocol",
+      "units": "ordinal",
+      "valid_range": "finite ordered set",
+      "target_role": "holdout transfer evaluation"
+    }
+  ],
+  "prediction_target": "is recoverability a transferable structural property across domains?",
+  "calibration_split": "source-domain development and calibration frozen before target evaluation",
+  "holdout_split": "untouched target domain",
+  "controls": [
+    {
+      "name": "label_permutation",
+      "purpose": "destroy source-target semantic alignment",
+      "preserves": ["sample sizes", "descriptor marginals"],
+      "destroys": ["true source-target mapping"],
+      "invalid_if": "permuted labels preserve the same transfer gain"
+    },
+    {
+      "name": "domain_swap_null",
+      "purpose": "ensure transfer is not a domain shortcut",
+      "preserves": ["frozen protocol"],
+      "destroys": ["meaningful source-target pairing"],
+      "invalid_if": "null transfer matches the intended transfer score"
+    },
+    {
+      "name": "topology_destroyed",
+      "purpose": "remove transferable structure from the source descriptors",
+      "preserves": ["counts", "basic scale"],
+      "destroys": ["recovery geometry"],
+      "invalid_if": "destroyed topology still transfers"
+    },
+    {
+      "name": "seed_repeat",
+      "purpose": "check deterministic reproducibility",
+      "preserves": ["protocol", "split", "descriptor extraction"],
+      "destroys": ["none"],
+      "invalid_if": "same seed changes the transfer verdict"
+    }
+  ],
+  "baselines": [
+    {
+      "name": "mean_predictor",
+      "family": "null",
+      "prediction_rule": "predict mean target recovery",
+      "training_scope": "development only",
+      "leakage_risk": "low"
+    },
+    {
+      "name": "graph_metrics_transfer",
+      "family": "topology-only",
+      "prediction_rule": "transfer degree / distance / spectral summaries",
+      "training_scope": "source domain only",
+      "leakage_risk": "medium"
+    },
+    {
+      "name": "supervised_transfer_baseline",
+      "family": "learned",
+      "prediction_rule": "train on source domain, evaluate untouched target domain",
+      "training_scope": "source domain only",
+      "leakage_risk": "medium"
+    }
+  ],
+  "uncertainty": "report confidence intervals, seed variance, and holdout degradation",
+  "falsification": {
+    "fail_conditions": [
+      "no statistically significant transfer improvement",
+      "domain leakage",
+      "target adaptation before scoring",
+      "seed instability"
+    ],
+    "invalidation_conditions": [
+      "source or target domain changes after freeze"
+    ],
+    "underpowered_policy": "report UNDERPOWERED when sample-size gate is not met",
+    "leakage_policy": "no target-domain leakage into feature design or thresholding"
+  },
+  "verdict_logic": "Most likely negative; only a frozen transfer improvement on untouched target domains is a candidate success.",
+  "provenance": {
+    "source_artifacts": [
+      "experiments/hbp/pb04_cross_domain_transfer/README.md"
+    ],
+    "code_artifacts": [],
+    "precommitment_artifact": "experiments/hbp/pb04_cross_domain_transfer/precommitment_contract.json",
+    "external_data_status": "none yet",
+    "level_history": [],
+    "notes": [
+      "PB-04 is a contract-first branch; no dataset or runner exists yet."
+    ]
+  }
+}
+

@@ -1,0 +1,38 @@
+{
+  "bridge_id": "PB-02",
+  "execution_mode": "frozen_external_benchmark_candidate",
+  "required_inputs": [
+    "dataset_manifest.json",
+    "precommitment_contract.json",
+    "holdout_split.json",
+    "development_split.json",
+    "calibration_split.json"
+  ],
+  "required_outputs": [
+    "baseline_only.csv",
+    "haos_only.csv",
+    "baseline_plus_haos.csv",
+    "ablated_haos.csv",
+    "matched_null.csv",
+    "report.md",
+    "result.json"
+  ],
+  "holdout_rules": [
+    "no feature changes after holdout inspection",
+    "no threshold movement after holdout inspection",
+    "no label leakage",
+    "same split path for baseline and HAOS conditions"
+  ],
+  "frozen_comparison": "best conventional baseline vs best conventional baseline + frozen HAOS features",
+  "claim_boundary": [
+    "operational mapping only until holdout transfer is demonstrated",
+    "no physical mechanism claim",
+    "no empirical bridge claim",
+    "no universal recoverability claim"
+  ],
+  "status": "DRAFT",
+  "notes": [
+    "This contract does not contain results.",
+    "This contract exists to define the preconditions for a future real-world holdout run."
+  ]
+}

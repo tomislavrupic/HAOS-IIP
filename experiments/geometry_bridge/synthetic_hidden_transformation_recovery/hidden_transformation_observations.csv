@@ -1,0 +1,9 @@
+split,element,signature_id,orbit_size,stabilizer_size,equivalence_class,inverse_target,inverse_predicted,identity_target,identity_predicted,composition_target,composition_predicted,relation_target,relation_predicted
+development,e,63b5c33f6bd19c72,1,4,even_rotations,e,e,e,e,e,e,1,1
+development,r,cc53cf61e3b63dd7,4,1,odd_rotations,r3,r3,e,e,e,e,0,0
+calibration,r2,a253a8676a77ca3f,2,2,even_rotations,r2,r2,e,e,e,e,1,1
+calibration,r3,78906a8139eabe32,4,1,odd_rotations,r,r,e,e,e,e,0,0
+development,s,8bebc1424b260435,1,4,reflections,s,s,e,e,e,e,1,1
+development,sr,9a364f22c076fcac,2,2,reflections,sr,sr,e,e,e,e,0,0
+calibration,sr2,58cc0c28f26aaa42,2,2,reflections,sr2,sr2,e,e,e,e,1,1
+holdout,sr3,0a109dce8126f9af,2,2,reflections,sr3,sr3,e,e,e,e,0,0

@@ -1,0 +1,42 @@
+{
+  "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+  "selection_status": "frozen",
+  "data_schema": {
+    "network_id": "string",
+    "time_step": "integer",
+    "node_state_vector": "float array",
+    "edge_weight_matrix": "float matrix",
+    "damage_type": "categorical",
+    "damage_magnitude": "float",
+    "recovery_label": "boolean",
+    "recovery_rank": "ordinal",
+    "source_family": "categorical",
+    "holdout_family": "categorical"
+  },
+  "required_fields": [
+    "network_id",
+    "time_step",
+    "node_state_vector",
+    "edge_weight_matrix",
+    "damage_type",
+    "damage_magnitude",
+    "recovery_label",
+    "recovery_rank"
+  ],
+  "field_rules": [
+    "time_step ordering must remain frozen",
+    "holdout families must remain untouched until scoring",
+    "node and edge dimensions must be declared before runner implementation",
+    "missing required fields fail the benchmark"
+  ],
+  "non_claims": [
+    "no biological validation claim",
+    "no physical mechanism claim",
+    "no result claim yet"
+  ],
+  "notes": [
+    "This schema is intended to be compatible with PowerGraph cascade-style records.",
+    "The schema remains independent of the actual implementation details."
+  ]
+}
+

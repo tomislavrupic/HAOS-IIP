@@ -1,0 +1,33 @@
+{
+  "bridge_id": "GEO-05",
+  "status": "OPEN",
+  "gap": "The remaining open chain is not geometry itself, but the transfer from geometry into transformation semantics, probability rule, and observable prediction with Bell-level causality still unproven.",
+  "layers": [
+    {
+      "name": "geometry",
+      "status": "PARTIAL",
+      "evidence": "GEO-01 finds nontrivial signal, but holdout performance does not beat the best baseline."
+    },
+    {
+      "name": "transformation_semantics",
+      "status": "OPEN",
+      "evidence": "GEO-02 exists, but it remains a synthetic semantics calibration and does not authorize Bell interpretation."
+    },
+    {
+      "name": "probability_rule",
+      "status": "PARTIAL",
+      "evidence": "GEO-03 beats the null on some probabilistic scores, but the claim is still open."
+    },
+    {
+      "name": "observable_prediction",
+      "status": "PARTIAL",
+      "evidence": "GEO-04 has pairwise ordering signal, but the coarse class target remains weak."
+    },
+    {
+      "name": "bell_causality_from_missing_geometry",
+      "status": "NOT_ESTABLISHED",
+      "evidence": "The chain never claims Bell-level causal proof, and the audit boundary explicitly blocks that inference."
+    }
+  ],
+  "boundary": "Synthetic calibration only; no Bell scoring; no physical mechanism claim."
+}

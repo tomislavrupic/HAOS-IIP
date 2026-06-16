@@ -1,0 +1,30 @@
+{
+  "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+  "selection_status": "frozen",
+  "baselines": [
+    {
+      "name": "mean_predictor",
+      "family": "null",
+      "training_scope": "development only",
+      "notes": "predict mean target recovery"
+    },
+    {
+      "name": "graph_metrics_transfer",
+      "family": "topology-only",
+      "training_scope": "source domain only",
+      "notes": "degree, distance, and spectral summaries transferred as-is"
+    },
+    {
+      "name": "supervised_transfer_baseline",
+      "family": "learned",
+      "training_scope": "source domain only",
+      "notes": "train on source domain, evaluate untouched target domain"
+    }
+  ],
+  "comparison_rule": "HAOS must outperform every frozen baseline on untouched target holdout to count as a candidate success",
+  "non_claims": [
+    "no baseline tuning after target inspection",
+    "no result claim yet"
+  ]
+}
+

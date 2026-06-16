@@ -1,0 +1,51 @@
+{
+  "boundary": "Synthetic calibration only; no Bell scoring; no physical mechanism claim.",
+  "bridge_id": "GEO-05",
+  "chain": [
+    {
+      "evidence": "holdout_pass=False / best_baseline_spearman=0.8298584298584298",
+      "external_status": "OPEN",
+      "name": "intrinsic_geometry",
+      "status": "OPEN",
+      "synthetic_status": "OPEN",
+      "unresolved_criterion": "holdout transfer does not outperform the best baseline on the spiral family"
+    },
+    {
+      "evidence": "synthetic semantics layer present; frozen control summary exists but no Bell relevance",
+      "external_status": "OPEN",
+      "name": "transformation_semantics",
+      "status": "VALID",
+      "synthetic_status": "VALID"
+    },
+    {
+      "evidence": "holdout_accuracy=0.7083333333333334 / null_accuracy=0.625 / brier=0.1963532621393027",
+      "external_status": "OPEN",
+      "name": "hidden_probability_rule",
+      "status": "VALID",
+      "synthetic_status": "VALID"
+    },
+    {
+      "evidence": "pairwise_accuracy=1.0 / pairwise_null_accuracy=0.5 / accuracy=0.8333333333333334 / null_accuracy=0.25",
+      "external_status": "OPEN",
+      "name": "observable_prediction",
+      "status": "VALID",
+      "synthetic_status": "VALID"
+    }
+  ],
+  "labels": [
+    "PREGEOMETRIC_CHAIN_OPEN",
+    "MIXED_OPEN"
+  ],
+  "source_artifacts": [
+    "experiments/geometry_bridge/synthetic_intrinsic_geometry_recovery/geometry_recovery_result.json",
+    "experiments/geometry_bridge/synthetic_transformation_semantics_recovery/semantics_result.json",
+    "experiments/geometry_bridge/synthetic_probability_rule_recovery/probability_rule_result.json",
+    "experiments/geometry_bridge/synthetic_hidden_probability_rule_recovery/probability_rule_result.json",
+    "experiments/geometry_bridge/synthetic_observable_prediction/observable_prediction_result.json"
+  ],
+  "status": "OPEN",
+  "status_axes": {
+    "external_semantics": "OPEN",
+    "synthetic_calibration": "CLOSED"
+  }
+}

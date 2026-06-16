@@ -230,6 +230,11 @@ class HBPRegistryTests(unittest.TestCase):
             rows["PB-01-NETWORK-RECOVERY"]["effective_classification"],
             {"EMPIRICALLY_SUPPORTED_BRIDGE", "PHYSICAL_MECHANISM_CANDIDATE"},
         )
+        self.assertIn("PB-02-EXTERNAL-NETWORK-RECOVERY", rows)
+        self.assertIn(rows["PB-02-EXTERNAL-NETWORK-RECOVERY"]["effective_classification"], {"FORMAL_CORRESPONDENCE", "OPERATIONAL_MAPPING"})
+        self.assertFalse(rows["PB-02-EXTERNAL-NETWORK-RECOVERY"]["verdict_authorized"])
+        self.assertTrue((__import__("pathlib").Path("experiments/hbp/pb02_external_network_recovery/dataset_manifest.json")).exists())
+        self.assertTrue((__import__("pathlib").Path("experiments/hbp/pb02_external_network_recovery/check_pb02_bundle.py")).exists())
 
     def test_scalar_claims_do_not_override_official_verdict(self) -> None:
         result = copy.deepcopy(self.pb01["result"])

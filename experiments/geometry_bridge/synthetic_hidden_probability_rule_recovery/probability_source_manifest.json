@@ -1,0 +1,26 @@
+{
+  "bridge_id": "GEO-P1-01",
+  "controls": [
+    "label_permutation_control",
+    "topology_destroyed_control",
+    "feature_shuffle_control",
+    "parameter_matched_null_control",
+    "seed_repeat_control",
+    "leakage_positive_control"
+  ],
+  "families": [
+    "ring",
+    "grid"
+  ],
+  "seeds": [
+    7101,
+    7102,
+    7103
+  ],
+  "transformations": [
+    "identity",
+    "pure_gauge",
+    "nontrivial_flux",
+    "orientation_reversal"
+  ]
+}

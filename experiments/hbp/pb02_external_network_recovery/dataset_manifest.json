@@ -1,0 +1,35 @@
+{
+  "dataset": "PowerGraph",
+  "source_paper": "https://arxiv.org/abs/2402.02827",
+  "landing_page": "https://figshare.com/articles/dataset/PowerGraph/22820534",
+  "code": "https://github.com/PowerGraph-Datasets",
+  "task_family": "cascading failure analyses of power grids",
+  "direct_semantics": "real-world power-grid recovery and cascading failures",
+  "dataset_layout": {
+    "pf_opf": [
+      "dataset_pf_opf/IEEE24",
+      "dataset_pf_opf/IEEE39",
+      "dataset_pf_opf/UK",
+      "dataset_pf_opf/IEEE118",
+      "dataset_pf_opf/Texas"
+    ],
+    "cascades": [
+      "dataset_cascades/IEEE24",
+      "dataset_cascades/IEEE39",
+      "dataset_cascades/UK",
+      "dataset_cascades/IEEE118"
+    ],
+    "raw": [
+      "raw.7z (Texas cascading failures raw package)"
+    ]
+  },
+  "frozen_status": "draft",
+  "holdout_policy": "untouched holdout, no feature changes after inspection",
+  "comparison": "best conventional baseline vs best conventional baseline + frozen HAOS features",
+  "claim_boundary": [
+    "operational mapping only until holdout transfer is demonstrated",
+    "no physical mechanism claim",
+    "no empirical bridge claim",
+    "no universal recoverability claim"
+  ]
+}

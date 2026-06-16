@@ -1,0 +1,46 @@
+{
+  "bridge_id": "GEO-03",
+  "control_summary": {
+    "feature_shuffle_control": {
+      "accuracy": 0.16666666666666666,
+      "brier": 0.2630346532115618
+    },
+    "label_permutation_control": {
+      "accuracy": 0.16666666666666666,
+      "brier": 0.2556494745767606
+    },
+    "leakage_positive_control": {
+      "accuracy": 0.8333333333333334,
+      "brier": 0.23986274806369431
+    },
+    "parameter_matched_null_control": {
+      "accuracy": 0.16666666666666666,
+      "brier": 0.260033933161408
+    },
+    "seed_repeat_control": {
+      "accuracy": 0.16666666666666666,
+      "brier": 0.260543437500146
+    },
+    "topology_destroyed_control": {
+      "accuracy": 1.0,
+      "brier": 0.21777202039751817
+    }
+  },
+  "holdout_metrics": {
+    "accuracy": 0.5,
+    "brier_score": 0.1871772918779361,
+    "log_loss": 0.5580877913629587,
+    "null_accuracy": 0.4166666666666667,
+    "null_brier": 0.25,
+    "null_log_loss": 0.6931471805599453
+  },
+  "labels": [
+    "PROBABILITY_RULE_OPEN",
+    "MIXED_OPEN"
+  ],
+  "observations": "probability_observations.csv",
+  "predictions": "probability_predictions.csv",
+  "result_hash": "probability_result__3163e26a3b75ebcecf0bc698",
+  "source_manifest": "probability_source_manifest.json",
+  "version": "synthetic-probability-rule-recovery-v0.1"
+}

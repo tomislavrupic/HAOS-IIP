@@ -1,0 +1,50 @@
+{
+  "bridge_id": "GEO-05",
+  "status": "OPEN",
+  "steps": [
+    {
+      "from": "geometry",
+      "to": "transformation_semantics",
+      "status": "OPEN",
+      "delta": "structure gains semantic labels, but the layer remains calibration-only",
+      "evidence": {
+        "geometry_reading": "plausible and nontrivial, but not sufficient",
+        "semantics_reading": "synthetic calibration only"
+      }
+    },
+    {
+      "from": "transformation_semantics",
+      "to": "probability_rule",
+      "status": "PARTIAL",
+      "delta": "probabilistic scoring improves over null, but does not close the rule",
+      "evidence": {
+        "holdout_accuracy": 0.5,
+        "null_accuracy": 0.4166666666666667,
+        "brier_score": 0.1871772918779361,
+        "null_brier": 0.25
+      }
+    },
+    {
+      "from": "probability_rule",
+      "to": "observable_prediction",
+      "status": "PARTIAL",
+      "delta": "pairwise ordering improves strongly, but coarse targets remain weak",
+      "evidence": {
+        "pairwise_accuracy": 1.0,
+        "pairwise_null_accuracy": 0.5,
+        "accuracy": 0.25,
+        "null_accuracy": 0.25
+      }
+    },
+    {
+      "from": "observable_prediction",
+      "to": "bell_causality_from_missing_geometry",
+      "status": "NOT_ESTABLISHED",
+      "delta": "no Bell-level causal proof emerges from the synthetic chain",
+      "evidence": {
+        "boundary": "synthetic calibration only"
+      }
+    }
+  ],
+  "boundary": "Synthetic calibration only; no Bell scoring; no physical mechanism claim."
+}

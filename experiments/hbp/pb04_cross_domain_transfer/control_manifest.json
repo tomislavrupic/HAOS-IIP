@@ -1,0 +1,45 @@
+{
+  "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+  "selection_status": "frozen",
+  "controls": [
+    {
+      "name": "label_permutation",
+      "purpose": "destroy source-target semantic alignment",
+      "preserves": ["sample sizes", "descriptor marginals"],
+      "destroys": ["true source-target mapping"],
+      "invalid_if": "permuted labels preserve the same transfer gain"
+    },
+    {
+      "name": "domain_swap_null",
+      "purpose": "ensure transfer is not a domain shortcut",
+      "preserves": ["frozen protocol"],
+      "destroys": ["meaningful source-target pairing"],
+      "invalid_if": "null transfer matches the intended transfer score"
+    },
+    {
+      "name": "topology_destroyed",
+      "purpose": "remove transferable structure from the source descriptors",
+      "preserves": ["counts", "basic scale"],
+      "destroys": ["recovery geometry"],
+      "invalid_if": "destroyed topology still transfers"
+    },
+    {
+      "name": "seed_repeat",
+      "purpose": "check deterministic reproducibility",
+      "preserves": ["protocol", "split", "descriptor extraction"],
+      "destroys": ["none"],
+      "invalid_if": "same seed changes the transfer verdict"
+    }
+  ],
+  "control_policy": [
+    "controls must use the same execution path as the target",
+    "controls must be frozen before runner implementation",
+    "controls must fail honestly if they destroy the intended structure",
+    "controls must not be redefined after target inspection"
+  ],
+  "non_claims": [
+    "no transfer success claim yet",
+    "no physical mechanism claim"
+  ]
+}
+

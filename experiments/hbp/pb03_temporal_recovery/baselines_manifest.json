@@ -1,0 +1,42 @@
+{
+  "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+  "selection_status": "frozen",
+  "baselines": [
+    {
+      "name": "degree_centrality",
+      "family": "topology-only",
+      "training_scope": "none",
+      "notes": "node degree summary"
+    },
+    {
+      "name": "betweenness_centrality",
+      "family": "topology-only",
+      "training_scope": "none",
+      "notes": "path-bridge summary"
+    },
+    {
+      "name": "shortest_path_distance",
+      "family": "topology-only",
+      "training_scope": "none",
+      "notes": "distance-to-damage summary"
+    },
+    {
+      "name": "spectral_metrics",
+      "family": "spectral",
+      "training_scope": "none",
+      "notes": "frozen spectral summaries only"
+    },
+    {
+      "name": "graph_neural_network_baseline",
+      "family": "learned",
+      "training_scope": "development only",
+      "notes": "trained only on frozen development split"
+    }
+  ],
+  "comparison_rule": "HAOS must outperform every frozen baseline on untouched holdout to count as a candidate success",
+  "non_claims": [
+    "no baseline tuning after holdout inspection",
+    "no result claim yet"
+  ]
+}
+

@@ -1,0 +1,45 @@
+{
+  "status": "FROZEN_PRECOMMITMENT",
+  "study_id": "GEO-01-SPIRAL-SPEC",
+  "purpose": "Determine which geometric invariant is necessary for spiral-family transfer and whether it is already latent in HAOS-IIP or must be added as genuinely new structure.",
+  "frozen_residual": "holdout transfer does not outperform the best baseline on the spiral family",
+  "candidate_invariants": [
+    "curvature_or_turning_rate",
+    "geodesic_ordering",
+    "orientation_transport",
+    "winding_or_path_history",
+    "multiscale_neighborhood_structure"
+  ],
+  "decisive_comparison": {
+    "baseline": "best_baseline",
+    "augmented": "best_baseline_plus_precommitted_haos_invariant",
+    "requirement": "stable_holdout_improvement_against_matched_control"
+  },
+  "matched_controls": [
+    "degree_preserving_rewiring",
+    "parameter_matched_nulls",
+    "topology_destruction",
+    "label_permutation",
+    "baseline_plus_candidate_invariant_control",
+    "holdout_spiral_transfer"
+  ],
+  "forbidden_actions": [
+    "change_GEO_01_thresholds",
+    "tune_existing_geometry_score_against_spiral_holdout",
+    "claim_external_physics_meaning",
+    "add_features_before_precommitment",
+    "optimize_spiral_score_directly"
+  ],
+  "success_criteria": [
+    "missing invariant isolated under frozen precommitment",
+    "added invariant improves holdout spiral transfer against the best baseline and the matched control destroys that increment",
+    "if the invariant is already latent, the operational mapping is recorded without upgrading it into a physics claim",
+    "if no candidate produces stable holdout improvement, freeze the result as SPIRAL_SPECIFIC_STRUCTURE_NOT_RECOVERED"
+  ],
+  "failure_criteria": [
+    "quiet_reoptimization_of_GEO_01",
+    "feature_addition_without_precommitment",
+    "synthetic_specificity_upgraded_into_physical_semantics",
+    "score_chasing_without_matched_control_check"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+  "execution_mode": "frozen_cross_domain_transfer_candidate",
+  "required_inputs": [
+    "source_manifest.json",
+    "precommitment_contract.json",
+    "split_manifest.json"
+  ],
+  "required_outputs": [
+    "source_domain_metrics.csv",
+    "target_domain_metrics.csv",
+    "control_results.csv",
+    "report.md",
+    "result.json"
+  ],
+  "holdout_rules": [
+    "no transfer protocol changes after holdout inspection",
+    "no evaluation changes after holdout inspection",
+    "no target leakage",
+    "same split path for target and controls"
+  ],
+  "frozen_comparison": "source-trained HAOS descriptors vs untouched target-domain evaluation",
+  "claim_boundary": [
+    "transfer only until untouched target is demonstrated",
+    "no physical mechanism claim",
+    "no empirical bridge claim",
+    "no domain-universal recoverability claim"
+  ],
+  "status": "DRAFT",
+  "notes": [
+    "This contract does not contain results.",
+    "This contract exists to define the preconditions for a future cross-domain transfer run."
+  ]
+}
+

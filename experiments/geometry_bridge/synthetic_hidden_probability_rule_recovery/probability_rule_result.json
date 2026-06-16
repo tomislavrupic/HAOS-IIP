@@ -1,0 +1,56 @@
+{
+  "bridge_id": "GEO-P1-01",
+  "control_summary": {
+    "feature_shuffle_control": {
+      "accuracy": 0.6354166666666666,
+      "brier_score": 0.24063666428329863,
+      "log_loss": 0.6743371139142232
+    },
+    "label_permutation_control": {
+      "accuracy": 0.5416666666666666,
+      "brier_score": 0.26866557757670756,
+      "log_loss": 0.752284640033492
+    },
+    "leakage_positive_control": {
+      "accuracy": 0.7083333333333334,
+      "brier_score": 0.19836321472802743,
+      "log_loss": 0.5860904853864206
+    },
+    "parameter_matched_null_control": {
+      "accuracy": 0.625,
+      "brier_score": 0.25,
+      "log_loss": 0.6931471805599453
+    },
+    "seed_repeat_control": {
+      "accuracy": 0.7083333333333334,
+      "brier_score": 0.19798446197167707,
+      "log_loss": 0.5850262795157442
+    },
+    "topology_destroyed_control": {
+      "accuracy": 0.7291666666666666,
+      "brier_score": 0.2022249982263052,
+      "log_loss": 0.5927803719699198
+    }
+  },
+  "holdout_metrics": {
+    "accuracy": 0.7083333333333334,
+    "brier_score": 0.1963532621393027,
+    "calibration_error": 0.047557052315614586,
+    "calibration_pass": true,
+    "holdout_pass": true,
+    "log_loss": 0.5796749610469437,
+    "null_accuracy": 0.625,
+    "null_brier": 0.25,
+    "null_log_loss": 0.6931471805599453,
+    "null_rejection_pass": true
+  },
+  "holdout_pass": true,
+  "labels": [
+    "PROBABILITY_RULE_VALID"
+  ],
+  "observations": "probability_observations.csv",
+  "predictions": "probability_predictions.csv",
+  "result_hash": "hidden_probability_result__7197e9179a2eecdf31666642",
+  "source_manifest": "probability_source_manifest.json",
+  "version": "synthetic-hidden-probability-rule-recovery-v0.1"
+}

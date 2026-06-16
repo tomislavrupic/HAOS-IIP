@@ -1,0 +1,28 @@
+{
+  "bridge_id": "GEO-04",
+  "holdout_metrics": {
+    "accuracy": 0.8333333333333334,
+    "class_means": {
+      "identity": -0.02145372111601425,
+      "nontrivial_flux": 0.16854627888398577,
+      "orientation_reversal": 0.11854627888398576,
+      "pure_gauge": 0.038546278883985756
+    },
+    "holdout_transform_means": {
+      "identity": -0.0506131467236619,
+      "nontrivial_flux": 0.1393868532763381,
+      "orientation_reversal": 0.08938685327633811,
+      "pure_gauge": 0.009386853276338104
+    },
+    "null_accuracy": 0.25,
+    "observable_rmse": 0.1594232248802716,
+    "pairwise_accuracy": 1.0,
+    "pairwise_null_accuracy": 0.5
+  },
+  "labels": [
+    "OBSERVABLE_PREDICTION_OPEN",
+    "MIXED_OPEN"
+  ],
+  "result_hash": "observable_result__23ce4a81f4868fa5825c5d6a",
+  "version": "synthetic-observable-prediction-v0.1"
+}

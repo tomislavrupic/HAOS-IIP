@@ -1,0 +1,107 @@
+{
+  "bridge_id": "GEO-T1-01",
+  "claim_boundary": [
+    "synthetic calibration only",
+    "not a Bell experiment",
+    "not a physical mechanism claim",
+    "not empirical validation of HAOS as ontology"
+  ],
+  "controls": [
+    {
+      "destroys": "element identities",
+      "name": "label_permutation_control",
+      "preserves": "group size"
+    },
+    {
+      "destroys": "composition structure",
+      "name": "topology_destroyed_control",
+      "preserves": "element count"
+    },
+    {
+      "destroys": "alignment",
+      "name": "signature_shuffle_control",
+      "preserves": "marginal signature values"
+    },
+    {
+      "destroys": "meaningful algebra",
+      "name": "parameter_matched_null_control",
+      "preserves": "signature scale"
+    },
+    {
+      "destroys": "none",
+      "name": "seed_repeat_control",
+      "preserves": "all choices"
+    },
+    {
+      "destroys": "blindness",
+      "name": "leakage_positive_control",
+      "preserves": "hidden labels"
+    }
+  ],
+  "falsification": [
+    "identity not recovered",
+    "inverse not recovered",
+    "composition not closed",
+    "held-out compositions not predicted",
+    "controls do not degrade"
+  ],
+  "provenance": {
+    "code_artifacts": [
+      "experiments/geometry_bridge/synthetic_hidden_transformation_recovery/run_synthetic_hidden_transformation_recovery.py"
+    ],
+    "external_data_status": "synthetic_only",
+    "source_artifacts": [
+      "experiments/geometry_bridge/synthetic_hidden_transformation_recovery/precommitment_contract.json",
+      "experiments/geometry_bridge/synthetic_hidden_transformation_recovery/hidden_transformation_source_manifest.json"
+    ]
+  },
+  "purpose": "Recover identity, inverse, composition closure, orbits, stabilizers, and holdout compositions from a hidden finite transformation system.",
+  "splits": {
+    "calibration": [
+      "r2",
+      "r3",
+      "sr2"
+    ],
+    "development": [
+      "e",
+      "r",
+      "s",
+      "sr"
+    ],
+    "holdout": [
+      "sr3"
+    ]
+  },
+  "state_schema": {
+    "elements": [
+      "e",
+      "r",
+      "r2",
+      "r3",
+      "s",
+      "sr",
+      "sr2",
+      "sr3"
+    ],
+    "generators": [
+      "r",
+      "s"
+    ],
+    "group": "small finite dihedral-like system",
+    "targets": [
+      "identity",
+      "inverse",
+      "composition table",
+      "orbits",
+      "stabilizers",
+      "equivalence classes",
+      "refinement persistence",
+      "holdout compositions"
+    ]
+  },
+  "verdict_logic": {
+    "fallback": "BENCHMARK_OPEN otherwise",
+    "official_verdict": "BENCHMARK_VALID if identity, inverse, composition, and holdout gates pass"
+  },
+  "version": "synthetic-hidden-transformation-recovery-v0.1"
+}

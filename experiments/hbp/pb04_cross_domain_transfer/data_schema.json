@@ -1,0 +1,41 @@
+{
+  "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+  "selection_status": "frozen",
+  "source_schema": {
+    "network_id": "string",
+    "node_state_vector": "float array",
+    "edge_weight_matrix": "float matrix",
+    "domain_label": "categorical",
+    "transfer_label": "boolean"
+  },
+  "target_schema": {
+    "network_id": "string",
+    "node_state_vector": "float array",
+    "edge_weight_matrix": "float matrix",
+    "domain_label": "categorical",
+    "recovery_rank": "ordinal",
+    "recovery_label": "boolean"
+  },
+  "required_fields": [
+    "network_id",
+    "node_state_vector",
+    "edge_weight_matrix",
+    "domain_label"
+  ],
+  "field_rules": [
+    "source and target schemas must remain separate",
+    "domain labels are metadata only and must not leak into the model",
+    "target evaluation must remain untouched until scoring",
+    "missing required fields fail the benchmark"
+  ],
+  "non_claims": [
+    "not biological tissue",
+    "not a physical mechanism claim",
+    "no transfer success claim yet"
+  ],
+  "notes": [
+    "This proxy schema supports a cross-domain transfer benchmark without pretending the source is literal tissue.",
+    "The model must remain blind to domain labels at scoring time."
+  ]
+}
+

@@ -1,0 +1,11 @@
+{
+  "bridge_id": "PB-02",
+  "split": "calibration",
+  "status": "frozen_placeholder",
+  "purpose": "Choose exactly one HAOS feature bundle and stop.",
+  "rules": [
+    "selection frozen before holdout",
+    "same scoring path as development and holdout",
+    "no holdout-derived feature selection"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+  "execution_mode": "frozen_temporal_recovery_candidate",
+  "required_inputs": [
+    "source_manifest.json",
+    "precommitment_contract.json",
+    "split_manifest.json"
+  ],
+  "required_outputs": [
+    "baseline_metrics.csv",
+    "haos_metrics.csv",
+    "control_results.csv",
+    "report.md",
+    "result.json"
+  ],
+  "holdout_rules": [
+    "no metric changes after holdout inspection",
+    "no baseline changes after holdout inspection",
+    "no threshold movement after holdout inspection",
+    "same split path for baseline and HAOS conditions"
+  ],
+  "frozen_comparison": "best topology-only baseline vs best topology-only baseline + frozen HAOS temporal descriptors",
+  "claim_boundary": [
+    "prediction only until untouched holdout is demonstrated",
+    "no physical mechanism claim",
+    "no empirical bridge claim",
+    "no universal recoverability claim"
+  ],
+  "status": "DRAFT",
+  "notes": [
+    "This contract does not contain results.",
+    "This contract exists to define the preconditions for a future temporal recovery run."
+  ]
+}
+

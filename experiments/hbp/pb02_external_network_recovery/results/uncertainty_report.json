@@ -1,0 +1,11 @@
+{
+  "bootstrap_replicates": 120,
+  "bootstrap_seed": 9107,
+  "holdout_size": 4321,
+  "incremental_prediction_ci": [
+    -0.0003553209877311026,
+    0.0017037750918144883
+  ],
+  "note": "bootstrap used for uncertainty only, not synthetic evidence",
+  "seed_variance": 0.024124702205069223
+}

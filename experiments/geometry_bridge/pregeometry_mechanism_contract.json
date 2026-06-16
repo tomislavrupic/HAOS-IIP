@@ -1,0 +1,84 @@
+{
+  "bridge_id": "GEO-05",
+  "candidate_name": "pregeometry_to_observable_chain",
+  "status": "OPEN",
+  "purpose": "Freeze the missing dependency between intrinsic geometry, transformation semantics, probability rule, and observable prediction before any Bell interpretation is attempted.",
+  "scope": "Synthetic calibration only. This contract does not authorize Bell scoring or any physical mechanism claim.",
+  "dependency_chain": [
+    "intrinsic_relations",
+    "relational_geometry",
+    "transformation_semantics",
+    "probability_rule",
+    "observable_prediction"
+  ],
+  "required_properties": {
+    "intrinsic_relations": {
+      "description": "Relations must be recovered from operators, transport, or closure behavior rather than assigned coordinates.",
+      "status": "OPEN"
+    },
+    "relational_geometry": {
+      "description": "The recovered structure must expose distance, orientation, adjacency, and covariance in a frozen synthetic setting.",
+      "status": "OPEN"
+    },
+    "transformation_semantics": {
+      "description": "Settings must correspond to native transformations with a declared composition rule and refinement persistence.",
+      "status": "OPEN"
+    },
+    "probability_rule": {
+      "description": "A prediction rule must map geometry and transformations to a bounded probability law without importing target curves.",
+      "status": "OPEN"
+    },
+    "observable_prediction": {
+      "description": "The observable layer must forecast a held-out target better than null baselines on a frozen split.",
+      "status": "OPEN"
+    }
+  },
+  "frozen_inputs": {
+    "source_artifacts": [
+      "experiments/geometry_bridge/synthetic_intrinsic_geometry_recovery/geometry_recovery_result.json",
+      "experiments/geometry_bridge/synthetic_transformation_semantics_recovery/semantics_result.json",
+      "experiments/geometry_bridge/synthetic_probability_rule_recovery/probability_rule_result.json",
+      "experiments/geometry_bridge/synthetic_observable_prediction/observable_prediction_result.json"
+    ],
+    "reference_files": [
+      "experiments/geometry_bridge/README.md",
+      "experiments/geometry_bridge/chain_audit_note.md"
+    ]
+  },
+  "precommitment_rules": {
+    "no_bell_scoring": true,
+    "no_physical_claim": true,
+    "no_target_curve_import": true,
+    "no_posthoc_geometry_selection": true,
+    "no_refinement_relabeling_for_signal": true
+  },
+  "gate_order": [
+    {
+      "gate": "GEO_01",
+      "question": "Can operators recover latent intrinsic geometry better than null or topology-destroyed controls?",
+      "required_evidence": "holdout geometry signal that survives frozen controls"
+    },
+    {
+      "gate": "GEO_02",
+      "question": "Do transport and holonomy observables distinguish synthetic transformation classes?",
+      "required_evidence": "semantic separation from label permutation and null controls"
+    },
+    {
+      "gate": "GEO_03",
+      "question": "Does a frozen probability rule improve probabilistic scores over null baselines?",
+      "required_evidence": "better holdout probability metrics than null"
+    },
+    {
+      "gate": "GEO_04",
+      "question": "Does observable prediction improve on pairwise ordering or coarse targets?",
+      "required_evidence": "pairwise ordering better than null, with coarse target still open if needed"
+    }
+  ],
+  "promotion_rule": {
+    "official_status_if_holdout_fails": "OPEN",
+    "official_status_if_pairwise_only_succeeds": "OPEN",
+    "official_status_if_coarse_target_beats_null": "OPEN",
+    "official_status_if_all_gates_pass": "SYNTHETIC_CHAIN_COMPLETE"
+  },
+  "boundary_statement": "This mechanism is a frozen synthetic dependency contract. It is the missing intermediate layer between geometry and downstream observables, not a Bell mechanism and not a physical derivation."
+}

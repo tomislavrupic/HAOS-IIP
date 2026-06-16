@@ -1,0 +1,107 @@
+{
+  "bridge_id": "GEO-P1-01",
+  "claim_boundary": [
+    "synthetic calibration only",
+    "not a Bell experiment",
+    "not a physical mechanism claim",
+    "not empirical validation of HAOS as ontology"
+  ],
+  "controls": [
+    {
+      "destroys": "label semantics",
+      "name": "label_permutation_control",
+      "preserves": "marginal feature scale"
+    },
+    {
+      "destroys": "transformation-conditioned structure",
+      "name": "topology_destroyed_control",
+      "preserves": "state count"
+    },
+    {
+      "destroys": "joint structure",
+      "name": "feature_shuffle_control",
+      "preserves": "marginal feature values"
+    },
+    {
+      "destroys": "probability structure",
+      "name": "parameter_matched_null_control",
+      "preserves": "weight scale"
+    },
+    {
+      "destroys": "none",
+      "name": "seed_repeat_control",
+      "preserves": "all choices"
+    },
+    {
+      "destroys": "blindness",
+      "name": "leakage_positive_control",
+      "preserves": "hidden labels"
+    }
+  ],
+  "falsification": [
+    "holdout accuracy below frozen threshold",
+    "calibration does not beat null",
+    "controls do not degrade",
+    "leakage positive control not detected",
+    "deterministic repeat mismatch"
+  ],
+  "provenance": {
+    "code_artifacts": [
+      "experiments/geometry_bridge/synthetic_hidden_probability_rule_recovery/run_synthetic_hidden_probability_rule_recovery.py"
+    ],
+    "external_data_status": "synthetic_only",
+    "source_artifacts": [
+      "experiments/geometry_bridge/synthetic_hidden_probability_rule_recovery/precommitment_contract.json",
+      "experiments/geometry_bridge/synthetic_hidden_probability_rule_recovery/probability_source_manifest.json"
+    ]
+  },
+  "purpose": "Recover probability semantics by inferring a hidden probability rule from transformation-conditioned observations with frozen holdout, calibration, and controls.",
+  "splits": {
+    "calibration": [
+      "ring",
+      "grid"
+    ],
+    "development": [
+      "ring"
+    ],
+    "holdout": [
+      "grid"
+    ]
+  },
+  "state_schema": {
+    "families": [
+      "ring",
+      "grid"
+    ],
+    "states": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "targets": [
+      "normalized probability model",
+      "holdout outcome prediction",
+      "calibration",
+      "null-rule rejection",
+      "transformation-conditioned generalization",
+      "no target leakage",
+      "reproducibility"
+    ],
+    "transformations": [
+      "identity",
+      "pure_gauge",
+      "nontrivial_flux",
+      "orientation_reversal"
+    ]
+  },
+  "verdict_logic": {
+    "fallback": "PROBABILITY_RULE_OPEN otherwise",
+    "official_verdict": "PROBABILITY_RULE_VALID if holdout transfer, calibration, and control gates pass"
+  },
+  "version": "synthetic-hidden-probability-rule-recovery-v0.1"
+}

@@ -1,0 +1,44 @@
+{
+  "baseline_plus_haos_holdout_spearman": 0.6490796159378962,
+  "best_baseline_holdout_spearman": 0.6490796159378962,
+  "best_baseline_model": "topology_only_baseline",
+  "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+  "case_counts": {
+    "calibration": 24,
+    "development": 48,
+    "holdout": 24
+  },
+  "controls": [
+    {
+      "control": "label_permutation",
+      "holdout_spearman": "0.046455",
+      "status": "PASS"
+    },
+    {
+      "control": "topology_destroyed",
+      "holdout_spearman": "0.000000",
+      "status": "PASS"
+    },
+    {
+      "control": "parameter_matched_null",
+      "holdout_spearman": "-0.152725",
+      "status": "PASS"
+    },
+    {
+      "control": "seed_repeat",
+      "holdout_spearman": "0.649080",
+      "status": "PASS"
+    }
+  ],
+  "haos_holdout_spearman": 0.6490796159378962,
+  "labels": [
+    "MIXED_OPEN",
+    "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
+  ],
+  "outputs": {
+    "report": "results/pb03_report.md",
+    "result": "results/pb03_result.json"
+  },
+  "result_hash": "pb03_result_c989483149438ed29eabc86d",
+  "status": "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
+}

@@ -1,0 +1,19 @@
+{
+  "bridge_id": "GEO-02",
+  "control_summary": {
+    "gauge_equivalent_null": 0.0,
+    "label_permutation_control": 0.0,
+    "leakage_positive_control": 0.0,
+    "random_phase_control": 0.0,
+    "seed_repeat_control": 0.0,
+    "topology_destroyed_control": 0.0
+  },
+  "labels": [
+    "TRANSFORMATION_SEMANTICS_OPEN",
+    "MIXED_OPEN"
+  ],
+  "result_hash": "semantics_result__45ea33e40a0d47ee738d1da4",
+  "results": "semantics_results.csv",
+  "source_manifest": "semantics_source_manifest.json",
+  "version": "synthetic-transformation-semantics-recovery-v0.1"
+}

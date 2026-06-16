@@ -1,0 +1,43 @@
+{
+  "bridge_id": "PB-03-TEMPORAL-RECOVERY",
+  "selection_status": "frozen",
+  "metric_family": "temporal recovery ranking",
+  "primary_metrics": [
+    "spearman_correlation",
+    "mae",
+    "rmse",
+    "top_k_precision"
+  ],
+  "classification_metrics": [
+    "roc_auc",
+    "pr_auc",
+    "brier_score",
+    "calibration_error"
+  ],
+  "diagnostics": [
+    "confidence_intervals",
+    "seed_variance",
+    "holdout_degradation"
+  ],
+  "metric_rules": [
+    "all metrics are computed only on untouched holdout",
+    "no metric tuning after holdout inspection",
+    "classification metrics apply only when recovered/failed labels exist",
+    "rank metrics are the primary decision path"
+  ],
+  "frozen_tolerances": {
+    "statistical_significance": 0.05,
+    "minimum_effect_size": "predeclared before implementation",
+    "confidence_interval_method": "bootstrap or analytic but frozen before runner implementation"
+  },
+  "non_claims": [
+    "no physical mechanism claim",
+    "no universal recoverability claim",
+    "no result claim yet"
+  ],
+  "notes": [
+    "The metric set is intentionally broader than a single scalar so the benchmark can fail honestly.",
+    "The rank metric remains the primary gate."
+  ]
+}
+

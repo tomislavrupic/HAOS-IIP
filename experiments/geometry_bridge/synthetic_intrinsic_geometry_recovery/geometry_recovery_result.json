@@ -1,0 +1,62 @@
+{
+  "baseline_summary": {
+    "shortest_spearman": 0.8298584298584298,
+    "spectral_spearman": 0.6895752895752896
+  },
+  "bridge_id": "GEO-01",
+  "calibration_pass": false,
+  "contract_hash": "geometry_contract__1634fb64213d793e165e3213",
+  "control_results": "control_results.csv",
+  "control_summary": {
+    "degree_preserving_rewire_control": {
+      "degraded": true,
+      "mean_spearman": 0.4205656303549125
+    },
+    "label_permutation_control": {
+      "degraded": true,
+      "mean_spearman": 0.05413202659083125
+    },
+    "leakage_positive_control": {
+      "degraded": false,
+      "mean_spearman": 1.0
+    },
+    "parameter_matched_null_control": {
+      "degraded": true,
+      "mean_spearman": 0.621166538613
+    },
+    "seed_repeat_control": {
+      "degraded": true,
+      "mean_spearman": 0.6617255112186875
+    },
+    "topology_destroyed_control": {
+      "degraded": true,
+      "mean_spearman": 0.6617255112186875
+    }
+  },
+  "geometry_matrix": "geometry_matrix.csv",
+  "holdout_metrics": {
+    "best_baseline_spearman": 0.8298584298584298,
+    "best_baseline_topk": 0.8148148148148148,
+    "haos": {
+      "mae": 0.18614643315161097,
+      "spearman_true_vs_predicted": 0.6873230373230373,
+      "top_k_precision": 0.6481481481481481
+    }
+  },
+  "holdout_pass": false,
+  "labels": [
+    "CONTROL_INVALID",
+    "GEOMETRY_NOT_DEMONSTRATED",
+    "MIXED_OPEN"
+  ],
+  "result_hash": "geometry_result__3799539d1b10f365cccdb68c",
+  "source_manifest": "geometry_source_manifest.json",
+  "version": "synthetic-intrinsic-geometry-recovery-v0.1",
+  "weights": [
+    -0.019983950849770536,
+    3.2094734495760322e-09,
+    0.7128854198021667,
+    0.00903746533900126,
+    0.13986278832623938
+  ]
+}

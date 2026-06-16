@@ -1,0 +1,39 @@
+{
+  "bridge_id": "GEO-T1-01",
+  "calibration": [
+    "r2",
+    "r3",
+    "sr2"
+  ],
+  "controls": [
+    "label_permutation_control",
+    "topology_destroyed_control",
+    "signature_shuffle_control",
+    "parameter_matched_null_control",
+    "seed_repeat_control",
+    "leakage_positive_control"
+  ],
+  "development": [
+    "e",
+    "r",
+    "s",
+    "sr"
+  ],
+  "elements": [
+    "e",
+    "r",
+    "r2",
+    "r3",
+    "s",
+    "sr",
+    "sr2",
+    "sr3"
+  ],
+  "generators": [
+    "r",
+    "s"
+  ],
+  "holdout": [
+    "sr3"
+  ]
+}

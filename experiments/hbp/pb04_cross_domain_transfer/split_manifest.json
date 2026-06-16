@@ -1,0 +1,21 @@
+{
+  "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+  "development_case_count": 48,
+  "calibration_case_count": 24,
+  "holdout_case_count": 24,
+  "holdout_families": [
+    "powergraph_pf_opf"
+  ],
+  "holdout_inspection_policy": "source domain, transfer protocol, and evaluation are frozen before target scoring",
+  "holdout_seeds": [
+    801,
+    802,
+    803,
+    804
+  ],
+  "notes": [
+    "This manifest freezes the first implementation split shape for the PB-04 transfer candidate.",
+    "Actual runner code is not yet present."
+  ]
+}
+

@@ -1,0 +1,44 @@
+{
+  "bridge_id": "PB-04-CROSS-DOMAIN-TRANSFER",
+  "selection_status": "frozen",
+  "metric_family": "cross-domain transfer ranking",
+  "primary_metrics": [
+    "spearman_correlation",
+    "mae",
+    "rmse",
+    "top_k_precision"
+  ],
+  "classification_metrics": [
+    "roc_auc",
+    "pr_auc",
+    "brier_score",
+    "calibration_error"
+  ],
+  "diagnostics": [
+    "confidence_intervals",
+    "seed_variance",
+    "holdout_degradation",
+    "source_to_target_transfer_gap"
+  ],
+  "metric_rules": [
+    "all metrics are computed only on untouched target-domain holdout",
+    "no metric tuning after target inspection",
+    "classification metrics apply only when recovered/failed labels exist",
+    "rank metrics are the primary decision path"
+  ],
+  "frozen_tolerances": {
+    "statistical_significance": 0.05,
+    "minimum_effect_size": "predeclared before implementation",
+    "confidence_interval_method": "bootstrap or analytic but frozen before runner implementation"
+  },
+  "non_claims": [
+    "no physical mechanism claim",
+    "no domain-universal recoverability claim",
+    "no result claim yet"
+  ],
+  "notes": [
+    "The metric set is intentionally broader than a single scalar so the benchmark can fail honestly.",
+    "The transfer-gap diagnostic is only secondary; the decision path remains holdout ranking."
+  ]
+}
+

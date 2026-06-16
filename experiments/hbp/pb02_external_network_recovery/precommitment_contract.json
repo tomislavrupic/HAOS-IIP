@@ -1,0 +1,112 @@
+{
+  "bridge_id": "PB-02",
+  "status": "PRECOMMITMENT_DRAFT",
+  "domain": "external power-grid network recovery",
+  "dataset_candidate": {
+    "name": "PowerGraph",
+    "source_paper": "https://arxiv.org/abs/2402.02827",
+    "landing_page": "https://figshare.com/articles/dataset/PowerGraph/22820534",
+    "code": "https://github.com/PowerGraph-Datasets",
+    "task_family": "cascading failure analyses of power grids",
+    "direct_semantics": "real-world power-grid recovery and cascading failures"
+  },
+  "purpose": "Test whether frozen HAOS-IIP features add predictive value beyond conventional baselines on an independently defined real-world system.",
+  "claim_boundary": [
+    "operational mapping only until holdout transfer is demonstrated",
+    "no physical mechanism claim",
+    "no empirical bridge claim",
+    "no universal recoverability claim",
+    "no claim of HAOS explaining power-grid physics"
+  ],
+  "frozen_comparison": {
+    "primary": "best conventional baseline vs best conventional baseline + frozen HAOS features",
+    "secondary": "baseline only, HAOS only, baseline + HAOS, ablated HAOS, matched null"
+  },
+  "observation_map": {
+    "prediction_target": "post-perturbation recovery ranking",
+    "secondary_targets": [
+      "recovery time",
+      "residual error",
+      "return probability",
+      "post-recovery similarity",
+      "recovered/failed label"
+    ],
+    "reporting_modes": [
+      "baseline only",
+      "HAOS only",
+      "baseline + HAOS",
+      "ablated HAOS",
+      "matched null"
+    ]
+  },
+  "splits": {
+    "development": "tune baselines and frozen HAOS feature usage only",
+    "calibration": "choose exactly one HAOS feature bundle and freeze it",
+    "holdout": "untouched scoring split; no feature changes after inspection",
+    "replication": "second external dataset only after PB-02 holdout is frozen"
+  },
+  "frozen_haos_feature_policy": [
+    "invariant_overlap",
+    "recovery_score_proxy",
+    "persistence_proxy",
+    "causal_depth_proxy",
+    "temporal_order_stability",
+    "distance_surrogate_proxy",
+    "calibrated_linear_score"
+  ],
+  "baselines": [
+    "mean_predictor",
+    "random_predictor",
+    "degree_centrality",
+    "betweenness_centrality",
+    "closeness_centrality",
+    "pagerank_centrality",
+    "eigenvector_centrality",
+    "shortest_path_to_perturbation",
+    "algebraic_connectivity",
+    "domain_diffusion_early_probe",
+    "supervised_graph_spectral_model",
+    "ablated_haos_model"
+  ],
+  "controls": [
+    "shuffled_target_labels",
+    "topology_destroyed_graph",
+    "degree_preserving_rewire",
+    "weight_shuffled_graph",
+    "parameter_matched_null",
+    "perturbation_free_baseline",
+    "seed_repeat",
+    "intentional_leakage_positive_control"
+  ],
+  "metrics": [
+    "spearman_correlation",
+    "mae",
+    "rmse",
+    "roc_auc",
+    "pr_auc",
+    "brier_score",
+    "top_k_precision",
+    "confidence_interval",
+    "seed_variance",
+    "holdout_degradation"
+  ],
+  "verdict_logic": {
+    "minimum_holdout_cases": 80,
+    "minimum_spearman_margin_over_best_baseline": 0.05,
+    "maximum_holdout_degradation": 0.18,
+    "leakage_positive_control_min_spearman": 0.98,
+    "shuffled_target_abs_spearman_max": 0.25,
+    "official_outcomes": [
+      "PREDICTION_NOT_DISTINCT_FROM_BASELINES",
+      "PREDICTION_OUTPERFORMS_BASELINES",
+      "HOLDOUT_TRANSFER_FAIL",
+      "CONTROL_INVALID",
+      "TARGET_LEAKAGE_DETECTED",
+      "UNDERPOWERED",
+      "MAPPING_INVALID",
+      "DIMENSIONAL_ANALYSIS_FAIL",
+      "MIXED_OPEN"
+    ]
+  },
+  "next_dependency": "Repair PB-01 controls before PB-02 execution so the frozen HAOS features do not inherit a known control leak."
+}

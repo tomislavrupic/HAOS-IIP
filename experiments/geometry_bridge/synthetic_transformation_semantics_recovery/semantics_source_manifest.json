@@ -1,0 +1,36 @@
+{
+  "bridge_id": "GEO-02",
+  "calibration_families": [
+    "ring",
+    "grid"
+  ],
+  "controls": [
+    "label_permutation_control",
+    "topology_destroyed_control",
+    "random_phase_control",
+    "gauge_equivalent_null",
+    "seed_repeat_control",
+    "leakage_positive_control"
+  ],
+  "development_families": [
+    "ring"
+  ],
+  "frozen_families": [
+    "ring",
+    "grid"
+  ],
+  "holdout_families": [
+    "grid"
+  ],
+  "seeds": [
+    5101,
+    5102,
+    5103
+  ],
+  "transformations": [
+    "identity",
+    "pure_gauge",
+    "nontrivial_flux",
+    "orientation_reversal"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "bridge_id": "GEO-HIDDEN-01",
+  "controls": [
+    "label_permutation_control",
+    "topology_destroyed_control",
+    "orientation_destroyed_control",
+    "parameter_matched_null_control",
+    "seed_repeat_control",
+    "leakage_positive_control"
+  ],
+  "families": [
+    "ring",
+    "grid",
+    "spiral"
+  ],
+  "seeds": [
+    2101,
+    2102,
+    2103,
+    2104
+  ],
+  "transformations": [
+    "identity",
+    "rotation",
+    "reflection",
+    "scale_shift"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "baselines": [
+    {
+      "description": "constant marginal predictor",
+      "name": "mean_predictor"
+    },
+    {
+      "description": "frozen random predictor",
+      "name": "random_predictor"
+    },
+    {
+      "description": "use only graph size and density",
+      "name": "graph_structure_null"
+    }
+  ],
+  "bridge_id": "GEO-HIDDEN-01",
+  "claim_boundary": [
+    "synthetic calibration only",
+    "not a Bell experiment",
+    "not a physical mechanism claim",
+    "not empirical validation of HAOS as ontology"
+  ],
+  "controls": [
+    {
+      "destroys": "semantic labels",
+      "name": "label_permutation_control",
+      "preserves": "weights"
+    },
+    {
+      "destroys": "adjacency topology",
+      "name": "topology_destroyed_control",
+      "preserves": "node count"
+    },
+    {
+      "destroys": "handedness",
+      "name": "orientation_destroyed_control",
+      "preserves": "node count and coarse weights"
+    },
+    {
+      "destroys": "structured geometry",
+      "name": "parameter_matched_null_control",
+      "preserves": "weight scale"
+    },
+    {
+      "destroys": "none",
+      "name": "seed_repeat_control",
+      "preserves": "all choices"
+    },
+    {
+      "destroys": "blindness",
+      "name": "leakage_positive_control",
+      "preserves": "hidden label access"
+    }
+  ],
+  "falsification": [
+    "holdout metrics below frozen thresholds",
+    "controls do not degrade",
+    "leakage positive control not detected",
+    "deterministic repeat mismatch"
+  ],
+  "provenance": {
+    "code_artifacts": [
+      "experiments/geometry_bridge/synthetic_hidden_geometry_recovery/run_synthetic_hidden_geometry_recovery.py"
+    ],
+    "external_data_status": "synthetic_only",
+    "source_artifacts": [
+      "experiments/geometry_bridge/synthetic_hidden_geometry_recovery/precommitment_contract.json",
+      "experiments/geometry_bridge/synthetic_hidden_geometry_recovery/hidden_geometry_source_manifest.json"
+    ]
+  },
+  "purpose": "Recover intrinsic distance, orientation, transformation labels, and held-out relations from hidden synthetic geometry.",
+  "splits": {
+    "calibration": [
+      "ring",
+      "grid"
+    ],
+    "development": [
+      "ring"
+    ],
+    "holdout": [
+      "spiral"
+    ]
+  },
+  "state_schema": {
+    "hidden_coordinates": "point set on ring, grid, or spiral manifold",
+    "latent_space": "two-dimensional hidden synthetic geometry",
+    "observations": "frozen operator / diffusion summaries from the hidden graph",
+    "targets": [
+      "pairwise distance",
+      "orientation",
+      "transformation class",
+      "held-out relation label"
+    ]
+  },
+  "verdict_logic": {
+    "official_verdict": "BENCHMARK_OPEN if holdout transfer or control criteria fail",
+    "positive_reading": "BENCHMARK_VALID if geometry, orientation, transformation, and held-out relation metrics all exceed frozen minima"
+  },
+  "version": "synthetic-hidden-geometry-recovery-v0.1"
+}

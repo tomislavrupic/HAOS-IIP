@@ -2,9 +2,25 @@ control,metric,value,expected,status
 shuffled_target_labels,spearman_against_shuffled_target,0.16479047018246656,abs(value) <= 0.25,PASS
 intentional_leakage_positive_control,spearman,0.9999999999999999,value >= 0.98,TARGET_LEAKAGE_DETECTED
 seed_repeat,deterministic_case_count,144.0,same on rerun,PASS
-topology_destroyed_graph,mean_recovery_quality_shift,-0.002329435011497405,abs(value) >= 0.02,CONTROL_INVALID
-degree_preserving_rewire,mean_recovery_quality_shift,-0.0022679081241732124,abs(value) >= 0.02,CONTROL_INVALID
-weight_shuffled_graph,mean_recovery_quality_shift,-0.004689705944564082,abs(value) >= 0.02,CONTROL_INVALID
-parameter_matched_null,mean_recovery_quality_shift,-0.01288328025137353,abs(value) >= 0.02,CONTROL_INVALID
+topology_destroyed_graph,mean_recovery_quality_shift,-0.010768770084695456,abs(value) >= 0.02,CONTROL_INVALID
+topology_destroyed_graph,mean_degree_delta,2.537352258462448,reported for localization only,REPORTING_ONLY
+topology_destroyed_graph,mean_density_delta,0.19806763285024148,reported for localization only,REPORTING_ONLY
+topology_destroyed_graph,mean_spectral_gap_delta,0.2129570159647608,reported for localization only,REPORTING_ONLY
+topology_destroyed_graph,mean_shortest_path_delta,2.736111111111111,reported for localization only,REPORTING_ONLY
+degree_preserving_rewire,mean_recovery_quality_shift,-6.2808552365623e-05,abs(value) >= 0.02,CONTROL_INVALID
+degree_preserving_rewire,mean_degree_delta,0.0,reported for localization only,REPORTING_ONLY
+degree_preserving_rewire,mean_density_delta,0.0,reported for localization only,REPORTING_ONLY
+degree_preserving_rewire,mean_spectral_gap_delta,0.5740115752361389,reported for localization only,REPORTING_ONLY
+degree_preserving_rewire,mean_shortest_path_delta,0.27314814814814814,reported for localization only,REPORTING_ONLY
+weight_shuffled_graph,mean_recovery_quality_shift,-0.002547784017789989,abs(value) >= 0.02,CONTROL_INVALID
+weight_shuffled_graph,mean_degree_delta,0.3163277374849574,reported for localization only,REPORTING_ONLY
+weight_shuffled_graph,mean_density_delta,0.0,reported for localization only,REPORTING_ONLY
+weight_shuffled_graph,mean_spectral_gap_delta,0.14999210915683187,reported for localization only,REPORTING_ONLY
+weight_shuffled_graph,mean_shortest_path_delta,0.0,reported for localization only,REPORTING_ONLY
+parameter_matched_null,mean_recovery_quality_shift,-0.013710168662544486,abs(value) >= 0.02,CONTROL_INVALID
+parameter_matched_null,mean_degree_delta,1.863242715513857,reported for localization only,REPORTING_ONLY
+parameter_matched_null,mean_density_delta,0.1413043478260869,reported for localization only,REPORTING_ONLY
+parameter_matched_null,mean_spectral_gap_delta,0.197116142136569,reported for localization only,REPORTING_ONLY
+parameter_matched_null,mean_shortest_path_delta,1.0231481481481481,reported for localization only,REPORTING_ONLY
 perturbation_free_baseline,mean_recovery_quality,1.0,value > holdout mean,PASS
 haos_holdout_target,spearman,0.912028422274154,reported for comparison only,REPORTING_ONLY

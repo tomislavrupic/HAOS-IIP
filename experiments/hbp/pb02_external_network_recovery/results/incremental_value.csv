@@ -1,0 +1,2 @@
+best_baseline_model,best_baseline_holdout_spearman,baseline_plus_haos_model,baseline_plus_haos_holdout_spearman,incremental_spearman,incremental_prediction_mean,incremental_prediction_ci_low,incremental_prediction_ci_high
+closeness_centrality,0.990555,baseline_plus_haos,0.679913,-0.310643,0.000668,-0.000355,0.001704
