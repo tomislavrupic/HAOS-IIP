@@ -14,6 +14,7 @@ PHASE10_EFFECTIVE = ROOT / "phase10-bridge" / "runs" / "phase10_effective_scalin
 PHASE15_SPEED = ROOT / "phase15-propagation" / "runs" / "phase15_effective_speed_ledger.csv"
 PHASE18_REFINEMENT = ROOT / "phase18-distance-surrogate" / "runs" / "phase18_refinement_scaling.csv"
 CP2_RECOVERY = OUT_DIR / "same_surrogate_coarse_graining_recovery.csv"
+CP2_CONTROL_INTEGRITY = OUT_DIR / "same_surrogate_control_integrity_report.md"
 KURAMOTO_STATUS = ROOT / "experiments" / "oscillators" / "kuramoto_bridge" / "outputs" / "bridge_status.json"
 HAOS_VALIDATION = ROOT / "external_validation" / "results" / "haos_iip_summaries.md"
 TOY_VALIDATION = ROOT / "external_validation" / "results" / "toy_summaries.md"
@@ -209,7 +210,7 @@ def build_cp3() -> list[dict[str, object]]:
             "branch_secondary": f"mean_fit_r2={fmt(b_r2)}",
             "control_secondary": f"mean_fit_r2={fmt(c_r2)}",
             "threshold": "branch_error<=0.01 and control_error/branch_error>=1.25",
-            "status": "PASS" if b_err <= 0.01 and sep >= 1.25 else "OPEN",
+            "status": "PASS" if b_err <= 0.01 and sep >= 1.25 else "CP3_RESCALED_INVARIANT_NOT_SPECIFIC",
             "claim_boundary": "bounded invariant-flow bookkeeping only; no continuum proof",
         }
     )
@@ -338,7 +339,7 @@ def build_cp5() -> list[dict[str, object]]:
             "required_minimum": 3,
             "branch_metric": f"max_relspread={fmt(branch_seed_max)}; mean_relspread={fmt(branch_seed_mean)}",
             "control_metric": f"max_relspread={fmt(control_seed_max)}; mean_relspread={fmt(control_seed_mean)}",
-            "status": "OPEN",
+            "status": "CP5_COVERAGE_INSUFFICIENT",
             "notes": "available but too variable for a CP5 universality pass",
         },
         {
@@ -358,7 +359,7 @@ def build_cp5() -> list[dict[str, object]]:
             "required_minimum": 2,
             "branch_metric": "not_available",
             "control_metric": "not_available",
-            "status": "OPEN",
+            "status": "CP5_COVERAGE_INSUFFICIENT",
             "notes": "no same-surrogate CP1-CP2 kernel-width sweep is present in this roadmap run",
         },
         {
@@ -368,7 +369,7 @@ def build_cp5() -> list[dict[str, object]]:
             "required_minimum": 2,
             "branch_metric": "frozen branch-local hierarchy",
             "control_metric": "matched controls only",
-            "status": "OPEN",
+            "status": "CP5_COVERAGE_INSUFFICIENT",
             "notes": "matched controls are present, but not multiple admissible substrate families",
         },
         {
@@ -378,7 +379,7 @@ def build_cp5() -> list[dict[str, object]]:
             "required_minimum": 2,
             "branch_metric": "; ".join(f"{row['surrogate_type']}={row['recovery_pct_admissible']}%" for row in cp2),
             "control_metric": "; ".join(f"{row['surrogate_type']}={row['recovery_pct_matched_control']}%" for row in cp2),
-            "status": "OPEN",
+            "status": "CP5_COVERAGE_INSUFFICIENT",
             "notes": "controls recover too strongly for CP5 universality language",
         },
     ]
@@ -386,9 +387,17 @@ def build_cp5() -> list[dict[str, object]]:
 
 
 def write_summary(cp3_rows: list[dict[str, object]], comparative_rows: list[dict[str, object]], cp5_rows: list[dict[str, object]]) -> None:
-    cp3_status = "OPEN" if any(row["status"] != "PASS" for row in cp3_rows) else "PASS"
-    comparative_status = "OPEN" if any(row["status"] != "PASS" for row in comparative_rows) else "PASS"
-    cp5_status = "OPEN" if any(row["status"] != "PASS" for row in cp5_rows) else "PASS"
+    cp3_status = (
+        "PASS"
+        if all(row["status"] == "PASS" for row in cp3_rows)
+        else "CP3_RESCALED_INVARIANT_NOT_SPECIFIC"
+        if any(row["contract"] == "CP3 rescaled-invariant flow" for row in cp3_rows)
+        else "CP3_OPEN"
+    )
+    comparative_status = "PASS" if all(row["status"] == "PASS" for row in comparative_rows) else "MIXED_OPEN"
+    cp5_status = "PASS" if all(row["status"] == "PASS" for row in cp5_rows) else "CP5_COVERAGE_INSUFFICIENT"
+    cp2_status = "CP2_CONTROL_INVALID" if CP2_CONTROL_INTEGRITY.exists() else "CP2_SAME_SURROGATE_OPEN"
+    release_status = "RELEASE_66_5_GATES_CLOSED" if cp3_status == "PASS" and comparative_status == "PASS" and cp5_status == "PASS" and cp2_status == "CP2_CONTROL_INVALID" else "RELEASE_66_5_PARTIAL"
 
     lines = [
         "# Post-66.5 Roadmap Run Summary",
@@ -397,11 +406,20 @@ def write_summary(cp3_rows: list[dict[str, object]], comparative_rows: list[dict
         "",
         "Phase 67 remains parked.",
         "",
+        f"Release verdict: `{release_status}`.",
+        "",
         "Generated outputs:",
         "",
+        f"- `{CP2_CONTROL_INTEGRITY.relative_to(ROOT)}`",
         f"- `{CP3_OUT.relative_to(ROOT)}`",
         f"- `{COMPARATIVE_OUT.relative_to(ROOT)}`",
         f"- `{CP5_OUT.relative_to(ROOT)}`",
+        "",
+        "## CP2 Same-Surrogate Control Integrity",
+        "",
+        f"Gate status: `{cp2_status}`.",
+        "",
+        f"See `{CP2_CONTROL_INTEGRITY.relative_to(ROOT)}` for branch/control distributions, effect size, overlap, and terminal control classification.",
         "",
         "## CP3 Effective-Equation Contract",
         "",
@@ -418,7 +436,7 @@ def write_summary(cp3_rows: list[dict[str, object]], comparative_rows: list[dict
     lines.extend(
         [
             "",
-            "Interpretation: coefficient-flow, metric-surrogate shell-slope, and propagation-speed rows separate from controls in the tested slices. The rescaled-invariant row does not separate, so CP3 remains `OPEN` overall.",
+            "Interpretation: coefficient-flow, metric-surrogate shell-slope, and propagation-speed rows separate from controls in the tested slices. The rescaled-invariant row does not separate, so it is terminally classified as `CP3_RESCALED_INVARIANT_NOT_SPECIFIC`.",
             "",
             "## Narrow Comparative Diagnostic",
             "",

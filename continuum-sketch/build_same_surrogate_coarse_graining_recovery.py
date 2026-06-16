@@ -14,6 +14,7 @@ PHASE10_COARSE = ROOT / "phase10-bridge" / "runs" / "phase10_coarse_grain_summar
 
 CSV_OUT = OUT_DIR / "same_surrogate_coarse_graining_recovery.csv"
 SUMMARY_OUT = OUT_DIR / "same_surrogate_coarse_graining_recovery_summary.md"
+CONTROL_INTEGRITY_OUT = OUT_DIR / "same_surrogate_control_integrity_report.md"
 
 SLOPE_REL_TOL = 0.05
 CAUSAL_DEPTH_DRIFT_TOL = 0.10
@@ -46,8 +47,6 @@ def status(branch_recovery: float, control_recovery: float, branch_error: float,
         and metric_check == "PASS"
     ):
         return "PASS"
-    if branch_recovery >= PASS_BRANCH_RECOVERY:
-        return "OPEN"
     return "FAIL"
 
 
@@ -201,13 +200,73 @@ def write_outputs(rows: list[dict[str, object]]) -> None:
             "",
             "Interpretation:",
             "",
-            "- Phase XVIII distance surrogate: admissible branch recovery is complete under declared checks, but matched-control recovery is not below the strict threshold, so the CP2 gate remains `OPEN`.",
+            "- Phase XVIII distance surrogate: admissible branch recovery is complete under declared checks, but matched-control recovery is not below the strict threshold, so the CP2 gate is `CP2_CONTROL_INVALID`.",
             "- Phase X low-mode spectral projection: branch and control both recover, so the row supports projection bookkeeping but not branch-specific control separation.",
             "",
             "Claim boundary: this is same-surrogate recovery bookkeeping inside frozen ledgers. It is not a continuum limit, physical metric, or physical correspondence claim.",
         ]
     )
     SUMMARY_OUT.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    control_lines = [
+        "# Same-Surrogate Control Integrity Report",
+        "",
+        "Status: control-hardening diagnostic, not a continuum claim.",
+        "",
+        f"Frozen thresholds: admissible recovery >= {PASS_BRANCH_RECOVERY:.1f}%, matched-control recovery < {PASS_CONTROL_RECOVERY_MAX:.1f}%, slope error <= {SLOPE_REL_TOL:.2f}, causal-depth drift <= {CAUSAL_DEPTH_DRIFT_TOL:.2f}, triangle violation <= {TRIANGLE_VIOLATION_TOL:.2f}.",
+        "",
+        "The available CP2 evidence contains two frozen surrogate rows:",
+        "",
+        "| Surrogate | Admissible recovery % | Matched-control recovery % | Admissible error | Control error | Status |",
+        "| --- | ---: | ---: | ---: | ---: | --- |",
+    ]
+    admissible_values = []
+    control_values = []
+    for row in rows:
+        admissible_values.append(float(row["recovery_pct_admissible"]))
+        control_values.append(float(row["recovery_pct_matched_control"]))
+        control_lines.append(
+            "| {surrogate_type} | {recovery_pct_admissible} | {recovery_pct_matched_control} | {round_trip_error_admissible} | {round_trip_error_matched_control} | {status} |".format(
+                **row
+            )
+        )
+
+    branch_mean = sum(admissible_values) / len(admissible_values)
+    control_mean = sum(control_values) / len(control_values)
+    branch_min = min(admissible_values)
+    branch_max = max(admissible_values)
+    control_min = min(control_values)
+    control_max = max(control_values)
+    overlap = 0.5 if any(value in control_values for value in admissible_values) else 0.0
+    effect_size = branch_mean - control_mean
+
+    control_lines.extend(
+        [
+            "",
+            "## Diagnostic Readout",
+            "",
+            f"- Branch recovery distribution: {admissible_values}",
+            f"- Control recovery distribution: {control_values}",
+            f"- Branch mean recovery: {branch_mean:.6f}%",
+            f"- Control mean recovery: {control_mean:.6f}%",
+            f"- Effect size: {effect_size:.6f} percentage points",
+            f"- Overlap coefficient: {overlap:.6f}",
+            f"- Branch range: [{branch_min:.6f}, {branch_max:.6f}]",
+            f"- Control range: [{control_min:.6f}, {control_max:.6f}]",
+            "",
+            "## Control Integrity",
+            "",
+            "- The matched control does not fall below the frozen strict threshold.",
+            "- One control row equals admissible recovery, so branch/control separation is not established.",
+            "- No additional hardening control family is available in the frozen same-surrogate artifact slice.",
+            "",
+            "## Terminal Classification",
+            "",
+            "- `CP2_CONTROL_INVALID`",
+            "- `CP2_SAME_SURROGATE_CLOSED`",
+        ]
+    )
+    CONTROL_INTEGRITY_OUT.write_text("\n".join(control_lines) + "\n", encoding="utf-8")
 
 
 def main() -> None:
