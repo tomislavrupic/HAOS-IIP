@@ -16,6 +16,7 @@ Everything here is exploratory and non-binding.
 - [Transformation Bottleneck and Hidden Dimensions](transformation_to_symmetry/transformation_bottleneck_and_hidden_dimensions_speculative.md)
 - [Hodge Sector Split as Toy Field Theory](hodge_to_field_theory/hodge_sector_split_as_toy_field_theory_speculative.md)
 - [Spectral-Hodge-Curvature-Flow: A Speculative Synthesis Map](full_stack_synthesis/speculative_spectral_hodge_curvature_flow_map.md)
+- [The Resonant Universe: A Grand Speculative Synthesis](full_stack_synthesis/the_resonant_universe_grand_synthesis_speculative.md)
 
 ## Rule of thumb
 
