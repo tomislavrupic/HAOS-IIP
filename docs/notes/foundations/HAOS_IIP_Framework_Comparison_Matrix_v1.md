@@ -77,6 +77,16 @@ Required test before stronger claim:
 - ...
 ```
 
+## See Equivalences Notes
+
+If a relationship is meant to be stated as a scoped structural correspondence rather than a bridge claim, use the equivalences layer:
+
+- [Equivalences Layer Overview](../equivalences/equivalences_layer_overview.md)
+- [Equivalences Layer Summary](../equivalences/equivalences_layer_summary.md)
+- [Equivalences Index](../equivalences/equivalences_index.md)
+
+The equivalence notes are for frozen discrete/operator correspondences only. They are not a shortcut around the comparison matrix or the claim-gating rules above.
+
 ## Rediscovery Policy
 
 Rediscovery is allowed.

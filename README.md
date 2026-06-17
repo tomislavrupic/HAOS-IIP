@@ -356,6 +356,9 @@ Phase 66 translation and hostile-audit rule:
 - [Core translation table](docs/notes/foundations/HAOS_IIP_Core_Translation_Table_v1.md) maps HAOS-IIP terms into operational standard-language meanings, numerical tests, non-claims, nearby concepts, and failure conditions.
 - [Falsification engine](docs/notes/foundations/HAOS_IIP_Falsification_Engine_v1.md) defines public failure gates, claim classes, downgrade conditions, and mandatory claim boxes for future releases.
 - [Framework comparison matrix](docs/notes/foundations/HAOS_IIP_Framework_Comparison_Matrix_v1.md) states overlap, difference, forbidden assumptions, rediscovery risk, possible contribution, and required tests against nearby frameworks.
+- [Equivalence notes](docs/notes/equivalences/) record deliberately scoped structural equivalences and adjacent mathematical correspondences inside frozen operator regimes.
+- [Equivalences layer overview](docs/notes/equivalences/equivalences_layer_overview.md) gives the purpose, rules, and core references for the equivalences folder.
+- [Equivalences layer summary](docs/notes/equivalences/equivalences_layer_summary.md) ties spectral address, current closure, and Hodge-style sector splitting into one discrete framing.
 - [Claim-gating template](docs/notes/foundations/HAOS_IIP_Claim_Gating_Template_v1.md) provides mandatory claim-boundary boilerplate for papers, dashboards, Zenodo releases, README updates, and public summaries.
 - [Scale-bridge legitimacy audit](docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md) applies the Phase 66 hostile-audit posture to refinement-ordered scaling diagnostics toward continuum feasibility.
 - Scale-Bridge Legitimacy Audit v1.2: focused lift cycle active; initial convergence diagnostic extract recorded from frozen ledgers, with no continuum-proof claim.

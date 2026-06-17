@@ -178,6 +178,7 @@ def write_report(result: dict[str, Any], rows: list[dict[str, Any]]) -> None:
     if pb04 is not None:
         lines.append(f"- effective classification: `{pb04['effective_classification']}`")
         lines.append(f"- labels: `{pb04['labels']}`")
+        lines.append("- terminal label: `CROSS_DOMAIN_TRANSFER_BOUNDARY_OPEN`")
         lines.append("- reading: cross-domain transfer remains terminally boundary-labeled and does not upgrade the bridge.")
     lines.extend(["", "## Registered Bridges", "", "| bridge_id | effective classification | labels |", "| --- | --- | --- |"])
     for row in rows:

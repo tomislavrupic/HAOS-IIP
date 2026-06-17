@@ -56,6 +56,7 @@ cat experiments/hbp/pb04_cross_domain_transfer/control_manifest.json
 
 ## Outputs
 
+- [HBP Status Snapshot](hbp_status_snapshot.md)
 - `results/hbp_bridge_registry.json`
 - `results/hbp_bridge_registry.csv`
 - `results/hbp_result.json`
@@ -126,3 +127,4 @@ future recoverability better than topology-only methods on untouched holdout.
 
 PB-04 is a cross-domain transfer benchmark draft. It asks whether frozen HAOS
 structural descriptors transfer recoverability ranking across domains.
+Current reading: `PREDICTION_NOT_DISTINCT_FROM_BASELINES` / `CROSS_DOMAIN_TRANSFER_BOUNDARY_OPEN`.

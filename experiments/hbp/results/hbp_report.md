@@ -29,6 +29,7 @@ This registry classifies bridge evidence. It does not upgrade frozen HAOS-IIP cl
 
 - effective classification: `FORMAL_CORRESPONDENCE`
 - labels: `DIMENSIONAL_ANALYSIS_FAIL;FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED`
+- terminal label: `CROSS_DOMAIN_TRANSFER_BOUNDARY_OPEN`
 - reading: cross-domain transfer remains terminally boundary-labeled and does not upgrade the bridge.
 
 ## Registered Bridges

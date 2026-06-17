@@ -2,6 +2,10 @@
 
 Status: `PREDICTION_NOT_DISTINCT_FROM_BASELINES`
 
+## Terminal Labels
+- `PREDICTION_NOT_DISTINCT_FROM_BASELINES`
+- `CROSS_DOMAIN_TRANSFER_BOUNDARY_OPEN`
+
 - source model: `source_domain_only`
 - source spearman: `1.000000`
 - target spearman: `0.361273`
