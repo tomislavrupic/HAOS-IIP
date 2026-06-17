@@ -76,6 +76,8 @@ This note fails if any of the following happen:
 ## Related frozen sources
 
 - `docs/notes/equivalences/ollivier_ricci_curvature_local_transport_diagnostic_v1.md`
+- `docs/notes/equivalences/sinkhorn_approximation_transport_diagnostic_v1.md`
+- `docs/notes/equivalences/sliced_wasserstein_transport_diagnostic_v1.md`
 - `docs/notes/equivalences/discrete_curvature_models_local_to_global_diagnostic_v1.md`
 - `docs/notes/equivalences/spectral_graph_clustering_diagnostic_v1.md`
 - `docs/notes/equivalences/hodge_laplacian_extensions_higher_order_sector_recovery_v1.md`

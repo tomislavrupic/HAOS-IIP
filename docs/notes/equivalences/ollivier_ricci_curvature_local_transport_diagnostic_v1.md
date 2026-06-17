@@ -76,6 +76,8 @@ This note fails if any of the following happen:
 ## Related frozen sources
 
 - `docs/notes/equivalences/wasserstein_distance_transport_cost_diagnostic_v1.md`
+- `docs/notes/equivalences/sinkhorn_approximation_transport_diagnostic_v1.md`
+- `docs/notes/equivalences/sliced_wasserstein_transport_diagnostic_v1.md`
 - `docs/notes/equivalences/discrete_curvature_models_local_to_global_diagnostic_v1.md`
 - `docs/notes/equivalences/spectral_graph_clustering_diagnostic_v1.md`
 - `docs/notes/equivalences/spectral_address_laplacian_eigenmodes_v1.md`

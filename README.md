@@ -166,6 +166,7 @@ phase3-stability/ ... phase19-spectral-address/    frozen phase bundles and diag
 continuum-sketch/                                  low-cost post-processing scaling test
 experiments/physics_bridge/                        external physics-facing proxy readout
 experiments/materials_bridge/                      external materials-data sidecar probes
+speculative_bridge/                                explicit exploratory analogy playground
 examples/                                          one-command public reproduction spine
 telemetry/                                         frozen emergence metrics
 haos_core/                                         shared core primitives

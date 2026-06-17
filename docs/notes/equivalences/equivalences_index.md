@@ -13,6 +13,9 @@ This index lists deliberately scoped structural equivalences and adjacent mathem
 - [Discrete Curvature Models and Local-to-Global Diagnostics](discrete_curvature_models_local_to_global_diagnostic_v1.md)
 - [Wasserstein Distance and Transport-Cost Diagnostics](wasserstein_distance_transport_cost_diagnostic_v1.md)
 - [Ollivier-Ricci Curvature as a Local Transport Diagnostic](ollivier_ricci_curvature_local_transport_diagnostic_v1.md)
+- [Sliced Wasserstein Distance as a Scalable Transport Diagnostic](sliced_wasserstein_transport_diagnostic_v1.md)
+- [Maximum Mean Discrepancy as a Kernel Diagnostic](maximum_mean_discrepancy_kernel_diagnostic_v1.md)
+- [MMD Kernel Selection Strategies](mmd_kernel_selection_strategies_v1.md)
 - [Discrete Ricci Flow on Graphs as a Diagnostic Probe](discrete_ricci_flow_graphs_diagnostic_v1.md)
 - [Equivalences Layer Summary](equivalences_layer_summary.md)
 

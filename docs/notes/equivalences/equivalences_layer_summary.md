@@ -37,7 +37,23 @@ It does not claim physical ontology, continuum derivation, or external physics v
    - neighborhood transport overlap acts as a bridge-versus-community diagnostic
    - Hodge-language adjacency: local transport geometry complementing spectral and Cheeger probes
 
-8. **Discrete Ricci Flow on Graphs as a Diagnostic Probe**
+8. **Sinkhorn Approximation as a Practical Transport Diagnostic**
+   - entropic regularization acts as a speed-oriented approximation layer
+   - Hodge-language adjacency: practical transport scaling without exact optimal transport
+
+9. **Sliced Wasserstein Distance as a Scalable Transport Diagnostic**
+   - projection-averaged transport acts as the fastest approximation rung
+   - Hodge-language adjacency: fast projected transport geometry for large or anisotropic supports
+
+10. **Maximum Mean Discrepancy as a Kernel Diagnostic**
+   - kernel mean discrepancy acts as the lightweight distribution test
+   - Hodge-language adjacency: RKHS separation for frozen feature clouds
+
+11. **MMD Kernel Selection Strategies**
+   - kernel choice acts as the frozen sensitivity dial for MMD
+   - Hodge-language adjacency: bandwidth and kernel family as comparison controls
+
+12. **Discrete Ricci Flow on Graphs as a Diagnostic Probe**
    - curvature-weighted reweighting acts as a short synthetic evolution pass
    - Hodge-language adjacency: local diagnostic evolution on discrete graph geometry
 

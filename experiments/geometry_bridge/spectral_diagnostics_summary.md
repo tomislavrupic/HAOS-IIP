@@ -47,9 +47,35 @@ comparison class:
 Interpretation:
 - Wasserstein distance is the cost functional underneath the local transport comparison.
 - Ollivier-Ricci turns that cost into a curvature-style bridge diagnostic.
+- Sinkhorn is recorded as the practical approximation layer when exact transport
+  is too expensive to use edge by edge.
 - Neither note changes the GEO-HIDDEN-01 verdict ceiling.
 - The metric family is recorded for diagnostic completeness; no code path or
   holdout verdict is changed here.
+
+### Kernel companion
+
+| Statistic | Role | Current reading |
+| --- | --- | --- |
+| Maximum Mean Discrepancy (`MMD`) | Kernel-side distribution test | Lightweight comparison for frozen embeddings and curvature summaries |
+
+### MMD kernel selection
+
+| Kernel family | Diagnostic reading | Practical note |
+| --- | --- | --- |
+| Gaussian / RBF | Default kernel for spectral embeddings | Median heuristic is the safest frozen starting point |
+| Laplace | Robust to outliers | Good for noisy curvature summaries |
+| Rational quadratic | Multi-scale discrepancy | Useful when the feature scale is mixed |
+| Linear | Fast first-pass check | Only sees coarse mean shifts |
+
+Interpretation:
+- MMD is the kernel-side companion to the transport ladder, not part of the
+  transport metric family itself.
+- It is useful for quick distribution separation on spectral embeddings or
+  curvature histograms.
+- Kernel choice is the main sensitivity dial for MMD, so it should be frozen
+  alongside the diagnostic contract rather than tuned informally.
+- It does not change the GEO-HIDDEN-01 verdict ceiling.
 
 ## Interpretation
 
@@ -75,6 +101,12 @@ Analogy:
 - `W1` is the direct local choice for neighborhood transport; `W2`, sliced
   variants, and Sinkhorn are recorded as practical approximations or adjacent
   comparisons, not as stronger claims.
+- Sinkhorn is the speed-oriented approximation layer, not a replacement for
+  exact Wasserstein or a stronger transport claim.
+- MMD is the kernel-side separation score beside the transport family, useful
+  when the question is distributional difference rather than mass transport.
+- For kernel choice, Gaussian / RBF is the default; Laplace and rational
+  quadratic are recorded as practical alternatives.
 
 Unverified hypothesis:
 - The remaining transformation gap may be caused by geometry that is too weak

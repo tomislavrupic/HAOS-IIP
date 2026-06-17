@@ -42,7 +42,23 @@ The notes are meant to be readable, auditable, and easy to compare against the r
    - neighborhood transport overlap as a bridge-vs-community diagnostic
    - nearby language: transport cost, lazy random-walk neighborhoods, edge curvature
 
-9. **Discrete Ricci Flow on Graphs as a Diagnostic Probe**
+9. **Sinkhorn Approximation as a Practical Transport Diagnostic**
+   - entropically regularized transport as a speed-oriented approximation layer
+   - nearby language: matrix scaling, entropic OT, practical transport probes
+
+10. **Sliced Wasserstein Distance as a Scalable Transport Diagnostic**
+   - projection-averaged transport cost as the fastest approximation rung
+   - nearby language: random projections, 1D transport, scalable OT approximation
+
+11. **Maximum Mean Discrepancy as a Kernel Diagnostic**
+   - RKHS mean-embedding discrepancy as a fast distribution test
+   - nearby language: kernel embeddings, class separation, lightweight screening
+
+12. **MMD Kernel Selection Strategies**
+   - kernel choice as the frozen sensitivity dial for MMD
+   - nearby language: median heuristic, cross-validation, kernel ensembles
+
+13. **Discrete Ricci Flow on Graphs as a Diagnostic Probe**
    - curvature-weighted reweighting as a local-to-global diagnostic evolution
    - nearby language: graph flow, edge-weight updates, bottleneck sharpening
 
