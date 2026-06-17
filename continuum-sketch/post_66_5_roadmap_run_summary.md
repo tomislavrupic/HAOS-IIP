@@ -32,9 +32,11 @@ Gate status: `CP3_RESCALED_INVARIANT_NOT_SPECIFIC`.
 
 Interpretation: coefficient-flow, metric-surrogate shell-slope, and propagation-speed rows separate from controls in the tested slices. The rescaled-invariant row does not separate, so it is terminally classified as `CP3_RESCALED_INVARIANT_NOT_SPECIFIC`.
 
+The external-validation toy-vs-HAOS ordering screen remains intentionally open as a validation boundary: it records a comparison harness difference without authorizing a bridge claim.
+
 ## Narrow Comparative Diagnostic
 
-Gate status: `MIXED_OPEN`.
+Gate status: `VALIDATION_BOUNDARY_OPEN`.
 
 | Diagnostic | Observed | Control | Status |
 | --- | --- | --- | --- |
@@ -45,7 +47,7 @@ Gate status: `MIXED_OPEN`.
 | CP2 Phase XVIII distance surrogate | 100.000000 | 50.000000 | `FAIL` |
 | CP2 Phase X low-mode spectral projection | 100.000000 | 100.000000 | `FAIL` |
 | Kuramoto line_e_like oscillator bridge | early_detection=True; specificity_pass=False; k_star_time=1.440000 | control_contrast=False; specificity_control_contrast=True | `FAIL` |
-| external-validation toy-vs-HAOS ordering screen | artifact of construction | invariant structural signal | `OPEN` |
+| external-validation toy-vs-HAOS ordering screen | artifact of construction | invariant structural signal | `VALIDATION_BOUNDARY_OPEN` |
 
 Interpretation: the Kuramoto sidecar fails in a useful way: early detection appears, but edge-signature specificity does not pass. No superiority claim is made.
 

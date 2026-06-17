@@ -316,7 +316,7 @@ def build_comparative(cp3_rows: list[dict[str, object]]) -> list[dict[str, objec
             "observed_result": haos_order,
             "control_result": toy_order,
             "contrast": "HAOS summary flags artifact-of-construction; toy summary flags invariant structural signal",
-            "status": "OPEN",
+            "status": "VALIDATION_BOUNDARY_OPEN",
             "claim_boundary": "validation harness comparison only; no physical claim",
         }
     )
@@ -394,7 +394,13 @@ def write_summary(cp3_rows: list[dict[str, object]], comparative_rows: list[dict
         if any(row["contract"] == "CP3 rescaled-invariant flow" for row in cp3_rows)
         else "CP3_OPEN"
     )
-    comparative_status = "PASS" if all(row["status"] == "PASS" for row in comparative_rows) else "MIXED_OPEN"
+    comparative_status = (
+        "PASS"
+        if all(row["status"] == "PASS" for row in comparative_rows)
+        else "VALIDATION_BOUNDARY_OPEN"
+        if any(row["status"] == "VALIDATION_BOUNDARY_OPEN" for row in comparative_rows)
+        else "MIXED_OPEN"
+    )
     cp5_status = "PASS" if all(row["status"] == "PASS" for row in cp5_rows) else "CP5_COVERAGE_INSUFFICIENT"
     cp2_status = "CP2_CONTROL_INVALID" if CP2_CONTROL_INTEGRITY.exists() else "CP2_SAME_SURROGATE_OPEN"
     release_status = "RELEASE_66_5_GATES_CLOSED" if cp3_status == "PASS" and comparative_status == "PASS" and cp5_status == "PASS" and cp2_status == "CP2_CONTROL_INVALID" else "RELEASE_66_5_PARTIAL"
@@ -436,9 +442,11 @@ def write_summary(cp3_rows: list[dict[str, object]], comparative_rows: list[dict
     lines.extend(
         [
             "",
-            "Interpretation: coefficient-flow, metric-surrogate shell-slope, and propagation-speed rows separate from controls in the tested slices. The rescaled-invariant row does not separate, so it is terminally classified as `CP3_RESCALED_INVARIANT_NOT_SPECIFIC`.",
-            "",
-            "## Narrow Comparative Diagnostic",
+        "Interpretation: coefficient-flow, metric-surrogate shell-slope, and propagation-speed rows separate from controls in the tested slices. The rescaled-invariant row does not separate, so it is terminally classified as `CP3_RESCALED_INVARIANT_NOT_SPECIFIC`.",
+        "",
+        "The external-validation toy-vs-HAOS ordering screen remains intentionally open as a validation boundary: it records a comparison harness difference without authorizing a bridge claim.",
+        "",
+        "## Narrow Comparative Diagnostic",
             "",
             f"Gate status: `{comparative_status}`.",
             "",
