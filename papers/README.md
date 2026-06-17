@@ -113,6 +113,19 @@ recovery benchmark and the PB-04 cross-domain transfer benchmark so that any
 future positive result would need to survive a stricter and more isolated
 evaluation path. Both current frozen results remain negative.
 
+Continuity note:
+
+1. 66.5 is the hardened scale-bridge baseline.
+2. 67.1 inherits that boundary discipline through the HBP registry and
+   benchmark bundle.
+3. Current HBP row labels remain terminal, not promotional:
+   - PB-01: `PREDICTION_NOT_DISTINCT_FROM_BASELINES`, `CONTROL_INVALID`,
+     `HOLDOUT_TRANSFER_PASS`, `MIXED_OPEN`, `PHYSICAL_MECHANISM_NOT_ESTABLISHED`
+   - PB-03: `PREDICTION_NOT_DISTINCT_FROM_BASELINES`, `CONTROL_INVALID`,
+     `MIXED_OPEN`
+   - PB-04: `PREDICTION_NOT_DISTINCT_FROM_BASELINES`, `HAOS_BELL_STATUS_OPEN`,
+     `MIXED_OPEN`
+
 ## 2.2 External-data sidecar releases
 
 The numbered release spine now also includes bounded external-data sidecar

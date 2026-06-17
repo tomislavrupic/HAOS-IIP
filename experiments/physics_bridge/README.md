@@ -216,6 +216,22 @@ Generated outputs:
 
 - `experiments/physics_bridge/synthetic_relational_geometry_calibration/precommitment_contract.json`
 - `experiments/physics_bridge/synthetic_relational_geometry_calibration/synthetic_source_manifest.json`
+
+## HBP Continuity
+
+The HBP registry is the synthetic bridge program used by the 67.1 companion
+release. It inherits the hardened 66.5 boundary discipline and keeps the row
+labels terminal:
+
+- PB-01: `PREDICTION_NOT_DISTINCT_FROM_BASELINES`, `CONTROL_INVALID`,
+  `HOLDOUT_TRANSFER_PASS`, `MIXED_OPEN`, `PHYSICAL_MECHANISM_NOT_ESTABLISHED`
+- PB-03: `PREDICTION_NOT_DISTINCT_FROM_BASELINES`, `CONTROL_INVALID`,
+  `MIXED_OPEN`
+- PB-04: `PREDICTION_NOT_DISTINCT_FROM_BASELINES`, `HAOS_BELL_STATUS_OPEN`,
+  `MIXED_OPEN`
+
+For the compact continuity note, see
+`docs/notes/foundations/post_67_1_bridge_audit.md`.
 - `experiments/physics_bridge/synthetic_relational_geometry_calibration/semantic_relation_matrix.csv`
 - `experiments/physics_bridge/synthetic_relational_geometry_calibration/calibration_geometry_matrix.csv`
 - `experiments/physics_bridge/synthetic_relational_geometry_calibration/calibration_control_results.csv`

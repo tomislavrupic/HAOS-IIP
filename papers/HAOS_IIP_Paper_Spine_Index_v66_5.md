@@ -64,6 +64,16 @@ Current gate status:
 
 This roadmap run improves audit clarity, but it is not a new numbered release and not a score upgrade.
 
+## Current HBP Continuity
+
+| Release | Role | Status | Claim boundary |
+| --- | --- | --- | --- |
+| `67.1` | HBP Recovery Benchmarks | current frozen companion | PB-01/PB-03/PB-04 remain terminally labeled; no physical mechanism claim |
+
+This is a navigation bridge only. It keeps the 66.5 scale-bridge baseline and
+the 67.1 HBP companion in the same reading frame without collapsing either into
+a stronger claim.
+
 ## Non-Claims
 
 This index does not claim:
