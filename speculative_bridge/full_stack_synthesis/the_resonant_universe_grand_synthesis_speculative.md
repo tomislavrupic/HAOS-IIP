@@ -1,4 +1,4 @@
-# The Resonant Universe: A Grand Speculative Synthesis
+# The Resonant Universe: A Grand Speculative Synthesis (v2)
 
 ## Status
 
@@ -107,6 +107,10 @@ fields living on it.
 
 That is the story. It is a story, not a result.
 
+If you want the shorter, sharper version: this is what the frozen machine
+looks like when it is allowed to daydream about what its own structure might
+mean.
+
 ## The wilder edge
 
 If the harmonic sector is the part that keeps surviving perturbation and
@@ -127,6 +131,9 @@ hard to stop noticing once you have seen it.
 - no claim that the transformation bottleneck has been solved
 - no claim that the frozen notes establish ontology
 - no claim that the speculative map is unique rather than decorative
+- no claim that the current recovery failures are cosmic evidence rather than
+  instrument limitations
+- no claim that the higher-order leaps survive outside the playground
 
 ## Why it is fun
 
@@ -141,6 +148,11 @@ Because the stack has a strangely satisfying shape:
 That is the emotional silhouette of a lot of physics stories. It is also a
 very human kind of story: start with relations, let them recover, and see what
 kind of world they accidentally build.
+
+If nothing else survives, the laboratory itself is still valuable: a clean
+pregeometric testbed that can produce stable spectral identities, decomposed
+flows, curvature-sensitive structure, and partial relational geometry without
+assuming spacetime upfront.
 
 ## Boundary
 

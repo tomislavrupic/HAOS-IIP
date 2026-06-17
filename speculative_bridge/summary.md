@@ -15,7 +15,7 @@ Everything here is exploratory and non-binding.
 | Transformation to hidden dimensions | Bottleneck as shadow of a richer space | [Transformation Bottleneck and Hidden Dimensions](transformation_to_symmetry/transformation_bottleneck_and_hidden_dimensions_speculative.md) |
 | Hodge to field theory | Constraints and degrees of freedom | [Hodge Sector Split as Toy Field Theory](hodge_to_field_theory/hodge_sector_split_as_toy_field_theory_speculative.md) |
 | Full-stack synthesis | Spectral -> Hodge -> curvature -> flow story | [Spectral-Hodge-Curvature-Flow: A Speculative Synthesis Map](full_stack_synthesis/speculative_spectral_hodge_curvature_flow_map.md) |
-| Grand synthesis | Full resonance story with pointer, sectors, curvature, symmetry, and flow | [The Resonant Universe: A Grand Speculative Synthesis](full_stack_synthesis/the_resonant_universe_grand_synthesis_speculative.md) |
+| Grand synthesis | Full resonance story with pointer, sectors, curvature, symmetry, and flow | [The Resonant Universe: A Grand Speculative Synthesis (v2)](full_stack_synthesis/the_resonant_universe_grand_synthesis_speculative.md) |
 
 ## Reading order
 
