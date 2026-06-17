@@ -25,6 +25,7 @@ A large-scale, disciplined numerical research program exploring reproducible eme
 - [HAOS-IIP Paper Spine Index v66.5](papers/HAOS_IIP_Paper_Spine_Index_v66_5.md)
 - [HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md](docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md) with populated convergence extract
 - [HAOS_IIP_Post_66_5_Roadmap_Run_v1.md](docs/notes/foundations/HAOS_IIP_Post_66_5_Roadmap_Run_v1.md) with CP2, CP3, comparative, and CP5 gate results
+- [Post-67.1 Consolidated Status Snapshot](docs/notes/foundations/post_67_1_status_snapshot.md)
 - [66.5 HAOS-IIP Scale-Bridge Legitimacy Audit.pdf](papers/pdf_releases/66.5%20HAOS-IIP%20Scale-Bridge%20Legitimacy%20Audit.pdf)
 - [Phase XIX Spectral Address bundle](phase19-spectral-address/README.md)
 - Python dependency lockfile for consistent `uv run` execution

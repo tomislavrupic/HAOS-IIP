@@ -67,6 +67,27 @@ not claim a physical mechanism.
 - useful signal: distance, orientation, and held-out relations recover well;
   transformation recovery remains the weak point and is the declared open
   criterion
+- spectral hardening summary: [spectral_diagnostics_summary.md](./spectral_diagnostics_summary.md)
+- terminal reading: `BENCHMARK_OPEN`, `TRANSFORMATION_RECOVERY_BOUNDARY_OPEN`,
+  `TRANSFORMATION_CLASS_NOT_ROBUST_ON_HOLDOUT`
+
+#### Spectral Hardening Pass (GEO-HIDDEN-01)
+
+- normalized Laplacian variants now run as the primary spectral path:
+  `L_sym` and `L_rw`
+- low-mode diagnostics now report Fiedler sign stability separately from holdout
+  transformation transfer
+- Cheeger sweep conductance is recorded as a bottleneck diagnostic
+- current frozen numbers:
+  - `transform_accuracy`: `0.500000`
+  - `fiedler_transform_accuracy`: `0.250000`
+  - `fiedler_sym_accuracy`: `0.250000`
+  - `fiedler_rw_accuracy`: `0.312500`
+  - `fiedler_sign_stability`: `0.513889`
+  - `cheeger_conductance`: `0.304962`
+- interpretation: the diagnostic layer improved, but
+  `TRANSFORMATION_RECOVERY_BOUNDARY_OPEN` remains the correct terminal reading
+- summary note: [spectral_diagnostics_summary.md](./spectral_diagnostics_summary.md)
 
 ### GEO-T1-01 - Synthetic hidden transformation recovery
 
@@ -115,6 +136,18 @@ structure before any Bell-adjacent questions are revisited.
 The chain-level audit at `run_geometry_chain_audit.py` keeps the boundary
 explicit. It treats the chain as pregeometric / proto-geometric, not as a Bell
 mechanism.
+
+## Chain Snapshot
+
+| Rung | Current state | Terminal reading | Short reading |
+| --- | --- | --- | --- |
+| GEO-01 | `open / non-dominant on holdout` | `GEOMETRY_NOT_DEMONSTRATED`, `MIXED_OPEN` | Pairwise geometry exists, but the coarse holdout target does not beat the best baseline. |
+| GEO-02 | `open` | `TRANSFORMATION_SEMANTICS_OPEN`, `MIXED_OPEN` | Transport / holonomy observables separate classes, but the transformation layer is still open. |
+| GEO-03 | `open` | `PROBABILITY_RULE_OPEN`, `MIXED_OPEN` | The frozen rule beats the null probabilistically, but not enough for closure. |
+| GEO-04 | `valid` | `OBSERVABLE_PREDICTION_VALID` | Observable prediction clears holdout class accuracy and pairwise ordering against null. |
+| GEO-HIDDEN-01 | `open` | `BENCHMARK_OPEN`, `TRANSFORMATION_RECOVERY_BOUNDARY_OPEN`, `TRANSFORMATION_CLASS_NOT_ROBUST_ON_HOLDOUT` | Distance, orientation, and held-out relations recover well; transformation recovery remains the weak point. |
+| GEO-T1-01 | `valid` | `BENCHMARK_VALID` | Hidden transformation algebra recovers identity, inverse, composition closure, orbits, stabilizers, equivalence classes, holdout compositions, and refinement persistence. |
+| GEO-P1-01 | `valid` | `PROBABILITY_RULE_VALID` | Hidden Bernoulli-law recovery passes calibration, holdout transfer, and null rejection. |
 
 ## Boundary
 

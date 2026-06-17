@@ -14,13 +14,37 @@ The notes are meant to be readable, auditable, and easy to compare against the r
    - spectral address as a recoverable eigenmode identity coordinate
    - nearby language: Laplacian eigenmodes, spectral clusters, harmonic identity
 
-2. **Current Closure and Discrete Conservation Balance**
+2. **Spectral Graph Clustering Diagnostic**
+   - low-mode embedding as a diagnostic for partition recovery
+   - nearby language: Fiedler vectors, community detection, spectral partitioning
+
+3. **Current Closure and Discrete Conservation Balance**
    - current closure as a bounded flux-like or divergence-like balance
    - nearby language: discrete conservation, flux balance, exact / coexact bookkeeping
 
-3. **Hodge Decomposition and Discrete Sector Splitting**
+4. **Hodge Decomposition and Discrete Sector Splitting**
    - exact / coexact / harmonic sector split as a Hodge-style decomposition
    - nearby language: cochain complexes, Laplacians, harmonic remainder
+
+5. **Hodge Laplacian Extensions and Higher-Order Sector Recovery**
+   - higher-order cochain bookkeeping as a combinatorial Hodge Laplacian extension
+   - nearby language: up / down Laplacians, k-cochains, higher-order sector recovery
+
+6. **Discrete Curvature Models and Local-to-Global Diagnostics**
+   - local curvature as a companion diagnostic for bottlenecks, bridges, and hubs
+   - nearby language: Forman curvature, Ollivier-Ricci curvature, Cheeger-style bottlenecks
+
+7. **Wasserstein Distance as a Transport-Cost Diagnostic**
+   - minimal transport cost between neighborhood measures
+   - nearby language: Earth Mover's distance, coupling cost, lazy random-walk measures
+
+8. **Ollivier-Ricci Curvature as a Local Transport Diagnostic**
+   - neighborhood transport overlap as a bridge-vs-community diagnostic
+   - nearby language: transport cost, lazy random-walk neighborhoods, edge curvature
+
+9. **Discrete Ricci Flow on Graphs as a Diagnostic Probe**
+   - curvature-weighted reweighting as a local-to-global diagnostic evolution
+   - nearby language: graph flow, edge-weight updates, bottleneck sharpening
 
 ## Rules
 

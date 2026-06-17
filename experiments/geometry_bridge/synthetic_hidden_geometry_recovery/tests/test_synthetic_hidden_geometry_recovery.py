@@ -38,13 +38,25 @@ class SyntheticHiddenGeometryRecoveryTests(unittest.TestCase):
         self.assertIn("distance_spearman", self.result["holdout_metrics"])
         self.assertIn("orientation_accuracy", self.result["holdout_metrics"])
         self.assertIn("transform_accuracy", self.result["holdout_metrics"])
+        self.assertIn("fiedler_sign_stability", self.result["holdout_metrics"])
+        self.assertIn("cheeger_conductance", self.result["holdout_metrics"])
+        self.assertIn("fiedler_sym_accuracy", self.result["holdout_metrics"])
+        self.assertIn("fiedler_rw_accuracy", self.result["holdout_metrics"])
         self.assertIn("relation_accuracy", self.result["holdout_metrics"])
         self.assertTrue(self.result["holdout_metrics"]["distance_pass"])
         self.assertTrue(self.result["holdout_metrics"]["orientation_pass"])
         self.assertTrue(self.result["holdout_metrics"]["relation_pass"])
         self.assertFalse(self.result["holdout_metrics"]["transform_pass"])
+        self.assertIn("fiedler_transform_pass", self.result["holdout_metrics"])
+        self.assertIn("fiedler_sym_pass", self.result["holdout_metrics"])
+        self.assertIn("fiedler_rw_pass", self.result["holdout_metrics"])
+        self.assertIn("fiedler_sign_stability_pass", self.result["holdout_metrics"])
+        self.assertIn("cheeger_pass", self.result["holdout_metrics"])
         self.assertFalse(self.result["holdout_pass"])
-        self.assertEqual(self.result["labels"], ["BENCHMARK_OPEN", "MIXED_OPEN"])
+        self.assertEqual(
+            self.result["labels"],
+            ["BENCHMARK_OPEN", "MIXED_OPEN"],
+        )
 
     def test_outputs_written(self) -> None:
         for filename in (
@@ -64,6 +76,10 @@ class SyntheticHiddenGeometryRecoveryTests(unittest.TestCase):
 
     def test_control_results_exist(self) -> None:
         self.assertTrue((MODULE.ROOT / "control_results.csv").exists())
+        control_text = (MODULE.ROOT / "control_results.csv").read_text(encoding="utf-8")
+        self.assertIn("edge_rewiring_control", control_text)
+        self.assertIn("bridge_removal_control", control_text)
+        self.assertIn("fiedler_variant_gap", (MODULE.ROOT / "hidden_geometry_observations.csv").read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

@@ -11,6 +11,10 @@
     {
       "description": "use only graph size and density",
       "name": "graph_structure_null"
+    },
+    {
+      "description": "normalized Laplacian low-mode embedding",
+      "name": "normalized_low_mode_embedding"
     }
   ],
   "bridge_id": "GEO-HIDDEN-01",
@@ -25,6 +29,16 @@
       "destroys": "semantic labels",
       "name": "label_permutation_control",
       "preserves": "weights"
+    },
+    {
+      "destroys": "global adjacency pattern",
+      "name": "edge_rewiring_control",
+      "preserves": "degree and edge-weight multiset"
+    },
+    {
+      "destroys": "spectral bridge connectivity",
+      "name": "bridge_removal_control",
+      "preserves": "coarse density"
     },
     {
       "destroys": "adjacency topology",

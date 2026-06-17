@@ -20,3 +20,5 @@ Alignment results:
 - Failure remains explicit: if the address cannot be reidentified, reconstructable, or separated from controls, the address claim fails.
 
 Phase XIX establishes the spectral-address translation layer for later HAOS-IIP wording and slide work.
+
+See also: [Spectral Address Recoverability Audit](spectral_address_recoverability_audit.md).

@@ -2,6 +2,8 @@
   "bridge_id": "GEO-HIDDEN-01",
   "controls": [
     "label_permutation_control",
+    "edge_rewiring_control",
+    "bridge_removal_control",
     "topology_destroyed_control",
     "orientation_destroyed_control",
     "parameter_matched_null_control",

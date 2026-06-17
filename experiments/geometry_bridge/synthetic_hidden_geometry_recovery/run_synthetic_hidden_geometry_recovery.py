@@ -44,6 +44,8 @@ SEEDS = (2101, 2102, 2103, 2104)
 TRANSFORMATIONS = ("identity", "rotation", "reflection", "scale_shift")
 CONTROL_NAMES = (
     "label_permutation_control",
+    "edge_rewiring_control",
+    "bridge_removal_control",
     "topology_destroyed_control",
     "orientation_destroyed_control",
     "parameter_matched_null_control",
@@ -64,6 +66,10 @@ OBS_FIELDNAMES = [
     "transform_predicted",
     "relation_true",
     "relation_predicted",
+    "fiedler_sign_stability",
+    "fiedler_variant_gap",
+    "fiedler_variant_agreement",
+    "cheeger_conductance",
 ]
 
 CONTROL_FIELDNAMES = [
@@ -91,6 +97,8 @@ class HiddenGeometryConfig:
     min_holdout_orientation_accuracy: float = 0.55
     min_holdout_transform_accuracy: float = 0.55
     min_holdout_relation_accuracy: float = 0.55
+    min_holdout_sign_stability: float = 0.55
+    min_holdout_spectral_transfer: float = 0.45
 
 
 def repo_rel(path: Path) -> str:
@@ -173,8 +181,58 @@ def laplacian(graph: np.ndarray) -> np.ndarray:
     return np.diag(degree) - graph
 
 
+def normalized_laplacian(graph: np.ndarray) -> np.ndarray:
+    sym_graph = 0.5 * (graph + graph.T)
+    degree = np.sum(sym_graph, axis=1)
+    inv_sqrt = np.zeros_like(degree)
+    positive = degree > 1.0e-12
+    inv_sqrt[positive] = 1.0 / np.sqrt(degree[positive])
+    scale = np.diag(inv_sqrt)
+    identity = np.eye(sym_graph.shape[0], dtype=float)
+    return identity - scale @ sym_graph @ scale
+
+
+def random_walk_laplacian(graph: np.ndarray) -> np.ndarray:
+    sym_graph = 0.5 * (graph + graph.T)
+    degree = np.sum(sym_graph, axis=1)
+    inv = np.zeros_like(degree)
+    positive = degree > 1.0e-12
+    inv[positive] = 1.0 / degree[positive]
+    transition = np.diag(inv) @ sym_graph
+    return np.eye(sym_graph.shape[0], dtype=float) - transition
+
+
+def low_mode_embedding(graph: np.ndarray, dimensions: int = 3, *, norm_type: str = "sym") -> dict[str, Any]:
+    sym_graph = 0.5 * (graph + graph.T)
+    if norm_type == "sym":
+        lap = normalized_laplacian(sym_graph)
+    elif norm_type == "rw":
+        lap = random_walk_laplacian(sym_graph)
+    else:
+        lap = laplacian(sym_graph)
+    eigvals, eigvecs = np.linalg.eigh(lap)
+    basis = eigvecs[:, 1 : 1 + min(dimensions, max(eigvecs.shape[1] - 1, 0))]
+    if basis.size == 0:
+        basis = np.zeros((sym_graph.shape[0], 1), dtype=float)
+    fiedler_vector = basis[:, 0]
+    harmonic_vector = eigvecs[:, 0] if eigvecs.size else np.zeros(sym_graph.shape[0], dtype=float)
+    cut_weight = float(np.mean(np.abs(fiedler_vector[:, None] - fiedler_vector[None, :]))) if fiedler_vector.size else 0.0
+    return {
+        "laplacian_kind": norm_type,
+        "fiedler_eigenvalue": float(eigvals[1]) if eigvals.size > 1 else float(eigvals[0]) if eigvals.size else 0.0,
+        "fiedler_sign_balance": float(np.mean(fiedler_vector > 0.0)) if fiedler_vector.size else 0.0,
+        "fiedler_std": float(np.std(fiedler_vector)) if fiedler_vector.size else 0.0,
+        "fiedler_orthogonality_to_harmonic": float(np.abs(np.dot(fiedler_vector, harmonic_vector))) if fiedler_vector.size and harmonic_vector.size else 0.0,
+        "fiedler_cut_weight": cut_weight,
+        "low_mode_count": int(basis.shape[1]),
+        "low_mode_energy": float(np.sum(np.linalg.norm(basis, axis=0))) if basis.size else 0.0,
+        "sign_vector": np.sign(fiedler_vector).tolist(),
+        "embedding": basis,
+    }
+
+
 def spectral_embedding(graph: np.ndarray, dimensions: int = 3) -> np.ndarray:
-    lap = laplacian(graph)
+    lap = normalized_laplacian(graph)
     eigvals, eigvecs = np.linalg.eigh(lap)
     basis = eigvecs[:, 1 : 1 + min(dimensions, eigvecs.shape[1] - 1)]
     if basis.size == 0:
@@ -247,6 +305,50 @@ def relation_label(coords: np.ndarray) -> int:
     return 1 if float(np.mean(upper)) <= threshold else 0
 
 
+def conductance(graph: np.ndarray, subset: np.ndarray) -> float:
+    sym_graph = 0.5 * (graph + graph.T)
+    subset = np.asarray(subset, dtype=bool)
+    if subset.size == 0 or subset.all() or (~subset).all():
+        return 1.0
+    degree = np.sum(sym_graph, axis=1)
+    volume_subset = float(np.sum(degree[subset]))
+    volume_complement = float(np.sum(degree[~subset]))
+    cut = float(np.sum(sym_graph[np.ix_(subset, ~subset)]))
+    denom = max(min(volume_subset, volume_complement), 1.0e-12)
+    return cut / denom
+
+
+def cheeger_sweep(graph: np.ndarray, fiedler_vector: np.ndarray) -> dict[str, float]:
+    if fiedler_vector.size == 0:
+        return {"cheeger_conductance": 1.0, "cheeger_balance": 0.0, "cheeger_cut_size": 0.0}
+    order = np.argsort(fiedler_vector, kind="mergesort")
+    best = 1.0
+    best_balance = 0.0
+    best_cut_size = 0.0
+    for k in range(1, len(order)):
+        subset = np.zeros(len(order), dtype=bool)
+        subset[order[:k]] = True
+        cond = conductance(graph, subset)
+        if cond < best:
+            best = cond
+            best_balance = float(min(k, len(order) - k) / max(len(order), 1))
+            best_cut_size = float(k)
+    return {
+        "cheeger_conductance": float(best),
+        "cheeger_balance": float(best_balance),
+        "cheeger_cut_size": float(best_cut_size),
+    }
+
+
+def perturb_graph(graph: np.ndarray, *, seed: int, scale: float = 0.02) -> np.ndarray:
+    rng = np.random.default_rng(seed)
+    noise = rng.normal(scale=scale, size=graph.shape)
+    sym_noise = 0.5 * (noise + noise.T)
+    perturbed = 0.5 * (graph + graph.T) + sym_noise
+    np.fill_diagonal(perturbed, 0.0)
+    return np.clip(perturbed, 0.0, None)
+
+
 def feature_matrix(graph: np.ndarray) -> np.ndarray:
     sym_graph = 0.5 * (graph + graph.T)
     spectral = spectral_embedding(sym_graph, dimensions=3)
@@ -290,7 +392,64 @@ def feature_summary(graph: np.ndarray) -> np.ndarray:
     )
 
 
+def fiedler_summary(graph: np.ndarray) -> np.ndarray:
+    features = low_mode_embedding(graph, dimensions=3, norm_type="sym")
+    embedding = np.asarray(features["embedding"], dtype=float)
+    return np.array(
+        [
+            features["fiedler_eigenvalue"],
+            features["fiedler_sign_balance"],
+            features["fiedler_std"],
+            features["fiedler_orthogonality_to_harmonic"],
+            features["fiedler_cut_weight"],
+            features["low_mode_count"],
+            features["low_mode_energy"],
+            float(np.mean(np.abs(embedding))) if embedding.size else 0.0,
+        ],
+        dtype=float,
+    )
+
+
+def cheeger_summary(graph: np.ndarray) -> np.ndarray:
+    features = low_mode_embedding(graph, dimensions=3, norm_type="sym")
+    embedding = np.asarray(features["embedding"], dtype=float)
+    fiedler = embedding[:, 0] if embedding.size else np.zeros(graph.shape[0], dtype=float)
+    sweep = cheeger_sweep(graph, fiedler)
+    return np.array(
+        [
+            sweep["cheeger_conductance"],
+            sweep["cheeger_balance"],
+            sweep["cheeger_cut_size"],
+            features["fiedler_eigenvalue"],
+            features["low_mode_energy"],
+        ],
+        dtype=float,
+    )
+
+
+def spectral_variant_summary(graph: np.ndarray, norm_type: str) -> np.ndarray:
+    features = low_mode_embedding(graph, dimensions=3, norm_type=norm_type)
+    embedding = np.asarray(features["embedding"], dtype=float)
+    return np.array(
+        [
+            features["fiedler_eigenvalue"],
+            features["fiedler_sign_balance"],
+            features["fiedler_std"],
+            features["fiedler_orthogonality_to_harmonic"],
+            features["fiedler_cut_weight"],
+            features["low_mode_count"],
+            features["low_mode_energy"],
+            float(np.mean(np.abs(embedding))) if embedding.size else 0.0,
+        ],
+        dtype=float,
+    )
+
+
 def centroid_classify(sample: np.ndarray, centroids: dict[str, np.ndarray]) -> str:
+    return min(centroids, key=lambda name: float(np.linalg.norm(sample - centroids[name])))
+
+
+def centroid_classify_int(sample: np.ndarray, centroids: dict[int, np.ndarray]) -> int:
     return min(centroids, key=lambda name: float(np.linalg.norm(sample - centroids[name])))
 
 
@@ -355,6 +514,28 @@ def control_graph(graph: np.ndarray, control_name: str, seed: int) -> np.ndarray
     if control_name == "label_permutation_control":
         order = rng.permutation(graph.shape[0])
         return graph[np.ix_(order, order)]
+    if control_name == "edge_rewiring_control":
+        sym_graph = 0.5 * (graph + graph.T)
+        upper = np.triu_indices(sym_graph.shape[0], 1)
+        values = sym_graph[upper]
+        permuted = values[rng.permutation(values.size)]
+        rewired = np.zeros_like(sym_graph)
+        rewired[upper] = permuted
+        rewired = rewired + rewired.T
+        np.fill_diagonal(rewired, 0.0)
+        return rewired
+    if control_name == "bridge_removal_control":
+        sym_graph = 0.5 * (graph + graph.T)
+        lap = normalized_laplacian(sym_graph)
+        eigvals, eigvecs = np.linalg.eigh(lap)
+        fiedler = eigvecs[:, 1] if eigvecs.shape[1] > 1 else np.ones(sym_graph.shape[0], dtype=float)
+        sign = np.sign(fiedler)
+        sign[sign == 0.0] = 1.0
+        bridge_mask = np.outer(sign, sign) < 0.0
+        trimmed = sym_graph.copy()
+        if np.any(bridge_mask):
+            trimmed[bridge_mask] *= 0.25
+        return trimmed
     if control_name == "topology_destroyed_control":
         return np.zeros_like(graph)
     if control_name == "orientation_destroyed_control":
@@ -390,6 +571,8 @@ def precommitment_payload(config: HiddenGeometryConfig) -> dict[str, Any]:
         "splits": {"development": list(DEVELOPMENT_FAMILIES), "calibration": list(CALIBRATION_FAMILIES), "holdout": list(HOLDOUT_FAMILIES)},
         "controls": [
             {"name": "label_permutation_control", "preserves": "weights", "destroys": "semantic labels"},
+            {"name": "edge_rewiring_control", "preserves": "degree and edge-weight multiset", "destroys": "global adjacency pattern"},
+            {"name": "bridge_removal_control", "preserves": "coarse density", "destroys": "spectral bridge connectivity"},
             {"name": "topology_destroyed_control", "preserves": "node count", "destroys": "adjacency topology"},
             {"name": "orientation_destroyed_control", "preserves": "node count and coarse weights", "destroys": "handedness"},
             {"name": "parameter_matched_null_control", "preserves": "weight scale", "destroys": "structured geometry"},
@@ -400,6 +583,7 @@ def precommitment_payload(config: HiddenGeometryConfig) -> dict[str, Any]:
             {"name": "mean_predictor", "description": "constant marginal predictor"},
             {"name": "random_predictor", "description": "frozen random predictor"},
             {"name": "graph_structure_null", "description": "use only graph size and density"},
+            {"name": "normalized_low_mode_embedding", "description": "normalized Laplacian low-mode embedding"},
         ],
         "falsification": [
             "holdout metrics below frozen thresholds",
@@ -423,8 +607,18 @@ def evaluate() -> dict[str, Any]:
 
     obs_rows: list[dict[str, Any]] = []
     observed_samples: list[np.ndarray] = []
+    observed_fiedler_samples: list[np.ndarray] = []
+    observed_fiedler_sym_samples: list[np.ndarray] = []
+    observed_fiedler_rw_samples: list[np.ndarray] = []
+    observed_cheeger_samples: list[np.ndarray] = []
+    observed_fiedler_signs: list[np.ndarray] = []
+    noisy_fiedler_signs: list[np.ndarray] = []
     records: list[dict[str, Any]] = []
     calibration_feature_vectors: dict[str, list[np.ndarray]] = {name: [] for name in TRANSFORMATIONS}
+    calibration_fiedler_vectors: dict[str, list[np.ndarray]] = {name: [] for name in TRANSFORMATIONS}
+    calibration_fiedler_sym_vectors: dict[str, list[np.ndarray]] = {name: [] for name in TRANSFORMATIONS}
+    calibration_fiedler_rw_vectors: dict[str, list[np.ndarray]] = {name: [] for name in TRANSFORMATIONS}
+    calibration_cheeger_vectors: dict[str, list[np.ndarray]] = {name: [] for name in TRANSFORMATIONS}
     orientation_vectors: dict[int, list[np.ndarray]] = {0: [], 1: []}
     relation_vectors: dict[int, list[np.ndarray]] = {0: [], 1: []}
     for family in FAMILIES:
@@ -448,11 +642,29 @@ def evaluate() -> dict[str, Any]:
                 relation_true = relation_label(coords)
                 relation_pred = relation_label(transformed)
                 sample = feature_summary(observed_graph)
+                fiedler_sample = fiedler_summary(observed_graph)
+                fiedler_sym = spectral_variant_summary(observed_graph, "sym")
+                fiedler_rw = spectral_variant_summary(observed_graph, "rw")
+                cheeger = cheeger_summary(observed_graph)
+                fiedler_sign = np.sign(np.asarray(low_mode_embedding(observed_graph, dimensions=3, norm_type="sym")["embedding"], dtype=float)[:, 0])
+                noisy_graph = perturb_graph(observed_graph, seed=seed + 991 + len(observed_samples))
+                noisy_fiedler = low_mode_embedding(noisy_graph, dimensions=3, norm_type="sym")
+                noisy_fiedler_sign = np.sign(np.asarray(noisy_fiedler["embedding"], dtype=float)[:, 0])
                 if family not in HOLDOUT_FAMILIES:
                     calibration_feature_vectors[transformation].append(sample)
+                    calibration_fiedler_vectors[transformation].append(fiedler_sample)
+                    calibration_fiedler_sym_vectors[transformation].append(fiedler_sym)
+                    calibration_fiedler_rw_vectors[transformation].append(fiedler_rw)
+                    calibration_cheeger_vectors[transformation].append(cheeger)
                     orientation_vectors[orientation_label(transformed)].append(sample)
                     relation_vectors[relation_pred].append(sample)
                 observed_samples.append(sample)
+                observed_fiedler_samples.append(fiedler_sample)
+                observed_fiedler_sym_samples.append(fiedler_sym)
+                observed_fiedler_rw_samples.append(fiedler_rw)
+                observed_cheeger_samples.append(cheeger)
+                observed_fiedler_signs.append(fiedler_sign)
+                noisy_fiedler_signs.append(noisy_fiedler_sign)
                 obs_rows.append(
                     {
                         "split": "holdout" if family in HOLDOUT_FAMILIES else "calibration",
@@ -467,6 +679,10 @@ def evaluate() -> dict[str, Any]:
                         "transform_predicted": transformation,
                         "relation_true": relation_true,
                         "relation_predicted": relation_pred,
+                        "fiedler_sign_stability": float(np.mean(fiedler_sign == noisy_fiedler_sign)) if fiedler_sign.size and noisy_fiedler_sign.size else 0.0,
+                        "fiedler_variant_gap": float(np.linalg.norm(fiedler_sym - fiedler_rw)) if fiedler_sym.size and fiedler_rw.size else 0.0,
+                        "fiedler_variant_agreement": float(fiedler_sym[0] == fiedler_rw[0]) if fiedler_sym.size and fiedler_rw.size else 0.0,
+                        "cheeger_conductance": float(cheeger[0]) if cheeger.size else 1.0,
                     }
                 )
 
@@ -479,10 +695,23 @@ def evaluate() -> dict[str, Any]:
     holdout_orientation_pred = [int(row["orientation_predicted"]) for row in holdout_rows]
     holdout_relation_true = [int(row["relation_true"]) for row in holdout_rows]
     holdout_relation_pred = [int(row["relation_predicted"]) for row in holdout_rows]
+    holdout_fiedler_stability = [float(row["fiedler_sign_stability"]) for row in holdout_rows]
     holdout_transform_true = [row["transform_true"] for row in holdout_rows]
     transformation_centroids = {
         name: np.mean(np.stack(vectors, axis=0), axis=0) if vectors else np.zeros(6, dtype=float)
         for name, vectors in calibration_feature_vectors.items()
+    }
+    fiedler_centroids = {
+        name: np.mean(np.stack(vectors, axis=0), axis=0) if vectors else np.zeros(5, dtype=float)
+        for name, vectors in calibration_fiedler_vectors.items()
+    }
+    fiedler_sym_centroids = {
+        name: np.mean(np.stack(vectors, axis=0), axis=0) if vectors else np.zeros(8, dtype=float)
+        for name, vectors in calibration_fiedler_sym_vectors.items()
+    }
+    fiedler_rw_centroids = {
+        name: np.mean(np.stack(vectors, axis=0), axis=0) if vectors else np.zeros(8, dtype=float)
+        for name, vectors in calibration_fiedler_rw_vectors.items()
     }
     orientation_centroids = {
         label: np.mean(np.stack(vectors, axis=0), axis=0) if vectors else np.zeros(6, dtype=float)
@@ -497,6 +726,21 @@ def evaluate() -> dict[str, Any]:
         for row, sample in zip(obs_rows, observed_samples)
         if row["split"] == "holdout"
     ]
+    holdout_fiedler_transform_pred = [
+        centroid_classify(sample, fiedler_centroids)
+        for row, sample in zip(obs_rows, observed_fiedler_samples)
+        if row["split"] == "holdout"
+    ]
+    holdout_fiedler_sym_pred = [
+        centroid_classify(sample, fiedler_sym_centroids)
+        for row, sample in zip(obs_rows, observed_fiedler_sym_samples)
+        if row["split"] == "holdout"
+    ]
+    holdout_fiedler_rw_pred = [
+        centroid_classify(sample, fiedler_rw_centroids)
+        for row, sample in zip(obs_rows, observed_fiedler_rw_samples)
+        if row["split"] == "holdout"
+    ]
     holdout_orientation_pred = [
         orientation_from_transform(transform_name)
         for row, sample in zip(obs_rows, observed_samples)
@@ -509,17 +753,30 @@ def evaluate() -> dict[str, Any]:
         if row["split"] == "holdout"
     ]
     all_transform_pred = [centroid_classify(sample, transformation_centroids) for sample in observed_samples]
+    all_fiedler_transform_pred = [centroid_classify(sample, fiedler_centroids) for sample in observed_fiedler_samples]
+    all_fiedler_sym_pred = [centroid_classify(sample, fiedler_sym_centroids) for sample in observed_fiedler_sym_samples]
+    all_fiedler_rw_pred = [centroid_classify(sample, fiedler_rw_centroids) for sample in observed_fiedler_rw_samples]
     all_orientation_pred = [orientation_from_transform(transform_name) for transform_name in all_transform_pred]
     all_relation_pred = [centroid_classify(sample, {0: relation_centroids[0], 1: relation_centroids[1]}) for sample in observed_samples]
-    for row, transform_pred, orientation_pred, relation_pred in zip(obs_rows, all_transform_pred, all_orientation_pred, all_relation_pred):
+    for row, transform_pred, fiedler_transform_pred, fiedler_sym_pred, fiedler_rw_pred, orientation_pred, relation_pred in zip(
+        obs_rows, all_transform_pred, all_fiedler_transform_pred, all_fiedler_sym_pred, all_fiedler_rw_pred, all_orientation_pred, all_relation_pred
+    ):
         row["transform_predicted"] = transform_pred
+        row["fiedler_transform_predicted"] = fiedler_transform_pred
+        row["fiedler_sym_predicted"] = fiedler_sym_pred
+        row["fiedler_rw_predicted"] = fiedler_rw_pred
         row["orientation_predicted"] = orientation_pred
         row["relation_predicted"] = relation_pred
 
     distance_spearman = spearman(holdout_distance_true, holdout_distance_pred)
     orientation_accuracy = float(np.mean([a == b for a, b in zip(holdout_orientation_true, holdout_orientation_pred)])) if holdout_orientation_true else 0.0
     transform_accuracy = float(np.mean([a == b for a, b in zip(holdout_transform_true, holdout_transform_pred)])) if holdout_transform_true else 0.0
+    fiedler_transform_accuracy = float(np.mean([a == b for a, b in zip(holdout_transform_true, holdout_fiedler_transform_pred)])) if holdout_transform_true else 0.0
+    fiedler_sym_accuracy = float(np.mean([a == b for a, b in zip(holdout_transform_true, holdout_fiedler_sym_pred)])) if holdout_transform_true else 0.0
+    fiedler_rw_accuracy = float(np.mean([a == b for a, b in zip(holdout_transform_true, holdout_fiedler_rw_pred)])) if holdout_transform_true else 0.0
     relation_accuracy = float(np.mean([a == b for a, b in zip(holdout_relation_true, holdout_relation_pred)])) if holdout_relation_true else 0.0
+    sign_stability = float(np.mean(holdout_fiedler_stability)) if holdout_fiedler_stability else 0.0
+    cheeger_conductance = float(np.mean([float(row["cheeger_conductance"]) for row in holdout_rows])) if holdout_rows else 1.0
 
     pred_rows: list[dict[str, Any]] = []
     for row in holdout_rows:
@@ -600,11 +857,41 @@ def evaluate() -> dict[str, Any]:
             "distance_spearman": distance_spearman,
             "orientation_accuracy": orientation_accuracy,
             "transform_accuracy": transform_accuracy,
+            "fiedler_transform_accuracy": fiedler_transform_accuracy,
+            "fiedler_sym_accuracy": fiedler_sym_accuracy,
+            "fiedler_rw_accuracy": fiedler_rw_accuracy,
+            "fiedler_sign_stability": sign_stability,
+            "cheeger_conductance": cheeger_conductance,
             "relation_accuracy": relation_accuracy,
             "distance_pass": distance_pass,
             "orientation_pass": orientation_pass,
             "transform_pass": transform_pass,
+            "fiedler_transform_pass": fiedler_transform_accuracy >= config.min_holdout_transform_accuracy,
+            "fiedler_sym_pass": fiedler_sym_accuracy >= config.min_holdout_transform_accuracy,
+            "fiedler_rw_pass": fiedler_rw_accuracy >= config.min_holdout_transform_accuracy,
+            "fiedler_sign_stability_pass": sign_stability >= config.min_holdout_sign_stability,
+            "cheeger_pass": cheeger_conductance <= 0.5,
             "relation_pass": relation_pass,
+        },
+        "fiedler_diagnostics": {
+            "fiedler_transform_accuracy": fiedler_transform_accuracy,
+            "fiedler_transform_pass": fiedler_transform_accuracy >= config.min_holdout_transform_accuracy,
+            "fiedler_sym_accuracy": fiedler_sym_accuracy,
+            "fiedler_sym_pass": fiedler_sym_accuracy >= config.min_holdout_transform_accuracy,
+            "fiedler_rw_accuracy": fiedler_rw_accuracy,
+            "fiedler_rw_pass": fiedler_rw_accuracy >= config.min_holdout_transform_accuracy,
+            "fiedler_sign_stability": sign_stability,
+            "fiedler_sign_stability_pass": sign_stability >= config.min_holdout_sign_stability,
+            "cheeger_conductance": cheeger_conductance,
+            "cheeger_pass": cheeger_conductance <= 0.5,
+            "fiedler_summary": {
+                "mean_fiedler_eigenvalue": float(np.mean([low_mode_embedding(record["graph"], dimensions=3, norm_type="sym")["fiedler_eigenvalue"] for record in records])) if records else 0.0,
+                "mean_fiedler_sign_balance": float(np.mean([low_mode_embedding(record["graph"], dimensions=3, norm_type="sym")["fiedler_sign_balance"] for record in records])) if records else 0.0,
+                "mean_fiedler_std": float(np.mean([low_mode_embedding(record["graph"], dimensions=3, norm_type="sym")["fiedler_std"] for record in records])) if records else 0.0,
+                "mean_low_mode_energy": float(np.mean([low_mode_embedding(record["graph"], dimensions=3, norm_type="sym")["low_mode_energy"] for record in records])) if records else 0.0,
+            },
+            "fiedler_control_note": "Diagnostic only; no verdict promotion unless holdout improvement survives controls.",
+            "cheeger_note": "Sweep-cut conductance is diagnostic only and does not override the open verdict.",
         },
         "control_summary": control_scores,
         "source_manifest": SOURCE_MANIFEST_PATH.name,
@@ -621,12 +908,17 @@ def evaluate() -> dict[str, Any]:
                 f"- bridge id: {result['bridge_id']}",
                 f"- version: {result['version']}",
                 f"- verdict: {', '.join(labels)}",
+                "- terminal labels: BENCHMARK_OPEN, TRANSFORMATION_RECOVERY_BOUNDARY_OPEN",
                 "",
                 "This benchmark asks whether a frozen observer can recover distance, orientation, transformation class, and held-out relations from a hidden synthetic geometry.",
                 f"- distance spearman: {distance_spearman:.6f}",
                 f"- orientation accuracy: {orientation_accuracy:.6f}",
                 f"- transform accuracy: {transform_accuracy:.6f}",
+                f"- fiedler transform accuracy: {fiedler_transform_accuracy:.6f}",
+                f"- fiedler sign stability: {sign_stability:.6f}",
                 f"- relation accuracy: {relation_accuracy:.6f}",
+                "- diagnosis: distance, orientation, and relations recover; normalized low-mode diagnostics remain below the frozen transformation threshold on holdout.",
+                "- fiedler note: low-mode diagnostics are recorded with the normalized Laplacian path and do not override the open verdict.",
             ]
         )
         + "\n",

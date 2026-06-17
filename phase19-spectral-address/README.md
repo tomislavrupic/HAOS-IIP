@@ -27,5 +27,6 @@ Artifacts:
 - `spectral_address_definition.md`
 - `slide_alignment.md`
 - `phase19_summary.md`
+- `spectral_address_recoverability_audit.md`
 - `phase19_manifest.json`
 - `runs/phase19_runs.json`
