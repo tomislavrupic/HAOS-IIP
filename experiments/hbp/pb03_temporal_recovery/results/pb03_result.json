@@ -32,13 +32,13 @@
   ],
   "haos_holdout_spearman": 0.6490796159378962,
   "labels": [
-    "MIXED_OPEN",
-    "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
+    "PREDICTION_NOT_DISTINCT_FROM_BASELINES",
+    "TEMPORAL_RECOVERY_BOUNDARY_OPEN"
   ],
   "outputs": {
     "report": "results/pb03_report.md",
     "result": "results/pb03_result.json"
   },
-  "result_hash": "pb03_result_c989483149438ed29eabc86d",
+  "result_hash": "pb03_result_67d6b86245537e4a5d07423b",
   "status": "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
 }

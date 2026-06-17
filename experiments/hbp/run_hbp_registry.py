@@ -151,6 +151,7 @@ def build_registry(write_outputs: bool = True) -> dict[str, Any]:
 
 
 def write_report(result: dict[str, Any], rows: list[dict[str, Any]]) -> None:
+    row_by_id = {row["bridge_id"]: row for row in rows}
     lines = [
         "# HBP Registry Report",
         "",
@@ -166,6 +167,18 @@ def write_report(result: dict[str, Any], rows: list[dict[str, Any]]) -> None:
     lines.extend(["", "## PB-01", ""])
     lines.append(f"- status: `{result['pb01_status']}`")
     lines.extend(f"- `{label}`" for label in result["pb01_labels"])
+    lines.extend(["", "## PB-03", ""])
+    pb03 = row_by_id.get("PB-03-TEMPORAL-RECOVERY")
+    if pb03 is not None:
+        lines.append(f"- effective classification: `{pb03['effective_classification']}`")
+        lines.append(f"- labels: `{pb03['labels']}`")
+        lines.append("- reading: temporal recovery remains terminally boundary-labeled and does not beat the baseline.")
+    lines.extend(["", "## PB-04", ""])
+    pb04 = row_by_id.get("PB-04-CROSS-DOMAIN-TRANSFER")
+    if pb04 is not None:
+        lines.append(f"- effective classification: `{pb04['effective_classification']}`")
+        lines.append(f"- labels: `{pb04['labels']}`")
+        lines.append("- reading: cross-domain transfer remains terminally boundary-labeled and does not upgrade the bridge.")
     lines.extend(["", "## Registered Bridges", "", "| bridge_id | effective classification | labels |", "| --- | --- | --- |"])
     for row in rows:
         lines.append(f"| {row['bridge_id']} | {row['effective_classification']} | {row['labels']} |")

@@ -19,6 +19,18 @@ This registry classifies bridge evidence. It does not upgrade frozen HAOS-IIP cl
 - `PHYSICAL_MECHANISM_NOT_ESTABLISHED`
 - `PREDICTION_NOT_DISTINCT_FROM_BASELINES`
 
+## PB-03
+
+- effective classification: `FORMAL_CORRESPONDENCE`
+- labels: `DIMENSIONAL_ANALYSIS_FAIL;FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED`
+- reading: temporal recovery remains terminally boundary-labeled and does not beat the baseline.
+
+## PB-04
+
+- effective classification: `FORMAL_CORRESPONDENCE`
+- labels: `DIMENSIONAL_ANALYSIS_FAIL;FORMAL_CORRESPONDENCE_ONLY;OPERATIONAL_MAPPING_PARTIAL;PHYSICAL_MECHANISM_NOT_ESTABLISHED`
+- reading: cross-domain transfer remains terminally boundary-labeled and does not upgrade the bridge.
+
 ## Registered Bridges
 
 | bridge_id | effective classification | labels |

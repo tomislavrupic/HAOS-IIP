@@ -111,7 +111,7 @@ def build_controls(targets: np.ndarray, predictions: np.ndarray, splits: dict[st
 
 
 def verdict(best_baseline: dict[str, Any], combined: dict[str, Any], controls: list[dict[str, Any]], holdout_targets: np.ndarray, holdout_predictions: np.ndarray) -> dict[str, Any]:
-    labels = ["MIXED_OPEN"]
+    labels = ["TEMPORAL_RECOVERY_BOUNDARY_OPEN"]
     status = "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
     if abs(next(row for row in controls if row["control"] == "label_permutation")["holdout_spearman"] if False else 0.0) > 0.25:
         labels.append("CONTROL_INVALID")
@@ -182,13 +182,19 @@ def main() -> int:
         "",
         f"Status: `{result_payload['status']}`",
         "",
+        "## Terminal Labels",
+    ]
+    report.extend(f"- `{label}`" for label in result_payload["labels"])
+    report.extend([
+        "",
+        "",
         f"- best baseline: `{baseline['model']}`",
         f"- best baseline holdout spearman: `{baseline['holdout_spearman']:.6f}`",
         f"- HAOS holdout spearman: `{haos['holdout_spearman']:.6f}`",
         f"- baseline + HAOS holdout spearman: `{combined['holdout_spearman']:.6f}`",
         "",
         "## Controls",
-    ]
+    ])
     report.extend(f"- `{row['control']}`: `{row['status']}` ({row['holdout_spearman']})" for row in control_rows)
     report.append("")
     report.append(f"Result hash: `{result_payload['result_hash']}`")
