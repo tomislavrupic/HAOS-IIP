@@ -14,6 +14,9 @@ most relevant to the current bridge stack.
 - [PDF inventory](inventory.md)
 - [Bridge reading order](reading_order.md)
 - [Bridge review map](review_map.md)
+- [HAOS-IIP bridge extraction](extraction/haos_iip_bridge_extraction.md)
+- [Bridge methods spine](extraction/bridge_methods_spine.md)
+- [Bridge action items](extraction/bridge_action_items.md)
 
 ## Reading intent
 

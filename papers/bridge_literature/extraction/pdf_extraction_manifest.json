@@ -1,0 +1,660 @@
+[
+  {
+    "file": "pdfs/altschuler_weed_rigollet_sinkhorn_iteration_near_linear_ot_2017.pdf",
+    "title": "Near-linear time approximation algorithms for optimal transport via Sinkhorn iteration",
+    "pages": 18,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 1,
+      "hodge_cochain": 5,
+      "curvature_flow": 8,
+      "transport_kernel": 106,
+      "physics_bridge": 0,
+      "haos_local": 7
+    }
+  },
+  {
+    "file": "pdfs/anderes_borgwardt_miller_discrete_wasserstein_barycenters_2015.pdf",
+    "title": "Discrete Wasserstein Barycenters: Optimal Transport for Discrete Data",
+    "pages": 14,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 0,
+      "hodge_cochain": 8,
+      "curvature_flow": 1,
+      "transport_kernel": 243,
+      "physics_bridge": 3,
+      "haos_local": 1
+    }
+  },
+  {
+    "file": "pdfs/black_nayyeri_hodge_decomposition_laplacian_solvers_embedded_simplicial_complexes_2022.pdf",
+    "title": "Hodge Decomposition and General Laplacian Solvers for Embedded Simplicial Complexes",
+    "pages": 35,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 107,
+      "hodge_cochain": 185,
+      "curvature_flow": 1,
+      "transport_kernel": 4,
+      "physics_bridge": 2,
+      "haos_local": 132
+    }
+  },
+  {
+    "file": "pdfs/caicedo_torres_pereira_amini_survey_optimal_transport_machine_learning_2021.pdf",
+    "title": "arXiv:2106.01963v1 [cs.LG] 3 Jun 2021 A S URVEY ON OPTIMAL TRANSPORT FOR MACHINE LEARNING :",
+    "pages": 15,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 0,
+      "hodge_cochain": 1,
+      "curvature_flow": 3,
+      "transport_kernel": 210,
+      "physics_bridge": 7,
+      "haos_local": 1
+    }
+  },
+  {
+    "file": "pdfs/catterall_dirac_kahler_fermions_exact_lattice_supersymmetry_2005.pdf",
+    "title": "arXiv:hep-lat/0509136v2  4 Oct 2005",
+    "pages": 22,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 3,
+      "hodge_cochain": 108,
+      "curvature_flow": 0,
+      "transport_kernel": 0,
+      "physics_bridge": 264,
+      "haos_local": 21
+    }
+  },
+  {
+    "file": "pdfs/claici_chien_solomon_stochastic_wasserstein_barycenters_2018.pdf",
+    "title": "Stochastic Wasserstein Barycenters Sebastian Claici, Edward Chien, and Justin Solomon",
+    "pages": 15,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 1,
+      "hodge_cochain": 4,
+      "curvature_flow": 4,
+      "transport_kernel": 156,
+      "physics_bridge": 5,
+      "haos_local": 0
+    }
+  },
+  {
+    "file": "pdfs/coifman_hirn_diffusion_maps_for_changing_data_2012.pdf",
+    "title": "Di\ufb00usion maps for changing data$ Ronald R. Coifman, Matthew J. Hirn\u2217",
+    "pages": 38,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 97,
+      "hodge_cochain": 7,
+      "curvature_flow": 6,
+      "transport_kernel": 59,
+      "physics_bridge": 15,
+      "haos_local": 86
+    }
+  },
+  {
+    "file": "pdfs/cuturi_sinkhorn_distances_2013.pdf",
+    "title": "SINKHORN DISTANCES: LIGHTSPEED COMPUTATION OF OPTIMAL TRANSPORTATION DISTANCES",
+    "pages": 13,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 0,
+      "hodge_cochain": 2,
+      "curvature_flow": 9,
+      "transport_kernel": 144,
+      "physics_bridge": 3,
+      "haos_local": 1
+    }
+  },
+  {
+    "file": "pdfs/de_beauce_sen_sexton_chiral_dirac_fermions_geometric_discretisation_2003.pdf",
+    "title": "arXiv:hep-lat/0309167v1 26 Sep 2003 1",
+    "pages": 3,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 1,
+      "hodge_cochain": 18,
+      "curvature_flow": 0,
+      "transport_kernel": 1,
+      "physics_bridge": 23,
+      "haos_local": 4
+    }
+  },
+  {
+    "file": "pdfs/di_marino_gerolin_optimal_transport_loss_general_convex_regularization_2020.pdf",
+    "title": "arXiv:2007.00976v1 [math.OC] 2 Jul 2020 Optimal Transport losses and Sinkhorn algorithm",
+    "pages": 18,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 0,
+      "hodge_cochain": 1,
+      "curvature_flow": 0,
+      "transport_kernel": 142,
+      "physics_bridge": 1,
+      "haos_local": 4
+    }
+  },
+  {
+    "file": "pdfs/dong_gao_peng_razenshteyn_sawlani_optimal_transport_performance_2020.pdf",
+    "title": "A Study of Performance of Optimal Transport Yihe Dong\u2217 Yu Gao\u2020 Richard Peng \u2020 Ilya Razenshteyn\u2217 Saurabh Sawlani\u2021",
+    "pages": 9,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 2,
+      "hodge_cochain": 18,
+      "curvature_flow": 12,
+      "transport_kernel": 85,
+      "physics_bridge": 0,
+      "haos_local": 0
+    }
+  },
+  {
+    "file": "pdfs/gallier_spectral_graph_theory_normalized_cuts_notes_2013.pdf",
+    "title": "Notes on Elementary Spectral Graph Theory Applications to Graph Clustering",
+    "pages": 76,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 244,
+      "hodge_cochain": 3,
+      "curvature_flow": 0,
+      "transport_kernel": 2,
+      "physics_bridge": 9,
+      "haos_local": 4
+    }
+  },
+  {
+    "file": "pdfs/gretton_borgwardt_rasch_scholkopf_smola_kernel_two_sample_test_2012.pdf",
+    "title": "gretton12a.dvi",
+    "pages": 51,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 7,
+      "hodge_cochain": 3,
+      "curvature_flow": 21,
+      "transport_kernel": 404,
+      "physics_bridge": 1,
+      "haos_local": 25
+    }
+  },
+  {
+    "file": "pdfs/hammond_vandergheynst_gribonval_wavelets_on_graphs_via_spectral_graph_theory_2009.pdf",
+    "title": "Wavelets on Graphs via Spectral Graph Theory David K Hammond*,a,1, Pierre Vandergheynstb,2, and R\u00b4 emi",
+    "pages": 37,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 122,
+      "hodge_cochain": 15,
+      "curvature_flow": 1,
+      "transport_kernel": 43,
+      "physics_bridge": 5,
+      "haos_local": 44
+    }
+  },
+  {
+    "file": "pdfs/jost_liu_ollivier_local_clustering_curvature_dimension_2011.pdf",
+    "title": "arXiv:1103.4037v3 [math.CO] 30 Oct 2013 Ollivier\u2019s Ricci curvature, local clustering and",
+    "pages": 22,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 28,
+      "hodge_cochain": 4,
+      "curvature_flow": 179,
+      "transport_kernel": 15,
+      "physics_bridge": 13,
+      "haos_local": 16
+    }
+  },
+  {
+    "file": "pdfs/kim_pass_wasserstein_barycenters_riemannian_manifolds_2014.pdf",
+    "title": "arXiv:1412.7726v2 [math.AP] 2 Oct 2015 Wasserstein Barycenters over Riemannian",
+    "pages": 44,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 3,
+      "hodge_cochain": 7,
+      "curvature_flow": 34,
+      "transport_kernel": 277,
+      "physics_bridge": 8,
+      "haos_local": 5
+    }
+  },
+  {
+    "file": "pdfs/kruglov_dirac_kahler_equation_2001.pdf",
+    "title": "arXiv:hep-th/0110251v3 7 Apr 2003 DIRAC-K \u00a8AHLER EQUATION 1",
+    "pages": 42,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 5,
+      "hodge_cochain": 77,
+      "curvature_flow": 0,
+      "transport_kernel": 0,
+      "physics_bridge": 58,
+      "haos_local": 36
+    }
+  },
+  {
+    "file": "pdfs/kruglov_dirac_kahler_equation_review_2001.pdf",
+    "title": "arXiv:hep-th/0110060v1  6 Oct 2001",
+    "pages": 34,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 4,
+      "hodge_cochain": 68,
+      "curvature_flow": 0,
+      "transport_kernel": 0,
+      "physics_bridge": 57,
+      "haos_local": 35
+    }
+  },
+  {
+    "file": "pdfs/kuncheva_montana_multiscale_community_detection_temporal_networks_wavelets_2017.pdf",
+    "title": "Multi-scale Community Detection in Temporal Networks Using Spectral Graph Wavelets",
+    "pages": 22,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 125,
+      "hodge_cochain": 6,
+      "curvature_flow": 12,
+      "transport_kernel": 0,
+      "physics_bridge": 1,
+      "haos_local": 1
+    }
+  },
+  {
+    "file": "pdfs/lederman_toader_manifold_learning_platos_cave_2023.pdf",
+    "title": "On Manifold Learning in Plato\u2019s Cave: Remarks on Manifold Learning and Physical Phenomena",
+    "pages": 7,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 26,
+      "hodge_cochain": 5,
+      "curvature_flow": 1,
+      "transport_kernel": 3,
+      "physics_bridge": 16,
+      "haos_local": 3
+    }
+  },
+  {
+    "file": "pdfs/liu_li_wu_algebraic_stability_persistent_laplacians_2023.pdf",
+    "title": "arXiv:2302.03902v2 [math.AT] 12 Jun 2023 The algebraic stability for persistent Laplacians",
+    "pages": 26,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 91,
+      "hodge_cochain": 52,
+      "curvature_flow": 0,
+      "transport_kernel": 1,
+      "physics_bridge": 10,
+      "haos_local": 6
+    }
+  },
+  {
+    "file": "pdfs/montesuma_mboula_souloumiac_recent_advances_ot_machine_learning_2023.pdf",
+    "title": "RECENT ADVANCES IN OPTIMAL TRANSPORT FOR MACHINE LEARNING 1 Recent Advances in Optimal Transport for",
+    "pages": 20,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 21,
+      "hodge_cochain": 8,
+      "curvature_flow": 20,
+      "transport_kernel": 358,
+      "physics_bridge": 18,
+      "haos_local": 4
+    }
+  },
+  {
+    "file": "pdfs/nadler_lafon_coifman_kevekidis_diffusion_maps_reaction_coordinates_2005.pdf",
+    "title": "arXiv:math/0503445v1  [math.NA]  22 Mar 2005",
+    "pages": 20,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 139,
+      "hodge_cochain": 7,
+      "curvature_flow": 1,
+      "transport_kernel": 24,
+      "physics_bridge": 27,
+      "haos_local": 43
+    }
+  },
+  {
+    "file": "pdfs/nadler_lafon_coifman_kevekidis_diffusion_maps_spectral_clustering_fokker_planck_2005.pdf",
+    "title": "arXiv:math/0506090v1 [math.NA] 6 Jun 2005 Diffusion Maps, Spectral Clustering and",
+    "pages": 8,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 153,
+      "hodge_cochain": 1,
+      "curvature_flow": 2,
+      "transport_kernel": 9,
+      "physics_bridge": 7,
+      "haos_local": 19
+    }
+  },
+  {
+    "file": "pdfs/peyre_cuturi_computational_optimal_transport_2018.pdf",
+    "title": "Computational Optimal Transport Gabriel Peyr\u00e9",
+    "pages": 209,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 37,
+      "hodge_cochain": 27,
+      "curvature_flow": 12,
+      "transport_kernel": 1061,
+      "physics_bridge": 52,
+      "haos_local": 68
+    }
+  },
+  {
+    "file": "pdfs/ren_wu_wu_hodge_decompositions_weighted_hypergraphs_2018.pdf",
+    "title": "arXiv:1805.11331v4 [math.AT] 7 Nov 2018 Hodge Decompositions for Weighted Hypergraphs",
+    "pages": 38,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 86,
+      "hodge_cochain": 79,
+      "curvature_flow": 0,
+      "transport_kernel": 13,
+      "physics_bridge": 1,
+      "haos_local": 5
+    }
+  },
+  {
+    "file": "pdfs/repo_local/14.1 Emergent Relational Geometry Probe on a Frozen Kernel-Induced Cochain Operator Architecture.pdf",
+    "title": "Emergent Relational Geometry Probe on a Frozen Kernel-Induced Cochain Operator Architecture",
+    "pages": 5,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 0,
+      "hodge_cochain": 3,
+      "curvature_flow": 0,
+      "transport_kernel": 17,
+      "physics_bridge": 7,
+      "haos_local": 24
+    }
+  },
+  {
+    "file": "pdfs/repo_local/18.1 Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture.pdf",
+    "title": "Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture",
+    "pages": 7,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 1,
+      "hodge_cochain": 6,
+      "curvature_flow": 0,
+      "transport_kernel": 15,
+      "physics_bridge": 15,
+      "haos_local": 45
+    }
+  },
+  {
+    "file": "pdfs/repo_local/46.1 HAOS-IIP Master Synthesis Program-Level Compression of the Paper Spine.pdf",
+    "title": "HAOS-IIP Master Synthesis: Program-Level Compression of the Paper Spine",
+    "pages": 12,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 14,
+      "hodge_cochain": 9,
+      "curvature_flow": 1,
+      "transport_kernel": 25,
+      "physics_bridge": 32,
+      "haos_local": 87
+    }
+  },
+  {
+    "file": "pdfs/repo_local/47.2 Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs.pdf",
+    "title": "Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs",
+    "pages": 8,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 2,
+      "hodge_cochain": 0,
+      "curvature_flow": 7,
+      "transport_kernel": 25,
+      "physics_bridge": 35,
+      "haos_local": 21
+    }
+  },
+  {
+    "file": "pdfs/repo_local/48.1 Scalar Continuum Control, Harmonic-Coexact Sector Separation, and a Bounded Roadmap Toward Continuum Physics on HAOS-IIP.pdf",
+    "title": "Scalar Continuum Control, Harmonic-Coexact Sector Separation, and a Bounded Roadmap Toward Continuum Physics on HAOS-IIP",
+    "pages": 8,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 2,
+      "hodge_cochain": 118,
+      "curvature_flow": 2,
+      "transport_kernel": 14,
+      "physics_bridge": 58,
+      "haos_local": 33
+    }
+  },
+  {
+    "file": "pdfs/repo_local/49.1 From Recoverable Coherence to Harmonic Operator Structure: A Bounded Derivation Program, Physical-Sector Restriction, and Continuum-Stability Roadmap for HAOS-IIP.pdf",
+    "title": "From Recoverable Coherence to Harmonic Operator Structure: A Bounded Derivation Program, Physical-Sector Restriction, and",
+    "pages": 14,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 11,
+      "hodge_cochain": 135,
+      "curvature_flow": 7,
+      "transport_kernel": 6,
+      "physics_bridge": 44,
+      "haos_local": 148
+    }
+  },
+  {
+    "file": "pdfs/repo_local/53.0 Physics Bridge Observables Release for HAOS-IIP.pdf",
+    "title": "Physics Bridge Observables Release for HAOS-IIP Tomislav Rupi\u00b4 c",
+    "pages": 4,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 0,
+      "hodge_cochain": 0,
+      "curvature_flow": 1,
+      "transport_kernel": 9,
+      "physics_bridge": 22,
+      "haos_local": 31
+    }
+  },
+  {
+    "file": "pdfs/repo_local/63.1 Celestial Boundary Toy Probes and Claim-Gated Physics Bridge for HAOS-IIP.pdf",
+    "title": "Celestial Boundary Toy Probes and Claim-Gated Physics Bridge: Phase 63.1 Release for HAOS-IIP",
+    "pages": 7,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 2,
+      "hodge_cochain": 10,
+      "curvature_flow": 0,
+      "transport_kernel": 1,
+      "physics_bridge": 17,
+      "haos_local": 43
+    }
+  },
+  {
+    "file": "pdfs/repo_local/64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe for HAOS-IIP.pdf",
+    "title": "Materials Bridge Line A: Ferron Coherence Recoverability Probe for HAOS-IIP",
+    "pages": 15,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 31,
+      "hodge_cochain": 6,
+      "curvature_flow": 0,
+      "transport_kernel": 0,
+      "physics_bridge": 6,
+      "haos_local": 122
+    }
+  },
+  {
+    "file": "pdfs/repo_local/65.1 Materials Bridge Line B - Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP.pdf",
+    "title": "Materials Bridge Line B: Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP",
+    "pages": 5,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 3,
+      "hodge_cochain": 0,
+      "curvature_flow": 0,
+      "transport_kernel": 0,
+      "physics_bridge": 3,
+      "haos_local": 50
+    }
+  },
+  {
+    "file": "pdfs/repo_local/66.4 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer.pdf",
+    "title": "HAOS-IIP: A Reproducible Computational Framework for Testing Recoverable Structure in Interaction-Native Operator Systems",
+    "pages": 10,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 22,
+      "hodge_cochain": 22,
+      "curvature_flow": 1,
+      "transport_kernel": 1,
+      "physics_bridge": 22,
+      "haos_local": 146
+    }
+  },
+  {
+    "file": "pdfs/repo_local/66.5 HAOS-IIP Scale-Bridge Legitimacy Audit.pdf",
+    "title": "HAOS-IIP Scale-Bridge Legitimacy Audit: A Phase 66-Compatible Companion to the Continuum Physics",
+    "pages": 9,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 12,
+      "hodge_cochain": 4,
+      "curvature_flow": 2,
+      "transport_kernel": 8,
+      "physics_bridge": 68,
+      "haos_local": 90
+    }
+  },
+  {
+    "file": "pdfs/repo_local/67.1 HAOS-IIP HBP Recovery Benchmarks - Temporal Recovery and Cross-Domain Transfer.pdf",
+    "title": "HAOS-IIP HBP Recovery Benchmarks: Harder Temporal Recovery and Cross-Domain Transfer Under",
+    "pages": 4,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 1,
+      "hodge_cochain": 0,
+      "curvature_flow": 0,
+      "transport_kernel": 0,
+      "physics_bridge": 1,
+      "haos_local": 51
+    }
+  },
+  {
+    "file": "pdfs/roddenberry_frantzen_schaub_segarra_hodgelets_2021.pdf",
+    "title": "HODGELETS: LOCALIZED SPECTRAL REPRESENTA TIONS OF FLOWS ON SIMPLICIAL COMPLEXES",
+    "pages": 6,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 71,
+      "hodge_cochain": 85,
+      "curvature_flow": 3,
+      "transport_kernel": 12,
+      "physics_bridge": 0,
+      "haos_local": 4
+    }
+  },
+  {
+    "file": "pdfs/sreejith_mohanraj_jost_saucan_samal_forman_curvature_complex_networks_2016.pdf",
+    "title": "Forman curvature for complex networks",
+    "pages": 18,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 70,
+      "hodge_cochain": 0,
+      "curvature_flow": 494,
+      "transport_kernel": 8,
+      "physics_bridge": 17,
+      "haos_local": 1
+    }
+  },
+  {
+    "file": "pdfs/van_der_hoorn_cunningham_lippner_trugenberger_krioukov_ollivier_curvature_convergence_random_geometric_graphs_2020.pdf",
+    "title": "Ollivier-Ricci curvature convergence in random geometric graphs Pim van der Hoorn, 1, 2, 3 William J. Cunningham, 4, 2, 3",
+    "pages": 15,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 8,
+      "hodge_cochain": 15,
+      "curvature_flow": 338,
+      "transport_kernel": 30,
+      "physics_bridge": 44,
+      "haos_local": 9
+    }
+  },
+  {
+    "file": "pdfs/van_der_hoorn_lippner_trugenberger_krioukov_ollivier_curvature_random_geometric_graphs_ricci_2020.pdf",
+    "title": "arXiv:2009.04306v2 [math.PR] 10 Sep 2020 Ollivier curvature of random geometric graphs",
+    "pages": 33,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 5,
+      "hodge_cochain": 2,
+      "curvature_flow": 286,
+      "transport_kernel": 39,
+      "physics_bridge": 28,
+      "haos_local": 3
+    }
+  },
+  {
+    "file": "pdfs/von_luxburg_spectral_clustering_tutorial_2007.pdf",
+    "title": "A Tutorial on Spectral Clustering Ulrike von Luxburg",
+    "pages": 32,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 695,
+      "hodge_cochain": 18,
+      "curvature_flow": 23,
+      "transport_kernel": 9,
+      "physics_bridge": 0,
+      "haos_local": 19
+    }
+  },
+  {
+    "file": "pdfs/weber_saucan_jost_forman_ricci_curvature_geometric_flows_2016.pdf",
+    "title": "Characterizing Complex Networks with Forman-Ricci curvature and associated geometric \ufb02ows",
+    "pages": 29,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 63,
+      "hodge_cochain": 2,
+      "curvature_flow": 400,
+      "transport_kernel": 16,
+      "physics_bridge": 17,
+      "haos_local": 16
+    }
+  },
+  {
+    "file": "pdfs/wei_wei_persistent_topological_laplacians_survey_2023.pdf",
+    "title": "Persistent Topological Laplacians \u2013 a Survey Xiaoqi Wei1\u2217, and Guo-Wei Wei1,2,3\u2020",
+    "pages": 40,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 215,
+      "hodge_cochain": 162,
+      "curvature_flow": 5,
+      "transport_kernel": 6,
+      "physics_bridge": 25,
+      "haos_local": 31
+    }
+  },
+  {
+    "file": "pdfs/wu_huang_acharya_li_thoma_paudel_van_gool_sliced_wasserstein_generative_models_2017.pdf",
+    "title": "Sliced Wasserstein Generative Models Jiqing Wu*1 Zhiwu Huang*1 Dinesh Acharya1 Wen Li1",
+    "pages": 16,
+    "extract_status": "ok",
+    "counts": {
+      "spectral_graph": 2,
+      "hodge_cochain": 1,
+      "curvature_flow": 6,
+      "transport_kernel": 63,
+      "physics_bridge": 0,
+      "haos_local": 0
+    }
+  }
+]

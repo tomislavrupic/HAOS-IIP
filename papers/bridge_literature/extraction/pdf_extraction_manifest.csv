@@ -1,0 +1,48 @@
+file,title,pages,extract_status,spectral_graph,hodge_cochain,curvature_flow,transport_kernel,physics_bridge,haos_local
+pdfs/altschuler_weed_rigollet_sinkhorn_iteration_near_linear_ot_2017.pdf,Near-linear time approximation algorithms for optimal transport via Sinkhorn iteration,18,ok,1,5,8,106,0,7
+pdfs/anderes_borgwardt_miller_discrete_wasserstein_barycenters_2015.pdf,Discrete Wasserstein Barycenters: Optimal Transport for Discrete Data,14,ok,0,8,1,243,3,1
+pdfs/black_nayyeri_hodge_decomposition_laplacian_solvers_embedded_simplicial_complexes_2022.pdf,Hodge Decomposition and General Laplacian Solvers for Embedded Simplicial Complexes,35,ok,107,185,1,4,2,132
+pdfs/caicedo_torres_pereira_amini_survey_optimal_transport_machine_learning_2021.pdf,arXiv:2106.01963v1 [cs.LG] 3 Jun 2021 A S URVEY ON OPTIMAL TRANSPORT FOR MACHINE LEARNING :,15,ok,0,1,3,210,7,1
+pdfs/catterall_dirac_kahler_fermions_exact_lattice_supersymmetry_2005.pdf,arXiv:hep-lat/0509136v2  4 Oct 2005,22,ok,3,108,0,0,264,21
+pdfs/claici_chien_solomon_stochastic_wasserstein_barycenters_2018.pdf,"Stochastic Wasserstein Barycenters Sebastian Claici, Edward Chien, and Justin Solomon",15,ok,1,4,4,156,5,0
+pdfs/coifman_hirn_diffusion_maps_for_changing_data_2012.pdf,"Diﬀusion maps for changing data$ Ronald R. Coifman, Matthew J. Hirn∗",38,ok,97,7,6,59,15,86
+pdfs/cuturi_sinkhorn_distances_2013.pdf,SINKHORN DISTANCES: LIGHTSPEED COMPUTATION OF OPTIMAL TRANSPORTATION DISTANCES,13,ok,0,2,9,144,3,1
+pdfs/de_beauce_sen_sexton_chiral_dirac_fermions_geometric_discretisation_2003.pdf,arXiv:hep-lat/0309167v1 26 Sep 2003 1,3,ok,1,18,0,1,23,4
+pdfs/di_marino_gerolin_optimal_transport_loss_general_convex_regularization_2020.pdf,arXiv:2007.00976v1 [math.OC] 2 Jul 2020 Optimal Transport losses and Sinkhorn algorithm,18,ok,0,1,0,142,1,4
+pdfs/dong_gao_peng_razenshteyn_sawlani_optimal_transport_performance_2020.pdf,A Study of Performance of Optimal Transport Yihe Dong∗ Yu Gao† Richard Peng † Ilya Razenshteyn∗ Saurabh Sawlani‡,9,ok,2,18,12,85,0,0
+pdfs/gallier_spectral_graph_theory_normalized_cuts_notes_2013.pdf,Notes on Elementary Spectral Graph Theory Applications to Graph Clustering,76,ok,244,3,0,2,9,4
+pdfs/gretton_borgwardt_rasch_scholkopf_smola_kernel_two_sample_test_2012.pdf,gretton12a.dvi,51,ok,7,3,21,404,1,25
+pdfs/hammond_vandergheynst_gribonval_wavelets_on_graphs_via_spectral_graph_theory_2009.pdf,"Wavelets on Graphs via Spectral Graph Theory David K Hammond*,a,1, Pierre Vandergheynstb,2, and R´ emi",37,ok,122,15,1,43,5,44
+pdfs/jost_liu_ollivier_local_clustering_curvature_dimension_2011.pdf,"arXiv:1103.4037v3 [math.CO] 30 Oct 2013 Ollivier’s Ricci curvature, local clustering and",22,ok,28,4,179,15,13,16
+pdfs/kim_pass_wasserstein_barycenters_riemannian_manifolds_2014.pdf,arXiv:1412.7726v2 [math.AP] 2 Oct 2015 Wasserstein Barycenters over Riemannian,44,ok,3,7,34,277,8,5
+pdfs/kruglov_dirac_kahler_equation_2001.pdf,arXiv:hep-th/0110251v3 7 Apr 2003 DIRAC-K ¨AHLER EQUATION 1,42,ok,5,77,0,0,58,36
+pdfs/kruglov_dirac_kahler_equation_review_2001.pdf,arXiv:hep-th/0110060v1  6 Oct 2001,34,ok,4,68,0,0,57,35
+pdfs/kuncheva_montana_multiscale_community_detection_temporal_networks_wavelets_2017.pdf,Multi-scale Community Detection in Temporal Networks Using Spectral Graph Wavelets,22,ok,125,6,12,0,1,1
+pdfs/lederman_toader_manifold_learning_platos_cave_2023.pdf,On Manifold Learning in Plato’s Cave: Remarks on Manifold Learning and Physical Phenomena,7,ok,26,5,1,3,16,3
+pdfs/liu_li_wu_algebraic_stability_persistent_laplacians_2023.pdf,arXiv:2302.03902v2 [math.AT] 12 Jun 2023 The algebraic stability for persistent Laplacians,26,ok,91,52,0,1,10,6
+pdfs/montesuma_mboula_souloumiac_recent_advances_ot_machine_learning_2023.pdf,RECENT ADVANCES IN OPTIMAL TRANSPORT FOR MACHINE LEARNING 1 Recent Advances in Optimal Transport for,20,ok,21,8,20,358,18,4
+pdfs/nadler_lafon_coifman_kevekidis_diffusion_maps_reaction_coordinates_2005.pdf,arXiv:math/0503445v1  [math.NA]  22 Mar 2005,20,ok,139,7,1,24,27,43
+pdfs/nadler_lafon_coifman_kevekidis_diffusion_maps_spectral_clustering_fokker_planck_2005.pdf,"arXiv:math/0506090v1 [math.NA] 6 Jun 2005 Diffusion Maps, Spectral Clustering and",8,ok,153,1,2,9,7,19
+pdfs/peyre_cuturi_computational_optimal_transport_2018.pdf,Computational Optimal Transport Gabriel Peyré,209,ok,37,27,12,1061,52,68
+pdfs/ren_wu_wu_hodge_decompositions_weighted_hypergraphs_2018.pdf,arXiv:1805.11331v4 [math.AT] 7 Nov 2018 Hodge Decompositions for Weighted Hypergraphs,38,ok,86,79,0,13,1,5
+pdfs/repo_local/14.1 Emergent Relational Geometry Probe on a Frozen Kernel-Induced Cochain Operator Architecture.pdf,Emergent Relational Geometry Probe on a Frozen Kernel-Induced Cochain Operator Architecture,5,ok,0,3,0,17,7,24
+pdfs/repo_local/18.1 Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture.pdf,Limits of Frozen Pre-Geometry on a Kernel-Induced Cochain Operator Architecture,7,ok,1,6,0,15,15,45
+pdfs/repo_local/46.1 HAOS-IIP Master Synthesis Program-Level Compression of the Paper Spine.pdf,HAOS-IIP Master Synthesis: Program-Level Compression of the Paper Spine,12,ok,14,9,1,25,32,87
+pdfs/repo_local/47.2 Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs.pdf,Cluster-Scale Dependence of Coupled Transport-Geometry Signatures in Interaction Graphs,8,ok,2,0,7,25,35,21
+"pdfs/repo_local/48.1 Scalar Continuum Control, Harmonic-Coexact Sector Separation, and a Bounded Roadmap Toward Continuum Physics on HAOS-IIP.pdf","Scalar Continuum Control, Harmonic-Coexact Sector Separation, and a Bounded Roadmap Toward Continuum Physics on HAOS-IIP",8,ok,2,118,2,14,58,33
+"pdfs/repo_local/49.1 From Recoverable Coherence to Harmonic Operator Structure: A Bounded Derivation Program, Physical-Sector Restriction, and Continuum-Stability Roadmap for HAOS-IIP.pdf","From Recoverable Coherence to Harmonic Operator Structure: A Bounded Derivation Program, Physical-Sector Restriction, and",14,ok,11,135,7,6,44,148
+pdfs/repo_local/53.0 Physics Bridge Observables Release for HAOS-IIP.pdf,Physics Bridge Observables Release for HAOS-IIP Tomislav Rupi´ c,4,ok,0,0,1,9,22,31
+pdfs/repo_local/63.1 Celestial Boundary Toy Probes and Claim-Gated Physics Bridge for HAOS-IIP.pdf,Celestial Boundary Toy Probes and Claim-Gated Physics Bridge: Phase 63.1 Release for HAOS-IIP,7,ok,2,10,0,1,17,43
+pdfs/repo_local/64.1 Materials Bridge Line A - Ferron Coherence Recoverability Probe for HAOS-IIP.pdf,Materials Bridge Line A: Ferron Coherence Recoverability Probe for HAOS-IIP,15,ok,31,6,0,0,6,122
+pdfs/repo_local/65.1 Materials Bridge Line B - Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP.pdf,Materials Bridge Line B: Magnon Address Stability in alpha-Fe2O3 for HAOS-IIP,5,ok,3,0,0,0,3,50
+pdfs/repo_local/66.4 HAOS-IIP Canonical Entry Paper - Translation and Hostile-Audit Layer.pdf,HAOS-IIP: A Reproducible Computational Framework for Testing Recoverable Structure in Interaction-Native Operator Systems,10,ok,22,22,1,1,22,146
+pdfs/repo_local/66.5 HAOS-IIP Scale-Bridge Legitimacy Audit.pdf,HAOS-IIP Scale-Bridge Legitimacy Audit: A Phase 66-Compatible Companion to the Continuum Physics,9,ok,12,4,2,8,68,90
+pdfs/repo_local/67.1 HAOS-IIP HBP Recovery Benchmarks - Temporal Recovery and Cross-Domain Transfer.pdf,HAOS-IIP HBP Recovery Benchmarks: Harder Temporal Recovery and Cross-Domain Transfer Under,4,ok,1,0,0,0,1,51
+pdfs/roddenberry_frantzen_schaub_segarra_hodgelets_2021.pdf,HODGELETS: LOCALIZED SPECTRAL REPRESENTA TIONS OF FLOWS ON SIMPLICIAL COMPLEXES,6,ok,71,85,3,12,0,4
+pdfs/sreejith_mohanraj_jost_saucan_samal_forman_curvature_complex_networks_2016.pdf,Forman curvature for complex networks,18,ok,70,0,494,8,17,1
+pdfs/van_der_hoorn_cunningham_lippner_trugenberger_krioukov_ollivier_curvature_convergence_random_geometric_graphs_2020.pdf,"Ollivier-Ricci curvature convergence in random geometric graphs Pim van der Hoorn, 1, 2, 3 William J. Cunningham, 4, 2, 3",15,ok,8,15,338,30,44,9
+pdfs/van_der_hoorn_lippner_trugenberger_krioukov_ollivier_curvature_random_geometric_graphs_ricci_2020.pdf,arXiv:2009.04306v2 [math.PR] 10 Sep 2020 Ollivier curvature of random geometric graphs,33,ok,5,2,286,39,28,3
+pdfs/von_luxburg_spectral_clustering_tutorial_2007.pdf,A Tutorial on Spectral Clustering Ulrike von Luxburg,32,ok,695,18,23,9,0,19
+pdfs/weber_saucan_jost_forman_ricci_curvature_geometric_flows_2016.pdf,Characterizing Complex Networks with Forman-Ricci curvature and associated geometric ﬂows,29,ok,63,2,400,16,17,16
+pdfs/wei_wei_persistent_topological_laplacians_survey_2023.pdf,"Persistent Topological Laplacians – a Survey Xiaoqi Wei1∗, and Guo-Wei Wei1,2,3†",40,ok,215,162,5,6,25,31
+pdfs/wu_huang_acharya_li_thoma_paudel_van_gool_sliced_wasserstein_generative_models_2017.pdf,Sliced Wasserstein Generative Models Jiqing Wu*1 Zhiwu Huang*1 Dinesh Acharya1 Wen Li1,16,ok,2,1,6,63,0,0
