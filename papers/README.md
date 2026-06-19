@@ -44,6 +44,19 @@ The capstone compresses the full frozen arc into one readable, citable boundary 
 
 > Frozen pre-geometry can organize, but it does not bind.
 
+## 0.1 Bridge literature corpus
+
+For the external and repo-local literature most relevant to the geometry /
+physics bridge, start with:
+
+1. `bridge_literature/README.md`
+2. `bridge_literature/sources.md`
+3. `bridge_literature/local_bridge_papers.md`
+
+That folder is a curated reading pack for spectral clustering, Hodge
+decomposition, curvature, optimal transport, kernel distances, and discrete
+field-theory analogies.
+
 ## 2. Living archive
 
 The capstone is supported by a permanent archive layer:
