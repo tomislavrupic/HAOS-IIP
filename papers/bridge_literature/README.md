@@ -11,6 +11,7 @@ most relevant to the current bridge stack.
 
 - [External bibliography](sources.md)
 - [Repo-local bridge papers](local_bridge_papers.md)
+- [PDF inventory](inventory.md)
 
 ## Reading intent
 
