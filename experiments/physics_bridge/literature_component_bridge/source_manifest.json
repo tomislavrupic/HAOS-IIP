@@ -1,0 +1,7 @@
+{
+  "code": "experiments/physics_bridge/literature_component_bridge/run_literature_component_bridge.py",
+  "literature_extraction": "papers/bridge_literature/extraction/haos_iip_bridge_extraction.md",
+  "methods_spine": "papers/bridge_literature/extraction/bridge_methods_spine.md",
+  "pdf_manifest": "papers/bridge_literature/extraction/pdf_extraction_manifest.csv",
+  "source": "literature_component_bridge synthetic sidecar"
+}

@@ -1,0 +1,51 @@
+{
+  "claim_ceiling": "OPERATIONAL_MAPPING",
+  "components": [
+    "spectral_identity",
+    "hodge_sector_split",
+    "graph_curvature",
+    "transport_metrics",
+    "kernel_two_sample"
+  ],
+  "conditions": {
+    "hodge_triangle_removed_control": "Hodge sector diagnostics should move while graph-only components remain stable",
+    "known_positive": "all component distances near zero",
+    "label_permutation_control": "all component distances near zero if labels do not leak",
+    "topology_destroyed_control": "spectral, curvature, and transport diagnostics should move",
+    "weight_shuffle_control": "transport/kernel and weighted spectral diagnostics should move"
+  },
+  "mapping_status": {
+    "graph_curvature": "HEURISTIC",
+    "hodge_sector_split": "HEURISTIC",
+    "kernel_two_sample": "HEURISTIC",
+    "spectral_identity": "HEURISTIC",
+    "transport_metrics": "HEURISTIC"
+  },
+  "name": "Literature Component Bridge v0.1",
+  "non_claims": [
+    "not a physical bridge",
+    "not a continuum limit",
+    "not a quantum, gravity, or field-theory derivation",
+    "not empirical validation",
+    "not a change to frozen HAOS-IIP phases"
+  ],
+  "purpose": "Combine literature-extracted spectral, Hodge, curvature, transport, and kernel components in a bounded HAOS-IIP bridge instrument.",
+  "source_artifacts": {
+    "code": "experiments/physics_bridge/literature_component_bridge/run_literature_component_bridge.py",
+    "literature_extraction": "papers/bridge_literature/extraction/haos_iip_bridge_extraction.md",
+    "methods_spine": "papers/bridge_literature/extraction/bridge_methods_spine.md",
+    "pdf_manifest": "papers/bridge_literature/extraction/pdf_extraction_manifest.csv",
+    "source": "literature_component_bridge synthetic sidecar"
+  },
+  "status": "PRECOMMITTED_COMPONENT_CALIBRATION",
+  "thresholds": {
+    "curvature_distance_min": 0.08,
+    "hodge_distance_min": 0.2,
+    "label_invariance_max": 1e-09,
+    "mmd_bandwidth": 0.75,
+    "sinkhorn_epsilon": 0.2,
+    "spectral_distance_min": 0.12,
+    "transport_distance_min": 0.02,
+    "version": "literature-component-bridge-v0.1"
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "bridge_id": "literature_component_bridge_v0_1",
+  "claim_ceiling": "No physical bridge claim; component calibration only.",
+  "classification": "OPERATIONAL_MAPPING",
+  "condition_results": {
+    "hodge_triangle_removed_control": {
+      "components": {
+        "curvature": {
+          "forman_mean": -2.1739130434782608,
+          "forman_negative_fraction": 1.0,
+          "forman_std": 1.0488989636360713,
+          "ollivier_mean": 0.3716293199783459,
+          "ollivier_negative_fraction": 0.13043478260869565,
+          "ollivier_std": 0.2297322548580072
+        },
+        "hodge": {
+          "coexact_fraction": 0.0,
+          "edge_count": 23,
+          "exact_fraction": 0.9910179640718564,
+          "harmonic_dim": 12,
+          "harmonic_fraction": 0.008982035928143709,
+          "lowest_l1_eigenvalues": [
+            -8.560105967858931e-16,
+            -8.314057211707086e-16,
+            -5.860341790729268e-16,
+            -3.661467851120675e-16,
+            -1.6370220847220998e-16,
+            -3.977675220641688e-17,
+            7.545219298289479e-17,
+            1.0427253775114691e-16
+          ],
+          "triangle_count": 0
+        },
+        "spectral": {
+          "eigenvalues": [
+            1.5504244146692524e-16,
+            0.05988844127318177,
+            0.08773789245293351,
+            1.2403308443035308,
+            1.2577842887102024,
+            1.2666363138154089,
+            1.2786458198500763,
+            1.3344059019182046
+          ],
+          "fiedler_sign_balance": 0.5833333333333334,
+          "low_mode_cluster_ordering": 0.8831018518518519,
+          "spectral_gap": 0.05988844127318162
+        },
+        "transport_kernel": {
+          "mmd_rbf": 0.0,
+          "sinkhorn_distance": 0.014760974595296544,
+          "sinkhorn_divergence": 0.0,
+          "sliced_wasserstein": 0.0
+        }
+      },
+      "distances": {
+        "curvature": 0.0,
+        "hodge": 1.208804318194789,
+        "spectral": 0.0,
+        "transport_kernel": 0.0
+      },
+      "expected_response": "Hodge sector diagnostics should move while graph-only components remain stable",
+      "observed_status": "PASS"
+    },
+    "known_positive": {
+      "components": {
+        "curvature": {
+          "forman_mean": -2.1739130434782608,
+          "forman_negative_fraction": 1.0,
+          "forman_std": 1.0488989636360713,
+          "ollivier_mean": 0.3716293199783459,
+          "ollivier_negative_fraction": 0.13043478260869565,
+          "ollivier_std": 0.2297322548580072
+        },
+        "hodge": {
+          "coexact_fraction": 1.0269843261846132e-31,
+          "edge_count": 23,
+          "exact_fraction": 0.9910179640718564,
+          "harmonic_dim": 3,
+          "harmonic_fraction": 0.008982035928143709,
+          "lowest_l1_eigenvalues": [
+            -1.62693104151101e-15,
+            -3.1954005953746635e-16,
+            1.747444430355541e-16,
+            0.7639320225002089,
+            1.2679491924311224,
+            3.9999999999999956,
+            3.9999999999999956,
+            3.9999999999999964
+          ],
+          "triangle_count": 12
+        },
+        "spectral": {
+          "eigenvalues": [
+            1.5504244146692524e-16,
+            0.05988844127318177,
+            0.08773789245293351,
+            1.2403308443035308,
+            1.2577842887102024,
+            1.2666363138154089,
+            1.2786458198500763,
+            1.3344059019182046
+          ],
+          "fiedler_sign_balance": 0.5833333333333334,
+          "low_mode_cluster_ordering": 0.8831018518518519,
+          "spectral_gap": 0.05988844127318162
+        },
+        "transport_kernel": {
+          "mmd_rbf": 0.0,
+          "sinkhorn_distance": 0.014760974595296544,
+          "sinkhorn_divergence": 0.0,
+          "sliced_wasserstein": 0.0
+        }
+      },
+      "distances": {
+        "curvature": 0.0,
+        "hodge": 0.0,
+        "spectral": 0.0,
+        "transport_kernel": 0.0
+      },
+      "expected_response": "all component distances near zero",
+      "observed_status": "PASS"
+    },
+    "label_permutation_control": {
+      "components": {
+        "curvature": {
+          "forman_mean": -2.1739130434782608,
+          "forman_negative_fraction": 1.0,
+          "forman_std": 1.0488989636360713,
+          "ollivier_mean": 0.3716293199783459,
+          "ollivier_negative_fraction": 0.13043478260869565,
+          "ollivier_std": 0.22973225485800716
+        },
+        "hodge": {
+          "coexact_fraction": 2.8959800767811884e-32,
+          "edge_count": 23,
+          "exact_fraction": 0.9910179640718564,
+          "harmonic_dim": 3,
+          "harmonic_fraction": 0.008982035928143707,
+          "lowest_l1_eigenvalues": [
+            -3.6538783039359154e-15,
+            -3.2579569258094534e-16,
+            4.927993999181478e-19,
+            0.7639320225002088,
+            1.2679491924311233,
+            3.9999999999999973,
+            3.999999999999998,
+            3.9999999999999982
+          ],
+          "triangle_count": 12
+        },
+        "spectral": {
+          "eigenvalues": [
+            -9.407163103905845e-17,
+            0.05988844127318148,
+            0.08773789245293327,
+            1.240330844303531,
+            1.2577842887102022,
+            1.266636313815408,
+            1.2786458198500767,
+            1.334405901918204
+          ],
+          "fiedler_sign_balance": 0.4166666666666667,
+          "low_mode_cluster_ordering": 0.8831018518518519,
+          "spectral_gap": 0.059888441273181575
+        },
+        "transport_kernel": {
+          "mmd_rbf": 0.0,
+          "sinkhorn_distance": 0.014760974595296544,
+          "sinkhorn_divergence": 0.0,
+          "sliced_wasserstein": 3.6906870474405117e-17
+        }
+      },
+      "distances": {
+        "curvature": 1.0465247547019388e-17,
+        "hodge": 1.3979608190897592e-19,
+        "spectral": 4.608227423994921e-16,
+        "transport_kernel": 3.6906870474405117e-17
+      },
+      "expected_response": "all component distances near zero if labels do not leak",
+      "observed_status": "PASS"
+    },
+    "topology_destroyed_control": {
+      "components": {
+        "curvature": {
+          "forman_mean": -2.9565217391304346,
+          "forman_negative_fraction": 0.9565217391304348,
+          "forman_std": 1.3980813209403067,
+          "ollivier_mean": 0.1639815105207613,
+          "ollivier_negative_fraction": 0.21739130434782608,
+          "ollivier_std": 0.20692998274910673
+        },
+        "hodge": {
+          "coexact_fraction": 0.09765826149067307,
+          "edge_count": 23,
+          "exact_fraction": 0.8876779048743842,
+          "harmonic_dim": 5,
+          "harmonic_fraction": 0.014663833634942752,
+          "lowest_l1_eigenvalues": [
+            -7.650774511371268e-16,
+            -2.838358126550264e-16,
+            2.5259726952104586e-16,
+            1.3026108285801373e-15,
+            1.635256944908963e-15,
+            0.6492233153337267,
+            1.9999999999999982,
+            1.9999999999999982
+          ],
+          "triangle_count": 8
+        },
+        "spectral": {
+          "eigenvalues": [
+            6.649876095174689e-16,
+            0.20109517874465535,
+            0.6057688698073446,
+            0.6962124898547365,
+            0.8110907275622546,
+            0.951035818415802,
+            1.1018260192828615,
+            1.1807750289294703
+          ],
+          "fiedler_sign_balance": 0.4166666666666667,
+          "low_mode_cluster_ordering": 0.5555555555555556,
+          "spectral_gap": 0.20109517874465468
+        },
+        "transport_kernel": {
+          "mmd_rbf": 0.22478450558310037,
+          "sinkhorn_distance": 1.534962924902508,
+          "sinkhorn_divergence": 1.5055456557601616,
+          "sliced_wasserstein": 0.4523713349867015
+        }
+      },
+      "distances": {
+        "curvature": 0.3345976646030887,
+        "hodge": 0.3605782084261781,
+        "spectral": 0.3392837413654541,
+        "transport_kernel": 2.1827014963299636
+      },
+      "expected_response": "spectral, curvature, and transport diagnostics should move",
+      "observed_status": "PASS"
+    },
+    "weight_shuffle_control": {
+      "components": {
+        "curvature": {
+          "forman_mean": -2.1739130434782608,
+          "forman_negative_fraction": 1.0,
+          "forman_std": 1.0488989636360713,
+          "ollivier_mean": 0.17022196710064622,
+          "ollivier_negative_fraction": 0.17391304347826086,
+          "ollivier_std": 0.259516425675442
+        },
+        "hodge": {
+          "coexact_fraction": 8.340246461032569e-32,
+          "edge_count": 23,
+          "exact_fraction": 0.9621522309711287,
+          "harmonic_dim": 3,
+          "harmonic_fraction": 0.03784776902887136,
+          "lowest_l1_eigenvalues": [
+            -1.62693104151101e-15,
+            -3.1954005953746635e-16,
+            1.747444430355541e-16,
+            0.7639320225002089,
+            1.2679491924311224,
+            3.9999999999999956,
+            3.9999999999999956,
+            3.9999999999999964
+          ],
+          "triangle_count": 12
+        },
+        "spectral": {
+          "eigenvalues": [
+            2.0968217926170226e-16,
+            0.1897968391911577,
+            0.3245586339103318,
+            0.7942565018945553,
+            0.9659905657429146,
+            1.0105393938299503,
+            1.157929760560799,
+            1.3439681985491172
+          ],
+          "fiedler_sign_balance": 0.5833333333333334,
+          "low_mode_cluster_ordering": 0.8425925925925926,
+          "spectral_gap": 0.18979683919115747
+        },
+        "transport_kernel": {
+          "mmd_rbf": 0.08879259455103672,
+          "sinkhorn_distance": 0.29230497413001627,
+          "sinkhorn_divergence": 0.2627159497404663,
+          "sliced_wasserstein": 0.1319984859577083
+        }
+      },
+      "distances": {
+        "curvature": 0.07849746536479238,
+        "hodge": 0.003289745740284212,
+        "spectral": 0.23162432170649394,
+        "transport_kernel": 0.4835070302492113
+      },
+      "expected_response": "transport/kernel and weighted spectral diagnostics should move",
+      "observed_status": "PASS"
+    }
+  },
+  "labels": [
+    "BRIDGE_COMPONENTS_BUILT",
+    "SPECTRAL_COMPONENT_AVAILABLE",
+    "HODGE_COMPONENT_AVAILABLE",
+    "CURVATURE_COMPONENT_AVAILABLE",
+    "TRANSPORT_KERNEL_COMPONENT_AVAILABLE",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "CLAIM_GATED_OPERATIONAL_MAPPING",
+    "COMPONENT_CONTROLS_PASS",
+    "LABEL_INVARIANCE_PASS"
+  ],
+  "result_hash": "literature_bridge_8356a0f41399aa154f7daf10",
+  "status": "PASS"
+}

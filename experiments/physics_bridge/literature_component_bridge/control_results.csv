@@ -1,0 +1,6 @@
+condition,expected_response,spectral_distance,hodge_distance,curvature_distance,transport_kernel_distance,observed_status
+known_positive,all component distances near zero,0,0,0,0,PASS
+label_permutation_control,all component distances near zero if labels do not leak,4.60822742399e-16,1.39796081909e-19,1.0465247547e-17,3.69068704744e-17,PASS
+weight_shuffle_control,transport/kernel and weighted spectral diagnostics should move,0.231624321706,0.00328974574028,0.0784974653648,0.483507030249,PASS
+topology_destroyed_control,"spectral, curvature, and transport diagnostics should move",0.339283741365,0.360578208426,0.334597664603,2.18270149633,PASS
+hodge_triangle_removed_control,Hodge sector diagnostics should move while graph-only components remain stable,0,1.20880431819,0,0,PASS

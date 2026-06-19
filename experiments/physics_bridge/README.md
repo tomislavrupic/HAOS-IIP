@@ -244,6 +244,30 @@ synthetic relational structure, reject destructive controls, and leave ambiguous
 partial-preservation cases open. It is not a physics bridge and does not
 authorize Bell scoring.
 
+## Literature Component Bridge
+
+The literature-derived component bridge is available as a bounded method
+calibration sidecar:
+
+```bash
+uv run python experiments/physics_bridge/literature_component_bridge/run_literature_component_bridge.py
+```
+
+Generated outputs:
+
+- `experiments/physics_bridge/literature_component_bridge/precommitment_contract.json`
+- `experiments/physics_bridge/literature_component_bridge/source_manifest.json`
+- `experiments/physics_bridge/literature_component_bridge/component_scores.csv`
+- `experiments/physics_bridge/literature_component_bridge/control_results.csv`
+- `experiments/physics_bridge/literature_component_bridge/literature_component_bridge_report.md`
+- `experiments/physics_bridge/literature_component_bridge/literature_component_bridge_result.json`
+
+This sidecar combines spectral identity, Hodge sector, graph curvature,
+transport, and kernel-distance components extracted from the bridge-literature
+corpus. It is an operational method calibration only. A component-level `PASS`
+does not establish a physical bridge, continuum limit, field theory, quantum
+result, or gravity result.
+
 ## Hydrogen Spectra Computational Reference Probe
 
 The hydrogen spectra reference probe is available as a bounded gross-spectrum
