@@ -12,6 +12,8 @@ most relevant to the current bridge stack.
 - [External bibliography](sources.md)
 - [Repo-local bridge papers](local_bridge_papers.md)
 - [PDF inventory](inventory.md)
+- [Bridge reading order](reading_order.md)
+- [Bridge review map](review_map.md)
 
 ## Reading intent
 
@@ -22,6 +24,8 @@ Start here if you want the shortest route through the bridge landscape:
 3. curvature on graphs and transport geometry
 4. optimal transport and kernel distances
 5. lattice / Dirac-Kähler / discretized field-theory analogies
+
+For an opinionated path through the corpus, see [Bridge reading order](reading_order.md).
 
 ## Boundary
 
