@@ -32,6 +32,18 @@ uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_mon
 - `monstrous_moonshine_diagnostic_report.md`
 - `monstrous_moonshine_diagnostic_result.json`
 
+## Visual Sidecar
+
+An external animated SVG visualization is stored under:
+
+- `visuals/anim_supersingular_betti.svg`
+- `visuals/visual_source_manifest.json`
+
+This visual sidecar is review material only. Its source text references a
+Lean-certified Betti diagram, but this repository does not independently check
+that Lean proof unless the proof source is added and run locally. The executable
+authority for this folder remains `run_monstrous_moonshine_diagnostic.py`.
+
 ## Controls
 
 - `known_positive`: self-recovery.
@@ -45,4 +57,3 @@ uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_mon
 This is an arithmetic support diagnostic only. The Gaussian-prime norm-lift
 bundle remains a narrative and structural neighbor, not a derivation of
 moonshine.
-

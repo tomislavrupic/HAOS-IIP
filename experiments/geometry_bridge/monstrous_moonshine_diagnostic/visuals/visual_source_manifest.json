@@ -1,0 +1,20 @@
+{
+  "artifact": "anim_supersingular_betti.svg",
+  "artifact_path": "experiments/geometry_bridge/monstrous_moonshine_diagnostic/visuals/anim_supersingular_betti.svg",
+  "bytes": 46399,
+  "cid": "bafk8e5dd576331df5bab6c7e75cfaf13a6c",
+  "description": "External animated SVG visualization of supersingular Gaussian-prime / Betti telemetry.",
+  "downloaded_from": "https://pastebin.xware.online/file/20260620_163608_anim_supersingular_betti_svg",
+  "ipfs": "QmYbFeE4sAwF4u3MVvMnS7kaEcAqRocqv7Zc2gdtEXcQ1a",
+  "non_claims": [
+    "not independently Lean-checked by this HAOS-IIP repository",
+    "not a proof of Monstrous Moonshine",
+    "not a physical bridge",
+    "not a replacement for the executable GEO-MM-01 diagnostic"
+  ],
+  "sha256": "8e5dd576331df5bab6c7e75cfaf13a6cbc9406a2e2a494b721ece86b8c1eabc3",
+  "script_tag_detected": false,
+  "source_page": "https://pastebin.xware.online/paste/20260620_163608_anim_supersingular_betti_svg",
+  "status": "EXTERNAL_VISUAL_SIDECAR"
+}
+
