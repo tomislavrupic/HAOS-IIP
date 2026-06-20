@@ -1,0 +1,51 @@
+{
+  "claim_ceiling": "ARITHMETIC_SUPPORT_DIAGNOSTIC",
+  "components": [
+    "supersingular_prime_support",
+    "monster_order_exponent_address",
+    "j_coefficient_decomposition_witnesses",
+    "gaussian_prime_class_bridge"
+  ],
+  "conditions": {
+    "decomposition_break_control": "j-coefficient decomposition witness should fail exactly",
+    "exponent_shuffle_control": "prime support remains but Monster-order exponent address moves",
+    "gaussian_class_swap_control": "Gaussian ramified/inert/split class relation should move",
+    "known_positive": "all component distances are zero",
+    "nonsupersingular_prime_control": "prime support and irrep support coverage should degrade"
+  },
+  "name": "Monstrous Moonshine Arithmetic Diagnostic v0.1",
+  "non_claims": [
+    "not a proof of Monstrous Moonshine",
+    "not a Moonshine module construction",
+    "not a complete Monster irrep catalog",
+    "not a physical bridge",
+    "not a continuum limit",
+    "not a quantum, gravity, or field-theory derivation",
+    "not empirical validation",
+    "not a change to frozen HAOS-IIP phases"
+  ],
+  "purpose": "Test a small auditable moonshine support pattern as HAOS-IIP-style arithmetic telemetry.",
+  "source_artifacts": {
+    "code": "experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_monstrous_moonshine_diagnostic.py",
+    "external_data": "none",
+    "mathematical_objects": [
+      "15 supersingular primes",
+      "Monster group order prime factorization",
+      "low j-coefficient decomposition witnesses",
+      "small embedded Monster irreducible dimensions",
+      "Gaussian-prime residue classes over the same prime support"
+    ],
+    "monster_irrep_catalog": "not complete; witness subset only",
+    "source": "Embedded arithmetic constants for a bounded moonshine diagnostic.",
+    "voa_construction": "not included"
+  },
+  "status": "PRECOMMITTED_ARITHMETIC_SUPPORT_DIAGNOSTIC",
+  "thresholds": {
+    "decomposition_control_min": 0.2,
+    "exponent_control_min": 0.2,
+    "gaussian_class_control_min": 0.2,
+    "invariance_max": 1e-12,
+    "support_control_min": 0.1,
+    "version": "monstrous-moonshine-diagnostic-v0.1"
+  }
+}

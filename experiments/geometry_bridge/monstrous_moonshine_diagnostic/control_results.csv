@@ -1,0 +1,6 @@
+condition,expected_response,support_distance,exponent_distance,decomposition_distance,gaussian_class_distance,observed_status
+known_positive,all component distances are zero,0,0,0,0,PASS
+nonsupersingular_prime_control,prime support and irrep support coverage should degrade,0.25,0.0194074169913,0.252982212813,0,PASS
+exponent_shuffle_control,prime support remains but Monster-order exponent address moves,0,1.11250383524,0,0,PASS
+decomposition_break_control,j-coefficient decomposition witness should fail exactly,0,0,0.4472135955,0,PASS
+gaussian_class_swap_control,Gaussian ramified/inert/split class relation should move,0,0,0,0.257129738613,PASS

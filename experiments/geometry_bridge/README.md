@@ -12,6 +12,7 @@ questions:
 7. hidden synthetic transformation recovery
 8. hidden synthetic probability-rule recovery
 9. Gaussian-prime norm-lift arithmetic geometry
+10. Monstrous Moonshine arithmetic support diagnostic
 
 The chain is intentionally bounded. It is not a Bell experiment and it does
 not claim a physical mechanism.
@@ -105,6 +106,21 @@ not claim a physical mechanism.
   `COMPONENT_CONTROLS_PASS`, `PHYSICAL_BRIDGE_NOT_ESTABLISHED`,
   `MONSTER_MOONSHINE_NOT_TESTED`
 
+### GEO-MM-01 - Monstrous Moonshine arithmetic diagnostic
+
+- path: `monstrous_moonshine_diagnostic/`
+- purpose: record a small auditable moonshine support pattern as arithmetic
+  telemetry: the 15 supersingular primes, Monster order prime exponents, low
+  j-coefficient decomposition witnesses, embedded irrep factor support, and
+  Gaussian-prime residue classes over the same support
+- current state: valid arithmetic support diagnostic
+- useful signal: prime-support, exponent-address, decomposition, and Gaussian
+  class controls move their intended components without upgrading the claim
+- report: [monstrous_moonshine_diagnostic_report.md](./monstrous_moonshine_diagnostic/monstrous_moonshine_diagnostic_report.md)
+- terminal reading: `MOONSHINE_ARITHMETIC_SUPPORT_BUILT`,
+  `COMPONENT_CONTROLS_PASS`, `MOONSHINE_PROOF_NOT_ESTABLISHED`,
+  `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
+
 ### GEO-T1-01 - Synthetic hidden transformation recovery
 
 - path: `synthetic_hidden_transformation_recovery/`
@@ -163,6 +179,7 @@ mechanism.
 | GEO-04 | `valid` | `OBSERVABLE_PREDICTION_VALID` | Observable prediction clears holdout class accuracy and pairwise ordering against null. |
 | GEO-HIDDEN-01 | `open` | `BENCHMARK_OPEN`, `TRANSFORMATION_RECOVERY_BOUNDARY_OPEN`, `TRANSFORMATION_CLASS_NOT_ROBUST_ON_HOLDOUT` | Distance, orientation, and held-out relations recover well; transformation recovery remains the weak point. |
 | GEO-GP-01 | `valid synthetic arithmetic calibration` | `GAUSSIAN_PRIME_NORM_LIFT_BUILT`, `COMPONENT_CONTROLS_PASS`, `PHYSICAL_BRIDGE_NOT_ESTABLISHED` | Gaussian-prime shell semantics, norm-lift spectral telemetry, and cochain-flow diagnostics respond to matched arithmetic controls. |
+| GEO-MM-01 | `valid arithmetic support diagnostic` | `MOONSHINE_ARITHMETIC_SUPPORT_BUILT`, `COMPONENT_CONTROLS_PASS`, `MOONSHINE_PROOF_NOT_ESTABLISHED` | Supersingular support, Monster-order exponents, low j-coefficient witnesses, and Gaussian residue classes are recorded as bounded arithmetic telemetry. |
 | GEO-T1-01 | `valid` | `BENCHMARK_VALID` | Hidden transformation algebra recovers identity, inverse, composition closure, orbits, stabilizers, equivalence classes, holdout compositions, and refinement persistence. |
 | GEO-P1-01 | `valid` | `PROBABILITY_RULE_VALID` | Hidden Bernoulli-law recovery passes calibration, holdout transfer, and null rejection. |
 

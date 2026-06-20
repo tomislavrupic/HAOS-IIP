@@ -1,0 +1,14 @@
+{
+  "code": "experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_monstrous_moonshine_diagnostic.py",
+  "external_data": "none",
+  "mathematical_objects": [
+    "15 supersingular primes",
+    "Monster group order prime factorization",
+    "low j-coefficient decomposition witnesses",
+    "small embedded Monster irreducible dimensions",
+    "Gaussian-prime residue classes over the same prime support"
+  ],
+  "monster_irrep_catalog": "not complete; witness subset only",
+  "source": "Embedded arithmetic constants for a bounded moonshine diagnostic.",
+  "voa_construction": "not included"
+}

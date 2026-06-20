@@ -1,0 +1,1035 @@
+{
+  "bridge_id": "monstrous_moonshine_diagnostic_v0_1",
+  "claim_ceiling": "No moonshine proof, VOA construction, complete irrep catalog, or physics claim.",
+  "classification": "ARITHMETIC_SUPPORT_DIAGNOSTIC",
+  "condition_results": {
+    "decomposition_break_control": {
+      "components": {
+        "decomposition": {
+          "exact_witness_count": 2,
+          "irrep_factor_rows": [
+            {
+              "dimension": 196883,
+              "factor_support_subset": true,
+              "factorization": {
+                "47": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_196883"
+            },
+            {
+              "dimension": 21296876,
+              "factor_support_subset": true,
+              "factorization": {
+                "2": 2,
+                "31": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_21296876"
+            },
+            {
+              "dimension": 842609326,
+              "factor_support_subset": true,
+              "factorization": {
+                "13": 2,
+                "2": 1,
+                "29": 1,
+                "31": 1,
+                "47": 1,
+                "59": 1
+              },
+              "name": "dim_842609326"
+            },
+            {
+              "dimension": 18538750076,
+              "factor_support_subset": true,
+              "factorization": {
+                "11": 1,
+                "2": 2,
+                "23": 1,
+                "29": 1,
+                "31": 1,
+                "41": 1,
+                "7": 1,
+                "71": 1
+              },
+              "name": "dim_18538750076"
+            },
+            {
+              "dimension": 19360062527,
+              "factor_support_subset": true,
+              "factorization": {
+                "13": 2,
+                "23": 1,
+                "29": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_19360062527"
+            }
+          ],
+          "irrep_factor_support_coverage": 1.0,
+          "residual_abs_sum": 1,
+          "witness_count": 3,
+          "witnesses": [
+            {
+              "coefficient": 196884,
+              "computed_sum": 196884,
+              "name": "j_q1",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 21493760,
+              "computed_sum": 21493760,
+              "name": "j_q2",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "dim_21296876": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 864299971,
+              "computed_sum": 864299970,
+              "name": "j_q3",
+              "residual": 1,
+              "terms": {
+                "dim_196883": 2,
+                "dim_21296876": 1,
+                "dim_842609326": 1,
+                "trivial": 2
+              }
+            }
+          ]
+        },
+        "exponent": {
+          "exponent_sum": 95,
+          "exponent_vector": [
+            46,
+            20,
+            9,
+            6,
+            2,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "log10_order": 53.90742072638165,
+          "nonzero_exponent_count": 15
+        },
+        "gaussian_class": {
+          "class_vector": [
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "inert_count": 9,
+          "ramified_count": 1,
+          "split_count": 5,
+          "unknown_count": 0
+        },
+        "support": {
+          "extra_supersingular_candidates": [],
+          "missing_from_supersingular": [],
+          "monster_prime_support": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            71
+          ],
+          "supersingular_primes": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            71
+          ],
+          "support_count": 15,
+          "support_jaccard": 1.0
+        }
+      },
+      "distances": {
+        "decomposition": 0.4472135954999579,
+        "exponent": 0.0,
+        "gaussian_class": 0.0,
+        "support": 0.0
+      },
+      "expected_response": "j-coefficient decomposition witness should fail exactly",
+      "observed_status": "PASS"
+    },
+    "exponent_shuffle_control": {
+      "components": {
+        "decomposition": {
+          "exact_witness_count": 3,
+          "irrep_factor_rows": [
+            {
+              "dimension": 196883,
+              "factor_support_subset": true,
+              "factorization": {
+                "47": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_196883"
+            },
+            {
+              "dimension": 21296876,
+              "factor_support_subset": true,
+              "factorization": {
+                "2": 2,
+                "31": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_21296876"
+            },
+            {
+              "dimension": 842609326,
+              "factor_support_subset": true,
+              "factorization": {
+                "13": 2,
+                "2": 1,
+                "29": 1,
+                "31": 1,
+                "47": 1,
+                "59": 1
+              },
+              "name": "dim_842609326"
+            },
+            {
+              "dimension": 18538750076,
+              "factor_support_subset": true,
+              "factorization": {
+                "11": 1,
+                "2": 2,
+                "23": 1,
+                "29": 1,
+                "31": 1,
+                "41": 1,
+                "7": 1,
+                "71": 1
+              },
+              "name": "dim_18538750076"
+            },
+            {
+              "dimension": 19360062527,
+              "factor_support_subset": true,
+              "factorization": {
+                "13": 2,
+                "23": 1,
+                "29": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_19360062527"
+            }
+          ],
+          "irrep_factor_support_coverage": 1.0,
+          "residual_abs_sum": 0,
+          "witness_count": 3,
+          "witnesses": [
+            {
+              "coefficient": 196884,
+              "computed_sum": 196884,
+              "name": "j_q1",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 21493760,
+              "computed_sum": 21493760,
+              "name": "j_q2",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "dim_21296876": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 864299970,
+              "computed_sum": 864299970,
+              "name": "j_q3",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 2,
+                "dim_21296876": 1,
+                "dim_842609326": 1,
+                "trivial": 2
+              }
+            }
+          ]
+        },
+        "exponent": {
+          "exponent_sum": 95,
+          "exponent_vector": [
+            3,
+            20,
+            46,
+            2,
+            6,
+            9,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "log10_order": 74.29385976768005,
+          "nonzero_exponent_count": 15
+        },
+        "gaussian_class": {
+          "class_vector": [
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "inert_count": 9,
+          "ramified_count": 1,
+          "split_count": 5,
+          "unknown_count": 0
+        },
+        "support": {
+          "extra_supersingular_candidates": [],
+          "missing_from_supersingular": [],
+          "monster_prime_support": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            71
+          ],
+          "supersingular_primes": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            71
+          ],
+          "support_count": 15,
+          "support_jaccard": 1.0
+        }
+      },
+      "distances": {
+        "decomposition": 0.0,
+        "exponent": 1.1125038352417016,
+        "gaussian_class": 0.0,
+        "support": 0.0
+      },
+      "expected_response": "prime support remains but Monster-order exponent address moves",
+      "observed_status": "PASS"
+    },
+    "gaussian_class_swap_control": {
+      "components": {
+        "decomposition": {
+          "exact_witness_count": 3,
+          "irrep_factor_rows": [
+            {
+              "dimension": 196883,
+              "factor_support_subset": true,
+              "factorization": {
+                "47": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_196883"
+            },
+            {
+              "dimension": 21296876,
+              "factor_support_subset": true,
+              "factorization": {
+                "2": 2,
+                "31": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_21296876"
+            },
+            {
+              "dimension": 842609326,
+              "factor_support_subset": true,
+              "factorization": {
+                "13": 2,
+                "2": 1,
+                "29": 1,
+                "31": 1,
+                "47": 1,
+                "59": 1
+              },
+              "name": "dim_842609326"
+            },
+            {
+              "dimension": 18538750076,
+              "factor_support_subset": true,
+              "factorization": {
+                "11": 1,
+                "2": 2,
+                "23": 1,
+                "29": 1,
+                "31": 1,
+                "41": 1,
+                "7": 1,
+                "71": 1
+              },
+              "name": "dim_18538750076"
+            },
+            {
+              "dimension": 19360062527,
+              "factor_support_subset": true,
+              "factorization": {
+                "13": 2,
+                "23": 1,
+                "29": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_19360062527"
+            }
+          ],
+          "irrep_factor_support_coverage": 1.0,
+          "residual_abs_sum": 0,
+          "witness_count": 3,
+          "witnesses": [
+            {
+              "coefficient": 196884,
+              "computed_sum": 196884,
+              "name": "j_q1",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 21493760,
+              "computed_sum": 21493760,
+              "name": "j_q2",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "dim_21296876": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 864299970,
+              "computed_sum": 864299970,
+              "name": "j_q3",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 2,
+                "dim_21296876": 1,
+                "dim_842609326": 1,
+                "trivial": 2
+              }
+            }
+          ]
+        },
+        "exponent": {
+          "exponent_sum": 95,
+          "exponent_vector": [
+            46,
+            20,
+            9,
+            6,
+            2,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "log10_order": 53.90742072638165,
+          "nonzero_exponent_count": 15
+        },
+        "gaussian_class": {
+          "class_vector": [
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "inert_count": 9,
+          "ramified_count": 1,
+          "split_count": 5,
+          "unknown_count": 0
+        },
+        "support": {
+          "extra_supersingular_candidates": [],
+          "missing_from_supersingular": [],
+          "monster_prime_support": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            71
+          ],
+          "supersingular_primes": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            71
+          ],
+          "support_count": 15,
+          "support_jaccard": 1.0
+        }
+      },
+      "distances": {
+        "decomposition": 0.0,
+        "exponent": 0.0,
+        "gaussian_class": 0.25712973861329,
+        "support": 0.0
+      },
+      "expected_response": "Gaussian ramified/inert/split class relation should move",
+      "observed_status": "PASS"
+    },
+    "known_positive": {
+      "components": {
+        "decomposition": {
+          "exact_witness_count": 3,
+          "irrep_factor_rows": [
+            {
+              "dimension": 196883,
+              "factor_support_subset": true,
+              "factorization": {
+                "47": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_196883"
+            },
+            {
+              "dimension": 21296876,
+              "factor_support_subset": true,
+              "factorization": {
+                "2": 2,
+                "31": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_21296876"
+            },
+            {
+              "dimension": 842609326,
+              "factor_support_subset": true,
+              "factorization": {
+                "13": 2,
+                "2": 1,
+                "29": 1,
+                "31": 1,
+                "47": 1,
+                "59": 1
+              },
+              "name": "dim_842609326"
+            },
+            {
+              "dimension": 18538750076,
+              "factor_support_subset": true,
+              "factorization": {
+                "11": 1,
+                "2": 2,
+                "23": 1,
+                "29": 1,
+                "31": 1,
+                "41": 1,
+                "7": 1,
+                "71": 1
+              },
+              "name": "dim_18538750076"
+            },
+            {
+              "dimension": 19360062527,
+              "factor_support_subset": true,
+              "factorization": {
+                "13": 2,
+                "23": 1,
+                "29": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_19360062527"
+            }
+          ],
+          "irrep_factor_support_coverage": 1.0,
+          "residual_abs_sum": 0,
+          "witness_count": 3,
+          "witnesses": [
+            {
+              "coefficient": 196884,
+              "computed_sum": 196884,
+              "name": "j_q1",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 21493760,
+              "computed_sum": 21493760,
+              "name": "j_q2",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "dim_21296876": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 864299970,
+              "computed_sum": 864299970,
+              "name": "j_q3",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 2,
+                "dim_21296876": 1,
+                "dim_842609326": 1,
+                "trivial": 2
+              }
+            }
+          ]
+        },
+        "exponent": {
+          "exponent_sum": 95,
+          "exponent_vector": [
+            46,
+            20,
+            9,
+            6,
+            2,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "log10_order": 53.90742072638165,
+          "nonzero_exponent_count": 15
+        },
+        "gaussian_class": {
+          "class_vector": [
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "inert_count": 9,
+          "ramified_count": 1,
+          "split_count": 5,
+          "unknown_count": 0
+        },
+        "support": {
+          "extra_supersingular_candidates": [],
+          "missing_from_supersingular": [],
+          "monster_prime_support": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            71
+          ],
+          "supersingular_primes": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            71
+          ],
+          "support_count": 15,
+          "support_jaccard": 1.0
+        }
+      },
+      "distances": {
+        "decomposition": 0.0,
+        "exponent": 0.0,
+        "gaussian_class": 0.0,
+        "support": 0.0
+      },
+      "expected_response": "all component distances are zero",
+      "observed_status": "PASS"
+    },
+    "nonsupersingular_prime_control": {
+      "components": {
+        "decomposition": {
+          "exact_witness_count": 3,
+          "irrep_factor_rows": [
+            {
+              "dimension": 196883,
+              "factor_support_subset": false,
+              "factorization": {
+                "47": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_196883"
+            },
+            {
+              "dimension": 21296876,
+              "factor_support_subset": false,
+              "factorization": {
+                "2": 2,
+                "31": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_21296876"
+            },
+            {
+              "dimension": 842609326,
+              "factor_support_subset": true,
+              "factorization": {
+                "13": 2,
+                "2": 1,
+                "29": 1,
+                "31": 1,
+                "47": 1,
+                "59": 1
+              },
+              "name": "dim_842609326"
+            },
+            {
+              "dimension": 18538750076,
+              "factor_support_subset": false,
+              "factorization": {
+                "11": 1,
+                "2": 2,
+                "23": 1,
+                "29": 1,
+                "31": 1,
+                "41": 1,
+                "7": 1,
+                "71": 1
+              },
+              "name": "dim_18538750076"
+            },
+            {
+              "dimension": 19360062527,
+              "factor_support_subset": false,
+              "factorization": {
+                "13": 2,
+                "23": 1,
+                "29": 1,
+                "41": 1,
+                "59": 1,
+                "71": 1
+              },
+              "name": "dim_19360062527"
+            }
+          ],
+          "irrep_factor_support_coverage": 0.2,
+          "residual_abs_sum": 0,
+          "witness_count": 3,
+          "witnesses": [
+            {
+              "coefficient": 196884,
+              "computed_sum": 196884,
+              "name": "j_q1",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 21493760,
+              "computed_sum": 21493760,
+              "name": "j_q2",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 1,
+                "dim_21296876": 1,
+                "trivial": 1
+              }
+            },
+            {
+              "coefficient": 864299970,
+              "computed_sum": 864299970,
+              "name": "j_q3",
+              "residual": 0,
+              "terms": {
+                "dim_196883": 2,
+                "dim_21296876": 1,
+                "dim_842609326": 1,
+                "trivial": 2
+              }
+            }
+          ]
+        },
+        "exponent": {
+          "exponent_sum": 94,
+          "exponent_vector": [
+            46,
+            20,
+            9,
+            6,
+            2,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "log10_order": 53.919485237783036,
+          "nonzero_exponent_count": 14
+        },
+        "gaussian_class": {
+          "class_vector": [
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "inert_count": 9,
+          "ramified_count": 1,
+          "split_count": 5,
+          "unknown_count": 0
+        },
+        "support": {
+          "extra_supersingular_candidates": [],
+          "missing_from_supersingular": [],
+          "monster_prime_support": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            73
+          ],
+          "supersingular_primes": [
+            2,
+            3,
+            5,
+            7,
+            11,
+            13,
+            17,
+            19,
+            23,
+            29,
+            31,
+            41,
+            47,
+            59,
+            73
+          ],
+          "support_count": 15,
+          "support_jaccard": 1.0
+        }
+      },
+      "distances": {
+        "decomposition": 0.25298221281347033,
+        "exponent": 0.0194074169913194,
+        "gaussian_class": 0.0,
+        "support": 0.25
+      },
+      "expected_response": "prime support and irrep support coverage should degrade",
+      "observed_status": "PASS"
+    }
+  },
+  "labels": [
+    "MOONSHINE_ARITHMETIC_SUPPORT_BUILT",
+    "SUPERSINGULAR_PRIME_SUPPORT_AVAILABLE",
+    "MONSTER_ORDER_EXPONENT_ADDRESS_AVAILABLE",
+    "J_DECOMPOSITION_WITNESSES_AVAILABLE",
+    "GAUSSIAN_CLASS_BRIDGE_AVAILABLE",
+    "MOONSHINE_PROOF_NOT_ESTABLISHED",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "CLAIM_GATED_ARITHMETIC_DIAGNOSTIC",
+    "COMPONENT_CONTROLS_PASS"
+  ],
+  "result_hash": "moonshine_diag_3ea77659b5d076fc6c03e4c6",
+  "status": "PASS"
+}
