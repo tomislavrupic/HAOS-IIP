@@ -60,14 +60,16 @@ Current reference result:
 Threshold sensitivity is checked by:
 
 ```bash
-uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/threshold_sweep_betti_stability.py
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_betti_threshold_sweep.py
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_betti_null_ensemble.py
 ```
 
 Generated outputs:
 
 - `betti_threshold_sweep.csv`
-- `betti_null_ensemble.csv`
 - `betti_threshold_sweep_report.md`
+- `betti_null_ensemble_results.csv`
+- `betti_null_ensemble_report.md`
 - `betti_threshold_sweep_result.json`
 
 Current sweep result:
@@ -76,7 +78,7 @@ Current sweep result:
 - exact edge-signature band: `[8.0, 8.5]`
 - edge-neighborhood band: `[8.0, 10.0]`
 - null false-positive rate: `0.110000`
-- result hash: `betti_sweep_8a3f5b7b3acaa8ea3a42a9a8`
+- result hash: `betti_sweep_6d8f185a0d3a8ad5130832c4`
 
 ## Visual Sidecar
 

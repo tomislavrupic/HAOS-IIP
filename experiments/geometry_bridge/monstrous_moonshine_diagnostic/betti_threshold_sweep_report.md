@@ -4,7 +4,7 @@
 
 - Result: `PASS`
 - Classification: `TOPOLOGICAL_DIAGNOSTIC_SIDECAR`
-- Result hash: `betti_sweep_8a3f5b7b3acaa8ea3a42a9a8`
+- Result hash: `betti_sweep_6d8f185a0d3a8ad5130832c4`
 - Reference threshold: `8.0`
 - Reference `Betti_0`: `4`
 - Reference edges: `33`
@@ -15,8 +15,10 @@
 
 ## Labels
 
-- `BETTI_THRESHOLD_SWEEP_AVAILABLE`
-- `BETTI_NULL_ENSEMBLE_AVAILABLE`
+- `BETTI_THRESHOLD_SWEEP_BUILT`
+- `BETTI_NULL_ENSEMBLE_BUILT`
+- `BETTI_ROBUSTNESS_OPEN`
+- `FALSE_POSITIVE_RATE_REPORTED`
 - `LEAN_THEOREM_NOT_INCLUDED`
 - `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
 - `CLAIM_GATED_TOPOLOGICAL_DIAGNOSTIC`

@@ -44,7 +44,9 @@ from run_betti_component_count import (  # noqa: E402
 
 SWEEP_CSV_PATH = ROOT / "betti_threshold_sweep.csv"
 NULL_CSV_PATH = ROOT / "betti_null_ensemble.csv"
+NULL_RESULTS_CSV_PATH = ROOT / "betti_null_ensemble_results.csv"
 REPORT_PATH = ROOT / "betti_threshold_sweep_report.md"
+NULL_REPORT_PATH = ROOT / "betti_null_ensemble_report.md"
 RESULT_PATH = ROOT / "betti_threshold_sweep_result.json"
 
 SWEEP_FIELDS = [
@@ -279,8 +281,10 @@ def run_threshold_sweep(config: BettiSweepConfig, output_dir: Path) -> dict[str,
     sweep, sweep_summary = sweep_rows(config)
     nulls, null_summary = null_rows(config, sweep_summary)
     labels = [
-        "BETTI_THRESHOLD_SWEEP_AVAILABLE",
-        "BETTI_NULL_ENSEMBLE_AVAILABLE",
+        "BETTI_THRESHOLD_SWEEP_BUILT",
+        "BETTI_NULL_ENSEMBLE_BUILT",
+        "BETTI_ROBUSTNESS_OPEN",
+        "FALSE_POSITIVE_RATE_REPORTED",
         "LEAN_THEOREM_NOT_INCLUDED",
         "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
         "CLAIM_GATED_TOPOLOGICAL_DIAGNOSTIC",
@@ -306,8 +310,10 @@ def run_threshold_sweep(config: BettiSweepConfig, output_dir: Path) -> dict[str,
 
     write_csv(output_dir / SWEEP_CSV_PATH.name, sweep, SWEEP_FIELDS)
     write_csv(output_dir / NULL_CSV_PATH.name, nulls, NULL_FIELDS)
+    write_csv(output_dir / NULL_RESULTS_CSV_PATH.name, nulls, NULL_FIELDS)
     write_json(output_dir / RESULT_PATH.name, result)
     write_report(output_dir / REPORT_PATH.name, result)
+    write_null_report(output_dir / NULL_REPORT_PATH.name, result)
     return result
 
 
@@ -343,6 +349,33 @@ def write_report(path: Path, result: dict[str, Any]) -> None:
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def write_null_report(path: Path, result: dict[str, Any]) -> None:
+    nulls = result["null_summary"]
+    lines = [
+        "# Betti Null-Ensemble Report",
+        "",
+        "## Status",
+        "",
+        f"- Result: `{result['status']}`",
+        f"- Classification: `{result['classification']}`",
+        f"- Result hash: `{result['result_hash']}`",
+        f"- null seeds: `{nulls['null_seed_count']}`",
+        f"- false-positive count: `{nulls['false_positive_count']}`",
+        f"- false-positive rate: `{nulls['false_positive_rate']:.6f}`",
+        "",
+        "## Definition",
+        "",
+        nulls["false_positive_definition"],
+        "",
+        "## Boundary",
+        "",
+        "This null ensemble estimates how often deterministic support impostors reproduce the reference Betti_0 and nearby edge count.",
+        "It is not a Moonshine proof, Lean theorem, or physical bridge.",
+        "",
+    ]
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
 def parse_and_run() -> None:
     args = parse_args()
     result = run_threshold_sweep(BettiSweepConfig(), args.output_dir)
@@ -351,4 +384,3 @@ def parse_and_run() -> None:
 
 if __name__ == "__main__":
     parse_and_run()
-

@@ -17,7 +17,8 @@ Its result hash is `betti_component_1454dd195fe727984643d0dc`.
 The local robustness sweep is:
 
 ```bash
-uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/threshold_sweep_betti_stability.py
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_betti_threshold_sweep.py
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_betti_null_ensemble.py
 ```
 
 It reports:
