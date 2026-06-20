@@ -1,0 +1,135 @@
+{
+  "bridge_id": "formal_lean_targets_v0_1",
+  "claim_ceiling": "Lean target scaffold only; no local Lean proof, Moonshine proof, or physical bridge claim.",
+  "classification": "FORMAL_TARGET_SCAFFOLD_ONLY",
+  "config": {
+    "claim_ceiling": "FORMAL_TARGET_SCAFFOLD_ONLY",
+    "lean_check_run": false,
+    "lean_project_present": false,
+    "version": "formal-lean-targets-v0.1"
+  },
+  "executable_evidence": {
+    "betti_vector_result_hash": "betti_vector_1d5373fa671fd513fe2d5ac0",
+    "reference_signature": {
+      "Betti_0": 4,
+      "Betti_1": 22,
+      "edges": 33,
+      "nodes": 15
+    },
+    "stable_condition_betti_vector_distance": {
+      "d4_reflect_real": 0,
+      "d4_rotate_90": 0,
+      "isomorphism_relabel": 0,
+      "known_positive": 0
+    },
+    "stable_condition_edge_distance": {
+      "d4_reflect_real": 0.0,
+      "d4_rotate_90": 0.0,
+      "isomorphism_relabel": 0.0,
+      "known_positive": 0.0
+    },
+    "stable_condition_status": {
+      "d4_reflect_real": "PASS",
+      "d4_rotate_90": "PASS",
+      "isomorphism_relabel": "PASS",
+      "known_positive": "PASS"
+    }
+  },
+  "labels": [
+    "LEAN_TARGET_SCAFFOLD_BUILT",
+    "GRAPH_ISO_COMPONENT_COUNT_TARGET_DECLARED",
+    "D4_COMPONENT_COUNT_TARGET_DECLARED",
+    "BETTI_VECTOR_INVARIANCE_TARGET_DECLARED",
+    "LOCAL_LEAN_PROJECT_NOT_PRESENT",
+    "LEAN_CHECK_NOT_RUN",
+    "LEAN_THEOREM_NOT_INCLUDED",
+    "MOONSHINE_PROOF_NOT_ESTABLISHED",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "CLAIM_GATED_FORMAL_TARGET_ONLY"
+  ],
+  "non_claims": [
+    "not Lean-certified",
+    "not a checked theorem inside this repository",
+    "not a Moonshine proof",
+    "not a Monster action",
+    "not a physical bridge"
+  ],
+  "required_definitions": [
+    {
+      "local_lean_status": "MISSING",
+      "name": "GaussianPrimeNode",
+      "purpose": "arithmetic graph vertex carrying prime and Gaussian representative coordinates",
+      "python_source": "run_betti_component_count.py:base_nodes"
+    },
+    {
+      "local_lean_status": "MISSING",
+      "name": "RelationGraph",
+      "purpose": "finite undirected graph over declared Gaussian-prime representatives",
+      "python_source": "run_betti_component_count.py:relation_edges"
+    },
+    {
+      "local_lean_status": "MISSING",
+      "name": "D4Action",
+      "purpose": "square-lattice rotation/reflection action on Gaussian-prime coordinates",
+      "python_source": "run_betti_component_count.py:transform_nodes"
+    },
+    {
+      "local_lean_status": "MISSING",
+      "name": "edgeRelation",
+      "purpose": "Euclidean threshold relation used to build the graph",
+      "python_source": "run_betti_component_count.py:relation_edges"
+    },
+    {
+      "local_lean_status": "MISSING",
+      "name": "componentCount",
+      "purpose": "finite graph connected-component count",
+      "python_source": "run_betti_component_count.py:component_count"
+    },
+    {
+      "local_lean_status": "MISSING",
+      "name": "bettiOne",
+      "purpose": "finite graph cycle count E - V + componentCount",
+      "python_source": "run_betti_vector.py:betti_signature"
+    }
+  ],
+  "result_hash": "formal_lean_targets_ebc40a27ab6bd9db12cc27d5",
+  "status": "OPEN",
+  "theorem_ladder": [
+    {
+      "id": "L1",
+      "name": "finite_graph_component_count_exists",
+      "status": "TARGET_ONLY_NOT_LEAN_CHECKED",
+      "target_statement": "componentCount is defined for every finite RelationGraph"
+    },
+    {
+      "id": "L2",
+      "name": "graph_iso_preserves_component_count",
+      "status": "TARGET_ONLY_NOT_LEAN_CHECKED",
+      "target_statement": "graph isomorphism preserves componentCount"
+    },
+    {
+      "id": "L3",
+      "name": "d4_action_induces_graph_iso",
+      "status": "TARGET_ONLY_NOT_LEAN_CHECKED",
+      "target_statement": "D4Action induces graph isomorphism under the Euclidean threshold edgeRelation"
+    },
+    {
+      "id": "L4",
+      "name": "d4_preserves_component_count",
+      "status": "TARGET_ONLY_NOT_LEAN_CHECKED",
+      "target_statement": "componentCount (applyD4 s g) = componentCount g"
+    },
+    {
+      "id": "L5",
+      "name": "graph_iso_preserves_betti_one",
+      "status": "TARGET_ONLY_NOT_LEAN_CHECKED",
+      "target_statement": "graph isomorphism preserves bettiOne"
+    },
+    {
+      "id": "L6",
+      "name": "d4_preserves_betti_vector",
+      "status": "TARGET_ONLY_NOT_LEAN_CHECKED",
+      "target_statement": "D4Action preserves [Betti_0, Betti_1]"
+    }
+  ]
+}

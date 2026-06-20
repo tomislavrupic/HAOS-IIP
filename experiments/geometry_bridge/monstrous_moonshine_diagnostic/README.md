@@ -132,6 +132,33 @@ Current bridge result:
   `MOONSHINE_BETTI_MECHANISM_NOT_ESTABLISHED`, and
   `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
 
+## Formal Lean Targets
+
+The local formal target scaffold is available as:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_formal_lean_targets.py
+```
+
+Generated outputs:
+
+- `formal_lean_targets_manifest.json`
+- `formal_lean_targets_report.md`
+- `lean_graph_invariance_targets.lean`
+
+Current formal target result:
+
+- status: `OPEN`
+- classification: `FORMAL_TARGET_SCAFFOLD_ONLY`
+- local Lean project: `not present`
+- Lean check: `not run`
+- first target after definitions: `graph_iso_preserves_component_count`
+- D4 target: `d4_preserves_component_count`
+- Betti-vector target: `d4_preserves_betti_vector`
+- result hash: `formal_lean_targets_ebc40a27ab6bd9db12cc27d5`
+- labels include `LEAN_TARGET_SCAFFOLD_BUILT`, `LEAN_THEOREM_NOT_INCLUDED`,
+  and `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
+
 ## Visual Sidecar
 
 An external animated SVG visualization is stored under:
