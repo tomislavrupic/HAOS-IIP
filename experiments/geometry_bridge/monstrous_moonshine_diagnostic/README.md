@@ -57,6 +57,27 @@ Current reference result:
 - labels include `BETTI_CONTROLS_PASS`, `LEAN_THEOREM_NOT_INCLUDED`,
   and `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
 
+Threshold sensitivity is checked by:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/threshold_sweep_betti_stability.py
+```
+
+Generated outputs:
+
+- `betti_threshold_sweep.csv`
+- `betti_null_ensemble.csv`
+- `betti_threshold_sweep_report.md`
+- `betti_threshold_sweep_result.json`
+
+Current sweep result:
+
+- `Betti_0` stability band: `[8.0, 11.5]`
+- exact edge-signature band: `[8.0, 8.5]`
+- edge-neighborhood band: `[8.0, 10.0]`
+- null false-positive rate: `0.110000`
+- result hash: `betti_sweep_8a3f5b7b3acaa8ea3a42a9a8`
+
 ## Visual Sidecar
 
 An external animated SVG visualization is stored under:

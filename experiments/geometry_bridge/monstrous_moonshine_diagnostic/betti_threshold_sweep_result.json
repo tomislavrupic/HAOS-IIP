@@ -1,0 +1,80 @@
+{
+  "bridge_id": "betti_threshold_sweep_v0_1",
+  "claim_ceiling": "Threshold robustness hardening only; no Moonshine proof, local Lean theorem, or physical bridge claim.",
+  "classification": "TOPOLOGICAL_DIAGNOSTIC_SIDECAR",
+  "config": {
+    "edge_count_tolerance": 2,
+    "null_max_replacements": 7,
+    "null_min_replacements": 1,
+    "null_seed_count": 100,
+    "reference_threshold": 8.0,
+    "threshold_max": 12.0,
+    "threshold_min": 2.0,
+    "threshold_step": 0.5,
+    "version": "betti-threshold-sweep-v0.1"
+  },
+  "labels": [
+    "BETTI_THRESHOLD_SWEEP_AVAILABLE",
+    "BETTI_NULL_ENSEMBLE_AVAILABLE",
+    "LEAN_THEOREM_NOT_INCLUDED",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "CLAIM_GATED_TOPOLOGICAL_DIAGNOSTIC",
+    "BETTI0_ROBUSTNESS_BAND_DETECTED",
+    "NULL_FALSE_POSITIVES_DETECTED"
+  ],
+  "null_summary": {
+    "false_positive_count": 11,
+    "false_positive_definition": "component_count equals reference Betti_0 and edge_count is within the configured edge-count tolerance",
+    "false_positive_rate": 0.11,
+    "nonsupersingular_prime_pool": [
+      37,
+      43,
+      53,
+      61,
+      67,
+      73,
+      79
+    ],
+    "null_seed_count": 100
+  },
+  "result_hash": "betti_sweep_8a3f5b7b3acaa8ea3a42a9a8",
+  "status": "PASS",
+  "sweep_summary": {
+    "betti0_stability_band": [
+      8.0,
+      11.5
+    ],
+    "betti0_stable_thresholds": [
+      8.0,
+      8.5,
+      9.0,
+      9.5,
+      10.0,
+      10.5,
+      11.0,
+      11.5
+    ],
+    "edge_exact_band": [
+      8.0,
+      8.5
+    ],
+    "edge_exact_thresholds": [
+      8.0,
+      8.5
+    ],
+    "edge_neighborhood_band": [
+      8.0,
+      10.0
+    ],
+    "edge_neighborhood_thresholds": [
+      8.0,
+      8.5,
+      9.0,
+      9.5,
+      10.0
+    ],
+    "reference_betti0": 4,
+    "reference_edge_count": 33,
+    "reference_threshold": 8.0
+  }
+}

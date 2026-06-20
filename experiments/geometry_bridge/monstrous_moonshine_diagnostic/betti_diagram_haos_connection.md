@@ -14,6 +14,19 @@ uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_bet
 The current declared relation graph has `Betti_0 = 4` and `33` relation edges.
 Its result hash is `betti_component_1454dd195fe727984643d0dc`.
 
+The local robustness sweep is:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/threshold_sweep_betti_stability.py
+```
+
+It reports:
+
+- `Betti_0` stability band: `[8.0, 11.5]`
+- exact edge-signature band: `[8.0, 8.5]`
+- edge-neighborhood band: `[8.0, 10.0]`
+- deterministic null false-positive rate: `0.110000`
+
 The stored SVG references a Lean-certified Betti diagram. HAOS-IIP does not
 upgrade that claim unless the Lean source is added to the repository and checked
 locally.
