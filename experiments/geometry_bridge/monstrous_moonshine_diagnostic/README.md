@@ -39,6 +39,10 @@ An external animated SVG visualization is stored under:
 - `visuals/anim_supersingular_betti.svg`
 - `visuals/visual_source_manifest.json`
 
+The HAOS-IIP interpretation is documented in:
+
+- `betti_diagram_haos_connection.md`
+
 This visual sidecar is review material only. Its source text references a
 Lean-certified Betti diagram, but this repository does not independently check
 that Lean proof unless the proof source is added and run locally. The executable
