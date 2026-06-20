@@ -1,0 +1,16 @@
+node_id,prime,x,y,gaussian_class
+0,2,1,1,ramified
+1,3,3,0,inert
+2,5,1,2,split
+3,7,7,0,inert
+4,11,11,0,inert
+5,13,2,3,split
+6,17,1,4,split
+7,19,19,0,inert
+8,23,23,0,inert
+9,29,2,5,split
+10,31,31,0,inert
+11,41,4,5,split
+12,47,47,0,inert
+13,59,59,0,inert
+14,71,71,0,inert

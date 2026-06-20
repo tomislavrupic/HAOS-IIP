@@ -5,6 +5,15 @@
 `GEO-MM-01` treats the Betti diagram as an arithmetic/topological diagnostic
 sidecar, not as a proof of Monstrous Moonshine and not as a physical bridge.
 
+The executable local sidecar is:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_betti_component_count.py
+```
+
+The current declared relation graph has `Betti_0 = 4` and `33` relation edges.
+Its result hash is `betti_component_1454dd195fe727984643d0dc`.
+
 The stored SVG references a Lean-certified Betti diagram. HAOS-IIP does not
 upgrade that claim unless the Lean source is added to the repository and checked
 locally.
@@ -19,7 +28,8 @@ or related algebraic object. In the simplest graph-level case:
   topological features when the chosen complex supports them.
 
 For this sidecar, the immediate HAOS-compatible target is `Betti_0`, because it
-has a direct graph interpretation: component count.
+has a direct graph interpretation: component count. That target is now
+implemented locally by `run_betti_component_count.py`.
 
 ## HAOS-IIP Interpretation
 
@@ -66,7 +76,41 @@ structure survives allowed interaction
 -> closure signature remains stable
 ```
 
-## First Lean Target
+## Current Executable Target
+
+The local executable target is:
+
+```text
+declared Gaussian-prime representative graph
+-> D4 / relabel perturbation
+-> same component count and edge signature
+```
+
+Current stable controls:
+
+- `d4_rotate_90`
+- `d4_reflect_real`
+- `isomorphism_relabel`
+
+Current destructive controls:
+
+- `threshold_mutation_control`
+- `topology_destroyed_control`
+- `support_replacement_control`
+
+Current output:
+
+```text
+known_positive: Betti_0 = 4
+d4_rotate_90: Betti_0 = 4
+d4_reflect_real: Betti_0 = 4
+isomorphism_relabel: Betti_0 = 4
+threshold_mutation_control: Betti_0 = 6
+topology_destroyed_control: Betti_0 = 2
+support_replacement_control: Betti_0 = 3
+```
+
+## Future Lean Target
 
 The cleanest theorem target is not a full cochain-Laplacian result. It is the
 graph-native component-count statement:
@@ -127,7 +171,8 @@ telemetry:
 - low j-coefficient decomposition witnesses,
 - Gaussian-prime residue classes.
 
-The Betti SVG extends this as a visual/topological sidecar:
+The Betti component-count sidecar extends this as a local topological
+diagnostic:
 
 ```text
 arithmetic support telemetry
@@ -136,8 +181,8 @@ arithmetic support telemetry
 -> symmetry-recoverability reading
 ```
 
-That is a natural HAOS-IIP bridge because it turns arithmetic structure into a
-recoverable topological signature.
+The SVG remains a visual companion. The local executable authority for Betti_0
+is `run_betti_component_count.py`.
 
 ## Boundary
 
@@ -153,4 +198,3 @@ This note does not claim:
 It only states that Betti diagrams are a good HAOS-IIP diagnostic language for
 testing whether an arithmetic constellation preserves topological structure
 under declared perturbations.
-

@@ -32,6 +32,31 @@ uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_mon
 - `monstrous_moonshine_diagnostic_report.md`
 - `monstrous_moonshine_diagnostic_result.json`
 
+## Betti_0 Sidecar
+
+The local Betti_0 / component-count diagnostic is available as:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_betti_component_count.py
+```
+
+Generated outputs:
+
+- `betti_relation_graph_spec.json`
+- `betti_relation_graph_nodes.csv`
+- `betti_relation_graph_edges.csv`
+- `betti_control_results.csv`
+- `betti_component_count_report.md`
+- `betti_component_count_result.json`
+
+Current reference result:
+
+- `Betti_0`: `4`
+- relation edges: `33`
+- result hash: `betti_component_1454dd195fe727984643d0dc`
+- labels include `BETTI_CONTROLS_PASS`, `LEAN_THEOREM_NOT_INCLUDED`,
+  and `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
+
 ## Visual Sidecar
 
 An external animated SVG visualization is stored under:
@@ -46,7 +71,8 @@ The HAOS-IIP interpretation is documented in:
 This visual sidecar is review material only. Its source text references a
 Lean-certified Betti diagram, but this repository does not independently check
 that Lean proof unless the proof source is added and run locally. The executable
-authority for this folder remains `run_monstrous_moonshine_diagnostic.py`.
+authority for this folder remains `run_monstrous_moonshine_diagnostic.py` and
+`run_betti_component_count.py`.
 
 ## Controls
 
