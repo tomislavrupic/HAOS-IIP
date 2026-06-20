@@ -1,0 +1,6 @@
+condition,expected_response,shell_distance,spectral_distance,norm_lift_distance,cochain_distance,observed_status
+known_positive,all component distances are zero,0,0,0,0,PASS
+rotation_invariance_control,Gaussian-prime and norm-lift telemetry remains invariant under lattice rotation,0,0,0,0,PASS
+class_shuffle_control,prime-shell semantic alignment degrades while graph geometry is mostly preserved,0.267642745626,0,0,0,PASS
+norm_shuffle_control,norm-lift and weighted spectral telemetry move under shell mismatch,0.21814440775,0.831782627542,3.46332341615,8.96469150985,PASS
+topology_destroyed_control,spectral and cochain telemetry move under lattice-neighborhood destruction,0,0.580793153406,3.62885518896,9.17916436035,PASS

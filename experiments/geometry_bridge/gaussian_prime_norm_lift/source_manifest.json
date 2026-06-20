@@ -1,0 +1,12 @@
+{
+  "code": "experiments/geometry_bridge/gaussian_prime_norm_lift/run_gaussian_prime_norm_lift.py",
+  "external_data": "none",
+  "mathematical_objects": [
+    "Gaussian integers Z[i]",
+    "norm N(a+bi)=a^2+b^2",
+    "Gaussian-prime ramified/inert/split classification",
+    "weighted grid graph Laplacian"
+  ],
+  "monster_data": "not included in v0.1; future visualization hook only",
+  "source": "Gaussian integer lattice synthetic arithmetic geometry sidecar"
+}

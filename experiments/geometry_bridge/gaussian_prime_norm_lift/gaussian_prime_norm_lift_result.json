@@ -1,0 +1,304 @@
+{
+  "bridge_id": "gaussian_prime_norm_lift_v0_1",
+  "claim_ceiling": "No physics or Monster claim; arithmetic geometry calibration only.",
+  "classification": "SYNTHETIC_ARITHMETIC_GEOMETRY_CALIBRATION",
+  "condition_results": {
+    "class_shuffle_control": {
+      "components": {
+        "cochain": {
+          "divergence_abs_mean": 6.228373702422146,
+          "divergence_l2": 0.45564509955381377,
+          "edge_flow_abs_mean": 8.0,
+          "edge_flow_abs_std": 4.58257569495584
+        },
+        "norm_lift": {
+          "edge_norm_gradient_mean": 8.0,
+          "edge_norm_gradient_std": 4.58257569495584,
+          "finite_origin_reachability": 1.0,
+          "origin_graph_radial_correlation": 0.9739951282011003
+        },
+        "shell": {
+          "class_counts": [
+            1,
+            4,
+            4,
+            8,
+            88,
+            184
+          ],
+          "distinct_prime_shells": 41,
+          "prime_count": 100,
+          "prime_shell_alignment": 0.29,
+          "prime_shell_entropy": 5.159819909835647
+        },
+        "spectral": {
+          "eigenvalues": [
+            -1.5748750169607188e-16,
+            0.011053970298691254,
+            0.011053970298691871,
+            0.02129520867838333,
+            0.02129520867838594,
+            0.039710143502462505,
+            0.05444659099406765,
+            0.054446590994068934,
+            0.05733593308879347,
+            0.05733593308879548,
+            0.06769415151144545,
+            0.0771764648857741
+          ],
+          "low_mode_sum": 0.4728441660195598,
+          "spectral_gap": 0.011053970298691412,
+          "zero_mode_count": 1
+        }
+      },
+      "distances": {
+        "cochain": 0.0,
+        "norm_lift": 0.0,
+        "shell": 0.2676427456255012,
+        "spectral": 0.0
+      },
+      "expected_response": "prime-shell semantic alignment degrades while graph geometry is mostly preserved",
+      "observed_status": "PASS"
+    },
+    "known_positive": {
+      "components": {
+        "cochain": {
+          "divergence_abs_mean": 6.228373702422146,
+          "divergence_l2": 0.45564509955381377,
+          "edge_flow_abs_mean": 8.0,
+          "edge_flow_abs_std": 4.58257569495584
+        },
+        "norm_lift": {
+          "edge_norm_gradient_mean": 8.0,
+          "edge_norm_gradient_std": 4.58257569495584,
+          "finite_origin_reachability": 1.0,
+          "origin_graph_radial_correlation": 0.9739951282011003
+        },
+        "shell": {
+          "class_counts": [
+            1,
+            4,
+            4,
+            8,
+            88,
+            184
+          ],
+          "distinct_prime_shells": 14,
+          "prime_count": 100,
+          "prime_shell_alignment": 1.0,
+          "prime_shell_entropy": 3.7638561897747245
+        },
+        "spectral": {
+          "eigenvalues": [
+            -1.5748750169607188e-16,
+            0.011053970298691254,
+            0.011053970298691871,
+            0.02129520867838333,
+            0.02129520867838594,
+            0.039710143502462505,
+            0.05444659099406765,
+            0.054446590994068934,
+            0.05733593308879347,
+            0.05733593308879548,
+            0.06769415151144545,
+            0.0771764648857741
+          ],
+          "low_mode_sum": 0.4728441660195598,
+          "spectral_gap": 0.011053970298691412,
+          "zero_mode_count": 1
+        }
+      },
+      "distances": {
+        "cochain": 0.0,
+        "norm_lift": 0.0,
+        "shell": 0.0,
+        "spectral": 0.0
+      },
+      "expected_response": "all component distances are zero",
+      "observed_status": "PASS"
+    },
+    "norm_shuffle_control": {
+      "components": {
+        "cochain": {
+          "divergence_abs_mean": 100.44290657439447,
+          "divergence_l2": 7.330585187885664,
+          "edge_flow_abs_mean": 33.14154411764706,
+          "edge_flow_abs_std": 24.821795047506285
+        },
+        "norm_lift": {
+          "edge_norm_gradient_mean": 33.14154411764706,
+          "edge_norm_gradient_std": 24.821795047506285,
+          "finite_origin_reachability": 1.0,
+          "origin_graph_radial_correlation": -0.11780366972419042
+        },
+        "shell": {
+          "class_counts": [
+            1,
+            4,
+            4,
+            8,
+            88,
+            184
+          ],
+          "distinct_prime_shells": 36,
+          "prime_count": 100,
+          "prime_shell_alignment": 0.37,
+          "prime_shell_entropy": 4.997431600260371
+        },
+        "spectral": {
+          "eigenvalues": [
+            -1.1898316236330801e-15,
+            0.003359399144494662,
+            0.00451600382431571,
+            0.008722965031749734,
+            0.013280955305107716,
+            0.014636429281881051,
+            0.017808370574200948,
+            0.0196876031520455,
+            0.02333183401540822,
+            0.028180214374144762,
+            0.03038463146607638,
+            0.03402152994832087
+          ],
+          "low_mode_sum": 0.19792993611774434,
+          "spectral_gap": 0.003359399144495852,
+          "zero_mode_count": 1
+        }
+      },
+      "distances": {
+        "cochain": 8.964691509846656,
+        "norm_lift": 3.4633234161526407,
+        "shell": 0.21814440775047103,
+        "spectral": 0.8317826275419328
+      },
+      "expected_response": "norm-lift and weighted spectral telemetry move under shell mismatch",
+      "observed_status": "PASS"
+    },
+    "rotation_invariance_control": {
+      "components": {
+        "cochain": {
+          "divergence_abs_mean": 6.228373702422146,
+          "divergence_l2": 0.45564509955381377,
+          "edge_flow_abs_mean": 8.0,
+          "edge_flow_abs_std": 4.58257569495584
+        },
+        "norm_lift": {
+          "edge_norm_gradient_mean": 8.0,
+          "edge_norm_gradient_std": 4.58257569495584,
+          "finite_origin_reachability": 1.0,
+          "origin_graph_radial_correlation": 0.9739951282011003
+        },
+        "shell": {
+          "class_counts": [
+            1,
+            4,
+            4,
+            8,
+            88,
+            184
+          ],
+          "distinct_prime_shells": 14,
+          "prime_count": 100,
+          "prime_shell_alignment": 1.0,
+          "prime_shell_entropy": 3.7638561897747245
+        },
+        "spectral": {
+          "eigenvalues": [
+            -1.5748750169607188e-16,
+            0.011053970298691254,
+            0.011053970298691871,
+            0.02129520867838333,
+            0.02129520867838594,
+            0.039710143502462505,
+            0.05444659099406765,
+            0.054446590994068934,
+            0.05733593308879347,
+            0.05733593308879548,
+            0.06769415151144545,
+            0.0771764648857741
+          ],
+          "low_mode_sum": 0.4728441660195598,
+          "spectral_gap": 0.011053970298691412,
+          "zero_mode_count": 1
+        }
+      },
+      "distances": {
+        "cochain": 0.0,
+        "norm_lift": 0.0,
+        "shell": 0.0,
+        "spectral": 0.0
+      },
+      "expected_response": "Gaussian-prime and norm-lift telemetry remains invariant under lattice rotation",
+      "observed_status": "PASS"
+    },
+    "topology_destroyed_control": {
+      "components": {
+        "cochain": {
+          "divergence_abs_mean": 102.38062283737024,
+          "divergence_l2": 8.112804863830243,
+          "edge_flow_abs_mean": 35.325367647058826,
+          "edge_flow_abs_std": 24.51580409858363
+        },
+        "norm_lift": {
+          "edge_norm_gradient_mean": 35.325367647058826,
+          "edge_norm_gradient_std": 24.51580409858363,
+          "finite_origin_reachability": 0.9792387543252595,
+          "origin_graph_radial_correlation": -0.016760198799660855
+        },
+        "shell": {
+          "class_counts": [
+            1,
+            4,
+            4,
+            8,
+            88,
+            184
+          ],
+          "distinct_prime_shells": 14,
+          "prime_count": 100,
+          "prime_shell_alignment": 1.0,
+          "prime_shell_entropy": 3.7638561897747245
+        },
+        "spectral": {
+          "eigenvalues": [
+            -2.4424906541753444e-15,
+            0.04105057466056819,
+            0.043017132924768955,
+            0.044782185756779565,
+            0.04601270672955383,
+            0.0560988917998669,
+            0.060808625700061965,
+            0.06472006553160274,
+            0.06780924015005328,
+            0.07363974433649545,
+            0.0828116896288331,
+            0.08637038634141865
+          ],
+          "low_mode_sum": 0.6671212435600002,
+          "spectral_gap": 0.04105057466057063,
+          "zero_mode_count": 1
+        }
+      },
+      "distances": {
+        "cochain": 9.179164360348832,
+        "norm_lift": 3.6288551889573437,
+        "shell": 0.0,
+        "spectral": 0.5807931534056161
+      },
+      "expected_response": "spectral and cochain telemetry move under lattice-neighborhood destruction",
+      "observed_status": "PASS"
+    }
+  },
+  "labels": [
+    "GAUSSIAN_PRIME_NORM_LIFT_BUILT",
+    "ARITHMETIC_GEOMETRY_TELEMETRY_AVAILABLE",
+    "SPECTRAL_TELEMETRY_AVAILABLE",
+    "COCHAIN_FLOW_TELEMETRY_AVAILABLE",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "MONSTER_MOONSHINE_NOT_TESTED",
+    "CLAIM_GATED_SYNTHETIC_CALIBRATION",
+    "COMPONENT_CONTROLS_PASS"
+  ],
+  "result_hash": "gaussian_norm_lift_efef774c5a288271a79706b7",
+  "status": "PASS"
+}

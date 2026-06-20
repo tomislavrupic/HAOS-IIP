@@ -1,0 +1,50 @@
+{
+  "claim_ceiling": "SYNTHETIC_ARITHMETIC_GEOMETRY_CALIBRATION",
+  "components": [
+    "gaussian_prime_shells",
+    "weighted_laplacian_spectrum",
+    "norm_lift_graph_telemetry",
+    "cochain_edge_flow_telemetry"
+  ],
+  "conditions": {
+    "class_shuffle_control": "prime-shell semantic alignment degrades while graph geometry is mostly preserved",
+    "known_positive": "all component distances are zero",
+    "norm_shuffle_control": "norm-lift and weighted spectral telemetry move under shell mismatch",
+    "rotation_invariance_control": "Gaussian-prime and norm-lift telemetry remains invariant under lattice rotation",
+    "topology_destroyed_control": "spectral and cochain telemetry move under lattice-neighborhood destruction"
+  },
+  "name": "Gaussian Prime Norm-Lift Geometry v0.1",
+  "non_claims": [
+    "not a physical bridge",
+    "not Monster moonshine",
+    "not a continuum limit",
+    "not a quantum, gravity, or field-theory derivation",
+    "not empirical validation",
+    "not a change to frozen HAOS-IIP phases"
+  ],
+  "purpose": "Test whether discrete arithmetic invariants form stable norm-lift and spectral telemetry under matched controls.",
+  "source_artifacts": {
+    "code": "experiments/geometry_bridge/gaussian_prime_norm_lift/run_gaussian_prime_norm_lift.py",
+    "external_data": "none",
+    "mathematical_objects": [
+      "Gaussian integers Z[i]",
+      "norm N(a+bi)=a^2+b^2",
+      "Gaussian-prime ramified/inert/split classification",
+      "weighted grid graph Laplacian"
+    ],
+    "monster_data": "not included in v0.1; future visualization hook only",
+    "source": "Gaussian integer lattice synthetic arithmetic geometry sidecar"
+  },
+  "status": "PRECOMMITTED_ARITHMETIC_GEOMETRY_CALIBRATION",
+  "thresholds": {
+    "class_shuffle_shell_min": 0.2,
+    "eigenvalue_count": 12,
+    "invariance_max": 1e-09,
+    "norm_shuffle_lift_min": 0.1,
+    "norm_shuffle_spectral_min": 0.02,
+    "radius": 8,
+    "topology_cochain_min": 0.05,
+    "topology_spectral_min": 0.05,
+    "version": "gaussian-prime-norm-lift-v0.1"
+  }
+}

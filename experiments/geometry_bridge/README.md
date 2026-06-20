@@ -11,6 +11,7 @@ questions:
 6. hidden synthetic geometry recovery
 7. hidden synthetic transformation recovery
 8. hidden synthetic probability-rule recovery
+9. Gaussian-prime norm-lift arithmetic geometry
 
 The chain is intentionally bounded. It is not a Bell experiment and it does
 not claim a physical mechanism.
@@ -89,6 +90,21 @@ not claim a physical mechanism.
   `TRANSFORMATION_RECOVERY_BOUNDARY_OPEN` remains the correct terminal reading
 - summary note: [spectral_diagnostics_summary.md](./spectral_diagnostics_summary.md)
 
+### GEO-GP-01 - Gaussian-prime norm-lift geometry
+
+- path: `gaussian_prime_norm_lift/`
+- purpose: test whether Gaussian-prime ramified / inert / split classes and
+  the norm lift `N(a + bi) = a^2 + b^2` produce stable shell, spectral,
+  norm-lift, and cochain-flow telemetry under matched controls
+- current state: valid synthetic arithmetic calibration
+- useful signal: rotation/self controls remain invariant; class shuffling
+  degrades prime-shell semantics; norm shuffling moves norm-lift and weighted
+  spectral telemetry; topology destruction moves spectral and cochain telemetry
+- report: [gaussian_prime_norm_lift_report.md](./gaussian_prime_norm_lift/gaussian_prime_norm_lift_report.md)
+- terminal reading: `GAUSSIAN_PRIME_NORM_LIFT_BUILT`,
+  `COMPONENT_CONTROLS_PASS`, `PHYSICAL_BRIDGE_NOT_ESTABLISHED`,
+  `MONSTER_MOONSHINE_NOT_TESTED`
+
 ### GEO-T1-01 - Synthetic hidden transformation recovery
 
 - path: `synthetic_hidden_transformation_recovery/`
@@ -146,6 +162,7 @@ mechanism.
 | GEO-03 | `open` | `PROBABILITY_RULE_OPEN`, `MIXED_OPEN` | The frozen rule beats the null probabilistically, but not enough for closure. |
 | GEO-04 | `valid` | `OBSERVABLE_PREDICTION_VALID` | Observable prediction clears holdout class accuracy and pairwise ordering against null. |
 | GEO-HIDDEN-01 | `open` | `BENCHMARK_OPEN`, `TRANSFORMATION_RECOVERY_BOUNDARY_OPEN`, `TRANSFORMATION_CLASS_NOT_ROBUST_ON_HOLDOUT` | Distance, orientation, and held-out relations recover well; transformation recovery remains the weak point. |
+| GEO-GP-01 | `valid synthetic arithmetic calibration` | `GAUSSIAN_PRIME_NORM_LIFT_BUILT`, `COMPONENT_CONTROLS_PASS`, `PHYSICAL_BRIDGE_NOT_ESTABLISHED` | Gaussian-prime shell semantics, norm-lift spectral telemetry, and cochain-flow diagnostics respond to matched arithmetic controls. |
 | GEO-T1-01 | `valid` | `BENCHMARK_VALID` | Hidden transformation algebra recovers identity, inverse, composition closure, orbits, stabilizers, equivalence classes, holdout compositions, and refinement persistence. |
 | GEO-P1-01 | `valid` | `PROBABILITY_RULE_VALID` | Hidden Bernoulli-law recovery passes calibration, holdout transfer, and null rejection. |
 
