@@ -103,6 +103,35 @@ Current sweep result:
 - null false-positive rate: `0.110000`
 - result hash: `betti_sweep_6d8f185a0d3a8ad5130832c4`
 
+## Moonshine-Betti Shared-Support Bridge
+
+The bounded bridge manifest is available as:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_moonshine_betti_bridge.py
+```
+
+Generated outputs:
+
+- `moonshine_betti_bridge_manifest.json`
+- `moonshine_betti_bridge_covariance.csv`
+- `moonshine_betti_bridge_report.md`
+- `moonshine_betti_bridge_result.json`
+
+Current bridge result:
+
+- bridge type: `shared-support diagnostic coupling`
+- useful phrase: `shared-support perturbation covariance`
+- dangerous phrase: `Moonshine-Betti mechanism`
+- shared-support replacement moves both channels:
+  - Moonshine total distance: `0.522389629805`
+  - Betti vector distance: `7`
+  - Betti edge distance: `0.175`
+- result hash: `moonshine_betti_bridge_a7d2b62c0c8be6d8c6b757e9`
+- labels include `SHARED_SUPPORT_COVARIANCE_PASS`,
+  `MOONSHINE_BETTI_MECHANISM_NOT_ESTABLISHED`, and
+  `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
+
 ## Visual Sidecar
 
 An external animated SVG visualization is stored under:

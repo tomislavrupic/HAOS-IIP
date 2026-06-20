@@ -1,0 +1,109 @@
+{
+  "bridge_id": "moonshine_betti_bridge_v0_1",
+  "claim_ceiling": "Shared-support perturbation covariance only; no Moonshine-Betti mechanism, Moonshine proof, or physical bridge claim.",
+  "classification": "SHARED_SUPPORT_DIAGNOSTIC_COUPLING",
+  "covariance_rows": [
+    {
+      "betti_condition": "known_positive",
+      "betti_edge_jaccard_distance": "0",
+      "betti_vector_distance": "0",
+      "bridge_case": "self_recovery",
+      "expected_response": "both channels recover with zero distance",
+      "moonshine_condition": "known_positive",
+      "moonshine_decomposition_distance": "0",
+      "moonshine_exponent_distance": "0",
+      "moonshine_gaussian_class_distance": "0",
+      "moonshine_support_distance": "0",
+      "moonshine_total_distance": "0",
+      "observed_status": "PASS"
+    },
+    {
+      "betti_condition": "support_replacement_control",
+      "betti_edge_jaccard_distance": "0.175",
+      "betti_vector_distance": "7",
+      "bridge_case": "shared_support_replacement",
+      "expected_response": "support replacement moves both arithmetic support telemetry and Betti vector or edge signature",
+      "moonshine_condition": "nonsupersingular_prime_control",
+      "moonshine_decomposition_distance": "0.252982212813",
+      "moonshine_exponent_distance": "0.0194074169913",
+      "moonshine_gaussian_class_distance": "0",
+      "moonshine_support_distance": "0.25",
+      "moonshine_total_distance": "0.522389629805",
+      "observed_status": "PASS"
+    }
+  ],
+  "input_hashes": {
+    "betti_vector_result_hash": "betti_vector_1d5373fa671fd513fe2d5ac0",
+    "moonshine_result_hash": "moonshine_diag_3ea77659b5d076fc6c03e4c6"
+  },
+  "labels": [
+    "MOONSHINE_BETTI_BRIDGE_MANIFEST_BUILT",
+    "SHARED_SUPPORT_DIAGNOSTIC_COUPLING_BUILT",
+    "SHARED_SUPPORT_PERTURBATION_COVARIANCE_REPORTED",
+    "MOONSHINE_BETTI_MECHANISM_NOT_ESTABLISHED",
+    "MOONSHINE_PROOF_NOT_ESTABLISHED",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "CLAIM_GATED_SHARED_SUPPORT_DIAGNOSTIC",
+    "SHARED_SUPPORT_COVARIANCE_PASS"
+  ],
+  "manifest": {
+    "allowed_phrase": "shared-support perturbation covariance",
+    "betti_channel": "Gaussian-prime threshold graph topology",
+    "bridge_id": "GEO-MM-BETTI-01",
+    "bridge_type": "shared-support diagnostic coupling",
+    "dangerous_phrase": "Moonshine-Betti mechanism",
+    "failure_conditions": [
+      "self-recovery moves either channel",
+      "shared-support replacement moves only one channel",
+      "report language upgrades shared support into a derivation"
+    ],
+    "matched_perturbations": {
+      "self_recovery": {
+        "betti_condition": "known_positive",
+        "expected_response": "both channels recover with zero distance",
+        "moonshine_condition": "known_positive"
+      },
+      "shared_support_replacement": {
+        "betti_condition": "support_replacement_control",
+        "expected_response": "support replacement moves both arithmetic support telemetry and Betti vector or edge signature",
+        "moonshine_condition": "nonsupersingular_prime_control"
+      }
+    },
+    "moonshine_channel": "arithmetic support diagnostic",
+    "not_claimed": [
+      "Moonshine proof",
+      "Monster action",
+      "Moonshine module construction",
+      "physical bridge",
+      "continuum limit",
+      "quantum claim",
+      "gravity claim"
+    ],
+    "shared_support": "15 supersingular primes",
+    "status": "PRECOMMITTED_SHARED_SUPPORT_DIAGNOSTIC_COUPLING",
+    "thresholds": {
+      "betti_edge_move_min": 0.1,
+      "betti_vector_move_min": 1.0,
+      "invariance_max": 1e-12,
+      "moonshine_move_min": 0.1,
+      "version": "moonshine-betti-bridge-v0.1"
+    },
+    "version": "moonshine-betti-bridge-v0.1"
+  },
+  "result_hash": "moonshine_betti_bridge_a7d2b62c0c8be6d8c6b757e9",
+  "status": "PASS",
+  "unmatched_controls": {
+    "betti_only": [
+      "d4_rotate_90",
+      "d4_reflect_real",
+      "isomorphism_relabel",
+      "threshold_mutation_control",
+      "topology_destroyed_control"
+    ],
+    "moonshine_only": [
+      "exponent_shuffle_control",
+      "decomposition_break_control",
+      "gaussian_class_swap_control"
+    ]
+  }
+}

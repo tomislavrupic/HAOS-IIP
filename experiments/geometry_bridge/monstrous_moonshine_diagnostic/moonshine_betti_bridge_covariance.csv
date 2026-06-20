@@ -1,0 +1,3 @@
+bridge_case,moonshine_condition,betti_condition,moonshine_total_distance,moonshine_support_distance,moonshine_exponent_distance,moonshine_decomposition_distance,moonshine_gaussian_class_distance,betti_vector_distance,betti_edge_jaccard_distance,expected_response,observed_status
+self_recovery,known_positive,known_positive,0,0,0,0,0,0,0,both channels recover with zero distance,PASS
+shared_support_replacement,nonsupersingular_prime_control,support_replacement_control,0.522389629805,0.25,0.0194074169913,0.252982212813,0,7,0.175,support replacement moves both arithmetic support telemetry and Betti vector or edge signature,PASS

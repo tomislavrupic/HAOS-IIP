@@ -48,6 +48,16 @@ It reports:
 - edge-neighborhood band: `[8.0, 10.0]`
 - deterministic null false-positive rate: `0.110000`
 
+The shared-support bridge manifest is:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_moonshine_betti_bridge.py
+```
+
+It reports `shared-support perturbation covariance`, not a
+Moonshine-Betti mechanism. Current result hash:
+`moonshine_betti_bridge_a7d2b62c0c8be6d8c6b757e9`.
+
 The stored SVG references a Lean-certified Betti diagram. HAOS-IIP does not
 upgrade that claim unless the Lean source is added to the repository and checked
 locally.
@@ -231,6 +241,18 @@ arithmetic support telemetry
 -> Betti diagram
 -> symmetry-recoverability reading
 ```
+
+The shared-support bridge manifest adds one more bounded check:
+
+```text
+Moonshine arithmetic support perturbation
++ Betti relation-graph support perturbation
+-> paired response table
+-> shared-support perturbation covariance
+```
+
+This remains local/shared-support coupling. It is not a derivation from one
+channel to the other.
 
 The SVG remains a visual companion. The local executable authority for Betti_0
 is `run_betti_component_count.py`. The local executable authority for the

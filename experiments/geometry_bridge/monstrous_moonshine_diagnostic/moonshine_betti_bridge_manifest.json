@@ -1,0 +1,44 @@
+{
+  "allowed_phrase": "shared-support perturbation covariance",
+  "betti_channel": "Gaussian-prime threshold graph topology",
+  "bridge_id": "GEO-MM-BETTI-01",
+  "bridge_type": "shared-support diagnostic coupling",
+  "dangerous_phrase": "Moonshine-Betti mechanism",
+  "failure_conditions": [
+    "self-recovery moves either channel",
+    "shared-support replacement moves only one channel",
+    "report language upgrades shared support into a derivation"
+  ],
+  "matched_perturbations": {
+    "self_recovery": {
+      "betti_condition": "known_positive",
+      "expected_response": "both channels recover with zero distance",
+      "moonshine_condition": "known_positive"
+    },
+    "shared_support_replacement": {
+      "betti_condition": "support_replacement_control",
+      "expected_response": "support replacement moves both arithmetic support telemetry and Betti vector or edge signature",
+      "moonshine_condition": "nonsupersingular_prime_control"
+    }
+  },
+  "moonshine_channel": "arithmetic support diagnostic",
+  "not_claimed": [
+    "Moonshine proof",
+    "Monster action",
+    "Moonshine module construction",
+    "physical bridge",
+    "continuum limit",
+    "quantum claim",
+    "gravity claim"
+  ],
+  "shared_support": "15 supersingular primes",
+  "status": "PRECOMMITTED_SHARED_SUPPORT_DIAGNOSTIC_COUPLING",
+  "thresholds": {
+    "betti_edge_move_min": 0.1,
+    "betti_vector_move_min": 1.0,
+    "invariance_max": 1e-12,
+    "moonshine_move_min": 0.1,
+    "version": "moonshine-betti-bridge-v0.1"
+  },
+  "version": "moonshine-betti-bridge-v0.1"
+}
