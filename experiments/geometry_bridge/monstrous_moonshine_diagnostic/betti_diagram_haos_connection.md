@@ -9,10 +9,30 @@ The executable local sidecar is:
 
 ```bash
 uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_betti_component_count.py
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_betti_vector.py
 ```
 
 The current declared relation graph has `Betti_0 = 4` and `33` relation edges.
 Its result hash is `betti_component_1454dd195fe727984643d0dc`.
+
+The Betti vector runner uses the same graph and reports:
+
+```json
+{
+  "Betti_0": 4,
+  "Betti_1": 22,
+  "nodes": 15,
+  "edges": 33
+}
+```
+
+The `Betti_1` value is the finite-graph cycle count:
+
+```text
+Betti_1 = E - V + C = 33 - 15 + 4 = 22
+```
+
+Its result hash is `betti_vector_1d5373fa671fd513fe2d5ac0`.
 
 The local robustness sweep is:
 
@@ -44,6 +64,11 @@ or related algebraic object. In the simplest graph-level case:
 For this sidecar, the immediate HAOS-compatible target is `Betti_0`, because it
 has a direct graph interpretation: component count. That target is now
 implemented locally by `run_betti_component_count.py`.
+
+The first local extension is `Betti_1`, implemented by
+`run_betti_vector.py`. This does not add a higher-dimensional Moonshine
+topology claim. It only records independent cycles in the declared finite
+undirected relation graph.
 
 ## HAOS-IIP Interpretation
 
@@ -124,6 +149,18 @@ topology_destroyed_control: Betti_0 = 2
 support_replacement_control: Betti_0 = 3
 ```
 
+Current Betti-vector output:
+
+```text
+known_positive: Betti_0 = 4, Betti_1 = 22
+d4_rotate_90: Betti_0 = 4, Betti_1 = 22
+d4_reflect_real: Betti_0 = 4, Betti_1 = 22
+isomorphism_relabel: Betti_0 = 4, Betti_1 = 22
+threshold_mutation_control: Betti_0 = 6, Betti_1 = 9
+topology_destroyed_control: Betti_0 = 2, Betti_1 = 20
+support_replacement_control: Betti_0 = 3, Betti_1 = 28
+```
+
 ## Future Lean Target
 
 The cleanest theorem target is not a full cochain-Laplacian result. It is the
@@ -196,7 +233,8 @@ arithmetic support telemetry
 ```
 
 The SVG remains a visual companion. The local executable authority for Betti_0
-is `run_betti_component_count.py`.
+is `run_betti_component_count.py`. The local executable authority for the
+finite-graph Betti vector is `run_betti_vector.py`.
 
 ## Boundary
 

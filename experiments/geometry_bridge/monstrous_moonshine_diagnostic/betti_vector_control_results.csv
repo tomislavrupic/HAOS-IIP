@@ -1,0 +1,8 @@
+condition,expected_response,nodes,edges,betti0,betti1,betti_vector_distance,edge_jaccard_distance,observed_status
+known_positive,self Betti_0 and edge signature recover exactly,15,33,4,22,0,0,PASS
+d4_rotate_90,D4 rotation preserves Betti_0 and edge signature,15,33,4,22,0,0,PASS
+d4_reflect_real,D4 reflection preserves Betti_0 and edge signature,15,33,4,22,0,0,PASS
+isomorphism_relabel,graph-isomorphism relabel preserves Betti_0 and edge signature,15,33,4,22,0,0,PASS
+threshold_mutation_control,threshold mutation should move Betti_0 or relation edges,15,18,6,9,15,0.454545454545,PASS
+topology_destroyed_control,rewiring should move Betti_0 or relation edges,15,33,2,20,4,0.8,PASS
+support_replacement_control,support replacement should move Betti_0 or relation edges,15,40,3,28,7,0.175,PASS

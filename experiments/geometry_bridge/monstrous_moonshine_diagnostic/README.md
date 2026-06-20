@@ -57,6 +57,29 @@ Current reference result:
 - labels include `BETTI_CONTROLS_PASS`, `LEAN_THEOREM_NOT_INCLUDED`,
   and `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
 
+The local Betti vector diagnostic extends the same declared graph to the
+graph-native cycle count:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_betti_vector.py
+```
+
+Generated outputs:
+
+- `betti_vector_control_results.csv`
+- `betti_vector_report.md`
+- `betti_vector_result.json`
+
+Current reference signature:
+
+- `Betti_0`: `4`
+- `Betti_1`: `22`
+- nodes: `15`
+- edges: `33`
+- result hash: `betti_vector_1d5373fa671fd513fe2d5ac0`
+- labels include `BETTI_VECTOR_CONTROLS_PASS`, `LEAN_THEOREM_NOT_INCLUDED`,
+  and `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
+
 Threshold sensitivity is checked by:
 
 ```bash
@@ -95,7 +118,7 @@ This visual sidecar is review material only. Its source text references a
 Lean-certified Betti diagram, but this repository does not independently check
 that Lean proof unless the proof source is added and run locally. The executable
 authority for this folder remains `run_monstrous_moonshine_diagnostic.py` and
-`run_betti_component_count.py`.
+the local Betti runners.
 
 ## Controls
 

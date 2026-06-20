@@ -1,0 +1,201 @@
+{
+  "bridge_id": "betti_vector_v0_1",
+  "claim_ceiling": "Graph-topology diagnostic only; no Moonshine proof, local Lean theorem, or physical bridge claim.",
+  "classification": "TOPOLOGICAL_DIAGNOSTIC_SIDECAR",
+  "condition_results": {
+    "d4_reflect_real": {
+      "betti_vector_distance": 0,
+      "edge_jaccard_distance": 0.0,
+      "expected_response": "D4 reflection preserves Betti_0 and edge signature",
+      "observed_status": "PASS",
+      "signature": {
+        "Betti_0": 4,
+        "Betti_1": 22,
+        "component_size_distribution": [
+          12,
+          1,
+          1,
+          1
+        ],
+        "edges": 33,
+        "nodes": 15
+      }
+    },
+    "d4_rotate_90": {
+      "betti_vector_distance": 0,
+      "edge_jaccard_distance": 0.0,
+      "expected_response": "D4 rotation preserves Betti_0 and edge signature",
+      "observed_status": "PASS",
+      "signature": {
+        "Betti_0": 4,
+        "Betti_1": 22,
+        "component_size_distribution": [
+          12,
+          1,
+          1,
+          1
+        ],
+        "edges": 33,
+        "nodes": 15
+      }
+    },
+    "isomorphism_relabel": {
+      "betti_vector_distance": 0,
+      "edge_jaccard_distance": 0.0,
+      "expected_response": "graph-isomorphism relabel preserves Betti_0 and edge signature",
+      "observed_status": "PASS",
+      "signature": {
+        "Betti_0": 4,
+        "Betti_1": 22,
+        "component_size_distribution": [
+          12,
+          1,
+          1,
+          1
+        ],
+        "edges": 33,
+        "nodes": 15
+      }
+    },
+    "known_positive": {
+      "betti_vector_distance": 0,
+      "edge_jaccard_distance": 0.0,
+      "expected_response": "self Betti_0 and edge signature recover exactly",
+      "observed_status": "PASS",
+      "signature": {
+        "Betti_0": 4,
+        "Betti_1": 22,
+        "component_size_distribution": [
+          12,
+          1,
+          1,
+          1
+        ],
+        "edges": 33,
+        "nodes": 15
+      }
+    },
+    "support_replacement_control": {
+      "betti_vector_distance": 7,
+      "edge_jaccard_distance": 0.17500000000000004,
+      "expected_response": "support replacement should move Betti_0 or relation edges",
+      "observed_status": "PASS",
+      "signature": {
+        "Betti_0": 3,
+        "Betti_1": 28,
+        "component_size_distribution": [
+          13,
+          1,
+          1
+        ],
+        "edges": 40,
+        "nodes": 15
+      }
+    },
+    "threshold_mutation_control": {
+      "betti_vector_distance": 15,
+      "edge_jaccard_distance": 0.4545454545454546,
+      "expected_response": "threshold mutation should move Betti_0 or relation edges",
+      "observed_status": "PASS",
+      "signature": {
+        "Betti_0": 6,
+        "Betti_1": 9,
+        "component_size_distribution": [
+          9,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "edges": 18,
+        "nodes": 15
+      }
+    },
+    "topology_destroyed_control": {
+      "betti_vector_distance": 4,
+      "edge_jaccard_distance": 0.8,
+      "expected_response": "rewiring should move Betti_0 or relation edges",
+      "observed_status": "PASS",
+      "signature": {
+        "Betti_0": 2,
+        "Betti_1": 20,
+        "component_size_distribution": [
+          14,
+          1
+        ],
+        "edges": 33,
+        "nodes": 15
+      }
+    }
+  },
+  "config": {
+    "destructive_betti_vector_min": 1.0,
+    "destructive_edge_min": 0.1,
+    "invariance_max": 1e-12,
+    "mutated_threshold": 4.0,
+    "threshold": 8.0,
+    "version": "betti-vector-v0.1"
+  },
+  "labels": [
+    "BETTI_VECTOR_BUILT",
+    "BETTI_0_COMPONENT_COUNT_AVAILABLE",
+    "BETTI_1_CYCLE_COUNT_AVAILABLE",
+    "D4_SYMMETRY_CONTROLS_AVAILABLE",
+    "DESTRUCTIVE_CONTROLS_AVAILABLE",
+    "LEAN_THEOREM_NOT_INCLUDED",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "CLAIM_GATED_GRAPH_TOPOLOGY",
+    "BETTI_VECTOR_CONTROLS_PASS"
+  ],
+  "reference_component_size_distribution": [
+    12,
+    1,
+    1,
+    1
+  ],
+  "reference_signature": {
+    "Betti_0": 4,
+    "Betti_1": 22,
+    "edges": 33,
+    "nodes": 15
+  },
+  "result_hash": "betti_vector_1d5373fa671fd513fe2d5ac0",
+  "spec": {
+    "allowed_symmetries": [
+      "D4 rotation by 90 degrees",
+      "D4 rotation by 180 degrees",
+      "D4 reflection across the real axis",
+      "D4 reflection across the diagonal"
+    ],
+    "claim_ceiling": "TOPOLOGICAL_DIAGNOSTIC_SIDECAR",
+    "destructive_controls": [
+      "threshold mutation",
+      "topology destroyed rewire",
+      "support replacement"
+    ],
+    "edges": {
+      "rule": "Connect two Gaussian-prime representative vertices when their Euclidean distance in Z[i] is less than or equal to threshold.",
+      "threshold": 8.0,
+      "threshold_status": "frozen before output inspection"
+    },
+    "nodes": {
+      "description": "One deterministic Gaussian-prime representative for each of the 15 supersingular primes.",
+      "selection_rule": "For p=2 use (1,1); for p congruent to 3 mod 4 use (p,0); for p congruent to 1 mod 4 use the lexicographically first positive pair (a,b) with a^2 + b^2 = p."
+    },
+    "non_claims": [
+      "not a proof of Monstrous Moonshine",
+      "not a Lean-certified theorem inside this repository",
+      "not a physical bridge",
+      "not a continuum, quantum, gravity, or field-theory result"
+    ],
+    "primary_invariant": "Betti_0 / componentCount",
+    "stable_controls": [
+      "D4 symmetry action",
+      "graph isomorphism preserving relabel"
+    ],
+    "status": "PRECOMMITTED_BETTI_RELATION_GRAPH_SPEC",
+    "version": "betti-relation-graph-v0.1"
+  },
+  "status": "PASS"
+}
