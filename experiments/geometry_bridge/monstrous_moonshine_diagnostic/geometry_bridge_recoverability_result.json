@@ -1,0 +1,165 @@
+{
+  "best_case_classification": [
+    "LOCAL_SIGNAL_STABLE",
+    "MATHEMATICALLY_INTERESTING",
+    "ENGINEERING_FEASIBLE",
+    "FORMALLY_PARTIAL",
+    "GLOBAL_CLAIM_OPEN"
+  ],
+  "bridge_id": "geometry_bridge_recoverability_dashboard_v0_1",
+  "channels": [
+    {
+      "classification": "ARITHMETIC_SUPPORT_DIAGNOSTIC",
+      "evidence": {
+        "result_hash": "moonshine_diag_3ea77659b5d076fc6c03e4c6"
+      },
+      "name": "Moonshine arithmetic diagnostic",
+      "status": "PASS"
+    },
+    {
+      "classification": "REPRESENTATIVE_INPUT_TO_BETTI_GRAPH",
+      "evidence": {
+        "reason": "Gaussian representatives and residue classes are validated as inputs, but no standalone norm-lift recovery runner exists in this bundle.",
+        "source_validation_hash": "source_validation_90b451e478499b9587bb4a5d"
+      },
+      "name": "Gaussian-prime norm-lift support",
+      "status": "PARTIAL"
+    },
+    {
+      "classification": "TOPOLOGICAL_DIAGNOSTIC_SIDECAR",
+      "evidence": {
+        "reference_signature": {
+          "Betti_0": 4,
+          "Betti_1": 22,
+          "edges": 33,
+          "nodes": 15
+        },
+        "result_hash": "betti_vector_1d5373fa671fd513fe2d5ac0"
+      },
+      "name": "Betti_0 / Betti_1 diagnostic",
+      "status": "PASS"
+    },
+    {
+      "classification": "LOCAL_ROBUSTNESS_BAND",
+      "evidence": {
+        "betti0_stability_band": [
+          8.0,
+          11.5
+        ],
+        "edge_exact_band": [
+          8.0,
+          8.5
+        ],
+        "result_hash": "betti_sweep_6d8f185a0d3a8ad5130832c4"
+      },
+      "name": "Threshold robustness",
+      "status": "PASS_WITH_FRAGILITY"
+    },
+    {
+      "classification": "FALSE_POSITIVE_RATE_ESTIMATE",
+      "evidence": {
+        "false_positive_rate": 0.11,
+        "result_hash": "betti_sweep_6d8f185a0d3a8ad5130832c4",
+        "watch_threshold": 0.05
+      },
+      "name": "Null ensemble rarity",
+      "status": "OPEN"
+    },
+    {
+      "classification": "SHARED_SUPPORT_DIAGNOSTIC_COUPLING",
+      "evidence": {
+        "covariance_rows": [
+          {
+            "betti_condition": "known_positive",
+            "betti_edge_jaccard_distance": "0",
+            "betti_vector_distance": "0",
+            "bridge_case": "self_recovery",
+            "expected_response": "both channels recover with zero distance",
+            "moonshine_condition": "known_positive",
+            "moonshine_decomposition_distance": "0",
+            "moonshine_exponent_distance": "0",
+            "moonshine_gaussian_class_distance": "0",
+            "moonshine_support_distance": "0",
+            "moonshine_total_distance": "0",
+            "observed_status": "PASS"
+          },
+          {
+            "betti_condition": "support_replacement_control",
+            "betti_edge_jaccard_distance": "0.175",
+            "betti_vector_distance": "7",
+            "bridge_case": "shared_support_replacement",
+            "expected_response": "support replacement moves both arithmetic support telemetry and Betti vector or edge signature",
+            "moonshine_condition": "nonsupersingular_prime_control",
+            "moonshine_decomposition_distance": "0.252982212813",
+            "moonshine_exponent_distance": "0.0194074169913",
+            "moonshine_gaussian_class_distance": "0",
+            "moonshine_support_distance": "0.25",
+            "moonshine_total_distance": "0.522389629805",
+            "observed_status": "PASS"
+          }
+        ],
+        "result_hash": "moonshine_betti_bridge_a7d2b62c0c8be6d8c6b757e9"
+      },
+      "name": "Cross-channel perturbation covariance",
+      "status": "PASS"
+    },
+    {
+      "classification": "PINNED_SOURCE_VALIDATION_ONLY",
+      "evidence": {
+        "manifest_hash": "source_manifest_pinned_4184b4b53867192d35ed6f01",
+        "result_hash": "source_validation_90b451e478499b9587bb4a5d"
+      },
+      "name": "Pinned source validation",
+      "status": "PASS"
+    },
+    {
+      "classification": "FORMAL_TARGET_SCAFFOLD_ONLY",
+      "evidence": {
+        "lean_check_run": false,
+        "lean_project_present": false,
+        "result_hash": "formal_lean_targets_ebc40a27ab6bd9db12cc27d5"
+      },
+      "name": "Formal Lean targets",
+      "status": "OPEN"
+    },
+    {
+      "classification": "RECOVERABILITY_FAILURE_CONTRACT",
+      "evidence": {
+        "path": "failure_conditions.md"
+      },
+      "name": "Failure ledger",
+      "status": "PASS"
+    },
+    {
+      "classification": "NO_FORBIDDEN_UPGRADE_LABELS",
+      "evidence": {
+        "forbidden_upgrade_labels_absent": true
+      },
+      "name": "Claim-boundary checks",
+      "status": "PASS"
+    }
+  ],
+  "claim_ceiling": "Composite recoverability dashboard only; no Moonshine proof, Monster action, physical bridge, continuum, quantum, or gravity claim.",
+  "classification": "COMPOSITE_DIAGNOSTIC_DASHBOARD_ONLY",
+  "config": {
+    "claim_ceiling": "COMPOSITE_DIAGNOSTIC_DASHBOARD_ONLY",
+    "null_false_positive_watch": 0.05,
+    "version": "geometry-bridge-recoverability-dashboard-v0.1"
+  },
+  "labels": [
+    "GEOMETRY_BRIDGE_RECOVERABILITY_DASHBOARD_BUILT",
+    "MOONSHINE_ARITHMETIC_CHANNEL_INCLUDED",
+    "GAUSSIAN_PRIME_SUPPORT_CHANNEL_PARTIAL",
+    "BETTI_VECTOR_CHANNEL_INCLUDED",
+    "THRESHOLD_ROBUSTNESS_INCLUDED",
+    "NULL_RARITY_INCLUDED",
+    "CROSS_CHANNEL_COVARIANCE_INCLUDED",
+    "FORMAL_TARGET_STATUS_INCLUDED",
+    "CLAIM_BOUNDARY_CHECKS_PASS",
+    "GLOBAL_CLAIM_OPEN",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "PASS_WITH_FRAGILITY"
+  ],
+  "result_hash": "geometry_bridge_dashboard_dc14cbaf7f66529e66a57f49",
+  "status": "PASS_WITH_FRAGILITY"
+}

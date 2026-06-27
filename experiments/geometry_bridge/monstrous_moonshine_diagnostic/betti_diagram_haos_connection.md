@@ -15,6 +15,15 @@ uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_bet
 The current declared relation graph has `Betti_0 = 4` and `33` relation edges.
 Its result hash is `betti_component_1454dd195fe727984643d0dc`.
 
+The embedded arithmetic constants are pinned by:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/arithmetic_source_validation.py
+```
+
+Current source-validation hash:
+`source_validation_90b451e478499b9587bb4a5d`.
+
 The Betti vector runner uses the same graph and reports:
 
 ```json
@@ -57,6 +66,15 @@ uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_moo
 It reports `shared-support perturbation covariance`, not a
 Moonshine-Betti mechanism. Current result hash:
 `moonshine_betti_bridge_a7d2b62c0c8be6d8c6b757e9`.
+
+The aggregate recoverability dashboard is:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_geometry_bridge_recoverability_dashboard.py
+```
+
+It currently returns `PASS_WITH_FRAGILITY`, because null rarity, standalone
+norm-lift recovery, and local Lean certification remain open or partial.
 
 The stored SVG references a Lean-certified Betti diagram. HAOS-IIP does not
 upgrade that claim unless the Lean source is added to the repository and checked

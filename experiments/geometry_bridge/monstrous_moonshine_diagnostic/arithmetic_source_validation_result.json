@@ -1,0 +1,360 @@
+{
+  "bridge_id": "arithmetic_source_validation_v0_1",
+  "claim_ceiling": "Pinned source validation and local arithmetic checks only; no Moonshine proof or physical bridge claim.",
+  "classification": "PINNED_SOURCE_VALIDATION_ONLY",
+  "labels": [
+    "ARITHMETIC_SOURCE_VALIDATION_BUILT",
+    "SOURCE_MANIFEST_PINNED_BUILT",
+    "SUPERSINGULAR_PRIME_SOURCE_PINNED",
+    "MONSTER_ORDER_EXPONENT_SOURCE_PINNED",
+    "J_COEFFICIENT_SOURCE_PINNED",
+    "IRREP_DIMENSION_SOURCE_PINNED",
+    "GAUSSIAN_REPRESENTATIVE_SOURCE_PINNED",
+    "MOONSHINE_PROOF_NOT_ESTABLISHED",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "CLAIM_GATED_PINNED_SOURCE_VALIDATION",
+    "PINNED_SOURCE_VALIDATION_PASS"
+  ],
+  "manifest_hash": "source_manifest_pinned_4184b4b53867192d35ed6f01",
+  "non_claims": [
+    "not a proof of Monstrous Moonshine",
+    "not external source certification beyond pinned references",
+    "not a Lean theorem",
+    "not a physical bridge"
+  ],
+  "result_hash": "source_validation_90b451e478499b9587bb4a5d",
+  "status": "PASS",
+  "validations": [
+    {
+      "claim": "15 supersingular primes",
+      "expected": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        41,
+        47,
+        59,
+        71
+      ],
+      "observed": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        41,
+        47,
+        59,
+        71
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim": "Monster order prime exponents",
+      "expected": {
+        "2": 46,
+        "3": 20,
+        "5": 9,
+        "7": 6,
+        "11": 2,
+        "13": 3,
+        "17": 1,
+        "19": 1,
+        "23": 1,
+        "29": 1,
+        "31": 1,
+        "41": 1,
+        "47": 1,
+        "59": 1,
+        "71": 1
+      },
+      "exponent_sum": 95,
+      "observed": {
+        "2": 46,
+        "3": 20,
+        "5": 9,
+        "7": 6,
+        "11": 2,
+        "13": 3,
+        "17": 1,
+        "19": 1,
+        "23": 1,
+        "29": 1,
+        "31": 1,
+        "41": 1,
+        "47": 1,
+        "59": 1,
+        "71": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "j-function witness coefficients and sums",
+      "rows": [
+        {
+          "computed_sum": 196884,
+          "expected_coefficient": 196884,
+          "name": "j_q1",
+          "observed_coefficient": 196884,
+          "residual": 0,
+          "status": "PASS"
+        },
+        {
+          "computed_sum": 21493760,
+          "expected_coefficient": 21493760,
+          "name": "j_q2",
+          "observed_coefficient": 21493760,
+          "residual": 0,
+          "status": "PASS"
+        },
+        {
+          "computed_sum": 864299970,
+          "expected_coefficient": 864299970,
+          "name": "j_q3",
+          "observed_coefficient": 864299970,
+          "residual": 0,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim": "Monster irrep dimensions used by witness subset",
+      "observed": {
+        "dim_18538750076": 18538750076,
+        "dim_19360062527": 19360062527,
+        "dim_196883": 196883,
+        "dim_21296876": 21296876,
+        "dim_842609326": 842609326,
+        "trivial": 1
+      },
+      "rows": [
+        {
+          "dimension": 1,
+          "factor_support_subset": true,
+          "factorization": {},
+          "name": "trivial"
+        },
+        {
+          "dimension": 196883,
+          "factor_support_subset": true,
+          "factorization": {
+            "47": 1,
+            "59": 1,
+            "71": 1
+          },
+          "name": "dim_196883"
+        },
+        {
+          "dimension": 21296876,
+          "factor_support_subset": true,
+          "factorization": {
+            "2": 2,
+            "31": 1,
+            "41": 1,
+            "59": 1,
+            "71": 1
+          },
+          "name": "dim_21296876"
+        },
+        {
+          "dimension": 842609326,
+          "factor_support_subset": true,
+          "factorization": {
+            "13": 2,
+            "2": 1,
+            "29": 1,
+            "31": 1,
+            "47": 1,
+            "59": 1
+          },
+          "name": "dim_842609326"
+        },
+        {
+          "dimension": 18538750076,
+          "factor_support_subset": true,
+          "factorization": {
+            "11": 1,
+            "2": 2,
+            "23": 1,
+            "29": 1,
+            "31": 1,
+            "41": 1,
+            "7": 1,
+            "71": 1
+          },
+          "name": "dim_18538750076"
+        },
+        {
+          "dimension": 19360062527,
+          "factor_support_subset": true,
+          "factorization": {
+            "13": 2,
+            "23": 1,
+            "29": 1,
+            "41": 1,
+            "59": 1,
+            "71": 1
+          },
+          "name": "dim_19360062527"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim": "Gaussian-prime representatives",
+      "rows": [
+        {
+          "expected_class": "ramified",
+          "gaussian_class": "ramified",
+          "prime": 2,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 1,
+          "y": 1
+        },
+        {
+          "expected_class": "inert",
+          "gaussian_class": "inert",
+          "prime": 3,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 3,
+          "y": 0
+        },
+        {
+          "expected_class": "split",
+          "gaussian_class": "split",
+          "prime": 5,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 1,
+          "y": 2
+        },
+        {
+          "expected_class": "inert",
+          "gaussian_class": "inert",
+          "prime": 7,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 7,
+          "y": 0
+        },
+        {
+          "expected_class": "inert",
+          "gaussian_class": "inert",
+          "prime": 11,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 11,
+          "y": 0
+        },
+        {
+          "expected_class": "split",
+          "gaussian_class": "split",
+          "prime": 13,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 2,
+          "y": 3
+        },
+        {
+          "expected_class": "split",
+          "gaussian_class": "split",
+          "prime": 17,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 1,
+          "y": 4
+        },
+        {
+          "expected_class": "inert",
+          "gaussian_class": "inert",
+          "prime": 19,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 19,
+          "y": 0
+        },
+        {
+          "expected_class": "inert",
+          "gaussian_class": "inert",
+          "prime": 23,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 23,
+          "y": 0
+        },
+        {
+          "expected_class": "split",
+          "gaussian_class": "split",
+          "prime": 29,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 2,
+          "y": 5
+        },
+        {
+          "expected_class": "inert",
+          "gaussian_class": "inert",
+          "prime": 31,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 31,
+          "y": 0
+        },
+        {
+          "expected_class": "split",
+          "gaussian_class": "split",
+          "prime": 41,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 4,
+          "y": 5
+        },
+        {
+          "expected_class": "inert",
+          "gaussian_class": "inert",
+          "prime": 47,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 47,
+          "y": 0
+        },
+        {
+          "expected_class": "inert",
+          "gaussian_class": "inert",
+          "prime": 59,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 59,
+          "y": 0
+        },
+        {
+          "expected_class": "inert",
+          "gaussian_class": "inert",
+          "prime": 71,
+          "representative_ok": true,
+          "status": "PASS",
+          "x": 71,
+          "y": 0
+        }
+      ],
+      "status": "PASS"
+    }
+  ]
+}

@@ -32,6 +32,33 @@ uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_mon
 - `monstrous_moonshine_diagnostic_report.md`
 - `monstrous_moonshine_diagnostic_result.json`
 
+## Source Validation
+
+The pinned source and local arithmetic validation pass is available as:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/arithmetic_source_validation.py
+```
+
+Generated outputs:
+
+- `source_manifest_pinned.json`
+- `source_validation_report.md`
+- `arithmetic_source_validation_result.json`
+
+Current validation result:
+
+- status: `PASS`
+- classification: `PINNED_SOURCE_VALIDATION_ONLY`
+- result hash: `source_validation_90b451e478499b9587bb4a5d`
+- pinned manifest hash: `source_manifest_pinned_4184b4b53867192d35ed6f01`
+- validates supersingular-prime support, Monster-order exponents,
+  j-coefficient witnesses, embedded irrep dimensions, and Gaussian-prime
+  representatives
+- labels include `SOURCE_MANIFEST_PINNED_BUILT`,
+  `MOONSHINE_PROOF_NOT_ESTABLISHED`, and
+  `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
+
 ## Betti_0 Sidecar
 
 The local Betti_0 / component-count diagnostic is available as:
@@ -158,6 +185,36 @@ Current formal target result:
 - result hash: `formal_lean_targets_ebc40a27ab6bd9db12cc27d5`
 - labels include `LEAN_TARGET_SCAFFOLD_BUILT`, `LEAN_THEOREM_NOT_INCLUDED`,
   and `PHYSICAL_BRIDGE_NOT_ESTABLISHED`
+
+## Failure Ledger and Composite Dashboard
+
+Failure conditions are recorded in:
+
+- `failure_conditions.md`
+
+The composite recoverability dashboard is available as:
+
+```bash
+uv run python experiments/geometry_bridge/monstrous_moonshine_diagnostic/run_geometry_bridge_recoverability_dashboard.py
+```
+
+Generated outputs:
+
+- `geometry_bridge_recoverability_report.md`
+- `geometry_bridge_recoverability_result.json`
+
+Current dashboard result:
+
+- status: `PASS_WITH_FRAGILITY`
+- classification: `COMPOSITE_DIAGNOSTIC_DASHBOARD_ONLY`
+- result hash: `geometry_bridge_dashboard_dc14cbaf7f66529e66a57f49`
+- open / partial channels remain visible:
+  - Gaussian-prime norm-lift support: `PARTIAL`
+  - null ensemble rarity: `OPEN`
+  - formal Lean targets: `OPEN`
+- best-case classification remains:
+  `LOCAL_SIGNAL_STABLE`, `MATHEMATICALLY_INTERESTING`,
+  `ENGINEERING_FEASIBLE`, `FORMALLY_PARTIAL`, `GLOBAL_CLAIM_OPEN`
 
 ## Visual Sidecar
 

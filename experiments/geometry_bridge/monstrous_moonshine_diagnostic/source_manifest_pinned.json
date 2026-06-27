@@ -1,0 +1,49 @@
+{
+  "claim_ceiling": "Pinned source validation and local arithmetic checks only; no Moonshine proof or physical bridge claim.",
+  "classification": "PINNED_SOURCE_VALIDATION_ONLY",
+  "config": {
+    "claim_ceiling": "PINNED_SOURCE_VALIDATION_ONLY",
+    "retrieval_date": "2026-06-20",
+    "version": "arithmetic-source-validation-v0.1"
+  },
+  "manifest_hash": "source_manifest_pinned_4184b4b53867192d35ed6f01",
+  "source_entries": [
+    {
+      "claim": "15 supersingular primes in Moonshine usage",
+      "hash_or_version": "source_value_b5236030aa6b80f96c51c82c",
+      "retrieval_date": "2026-06-20",
+      "source": "https://en.wikipedia.org/wiki/Supersingular_prime_(moonshine_theory)",
+      "used_in": "SUPERSINGULAR_PRIMES; Betti relation graph node support"
+    },
+    {
+      "claim": "Monster group order prime exponents",
+      "hash_or_version": "source_value_e27c75c266e9a43b8996e713",
+      "retrieval_date": "2026-06-20",
+      "source": "ATLAS of Finite Groups; https://en.wikipedia.org/wiki/Monster_group",
+      "used_in": "MONSTER_ORDER_EXPONENTS; arithmetic support diagnostic"
+    },
+    {
+      "claim": "first j-function coefficients used by the witness subset",
+      "hash_or_version": "source_value_11dc66a3620bb8676e9f8cd8",
+      "retrieval_date": "2026-06-20",
+      "source": "https://en.wikipedia.org/wiki/J-invariant; https://en.wikipedia.org/wiki/Monstrous_moonshine",
+      "used_in": "J_DECOMPOSITION_WITNESSES"
+    },
+    {
+      "claim": "Monster irrep dimensions used by the embedded witness subset",
+      "hash_or_version": "source_value_0d645962d36a789ef33a9300",
+      "retrieval_date": "2026-06-20",
+      "source": "ATLAS of Finite Groups; https://en.wikipedia.org/wiki/Monstrous_moonshine",
+      "used_in": "IRREP_DIMS; j-coefficient witness sums"
+    },
+    {
+      "claim": "Gaussian-prime residue class representatives",
+      "hash_or_version": "source_value_d38e13ebaf10ea072b10c8bb",
+      "retrieval_date": "2026-06-20",
+      "source": "elementary Gaussian integer splitting law for rational primes",
+      "used_in": "betti_relation_graph_nodes.csv; Betti relation graph construction"
+    }
+  ],
+  "status": "PASS",
+  "validation_id": "arithmetic_source_validation_v0_1"
+}
