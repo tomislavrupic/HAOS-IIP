@@ -1,0 +1,3 @@
+control,preserved,destroyed,expected_response,observed_leading_coefficient,observed_correction_coefficient,r2,observed_status
+identity_operator_control,node count and time grid,spatial coupling and decay hierarchy,coefficients should collapse near zero,-1.43539468358e-32,2.54604976057e-32,1,PASS
+unstable_sign_control,same eigenvectors and scale grid,stable decay sign,growth should be detected as invalid effective decay,-0.180102930412,-0.010426826667,0.999999987317,PASS

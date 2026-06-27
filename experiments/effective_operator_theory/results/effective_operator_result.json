@@ -1,0 +1,64 @@
+{
+  "bridge_id": "effective_operator_expansion_v0_1",
+  "claim_ceiling": "Synthetic EFT-like effective-operator expansion only; no EFT quantum gravity, physical field theory, spacetime, or ontology claim.",
+  "classification": "SYNTHETIC_EFFECTIVE_OPERATOR_SCAFFOLD",
+  "config": {
+    "correction_coeff": 0.012,
+    "diffusion_coeff": 0.18,
+    "dt": 0.08,
+    "long_wavelength_mode_max": 4,
+    "max_correction_ratio": 0.35,
+    "max_long_mode_relative_residual": 0.035,
+    "min_fit_r2": 0.995,
+    "min_leading_coefficient": 0.05,
+    "mode_max": 12,
+    "mode_min": 1,
+    "node_count": 64,
+    "steps": 72,
+    "unstable_growth_tolerance": 1e-09,
+    "version": "effective-operator-expansion-v0.1"
+  },
+  "controls": [
+    {
+      "control": "identity_operator_control",
+      "destroyed": "spatial coupling and decay hierarchy",
+      "expected_response": "coefficients should collapse near zero",
+      "observed_correction_coefficient": "2.54604976057e-32",
+      "observed_leading_coefficient": "-1.43539468358e-32",
+      "observed_status": "PASS",
+      "preserved": "node count and time grid",
+      "r2": "1"
+    },
+    {
+      "control": "unstable_sign_control",
+      "destroyed": "stable decay sign",
+      "expected_response": "growth should be detected as invalid effective decay",
+      "observed_correction_coefficient": "-0.010426826667",
+      "observed_leading_coefficient": "-0.180102930412",
+      "observed_status": "PASS",
+      "preserved": "same eigenvectors and scale grid",
+      "r2": "0.999999987317"
+    }
+  ],
+  "fit": {
+    "correction_ratio": 0.07576069852306606,
+    "higher_laplacian_squared_coeff": 0.013627492561227398,
+    "leading_laplacian_coeff": 0.17987548724987507,
+    "max_long_wavelength_relative_residual": 0.000673617871882,
+    "r2": 0.9999999816111709
+  },
+  "labels": [
+    "EFFECTIVE_OPERATOR_EXPANSION_BUILT",
+    "EFT_DISCIPLINE_METHOD_IMPORTED",
+    "DIFFUSION_LIKE_LEADING_TERM_DETECTED",
+    "SUPPRESSED_CORRECTION_HIERARCHY_REPORTED",
+    "CUTOFF_DECLARED",
+    "CONTROL_RESPONSE_REPORTED",
+    "EFT_QG_NOT_DERIVED",
+    "PHYSICAL_FIELD_THEORY_NOT_ESTABLISHED",
+    "PHYSICAL_BRIDGE_NOT_ESTABLISHED",
+    "EFFECTIVE_OPERATOR_SCAFFOLD_PASS"
+  ],
+  "result_hash": "effective_operator_a740ce933dd1dbd479931847",
+  "status": "PASS"
+}

@@ -1,0 +1,67 @@
+{
+  "allowed_terms": [
+    {
+      "name": "identity",
+      "order": 0,
+      "status": "reporting_only"
+    },
+    {
+      "name": "laplacian",
+      "order": 2,
+      "status": "leading_allowed"
+    },
+    {
+      "name": "laplacian_squared",
+      "order": 4,
+      "status": "suppressed_correction_allowed"
+    }
+  ],
+  "base_operator_family": "1D ring graph Laplacian",
+  "bridge_id": "HAOS-EOT-01",
+  "config": {
+    "correction_coeff": 0.012,
+    "diffusion_coeff": 0.18,
+    "dt": 0.08,
+    "long_wavelength_mode_max": 4,
+    "max_correction_ratio": 0.35,
+    "max_long_mode_relative_residual": 0.035,
+    "min_fit_r2": 0.995,
+    "min_leading_coefficient": 0.05,
+    "mode_max": 12,
+    "mode_min": 1,
+    "node_count": 64,
+    "steps": 72,
+    "unstable_growth_tolerance": 1e-09,
+    "version": "effective-operator-expansion-v0.1"
+  },
+  "cutoff": {
+    "long_wavelength_mode_max": 4,
+    "mode_max": 12,
+    "node_count": 64
+  },
+  "not_claimed": [
+    "EFT quantum gravity",
+    "physical field theory",
+    "spacetime derivation",
+    "Lorentz invariance",
+    "empirical physics",
+    "ontology"
+  ],
+  "observables": [
+    "mode_decay_rate",
+    "coefficient_hierarchy",
+    "long_wavelength_residual",
+    "control_response"
+  ],
+  "purpose": "Test whether a frozen synthetic operator hierarchy admits an EFT-like effective expansion.",
+  "verdict_logic": {
+    "claim_ceiling": "synthetic effective-operator scaffold only",
+    "effective_operator_scaffold_pass": [
+      "fit r2 >= configured minimum",
+      "leading coefficient positive",
+      "higher-order correction smaller than configured ratio",
+      "long-wavelength residuals below configured tolerance",
+      "unstable-sign control is detected"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "claim_ceiling": "Allowed terms for synthetic operator expansion only.",
+  "mapping_status": {
+    "laplacian": "SYNTHETIC_DERIVED_FROM_GRAPH_OPERATOR",
+    "laplacian_squared": "SYNTHETIC_ALLOWED_CORRECTION",
+    "metric": "UNAVAILABLE",
+    "physical_field": "UNAVAILABLE",
+    "stress_energy": "UNAVAILABLE"
+  },
+  "terms": [
+    {
+      "name": "identity",
+      "order": 0,
+      "status": "reporting_only"
+    },
+    {
+      "name": "laplacian",
+      "order": 2,
+      "status": "leading_allowed"
+    },
+    {
+      "name": "laplacian_squared",
+      "order": 4,
+      "status": "suppressed_correction_allowed"
+    }
+  ]
+}
