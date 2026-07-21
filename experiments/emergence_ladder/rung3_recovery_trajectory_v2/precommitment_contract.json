@@ -1,0 +1,147 @@
+{
+  "artifact_list": {
+    "calibration": [
+      "calibration/parameter_selection.json",
+      "calibration/calibration_runs.csv",
+      "calibration/derived_thresholds.json",
+      "calibration/validation_runs.csv"
+    ],
+    "final": [
+      "final/seed_registry.json",
+      "final/run_level_results.csv",
+      "final/control_results.csv",
+      "final/aggregate_result.json",
+      "final/uncertainty.json",
+      "final/CLASSIFICATION.md"
+    ]
+  },
+  "calibration_partition": {
+    "magnitudes": [0.2, 0.45, 0.7],
+    "seeds": [6101, 6102, 6103, 6104, 6105, 6106]
+  },
+  "claim": "Locally available cochain-compatibility errors and distributed relational memory produce identity-preserving organizational-regime recovery after bounded intervention, beyond passive, filtering, topology, trivial-attractor, signal-blind, parameter-matched, and ablation controls.",
+  "experiment_id": "EL-R3-RT-02",
+  "final_evaluation_partition": {
+    "access_policy": "The runner may access this partition only after mechanism tests, leakage tests, contract checks, calibration, and validation complete without contract modification.",
+    "magnitudes": [0.25, 0.5, 0.8, 1.1],
+    "seeds": [6301, 6302, 6303, 6304, 6305, 6306, 6307, 6308]
+  },
+  "hostile_controls": [
+    "passive_relaxation",
+    "operator_only_filtering",
+    "topology_altered",
+    "trivial_attractor",
+    "identity_scrambled",
+    "signal_blind",
+    "parameter_budget_matched",
+    "oracle_upper_bound_non_admissible",
+    "memory_ablation",
+    "redundancy_ablation"
+  ],
+  "identity_criteria": {
+    "primary": "agreement between current edge-difference signs and stored one-bit relational orientations",
+    "secondary": "rank correlation of current and pre-intervention node order",
+    "global_offset": "unidentified gauge and excluded from identity"
+  },
+  "initial_condition_generation": "Seeded low-frequency scalar fields on an 8x8 periodic grid, standardized to zero mean and unit variance before relational memory is encoded.",
+  "invalidation_conditions": [
+    "mechanism object contains a reference state, future trajectory, recovery score, final label, or evaluation classification",
+    "final partition is used in parameter or threshold selection",
+    "relation memory plus metadata directly serializes the full node state rather than local edge relations",
+    "correction direction uses distance to the hidden reference state",
+    "any mandatory control fails its mechanism assertion",
+    "non-finite state or correction occurs",
+    "contract or thresholds change after final evaluation begins"
+  ],
+  "mechanism": {
+    "available_information": [
+      "current endpoint state on each local edge",
+      "locally stored one-bit pre-intervention edge orientation",
+      "current edge inequality violation",
+      "local incidence orientation",
+      "predeclared edge-availability mask"
+    ],
+    "edge_dropout_fraction": 0.2,
+    "equation": "x_(t+1) = x_t + eta * D^T [availability * s * max(0, margin - s * D x_t)] / max_degree",
+    "free_parameters": [
+      "eta",
+      "inequality_margin"
+    ],
+    "name": "redundant_local_cochain_constraint_feedback",
+    "minimum_memory_edge_magnitude": 0.08,
+    "parameter_grid": {
+      "inequality_margin": [0.02, 0.05],
+      "eta": [0.4, 0.7, 1.0]
+    },
+    "steps": 80
+  },
+  "non_claims": [
+    "not exact microscopic reversal",
+    "not universal recoverability",
+    "not operational closure",
+    "not self-maintenance or agency",
+    "not cross-scale or compositional emergence",
+    "not continuum or physical emergence"
+  ],
+  "observable_information": "Only current local edge inequality violations against distributed one-bit orientation memory; no edge magnitudes, future, or full-state checkpoint.",
+  "parameter_selection_policy": "Choose the eta/tolerance pair with highest calibration-only median organizational recovery minus 0.02 times median corrective cost; ties resolve by lower eta then lower tolerance. Validation cannot change parameters.",
+  "perturbation_family": [
+    "localized_block_shock",
+    "sparse_node_corruption",
+    "relational_twist"
+  ],
+  "perturbation_magnitude_definition": "RMS of a zero-mean perturbation relative to the unit-variance initial field.",
+  "perturbation_timing": "One intervention at t=0 after local relation memory is encoded.",
+  "primary_recovery_type": "identity-preserving organizational-regime recovery",
+  "prohibited_information": [
+    "unperturbed future trajectory",
+    "full pre-intervention node-state checkpoint",
+    "future state",
+    "recovery score during execution",
+    "final evaluation labels",
+    "evaluation-selected parameters",
+    "experiment classification"
+  ],
+  "recovery_dimensions": [
+    "state restoration",
+    "trajectory-corridor restoration",
+    "operator restoration",
+    "identity preservation",
+    "functional recovery",
+    "latency",
+    "gain",
+    "basin",
+    "failure threshold",
+    "overshoot",
+    "corrective cost"
+  ],
+  "seed_policy": {
+    "calibration_only_for_selection": true,
+    "control_direction_seed_offset": 100000,
+    "uncertainty_seed": 6401,
+    "uncertainty_resamples": 3000
+  },
+  "status": "FROZEN",
+  "stopping_condition": "Execute the frozen calibration, validation, and final partitions once. Any mechanism, grid, threshold-formula, split, or control change requires EL-R3-RT-03.",
+  "system_family": {
+    "graph": "8x8 periodic square grid with horizontal, vertical, and two diagonal local relation edges",
+    "state": "one dimensionless scalar per node",
+    "stored_memory": "one-bit signs of oriented local edge differences only; magnitudes and node values are not stored",
+    "units": "dimensionless"
+  },
+  "threshold_derivation": {
+    "control_margin_min": "max(0.05, 0.5 * calibration median target-vs-best-admissible-control gain margin)",
+    "functional_recovery_min": "max(0.75, calibration target 10th percentile - 0.05)",
+    "identity_min": "max(0.85, calibration target 10th percentile - 0.03)",
+    "operator_recovery_min": "max(0.75, calibration target 10th percentile - 0.05)",
+    "recovery_gain_min": "max(0.10, 0.5 * calibration target median recovery gain)",
+    "state_error_max": "min(0.15, calibration target 90th percentile + 0.02)",
+    "trajectory_error_max": "min(0.20, calibration target 90th percentile + 0.03)"
+  },
+  "uncertainty_method": "Run-level stratified bootstrap over final seed x perturbation-family x magnitude rows; resamples estimate uncertainty only.",
+  "validation_partition": {
+    "magnitudes": [0.3, 0.6, 0.85],
+    "seeds": [6201, 6202, 6203, 6204]
+  },
+  "version": "2.0.0"
+}

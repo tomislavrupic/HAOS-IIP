@@ -1,0 +1,105 @@
+{
+  "classification": "PARTIAL_RECOVERY_ONLY",
+  "contract_hash": "el_r3_rt_02_contract_4736da2780559286a31d0316",
+  "control_assertions": {
+    "all_controls_present": true,
+    "identity_scramble_changes_response": true,
+    "oracle_excluded_from_evidence": true,
+    "passive_zero_cost": true,
+    "redundancy_ablation_is_distinct": true,
+    "signal_blind_consumes_energy": true,
+    "topology_control_changes_response": true
+  },
+  "dimension_medians": {
+    "corrective_cost": 0.03537587025488527,
+    "functional_recovery": 0.0,
+    "identity_sign_agreement": 1.0,
+    "node_rank_identity": 0.9787774725274723,
+    "operator_recovery": 0.9191474721135737,
+    "overshoot": 0.0,
+    "recovery_latency": 20.0,
+    "state_recovery_gain": 0.99766538800382,
+    "trajectory_recovery_gain": 0.5063287640104062
+  },
+  "experiment_id": "EL-R3-RT-02",
+  "failure_threshold": 0.25,
+  "gates": {
+    "beats_operator_only": false,
+    "beats_signal_blind": false,
+    "controls_valid": true,
+    "evaluation_not_used_for_selection": true,
+    "gain_ci_excludes_zero": true,
+    "identity_preserved": true,
+    "memory_ablation_degrades": false,
+    "multiple_directions": false,
+    "no_reference_leakage": true,
+    "nonzero_basin": false,
+    "positive_gain_vs_passive": true,
+    "redundancy_ablation_degrades": false,
+    "run_recovery_rate": false,
+    "trivial_attractor_rejected": false,
+    "validation_pass": false
+  },
+  "labels": [
+    "PARTIAL_RECOVERY_ONLY",
+    "IDENTITY_PRESERVING_ORGANIZATIONAL_RECOVERY_TESTED",
+    "NO_HIGHER_RUNG_PROMOTION"
+  ],
+  "leakage_guard": {
+    "calibration_only_selection_declared": true,
+    "mechanism_signature_has_no_reference": true,
+    "memory_stores_only_orientation_bits": true,
+    "seed_partitions_disjoint": true
+  },
+  "perturbation_family_rates": {
+    "localized_block_shock": 0.0,
+    "relational_twist": 0.0,
+    "sparse_node_corruption": 0.0
+  },
+  "recovery_basin": {
+    "0.25": 0.0,
+    "0.5": 0.0,
+    "0.8": 0.0,
+    "1.1": 0.0
+  },
+  "recovery_rates": {
+    "identity_scrambled": 0.0,
+    "memory_ablation": 0.0,
+    "operator_only_filtering": 0.0,
+    "oracle_upper_bound_non_admissible": 0.625,
+    "parameter_budget_matched": 0.0,
+    "passive_relaxation": 0.0,
+    "redundancy_ablation": 0.0,
+    "signal_blind": 0.0,
+    "target": 0.0,
+    "topology_altered": 0.0,
+    "trivial_attractor": 0.0
+  },
+  "result_hash": "el_r3_rt_02_cade4e057a54d119e6af143c",
+  "run_counts": {
+    "final_total": 1056,
+    "invalid": 0,
+    "target": 96
+  },
+  "selected_parameters": {
+    "eta": 0.7,
+    "inequality_margin": 0.05
+  },
+  "source_hashes": {
+    "controls": "85230dc7733f3d9ca9ea27692f45480ce8140da0ad378ae31d5dca196636b69f",
+    "mechanism": "e1fa224b88a00fb24aba9522dd947599b1bc9b59ed7e72ceaafeb55c98a6df61",
+    "runner": "f09df61615c5a671633011b395562111d4891cd51c8ab76813cb360bcf0971cf"
+  },
+  "status": "FAIL",
+  "thresholds": {
+    "control_margin_min": 0.06504960827618911,
+    "functional_recovery_min": 0.75,
+    "identity_min": 0.97,
+    "operator_recovery_min": 0.8319803600654664,
+    "recovery_gain_min": 0.49944281705920324,
+    "run_recovery_rate_min": 0.75,
+    "state_error_max": 0.021328762591301488,
+    "trajectory_error_max": 0.2,
+    "trivial_variance_ratio_min": 0.5
+  }
+}

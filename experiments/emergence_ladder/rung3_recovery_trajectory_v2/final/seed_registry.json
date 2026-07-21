@@ -1,0 +1,26 @@
+{
+  "magnitudes": [
+    0.25,
+    0.5,
+    0.8,
+    1.1
+  ],
+  "partition": "final_untouched_until_execution",
+  "perturbation_families": [
+    "localized_block_shock",
+    "sparse_node_corruption",
+    "relational_twist"
+  ],
+  "seeds": [
+    6301,
+    6302,
+    6303,
+    6304,
+    6305,
+    6306,
+    6307,
+    6308
+  ],
+  "selected_parameters_from": "calibration/parameter_selection.json",
+  "thresholds_from": "calibration/derived_thresholds.json"
+}

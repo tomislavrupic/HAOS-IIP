@@ -1,0 +1,9 @@
+{
+  "functional_restoration_min": 0.75,
+  "identity_min": 0.9,
+  "recovery_rate_min": 0.75,
+  "state_region_gain_min": 0.25,
+  "superiority_margin_min": 0.05,
+  "trajectory_corridor_gain_min": 0.1,
+  "trivial_variance_ratio_min": 0.5
+}

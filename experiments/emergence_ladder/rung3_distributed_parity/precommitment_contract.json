@@ -1,0 +1,138 @@
+{
+  "architecture": {
+    "blocks": 16,
+    "check_degree": 2,
+    "code": "direct sum of local [3,1,3] repetition-coset blocks",
+    "correction_radius_per_block": 1,
+    "decoder_iterations": 1,
+    "estimated_minimum_distance": 3,
+    "local_H": [[1, 1, 0], [0, 1, 1]],
+    "maximum_decoder_visible_bits": 5,
+    "parity_bits": 32,
+    "primary_symbols": 48,
+    "variable_degree_max": 2
+  },
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "system": {
+    "n_side": 8,
+    "continuous_dtype": "float64",
+    "correction_steps": 60,
+    "post_recovery_persistence_steps": 12,
+    "base_dynamics": "identity transport; all movement is attributed explicitly to the tested bridge or control"
+  },
+  "artifact_policy": {
+    "final_outputs_only_if_validation_passes": true,
+    "validation_failure_outputs": [
+      "calibration/parameter_selection.json",
+      "calibration/calibration_runs.csv",
+      "validation/validation_runs.csv",
+      "validation/validation_result.json",
+      "validation/uncertainty.json",
+      "CLASSIFICATION.md",
+      "THEORY_INTERPRETATION.md"
+    ]
+  },
+  "calibration": {
+    "bridge_eta": [0.4, 0.7],
+    "bridge_margin": [0.02, 0.05],
+    "magnitudes": [0.25, 0.55],
+    "seeds": [7101, 7102, 7103, 7104]
+  },
+  "claim": "Sparse distributed parity over function-relevant local relations enables identity-preserving organizational-regime and functional recovery within a predefined one-error-per-block radius, without continuous-state memory.",
+  "controls": [
+    "rt02_frozen_baseline",
+    "passive_relaxation",
+    "operator_only",
+    "random_parity_checks",
+    "parity_permutation",
+    "parity_deletion",
+    "parity_bit_corruption",
+    "memory_budget_random_bits",
+    "centralized_parity_non_admissible",
+    "signal_blind",
+    "identity_scrambled",
+    "trivial_attractor",
+    "function_label_leakage_positive",
+    "full_checkpoint_oracle_non_admissible",
+    "redundancy_ablation",
+    "syndrome_ablation",
+    "message_passing_ablation",
+    "continuous_bridge_ablation",
+    "identity_constraint_ablation"
+  ],
+  "experiment_id": "EL-R3-RP-01",
+  "final_evaluation": {
+    "magnitudes": [0.25, 0.5, 0.8],
+    "seeds": [7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308],
+    "status": "INACCESSIBLE_UNTIL_VALIDATION_PASS"
+  },
+  "functional_target": "four frozen low-frequency projection responses defined in FUNCTIONAL_TARGET.md",
+  "information_limits": {
+    "continuous_state_variables": 64,
+    "float_precision_bits": 64,
+    "full_checkpoint_bits": 4096,
+    "maximum_local_decoder_bits": 5,
+    "parity_memory_bits": 32,
+    "rt02_orientation_memory_bits_max": 256
+  },
+  "invalidation_conditions": [
+    "parity or decoder input contains continuous pre-state values or magnitudes",
+    "functional probe values enter encoding, parity construction, decoding, correction, or selection",
+    "a local decoder accesses more than one block",
+    "a global decoder silently replaces the local decoder",
+    "stored parity uniquely identifies the continuous pre-state",
+    "final seeds are consumed after a failed validation gate",
+    "architecture or radius changes after validation"
+  ],
+  "non_claims": [
+    "not general coding-theory optimality",
+    "not exact continuous-state restoration",
+    "not operational closure",
+    "not cross-scale, compositional, universal, continuum, or physical emergence"
+  ],
+  "parameter_selection": "Calibration-only median functional recovery plus identity minus 0.01 corrective cost; ties prefer lower eta then lower margin.",
+  "perturbation_families": [
+    "localized_block_shock",
+    "sparse_node_corruption",
+    "relational_twist",
+    "clustered_symbol_corruption",
+    "dispersed_equal_weight_corruption",
+    "parity_memory_corruption",
+    "parity_check_deletion",
+    "topology_preserving_identity_disruption"
+  ],
+  "relational_alphabet": "48 local horizontal, vertical, and diagonal order bits defined in RELATIONAL_ALPHABET.md",
+  "stopping_condition": "If validation fails any mandatory gate, emit VALIDATION_GATE_FAILED, do not access final seeds, and require a new experiment identifier for any change.",
+  "uncertainty": {
+    "method": "seed-block bootstrap percentile interval",
+    "resamples": 1000,
+    "seed": 77001,
+    "confidence": 0.95
+  },
+  "threshold_derivation": {
+    "functional_recovery_min": "max(0.75, calibration target 10th percentile - 0.05)",
+    "identity_min": "max(0.90, calibration target 10th percentile - 0.03)",
+    "recovery_rate_min": 0.75,
+    "state_region_gain_min": 0.25,
+    "trajectory_corridor_gain_min": 0.10,
+    "trivial_variance_ratio_min": 0.50,
+    "superiority_margin_min": "max(0.05, half calibration target-minus-best-control recovery-rate margin)"
+  },
+  "validation": {
+    "gate_requirements": [
+      "nonzero functional recovery",
+      "target exceeds passive",
+      "target exceeds frozen RT-02 functional recovery",
+      "target exceeds random parity and random memory",
+      "identity threshold passes",
+      "trivial attractor rejected",
+      "no leakage",
+      "parity deletion degrades recovery",
+      "above-radius recovery lower than within-radius",
+      "memory insufficient for continuous reconstruction"
+    ],
+    "magnitudes": [0.3, 0.6],
+    "seeds": [7201, 7202, 7203, 7204]
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,9 @@
+{
+  "holdout_internal_advantage_ci_95": [
+    -0.03703703703703703,
+    0.046296296296296315
+  ],
+  "holdout_run_count": 54,
+  "resamples": 2000,
+  "unit": "stored run key"
+}

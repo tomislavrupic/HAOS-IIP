@@ -1,0 +1,4 @@
+radius_class,run_count,median_recovered,median_parity_decoding_success,median_functional_restoration,median_identity_preservation,median_state_region_recovery_gain,median_trajectory_corridor_recovery_gain,median_operator_restoration,median_corrective_cost,median_wrong_codeword_convergence
+above_radius,9,0.0,0.0,0.025095513956505743,0.875,0.4179615645358694,0.033449245346541624,0.0,0.002482954132950693,1.0
+near_above_boundary,23,0.0,0.0,0.0,0.9375,0.35255610354053757,0.022096344891069746,0.0,0.0027047260003275255,1.0
+within_radius,16,0.0,1.0,0.0,1.0,0.999999991718947,0.026516120038161395,0.999999964522861,0.00025991681383033413,0.0

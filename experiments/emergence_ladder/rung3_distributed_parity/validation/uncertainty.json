@@ -1,0 +1,12 @@
+{
+  "confidence": 0.95,
+  "functional_difference_ci_vs_passive": [
+    -0.012058175518422578,
+    0.026969081746776095
+  ],
+  "functional_difference_ci_vs_rt02": [
+    -0.04361042388570685,
+    0.03984758788657446
+  ],
+  "method": "seed-block bootstrap percentile interval"
+}

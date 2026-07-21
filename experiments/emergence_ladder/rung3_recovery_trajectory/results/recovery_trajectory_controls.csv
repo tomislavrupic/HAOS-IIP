@@ -1,0 +1,5 @@
+control,mean_recovery_gain,mechanism_valid
+passive_relaxation,0.0,True
+operator_only_filtering,-0.030470570732118868,True
+topology_altered_cycle_phase,-0.04652777521176488,True
+trivial_attractor,0.23544577983843204,True

@@ -1,0 +1,20 @@
+{
+  "continuous_state_reconstruction_possible": false,
+  "continuous_state_variables": 64,
+  "distinct_continuous_states": true,
+  "empirical_non_uniqueness_pass": true,
+  "full_checkpoint_bits": 4096,
+  "global_binary_check_rank": 32,
+  "global_binary_nullity": 16,
+  "maximum_local_decoder_visible_bits": 5,
+  "parity_to_checkpoint_ratio": 0.0078125,
+  "parity_to_rt02_ratio": 0.125,
+  "primary_relational_symbols": 48,
+  "rt02_memory_bits_upper_bound": 256,
+  "same_parity_for_distinct_states": true,
+  "same_primary_symbols_for_distinct_states": true,
+  "single_component_has_complete_parity": false,
+  "state_precision_bits": 64,
+  "stored_parity_bits": 32,
+  "symbol_vectors_per_parity_coset": 65536
+}

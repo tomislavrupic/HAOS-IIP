@@ -1,0 +1,39 @@
+{
+  "ranking": [
+    {
+      "calibration_score": 0.8034528635461466,
+      "eta": 0.7,
+      "inequality_margin": 0.05
+    },
+    {
+      "calibration_score": 0.80303243968995,
+      "eta": 1.0,
+      "inequality_margin": 0.05
+    },
+    {
+      "calibration_score": 0.8004871674596177,
+      "eta": 1.0,
+      "inequality_margin": 0.02
+    },
+    {
+      "calibration_score": 0.800026037622863,
+      "eta": 0.7,
+      "inequality_margin": 0.02
+    },
+    {
+      "calibration_score": 0.7998616124553661,
+      "eta": 0.4,
+      "inequality_margin": 0.05
+    },
+    {
+      "calibration_score": 0.7932739536276722,
+      "eta": 0.4,
+      "inequality_margin": 0.02
+    }
+  ],
+  "selected": {
+    "eta": 0.7,
+    "inequality_margin": 0.05
+  },
+  "selection_partition": "calibration_only"
+}

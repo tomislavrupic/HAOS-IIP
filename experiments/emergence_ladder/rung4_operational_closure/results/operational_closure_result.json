@@ -1,0 +1,68 @@
+{
+  "classification": "NEGATIVE_RESULT",
+  "contract_hash": "el_r4_contract_ceb481303c49d36df4fd1461",
+  "controls": [
+    {
+      "control": "transition_shuffled_training",
+      "degradation_from_target": 0.1790123456790123,
+      "internal_accuracy": 0.39197530864197533,
+      "internal_advantage": -0.1111111111111111,
+      "mechanism_valid": true
+    },
+    {
+      "control": "context_ablation",
+      "degradation_from_target": 0.3395061728395061,
+      "internal_accuracy": 0.4537037037037037,
+      "internal_advantage": -0.2716049382716049,
+      "mechanism_valid": true
+    },
+    {
+      "control": "target_label_permutation",
+      "degradation_from_target": 0.09259259259259256,
+      "internal_accuracy": 0.17592592592592593,
+      "internal_advantage": -0.024691358024691357,
+      "mechanism_valid": true
+    }
+  ],
+  "experiment_id": "EL-R4-OC-01",
+  "gates": {
+    "context_ablation_degrades": true,
+    "holdout_advantage": true,
+    "holdout_ci_excludes_zero": false,
+    "strata_consistency": true,
+    "transition_shuffle_degrades": true,
+    "validation_advantage": true
+  },
+  "holdout": {
+    "best_external_accuracy": 0.7253086419753086,
+    "external_accuracy": 0.7253086419753086,
+    "internal_accuracy": 0.7932098765432098,
+    "internal_advantage": 0.0679012345679012,
+    "marginal_accuracy": 0.4537037037037037,
+    "position_accuracy": 0.654320987654321
+  },
+  "holdout_positive_strata_fraction": 0.8333333333333334,
+  "labels": [
+    "RUNG_4_OPERATIONAL_CLOSURE_NOT_SUPPORTED",
+    "INTERNAL_VS_EXTERNAL_PREDICTION_TESTED",
+    "DESTRUCTIVE_CONTROLS_EXECUTED",
+    "NO_CROSS_SCALE_OR_PHYSICS_CLAIM"
+  ],
+  "result_hash": "el_r4_oc_01_9baab6211c9ba7d38b7be0b7",
+  "run_counts": {
+    "48": 54,
+    "60": 54,
+    "72": 54,
+    "84": 54
+  },
+  "source_hash": "50d552dba2487dc256d3c6856d5671d26abcfae3b8ad69651c9dbcf131a5e67b",
+  "status": "FAIL",
+  "validation": {
+    "best_external_accuracy": 0.7253086419753086,
+    "external_accuracy": 0.7253086419753086,
+    "internal_accuracy": 0.7993827160493827,
+    "internal_advantage": 0.07407407407407407,
+    "marginal_accuracy": 0.46296296296296297,
+    "position_accuracy": 0.6481481481481481
+  }
+}

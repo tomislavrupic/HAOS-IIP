@@ -1,0 +1,134 @@
+{
+  "classification": "VALIDATION_GATE_FAILED",
+  "contract_hash": "el_r3_rp_01_contract_029d9c726c10462b11efb274",
+  "dimension_medians": {
+    "corrective_cost": 0.0017805939343091977,
+    "functional_restoration": 0.0013755714861579309,
+    "identity_preservation": 0.9375,
+    "operator_restoration": 0.0,
+    "parity_decoding_success": 0.0,
+    "post_recovery_persistence": 1.0,
+    "recovery_latency": 0.0,
+    "relational_symbol_restoration": 0.9375,
+    "state_region_recovery_gain": 0.5220369568279402,
+    "syndrome_reduction": 4.0,
+    "trajectory_corridor_recovery_gain": 0.025716476457026686,
+    "trivial_attractor": 0.0,
+    "wrong_codeword_convergence": 1.0
+  },
+  "experiment_id": "EL-R3-RP-01",
+  "final_evaluation_authorized": false,
+  "final_seed_count_consumed": 0,
+  "historical_rt02_result_hash": "el_r3_rt_02_cade4e057a54d119e6af143c",
+  "labels": [
+    "VALIDATION_GATE_FAILED",
+    "NO_RUNG_4_PROMOTION"
+  ],
+  "radius_results": {
+    "above": 0.0,
+    "within": 0.0
+  },
+  "result_hash": "el_r3_rp_01_e7806ce1a296242b75ad3d3b",
+  "run_counts": {
+    "calibration": 1152,
+    "final": 0,
+    "invalid": 0,
+    "validation": 1216
+  },
+  "selected_parameters": {
+    "bridge_margin": 0.02,
+    "eta": 0.4
+  },
+  "source_hashes": {
+    "alphabet": "aee4e99ecb891133a2cd15addc2028270b33a018aaf4280bfea6269d191d28d7",
+    "bridge": "ae96d21ba2ce0fc3c0484c1a2b03c5b930e956ae83b6f33b321537e0b04ac2d6",
+    "controls": "d3de9cb4b6159ef29c0ab2ff399b07aabeef90ee484a85e3952648a2f0b94abe",
+    "decoder": "46840ccb9bc41f8b555d44ca344ef07d227932a059dcb304e47b523a81ef0862",
+    "parity_architecture": "9b72c602caad7de27f298801e79448735dc10f7e4248a588f16b8c86feb20921",
+    "runner": "a5f5c2486b622128fe6cac8cd4237bad73bfde871a93f555f484375fbc854014"
+  },
+  "thresholds": {
+    "functional_restoration_min": 0.75,
+    "identity_min": 0.9,
+    "recovery_rate_min": 0.75,
+    "state_region_gain_min": 0.25,
+    "superiority_margin_min": 0.05,
+    "trajectory_corridor_gain_min": 0.1,
+    "trivial_variance_ratio_min": 0.5
+  },
+  "validation_gate": {
+    "above_radius_count": 32,
+    "above_radius_recovery_rate": 0.0,
+    "functional_difference_ci_vs_passive": [
+      -0.012058175518422578,
+      0.026969081746776095
+    ],
+    "functional_difference_ci_vs_rt02": [
+      -0.04361042388570685,
+      0.03984758788657446
+    ],
+    "gates": {
+      "beyond_radius_degrades": false,
+      "identity_threshold": true,
+      "memory_insufficient_for_continuous_reconstruction": true,
+      "no_leakage": true,
+      "nonzero_functional_recovery": true,
+      "parity_deletion_degrades": false,
+      "target_exceeds_frozen_rt02": false,
+      "target_exceeds_passive": false,
+      "target_exceeds_random_parity_and_random_memory": false,
+      "trivial_attractor_rejected": false
+    },
+    "information_accounting": {
+      "continuous_state_reconstruction_possible": false,
+      "continuous_state_variables": 64,
+      "distinct_continuous_states": true,
+      "empirical_non_uniqueness_pass": true,
+      "full_checkpoint_bits": 4096,
+      "global_binary_check_rank": 32,
+      "global_binary_nullity": 16,
+      "maximum_local_decoder_visible_bits": 5,
+      "parity_to_checkpoint_ratio": 0.0078125,
+      "parity_to_rt02_ratio": 0.125,
+      "primary_relational_symbols": 48,
+      "rt02_memory_bits_upper_bound": 256,
+      "same_parity_for_distinct_states": true,
+      "same_primary_symbols_for_distinct_states": true,
+      "single_component_has_complete_parity": false,
+      "state_precision_bits": 64,
+      "stored_parity_bits": 32,
+      "symbol_vectors_per_parity_coset": 65536
+    },
+    "leakage_guard": {
+      "calibration_only_parameter_selection": true,
+      "function_label_absent_from_contract_mechanism": true,
+      "mechanism_signatures_exclude_prohibited_information": true,
+      "memory_schema_excludes_continuous_state": true,
+      "seed_partitions_disjoint": true
+    },
+    "rates": {
+      "centralized_parity_non_admissible": 0.0,
+      "continuous_bridge_ablation": 0.0,
+      "full_checkpoint_oracle_non_admissible": 0.75,
+      "identity_constraint_ablation": 0.0,
+      "identity_scrambled": 0.0,
+      "memory_budget_random_bits": 0.0,
+      "message_passing_ablation": 0.0,
+      "operator_only": 0.0,
+      "parity_bit_corruption": 0.0,
+      "parity_deletion": 0.0,
+      "parity_permutation": 0.0,
+      "passive_relaxation": 0.0,
+      "random_parity_checks": 0.0,
+      "redundancy_ablation": 0.0,
+      "rt02_frozen_baseline": 0.0,
+      "signal_blind": 0.0,
+      "syndrome_ablation": 0.0,
+      "target": 0.0,
+      "trivial_attractor": 0.0
+    },
+    "validation_pass": false,
+    "within_radius_count": 16,
+    "within_radius_recovery_rate": 0.0
+  }
+}

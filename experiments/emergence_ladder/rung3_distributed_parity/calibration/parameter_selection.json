@@ -1,0 +1,28 @@
+{
+  "ranking": [
+    {
+      "bridge_margin": 0.02,
+      "calibration_score": 0.9374858554183385,
+      "eta": 0.4
+    },
+    {
+      "bridge_margin": 0.05,
+      "calibration_score": 0.9374815836896425,
+      "eta": 0.4
+    },
+    {
+      "bridge_margin": 0.02,
+      "calibration_score": 0.9374720206035639,
+      "eta": 0.7
+    },
+    {
+      "bridge_margin": 0.05,
+      "calibration_score": 0.9374666274144905,
+      "eta": 0.7
+    }
+  ],
+  "selected": {
+    "bridge_margin": 0.02,
+    "eta": 0.4
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "artifact_list": [
+    "operational_closure_result.json",
+    "operational_closure_predictions.csv",
+    "operational_closure_controls.csv",
+    "operational_closure_uncertainty.json",
+    "operational_closure_report.md"
+  ],
+  "claim": "A run's observed internal event-transition context predicts its next event on unseen refinement levels better than external metadata and position-only baselines, and that advantage degrades when transition structure is destroyed.",
+  "competing_explanations": [
+    "probe and hierarchy metadata alone determine event order",
+    "event position alone determines the next event",
+    "event-label marginals explain apparent closure",
+    "transition advantage survives arbitrary order destruction"
+  ],
+  "controls": [
+    {
+      "destroyed": "within-run transition structure",
+      "expected": "internal advantage decreases",
+      "name": "transition_shuffled_training",
+      "preserved": "run count, event labels, probes, hierarchy labels, split membership"
+    },
+    {
+      "destroyed": "current-event context at evaluation",
+      "expected": "internal advantage decreases",
+      "name": "context_ablation",
+      "preserved": "trained counts, targets, candidate labels, run metadata"
+    },
+    {
+      "destroyed": "event-label identity",
+      "expected": "target accuracy approaches baseline",
+      "name": "target_label_permutation",
+      "preserved": "run sizes and prediction pipeline"
+    }
+  ],
+  "dependent_variables": [
+    "next_event_accuracy",
+    "run_level_accuracy_advantage",
+    "bootstrap_confidence_interval",
+    "stratum_positive_fraction",
+    "control_degradation"
+  ],
+  "experiment_id": "EL-R4-OC-01",
+  "failure_threshold": "Any required source inconsistency or control mechanism failure returns INSTRUMENT_INVALID. Valid execution that misses any official success gate returns NEGATIVE_RESULT.",
+  "independent_variables": [
+    "predictor family",
+    "refinement split",
+    "probe",
+    "hierarchy label",
+    "transition intervention"
+  ],
+  "invalidation_conditions": [
+    "duplicate run keys with conflicting chain signatures",
+    "chain signature disagrees with event ranks",
+    "holdout level appears in model construction",
+    "future event is included in the predictor key",
+    "control does not change the declared transition mechanism",
+    "fewer than 30 holdout runs"
+  ],
+  "non_claims": [
+    "not thermodynamic closure",
+    "not organizational closure in a biological sense",
+    "not causal sufficiency",
+    "not cross-scale organization",
+    "not a physical law or physical bridge"
+  ],
+  "seed_policy": {
+    "bootstrap_seed": 4401,
+    "control_seed": 4402,
+    "resamples": 2000,
+    "unit_of_uncertainty": "independent stored run key; bootstrap resamples are uncertainty only"
+  },
+  "source": {
+    "artifact": "phase16-temporal-ordering/runs/phase16_event_ordering_ledger.csv",
+    "construction_levels": [48, 60],
+    "holdout_level": 84,
+    "validation_level": 72
+  },
+  "status": "FROZEN",
+  "stopping_condition": "Classify after one execution under the frozen split and controls. Do not tune predictor keys or thresholds after observing the result.",
+  "success_threshold": {
+    "control_degradation_min": 0.05,
+    "holdout_accuracy_advantage_min": 0.05,
+    "holdout_advantage_ci_lower_min": 0.0,
+    "holdout_positive_strata_fraction_min": 0.666666666667,
+    "validation_accuracy_advantage_min": 0.03
+  },
+  "version": "operational-closure-v0.1"
+}

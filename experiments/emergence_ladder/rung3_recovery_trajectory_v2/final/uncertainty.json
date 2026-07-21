@@ -1,0 +1,10 @@
+{
+  "best_admissible_control_recovery_rate": 0.0,
+  "paired_difference_median": 0.99766538800382,
+  "paired_target_minus_passive_gain_ci_95": [
+    0.9974527263720561,
+    0.99807239972485
+  ],
+  "resamples": 3000,
+  "run_unit": "seed x perturbation family x magnitude"
+}

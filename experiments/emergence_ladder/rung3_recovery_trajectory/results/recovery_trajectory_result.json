@@ -1,0 +1,63 @@
+{
+  "classification": "NEGATIVE_RESULT",
+  "contract_hash": "el_r3_contract_e8fcb46cfad266532aa7024c",
+  "controls": [
+    {
+      "control": "passive_relaxation",
+      "mean_recovery_gain": 0.0,
+      "mechanism_valid": true
+    },
+    {
+      "control": "operator_only_filtering",
+      "mean_recovery_gain": -0.030470570732118868,
+      "mechanism_valid": true
+    },
+    {
+      "control": "topology_altered_cycle_phase",
+      "mean_recovery_gain": -0.04652777521176488,
+      "mechanism_valid": true
+    },
+    {
+      "control": "trivial_attractor",
+      "mean_recovery_gain": 0.23544577983843204,
+      "mechanism_valid": true
+    }
+  ],
+  "experiment_id": "EL-R3-RT-01",
+  "gates": {
+    "beats_operator_only": false,
+    "beats_passive": false,
+    "branch_gain": false,
+    "branch_gain_ci": false,
+    "grade_signature_retained": false,
+    "run_fraction": false,
+    "topology_specific": false,
+    "trivial_attractor_rejected": true
+  },
+  "labels": [
+    "RUNG_3_RECOVERABILITY_NOT_SUPPORTED",
+    "PASSIVE_AND_TRIVIAL_CONTROLS_EXECUTED",
+    "OPERATOR_ONLY_EXPLANATION_TESTED",
+    "NO_CLOSURE_OR_PHYSICS_CLAIM"
+  ],
+  "means": {
+    "branch_grade_signature_error": 0.3606260323158254,
+    "branch_recovery_gain": -0.046653596268820874,
+    "operator_only_recovery_gain": -0.030470570732118868,
+    "passive_recovery_gain": 0.0,
+    "topology_recovery_gain": -0.04652777521176488,
+    "trivial_identity_to_branch": 0.18713235914085027,
+    "trivial_recovery_gain": 0.23544577983843204
+  },
+  "recovered_run_fraction": 0.0,
+  "result_hash": "el_r3_rt_01_dbf9c9c842fa4d7936670f28",
+  "status": "FAIL",
+  "uncertainty": {
+    "branch_recovery_gain_ci_95": [
+      -0.04930691668852593,
+      -0.044018359841133586
+    ],
+    "independent_parameter_seed_rows": 24,
+    "resamples": 2000
+  }
+}

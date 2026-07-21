@@ -1,0 +1,78 @@
+{
+  "artifact_list": [
+    "recovery_trajectory_result.json",
+    "recovery_trajectory_rows.csv",
+    "recovery_trajectory_controls.csv",
+    "recovery_trajectory_uncertainty.json",
+    "recovery_trajectory_report.md"
+  ],
+  "claim": "After an orthogonal state disruption, the frozen grade-locked cochain transport returns toward its unperturbed trajectory more strongly than passive relaxation, operator-only filtering, a topology-altered control, and a trivial-attractor explanation while retaining the declared grade signature.",
+  "competing_explanations": [
+    "the perturbed state merely remains close without active recovery",
+    "ordinary operator filtering explains the full recovery",
+    "any topology gives the same result",
+    "both trajectories collapse to one trivial attractor"
+  ],
+  "config": {
+    "beta": 0.06,
+    "dt": 0.0025,
+    "epsilon": 0.02,
+    "lock_alpha": 0.15,
+    "n_side": 6,
+    "steps": 80
+  },
+  "controls": [
+    "passive_relaxation",
+    "operator_only_filtering",
+    "topology_altered_cycle_phase",
+    "trivial_attractor"
+  ],
+  "dependent_variables": [
+    "trajectory_fidelity",
+    "recovery_gain",
+    "recovery_time",
+    "grade_signature_error",
+    "run-level confidence interval"
+  ],
+  "experiment_id": "EL-R3-RT-01",
+  "failure_threshold": "Valid execution that misses any official gate returns NEGATIVE_RESULT. Source or control mechanism failure returns INSTRUMENT_INVALID.",
+  "independent_variables": [
+    "perturbation amplitude",
+    "seed",
+    "recovery mechanism",
+    "topology condition"
+  ],
+  "invalidation_conditions": [
+    "perturbation is not orthogonal to the reference state",
+    "passive control changes fidelity",
+    "topology control does not alter the frozen operator",
+    "non-finite trajectory value",
+    "threshold or mechanism changes after execution"
+  ],
+  "non_claims": [
+    "not universal recoverability",
+    "not operational closure",
+    "not cross-scale organization",
+    "not a physical relaxation law",
+    "not a continuum or ontology claim"
+  ],
+  "perturbation_amplitudes": [0.25, 0.5, 0.9],
+  "seed_policy": {
+    "bootstrap_seed": 3300,
+    "perturbation_seeds": [3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308],
+    "resamples": 2000
+  },
+  "status": "FROZEN",
+  "stopping_condition": "Execute one frozen representative sweep and classify. Do not tune beta, lock strength, amplitudes, controls, or gates after observing outputs.",
+  "success_threshold": {
+    "branch_gain_ci_lower_min": 0.02,
+    "branch_gain_min": 0.08,
+    "branch_over_operator_only_min": 0.04,
+    "branch_over_passive_min": 0.08,
+    "grade_signature_error_max": 0.08,
+    "recovered_run_fraction_min": 0.75,
+    "topology_degradation_min": 0.04,
+    "trivial_identity_max": 0.5
+  },
+  "version": "recovery-trajectory-v0.1"
+}

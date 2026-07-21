@@ -1,0 +1,23 @@
+{
+  "formulas": {
+    "control_margin_min": "max(0.05, 0.5 * calibration median target-vs-best-admissible-control gain margin)",
+    "functional_recovery_min": "max(0.75, calibration target 10th percentile - 0.05)",
+    "identity_min": "max(0.85, calibration target 10th percentile - 0.03)",
+    "operator_recovery_min": "max(0.75, calibration target 10th percentile - 0.05)",
+    "recovery_gain_min": "max(0.10, 0.5 * calibration target median recovery gain)",
+    "state_error_max": "min(0.15, calibration target 90th percentile + 0.02)",
+    "trajectory_error_max": "min(0.20, calibration target 90th percentile + 0.03)"
+  },
+  "source_partition": "calibration_only",
+  "thresholds": {
+    "control_margin_min": 0.06504960827618911,
+    "functional_recovery_min": 0.75,
+    "identity_min": 0.97,
+    "operator_recovery_min": 0.8319803600654664,
+    "recovery_gain_min": 0.49944281705920324,
+    "run_recovery_rate_min": 0.75,
+    "state_error_max": 0.021328762591301488,
+    "trajectory_error_max": 0.2,
+    "trivial_variance_ratio_min": 0.5
+  }
+}

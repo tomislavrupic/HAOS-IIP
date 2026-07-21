@@ -1,0 +1,4 @@
+control,mechanism_valid,internal_accuracy,internal_advantage,degradation_from_target
+transition_shuffled_training,True,0.39197530864197533,-0.1111111111111111,0.1790123456790123
+context_ablation,True,0.4537037037037037,-0.2716049382716049,0.3395061728395061
+target_label_permutation,True,0.17592592592592593,-0.024691358024691357,0.09259259259259256

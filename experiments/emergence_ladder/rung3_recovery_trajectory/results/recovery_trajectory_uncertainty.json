@@ -1,0 +1,8 @@
+{
+  "branch_recovery_gain_ci_95": [
+    -0.04930691668852593,
+    -0.044018359841133586
+  ],
+  "independent_parameter_seed_rows": 24,
+  "resamples": 2000
+}
