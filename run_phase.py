@@ -31,6 +31,9 @@ PHASE_COMMANDS = {
 }
 
 PHASE_CHECKERS = {
+    "3": ROOT / "phase3-stability" / "diagnostics" / "check_phase3_bundle.py",
+    "4": ROOT / "phase4-sector-freeze" / "diagnostics" / "check_phase4_bundle.py",
+    "5": ROOT / "phase5-readout" / "diagnostics" / "check_phase5_bundle.py",
     "10": ROOT / "phase10-bridge" / "diagnostics" / "check_phase10_bundle.py",
     "11": ROOT / "phase11-protection" / "diagnostics" / "check_phase11_bundle.py",
     "12": ROOT / "phase12-interactions" / "diagnostics" / "check_phase12_bundle.py",
@@ -52,6 +55,24 @@ def normalize_phase_id(value: str) -> str:
     return phase
 
 
+def resolve_target(phase_id: str, *, check: bool) -> Path:
+    if check:
+        target = PHASE_CHECKERS.get(phase_id)
+        if target is None:
+            valid = ", ".join(sorted(PHASE_CHECKERS))
+            raise ValueError(
+                f"No checker registered for phase '{phase_id}'. "
+                f"Refusing to run its builder in --check mode. Checkable phase ids: {valid}"
+            )
+        return target
+
+    command = PHASE_COMMANDS.get(phase_id)
+    if command is None:
+        valid = ", ".join(sorted(PHASE_COMMANDS))
+        raise ValueError(f"Unknown phase '{phase_id}'. Valid phase ids: {valid}")
+    return command[0]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run or check one frozen HAOS-IIP phase builder.")
     parser.add_argument("phase", help="Phase id, for example: 10, 16, 19, or X")
@@ -59,13 +80,10 @@ def main() -> None:
     args = parser.parse_args()
 
     phase_id = normalize_phase_id(args.phase)
-    target = PHASE_CHECKERS.get(phase_id) if args.check else None
-    if target is None:
-        command = PHASE_COMMANDS.get(phase_id)
-        if command is None:
-            valid = ", ".join(sorted(PHASE_COMMANDS))
-            raise SystemExit(f"Unknown phase '{args.phase}'. Valid phase ids: {valid}")
-        target = command[0]
+    try:
+        target = resolve_target(phase_id, check=args.check)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
 
     if not Path(target).exists():
         raise SystemExit(f"Missing target for phase '{args.phase}': {target}")

@@ -1,6 +1,8 @@
 # Root Execution Guide
 
-- Run a checker with `python3 run_phase.py <phase> --check` from repo root.
+- Run a registered checker with `python3 run_phase.py <phase> --check` from repo root.
+- Registered check-only phase IDs are `3`, `4`, `5`, `10`-`19`, and `X`.
+- Check-only mode fails closed when no checker is registered; it never falls back to a builder.
 - A phase authority bundle means: builder output passes its checker and has `manifest + summary + runs.json`.
 - Read manifests first, not phase source, unless you are fixing that phase locally.
 - Regime-defining phases are `6`, `8`, `10`, `11`, `14`, `16`, `17`, and `18`.
