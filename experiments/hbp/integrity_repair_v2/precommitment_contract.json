@@ -1,0 +1,90 @@
+{
+  "artifact_list": [
+    "hbp_ir_01_result.json",
+    "hbp_ir_01_predictions.csv",
+    "hbp_ir_01_controls.csv",
+    "hbp_ir_01_report.md"
+  ],
+  "bridge_id": "HBP-IR-01",
+  "claim": "A versioned predictive instrument can enforce calibration-only selection, untouched holdout scoring, canonical features, explicit missingness, same-path controls, and fail-closed mechanism assertions.",
+  "controls": [
+    {
+      "destroyed": "target-feature relation",
+      "name": "target_label_shuffle",
+      "preserved": "features, split sizes, model candidates"
+    },
+    {
+      "destroyed": "primary signal feature alignment",
+      "name": "signal_feature_shuffle",
+      "preserved": "target, feature marginals, split sizes"
+    },
+    {
+      "destroyed": "source signal identity",
+      "name": "parameter_matched_null",
+      "preserved": "signal mean and standard deviation"
+    },
+    {
+      "control_type": "LEAKAGE_POSITIVE_CONTROL",
+      "expected": "rejected before fitting",
+      "name": "target_proxy_leakage"
+    },
+    {
+      "control_type": "INVALID_MECHANISM_POSITIVE_CONTROL",
+      "expected": "detected because declared mechanism changes nothing",
+      "name": "no_op_control"
+    }
+  ],
+  "data_split": {
+    "calibration": 40,
+    "development": 80,
+    "holdout": 60,
+    "rule": "one deterministic permutation frozen before generation"
+  },
+  "dependent_variables": [
+    "holdout_rmse",
+    "holdout_spearman",
+    "prediction_row_hash",
+    "control_mechanism_validity"
+  ],
+  "failure_threshold": "Any holdout access during selection, prediction/score mismatch, undeclared feature, unchanged destructive control, or non-finite target returns INSTRUMENT_INVALID.",
+  "feature_registry": "feature_registry.json",
+  "independent_variables": [
+    "candidate feature set",
+    "fit seed",
+    "control transformation"
+  ],
+  "invalidation_conditions": [
+    "holdout target influences model selection",
+    "stored predictions differ from scored predictions",
+    "feature outside canonical registry reaches fitting",
+    "required non-finite value is silently imputed",
+    "destructive control leaves its declared source field unchanged",
+    "control bypasses the target evaluation path"
+  ],
+  "missingness_policy": {
+    "optional_features": "development-mean imputation with counts reported by split",
+    "required_features": "fail closed on any non-finite value",
+    "targets": "fail closed on any non-finite value"
+  },
+  "non_claims": [
+    "not a repair or rerun of PB-01, PB-02, PB-03, or PB-04",
+    "not evidence that HAOS predicts an external system",
+    "not empirical validation",
+    "not a physical mechanism"
+  ],
+  "perturbations": [
+    "target permutation",
+    "signal permutation",
+    "parameter-matched signal replacement"
+  ],
+  "seed_policy": {
+    "data_seed": 20260711,
+    "fit_seeds": [3101, 3102, 3103],
+    "independent_evidence": "fit seeds are repeated fitting only, not independent datasets"
+  },
+  "status": "FROZEN",
+  "stopping_condition": "Stop after one deterministic synthetic end-to-end run proves the integrity gates and intended controls; do not optimize predictive score.",
+  "success_threshold": "All integrity gates pass, all valid controls alter their declared mechanism, both intentionally invalid controls are detected, and a second run is byte-equivalent at the result level.",
+  "uncertainty_method": "variance across three predeclared repeated fits; no bootstrap sample is treated as independent evidence",
+  "version": "hbp-integrity-repair-v2.0"
+}

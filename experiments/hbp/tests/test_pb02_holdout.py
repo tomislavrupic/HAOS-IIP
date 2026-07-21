@@ -9,7 +9,7 @@ from pathlib import Path
 from experiments.hbp.pb02_external_network_recovery import pb02_holdout as pb02
 
 
-DATA_ROOT = Path("/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/DATA/Powergraph")
+DATA_ROOT = pb02.DEFAULT_DATA_ROOT
 RESULTS_DIR = Path(__file__).resolve().parents[1] / "pb02_external_network_recovery" / "results"
 RESULT_PATH = RESULTS_DIR / "pb02_result.json"
 DATASET_VALIDATION_PATH = RESULTS_DIR / "dataset_validation.json"

@@ -1,0 +1,20 @@
+{
+  "features": {
+    "noise": {
+      "missingness": "development_mean_imputation_with_split_counts",
+      "provenance": "synthetic_source",
+      "required": false
+    },
+    "signal": {
+      "missingness": "fail_closed",
+      "provenance": "synthetic_source",
+      "required": true
+    }
+  },
+  "forbidden_provenance": [
+    "target_derived",
+    "holdout_derived"
+  ],
+  "registry_id": "HBP-IR-01-FEATURES",
+  "version": "1.0"
+}

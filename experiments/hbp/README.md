@@ -1,5 +1,11 @@
 # HAOS-IIP Physical Bridge Program
 
+Lifecycle status: PB-01 through PB-04 are `QUARANTINED_INVALID` and may not be
+repaired in place. The versioned `HBP-IR-01` synthetic integrity calibration is
+complete and retained as a supporting instrument; it does not promote any
+historical result. See the
+[branch lifecycle registry](../../docs/branch_governance/branch_lifecycle_summary.md).
+
 HBP is an experimental bridge registry and verifier. It classifies candidate
 bridges from HAOS-IIP telemetry to externally measurable or real-world systems.
 
@@ -113,18 +119,18 @@ is not empirical physical validation and not a physical mechanism claim.
 
 ## PB-02 Boundary
 
-PB-02 is the next external network-recovery target. It is frozen as a
-precommitment draft and does not claim any empirical result yet. The intended
-benchmark is a real-world power-grid recovery task with frozen holdout and a
-best-baseline-vs-best-baseline-plus-frozen-HAOS comparison.
+PB-02 is a quarantined historical artifact. Its scored output remains preserved,
+but control routing, holdout selection, and feature reconstruction are not valid
+enough for interpretation. Any replacement must use the new `HBP-IR-01`
+precommitment and a new result namespace.
 
 ## PB-03 Boundary
 
-PB-03 is a temporal recovery benchmark draft. It asks whether HAOS predicts
-future recoverability better than topology-only methods on untouched holdout.
+PB-03 is a quarantined temporal-recovery artifact. Its present controls and
+baseline coverage do not satisfy their contracts.
 
 ## PB-04 Boundary
 
-PB-04 is a cross-domain transfer benchmark draft. It asks whether frozen HAOS
-structural descriptors transfer recoverability ranking across domains.
-Current reading: `PREDICTION_NOT_DISTINCT_FROM_BASELINES` / `CROSS_DOMAIN_TRANSFER_BOUNDARY_OPEN`.
+PB-04 is a quarantined cross-domain transfer artifact. Its baseline and HAOS
+candidate currently alias the same model path, so no transfer interpretation is
+authorized.

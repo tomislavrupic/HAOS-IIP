@@ -23,11 +23,12 @@ from experiments.hbp.benchmark_utils import (
     stable_hash,
     top_k_precision,
 )
+from experiments.hbp.data_paths import DEFAULT_POWERGRAPH_ROOT
 from experiments.hbp.pb04_cross_domain_transfer.loader import build_transfer_tables
 
 
 REPO_ROOT = HERE.parents[2]
-DATA_ROOT = Path("/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/DATA/Powergraph")
+DATA_ROOT = DEFAULT_POWERGRAPH_ROOT
 RESULTS_DIR = HERE / "results"
 RESULT_PATH = RESULTS_DIR / "pb04_result.json"
 REPORT_PATH = RESULTS_DIR / "pb04_report.md"

@@ -13,12 +13,13 @@ import h5py
 import numpy as np
 from scipy.io import loadmat
 
+from experiments.hbp.data_paths import DEFAULT_POWERGRAPH_ROOT
 from experiments.hbp.hbp_validation import stable_hash
 
 
 HERE = Path(__file__).resolve().parent
 REPO_ROOT = HERE.parents[2]
-DEFAULT_DATA_ROOT = Path("/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/DATA/Powergraph")
+DEFAULT_DATA_ROOT = DEFAULT_POWERGRAPH_ROOT
 RESULTS_DIR = HERE / "results"
 
 

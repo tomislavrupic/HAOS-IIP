@@ -9,7 +9,7 @@ from experiments.hbp.pb03_temporal_recovery.loader import build_loader_summary a
 from experiments.hbp.pb04_cross_domain_transfer.loader import build_loader_summary as build_pb04_loader_summary
 
 
-REPO_ROOT = Path("/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP")
+REPO_ROOT = Path(__file__).resolve().parents[3]
 PB03 = REPO_ROOT / "experiments/hbp/pb03_temporal_recovery"
 PB04 = REPO_ROOT / "experiments/hbp/pb04_cross_domain_transfer"
 

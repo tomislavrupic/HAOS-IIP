@@ -1,5 +1,11 @@
 # PB-03 Execution Readiness
 
+Audit note (2026-07-11): this file records the pre-run state. A runner and
+stored result now exist, but the runner does not implement the full frozen
+baseline manifest and its seed-repeat control compares a prediction array with
+itself. The stored result is not authoritative for bridge promotion until a
+new precommitted repair run closes those gaps.
+
 PB-03 remains contract-first, but the source family is now pinned.
 
 ## Frozen Source Anchor
@@ -33,4 +39,3 @@ Before a runner exists, PB-03 still needs:
 2. metric freeze
 3. baseline freeze
 4. deterministic holdout runner
-

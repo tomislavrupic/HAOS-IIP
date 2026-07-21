@@ -1,5 +1,11 @@
 # PB-04 Execution Readiness
 
+Audit note (2026-07-11): this file records the pre-run state. A runner and
+stored result now exist, but the baseline and HAOS candidate currently execute
+the same model path, while the seed-repeat and topology controls do not enact
+their declared perturbations. The stored result is not authoritative for bridge
+promotion until a new precommitted repair run closes those gaps.
+
 PB-04 remains contract-first, but the source and target anchors are now pinned.
 
 ## Frozen Anchors
@@ -39,4 +45,3 @@ Before a runner exists, PB-04 still needs:
 2. a frozen evaluation rule
 3. a target-domain split manifest
 4. a deterministic holdout runner
-

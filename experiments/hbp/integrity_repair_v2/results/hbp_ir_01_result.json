@@ -1,0 +1,41 @@
+{
+  "bridge_id": "HBP-IR-01",
+  "calibration_scores": {
+    "mean": 1.9863734287818078,
+    "signal_linear": 0.28879452586963167,
+    "signal_noise_linear": 0.16120760159213385
+  },
+  "classification": "INSTRUMENT_VALID",
+  "contract_hash": "hbp_ir_contract_f907381fe734433115b7cd40",
+  "holdout_metrics": {
+    "fit_seed_variance": 4.0869665405855125e-06,
+    "rmse": 0.1334760617163942,
+    "spearman": 0.9944429008057796
+  },
+  "invalid_controls_detected": [
+    "target_proxy_leakage",
+    "no_op_control"
+  ],
+  "labels": [
+    "CALIBRATION_ONLY_SELECTION_PASS",
+    "HOLDOUT_ISOLATION_PASS",
+    "SAME_PREDICTION_PATH_PASS",
+    "CONTROL_MECHANISM_ASSERTIONS_PASS",
+    "NO_PREDICTIVE_BRIDGE_CLAIM"
+  ],
+  "missingness": {
+    "noise": {
+      "calibration": 1,
+      "development": 2,
+      "holdout": 1
+    },
+    "signal": {
+      "calibration": 0,
+      "development": 0,
+      "holdout": 0
+    }
+  },
+  "result_hash": "hbp_ir_01_0fdcdc0fed1078b9ea900ccf",
+  "selected_model": "signal_noise_linear",
+  "status": "PASS"
+}

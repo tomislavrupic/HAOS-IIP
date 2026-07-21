@@ -3,6 +3,13 @@
 This page gives a compact view of the current HBP branches and their terminal labels.
 It is a snapshot, not a claim upgrade.
 
+Lifecycle decision: PB-01 through PB-04 are `QUARANTINED_INVALID`. Their
+artifacts remain preserved, but none is an active development target. The only
+eligible instrument successor was the separately versioned `HBP-IR-01`; its
+minimal synthetic integrity run now passes and is retained without predictive
+promotion. See the
+[branch lifecycle registry](../../docs/branch_governance/branch_lifecycle_summary.md).
+
 ## PB-01
 
 - Bridge ID: `PB-01-NETWORK-RECOVERY`
@@ -18,12 +25,14 @@ It is a snapshot, not a claim upgrade.
 ## PB-02
 
 - Bridge ID: `PB-02-EXTERNAL-NETWORK-RECOVERY`
-- Current status: `PRECOMMITMENT_DRAFT`
+- Contract status: `PRECOMMITMENT_DRAFT`
+- Stored result status: `CONTROL_INVALID`
+- Audit status: quarantined pending integrity repair
 - Terminal labels:
-  - `OPERATIONAL_MAPPING_PARTIAL`
-  - `OPERATIONAL_MAPPING_VALID`
-  - `PHYSICAL_MECHANISM_NOT_ESTABLISHED`
-- Reading: PB-02 is still a frozen precommitment draft for external PowerGraph holdout work; it has not yet been run as a scored holdout bridge.
+  - `CONTROL_INVALID`
+  - `PREDICTION_NOT_DISTINCT_FROM_BASELINES`
+  - `MIXED_OPEN`
+- Reading: scored PowerGraph artifacts exist, but the baseline reconstruction and shuffled-label control are internally inconsistent. Hash reproducibility does not validate this result.
 
 ## PB-03
 
@@ -34,7 +43,7 @@ It is a snapshot, not a claim upgrade.
   - `FORMAL_CORRESPONDENCE_ONLY`
   - `OPERATIONAL_MAPPING_PARTIAL`
   - `PHYSICAL_MECHANISM_NOT_ESTABLISHED`
-- Reading: PB-03 remains a temporal recovery boundary case; the target does not beat the baseline.
+- Reading: PB-03 remains a temporal recovery boundary case. Its stored result is reproducible, but the runner does not implement the full frozen baseline manifest and its seed-repeat control is tautological, so no predictive promotion is supported.
 
 ## PB-04
 
@@ -46,16 +55,16 @@ It is a snapshot, not a claim upgrade.
   - `FORMAL_CORRESPONDENCE_ONLY`
   - `OPERATIONAL_MAPPING_PARTIAL`
   - `PHYSICAL_MECHANISM_NOT_ESTABLISHED`
-- Reading: PB-04 remains a cross-domain transfer boundary case; it does not upgrade the bridge.
+- Reading: PB-04 remains a cross-domain transfer boundary case. Its baseline and HAOS models currently use the same feature path, and its seed-repeat and topology controls do not execute their declared mechanisms.
 
 ## One-line view
 
 | Bridge | Status | Terminal reading |
 | --- | --- | --- |
 | PB-01 | `PREDICTION_NOT_DISTINCT_FROM_BASELINES` | control-invalid synthetic calibration |
-| PB-02 | `PRECOMMITMENT_DRAFT` | frozen draft for external PowerGraph holdout |
-| PB-03 | `PREDICTION_NOT_DISTINCT_FROM_BASELINES` | temporal recovery boundary open |
-| PB-04 | `PREDICTION_NOT_DISTINCT_FROM_BASELINES` | cross-domain transfer boundary open |
+| PB-02 | `CONTROL_INVALID` | scored artifact quarantined; contract remains draft |
+| PB-03 | `PREDICTION_NOT_DISTINCT_FROM_BASELINES` | reproducible result, incomplete baseline/control implementation |
+| PB-04 | `PREDICTION_NOT_DISTINCT_FROM_BASELINES` | non-discriminative candidate path and invalid control mechanisms |
 
 ## Boundary
 

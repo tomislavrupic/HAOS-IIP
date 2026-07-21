@@ -15,10 +15,12 @@ from experiments.biology.gene_network_demo.gene_network_model import (
     simulate_network,
 )
 from experiments.hbp.benchmark_utils import build_feature_vector
+from experiments.hbp.data_paths import DEFAULT_POWERGRAPH_ROOT
 
 
 HERE = Path(__file__).resolve().parent
-DEFAULT_DATA_ROOT = Path("/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/DATA/Powergraph")
+REPO_ROOT = HERE.parents[2]
+DEFAULT_DATA_ROOT = DEFAULT_POWERGRAPH_ROOT
 
 
 @dataclass(frozen=True)
@@ -35,7 +37,7 @@ def read_json(path: Path) -> dict[str, Any]:
 
 def build_loader_summary(data_root: Path = DEFAULT_DATA_ROOT) -> dict[str, Any]:
     source_manifest = read_json(HERE / "source_manifest.json")
-    source_path = Path("/Volumes/Samsung T5/2026/HAOS/HAOS DOCS/HAOS-IIP/experiments/biology/gene_network_demo")
+    source_path = REPO_ROOT / "experiments" / "biology" / "gene_network_demo"
     target_root = data_root / "dataset_pf_opf" / "ieee24" / "ieee24" / "raw"
     source_files = list(source_path.glob("*"))
     target_files = list(target_root.glob("*")) if target_root.exists() else []

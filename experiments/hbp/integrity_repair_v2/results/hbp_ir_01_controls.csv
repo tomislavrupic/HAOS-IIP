@@ -1,0 +1,6 @@
+control,mechanism_valid,changed_fields,status,holdout_rmse,holdout_spearman,reason
+target_label_shuffle,True,target,PASS,1.9429072146795003,0.24601278132814677,
+signal_feature_shuffle,True,signal,PASS,1.8836751240437313,0.008669074742984164,
+parameter_matched_null,True,signal,PASS,1.8401642609796263,-0.03050847457627119,
+target_proxy_leakage,False,target_proxy,DETECTED_INVALID,,,undeclared or target-derived feature rejected: ['target_proxy']
+no_op_control,False,,DETECTED_INVALID,,,declared mechanism made no change

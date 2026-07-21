@@ -1,6 +1,13 @@
 # PB-02 External Network Recovery
 
-Status: precommitment draft
+Status: stored execution artifact quarantined pending integrity repair
+
+The precommitment and execution contracts remain marked as drafts, but scored
+PB-02 outputs are present. The 2026-07-11 project audit found an internally
+inconsistent baseline reconstruction and a shuffled-label control that scored
+the unshuffled target. The stored hash is reproducible, but the result is not a
+valid predictive bridge result and must not be promoted. Repair requires a new
+versioned execution under the unchanged scientific thresholds.
 
 Purpose
 
@@ -22,6 +29,9 @@ Bundle check
 ```bash
 uv run python experiments/hbp/pb02_external_network_recovery/check_pb02_bundle.py
 ```
+
+The current checker validates presence and result-hash integrity only. It does
+not establish methodological validity.
 
 Execution contract
 
