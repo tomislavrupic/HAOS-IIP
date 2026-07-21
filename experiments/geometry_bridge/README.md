@@ -1,5 +1,12 @@
 # Geometry Bridge Chain
 
+Lifecycle note: `GEO-INTRINSIC-SPIRAL-V1` and `GEO-HIDDEN-01-V1` are terminal
+under their current feature representations. The synthetic chain remains a
+supporting calibration. `GEO-MM-02-FORMAL-INVARIANCE` remains a legitimate but
+deferred formal target because it does not advance the present emergence
+frontier. See the
+[branch lifecycle registry](../../docs/branch_governance/branch_lifecycle_summary.md).
+
 This folder contains a synthetic, frozen bridge chain that separates four
 questions:
 

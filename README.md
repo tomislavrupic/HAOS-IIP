@@ -6,7 +6,8 @@ A large-scale, disciplined numerical research program exploring reproducible eme
 
 **200+ commits | 19+ phased bundles | strict reproducibility | frozen baselines + telemetry**
 
-**Current focus**: strengthening numerical scale-bridge diagnostics (Release 66.5).
+**Current focus**: closing exhausted experiment branches and advancing only
+new, precommitted successors selected by evidence quality and falsifiability.
 
 **Current milestone**: `66.5` is the current scale-bridge milestone; `66.4` remains the recommended canonical entry paper.
 
@@ -30,9 +31,9 @@ A large-scale, disciplined numerical research program exploring reproducible eme
 - [Phase XIX Spectral Address bundle](phase19-spectral-address/README.md)
 - Python dependency lockfile for consistent `uv run` execution
 
-**Current hard-gate status**: CP2 same-surrogate recovery, CP3 effective-equation closure, narrow comparative diagnostics, and CP5 universality screening have been executed once and remain `OPEN`. Branch-side diagnostics are encouraging in several rows, but controls and universality coverage are not yet strong enough for scale-bridge closure. All work remains in the roadmap/foundations layer; no claim boundaries are altered.
+**Current hard-gate status**: CP2 same-surrogate recovery, CP3 effective-equation closure, narrow comparative diagnostics, and CP5 universality screening have been executed once and remain `OPEN`. Branch-side diagnostics are encouraging in several rows, but controls and universality coverage are not yet strong enough for scale-bridge closure. The current 66.5 mechanism is now terminal-negative for development purposes; its evidence remains frozen and no claim boundary is altered.
 
-**Next cycle**: control hardening and specificity inside the existing CP ladder. No Phase 67 activation, no score upgrade, and no stronger continuum language until at least one `OPEN` gate becomes `PASS` under hardened controls.
+**Next cycle**: the authoritative [branch lifecycle registry](docs/branch_governance/branch_lifecycle_summary.md) and [emergence ladder](docs/roadmaps/HAOS_IIP_EMERGENCE_LADDER_2026-07-11.md) place `EL-R3-THEORY-REVISION-01` first. RT-02 remains frozen as `PARTIAL_RECOVERY_ONLY`, and RP-01 is terminal at `VALIDATION_GATE_FAILED`; operational closure and cross-scale recovery remain dependency-blocked. No score upgrade or stronger continuum language is authorized.
 
 **Philosophy reminder**: structure is what survives perturbation. This repository provides diagnostic scaffolding and numerical feasibility tests. It does not claim a continuum limit, physical correspondence, or ontology.
 

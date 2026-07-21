@@ -1,5 +1,12 @@
 # Monstrous Moonshine Arithmetic Diagnostic
 
+Lifecycle note: GEO-MM-01 is retained as a supporting arithmetic calibration.
+The bounded successor `GEO-MM-02-FORMAL-INVARIANCE` is deferred while the
+emergence ladder works at its first unsupported rung. Any later implementation
+still requires a new precommitment and remains outside Moonshine or physics
+mechanism claims. See the
+[branch lifecycle registry](../../../docs/branch_governance/branch_lifecycle_summary.md).
+
 This sidecar records a small, bounded Monstrous Moonshine support diagnostic for
 the HAOS-IIP geometry bridge.
 

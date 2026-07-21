@@ -1,0 +1,629 @@
+{
+  "active_priority_order": [
+    "EL-R3-THEORY-REVISION-01",
+    "EL-R4-OC-02-INTERVENTION-NATIVE",
+    "EL-R5-CSR-01"
+  ],
+  "audit_date": "2026-07-11",
+  "authority": "Development lifecycle only. Result artifacts, frozen phase manifests, and claim ledgers remain authoritative for scientific outcomes.",
+  "branches": [
+    {
+      "branch_id": "CORE-PHASE-SPINE-03-19",
+      "claim_ceiling": "Frozen bounded feasibility and reproducibility only.",
+      "evidence_classification": "RS",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "FROZEN_REFERENCE",
+      "path": "phase19-spectral-address",
+      "preserved_artifacts": [
+        "phase19-spectral-address/phase19_manifest.json"
+      ],
+      "reason": "The public phase spine is a reference dependency, not an expansion target.",
+      "result_status": "FROZEN / CHECKED",
+      "terminal_labels": [
+        "FROZEN_CORE_UNCHANGED"
+      ]
+    },
+    {
+      "branch_id": "SCALE-BRIDGE-66.5-CURRENT-MECHANISM",
+      "claim_ceiling": "Open scale-bridge diagnostics; no continuum limit or physical correspondence.",
+      "evidence_classification": "MP",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "continuum-sketch",
+      "preserved_artifacts": [
+        "continuum-sketch/post_66_5_roadmap_run_summary.md"
+      ],
+      "reason": "CP2, CP3, comparative, and CP5 gates remain open under the current mechanism. More diagnostics around the same object are not authorized.",
+      "result_status": "OPEN / CURRENT MECHANISM EXHAUSTED",
+      "terminal_labels": [
+        "CURRENT_SCALE_BRIDGE_NOT_CLOSED",
+        "NO_CONTINUUM_CLAIM"
+      ]
+    },
+    {
+      "branch_id": "CST-V0.2.2",
+      "claim_ceiling": "Experimental closure-stability instrument only.",
+      "evidence_classification": "RS / RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/cst",
+      "preserved_artifacts": [
+        "experiments/cst/runs/phase_2_2/phase_2_2_result.json"
+      ],
+      "reason": "The repaired instrument is partially discriminative, the target is not distinct, and the evidence is underpowered. Target-adjacent repair is closed.",
+      "result_status": "OPEN / TARGET NOT DISTINCT / UNDERPOWERED",
+      "terminal_labels": [
+        "INSTRUMENT_PARTIALLY_DISCRIMINATIVE",
+        "TARGET_NOT_DISTINCT",
+        "UNDERPOWERED"
+      ]
+    },
+    {
+      "branch_id": "BELL-HAOS-B0-B3.2.2",
+      "claim_ceiling": "Terminal computational Bell-candidate audit; no Bell derivation.",
+      "evidence_classification": "RS / RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/physics_bridge/bell_haos_candidate",
+      "preserved_artifacts": [
+        "experiments/physics_bridge/bell_haos_candidate/b3_2_2_result.json",
+        "experiments/physics_bridge/bell_haos_candidate/bell_bridge_v0_3_freeze.json"
+      ],
+      "reason": "The current G/J_lambda branch yields generic relational geometry without setting semantics or refinement specificity. CHSH scoring is not authorized.",
+      "result_status": "TERMINAL FAIL / OPEN",
+      "terminal_labels": [
+        "GENERIC_RELATIONAL_GEOMETRY",
+        "CHSH_SCORING_NOT_AUTHORIZED",
+        "HAOS_BELL_DERIVATION_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "branch_id": "BELL-CHSH-REFERENCE",
+      "claim_ceiling": "Reference scoreboard only.",
+      "evidence_classification": "RS",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "FROZEN_REFERENCE",
+      "path": "experiments/physics_bridge/bell_chsh_reference",
+      "preserved_artifacts": [
+        "experiments/physics_bridge/bell_chsh_reference/bridge_status.json"
+      ],
+      "reason": "The sidecar is a valid frozen calibration target, not a HAOS mechanism branch.",
+      "result_status": "REFERENCE SANITY PASS",
+      "terminal_labels": [
+        "HAOS_DERIVATION_NOT_TESTED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "branch_id": "HYDROGEN-REFERENCE",
+      "claim_ceiling": "Gross-spectrum reference harness only.",
+      "evidence_classification": "RS",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "FROZEN_REFERENCE",
+      "path": "experiments/physics_bridge/hydrogen_spectra_reference",
+      "preserved_artifacts": [
+        "experiments/physics_bridge/hydrogen_spectra_reference/bridge_status.json"
+      ],
+      "reason": "The reference law reproduces; the HAOS derivation slot remains empty.",
+      "result_status": "REFERENCE SANITY PASS",
+      "terminal_labels": [
+        "HAOS_DERIVATION_NOT_TESTED",
+        "NO_PHYSICAL_EXPERIMENT"
+      ]
+    },
+    {
+      "branch_id": "SEMICONDUCTOR-REFERENCE",
+      "claim_ceiling": "Toy band-structure reference harness only.",
+      "evidence_classification": "RS",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "FROZEN_REFERENCE",
+      "path": "experiments/physics_bridge/semiconductor_band_reference",
+      "preserved_artifacts": [
+        "experiments/physics_bridge/semiconductor_band_reference/bridge_status.json"
+      ],
+      "reason": "The sidecar is a reference calibration and contains no independent HAOS derivation.",
+      "result_status": "REFERENCE SANITY PASS",
+      "terminal_labels": [
+        "TOY_BAND_STRUCTURE_ONLY",
+        "HAOS_DERIVATION_NOT_TESTED"
+      ]
+    },
+    {
+      "branch_id": "GEO-INTRINSIC-SPIRAL-V1",
+      "claim_ceiling": "Synthetic intrinsic-geometry diagnostic only.",
+      "evidence_classification": "RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/geometry_bridge/synthetic_intrinsic_geometry_recovery",
+      "preserved_artifacts": [
+        "experiments/geometry_bridge/spiral_feature_specificity_result.json"
+      ],
+      "reason": "The current feature bundle does not establish spiral-specific transfer beyond the strongest baseline.",
+      "result_status": "FEATURE BUNDLE SPECIFICITY INSUFFICIENT",
+      "terminal_labels": [
+        "SPIRAL_SPECIFIC_STRUCTURE_NOT_RECOVERED"
+      ]
+    },
+    {
+      "branch_id": "GEO-HIDDEN-01-V1",
+      "claim_ceiling": "Synthetic hidden-geometry calibration only.",
+      "evidence_classification": "MP / RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/geometry_bridge/synthetic_hidden_geometry_recovery",
+      "preserved_artifacts": [
+        "experiments/geometry_bridge/synthetic_hidden_geometry_recovery/hidden_geometry_result.json"
+      ],
+      "reason": "Distance and orientation signals survive, but transformation-class recovery is not robust on holdout under the current feature representation.",
+      "result_status": "BENCHMARK OPEN / CURRENT FEATURE PATH CLOSED",
+      "terminal_labels": [
+        "TRANSFORMATION_RECOVERY_BOUNDARY_OPEN",
+        "TRANSFORMATION_CLASS_NOT_ROBUST_ON_HOLDOUT"
+      ]
+    },
+    {
+      "branch_id": "GEO-SYNTHETIC-CHAIN-CALIBRATION",
+      "claim_ceiling": "Synthetic calibration only; no Bell or physical mechanism claim.",
+      "evidence_classification": "MC / RS",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "SUPPORTING_CALIBRATION",
+      "path": "experiments/geometry_bridge",
+      "preserved_artifacts": [
+        "experiments/geometry_bridge/geometry_chain_audit_result.json"
+      ],
+      "reason": "Transformation, probability, and observable sub-harnesses remain useful calibration instruments even though external semantics are open.",
+      "result_status": "SYNTHETIC CALIBRATION CLOSED / EXTERNAL SEMANTICS OPEN",
+      "terminal_labels": [
+        "PREGEOMETRIC_CHAIN_OPEN",
+        "NO_BELL_SCORING"
+      ]
+    },
+    {
+      "branch_id": "BELL-SYNTHETIC-RELATIONAL-CALIBRATION",
+      "claim_ceiling": "Known-positive/negative relational geometry calibration only.",
+      "evidence_classification": "MC / RS",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "SUPPORTING_CALIBRATION",
+      "path": "experiments/physics_bridge/synthetic_relational_geometry_calibration",
+      "preserved_artifacts": [
+        "experiments/physics_bridge/synthetic_relational_geometry_calibration/synthetic_calibration_result.json"
+      ],
+      "reason": "The instrument calibration remains reusable, but it cannot reopen the terminal Bell mechanism branch.",
+      "result_status": "SYNTHETIC CALIBRATION PASS",
+      "terminal_labels": [
+        "NO_HAOS_BELL_DERIVATION"
+      ]
+    },
+    {
+      "branch_id": "HBP-PB01-V1",
+      "claim_ceiling": "Synthetic network-recovery calibration only.",
+      "evidence_classification": "RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "QUARANTINED_INVALID",
+      "path": "experiments/hbp/pb01_network_recovery",
+      "preserved_artifacts": [
+        "experiments/hbp/pb01_network_recovery/results/pb01_result.json"
+      ],
+      "reason": "The stored result is not distinct from baselines and reports invalid controls. It remains reproducible historical evidence only.",
+      "result_status": "PREDICTION NOT DISTINCT / CONTROL INVALID",
+      "terminal_labels": [
+        "CONTROL_INVALID",
+        "PREDICTION_NOT_DISTINCT_FROM_BASELINES"
+      ]
+    },
+    {
+      "branch_id": "HBP-PB02-V1",
+      "claim_ceiling": "Quarantined external-network artifact; no predictive claim.",
+      "evidence_classification": "RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "QUARANTINED_INVALID",
+      "path": "experiments/hbp/pb02_external_network_recovery",
+      "preserved_artifacts": [
+        "experiments/hbp/pb02_external_network_recovery/results/pb02_result.json"
+      ],
+      "reason": "Control routing, holdout model selection, feature-slice consistency, and draft-contract enforcement are invalid in the current artifact.",
+      "result_status": "CONTROL INVALID",
+      "terminal_labels": [
+        "HOLDOUT_LEAKAGE",
+        "CONTROL_PATH_INVALID",
+        "RESULT_QUARANTINED"
+      ]
+    },
+    {
+      "branch_id": "HBP-PB03-V1",
+      "claim_ceiling": "Quarantined temporal-recovery artifact; no predictive claim.",
+      "evidence_classification": "RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "QUARANTINED_INVALID",
+      "path": "experiments/hbp/pb03_temporal_recovery",
+      "preserved_artifacts": [
+        "experiments/hbp/pb03_temporal_recovery/results/pb03_result.json"
+      ],
+      "reason": "The baseline manifest is incomplete and seed/topology controls do not execute their declared perturbations through the target path.",
+      "result_status": "PREDICTION NOT DISTINCT / INSTRUMENT INVALID",
+      "terminal_labels": [
+        "CONTROL_PATH_INVALID",
+        "BASELINE_SET_INCOMPLETE"
+      ]
+    },
+    {
+      "branch_id": "HBP-PB04-V1",
+      "claim_ceiling": "Quarantined cross-domain artifact; no transfer claim.",
+      "evidence_classification": "RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "QUARANTINED_INVALID",
+      "path": "experiments/hbp/pb04_cross_domain_transfer",
+      "preserved_artifacts": [
+        "experiments/hbp/pb04_cross_domain_transfer/results/pb04_result.json"
+      ],
+      "reason": "The baseline and HAOS candidate share the same implementation path, and declared controls do not establish valid transfer discrimination.",
+      "result_status": "PREDICTION NOT DISTINCT / INSTRUMENT INVALID",
+      "terminal_labels": [
+        "CANDIDATE_BASELINE_ALIASING",
+        "CONTROL_PATH_INVALID"
+      ]
+    },
+    {
+      "branch_id": "CELESTIAL-BOUNDARY-V1",
+      "claim_ceiling": "Boundary audit only; no BMS, memory, or scattering claim.",
+      "evidence_classification": "RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/physics_bridge/celestial_boundary_audit",
+      "preserved_artifacts": [
+        "experiments/physics_bridge/celestial_boundary_audit/bridge_status.json"
+      ],
+      "reason": "The current proxy path does not close the declared celestial requirements. Further work requires a genuinely new operational mapping.",
+      "result_status": "OPEN / REQUIREMENTS NOT CLOSED",
+      "terminal_labels": [
+        "CELESTIAL_REQUIREMENTS_NOT_CLOSED"
+      ]
+    },
+    {
+      "branch_id": "PHYSICS-RAW-GRADIENT-V1",
+      "claim_ceiling": "Proxy-shape diagnostic only.",
+      "evidence_classification": "RF",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/physics_bridge/results",
+      "preserved_artifacts": [
+        "experiments/physics_bridge/results/raw_gradient_shape_audit.json"
+      ],
+      "reason": "Raw local-gradient observables fail the current shape thresholds; only the separately bounded shell-native proxies survive.",
+      "result_status": "OPEN / RAW PROXY NOT RECOVERED",
+      "terminal_labels": [
+        "RAW_GRADIENT_BOUNDARY_OPEN"
+      ]
+    },
+    {
+      "branch_id": "EOT-01-SYNTHETIC-CALIBRATION",
+      "claim_ceiling": "Synthetic effective-operator calibration only.",
+      "evidence_classification": "MC / RS",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "SUPPORTING_CALIBRATION",
+      "path": "experiments/effective_operator_theory",
+      "preserved_artifacts": [
+        "experiments/effective_operator_theory/results/effective_operator_result.json"
+      ],
+      "reason": "EOT-01 recovers terms generated by construction and remains a valid method calibration, not an artifact-derived result.",
+      "result_status": "SYNTHETIC CALIBRATION PASS",
+      "terminal_labels": [
+        "PHYSICAL_MECHANISM_NOT_ESTABLISHED"
+      ]
+    },
+    {
+      "branch_id": "GEO-MM-01-ARITHMETIC-CALIBRATION",
+      "claim_ceiling": "Arithmetic/topological diagnostic only.",
+      "evidence_classification": "MC / MP",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "SUPPORTING_CALIBRATION",
+      "path": "experiments/geometry_bridge/monstrous_moonshine_diagnostic",
+      "preserved_artifacts": [
+        "experiments/geometry_bridge/monstrous_moonshine_diagnostic/moonshine_betti_bridge_result.json"
+      ],
+      "reason": "The shared-support diagnostic passes with a narrow claim ceiling; local formal graph invariance remains unproved.",
+      "result_status": "PASS WITH FORMAL TARGET OPEN",
+      "terminal_labels": [
+        "NO_MOONSHINE_PROOF",
+        "NO_PHYSICAL_BRIDGE"
+      ]
+    },
+    {
+      "branch_id": "EOT-02-ARTIFACT-DERIVED",
+      "claim_ceiling": "Artifact-derived effective operator candidate; no physical EFT or quantum-gravity claim.",
+      "evidence_basis": "EOT-01 has a deterministic synthetic pass, but the current frozen artifacts do not expose enough independent refinements for development, calibration, and untouched holdout.",
+      "evidence_classification": "DEFERRED / DATA INSUFFICIENT",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "SUPPORTING_CALIBRATION",
+      "next_precommitment": {
+        "path": "experiments/effective_operator_theory/eot_02_precommitment_contract.json",
+        "status": "REQUIRED"
+      },
+      "path": "experiments/effective_operator_theory",
+      "preserved_artifacts": [
+        "experiments/effective_operator_theory/results/effective_operator_result.json"
+      ],
+      "reason": "The candidate remains scientifically useful but is deferred until enough independent refinements exist and lower recovery/closure rungs are supported.",
+      "result_status": "DEFERRED / NOT RUN",
+      "stop_conditions": [
+        "no stable coefficient hierarchy across holdout refinements",
+        "no improvement over conventional Laplacian/spectral baselines",
+        "controls fail to destroy the fitted hierarchy",
+        "term selection depends on holdout inspection"
+      ],
+      "success_criterion": "A frozen term family transfers to unseen refinements and beats predeclared conventional baselines without post-hoc term selection.",
+      "terminal_labels": [
+        "PRECOMMITMENT_REQUIRED"
+      ]
+    },
+    {
+      "branch_id": "HBP-IR-01",
+      "claim_ceiling": "Instrument-integrity repair only; no predictive or empirical bridge promotion.",
+      "evidence_classification": "MC / RS",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "SUPPORTING_CALIBRATION",
+      "path": "experiments/hbp/integrity_repair_v2",
+      "preserved_artifacts": [
+        "experiments/hbp/integrity_repair_v2/results/hbp_ir_01_result.json"
+      ],
+      "reason": "The minimal synthetic integrity run passes and detects forced leakage and no-op controls. It is retained for future predictive branches without promoting any historical HBP result.",
+      "result_status": "INSTRUMENT VALID / SYNTHETIC CALIBRATION",
+      "terminal_labels": [
+        "CALIBRATION_ONLY_SELECTION_PASS",
+        "NO_PREDICTIVE_BRIDGE_CLAIM"
+      ]
+    },
+    {
+      "branch_id": "GEO-MM-02-FORMAL-INVARIANCE",
+      "claim_ceiling": "Local arithmetic relation-graph and D4/isomorphism invariance only.",
+      "evidence_classification": "DEFERRED",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "SUPPORTING_CALIBRATION",
+      "path": "experiments/geometry_bridge/monstrous_moonshine_diagnostic",
+      "preserved_artifacts": [
+        "experiments/geometry_bridge/monstrous_moonshine_diagnostic/moonshine_betti_bridge_result.json"
+      ],
+      "reason": "The finite formal target remains legitimate but is deferred because it does not advance the current emergence frontier.",
+      "result_status": "DEFERRED / FORMAL TARGET OPEN",
+      "terminal_labels": [
+        "NOT_IN_ACTIVE_EMERGENCE_QUEUE",
+        "NO_ONTOLOGY_UPGRADE"
+      ]
+    },
+    {
+      "branch_id": "EL-R3-RT-01",
+      "claim_ceiling": "Post-perturbation trajectory recovery on the frozen grade-locked cochain operator only.",
+      "evidence_classification": "RS / NEGATIVE_RESULT",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/emergence_ladder/rung3_recovery_trajectory",
+      "preserved_artifacts": [
+        "experiments/emergence_ladder/rung3_recovery_trajectory/results/recovery_trajectory_result.json"
+      ],
+      "reason": "The tested grade-locked transport moves away from its unperturbed trajectory, loses the grade signature, and does not beat passive or operator-only controls.",
+      "result_status": "RUNG 3 NEGATIVE RESULT",
+      "terminal_labels": [
+        "RUNG_3_RECOVERABILITY_NOT_SUPPORTED",
+        "NEW_RECOVERY_MECHANISM_REQUIRED"
+      ]
+    },
+    {
+      "branch_id": "EL-R3-RT-02-RELATIONAL-FEEDBACK",
+      "claim_ceiling": "Bounded post-perturbation trajectory recoverability only.",
+      "evidence_classification": "RS / PARTIAL_RECOVERY_ONLY",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/emergence_ladder/rung3_recovery_trajectory_v2",
+      "preserved_artifacts": [
+        "experiments/emergence_ladder/rung3_recovery_trajectory_v2/final/aggregate_result.json"
+      ],
+      "reason": "One-bit relational feedback repairs constraints and preserves identity but has zero fully recovered runs, no functional recovery, no qualifying basin, and failed validation/control-ablation gates.",
+      "result_status": "PARTIAL RECOVERY ONLY / RUNG 3 UNSUPPORTED",
+      "terminal_labels": [
+        "PARTIAL_RECOVERY_ONLY",
+        "NO_HIGHER_RUNG_PROMOTION",
+        "NEW_MECHANISM_REQUIRED"
+      ]
+    },
+    {
+      "branch_id": "EL-R3-RP-01-DISTRIBUTED-PARITY",
+      "claim_ceiling": "Finite-radius distributed reconstruction of identity-bearing functional state only.",
+      "evidence_classification": "RS / VALIDATION_GATE_FAILED",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/emergence_ladder/rung3_distributed_parity",
+      "preserved_artifacts": [
+        "experiments/emergence_ladder/rung3_distributed_parity/validation/validation_result.json"
+      ],
+      "reason": "Within-radius local parity decoding restores the relation/operator region, but functional recovery remains absent, the full recovery basin is empty, and target performance does not separate from RT-02 or matched controls. The current alphabet/code/bridge path is closed.",
+      "result_status": "VALIDATION GATE FAILED / RUNG 3 UNSUPPORTED",
+      "terminal_labels": [
+        "VALIDATION_GATE_FAILED",
+        "FINAL_EVALUATION_NOT_AUTHORIZED",
+        "THEORY_REVISION_REQUIRED"
+      ]
+    },
+    {
+      "branch_id": "EL-R3-THEORY-REVISION-01",
+      "claim_ceiling": "Theory and information-architecture revision for a future Rung 3 mechanism; no recovery claim.",
+      "evidence_basis": "RT-01, RT-02, and RP-01 jointly show that persistence, one-bit orientation repair, and finite-radius parity repair do not supply the mesoscopic information needed for functional restoration.",
+      "evidence_classification": "ACTIVE THEORY REVISION",
+      "expansion_authorized": true,
+      "implementation_authorized": false,
+      "lifecycle_status": "ACTIVE_CANDIDATE",
+      "next_precommitment": {
+        "path": "docs/roadmaps/EL_R3_THEORY_REVISION_01.md",
+        "status": "REQUIRED"
+      },
+      "path": "experiments/emergence_ladder",
+      "preserved_artifacts": [
+        "experiments/emergence_ladder/rung3_distributed_parity/validation/validation_result.json"
+      ],
+      "reason": "A future mechanism must first justify a representation that stores function-relevant mesoscopic information without becoming a continuous checkpoint. Decoder or threshold tuning is not authorized.",
+      "result_status": "PRECOMMITMENT REQUIRED",
+      "stop_conditions": [
+        "the proposal re-encodes RT-02 orientation or RP-01 parity without a new information representation",
+        "the stored representation uniquely reconstructs the continuous pre-state",
+        "function labels or final trajectories influence representation design",
+        "the mechanism lacks a predicted failure basin",
+        "the proposal attempts Rung 4 promotion before Rung 3 support"
+      ],
+      "success_criterion": "A new precommitment identifies independently motivated mesoscopic restorative information, proves a bounded non-checkpoint memory budget, predicts how that information restores the declared function, and defines destructive controls before execution.",
+      "terminal_labels": [
+        "THEORY_REVISION_REQUIRED",
+        "IMPLEMENTATION_NOT_AUTHORIZED"
+      ]
+    },
+    {
+      "branch_id": "EL-R4-OC-01",
+      "claim_ceiling": "Next-event predictive closure in stored Phase XVI event chains only.",
+      "evidence_classification": "RS / NEGATIVE_RESULT",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "path": "experiments/emergence_ladder/rung4_operational_closure",
+      "preserved_artifacts": [
+        "experiments/emergence_ladder/rung4_operational_closure/results/operational_closure_result.json"
+      ],
+      "reason": "Aggregate internal-context advantage survives validation and holdout, but the run-level confidence interval includes zero. The compressed event-chain mechanism is closed.",
+      "result_status": "RUNG 4 NEGATIVE RESULT",
+      "terminal_labels": [
+        "RUNG_4_OPERATIONAL_CLOSURE_NOT_SUPPORTED",
+        "NEW_MECHANISM_REQUIRED"
+      ]
+    },
+    {
+      "branch_id": "EL-R4-OC-02-INTERVENTION-NATIVE",
+      "claim_ceiling": "Operational predictive closure over intervention-native state trajectories only.",
+      "evidence_basis": "EL-R4-OC-01 localized uncertainty to compressed event-chain summaries while validating the internal/external comparison and destructive-control instrument.",
+      "evidence_classification": "BLOCKED BY RUNG 3",
+      "expansion_authorized": true,
+      "implementation_authorized": false,
+      "lifecycle_status": "ACTIVE_CANDIDATE",
+      "next_precommitment": {
+        "path": "experiments/emergence_ladder/rung4_operational_closure/oc_02_precommitment_contract.json",
+        "status": "REQUIRED"
+      },
+      "path": "experiments/emergence_ladder/rung4_operational_closure",
+      "preserved_artifacts": [
+        "experiments/emergence_ladder/rung4_operational_closure/results/operational_closure_result.json"
+      ],
+      "reason": "This remains the correct operational-closure successor, but implementation is blocked until a Rung 3 recovery mechanism is supported.",
+      "result_status": "NOT RUN",
+      "stop_conditions": [
+        "Rung 3 remains unsupported",
+        "internal and external predictors do not have equal information budgets",
+        "internal-edge destruction does not reduce the claimed advantage",
+        "holdout regimes influence model selection",
+        "run-level uncertainty includes zero"
+      ],
+      "success_criterion": "Internal state predicts holdout evolution beyond external and matched-compression baselines with a run-level interval excluding zero, and the advantage collapses under internal-edge destruction.",
+      "terminal_labels": [
+        "PRECOMMITMENT_REQUIRED"
+      ]
+    },
+    {
+      "branch_id": "EL-R5-CSR-01",
+      "claim_ceiling": "Cross-scale recovery coordination only; no continuum or physical claim.",
+      "evidence_basis": "Phases XV-XVIII expose propagation, temporal, causal, and distance-surrogate observables across refinements, but no experiment yet tests dependency transfer among declared scales.",
+      "evidence_classification": "BLOCKED BY RUNG 4",
+      "expansion_authorized": true,
+      "implementation_authorized": false,
+      "lifecycle_status": "ACTIVE_CANDIDATE",
+      "next_precommitment": {
+        "path": "experiments/emergence_ladder/rung5_cross_scale_recovery/precommitment_contract.json",
+        "status": "REQUIRED"
+      },
+      "path": "experiments/emergence_ladder",
+      "preserved_artifacts": [
+        "phase18-distance-surrogate/phase18_summary.md"
+      ],
+      "reason": "This is the next higher rung after operational closure, but implementation remains blocked until a Rung 4 mechanism survives intervention.",
+      "result_status": "NOT RUN / DEPENDENCY BLOCKED",
+      "stop_conditions": [
+        "Rung 4 remains unsupported",
+        "scale variables are chosen after output inspection",
+        "controls fail to preserve within-scale statistics while destroying cross-scale coupling",
+        "coordination reduces to independent passive relaxation"
+      ],
+      "success_criterion": "Predeclared local, mesoscopic, and global recovery signals show ordered dependency transfer beyond scale-shuffled, cross-scale-disrupted, passive, and random controls.",
+      "terminal_labels": [
+        "RUNG_4_DEPENDENCY_GATE",
+        "PRECOMMITMENT_REQUIRED"
+      ]
+    },
+    {
+      "branch_id": "SPECULATIVE-BRIDGE",
+      "claim_ceiling": "Explicit analogy playground; non-authoritative.",
+      "evidence_classification": "SYMBOLIC ONLY",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "SPECULATIVE_ONLY",
+      "path": "speculative_bridge",
+      "preserved_artifacts": [
+        "speculative_bridge/README.md"
+      ],
+      "reason": "Speculative notes may inspire questions but cannot enter the active evidence queue or reopen closed branches.",
+      "result_status": "PLAYGROUND",
+      "terminal_labels": [
+        "NO_CLAIM_AUTHORITY"
+      ]
+    }
+  ],
+  "ranking_policy": [
+    "independent motivation",
+    "direct operational mapping",
+    "falsifiability",
+    "valid controls and baselines",
+    "holdout readiness",
+    "dependency readiness",
+    "bounded claim ceiling",
+    "computational tractability"
+  ],
+  "reopen_policy": {
+    "required_conditions": [
+      "new_candidate_id",
+      "new_precommitment",
+      "new_mechanism_or_independent_evidence",
+      "prior_result_preserved",
+      "no_threshold_movement",
+      "no_post_hoc_field_addition"
+    ],
+    "rule": "Closed branches are immutable evidence. A successor must be a new branch and must not rewrite, relabel, or tune the predecessor into a pass."
+  },
+  "schema_version": "1.0",
+  "status_definitions": {
+    "ACTIVE_CANDIDATE": "A justified successor question. Implementation remains blocked until its new precommitment is frozen.",
+    "ACTIVE_INSTRUMENT_REPAIR": "A versioned repair of measurement validity. It may not optimize target performance.",
+    "FROZEN_REFERENCE": "A valid scoreboard or dependency that is not an active mechanism branch.",
+    "QUARANTINED_INVALID": "A reproducible artifact with invalid experimental routing or controls. It cannot support interpretation or expansion.",
+    "SPECULATIVE_ONLY": "Non-authoritative analogy material outside the evidence queue.",
+    "SUPPORTING_CALIBRATION": "A valid synthetic or method calibration retained for reuse but not promoted as an active claim.",
+    "TERMINAL_NEGATIVE": "The current mechanism or feature representation reached a stable negative/open endpoint. No further tuning is authorized."
+  }
+}

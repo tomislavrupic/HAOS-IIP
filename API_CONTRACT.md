@@ -18,11 +18,11 @@ The design rule is:
 
 The contract is anchored to the already frozen scientific layers:
 
-- operator definition: [phase6-operator/phase6_operator_manifest.json](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/phase6-operator/phase6_operator_manifest.json)
-- localized branch candidate: [phaseX-proto-particle/phaseX_integrated_manifest.json](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/phaseX-proto-particle/phaseX_integrated_manifest.json)
-- protection and persistence logic: [phase11-protection/phase11_manifest.json](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/phase11-protection/phase11_manifest.json)
-- interaction and collective sector continuity: [phase12-interactions/phase12_manifest.json](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/phase12-interactions/phase12_manifest.json), [phase13-sector-formation/phase13_manifest.json](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/phase13-sector-formation/phase13_manifest.json), [phase14-collective-dynamics/phase14_manifest.json](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/phase14-collective-dynamics/phase14_manifest.json)
-- ordering and causal telemetry: [phase16-temporal-ordering/phase16_manifest.json](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/phase16-temporal-ordering/phase16_manifest.json), [phase17-causal-closure/phase17_manifest.json](/Volumes/Samsung%20T5/2026/HAOS/HAOS%20DOCS/HAOS-IIP/phase17-causal-closure/phase17_manifest.json)
+- operator definition: [phase6-operator/phase6_operator_manifest.json](phase6-operator/phase6_operator_manifest.json)
+- localized branch candidate: [phaseX-proto-particle/phaseX_integrated_manifest.json](phaseX-proto-particle/phaseX_integrated_manifest.json)
+- protection and persistence logic: [phase11-protection/phase11_manifest.json](phase11-protection/phase11_manifest.json)
+- interaction and collective sector continuity: [phase12-interactions/phase12_manifest.json](phase12-interactions/phase12_manifest.json), [phase13-sector-formation/phase13_manifest.json](phase13-sector-formation/phase13_manifest.json), [phase14-collective-dynamics/phase14_manifest.json](phase14-collective-dynamics/phase14_manifest.json)
+- ordering and causal telemetry: [phase16-temporal-ordering/phase16_manifest.json](phase16-temporal-ordering/phase16_manifest.json), [phase17-causal-closure/phase17_manifest.json](phase17-causal-closure/phase17_manifest.json)
 
 ## Module Layout
 

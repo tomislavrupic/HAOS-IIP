@@ -1,5 +1,10 @@
 # CST Toy Benchmark
 
+Lifecycle status: `TERMINAL_NEGATIVE` for CST v0.2.2. The repaired instrument,
+frozen results, and tests remain reproducible, but target-adjacent expansion is
+not authorized. See the
+[branch lifecycle registry](../../docs/branch_governance/branch_lifecycle_summary.md).
+
 CST in this directory means **Closure Stability Test**. It is an experimental,
 auditable numerical extension around existing HAOS-IIP frozen ledgers. It does
 not assert new ontology and does not claim to replace quantum mechanics,

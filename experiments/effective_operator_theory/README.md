@@ -2,6 +2,13 @@
 
 Status: synthetic diagnostic scaffold.
 
+Lifecycle note: EOT-01 is retained as a supporting calibration.
+`EOT-02-ARTIFACT-DERIVED` is deferred until lower recovery and closure rungs are
+supported and enough independent refinements exist for a real untouched
+holdout. Any successor must use unseen refinements and predeclared conventional
+baselines; it may not select terms after holdout inspection. See the
+[branch lifecycle registry](../../docs/branch_governance/branch_lifecycle_summary.md).
+
 This bundle imports a restrained lesson from effective field theory: declare a
 scale, allowed terms, cutoffs, controls, and claim ceilings before interpreting
 coarse dynamics. It does not derive EFT quantum gravity, physical field theory,
