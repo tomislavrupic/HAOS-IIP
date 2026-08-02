@@ -1,0 +1,51 @@
+{
+  "status_schema": "haos_gen_evidence_semantics_v1",
+  "rule": "Red is reserved for invalid execution or evidence contracts. Negative scientific results remain verified evidence.",
+  "lines": [
+    {
+      "version": "V0.2",
+      "title": "Hostile Validation Judge",
+      "execution_health": "VERIFIED",
+      "evidence_outcome": "WORKING_AS_DESIGNED",
+      "research_state": "FROZEN_REFERENCE",
+      "display_tone": "GREEN",
+      "summary": "Held-out, null, amplification, and equal-budget rejection gates operate reproducibly."
+    },
+    {
+      "version": "V0.3",
+      "title": "Proposal Operator Tournament",
+      "status": "TERMINAL_NEGATIVE_MODE_SAMPLING_CURRENT_REGIME",
+      "execution_health": "VERIFIED",
+      "evidence_outcome": "NEGATIVE",
+      "research_state": "TERMINAL_BOUNDARY",
+      "display_tone": "BLUE",
+      "summary": "Directed mode sampling showed no unique recovery advantage over frozen baselines in the tested regime."
+    },
+    {
+      "version": "V0.4 Class 1",
+      "title": "Local Edge-Weight Intervention",
+      "status": "OPEN_NO_STRUCTURAL_INTERVENTION_ADVANTAGE",
+      "execution_health": "VERIFIED",
+      "evidence_outcome": "NEGATIVE",
+      "research_state": "OPEN",
+      "display_tone": "AMBER",
+      "summary": "Sparse reversible updates were evaluated correctly, but all six directed cells degraded the admitted set."
+    },
+    {
+      "version": "Research boundary v1",
+      "title": "Synthetic Generative Line",
+      "status": "VERIFIED_NEGATIVE_SYNTHETIC_GENERATIVE_LINE_PAUSED",
+      "execution_health": "VERIFIED",
+      "evidence_outcome": "NEGATIVE",
+      "research_state": "PAUSED_PENDING_EXTERNAL_TASK",
+      "display_tone": "BLUE",
+      "summary": "Further synthetic generator versions are paused until an external application passes the admission gate."
+    }
+  ],
+  "red_only_for": [
+    "EXECUTION_FAILED",
+    "INVALID_ARTIFACT",
+    "CONTRACT_VIOLATION",
+    "REPRODUCIBILITY_FAILED"
+  ]
+}

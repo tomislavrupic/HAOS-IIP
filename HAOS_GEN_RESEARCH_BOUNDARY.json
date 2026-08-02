@@ -1,0 +1,32 @@
+{
+  "schema": "haos_gen_research_boundary_v1",
+  "status": "VERIFIED_NEGATIVE_SYNTHETIC_GENERATIVE_LINE_PAUSED",
+  "attempt": "V0.4 Class 1 sparse local edge-weight intervention",
+  "failure": {
+    "directed_cells": 6,
+    "degradation_cells": 6,
+    "valid_structural_expansions": 0,
+    "exact_reversals": 6
+  },
+  "diagnosis": [
+    "fixed edge budget forced action when selector evidence was zero",
+    "seed-level tuning objective did not protect the larger discovered address set",
+    "synthetic generative search lacked an independently meaningful external target"
+  ],
+  "repaired_claim": "HAOS-IIP provides a reproducible fail-closed recoverability audit protocol on declared discrete systems; it has not demonstrated generative advantage.",
+  "next_action": "Require an external application to pass the application-admission gate before further HAOS-GEN work.",
+  "application_admission_gate": [
+    "external_task",
+    "independent_target",
+    "standard_baseline",
+    "matched_controls",
+    "false_positive_budget",
+    "heldout_data",
+    "predeclared_haos_contribution"
+  ],
+  "forbidden_claims": [
+    "general generative advantage",
+    "new physical law",
+    "AI-music attribution from degradation telemetry alone"
+  ]
+}
