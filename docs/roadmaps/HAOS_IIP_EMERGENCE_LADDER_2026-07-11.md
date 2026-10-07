@@ -2,6 +2,11 @@
 
 Status: evidence-derived project roadmap and claim boundary.
 
+Reconciled 7 October 2026 against the frozen mesoscopic-field result and the
+[branch lifecycle registry](../branch_governance/branch_lifecycle_summary.md).
+The original ladder date is retained; this update changes planning prose, not
+frozen results or claim thresholds. See [current status](../../PROJECT_STATUS.md).
+
 This ladder separates increasingly difficult claims. A result at one rung does
 not promote a higher rung. Classifications describe repository evidence, not an
 ontology.
@@ -13,7 +18,7 @@ ontology.
 | 0 | Can the instruments measure their declared mechanisms reliably? | `PARTIALLY_SUPPORTED` | High | Frozen phase checks and HBP-IR-01 are valid; historical HBP PB-01 to PB-04 remain quarantined. |
 | 1 | Is organization distinguishable from matched nulls? | `SUPPORTED` | High | Stable Phase V recovery distributions separate strongly from degraded and shuffled controls. |
 | 2 | Does organization persist under bounded perturbation? | `SUPPORTED` | High | Phase XI maps survival basins, perturbation thresholds, and repeatable failure channels across refinements. |
-| 3 | Does the system recover toward a constrained organizational region after disruption? | `NEGATIVE_RESULT` | High for tested mechanisms | RT-01 is negative; RT-02 repairs relational identity only; RP-01 adds finite-radius parity repair but fails the functional validation gate and does not consume final seeds. |
+| 3 | Does the system recover toward a constrained organizational region after disruption? | `NEGATIVE_RESULT` | High for tested mechanisms | RT-01 is negative; RT-02 and RP-01 do not restore function. The completed 128-bit mesoscopic field recovers two families but fails the within-cell nullspace family and the 0.75 per-level gate; it remains `PARTIAL_RECOVERY_ONLY`. |
 | 4 | Do internal relations predict future evolution beyond external descriptions? | `NEGATIVE_RESULT` | High for current mechanism | EL-R4-OC-01 shows aggregate advantage but its run-level confidence interval includes zero. |
 | 5 | Are local, mesoscopic, and global structures coupled nontrivially? | `PARTIALLY_SUPPORTED` | Medium | Refinement, propagation, temporal, and distance-surrogate structure exist; explicit cross-scale dependency transfer is missing. |
 | 6 | Do macrovariables provide a stable, efficient future description? | `PARTIALLY_SUPPORTED` | Medium-low | Effective propagation and EOT-01 synthetic term recovery exist; equal-information out-of-sample macro prediction is absent. |
@@ -36,13 +41,22 @@ comparison and returned `NEGATIVE_RESULT`. EL-R3-RT-02 then tested independently
 motivated local relation feedback and returned `PARTIAL_RECOVERY_ONLY`.
 EL-R3-RP-01 tested distributed local parity and stopped at
 `VALIDATION_GATE_FAILED`: relation and operator repair succeed inside the code
-radius, but the independent function does not recover. None promotes the rung.
+radius, but the independent function does not recover. The completed
+`EL-R3-THEORY-REVISION-01` then supplied a fixed 128-bit mesoscopic field.
+Its successor `EL-R3-MESOSCOPIC-FIELD-01` restored coarse-cell-offset and
+smooth-twist disruptions at every tested level, but recovered none of the
+within-cell balanced-gradient family. Its `2/3` recovery rate misses the frozen
+`0.75` gate. None promotes the rung.
 
 The minimum blocker is primarily **theory and information architecture**.
 One-bit orientations and local parity over order relations store enough
 information for identity-preserving constraint repair, but not the mesoscopic
 amplitude/phase information required by the independent function. More gain,
 decoder iterations, or threshold tuning cannot supply the missing information.
+The mesoscopic successor now localizes a further boundary: restoring stored
+cell means cannot restore function-relevant changes inside their nullspace.
+That theory revision is complete; another candidate would require independent
+motivation and a new frozen contract, not rerunning the completed revision.
 
 ## Rung Details
 
@@ -107,24 +121,27 @@ decoder iterations, or threshold tuning cannot supply the missing information.
   constrained invariant region and outperform passive, degraded, and null
   alternatives.
 - Repository evidence: Phase V recovery histograms, Phase XI persistence,
-  EL-R3-RT-01, EL-R3-RT-02, and EL-R3-RP-01.
+  EL-R3-RT-01, EL-R3-RT-02, EL-R3-RP-01, and EL-R3-MESOSCOPIC-FIELD-01.
 - Relevant phases/experiments: V, XI, and `experiments/emergence_ladder/`.
 - Strongest supporting artifact: `phase5-readout/phase5_authoritative_summary.md`.
 - Strongest new partial signal:
-  `experiments/emergence_ladder/rung3_recovery_trajectory_v2/final/aggregate_result.json`.
+  `experiments/emergence_ladder/rung3_mesoscopic_field/final/aggregate_result.json`.
 - Strongest counterevidence: RP-01 correctly decodes all 16 within-radius
   validation targets but has functional restoration median `0.0`, full recovery
   rate `0.0`, and no separation from RT-02 or matched controls. Its validation
-  gate fails and final seeds remain untouched.
-- Classification: `NEGATIVE_RESULT` at the ladder level; RT-02 is
+  gate fails and final seeds remain untouched. The later mesoscopic field
+  completed its final schedule but fails the within-cell nullspace family,
+  leaving each tested level at `2/3` recovery below the frozen `0.75` gate.
+- Classification: `NEGATIVE_RESULT` at the ladder level; RT-02 and the mesoscopic field are
   `PARTIAL_RECOVERY_ONLY` and cannot promote the rung.
-- Confidence: high for the three tested mechanism families.
-- Missing validation: an independently justified mesoscopic information
-  representation that is function-relevant but cannot reconstruct the full
-  continuous state.
-- Next decisive experiment: none authorized until EL-R3-THEORY-REVISION-01
-  explains what restorative variable stores the missing function-relevant
-  information and freezes new destructive controls.
+- Confidence: high for the tested mechanisms and their declared perturbation domains.
+- Missing validation: a new independently justified information architecture
+  that restores function under its full declared perturbation domain without
+  becoming a full-state checkpoint or removing a failed family after inspection.
+- Next decisive experiment: none authorized. EL-R3-THEORY-REVISION-01 is frozen
+  and its mesoscopic successor is terminal-negative for development. Any new
+  candidate needs a new identifier, independent motivation, and a frozen
+  precommitment while preserving both earlier results.
 - Non-claim: recoverability does not imply operational closure or a law of
   nature.
 
@@ -282,7 +299,9 @@ decoder iterations, or threshold tuning cannot supply the missing information.
 - Non-claim: reference reproduction is not mechanism derivation or empirical
   confirmation.
 
-## Frontier Candidate Ranking
+## Historical Frontier Candidate Ranking
+
+This table records the original selection rationale, not the current active queue.
 
 Scores use `1` (weak) to `5` (strong). Circularity is scored as resistance to
 circularity, so higher is better.
@@ -300,12 +319,16 @@ failure localization, but it cannot be used to skip Rung 3.
 
 ## Following-Rung Priority
 
-1. **EL-R3-THEORY-REVISION-01.** Explain and precommit a new mesoscopic
-   restorative representation; do not retune RT-02 or RP-01.
+1. **Rung 3 successor gate, currently unfilled.** EL-R3-THEORY-REVISION-01 is
+   complete; EL-R3-MESOSCOPIC-FIELD-01 is closed at PARTIAL_RECOVERY_ONLY. A new
+   representation requires independent motivation and a new precommitment.
+   This planning gap is not an active or authorized implementation branch.
 2. **EL-R4-OC-02 intervention-native closure.** Execute only after Rung 3 is
    supported; use raw internal state and external forcing under equal budgets.
 3. **EL-R5-CSR-01 cross-scale recovery.** Execute only after Rung 4 survives
    intervention; retain scale-shuffled and passive controls.
 
-The next cycle should not retune EL-R3-RT-01, EL-R3-RT-02, EL-R3-RP-01, or
-EL-R4-OC-01. Their negative/partial results are frozen.
+The next cycle should not retune EL-R3-RT-01, EL-R3-RT-02, EL-R3-RP-01,
+EL-R3-MESOSCOPIC-FIELD-01, or EL-R4-OC-01. Their negative/partial results are
+frozen. The registry retains only the two dependency-blocked higher-rung
+candidates; this document does not authorize either one.

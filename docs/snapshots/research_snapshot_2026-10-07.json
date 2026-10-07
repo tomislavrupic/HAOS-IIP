@@ -1,0 +1,428 @@
+{
+  "date": "2026-10-07",
+  "base_commit": "f4742c49f4a50b18f7b92b98b18f176cd1637987",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 34320,
+      "sha256": "022bbc9e044f048eede66257e1428506d273ebf82c5e6be6b77c60491811856b",
+      "original_state": "modified"
+    },
+    {
+      "path": "docs/branch_governance/branch_lifecycle_registry.json",
+      "bytes": 31685,
+      "sha256": "3a3ff04d125aac015cef1af83118240522dca1aad46663ab47e62994f5933324",
+      "original_state": "modified"
+    },
+    {
+      "path": "docs/branch_governance/branch_lifecycle_summary.md",
+      "bytes": 8292,
+      "sha256": "60c1f3906769added17890080e8aba807819075459607e63234793f5aba6939b",
+      "original_state": "modified"
+    },
+    {
+      "path": "docs/claim_governance/README.md",
+      "bytes": 2138,
+      "sha256": "9e72b8d4f2b30381581dee4adb40261f7bd2d2d4e7d1ea6cdeed7002e1862be3",
+      "original_state": "untracked"
+    },
+    {
+      "path": "docs/claim_governance/claim_contract.schema.json",
+      "bytes": 4928,
+      "sha256": "9dd439117a25986ee23e902e4867379ac16415eb805cd6abf6d84e972647beaf",
+      "original_state": "untracked"
+    },
+    {
+      "path": "docs/claim_governance/scale_bridge_66_5.claim.json",
+      "bytes": 5236,
+      "sha256": "ba848931aef4fa34e67f5aecb01a5e31acfd843a0210ec7461943c17401df9e5",
+      "original_state": "untracked"
+    },
+    {
+      "path": "docs/notes/foundations/HAOS_IIP_Bounded_Antifragility_Criterion_v1.md",
+      "bytes": 5808,
+      "sha256": "6228e19cd916a2165882726458a10cfaaf816e9bfaf2a0069db420ebc52ad582",
+      "original_state": "untracked"
+    },
+    {
+      "path": "docs/notes/foundations/HAOS_IIP_Claim_Gating_Template_v1.md",
+      "bytes": 6031,
+      "sha256": "e5587c542191261d249d8525b30a50fcab613c4a520d1fd40af792f4e7d625ed",
+      "original_state": "modified"
+    },
+    {
+      "path": "docs/notes/foundations/HAOS_IIP_Falsification_Engine_v1.md",
+      "bytes": 8547,
+      "sha256": "e16a5eb2c3613843e9c8a291fed44d3358662669a9783a0558fff6b537fdfe28",
+      "original_state": "modified"
+    },
+    {
+      "path": "docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md",
+      "bytes": 36687,
+      "sha256": "357baf31a5dfd7e98686707521aad789c46ec249846365d3dece817e09df9a3d",
+      "original_state": "modified"
+    },
+    {
+      "path": "docs/notes/foundations/PIX_7_Candidate_01_NLQT_Audit.md",
+      "bytes": 8819,
+      "sha256": "6d2a432fc5c41c4d592f74024604c60397c47dbe19ffc376d6f499933955670b",
+      "original_state": "untracked"
+    },
+    {
+      "path": "docs/notes/foundations/PIX_7_Constructed_Finite_Capacity_Exchange_v1.md",
+      "bytes": 12089,
+      "sha256": "990fafc3b863499bb2049cd004d997720a86624fadd80bff49b540a63722029b",
+      "original_state": "untracked"
+    },
+    {
+      "path": "docs/notes/foundations/PIX_7_No_Singularity_Constraint_v1.md",
+      "bytes": 11432,
+      "sha256": "a708ad1f95062742582ac77dee1cc0ea31fe87a63b019193e94f7bb7d07ac932",
+      "original_state": "untracked"
+    },
+    {
+      "path": "docs/roadmaps/EL_R3_THEORY_REVISION_01.md",
+      "bytes": 4555,
+      "sha256": "600ff5f845cb6264865a61df806b6d3d7b8a8c70b65d0f2d8e1a83ee83bf3bfe",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/__init__.py",
+      "bytes": 58,
+      "sha256": "36aa47ce81f8d830ab89deebc15281a5b8ce68854b46548601754c646f4d0a8c",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/README.md",
+      "bytes": 2509,
+      "sha256": "0d2df2948b74220c5ce5c59e176187e4ec48cfc147c9ddeb4698597c794abf87",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/__init__.py",
+      "bytes": 50,
+      "sha256": "2b71e45da5853e854179ed04945a9fe1720e8ca4b67a17fbdf8befcd5eda3040",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/audit/hostile_audit.md",
+      "bytes": 4502,
+      "sha256": "323211a11b11d65baa3e164ed18e9f0b7c847d7221532d34a394e2f6ef4416df",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/check_bundle.py",
+      "bytes": 7279,
+      "sha256": "1ec54153e4202fedd1939bd6b115f9e6cfb19fcf29f2e1ed1f632f32ed39c16f",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/final/aggregate_result.json",
+      "bytes": 57384,
+      "sha256": "61a81ac07a38924f29e405304eb9dd8e48146fcad4add206a360c26eabc5b0ac",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/final/result_manifest.json",
+      "bytes": 627,
+      "sha256": "294326b062e4b786ace719d9ffc4b3dbb5c7ddd4f530be1246917adb661283b5",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/final/summary.md",
+      "bytes": 1850,
+      "sha256": "fa7ebaf08fe3a6b1f8efb4c3a49105d6dc66b5aa098d0e0a9d7176d957b05dc2",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/final/uncertainty.json",
+      "bytes": 493,
+      "sha256": "d8cfc48e408de1c9911be2bc70501fdc7fb35dcc5863c0d5e435f747a09fc72b",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/model.py",
+      "bytes": 7118,
+      "sha256": "ec3540980e5190fe9b4f77dcbfc51a873eb6659d31c6b4e39656657eeee68d66",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/precommitment_contract.json",
+      "bytes": 6031,
+      "sha256": "9ff9c77f6ee93d93ea098751d804396666aad5e8c94c22486945ba9752b93398",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/results/per_family_summary.csv",
+      "bytes": 252,
+      "sha256": "fcbffd8a81c5a1fe6520beef9ee3b2128e8a22925576cb598ce40a4d09319759",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/results/per_run_results.jsonl",
+      "bytes": 2390343,
+      "sha256": "9f564055e8478fc2f79582b244a6ea930814aebd2a0754dc3373bfd1ea362700",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/run_experiment.py",
+      "bytes": 25642,
+      "sha256": "036eef4d94489d77c8d736c2ead84d8bab3c8a6b3bc3d669045eb014ffb0af6d",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/tests/__init__.py",
+      "bytes": 31,
+      "sha256": "0bc38f9c4fc25447c3d5e0be8f1244477cbc58beaee8a24faa503918d70c8b13",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/antifragility/adaptive_recoverability_v1/tests/test_adaptive_recoverability.py",
+      "bytes": 3317,
+      "sha256": "d2d13f81c9260cf14ae6bcf0f09e39d0585c67db0fed3d4ef2dbbb3a9d509ee1",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/one_bit_scale_falsifier_01/README.md",
+      "bytes": 1285,
+      "sha256": "c6a13b74f23454eb41b79c249eff9ab239e0092ebf8298b82c776a2365764287",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/one_bit_scale_falsifier_01/audit/M0_DISCOVERY_REPORT.md",
+      "bytes": 15007,
+      "sha256": "998e2a392903ec7fd8f691adf9a9da0b3ce363c0b3744a3ebdcf6bbe5f66272b",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/one_bit_scale_falsifier_01/audit/proposed_lifecycle_registry_entry.json",
+      "bytes": 2618,
+      "sha256": "2da22d93c84f5ab56ee7423a57a8f6dd6882654a458fbe81ef07bb0fb7ded4b6",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/one_bit_scale_falsifier_01/final/aggregate_result.json",
+      "bytes": 1160,
+      "sha256": "640f33ec71a5e1f22132fe2bd26d812e610c3044b1b498b4d7a25aef6bbd5c2c",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/one_bit_scale_falsifier_01/final/summary.md",
+      "bytes": 2052,
+      "sha256": "60353904eaad9a860f94697fb2db7d22e605081844ecd697a764f6f7598d0016",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/one_bit_scale_falsifier_01/precommitment_contract.draft.json",
+      "bytes": 7020,
+      "sha256": "8bb88574bd4bcb4cb709a1c917134aacc119bd15fefe53eb423cbad3b0716af1",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/README.md",
+      "bytes": 2434,
+      "sha256": "fdb9fcb15ce6b542496bd4a7dcfd06be9a63247450c1e325c314a6d6fb032d5e",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/__init__.py",
+      "bytes": 66,
+      "sha256": "48dbbf593456cd62cdeb2d86d7b22e9e621080b58ddc80c36a4c2ac4854733ec",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/audit/hostile_audit.md",
+      "bytes": 456,
+      "sha256": "bac85ad3d69e0954ba180bcc21570a951025c81001f2865f40474d96ec926c75",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/audit/pre_repair_aggregate_result.json",
+      "bytes": 5932,
+      "sha256": "dbe91da820c5c1b9e7cf55913f76a69ce6970d3b7f91b080c78b85af21fcf649",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/audit/pre_repair_result_manifest.json",
+      "bytes": 2417,
+      "sha256": "6cf0389dddceac63be8647b11bbb29197e40e427b61296775bcb597277a713a8",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/audit/semantic_reporting_repair.md",
+      "bytes": 393,
+      "sha256": "4dfddd174d485e9262542e1a9b81239d907576605d4a3bdf08fb64f2f3aea3d1",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/check_bundle.py",
+      "bytes": 13646,
+      "sha256": "5e1fcb202965c035c2f773b2f533f1a7dd7edc2f0319d6bcdafbf9d775ef56bd",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/controls.py",
+      "bytes": 6704,
+      "sha256": "16ce86472e96249708551beef329b4584d0b5f23e970eff50580629d7906c10f",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/final/aggregate_result.json",
+      "bytes": 5916,
+      "sha256": "c19a3c428f5b2f9eee5a1a35dc7fc611b478570d9e204804739070f4c4d02988",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/final/result_manifest.json",
+      "bytes": 2754,
+      "sha256": "f6c41faf0255bcc62fef0d6220726b40b2abdb19c68ace5ae48a85bd377ba3c9",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/final/summary.md",
+      "bytes": 1238,
+      "sha256": "7adb674db1ef813d864cb4151569caf02a946997dca41ce96af3d4a078fc1674",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/final/uncertainty.json",
+      "bytes": 459,
+      "sha256": "6f4423d91a2bad9eb54eab084c208c47487a624131efe57d9f63d5fa817f5a44",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/fixtures.py",
+      "bytes": 3664,
+      "sha256": "7083c882d95da40aef0e4e78725783c23912ef11b0d62f63109a16a66d5a25f9",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/infographics/01-the-128-bit-contract-pix7.png",
+      "bytes": 2538138,
+      "sha256": "6232df3389ef9de41d127b0204c18bb84ed05597633e5b6b6a9e6831fabe489d",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/infographics/02-the-blind-channel-pix7.png",
+      "bytes": 2211594,
+      "sha256": "cee13879490d297d64fc051ee5bdea077c0349201558fa44d42fbc7f55d32404",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/infographics/README.md",
+      "bytes": 1185,
+      "sha256": "e1860df61c8d6f252a05d6fa76cb791fa4a854bb662423b20446f25d9952dc46",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/plots/fixed_budget_vs_nullity.svg",
+      "bytes": 1616,
+      "sha256": "c899ed9fd172e701328739d9c21ff0ae2783fc7b03070325330b4a60e18d3784",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/plots/functional_recovery_vs_refinement.svg",
+      "bytes": 1713,
+      "sha256": "427dda9bbb2b08f4a64ab9eed9ff490c028ca727b4fb7bf4dae3a4da07528c5b",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/precommitment_contract.json",
+      "bytes": 8413,
+      "sha256": "8cc5dc3cca96bb3364ffa17eb4b8c5bb714091f49303e7c991d9d034129b23d9",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/representation.py",
+      "bytes": 4446,
+      "sha256": "95b9d4224287db123f86f18c7799815766b8199f111148f66766fef2323bc88a",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/results/control_validity.json",
+      "bytes": 302,
+      "sha256": "d25b5a7164aa95c35158798bbe6f94419e9f84f26df2e3428942fa62213cd2e6",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/results/information_budget.csv",
+      "bytes": 231,
+      "sha256": "5e885b50ec9e7336b25988eddf0302f0437400801263b33739d0145ceccfd71e",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/results/per_level_summary.csv",
+      "bytes": 747,
+      "sha256": "8e2232eb15300d3116ec97d57e8f1fabf9bd6f835a2d160a897925d8d5840219",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/results/per_run_results.jsonl",
+      "bytes": 3779344,
+      "sha256": "e34170d7d531d5cfc5a107e51bff987e1c79720db57e2ad28770763dd37ad40c",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field/run_experiment.py",
+      "bytes": 34227,
+      "sha256": "07d8ea5da56439d92f9416536227e374bc1074602922343d98dc4a787fc90469",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/physics_bridge/pix7_finite_capacity_exchange/README.md",
+      "bytes": 1717,
+      "sha256": "9ad2d47a968bdf5c9090f1353111a712bdd9d32ece8e78c76eb86e16c664b102",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/physics_bridge/pix7_finite_capacity_exchange/outputs/comparison.png",
+      "bytes": 129444,
+      "sha256": "012d4cb943bc7982abd6a7a2e0d9bc91799e63e6a929ebdd14aebac66061349a",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/physics_bridge/pix7_finite_capacity_exchange/outputs/results.json",
+      "bytes": 5875,
+      "sha256": "00cecf758f916832b68aca478dcaada3c23b3d62b6ddecc3eeb54a81a3fb2ccc",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/physics_bridge/pix7_finite_capacity_exchange/outputs/trajectory.npz",
+      "bytes": 369748,
+      "sha256": "d9338b40569187b3b2c1c429ece7942b118040dfc9f0bf4bb541bca563fae02b",
+      "original_state": "untracked"
+    },
+    {
+      "path": "experiments/physics_bridge/pix7_finite_capacity_exchange/run_probe.py",
+      "bytes": 10325,
+      "sha256": "37644bb8537a498b793dc9ea73e21a2238687a2a6c67ee73b1de0c38a5dd0fc5",
+      "original_state": "untracked"
+    },
+    {
+      "path": "scripts/check_claim_contracts.py",
+      "bytes": 7367,
+      "sha256": "f66dc36f8b4e6136a6e329f9ef0a66a9f30ba6a48387ae36c0640534f1815174",
+      "original_state": "untracked"
+    },
+    {
+      "path": "tests/test_branch_lifecycle.py",
+      "bytes": 3498,
+      "sha256": "0151bd4962ba5c1d56c9a33a8cbdd79d940169c41b0bba36c523554e6b685120",
+      "original_state": "modified"
+    },
+    {
+      "path": "tests/test_claim_contracts.py",
+      "bytes": 1434,
+      "sha256": "39556b8abc5c0185a32d44a7c246ebba892dc135dd09a0503aadbc9ef049bd5d",
+      "original_state": "untracked"
+    },
+    {
+      "path": "tests/test_rung3_mesoscopic_field.py",
+      "bytes": 7793,
+      "sha256": "5f8c0b7158297480c4a595c3e5bbff3b28923010fe732abb847b15c1e6116fc1",
+      "original_state": "untracked"
+    }
+  ],
+  "snapshot_commit": "2d0731e41458566b7668946fa7709897260f6384",
+  "scope": "Exact pre-reconciliation local research snapshot; hashes refer to snapshot_commit, not subsequent documentation edits."
+}
