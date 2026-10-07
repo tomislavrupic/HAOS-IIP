@@ -1,0 +1,22 @@
+{
+  "sham_minus_passive": {
+    "estimate": 0.0,
+    "lower": 0.0,
+    "upper": 0.0
+  },
+  "target_minus_passive": {
+    "estimate": 0.3537755039702133,
+    "lower": 0.3537755039702124,
+    "upper": 0.3537755039702141
+  },
+  "target_minus_random": {
+    "estimate": 0.16774515893717884,
+    "lower": 0.1579854979128732,
+    "upper": 0.17789883679921867
+  },
+  "target_minus_reversed": {
+    "estimate": 0.567426342771535,
+    "lower": 0.5674263427715343,
+    "upper": 0.5674263427715359
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "abort_conditions": [
+    "the contract is not FROZEN before final execution",
+    "a final seed is used for implementation, smoke testing, threshold selection, or parameter selection",
+    "the evaluation metric changes after final outputs are inspected",
+    "the target receives the held-out stress location, held-out family label, or future outcome",
+    "the total interaction-weight budget changes during adaptation",
+    "a positive classification requires dropping a scheduled stress family, severity, size, seed, or control",
+    "the static-hardened reference is presented as a causal adaptation control",
+    "a toy internal result is promoted to general, physical, biological, economic, or engineering antifragility"
+  ],
+  "candidate_id": "HAOS-AF-AR-01",
+  "claim_ceiling": "Bounded toy evidence that a stress-triggered, budget-conserving graph update improves later held-out recoverability under the frozen finite schedule.",
+  "conditions": {
+    "admissible": [
+      "target_adaptive",
+      "passive_no_update",
+      "matched_random_reallocation",
+      "reversed_update",
+      "sham_no_stress"
+    ],
+    "noncausal_reference_only": [
+      "static_hardened_reference"
+    ]
+  },
+  "decision_rules": {
+    "budget_error_max": 1e-12,
+    "collapse_capacity_threshold": 0.75,
+    "identity_cosine_min": 0.95,
+    "minimum_family_median_gain": 0.10,
+    "minimum_primary_capacity_retention": 0.75,
+    "minimum_tail_gain_p10": 0.10,
+    "minimum_target_gain_ci_lower": 0.15,
+    "minimum_target_minus_random_ci_lower": 0.0,
+    "minimum_target_minus_reversed_ci_lower": 0.0,
+    "sham_gain_abs_max": 1e-12,
+    "positive_classification_requires": [
+      "the paired target-minus-passive seed-block confidence interval lower bound is at least 0.15",
+      "the paired target-minus-random and target-minus-reversed confidence interval lower bounds exceed zero",
+      "every held-out stress family has median target gain at least 0.10",
+      "the tenth percentile target gain is at least 0.10 and no target row regresses against its passive pair",
+      "target gain is nondecreasing with exposure severity",
+      "the sham condition produces no adaptation gain",
+      "interaction-weight budget error is at most 1e-12",
+      "operator identity cosine is at least 0.95 and primary capacity retention is at least 0.75",
+      "target collapse is never earlier than passive collapse and shifts later in at least one primary-stress group",
+      "all exposure and held-out primary damage locations are disjoint",
+      "all scheduled rows and controls are present and the semantic checker passes"
+    ],
+    "terminal_classifications": [
+      "BOUNDED_TOY_ANTIFRAGILITY_SUPPORTED",
+      "ADAPTIVE_GAIN_NOT_CONTROL_DISTINCT",
+      "IDENTITY_OR_BUDGET_GATE_FAILED",
+      "HELD_OUT_GENERALIZATION_FAILED",
+      "ANTIFRAGILITY_GATE_FAILED",
+      "CONTROL_INVALID",
+      "INSTRUMENT_INVALID"
+    ]
+  },
+  "exposure": {
+    "family": "contiguous_primary_damage",
+    "severities": [
+      0.4,
+      0.7,
+      1.0
+    ],
+    "observable": "maximum fractional loss among currently available primary interactions",
+    "location_memory": false,
+    "test_information_available": false
+  },
+  "final_evaluation": {
+    "seeds": [
+      7411,
+      7412,
+      7413,
+      7414,
+      7415,
+      7416,
+      7417,
+      7418
+    ],
+    "stress_families": [
+      "displaced_primary_block",
+      "distributed_primary_damage",
+      "backup_channel_damage"
+    ],
+    "test_severities": [
+      0.4,
+      0.7,
+      1.0
+    ]
+  },
+  "forbidden_claims": [
+    "general antifragility",
+    "antifragility in physical systems",
+    "biological adaptation",
+    "economic or trading advantage",
+    "optimal adaptation",
+    "autonomy or agency",
+    "self-maintenance",
+    "universality",
+    "continuum limit",
+    "new physics",
+    "higher-rung promotion"
+  ],
+  "graph_family": {
+    "backup_edges": "undirected distance-two ring edges",
+    "baseline_backup_fraction": 0.05,
+    "interaction_weight_budget": "one unit per node, invariant across every pre-test adapted graph",
+    "node_counts": [
+      24,
+      32,
+      40
+    ],
+    "primary_edges": "undirected nearest-neighbor ring edges",
+    "stress_block_fraction": 0.125
+  },
+  "mechanism": {
+    "adaptation_gain": 0.22,
+    "backup_fraction_cap": 0.27,
+    "formula": "alpha_after = min(alpha_cap, alpha_before + eta * observed_exposure_severity)",
+    "persistent_update": "uniformly transfer interaction-weight budget from primary ring edges to local distance-two backup edges",
+    "prohibited_information": [
+      "held-out stress location",
+      "held-out stress family",
+      "held-out recovery score",
+      "future graph state",
+      "full-state recovery checkpoint"
+    ],
+    "stored_adaptive_state": "one float64 backup-budget fraction",
+    "update_depends_on": "exposure severity only"
+  },
+  "operational_definition": {
+    "antifragility_gain": "held-out recovery capacity after stress-triggered update minus held-out recovery capacity before update under the identical test perturbation",
+    "interaction_invariant": "the graph family, total weight budget, stress schedule, recovery-capacity formula, identity metric, thresholds, and controls remain frozen",
+    "recovery_capacity": "harmonic mean of algebraic-connectivity ratio and effective-conductance ratio relative to the unexposed baseline graph",
+    "strict_hierarchy": "robustness and recoverability do not imply antifragility; positive held-out change caused by prior stress is additionally required"
+  },
+  "smoke_partition": {
+    "access_policy": "implementation and deterministic smoke tests only; never contributes evidence or thresholds",
+    "seeds": [
+      7311,
+      7312
+    ]
+  },
+  "starting_commit_sha": "f4742c49f4a50b18f7b92b98b18f176cd1637987",
+  "status": "FROZEN",
+  "uncertainty": {
+    "confidence": 0.95,
+    "method": "paired seed-block bootstrap percentile interval",
+    "resamples": 4000,
+    "seed": 7511
+  },
+  "version": "1.0.0"
+}

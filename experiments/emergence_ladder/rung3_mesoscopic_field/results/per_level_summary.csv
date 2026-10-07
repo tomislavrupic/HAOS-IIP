@@ -1,0 +1,4 @@
+n_side,state_dimension,payload_bits,payload_bits_per_node,rank,nullity,target_rows,applicable_fraction,functional_recovery_median,functional_recovery_rate,coarse_field_recovery_median,intervention_rms_median,intervention_density_median,saturation_total,family_rate_coarse_cell_offsets,family_rate_smooth_physical_twist,family_rate_within_cell_balanced_gradient
+8,64,128,2.0,16,48,72,1.0,0.8538546047166048,0.6666666666666666,0.9819937385338691,0.3496259431420048,1.0,0,1.0,1.0,0.0
+12,144,128,0.8888888888888888,16,128,72,1.0,0.8278428010034087,0.6666666666666666,0.9826385198343531,0.35016687576742056,1.0,0,1.0,1.0,0.0
+16,256,128,0.5,16,240,72,1.0,0.8224247726298726,0.6666666666666666,0.9809922162620286,0.3491498448594583,1.0,0,1.0,1.0,0.0

@@ -1,0 +1,104 @@
+{
+  "contract_version": "1.0",
+  "claim_id": "SCALE-BRIDGE-66.5",
+  "claim_title": "Bounded refinement and recovery diagnostics in selected frozen operator families",
+  "claim_class": "C",
+  "overall_status": "OPEN",
+  "bridge_status": "INTERNAL_DIAGNOSTIC_ONLY",
+  "claim_text": "Within selected frozen graph and operator families, the committed diagnostics preserve several ordered numerical structures across declared refinement and recovery tests.",
+  "evidence_scope": "SCALING",
+  "selection_history": {
+    "disclosure_status": "PARTIAL",
+    "selection_rule": "The public phase spine, frozen manifests, and branch lifecycle registry identify retained and closed branches; they do not establish a complete prospective record of all exploratory choices made before the earliest freezes.",
+    "alternatives_considered": [
+      "periodic_diagonal_augmented_control",
+      "generic_open_grid_scalar_block_control",
+      "closed and quarantined branches in docs/branch_governance/branch_lifecycle_registry.json"
+    ],
+    "unreported_exploration_known_absent": false,
+    "limitations": "A complete historical multiverse of tried parameters, renamed candidates, and discarded telemetry is not demonstrated. No claim may treat freezing alone as evidence against prior tuning."
+  },
+  "perturbation_domain": {
+    "included": [
+      "Phase XVIII refinement levels N=60,72,84 with the declared disturbance family",
+      "Phase X projection levels R1-R5",
+      "84->72->84 same-surrogate round trip",
+      "three-seed variation in the post-66.5 CP5 screen"
+    ],
+    "omitted": [
+      "same-surrogate kernel-width sweep",
+      "multiple admissible substrate families",
+      "systematic boundary-condition sweep",
+      "dimensionality sweep",
+      "independent telemetry-family substitution"
+    ],
+    "applicability_statement": "Recoverability is conditional on the listed perturbations, telemetry, and controls; it is not a universal property of the candidate structures."
+  },
+  "telemetry": {
+    "primary": [
+      "arrival-vs-depth shell slope",
+      "causal-depth identity",
+      "low-mode retention and ratio ordering",
+      "same-surrogate round-trip recovery and error"
+    ],
+    "alternatives_tested": [],
+    "sensitivity_status": "OPEN",
+    "limitations": "Frozen telemetry improves repeatability but metric independence has not been demonstrated."
+  },
+  "controls": {
+    "tested": [
+      {
+        "name": "periodic_diagonal_augmented_control",
+        "matched_properties": ["disturbance family", "seeds", "ensemble size", "observable", "refinement levels"],
+        "result": "Does not reproduce the branch shell-slope and causal-depth stability in the tested Phase XVIII slice.",
+        "status": "PASS"
+      },
+      {
+        "name": "generic_open_grid_scalar_block_control",
+        "matched_properties": ["projection levels", "low-mode readout", "ratio-ordering readout"],
+        "result": "Preserves the listed Phase X projection properties strongly enough that branch-specific control separation remains unresolved.",
+        "status": "OPEN"
+      }
+    ],
+    "omitted_adversarial_controls": [
+      "degree-distribution matched control",
+      "spectrum-matched eigenvector-randomized control",
+      "weight-histogram matched control",
+      "local-motif matched control",
+      "alternative operator with matched low-frequency structure"
+    ],
+    "specificity_status": "OPEN"
+  },
+  "reproduction": {
+    "artifact_status": "ARTIFACT_VERIFIED",
+    "execution_status": "NOT_DEMONSTRATED",
+    "independent_replication_status": "NOT_DEMONSTRATED",
+    "commands": [
+      "uv run python examples/quick_reproduce.py",
+      "uv run python continuum-sketch/build_same_surrogate_coarse_graining_recovery.py",
+      "uv run python continuum-sketch/build_post_66_5_roadmap_audit.py"
+    ],
+    "artifacts": [
+      "docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md",
+      "continuum-sketch/same_surrogate_coarse_graining_recovery.csv",
+      "continuum-sketch/post_66_5_cp3_effective_equation_contract.csv",
+      "continuum-sketch/post_66_5_cp5_universality_screen.csv"
+    ],
+    "limitations": "Repository artifact consistency is declared. This contract does not record a fresh execution in the present audit or an unaffiliated reproduction of outputs and classifications."
+  },
+  "claim_boundary": {
+    "allowed_language": "Bounded refinement and recovery diagnostics preserve selected numerical structures inside the declared frozen regimes; overall scale-bridge status remains OPEN.",
+    "not_claimed": [
+      "a continuum limit",
+      "unique convergence",
+      "universality across substrate or kernel families",
+      "physical geometry or causality",
+      "derivation or explanation of known physics",
+      "fundamental ontology"
+    ],
+    "downgrade_condition": "Downgrade to analogy-only if reasonable alternative telemetry or stronger matched controls remove the reported separation.",
+    "kill_condition": "Fail the bounded scaling claim if committed reproduction fails under the frozen contract or the reported branch stability collapses under its declared perturbation domain.",
+    "physical_correspondence_status": "NOT_DEMONSTRATED"
+  }
+}
+

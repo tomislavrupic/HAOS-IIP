@@ -2,9 +2,11 @@
 
 **Harmonic Address Operating System - Interaction Invariant Physics**
 
-A large-scale, disciplined numerical research program exploring reproducible emergence of stability, temporal ordering, causal closure, and proto-geometric structures inside **frozen branch-local cochain-Laplacian hierarchies**.
+A reproducible numerical laboratory for testing whether selected structures in
+discrete operator systems remain distinguishable under declared perturbations,
+controls, refinement, and coarse-graining.
 
-**200+ commits | 19+ phased bundles | strict reproducibility | frozen baselines + telemetry**
+**Frozen baselines + telemetry | explicit claim gates | bounded reproduction**
 
 **Current focus**: closing exhausted experiment branches and advancing only
 new, precommitted successors selected by evidence quality and falsifiability.
@@ -39,15 +41,20 @@ new, precommitted successors selected by evidence quality and falsifiability.
 
 ### One-Sentence Summary
 
-This repository demonstrates that a coherent, multi-hundred-page-equivalent computational research arc (stability -> scalar-carrier geometry -> cautious physics-bridge observables -> bounded external-data sidecars) can be built and kept verifiable using structured workflows and current tools.
+Within selected frozen graph and operator families, HAOS-IIP can construct,
+measure, preserve, and reproduce several ordered numerical structures across a
+staged experimental hierarchy.
 
-### Success Criterion
+### Artifact-Reproduction Criterion
 
 ```bash
 uv run python examples/quick_reproduce.py
 ```
 
-This command must reproduce identical public tables and plots against the frozen baselines. No new simulations are required for validation.
+This command checks that the public summary artifacts match frozen baselines. It
+does not freshly validate every numerical result, establish metric independence,
+reconstruct selection history, provide independent replication, or support a
+continuum or physical claim.
 
 ## Recommended Starting Point (New Readers)
 
@@ -376,7 +383,7 @@ Core experimental layers are frozen and defined in:
 - [API_CONTRACT.md](API_CONTRACT.md)
 - [telemetry/frozen_metrics.py](telemetry/frozen_metrics.py)
 
-This guarantees:
+These frozen interfaces support:
 
 - stable operator definitions
 - consistent initialization rules
@@ -384,6 +391,26 @@ This guarantees:
 - matched control construction
 
 Emergence diagnostics rely only on these frozen interfaces.
+
+Reproducibility is reported at three distinct levels:
+
+- `ARTIFACT_VERIFIED`: committed summaries match committed expected artifacts;
+- `EXECUTION_REPRODUCED`: the declared numerical computation was rerun;
+- `INDEPENDENTLY_REPLICATED`: an unaffiliated party reproduced both outputs and
+  classifications from the declared protocol.
+
+The quick-reproduction command establishes only its reported artifact checks.
+It does not imply the higher levels. Claim-specific status, perturbation scope,
+telemetry sensitivity, omitted controls, and selection-history limits are
+recorded in the [machine-readable claim governance layer](docs/claim_governance/README.md).
+Validate those contracts with:
+
+```bash
+uv run python scripts/check_claim_contracts.py
+```
+
+Passing the claim-contract validator means that required boundaries are present
+and internally consistent. It does not mean the underlying claim is true.
 
 ## Continuum-Sketch Layer
 

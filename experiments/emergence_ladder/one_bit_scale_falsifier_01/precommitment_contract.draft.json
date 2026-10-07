@@ -1,0 +1,146 @@
+{
+  "abort_conditions": [
+    "lifecycle governance does not explicitly authorize implementation",
+    "fewer than three comparable refinement levels are frozen before execution",
+    "the fixed RT-02 mechanism cannot traverse every required level without retuning",
+    "perturbation semantics are not scale-equivalent",
+    "a required control does not traverse the declared common execution path",
+    "addressing, mask, policy, hyperparameter, or runtime intervention information is omitted",
+    "calibration seeds overlap final seeds",
+    "a functional target or its cross-level normalization is selected after result inspection",
+    "a frozen parent artifact changes",
+    "the experiment can only continue by increasing mechanism information with scale without counting it"
+  ],
+  "candidate_id": "EL-R3-ONE-BIT-SCALE-FALSIFIER-01",
+  "checker_requirements": [
+    "reject an unfrozen contract or checksum mismatch",
+    "reject any change to frozen parent evidence",
+    "reject mechanism parameter variation by level",
+    "reject prohibited seed overlap",
+    "reject missing or off-path controls",
+    "reject omitted addressing overhead or intervention events",
+    "reject silently discarded runs or missing final seeds",
+    "reject absent primary endpoint or confidence intervals",
+    "reject a scale claim from fewer than three comparable levels",
+    "reject relational repair reported as functional recovery",
+    "reject unauthorized claims",
+    "reject execution forbidden by the lifecycle registry",
+    "reject disagreement between raw rows and generated summaries"
+  ],
+  "controls": [
+    "passive_relaxation",
+    "operator_only_filtering",
+    "trivial_attractor",
+    "matched_random_bit_local_correction",
+    "shuffled_relation_bit",
+    "altered_connectivity"
+  ],
+  "decision_rules": {
+    "bounded_relational_scale_stability": "Requires at least three comparable levels, no retuning, branch-control separation at every required level, normalized intervention cost compatible with a predeclared bound including uncertainty, no hidden functional degradation, complete seeds, valid controls, and a passing semantic checker.",
+    "functional_recovery": "Requires the independent functional target to beat passive, filtering, trivial-attractor, and matched-information controls across refinement under a frozen cross-level normalization.",
+    "instrument_insufficient": "Applies when common levels, compatible variables, controls, information accounting, or uncertainty are insufficient.",
+    "scale_failure": "Applies when effect separation decays, intervention density or normalized cost grows beyond the declared bound, or failure probability grows under the frozen mechanism."
+  },
+  "fixed_mechanism": {
+    "correction_steps": 80,
+    "edge_dropout_fraction": 0.2,
+    "eta": 0.7,
+    "inequality_margin": 0.05,
+    "minimum_memory_edge_magnitude": 0.08,
+    "name": "EL-R3-RT-02 redundant_local_cochain_constraint_feedback",
+    "one_bit_semantics": "sign of each valid oriented local edge difference",
+    "source": "experiments/emergence_ladder/rung3_recovery_trajectory_v2/mechanism.py",
+    "update_rule": "x_(t+1) = x_t + eta * D^T [availability * s * max(0, margin - s * D x_t)] / max_degree"
+  },
+  "forbidden_claims": [
+    "continuum behavior or continuum limit",
+    "physical energy law or energy optimization",
+    "spacetime derivation",
+    "universality",
+    "new physics",
+    "generative advantage",
+    "ontology",
+    "functional recovery inferred from relational repair",
+    "general emergence"
+  ],
+  "functional_target": {
+    "candidate": "four low-frequency projection responses from EL-R3-RP-01",
+    "source": "experiments/emergence_ladder/rung3_distributed_parity/FUNCTIONAL_TARGET.md",
+    "status": "PRESENT_BUT_CROSS_LEVEL_NORMALIZATION_NOT_FROZEN"
+  },
+  "hypotheses": {
+    "H0": "Scale failure",
+    "H1": "Bounded relational scale stability",
+    "H2": "Functional recovery",
+    "H3": "Instrument insufficient"
+  },
+  "information_budget": {
+    "required_components": [
+      "representational bits",
+      "addressing and index overhead",
+      "control-policy information",
+      "hyperparameter information",
+      "runtime intervention count",
+      "raw total cost",
+      "cost per node",
+      "cost per relation",
+      "cost per state dimension",
+      "cost per disrupted relation",
+      "wall time",
+      "peak memory"
+    ],
+    "status": "NOT_YET_OPERATIONALIZED"
+  },
+  "missingness_policy": "Every scheduled run must appear with an explicit success, failure, abort, or invalid reason. No scheduled row may be silently dropped. Any missing final seed prevents a positive scale classification.",
+  "output_paths": {
+    "audit": "experiments/emergence_ladder/one_bit_scale_falsifier_01/audit",
+    "final": "experiments/emergence_ladder/one_bit_scale_falsifier_01/final",
+    "plots": "experiments/emergence_ladder/one_bit_scale_falsifier_01/plots",
+    "results": "experiments/emergence_ladder/one_bit_scale_falsifier_01/results"
+  },
+  "parent_evidence": [
+    "EL-R3-RT-01: NEGATIVE_RESULT",
+    "EL-R3-RT-02: PARTIAL_RECOVERY_ONLY; el_r3_rt_02_cade4e057a54d119e6af143c",
+    "EL-R3-RP-01: VALIDATION_GATE_FAILED; el_r3_rp_01_e7806ce1a296242b75ad3d3b"
+  ],
+  "permitted_claim": "At most BOUNDED_RELATIONAL_SCALE_STABILITY over the preregistered finite refinement levels; functional recovery requires its independent gate.",
+  "perturbation_families": [
+    "localized_block_shock",
+    "sparse_node_corruption",
+    "relational_twist"
+  ],
+  "primary_endpoint": "normalized intervention cost required to preserve the frozen relational-repair threshold",
+  "scientific_question": "Does the already-frozen one-bit relational-memory correction remain effective under progressive refinement, or does the intervention requirement grow with hierarchy depth?",
+  "secondary_endpoints": [
+    "overlap",
+    "concentration retention",
+    "localization width growth",
+    "participation growth",
+    "frozen recovery score",
+    "relational identity accuracy",
+    "operator repair score",
+    "independent functional restoration",
+    "full recovery rate",
+    "persistence time",
+    "branch-versus-control effect size and confidence interval",
+    "failure-channel classification",
+    "intervention density",
+    "total and normalized bit cost",
+    "runtime scaling"
+  ],
+  "seeds": {
+    "calibration": null,
+    "final": null,
+    "generation_policy": null,
+    "status": "BLOCKED_UNTIL_GOVERNANCE_AND_LEVELS_ARE_FROZEN"
+  },
+  "starting_commit_sha": "f4742c49f4a50b18f7b92b98b18f176cd1637987",
+  "status": "DRAFT_BLOCKED_BY_THEORY_REVISION",
+  "tested_refinement_levels": {
+    "levels": [],
+    "minimum_required": 3,
+    "status": "NO_COMMON_ADMISSIBLE_ONE_BIT_LEVELS_FROZEN"
+  },
+  "uncertainty_method": "Prospective paired seed-block bootstrap confidence intervals with a frozen resample seed and count; exact values remain unset because the cross-level seed schedule is not admissible.",
+  "version": "0.0.1-draft"
+}

@@ -1,0 +1,25 @@
+{
+  "candidate_id": "HAOS-AF-AR-01",
+  "contract_sha256": "9ff9c77f6ee93d93ea098751d804396666aad5e8c94c22486945ba9752b93398",
+  "final_seeds": [
+    7411,
+    7412,
+    7413,
+    7414,
+    7415,
+    7416,
+    7417,
+    7418
+  ],
+  "partition": "final",
+  "result_hash": "haos_af_ar_01_4458994589914f9df321a879",
+  "smoke_seeds": [
+    7311,
+    7312
+  ],
+  "source_hashes": {
+    "checker": "1ec54153e4202fedd1939bd6b115f9e6cfb19fcf29f2e1ed1f632f32ed39c16f",
+    "model": "ec3540980e5190fe9b4f77dcbfc51a873eb6659d31c6b4e39656657eeee68d66",
+    "runner": "036eef4d94489d77c8d736c2ead84d8bab3c8a6b3bc3d669045eb014ffb0af6d"
+  }
+}

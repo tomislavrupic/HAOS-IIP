@@ -36,6 +36,9 @@ Bridge status:
   bridge hypothesis / externally testable candidate / externally supported /
   failed under current tests
 
+Overall status:
+- PASS / OPEN / FAIL
+
 Numerically shown inside HAOS-IIP frozen regime:
 - ...
 
@@ -54,6 +57,25 @@ Bridge hypothesis:
 Required null model:
 - ...
 
+Selection history:
+- selection rule: ...
+- alternatives considered: ...
+- disclosure status: COMPLETE / PARTIAL / UNKNOWN
+
+Perturbation domain:
+- included: ...
+- omitted: ...
+
+Telemetry sensitivity:
+- primary metric(s): ...
+- reasonable alternatives tested: ...
+- status: PASS / OPEN / FAIL
+
+Control coverage:
+- tested controls and properties matched: ...
+- dangerous controls still omitted: ...
+- specificity status: PASS / OPEN / FAIL
+
 Failure condition:
 - ...
 
@@ -65,6 +87,10 @@ Not claimed:
 
 Reproduction path:
 - ...
+
+Reproduction level:
+- ARTIFACT_VERIFIED / EXECUTION_REPRODUCED / INDEPENDENTLY_REPLICATED /
+  NOT_DEMONSTRATED
 ```
 
 ## Bridge Status Labels
@@ -166,10 +192,16 @@ Before publication or archive:
 - [ ] standard-language translation appears before HAOS-IIP shorthand
 - [ ] operational meaning is stated
 - [ ] null model or matched control is stated
+- [ ] selection rule, alternatives, and disclosure completeness are stated
+- [ ] included and omitted perturbation families are stated
+- [ ] primary telemetry and reasonable alternatives are stated
+- [ ] tested and omitted adversarial controls are stated
 - [ ] failure condition is stated
 - [ ] downgrade condition is stated
 - [ ] not-claimed section is explicit
 - [ ] reproduction path is listed
+- [ ] artifact, execution, and independent-replication levels are separated
+- [ ] machine-readable `*.claim.json` contract passes validation
 - [ ] public summary passes the four-sentence rule
 
 ## Authority Boundary
@@ -179,9 +211,9 @@ This template controls claim language. It does not validate claims.
 The strongest permitted interpretation is always bounded by the selected bridge
 status label and the declared failure gates.
 
-## Next Work
+## Machine-Readable Authority
 
-- backfill this claim box into the canonical entry paper draft
-- add the template to future numbered paper boilerplate
-- add dashboard support for bridge status labels
-- create a machine-readable claim-box schema for release validation
+The schema, current contracts, evidence-level definitions, and validation command
+are maintained in [docs/claim_governance/](../../claim_governance/README.md).
+The validator checks completeness and claim ceilings; it does not validate the
+science.

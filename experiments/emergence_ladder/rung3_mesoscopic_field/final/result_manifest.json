@@ -1,0 +1,47 @@
+{
+  "artifact_hashes": {
+    "audit/hostile_audit.md": "bac85ad3d69e0954ba180bcc21570a951025c81001f2865f40474d96ec926c75",
+    "audit/pre_repair_aggregate_result.json": "dbe91da820c5c1b9e7cf55913f76a69ce6970d3b7f91b080c78b85af21fcf649",
+    "audit/pre_repair_result_manifest.json": "6cf0389dddceac63be8647b11bbb29197e40e427b61296775bcb597277a713a8",
+    "audit/semantic_reporting_repair.md": "4dfddd174d485e9262542e1a9b81239d907576605d4a3bdf08fb64f2f3aea3d1",
+    "final/aggregate_result.json": "c19a3c428f5b2f9eee5a1a35dc7fc611b478570d9e204804739070f4c4d02988",
+    "final/summary.md": "7adb674db1ef813d864cb4151569caf02a946997dca41ce96af3d4a078fc1674",
+    "final/uncertainty.json": "6f4423d91a2bad9eb54eab084c208c47487a624131efe57d9f63d5fa817f5a44",
+    "plots/fixed_budget_vs_nullity.svg": "c899ed9fd172e701328739d9c21ff0ae2783fc7b03070325330b4a60e18d3784",
+    "plots/functional_recovery_vs_refinement.svg": "427dda9bbb2b08f4a64ab9eed9ff490c028ca727b4fb7bf4dae3a4da07528c5b",
+    "results/control_validity.json": "d25b5a7164aa95c35158798bbe6f94419e9f84f26df2e3428942fa62213cd2e6",
+    "results/information_budget.csv": "5e885b50ec9e7336b25988eddf0302f0437400801263b33739d0145ceccfd71e",
+    "results/per_level_summary.csv": "8e2232eb15300d3116ec97d57e8f1fabf9bd6f835a2d160a897925d8d5840219",
+    "results/per_run_results.jsonl": "e34170d7d531d5cfc5a107e51bff987e1c79720db57e2ad28770763dd37ad40c"
+  },
+  "candidate_id": "EL-R3-MESOSCOPIC-FIELD-01",
+  "contract_bytes": 8413,
+  "contract_sha256": "8cc5dc3cca96bb3364ffa17eb4b8c5bb714091f49303e7c991d9d034129b23d9",
+  "final_seeds": [
+    9401,
+    9402,
+    9403,
+    9404,
+    9405,
+    9406,
+    9407,
+    9408
+  ],
+  "parent_artifact_hashes": {
+    "experiments/emergence_ladder/rung3_distributed_parity/validation/validation_result.json": "0cbf2dd8ada3baa67f8dc498f5929d9b8a4a3f7700f234b58967d7d3f6d0fbe6",
+    "experiments/emergence_ladder/rung3_recovery_trajectory_v2/final/aggregate_result.json": "7f88faba8018f75e9700de240d2b142f5a05dedec7a28e8e8874ad36bc196962",
+    "telemetry/frozen_metrics.py": "daa7a759ad8f0ed67249f194a7e7e0753c78a4eb4c0a8b44d47e2e7a0d121f87"
+  },
+  "result_hash": "el_r3_mesoscopic_field_01_2deccb28c2463931e78d5ac6",
+  "smoke_seeds": [
+    9301
+  ],
+  "source_hashes": {
+    "checker": "5e1fcb202965c035c2f773b2f533f1a7dd7edc2f0319d6bcdafbf9d775ef56bd",
+    "controls": "16ce86472e96249708551beef329b4584d0b5f23e970eff50580629d7906c10f",
+    "fixtures": "7083c882d95da40aef0e4e78725783c23912ef11b0d62f63109a16a66d5a25f9",
+    "representation": "95b9d4224287db123f86f18c7799815766b8199f111148f66766fef2323bc88a",
+    "runner": "07d8ea5da56439d92f9416536227e374bc1074602922343d98dc4a787fc90469"
+  },
+  "starting_commit_sha": "f4742c49f4a50b18f7b92b98b18f176cd1637987"
+}

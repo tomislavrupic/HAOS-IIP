@@ -1,0 +1,4 @@
+n_side,state_dimension,rank,nullity,payload_values,bits_per_value,payload_bits,addressing_bits_per_sample,payload_bits_per_node
+8,64,16,48,16,8,128,0,2.0
+12,144,16,128,16,8,128,0,0.8888888888888888
+16,256,16,240,16,8,128,0,0.5

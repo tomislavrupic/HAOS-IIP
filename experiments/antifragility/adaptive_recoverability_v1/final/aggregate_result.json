@@ -1,0 +1,2247 @@
+{
+  "candidate_id": "HAOS-AF-AR-01",
+  "claim_ceiling": "Bounded toy evidence that a stress-triggered, budget-conserving graph update improves later held-out recoverability under the frozen finite schedule.",
+  "classification": "BOUNDED_TOY_ANTIFRAGILITY_SUPPORTED",
+  "collapse_groups": [
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7411,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7411,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7411,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7412,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7412,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7412,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7413,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7413,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7413,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7414,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7414,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7414,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7415,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7415,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7415,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7416,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7416,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7416,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7417,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7417,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7417,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7418,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7418,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7418,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 24,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7411,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7411,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7411,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7412,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7412,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7412,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7413,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7413,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7413,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7414,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7414,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7414,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7415,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7415,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7415,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7416,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7416,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7416,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7417,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7417,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7417,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7418,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7418,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7418,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 32,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7411,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7411,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7411,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7411,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7412,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7412,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7412,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7412,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7413,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7413,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7413,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7413,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7414,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7414,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7414,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7414,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7415,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7415,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7415,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7415,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7416,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7416,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7416,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7416,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7417,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7417,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7417,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7417,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7418,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.4,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7418,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 0.7,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": null,
+      "seed": 7418,
+      "shifted_later": false,
+      "stress_family": "backup_channel_damage",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "displaced_primary_block",
+      "target_k_star": null
+    },
+    {
+      "exposure_severity": 1.0,
+      "node_count": 40,
+      "not_earlier": true,
+      "passive_k_star": 1.0,
+      "seed": 7418,
+      "shifted_later": true,
+      "stress_family": "distributed_primary_damage",
+      "target_k_star": null
+    }
+  ],
+  "contract_sha256": "9ff9c77f6ee93d93ea098751d804396666aad5e8c94c22486945ba9752b93398",
+  "dose_summary": [
+    {
+      "exposure_severity": 0.4,
+      "median_gain": 0.20059380199440102
+    },
+    {
+      "exposure_severity": 0.7,
+      "median_gain": 0.34314362809060295
+    },
+    {
+      "exposure_severity": 1.0,
+      "median_gain": 0.48041075765272495
+    }
+  ],
+  "family_summary": [
+    {
+      "median_gain": 0.38225057152634023,
+      "minimum_gain": 0.19529692176266533,
+      "rows": 216,
+      "stress_family": "displaced_primary_block"
+    },
+    {
+      "median_gain": 0.38115267113364815,
+      "minimum_gain": 0.19066026522663937,
+      "rows": 216,
+      "stress_family": "distributed_primary_damage"
+    },
+    {
+      "median_gain": 0.2461768327229122,
+      "minimum_gain": 0.11626374981392662,
+      "rows": 216,
+      "stress_family": "backup_channel_damage"
+    }
+  ],
+  "gates": {
+    "budget_invariant": true,
+    "collapse_never_earlier": true,
+    "collapse_shift_present": true,
+    "dose_response_nondecreasing": true,
+    "family_generalization": true,
+    "held_out_locations_disjoint": true,
+    "identity_preserved": true,
+    "no_target_regression": true,
+    "primary_capacity_preserved": true,
+    "sham_inert": true,
+    "tail_gain": true,
+    "target_beats_passive": true,
+    "target_beats_random": true,
+    "target_beats_reversed": true
+  },
+  "labels": [
+    "BOUNDED_TOY_ANTIFRAGILITY_SUPPORTED",
+    "FINITE_TOY_GRAPH_ONLY",
+    "NO_HIGHER_RUNG_PROMOTION"
+  ],
+  "result_hash": "haos_af_ar_01_4458994589914f9df321a879",
+  "run_counts": {
+    "admissible": 3240,
+    "static_reference": 648,
+    "target": 648,
+    "total": 3888
+  },
+  "source_hashes": {
+    "checker": "1ec54153e4202fedd1939bd6b115f9e6cfb19fcf29f2e1ed1f632f32ed39c16f",
+    "model": "ec3540980e5190fe9b4f77dcbfc51a873eb6659d31c6b4e39656657eeee68d66",
+    "runner": "036eef4d94489d77c8d736c2ead84d8bab3c8a6b3bc3d669045eb014ffb0af6d"
+  },
+  "static_reference_disclosure": "A statically hardened graph can reach the same endpoint without exposure; it is a noncausal ceiling reference, not evidence for the adaptive mechanism.",
+  "status": "PASS",
+  "target_gain": {
+    "maximum": 0.75676547017427,
+    "median": 0.34043354295156747,
+    "minimum": 0.11626374981392662,
+    "p10": 0.16926721473832923
+  },
+  "target_minima": {
+    "operator_identity": 0.954839748451956,
+    "primary_capacity_retention": 0.768421052631579
+  }
+}

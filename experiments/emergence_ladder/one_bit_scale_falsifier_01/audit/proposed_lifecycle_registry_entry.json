@@ -1,0 +1,43 @@
+{
+  "entry": {
+    "branch_id": "EL-R3-ONE-BIT-SCALE-FALSIFIER-01",
+    "claim_ceiling": "Finite-level scale behavior of the unchanged EL-R3-RT-02 relational repair mechanism only; no functional recovery or continuum claim.",
+    "dependencies": [
+      "EL-R3-THEORY-REVISION-01 must close with an authorized precommitment",
+      "at least three comparable mechanism-valid refinement levels must be frozen",
+      "complete information and intervention accounting must be frozen",
+      "a common independent functional target and scale normalization must be frozen"
+    ],
+    "evidence_basis": "RT-02 demonstrates one-size relational repair without functional recovery; current Phase VI, X, and XI refinement artifacts do not execute the RT-02 mechanism.",
+    "evidence_classification": "M0 / BLOCKED_BY_THEORY_REVISION",
+    "expansion_authorized": false,
+    "implementation_authorized": false,
+    "lifecycle_status": "ACTIVE_CANDIDATE",
+    "next_precommitment": {
+      "path": "experiments/emergence_ladder/one_bit_scale_falsifier_01/precommitment_contract.draft.json",
+      "status": "DRAFT_NOT_FROZEN"
+    },
+    "path": "experiments/emergence_ladder/one_bit_scale_falsifier_01",
+    "preserved_artifacts": [
+      "experiments/emergence_ladder/rung3_recovery_trajectory/results/recovery_trajectory_result.json",
+      "experiments/emergence_ladder/rung3_recovery_trajectory_v2/final/aggregate_result.json",
+      "experiments/emergence_ladder/rung3_distributed_parity/validation/validation_result.json"
+    ],
+    "reason": "The authoritative queue requires EL-R3-THEORY-REVISION-01 first and forbids implementation. The frozen one-bit record also lacks three comparable levels and complete information-overhead accounting.",
+    "result_status": "BLOCKED_BY_THEORY_REVISION",
+    "stop_conditions": [
+      "theory revision remains incomplete or implementation remains unauthorized",
+      "the proposal changes gain, margin, decoder iterations, update schedule, information budget, metric definitions, or thresholds by level",
+      "fewer than three mechanism-valid levels are available",
+      "any required control bypasses the common mechanism path",
+      "functional recovery is inferred from relational repair"
+    ],
+    "terminal_labels": [
+      "BLOCKED_BY_THEORY_REVISION",
+      "IMPLEMENTATION_NOT_AUTHORIZED",
+      "INSUFFICIENT_REFINEMENT_COVERAGE"
+    ]
+  },
+  "proposal_status": "NOT_APPLIED_TO_AUTHORITATIVE_REGISTRY",
+  "required_review_action": "Resolve EL-R3-THEORY-REVISION-01 and explicitly authorize or reject this candidate before freezing its contract or running seeds."
+}
