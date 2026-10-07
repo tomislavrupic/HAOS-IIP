@@ -50,6 +50,12 @@ Every claim must specify:
 - what result would downgrade the claim
 - what result would kill the claim
 - what reproduction command or artifact verifies the result
+- how the branch, parameters, and thresholds were selected
+- which plausible alternatives were considered or remain undisclosed
+- the exact perturbation domain, including omitted perturbations
+- whether reasonable alternative telemetry preserves the conclusion
+- which statistics each control matches and which dangerous controls are absent
+- artifact, execution, and independent-replication status separately
 
 If one of these is missing, the claim remains immature.
 
@@ -70,6 +76,9 @@ These gates can apply to any claim class:
 - bridge observable is indistinguishable from generic graph behavior
 - external-data result disappears when standard analysis or null models are used
 - claim language exceeds the evidence class
+- selection history is incomplete but the claim is presented as uniquely selected
+- the result depends on the chosen telemetry and fails reasonable substitutes
+- recoverability is stated without its perturbation, measurement, and control domain
 
 ## 4. Claim-Specific Failure Gates
 
@@ -218,9 +227,10 @@ It does not mean:
 
 ## 11. Next Work
 
-- convert this Markdown checklist into a machine-readable claim-box template
-- add a small validator for new releases that checks for required claim-box fields
 - apply the checklist to the next canonical entry paper draft
 - backfill claim boxes into the most visible public-facing releases
 - build a dashboard table summarizing claim class, bridge status, and current downgrade level
 - use the framework comparison matrix to add framework-specific null models
+
+The machine-readable schema and validator are now maintained in
+[docs/claim_governance/](../../claim_governance/README.md).

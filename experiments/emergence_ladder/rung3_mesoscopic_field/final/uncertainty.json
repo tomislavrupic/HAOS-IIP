@@ -1,0 +1,14 @@
+{
+  "paired_target_minus_equal_budget_random_functional_recovery_ci_95": [
+    0.4393028544448524,
+    0.5493256144382773
+  ],
+  "paired_target_minus_equal_budget_random_median": 0.7125628119265451,
+  "paired_target_minus_passive_functional_recovery_ci_95": [
+    0.5524693171182541,
+    0.6663587490049226
+  ],
+  "paired_target_minus_passive_median": 0.82802349948248,
+  "resamples": 2000,
+  "unit": "paired level x seed x perturbation family x magnitude"
+}

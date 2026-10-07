@@ -1,0 +1,174 @@
+{
+  "classification": "INTERNAL_FINITE_GRAPH_PROBE",
+  "physical_gravity_demonstrated": false,
+  "novelty_established": false,
+  "state_projection_or_clipping": false,
+  "source_sha256": "37644bb8537a498b793dc9ea73e21a2238687a2a6c67ee73b1de0c38a5dd0fc5",
+  "fixed_protocol": {
+    "sides": [
+      4,
+      6,
+      8
+    ],
+    "J": 1.0,
+    "K": 1.0,
+    "g": 2.0,
+    "amplitude": 0.001,
+    "end_time": 12.0,
+    "random_seeds": [
+      7,
+      19,
+      41
+    ]
+  },
+  "size_runs": [
+    {
+      "side": 4,
+      "nodes": 16,
+      "max_spin_norm_error": 1.3322676295501878e-15,
+      "max_mass_drift": 1.7763568394002505e-15,
+      "max_absolute_energy_drift": 1.9186671836816244e-14,
+      "energy_drift_per_site": 1.1991669898010152e-15,
+      "min_occupancy": 0.011486930737163448,
+      "max_occupancy": 0.9885130692628366,
+      "max_mediator_abs_x": 0.9770261385256733,
+      "function_evaluations": 4517,
+      "lambda_first": 1.2130613194252668,
+      "predicted_tangent_growth_rate": 0.977038829404832,
+      "tangent_max_abs_q": 61.77899953604491,
+      "full_max_abs_q": 0.9770261385256731
+    },
+    {
+      "side": 6,
+      "nodes": 36,
+      "max_spin_norm_error": 3.3306690738754696e-15,
+      "max_mass_drift": 1.0658141036401503e-14,
+      "max_absolute_energy_drift": 1.9758796514094193e-13,
+      "energy_drift_per_site": 5.488554587248387e-15,
+      "min_occupancy": 0.04604431396988917,
+      "max_occupancy": 0.9539556860301107,
+      "max_mediator_abs_x": 0.9079113720602218,
+      "function_evaluations": 4517,
+      "lambda_first": 0.6065306597126328,
+      "predicted_tangent_growth_rate": 0.9193377389478928,
+      "tangent_max_abs_q": 30.91218392893037,
+      "full_max_abs_q": 0.9079113720602217
+    },
+    {
+      "side": 8,
+      "nodes": 64,
+      "max_spin_norm_error": 3.3306690738754696e-15,
+      "max_mass_drift": 1.0658141036401503e-14,
+      "max_absolute_energy_drift": 1.8922007244490807e-13,
+      "energy_drift_per_site": 2.9565636319516886e-15,
+      "min_occupancy": 0.0976190093251223,
+      "max_occupancy": 0.9023809906748774,
+      "max_mediator_abs_x": 0.8047619813497555,
+      "function_evaluations": 4517,
+      "lambda_first": 0.35529743446455775,
+      "predicted_tangent_growth_rate": 0.7644335170516915,
+      "tangent_max_abs_q": 4.817715031709328,
+      "full_max_abs_q": 0.8047619813497554
+    }
+  ],
+  "random_runs": [
+    {
+      "seed": 7,
+      "max_spin_norm_error": 4.100053629940703e-13,
+      "max_mass_drift": 5.329070518200751e-15,
+      "max_absolute_energy_drift": 5.4285465012071654e-12,
+      "energy_drift_per_site": 1.507929583668657e-13,
+      "min_occupancy": 0.0008057394232527382,
+      "max_occupancy": 0.9934413637096158,
+      "max_mediator_abs_x": 0.9990788780060575,
+      "function_evaluations": 1142
+    },
+    {
+      "seed": 19,
+      "max_spin_norm_error": 9.774403508799878e-13,
+      "max_mass_drift": 7.105427357601002e-15,
+      "max_absolute_energy_drift": 9.79127889877418e-12,
+      "energy_drift_per_site": 2.719799694103939e-13,
+      "min_occupancy": 2.0096940556990628e-05,
+      "max_occupancy": 0.9998830887544647,
+      "max_mediator_abs_x": 0.9995362290395439,
+      "function_evaluations": 1142
+    },
+    {
+      "seed": 41,
+      "max_spin_norm_error": 1.0919043447188415e-12,
+      "max_mass_drift": 3.552713678800501e-15,
+      "max_absolute_energy_drift": 1.56035184772918e-11,
+      "energy_drift_per_site": 4.334310688136611e-13,
+      "min_occupancy": 0.00046146732052354533,
+      "max_occupancy": 0.9996569915466083,
+      "max_mediator_abs_x": 0.9995307822715982,
+      "function_evaluations": 1142
+    }
+  ],
+  "weak_amplitude_runs": [
+    {
+      "amplitude": 0.04,
+      "relative_tangent_error": 0.00047130859395435465
+    },
+    {
+      "amplitude": 0.02,
+      "relative_tangent_error": 0.00011782210825582324
+    },
+    {
+      "amplitude": 0.01,
+      "relative_tangent_error": 2.9455213309770267e-05
+    }
+  ],
+  "tolerance_check": {
+    "max_spin_norm_error": 1.7763568394002505e-15,
+    "max_mass_drift": 1.0658141036401503e-14,
+    "max_absolute_energy_drift": 1.284685384331588e-14,
+    "energy_drift_per_site": 3.568570512032189e-16,
+    "min_occupancy": 0.04604431396989084,
+    "max_occupancy": 0.953955686030109,
+    "max_mediator_abs_x": 0.9079113720602184,
+    "function_evaluations": 9011,
+    "reference_max_step": 0.04,
+    "refined_max_step": 0.02,
+    "maximum_state_difference": 2.3814283878209608e-14
+  },
+  "inverse_flow_error": 4.1375459670226e-12,
+  "zero_coupling_control": {
+    "max_spin_norm_error": 8.881784197001252e-16,
+    "max_mass_drift": 1.0658141036401503e-14,
+    "max_absolute_energy_drift": 6.443186506251489e-15,
+    "energy_drift_per_site": 1.7897740295143024e-16,
+    "min_occupancy": 0.4995,
+    "max_occupancy": 0.5005,
+    "max_mediator_abs_x": 0.001,
+    "function_evaluations": 4517
+  },
+  "near_capacity_run": {
+    "max_spin_norm_error": 1.2878587085651816e-14,
+    "max_mass_drift": 7.105427357601002e-15,
+    "max_absolute_energy_drift": 8.775202786637237e-13,
+    "energy_drift_per_site": 2.4375563296214547e-14,
+    "min_occupancy": 5.000000025123796e-09,
+    "max_occupancy": 0.999999995,
+    "max_mediator_abs_x": 0.99999999,
+    "function_evaluations": 1142
+  },
+  "structural_checks": {
+    "instantaneous_energy_derivative": 3.164135620181696e-15,
+    "instantaneous_total_occupancy_derivative": 9.43689570931383e-16,
+    "instantaneous_norm_derivative_max": 4.440892098500626e-16,
+    "relabeling_equivariance_error": 0.0,
+    "tangent_poisson_residual": 2.124263792033019e-15
+  },
+  "diagnostic_checks": {
+    "numerical_invariants": true,
+    "occupancy_range": true,
+    "tangent_outgrows_capacity": true,
+    "tolerance_agreement": true,
+    "inverse_flow": true,
+    "structural_identities": true,
+    "weak_limit_error_decreases": true
+  },
+  "diagnostic_status": "PASS_SCOPED"
+}

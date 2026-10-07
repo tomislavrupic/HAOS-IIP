@@ -1,172 +1,81 @@
-# PROJECT_STATUS
+# HAOS-IIP Current Research Status
 
-Date: March 10, 2026
+Reconciled: **7 October 2026**.
 
-## Status summary
+This is the current navigation index. It summarizes the authorities linked below;
+it does not replace their contracts, change scientific classifications, or
+unblock implementation. Release 66.5 remains a frozen baseline and 66.4 remains
+the recommended entry paper, rather than dates for the latest local research.
 
-The repository has been restructured into a research layout with:
+## Current evidence and lifecycle
 
-- canonical theory files
-- classified legacy source documents
-- initialized Git repository
-- reusable starter numerics
-- reproducible orchestration layer
-- one explicit 3D eigenmode experiment preserved under `experiments/`
-- a periodic/twisted `L1` gauge-sector experiment with coexact projection
+| Work | Recorded outcome | Development reading | Evidence / authority |
+| --- | --- | --- | --- |
+| EL-R3-THEORY-REVISION-01 | `FROZEN_THEORY_REVISION` | Complete; do not schedule the revision again | [Theory](docs/roadmaps/EL_R3_THEORY_REVISION_01.md) |
+| EL-R3-MESOSCOPIC-FIELD-01 | `PARTIAL_RECOVERY_ONLY` | `TERMINAL_NEGATIVE`; Rung 3 unsupported | [Frozen result](experiments/emergence_ladder/rung3_mesoscopic_field/final/summary.md), [manifest](experiments/emergence_ladder/rung3_mesoscopic_field/final/result_manifest.json) |
+| HAOS-AF-AR-01 | `BOUNDED_TOY_ANTIFRAGILITY_SUPPORTED` | Preserve the bounded sidecar; no higher-rung promotion | [Result](experiments/antifragility/adaptive_recoverability_v1/final/summary.md), [hostile audit](experiments/antifragility/adaptive_recoverability_v1/audit/hostile_audit.md) |
+| PIX-7 finite-capacity exchange | `INTERNAL_FINITE_GRAPH_PROBE`; diagnostics `PASS_SCOPED` | Finite conservative model; physical gravity not demonstrated | [Stored result](experiments/physics_bridge/pix7_finite_capacity_exchange/outputs/results.json), [derivation and boundaries](docs/notes/foundations/PIX_7_Constructed_Finite_Capacity_Exchange_v1.md) |
+| EL-R4-OC-02 / EL-R5-CSR-01 | Registry candidates; implementation blocked | Missing lower-rung support and required frozen precommitments | [Lifecycle registry](docs/branch_governance/branch_lifecycle_summary.md) |
+| HBP PB-01 through PB-04 | `QUARANTINED_INVALID` | Historical artifacts only; no in-place rehabilitation | [HBP status](experiments/hbp/hbp_status_snapshot.md) |
+| HBP-IR-01 | `INSTRUMENT_VALID` | Supporting synthetic calibration; no external prediction claim | [Integrity result](experiments/hbp/integrity_repair_v2/results/hbp_ir_01_report.md) |
+| Current scale-bridge 66.5 mechanism | CP2 / CP3 / comparative / CP5 gates `OPEN` | `TERMINAL_NEGATIVE` for development; lower-level evidence retained | [Lifecycle registry](docs/branch_governance/branch_lifecycle_summary.md), [claim contract](docs/claim_governance/scale_bridge_66_5.claim.json) |
+| HAOS-GEN synthetic generative line | Verified negative; paused pending external task | No further synthetic versions without the external-task gate | [Status](HAOS_GEN_STATUS.json) |
 
-The theory architecture has now been tightened further:
+The mesoscopic field restores two perturbation families at each tested level,
+but its within-cell nullspace family remains unrecovered. The resulting `2/3`
+rate is below the frozen `0.75` gate. A valid checker result does not promote
+this partial scientific outcome.
 
-- same substrate
-- same kernel
-- three operator sectors
+The antifragility sidecar's positive result remains limited by its symmetric
+ring, designer-specified update, structural capacity metric, and static-hardening
+reference. PIX-7 numerical consistency is not a gravity gate pass. Neither
+sidecar changes the emergence ladder or creates an authorized successor.
 
-This replaces the earlier compressed reading that one node Laplacian might explain all sectors directly.
+## Next gate
 
-## Current gauge-sector verdict
+The highest supported emergence rung remains Rung 2. The theory revision and
+its mesoscopic successor are finished; no new Rung 3 candidate is currently
+authorized. A successor requires independent motivation, a new identifier, and
+a frozen precommitment under the registry's reopening policy. Existing failures,
+thresholds, controls, and result identifiers remain preserved.
 
-The present HAOS/IIP edge operator supports a genuine non-scalar flux-responsive branch, but explicit harmonic-vs-coexact separation shows that the lowest modes remain harmonic or mixed topological structure rather than a low coexact vector band. In the current periodic/twisted range, this is a negative Maxwell test.
+The two candidates in the registry's active queue are dependency-blocked.
+Their presence in that queue is not permission to implement operational closure
+or cross-scale recovery. See the [reconciled emergence ladder](docs/roadmaps/HAOS_IIP_EMERGENCE_LADDER_2026-07-11.md).
 
-- `n = 5`, `m = 1`: full lowest `0.013057`, harmonic-projected `0.509808`, coexact-projected `0.458457`
-- `n = 4`, `m = 1`: full lowest `0.014110`, harmonic-projected `0.611897`, coexact-projected `0.679582`
+## Preservation and verification
 
-## FILES_MOVED
+The [reviewed local snapshot](docs/snapshots/RESEARCH_SNAPSHOT_2026-10-07.md)
+records the Git anchor, exact file inventory, verification scope, and restoration
+instructions. It preserves 63 formerly untracked files and seven existing
+modified files, including raw rows, figures, arrays, contracts, tests, and audits.
+It is a local snapshot, not a release or independent replication.
 
-### Foundations -> `docs/notes/foundations/`
-
-- `HAOS_Frozen_Specification_v1.docx`
-- `HAOS_IIP_Minimal_Theory_Statement_v2.docx`
-- `Interaction_Invariant_Physics_Full_v1.docx`
-
-### Kernel -> `theory/kernel/`
-
-- `HAOS_IIP_Kernel_v1.docx`
-- `HAOS_Spectral_Recoverability_Principle_v1.docx`
-- `Discrete_Scale_Invariance_and_Coherence_Stability_v1.docx`
-
-### Geometry -> `theory/geometry/`
-
-- `Interaction_Kernels_to_Emergent_Geometry_v1.docx`
-- `HAOS_IIP_Spectral_Geometry_Note_v1.docx`
-- `HAOS_IIP_Spectral_Gravity_Note_v1.docx`
-- `HAOS_IIP_Singularities_v1.docx`
-
-### Gauge -> `theory/gauge/`
-
-- `HAOS_IIP_Emergent_Gauge_Sector_Note_v1.md`
-
-### Particles -> `theory/particles/`
-
-- `Rebuilding_Dudas_Picture_in_HAOS_IIP_v1.docx`
-
-### Applications -> `docs/notes/applications/`
-
-- `HAOS_IIP_Microtubules_v1.docx`
-- `HAOS_IIP_Fluid_Derivation_v1.docx`
-- `The_Meissner_Effect_v1.docx`
-
-### Archive -> `docs/archive/`
-
-- `Interaction_Invariant_Foundations_of_Consciousness_v1.docx`
-- `Mathematical_Foundations_of_QATC_v1.docx`
-- `QATC_2026_Creative_Dynamics_v1.docx`
-- `The_Physics_of_Imagination_v1.docx`
-- `ALi_22_v1.docx`
-- `HAOPS_v1.docx`
-- `STATEFLOW_v1.docx`
-- `The_Hierarchical_Autonomy_of_Reality_v1.docx`
-
-### Experiments -> `experiments/eigenmodes/haos_iip_3d_low_mode_study/`
-
-- `HAOS_IIP_3D_Low_Mode_Study_v1.md`
-- `haos_iip_3d_low_modes_v1.py`
-- `haos_iip_results_v1.json`
-- `haos_iip_mode_plots/`
-
-## FILES_VERSIONED
-
-- existing active notes were given `_v1` or `_v2` suffixes
-- the minimal theory statement retained `_v2` because the source title already marked it as a later-stage document
-- canonical files were created separately under `docs/canon/` rather than renaming source drafts into canon
-
-## TERMINOLOGY_CONFLICTS
-
-Primary conflicts found in legacy material:
-
-1. `epsilon`
-
-- used as kernel width in geometry/kernel notes
-- also used as coherence threshold in recoverability inequalities
-- canonical standard:
-  - `epsilon_k`: kernel width
-  - `epsilon_c`: coherence threshold
-
-2. `L`
-
-- used as graph Laplacian
-- also loosely used in some drafts for Lagrangian-like objects
-- canonical standard:
-  - `L0`: node Laplacian
-  - `L1`: edge/Hodge Laplacian
-  - `L`: generic Laplacian only when sector is obvious
-  - `mathcal{L}`: continuum operator
-
-3. charge language
-
-- some drafts treat charge as winding, some as coupling asymmetry, some as placeholder gauge quantity
-- canonical status:
-  - winding/defect charge is `[P]`
-  - no physical charge derivation is `[E]`
-
-## CANON_CREATED
-
-Created under `docs/canon/`:
-
-- `HAOS_IIP_CORE_THEORY.md`
-- `KERNEL_DEFINITION.md`
-- `OPERATOR_STRUCTURE.md`
-- `EMERGENT_GEOMETRY.md`
-- `GAUGE_PROGRAM.md`
-- `OPEN_PROBLEMS.md`
-
-## NUMERICS_INITIALIZED
-
-Created under `numerics/simulations/`:
-
-- `laplacian_modes.py`
-- `gauge_modes.py`
-- `hodge_modes.py`
-- `parameter_sweep.py`
-- `periodic_twisted_l1.py`
-
-These are small reusable scripts, separate from experiment-specific code.
-
-Added orchestration layer:
-
-- `scripts/run_experiments.py`
-- `config.json`
-- `experiments/EXPERIMENT_LOG.md`
-- `Makefile`
-- `numerics/simulations/hodge_modes.py`
-- `numerics/simulations/parameter_sweep.py`
-
-The repository now supports a single command workflow:
+From the repository root:
 
 ```bash
-python3 scripts/run_experiments.py
+uv run python scripts/check_branch_lifecycle.py
+uv run python scripts/check_claim_contracts.py
+uv run python experiments/emergence_ladder/rung3_mesoscopic_field/check_bundle.py
+uv run python experiments/antifragility/adaptive_recoverability_v1/check_bundle.py
+uv run python examples/quick_reproduce.py
 ```
 
-or
+These commands check saved artifacts and governance. Do not rerun single-use
+final partitions as a substitute for their bundle checkers.
 
-```bash
-make run
-```
+## Authority and historical notes
 
-This loads shared parameters, runs the starter simulations, stores structured JSON results in `data/`, writes plots into `plots/`, and appends a dated run record to `experiments/EXPERIMENT_LOG.md`.
-
-## NEXT_RESEARCH_TARGET
-
-The next technical target should be:
-
-1. introduce punctures or controlled defects to separate torus-cycle modes from local transverse circulation
-2. extend the periodic scan to larger lattices and check whether the coexact floor moves down toward a cleaner low band
-3. only after that, build the minimal Dirac-type branch `D_H`
+- Scientific outcomes: each frozen contract, result, and manifest.
+- Development decisions: [lifecycle JSON](docs/branch_governance/branch_lifecycle_registry.json);
+  its Markdown summary is generated from that authority.
+- Public claim ceilings: [claim governance](docs/claim_governance/README.md).
+- Current navigation: this page, with the README and ladder pointing to it.
+- [March 10 project status](docs/archive/PROJECT_STATUS_2026-03-10.md) is preserved
+  byte-for-byte as history, including its old proposed next steps.
+- The [post-67.1 snapshot](docs/notes/foundations/post_67_1_status_snapshot.md)
+  is historical; its earlier HBP readiness descriptions are superseded.
+- The [one-bit scale falsifier M0 record](experiments/emergence_ladder/one_bit_scale_falsifier_01/README.md)
+  preserves the missing-theory gate as it stood at that time. The later completed
+  revision does not retrospectively execute that falsifier or turn its draft
+  into a frozen contract.

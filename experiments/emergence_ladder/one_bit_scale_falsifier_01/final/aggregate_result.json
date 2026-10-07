@@ -1,0 +1,34 @@
+{
+  "candidate_id": "EL-R3-ONE-BIT-SCALE-FALSIFIER-01",
+  "contract_checksum": null,
+  "execution_authorized": false,
+  "final_seeds_consumed": 0,
+  "frozen_artifacts_changed": false,
+  "governance": {
+    "authoritative_candidate": "EL-R3-THEORY-REVISION-01",
+    "implementation_authorized": false,
+    "required_precommitment": "docs/roadmaps/EL_R3_THEORY_REVISION_01.md",
+    "required_precommitment_present": false
+  },
+  "hypothesis_outcome": "H3_INSTRUMENT_INSUFFICIENT",
+  "m0_decision": "STOP",
+  "parent_classifications_preserved": {
+    "EL-R3-RP-01": "VALIDATION_GATE_FAILED",
+    "EL-R3-RT-01": "NEGATIVE_RESULT",
+    "EL-R3-RT-02": "PARTIAL_RECOVERY_ONLY",
+    "highest_supported_emergence_rung": 2,
+    "rung_3": "NEGATIVE_RESULT"
+  },
+  "refinement_evidence": {
+    "common_mechanism_valid_levels": 1,
+    "minimum_required_for_scale_classification": 3,
+    "retrospective_artifact_audit_supported": false
+  },
+  "starting_commit_sha": "f4742c49f4a50b18f7b92b98b18f176cd1637987",
+  "status": "BLOCKED",
+  "terminal_classification": [
+    "BLOCKED_BY_THEORY_REVISION",
+    "INSUFFICIENT_REFINEMENT_COVERAGE"
+  ],
+  "tested_scale_result": null
+}

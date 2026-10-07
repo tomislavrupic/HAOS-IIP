@@ -350,6 +350,74 @@ Scale-bridge evidence is useful.
 
 Scale-bridge evidence is not continuum proof.
 
+### 12.1 Adversarial dependency and assumption register
+
+The numerical observations in this audit are conditional. Recoverability must be
+read as:
+
+```text
+R(S | P, M, C)
+```
+
+where `S` is the candidate structure, `P` is the declared perturbation family,
+`M` is the measurement scheme, and `C` is the control set. No result in this
+audit authorizes dropping those qualifiers.
+
+#### 12.1.1 Dependency inheritance
+
+```text
+substrate and boundary choice
+  -> kernel, weights, and normalization
+  -> operator hierarchy
+  -> branch and admissibility selection
+  -> initialization and evolution
+  -> telemetry
+  -> stability and ordering diagnostics
+  -> metric-like and scale surrogates
+  -> external bridge hypothesis
+```
+
+Evidence at a later layer inherits every unresolved dependency above it. A
+positive surrogate diagnostic cannot independently validate substrate choice,
+telemetry choice, universality, physical correspondence, or ontology.
+
+#### 12.1.2 Current assumption status
+
+| Dependency-critical assumption | Current status | Consequence |
+| --- | --- | --- |
+| complete selection history rules out hidden tuning | `OPEN` | freezing prevents later edits but does not establish prospectivity before the earliest freeze |
+| privileged branches survive reasonable telemetry substitution | `OPEN` | frozen telemetry supports repeatability, not metric independence |
+| tested controls are sufficiently adversarial | `OPEN` | current controls do not cover all degree-, spectrum-, weight-, motif-, and low-frequency-matched alternatives |
+| recoverability transfers beyond the declared perturbation family | `OPEN` | every recovery statement remains conditional on `P`, `M`, and `C` |
+| multiple admissible substrate and kernel families share a limit | `OPEN` | CP5 universality language is not authorized |
+| compression preserves the same claimed surrogate with specificity | `OPEN` | CP2 bookkeeping is useful but controls recover too strongly for closure |
+| external sidecars establish a generative correspondence | `FAIL` as a current inference | applying telemetry to external data does not show that HAOS generated or explains the phenomenon |
+| independent teams reproduce outputs and classifications | `OPEN` | repository self-consistency is not independent replication |
+
+#### 12.1.3 Machine-readable claim ceiling
+
+The authoritative public contract for this milestone is:
+
+- `docs/claim_governance/scale_bridge_66_5.claim.json`
+
+It records the included and omitted perturbations, telemetry sensitivity, tested
+and omitted controls, selection-history disclosure, reproduction level, and
+physical-correspondence status. Validate it with:
+
+```bash
+uv run python scripts/check_claim_contracts.py
+```
+
+The current composite reading remains:
+
+- `PASS` for bounded artifact and governance checks that actually pass;
+- `OPEN` for the general scaling/recoverability methodology;
+- `FAIL` for any present inference to continuum physics, physical explanation,
+  or ontology.
+
+This register does not downgrade preserved lower-level numerical results. It
+prevents those results from lending unsupported authority to later layers.
+
 ## 19. Control hardening and specificity next cycle
 
 The next-cycle control-hardening roadmap is:

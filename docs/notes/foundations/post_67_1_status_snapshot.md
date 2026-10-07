@@ -1,6 +1,13 @@
 # Post-67.1 Consolidated Status Snapshot
 
-Status: continuity snapshot, not a new phase and not a new claim ceiling.
+Status: historical continuity snapshot, superseded for current planning.
+
+For the reconciled 7 October 2026 state, read [PROJECT_STATUS.md](../../../PROJECT_STATUS.md)
+and the [branch lifecycle registry](../../branch_governance/branch_lifecycle_summary.md).
+In particular, PB-01 through PB-04 are now quarantined, HBP-IR-01 is retained as
+instrument calibration, and the theory revision and mesoscopic successor have
+completed. The body below records the earlier snapshot; its uses of “current”
+and “next” describe that historical state, not implementation authorization.
 
 This page consolidates the current reading across the 66.5 scale-bridge
 baseline, the HBP registry, the geometry bridge, and the equivalences layer.
@@ -77,8 +84,8 @@ Frozen spectral / curvature numbers:
 
 Related notes:
 
-- [Geometry Bridge Chain](../../geometry_bridge/README.md)
-- [Spectral Diagnostics Summary](../../geometry_bridge/spectral_diagnostics_summary.md)
+- [Geometry Bridge Chain](../../../experiments/geometry_bridge/README.md)
+- [Spectral Diagnostics Summary](../../../experiments/geometry_bridge/spectral_diagnostics_summary.md)
 
 ## 4. Equivalences Layer
 

@@ -1,10 +1,9 @@
 {
   "active_priority_order": [
-    "EL-R3-THEORY-REVISION-01",
     "EL-R4-OC-02-INTERVENTION-NATIVE",
     "EL-R5-CSR-01"
   ],
-  "audit_date": "2026-07-11",
+  "audit_date": "2026-08-18",
   "authority": "Development lifecycle only. Result artifacts, frozen phase manifests, and claim ledgers remain authoritative for scientific outcomes.",
   "branches": [
     {
@@ -471,32 +470,55 @@
     {
       "branch_id": "EL-R3-THEORY-REVISION-01",
       "claim_ceiling": "Theory and information-architecture revision for a future Rung 3 mechanism; no recovery claim.",
-      "evidence_basis": "RT-01, RT-02, and RP-01 jointly show that persistence, one-bit orientation repair, and finite-radius parity repair do not supply the mesoscopic information needed for functional restoration.",
-      "evidence_classification": "ACTIVE THEORY REVISION",
-      "expansion_authorized": true,
+      "evidence_classification": "FROZEN THEORY REVISION",
+      "expansion_authorized": false,
       "implementation_authorized": false,
-      "lifecycle_status": "ACTIVE_CANDIDATE",
-      "next_precommitment": {
-        "path": "docs/roadmaps/EL_R3_THEORY_REVISION_01.md",
-        "status": "REQUIRED"
-      },
-      "path": "experiments/emergence_ladder",
+      "lifecycle_status": "FROZEN_REFERENCE",
+      "path": "docs/roadmaps",
       "preserved_artifacts": [
-        "experiments/emergence_ladder/rung3_distributed_parity/validation/validation_result.json"
+        "docs/roadmaps/EL_R3_THEORY_REVISION_01.md"
       ],
-      "reason": "A future mechanism must first justify a representation that stores function-relevant mesoscopic information without becoming a continuous checkpoint. Decoder or threshold tuning is not authorized.",
-      "result_status": "PRECOMMITMENT REQUIRED",
-      "stop_conditions": [
-        "the proposal re-encodes RT-02 orientation or RP-01 parity without a new information representation",
-        "the stored representation uniquely reconstructs the continuous pre-state",
-        "function labels or final trajectories influence representation design",
-        "the mechanism lacks a predicted failure basin",
-        "the proposal attempts Rung 4 promotion before Rung 3 support"
-      ],
-      "success_criterion": "A new precommitment identifies independently motivated mesoscopic restorative information, proves a bounded non-checkpoint memory budget, predicts how that information restores the declared function, and defines destructive controls before execution.",
+      "reason": "The revision freezes a target-blind 4x4 quantized mesoscopic field, proves rank 16 and nullity n^2-16, supplies a deterministic local decoder and predicted failure channels, and authorizes only its separately precommitted successor.",
+      "result_status": "THEORY REVISION FROZEN / SUCCESSOR PRECOMMITTED",
       "terminal_labels": [
-        "THEORY_REVISION_REQUIRED",
-        "IMPLEMENTATION_NOT_AUTHORIZED"
+        "THEORY_REVISION_FROZEN",
+        "NO_RECOVERY_CLAIM"
+      ]
+    },
+    {
+      "branch_id": "EL-R3-MESOSCOPIC-FIELD-01",
+      "claim_ceiling": "Finite-level functional recovery by a fixed 128-bit mesoscopic field only; no continuum, universality, or physics claim.",
+      "evidence_basis": "EL-R3-THEORY-REVISION-01 identifies a target-blind, rank-16 mesoscopic field with fixed quantization, provable microscopic nullity, a deterministic cell-local decoder, and explicit destructive controls.",
+      "evidence_classification": "RS / PARTIAL_RECOVERY_ONLY",
+      "expansion_authorized": false,
+      "implementation_authorized": false,
+      "lifecycle_status": "TERMINAL_NEGATIVE",
+      "next_precommitment": {
+        "path": "experiments/emergence_ladder/rung3_mesoscopic_field/precommitment_contract.json",
+        "status": "FROZEN"
+      },
+      "path": "experiments/emergence_ladder/rung3_mesoscopic_field",
+      "preserved_artifacts": [
+        "experiments/emergence_ladder/rung3_mesoscopic_field/precommitment_contract.json",
+        "experiments/emergence_ladder/rung3_mesoscopic_field/results/per_run_results.jsonl",
+        "experiments/emergence_ladder/rung3_mesoscopic_field/final/aggregate_result.json",
+        "experiments/emergence_ladder/rung3_mesoscopic_field/final/result_manifest.json",
+        "experiments/emergence_ladder/rung3_mesoscopic_field/audit/semantic_reporting_repair.md"
+      ],
+      "reason": "The fixed 128-bit field restored its quantized values exactly, passed scale stability and destructive-control separation, and recovered coarse-cell-offset and smooth-twist disruptions at every tested level. It failed the preregistered 0.75 per-level recovery-rate gate because the within-cell nullspace family remained unrecovered, so the candidate closes without Rung 3 promotion or result-driven retuning.",
+      "result_status": "PARTIAL RECOVERY ONLY / RUNG 3 UNSUPPORTED",
+      "stop_conditions": [
+        "the quantizer, partition, decoder, seeds, perturbations, controls, thresholds, or bit budget changes after result inspection",
+        "the direct functional phasors or full microscopic state enter an admissible representation",
+        "a frozen parent artifact changes",
+        "a required control is missing or a scheduled row is silently discarded"
+      ],
+      "success_criterion": "The fixed 128-bit field restores its stored quantized values exactly and meets every preregistered functional, control-separation, uncertainty, and finite-refinement gate without retuning.",
+      "terminal_labels": [
+        "PARTIAL_RECOVERY_ONLY",
+        "FIXED_128_BIT_FIELD_TESTED",
+        "WITHIN_CELL_NULLSPACE_FAILURE",
+        "NO_HIGHER_RUNG_PROMOTION"
       ]
     },
     {

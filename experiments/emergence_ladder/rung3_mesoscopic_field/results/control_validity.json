@@ -1,0 +1,10 @@
+{
+  "all_conditions_present": true,
+  "coarse_rank_and_nullity_exact": true,
+  "compression_payloads_exact": true,
+  "no_missing_or_duplicate_rows": true,
+  "oracles_excluded": true,
+  "passive_zero_intervention": true,
+  "random_projection_payload_matched": true,
+  "target_payload_fixed_128": true
+}

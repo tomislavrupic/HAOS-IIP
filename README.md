@@ -2,18 +2,44 @@
 
 **Harmonic Address Operating System - Interaction Invariant Physics**
 
-A large-scale, disciplined numerical research program exploring reproducible emergence of stability, temporal ordering, causal closure, and proto-geometric structures inside **frozen branch-local cochain-Laplacian hierarchies**.
+A reproducible numerical laboratory for testing whether selected structures in
+discrete operator systems remain distinguishable under declared perturbations,
+controls, refinement, and coarse-graining.
 
-**200+ commits | 19+ phased bundles | strict reproducibility | frozen baselines + telemetry**
+**Frozen baselines + telemetry | explicit claim gates | bounded reproduction**
 
 **Current focus**: closing exhausted experiment branches and advancing only
 new, precommitted successors selected by evidence quality and falsifiability.
 
-**Current milestone**: `66.5` is the current scale-bridge milestone; `66.4` remains the recommended canonical entry paper.
+**Current status**: [research status index, 7 October 2026](PROJECT_STATUS.md).
+`66.5` remains the frozen scale-bridge baseline; `66.4` remains the recommended
+canonical entry paper. These release numbers do not describe the later recovery
+experiments or authorize expansion of the scale-bridge mechanism.
 
-### Current Status - Release 66.5 (May 2026)
+### Current Research Status - 7 October 2026
 
-**Scale-Bridge Legitimacy Audit is active**
+- `EL-R3-THEORY-REVISION-01` is complete and frozen. Its successor,
+  `EL-R3-MESOSCOPIC-FIELD-01`, completed the fixed 128-bit experiment and remains
+  `PARTIAL_RECOVERY_ONLY`: two perturbation families recover, but the within-cell
+  nullspace family does not. The candidate is closed and Rung 3 is unsupported.
+- `HAOS-AF-AR-01` retains `BOUNDED_TOY_ANTIFRAGILITY_SUPPORTED`; its symmetric-ring
+  and static-hardening limitations remain explicit. It does not promote the
+  emergence ladder.
+- PIX-7 finite-capacity exchange retains `PASS_SCOPED` numerical diagnostics on a
+  finite conservative graph model. Gravity recovery is not demonstrated.
+- The [local research snapshot](docs/snapshots/RESEARCH_SNAPSHOT_2026-10-07.md)
+  preserves these bundles, their evidence, and the associated governance work.
+
+**Next gate**: the [branch lifecycle registry](docs/branch_governance/branch_lifecycle_summary.md)
+lists operational closure and cross-scale recovery as candidates with
+implementation blocked. There is no authorized Rung 3 successor. A new recovery
+mechanism requires a new identifier, independent motivation, and a frozen
+precommitment; the completed theory revision must not be scheduled again.
+No score upgrade or stronger continuum language is authorized.
+
+### Frozen Release 66.5 Baseline (May 2026)
+
+**Scale-Bridge Legitimacy Audit evidence is retained; the current mechanism is terminal-negative.**
 
 - dedicated **66.5 HAOS-IIP Scale-Bridge Legitimacy Audit** PDF released
 - CP1-CP6 Continuum Physics ladder formalized in the foundations layer
@@ -21,33 +47,36 @@ new, precommitted successors selected by evidence quality and falsifiability.
 - Phase XIX Spectral Address bundle frozen as the canonical terminology layer
 - environment reproducible via `uv` with `pyproject.toml` and `uv.lock`
 
-**Key recent artifacts**:
+**Baseline and historical artifacts**:
 
 - [HAOS-IIP Paper Spine Index v66.5](papers/HAOS_IIP_Paper_Spine_Index_v66_5.md)
 - [HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md](docs/notes/foundations/HAOS_IIP_Scale_Bridge_Legitimacy_Audit_v1.md) with populated convergence extract
 - [HAOS_IIP_Post_66_5_Roadmap_Run_v1.md](docs/notes/foundations/HAOS_IIP_Post_66_5_Roadmap_Run_v1.md) with CP2, CP3, comparative, and CP5 gate results
-- [Post-67.1 Consolidated Status Snapshot](docs/notes/foundations/post_67_1_status_snapshot.md)
+- [Historical post-67.1 snapshot](docs/notes/foundations/post_67_1_status_snapshot.md) (superseded for current planning)
 - [66.5 HAOS-IIP Scale-Bridge Legitimacy Audit.pdf](papers/pdf_releases/66.5%20HAOS-IIP%20Scale-Bridge%20Legitimacy%20Audit.pdf)
 - [Phase XIX Spectral Address bundle](phase19-spectral-address/README.md)
 - Python dependency lockfile for consistent `uv run` execution
 
 **Current hard-gate status**: CP2 same-surrogate recovery, CP3 effective-equation closure, narrow comparative diagnostics, and CP5 universality screening have been executed once and remain `OPEN`. Branch-side diagnostics are encouraging in several rows, but controls and universality coverage are not yet strong enough for scale-bridge closure. The current 66.5 mechanism is now terminal-negative for development purposes; its evidence remains frozen and no claim boundary is altered.
 
-**Next cycle**: the authoritative [branch lifecycle registry](docs/branch_governance/branch_lifecycle_summary.md) and [emergence ladder](docs/roadmaps/HAOS_IIP_EMERGENCE_LADDER_2026-07-11.md) place `EL-R3-THEORY-REVISION-01` first. RT-02 remains frozen as `PARTIAL_RECOVERY_ONLY`, and RP-01 is terminal at `VALIDATION_GATE_FAILED`; operational closure and cross-scale recovery remain dependency-blocked. No score upgrade or stronger continuum language is authorized.
-
 **Philosophy reminder**: structure is what survives perturbation. This repository provides diagnostic scaffolding and numerical feasibility tests. It does not claim a continuum limit, physical correspondence, or ontology.
 
 ### One-Sentence Summary
 
-This repository demonstrates that a coherent, multi-hundred-page-equivalent computational research arc (stability -> scalar-carrier geometry -> cautious physics-bridge observables -> bounded external-data sidecars) can be built and kept verifiable using structured workflows and current tools.
+Within selected frozen graph and operator families, HAOS-IIP can construct,
+measure, preserve, and reproduce several ordered numerical structures across a
+staged experimental hierarchy.
 
-### Success Criterion
+### Artifact-Reproduction Criterion
 
 ```bash
 uv run python examples/quick_reproduce.py
 ```
 
-This command must reproduce identical public tables and plots against the frozen baselines. No new simulations are required for validation.
+This command checks that the public summary artifacts match frozen baselines. It
+does not freshly validate every numerical result, establish metric independence,
+reconstruct selection history, provide independent replication, or support a
+continuum or physical claim.
 
 ## Recommended Starting Point (New Readers)
 
@@ -281,9 +310,12 @@ Short note:
 
 - [A Minimal Structural-Stability Oracle Based on Frozen HAOS-IIP Telemetry](docs/notes/applications/A_Minimal_Structural_Stability_Oracle_Based_on_Frozen_HAOS_IIP_Telemetry_v1.md)
 
-## Program Status
+## Published Program History
 
-**Current public milestone (66.4 canonical entry paper after Phase 66 audit layer):**
+The following summarizes the published phase/release arc. Use [PROJECT_STATUS.md](PROJECT_STATUS.md)
+for later recovery outcomes and development decisions.
+
+**Public entry milestone (66.4 canonical entry paper after Phase 66 audit layer):**
 The bounded HAOS-to-harmonic derivation program is fully executed, the vector validation line is frozen through `51.2`, and the scalar kernel-graph line closes through the `52.x` scalar-carrier releases and the `53.x` physics-bridge observable stack. Release `64.1` adds the first real external materials-data sidecar: a ferron / NbOI2 bridge over public Figshare data from Choe et al. Release `65.1` adds the parallel spin-sector Line B magnon sidecar for alpha-Fe2O3 with a first-class artifact and explicit raw-data boundary. Release `66.4` freezes the copy-clean Phase 66 canonical entry paper: a public translation and hostile-audit entry document, not a new mechanism or stronger physical claim.
 
 The public repository now contains seven stacked bounded results:
@@ -376,7 +408,7 @@ Core experimental layers are frozen and defined in:
 - [API_CONTRACT.md](API_CONTRACT.md)
 - [telemetry/frozen_metrics.py](telemetry/frozen_metrics.py)
 
-This guarantees:
+These frozen interfaces support:
 
 - stable operator definitions
 - consistent initialization rules
@@ -384,6 +416,26 @@ This guarantees:
 - matched control construction
 
 Emergence diagnostics rely only on these frozen interfaces.
+
+Reproducibility is reported at three distinct levels:
+
+- `ARTIFACT_VERIFIED`: committed summaries match committed expected artifacts;
+- `EXECUTION_REPRODUCED`: the declared numerical computation was rerun;
+- `INDEPENDENTLY_REPLICATED`: an unaffiliated party reproduced both outputs and
+  classifications from the declared protocol.
+
+The quick-reproduction command establishes only its reported artifact checks.
+It does not imply the higher levels. Claim-specific status, perturbation scope,
+telemetry sensitivity, omitted controls, and selection-history limits are
+recorded in the [machine-readable claim governance layer](docs/claim_governance/README.md).
+Validate those contracts with:
+
+```bash
+uv run python scripts/check_claim_contracts.py
+```
+
+Passing the claim-contract validator means that required boundaries are present
+and internally consistent. It does not mean the underlying claim is true.
 
 ## Continuum-Sketch Layer
 

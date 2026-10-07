@@ -1,0 +1,226 @@
+{
+  "abort_conditions": [
+    "the lifecycle registry does not authorize implementation",
+    "the contract is not FROZEN before final execution",
+    "any final seed is used for implementation, smoke testing, parameter selection, or threshold selection",
+    "the quantizer range, precision, rounding, saturation, or invalid-value behavior changes",
+    "the physical 4x4 partition or row-major addressing changes by refinement level",
+    "the decoder gains an iterative update, learned parameter, fitted gain, adaptive normalization, or full-state reference",
+    "any scheduled row is silently dropped",
+    "a frozen parent artifact changes",
+    "the direct functional phasors enter an admissible representation",
+    "a positive classification requires excluding a predeclared perturbation family or control"
+  ],
+  "candidate_id": "EL-R3-MESOSCOPIC-FIELD-01",
+  "claim_ceiling": "Bounded functional recovery by a fixed 128-bit mesoscopic field over the preregistered finite levels 8x8, 12x12, and 16x16 only.",
+  "conditions": {
+    "admissible": [
+      "target_quantized_coarse_field",
+      "passive_relaxation",
+      "operator_filter_matched_cost",
+      "rt02_frozen_one_bit_rule",
+      "block_permutation",
+      "phase_scrambling",
+      "amplitude_only",
+      "phase_only",
+      "equal_budget_random_projection",
+      "compression_12_target_blind",
+      "compression_8_target_blind"
+    ],
+    "historical_only": [
+      "EL-R3-RP-01 validation functional restoration rate 0.0"
+    ],
+    "non_admissible_oracles": [
+      "unquantized_coarse_field",
+      "direct_four_functional_phasors",
+      "full_microscopic_checkpoint"
+    ]
+  },
+  "decision_rules": {
+    "control_margin_min": 0.05,
+    "field_exact_tolerance": 1e-10,
+    "function_applicability_error_min": 1e-10,
+    "functional_recovery_min": 0.75,
+    "maximum_level_median_drop_8_to_16": 0.1,
+    "minimum_applicable_fraction_per_level": 0.75,
+    "minimum_family_recovery_rate": 0.5,
+    "minimum_level_recovery_rate": 0.75,
+    "minimum_qualifying_families_per_level": 2,
+    "minimum_variance_ratio": 0.5,
+    "positive_classification_requires": [
+      "the stored quantized field is restored within tolerance on every target run",
+      "at least 75 percent of target rows are function-applicable at every level",
+      "target functional recovery rate is at least 0.75 at every level",
+      "at least two perturbation families have target recovery rate at least 0.5 at every level",
+      "the paired target-minus-passive functional-recovery confidence interval excludes zero",
+      "the paired target-minus-equal-budget-random confidence interval excludes zero",
+      "block permutation and phase scrambling each degrade median functional recovery by at least 0.05",
+      "median target functional recovery drops by no more than 0.10 from 8x8 to 16x16",
+      "target median variance ratio is at least 0.5",
+      "all controls are valid, all scheduled rows exist, all seeds are final-only, and the semantic checker passes"
+    ],
+    "terminal_classifications": [
+      "RUNG_3_SUPPORTED_BOUNDED_MESOSCOPIC_MEMORY",
+      "FIELD_RESTORED_FUNCTION_NOT_RESTORED",
+      "FUNCTION_RECOVERY_NOT_CONTROL_DISTINCT",
+      "FIXED_BUDGET_NOT_SCALE_STABLE",
+      "PARTIAL_RECOVERY_ONLY",
+      "CONTROL_INVALID",
+      "INSTRUMENT_INVALID"
+    ]
+  },
+  "decoder": {
+    "formula": "x_hat = x_prime + C_n^T (C_n C_n^T)^-1 (q_b - C_n x_prime)",
+    "implementation_form": "For every microscopic value in coarse cell j, add q_b[j] minus the current mean of cell j.",
+    "iterations": 1,
+    "learned_or_fitted_parameters": [],
+    "target_property": "C_n x_hat equals q_b within 1e-10"
+  },
+  "final_evaluation": {
+    "magnitudes": [
+      0.35,
+      0.7,
+      1.05
+    ],
+    "perturbation_families": [
+      "coarse_cell_offsets",
+      "smooth_physical_twist",
+      "within_cell_balanced_gradient"
+    ],
+    "seeds": [
+      9401,
+      9402,
+      9403,
+      9404,
+      9405,
+      9406,
+      9407,
+      9408
+    ]
+  },
+  "forbidden_claims": [
+    "continuum limit",
+    "scale behavior beyond the three tested finite levels",
+    "universality",
+    "physical energy law",
+    "spacetime derivation",
+    "new physics",
+    "ontology",
+    "agency or self-maintenance",
+    "operational closure",
+    "generative advantage",
+    "general emergence"
+  ],
+  "function": {
+    "definition": "F(x) = [<x, cos(2 pi x)>, <x, sin(2 pi x)>, <x, cos(2 pi y)>, <x, sin(2 pi y)>] using unit-norm probes at each refinement level",
+    "origin": "Frozen independently in EL-R3-RP-01 before this representation was proposed.",
+    "recovery": "1 - ||F(x_hat)-F(x)|| / ||F(x_prime)-F(x)||",
+    "target_leakage_rule": "F, its four coefficients, recovery values, labels, and final outcomes are unavailable to every admissible encoder and decoder."
+  },
+  "information_accounting": {
+    "addressing_bits_per_sample": 0,
+    "canonical_addressing": "fixed row-major 4x4 cell order",
+    "control_policy_information": "constant source and frozen contract hashes; reported separately from payload",
+    "hyperparameter_information": "constant frozen quantizer and decoder schema; reported separately from payload",
+    "payload_bits": 128,
+    "payload_values": 16,
+    "precision_bits_per_value": 8,
+    "runtime_intervention_count": "number of microscopic values receiving a nonzero uniform cell correction",
+    "schema_overhead": "constant, state-independent, and reported by contract byte count and SHA-256"
+  },
+  "missingness_policy": "Every level x seed x perturbation family x magnitude x condition row must be emitted. Non-applicable functional rows remain present with function_applicable=false. Any missing or invalid row prevents a positive result.",
+  "parent_evidence": {
+    "EL-R3-RP-01": "VALIDATION_GATE_FAILED; el_r3_rp_01_e7806ce1a296242b75ad3d3b",
+    "EL-R3-RT-01": "NEGATIVE_RESULT",
+    "EL-R3-RT-02": "PARTIAL_RECOVERY_ONLY; el_r3_rt_02_cade4e057a54d119e6af143c",
+    "frozen_parent_slice_sha256": "ab4c36b30b8f8dd9d43b8f2710a977d7f39241ade6c030e8a1c99b3584cada18"
+  },
+  "quantizer": {
+    "adaptive_range": false,
+    "bits_per_value": 8,
+    "code_count": 256,
+    "fixed_max": 3.0,
+    "fixed_min": -3.0,
+    "invalid_codes_reserved": 0,
+    "level_rule": "uniform inclusive reconstruction levels from -3.0 to 3.0",
+    "non_finite_input": "abort run",
+    "overflow": "saturate to fixed endpoints and report saturation count",
+    "per_sample_normalization": false,
+    "rounding": "round half to even",
+    "signed": true
+  },
+  "representation": {
+    "construction": "uniform mean in each of sixteen nonempty disjoint physical cells",
+    "full_state_reconstruction": false,
+    "nullity_by_level": {
+      "8": 48,
+      "12": 128,
+      "16": 240
+    },
+    "partition": "fixed 4x4 physical-domain partition",
+    "rank": 16,
+    "stored_shape": [
+      4,
+      4
+    ],
+    "target_blind": true
+  },
+  "scale_levels": [
+    {
+      "coarse_cell_shape": [
+        2,
+        2
+      ],
+      "n_side": 8,
+      "state_dimension": 64
+    },
+    {
+      "coarse_cell_shape": [
+        3,
+        3
+      ],
+      "n_side": 12,
+      "state_dimension": 144
+    },
+    {
+      "coarse_cell_shape": [
+        4,
+        4
+      ],
+      "n_side": 16,
+      "state_dimension": 256
+    }
+  ],
+  "secondary_endpoints": [
+    "coarse field restoration",
+    "quantization error and saturation count",
+    "state restoration gain",
+    "edge-sign relational identity",
+    "variance ratio",
+    "intervention RMS and intervention density",
+    "payload bits per node and per state dimension",
+    "deterministic decoder operation count",
+    "functional recovery by perturbation family and level",
+    "compression boundary at 12 and 8 target-blind projected values"
+  ],
+  "smoke_partition": {
+    "access_policy": "implementation and deterministic smoke tests only; never contributes evidence or thresholds",
+    "seeds": [
+      9301
+    ]
+  },
+  "starting_commit_sha": "f4742c49f4a50b18f7b92b98b18f176cd1637987",
+  "status": "FROZEN",
+  "system": {
+    "continuous_dtype": "float64",
+    "initial_state": "seeded smooth periodic scalar field standardized to zero mean and unit variance",
+    "units": "dimensionless"
+  },
+  "uncertainty": {
+    "confidence": 0.95,
+    "method": "paired seed-block bootstrap percentile interval",
+    "resamples": 2000,
+    "seed": 9501
+  },
+  "version": "1.0.0"
+}

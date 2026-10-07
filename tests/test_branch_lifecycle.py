@@ -48,6 +48,7 @@ class BranchLifecycleTests(unittest.TestCase):
         mutated = copy.deepcopy(self.registry)
         active_id = mutated["active_priority_order"][0]
         row = next(item for item in mutated["branches"] if item["branch_id"] == active_id)
+        row["next_precommitment"]["status"] = "REQUIRED"
         row["implementation_authorized"] = True
         with self.assertRaisesRegex(LifecycleValidationError, "implementation requires a frozen precommitment"):
             validate_registry(mutated, ROOT)

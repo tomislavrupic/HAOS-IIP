@@ -1,0 +1,4 @@
+stress_family,median_gain,minimum_gain,rows
+displaced_primary_block,0.38225057152634023,0.19529692176266533,216
+distributed_primary_damage,0.38115267113364815,0.19066026522663937,216
+backup_channel_damage,0.2461768327229122,0.11626374981392662,216
